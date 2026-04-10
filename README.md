@@ -12,7 +12,7 @@ Partsmith is a document-based macOS prototype for extracting instrument parts fr
 1. Create a new project in Partsmith.
 2. Drag a full-score PDF into the center pane.
 3. Set the header block:
-   - use `Source Header`, click `Edit`, drag a header box, then click `Save` near the orange header box, or
+   - use `Source Header`, click `Edit`, drag a header box, then click `Save` in the inspector or just click elsewhere to finish, or
    - switch to `Typed` and enter a title/subtitle.
 4. Click `New Part` in the bottom-left sidebar.
 5. Click on the first staff/system for that part to create a crop band.
@@ -40,25 +40,25 @@ Partsmith is a document-based macOS prototype for extracting instrument parts fr
 
 ## Run From Source
 
-1. Open [Partsmith.xcodeproj](/Users/will/Documents/git/partsmith/Partsmith.xcodeproj) in Xcode.
+1. Open [Partsmith.xcodeproj](Partsmith.xcodeproj) in Xcode.
 2. Build the `Partsmith` scheme.
 3. Launch the app and either:
    - import a PDF directly, or
-   - open [Partsmith/Resources/Fixtures/SampleProject.partsmithproject](/Users/will/Documents/git/partsmith/Partsmith/Resources/Fixtures/SampleProject.partsmithproject)
+   - open [Partsmith/Resources/Fixtures/SampleProject.partsmithproject](Partsmith/Resources/Fixtures/SampleProject.partsmithproject)
 
 ## Project Layout
 
-- [Partsmith.xcodeproj](/Users/will/Documents/git/partsmith/Partsmith.xcodeproj)
-- [Partsmith/App/PartsmithApp.swift](/Users/will/Documents/git/partsmith/Partsmith/App/PartsmithApp.swift)
-- [Partsmith/Core/DocumentModel/PartsmithDocument.swift](/Users/will/Documents/git/partsmith/Partsmith/Core/DocumentModel/PartsmithDocument.swift)
-- [Partsmith/Features/SourceCanvas/SourceCanvasView.swift](/Users/will/Documents/git/partsmith/Partsmith/Features/SourceCanvas/SourceCanvasView.swift)
-- [Partsmith/Core/Layout/PartLayoutEngine.swift](/Users/will/Documents/git/partsmith/Partsmith/Core/Layout/PartLayoutEngine.swift)
-- [Partsmith/Core/Export/PartPDFExporter.swift](/Users/will/Documents/git/partsmith/Partsmith/Core/Export/PartPDFExporter.swift)
+- [Partsmith.xcodeproj](Partsmith.xcodeproj)
+- [Partsmith/App/PartsmithApp.swift](Partsmith/App/PartsmithApp.swift)
+- [Partsmith/Core/DocumentModel/PartsmithDocument.swift](Partsmith/Core/DocumentModel/PartsmithDocument.swift)
+- [Partsmith/Features/SourceCanvas/SourceCanvasView.swift](Partsmith/Features/SourceCanvas/SourceCanvasView.swift)
+- [Partsmith/Core/Layout/PartLayoutEngine.swift](Partsmith/Core/Layout/PartLayoutEngine.swift)
+- [Partsmith/Core/Export/PartPDFExporter.swift](Partsmith/Core/Export/PartPDFExporter.swift)
 
 ## Fixture Files
 
-- [Partsmith/Resources/Fixtures/SampleScoreFixture.pdf](/Users/will/Documents/git/partsmith/Partsmith/Resources/Fixtures/SampleScoreFixture.pdf)
-- [Partsmith/Resources/Fixtures/SampleProject.partsmithproject](/Users/will/Documents/git/partsmith/Partsmith/Resources/Fixtures/SampleProject.partsmithproject)
+- [Partsmith/Resources/Fixtures/SampleScoreFixture.pdf](Partsmith/Resources/Fixtures/SampleScoreFixture.pdf)
+- [Partsmith/Resources/Fixtures/SampleProject.partsmithproject](Partsmith/Resources/Fixtures/SampleProject.partsmithproject)
 
 ## Document Format
 
@@ -67,8 +67,8 @@ Partsmith is a document-based macOS prototype for extracting instrument parts fr
 - `project.json`: project metadata, parts, bands, and settings
 - `source.pdf`: the immutable embedded source score PDF
 
-See [Partsmith/Resources/Fixtures/SampleProject.partsmithproject/project.json](/Users/will/Documents/git/partsmith/Partsmith/Resources/Fixtures/SampleProject.partsmithproject/project.json) for a concrete example.
+See [Partsmith/Resources/Fixtures/SampleProject.partsmithproject/project.json](Partsmith/Resources/Fixtures/SampleProject.partsmithproject/project.json) for a concrete example.
 
 ## Limitations
 
-Current gaps and next steps are summarized in [KNOWN_LIMITATIONS.md](/Users/will/Documents/git/partsmith/KNOWN_LIMITATIONS.md).
+Current gaps and next steps are summarized in [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md).

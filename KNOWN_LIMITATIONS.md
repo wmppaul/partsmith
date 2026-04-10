@@ -1,6 +1,6 @@
 # Known Limitations
 
-This repo currently delivers a usable manual-first alpha, not the full product described in [score-part-extractor-spec.md](/Users/will/Documents/git/partsmith/score-part-extractor-spec.md).
+This repo currently delivers a usable manual-first alpha, not the full product described in [score-part-extractor-spec.md](score-part-extractor-spec.md).
 
 ## What The Alpha Already Covers
 
