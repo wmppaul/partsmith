@@ -5,7 +5,7 @@ Partsmith is a document-based macOS prototype for extracting instrument parts fr
 ## Alpha Download
 
 - macOS alpha zip: [Partsmith v0.1.0-alpha.2](https://raw.githubusercontent.com/wmppaul/partsmith/v0.1.0-alpha.2/artifacts/macos/Partsmith-v0.1.0-alpha.2-macos.zip)
-- Repo tag: [v0.1.0-alpha.2](https://github.com/wmppaul/partsmith/tree/v0.1.0-alpha.2)
+- If macOS says `Apple could not verify "Partsmith.app" is free of malware that may harm your Mac or compromise your privacy`, open `System Settings > Privacy & Security`, scroll down, and click `Open Anyway`.
 
 ## Getting Started
 
