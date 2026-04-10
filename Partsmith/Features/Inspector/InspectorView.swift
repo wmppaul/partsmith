@@ -37,21 +37,19 @@ struct InspectorView: View {
             Text("Project")
                 .font(.headline)
 
-            VStack(alignment: .leading, spacing: 6) {
-                Text("Header Block")
-                Picker(
-                    "Header Block",
-                    selection: Binding(
-                        get: { document.project.projectSettings.headerDisplayMode },
-                        set: { document.updateProjectHeaderDisplayMode($0) }
-                    )
-                ) {
-                    ForEach(HeaderDisplayMode.allCases) { mode in
-                        Text(mode.title).tag(mode)
-                    }
+            Picker(
+                "Header Block",
+                selection: Binding(
+                    get: { document.project.projectSettings.headerDisplayMode },
+                    set: { document.updateProjectHeaderDisplayMode($0) }
+                )
+            ) {
+                ForEach([HeaderDisplayMode.sourceSelection, .typed]) { mode in
+                    Text(mode.title).tag(mode)
                 }
-                .pickerStyle(.segmented)
             }
+            .pickerStyle(.segmented)
+            .labelsHidden()
 
             if document.project.projectSettings.headerDisplayMode == .typed {
                 VStack(alignment: .leading, spacing: 6) {
@@ -85,21 +83,26 @@ struct InspectorView: View {
                             .foregroundStyle(.secondary)
                     }
 
-                    Text("Drag a rectangle over the score header on a source page. That engraving will be copied into the first page of every part.")
+                    Text("Click Edit, adjust the score header on the page, then click Save here or just move on to normal part editing. That engraving will be copied into the first page of every part.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
 
                     HStack {
-                        Button(document.isEditingHeaderSelection ? "Finish Header Selection" : "Select Header On This Page") {
+                        Button(document.isEditingHeaderSelection ? "Save" : "Edit") {
                             document.setHeaderSelectionEditing(document.isEditingHeaderSelection == false)
                         }
                         .disabled(document.pdfDocument == nil)
 
-                        if document.headerSelection != nil {
-                            Button("Clear Header Selection", role: .destructive) {
-                                document.clearHeaderSelection()
-                            }
+                        Button("Clear", role: .destructive) {
+                            document.clearHeaderSelection()
                         }
+                        .disabled(document.headerSelection == nil)
+                    }
+
+                    if document.isEditingHeaderSelection {
+                        Text("Editing header selection on the page.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }

@@ -170,6 +170,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func selectPart(_ partID: UUID?) {
+        if partID != nil {
+            isEditingHeaderSelection = false
+        }
         selectedPartID = partID
         guard let partID else {
             selectedBandID = nil
@@ -185,6 +188,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func selectBand(_ bandID: UUID?) {
+        if bandID != nil {
+            isEditingHeaderSelection = false
+        }
         selectedBandID = bandID
         guard let bandID,
               let band = project.bands.first(where: { $0.id == bandID })
@@ -246,6 +252,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
         selectedPartID = part.id
         selectedBandID = nil
+        isEditingHeaderSelection = false
     }
 
     func deletePart(_ partID: UUID) {

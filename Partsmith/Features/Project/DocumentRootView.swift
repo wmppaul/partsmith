@@ -1,6 +1,24 @@
 import AppKit
 import SwiftUI
 
+struct DocumentExportCommands {
+    var exportSelectedPart: () -> Void
+    var exportAllParts: () -> Void
+    var canExportSelectedPart: Bool
+    var canExportAllParts: Bool
+}
+
+private struct DocumentExportCommandsKey: FocusedValueKey {
+    typealias Value = DocumentExportCommands
+}
+
+extension FocusedValues {
+    var documentExportCommands: DocumentExportCommands? {
+        get { self[DocumentExportCommandsKey.self] }
+        set { self[DocumentExportCommandsKey.self] = newValue }
+    }
+}
+
 struct DocumentRootView: View {
     @ObservedObject var document: PartsmithDocument
     @Environment(\.undoManager) private var undoManager
@@ -12,7 +30,10 @@ struct DocumentRootView: View {
         NavigationSplitView {
             PartsSidebarView(
                 document: document,
-                onNewPartRequested: { showingAddPartSheet = true }
+                onNewPartRequested: {
+                    document.setHeaderSelectionEditing(false)
+                    showingAddPartSheet = true
+                }
             )
         } detail: {
             HSplitView {
@@ -23,12 +44,18 @@ struct DocumentRootView: View {
                             document: document,
                             onImportRequested: importPDF,
                             onImportDropped: importPDF(from:),
-                            onNewPartRequested: { showingAddPartSheet = true }
+                            onNewPartRequested: {
+                                document.setHeaderSelectionEditing(false)
+                                showingAddPartSheet = true
+                            }
                         )
                     case .preview:
-                        PartPreviewView(document: document)
-                    }
+                        PartPreviewView(
+                            document: document,
+                            onExportRequested: exportSelectedPart
+                        )
                 }
+            }
                 .frame(minWidth: 760, maxWidth: .infinity, maxHeight: .infinity)
 
                 InspectorView(document: document)
@@ -36,6 +63,15 @@ struct DocumentRootView: View {
             }
         }
         .navigationSplitViewStyle(.balanced)
+        .focusedSceneValue(
+            \.documentExportCommands,
+            DocumentExportCommands(
+                exportSelectedPart: exportSelectedPart,
+                exportAllParts: exportAllParts,
+                canExportSelectedPart: exportSelectedDisabled == false,
+                canExportAllParts: exportAllDisabled == false
+            )
+        )
         .toolbar {
             ToolbarItemGroup(placement: .automatic) {
                 Button("Import PDF", systemImage: "doc.badge.plus") {
@@ -74,10 +110,11 @@ struct DocumentRootView: View {
                     }
                 }
 
-                Button("Export PDF", systemImage: "square.and.arrow.up") {
-                    exportSelectedPart()
+                Button(primaryExportTitle, systemImage: "square.and.arrow.up") {
+                    performPrimaryExport()
                 }
-                .disabled(exportDisabled)
+                .disabled(primaryExportDisabled)
+                .keyboardShortcut("e", modifiers: [.command, .shift])
 
                 Picker(
                     "Mode",
@@ -113,10 +150,29 @@ struct DocumentRootView: View {
         }
     }
 
-    private var exportDisabled: Bool {
+    private var exportableParts: [PartModel] {
+        document.project.parts.filter { part in
+            document.project.bands.contains { $0.partID == part.id && !$0.excluded }
+        }
+    }
+
+    private var exportSelectedDisabled: Bool {
         guard let selectedPartID = document.selectedPartID else { return true }
         guard document.pdfDocument != nil else { return true }
         return document.project.bands.contains(where: { $0.partID == selectedPartID && !$0.excluded }) == false
+    }
+
+    private var exportAllDisabled: Bool {
+        guard document.pdfDocument != nil else { return true }
+        return exportableParts.isEmpty
+    }
+
+    private var primaryExportTitle: String {
+        document.canvasMode == .source ? "Export All" : "Export PDF"
+    }
+
+    private var primaryExportDisabled: Bool {
+        document.canvasMode == .source ? exportAllDisabled : exportSelectedDisabled
     }
 
     private func importPDF() {
@@ -155,11 +211,57 @@ struct DocumentRootView: View {
         }
     }
 
-    private func sanitizedFilename(_ string: String) -> String {
-        string
+    private func exportAllParts() {
+        guard exportAllDisabled == false else { return }
+
+        let panel = NSOpenPanel()
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = false
+        panel.canCreateDirectories = true
+        panel.allowsMultipleSelection = false
+
+        let folderName = sanitizedFilename(document.project.projectName, fallback: "Partsmith Export")
+        panel.message = "Choose where to create the \"\(folderName)\" export folder."
+        panel.prompt = "Export All"
+
+        guard panel.runModal() == .OK, let parentURL = panel.url else { return }
+
+        let exportFolderURL = uniqueExportFolderURL(named: folderName, inside: parentURL)
+
+        do {
+            try PartPDFExporter.exportAll(document: document, to: exportFolderURL)
+        } catch {
+            presentedError = PresentedError(title: "Export Failed", message: error.localizedDescription)
+        }
+    }
+
+    private func performPrimaryExport() {
+        if document.canvasMode == .source {
+            exportAllParts()
+        } else {
+            exportSelectedPart()
+        }
+    }
+
+    private func uniqueExportFolderURL(named folderName: String, inside parentURL: URL) -> URL {
+        let fileManager = FileManager.default
+        var candidate = parentURL.appendingPathComponent(folderName, isDirectory: true)
+        var suffix = 2
+
+        while fileManager.fileExists(atPath: candidate.path) {
+            candidate = parentURL.appendingPathComponent("\(folderName) \(suffix)", isDirectory: true)
+            suffix += 1
+        }
+
+        return candidate
+    }
+
+    private func sanitizedFilename(_ string: String, fallback: String = "Part") -> String {
+        let sanitized = string
             .replacingOccurrences(of: "/", with: "-")
             .replacingOccurrences(of: ":", with: "-")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+        return sanitized.isEmpty ? fallback : sanitized
     }
 }
 

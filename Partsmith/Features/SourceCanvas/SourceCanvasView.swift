@@ -60,6 +60,9 @@ struct SourceCanvasView: View {
                             leftFraction: leftFraction,
                             rightFraction: rightFraction
                         )
+                    },
+                    onFinishHeaderSelection: {
+                        document.setHeaderSelectionEditing(false)
                     }
                 )
                 .background(Color(nsColor: .windowBackgroundColor))
@@ -166,7 +169,7 @@ private extension PartsmithDocument {
         if isEditingHeaderSelection {
             return (
                 title: "Selecting a shared source header",
-                body: "Drag a rectangle over the engraved score header, or adjust its corner handles. That crop will be copied to the first page of every output part."
+                body: "Drag a rectangle over the engraved score header, or adjust its corner handles. Click Save in the inspector, or just click elsewhere to finish."
             )
         }
 
@@ -206,6 +209,7 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
     var onCreateBand: (Double) -> Void
     var onUpdateBand: (UUID, Double, Double) -> Void
     var onUpdateHeaderSelection: (Int, Double, Double, Double, Double) -> Void
+    var onFinishHeaderSelection: () -> Void
 
     func makeNSView(context: Context) -> PDFBandEditorContainerView {
         PDFBandEditorContainerView()
@@ -226,7 +230,8 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
             onUpdateBand: onUpdateBand,
-            onUpdateHeaderSelection: onUpdateHeaderSelection
+            onUpdateHeaderSelection: onUpdateHeaderSelection,
+            onFinishHeaderSelection: onFinishHeaderSelection
         )
     }
 }
@@ -307,7 +312,8 @@ final class PDFBandEditorContainerView: NSView {
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
-        onUpdateHeaderSelection: @escaping (Int, Double, Double, Double, Double) -> Void
+        onUpdateHeaderSelection: @escaping (Int, Double, Double, Double, Double) -> Void,
+        onFinishHeaderSelection: @escaping () -> Void
     ) {
         let documentChanged = pdfView.document !== pdfDocument
         if documentChanged {
@@ -344,7 +350,8 @@ final class PDFBandEditorContainerView: NSView {
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
             onUpdateBand: onUpdateBand,
-            onUpdateHeaderSelection: onUpdateHeaderSelection
+            onUpdateHeaderSelection: onUpdateHeaderSelection,
+            onFinishHeaderSelection: onFinishHeaderSelection
         )
 
         if documentChanged || pageChanged || zoomModeChanged {
@@ -524,6 +531,7 @@ private final class BandOverlayView: NSView {
     private var onCreateBand: ((Double) -> Void)?
     private var onUpdateBand: ((UUID, Double, Double) -> Void)?
     private var onUpdateHeaderSelection: ((Int, Double, Double, Double, Double) -> Void)?
+    private var onFinishHeaderSelection: (() -> Void)?
     private var dragState: DragState?
     private var headerDragState: HeaderSelectionDragState?
     private var headerDraft: SourceHeaderSelection?
@@ -615,7 +623,8 @@ private final class BandOverlayView: NSView {
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
-        onUpdateHeaderSelection: @escaping (Int, Double, Double, Double, Double) -> Void
+        onUpdateHeaderSelection: @escaping (Int, Double, Double, Double, Double) -> Void,
+        onFinishHeaderSelection: @escaping () -> Void
     ) {
         self.pageIndex = pageIndex
         self.page = page
@@ -630,6 +639,7 @@ private final class BandOverlayView: NSView {
         self.onCreateBand = onCreateBand
         self.onUpdateBand = onUpdateBand
         self.onUpdateHeaderSelection = onUpdateHeaderSelection
+        self.onFinishHeaderSelection = onFinishHeaderSelection
         if isEditingHeaderSelection == false {
             headerDragState = nil
             headerDraft = nil
@@ -756,6 +766,7 @@ private final class BandOverlayView: NSView {
                 withAttributes: labelAttributes
             )
         }
+
     }
 
     override func mouseDown(with event: NSEvent) {
@@ -765,18 +776,39 @@ private final class BandOverlayView: NSView {
         guard let page, let pageFrame = pageFrameInView() else { return }
 
         if isEditingHeaderSelection {
-            guard pageFrame.contains(point) else { return }
+            let target = hoverTarget(at: point)
+            let existingHeaderSelection = displayedHeaderSelection
+
+            guard pageFrame.contains(point) else {
+                onFinishHeaderSelection?()
+                updateCursor(for: point)
+                needsDisplay = true
+                return
+            }
+
             let fractionPoint = headerFractionPointFromViewPoint(point, in: page)
             let dragMode: HeaderDragMode
-            switch hoverTarget(at: point) {
+            switch target {
             case .headerResize(let corner):
-                guard let displayedHeaderSelection else { return }
-                dragMode = .resize(corner: corner, initialSelection: displayedHeaderSelection)
+                guard let existingHeaderSelection else { return }
+                dragMode = .resize(corner: corner, initialSelection: existingHeaderSelection)
             case .headerMove:
-                guard let displayedHeaderSelection else { return }
-                dragMode = .move(initialSelection: displayedHeaderSelection)
+                guard let existingHeaderSelection else { return }
+                dragMode = .move(initialSelection: existingHeaderSelection)
+            case .headerCreate:
+                if existingHeaderSelection == nil {
+                    dragMode = .create
+                } else {
+                    onFinishHeaderSelection?()
+                    updateCursor(for: point)
+                    needsDisplay = true
+                    return
+                }
             default:
-                dragMode = .create
+                onFinishHeaderSelection?()
+                updateCursor(for: point)
+                needsDisplay = true
+                return
             }
 
             let dragState = HeaderSelectionDragState(

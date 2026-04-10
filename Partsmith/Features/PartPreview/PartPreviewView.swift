@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PartPreviewView: View {
     @ObservedObject var document: PartsmithDocument
+    var onExportRequested: () -> Void
 
     var body: some View {
         if let selectedPart = document.selectedPart {
@@ -18,6 +19,9 @@ struct PartPreviewView: View {
                                     .foregroundStyle(.secondary)
                             }
                             Spacer()
+                            Button("Export PDF", systemImage: "square.and.arrow.up") {
+                                onExportRequested()
+                            }
                         }
                         .padding(16)
 

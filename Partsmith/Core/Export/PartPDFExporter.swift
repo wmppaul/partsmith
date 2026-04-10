@@ -16,6 +16,27 @@ enum PartPDFExporter {
         try data.write(to: url, options: .atomic)
     }
 
+    static func exportAll(document: PartsmithDocument, to directoryURL: URL) throws {
+        let exportableParts = document.project.parts.filter { part in
+            document.project.bands.contains { $0.partID == part.id && !$0.excluded }
+        }
+
+        guard exportableParts.isEmpty == false else {
+            throw NSError(domain: "Partsmith", code: 2003, userInfo: [NSLocalizedDescriptionKey: "There are no parts with included bands to export."])
+        }
+
+        try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+
+        var usedNames: Set<String> = []
+        for part in exportableParts {
+            let filename = uniqueFilename(for: part.name, usedNames: &usedNames)
+            let url = directoryURL
+                .appendingPathComponent(filename)
+                .appendingPathExtension("pdf")
+            try export(partID: part.id, document: document, to: url)
+        }
+    }
+
     private static func pdfData(for partID: UUID, in document: PartsmithDocument) throws -> Data {
         let plan = try PartLayoutEngine.makePlan(project: document.project, pdfDocument: document.pdfDocument, partID: partID)
         let mutableData = NSMutableData()
@@ -153,5 +174,27 @@ enum PartPDFExporter {
         pdfPage.draw(with: .mediaBox, to: context)
 
         context.restoreGState()
+    }
+
+    private static func uniqueFilename(for partName: String, usedNames: inout Set<String>) -> String {
+        let baseName = sanitizedPathComponent(partName, fallback: "Part")
+        var candidate = baseName
+        var suffix = 2
+
+        while usedNames.contains(candidate.lowercased()) {
+            candidate = "\(baseName) \(suffix)"
+            suffix += 1
+        }
+
+        usedNames.insert(candidate.lowercased())
+        return candidate
+    }
+
+    private static func sanitizedPathComponent(_ string: String, fallback: String) -> String {
+        let sanitized = string
+            .replacingOccurrences(of: "/", with: "-")
+            .replacingOccurrences(of: ":", with: "-")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        return sanitized.isEmpty ? fallback : sanitized
     }
 }

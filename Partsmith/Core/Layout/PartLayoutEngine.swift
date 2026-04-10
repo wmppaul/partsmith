@@ -68,14 +68,12 @@ enum PartLayoutEngine {
         let pageSize = project.projectSettings.outputPageSize.pointsSize
         let margins = project.projectSettings.margins
         let fullPageBandWidth = max(120, pageSize.width)
-        let availableHeaderWidth = max(120, pageSize.width - margins.leading - margins.trailing)
         let partScale = max(0.6, min(part.layoutSettings.scale, 1.4))
         let interSystemGap = max(4, part.layoutSettings.interSystemGap)
         let headerPlacement = sourceHeaderPlacement(
             project: project,
             pdfDocument: pdfDocument,
-            pageSize: pageSize,
-            availableWidth: availableHeaderWidth
+            pageSize: pageSize
         )
         let headerBlockHeight: Double
         if part.layoutSettings.showTitle == false {
@@ -155,8 +153,7 @@ enum PartLayoutEngine {
     private static func sourceHeaderPlacement(
         project: ProjectData,
         pdfDocument: PDFDocument,
-        pageSize: CGSize,
-        availableWidth: Double
+        pageSize: CGSize
     ) -> HeaderPlacement? {
         guard project.projectSettings.headerDisplayMode == .sourceSelection,
               let headerSelection = project.projectSettings.headerSelection,
@@ -165,16 +162,17 @@ enum PartLayoutEngine {
             return nil
         }
 
-        let sourceRect = headerSelection.cropRect(in: pdfPage.bounds(for: .mediaBox))
+        let sourcePageBounds = pdfPage.bounds(for: .mediaBox)
+        let sourceRect = headerSelection.cropRect(in: sourcePageBounds)
         guard sourceRect.width > 0, sourceRect.height > 0 else {
             return nil
         }
 
         let margins = project.projectSettings.margins
-        let renderScale = availableWidth / sourceRect.width
+        let renderScale = pageSize.width / sourcePageBounds.width
         let targetHeight = sourceRect.height * renderScale
         let destinationRect = CGRect(
-            x: margins.leading,
+            x: (sourceRect.minX - sourcePageBounds.minX) * renderScale,
             y: pageSize.height - margins.top - targetHeight,
             width: sourceRect.width * renderScale,
             height: targetHeight
