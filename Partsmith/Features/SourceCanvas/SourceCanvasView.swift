@@ -166,7 +166,7 @@ private extension PartsmithDocument {
         if isEditingHeaderSelection {
             return (
                 title: "Selecting a shared source header",
-                body: "Drag a rectangle over the engraved score header on this page. That crop will be copied to the first page of every output part."
+                body: "Drag a rectangle over the engraved score header, or adjust its corner handles. That crop will be copied to the first page of every output part."
             )
         }
 
@@ -471,6 +471,19 @@ private final class BandOverlayView: NSView {
         case move
     }
 
+    enum HeaderCorner: CaseIterable {
+        case topLeft
+        case topRight
+        case bottomLeft
+        case bottomRight
+    }
+
+    enum HeaderDragMode {
+        case create
+        case move(initialSelection: SourceHeaderSelection)
+        case resize(corner: HeaderCorner, initialSelection: SourceHeaderSelection)
+    }
+
     struct DragState {
         var bandID: UUID
         var mode: DragMode
@@ -481,8 +494,19 @@ private final class BandOverlayView: NSView {
 
     struct HeaderSelectionDragState {
         var pageIndex: Int
+        var mode: HeaderDragMode
         var startPoint: CGPoint
         var currentPoint: CGPoint
+    }
+
+    private enum HoverTarget: Equatable {
+        case none
+        case bandCreate
+        case bandMove
+        case bandResize
+        case headerCreate
+        case headerMove
+        case headerResize(HeaderCorner)
     }
 
     weak var pdfView: PDFView?
@@ -503,12 +527,79 @@ private final class BandOverlayView: NSView {
     private var dragState: DragState?
     private var headerDragState: HeaderSelectionDragState?
     private var headerDraft: SourceHeaderSelection?
+    private var trackingArea: NSTrackingArea?
 
     override var acceptsFirstResponder: Bool { true }
+
+    private static let addBandCursor: NSCursor = {
+        let size = NSSize(width: 24, height: 24)
+        let image = NSImage(size: size)
+        image.lockFocus()
+        defer { image.unlockFocus() }
+
+        let center = CGPoint(x: size.width / 2, y: size.height / 2)
+        let ringRect = CGRect(x: center.x - 7, y: center.y - 7, width: 14, height: 14)
+
+        NSColor.white.withAlphaComponent(0.95).setStroke()
+        let haloRing = NSBezierPath(ovalIn: ringRect)
+        haloRing.lineWidth = 4
+        haloRing.stroke()
+
+        NSColor.controlAccentColor.setStroke()
+        let ring = NSBezierPath(ovalIn: ringRect)
+        ring.lineWidth = 1.6
+        ring.stroke()
+
+        let halo = NSBezierPath()
+        halo.lineCapStyle = .round
+        halo.lineWidth = 4
+        halo.move(to: CGPoint(x: center.x - 4.5, y: center.y))
+        halo.line(to: CGPoint(x: center.x + 4.5, y: center.y))
+        halo.move(to: CGPoint(x: center.x, y: center.y - 4.5))
+        halo.line(to: CGPoint(x: center.x, y: center.y + 4.5))
+        NSColor.white.withAlphaComponent(0.95).setStroke()
+        halo.stroke()
+
+        let plus = NSBezierPath()
+        plus.lineCapStyle = .round
+        plus.lineWidth = 2
+        plus.move(to: CGPoint(x: center.x - 4.5, y: center.y))
+        plus.line(to: CGPoint(x: center.x + 4.5, y: center.y))
+        plus.move(to: CGPoint(x: center.x, y: center.y - 4.5))
+        plus.line(to: CGPoint(x: center.x, y: center.y + 4.5))
+        NSColor.controlAccentColor.setStroke()
+        plus.stroke()
+
+        return NSCursor(image: image, hotSpot: NSPoint(x: center.x, y: center.y))
+    }()
 
     override func resetCursorRects() {
         discardCursorRects()
         addCursorRect(bounds, cursor: .arrow)
+    }
+
+    override func updateTrackingAreas() {
+        if let trackingArea {
+            removeTrackingArea(trackingArea)
+        }
+
+        let trackingArea = NSTrackingArea(
+            rect: .zero,
+            options: [.activeInKeyWindow, .inVisibleRect, .mouseMoved, .cursorUpdate],
+            owner: self,
+            userInfo: nil
+        )
+        addTrackingArea(trackingArea)
+        self.trackingArea = trackingArea
+        super.updateTrackingAreas()
+    }
+
+    override func mouseMoved(with event: NSEvent) {
+        updateCursor(for: convert(event.locationInWindow, from: nil))
+    }
+
+    override func cursorUpdate(with event: NSEvent) {
+        updateCursor(for: convert(event.locationInWindow, from: nil))
     }
 
     func update(
@@ -544,6 +635,7 @@ private final class BandOverlayView: NSView {
             headerDraft = nil
         }
         window?.invalidateCursorRects(for: self)
+        updateCursorFromCurrentMouseLocation()
         needsDisplay = true
     }
 
@@ -646,6 +738,15 @@ private final class BandOverlayView: NSView {
             border.lineWidth = isEditingHeaderSelection ? 3 : 2
             border.stroke()
 
+            if isEditingHeaderSelection {
+                for corner in HeaderCorner.allCases {
+                    drawHeaderHandle(
+                        rect: headerHandleRect(for: headerRect, corner: corner),
+                        color: headerColor
+                    )
+                }
+            }
+
             let labelAttributes: [NSAttributedString.Key: Any] = [
                 .font: NSFont.systemFont(ofSize: 11, weight: .semibold),
                 .foregroundColor: NSColor.labelColor
@@ -666,13 +767,27 @@ private final class BandOverlayView: NSView {
         if isEditingHeaderSelection {
             guard pageFrame.contains(point) else { return }
             let fractionPoint = headerFractionPointFromViewPoint(point, in: page)
+            let dragMode: HeaderDragMode
+            switch hoverTarget(at: point) {
+            case .headerResize(let corner):
+                guard let displayedHeaderSelection else { return }
+                dragMode = .resize(corner: corner, initialSelection: displayedHeaderSelection)
+            case .headerMove:
+                guard let displayedHeaderSelection else { return }
+                dragMode = .move(initialSelection: displayedHeaderSelection)
+            default:
+                dragMode = .create
+            }
+
             let dragState = HeaderSelectionDragState(
                 pageIndex: pageIndex,
+                mode: dragMode,
                 startPoint: fractionPoint,
                 currentPoint: fractionPoint
             )
             headerDragState = dragState
             headerDraft = headerSelection(from: dragState)
+            updateCursor(for: point)
             needsDisplay = true
             return
         }
@@ -690,6 +805,7 @@ private final class BandOverlayView: NSView {
                     bottomFraction: band.bottomFraction
                 )
                 needsDisplay = true
+                updateCursor(for: point)
                 return
             }
 
@@ -704,6 +820,7 @@ private final class BandOverlayView: NSView {
                     bottomFraction: band.bottomFraction
                 )
                 needsDisplay = true
+                updateCursor(for: point)
                 return
             }
 
@@ -718,6 +835,7 @@ private final class BandOverlayView: NSView {
                     bottomFraction: band.bottomFraction
                 )
                 needsDisplay = true
+                updateCursor(for: point)
                 return
             }
         }
@@ -729,6 +847,7 @@ private final class BandOverlayView: NSView {
         guard canCreateBands, pageFrame.contains(point) else { return }
         let centerFraction = fractionFromViewPoint(point, in: page)
         onCreateBand?(centerFraction)
+        updateCursor(for: point)
     }
 
     override func mouseDragged(with event: NSEvent) {
@@ -737,6 +856,7 @@ private final class BandOverlayView: NSView {
             headerDragState.currentPoint = headerFractionPointFromViewPoint(point, in: page)
             self.headerDragState = headerDragState
             headerDraft = headerSelection(from: headerDragState)
+            updateCursor(for: point)
             needsDisplay = true
             return
         }
@@ -771,6 +891,7 @@ private final class BandOverlayView: NSView {
         }
 
         self.dragState = dragState
+        updateCursor(for: point)
         needsDisplay = true
     }
 
@@ -790,6 +911,7 @@ private final class BandOverlayView: NSView {
             }
             self.headerDragState = nil
             headerDraft = nil
+            updateCursor(for: convert(event.locationInWindow, from: nil))
             needsDisplay = true
             return
         }
@@ -805,6 +927,7 @@ private final class BandOverlayView: NSView {
         }
 
         self.dragState = nil
+        updateCursor(for: convert(event.locationInWindow, from: nil))
         needsDisplay = true
     }
 
@@ -822,6 +945,16 @@ private final class BandOverlayView: NSView {
         let grip = NSBezierPath(roundedRect: rect.insetBy(dx: 1.5, dy: 1.5), xRadius: 4, yRadius: 4)
         grip.lineWidth = 1
         grip.stroke()
+    }
+
+    private func drawHeaderHandle(rect: CGRect, color: NSColor) {
+        color.setFill()
+        NSBezierPath(roundedRect: rect, xRadius: 4, yRadius: 4).fill()
+
+        NSColor.white.withAlphaComponent(0.92).setStroke()
+        let border = NSBezierPath(roundedRect: rect.insetBy(dx: 1.25, dy: 1.25), xRadius: 3, yRadius: 3)
+        border.lineWidth = 1.2
+        border.stroke()
     }
 
     private func visibleHandleRect(for bandRect: CGRect, edge: DragMode) -> CGRect {
@@ -853,6 +986,33 @@ private final class BandOverlayView: NSView {
             width: max(40, bandRect.width - 8),
             height: 28
         )
+    }
+
+    private func headerHandleRect(for headerRect: CGRect, corner: HeaderCorner) -> CGRect {
+        let size: CGFloat = 14
+        let center: CGPoint
+
+        switch corner {
+        case .topLeft:
+            center = CGPoint(x: headerRect.minX, y: headerRect.maxY)
+        case .topRight:
+            center = CGPoint(x: headerRect.maxX, y: headerRect.maxY)
+        case .bottomLeft:
+            center = CGPoint(x: headerRect.minX, y: headerRect.minY)
+        case .bottomRight:
+            center = CGPoint(x: headerRect.maxX, y: headerRect.minY)
+        }
+
+        return CGRect(
+            x: center.x - size / 2,
+            y: center.y - size / 2,
+            width: size,
+            height: size
+        )
+    }
+
+    private func headerHandleHitRect(for headerRect: CGRect, corner: HeaderCorner) -> CGRect {
+        headerHandleRect(for: headerRect, corner: corner).insetBy(dx: -6, dy: -6)
     }
 
     private func pageFrameInView() -> CGRect? {
@@ -911,18 +1071,123 @@ private final class BandOverlayView: NSView {
     }
 
     private func headerSelection(from dragState: HeaderSelectionDragState) -> SourceHeaderSelection {
-        let minX = min(dragState.startPoint.x, dragState.currentPoint.x)
-        let maxX = max(dragState.startPoint.x, dragState.currentPoint.x)
-        let top = min(dragState.startPoint.y, dragState.currentPoint.y)
-        let bottom = max(dragState.startPoint.y, dragState.currentPoint.y)
+        let minX: CGFloat
+        let maxX: CGFloat
+        let top: CGFloat
+        let bottom: CGFloat
+
+        switch dragState.mode {
+        case .create:
+            minX = min(dragState.startPoint.x, dragState.currentPoint.x)
+            maxX = max(dragState.startPoint.x, dragState.currentPoint.x)
+            top = min(dragState.startPoint.y, dragState.currentPoint.y)
+            bottom = max(dragState.startPoint.y, dragState.currentPoint.y)
+        case .move(let initialSelection):
+            let initialMinX = initialSelection.leftFraction
+            let initialMaxX = 1 - initialSelection.rightFraction
+            let deltaX = dragState.currentPoint.x - dragState.startPoint.x
+            let deltaY = dragState.currentPoint.y - dragState.startPoint.y
+            let width = initialMaxX - initialMinX
+            let height = initialSelection.bottomFraction - initialSelection.topFraction
+
+            let clampedMinX = max(0, min(initialMinX + deltaX, 1 - width))
+            let clampedTop = max(0, min(initialSelection.topFraction + deltaY, 1 - height))
+            minX = clampedMinX
+            maxX = clampedMinX + width
+            top = clampedTop
+            bottom = clampedTop + height
+        case .resize(let corner, let initialSelection):
+            let anchorPoint: CGPoint
+            switch corner {
+            case .topLeft:
+                anchorPoint = CGPoint(x: 1 - initialSelection.rightFraction, y: initialSelection.bottomFraction)
+            case .topRight:
+                anchorPoint = CGPoint(x: initialSelection.leftFraction, y: initialSelection.bottomFraction)
+            case .bottomLeft:
+                anchorPoint = CGPoint(x: 1 - initialSelection.rightFraction, y: initialSelection.topFraction)
+            case .bottomRight:
+                anchorPoint = CGPoint(x: initialSelection.leftFraction, y: initialSelection.topFraction)
+            }
+
+            minX = min(anchorPoint.x, dragState.currentPoint.x)
+            maxX = max(anchorPoint.x, dragState.currentPoint.x)
+            top = min(anchorPoint.y, dragState.currentPoint.y)
+            bottom = max(anchorPoint.y, dragState.currentPoint.y)
+        }
 
         return SourceHeaderSelection(
             pageIndex: dragState.pageIndex,
-            topFraction: top,
-            bottomFraction: bottom,
-            leftFraction: minX,
-            rightFraction: 1 - maxX
+            topFraction: Double(top),
+            bottomFraction: Double(bottom),
+            leftFraction: Double(minX),
+            rightFraction: Double(1 - maxX)
         ).normalized()
+    }
+
+    private func hoverTarget(at point: CGPoint) -> HoverTarget {
+        guard let pageFrame = pageFrameInView() else { return .none }
+
+        if isEditingHeaderSelection {
+            if let headerSelection = displayedHeaderSelection,
+               let headerRect = headerFrame(for: headerSelection)
+            {
+                for corner in HeaderCorner.allCases {
+                    if headerHandleHitRect(for: headerRect, corner: corner).contains(point) {
+                        return .headerResize(corner)
+                    }
+                }
+
+                if headerRect.insetBy(dx: -4, dy: -4).contains(point) {
+                    return .headerMove
+                }
+            }
+
+            return pageFrame.contains(point) ? .headerCreate : .none
+        }
+
+        for band in orderedBandsForDisplay.reversed() {
+            guard let bandRect = bandFrame(for: band) else { continue }
+            if edgeHitRect(for: bandRect, edge: .top).contains(point) ||
+                edgeHitRect(for: bandRect, edge: .bottom).contains(point)
+            {
+                return .bandResize
+            }
+
+            if bandRect.contains(point) {
+                return .bandMove
+            }
+        }
+
+        return canCreateBands && pageFrame.contains(point) ? .bandCreate : .none
+    }
+
+    private func updateCursor(for point: CGPoint) {
+        cursor(for: hoverTarget(at: point)).set()
+    }
+
+    private func updateCursorFromCurrentMouseLocation() {
+        guard let window else { return }
+        updateCursor(for: convert(window.mouseLocationOutsideOfEventStream, from: nil))
+    }
+
+    private func cursor(for hoverTarget: HoverTarget) -> NSCursor {
+        switch hoverTarget {
+        case .none:
+            return .arrow
+        case .bandCreate, .headerCreate:
+            return Self.addBandCursor
+        case .bandResize:
+            return .resizeUpDown
+        case .bandMove:
+            return dragState?.mode == .move ? .closedHand : .openHand
+        case .headerMove:
+            if let headerDragState, case .move = headerDragState.mode {
+                return .closedHand
+            }
+            return .openHand
+        case .headerResize:
+            return .crosshair
+        }
     }
 
     private var orderedBandsForDisplay: [BandModel] {

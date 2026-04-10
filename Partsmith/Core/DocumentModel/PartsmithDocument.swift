@@ -353,8 +353,6 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             project.projectSettings.headerDisplayMode = .sourceSelection
             project.projectSettings.headerSelection = selection
         }
-
-        isEditingHeaderSelection = false
     }
 
     func clearHeaderSelection() {

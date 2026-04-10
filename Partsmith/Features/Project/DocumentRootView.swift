@@ -42,21 +42,6 @@ struct DocumentRootView: View {
                     importPDF()
                 }
 
-                Picker(
-                    "Mode",
-                    selection: Binding(
-                        get: { document.canvasMode },
-                        set: { document.canvasMode = $0 }
-                    )
-                ) {
-                    ForEach(CanvasMode.allCases) { mode in
-                        Text(mode.title).tag(mode)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 180)
-                .disabled(document.pdfDocument == nil)
-
                 if document.canvasMode == .source, document.project.pageCount > 0 {
                     Button {
                         document.previousPage()
@@ -93,6 +78,21 @@ struct DocumentRootView: View {
                     exportSelectedPart()
                 }
                 .disabled(exportDisabled)
+
+                Picker(
+                    "Mode",
+                    selection: Binding(
+                        get: { document.canvasMode },
+                        set: { document.canvasMode = $0 }
+                    )
+                ) {
+                    ForEach(CanvasMode.allCases) { mode in
+                        Text(mode.title).tag(mode)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .frame(width: 180)
+                .disabled(document.pdfDocument == nil)
             }
         }
         .onAppear {

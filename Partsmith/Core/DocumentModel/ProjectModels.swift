@@ -65,8 +65,8 @@ struct SourceHeaderSelection: Codable, Equatable {
 
     func cropRect(in pageBounds: CGRect) -> CGRect {
         let normalized = normalized()
-        let minX = pageBounds.minX
-        let maxX = pageBounds.maxX
+        let minX = pageBounds.minX + pageBounds.width * normalized.leftFraction
+        let maxX = pageBounds.maxX - pageBounds.width * normalized.rightFraction
         let maxY = pageBounds.maxY - pageBounds.height * normalized.topFraction
         let minY = pageBounds.maxY - pageBounds.height * normalized.bottomFraction
         return CGRect(
@@ -93,7 +93,7 @@ struct ProjectSettings: Codable, Equatable {
         margins: PageMargins,
         defaultScale: Double,
         interSystemGap: Double,
-        headerDisplayMode: HeaderDisplayMode = .typed,
+        headerDisplayMode: HeaderDisplayMode = .sourceSelection,
         headerSelection: SourceHeaderSelection? = nil,
         defaultTitleText: String = "",
         defaultComposerText: String = ""
@@ -113,7 +113,7 @@ struct ProjectSettings: Codable, Equatable {
         margins: .standard,
         defaultScale: 1.0,
         interSystemGap: 16,
-        headerDisplayMode: .typed,
+        headerDisplayMode: .sourceSelection,
         headerSelection: nil,
         defaultTitleText: "",
         defaultComposerText: ""
@@ -136,7 +136,7 @@ struct ProjectSettings: Codable, Equatable {
         margins = try container.decodeIfPresent(PageMargins.self, forKey: .margins) ?? .standard
         defaultScale = try container.decodeIfPresent(Double.self, forKey: .defaultScale) ?? 1.0
         interSystemGap = try container.decodeIfPresent(Double.self, forKey: .interSystemGap) ?? 16
-        headerDisplayMode = try container.decodeIfPresent(HeaderDisplayMode.self, forKey: .headerDisplayMode) ?? .typed
+        headerDisplayMode = try container.decodeIfPresent(HeaderDisplayMode.self, forKey: .headerDisplayMode) ?? .sourceSelection
         headerSelection = try container.decodeIfPresent(SourceHeaderSelection.self, forKey: .headerSelection)
         defaultTitleText = try container.decodeIfPresent(String.self, forKey: .defaultTitleText) ?? ""
         defaultComposerText = try container.decodeIfPresent(String.self, forKey: .defaultComposerText) ?? ""

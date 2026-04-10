@@ -67,14 +67,15 @@ enum PartLayoutEngine {
 
         let pageSize = project.projectSettings.outputPageSize.pointsSize
         let margins = project.projectSettings.margins
-        let availableWidth = max(120, pageSize.width - margins.leading - margins.trailing)
+        let fullPageBandWidth = max(120, pageSize.width)
+        let availableHeaderWidth = max(120, pageSize.width - margins.leading - margins.trailing)
         let partScale = max(0.6, min(part.layoutSettings.scale, 1.4))
         let interSystemGap = max(4, part.layoutSettings.interSystemGap)
         let headerPlacement = sourceHeaderPlacement(
             project: project,
             pdfDocument: pdfDocument,
             pageSize: pageSize,
-            availableWidth: availableWidth
+            availableWidth: availableHeaderWidth
         )
         let headerBlockHeight: Double
         if part.layoutSettings.showTitle == false {
@@ -93,7 +94,7 @@ enum PartLayoutEngine {
         for band in includedBands {
             guard let pdfPage = pdfDocument.page(at: band.pageIndex) else { continue }
             let sourceRect = band.cropRect(in: pdfPage.bounds(for: .mediaBox))
-            let fitScale = availableWidth / sourceRect.width
+            let fitScale = fullPageBandWidth / sourceRect.width
             let renderScale = fitScale * partScale
             let targetHeight = sourceRect.height * renderScale
             let targetWidth = sourceRect.width * renderScale
@@ -113,7 +114,7 @@ enum PartLayoutEngine {
             }
 
             let destinationRect = CGRect(
-                x: margins.leading + max(0, (availableWidth - targetWidth) / 2),
+                x: (pageSize.width - targetWidth) / 2,
                 y: max(margins.bottom, cursorTop - targetHeight),
                 width: targetWidth,
                 height: targetHeight
