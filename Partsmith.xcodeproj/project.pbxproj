@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200000000000000000000001 /* PartsmithApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* PartsmithApp.swift */; };
+		200000000000000000000002 /* ProjectModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* ProjectModels.swift */; };
+		200000000000000000000003 /* PartsmithDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* PartsmithDocument.swift */; };
+		200000000000000000000004 /* PartLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* PartLayoutEngine.swift */; };
+		200000000000000000000005 /* PartPDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* PartPDFExporter.swift */; };
+		200000000000000000000006 /* DocumentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* DocumentRootView.swift */; };
+		200000000000000000000007 /* PartsSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* PartsSidebarView.swift */; };
+		200000000000000000000008 /* SourceCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* SourceCanvasView.swift */; };
+		200000000000000000000009 /* PartPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* PartPreviewView.swift */; };
+		20000000000000000000000A /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000A /* InspectorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000001 /* PartsmithApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsmithApp.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* ProjectModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModels.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* PartsmithDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsmithDocument.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* PartLayoutEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartLayoutEngine.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* PartPDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPDFExporter.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* DocumentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRootView.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* PartsSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsSidebarView.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* SourceCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCanvasView.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* PartPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPreviewView.swift; sourceTree = "<group>"; };
+		10000000000000000000000A /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
+		10000000000000000000000B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Partsmith/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
+		10000000000000000000000C /* Partsmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partsmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		400000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000002 /* App */,
+				400000000000000000000003 /* Core */,
+				400000000000000000000004 /* Features */,
+				10000000000000000000000B /* Info.plist */,
+				40000000000000000000000B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		400000000000000000000002 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* PartsmithApp.swift */,
+			);
+			path = Partsmith/App;
+			sourceTree = SOURCE_ROOT;
+		};
+		400000000000000000000003 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000005 /* DocumentModel */,
+				400000000000000000000006 /* Layout */,
+				400000000000000000000007 /* Export */,
+			);
+			path = Partsmith/Core;
+			sourceTree = SOURCE_ROOT;
+		};
+		400000000000000000000004 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000008 /* Project */,
+				400000000000000000000009 /* PartsSidebar */,
+				40000000000000000000000A /* SourceCanvas */,
+				40000000000000000000000C /* PartPreview */,
+				40000000000000000000000D /* Inspector */,
+			);
+			path = Partsmith/Features;
+			sourceTree = SOURCE_ROOT;
+		};
+		400000000000000000000005 /* DocumentModel */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000002 /* ProjectModels.swift */,
+				100000000000000000000003 /* PartsmithDocument.swift */,
+			);
+			path = DocumentModel;
+			sourceTree = "<group>";
+		};
+		400000000000000000000006 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000004 /* PartLayoutEngine.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		400000000000000000000007 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000005 /* PartPDFExporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		400000000000000000000008 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000006 /* DocumentRootView.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		400000000000000000000009 /* PartsSidebar */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000007 /* PartsSidebarView.swift */,
+			);
+			path = PartsSidebar;
+			sourceTree = "<group>";
+		};
+		40000000000000000000000A /* SourceCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000008 /* SourceCanvasView.swift */,
+			);
+			path = SourceCanvas;
+			sourceTree = "<group>";
+		};
+		40000000000000000000000B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000000C /* Partsmith.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40000000000000000000000C /* PartPreview */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000009 /* PartPreviewView.swift */,
+			);
+			path = PartPreview;
+			sourceTree = "<group>";
+		};
+		40000000000000000000000D /* Inspector */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000000A /* InspectorView.swift */,
+			);
+			path = Inspector;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		500000000000000000000001 /* Partsmith */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700000000000000000000002 /* Build configuration list for PBXNativeTarget "Partsmith" */;
+			buildPhases = (
+				300000000000000000000002 /* Sources */,
+				300000000000000000000001 /* Frameworks */,
+				300000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Partsmith;
+			productName = Partsmith;
+			productReference = 10000000000000000000000C /* Partsmith.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		600000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					500000000000000000000001 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = 700000000000000000000001 /* Build configuration list for PBXProject "Partsmith" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 400000000000000000000001;
+			productRefGroup = 40000000000000000000000B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				500000000000000000000001 /* Partsmith */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		300000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		300000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				200000000000000000000001 /* PartsmithApp.swift in Sources */,
+				200000000000000000000002 /* ProjectModels.swift in Sources */,
+				200000000000000000000003 /* PartsmithDocument.swift in Sources */,
+				200000000000000000000004 /* PartLayoutEngine.swift in Sources */,
+				200000000000000000000005 /* PartPDFExporter.swift in Sources */,
+				200000000000000000000006 /* DocumentRootView.swift in Sources */,
+				200000000000000000000007 /* PartsSidebarView.swift in Sources */,
+				200000000000000000000008 /* SourceCanvasView.swift in Sources */,
+				200000000000000000000009 /* PartPreviewView.swift in Sources */,
+				20000000000000000000000A /* InspectorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		800000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		800000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		800000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Partsmith/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Partsmith;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		800000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Partsmith/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Partsmith;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		700000000000000000000001 /* Build configuration list for PBXProject "Partsmith" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				800000000000000000000001 /* Debug */,
+				800000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700000000000000000000002 /* Build configuration list for PBXNativeTarget "Partsmith" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				800000000000000000000003 /* Debug */,
+				800000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 600000000000000000000001 /* Project object */;
+}
