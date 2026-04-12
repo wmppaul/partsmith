@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct PartsmithApp: App {
     @FocusedValue(\.documentExportCommands) private var documentExportCommands
+    @FocusedValue(\.documentBandCommands) private var documentBandCommands
 
     var body: some Scene {
         DocumentGroup(newDocument: { PartsmithDocument() }) { file in
@@ -17,6 +18,15 @@ struct PartsmithApp: App {
                     documentExportCommands?.exportAllParts()
                 }
                 .disabled(documentExportCommands?.canExportAllParts != true)
+            }
+
+            CommandGroup(after: .pasteboard) {
+                Divider()
+
+                Button("Delete Selected Band") {
+                    documentBandCommands?.deleteSelectedBand()
+                }
+                .disabled(documentBandCommands?.canDeleteSelectedBand != true)
             }
         }
     }

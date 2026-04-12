@@ -50,20 +50,99 @@ struct PartPreviewView: View {
 private struct PDFPreviewRepresentable: NSViewRepresentable {
     var pdfDocument: PDFDocument
 
-    func makeNSView(context: Context) -> PDFView {
-        let pdfView = PDFView()
+    func makeNSView(context: Context) -> PDFPreviewContainerView {
+        PDFPreviewContainerView()
+    }
+
+    func updateNSView(_ nsView: PDFPreviewContainerView, context: Context) {
+        nsView.update(pdfDocument: pdfDocument)
+    }
+}
+
+final class PDFPreviewContainerView: NSView {
+    private let pdfView = PDFView()
+    private var refreshGeneration = 0
+
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
         pdfView.autoScales = true
         pdfView.displayMode = .singlePageContinuous
         pdfView.displayDirection = .vertical
         pdfView.backgroundColor = .windowBackgroundColor
         pdfView.displaysPageBreaks = true
-        return pdfView
+
+        addSubview(pdfView)
+        NSLayoutConstraint.activate([
+            pdfView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            pdfView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            pdfView.topAnchor.constraint(equalTo: topAnchor),
+            pdfView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 
-    func updateNSView(_ nsView: PDFView, context: Context) {
-        if nsView.document !== pdfDocument {
-            nsView.document = pdfDocument
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func update(pdfDocument: PDFDocument) {
+        let documentChanged = pdfView.document !== pdfDocument
+        if documentChanged {
+            pdfView.document = pdfDocument
         }
-        nsView.autoScales = true
+
+        pdfView.autoScales = true
+        guard bounds.size != .zero else { return }
+
+        refreshGeneration &+= 1
+        refreshPDFView(generation: refreshGeneration)
+    }
+
+    override func layout() {
+        super.layout()
+        guard bounds.size != .zero else { return }
+        refreshGeneration &+= 1
+        refreshPDFView(generation: refreshGeneration)
+    }
+
+    private func refreshPDFView(generation: Int) {
+        guard generation == refreshGeneration else { return }
+
+        let firstPage = pdfView.document?.page(at: 0)
+        pdfView.layoutDocumentView()
+        pdfView.documentView?.needsLayout = true
+        pdfView.documentView?.layoutSubtreeIfNeeded()
+        pdfView.documentView?.needsDisplay = true
+        pdfView.needsDisplay = true
+        pdfView.displayIfNeeded()
+        if let firstPage {
+            pdfView.go(to: firstPage)
+        }
+        forceScrollViewRefresh()
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self, generation == self.refreshGeneration else { return }
+            let firstPage = self.pdfView.document?.page(at: 0)
+            self.pdfView.layoutDocumentView()
+            self.pdfView.documentView?.needsLayout = true
+            self.pdfView.documentView?.layoutSubtreeIfNeeded()
+            self.pdfView.documentView?.needsDisplay = true
+            self.pdfView.needsDisplay = true
+            self.pdfView.displayIfNeeded()
+            if let firstPage {
+                self.pdfView.go(to: firstPage)
+            }
+            self.forceScrollViewRefresh()
+        }
+    }
+
+    private func forceScrollViewRefresh() {
+        guard let clipView = pdfView.documentView?.enclosingScrollView?.contentView else { return }
+        clipView.scroll(to: clipView.bounds.origin)
+        clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+        pdfView.documentView?.needsDisplay = true
+        clipView.needsDisplay = true
     }
 }

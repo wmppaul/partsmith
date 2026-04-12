@@ -38,7 +38,16 @@ enum PartPDFExporter {
     }
 
     private static func pdfData(for partID: UUID, in document: PartsmithDocument) throws -> Data {
-        let plan = try PartLayoutEngine.makePlan(project: document.project, pdfDocument: document.pdfDocument, partID: partID)
+        guard let pdfDocument = document.pdfDocument else {
+            throw PartLayoutError.missingPDF
+        }
+
+        let sourcePageCache = SourcePageRenderCache(pdfDocument: pdfDocument)
+        let plan = try PartLayoutEngine.makePlan(
+            project: document.project,
+            pageBoundsProvider: { sourcePageCache.pageBounds(for: $0) },
+            partID: partID
+        )
         let mutableData = NSMutableData()
         var mediaBox = CGRect(origin: .zero, size: plan.pageSize)
 
@@ -53,8 +62,8 @@ enum PartPDFExporter {
         }
 
         for page in plan.pages {
-            context.beginPDFPage(nil)
-            render(page: page, plan: plan, sourceDocument: document.pdfDocument, in: context)
+            context.beginPDFPage(nil as CFDictionary?)
+            render(page: page, plan: plan, project: document.project, sourcePageCache: sourcePageCache, in: context)
             context.endPDFPage()
         }
 
@@ -62,25 +71,31 @@ enum PartPDFExporter {
         return mutableData as Data
     }
 
-    private static func render(page: PartRenderPage, plan: PartRenderPlan, sourceDocument: PDFDocument?, in context: CGContext) {
+    private static func render(
+        page: PartRenderPage,
+        plan: PartRenderPlan,
+        project: ProjectData,
+        sourcePageCache: SourcePageRenderCache,
+        in context: CGContext
+    ) {
         context.saveGState()
         context.setFillColor(NSColor.white.cgColor)
         context.fill(CGRect(origin: .zero, size: plan.pageSize))
 
-        if plan.part.layoutSettings.showPartNameLabel {
+        if plan.showsPartNameInHeader {
             drawPartNameLabel(for: plan, in: context)
         }
 
         if page.drawsTitle {
             if let headerPlacement = plan.headerPlacement {
-                draw(headerPlacement: headerPlacement, sourceDocument: sourceDocument, in: context)
+                draw(headerPlacement: headerPlacement, project: project, sourcePageCache: sourcePageCache, in: context)
             } else {
                 drawTitle(for: plan, in: context)
             }
         }
 
         for placement in page.placements {
-            draw(placement: placement, sourceDocument: sourceDocument, in: context)
+            draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
         }
 
         context.restoreGState()
@@ -138,42 +153,34 @@ enum PartPDFExporter {
         NSGraphicsContext.restoreGraphicsState()
     }
 
-    private static func draw(placement: BandPlacement, sourceDocument: PDFDocument?, in context: CGContext) {
-        guard let pdfPage = sourceDocument?.page(at: placement.sourcePageIndex) else { return }
-
-        context.saveGState()
-        context.clip(to: placement.destinationRect)
-
-        let xScale = placement.destinationRect.width / placement.sourceRect.width
-        let yScale = placement.destinationRect.height / placement.sourceRect.height
-
-        context.translateBy(
-            x: placement.destinationRect.minX - placement.sourceRect.minX * xScale,
-            y: placement.destinationRect.minY - placement.sourceRect.minY * yScale
+    private static func draw(
+        placement: BandPlacement,
+        project: ProjectData,
+        sourcePageCache: SourcePageRenderCache,
+        in context: CGContext
+    ) {
+        sourcePageCache.draw(
+            pageIndex: placement.sourcePageIndex,
+            rectification: project.pageRectifications.first(where: { $0.pageIndex == placement.sourcePageIndex }),
+            sourceRect: placement.sourceRect,
+            destinationRect: placement.destinationRect,
+            in: context
         )
-        context.scaleBy(x: xScale, y: yScale)
-        pdfPage.draw(with: .mediaBox, to: context)
-
-        context.restoreGState()
     }
 
-    private static func draw(headerPlacement: HeaderPlacement, sourceDocument: PDFDocument?, in context: CGContext) {
-        guard let pdfPage = sourceDocument?.page(at: headerPlacement.sourcePageIndex) else { return }
-
-        context.saveGState()
-        context.clip(to: headerPlacement.destinationRect)
-
-        let xScale = headerPlacement.destinationRect.width / headerPlacement.sourceRect.width
-        let yScale = headerPlacement.destinationRect.height / headerPlacement.sourceRect.height
-
-        context.translateBy(
-            x: headerPlacement.destinationRect.minX - headerPlacement.sourceRect.minX * xScale,
-            y: headerPlacement.destinationRect.minY - headerPlacement.sourceRect.minY * yScale
+    private static func draw(
+        headerPlacement: HeaderPlacement,
+        project: ProjectData,
+        sourcePageCache: SourcePageRenderCache,
+        in context: CGContext
+    ) {
+        sourcePageCache.draw(
+            pageIndex: headerPlacement.sourcePageIndex,
+            rectification: project.pageRectifications.first(where: { $0.pageIndex == headerPlacement.sourcePageIndex }),
+            sourceRect: headerPlacement.sourceRect,
+            destinationRect: headerPlacement.destinationRect,
+            in: context
         )
-        context.scaleBy(x: xScale, y: yScale)
-        pdfPage.draw(with: .mediaBox, to: context)
-
-        context.restoreGState()
     }
 
     private static func uniqueFilename(for partName: String, usedNames: inout Set<String>) -> String {

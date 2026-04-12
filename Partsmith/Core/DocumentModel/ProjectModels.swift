@@ -12,6 +12,7 @@ struct ProjectData: Codable, Equatable {
     var projectSettings: ProjectSettings
     var parts: [PartModel]
     var bands: [BandModel]
+    var pageRectifications: [PageRectification]
 
     static let empty = ProjectData(
         id: UUID(),
@@ -22,8 +23,115 @@ struct ProjectData: Codable, Equatable {
         pageCount: 0,
         projectSettings: .default,
         parts: [],
-        bands: []
+        bands: [],
+        pageRectifications: []
     )
+
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case projectName
+        case createdAt
+        case modifiedAt
+        case sourceFilename
+        case pageCount
+        case projectSettings
+        case parts
+        case bands
+        case pageRectifications
+    }
+
+    init(
+        id: UUID,
+        projectName: String,
+        createdAt: Date,
+        modifiedAt: Date,
+        sourceFilename: String?,
+        pageCount: Int,
+        projectSettings: ProjectSettings,
+        parts: [PartModel],
+        bands: [BandModel],
+        pageRectifications: [PageRectification]
+    ) {
+        self.id = id
+        self.projectName = projectName
+        self.createdAt = createdAt
+        self.modifiedAt = modifiedAt
+        self.sourceFilename = sourceFilename
+        self.pageCount = pageCount
+        self.projectSettings = projectSettings
+        self.parts = parts
+        self.bands = bands
+        self.pageRectifications = pageRectifications
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        projectName = try container.decode(String.self, forKey: .projectName)
+        createdAt = try container.decode(Date.self, forKey: .createdAt)
+        modifiedAt = try container.decode(Date.self, forKey: .modifiedAt)
+        sourceFilename = try container.decodeIfPresent(String.self, forKey: .sourceFilename)
+        pageCount = try container.decodeIfPresent(Int.self, forKey: .pageCount) ?? 0
+        projectSettings = try container.decodeIfPresent(ProjectSettings.self, forKey: .projectSettings) ?? .default
+        parts = try container.decodeIfPresent([PartModel].self, forKey: .parts) ?? []
+        bands = try container.decodeIfPresent([BandModel].self, forKey: .bands) ?? []
+        pageRectifications = try container.decodeIfPresent([PageRectification].self, forKey: .pageRectifications) ?? []
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(projectName, forKey: .projectName)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(modifiedAt, forKey: .modifiedAt)
+        try container.encodeIfPresent(sourceFilename, forKey: .sourceFilename)
+        try container.encode(pageCount, forKey: .pageCount)
+        try container.encode(projectSettings, forKey: .projectSettings)
+        try container.encode(parts, forKey: .parts)
+        try container.encode(bands, forKey: .bands)
+        try container.encode(pageRectifications, forKey: .pageRectifications)
+    }
+}
+
+struct FractionPoint: Codable, Equatable {
+    var x: Double
+    var y: Double
+
+    func normalized() -> FractionPoint {
+        FractionPoint(
+            x: max(0, min(x, 1)),
+            y: max(0, min(y, 1))
+        )
+    }
+}
+
+struct PageRectification: Codable, Equatable, Identifiable {
+    var id: Int { pageIndex }
+
+    var pageIndex: Int
+    var topLeft: FractionPoint
+    var topRight: FractionPoint
+    var bottomRight: FractionPoint
+    var bottomLeft: FractionPoint
+
+    func normalized() -> PageRectification {
+        var copy = self
+        copy.topLeft = topLeft.normalized()
+        copy.topRight = topRight.normalized()
+        copy.bottomRight = bottomRight.normalized()
+        copy.bottomLeft = bottomLeft.normalized()
+        return copy
+    }
+
+    static func `default`(pageIndex: Int) -> PageRectification {
+        PageRectification(
+            pageIndex: pageIndex,
+            topLeft: FractionPoint(x: 0.08, y: 0.08),
+            topRight: FractionPoint(x: 0.92, y: 0.08),
+            bottomRight: FractionPoint(x: 0.92, y: 0.92),
+            bottomLeft: FractionPoint(x: 0.08, y: 0.92)
+        )
+    }
 }
 
 enum HeaderDisplayMode: String, Codable, CaseIterable, Identifiable {
@@ -83,6 +191,8 @@ struct ProjectSettings: Codable, Equatable {
     var margins: PageMargins
     var defaultScale: Double
     var interSystemGap: Double
+    var showTitleBlock: Bool
+    var showPartNameInHeader: Bool
     var headerDisplayMode: HeaderDisplayMode
     var headerSelection: SourceHeaderSelection?
     var defaultTitleText: String
@@ -93,6 +203,8 @@ struct ProjectSettings: Codable, Equatable {
         margins: PageMargins,
         defaultScale: Double,
         interSystemGap: Double,
+        showTitleBlock: Bool = true,
+        showPartNameInHeader: Bool = false,
         headerDisplayMode: HeaderDisplayMode = .sourceSelection,
         headerSelection: SourceHeaderSelection? = nil,
         defaultTitleText: String = "",
@@ -102,6 +214,8 @@ struct ProjectSettings: Codable, Equatable {
         self.margins = margins
         self.defaultScale = defaultScale
         self.interSystemGap = interSystemGap
+        self.showTitleBlock = showTitleBlock
+        self.showPartNameInHeader = showPartNameInHeader
         self.headerDisplayMode = headerDisplayMode
         self.headerSelection = headerSelection
         self.defaultTitleText = defaultTitleText
@@ -113,6 +227,8 @@ struct ProjectSettings: Codable, Equatable {
         margins: .standard,
         defaultScale: 1.0,
         interSystemGap: 16,
+        showTitleBlock: true,
+        showPartNameInHeader: false,
         headerDisplayMode: .sourceSelection,
         headerSelection: nil,
         defaultTitleText: "",
@@ -124,6 +240,8 @@ struct ProjectSettings: Codable, Equatable {
         case margins
         case defaultScale
         case interSystemGap
+        case showTitleBlock
+        case showPartNameInHeader
         case headerDisplayMode
         case headerSelection
         case defaultTitleText
@@ -136,6 +254,8 @@ struct ProjectSettings: Codable, Equatable {
         margins = try container.decodeIfPresent(PageMargins.self, forKey: .margins) ?? .standard
         defaultScale = try container.decodeIfPresent(Double.self, forKey: .defaultScale) ?? 1.0
         interSystemGap = try container.decodeIfPresent(Double.self, forKey: .interSystemGap) ?? 16
+        showTitleBlock = try container.decodeIfPresent(Bool.self, forKey: .showTitleBlock) ?? true
+        showPartNameInHeader = try container.decodeIfPresent(Bool.self, forKey: .showPartNameInHeader) ?? false
         headerDisplayMode = try container.decodeIfPresent(HeaderDisplayMode.self, forKey: .headerDisplayMode) ?? .sourceSelection
         headerSelection = try container.decodeIfPresent(SourceHeaderSelection.self, forKey: .headerSelection)
         defaultTitleText = try container.decodeIfPresent(String.self, forKey: .defaultTitleText) ?? ""
@@ -148,6 +268,8 @@ struct ProjectSettings: Codable, Equatable {
         try container.encode(margins, forKey: .margins)
         try container.encode(defaultScale, forKey: .defaultScale)
         try container.encode(interSystemGap, forKey: .interSystemGap)
+        try container.encode(showTitleBlock, forKey: .showTitleBlock)
+        try container.encode(showPartNameInHeader, forKey: .showPartNameInHeader)
         try container.encode(headerDisplayMode, forKey: .headerDisplayMode)
         try container.encodeIfPresent(headerSelection, forKey: .headerSelection)
         try container.encode(defaultTitleText, forKey: .defaultTitleText)
@@ -365,22 +487,48 @@ extension ProjectData {
     func sortedBands(for partID: UUID) -> [BandModel] {
         bands
             .filter { $0.partID == partID }
-            .sorted {
-                if $0.pageIndex != $1.pageIndex {
-                    return $0.pageIndex < $1.pageIndex
-                }
-                return $0.createdAt < $1.createdAt
-            }
+            .sorted(by: Self.bandAppearsEarlierInScore(_:_:))
     }
 
     func bands(on pageIndex: Int) -> [BandModel] {
         bands
             .filter { $0.pageIndex == pageIndex }
-            .sorted {
-                if $0.partID != $1.partID {
-                    return $0.partID.uuidString < $1.partID.uuidString
-                }
-                return $0.createdAt < $1.createdAt
-            }
+            .sorted(by: Self.bandAppearsEarlierInScore(_:_:))
+    }
+
+    // Use score position instead of insertion time so backfilled staves land in the expected export order.
+    private static func bandAppearsEarlierInScore(_ lhs: BandModel, _ rhs: BandModel) -> Bool {
+        if lhs.pageIndex != rhs.pageIndex {
+            return lhs.pageIndex < rhs.pageIndex
+        }
+
+        let lhsNormalized = lhs.normalized()
+        let rhsNormalized = rhs.normalized()
+
+        if lhsNormalized.topFraction != rhsNormalized.topFraction {
+            return lhsNormalized.topFraction < rhsNormalized.topFraction
+        }
+
+        if lhsNormalized.bottomFraction != rhsNormalized.bottomFraction {
+            return lhsNormalized.bottomFraction < rhsNormalized.bottomFraction
+        }
+
+        if lhsNormalized.leftFraction != rhsNormalized.leftFraction {
+            return lhsNormalized.leftFraction < rhsNormalized.leftFraction
+        }
+
+        if lhsNormalized.rightFraction != rhsNormalized.rightFraction {
+            return lhsNormalized.rightFraction < rhsNormalized.rightFraction
+        }
+
+        if lhs.partID != rhs.partID {
+            return lhs.partID.uuidString < rhs.partID.uuidString
+        }
+
+        if lhs.createdAt != rhs.createdAt {
+            return lhs.createdAt < rhs.createdAt
+        }
+
+        return lhs.id.uuidString < rhs.id.uuidString
     }
 }

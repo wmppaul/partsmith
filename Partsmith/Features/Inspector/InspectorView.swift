@@ -7,7 +7,9 @@ struct InspectorView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                projectSection
+                headerSection
+                rectificationSection
+                projectInfoSection
 
                 if let part = document.selectedPart {
                     partSection(part)
@@ -17,28 +19,16 @@ struct InspectorView: View {
                         body: "Select a part in the sidebar to change its preview settings and band assignments."
                     )
                 }
-
-                if let band = document.selectedBand {
-                    bandSection(band)
-                } else {
-                    placeholderSection(
-                        title: "No Band Selected",
-                        body: "Select a crop band on the source page to inspect it here."
-                    )
-                }
             }
             .padding(18)
         }
         .background(Color(nsColor: .controlBackgroundColor))
     }
 
-    private var projectSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Project")
-                .font(.headline)
-
+    private var headerSection: some View {
+        inspectorCard(title: "Header") {
             Picker(
-                "Header Block",
+                "Header Source",
                 selection: Binding(
                     get: { document.project.projectSettings.headerDisplayMode },
                     set: { document.updateProjectHeaderDisplayMode($0) }
@@ -50,6 +40,7 @@ struct InspectorView: View {
             }
             .pickerStyle(.segmented)
             .labelsHidden()
+            .help("Choose whether each part uses a copied score header or typed title and subtitle text.")
 
             if document.project.projectSettings.headerDisplayMode == .typed {
                 VStack(alignment: .leading, spacing: 6) {
@@ -76,22 +67,28 @@ struct InspectorView: View {
             } else {
                 VStack(alignment: .leading, spacing: 8) {
                     if let headerSelection = document.headerSelection {
-                        inspectorRow(label: "Header Page", value: "\(headerSelection.pageIndex + 1)")
+                        inspectorRow(label: "Page", value: "\(headerSelection.pageIndex + 1)")
                     } else {
                         Text("No source header selected yet.")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
 
-                    Text("Click Edit, adjust the score header on the page, then click Save here or just move on to normal part editing. That engraving will be copied into the first page of every part.")
-                        .font(.subheadline)
+                    Text("Click Edit to choose the score header copied onto the first page of every part.")
+                        .font(.caption)
                         .foregroundStyle(.secondary)
+                        .help("After clicking Edit, drag the header box or its corners on the source page. Click Save here or click elsewhere when finished.")
 
                     HStack {
                         Button(document.isEditingHeaderSelection ? "Save" : "Edit") {
                             document.setHeaderSelectionEditing(document.isEditingHeaderSelection == false)
                         }
                         .disabled(document.pdfDocument == nil)
+                        .help(
+                            document.isEditingHeaderSelection
+                                ? "Save the current header selection."
+                                : "Enter header editing and drag a box around the score header."
+                        )
 
                         Button("Clear", role: .destructive) {
                             document.clearHeaderSelection()
@@ -100,17 +97,102 @@ struct InspectorView: View {
                     }
 
                     if document.isEditingHeaderSelection {
-                        Text("Editing header selection on the page.")
+                        Text("Drag the header box on the page, then click Save.")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
                 }
             }
 
+            Divider()
+
+            Toggle(
+                "Show Title Block",
+                isOn: Binding(
+                    get: { document.project.projectSettings.showTitleBlock },
+                    set: { document.updateProjectShowTitleBlock($0) }
+                )
+            )
+
+            Toggle(
+                "Show Part Name In Header",
+                isOn: Binding(
+                    get: { document.project.projectSettings.showPartNameInHeader },
+                    set: { document.updateProjectShowPartNameInHeader($0) }
+                )
+            )
+        }
+    }
+
+    private var rectificationSection: some View {
+        inspectorCard(title: "Rectification") {
+            VStack(alignment: .leading, spacing: 8) {
+                if document.isAutoEstimatingPageRectifications {
+                    Text(
+                        "Auto-rectifying \(document.rectificationAutoProgress?.completedPageCount ?? 0) of \(document.rectificationAutoProgress?.totalPageCount ?? 0) pages in the background."
+                    )
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if document.isEditingPageRectification {
+                    Text("Drag the four corners on the page, then click Done.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if document.currentPageRectification != nil {
+                    Text("A rectification is saved for this page.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                HStack {
+                    Button("Auto All") {
+                        document.autoEstimateAllPageRectifications()
+                    }
+                    .disabled(document.canAutoEstimateAllPageRectifications == false)
+                    .help("Estimate rectification for every page in the source PDF.")
+
+                    Button("Auto") {
+                        document.autoEstimateCurrentPageRectification()
+                    }
+                    .disabled(document.canAutoEstimateCurrentPageRectification == false)
+                    .help("Estimate rectification for the current page.")
+
+                    Button(document.isEditingPageRectification ? "Done" : "Manual") {
+                        document.setPageRectificationEditing(document.isEditingPageRectification == false)
+                    }
+                    .disabled(document.pdfDocument == nil || document.isAutoEstimatingPageRectifications)
+                    .help(
+                        document.isEditingPageRectification
+                            ? "Finish manual rectification editing."
+                            : "Adjust the current page rectification by dragging its four corners."
+                    )
+
+                    Button("Clear", role: .destructive) {
+                        document.clearCurrentPageRectification()
+                    }
+                    .disabled(document.currentPageRectification == nil || document.isAutoEstimatingPageRectifications)
+                    .help("Remove the saved rectification for the current page.")
+                }
+            }
+        }
+    }
+
+    private var projectInfoSection: some View {
+        inspectorCard(title: "Project Info") {
             inspectorRow(label: "Source PDF", value: document.project.sourceFilename ?? "Not imported")
             inspectorRow(label: "Pages", value: "\(document.project.pageCount)")
             inspectorRow(label: "Parts", value: "\(document.project.parts.count)")
-            inspectorRow(label: "Mode", value: document.canvasMode.title)
+        }
+    }
+
+    private func inspectorCard<Content: View>(
+        title: String,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.headline)
+
+            content()
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -137,22 +219,6 @@ struct InspectorView: View {
                     set: { document.updatePartColor(part.id, color: NSColor($0)) }
                 ),
                 supportsOpacity: false
-            )
-
-            Toggle(
-                "Show Title Block",
-                isOn: Binding(
-                    get: { document.part(withID: part.id)?.layoutSettings.showTitle ?? part.layoutSettings.showTitle },
-                    set: { document.updateShowTitle(part.id, showTitle: $0) }
-                )
-            )
-
-            Toggle(
-                "Show Part Name In Header",
-                isOn: Binding(
-                    get: { document.part(withID: part.id)?.layoutSettings.showPartNameLabel ?? part.layoutSettings.showPartNameLabel },
-                    set: { document.updateShowPartNameLabel(part.id, showPartNameLabel: $0) }
-                )
             )
 
             if document.project.projectSettings.headerDisplayMode == .typed {
@@ -226,54 +292,90 @@ struct InspectorView: View {
                     step: 2
                 )
             }
+
+            bandOrderSection(part)
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
     }
 
-    private func bandSection(_ band: BandModel) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Selected Band")
-                .font(.headline)
+    private func bandOrderSection(_ part: PartModel) -> some View {
+        let outputBands = document.outputBands(for: part.id)
+        let excludedCount = document.project.sortedBands(for: part.id).count - outputBands.count
 
-            inspectorRow(label: "Page", value: "\(band.pageIndex + 1)")
-            inspectorRow(label: "Top Crop", value: band.topFraction.formatted(.percent.precision(.fractionLength(0))))
-            inspectorRow(label: "Bottom Crop", value: band.bottomFraction.formatted(.percent.precision(.fractionLength(0))))
+        return VStack(alignment: .leading, spacing: 10) {
+            Text("Output Order")
+                .font(.subheadline.weight(.semibold))
 
-            HStack {
-                Button("Raise Top") {
-                    document.nudgeBandTop(band.id, delta: -0.01)
-                }
-                Button("Lower Top") {
-                    document.nudgeBandTop(band.id, delta: 0.01)
-                }
-            }
+            Text("Bands now follow score order within the part. Click a row to jump to that band on the source page.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
 
-            HStack {
-                Button("Raise Bottom") {
-                    document.nudgeBandBottom(band.id, delta: -0.01)
-                }
-                Button("Lower Bottom") {
-                    document.nudgeBandBottom(band.id, delta: 0.01)
+            if outputBands.isEmpty {
+                Text(excludedCount > 0 ? "All bands for this part are currently excluded." : "No included bands yet.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            } else {
+                VStack(spacing: 6) {
+                    ForEach(Array(outputBands.enumerated()), id: \.element.id) { index, band in
+                        bandOrderRow(band, position: index + 1)
+                    }
                 }
             }
 
-            Toggle(
-                "Include In Preview",
-                isOn: Binding(
-                    get: { document.selectedBand?.excluded == false },
-                    set: { document.toggleBandExclusion(band.id, excluded: !$0) }
-                )
-            )
-
-            Button("Delete Band", role: .destructive) {
-                document.deleteBand(band.id)
+            if excludedCount > 0 {
+                Text("\(excludedCount) excluded band\(excludedCount == 1 ? "" : "s") omitted from output order.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func bandOrderRow(_ band: BandModel, position: Int) -> some View {
+        let isSelected = document.selectedBandID == band.id
+
+        return Button {
+            document.revealBand(band.id)
+        } label: {
+            HStack(spacing: 12) {
+                Text("\(position)")
+                    .font(.caption.monospacedDigit())
+                    .foregroundStyle(.secondary)
+                    .frame(width: 18, alignment: .trailing)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Page \(band.pageIndex + 1)")
+                        .font(.subheadline.weight(isSelected ? .semibold : .regular))
+                        .foregroundStyle(.primary)
+                    Text(bandPositionDescription(for: band))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                if isSelected {
+                    Image(systemName: "scope")
+                        .foregroundStyle(.tint)
+                }
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(isSelected ? Color.accentColor.opacity(0.14) : Color.primary.opacity(0.04))
+            )
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func bandPositionDescription(for band: BandModel) -> String {
+        let normalizedBand = band.normalized()
+        let topPercent = Int((normalizedBand.topFraction * 100).rounded())
+        let bottomPercent = Int((normalizedBand.bottomFraction * 100).rounded())
+        return "Top \(topPercent)% • Bottom \(bottomPercent)%"
     }
 
     private func placeholderSection(title: String, body: String) -> some View {

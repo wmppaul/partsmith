@@ -1,4 +1,8 @@
 import AppKit
+import CoreGraphics
+import CoreImage
+import CoreImage.CIFilterBuiltins
+import OSLog
 import PDFKit
 import SwiftUI
 import UniformTypeIdentifiers
@@ -16,6 +20,17 @@ struct DocumentStateSnapshot {
     var sourcePDFData: Data?
 }
 
+struct RectificationAutoProgress {
+    var completedPageCount: Int
+    var totalPageCount: Int
+    var estimatedPageCount: Int
+
+    var fractionComplete: Double {
+        guard totalPageCount > 0 else { return 0 }
+        return Double(completedPageCount) / Double(totalPageCount)
+    }
+}
+
 final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     static var readableContentTypes: [UTType] { [.partsmithProject] }
     private static let defaultPartPalette: [NSColor] = [
@@ -28,6 +43,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         .systemPink,
         .systemIndigo
     ]
+    private static let rectificationLogger = Logger(subsystem: "Partsmith", category: "Rectification")
 
     @Published var project: ProjectData
     @Published var sourcePDFData: Data?
@@ -37,11 +53,20 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @Published var canvasMode: CanvasMode
     @Published var zoomMode: ZoomMode
     @Published var isEditingHeaderSelection: Bool
+    @Published var isEditingPageRectification: Bool
+    @Published private(set) var rectificationAutoProgress: RectificationAutoProgress?
 
     weak var undoManager: UndoManager?
 
     private var cachedPDFDocument: PDFDocument?
+    private var sourcePageRenderCache: SourcePageRenderCache?
     private var bandTemplateHalfHeight: Double?
+    private var rectificationAutoRunID: UUID?
+
+    private enum BandCopyScope {
+        case allParts
+        case selectedPart(UUID)
+    }
 
     init(project: ProjectData = .empty, sourcePDFData: Data? = nil) {
         self.project = project
@@ -52,6 +77,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         self.canvasMode = .source
         self.zoomMode = .fitWidth
         self.isEditingHeaderSelection = false
+        self.isEditingPageRectification = false
         self.bandTemplateHalfHeight = project.bands.max(by: { $0.createdAt < $1.createdAt }).map { band in
             Self.bandHalfHeight(for: band)
         }
@@ -87,6 +113,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         self.canvasMode = .source
         self.zoomMode = .fitWidth
         self.isEditingHeaderSelection = false
+        self.isEditingPageRectification = false
         self.bandTemplateHalfHeight = loadedProject.bands.max(by: { $0.createdAt < $1.createdAt }).map { band in
             Self.bandHalfHeight(for: band)
         }
@@ -122,6 +149,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     var pdfDocument: PDFDocument? {
         if cachedPDFDocument == nil, let sourcePDFData {
             cachedPDFDocument = PDFDocument(data: sourcePDFData)
+            if let cachedPDFDocument {
+                sourcePageRenderCache = SourcePageRenderCache(pdfDocument: cachedPDFDocument)
+            }
         }
         return cachedPDFDocument
     }
@@ -148,6 +178,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         project.bands.filter { $0.partID == partID && !$0.excluded }.count
     }
 
+    func outputBands(for partID: UUID) -> [BandModel] {
+        project.sortedBands(for: partID).filter { !$0.excluded }
+    }
+
     func colorMap() -> [UUID: NSColor] {
         Dictionary(uniqueKeysWithValues: project.parts.map { ($0.id, $0.nsColor) })
     }
@@ -157,7 +191,25 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     var canCopyCurrentPageBandsToNextPage: Bool {
-        currentPageIndex + 1 < project.pageCount && project.bands.contains(where: { $0.pageIndex == currentPageIndex })
+        canCopyBands(from: currentPageIndex, to: [currentPageIndex + 1], scope: .allParts)
+    }
+
+    var canCopySelectedPartBandsToNextPage: Bool {
+        guard let selectedPartID else { return false }
+        return canCopyBands(from: currentPageIndex, to: [currentPageIndex + 1], scope: .selectedPart(selectedPartID))
+    }
+
+    var canCopyCurrentPageBandsToRemainingPages: Bool {
+        canCopyBands(from: currentPageIndex, to: remainingPageIndices(after: currentPageIndex), scope: .allParts)
+    }
+
+    var canCopySelectedPartBandsToRemainingPages: Bool {
+        guard let selectedPartID else { return false }
+        return canCopyBands(
+            from: currentPageIndex,
+            to: remainingPageIndices(after: currentPageIndex),
+            scope: .selectedPart(selectedPartID)
+        )
     }
 
     var headerSelection: SourceHeaderSelection? {
@@ -169,9 +221,62 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         return headerSelection
     }
 
+    var currentPageRectification: PageRectification? {
+        project.pageRectifications.first(where: { $0.pageIndex == currentPageIndex })
+    }
+
+    var isAutoEstimatingPageRectifications: Bool {
+        rectificationAutoProgress != nil
+    }
+
+    var canAutoEstimateCurrentPageRectification: Bool {
+        isEditingPageRectification == false &&
+        isAutoEstimatingPageRectifications == false &&
+        pdfDocument?.page(at: currentPageIndex) != nil
+    }
+
+    var canAutoEstimateAllPageRectifications: Bool {
+        isEditingPageRectification == false &&
+        isAutoEstimatingPageRectifications == false &&
+        (pdfDocument?.pageCount ?? 0) > 0
+    }
+
+    var usesRectifiedDisplayForCurrentPage: Bool {
+        isEditingPageRectification == false && currentPageRectification != nil
+    }
+
+    var sourceDisplayPageIndex: Int {
+        usesRectifiedDisplayForCurrentPage ? 0 : currentPageIndex
+    }
+
+    func sourceDisplayDocumentForCurrentPage() -> PDFDocument? {
+        guard let pdfDocument else { return nil }
+        guard usesRectifiedDisplayForCurrentPage else { return pdfDocument }
+        guard let currentPageRectification else { return pdfDocument }
+        return sourcePageRenderCache?.rectifiedDisplayDocument(for: currentPageIndex, rectification: currentPageRectification) ?? pdfDocument
+    }
+
+    func sourceDisplayImageForCurrentPage() -> CGImage? {
+        guard usesRectifiedDisplayForCurrentPage else { return nil }
+        guard let currentPageRectification else { return nil }
+        return sourcePageRenderCache?.rectifiedDisplayImage(
+            for: currentPageIndex,
+            rectification: currentPageRectification
+        )
+    }
+
+    func sourceDisplayPageBoundsForCurrentPage() -> CGRect? {
+        guard let pdfDocument else { return nil }
+        if usesRectifiedDisplayForCurrentPage {
+            return sourcePageRenderCache?.pageBounds(for: currentPageIndex)
+        }
+        return pdfDocument.page(at: currentPageIndex)?.bounds(for: .mediaBox)
+    }
+
     func selectPart(_ partID: UUID?) {
         if partID != nil {
             isEditingHeaderSelection = false
+            isEditingPageRectification = false
         }
         selectedPartID = partID
         guard let partID else {
@@ -190,6 +295,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     func selectBand(_ bandID: UUID?) {
         if bandID != nil {
             isEditingHeaderSelection = false
+            isEditingPageRectification = false
         }
         selectedBandID = bandID
         guard let bandID,
@@ -199,21 +305,31 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         selectedPartID = band.partID
     }
 
+    func revealBand(_ bandID: UUID) {
+        guard let band = project.bands.first(where: { $0.id == bandID }) else { return }
+        canvasMode = .source
+        setCurrentPage(band.pageIndex)
+        selectBand(bandID)
+    }
+
     func nextPage() {
         guard currentPageIndex + 1 < project.pageCount else { return }
         currentPageIndex += 1
         selectedBandID = nil
+        isEditingPageRectification = false
     }
 
     func previousPage() {
         guard currentPageIndex > 0 else { return }
         currentPageIndex -= 1
         selectedBandID = nil
+        isEditingPageRectification = false
     }
 
     func setCurrentPage(_ pageIndex: Int) {
         currentPageIndex = max(0, min(pageIndex, max(0, project.pageCount - 1)))
         selectedBandID = nil
+        isEditingPageRectification = false
     }
 
     func importSourcePDF(from url: URL) throws {
@@ -228,12 +344,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             project.pageCount = pdfDocument.pageCount
             project.projectSettings.headerSelection = nil
             project.bands.removeAll()
+            project.pageRectifications.removeAll()
         }
 
         currentPageIndex = 0
         selectedBandID = nil
         canvasMode = .source
         isEditingHeaderSelection = false
+        isEditingPageRectification = false
     }
 
     func createPart(name: String, color: NSColor) {
@@ -253,6 +371,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         selectedPartID = part.id
         selectedBandID = nil
         isEditingHeaderSelection = false
+        isEditingPageRectification = false
     }
 
     func deletePart(_ partID: UUID) {
@@ -279,9 +398,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
     }
 
-    func updateShowTitle(_ partID: UUID, showTitle: Bool) {
-        updatePart(partID: partID, actionName: "Toggle Title") { part in
-            part.layoutSettings.showTitle = showTitle
+    func updateProjectShowTitleBlock(_ showTitleBlock: Bool) {
+        commit(actionName: "Toggle Title Block") { project, _ in
+            project.projectSettings.showTitleBlock = showTitleBlock
         }
     }
 
@@ -321,6 +440,12 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
     }
 
+    func updateProjectShowPartNameInHeader(_ showPartNameInHeader: Bool) {
+        commit(actionName: "Toggle Part Name Header") { project, _ in
+            project.projectSettings.showPartNameInHeader = showPartNameInHeader
+        }
+    }
+
     func updateProjectHeaderDisplayMode(_ mode: HeaderDisplayMode) {
         commit(actionName: "Change Header Mode") { project, _ in
             project.projectSettings.headerDisplayMode = mode
@@ -338,6 +463,20 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         if isEditing {
             canvasMode = .source
             selectedBandID = nil
+            isEditingPageRectification = false
+            if let headerSelection = project.projectSettings.headerSelection {
+                currentPageIndex = max(0, min(headerSelection.pageIndex, max(0, project.pageCount - 1)))
+            }
+        }
+    }
+
+    func setPageRectificationEditing(_ isEditing: Bool) {
+        guard isAutoEstimatingPageRectifications == false else { return }
+        isEditingPageRectification = isEditing
+        if isEditing {
+            canvasMode = .source
+            selectedBandID = nil
+            isEditingHeaderSelection = false
         }
     }
 
@@ -370,9 +509,91 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         isEditingHeaderSelection = false
     }
 
-    func updateShowPartNameLabel(_ partID: UUID, showPartNameLabel: Bool) {
-        updatePart(partID: partID, actionName: "Toggle Part Name Label") { part in
-            part.layoutSettings.showPartNameLabel = showPartNameLabel
+    func updatePageRectification(_ rectification: PageRectification) {
+        let rectification = rectification.normalized()
+        commit(actionName: "Rectify Page") { project, _ in
+            project.pageRectifications.removeAll { $0.pageIndex == rectification.pageIndex }
+            project.pageRectifications.append(rectification)
+        }
+    }
+
+    func clearCurrentPageRectification() {
+        guard isAutoEstimatingPageRectifications == false else { return }
+        let pageIndex = currentPageIndex
+        commit(actionName: "Clear Page Rectification") { project, _ in
+            project.pageRectifications.removeAll { $0.pageIndex == pageIndex }
+        }
+        isEditingPageRectification = false
+    }
+
+    func autoEstimateCurrentPageRectification() {
+        guard isAutoEstimatingPageRectifications == false else { return }
+        guard let estimate = estimatedRectification(for: currentPageIndex) else { return }
+
+        updatePageRectification(estimate)
+        isEditingPageRectification = false
+    }
+
+    func autoEstimateAllPageRectifications() {
+        guard isAutoEstimatingPageRectifications == false else { return }
+        guard let sourcePDFData else { return }
+        let totalPageCount = pdfDocument?.pageCount ?? 0
+        guard totalPageCount > 0 else { return }
+
+        let runID = UUID()
+        rectificationAutoRunID = runID
+        rectificationAutoProgress = RectificationAutoProgress(
+            completedPageCount: 0,
+            totalPageCount: totalPageCount,
+            estimatedPageCount: 0
+        )
+        isEditingPageRectification = false
+        Self.rectificationLogger.notice("Auto All started for \(totalPageCount, privacy: .public) pages")
+
+        DispatchQueue.global(qos: .userInitiated).async { [weak self, sourcePDFData] in
+            guard let backgroundDocument = PDFDocument(data: sourcePDFData) else {
+                Self.rectificationLogger.error("Auto All failed to open background PDF document")
+                DispatchQueue.main.async { [weak self] in
+                    self?.finishAutoEstimateAllPageRectifications(
+                        [],
+                        sourcePDFData: sourcePDFData,
+                        runID: runID
+                    )
+                }
+                return
+            }
+
+            var estimatedRectifications: [PageRectification] = []
+            estimatedRectifications.reserveCapacity(backgroundDocument.pageCount)
+
+            for pageIndex in 0..<backgroundDocument.pageCount {
+                if let rectification = Self.estimatedRectification(for: pageIndex, in: backgroundDocument) {
+                    estimatedRectifications.append(rectification)
+                }
+
+                let progress = RectificationAutoProgress(
+                    completedPageCount: pageIndex + 1,
+                    totalPageCount: totalPageCount,
+                    estimatedPageCount: estimatedRectifications.count
+                )
+                if progress.completedPageCount == totalPageCount || progress.completedPageCount.isMultiple(of: 8) {
+                    Self.rectificationLogger.debug(
+                        "Auto All progress \(progress.completedPageCount, privacy: .public)/\(progress.totalPageCount, privacy: .public), estimates \(progress.estimatedPageCount, privacy: .public)"
+                    )
+                }
+                DispatchQueue.main.async { [weak self] in
+                    guard let self, self.rectificationAutoRunID == runID else { return }
+                    self.rectificationAutoProgress = progress
+                }
+            }
+
+            DispatchQueue.main.async { [weak self] in
+                self?.finishAutoEstimateAllPageRectifications(
+                    estimatedRectifications,
+                    sourcePDFData: sourcePDFData,
+                    runID: runID
+                )
+            }
         }
     }
 
@@ -413,37 +634,45 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func copyCurrentPageBandsToNextPage() {
-        guard canCopyCurrentPageBandsToNextPage else { return }
+        copyBands(
+            from: currentPageIndex,
+            to: [currentPageIndex + 1],
+            scope: .allParts,
+            actionName: "Copy Bands To Next Page",
+            advanceToFirstDestination: true
+        )
+    }
 
-        let sourcePageIndex = currentPageIndex
-        let destinationPageIndex = currentPageIndex + 1
-        let sourceBands = project.bands
-            .filter { $0.pageIndex == sourcePageIndex }
-            .sorted {
-                if $0.partID != $1.partID {
-                    return $0.partID.uuidString < $1.partID.uuidString
-                }
-                return $0.createdAt < $1.createdAt
-            }
+    func copySelectedPartBandsToNextPage() {
+        guard let selectedPartID else { return }
+        copyBands(
+            from: currentPageIndex,
+            to: [currentPageIndex + 1],
+            scope: .selectedPart(selectedPartID),
+            actionName: "Copy Selected Part To Next Page",
+            advanceToFirstDestination: true
+        )
+    }
 
-        guard sourceBands.isEmpty == false else { return }
+    func copyCurrentPageBandsToRemainingPages() {
+        copyBands(
+            from: currentPageIndex,
+            to: remainingPageIndices(after: currentPageIndex),
+            scope: .allParts,
+            actionName: "Copy Bands To Remaining Pages",
+            advanceToFirstDestination: false
+        )
+    }
 
-        let copyStartDate = Date()
-        let copiedBands = sourceBands.enumerated().map { offset, band in
-            var copy = band
-            copy.id = UUID()
-            copy.pageIndex = destinationPageIndex
-            copy.createdAt = copyStartDate.addingTimeInterval(Double(offset) * 0.001)
-            return copy
-        }
-
-        commit(actionName: "Copy Bands To Next Page") { project, _ in
-            project.bands.removeAll { $0.pageIndex == destinationPageIndex }
-            project.bands.append(contentsOf: copiedBands)
-        }
-
-        currentPageIndex = destinationPageIndex
-        selectedBandID = nil
+    func copySelectedPartBandsToRemainingPages() {
+        guard let selectedPartID else { return }
+        copyBands(
+            from: currentPageIndex,
+            to: remainingPageIndices(after: currentPageIndex),
+            scope: .selectedPart(selectedPartID),
+            actionName: "Copy Selected Part To Remaining Pages",
+            advanceToFirstDestination: false
+        )
     }
 
     func nudgeBandTop(_ bandID: UUID, delta: Double) {
@@ -514,8 +743,118 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         return max(0.01, min(rawHalfHeight, 0.49))
     }
 
+    private func remainingPageIndices(after pageIndex: Int) -> [Int] {
+        guard pageIndex + 1 < project.pageCount else { return [] }
+        return Array((pageIndex + 1)..<project.pageCount)
+    }
+
+    private func canCopyBands(from sourcePageIndex: Int, to destinationPageIndices: [Int], scope: BandCopyScope) -> Bool {
+        guard destinationPageIndices.isEmpty == false else { return false }
+        return sourceBandsForCopy(on: sourcePageIndex, scope: scope).isEmpty == false
+    }
+
+    private func sourceBandsForCopy(on pageIndex: Int, scope: BandCopyScope) -> [BandModel] {
+        project.bands(on: pageIndex).filter { band in
+            switch scope {
+            case .allParts:
+                return true
+            case .selectedPart(let partID):
+                return band.partID == partID
+            }
+        }
+    }
+
+    private func copyBands(
+        from sourcePageIndex: Int,
+        to destinationPageIndices: [Int],
+        scope: BandCopyScope,
+        actionName: String,
+        advanceToFirstDestination: Bool
+    ) {
+        let destinationPageIndices = destinationPageIndices.filter { $0 >= 0 && $0 < project.pageCount && $0 != sourcePageIndex }
+        guard destinationPageIndices.isEmpty == false else { return }
+
+        let sourceBands = sourceBandsForCopy(on: sourcePageIndex, scope: scope)
+        guard sourceBands.isEmpty == false else { return }
+
+        let copyStartDate = Date()
+        var copyIndex = 0
+        var copiedBands: [BandModel] = []
+        copiedBands.reserveCapacity(sourceBands.count * destinationPageIndices.count)
+
+        for destinationPageIndex in destinationPageIndices {
+            for band in sourceBands {
+                var copy = band
+                copy.id = UUID()
+                copy.pageIndex = destinationPageIndex
+                copy.createdAt = copyStartDate.addingTimeInterval(Double(copyIndex) * 0.001)
+                copiedBands.append(copy)
+                copyIndex += 1
+            }
+        }
+
+        commit(actionName: actionName) { project, _ in
+            for destinationPageIndex in destinationPageIndices {
+                switch scope {
+                case .allParts:
+                    project.bands.removeAll { $0.pageIndex == destinationPageIndex }
+                case .selectedPart(let partID):
+                    project.bands.removeAll { $0.pageIndex == destinationPageIndex && $0.partID == partID }
+                }
+            }
+            project.bands.append(contentsOf: copiedBands)
+        }
+
+        if advanceToFirstDestination, let firstDestination = destinationPageIndices.first {
+            currentPageIndex = firstDestination
+        }
+        selectedBandID = nil
+    }
+
     private func currentState() -> DocumentStateSnapshot {
         DocumentStateSnapshot(project: project, sourcePDFData: sourcePDFData)
+    }
+
+    private func estimatedRectification(for pageIndex: Int) -> PageRectification? {
+        guard let pdfDocument, let page = pdfDocument.page(at: pageIndex) else { return nil }
+        return PageRectificationEstimator.estimate(for: page, pageIndex: pageIndex)?.rectification.normalized()
+    }
+
+    private static func estimatedRectification(for pageIndex: Int, in pdfDocument: PDFDocument) -> PageRectification? {
+        guard let page = pdfDocument.page(at: pageIndex) else { return nil }
+        return PageRectificationEstimator.estimate(for: page, pageIndex: pageIndex)?.rectification.normalized()
+    }
+
+    private func finishAutoEstimateAllPageRectifications(
+        _ estimatedRectifications: [PageRectification],
+        sourcePDFData: Data,
+        runID: UUID
+    ) {
+        defer {
+            if rectificationAutoRunID == runID {
+                rectificationAutoProgress = nil
+                rectificationAutoRunID = nil
+            }
+        }
+
+        guard rectificationAutoRunID == runID else { return }
+        guard self.sourcePDFData == sourcePDFData else {
+            Self.rectificationLogger.notice("Auto All ignored because the source PDF changed during processing")
+            return
+        }
+        guard estimatedRectifications.isEmpty == false else {
+            Self.rectificationLogger.notice("Auto All finished with no estimated rectifications")
+            return
+        }
+
+        let estimatedPageIndices = Set(estimatedRectifications.map(\.pageIndex))
+        commit(actionName: "Auto Rectify All Pages") { project, _ in
+            project.pageRectifications.removeAll { estimatedPageIndices.contains($0.pageIndex) }
+            project.pageRectifications.append(contentsOf: estimatedRectifications)
+        }
+        Self.rectificationLogger.notice(
+            "Auto All finished with \(estimatedRectifications.count, privacy: .public) rectified pages"
+        )
     }
 
     private func commit(actionName: String, mutation: (inout ProjectData, inout Data?) -> Void) {
@@ -557,8 +896,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private func rebuildPDFCache() {
         if let sourcePDFData {
             cachedPDFDocument = PDFDocument(data: sourcePDFData)
+            if let cachedPDFDocument {
+                sourcePageRenderCache = SourcePageRenderCache(pdfDocument: cachedPDFDocument)
+            } else {
+                sourcePageRenderCache = nil
+            }
         } else {
             cachedPDFDocument = nil
+            sourcePageRenderCache = nil
         }
     }
 
@@ -577,6 +922,391 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             project.projectSettings.headerSelection = nil
         }
 
+        project.pageRectifications.removeAll { rectification in
+            rectification.pageIndex < 0 || rectification.pageIndex >= project.pageCount
+        }
+
         currentPageIndex = max(0, min(currentPageIndex, max(0, project.pageCount - 1)))
+    }
+}
+
+final class SourcePageRenderCache {
+    private struct CachedRectifiedPage {
+        var rectification: PageRectification
+        var pageBounds: CGRect
+        var image: CGImage
+        var displayDocument: PDFDocument
+    }
+
+    private static let ciContext = CIContext(options: nil)
+
+    private let pdfDocument: PDFDocument
+    private let rasterScale: CGFloat
+    private var rectifiedPages: [Int: CachedRectifiedPage] = [:]
+
+    init(pdfDocument: PDFDocument, rasterScale: CGFloat = 300.0 / 72.0) {
+        self.pdfDocument = pdfDocument
+        self.rasterScale = rasterScale
+    }
+
+    func rectifiedDisplayDocument(for pageIndex: Int, rectification: PageRectification?) -> PDFDocument? {
+        rectifiedPage(for: pageIndex, rectification: rectification)?.displayDocument
+    }
+
+    func rectifiedDisplayImage(for pageIndex: Int, rectification: PageRectification?) -> CGImage? {
+        rectifiedPage(for: pageIndex, rectification: rectification)?.image
+    }
+
+    func pageBounds(for pageIndex: Int) -> CGRect? {
+        pdfDocument.page(at: pageIndex)?.bounds(for: .mediaBox)
+    }
+
+    func draw(
+        pageIndex: Int,
+        rectification: PageRectification?,
+        sourceRect: CGRect,
+        destinationRect: CGRect,
+        in context: CGContext
+    ) {
+        guard let pdfPage = pdfDocument.page(at: pageIndex) else { return }
+
+        if let rectifiedPage = rectifiedPage(for: pageIndex, rectification: rectification) {
+            draw(
+                image: rectifiedPage.image,
+                pageBounds: rectifiedPage.pageBounds,
+                sourceRect: sourceRect,
+                destinationRect: destinationRect,
+                in: context
+            )
+        } else {
+            draw(
+                pdfPage: pdfPage,
+                sourceRect: sourceRect,
+                destinationRect: destinationRect,
+                in: context
+            )
+        }
+    }
+
+    private func rectifiedPage(for pageIndex: Int, rectification: PageRectification?) -> CachedRectifiedPage? {
+        guard let rectification else { return nil }
+        guard let pdfPage = pdfDocument.page(at: pageIndex) else { return nil }
+
+        let normalizedRectification = rectification.normalized()
+        if let cached = rectifiedPages[pageIndex], cached.rectification == normalizedRectification {
+            return cached
+        }
+
+        let pageBounds = pdfPage.bounds(for: .mediaBox)
+        guard let rasterizedImage = rasterizedImage(
+            for: pdfPage,
+            pageBounds: pageBounds,
+            scale: rasterScale
+        ) else {
+            return nil
+        }
+
+        guard let correctedImage = rectifiedImage(
+            from: rasterizedImage,
+            rectification: normalizedRectification
+        ) else {
+            return nil
+        }
+
+        guard let displayDocument = makeDisplayDocument(
+            from: correctedImage,
+            pageBounds: pageBounds
+        ) else {
+            return nil
+        }
+
+        let cachedPage = CachedRectifiedPage(
+            rectification: normalizedRectification,
+            pageBounds: pageBounds,
+            image: correctedImage,
+            displayDocument: displayDocument
+        )
+        rectifiedPages[pageIndex] = cachedPage
+        return cachedPage
+    }
+
+    private func rasterizedImage(
+        for page: PDFPage,
+        pageBounds: CGRect,
+        scale: CGFloat
+    ) -> CGImage? {
+        let pixelWidth = max(1, Int((pageBounds.width * scale).rounded(.up)))
+        let pixelHeight = max(1, Int((pageBounds.height * scale).rounded(.up)))
+
+        guard let context = CGContext(
+            data: nil,
+            width: pixelWidth,
+            height: pixelHeight,
+            bitsPerComponent: 8,
+            bytesPerRow: 0,
+            space: CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+        ) else {
+            return nil
+        }
+
+        context.setFillColor(NSColor.white.cgColor)
+        context.fill(CGRect(x: 0, y: 0, width: pixelWidth, height: pixelHeight))
+        context.scaleBy(x: scale, y: scale)
+        page.draw(with: .mediaBox, to: context)
+        return context.makeImage()
+    }
+
+    private func rectifiedImage(from image: CGImage, rectification: PageRectification) -> CGImage? {
+        let ciImage = CIImage(cgImage: image)
+        let sourceExtent = ciImage.extent
+        let sourceQuad = sourceQuadPoints(for: rectification, in: sourceExtent)
+        let targetRect = targetRectForRectification(rectification: rectification, sourceExtent: sourceExtent)
+        let targetQuad = targetQuadPoints(for: targetRect)
+
+        guard let homography = solveHomography(from: sourceQuad, to: targetQuad) else {
+            return nil
+        }
+
+        let pageCorners = [
+            CGPoint(x: sourceExtent.minX, y: sourceExtent.maxY),
+            CGPoint(x: sourceExtent.maxX, y: sourceExtent.maxY),
+            CGPoint(x: sourceExtent.maxX, y: sourceExtent.minY),
+            CGPoint(x: sourceExtent.minX, y: sourceExtent.minY)
+        ]
+        let transformedCorners = pageCorners.map { applyingHomography($0, coefficients: homography) }
+
+        let filter = CIFilter.perspectiveTransform()
+        filter.inputImage = ciImage
+        filter.topLeft = transformedCorners[0]
+        filter.topRight = transformedCorners[1]
+        filter.bottomRight = transformedCorners[2]
+        filter.bottomLeft = transformedCorners[3]
+
+        guard let outputImage = filter.outputImage else { return nil }
+
+        let whiteBackground = CIImage(color: CIColor.white).cropped(to: sourceExtent)
+        let compositedImage = outputImage
+            .composited(over: whiteBackground)
+            .cropped(to: sourceExtent)
+        return Self.ciContext.createCGImage(compositedImage, from: sourceExtent)
+    }
+
+    private func sourceQuadPoints(for rectification: PageRectification, in sourceExtent: CGRect) -> [CGPoint] {
+        [
+            CGPoint(
+                x: sourceExtent.minX + rectification.topLeft.x * sourceExtent.width,
+                y: sourceExtent.maxY - rectification.topLeft.y * sourceExtent.height
+            ),
+            CGPoint(
+                x: sourceExtent.minX + rectification.topRight.x * sourceExtent.width,
+                y: sourceExtent.maxY - rectification.topRight.y * sourceExtent.height
+            ),
+            CGPoint(
+                x: sourceExtent.minX + rectification.bottomRight.x * sourceExtent.width,
+                y: sourceExtent.maxY - rectification.bottomRight.y * sourceExtent.height
+            ),
+            CGPoint(
+                x: sourceExtent.minX + rectification.bottomLeft.x * sourceExtent.width,
+                y: sourceExtent.maxY - rectification.bottomLeft.y * sourceExtent.height
+            )
+        ]
+    }
+
+    private func targetRectForRectification(
+        rectification: PageRectification,
+        sourceExtent: CGRect
+    ) -> CGRect {
+        let quad = sourceQuadPoints(for: rectification, in: sourceExtent)
+        let topLeft = quad[0]
+        let topRight = quad[1]
+        let bottomRight = quad[2]
+        let bottomLeft = quad[3]
+
+        let center = CGPoint(
+            x: (topLeft.x + topRight.x + bottomRight.x + bottomLeft.x) / 4,
+            y: (topLeft.y + topRight.y + bottomRight.y + bottomLeft.y) / 4
+        )
+
+        let averageHorizontal = (distance(from: topLeft, to: topRight) + distance(from: bottomLeft, to: bottomRight)) / 2
+        let averageVertical = (distance(from: topLeft, to: bottomLeft) + distance(from: topRight, to: bottomRight)) / 2
+        let width = min(max(averageHorizontal, 1), sourceExtent.width)
+        let height = min(max(averageVertical, 1), sourceExtent.height)
+        var rect = CGRect(
+            x: center.x - width / 2,
+            y: center.y - height / 2,
+            width: width,
+            height: height
+        )
+
+        if rect.minX < sourceExtent.minX {
+            rect.origin.x = sourceExtent.minX
+        }
+        if rect.maxX > sourceExtent.maxX {
+            rect.origin.x = sourceExtent.maxX - rect.width
+        }
+        if rect.minY < sourceExtent.minY {
+            rect.origin.y = sourceExtent.minY
+        }
+        if rect.maxY > sourceExtent.maxY {
+            rect.origin.y = sourceExtent.maxY - rect.height
+        }
+
+        return rect
+    }
+
+    private func targetQuadPoints(for rect: CGRect) -> [CGPoint] {
+        [
+            CGPoint(x: rect.minX, y: rect.maxY),
+            CGPoint(x: rect.maxX, y: rect.maxY),
+            CGPoint(x: rect.maxX, y: rect.minY),
+            CGPoint(x: rect.minX, y: rect.minY)
+        ]
+    }
+
+    private func distance(from start: CGPoint, to end: CGPoint) -> CGFloat {
+        hypot(end.x - start.x, end.y - start.y)
+    }
+
+    private func solveHomography(from source: [CGPoint], to destination: [CGPoint]) -> [Double]? {
+        guard source.count == 4, destination.count == 4 else { return nil }
+
+        var matrix = Array(
+            repeating: Array(repeating: 0.0, count: 9),
+            count: 8
+        )
+
+        for index in 0..<4 {
+            let sourcePoint = source[index]
+            let destinationPoint = destination[index]
+            let x = Double(sourcePoint.x)
+            let y = Double(sourcePoint.y)
+            let u = Double(destinationPoint.x)
+            let v = Double(destinationPoint.y)
+
+            matrix[index * 2] = [x, y, 1, 0, 0, 0, -x * u, -y * u, u]
+            matrix[index * 2 + 1] = [0, 0, 0, x, y, 1, -x * v, -y * v, v]
+        }
+
+        guard gaussianEliminationSolve(&matrix) else { return nil }
+
+        return matrix.enumerated().map { rowIndex, row in
+            row[row.count - 1]
+        } + [1.0]
+    }
+
+    private func gaussianEliminationSolve(_ matrix: inout [[Double]]) -> Bool {
+        let rowCount = matrix.count
+        let columnCount = matrix.first?.count ?? 0
+        guard rowCount == 8, columnCount == 9 else { return false }
+
+        for pivotIndex in 0..<rowCount {
+            var bestRow = pivotIndex
+            var bestValue = abs(matrix[pivotIndex][pivotIndex])
+
+            for candidateRow in (pivotIndex + 1)..<rowCount {
+                let candidateValue = abs(matrix[candidateRow][pivotIndex])
+                if candidateValue > bestValue {
+                    bestValue = candidateValue
+                    bestRow = candidateRow
+                }
+            }
+
+            guard bestValue > 1e-9 else { return false }
+
+            if bestRow != pivotIndex {
+                matrix.swapAt(bestRow, pivotIndex)
+            }
+
+            let pivot = matrix[pivotIndex][pivotIndex]
+            for columnIndex in pivotIndex..<columnCount {
+                matrix[pivotIndex][columnIndex] /= pivot
+            }
+
+            for rowIndex in 0..<rowCount where rowIndex != pivotIndex {
+                let factor = matrix[rowIndex][pivotIndex]
+                guard factor != 0 else { continue }
+                for columnIndex in pivotIndex..<columnCount {
+                    matrix[rowIndex][columnIndex] -= factor * matrix[pivotIndex][columnIndex]
+                }
+            }
+        }
+
+        return true
+    }
+
+    private func applyingHomography(_ point: CGPoint, coefficients: [Double]) -> CGPoint {
+        let x = Double(point.x)
+        let y = Double(point.y)
+        let denominator = coefficients[6] * x + coefficients[7] * y + coefficients[8]
+        guard abs(denominator) > 1e-9 else { return point }
+
+        let mappedX = (coefficients[0] * x + coefficients[1] * y + coefficients[2]) / denominator
+        let mappedY = (coefficients[3] * x + coefficients[4] * y + coefficients[5]) / denominator
+        return CGPoint(x: mappedX, y: mappedY)
+    }
+
+    private func makeDisplayDocument(from image: CGImage, pageBounds: CGRect) -> PDFDocument? {
+        let mutableData = NSMutableData()
+        var mediaBox = pageBounds
+
+        guard let consumer = CGDataConsumer(data: mutableData as CFMutableData),
+              let context = CGContext(consumer: consumer, mediaBox: &mediaBox, nil) else {
+            return nil
+        }
+
+        context.beginPDFPage(nil as CFDictionary?)
+        context.setFillColor(NSColor.white.cgColor)
+        context.fill(pageBounds)
+        context.draw(image, in: pageBounds)
+        context.endPDFPage()
+        context.closePDF()
+
+        return PDFDocument(data: mutableData as Data)
+    }
+
+    private func draw(
+        pdfPage: PDFPage,
+        sourceRect: CGRect,
+        destinationRect: CGRect,
+        in context: CGContext
+    ) {
+        context.saveGState()
+        context.clip(to: destinationRect)
+
+        let xScale = destinationRect.width / sourceRect.width
+        let yScale = destinationRect.height / sourceRect.height
+
+        context.translateBy(
+            x: destinationRect.minX - sourceRect.minX * xScale,
+            y: destinationRect.minY - sourceRect.minY * yScale
+        )
+        context.scaleBy(x: xScale, y: yScale)
+        pdfPage.draw(with: .mediaBox, to: context)
+
+        context.restoreGState()
+    }
+
+    private func draw(
+        image: CGImage,
+        pageBounds: CGRect,
+        sourceRect: CGRect,
+        destinationRect: CGRect,
+        in context: CGContext
+    ) {
+        context.saveGState()
+        context.clip(to: destinationRect)
+
+        let xScale = destinationRect.width / sourceRect.width
+        let yScale = destinationRect.height / sourceRect.height
+
+        context.translateBy(
+            x: destinationRect.minX - sourceRect.minX * xScale,
+            y: destinationRect.minY - sourceRect.minY * yScale
+        )
+        context.scaleBy(x: xScale, y: yScale)
+        context.draw(image, in: pageBounds)
+
+        context.restoreGState()
     }
 }

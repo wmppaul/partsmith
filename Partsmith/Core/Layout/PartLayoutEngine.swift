@@ -6,6 +6,7 @@ struct PartRenderPlan {
     var part: PartModel
     var resolvedTitle: String
     var resolvedSubtitle: String
+    var showsPartNameInHeader: Bool
     var headerPlacement: HeaderPlacement?
     var pages: [PartRenderPage]
 }
@@ -48,11 +49,11 @@ enum PartLayoutError: LocalizedError {
 }
 
 enum PartLayoutEngine {
-    static func makePlan(project: ProjectData, pdfDocument: PDFDocument?, partID: UUID) throws -> PartRenderPlan {
-        guard let pdfDocument else {
-            throw PartLayoutError.missingPDF
-        }
-
+    static func makePlan(
+        project: ProjectData,
+        pageBoundsProvider: (Int) -> CGRect?,
+        partID: UUID
+    ) throws -> PartRenderPlan {
         guard let part = project.parts.first(where: { $0.id == partID }) else {
             throw PartLayoutError.missingPart
         }
@@ -72,11 +73,11 @@ enum PartLayoutEngine {
         let interSystemGap = max(4, part.layoutSettings.interSystemGap)
         let headerPlacement = sourceHeaderPlacement(
             project: project,
-            pdfDocument: pdfDocument,
+            pageBoundsProvider: pageBoundsProvider,
             pageSize: pageSize
         )
         let headerBlockHeight: Double
-        if part.layoutSettings.showTitle == false {
+        if project.projectSettings.showTitleBlock == false {
             headerBlockHeight = 0
         } else if let headerPlacement {
             headerBlockHeight = headerPlacement.destinationRect.height + 18
@@ -90,8 +91,8 @@ enum PartLayoutEngine {
         var cursorTop = pageSize.height - margins.top - headerBlockHeight
 
         for band in includedBands {
-            guard let pdfPage = pdfDocument.page(at: band.pageIndex) else { continue }
-            let sourceRect = band.cropRect(in: pdfPage.bounds(for: .mediaBox))
+            guard let pageBounds = pageBoundsProvider(band.pageIndex) else { continue }
+            let sourceRect = band.cropRect(in: pageBounds)
             let fitScale = fullPageBandWidth / sourceRect.width
             let renderScale = fitScale * partScale
             let targetHeight = sourceRect.height * renderScale
@@ -102,7 +103,7 @@ enum PartLayoutEngine {
                 pages.append(
                     PartRenderPage(
                         index: pageIndex,
-                        drawsTitle: pageIndex == 0 && part.layoutSettings.showTitle,
+                        drawsTitle: pageIndex == 0 && project.projectSettings.showTitleBlock,
                         placements: currentPlacements
                     )
                 )
@@ -134,7 +135,7 @@ enum PartLayoutEngine {
             pages.append(
                 PartRenderPage(
                     index: pageIndex,
-                    drawsTitle: pageIndex == 0 && part.layoutSettings.showTitle,
+                    drawsTitle: pageIndex == 0 && project.projectSettings.showTitleBlock,
                     placements: currentPlacements
                 )
             )
@@ -145,6 +146,7 @@ enum PartLayoutEngine {
             part: part,
             resolvedTitle: resolvedTitle(for: part, project: project),
             resolvedSubtitle: resolvedSubtitle(for: part, project: project),
+            showsPartNameInHeader: project.projectSettings.showPartNameInHeader,
             headerPlacement: headerPlacement,
             pages: pages
         )
@@ -152,17 +154,16 @@ enum PartLayoutEngine {
 
     private static func sourceHeaderPlacement(
         project: ProjectData,
-        pdfDocument: PDFDocument,
+        pageBoundsProvider: (Int) -> CGRect?,
         pageSize: CGSize
     ) -> HeaderPlacement? {
         guard project.projectSettings.headerDisplayMode == .sourceSelection,
               let headerSelection = project.projectSettings.headerSelection,
-              let pdfPage = pdfDocument.page(at: headerSelection.pageIndex)
+              let sourcePageBounds = pageBoundsProvider(headerSelection.pageIndex)
         else {
             return nil
         }
 
-        let sourcePageBounds = pdfPage.bounds(for: .mediaBox)
         let sourceRect = headerSelection.cropRect(in: sourcePageBounds)
         guard sourceRect.width > 0, sourceRect.height > 0 else {
             return nil

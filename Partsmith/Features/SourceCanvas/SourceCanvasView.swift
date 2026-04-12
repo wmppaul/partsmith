@@ -13,6 +13,10 @@ struct SourceCanvasView: View {
 
     var body: some View {
         if let pdfDocument = document.pdfDocument {
+            let rectifiedDisplayImage = document.sourceDisplayImageForCurrentPage()
+            let sourceEditorDocument = document.sourceDisplayDocumentForCurrentPage() ?? pdfDocument
+            let sourceEditorPageIndex = document.usesRectifiedDisplayForCurrentPage ? document.sourceDisplayPageIndex : document.currentPageIndex
+
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
@@ -33,38 +37,91 @@ struct SourceCanvasView: View {
 
                 Divider()
 
-                PDFBandEditorRepresentable(
-                    pdfDocument: pdfDocument,
-                    pageIndex: document.currentPageIndex,
-                    bands: document.bands(on: document.currentPageIndex),
-                    headerSelection: document.headerSelectionOnCurrentPage,
-                    isEditingHeaderSelection: document.isEditingHeaderSelection,
-                    selectedPartID: document.selectedPartID,
-                    selectedBandID: document.selectedBandID,
-                    partColors: document.colorMap(),
-                    zoomMode: document.zoomMode,
-                    canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
-                    onSelectBand: document.selectBand(_:),
-                    onCreateBand: { centerFraction in
-                        guard let selectedPartID = document.selectedPartID else { return }
-                        document.createBand(on: document.currentPageIndex, centerFraction: centerFraction, partID: selectedPartID)
-                    },
-                    onUpdateBand: { bandID, topFraction, bottomFraction in
-                        document.updateBand(bandID, topFraction: topFraction, bottomFraction: bottomFraction)
-                    },
-                    onUpdateHeaderSelection: { pageIndex, topFraction, bottomFraction, leftFraction, rightFraction in
-                        document.updateHeaderSelection(
-                            pageIndex: pageIndex,
-                            topFraction: topFraction,
-                            bottomFraction: bottomFraction,
-                            leftFraction: leftFraction,
-                            rightFraction: rightFraction
+                Group {
+                    if document.isEditingPageRectification {
+                        PDFPageRectificationEditorRepresentable(
+                            pdfDocument: pdfDocument,
+                            pageIndex: document.currentPageIndex,
+                            rectification: document.currentPageRectification,
+                            zoomMode: document.zoomMode,
+                            onUpdateRectification: { document.updatePageRectification($0) }
                         )
-                    },
-                    onFinishHeaderSelection: {
-                        document.setHeaderSelectionEditing(false)
+                        .id(document.rectificationEditorIdentity)
+                    } else if document.usesRectifiedDisplayForCurrentPage,
+                              let rectifiedDisplayImage,
+                              let pageBounds = document.sourceDisplayPageBoundsForCurrentPage()
+                    {
+                        RectifiedBandEditorRepresentable(
+                            image: rectifiedDisplayImage,
+                            pageBounds: pageBounds,
+                            pageIndex: document.currentPageIndex,
+                            bands: document.bands(on: document.currentPageIndex),
+                            headerSelection: document.headerSelectionOnCurrentPage,
+                            isEditingHeaderSelection: document.isEditingHeaderSelection,
+                            selectedPartID: document.selectedPartID,
+                            selectedBandID: document.selectedBandID,
+                            partColors: document.colorMap(),
+                            zoomMode: document.zoomMode,
+                            canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
+                            renderIdentity: document.bandEditorIdentity,
+                            onSelectBand: document.selectBand(_:),
+                            onCreateBand: { centerFraction in
+                                guard let selectedPartID = document.selectedPartID else { return }
+                                document.createBand(on: document.currentPageIndex, centerFraction: centerFraction, partID: selectedPartID)
+                            },
+                            onUpdateBand: { bandID, topFraction, bottomFraction in
+                                document.updateBand(bandID, topFraction: topFraction, bottomFraction: bottomFraction)
+                            },
+                            onUpdateHeaderSelection: { _, topFraction, bottomFraction, leftFraction, rightFraction in
+                                document.updateHeaderSelection(
+                                    pageIndex: document.currentPageIndex,
+                                    topFraction: topFraction,
+                                    bottomFraction: bottomFraction,
+                                    leftFraction: leftFraction,
+                                    rightFraction: rightFraction
+                                )
+                            },
+                            onFinishHeaderSelection: {
+                                document.setHeaderSelectionEditing(false)
+                            }
+                        )
+                        .id(document.bandEditorIdentity)
+                    } else {
+                        PDFBandEditorRepresentable(
+                            pdfDocument: sourceEditorDocument,
+                            pageIndex: sourceEditorPageIndex,
+                            bands: document.bands(on: document.currentPageIndex),
+                            headerSelection: document.headerSelectionOnCurrentPage,
+                            isEditingHeaderSelection: document.isEditingHeaderSelection,
+                            selectedPartID: document.selectedPartID,
+                            selectedBandID: document.selectedBandID,
+                            partColors: document.colorMap(),
+                            zoomMode: document.zoomMode,
+                            canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
+                            onSelectBand: document.selectBand(_:),
+                            onCreateBand: { centerFraction in
+                                guard let selectedPartID = document.selectedPartID else { return }
+                                document.createBand(on: document.currentPageIndex, centerFraction: centerFraction, partID: selectedPartID)
+                            },
+                            onUpdateBand: { bandID, topFraction, bottomFraction in
+                                document.updateBand(bandID, topFraction: topFraction, bottomFraction: bottomFraction)
+                            },
+                            onUpdateHeaderSelection: { _, topFraction, bottomFraction, leftFraction, rightFraction in
+                                document.updateHeaderSelection(
+                                    pageIndex: document.currentPageIndex,
+                                    topFraction: topFraction,
+                                    bottomFraction: bottomFraction,
+                                    leftFraction: leftFraction,
+                                    rightFraction: rightFraction
+                                )
+                            },
+                            onFinishHeaderSelection: {
+                                document.setHeaderSelectionEditing(false)
+                            }
+                        )
+                        .id(document.bandEditorIdentity)
                     }
-                )
+                }
                 .background(Color(nsColor: .windowBackgroundColor))
             }
         } else {
@@ -165,7 +222,29 @@ struct SourceCanvasView: View {
 }
 
 private extension PartsmithDocument {
+    var rectificationEditorIdentity: String {
+        "rectify-\(currentPageIndex)-\(zoomMode.rawValue)"
+    }
+
+    var bandEditorIdentity: String {
+        let rectificationKey: String
+        if usesRectifiedDisplayForCurrentPage {
+            rectificationKey = currentPageRectification?.renderIdentity ?? "none"
+        } else {
+            rectificationKey = "raw"
+        }
+
+        return "bands-\(currentPageIndex)-\(zoomMode.rawValue)-\(rectificationKey)-header-\(isEditingHeaderSelection)"
+    }
+
     var sourceInstruction: (title: String, body: String) {
+        if isEditingPageRectification {
+            return (
+                title: "Rectifying page \(currentPageIndex + 1)",
+                body: "Drag the four orange corner handles onto the staff field you want to square up. Saving keeps the same page size and switches band editing to the rectified page."
+            )
+        }
+
         if isEditingHeaderSelection {
             return (
                 title: "Selecting a shared source header",
@@ -191,6 +270,22 @@ private extension PartsmithDocument {
             title: "Select a part before creating bands",
             body: "Choose a part in the sidebar, then click inside the page to create a horizontal crop band."
         )
+    }
+}
+
+private extension PageRectification {
+    var renderIdentity: String {
+        [
+            pageIndex.description,
+            String(format: "%.5f", topLeft.x),
+            String(format: "%.5f", topLeft.y),
+            String(format: "%.5f", topRight.x),
+            String(format: "%.5f", topRight.y),
+            String(format: "%.5f", bottomRight.x),
+            String(format: "%.5f", bottomRight.y),
+            String(format: "%.5f", bottomLeft.x),
+            String(format: "%.5f", bottomLeft.y)
+        ].joined(separator: "-")
     }
 }
 
@@ -236,12 +331,290 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
     }
 }
 
-final class PDFBandEditorContainerView: NSView {
-    private let pdfView = PDFView()
+struct RectifiedBandEditorRepresentable: NSViewRepresentable {
+    var image: CGImage
+    var pageBounds: CGRect
+    var pageIndex: Int
+    var bands: [BandModel]
+    var headerSelection: SourceHeaderSelection?
+    var isEditingHeaderSelection: Bool
+    var selectedPartID: UUID?
+    var selectedBandID: UUID?
+    var partColors: [UUID: NSColor]
+    var zoomMode: ZoomMode
+    var canCreateBands: Bool
+    var renderIdentity: String
+    var onSelectBand: (UUID?) -> Void
+    var onCreateBand: (Double) -> Void
+    var onUpdateBand: (UUID, Double, Double) -> Void
+    var onUpdateHeaderSelection: (Int, Double, Double, Double, Double) -> Void
+    var onFinishHeaderSelection: () -> Void
+
+    func makeNSView(context: Context) -> RectifiedBandEditorContainerView {
+        RectifiedBandEditorContainerView()
+    }
+
+    func updateNSView(_ nsView: RectifiedBandEditorContainerView, context: Context) {
+        nsView.update(
+            image: image,
+            pageBounds: pageBounds,
+            pageIndex: pageIndex,
+            bands: bands,
+            headerSelection: headerSelection,
+            isEditingHeaderSelection: isEditingHeaderSelection,
+            selectedPartID: selectedPartID,
+            selectedBandID: selectedBandID,
+            partColors: partColors,
+            zoomMode: zoomMode,
+            canCreateBands: canCreateBands,
+            renderIdentity: renderIdentity,
+            onSelectBand: onSelectBand,
+            onCreateBand: onCreateBand,
+            onUpdateBand: onUpdateBand,
+            onUpdateHeaderSelection: onUpdateHeaderSelection,
+            onFinishHeaderSelection: onFinishHeaderSelection
+        )
+    }
+}
+
+struct PDFPageRectificationEditorRepresentable: NSViewRepresentable {
+    var pdfDocument: PDFDocument
+    var pageIndex: Int
+    var rectification: PageRectification?
+    var zoomMode: ZoomMode
+    var onUpdateRectification: (PageRectification) -> Void
+
+    func makeNSView(context: Context) -> PDFPageRectificationEditorContainerView {
+        PDFPageRectificationEditorContainerView()
+    }
+
+    func updateNSView(_ nsView: PDFPageRectificationEditorContainerView, context: Context) {
+        nsView.update(
+            pdfDocument: pdfDocument,
+            pageIndex: pageIndex,
+            rectification: rectification,
+            zoomMode: zoomMode,
+            onUpdateRectification: onUpdateRectification
+        )
+    }
+}
+
+final class RectifiedBandEditorContainerView: NSView {
+    private let scrollView = NSScrollView()
+    private let documentView = NSView()
+    private let imageView = NSImageView()
     private let overlayView = BandOverlayView()
 
     private var currentZoomMode: ZoomMode = .fitWidth
+    private var currentRenderIdentity: String?
+    private var currentPageBounds: CGRect = .zero
+    private var lastAppliedViewportSize: CGSize = .zero
+
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.drawsBackground = false
+        scrollView.hasVerticalScroller = true
+        scrollView.hasHorizontalScroller = true
+        scrollView.borderType = .noBorder
+        scrollView.documentView = documentView
+
+        documentView.wantsLayer = true
+        documentView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+
+        imageView.imageAlignment = .alignCenter
+        imageView.imageScaling = .scaleAxesIndependently
+
+        overlayView.viewportClipView = scrollView.contentView
+
+        documentView.addSubview(imageView)
+        documentView.addSubview(overlayView)
+        addSubview(scrollView)
+
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layout() {
+        super.layout()
+        let viewportSize = bounds.size
+        guard viewportSize != .zero else { return }
+
+        if lastAppliedViewportSize != viewportSize {
+            lastAppliedViewportSize = viewportSize
+            applyZoomMode(resetToTop: false)
+        } else {
+            overlayView.needsDisplay = true
+        }
+    }
+
+    func update(
+        image: CGImage,
+        pageBounds: CGRect,
+        pageIndex: Int,
+        bands: [BandModel],
+        headerSelection: SourceHeaderSelection?,
+        isEditingHeaderSelection: Bool,
+        selectedPartID: UUID?,
+        selectedBandID: UUID?,
+        partColors: [UUID: NSColor],
+        zoomMode: ZoomMode,
+        canCreateBands: Bool,
+        renderIdentity: String,
+        onSelectBand: @escaping (UUID?) -> Void,
+        onCreateBand: @escaping (Double) -> Void,
+        onUpdateBand: @escaping (UUID, Double, Double) -> Void,
+        onUpdateHeaderSelection: @escaping (Int, Double, Double, Double, Double) -> Void,
+        onFinishHeaderSelection: @escaping () -> Void
+    ) {
+        let renderChanged = currentRenderIdentity != renderIdentity
+        let zoomModeChanged = currentZoomMode != zoomMode
+        let preservedViewportOrigin = (renderChanged == false && zoomModeChanged == false) ? currentViewportOrigin() : nil
+
+        if renderChanged {
+            currentRenderIdentity = renderIdentity
+            currentPageBounds = pageBounds
+            imageView.image = NSImage(
+                cgImage: image,
+                size: NSSize(width: pageBounds.width, height: pageBounds.height)
+            )
+        }
+
+        currentZoomMode = zoomMode
+
+        if renderChanged || zoomModeChanged {
+            applyZoomMode(resetToTop: renderChanged && preservedViewportOrigin == nil)
+        } else {
+            overlayView.fixedPageFrame = imageView.frame
+            restoreViewportOrigin(preservedViewportOrigin)
+        }
+
+        overlayView.update(
+            pageIndex: pageIndex,
+            page: nil,
+            bands: bands,
+            headerSelection: headerSelection,
+            isEditingHeaderSelection: isEditingHeaderSelection,
+            selectedPartID: selectedPartID,
+            selectedBandID: selectedBandID,
+            partColors: partColors,
+            canCreateBands: canCreateBands,
+            onSelectBand: onSelectBand,
+            onCreateBand: onCreateBand,
+            onUpdateBand: onUpdateBand,
+            onUpdateHeaderSelection: onUpdateHeaderSelection,
+            onFinishHeaderSelection: onFinishHeaderSelection
+        )
+
+        if renderChanged == false && zoomModeChanged == false {
+            restoreViewportOrigin(preservedViewportOrigin)
+        }
+    }
+
+    private func applyZoomMode(resetToTop: Bool) {
+        guard currentPageBounds.width > 0, currentPageBounds.height > 0 else { return }
+
+        let horizontalInset: CGFloat = 48
+        let verticalInset: CGFloat = 24
+        let viewportWidth = max(200, bounds.width)
+        let viewportHeight = max(200, bounds.height)
+
+        let scale: CGFloat
+        switch currentZoomMode {
+        case .fitWidth:
+            scale = max(0.01, (viewportWidth - horizontalInset) / currentPageBounds.width)
+        case .fitPage:
+            let widthScale = max(0.01, (viewportWidth - horizontalInset) / currentPageBounds.width)
+            let heightScale = max(0.01, (viewportHeight - verticalInset * 2) / currentPageBounds.height)
+            scale = min(widthScale, heightScale)
+        }
+
+        let displaySize = CGSize(
+            width: currentPageBounds.width * scale,
+            height: currentPageBounds.height * scale
+        )
+        let contentSize = CGSize(
+            width: max(viewportWidth, displaySize.width + horizontalInset),
+            height: max(viewportHeight, displaySize.height + verticalInset * 2)
+        )
+
+        documentView.frame = CGRect(origin: .zero, size: contentSize)
+        let imageFrame = CGRect(
+            x: (contentSize.width - displaySize.width) / 2,
+            y: contentSize.height - displaySize.height - verticalInset,
+            width: displaySize.width,
+            height: displaySize.height
+        )
+        imageView.frame = imageFrame
+        overlayView.frame = documentView.bounds
+        overlayView.fixedPageFrame = imageFrame
+
+        documentView.needsLayout = true
+        documentView.layoutSubtreeIfNeeded()
+        documentView.needsDisplay = true
+        imageView.needsDisplay = true
+        overlayView.needsDisplay = true
+        scrollView.needsDisplay = true
+        scrollView.displayIfNeeded()
+
+        if resetToTop {
+            scrollToTop()
+        }
+    }
+
+    private func scrollToTop() {
+        let clipView = scrollView.contentView
+        let maxY = max(0, documentView.bounds.height - clipView.bounds.height)
+        let origin = CGPoint(x: 0, y: maxY)
+        clipView.scroll(to: origin)
+        scrollView.reflectScrolledClipView(clipView)
+        overlayView.needsDisplay = true
+    }
+
+    private func currentViewportOrigin() -> CGPoint? {
+        scrollView.contentView.bounds.origin
+    }
+
+    private func restoreViewportOrigin(_ origin: CGPoint?) {
+        guard let origin else { return }
+        let clipView = scrollView.contentView
+        let maxX = max(0, documentView.bounds.width - clipView.bounds.width)
+        let maxY = max(0, documentView.bounds.height - clipView.bounds.height)
+        let clampedOrigin = CGPoint(
+            x: min(max(0, origin.x), maxX),
+            y: min(max(0, origin.y), maxY)
+        )
+        clipView.scroll(to: clampedOrigin)
+        scrollView.reflectScrolledClipView(clipView)
+        overlayView.needsDisplay = true
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            let clipView = self.scrollView.contentView
+            clipView.scroll(to: clampedOrigin)
+            self.scrollView.reflectScrolledClipView(clipView)
+            self.overlayView.needsDisplay = true
+        }
+    }
+}
+
+final class PDFPageRectificationEditorContainerView: NSView {
+    private let pdfView = PDFView()
+    private let overlayView = PageRectificationOverlayView()
+
+    private var currentZoomMode: ZoomMode = .fitWidth
     private var displayedPageIndex: Int?
+    private var refreshGeneration: Int = 0
     private var lastAppliedViewportSize: CGSize = .zero
     private var overlayRedrawObservers: [NSObjectProtocol] = []
     private weak var observedClipView: NSClipView?
@@ -293,6 +666,551 @@ final class PDFBandEditorContainerView: NSView {
         if lastAppliedViewportSize != viewportSize {
             lastAppliedViewportSize = viewportSize
             applyZoomMode()
+            if let displayedPageIndex {
+                refreshGeneration &+= 1
+                refreshPDFView(pageIndex: displayedPageIndex, generation: refreshGeneration)
+            } else {
+                overlayView.needsDisplay = true
+            }
+        } else {
+            overlayView.needsDisplay = true
+        }
+    }
+
+    func update(
+        pdfDocument: PDFDocument,
+        pageIndex: Int,
+        rectification: PageRectification?,
+        zoomMode: ZoomMode,
+        onUpdateRectification: @escaping (PageRectification) -> Void
+    ) {
+        let documentChanged = pdfView.document !== pdfDocument
+        if documentChanged {
+            pdfView.document = pdfDocument
+            displayedPageIndex = nil
+            lastAppliedViewportSize = .zero
+            configureOverlayObservers()
+        }
+
+        let pageChanged = displayedPageIndex != pageIndex
+        if pageChanged, let page = pdfDocument.page(at: pageIndex) {
+            pdfView.go(to: page)
+            displayedPageIndex = pageIndex
+        }
+
+        let zoomModeChanged = currentZoomMode != zoomMode
+        currentZoomMode = zoomMode
+
+        overlayView.update(
+            pageIndex: pageIndex,
+            page: pdfDocument.page(at: pageIndex),
+            rectification: rectification,
+            onUpdateRectification: onUpdateRectification
+        )
+
+        if documentChanged || pageChanged || zoomModeChanged {
+            guard bounds.size != .zero else {
+                overlayView.needsDisplay = true
+                return
+            }
+
+            refreshGeneration &+= 1
+            applyZoomMode()
+            refreshPDFView(pageIndex: pageIndex, generation: refreshGeneration)
+        } else {
+            overlayView.needsDisplay = true
+        }
+    }
+
+    private func applyZoomMode() {
+        guard let page = pdfView.currentPage else { return }
+        switch currentZoomMode {
+        case .fitWidth:
+            pdfView.autoScales = false
+            let pageBounds = page.bounds(for: .mediaBox)
+            let horizontalInset: CGFloat = 48
+            let width = max(200, pdfView.bounds.width - horizontalInset)
+            let scale = width / pageBounds.width
+            pdfView.scaleFactor = min(pdfView.maxScaleFactor, max(pdfView.minScaleFactor, scale))
+        case .fitPage:
+            pdfView.autoScales = true
+        }
+
+        overlayView.needsDisplay = true
+    }
+
+    private func refreshPDFView(pageIndex: Int, generation: Int) {
+        guard generation == refreshGeneration else { return }
+        let targetPage = pdfView.document?.page(at: pageIndex) ?? pdfView.currentPage
+        pdfView.layoutDocumentView()
+        pdfView.documentView?.needsLayout = true
+        pdfView.documentView?.layoutSubtreeIfNeeded()
+        pdfView.documentView?.needsDisplay = true
+        pdfView.needsDisplay = true
+        pdfView.displayIfNeeded()
+        if let targetPage {
+            pdfView.go(to: targetPage)
+        }
+        let targetOrigin = pdfView.documentView?.enclosingScrollView?.contentView.bounds.origin
+        forceScrollViewRefresh(origin: targetOrigin)
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self, generation == self.refreshGeneration else { return }
+            let targetPage = self.pdfView.document?.page(at: pageIndex) ?? self.pdfView.currentPage
+            self.pdfView.layoutDocumentView()
+            self.pdfView.documentView?.needsLayout = true
+            self.pdfView.documentView?.layoutSubtreeIfNeeded()
+            self.pdfView.documentView?.needsDisplay = true
+            self.pdfView.needsDisplay = true
+            self.pdfView.displayIfNeeded()
+            if let targetPage {
+                self.pdfView.go(to: targetPage)
+            }
+            let targetOrigin = self.pdfView.documentView?.enclosingScrollView?.contentView.bounds.origin
+            self.forceScrollViewRefresh(origin: targetOrigin)
+            self.overlayView.needsDisplay = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+            guard let self, generation == self.refreshGeneration else { return }
+            let targetPage = self.pdfView.document?.page(at: pageIndex) ?? self.pdfView.currentPage
+            self.pdfView.layoutDocumentView()
+            self.pdfView.documentView?.needsLayout = true
+            self.pdfView.documentView?.layoutSubtreeIfNeeded()
+            self.pdfView.documentView?.needsDisplay = true
+            self.pdfView.needsDisplay = true
+            self.pdfView.displayIfNeeded()
+            if let targetPage {
+                self.pdfView.go(to: targetPage)
+            }
+            let targetOrigin = self.pdfView.documentView?.enclosingScrollView?.contentView.bounds.origin
+            self.forceScrollViewRefresh(origin: targetOrigin)
+            self.overlayView.needsDisplay = true
+        }
+    }
+
+    private func forceScrollViewRefresh(origin: CGPoint?) {
+        guard let clipView = pdfView.documentView?.enclosingScrollView?.contentView else { return }
+        clipView.scroll(to: origin ?? clipView.bounds.origin)
+        clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+        pdfView.documentView?.needsDisplay = true
+        clipView.needsDisplay = true
+    }
+
+    private func configureOverlayObservers() {
+        tearDownOverlayObservers()
+
+        let center = NotificationCenter.default
+
+        overlayRedrawObservers.append(
+            center.addObserver(
+                forName: Notification.Name.PDFViewScaleChanged,
+                object: pdfView,
+                queue: .main
+            ) { [weak self] _ in
+                self?.overlayView.needsDisplay = true
+            }
+        )
+
+        overlayRedrawObservers.append(
+            center.addObserver(
+                forName: Notification.Name.PDFViewPageChanged,
+                object: pdfView,
+                queue: .main
+            ) { [weak self] _ in
+                self?.overlayView.needsDisplay = true
+            }
+        )
+
+        overlayRedrawObservers.append(
+            center.addObserver(
+                forName: Notification.Name.PDFViewVisiblePagesChanged,
+                object: pdfView,
+                queue: .main
+            ) { [weak self] _ in
+                self?.overlayView.needsDisplay = true
+            }
+        )
+
+        if let clipView = pdfView.documentView?.enclosingScrollView?.contentView {
+            clipView.postsBoundsChangedNotifications = true
+            observedClipView = clipView
+
+            overlayRedrawObservers.append(
+                center.addObserver(
+                    forName: NSView.boundsDidChangeNotification,
+                    object: clipView,
+                    queue: .main
+                ) { [weak self] _ in
+                    self?.overlayView.needsDisplay = true
+                }
+            )
+        }
+    }
+
+    private func tearDownOverlayObservers() {
+        let center = NotificationCenter.default
+        overlayRedrawObservers.forEach(center.removeObserver)
+        overlayRedrawObservers.removeAll()
+        observedClipView?.postsBoundsChangedNotifications = false
+        observedClipView = nil
+    }
+}
+
+private final class PageRectificationOverlayView: NSView {
+    private enum RectificationCorner: CaseIterable {
+        case topLeft
+        case topRight
+        case bottomRight
+        case bottomLeft
+    }
+
+    weak var pdfView: PDFView?
+    weak var viewportClipView: NSClipView?
+    var fixedPageFrame: CGRect?
+
+    private var pageIndex = 0
+    private var page: PDFPage?
+    private var rectification: PageRectification?
+    private var draftRectification: PageRectification?
+    private var activeCorner: RectificationCorner?
+    private var trackingArea: NSTrackingArea?
+    private var onUpdateRectification: ((PageRectification) -> Void)?
+
+    override var acceptsFirstResponder: Bool { true }
+
+    override func resetCursorRects() {
+        discardCursorRects()
+        addCursorRect(bounds, cursor: .arrow)
+    }
+
+    override func updateTrackingAreas() {
+        if let trackingArea {
+            removeTrackingArea(trackingArea)
+        }
+
+        let trackingArea = NSTrackingArea(
+            rect: .zero,
+            options: [.activeInKeyWindow, .inVisibleRect, .mouseMoved, .cursorUpdate],
+            owner: self,
+            userInfo: nil
+        )
+        addTrackingArea(trackingArea)
+        self.trackingArea = trackingArea
+        super.updateTrackingAreas()
+    }
+
+    override func mouseMoved(with event: NSEvent) {
+        updateCursor(for: convert(event.locationInWindow, from: nil))
+    }
+
+    override func cursorUpdate(with event: NSEvent) {
+        updateCursor(for: convert(event.locationInWindow, from: nil))
+    }
+
+    func update(
+        pageIndex: Int,
+        page: PDFPage?,
+        rectification: PageRectification?,
+        onUpdateRectification: @escaping (PageRectification) -> Void
+    ) {
+        self.pageIndex = pageIndex
+        self.page = page
+        self.rectification = rectification?.normalized()
+        self.onUpdateRectification = onUpdateRectification
+
+        if activeCorner == nil {
+            draftRectification = nil
+        }
+
+        window?.invalidateCursorRects(for: self)
+        updateCursorFromCurrentMouseLocation()
+        needsDisplay = true
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        guard let pageFrame = pageFrameInView() else { return }
+
+        let displayedRectification = displayedRectification()
+        let path = quadPath(for: displayedRectification, in: pageFrame)
+
+        NSColor.systemOrange.withAlphaComponent(0.1).setFill()
+        path.fill()
+
+        drawGrid(for: displayedRectification, in: pageFrame)
+
+        NSColor.systemOrange.setStroke()
+        path.lineWidth = 3
+        path.stroke()
+
+        for corner in RectificationCorner.allCases {
+            let handleRect = handleRect(for: corner, rectification: displayedRectification, in: pageFrame)
+            NSColor.systemOrange.setFill()
+            NSBezierPath(roundedRect: handleRect, xRadius: 5, yRadius: 5).fill()
+
+            NSColor.white.withAlphaComponent(0.95).setStroke()
+            let border = NSBezierPath(roundedRect: handleRect.insetBy(dx: 1.2, dy: 1.2), xRadius: 4, yRadius: 4)
+            border.lineWidth = 1.2
+            border.stroke()
+        }
+    }
+
+    override func mouseDown(with event: NSEvent) {
+        window?.makeFirstResponder(self)
+        let point = convert(event.locationInWindow, from: nil)
+        guard let pageFrame = pageFrameInView() else { return }
+
+        let displayedRectification = displayedRectification()
+        for corner in RectificationCorner.allCases {
+            if handleHitRect(for: corner, rectification: displayedRectification, in: pageFrame).contains(point) {
+                activeCorner = corner
+                draftRectification = displayedRectification
+                updateCursor(for: point)
+                needsDisplay = true
+                return
+            }
+        }
+    }
+
+    override func mouseDragged(with event: NSEvent) {
+        guard let activeCorner, var draftRectification, let page else { return }
+        let point = convert(event.locationInWindow, from: nil)
+        let fractionPoint = fractionPointFromViewPoint(point, in: page)
+
+        switch activeCorner {
+        case .topLeft:
+            draftRectification.topLeft = fractionPoint
+        case .topRight:
+            draftRectification.topRight = fractionPoint
+        case .bottomRight:
+            draftRectification.bottomRight = fractionPoint
+        case .bottomLeft:
+            draftRectification.bottomLeft = fractionPoint
+        }
+
+        self.draftRectification = draftRectification.normalized()
+        updateCursor(for: point)
+        needsDisplay = true
+    }
+
+    override func mouseUp(with event: NSEvent) {
+        if let draftRectification {
+            onUpdateRectification?(draftRectification.normalized())
+        }
+
+        activeCorner = nil
+        draftRectification = nil
+        updateCursor(for: convert(event.locationInWindow, from: nil))
+        needsDisplay = true
+    }
+
+    private func displayedRectification() -> PageRectification {
+        draftRectification?.normalized()
+            ?? rectification?.normalized()
+            ?? PageRectification.default(pageIndex: pageIndex)
+    }
+
+    private func pageFrameInView() -> CGRect? {
+        guard let pdfView, let page else { return nil }
+        return pdfView.convert(page.bounds(for: .mediaBox), from: page)
+    }
+
+    private func fractionPointFromViewPoint(_ point: CGPoint, in page: PDFPage) -> FractionPoint {
+        guard let pdfView else { return FractionPoint(x: 0.5, y: 0.5) }
+        let pagePoint = pdfView.convert(point, to: page)
+        let pageBounds = page.bounds(for: .mediaBox)
+        let normalizedX = (pagePoint.x - pageBounds.minX) / pageBounds.width
+        let normalizedY = (pagePoint.y - pageBounds.minY) / pageBounds.height
+
+        return FractionPoint(
+            x: Double(max(0.0, min(1.0, normalizedX))),
+            y: Double(max(0.0, min(1.0, 1.0 - normalizedY)))
+        )
+    }
+
+    private func point(for point: FractionPoint, in pageFrame: CGRect) -> CGPoint {
+        CGPoint(
+            x: pageFrame.minX + pageFrame.width * point.x,
+            y: pageFrame.maxY - pageFrame.height * point.y
+        )
+    }
+
+    private func quadPath(for rectification: PageRectification, in pageFrame: CGRect) -> NSBezierPath {
+        let path = NSBezierPath()
+        path.move(to: point(for: rectification.topLeft, in: pageFrame))
+        path.line(to: point(for: rectification.topRight, in: pageFrame))
+        path.line(to: point(for: rectification.bottomRight, in: pageFrame))
+        path.line(to: point(for: rectification.bottomLeft, in: pageFrame))
+        path.close()
+        return path
+    }
+
+    private func handleRect(
+        for corner: RectificationCorner,
+        rectification: PageRectification,
+        in pageFrame: CGRect
+    ) -> CGRect {
+        let size: CGFloat = 16
+        let center: CGPoint
+
+        switch corner {
+        case .topLeft:
+            center = point(for: rectification.topLeft, in: pageFrame)
+        case .topRight:
+            center = point(for: rectification.topRight, in: pageFrame)
+        case .bottomRight:
+            center = point(for: rectification.bottomRight, in: pageFrame)
+        case .bottomLeft:
+            center = point(for: rectification.bottomLeft, in: pageFrame)
+        }
+
+        return CGRect(x: center.x - size / 2, y: center.y - size / 2, width: size, height: size)
+    }
+
+    private func handleHitRect(
+        for corner: RectificationCorner,
+        rectification: PageRectification,
+        in pageFrame: CGRect
+    ) -> CGRect {
+        handleRect(for: corner, rectification: rectification, in: pageFrame).insetBy(dx: -8, dy: -8)
+    }
+
+    private func drawGrid(for rectification: PageRectification, in pageFrame: CGRect) {
+        NSColor.systemOrange.withAlphaComponent(0.28).setStroke()
+
+        for step in 1...3 {
+            let t = CGFloat(step) / 4
+            let left = interpolate(
+                from: point(for: rectification.topLeft, in: pageFrame),
+                to: point(for: rectification.bottomLeft, in: pageFrame),
+                t: t
+            )
+            let right = interpolate(
+                from: point(for: rectification.topRight, in: pageFrame),
+                to: point(for: rectification.bottomRight, in: pageFrame),
+                t: t
+            )
+
+            let horizontal = NSBezierPath()
+            horizontal.move(to: left)
+            horizontal.line(to: right)
+            horizontal.lineWidth = 1
+            horizontal.stroke()
+        }
+
+        for step in 1...3 {
+            let t = CGFloat(step) / 4
+            let top = interpolate(
+                from: point(for: rectification.topLeft, in: pageFrame),
+                to: point(for: rectification.topRight, in: pageFrame),
+                t: t
+            )
+            let bottom = interpolate(
+                from: point(for: rectification.bottomLeft, in: pageFrame),
+                to: point(for: rectification.bottomRight, in: pageFrame),
+                t: t
+            )
+
+            let vertical = NSBezierPath()
+            vertical.move(to: top)
+            vertical.line(to: bottom)
+            vertical.lineWidth = 1
+            vertical.stroke()
+        }
+    }
+
+    private func interpolate(from start: CGPoint, to end: CGPoint, t: CGFloat) -> CGPoint {
+        CGPoint(
+            x: start.x + (end.x - start.x) * t,
+            y: start.y + (end.y - start.y) * t
+        )
+    }
+
+    private func updateCursor(for point: CGPoint) {
+        guard let pageFrame = pageFrameInView() else {
+            NSCursor.arrow.set()
+            return
+        }
+
+        let rectification = displayedRectification()
+        let isOverHandle = RectificationCorner.allCases.contains {
+            handleHitRect(for: $0, rectification: rectification, in: pageFrame).contains(point)
+        }
+
+        (isOverHandle ? NSCursor.crosshair : NSCursor.arrow).set()
+    }
+
+    private func updateCursorFromCurrentMouseLocation() {
+        guard let window else { return }
+        updateCursor(for: convert(window.mouseLocationOutsideOfEventStream, from: nil))
+    }
+}
+
+final class PDFBandEditorContainerView: NSView {
+    private let pdfView = PDFView()
+    private let overlayView = BandOverlayView()
+
+    private var currentZoomMode: ZoomMode = .fitWidth
+    private var displayedPageIndex: Int?
+    private var refreshGeneration: Int = 0
+    private var lastAppliedViewportSize: CGSize = .zero
+    private var overlayRedrawObservers: [NSObjectProtocol] = []
+    private weak var observedClipView: NSClipView?
+
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        pdfView.autoScales = false
+        pdfView.backgroundColor = .windowBackgroundColor
+        pdfView.displayMode = .singlePage
+        pdfView.displayDirection = .vertical
+        pdfView.displaysPageBreaks = true
+        pdfView.minScaleFactor = 0.25
+        pdfView.maxScaleFactor = 8.0
+
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        overlayView.pdfView = pdfView
+
+        addSubview(pdfView)
+        addSubview(overlayView)
+
+        NSLayoutConstraint.activate([
+            pdfView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            pdfView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            pdfView.topAnchor.constraint(equalTo: topAnchor),
+            pdfView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            overlayView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            overlayView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            overlayView.topAnchor.constraint(equalTo: topAnchor),
+            overlayView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    deinit {
+        tearDownOverlayObservers()
+    }
+
+    override func layout() {
+        super.layout()
+        let viewportSize = bounds.size
+        guard viewportSize != .zero else { return }
+
+        if lastAppliedViewportSize != viewportSize {
+            lastAppliedViewportSize = viewportSize
+            applyZoomMode()
+            if let displayedPageIndex {
+                refreshGeneration &+= 1
+                refreshPDFView(pageIndex: displayedPageIndex, generation: refreshGeneration)
+            } else {
+                overlayView.needsDisplay = true
+            }
         } else {
             overlayView.needsDisplay = true
         }
@@ -355,7 +1273,14 @@ final class PDFBandEditorContainerView: NSView {
         )
 
         if documentChanged || pageChanged || zoomModeChanged {
+            guard bounds.size != .zero else {
+                overlayView.needsDisplay = true
+                return
+            }
+
+            refreshGeneration &+= 1
             applyZoomMode()
+            refreshPDFView(pageIndex: pageIndex, generation: refreshGeneration)
         } else {
             restoreViewportOrigin(preservedViewportOrigin)
             overlayView.needsDisplay = true
@@ -377,6 +1302,64 @@ final class PDFBandEditorContainerView: NSView {
         }
 
         overlayView.needsDisplay = true
+    }
+
+    private func refreshPDFView(pageIndex: Int, generation: Int) {
+        guard generation == refreshGeneration else { return }
+        let targetPage = pdfView.document?.page(at: pageIndex) ?? pdfView.currentPage
+        pdfView.layoutDocumentView()
+        pdfView.documentView?.needsLayout = true
+        pdfView.documentView?.layoutSubtreeIfNeeded()
+        pdfView.documentView?.needsDisplay = true
+        pdfView.needsDisplay = true
+        pdfView.displayIfNeeded()
+        if let targetPage {
+            pdfView.go(to: targetPage)
+        }
+        let targetOrigin = pdfView.documentView?.enclosingScrollView?.contentView.bounds.origin
+        forceScrollViewRefresh(origin: targetOrigin)
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self, generation == self.refreshGeneration else { return }
+            let targetPage = self.pdfView.document?.page(at: pageIndex) ?? self.pdfView.currentPage
+            self.pdfView.layoutDocumentView()
+            self.pdfView.documentView?.needsLayout = true
+            self.pdfView.documentView?.layoutSubtreeIfNeeded()
+            self.pdfView.documentView?.needsDisplay = true
+            self.pdfView.needsDisplay = true
+            self.pdfView.displayIfNeeded()
+            if let targetPage {
+                self.pdfView.go(to: targetPage)
+            }
+            let targetOrigin = self.pdfView.documentView?.enclosingScrollView?.contentView.bounds.origin
+            self.forceScrollViewRefresh(origin: targetOrigin)
+            self.overlayView.needsDisplay = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+            guard let self, generation == self.refreshGeneration else { return }
+            let targetPage = self.pdfView.document?.page(at: pageIndex) ?? self.pdfView.currentPage
+            self.pdfView.layoutDocumentView()
+            self.pdfView.documentView?.needsLayout = true
+            self.pdfView.documentView?.layoutSubtreeIfNeeded()
+            self.pdfView.documentView?.needsDisplay = true
+            self.pdfView.needsDisplay = true
+            self.pdfView.displayIfNeeded()
+            if let targetPage {
+                self.pdfView.go(to: targetPage)
+            }
+            let targetOrigin = self.pdfView.documentView?.enclosingScrollView?.contentView.bounds.origin
+            self.forceScrollViewRefresh(origin: targetOrigin)
+            self.overlayView.needsDisplay = true
+        }
+    }
+
+    private func forceScrollViewRefresh(origin: CGPoint?) {
+        guard let clipView = pdfView.documentView?.enclosingScrollView?.contentView else { return }
+        clipView.scroll(to: origin ?? clipView.bounds.origin)
+        clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+        pdfView.documentView?.needsDisplay = true
+        clipView.needsDisplay = true
     }
 
     private func configureOverlayObservers() {
@@ -468,6 +1451,16 @@ final class PDFBandEditorContainerView: NSView {
             clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
             self.overlayView.needsDisplay = true
         }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+            guard let self,
+                  let clipView = self.pdfView.documentView?.enclosingScrollView?.contentView
+            else { return }
+
+            clipView.scroll(to: origin)
+            clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+            self.overlayView.needsDisplay = true
+        }
     }
 }
 
@@ -517,6 +1510,8 @@ private final class BandOverlayView: NSView {
     }
 
     weak var pdfView: PDFView?
+    weak var viewportClipView: NSClipView?
+    var fixedPageFrame: CGRect?
 
     private var pageIndex = 0
     private var page: PDFPage?
@@ -773,7 +1768,7 @@ private final class BandOverlayView: NSView {
         window?.makeFirstResponder(self)
         let point = convert(event.locationInWindow, from: nil)
 
-        guard let page, let pageFrame = pageFrameInView() else { return }
+        guard let pageFrame = pageFrameInView() else { return }
 
         if isEditingHeaderSelection {
             let target = hoverTarget(at: point)
@@ -786,7 +1781,7 @@ private final class BandOverlayView: NSView {
                 return
             }
 
-            let fractionPoint = headerFractionPointFromViewPoint(point, in: page)
+            let fractionPoint = headerFractionPointFromViewPoint(point)
             let dragMode: HeaderDragMode
             switch target {
             case .headerResize(let corner):
@@ -832,7 +1827,7 @@ private final class BandOverlayView: NSView {
                 dragState = DragState(
                     bandID: band.id,
                     mode: .top,
-                    startPointerFraction: fractionFromViewPoint(point, in: page),
+                    startPointerFraction: fractionFromViewPoint(point),
                     topFraction: band.topFraction,
                     bottomFraction: band.bottomFraction
                 )
@@ -847,7 +1842,7 @@ private final class BandOverlayView: NSView {
                 dragState = DragState(
                     bandID: band.id,
                     mode: .bottom,
-                    startPointerFraction: fractionFromViewPoint(point, in: page),
+                    startPointerFraction: fractionFromViewPoint(point),
                     topFraction: band.topFraction,
                     bottomFraction: band.bottomFraction
                 )
@@ -862,7 +1857,7 @@ private final class BandOverlayView: NSView {
                 dragState = DragState(
                     bandID: band.id,
                     mode: .move,
-                    startPointerFraction: fractionFromViewPoint(point, in: page),
+                    startPointerFraction: fractionFromViewPoint(point),
                     topFraction: band.topFraction,
                     bottomFraction: band.bottomFraction
                 )
@@ -877,15 +1872,15 @@ private final class BandOverlayView: NSView {
         needsDisplay = true
 
         guard canCreateBands, pageFrame.contains(point) else { return }
-        let centerFraction = fractionFromViewPoint(point, in: page)
+        let centerFraction = fractionFromViewPoint(point)
         onCreateBand?(centerFraction)
         updateCursor(for: point)
     }
 
     override func mouseDragged(with event: NSEvent) {
-        if var headerDragState, let page {
+        if var headerDragState {
             let point = convert(event.locationInWindow, from: nil)
-            headerDragState.currentPoint = headerFractionPointFromViewPoint(point, in: page)
+            headerDragState.currentPoint = headerFractionPointFromViewPoint(point)
             self.headerDragState = headerDragState
             headerDraft = headerSelection(from: headerDragState)
             updateCursor(for: point)
@@ -893,9 +1888,9 @@ private final class BandOverlayView: NSView {
             return
         }
 
-        guard let page, var dragState else { return }
+        guard var dragState else { return }
         let point = convert(event.locationInWindow, from: nil)
-        let fraction = fractionFromViewPoint(point, in: page)
+        let fraction = fractionFromViewPoint(point)
 
         switch dragState.mode {
         case .top:
@@ -929,6 +1924,7 @@ private final class BandOverlayView: NSView {
 
     override func mouseUp(with event: NSEvent) {
         if let headerDragState {
+            let preservedViewportOrigin = currentViewportOrigin()
             let selection = headerSelection(from: headerDragState)
             let widthFraction = 1 - selection.leftFraction - selection.rightFraction
             let heightFraction = selection.bottomFraction - selection.topFraction
@@ -943,12 +1939,14 @@ private final class BandOverlayView: NSView {
             }
             self.headerDragState = nil
             headerDraft = nil
+            restoreViewportOrigin(preservedViewportOrigin)
             updateCursor(for: convert(event.locationInWindow, from: nil))
             needsDisplay = true
             return
         }
 
         guard let dragState else { return }
+        let preservedViewportOrigin = currentViewportOrigin()
 
         if let band = bands.first(where: { $0.id == dragState.bandID }) {
             let topChanged = abs(band.topFraction - dragState.topFraction) > 0.0001
@@ -959,6 +1957,7 @@ private final class BandOverlayView: NSView {
         }
 
         self.dragState = nil
+        restoreViewportOrigin(preservedViewportOrigin)
         updateCursor(for: convert(event.locationInWindow, from: nil))
         needsDisplay = true
     }
@@ -1020,6 +2019,40 @@ private final class BandOverlayView: NSView {
         )
     }
 
+    private func currentViewportOrigin() -> CGPoint? {
+        viewportClipView?.bounds.origin ?? pdfView?.documentView?.enclosingScrollView?.contentView.bounds.origin
+    }
+
+    private func restoreViewportOrigin(_ origin: CGPoint?) {
+        guard let origin,
+              let clipView = currentClipView()
+        else { return }
+
+        clipView.scroll(to: origin)
+        clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+        needsDisplay = true
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self,
+                  let clipView = self.currentClipView()
+            else { return }
+
+            clipView.scroll(to: origin)
+            clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+            self.needsDisplay = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+            guard let self,
+                  let clipView = self.currentClipView()
+            else { return }
+
+            clipView.scroll(to: origin)
+            clipView.enclosingScrollView?.reflectScrolledClipView(clipView)
+            self.needsDisplay = true
+        }
+    }
+
     private func headerHandleRect(for headerRect: CGRect, corner: HeaderCorner) -> CGRect {
         let size: CGFloat = 14
         let center: CGPoint
@@ -1048,6 +2081,9 @@ private final class BandOverlayView: NSView {
     }
 
     private func pageFrameInView() -> CGRect? {
+        if let fixedPageFrame {
+            return fixedPageFrame
+        }
         guard let pdfView, let page else { return nil }
         return pdfView.convert(page.bounds(for: .mediaBox), from: page)
     }
@@ -1082,24 +2118,30 @@ private final class BandOverlayView: NSView {
         )
     }
 
-    private func fractionFromViewPoint(_ point: CGPoint, in page: PDFPage) -> Double {
-        guard let pdfView else { return 0.5 }
-        let pagePoint = pdfView.convert(point, to: page)
-        let pageBounds = page.bounds(for: .mediaBox)
-        let normalizedY = (pagePoint.y - pageBounds.minY) / pageBounds.height
+    private func fractionFromViewPoint(_ point: CGPoint) -> Double {
+        guard let pageFrame = pageFrameInView(), pageFrame.height > 0 else { return 0.5 }
+        let normalizedY = (point.y - pageFrame.minY) / pageFrame.height
         return max(0.0, min(1.0, 1.0 - normalizedY))
     }
 
-    private func headerFractionPointFromViewPoint(_ point: CGPoint, in page: PDFPage) -> CGPoint {
-        guard let pdfView else { return CGPoint(x: 0.5, y: 0.5) }
-        let pagePoint = pdfView.convert(point, to: page)
-        let pageBounds = page.bounds(for: .mediaBox)
-        let normalizedX = (pagePoint.x - pageBounds.minX) / pageBounds.width
-        let normalizedY = (pagePoint.y - pageBounds.minY) / pageBounds.height
+    private func headerFractionPointFromViewPoint(_ point: CGPoint) -> CGPoint {
+        guard let pageFrame = pageFrameInView(),
+              pageFrame.width > 0,
+              pageFrame.height > 0
+        else {
+            return CGPoint(x: 0.5, y: 0.5)
+        }
+
+        let normalizedX = (point.x - pageFrame.minX) / pageFrame.width
+        let normalizedY = (point.y - pageFrame.minY) / pageFrame.height
         return CGPoint(
             x: max(0.0, min(1.0, normalizedX)),
             y: max(0.0, min(1.0, 1.0 - normalizedY))
         )
+    }
+
+    private func currentClipView() -> NSClipView? {
+        viewportClipView ?? pdfView?.documentView?.enclosingScrollView?.contentView
     }
 
     private func headerSelection(from dragState: HeaderSelectionDragState) -> SourceHeaderSelection {

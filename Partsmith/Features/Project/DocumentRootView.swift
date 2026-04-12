@@ -8,14 +8,28 @@ struct DocumentExportCommands {
     var canExportAllParts: Bool
 }
 
+struct DocumentBandCommands {
+    var deleteSelectedBand: () -> Void
+    var canDeleteSelectedBand: Bool
+}
+
 private struct DocumentExportCommandsKey: FocusedValueKey {
     typealias Value = DocumentExportCommands
+}
+
+private struct DocumentBandCommandsKey: FocusedValueKey {
+    typealias Value = DocumentBandCommands
 }
 
 extension FocusedValues {
     var documentExportCommands: DocumentExportCommands? {
         get { self[DocumentExportCommandsKey.self] }
         set { self[DocumentExportCommandsKey.self] = newValue }
+    }
+
+    var documentBandCommands: DocumentBandCommands? {
+        get { self[DocumentBandCommandsKey.self] }
+        set { self[DocumentBandCommandsKey.self] = newValue }
     }
 }
 
@@ -32,34 +46,42 @@ struct DocumentRootView: View {
                 document: document,
                 onNewPartRequested: {
                     document.setHeaderSelectionEditing(false)
+                    document.setPageRectificationEditing(false)
                     showingAddPartSheet = true
                 }
             )
         } detail: {
-            HSplitView {
-                Group {
-                    switch document.canvasMode {
-                    case .source:
-                        SourceCanvasView(
-                            document: document,
-                            onImportRequested: importPDF,
-                            onImportDropped: importPDF(from:),
-                            onNewPartRequested: {
-                                document.setHeaderSelectionEditing(false)
-                                showingAddPartSheet = true
-                            }
-                        )
-                    case .preview:
-                        PartPreviewView(
-                            document: document,
-                            onExportRequested: exportSelectedPart
-                        )
-                }
-            }
-                .frame(minWidth: 760, maxWidth: .infinity, maxHeight: .infinity)
+            VStack(spacing: 0) {
+                HSplitView {
+                    Group {
+                        switch document.canvasMode {
+                        case .source:
+                            SourceCanvasView(
+                                document: document,
+                                onImportRequested: importPDF,
+                                onImportDropped: importPDF(from:),
+                                onNewPartRequested: {
+                                    document.setHeaderSelectionEditing(false)
+                                    document.setPageRectificationEditing(false)
+                                    showingAddPartSheet = true
+                                }
+                            )
+                        case .preview:
+                            PartPreviewView(
+                                document: document,
+                                onExportRequested: exportSelectedPart
+                            )
+                        }
+                    }
+                    .frame(minWidth: 760, maxWidth: .infinity, maxHeight: .infinity)
 
-                InspectorView(document: document)
-                    .frame(minWidth: 300, idealWidth: 320, maxWidth: 360, maxHeight: .infinity)
+                    InspectorView(document: document)
+                        .frame(minWidth: 300, idealWidth: 320, maxWidth: 360, maxHeight: .infinity)
+                }
+
+                if let progress = document.rectificationAutoProgress {
+                    RectificationStatusBar(progress: progress)
+                }
             }
         }
         .navigationSplitViewStyle(.balanced)
@@ -70,6 +92,13 @@ struct DocumentRootView: View {
                 exportAllParts: exportAllParts,
                 canExportSelectedPart: exportSelectedDisabled == false,
                 canExportAllParts: exportAllDisabled == false
+            )
+        )
+        .focusedSceneValue(
+            \.documentBandCommands,
+            DocumentBandCommands(
+                deleteSelectedBand: deleteSelectedBand,
+                canDeleteSelectedBand: document.selectedBandID != nil
             )
         )
         .toolbar {
@@ -96,10 +125,35 @@ struct DocumentRootView: View {
                     }
                     .disabled(document.currentPageIndex + 1 >= document.project.pageCount)
 
-                    Button("Copy To Next Page", systemImage: "doc.on.doc") {
-                        document.copyCurrentPageBandsToNextPage()
+                    Menu("Copy Bands") {
+                        Button("All Parts to Next Page") {
+                            document.copyCurrentPageBandsToNextPage()
+                        }
+                        .disabled(document.canCopyCurrentPageBandsToNextPage == false)
+
+                        Button("Selected Part to Next Page") {
+                            document.copySelectedPartBandsToNextPage()
+                        }
+                        .disabled(document.canCopySelectedPartBandsToNextPage == false)
+
+                        Divider()
+
+                        Button("All Parts to Remaining Pages") {
+                            document.copyCurrentPageBandsToRemainingPages()
+                        }
+                        .disabled(document.canCopyCurrentPageBandsToRemainingPages == false)
+
+                        Button("Selected Part to Remaining Pages") {
+                            document.copySelectedPartBandsToRemainingPages()
+                        }
+                        .disabled(document.canCopySelectedPartBandsToRemainingPages == false)
                     }
-                    .disabled(document.canCopyCurrentPageBandsToNextPage == false)
+                    .disabled(
+                        document.canCopyCurrentPageBandsToNextPage == false &&
+                        document.canCopySelectedPartBandsToNextPage == false &&
+                        document.canCopyCurrentPageBandsToRemainingPages == false &&
+                        document.canCopySelectedPartBandsToRemainingPages == false
+                    )
 
                     Button(document.zoomMode == .fitWidth ? "Fit Width" : "Fit Width") {
                         document.zoomMode = .fitWidth
@@ -117,7 +171,7 @@ struct DocumentRootView: View {
                 .keyboardShortcut("e", modifiers: [.command, .shift])
 
                 Picker(
-                    "Mode",
+                    "View",
                     selection: Binding(
                         get: { document.canvasMode },
                         set: { document.canvasMode = $0 }
@@ -141,6 +195,7 @@ struct DocumentRootView: View {
         .sheet(isPresented: $showingAddPartSheet) {
             AddPartSheet(document: document, isPresented: $showingAddPartSheet)
         }
+        .onDeleteCommand(perform: deleteSelectedBand)
         .alert(item: $presentedError) { error in
             Alert(
                 title: Text(error.title),
@@ -243,6 +298,11 @@ struct DocumentRootView: View {
         }
     }
 
+    private func deleteSelectedBand() {
+        guard let selectedBandID = document.selectedBandID else { return }
+        document.deleteBand(selectedBandID)
+    }
+
     private func uniqueExportFolderURL(named folderName: String, inside parentURL: URL) -> URL {
         let fileManager = FileManager.default
         var candidate = parentURL.appendingPathComponent(folderName, isDirectory: true)
@@ -262,6 +322,38 @@ struct DocumentRootView: View {
             .replacingOccurrences(of: ":", with: "-")
             .trimmingCharacters(in: .whitespacesAndNewlines)
         return sanitized.isEmpty ? fallback : sanitized
+    }
+}
+
+private struct RectificationStatusBar: View {
+    var progress: RectificationAutoProgress
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Text("Deskew")
+                .font(.subheadline.weight(.semibold))
+
+            ProgressView(value: progress.fractionComplete)
+                .progressViewStyle(.linear)
+                .frame(width: 220)
+
+            Text("\(progress.completedPageCount)/\(progress.totalPageCount)")
+                .monospacedDigit()
+                .foregroundStyle(.secondary)
+
+            Text("\(progress.estimatedPageCount) found")
+                .foregroundStyle(.secondary)
+
+            Spacer()
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
+        .background(.thinMaterial)
+        .overlay(alignment: .top) {
+            Rectangle()
+                .fill(Color.primary.opacity(0.08))
+                .frame(height: 1)
+        }
     }
 }
 
