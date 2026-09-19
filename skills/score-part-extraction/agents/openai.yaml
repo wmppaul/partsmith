@@ -1,0 +1,4 @@
+interface:
+  display_name: "Score Part Extraction"
+  short_description: "Extract and review instrument parts from score PDFs"
+  default_prompt: "Use $score-part-extraction to extract the requested parts from this score, visually review every output, and deliver PDFs plus an editable Partsmith project."

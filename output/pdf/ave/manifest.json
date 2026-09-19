@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+  "inputRecipeSHA256": "a1598c55f04a7e5b6fd8493755b5e9b949a33ea6b27a23335be14c49a371e8e2",
+  "scopePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "status": "reviewed",
+  "parts": [
+    {
+      "name": "Soprano",
+      "file": "Soprano.pdf",
+      "sha256": "d880481e1433bf434ab4c2359bc66f42f8c6f3cb4db6455f9ab4ad70b1376660",
+      "outputPages": 1,
+      "bandCount": 8,
+      "placements": [
+        {
+          "id": "ave-p1-s1",
+          "sourcePage": 1,
+          "system": "1",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            125.0,
+            597.0,
+            168.0
+          ],
+          "destinationRect": [
+            36.0,
+            126.0,
+            576.0,
+            166.2426343154246
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p1-s2",
+          "sourcePage": 1,
+          "system": "2",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            442.0,
+            597.0,
+            487.0
+          ],
+          "destinationRect": [
+            36.0,
+            184.2426343154246,
+            576.0,
+            226.35701906412476
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p2-s1",
+          "sourcePage": 2,
+          "system": "1",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            88.0,
+            597.0,
+            133.0
+          ],
+          "destinationRect": [
+            36.0,
+            244.35701906412476,
+            576.0,
+            286.4714038128249
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p2-s2",
+          "sourcePage": 2,
+          "system": "2",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            425.0,
+            597.0,
+            468.25
+          ],
+          "destinationRect": [
+            36.0,
+            304.4714038128249,
+            576.0,
+            344.948006932409
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p3-s1",
+          "sourcePage": 3,
+          "system": "1",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            88.0,
+            597.0,
+            133.0
+          ],
+          "destinationRect": [
+            36.0,
+            362.948006932409,
+            576.0,
+            405.06239168110915
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p3-s2",
+          "sourcePage": 3,
+          "system": "2",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            432.0,
+            597.0,
+            478.0
+          ],
+          "destinationRect": [
+            36.0,
+            423.06239168110915,
+            576.0,
+            466.1126516464471
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p4-s1",
+          "sourcePage": 4,
+          "system": "1",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            88.0,
+            597.0,
+            131.0
+          ],
+          "destinationRect": [
+            36.0,
+            484.1126516464471,
+            576.0,
+            524.3552859618717
+          ],
+          "exclusions": []
+        },
+        {
+          "id": "ave-p4-s2",
+          "sourcePage": 4,
+          "system": "2",
+          "outputPage": 1,
+          "sourceRect": [
+            20.0,
+            434.0,
+            597.0,
+            479.0
+          ],
+          "destinationRect": [
+            36.0,
+            542.3552859618717,
+            576.0,
+            584.4696707105719
+          ],
+          "exclusions": []
+        }
+      ]
+    }
+  ],
+  "recipeSHA256": "57ff6f550cdc051dce8825022862a669f3c4a7aeeae12b88cdd94d4e5e2f1da9",
+  "review": {
+    "reviewer": "Independent app_audit agent; full source and output visual review",
+    "outputSHA256": {
+      "Soprano.pdf": "d880481e1433bf434ab4c2359bc66f42f8c6f3cb4db6455f9ab4ad70b1376660"
+    },
+    "reviewedBandIDs": [
+      "ave-p1-s1",
+      "ave-p1-s2",
+      "ave-p2-s1",
+      "ave-p2-s2",
+      "ave-p3-s1",
+      "ave-p3-s2",
+      "ave-p4-s1",
+      "ave-p4-s2"
+    ],
+    "checks": {
+      "identity": "pass",
+      "coverage": "pass",
+      "cropEdges": "pass",
+      "globalMarkings": "pass",
+      "readability": "pass",
+      "pageTurns": "pass"
+    },
+    "notes": "Compared the full single-page final Soprano output with all four full source pages and every expanded source strip. All eight soprano systems occur in source order (starts 1, 7, 13, 19, 25, 30, 35, 41), with the final double bar and all ending rests. Initial drafts cut lower lyric glyphs and the long slur above system 35; each band was expanded and checked again. The final p2 system 2 lower boundary is 468.25 points: soprano lyric ink ends at 467.5, while the neighboring Alto clef begins at 468.5. The final output retains complete lyrics, stems, accidentals, ties/slurs, Adagio and sotto voce, and has no neighboring Alto notation. Source bracket fragments at the left are retained score context. Letter-sized single page has readable engraving, preserved aspect ratio, clear headings and no page turn. This review covers the complete Soprano part only; no transcription or transposition was performed."
+  }
+}

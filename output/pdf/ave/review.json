@@ -1,0 +1,25 @@
+{
+  "reviewer": "Independent app_audit agent; full source and output visual review",
+  "outputSHA256": {
+    "Soprano.pdf": "d880481e1433bf434ab4c2359bc66f42f8c6f3cb4db6455f9ab4ad70b1376660"
+  },
+  "reviewedBandIDs": [
+    "ave-p1-s1",
+    "ave-p1-s2",
+    "ave-p2-s1",
+    "ave-p2-s2",
+    "ave-p3-s1",
+    "ave-p3-s2",
+    "ave-p4-s1",
+    "ave-p4-s2"
+  ],
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "cropEdges": "pass",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "pageTurns": "pass"
+  },
+  "notes": "Compared the full single-page final Soprano output with all four full source pages and every expanded source strip. All eight soprano systems occur in source order (starts 1, 7, 13, 19, 25, 30, 35, 41), with the final double bar and all ending rests. Initial drafts cut lower lyric glyphs and the long slur above system 35; each band was expanded and checked again. The final p2 system 2 lower boundary is 468.25 points: soprano lyric ink ends at 467.5, while the neighboring Alto clef begins at 468.5. The final output retains complete lyrics, stems, accidentals, ties/slurs, Adagio and sotto voce, and has no neighboring Alto notation. Source bracket fragments at the left are retained score context. Letter-sized single page has readable engraving, preserved aspect ratio, clear headings and no page turn. This review covers the complete Soprano part only; no transcription or transposition was performed."
+}

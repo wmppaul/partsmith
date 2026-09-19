@@ -39,6 +39,7 @@ struct DocumentRootView: View {
 
     @State private var presentedError: PresentedError?
     @State private var showingAddPartSheet = false
+    @State private var showingStaffDetectionSheet = false
 
     var body: some View {
         NavigationSplitView {
@@ -125,6 +126,14 @@ struct DocumentRootView: View {
                     }
                     .disabled(document.currentPageIndex + 1 >= document.project.pageCount)
 
+                    Button("Find Staves", systemImage: "music.note.list") {
+                        document.setHeaderSelectionEditing(false)
+                        document.setPageRectificationEditing(false)
+                        showingStaffDetectionSheet = true
+                    }
+                    .disabled(document.project.parts.isEmpty || document.isAutoEstimatingPageRectifications)
+                    .help("Find editable staff bands on this page using offline image analysis. Create a part first.")
+
                     Menu("Copy Bands") {
                         Button("All Parts to Next Page") {
                             document.copyCurrentPageBandsToNextPage()
@@ -194,6 +203,9 @@ struct DocumentRootView: View {
         }
         .sheet(isPresented: $showingAddPartSheet) {
             AddPartSheet(document: document, isPresented: $showingAddPartSheet)
+        }
+        .sheet(isPresented: $showingStaffDetectionSheet) {
+            StaffDetectionView(document: document)
         }
         .onDeleteCommand(perform: deleteSelectedBand)
         .alert(item: $presentedError) { error in

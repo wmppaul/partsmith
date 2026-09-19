@@ -417,6 +417,43 @@ enum BarNumberDetectionMethod: String, Codable {
     }
 }
 
+// A reversible whiteout area in the same full-page coordinates as its crop band.
+struct BandExclusion: Codable, Identifiable, Equatable {
+    var id: UUID
+    var topFraction: Double
+    var bottomFraction: Double
+    var leftFraction: Double
+    var rightFraction: Double
+
+    init(id: UUID = UUID(), topFraction: Double, bottomFraction: Double, leftFraction: Double, rightFraction: Double) {
+        self.id = id
+        self.topFraction = topFraction
+        self.bottomFraction = bottomFraction
+        self.leftFraction = leftFraction
+        self.rightFraction = rightFraction
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case id, topFraction, bottomFraction, leftFraction, rightFraction
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        topFraction = try container.decode(Double.self, forKey: .topFraction)
+        bottomFraction = try container.decode(Double.self, forKey: .bottomFraction)
+        leftFraction = try container.decode(Double.self, forKey: .leftFraction)
+        rightFraction = try container.decode(Double.self, forKey: .rightFraction)
+    }
+
+    func isValid(in band: BandModel) -> Bool {
+        [topFraction, bottomFraction, leftFraction, rightFraction].allSatisfy { $0.isFinite && $0 >= 0 && $0 <= 1 }
+            && bottomFraction > topFraction && leftFraction + rightFraction < 1
+            && topFraction >= band.topFraction && bottomFraction <= band.bottomFraction
+            && leftFraction >= band.leftFraction && rightFraction >= band.rightFraction
+    }
+}
+
 struct BandModel: Codable, Identifiable, Equatable {
     var id: UUID
     var pageIndex: Int
@@ -431,6 +468,9 @@ struct BandModel: Codable, Identifiable, Equatable {
     var barNumberValue: Int?
     var barNumberConfidence: Double?
     var barNumberDetectionMethod: BarNumberDetectionMethod?
+    var exclusions: [BandExclusion]
+    var editorialLabel: String
+    var pageBreakBefore: Bool
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -446,6 +486,9 @@ struct BandModel: Codable, Identifiable, Equatable {
         case barNumberValue
         case barNumberConfidence
         case barNumberDetectionMethod
+        case exclusions
+        case editorialLabel
+        case pageBreakBefore
     }
 
     init(
@@ -461,7 +504,10 @@ struct BandModel: Codable, Identifiable, Equatable {
         barNumberMode: BarNumberMode = .automatic,
         barNumberValue: Int? = nil,
         barNumberConfidence: Double? = nil,
-        barNumberDetectionMethod: BarNumberDetectionMethod? = nil
+        barNumberDetectionMethod: BarNumberDetectionMethod? = nil,
+        exclusions: [BandExclusion] = [],
+        editorialLabel: String = "",
+        pageBreakBefore: Bool = false
     ) {
         self.id = id
         self.pageIndex = pageIndex
@@ -476,6 +522,9 @@ struct BandModel: Codable, Identifiable, Equatable {
         self.barNumberValue = barNumberValue
         self.barNumberConfidence = barNumberConfidence
         self.barNumberDetectionMethod = barNumberDetectionMethod
+        self.exclusions = exclusions
+        self.editorialLabel = editorialLabel
+        self.pageBreakBefore = pageBreakBefore
     }
 
     init(from decoder: Decoder) throws {
@@ -496,6 +545,9 @@ struct BandModel: Codable, Identifiable, Equatable {
             BarNumberDetectionMethod.self,
             forKey: .barNumberDetectionMethod
         )
+        exclusions = try container.decodeIfPresent([BandExclusion].self, forKey: .exclusions) ?? []
+        editorialLabel = try container.decodeIfPresent(String.self, forKey: .editorialLabel) ?? ""
+        pageBreakBefore = try container.decodeIfPresent(Bool.self, forKey: .pageBreakBefore) ?? false
     }
 
     func encode(to encoder: Encoder) throws {
@@ -513,14 +565,26 @@ struct BandModel: Codable, Identifiable, Equatable {
         try container.encodeIfPresent(barNumberValue, forKey: .barNumberValue)
         try container.encodeIfPresent(barNumberConfidence, forKey: .barNumberConfidence)
         try container.encodeIfPresent(barNumberDetectionMethod, forKey: .barNumberDetectionMethod)
+        if !exclusions.isEmpty {
+            try container.encode(exclusions, forKey: .exclusions)
+        }
+        if !editorialLabel.isEmpty {
+            try container.encode(editorialLabel, forKey: .editorialLabel)
+        }
+        if pageBreakBefore {
+            try container.encode(pageBreakBefore, forKey: .pageBreakBefore)
+        }
     }
 
     func normalized() -> BandModel {
         var copy = self
-        copy.topFraction = max(0, min(topFraction, 0.98))
-        copy.bottomFraction = max(copy.topFraction + 0.02, min(bottomFraction, 1.0))
-        copy.leftFraction = max(0, min(leftFraction, 0.9))
-        copy.rightFraction = max(0, min(rightFraction, 0.9))
+        copy.topFraction = max(0, min(topFraction, 0.998))
+        copy.bottomFraction = max(copy.topFraction + 0.002, min(bottomFraction, 1.0))
+        copy.leftFraction = max(0, min(leftFraction, 0.998))
+        copy.rightFraction = max(0, min(rightFraction, 0.998))
+        if copy.leftFraction + copy.rightFraction > 0.998 {
+            copy.rightFraction = max(0, 0.998 - copy.leftFraction)
+        }
         return copy
     }
 

@@ -328,6 +328,29 @@ struct InspectorView: View {
 
             Divider()
 
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Editorial Label").font(.subheadline.weight(.semibold))
+                TextField("Optional direction or source reference", text: Binding(
+                    get: { (document.band(withID: band.id) ?? band).editorialLabel },
+                    set: { document.updateBandEditorialLabel(band.id, label: $0) }
+                ), axis: .vertical)
+                .lineLimit(1...4)
+                .textFieldStyle(.roundedBorder)
+                Text("Printed above this band. Long labels wrap to keep every word.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Toggle("Start on New Page", isOn: Binding(
+                    get: { (document.band(withID: band.id) ?? band).pageBreakBefore },
+                    set: { document.updateBandPageBreakBefore(band.id, pageBreakBefore: $0) }
+                ))
+            }
+
+            Divider()
+
+            bandExclusionsSection(currentBand)
+
+            Divider()
+
             VStack(alignment: .leading, spacing: 8) {
                 Text("Bar Number")
                     .font(.subheadline.weight(.semibold))
@@ -426,6 +449,116 @@ struct InspectorView: View {
                     .foregroundStyle(.secondary)
             }
         }
+    }
+
+    private enum ExclusionEdge: String {
+        case top = "Top"
+        case bottom = "Bottom"
+        case left = "Left"
+        case right = "Right"
+    }
+
+    private func bandExclusionsSection(_ band: BandModel) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Whiteout Areas")
+                .font(.subheadline.weight(.semibold))
+            Text("Hide neighboring ink without changing the source. Check each area in Preview.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            ForEach(Array(band.exclusions.enumerated()), id: \.element.id) { index, exclusion in
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        Text("Area \(index + 1)").font(.caption.weight(.semibold))
+                        Spacer()
+                        Button("Delete Area", systemImage: "trash", role: .destructive) {
+                            let current = document.band(withID: band.id) ?? band
+                            document.updateBandExclusions(band.id, exclusions: current.exclusions.filter { $0.id != exclusion.id })
+                        }
+                        .labelStyle(.iconOnly)
+                        .buttonStyle(.borderless)
+                    }
+                    HStack {
+                        exclusionCoordinateField(.top, band: band, exclusionID: exclusion.id)
+                        exclusionCoordinateField(.bottom, band: band, exclusionID: exclusion.id)
+                    }
+                    HStack {
+                        exclusionCoordinateField(.left, band: band, exclusionID: exclusion.id)
+                        exclusionCoordinateField(.right, band: band, exclusionID: exclusion.id)
+                    }
+                    if !exclusion.isValid(in: band) {
+                        Text("This area must fit inside the selected crop.")
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+                .padding(8)
+                .background(.quaternary, in: RoundedRectangle(cornerRadius: 6))
+            }
+
+            if !band.exclusions.isEmpty {
+                Text("Edges are page percentages, measured from the top left.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+
+            Button("Add Whiteout Area", systemImage: "rectangle.dashed") {
+                let current = document.band(withID: band.id) ?? band
+                let width = 1 - current.leftFraction - current.rightFraction
+                let height = current.bottomFraction - current.topFraction
+                guard width > 0, height > 0 else { return }
+                let area = BandExclusion(topFraction: current.topFraction,
+                                         bottomFraction: current.topFraction + height * 0.18,
+                                         leftFraction: 1 - current.rightFraction - width * 0.12,
+                                         rightFraction: current.rightFraction)
+                document.updateBandExclusions(band.id, exclusions: current.exclusions + [area])
+            }
+        }
+    }
+
+    private func exclusionCoordinateField(_ edge: ExclusionEdge, band: BandModel, exclusionID: UUID) -> some View {
+        HStack(spacing: 4) {
+            Text(edge.rawValue).font(.caption).frame(width: 42, alignment: .leading)
+            TextField(edge.rawValue, value: exclusionCoordinateBinding(edge, band: band, exclusionID: exclusionID),
+                      format: .number.precision(.fractionLength(2)))
+                .textFieldStyle(.roundedBorder)
+                .font(.caption.monospacedDigit())
+            Text("%").font(.caption).foregroundStyle(.secondary)
+        }
+    }
+
+    private func exclusionCoordinateBinding(_ edge: ExclusionEdge, band: BandModel, exclusionID: UUID) -> Binding<Double> {
+        Binding(
+            get: {
+                guard let area = (document.band(withID: band.id) ?? band).exclusions.first(where: { $0.id == exclusionID }) else { return 0 }
+                switch edge {
+                case .top: return area.topFraction * 100
+                case .bottom: return area.bottomFraction * 100
+                case .left: return area.leftFraction * 100
+                case .right: return (1 - area.rightFraction) * 100
+                }
+            },
+            set: { percent in
+                guard percent.isFinite else { return }
+                let current = document.band(withID: band.id) ?? band
+                var areas = current.exclusions
+                guard let index = areas.firstIndex(where: { $0.id == exclusionID }) else { return }
+                let value = percent / 100
+                let minimumSize = min(current.bottomFraction - current.topFraction,
+                                      1 - current.leftFraction - current.rightFraction) * 0.001
+                switch edge {
+                case .top:
+                    areas[index].topFraction = max(current.topFraction, min(value, areas[index].bottomFraction - minimumSize))
+                case .bottom:
+                    areas[index].bottomFraction = min(current.bottomFraction, max(value, areas[index].topFraction + minimumSize))
+                case .left:
+                    areas[index].leftFraction = max(current.leftFraction, min(value, 1 - areas[index].rightFraction - minimumSize))
+                case .right:
+                    areas[index].rightFraction = max(current.rightFraction, min(1 - value, 1 - areas[index].leftFraction - minimumSize))
+                }
+                document.updateBandExclusions(band.id, exclusions: areas)
+            }
+        )
     }
 
     private func bandOrderRow(_ band: BandModel, position: Int) -> some View {

@@ -1,0 +1,143 @@
+{
+  "reviewer": "Independent bounded scan forward-test agent score_survey",
+  "outputSHA256": {
+    "Violin I.pdf": "5b1b6d04aa6426a787b2d55de4043f8cac90d440217eb2e339c0c28929a21c56"
+  },
+  "reviewedBandIDs": [
+    "brahms-p1-s1",
+    "brahms-p1-s2",
+    "brahms-p1-s3",
+    "brahms-p1-s4",
+    "brahms-p2-s1",
+    "brahms-p2-s2",
+    "brahms-p2-s3",
+    "brahms-p2-s4",
+    "brahms-p2-s5",
+    "brahms-p3-s1",
+    "brahms-p3-s2",
+    "brahms-p3-s3",
+    "brahms-p3-s4",
+    "brahms-p3-s5"
+  ],
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "cropEdges": "fail",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "pageTurns": "not_assessed"
+  },
+  "notes": "FAILED clean-part review. All14 Violin I systems on PDFpages1\u20133 (bars1\u201398) are present in source order; Vivace and rehearsal A/B/C/D retained. Source staff detection16/20/20 agrees with visual ground truth. All final two output pages inspected against source. The output contains visible neighboring notes, beams, slurs and markings and must remain draft. A bounded trial of35 rectangular exclusions improved appearance but also deleted portions of target dynamics and D box, so all experimental exclusions were removed from this conservative final draft. No claim that the source is fundamentally inseparable: more exact mask geometry or normalized/contour-aware cropping may succeed, but that has not been established. Expanded p3s2 top from189 to182 to restore a clipped high slur. No clean performance-ready part is delivered. See scan-test-report.md and issues for exact unresolved regions.",
+  "issues": [
+    {
+      "bandID": "brahms-p1-s1",
+      "sourceRegion": [
+        250,
+        192,
+        560,
+        200
+      ],
+      "description": "Violin II beams remain under target f/sf. Experimental broad masks shortened the final target f; those masks were removed."
+    },
+    {
+      "bandID": "brahms-p1-s2",
+      "sourceRegion": [
+        55,
+        339,
+        570,
+        348
+      ],
+      "description": "Violin II accents/high notes appear along bottom. Cleanup needs spatially selective regions around the two target f dynamics."
+    },
+    {
+      "bandID": "brahms-p1-s4",
+      "sourceRegion": [
+        200,
+        640,
+        575,
+        650
+      ],
+      "description": "Second-violin accents, dots and high notes intrude below sf markings."
+    },
+    {
+      "bandID": "brahms-p2-s1",
+      "sourceRegion": [
+        20,
+        87,
+        575,
+        97
+      ],
+      "description": "Second-violin beams/slur/high note below running target beams and fp require several carefully measured local boundaries."
+    },
+    {
+      "bandID": "brahms-p2-s2",
+      "sourceRegion": [
+        20,
+        229,
+        575,
+        240
+      ],
+      "description": "Violin II upper slurs encroach immediately below target hairpin and dolce legg. text; global bottom crop cannot isolate the target."
+    },
+    {
+      "bandID": "brahms-p2-s3",
+      "sourceRegion": [
+        92,
+        360,
+        120,
+        385
+      ],
+      "description": "Target fp and Violin II upward flag have a sub-point white gap in the low-resolution original scan. Local rectangular deletion was not proven safe at all edges."
+    },
+    {
+      "bandID": "brahms-p2-s4",
+      "sourceRegion": [
+        368,
+        500,
+        403,
+        513
+      ],
+      "description": "Experimental local exclusion clipped the first letter of target dim.; final conservative draft restores it and retains neighboring fragments."
+    },
+    {
+      "bandID": "brahms-p2-s5",
+      "sourceRegion": [
+        190,
+        639,
+        576,
+        651
+      ],
+      "description": "Violin II beams remain underneath target pp and ending slurs; previous-system small marks can also enter the top envelope."
+    },
+    {
+      "bandID": "brahms-p3-s2",
+      "sourceRegion": [
+        20,
+        182,
+        576,
+        236
+      ],
+      "description": "Original top189 cut the high target slur at the right; expanding to182 restores it but reveals preceding-system fragments. Lower Violin II slurs/staff also remain."
+    },
+    {
+      "bandID": "brahms-p3-s3",
+      "sourceRegion": [
+        20,
+        333,
+        576,
+        384
+      ],
+      "description": "Previous-system cello poco cresc./hairpin fragments enter the top crop around D. An experimental mask touched the D box; final draft restores the complete box."
+    },
+    {
+      "bandID": "brahms-p3-s5",
+      "sourceRegion": [
+        425,
+        660,
+        576,
+        673
+      ],
+      "description": "Violin II staff/slurs and staccato dots remain just below target p cresc. and low slurs; no verified clean boundary established."
+    }
+  ]
+}

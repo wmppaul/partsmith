@@ -1,0 +1,74 @@
+{
+  "edgeChecks": [
+    {
+      "band": "piano-p2-s3",
+      "mask": 1,
+      "darkPixelsAtCropEdge": 0
+    },
+    {
+      "band": "piano-p2-s4",
+      "mask": 1,
+      "darkPixelsAtCropEdge": 0
+    },
+    {
+      "band": "piano-p2-s4",
+      "mask": 2,
+      "darkPixelsAtCropEdge": 0
+    },
+    {
+      "band": "piano-p2-s5",
+      "mask": 1,
+      "darkPixelsAtCropEdge": 0
+    },
+    {
+      "band": "piano-p2-s5",
+      "mask": 2,
+      "darkPixelsAtCropEdge": 0
+    },
+    {
+      "band": "piano-p3-s1",
+      "mask": 1,
+      "darkPixelsAtCropEdge": 0
+    },
+    {
+      "band": "piano-p3-s1",
+      "mask": 2,
+      "darkPixelsAtCropEdge": 0
+    }
+  ],
+  "preservationChecks": [
+    {
+      "band": "piano-p2-s3",
+      "sourceROI": [
+        30,
+        400,
+        51,
+        435
+      ],
+      "referenceInkPixels": 3164,
+      "maximumPixelDifference": 0
+    },
+    {
+      "band": "piano-p2-s4",
+      "sourceROI": [
+        235,
+        555,
+        335,
+        570
+      ],
+      "referenceInkPixels": 2234,
+      "maximumPixelDifference": 0
+    },
+    {
+      "band": "piano-p3-s1",
+      "sourceROI": [
+        516,
+        90,
+        541,
+        116
+      ],
+      "referenceInkPixels": 2653,
+      "maximumPixelDifference": 0
+    }
+  ]
+}

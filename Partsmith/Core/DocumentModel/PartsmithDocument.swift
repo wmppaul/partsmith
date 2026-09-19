@@ -31,6 +31,14 @@ struct RectificationAutoProgress {
     }
 }
 
+struct StaffDetectionPage {
+    var pageIndex: Int
+    var image: CGImage
+    var result: StaffDetectionResult
+    var sourcePDFData: Data
+    var rectification: PageRectification?
+}
+
 final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     static var readableContentTypes: [UTType] { [.partsmithProject] }
     private static let defaultPartPalette: [NSColor] = [
@@ -64,6 +72,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private var bandTemplateHalfHeight: Double?
     private var rectificationAutoRunID: UUID?
     private let barNumberDetectionQueue = DispatchQueue(label: "Partsmith.BarNumberDetection", qos: .userInitiated)
+    private var staffDetectionOperation: BlockOperation?
+    private let staffDetectionQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "Partsmith.StaffDetection"
+        queue.qualityOfService = .userInitiated
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
 
     private enum BandCopyScope {
         case allParts
@@ -277,6 +293,101 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             return sourcePageRenderCache?.pageBounds(for: currentPageIndex)
         }
         return pdfDocument.page(at: currentPageIndex)?.bounds(for: .mediaBox)
+    }
+
+    func detectStaffBands(completion: @escaping (StaffDetectionPage?) -> Void) {
+        cancelStaffDetection()
+        guard let sourcePDFData else { completion(nil); return }
+        let pageIndex = currentPageIndex
+        let rectification = currentPageRectification
+        let operation = BlockOperation()
+        staffDetectionOperation = operation
+        operation.addExecutionBlock { [weak self, weak operation] in
+            guard let operation, !operation.isCancelled else { return }
+            // Each worker owns its PDFKit document and render cache. No mutable
+            // PDFKit/AppKit state crosses from the editor into this queue.
+            let backgroundPDF = PDFDocument(data: sourcePDFData)
+            let bounds = backgroundPDF?.page(at: pageIndex)?.bounds(for: .mediaBox)
+            let cache = backgroundPDF.map {
+                SourcePageRenderCache(pdfDocument: $0, rasterScale: 1800 / max(bounds?.width ?? 612, 1))
+            }
+            let detectionImage: CGImage?
+            if let rectification {
+                // Never detect in original coordinates after a failed
+                // rectification: the editor's bands refer to corrected space.
+                detectionImage = cache?.rectifiedDisplayImage(for: pageIndex, rectification: rectification)
+            } else {
+                detectionImage = cache?.imageForDetection(pageIndex: pageIndex, rectification: nil)?.image
+            }
+            guard !operation.isCancelled else { return }
+            let review = detectionImage.map {
+                StaffDetectionPage(
+                    pageIndex: pageIndex, image: $0,
+                    result: StaffBandDetector.detect(in: $0, isCancelled: { operation.isCancelled }),
+                    sourcePDFData: sourcePDFData, rectification: rectification
+                )
+            }
+            DispatchQueue.main.async { [weak self, weak operation] in
+                guard let self, let operation,
+                      self.staffDetectionOperation === operation, !operation.isCancelled else { return }
+                self.staffDetectionOperation = nil
+                guard let review, self.isStaffDetectionCurrent(review) else { completion(nil); return }
+                completion(review)
+            }
+        }
+        staffDetectionQueue.addOperation(operation)
+    }
+
+    func cancelStaffDetection() {
+        staffDetectionOperation?.cancel()
+        staffDetectionOperation = nil
+    }
+
+    func isStaffDetectionCurrent(_ review: StaffDetectionPage) -> Bool {
+        review.pageIndex == currentPageIndex && review.sourcePDFData == sourcePDFData
+            && review.rectification == currentPageRectification
+    }
+
+    /// Applies explicitly reviewed consecutive groups as one undoable edit.
+    /// Returns nil for a stale/invalid review and skips existing overlapping bands.
+    @discardableResult
+    func addStaffBands(from review: StaffDetectionPage, groups: [[Int]], partID: UUID) -> Int? {
+        guard isStaffDetectionCurrent(review), project.parts.contains(where: { $0.id == partID }) else { return nil }
+        let candidates = review.result.candidates
+        var usedIDs = Set<Int>()
+        var additions: [BandModel] = []
+        for group in groups {
+            let ids = group.sorted()
+            guard !ids.isEmpty, ids.allSatisfy({ candidates.indices.contains($0) && usedIDs.insert($0).inserted }),
+                  zip(ids, ids.dropFirst()).allSatisfy({ $1 == $0 + 1 }) else { return nil }
+            let selected = ids.map { candidates[$0] }
+            guard let top = selected.map(\.topFraction).min(),
+                  let bottom = selected.map(\.bottomFraction).max(),
+                  top.isFinite, bottom.isFinite, top >= 0, bottom <= 1, bottom > top else { return nil }
+            let overlapsExisting = project.bands.contains { band in
+                guard band.partID == partID, band.pageIndex == review.pageIndex else { return false }
+                return selected.contains { candidate in
+                    let center = candidate.staffLineFractions.reduce(0, +) / 5
+                    return center >= band.topFraction && center <= band.bottomFraction
+                }
+            }
+            if overlapsExisting { continue }
+            additions.append(BandModel(
+                id: UUID(), pageIndex: review.pageIndex, partID: partID,
+                topFraction: top, bottomFraction: bottom, leftFraction: 0, rightFraction: 0,
+                excluded: false, createdAt: .now
+            ).normalized())
+        }
+        guard !additions.isEmpty else { return 0 }
+        commit(actionName: "Add Detected Staff Bands") { project, _ in
+            project.bands.append(contentsOf: additions)
+        }
+        selectedPartID = partID
+        selectedBandID = additions.first?.id
+        canvasMode = .source
+        isEditingHeaderSelection = false
+        isEditingPageRectification = false
+        return additions.count
     }
 
     func selectPart(_ partID: UUID?) {
@@ -640,6 +751,30 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             if updatedBand.barNumberMode == .automatic {
                 refreshBarNumber(for: bandID)
             }
+        }
+    }
+
+    func updateBandExclusions(_ bandID: UUID, exclusions: [BandExclusion]) {
+        guard project.bands.contains(where: { $0.id == bandID }) else { return }
+        commit(actionName: "Edit Band Exclusions") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].exclusions = exclusions
+        }
+    }
+
+    func updateBandEditorialLabel(_ bandID: UUID, label: String) {
+        guard project.bands.contains(where: { $0.id == bandID }) else { return }
+        commit(actionName: "Edit Band Label") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].editorialLabel = label
+        }
+    }
+
+    func updateBandPageBreakBefore(_ bandID: UUID, pageBreakBefore: Bool) {
+        guard project.bands.contains(where: { $0.id == bandID }) else { return }
+        commit(actionName: "Change Band Page Break") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].pageBreakBefore = pageBreakBefore
         }
     }
 

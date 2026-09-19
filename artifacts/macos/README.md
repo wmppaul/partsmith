@@ -2,6 +2,8 @@
 
 This folder contains a built macOS app bundle for quick testing without opening Xcode.
 
+The current local workflow preview is [Partsmith-extraction-preview-macos.zip](Partsmith-extraction-preview-macos.zip). It adds offline staff proposals, reviewed grouping, precise whiteout areas, editorial labels, page breaks and safer export layout. It is an unsigned universal macOS build; it has not been published as a release. See [the workflow evaluation](../../EXTRACTION_WORKFLOW.md) for reviewed examples and limits.
+
 - Open `Partsmith.app`
 - Or download `Partsmith-v0.1.0-alpha.2-macos.zip` for a single-file transfer
 - If macOS warns that the app is from an unidentified developer, right-click it and choose `Open`

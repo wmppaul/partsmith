@@ -1,0 +1,37 @@
+{
+  "reviewer": "Independent forward-test agent score_survey (not skill implementation author); visual review of every output page and source crop",
+  "outputSHA256": {
+    "Piano.pdf": "ba9b77f2b814e7369998f2d3492a8e2d8c9e037fe6f0da4433856b57b0f4657d"
+  },
+  "reviewedBandIDs": [
+    "piano-p1-s1",
+    "piano-p1-s2",
+    "piano-p1-s3",
+    "piano-p1-s4",
+    "piano-p1-s5",
+    "piano-p2-s1",
+    "piano-p2-s2",
+    "piano-p2-s3",
+    "piano-p2-s4",
+    "piano-p2-s5",
+    "piano-p3-s1",
+    "piano-p3-s2",
+    "piano-p3-s3",
+    "piano-p3-s4",
+    "piano-p3-s5",
+    "piano-p4-s1",
+    "piano-p4-s2",
+    "piano-p4-s3",
+    "piano-p4-s4",
+    "piano-p4-s5"
+  ],
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "cropEdges": "pass",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "pageTurns": "pass"
+  },
+  "notes": "Complete Piano reduction of Notte e giorno, all 20 grand-staff systems and bars 1\u201373 from all four source pages. Reviewed final output pages 1\u20134 at 144dpi in reading order against all four source pages; all piano clefs, signatures, dynamics, articulations, slurs, cue text and ledger notes retained. Corrected clipped bar20 Ob./Fag./trill, bar43 lowest bass notehead and bar46 slur tops. Removed vocal lyric/stage-text fragments with reviewed crop refinements and seven precise exclusions. All four exclusion passages inspected against source at 288dpi: treble clefs, p2s4 central slur, p3s1 high chord and accidental remain intact. Seven crop-edge residual checks return zero dark pixels; three critical notation regions compare pixel-identically to unmasked reference at 288dpi. Printed source bar labels repeated editorially except opening systems already self-identifying. Four original source page divisions retained; pageTurns pass means no added/mid-system breaks and original page boundaries preserved, not a claim of effortless unassisted turning during Molto allegro. Digital display or page turner may be appropriate. Staff spacing about4.9pt, no stretching. Native project contains 20 bands and7 source-relative exclusions; PDF-only editorial labels/page-break controls and native re-export pagination still require renewed review. See forward-test-report.md and regression-results.json for evidence."
+}

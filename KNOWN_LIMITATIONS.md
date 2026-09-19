@@ -1,79 +1,29 @@
-# Known Limitations
+# Known limitations
 
-This repo currently delivers a usable manual-first alpha, not the full product described in [score-part-extractor-spec.md](score-part-extractor-spec.md).
+Partsmith remains a geometry-first, assisted extraction app. The score-part-extraction skill is a parallel workflow for ChatGPT/Codex; neither performs notation recognition or re-engraving.
 
-## What The Alpha Already Covers
+## Detection and musical review
 
-- native macOS document-based project workflow
-- immutable embedded source PDF
-- parts sidebar with color coding
-- source vs preview modes
-- manual band creation, moving, and top/bottom crop editing
-- shared source-header selection or typed header text
-- per-part preview/export settings like scale, gap, and title visibility
-- preview rendering and PDF export
-- `Export All` to a project-named folder
-- undo/redo across the main editing flow
+- Find Staves runs offline on one page at a time. It detects five-line staff geometry, not instrument identity or musical completeness.
+- Staff counts can be wrong on severe skew, curved scans, faint or broken lines, and dense engraving. Line confidence does not certify crop boundaries.
+- Lyrics, dynamics, slurs, ledger notes and shared tempo/rehearsal marks require visual review. Instruments can disappear during tacet passages, so repeated staff order must be checked before applying it.
+- Scan rectification and staff detection are separate steps. Rectification remains editable; failed rectification cannot be silently used for staff proposals.
+- Rectangular whiteout areas can remove spatially separate neighboring fragments. They cannot separate ink that physically overlaps target notation. Changes to a crop or rectification require reviewing its whiteouts again.
 
-## Major Gaps Versus The Original Spec
+## Editing and layout
 
-### Detection and analysis
+- Whiteout areas are edited numerically in the inspector and checked in Preview; direct drawing/dragging of whiteouts on the source canvas is not implemented.
+- Bands retain left/right trims, but the source overlay still emphasizes full-width top/bottom editing. Inspect Preview to judge horizontal trimming.
+- No notation reflow, transposition, generated multimeasure rests or automatic page-turn optimization.
+- Explicit page breaks and editorial strip labels are editable in the native band inspector. Drag reordering and automated musical page-turn planning remain absent.
+- Native export respects printable margins. Scale above 100% is capped at the available width; unusually tall indivisible bands shrink to fit and may need manual readability correction.
+- Rotated PDF pages and unusual CropBox/MediaBox combinations need special care. The skill rejects unsupported geometry rather than silently mapping it into a native project.
 
-- There is no `Analyze` or `Auto Detect` pipeline yet.
-- There is no staff/system detection, instrument-label detection, OCR, or OMR assist.
-- There is no confidence display or repair workflow for automatic results because there are no automatic results yet.
+## Platform and workflow
 
-### Scan rescue and page correction
-
-- There is no scan rescue mode.
-- There is no deskew, thresholding, de-noising, or rotation correction workflow.
-- There are no per-page page-crop tools for difficult scans.
-
-### Canvas editing depth
-
-- Bands are full-width by default and only top/bottom editing is exposed in the canvas.
-- Left/right trim is stored in the model for headers but still not available as a normal band-editing UI.
-- There is no option-drag duplicate, batch editing, shift multi-select, or command-click add/remove workflow.
-- There is no horizontal nudge or per-band scale override UI.
-
-### Propagation and template workflow
-
-- Propagation is still minimal.
-- Current support is only `Copy To Next Page`.
-- There is no copy to page range, copy selected part only, or match-similar-pages template propagation yet.
-
-### Navigation and project ergonomics
-
-- The left sidebar does not yet include page thumbnails or page-level project structure.
-- There is no page search, part search, compare-before-after, or multi-window comparison workflow.
-- The toolbar is still much smaller than the full spec vision.
-
-### Preview and layout controls
-
-- Preview stacks systems vertically, but there is no manual page-break editing.
-- There is no drag reordering of extracted systems.
-- There is no preview-side per-system nudge tool.
-- There is no custom header/page-number system beyond the current typed header and source-header crop options.
-- Output page size and margin controls exist in the model, but there is not yet a full user-facing settings workflow for them.
-
-### Settings hierarchy
-
-- The spec calls for clear global, per-part, per-page, and per-band settings layers.
-- The alpha currently covers some project-level and part-level settings plus a few band controls.
-- Per-page overrides and richer per-band overrides are still mostly missing.
-
-### Persistence and platform polish
-
-- The project currently embeds a copy of the source PDF for portability instead of using security-scoped external file bookmarks.
-- The app is macOS-only and not packaged for the App Store.
-- There is no automated test suite yet.
-
-## Practical Next Steps
-
-1. Improve propagation from `Copy To Next Page` to page-range and similar-page template copy.
-2. Add left/right trim editing for bands.
-3. Add page thumbnails and faster page navigation.
-4. Add manual page-break and system reordering in Preview.
-5. Add first-pass staff/system auto-detection for clean born-digital PDFs.
-6. Add scan rescue tools for skewed or noisy scans.
-7. Add automated tests around document model, layout planning, and export.
+- macOS only; direct local build, not an App Store or notarized release.
+- Source PDFs are embedded in project bundles for portability.
+- Background staff detection supports cancellation and stale-result checks. Preview/export and some older analysis paths can still block on very large scores.
+- No page thumbnail sidebar, batch multiselect editing, or automatic matching of layout templates across varying pages.
+- Focused regression harnesses cover extraction, layout, export masks and native detection transactions. They do not replace testing across a larger engraving/scan corpus.
+- The historic bundled sample project contains exploratory crops and is not a musical gold standard. Use the reviewed examples and recipes described in [EXTRACTION_WORKFLOW.md](EXTRACTION_WORKFLOW.md).

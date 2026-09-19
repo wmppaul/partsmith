@@ -19,6 +19,8 @@
 		20000000000000000000000A /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000A /* InspectorView.swift */; };
 		20000000000000000000000B /* PageRectificationEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000D /* PageRectificationEstimator.swift */; };
 		20000000000000000000000C /* BarNumberDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000E /* BarNumberDetector.swift */; };
+		20000000000000000000000D /* StaffBandDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000F /* StaffBandDetector.swift */; };
+		20000000000000000000000E /* StaffDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* StaffDetectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		10000000000000000000000C /* Partsmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partsmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10000000000000000000000D /* PageRectificationEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageRectificationEstimator.swift; sourceTree = "<group>"; };
 		10000000000000000000000E /* BarNumberDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNumberDetector.swift; sourceTree = "<group>"; };
+		10000000000000000000000F /* StaffBandDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffBandDetector.swift; sourceTree = "<group>"; };
+		100000000000000000000010 /* StaffDetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				400000000000000000000005 /* DocumentModel */,
 				400000000000000000000006 /* Layout */,
 				400000000000000000000007 /* Export */,
+				40000000000000000000000E /* Detection */,
 			);
 			path = Partsmith/Core;
 			sourceTree = SOURCE_ROOT;
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				100000000000000000000006 /* DocumentRootView.swift */,
+				100000000000000000000010 /* StaffDetectionView.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -163,6 +169,12 @@
 				10000000000000000000000A /* InspectorView.swift */,
 			);
 			path = Inspector;
+			sourceTree = "<group>";
+		};
+		40000000000000000000000E /* Detection */ = {
+			isa = PBXGroup;
+			children = (10000000000000000000000F /* StaffBandDetector.swift */,);
+			path = Detection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +255,8 @@
 				20000000000000000000000A /* InspectorView.swift in Sources */,
 				20000000000000000000000B /* PageRectificationEstimator.swift in Sources */,
 				20000000000000000000000C /* BarNumberDetector.swift in Sources */,
+				20000000000000000000000D /* StaffBandDetector.swift in Sources */,
+				20000000000000000000000E /* StaffDetectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

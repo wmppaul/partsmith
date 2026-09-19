@@ -95,61 +95,76 @@ enum PartPDFExporter {
         }
 
         for placement in page.placements {
+            drawEditorialLabel(for: placement, in: context)
             draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
+            drawExclusions(for: placement, in: context)
             drawBarNumber(for: placement, project: project, in: context)
         }
 
         context.restoreGState()
     }
 
+    private static func drawEditorialLabel(for placement: BandPlacement, in context: CGContext) {
+        guard let rect = placement.editorialLabelRect else { return }
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
+        (placement.editorialLabel as NSString).draw(with: rect,
+                                                  options: BandEditorialLabelStyle.drawingOptions,
+                                                  attributes: BandEditorialLabelStyle.attributes)
+        NSGraphicsContext.restoreGraphicsState()
+    }
+
     private static func drawTitle(for plan: PartRenderPlan, in context: CGContext) {
+        guard let titleBlock = plan.titleBlockRect else { return }
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        paragraph.lineBreakMode = .byTruncatingTail
         let titleAttributes: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 22, weight: .semibold),
-            .foregroundColor: NSColor.black
+            .foregroundColor: NSColor.black,
+            .paragraphStyle: paragraph
         ]
 
         let subtitleAttributes: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 11, weight: .regular),
-            .foregroundColor: NSColor.secondaryLabelColor
+            .foregroundColor: NSColor.darkGray,
+            .paragraphStyle: paragraph
         ]
 
         NSGraphicsContext.saveGraphicsState()
         NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
 
-        let titleSize = plan.resolvedTitle.size(withAttributes: titleAttributes)
-        let titleOrigin = CGPoint(
-            x: (plan.pageSize.width - titleSize.width) / 2,
-            y: plan.pageSize.height - 42 - titleSize.height
+        let titleRect = CGRect(
+            x: titleBlock.minX, y: titleBlock.maxY - 29,
+            width: titleBlock.width, height: 29
         )
-        plan.resolvedTitle.draw(at: titleOrigin, withAttributes: titleAttributes)
+        plan.resolvedTitle.draw(in: titleRect, withAttributes: titleAttributes)
 
         if plan.resolvedSubtitle.isEmpty == false {
-            let subtitleSize = plan.resolvedSubtitle.size(withAttributes: subtitleAttributes)
-            let subtitleOrigin = CGPoint(
-                x: (plan.pageSize.width - subtitleSize.width) / 2,
-                y: titleOrigin.y - subtitleSize.height - 6
+            let subtitleRect = CGRect(
+                x: titleBlock.minX, y: titleBlock.maxY - 47,
+                width: titleBlock.width, height: 17
             )
-            plan.resolvedSubtitle.draw(at: subtitleOrigin, withAttributes: subtitleAttributes)
+            plan.resolvedSubtitle.draw(in: subtitleRect, withAttributes: subtitleAttributes)
         }
 
         NSGraphicsContext.restoreGraphicsState()
     }
 
     private static func drawPartNameLabel(for plan: PartRenderPlan, in context: CGContext) {
+        guard let labelRect = plan.partNameRect else { return }
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byTruncatingTail
         let labelAttributes: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 12, weight: .semibold),
-            .foregroundColor: NSColor.labelColor
+            .foregroundColor: NSColor.black,
+            .paragraphStyle: paragraph
         ]
 
         NSGraphicsContext.saveGraphicsState()
         NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
 
-        let labelSize = plan.part.name.size(withAttributes: labelAttributes)
-        let labelOrigin = CGPoint(
-            x: 48,
-            y: plan.pageSize.height - 30 - labelSize.height
-        )
-        plan.part.name.draw(at: labelOrigin, withAttributes: labelAttributes)
+        plan.part.name.draw(in: labelRect, withAttributes: labelAttributes)
 
         NSGraphicsContext.restoreGraphicsState()
     }
@@ -214,6 +229,25 @@ enum PartPDFExporter {
         )
 
         NSGraphicsContext.restoreGraphicsState()
+    }
+
+    private static func drawExclusions(for placement: BandPlacement, in context: CGContext) {
+        guard !placement.exclusionRects.isEmpty else { return }
+        context.saveGState()
+        // At outer crop edges, cover subpixel sampling fringes as well. Interior edges stay exact
+        // so a mask cannot erase neighboring notation that was intentionally retained.
+        let rects = placement.exclusionRects.map { rect -> CGRect in
+            var minX = rect.minX, maxX = rect.maxX, minY = rect.minY, maxY = rect.maxY
+            if abs(minX - placement.destinationRect.minX) < 0.00001 { minX -= 0.5 }
+            if abs(maxX - placement.destinationRect.maxX) < 0.00001 { maxX += 0.5 }
+            if abs(minY - placement.destinationRect.minY) < 0.00001 { minY -= 0.5 }
+            if abs(maxY - placement.destinationRect.maxY) < 0.00001 { maxY += 0.5 }
+            return CGRect(x: minX, y: minY, width: maxX - minX, height: maxY - minY)
+        }
+        context.clip(to: placement.destinationRect.insetBy(dx: -0.5, dy: -0.5))
+        context.setFillColor(NSColor.white.cgColor)
+        context.fill(rects)
+        context.restoreGState()
     }
 
     private static func draw(
