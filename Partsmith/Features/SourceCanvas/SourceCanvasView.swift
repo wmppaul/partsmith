@@ -1701,6 +1701,8 @@ private final class BandOverlayView: NSView {
             border.lineWidth = borderWidth
             border.stroke()
 
+            drawBarNumberBadge(for: band, in: bandRect, color: color)
+
             if isSelectedBand {
                 drawEdgeGuide(
                     rect: edgeGuideRect(for: bandRect, edge: .bottom),
@@ -1986,6 +1988,52 @@ private final class BandOverlayView: NSView {
         let border = NSBezierPath(roundedRect: rect.insetBy(dx: 1.25, dy: 1.25), xRadius: 3, yRadius: 3)
         border.lineWidth = 1.2
         border.stroke()
+    }
+
+    private func drawBarNumberBadge(for band: BandModel, in bandRect: CGRect, color: NSColor) {
+        guard let barNumber = band.displayedBarNumber else { return }
+
+        let label = "\(barNumber)"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 11, weight: .semibold),
+            .foregroundColor: band.barNumberMode == .manual ? NSColor.white : NSColor.labelColor
+        ]
+        let labelSize = label.size(withAttributes: attributes)
+        let badgeRect = CGRect(
+            x: bandRect.minX + 8,
+            y: bandRect.maxY - labelSize.height - 12,
+            width: labelSize.width + 16,
+            height: labelSize.height + 8
+        )
+
+        let fillColor: NSColor
+        let strokeColor: NSColor
+        switch band.barNumberMode {
+        case .automatic:
+            fillColor = NSColor.windowBackgroundColor.withAlphaComponent(0.94)
+            strokeColor = color.withAlphaComponent(0.68)
+        case .manual:
+            fillColor = color.withAlphaComponent(0.96)
+            strokeColor = color.withAlphaComponent(1.0)
+        case .hidden:
+            return
+        }
+
+        fillColor.setFill()
+        NSBezierPath(roundedRect: badgeRect, xRadius: 8, yRadius: 8).fill()
+
+        strokeColor.setStroke()
+        let border = NSBezierPath(roundedRect: badgeRect, xRadius: 8, yRadius: 8)
+        border.lineWidth = 1
+        border.stroke()
+
+        label.draw(
+            at: CGPoint(
+                x: badgeRect.minX + (badgeRect.width - labelSize.width) / 2,
+                y: badgeRect.minY + (badgeRect.height - labelSize.height) / 2
+            ),
+            withAttributes: attributes
+        )
     }
 
     private func visibleHandleRect(for bandRect: CGRect, edge: DragMode) -> CGRect {

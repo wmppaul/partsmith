@@ -381,6 +381,42 @@ struct PartLayoutSettings: Codable, Equatable {
     }
 }
 
+enum BarNumberMode: String, Codable, CaseIterable, Identifiable {
+    case automatic
+    case manual
+    case hidden
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .automatic:
+            return "Auto"
+        case .manual:
+            return "Manual"
+        case .hidden:
+            return "Hidden"
+        }
+    }
+}
+
+enum BarNumberDetectionMethod: String, Codable {
+    case pdfText
+    case ocr
+    case nearbyBand
+
+    var title: String {
+        switch self {
+        case .pdfText:
+            return "PDF Text"
+        case .ocr:
+            return "OCR"
+        case .nearbyBand:
+            return "Nearby System"
+        }
+    }
+}
+
 struct BandModel: Codable, Identifiable, Equatable {
     var id: UUID
     var pageIndex: Int
@@ -391,6 +427,93 @@ struct BandModel: Codable, Identifiable, Equatable {
     var rightFraction: Double
     var excluded: Bool
     var createdAt: Date
+    var barNumberMode: BarNumberMode
+    var barNumberValue: Int?
+    var barNumberConfidence: Double?
+    var barNumberDetectionMethod: BarNumberDetectionMethod?
+
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case pageIndex
+        case partID
+        case topFraction
+        case bottomFraction
+        case leftFraction
+        case rightFraction
+        case excluded
+        case createdAt
+        case barNumberMode
+        case barNumberValue
+        case barNumberConfidence
+        case barNumberDetectionMethod
+    }
+
+    init(
+        id: UUID,
+        pageIndex: Int,
+        partID: UUID,
+        topFraction: Double,
+        bottomFraction: Double,
+        leftFraction: Double,
+        rightFraction: Double,
+        excluded: Bool,
+        createdAt: Date,
+        barNumberMode: BarNumberMode = .automatic,
+        barNumberValue: Int? = nil,
+        barNumberConfidence: Double? = nil,
+        barNumberDetectionMethod: BarNumberDetectionMethod? = nil
+    ) {
+        self.id = id
+        self.pageIndex = pageIndex
+        self.partID = partID
+        self.topFraction = topFraction
+        self.bottomFraction = bottomFraction
+        self.leftFraction = leftFraction
+        self.rightFraction = rightFraction
+        self.excluded = excluded
+        self.createdAt = createdAt
+        self.barNumberMode = barNumberMode
+        self.barNumberValue = barNumberValue
+        self.barNumberConfidence = barNumberConfidence
+        self.barNumberDetectionMethod = barNumberDetectionMethod
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        pageIndex = try container.decode(Int.self, forKey: .pageIndex)
+        partID = try container.decode(UUID.self, forKey: .partID)
+        topFraction = try container.decode(Double.self, forKey: .topFraction)
+        bottomFraction = try container.decode(Double.self, forKey: .bottomFraction)
+        leftFraction = try container.decodeIfPresent(Double.self, forKey: .leftFraction) ?? 0
+        rightFraction = try container.decodeIfPresent(Double.self, forKey: .rightFraction) ?? 0
+        excluded = try container.decodeIfPresent(Bool.self, forKey: .excluded) ?? false
+        createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt) ?? .now
+        barNumberMode = try container.decodeIfPresent(BarNumberMode.self, forKey: .barNumberMode) ?? .automatic
+        barNumberValue = try container.decodeIfPresent(Int.self, forKey: .barNumberValue)
+        barNumberConfidence = try container.decodeIfPresent(Double.self, forKey: .barNumberConfidence)
+        barNumberDetectionMethod = try container.decodeIfPresent(
+            BarNumberDetectionMethod.self,
+            forKey: .barNumberDetectionMethod
+        )
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(pageIndex, forKey: .pageIndex)
+        try container.encode(partID, forKey: .partID)
+        try container.encode(topFraction, forKey: .topFraction)
+        try container.encode(bottomFraction, forKey: .bottomFraction)
+        try container.encode(leftFraction, forKey: .leftFraction)
+        try container.encode(rightFraction, forKey: .rightFraction)
+        try container.encode(excluded, forKey: .excluded)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(barNumberMode, forKey: .barNumberMode)
+        try container.encodeIfPresent(barNumberValue, forKey: .barNumberValue)
+        try container.encodeIfPresent(barNumberConfidence, forKey: .barNumberConfidence)
+        try container.encodeIfPresent(barNumberDetectionMethod, forKey: .barNumberDetectionMethod)
+    }
 
     func normalized() -> BandModel {
         var copy = self
@@ -413,6 +536,15 @@ struct BandModel: Codable, Identifiable, Equatable {
             width: max(1, maxX - minX),
             height: max(1, maxY - minY)
         )
+    }
+
+    var displayedBarNumber: Int? {
+        switch barNumberMode {
+        case .automatic, .manual:
+            return barNumberValue
+        case .hidden:
+            return nil
+        }
     }
 }
 

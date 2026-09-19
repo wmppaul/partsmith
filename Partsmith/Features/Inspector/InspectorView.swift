@@ -19,6 +19,10 @@ struct InspectorView: View {
                         body: "Select a part in the sidebar to change its preview settings and band assignments."
                     )
                 }
+
+                if let selectedBand = document.selectedBand {
+                    selectedBandSection(selectedBand)
+                }
             }
             .padding(18)
         }
@@ -300,13 +304,105 @@ struct InspectorView: View {
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
     }
 
+    private func selectedBandSection(_ band: BandModel) -> some View {
+        let currentBand = document.band(withID: band.id) ?? band
+
+        return inspectorCard(title: "Selected Band") {
+            inspectorRow(label: "Page", value: "\(currentBand.pageIndex + 1)")
+            inspectorRow(
+                label: "Top Crop",
+                value: currentBand.topFraction.formatted(.percent.precision(.fractionLength(0)))
+            )
+            inspectorRow(
+                label: "Bottom Crop",
+                value: currentBand.bottomFraction.formatted(.percent.precision(.fractionLength(0)))
+            )
+
+            Toggle(
+                "Include In Output",
+                isOn: Binding(
+                    get: { (document.band(withID: band.id) ?? band).excluded == false },
+                    set: { document.toggleBandExclusion(band.id, excluded: !$0) }
+                )
+            )
+
+            Divider()
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Bar Number")
+                    .font(.subheadline.weight(.semibold))
+
+                Picker(
+                    "Bar Number Mode",
+                    selection: Binding(
+                        get: { (document.band(withID: band.id) ?? band).barNumberMode },
+                        set: { document.updateBandBarNumberMode(band.id, mode: $0) }
+                    )
+                ) {
+                    ForEach(BarNumberMode.allCases) { mode in
+                        Text(mode.title).tag(mode)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+
+                switch currentBand.barNumberMode {
+                case .automatic:
+                    Text(automaticBarNumberDescription(for: currentBand))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+
+                    Button("Refresh Auto Detection") {
+                        document.refreshBarNumber(for: band.id)
+                    }
+                    .disabled(document.pdfDocument == nil)
+                case .manual:
+                    HStack {
+                        Text("Value")
+                            .foregroundStyle(.secondary)
+
+                        TextField(
+                            "Bar number",
+                            value: manualBarNumberBinding(for: band.id),
+                            format: .number
+                        )
+                        .frame(width: 90)
+                    }
+
+                    Text("Manual values are re-engraved in preview and export.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                case .hidden:
+                    Text("This band will not show a bar-number badge on the source pane or in exported output.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
+            Divider()
+
+            Button("Delete Band", role: .destructive) {
+                document.deleteBand(band.id)
+            }
+        }
+    }
+
     private func bandOrderSection(_ part: PartModel) -> some View {
         let outputBands = document.outputBands(for: part.id)
         let excludedCount = document.project.sortedBands(for: part.id).count - outputBands.count
 
         return VStack(alignment: .leading, spacing: 10) {
-            Text("Output Order")
-                .font(.subheadline.weight(.semibold))
+            HStack {
+                Text("Output Order")
+                    .font(.subheadline.weight(.semibold))
+
+                Spacer()
+
+                Button("Refresh Auto") {
+                    document.refreshAutomaticBarNumbers(for: part.id)
+                }
+                .disabled(outputBands.isEmpty || document.pdfDocument == nil)
+            }
 
             Text("Bands now follow score order within the part. Click a row to jump to that band on the source page.")
                 .font(.caption)
@@ -375,7 +471,33 @@ struct InspectorView: View {
         let normalizedBand = band.normalized()
         let topPercent = Int((normalizedBand.topFraction * 100).rounded())
         let bottomPercent = Int((normalizedBand.bottomFraction * 100).rounded())
-        return "Top \(topPercent)% • Bottom \(bottomPercent)%"
+        let barDescription: String
+        if let barNumber = band.displayedBarNumber {
+            barDescription = " • Bar \(barNumber)"
+        } else {
+            barDescription = ""
+        }
+        return "Top \(topPercent)% • Bottom \(bottomPercent)%\(barDescription)"
+    }
+
+    private func manualBarNumberBinding(for bandID: UUID) -> Binding<Int> {
+        Binding(
+            get: { document.band(withID: bandID)?.barNumberValue ?? 1 },
+            set: { document.updateBandBarNumberValue(bandID, value: $0) }
+        )
+    }
+
+    private func automaticBarNumberDescription(for band: BandModel) -> String {
+        guard let value = band.barNumberValue else {
+            return "No system-start number found yet for this band. You can refresh detection or switch to Manual."
+        }
+
+        let method = band.barNumberDetectionMethod?.title ?? "Auto"
+        if let confidence = band.barNumberConfidence {
+            return "Detected \(value) via \(method) (\(Int((confidence * 100).rounded()))% confidence)."
+        }
+
+        return "Detected \(value) via \(method)."
     }
 
     private func placeholderSection(title: String, body: String) -> some View {

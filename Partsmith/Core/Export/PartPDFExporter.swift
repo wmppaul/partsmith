@@ -96,6 +96,7 @@ enum PartPDFExporter {
 
         for placement in page.placements {
             draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
+            drawBarNumber(for: placement, project: project, in: context)
         }
 
         context.restoreGState()
@@ -166,6 +167,53 @@ enum PartPDFExporter {
             destinationRect: placement.destinationRect,
             in: context
         )
+    }
+
+    private static func drawBarNumber(
+        for placement: BandPlacement,
+        project: ProjectData,
+        in context: CGContext
+    ) {
+        guard let band = project.bands.first(where: { $0.id == placement.bandID }),
+              let barNumber = band.displayedBarNumber
+        else {
+            return
+        }
+
+        let label = "\(barNumber)"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 10, weight: .semibold),
+            .foregroundColor: NSColor.labelColor
+        ]
+
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
+
+        let labelSize = label.size(withAttributes: attributes)
+        let badgeRect = CGRect(
+            x: placement.destinationRect.minX + 8,
+            y: placement.destinationRect.maxY - labelSize.height - 12,
+            width: labelSize.width + 16,
+            height: labelSize.height + 8
+        )
+
+        let badgePath = NSBezierPath(roundedRect: badgeRect, xRadius: 8, yRadius: 8)
+        NSColor.white.withAlphaComponent(0.96).setFill()
+        badgePath.fill()
+
+        NSColor.black.withAlphaComponent(0.18).setStroke()
+        badgePath.lineWidth = 0.8
+        badgePath.stroke()
+
+        label.draw(
+            at: CGPoint(
+                x: badgeRect.minX + (badgeRect.width - labelSize.width) / 2,
+                y: badgeRect.minY + (badgeRect.height - labelSize.height) / 2
+            ),
+            withAttributes: attributes
+        )
+
+        NSGraphicsContext.restoreGraphicsState()
     }
 
     private static func draw(

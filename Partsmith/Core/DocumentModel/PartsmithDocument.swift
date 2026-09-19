@@ -44,6 +44,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         .systemIndigo
     ]
     private static let rectificationLogger = Logger(subsystem: "Partsmith", category: "Rectification")
+    private static let barNumberLogger = Logger(subsystem: "Partsmith", category: "BarNumbers")
 
     @Published var project: ProjectData
     @Published var sourcePDFData: Data?
@@ -62,6 +63,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private var sourcePageRenderCache: SourcePageRenderCache?
     private var bandTemplateHalfHeight: Double?
     private var rectificationAutoRunID: UUID?
+    private let barNumberDetectionQueue = DispatchQueue(label: "Partsmith.BarNumberDetection", qos: .userInitiated)
 
     private enum BandCopyScope {
         case allParts
@@ -168,6 +170,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
     func part(withID partID: UUID) -> PartModel? {
         project.parts.first(where: { $0.id == partID })
+    }
+
+    func band(withID bandID: UUID) -> BandModel? {
+        project.bands.first(where: { $0.id == bandID })
     }
 
     func bands(on pageIndex: Int) -> [BandModel] {
@@ -618,6 +624,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         bandTemplateHalfHeight = halfHeight
         selectedBandID = band.id
         selectedPartID = partID
+        refreshBarNumber(for: band.id)
     }
 
     func updateBand(_ bandID: UUID, topFraction: Double, bottomFraction: Double) {
@@ -630,6 +637,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
         if let updatedBand = project.bands.first(where: { $0.id == bandID }) {
             bandTemplateHalfHeight = Self.bandHalfHeight(for: updatedBand)
+            if updatedBand.barNumberMode == .automatic {
+                refreshBarNumber(for: bandID)
+            }
         }
     }
 
@@ -699,6 +709,84 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         if selectedBandID == bandID {
             selectedBandID = nil
         }
+    }
+
+    func updateBandBarNumberMode(_ bandID: UUID, mode: BarNumberMode) {
+        commit(actionName: "Change Bar Number Mode") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].barNumberMode = mode
+
+            switch mode {
+            case .automatic:
+                project.bands[index].barNumberValue = nil
+                project.bands[index].barNumberConfidence = nil
+                project.bands[index].barNumberDetectionMethod = nil
+            case .manual:
+                if project.bands[index].barNumberValue == nil {
+                    project.bands[index].barNumberValue = 1
+                }
+                project.bands[index].barNumberConfidence = nil
+                project.bands[index].barNumberDetectionMethod = nil
+            case .hidden:
+                break
+            }
+        }
+
+        if mode == .automatic {
+            refreshBarNumber(for: bandID)
+        }
+    }
+
+    func updateBandBarNumberValue(_ bandID: UUID, value: Int) {
+        let clampedValue = max(1, min(value, 999))
+        commit(actionName: "Edit Bar Number") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].barNumberMode = .manual
+            project.bands[index].barNumberValue = clampedValue
+            project.bands[index].barNumberConfidence = nil
+            project.bands[index].barNumberDetectionMethod = nil
+        }
+    }
+
+    func refreshBarNumber(for bandID: UUID) {
+        guard let band = band(withID: bandID) else { return }
+        guard band.barNumberMode == .automatic else { return }
+        guard let sourcePDFData else { return }
+
+        let bandSnapshot = band
+        let systemBandsSnapshot = scoreSystemBands(containing: bandSnapshot)
+        let pageRectification = project.pageRectifications.first(where: { $0.pageIndex == band.pageIndex })
+        Self.barNumberLogger.debug("Refreshing bar number for band \(bandID.uuidString, privacy: .public)")
+
+        barNumberDetectionQueue.async { [weak self, sourcePDFData] in
+            guard let self else { return }
+            guard let pdfDocument = PDFDocument(data: sourcePDFData) else { return }
+
+            let renderCache = SourcePageRenderCache(pdfDocument: pdfDocument)
+            let detection = BarNumberDetector.detect(
+                band: bandSnapshot,
+                systemBands: systemBandsSnapshot,
+                pdfDocument: pdfDocument,
+                rectification: pageRectification,
+                sourcePageCache: renderCache
+            )
+
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                guard self.sourcePDFData == sourcePDFData else { return }
+                guard let currentBand = self.band(withID: bandID) else { return }
+                guard currentBand.barNumberMode == .automatic else { return }
+                guard Self.matchesDetectionSnapshot(currentBand, snapshot: bandSnapshot) else { return }
+                let resolvedDetection = detection ?? self.inferredBarNumberFromNearbyBands(for: currentBand)
+                self.applyAutomaticBarNumberDetection(resolvedDetection, toSystemContaining: currentBand)
+            }
+        }
+    }
+
+    func refreshAutomaticBarNumbers(for partID: UUID) {
+        project.sortedBands(for: partID)
+            .filter { $0.excluded == false && $0.barNumberMode == .automatic }
+            .forEach { refreshBarNumber(for: $0.id) }
     }
 
     private func updatePart(partID: UUID, actionName: String, mutation: (inout PartModel) -> Void) {
@@ -788,6 +876,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 copy.id = UUID()
                 copy.pageIndex = destinationPageIndex
                 copy.createdAt = copyStartDate.addingTimeInterval(Double(copyIndex) * 0.001)
+                copy.barNumberMode = .automatic
+                copy.barNumberValue = nil
+                copy.barNumberConfidence = nil
+                copy.barNumberDetectionMethod = nil
                 copiedBands.append(copy)
                 copyIndex += 1
             }
@@ -809,6 +901,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             currentPageIndex = firstDestination
         }
         selectedBandID = nil
+
+        copiedBands.forEach { copy in
+            refreshBarNumber(for: copy.id)
+        }
     }
 
     private func currentState() -> DocumentStateSnapshot {
@@ -871,6 +967,138 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             target.restore(previousState, actionName: actionName)
         }
         undoManager?.setActionName(actionName)
+    }
+
+    private func applyDerivedProjectMutation(_ mutation: (inout ProjectData) -> Void) {
+        var projectCopy = project
+        mutation(&projectCopy)
+        projectCopy.modifiedAt = .now
+        project = projectCopy
+        clampSelectionsToCurrentState()
+    }
+
+    private func applyAutomaticBarNumberDetection(_ detection: BarNumberDetector.Detection?, toSystemContaining band: BandModel) {
+        let targetIDs: Set<UUID>
+        if detection == nil {
+            targetIDs = [band.id]
+        } else {
+            targetIDs = Set(scoreSystemBands(containing: band).map(\.id))
+        }
+
+        applyDerivedProjectMutation { project in
+            for targetID in targetIDs {
+                guard let index = project.bands.firstIndex(where: { $0.id == targetID }) else { continue }
+                guard project.bands[index].barNumberMode == .automatic else { continue }
+                project.bands[index].barNumberValue = detection?.value
+                project.bands[index].barNumberConfidence = detection?.confidence
+                project.bands[index].barNumberDetectionMethod = detection?.method
+            }
+        }
+    }
+
+    private func scoreSystemBands(containing band: BandModel) -> [BandModel] {
+        let pageBands = project.bands(on: band.pageIndex)
+        guard let seedIndex = pageBands.firstIndex(where: { $0.id == band.id }) else { return [band] }
+
+        var lowerBound = seedIndex
+        while lowerBound > 0, likelySharesScoreSystem(pageBands[lowerBound], pageBands[lowerBound - 1]) {
+            lowerBound -= 1
+        }
+
+        var upperBound = seedIndex
+        while upperBound + 1 < pageBands.count, likelySharesScoreSystem(pageBands[upperBound], pageBands[upperBound + 1]) {
+            upperBound += 1
+        }
+
+        return Array(pageBands[lowerBound...upperBound])
+    }
+
+    private func inferredBarNumberFromNearbyBands(for band: BandModel) -> BarNumberDetector.Detection? {
+        let candidateBands = scoreSystemBands(containing: band)
+            .filter { otherBand in
+                otherBand.id != band.id && otherBand.displayedBarNumber != nil
+            }
+            .sorted { lhs, rhs in
+                let lhsPriority = barNumberInferencePriority(for: lhs)
+                let rhsPriority = barNumberInferencePriority(for: rhs)
+                if lhsPriority != rhsPriority {
+                    return lhsPriority < rhsPriority
+                }
+
+                let lhsConfidence = lhs.barNumberConfidence ?? (lhs.barNumberMode == .manual ? 1.0 : 0.5)
+                let rhsConfidence = rhs.barNumberConfidence ?? (rhs.barNumberMode == .manual ? 1.0 : 0.5)
+                if lhsConfidence != rhsConfidence {
+                    return lhsConfidence > rhsConfidence
+                }
+
+                let lhsGap = systemGapDistance(between: band, and: lhs)
+                let rhsGap = systemGapDistance(between: band, and: rhs)
+                if lhsGap != rhsGap {
+                    return lhsGap < rhsGap
+                }
+
+                return lhs.normalized().topFraction < rhs.normalized().topFraction
+            }
+
+        guard let sourceBand = candidateBands.first,
+              let value = sourceBand.displayedBarNumber
+        else {
+            return nil
+        }
+
+        let inheritedConfidence = min(0.95, max(0.55, (sourceBand.barNumberConfidence ?? 0.78) * 0.9))
+        return BarNumberDetector.Detection(
+            value: value,
+            confidence: inheritedConfidence,
+            method: .nearbyBand
+        )
+    }
+
+    private func barNumberInferencePriority(for band: BandModel) -> Int {
+        switch band.barNumberMode {
+        case .manual:
+            return 0
+        case .automatic:
+            if band.barNumberDetectionMethod == .nearbyBand {
+                return 2
+            }
+            return 1
+        case .hidden:
+            return 3
+        }
+    }
+
+    private func likelySharesScoreSystem(_ lhs: BandModel, _ rhs: BandModel) -> Bool {
+        systemGapDistance(between: lhs, and: rhs) <= systemAdjacencyThreshold(between: lhs, and: rhs)
+    }
+
+    private func systemGapDistance(between lhs: BandModel, and rhs: BandModel) -> Double {
+        let lhsNormalized = lhs.normalized()
+        let rhsNormalized = rhs.normalized()
+
+        if lhsNormalized.bottomFraction < rhsNormalized.topFraction {
+            return rhsNormalized.topFraction - lhsNormalized.bottomFraction
+        }
+
+        if rhsNormalized.bottomFraction < lhsNormalized.topFraction {
+            return lhsNormalized.topFraction - rhsNormalized.bottomFraction
+        }
+
+        return 0
+    }
+
+    private func systemAdjacencyThreshold(between lhs: BandModel, and rhs: BandModel) -> Double {
+        let lhsHeight = lhs.normalized().bottomFraction - lhs.normalized().topFraction
+        let rhsHeight = rhs.normalized().bottomFraction - rhs.normalized().topFraction
+        return max(0.01, min(0.035, (lhsHeight + rhsHeight) * 0.45))
+    }
+
+    private static func matchesDetectionSnapshot(_ lhs: BandModel, snapshot rhs: BandModel) -> Bool {
+        lhs.pageIndex == rhs.pageIndex &&
+        abs(lhs.topFraction - rhs.topFraction) < 0.0001 &&
+        abs(lhs.bottomFraction - rhs.bottomFraction) < 0.0001 &&
+        abs(lhs.leftFraction - rhs.leftFraction) < 0.0001 &&
+        abs(lhs.rightFraction - rhs.rightFraction) < 0.0001
     }
 
     private func restore(_ snapshot: DocumentStateSnapshot, actionName: String) {
@@ -959,6 +1187,17 @@ final class SourcePageRenderCache {
 
     func pageBounds(for pageIndex: Int) -> CGRect? {
         pdfDocument.page(at: pageIndex)?.bounds(for: .mediaBox)
+    }
+
+    func imageForDetection(pageIndex: Int, rectification: PageRectification?) -> (image: CGImage, pageBounds: CGRect)? {
+        if let rectifiedPage = rectifiedPage(for: pageIndex, rectification: rectification) {
+            return (rectifiedPage.image, rectifiedPage.pageBounds)
+        }
+
+        guard let pdfPage = pdfDocument.page(at: pageIndex) else { return nil }
+        guard let pageBounds = pageBounds(for: pageIndex) else { return nil }
+        guard let image = rasterizedImage(for: pdfPage, pageBounds: pageBounds, scale: rasterScale) else { return nil }
+        return (image, pageBounds)
     }
 
     func draw(
