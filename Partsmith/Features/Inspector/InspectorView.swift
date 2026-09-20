@@ -269,6 +269,28 @@ struct InspectorView: View {
                 commit: { document.updatePartScale(part.id, scale: $0) })
                 .id("scale-\(part.id)")
 
+            if let info = document.previewScaleInfo, info.isWidthLimited {
+                Text(part.layoutSettings.useConsistentScale
+                    ? "The widest strip limits Scale to \(info.appliedScale.formatted(.number.precision(.fractionLength(2))))×. Reduce Side Margins for more width."
+                    : "Some strips reached the page width. Their scale is limited to protect notation. Reduce Side Margins for more room.")
+                    .font(.caption).foregroundStyle(.secondary)
+            } else {
+                Text("Above 1.00, blank source side margins are removed when possible. Notation stays inside the page margins.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+
+            DeferredLayoutSlider(title: "Side Margins",
+                value: document.part(withID: part.id)?.layoutSettings.sideMarginPoints
+                    ?? (document.project.projectSettings.margins.leading + document.project.projectSettings.margins.trailing) / 2,
+                range: 0...144, step: 3, format: { "\(Int($0)) pt" },
+                commit: { document.updatePartSideMargins(part.id, points: $0) })
+                .id("side-margins-\(part.id)")
+                .help("Left and right output-page margins for this part. Smaller margins give the music more width.")
+            if part.layoutSettings.sideMarginPoints != nil {
+                Button("Use Project Margins") { document.updatePartSideMargins(part.id, points: nil) }
+                    .font(.caption)
+            }
+
             DeferredLayoutSlider(title: "Preferred System Gap",
                 value: document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap,
                 range: 4...48, step: 2, format: { "\(Int($0)) pt" },

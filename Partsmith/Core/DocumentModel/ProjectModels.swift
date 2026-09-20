@@ -353,6 +353,8 @@ struct PartLayoutSettings: Codable, Equatable {
     var showPartNameLabel: Bool
     var balancePages: Bool
     var useConsistentScale: Bool
+    /// Nil retains the project's original (possibly asymmetric) page margins.
+    var sideMarginPoints: Double?
 
     init(
         showTitle: Bool,
@@ -362,7 +364,8 @@ struct PartLayoutSettings: Codable, Equatable {
         interSystemGap: Double,
         showPartNameLabel: Bool = false,
         balancePages: Bool = true,
-        useConsistentScale: Bool = true
+        useConsistentScale: Bool = true,
+        sideMarginPoints: Double? = nil
     ) {
         self.showTitle = showTitle
         self.titleText = titleText
@@ -372,6 +375,7 @@ struct PartLayoutSettings: Codable, Equatable {
         self.showPartNameLabel = showPartNameLabel
         self.balancePages = balancePages
         self.useConsistentScale = useConsistentScale
+        self.sideMarginPoints = sideMarginPoints
     }
 
     static let `default` = PartLayoutSettings(
@@ -392,6 +396,7 @@ struct PartLayoutSettings: Codable, Equatable {
         case showPartNameLabel
         case balancePages
         case useConsistentScale
+        case sideMarginPoints
     }
 
     init(from decoder: Decoder) throws {
@@ -404,6 +409,7 @@ struct PartLayoutSettings: Codable, Equatable {
         showPartNameLabel = try container.decodeIfPresent(Bool.self, forKey: .showPartNameLabel) ?? false
         balancePages = try container.decodeIfPresent(Bool.self, forKey: .balancePages) ?? true
         useConsistentScale = try container.decodeIfPresent(Bool.self, forKey: .useConsistentScale) ?? true
+        sideMarginPoints = try container.decodeIfPresent(Double.self, forKey: .sideMarginPoints)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -416,6 +422,7 @@ struct PartLayoutSettings: Codable, Equatable {
         try container.encode(showPartNameLabel, forKey: .showPartNameLabel)
         try container.encode(balancePages, forKey: .balancePages)
         try container.encode(useConsistentScale, forKey: .useConsistentScale)
+        try container.encodeIfPresent(sideMarginPoints, forKey: .sideMarginPoints)
     }
 }
 

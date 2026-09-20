@@ -35,10 +35,10 @@ struct LayoutRegressionTests {
                   barNumberMode: .hidden)
     }
 
-    static func plan(_ project: ProjectData) throws -> PartRenderPlan {
+    static func plan(_ project: ProjectData, horizontalBounds: ((BandModel, CGRect) -> CGRect?)? = nil) throws -> PartRenderPlan {
         try PartLayoutEngine.makePlan(project: project,
                                       pageBoundsProvider: { (0..<3).contains($0) ? sourceBounds : nil },
-                                      partID: project.parts[0].id)
+                                      partID: project.parts[0].id, horizontalContentBoundsProvider: horizontalBounds)
     }
 
     static func expectError(_ project: ProjectData, matches: (PartLayoutError) -> Bool, _ message: String) {
@@ -53,7 +53,10 @@ struct LayoutRegressionTests {
     }
 
     static func verifyGeometry(_ plan: PartRenderPlan, project: ProjectData) {
-        let margins = project.projectSettings.margins
+        var margins = project.projectSettings.margins
+        if let side = project.parts[0].layoutSettings.sideMarginPoints {
+            margins.leading = side; margins.trailing = side
+        }
         let content = CGRect(x: margins.leading, y: margins.bottom,
                              width: plan.pageSize.width - margins.leading - margins.trailing,
                              height: plan.pageSize.height - margins.top - margins.bottom)
@@ -270,6 +273,107 @@ struct LayoutRegressionTests {
         shared.bands[0].sourceMarkings[0].leftFraction = 0.01
         expectError(shared, matches: { if case .invalidSourceMarking = $0 { return true }; return false },
                     "A shared marking outside the horizontal crop fails instead of being clipped")
+
+        let insetInk: (BandModel, CGRect) -> CGRect? = { _, rect in rect.insetBy(dx: 80, dy: 0) }
+        var enlarged = project()
+        var providerCalls = 0
+        let unchanged = try plan(enlarged, horizontalBounds: { _, rect in
+            providerCalls += 1; return rect.insetBy(dx: 80, dy: 0)
+        })
+        check(providerCalls == 0, "Scale one avoids analysis and preserves historical source crops")
+        let originalPlacement = unchanged.pages[0].placements[0]
+        for multiplier in [0.6, 0.85, 1.0] {
+            enlarged.parts[0].layoutSettings.scale = multiplier
+            let legacy = try plan(enlarged)
+            let withProvider = try plan(enlarged, horizontalBounds: insetInk)
+            check(legacy.pages.map { $0.placements.map(\.sourceRect) } == withProvider.pages.map { $0.placements.map(\.sourceRect) }
+                  && legacy.pages.map { $0.placements.map(\.destinationRect) } == withProvider.pages.map { $0.placements.map(\.destinationRect) },
+                  "Scale <= one preserves exact historical source and destination geometry")
+        }
+        for multiplier in [1.05, 1.25, 1.4] {
+            enlarged.parts[0].layoutSettings.scale = multiplier
+            let result = try plan(enlarged, horizontalBounds: insetInk)
+            let placement = result.pages[0].placements[0]
+            check(abs(placement.destinationRect.height / originalPlacement.destinationRect.height - multiplier) < 0.00001,
+                  "Requested scale \(multiplier) enlarges the notation when blank edges provide room")
+            check(placement.sourceRect.minY == originalPlacement.sourceRect.minY && placement.sourceRect.height == originalPlacement.sourceRect.height,
+                  "Horizontal enlargement never changes top or bottom crop edges")
+            check(abs(result.scaleInfo.appliedScale - multiplier) < 0.00001 && !result.scaleInfo.isWidthLimited,
+                  "Scale metadata reports the visible enlargement")
+            verifyGeometry(result, project: enlarged)
+        }
+        let limited = try plan(enlarged, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
+        check(limited.scaleInfo.isWidthLimited && abs(limited.scaleInfo.appliedScale - 516.0 / 456) < 0.00001,
+              "A crop with little blank space stops at its actual safe width and reports the limit")
+        let noBounds = try plan(enlarged)
+        check(noBounds.scaleInfo.isWidthLimited && noBounds.pages[0].placements[0].destinationRect == originalPlacement.destinationRect,
+              "Unavailable content bounds safely preserve the original crop")
+        for bad in [CGRect(x: -.infinity, y: 0, width: 10, height: 10), CGRect.zero,
+                    originalPlacement.sourceRect.insetBy(dx: -2, dy: 0)] {
+            let rejected = try plan(enlarged, horizontalBounds: { _, _ in bad })
+            check(rejected.pages[0].placements[0].sourceRect == originalPlacement.sourceRect,
+                  "Invalid, empty, and outward content bounds never change a source crop")
+        }
+        var withMarks = enlarged
+        withMarks.bands[0].sourceMarkings = [BandSourceMarking(topFraction: 0.05, bottomFraction: 0.075,
+                                                            leftFraction: 0.09, rightFraction: 0.85)]
+        let markedPlan = try plan(withMarks, horizontalBounds: insetInk)
+        let markedPlacement = markedPlan.pages[0].placements[0]
+        let retainedMark = markedPlacement.sourceMarkings[0]
+        check(markedPlacement.sourceRect.minX <= retainedMark.sourceRect.minX
+              && retainedMark.destinationRect.minX >= 48 && retainedMark.destinationRect.maxX <= 564,
+              "Copied directions outside the staff's ink envelope remain fully preserved")
+        check(markedPlan.scaleInfo.isWidthLimited, "An edge direction contributes to the actual width limit")
+        var mixedWidths = enlarged
+        var short = mixedWidths.bands[0]; short.id = UUID(); short.pageIndex = 1; short.leftFraction = 0.40
+        mixedWidths.bands.append(short)
+        let uniformEnlargement = try plan(mixedWidths, horizontalBounds: insetInk).pages.flatMap(\.placements)
+        check(abs(uniformEnlargement[0].destinationRect.height - uniformEnlargement[1].destinationRect.height) < 0.00001,
+              "Safe enlargement preserves consistent notation sizes across different crop widths")
+        mixedWidths.parts[0].layoutSettings.useConsistentScale = false
+        let independentEnlargement = try plan(mixedWidths, horizontalBounds: insetInk).pages.flatMap(\.placements)
+        check(independentEnlargement[1].destinationRect.height > independentEnlargement[0].destinationRect.height,
+              "Independent system scaling still uses each original crop's own fit-to-width baseline")
+        var restAndMusic = enlarged
+        var rest = restAndMusic.bands[0]; rest.id = UUID(); rest.pageIndex = 1
+        rest.restReplacement = BandRestReplacement(barCount: 12)
+        restAndMusic.bands.append(rest)
+        let restPlan = try plan(restAndMusic, horizontalBounds: insetInk)
+        check(abs(restPlan.scaleInfo.appliedScale - 1.4) < 0.00001,
+              "Full-width synthetic rest lines do not prevent music enlargement")
+        let restPlacement = restPlan.pages.flatMap(\.placements).first { $0.restBarCount != nil }!
+        check(restPlacement.destinationRect.width <= 516.00001 && abs(restPlacement.destinationRect.height - 48 * 1.4) < 0.00001,
+              "Synthetic rest notation grows while its drawn staff remains within page margins")
+        restAndMusic.bands[1].restReplacement = nil
+        restAndMusic.bands[1].generatedRest = BandGeneratedRest(barCount: 3, startBarNumber: 20, sourceSystemIndex: 1)
+        let generatedRestPlan = try plan(restAndMusic, horizontalBounds: insetInk)
+        check(abs(generatedRestPlan.scaleInfo.appliedScale - 1.4) < 0.00001,
+              "Generated silent-system rests also preserve the requested music enlargement")
+        var contextRest = enlarged
+        contextRest.bands[0].restReplacement = BandRestReplacement(barCount: 12,
+            sourceContext: BandRestSourceContext(
+                prefix: BandSourceMarking(topFraction: 0.2, bottomFraction: 0.4, leftFraction: 0.08, rightFraction: 0.75),
+                suffix: BandSourceMarking(topFraction: 0.2, bottomFraction: 0.4, leftFraction: 0.90, rightFraction: 0.06),
+                staffLineFractions: [0.27, 0.28, 0.29, 0.30, 0.31], skewDegrees: 0,
+                staffLeftFraction: 0.15, staffRightFraction: 0.93))
+        let contextPlan = try plan(contextRest, horizontalBounds: insetInk)
+        let contextPlacement = contextPlan.pages[0].placements[0]
+        check(abs(contextPlacement.sourceRect.minX - originalPlacement.sourceRect.minX) < 0.00001
+              && abs(contextPlacement.sourceRect.maxX - originalPlacement.sourceRect.maxX) < 0.00001
+              && contextPlan.scaleInfo.isWidthLimited,
+              "An automatic rest keeps its entire source clef, signature and final barline context")
+        check(contextPlacement.restSourcePlacement!.fragments.allSatisfy {
+            $0.destinationRect.minX >= 48 && $0.destinationRect.maxX <= 564
+        }, "Preserved automatic-rest fragments remain on the output page")
+        var closerMargins = project()
+        closerMargins.parts[0].layoutSettings.sideMarginPoints = 12
+        let closerPlan = try plan(closerMargins)
+        check(closerPlan.pages[0].placements[0].destinationRect.width == 588,
+              "Per-part side margins make the notation wider without changing stored source crops")
+        verifyGeometry(closerPlan, project: closerMargins)
+        closerMargins.parts[0].layoutSettings.sideMarginPoints = .nan
+        expectError(closerMargins, matches: { if case .invalidLayoutSettings = $0 { return true }; return false },
+                    "Invalid part side margins fail before layout")
 
         // Exercise page breaks, sparse pages, exclusions, narrow/tall crops, high zoom, and asymmetric margins together.
         for index in 0..<80 {

@@ -12,6 +12,18 @@ struct PartRenderPlan {
     var partNameRect: CGRect?
     var headerPlacement: HeaderPlacement?
     var pages: [PartRenderPage]
+    var scaleInfo: PartRenderScaleInfo
+}
+
+/// Multipliers relative to the original crop's fit-to-width scale. With
+/// independent system scaling, the least enlarged system is reported.
+struct PartRenderScaleInfo: Equatable {
+    var requestedScale: Double
+    /// Horizontal enlargement before the exceptional vertical fitting of a
+    /// crop taller than an output page; this is not a universal printed size.
+    var appliedScale: Double
+    var maximumSafeScale: Double
+    var isWidthLimited: Bool { requestedScale > maximumSafeScale + 0.0001 }
 }
 
 struct PartRenderPage: Identifiable {
@@ -138,11 +150,16 @@ enum PartLayoutEngine {
         var label: String
         var labelHeight: Double
         var scale: Double
+        var originalSourceWidth: Double
         var markingRects: [CGRect] = []
         var sourceBandIDs: [UUID]
         var lastSourceOrder: Int
         var restReplacement: BandRestReplacement?
         var restStartNumber: Int?
+        var hasFlexibleRestWidth: Bool {
+            (band.generatedRest != nil || (restReplacement != nil && restReplacement?.sourceContext == nil))
+                && markingRects.isEmpty
+        }
         var renderedSourceHeight: Double {
             if band.generatedRest != nil { return PartLayoutEngine.restStripHeight }
             guard let replacement = restReplacement else { return sourceRect.height }
@@ -210,7 +227,8 @@ enum PartLayoutEngine {
     static func makePlan(
         project: ProjectData,
         pageBoundsProvider: (Int) -> CGRect?,
-        partID: UUID
+        partID: UUID,
+        horizontalContentBoundsProvider: ((BandModel, CGRect) -> CGRect?)? = nil
     ) throws -> PartRenderPlan {
         guard let part = project.parts.first(where: { $0.id == partID }) else {
             throw PartLayoutError.missingPart
@@ -224,7 +242,11 @@ enum PartLayoutEngine {
         }
 
         let pageSize = project.projectSettings.outputPageSize.pointsSize
-        let margins = project.projectSettings.margins
+        var margins = project.projectSettings.margins
+        if let sideMargin = part.layoutSettings.sideMarginPoints {
+            margins.leading = sideMargin
+            margins.trailing = sideMargin
+        }
         let marginValues = [margins.top, margins.leading, margins.bottom, margins.trailing]
         guard marginValues.allSatisfy({ $0.isFinite && $0 >= 0 }),
               margins.leading + margins.trailing < pageSize.width,
@@ -318,12 +340,36 @@ enum PartLayoutEngine {
             guard labelHeight + (markingRects.isEmpty ? 0 : 4) < capacity else {
                 throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
             }
-            prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: sourceRect,
-                                         label: label, labelHeight: labelHeight, scale: 1, markingRects: markingRects,
+            var renderedSourceRect = sourceRect
+            // At the historical range (<= 1), preserve source geometry exactly.
+            // Above it, only independently verified blank horizontal edges can go.
+            if partScale > 1, band.generatedRest == nil,
+               band.restReplacement == nil || band.restReplacement?.sourceContext != nil,
+               let ink = horizontalContentBoundsProvider?(band, sourceRect),
+               [ink.minX, ink.minY, ink.width, ink.height].allSatisfy({ $0.isFinite }),
+               !ink.isEmpty, sourceRect.insetBy(dx: -0.000001, dy: -0.000001).contains(ink) {
+                var left = max(sourceRect.minX, ink.minX)
+                var right = min(sourceRect.maxX, ink.maxX)
+                var preservedRects = markingRects
+                if let context = band.restReplacement?.sourceContext {
+                    preservedRects += ([context.prefix] + (context.suffix.map { [$0] } ?? [])).map {
+                        cropRect(top: $0.topFraction, bottom: $0.bottomFraction,
+                                 left: $0.leftFraction, right: $0.rightFraction, in: bounds)
+                    }
+                    left = min(left, bounds.minX + context.staffLeftFraction * bounds.width)
+                    right = max(right, bounds.minX + context.staffRightFraction * bounds.width)
+                }
+                for rect in preservedRects { left = min(left, rect.minX); right = max(right, rect.maxX) }
+                renderedSourceRect = CGRect(x: max(sourceRect.minX, left), y: sourceRect.minY,
+                    width: min(sourceRect.maxX, right) - max(sourceRect.minX, left), height: sourceRect.height)
+            }
+            prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: renderedSourceRect,
+                                         label: label, labelHeight: labelHeight, scale: 1,
+                                         originalSourceWidth: sourceRect.width, markingRects: markingRects,
                                          sourceBandIDs: [band.id], lastSourceOrder: sourceOrder,
                                          restReplacement: band.restReplacement, restStartNumber: band.barNumberValue))
         }
-        let maximumSourceWidth = prepared.map { $0.sourceRect.width }.max() ?? contentRect.width
+        let maximumSourceWidth = prepared.map { $0.originalSourceWidth }.max() ?? contentRect.width
         var joined: [PreparedBand] = []
         for item in prepared {
             if let current = item.restReplacement, current.joinWithPrevious,
@@ -352,10 +398,23 @@ enum PartLayoutEngine {
             }
         }
         prepared = joined
+        let maximumRetainedWidth = prepared.filter { !$0.hasFlexibleRestWidth }.map { $0.sourceRect.width }.max()
+        let consistentSafeScale = maximumRetainedWidth.map { maximumSourceWidth / $0 } ?? partScale
+        var appliedScales: [Double] = []
+        var safeScales: [Double] = []
         for index in prepared.indices {
-            let width = part.layoutSettings.useConsistentScale ? maximumSourceWidth : prepared[index].sourceRect.width
-            prepared[index].scale = contentRect.width / width * min(partScale, 1)
+            let item = prepared[index]
+            let width = part.layoutSettings.useConsistentScale ? maximumSourceWidth : item.originalSourceWidth
+            let safeScale = part.layoutSettings.useConsistentScale ? consistentSafeScale :
+                (item.hasFlexibleRestWidth ? partScale : width / item.sourceRect.width)
+            let appliedScale = min(partScale, safeScale)
+            prepared[index].scale = contentRect.width / width * appliedScale
+            appliedScales.append(appliedScale)
+            safeScales.append(safeScale)
         }
+        let scaleInfo = PartRenderScaleInfo(requestedScale: partScale,
+            appliedScale: appliedScales.min() ?? partScale,
+            maximumSafeScale: safeScales.min() ?? partScale)
         let firstCapacity = pageMusicTop - headerBlockHeight - contentRect.minY
         let continuationCapacity = pageMusicTop - contentRect.minY
         var actualGap = interSystemGap
@@ -396,7 +455,10 @@ enum PartLayoutEngine {
                 let renderScale = min(item.scale, (markingsTop - contentRect.minY - item.markingGap) /
                                       (item.renderedSourceHeight + item.markingSourceHeight))
                 let bandTop = markingsTop - item.markingSourceHeight * renderScale - item.markingGap
-                let targetWidth = item.sourceRect.width * renderScale
+                // Newly drawn rest lines can shorten to the available width
+                // without constraining the size of surrounding source notation.
+                let targetWidth = item.hasFlexibleRestWidth ? min(contentRect.width, item.sourceRect.width * renderScale)
+                    : item.sourceRect.width * renderScale
                 let destinationRect = CGRect(x: contentRect.minX + (contentRect.width - targetWidth) / 2,
                     y: bandTop - item.renderedSourceHeight * renderScale,
                     width: targetWidth, height: item.renderedSourceHeight * renderScale)
@@ -433,7 +495,8 @@ enum PartLayoutEngine {
             titleBlockRect: titleBlockRect,
             partNameRect: partNameRect,
             headerPlacement: headerPlacement,
-            pages: pages
+            pages: pages,
+            scaleInfo: scaleInfo
         )
     }
 

@@ -261,6 +261,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @Published private(set) var rectificationAutoProgress: RectificationAutoProgress?
     @Published private(set) var scoreDetectionProgress: ScoreDetectionProgress?
     @Published private(set) var restAutoProgress: RestAutoProgress?
+    @Published var previewScaleInfo: PartRenderScaleInfo?
     @Published private(set) var restAutoStatus: String?
     @Published var isPickingInstrumentNames = false
     @Published private(set) var instrumentNamePick: ScoreInstrumentNamePick?
@@ -1071,6 +1072,13 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     func updatePartGap(_ partID: UUID, gap: Double) {
         updatePart(partID: partID, actionName: "Change System Gap") { part in
             part.layoutSettings.interSystemGap = max(4, min(gap, 48))
+        }
+    }
+
+    func updatePartSideMargins(_ partID: UUID, points: Double?) {
+        guard points == nil || (points!.isFinite && (0...144).contains(points!)) else { return }
+        updatePart(partID: partID, actionName: "Change Side Margins") { part in
+            part.layoutSettings.sideMarginPoints = points
         }
     }
 
@@ -2264,6 +2272,48 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 }
 
+/// Lightweight, worker-owned source analysis reused across preview scale/gap
+/// changes. Call prepare(for:) before sharing it with a new source document.
+/// No source image, detected note, crop edit or whiteout is stored here.
+final class SourceHorizontalContentCache {
+    fileprivate struct Rows {
+        var width: Int
+        var height: Int
+        var left: [Int]
+        var right: [Int]
+    }
+    private struct Entry {
+        var rectification: PageRectification?
+        var rasterScale: CGFloat
+        var bounds: CGRect
+        var rows: Rows
+    }
+    private var sourceData: Data?
+    private var entries: [Int: Entry] = [:]
+    private var order: [Int] = []
+    private(set) var analysisCount = 0
+
+    func prepare(for sourcePDFData: Data) {
+        guard sourceData != sourcePDFData else { return }
+        sourceData = sourcePDFData
+        entries.removeAll()
+        order.removeAll()
+    }
+
+    fileprivate func rows(pageIndex: Int, rectification: PageRectification?, scale: CGFloat,
+                          bounds: CGRect, build: () -> Rows?) -> Rows? {
+        if let entry = entries[pageIndex], entry.rectification == rectification,
+           entry.rasterScale == scale, entry.bounds == bounds { return entry.rows }
+        guard let rows = build() else { return nil }
+        analysisCount += 1
+        entries[pageIndex] = Entry(rectification: rectification, rasterScale: scale, bounds: bounds, rows: rows)
+        order.removeAll { $0 == pageIndex }
+        order.append(pageIndex)
+        if order.count > 256 { entries.removeValue(forKey: order.removeFirst()) }
+        return rows
+    }
+}
+
 final class SourcePageRenderCache {
     private struct CachedRectifiedPage {
         var rectification: PageRectification
@@ -2276,11 +2326,14 @@ final class SourcePageRenderCache {
 
     private let pdfDocument: PDFDocument
     private let rasterScale: CGFloat
+    private let horizontalContentCache: SourceHorizontalContentCache
     private var rectifiedPages: [Int: CachedRectifiedPage] = [:]
 
-    init(pdfDocument: PDFDocument, rasterScale: CGFloat = 300.0 / 72.0) {
+    init(pdfDocument: PDFDocument, rasterScale: CGFloat = 300.0 / 72.0,
+         horizontalContentCache: SourceHorizontalContentCache? = nil) {
         self.pdfDocument = pdfDocument
         self.rasterScale = rasterScale
+        self.horizontalContentCache = horizontalContentCache ?? SourceHorizontalContentCache()
     }
 
     func rectifiedDisplayDocument(for pageIndex: Int, rectification: PageRectification?) -> PDFDocument? {
@@ -2304,6 +2357,73 @@ final class SourcePageRenderCache {
         guard let pageBounds = pageBounds(for: pageIndex) else { return nil }
         guard let image = rasterizedImage(for: pdfPage, pageBounds: pageBounds, scale: rasterScale) else { return nil }
         return (image, pageBounds)
+    }
+
+    /// Returns only a conservative horizontal inset of the original crop.
+    /// Any visible ink, including scan speckles and neighboring notation, limits
+    /// the inset. No connected-component cleanup or whiteout is consulted.
+    func horizontalContentBounds(for band: BandModel, sourceRect: CGRect,
+                                 rectification: PageRectification?,
+                                 isCancelled: () -> Bool = { false }) -> CGRect? {
+        guard !isCancelled(), band.generatedRest == nil,
+              let page = pdfDocument.page(at: band.pageIndex),
+              let bounds = pageBounds(for: band.pageIndex),
+              bounds.origin == .zero, page.rotation == 0,
+              bounds.width > 0, bounds.height > 0,
+              !sourceRect.isEmpty, bounds.contains(sourceRect) else { return nil }
+        let rows = horizontalContentCache.rows(pageIndex: band.pageIndex,
+            rectification: rectification, scale: rasterScale, bounds: bounds) {
+            autoreleasepool {
+                let image: CGImage?
+                if let rectification {
+                    // Never use uncorrected ink to trim corrected notation.
+                    image = rectifiedPage(for: band.pageIndex, rectification: rectification)?.image
+                } else {
+                    image = rasterizedImage(for: page, pageBounds: bounds, scale: rasterScale)
+                }
+                guard !isCancelled(), let image else { return nil }
+                let width = image.width, height = image.height
+                guard width > 0, height > 0,
+                      let context = CGContext(data: nil, width: width, height: height,
+                          bitsPerComponent: 8, bytesPerRow: width * 4,
+                          space: CGColorSpaceCreateDeviceRGB(),
+                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue | CGBitmapInfo.byteOrder32Big.rawValue),
+                      let memory = context.data else { return nil }
+                context.setFillColor(gray: 1, alpha: 1)
+                context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
+                let pixels = memory.assumingMemoryBound(to: UInt8.self)
+                var left = [Int](repeating: width, count: height)
+                var right = [Int](repeating: -1, count: height)
+                for y in 0..<height {
+                    if y % 64 == 0 && isCancelled() { return nil }
+                    let row = y * width * 4
+                    for x in 0..<width {
+                        let offset = row + x * 4
+                        // Near-white anti-aliasing below two levels is covered
+                        // by the extra three source points at both crop edges.
+                        if pixels[offset] < 254 || pixels[offset + 1] < 254 || pixels[offset + 2] < 254 {
+                            left[y] = min(left[y], x)
+                            right[y] = x
+                        }
+                    }
+                }
+                return SourceHorizontalContentCache.Rows(width: width, height: height, left: left, right: right)
+            }
+        }
+        guard !isCancelled(), let rows else { return nil }
+        let top = max(0, Int(floor((bounds.maxY - sourceRect.maxY) / bounds.height * Double(rows.height))))
+        let bottom = min(rows.height, Int(ceil((bounds.maxY - sourceRect.minY) / bounds.height * Double(rows.height))))
+        guard top < bottom else { return nil }
+        var first = rows.width, last = -1
+        for y in top..<bottom {
+            first = min(first, rows.left[y]); last = max(last, rows.right[y])
+        }
+        guard first <= last else { return nil }
+        let left = max(sourceRect.minX, bounds.minX + Double(first) / Double(rows.width) * bounds.width - 3)
+        let right = min(sourceRect.maxX, bounds.minX + Double(last + 1) / Double(rows.width) * bounds.width + 3)
+        guard right > left else { return nil }
+        return CGRect(x: left, y: sourceRect.minY, width: right - left, height: sourceRect.height)
     }
 
     func draw(

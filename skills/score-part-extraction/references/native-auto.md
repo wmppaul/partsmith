@@ -61,6 +61,15 @@ all parts. Balanced pagination minimizes pages by choosing the widest viable gap
 down to four points; it preserves notation scale and crop geometry. Reserve
 explicit breaks for musical sections, not source-page boundaries.
 
+In Preview, **Scale** above 1.00 uses verified blank horizontal source margins
+to enlarge notation without changing saved crop bands. Scale at or below 1.00
+keeps its previous geometry. The widest retained strip limits **Use Consistent
+Scale**; the Inspector reports that limit. Reduce per-part **Side Margins** for
+more output width. Analysis retains scan speckles, neighboring ink, copied
+markings and rest context, so a noisy or wide strip may prevent further
+enlargement. Do not erase notation to defeat this limit. Preview and native PDF
+export use the same layout; inspect enlarged output against the original source.
+
 ## Shared markings and review
 
 Shared rehearsal letters, tempos, endings and return instructions can be printed

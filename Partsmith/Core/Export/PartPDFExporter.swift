@@ -2,6 +2,11 @@ import AppKit
 import CoreGraphics
 import PDFKit
 
+struct PartPDFRenderResult {
+    var data: Data
+    var scaleInfo: PartRenderScaleInfo
+}
+
 enum PartPDFExporter {
     static func previewDocument(for partID: UUID, in document: PartsmithDocument) throws -> PDFDocument {
         let data = try pdfData(for: partID, in: document)
@@ -41,27 +46,49 @@ enum PartPDFExporter {
         guard let pdfDocument = document.pdfDocument else {
             throw PartLayoutError.missingPDF
         }
-        return try pdfData(for: partID, project: document.project, pdfDocument: pdfDocument)
+        return try renderResult(for: partID, project: document.project, pdfDocument: pdfDocument).data
     }
 
     /// Immutable input for background previews. Each caller owns its PDFKit
     /// document and render cache, using exactly the export layout and renderer.
     static func pdfData(for partID: UUID, project: ProjectData, sourcePDFData: Data,
                         isCancelled: () -> Bool = { false }) throws -> Data {
-        guard !isCancelled() else { throw CancellationError() }
-        guard let pdfDocument = PDFDocument(data: sourcePDFData) else { throw PartLayoutError.missingPDF }
-        return try pdfData(for: partID, project: project, pdfDocument: pdfDocument, isCancelled: isCancelled)
+        try renderResult(for: partID, project: project, sourcePDFData: sourcePDFData,
+                         isCancelled: isCancelled).data
     }
 
-    private static func pdfData(for partID: UUID, project: ProjectData, pdfDocument: PDFDocument,
-                                isCancelled: () -> Bool = { false }) throws -> Data {
+    static func renderResult(for partID: UUID, project: ProjectData, sourcePDFData: Data,
+                             horizontalContentCache: SourceHorizontalContentCache? = nil,
+                             isCancelled: () -> Bool = { false }) throws -> PartPDFRenderResult {
         guard !isCancelled() else { throw CancellationError() }
-        let sourcePageCache = SourcePageRenderCache(pdfDocument: pdfDocument)
-        let plan = try PartLayoutEngine.makePlan(
-            project: project,
-            pageBoundsProvider: { sourcePageCache.pageBounds(for: $0) },
-            partID: partID
-        )
+        horizontalContentCache?.prepare(for: sourcePDFData)
+        guard let pdfDocument = PDFDocument(data: sourcePDFData) else { throw PartLayoutError.missingPDF }
+        return try renderResult(for: partID, project: project, pdfDocument: pdfDocument,
+                                horizontalContentCache: horizontalContentCache, isCancelled: isCancelled)
+    }
+
+    private static func renderResult(for partID: UUID, project: ProjectData, pdfDocument: PDFDocument,
+                                     horizontalContentCache: SourceHorizontalContentCache? = nil,
+                                     isCancelled: () -> Bool = { false }) throws -> PartPDFRenderResult {
+        guard !isCancelled() else { throw CancellationError() }
+        let sourcePageCache = SourcePageRenderCache(pdfDocument: pdfDocument, horizontalContentCache: horizontalContentCache)
+        // makePlan consumes the provider synchronously; it never stores it.
+        let plan = try withoutActuallyEscaping(isCancelled) { cancelled in
+            try PartLayoutEngine.makePlan(
+                project: project,
+                pageBoundsProvider: { sourcePageCache.pageBounds(for: $0) },
+                partID: partID,
+                horizontalContentBoundsProvider: { band, sourceRect in
+                    guard !cancelled() else { return nil }
+                    return autoreleasepool {
+                        sourcePageCache.horizontalContentBounds(for: band, sourceRect: sourceRect,
+                            rectification: project.pageRectifications.first(where: { $0.pageIndex == band.pageIndex }),
+                            isCancelled: cancelled)
+                    }
+                }
+            )
+        }
+        guard !isCancelled() else { throw CancellationError() }
         let mutableData = NSMutableData()
         var mediaBox = CGRect(origin: .zero, size: plan.pageSize)
 
@@ -90,7 +117,7 @@ enum PartPDFExporter {
         }
 
         context.closePDF()
-        return mutableData as Data
+        return PartPDFRenderResult(data: mutableData as Data, scaleInfo: plan.scaleInfo)
     }
 
     private static func render(
@@ -154,9 +181,11 @@ enum PartPDFExporter {
                 .foregroundColor: NSColor.darkGray,
                 .paragraphStyle: paragraph
             ]
-            let footer = CGRect(x: project.projectSettings.margins.leading,
+            let leading = plan.part.layoutSettings.sideMarginPoints ?? project.projectSettings.margins.leading
+            let trailing = plan.part.layoutSettings.sideMarginPoints ?? project.projectSettings.margins.trailing
+            let footer = CGRect(x: leading,
                                 y: max(3, (project.projectSettings.margins.bottom - 12) / 2),
-                                width: plan.pageSize.width - project.projectSettings.margins.leading - project.projectSettings.margins.trailing,
+                                width: plan.pageSize.width - leading - trailing,
                                 height: 12)
             NSGraphicsContext.saveGraphicsState()
             NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)

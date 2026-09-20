@@ -59,7 +59,8 @@ struct PartPreviewView: View {
         }
         .onAppear(perform: updatePreview)
         .onChange(of: snapshot) { updatePreview() }
-        .onDisappear { renderer.cancel() }
+        .onChange(of: renderer.scaleInfo) { document.previewScaleInfo = renderer.scaleInfo }
+        .onDisappear { renderer.cancel(); document.previewScaleInfo = nil }
     }
 
     private func updatePreview() {

@@ -30,10 +30,14 @@ final class PartPreviewRenderer: ObservableObject {
     @Published private(set) var pdfDocument: PDFDocument?
     @Published private(set) var isRendering = false
     @Published private(set) var errorMessage: String?
+    @Published private(set) var scaleInfo: PartRenderScaleInfo?
     private(set) var renderedSnapshot: PartPreviewSnapshot?
     private var requestedSnapshot: PartPreviewSnapshot?
     private var operation: BlockOperation?
     private var generation = UUID()
+    // Used only on the serial worker queue. The exporter validates source
+    // identity before reusing lightweight row bounds across slider commits.
+    private let horizontalContentCache = SourceHorizontalContentCache()
     private let queue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
@@ -51,28 +55,32 @@ final class PartPreviewRenderer: ObservableObject {
         }
         requestedSnapshot = snapshot
         errorMessage = nil
+        scaleInfo = nil
         isRendering = true
         let token = UUID()
         generation = token
         let operation = BlockOperation()
         self.operation = operation
+        let horizontalContentCache = self.horizontalContentCache
         operation.addExecutionBlock { [weak self, weak operation] in
             guard let operation, !operation.isCancelled else { return }
             let result = Result { try autoreleasepool {
-                try PartPDFExporter.pdfData(for: snapshot.partID, project: snapshot.project,
-                    sourcePDFData: snapshot.sourcePDFData, isCancelled: { operation.isCancelled })
+                try PartPDFExporter.renderResult(for: snapshot.partID, project: snapshot.project,
+                    sourcePDFData: snapshot.sourcePDFData, horizontalContentCache: horizontalContentCache,
+                    isCancelled: { operation.isCancelled })
             } }
             DispatchQueue.main.async { [weak self] in
                 guard let self, self.generation == token, !operation.isCancelled else { return }
                 self.operation = nil
                 self.isRendering = false
                 switch result {
-                case .success(let data):
-                    guard let pdf = PDFDocument(data: data) else {
+                case .success(let result):
+                    guard let pdf = PDFDocument(data: result.data) else {
                         self.errorMessage = "The preview PDF could not be generated."
                         return
                     }
                     self.pdfDocument = pdf
+                    self.scaleInfo = result.scaleInfo
                     self.renderedSnapshot = snapshot
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
@@ -89,6 +97,7 @@ final class PartPreviewRenderer: ObservableObject {
         generation = UUID()
         requestedSnapshot = nil
         isRendering = false
+        scaleInfo = nil
         if clearPreview {
             pdfDocument = nil
             renderedSnapshot = nil
