@@ -1,0 +1,955 @@
+{
+  "schemaVersion": 1,
+  "source": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+  "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+  "notationPolicy": "preserve-target",
+  "reviewStatus": "source_structure_reviewed_output_pending",
+  "profile": {
+    "parts": [
+      {
+        "id": "voice",
+        "name": "Voice (Leporello)",
+        "staffCount": 1
+      },
+      {
+        "id": "piano",
+        "name": "Piano",
+        "staffCount": 2
+      }
+    ]
+  },
+  "expectedSystemCount": 20,
+  "expectedPhysicalStaffCount": 58,
+  "movements": [],
+  "sharedMarkings": [],
+  "sourceObservations": "All four source pages inspected. First two systems contain piano alone (bars 1\u20139); retain labeled piano cues for the voice. Remaining 18 systems have Voice plus grand staff. Preserve both lyric languages, stage directions, orchestral cues in the piano reduction, final bar 73.",
+  "pages": [
+    {
+      "pageIndex": 0,
+      "expectedSystems": 5,
+      "expectedPhysicalStaves": 13,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                0,
+                1
+              ],
+              "kind": "cue",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    53.4038,
+                    572,
+                    176.909
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                0,
+                1
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    53.4038,
+                    572,
+                    176.909
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                2,
+                3
+              ],
+              "kind": "cue",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    159.5493,
+                    572,
+                    283.0548
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                2,
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    159.5493,
+                    572,
+                    283.0548
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 2,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                4
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    265.1576,
+                    572,
+                    352.3965
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                5,
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    326.5383,
+                    572,
+                    451.3666
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 3,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                7
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    433.7383,
+                    572,
+                    520.2617
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                8,
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    502.8485,
+                    572,
+                    627.1599
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 4,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                10
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    609.0561,
+                    572,
+                    696.295
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                11,
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    684.7177,
+                    572,
+                    809.6908
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 1,
+      "expectedSystems": 5,
+      "expectedPhysicalStaves": 15,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    6.1177,
+                    572,
+                    91.9265
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                1,
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    71.6528,
+                    572,
+                    190.0118
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    163.6414,
+                    572,
+                    250.8803
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                4,
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    223.8237,
+                    572,
+                    342.6582
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 2,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    316.6183,
+                    572,
+                    402.4273
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                7,
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    379.1154,
+                    572,
+                    499.3139
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 3,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    478.3166,
+                    572,
+                    564.1257
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                10,
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    535.5849,
+                    572,
+                    669.486
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 4,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    643.9833,
+                    572,
+                    729.792
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                13,
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    700.5901,
+                    572,
+                    839.7818
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 2,
+      "expectedSystems": 5,
+      "expectedPhysicalStaves": 15,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    7.4403,
+                    572,
+                    93.2493
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                1,
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    69.6067,
+                    572,
+                    188.1519
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    164.5093,
+                    572,
+                    250.3183
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                4,
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    232.2971,
+                    572,
+                    350.8424
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 2,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    327.5304,
+                    572,
+                    413.3394
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                7,
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    389.3662,
+                    572,
+                    511.8794
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 3,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    487.6996,
+                    572,
+                    574.9385
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                10,
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    559.9927,
+                    572,
+                    678.8686
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 4,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    654.6888,
+                    572,
+                    741.9277
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                13,
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    714.8088,
+                    572,
+                    839.7819
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 3,
+      "expectedSystems": 5,
+      "expectedPhysicalStaves": 15,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    5.5803,
+                    572,
+                    92.8193
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                1,
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    79.5267,
+                    572,
+                    198.4029
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    162.856,
+                    572,
+                    248.6648
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                4,
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    228.7217,
+                    572,
+                    351.3797
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 2,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    315.6263,
+                    572,
+                    401.4351
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                7,
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    386.39,
+                    572,
+                    519.1543
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 3,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    483.6075,
+                    572,
+                    569.4163
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                10,
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    558.5359,
+                    572,
+                    677.8143
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 4,
+          "bands": [
+            {
+              "partID": "voice",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    641.4619,
+                    572,
+                    728.7008
+                  ],
+                  "description": "Reviewed complete target vocal staff, Italian and English lyrics, fermatas and stage directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "piano",
+              "candidateIDs": [
+                13,
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    18,
+                    710.779,
+                    572,
+                    834.615
+                  ],
+                  "description": "Reviewed complete target piano grand staff, both-hand notes/rests, ledger lines, beams, dynamics, slurs and source orchestral cues"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "independentCropReview": {
+    "reviewer": "offline_detection",
+    "status": "source-comparison-and-final-page-review-pass",
+    "bandCount": 40,
+    "method": "Every band compared actual output strip with original source context extending beyond all vertical crop edges; neighboring notation accepted. Protected envelopes supplement, not replace, musical visual review.",
+    "draftOutputHashes": {
+      "Voice (Leporello).pdf": "935764f455f316980d0b0d991227d3096434dce46b9e43167a09ea0e25fe00d2",
+      "Piano.pdf": "a409a4c0c830f0d64bc5da5947d7da6b2df451fc1d3450d5389f060b0baa8fa6"
+    },
+    "finalOutputHashes": {
+      "Voice (Leporello).pdf": "4bc087fcd659a995b466c64206c83c2f834f3b6f4ca0f3b85cb81b09fb876d93",
+      "Piano.pdf": "6f6303975ad5ff5f0a3ef7cfb37061f65a1774f98bd0629c2ace0c05579979ce"
+    },
+    "finalPageCount": 7,
+    "finalReviewMethod": "All source bands compared with outside-edge original context; all final exported pages viewed at 120 dpi for layout, reading scale, source order, headings, shared cues and footer clearance. Final v7 geometry changes reviewed separately; no target ink loss found.",
+    "performancePageTurns": "System-boundary pagination and section starts checked; practical turning opportunities were not optimized."
+  }
+}

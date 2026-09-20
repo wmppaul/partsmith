@@ -1,0 +1,1378 @@
+{
+  "schemaVersion": 1,
+  "source": "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+  "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+  "notationPolicy": "preserve-target",
+  "reviewStatus": "source_structure_reviewed_output_pending",
+  "profile": {
+    "parts": [
+      {
+        "id": "soprano",
+        "name": "Soprano",
+        "staffCount": 1
+      },
+      {
+        "id": "alto",
+        "name": "Alto",
+        "staffCount": 1
+      },
+      {
+        "id": "tenore",
+        "name": "Tenore",
+        "staffCount": 1
+      },
+      {
+        "id": "basso",
+        "name": "Basso",
+        "staffCount": 1
+      },
+      {
+        "id": "violin1",
+        "name": "Violino I",
+        "staffCount": 1
+      },
+      {
+        "id": "violin2",
+        "name": "Violino II",
+        "staffCount": 1
+      },
+      {
+        "id": "viola",
+        "name": "Viola",
+        "staffCount": 1
+      },
+      {
+        "id": "bass_organ",
+        "name": "Basso ed Organo",
+        "staffCount": 1,
+        "bottomPaddingStaffSpaces": 9
+      }
+    ]
+  },
+  "expectedSystemCount": 8,
+  "expectedPhysicalStaffCount": 64,
+  "movements": [
+    {
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "label": "Adagio"
+    }
+  ],
+  "sharedMarkings": [],
+  "sourceObservations": "All four source pages inspected. Eight printed staves per system, including the combined Basso ed Organo staff. Preserve choral text, organ tasto solo and multi-line figured bass; no invented separate organ realization.",
+  "pages": [
+    {
+      "pageIndex": 0,
+      "expectedSystems": 2,
+      "expectedPhysicalStaves": 16,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    116.1048,
+                    580,
+                    180.4074
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                1
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    153.0013,
+                    580,
+                    217.304
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    191.5981,
+                    580,
+                    255.9007
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    224.0739,
+                    580,
+                    288.3766
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                4
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    267.2615,
+                    580,
+                    325.5642
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    302.4576,
+                    580,
+                    360.7604
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    339.6943,
+                    580,
+                    397.997
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                7
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    370.9798,
+                    580,
+                    443.2825
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    433.721,
+                    580,
+                    498.0236
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    470.7875,
+                    580,
+                    535.0901
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                10
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    508.8742,
+                    580,
+                    573.1768
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    546.2808,
+                    580,
+                    610.5834
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    593.3791,
+                    580,
+                    651.6818
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                13
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    624.1546,
+                    580,
+                    682.4573
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    657.6505,
+                    580,
+                    715.7832
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                15
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    689.6161,
+                    580,
+                    761.9188
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 1,
+      "expectedSystems": 2,
+      "expectedPhysicalStaves": 16,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    80.0584,
+                    580,
+                    144.3611
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                1
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    116.9549,
+                    580,
+                    181.2576
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    155.0416,
+                    580,
+                    219.3444
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    189.3877,
+                    580,
+                    253.6904
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                4
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    237.5062,
+                    580,
+                    295.8089
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    270.152,
+                    580,
+                    328.4547
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    308.0687,
+                    580,
+                    366.3714
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                7
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    338.6741,
+                    580,
+                    410.9768
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    416.3778,
+                    580,
+                    480.6805
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    450.3839,
+                    580,
+                    514.6866
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                10
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    485.41,
+                    580,
+                    549.7128
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    521.2864,
+                    580,
+                    585.5891
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    570.4251,
+                    580,
+                    628.7278
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                13
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    603.751,
+                    580,
+                    662.0537
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    637.927,
+                    580,
+                    696.2297
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                15
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    673.1232,
+                    580,
+                    745.4253
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 2,
+      "expectedSystems": 2,
+      "expectedPhysicalStaves": 16,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    80.0584,
+                    580,
+                    144.3611
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                1
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    116.9549,
+                    580,
+                    181.2576
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    156.4019,
+                    580,
+                    220.7046
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    192.9584,
+                    580,
+                    257.2611
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                4
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    240.0567,
+                    580,
+                    298.3594
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    273.7226,
+                    580,
+                    332.0253
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    311.1292,
+                    580,
+                    369.4319
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                7
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    343.775,
+                    580,
+                    416.0777
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    423.6891,
+                    580,
+                    487.8218
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    460.5857,
+                    580,
+                    524.8884
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                10
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    501.3929,
+                    580,
+                    565.6956
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    539.4796,
+                    580,
+                    603.7823
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    583.1773,
+                    580,
+                    641.48
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                13
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    613.9528,
+                    580,
+                    672.2555
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    647.4487,
+                    580,
+                    705.7514
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                15
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    679.9244,
+                    580,
+                    752.2265
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 3,
+      "expectedSystems": 2,
+      "expectedPhysicalStaves": 16,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                0
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    80.0584,
+                    580,
+                    144.3611
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                1
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    115.0846,
+                    580,
+                    179.3873
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                2
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    155.0416,
+                    580,
+                    219.3444
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                3
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    194.4886,
+                    580,
+                    258.7913
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                4
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    245.1576,
+                    580,
+                    303.4603
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                5
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    275.933,
+                    580,
+                    334.2357
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                6
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    313.3396,
+                    580,
+                    371.6423
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                7
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    345.8154,
+                    580,
+                    418.1181
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "bands": [
+            {
+              "partID": "soprano",
+              "candidateIDs": [
+                8
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    425.7295,
+                    580,
+                    490.0322
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "alto",
+              "candidateIDs": [
+                9
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    462.626,
+                    580,
+                    526.9287
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "tenore",
+              "candidateIDs": [
+                10
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    499.6926,
+                    580,
+                    563.9953
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "basso",
+              "candidateIDs": [
+                11
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    532.1683,
+                    580,
+                    596.471
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; complete Latin lyric line including melismas and final syllables"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin1",
+              "candidateIDs": [
+                12
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    579.7767,
+                    580,
+                    638.0794
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "violin2",
+              "candidateIDs": [
+                13
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    610.5522,
+                    580,
+                    668.8549
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "viola",
+              "candidateIDs": [
+                14
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    644.0481,
+                    580,
+                    702.3508
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs"
+                }
+              ],
+              "targetPreservation": "pass"
+            },
+            {
+              "partID": "bass_organ",
+              "candidateIDs": [
+                15
+              ],
+              "kind": "music",
+              "protectedRegions": [
+                {
+                  "rect": [
+                    25,
+                    676.5238,
+                    580,
+                    748.8259
+                  ],
+                  "description": "Reviewed complete target staff, clef/key, rests, notes, accidentals, ties and slurs; all three figured-bass rows and tasto solo/sotto voce directions"
+                }
+              ],
+              "targetPreservation": "pass"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "independentCropReview": {
+    "reviewer": "offline_detection",
+    "status": "source-comparison-and-final-page-review-pass",
+    "bandCount": 64,
+    "method": "Every band compared actual output strip with original source context extending beyond all vertical crop edges; neighboring notation accepted. Protected envelopes supplement, not replace, musical visual review.",
+    "draftOutputHashes": {
+      "Soprano.pdf": "22ea172508d8f82e7ce5894c0d5437f9204c75610a3f2ed99c241aae5e6cbf15",
+      "Alto.pdf": "be21de465c77ac698d10cfdfe876bef74f00de74ef6ce71f08054d52d4667161",
+      "Tenore.pdf": "f2a7f3741ff24b8c1d538ca46f9ce3715dbfd29536b898b0e364097b26840759",
+      "Basso.pdf": "25ae9c3c530ea6f5782ba1ee925ddef270ef99a81eb189cbac89412b593cd724",
+      "Violino I.pdf": "8f7731ba0b7c6a9999c7bd2bd688d8fcfc2eec4fe12931180effd332485576c8",
+      "Violino II.pdf": "5f178015de33c83db69af756ffea27a8591c6974a335edf95b730cafdf192a7d",
+      "Viola.pdf": "8a057f7d01e6c8b1dc9051287327010bc8970dcfb9bef0864305a5632d424298",
+      "Basso ed Organo.pdf": "9af054fea67a7181085d0c70a66c2eb389ea40ddd6e6f19e647153e4715ffa74"
+    },
+    "finalOutputHashes": {
+      "Soprano.pdf": "5369b140addf0add45766224fe684659444e221748f94d6cb973352f7e0cb551",
+      "Alto.pdf": "8b70de00c9665b8b496e89619692f31a11ea389443c3c7ada43f3b5d59c345cc",
+      "Tenore.pdf": "c18575a3a7e67aa19436b0c9c4dbaa56ec7fc957b1cbb504e5efade0b4e1851c",
+      "Basso.pdf": "a0bc4b3f025ebafb9453e2df04ddf8eb1c70764e060fca0d5d6c7aecaee7ddee",
+      "Violino I.pdf": "f403db3e3e5a37e9db1d6ed24721eff851b2368bde51f6e2c7e2701326bdafce",
+      "Violino II.pdf": "1bb4c2f457f2d474c6cccb7cb205a37a724e03dd7998091517da12ed610059f6",
+      "Viola.pdf": "64dfdd3cf32681d1d139b9afb1ae729d681999f31bcc3698b7135423a11c692f",
+      "Basso ed Organo.pdf": "d6b3baea434e7299349ba05173f67c3e2c411a8ff0a443341fcf370b2e566489"
+    },
+    "finalPageCount": 8,
+    "finalReviewMethod": "All source bands compared with outside-edge original context; all final exported pages viewed at 120 dpi for layout, reading scale, source order, headings, shared cues and footer clearance. Final v7 geometry changes reviewed separately; no target ink loss found.",
+    "performancePageTurns": "System-boundary pagination and section starts checked; practical turning opportunities were not optimized."
+  }
+}

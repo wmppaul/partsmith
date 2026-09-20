@@ -186,6 +186,23 @@ struct SourceHeaderSelection: Codable, Equatable {
     }
 }
 
+/// A portable, reviewed instrument order. Detection results remain separate so
+/// reusing setup never implies that a new source page has already been reviewed.
+struct ScoreInstrumentationSetup: Codable, Equatable {
+    struct Instrument: Codable, Equatable {
+        var id: String
+        var name: String
+        var staffCount: Int
+        var topPaddingStaffSpaces: Double?
+        var bottomPaddingStaffSpaces: Double?
+    }
+    var instruments: [Instrument]
+    var topPaddingStaffSpaces: Double?
+    var bottomPaddingStaffSpaces: Double?
+    var leftTrimPoints: Double?
+    var rightTrimPoints: Double?
+}
+
 struct ProjectSettings: Codable, Equatable {
     var outputPageSize: OutputPageSize
     var margins: PageMargins
@@ -197,6 +214,7 @@ struct ProjectSettings: Codable, Equatable {
     var headerSelection: SourceHeaderSelection?
     var defaultTitleText: String
     var defaultComposerText: String
+    var instrumentationSetup: ScoreInstrumentationSetup?
 
     init(
         outputPageSize: OutputPageSize,
@@ -208,7 +226,8 @@ struct ProjectSettings: Codable, Equatable {
         headerDisplayMode: HeaderDisplayMode = .sourceSelection,
         headerSelection: SourceHeaderSelection? = nil,
         defaultTitleText: String = "",
-        defaultComposerText: String = ""
+        defaultComposerText: String = "",
+        instrumentationSetup: ScoreInstrumentationSetup? = nil
     ) {
         self.outputPageSize = outputPageSize
         self.margins = margins
@@ -220,6 +239,7 @@ struct ProjectSettings: Codable, Equatable {
         self.headerSelection = headerSelection
         self.defaultTitleText = defaultTitleText
         self.defaultComposerText = defaultComposerText
+        self.instrumentationSetup = instrumentationSetup
     }
 
     static let `default` = ProjectSettings(
@@ -246,6 +266,7 @@ struct ProjectSettings: Codable, Equatable {
         case headerSelection
         case defaultTitleText
         case defaultComposerText
+        case instrumentationSetup
     }
 
     init(from decoder: Decoder) throws {
@@ -260,6 +281,7 @@ struct ProjectSettings: Codable, Equatable {
         headerSelection = try container.decodeIfPresent(SourceHeaderSelection.self, forKey: .headerSelection)
         defaultTitleText = try container.decodeIfPresent(String.self, forKey: .defaultTitleText) ?? ""
         defaultComposerText = try container.decodeIfPresent(String.self, forKey: .defaultComposerText) ?? ""
+        instrumentationSetup = try container.decodeIfPresent(ScoreInstrumentationSetup.self, forKey: .instrumentationSetup)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -274,6 +296,7 @@ struct ProjectSettings: Codable, Equatable {
         try container.encodeIfPresent(headerSelection, forKey: .headerSelection)
         try container.encode(defaultTitleText, forKey: .defaultTitleText)
         try container.encode(defaultComposerText, forKey: .defaultComposerText)
+        try container.encodeIfPresent(instrumentationSetup, forKey: .instrumentationSetup)
     }
 }
 
@@ -325,6 +348,8 @@ struct PartLayoutSettings: Codable, Equatable {
     var scale: Double
     var interSystemGap: Double
     var showPartNameLabel: Bool
+    var balancePages: Bool
+    var useConsistentScale: Bool
 
     init(
         showTitle: Bool,
@@ -332,7 +357,9 @@ struct PartLayoutSettings: Codable, Equatable {
         composerText: String,
         scale: Double,
         interSystemGap: Double,
-        showPartNameLabel: Bool = false
+        showPartNameLabel: Bool = false,
+        balancePages: Bool = true,
+        useConsistentScale: Bool = true
     ) {
         self.showTitle = showTitle
         self.titleText = titleText
@@ -340,6 +367,8 @@ struct PartLayoutSettings: Codable, Equatable {
         self.scale = scale
         self.interSystemGap = interSystemGap
         self.showPartNameLabel = showPartNameLabel
+        self.balancePages = balancePages
+        self.useConsistentScale = useConsistentScale
     }
 
     static let `default` = PartLayoutSettings(
@@ -358,6 +387,8 @@ struct PartLayoutSettings: Codable, Equatable {
         case scale
         case interSystemGap
         case showPartNameLabel
+        case balancePages
+        case useConsistentScale
     }
 
     init(from decoder: Decoder) throws {
@@ -368,6 +399,8 @@ struct PartLayoutSettings: Codable, Equatable {
         scale = try container.decodeIfPresent(Double.self, forKey: .scale) ?? 1.0
         interSystemGap = try container.decodeIfPresent(Double.self, forKey: .interSystemGap) ?? 16
         showPartNameLabel = try container.decodeIfPresent(Bool.self, forKey: .showPartNameLabel) ?? false
+        balancePages = try container.decodeIfPresent(Bool.self, forKey: .balancePages) ?? true
+        useConsistentScale = try container.decodeIfPresent(Bool.self, forKey: .useConsistentScale) ?? true
     }
 
     func encode(to encoder: Encoder) throws {
@@ -378,6 +411,8 @@ struct PartLayoutSettings: Codable, Equatable {
         try container.encode(scale, forKey: .scale)
         try container.encode(interSystemGap, forKey: .interSystemGap)
         try container.encode(showPartNameLabel, forKey: .showPartNameLabel)
+        try container.encode(balancePages, forKey: .balancePages)
+        try container.encode(useConsistentScale, forKey: .useConsistentScale)
     }
 }
 
@@ -454,6 +489,21 @@ struct BandExclusion: Codable, Identifiable, Equatable {
     }
 }
 
+/// A verified shared score direction copied from this band's source page.
+/// Right is a trim amount; its horizontal source position is retained above the part.
+struct BandSourceMarking: Codable, Equatable {
+    var topFraction: Double
+    var bottomFraction: Double
+    var leftFraction: Double
+    var rightFraction: Double
+
+    func isValid(in band: BandModel) -> Bool {
+        [topFraction, bottomFraction, leftFraction, rightFraction].allSatisfy { $0.isFinite && $0 >= 0 && $0 <= 1 }
+            && topFraction < bottomFraction && leftFraction + rightFraction < 1
+            && leftFraction >= band.leftFraction && rightFraction >= band.rightFraction
+    }
+}
+
 struct BandModel: Codable, Identifiable, Equatable {
     var id: UUID
     var pageIndex: Int
@@ -471,6 +521,7 @@ struct BandModel: Codable, Identifiable, Equatable {
     var exclusions: [BandExclusion]
     var editorialLabel: String
     var pageBreakBefore: Bool
+    var sourceMarkings: [BandSourceMarking]
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -489,6 +540,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         case exclusions
         case editorialLabel
         case pageBreakBefore
+        case sourceMarkings
     }
 
     init(
@@ -507,7 +559,8 @@ struct BandModel: Codable, Identifiable, Equatable {
         barNumberDetectionMethod: BarNumberDetectionMethod? = nil,
         exclusions: [BandExclusion] = [],
         editorialLabel: String = "",
-        pageBreakBefore: Bool = false
+        pageBreakBefore: Bool = false,
+        sourceMarkings: [BandSourceMarking] = []
     ) {
         self.id = id
         self.pageIndex = pageIndex
@@ -525,6 +578,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         self.exclusions = exclusions
         self.editorialLabel = editorialLabel
         self.pageBreakBefore = pageBreakBefore
+        self.sourceMarkings = sourceMarkings
     }
 
     init(from decoder: Decoder) throws {
@@ -548,6 +602,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         exclusions = try container.decodeIfPresent([BandExclusion].self, forKey: .exclusions) ?? []
         editorialLabel = try container.decodeIfPresent(String.self, forKey: .editorialLabel) ?? ""
         pageBreakBefore = try container.decodeIfPresent(Bool.self, forKey: .pageBreakBefore) ?? false
+        sourceMarkings = try container.decodeIfPresent([BandSourceMarking].self, forKey: .sourceMarkings) ?? []
     }
 
     func encode(to encoder: Encoder) throws {
@@ -573,6 +628,9 @@ struct BandModel: Codable, Identifiable, Equatable {
         }
         if pageBreakBefore {
             try container.encode(pageBreakBefore, forKey: .pageBreakBefore)
+        }
+        if !sourceMarkings.isEmpty {
+            try container.encode(sourceMarkings, forKey: .sourceMarkings)
         }
     }
 

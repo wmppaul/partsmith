@@ -39,6 +39,26 @@ struct StaffDetectionPage {
     var rectification: PageRectification?
 }
 
+struct ScoreDetectionProgress {
+    var completedPages: Int
+    var totalPages: Int
+}
+
+struct ScoreDetectionReview {
+    var profile: ScoreExtractionProfile
+    var analyses: [ScorePageAnalysis]
+    var plan: ScoreExtractionPlan
+    var overrides: [ScorePageOverride] = []
+    var excludedPageReasons: [Int: String] = [:]
+    var sourcePDFData: Data
+    var rectifications: [PageRectification]
+
+    mutating func replan() {
+        plan = ScoreExtractionPlanner.plan(pages: analyses.filter { excludedPageReasons[$0.pageIndex] == nil },
+                                           profile: profile, overrides: overrides.filter { excludedPageReasons[$0.pageIndex] == nil })
+    }
+}
+
 final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     static var readableContentTypes: [UTType] { [.partsmithProject] }
     private static let defaultPartPalette: [NSColor] = [
@@ -64,6 +84,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @Published var isEditingHeaderSelection: Bool
     @Published var isEditingPageRectification: Bool
     @Published private(set) var rectificationAutoProgress: RectificationAutoProgress?
+    @Published private(set) var scoreDetectionProgress: ScoreDetectionProgress?
 
     weak var undoManager: UndoManager?
 
@@ -73,6 +94,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private var rectificationAutoRunID: UUID?
     private let barNumberDetectionQueue = DispatchQueue(label: "Partsmith.BarNumberDetection", qos: .userInitiated)
     private var staffDetectionOperation: BlockOperation?
+    private var scoreDetectionOperation: BlockOperation?
     private let staffDetectionQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.name = "Partsmith.StaffDetection"
@@ -343,6 +365,159 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         staffDetectionOperation = nil
     }
 
+    /// Analyze every source page with an explicitly supplied instrument order.
+    /// Each worker owns its PDFKit objects; only small geometric results return to the UI.
+    func detectScore(profile: ScoreExtractionProfile, completion: @escaping (ScoreDetectionReview?) -> Void) {
+        cancelScoreDetection()
+        cancelStaffDetection()
+        guard let data = sourcePDFData, let pageCount = pdfDocument?.pageCount, pageCount > 0 else {
+            completion(nil); return
+        }
+        let rectifications = project.pageRectifications
+        let operation = BlockOperation()
+        scoreDetectionOperation = operation
+        scoreDetectionProgress = ScoreDetectionProgress(completedPages: 0, totalPages: pageCount)
+        operation.addExecutionBlock { [weak self, weak operation] in
+            guard let operation, !operation.isCancelled, let pdf = PDFDocument(data: data) else { return }
+            var analyses: [ScorePageAnalysis] = []
+            for pageIndex in 0..<pdf.pageCount {
+                guard !operation.isCancelled else { return }
+                let analysis: ScorePageAnalysis = autoreleasepool {
+                    let page = pdf.page(at: pageIndex)
+                    let bounds = page?.bounds(for: .mediaBox) ?? .zero
+                    let image: CGImage?
+                    if let rectification = rectifications.first(where: { $0.pageIndex == pageIndex }) {
+                        // Release each corrected raster after analysis rather than
+                        // retaining an entire scanned score in a render cache.
+                        let cache = SourcePageRenderCache(pdfDocument: pdf, rasterScale: 2.5)
+                        image = cache.rectifiedDisplayImage(for: pageIndex, rectification: rectification)
+                    } else {
+                        image = page.flatMap { NativeScorePageAnalyzer.render($0) }
+                    }
+                    guard let image else {
+                        return ScorePageAnalysis(pageIndex: pageIndex, pageWidth: bounds.width, pageHeight: bounds.height,
+                            imageWidth: 0, imageHeight: 0, staves: [], warnings: ["Page could not be rendered; review or restore the source."])
+                    }
+                    return NativeScorePageAnalyzer.analyze(pageIndex: pageIndex, image: image,
+                        pageWidth: bounds.width, pageHeight: bounds.height, isCancelled: { operation.isCancelled })
+                }
+                analyses.append(analysis)
+                DispatchQueue.main.async { [weak self, weak operation] in
+                    guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
+                    self.scoreDetectionProgress = ScoreDetectionProgress(completedPages: pageIndex + 1, totalPages: pageCount)
+                }
+            }
+            let plan = ScoreExtractionPlanner.plan(pages: analyses, profile: profile, isCancelled: { operation.isCancelled })
+            let review = ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan,
+                                               sourcePDFData: data, rectifications: rectifications)
+            DispatchQueue.main.async { [weak self, weak operation] in
+                guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
+                self.scoreDetectionOperation = nil
+                self.scoreDetectionProgress = nil
+                completion(self.isScoreDetectionCurrent(review) ? review : nil)
+            }
+        }
+        staffDetectionQueue.addOperation(operation)
+    }
+
+    func cancelScoreDetection() {
+        scoreDetectionOperation?.cancel()
+        scoreDetectionOperation = nil
+        scoreDetectionProgress = nil
+    }
+
+    var savedScoreProfile: ScoreExtractionProfile? {
+        guard let setup = project.projectSettings.instrumentationSetup else { return nil }
+        return ScoreExtractionProfile(parts: setup.instruments.map {
+            ScorePartDefinition(id: $0.id, name: $0.name, staffCount: $0.staffCount,
+                topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces)
+        }, topPaddingStaffSpaces: setup.topPaddingStaffSpaces, bottomPaddingStaffSpaces: setup.bottomPaddingStaffSpaces,
+           leftTrimPoints: setup.leftTrimPoints, rightTrimPoints: setup.rightTrimPoints)
+    }
+
+    private static func instrumentationSetup(for profile: ScoreExtractionProfile) -> ScoreInstrumentationSetup {
+        ScoreInstrumentationSetup(instruments: profile.parts.map {
+            ScoreInstrumentationSetup.Instrument(id: $0.id, name: $0.name, staffCount: $0.staffCount,
+                topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces)
+        }, topPaddingStaffSpaces: profile.topPaddingStaffSpaces, bottomPaddingStaffSpaces: profile.bottomPaddingStaffSpaces,
+           leftTrimPoints: profile.leftTrimPoints, rightTrimPoints: profile.rightTrimPoints)
+    }
+
+    func saveScoreProfile(_ profile: ScoreExtractionProfile) {
+        let setup = Self.instrumentationSetup(for: profile)
+        guard project.projectSettings.instrumentationSetup != setup else { return }
+        commit(actionName: "Save Instrumentation Setup") { project, _ in
+            project.projectSettings.instrumentationSetup = setup
+        }
+    }
+
+    func isScoreDetectionCurrent(_ review: ScoreDetectionReview) -> Bool {
+        review.sourcePDFData == sourcePDFData && review.rectifications == project.pageRectifications &&
+            review.analyses.map(\.pageIndex) == Array(0..<(pdfDocument?.pageCount ?? 0))
+    }
+
+    func scoreReviewImage(pageIndex: Int) -> CGImage? {
+        guard let page = pdfDocument?.page(at: pageIndex) else { return nil }
+        if let rectification = project.pageRectifications.first(where: { $0.pageIndex == pageIndex }) {
+            return sourcePageRenderCache?.rectifiedDisplayImage(for: pageIndex, rectification: rectification)
+        }
+        return NativeScorePageAnalyzer.render(page)
+    }
+
+    /// Add every reviewed part atomically. Existing populated parts of the same
+    /// name are rejected, so re-running Auto cannot silently duplicate their music.
+    @discardableResult
+    func addScoreParts(from review: ScoreDetectionReview) -> Int? {
+        guard isScoreDetectionCurrent(review), review.plan.canApply, !review.plan.bands.isEmpty,
+              review.excludedPageReasons.values.allSatisfy({ !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }),
+              Set(review.plan.pages.map(\.pageIndex)) == Set(review.analyses.map(\.pageIndex)).subtracting(review.excludedPageReasons.keys),
+              review.plan.parts == review.profile.parts,
+              Set(review.profile.parts.map { $0.name.lowercased() }).count == review.profile.parts.count else { return nil }
+        let now = Date()
+        var parts: [PartModel] = []
+        var partIDs: [String: UUID] = [:]
+        for definition in review.profile.parts {
+            let existing = project.parts.filter { $0.name.caseInsensitiveCompare(definition.name) == .orderedSame }
+            guard existing.count <= 1 else { return nil }
+            if let part = existing.first {
+                guard !project.bands.contains(where: { $0.partID == part.id }) else { return nil }
+                partIDs[definition.id] = part.id
+            } else {
+                let id = UUID()
+                partIDs[definition.id] = id
+                parts.append(PartModel(id: id, name: definition.name,
+                    color: ColorData(nsColor: Self.defaultPartPalette[(project.parts.count + parts.count) % Self.defaultPartPalette.count]),
+                    layoutSettings: defaultPartLayoutSettings(), createdAt: now))
+            }
+        }
+        var bands: [BandModel] = []
+        for planned in review.plan.bands {
+            guard let partID = partIDs[planned.partID], planned.pageIndex >= 0, planned.pageIndex < review.analyses.count,
+                  [planned.topFraction, planned.bottomFraction, planned.leftFraction, planned.rightFraction].allSatisfy({ $0.isFinite && $0 >= 0 && $0 <= 1 }),
+                  planned.topFraction < planned.bottomFraction, planned.leftFraction + planned.rightFraction < 1 else { return nil }
+            let band = BandModel(id: UUID(), pageIndex: planned.pageIndex, partID: partID,
+                topFraction: planned.topFraction, bottomFraction: planned.bottomFraction,
+                leftFraction: planned.leftFraction, rightFraction: planned.rightFraction,
+                excluded: false, createdAt: now, barNumberMode: .hidden,
+                editorialLabel: planned.editorialLabel, pageBreakBefore: planned.pageBreakBefore,
+                sourceMarkings: planned.sourceMarkings.map { BandSourceMarking(topFraction: $0.topFraction,
+                    bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction) })
+            guard band.sourceMarkings.allSatisfy({ $0.isValid(in: band) }) else { return nil }
+            bands.append(band)
+        }
+        commit(actionName: "Auto Extract Reviewed Parts") { project, _ in
+            project.parts.append(contentsOf: parts)
+            project.bands.append(contentsOf: bands)
+            project.projectSettings.showPartNameInHeader = true
+            project.projectSettings.instrumentationSetup = Self.instrumentationSetup(for: review.profile)
+        }
+        selectedPartID = review.profile.parts.first.flatMap { partIDs[$0.id] }
+        selectedBandID = bands.first?.id
+        currentPageIndex = bands.first?.pageIndex ?? 0
+        canvasMode = .source
+        return bands.count
+    }
+
     func isStaffDetectionCurrent(_ review: StaffDetectionPage) -> Bool {
         review.pageIndex == currentPageIndex && review.sourcePDFData == sourcePDFData
             && review.rectification == currentPageRectification
@@ -530,6 +705,18 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     func updatePartGap(_ partID: UUID, gap: Double) {
         updatePart(partID: partID, actionName: "Change System Gap") { part in
             part.layoutSettings.interSystemGap = max(4, min(gap, 48))
+        }
+    }
+
+    func updatePartBalancedPages(_ partID: UUID, enabled: Bool) {
+        updatePart(partID: partID, actionName: "Balance Part Pages") { part in
+            part.layoutSettings.balancePages = enabled
+        }
+    }
+
+    func updatePartConsistentScale(_ partID: UUID, enabled: Bool) {
+        updatePart(partID: partID, actionName: "Change Part Scaling") { part in
+            part.layoutSettings.useConsistentScale = enabled
         }
     }
 
@@ -794,6 +981,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         commit(actionName: "Edit Band Label") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].editorialLabel = label
+        }
+    }
+
+    func updateBandSourceMarkings(_ bandID: UUID, markings: [BandSourceMarking]) {
+        guard project.bands.contains(where: { $0.id == bandID }) else { return }
+        commit(actionName: "Edit Shared Score Markings") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].sourceMarkings = markings
         }
     }
 
@@ -1368,10 +1563,15 @@ final class SourcePageRenderCache {
         sourceRect: CGRect,
         destinationRect: CGRect,
         in context: CGContext
-    ) {
-        guard let pdfPage = pdfDocument.page(at: pageIndex) else { return }
+    ) throws {
+        guard let pdfPage = pdfDocument.page(at: pageIndex) else { throw PartLayoutError.missingSourcePage(pageIndex) }
 
-        if let rectifiedPage = rectifiedPage(for: pageIndex, rectification: rectification) {
+        if let rectification {
+            // Bands refer to corrected coordinates. Drawing the original page
+            // after a correction failure would silently substitute different music.
+            guard let rectifiedPage = rectifiedPage(for: pageIndex, rectification: rectification) else {
+                throw PartLayoutError.failedRectification(pageIndex)
+            }
             draw(
                 image: rectifiedPage.image,
                 pageBounds: rectifiedPage.pageBounds,

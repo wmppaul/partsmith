@@ -174,6 +174,103 @@ struct LayoutRegressionTests {
         expectError(annotated, matches: { if case .editorialLabelDoesNotFit = $0 { return true }; return false },
                     "Impossible label layout reports an error instead of cutting text")
 
+        var balanced = project()
+        balanced.bands = (0..<5).map { index in
+            band(partID: balanced.parts[0].id, page: index % 3, top: 0.2, bottom: 0.3625)
+        }
+        let balancedPlan = try plan(balanced)
+        check(balancedPlan.pages.count == 2 && balancedPlan.pages.allSatisfy { $0.placements.count >= 2 },
+              "Balanced pagination avoids a lone final system without adding a page")
+        check(balancedPlan.pages.flatMap(\.placements).allSatisfy { abs($0.destinationRect.height - 130) < 0.00001 },
+              "Page balancing never shrinks notation")
+        balanced.parts[0].layoutSettings.balancePages = false
+        let greedyPlan = try plan(balanced)
+        check(greedyPlan.pages.map { $0.placements.count } == [4, 1], "Greedy pagination remains available")
+        balanced.parts[0].layoutSettings.balancePages = true
+        let lastID = balanced.sortedBands(for: balanced.parts[0].id)[3].id
+        balanced.bands[balanced.bands.firstIndex { $0.id == lastID }!].pageBreakBefore = true
+        let sectionPlan = try plan(balanced)
+        check(sectionPlan.pages.map { $0.placements.count } == [3, 2], "Explicit musical section breaks remain hard boundaries")
+
+        var compact = project()
+        compact.bands = (0..<6).map { index in
+            band(partID: compact.parts[0].id, page: index % 3, top: 0.2, bottom: 0.31875)
+        }
+        let compactPlan = try plan(compact)
+        check(compactPlan.pages.count == 1, "A four-point gap reduction avoids an unnecessary second page")
+        check(compactPlan.pages[0].placements.allSatisfy { abs($0.destinationRect.height - 95) < 0.00001 },
+              "Compact page packing retains requested notation scale")
+
+        var choir = project()
+        choir.projectSettings.showPartNameInHeader = true
+        choir.bands = (0..<8).map { index in
+            band(partID: choir.parts[0].id, page: index % 3, top: 0.2, bottom: 0.2 + 64.5 / 800)
+        }
+        let firstChoirBandID = choir.sortedBands(for: choir.parts[0].id)[0].id
+        choir.bands[choir.bands.firstIndex { $0.id == firstChoirBandID }!].editorialLabel = "Adagio"
+        let choirPlan = try plan(choir)
+        check(choirPlan.pages.count == 1, "An eight-system choir part avoids a page turn by using a gap below twelve points")
+        let choirPlacements = choirPlan.pages[0].placements
+        let choirGap = choirPlacements[0].destinationRect.minY - choirPlacements[1].destinationRect.maxY
+        check(choirGap > 11.7 && choirGap < 11.72, "The chosen gap is the largest gap reaching the minimum page count: \(choirGap)")
+        check(choirPlacements.allSatisfy { abs($0.destinationRect.height - 64.5) < 0.00001 },
+              "Gap optimization never reduces source scale")
+
+        var pianoPacking = project()
+        pianoPacking.projectSettings.showPartNameInHeader = true
+        pianoPacking.bands = (0..<20).map { index in
+            band(partID: pianoPacking.parts[0].id, page: index % 3, top: 0.2, bottom: 0.2 + 118.4 / 800)
+        }
+        let pianoPlan = try plan(pianoPacking)
+        check(pianoPlan.pages.count == 4 && pianoPlan.pages.allSatisfy { $0.placements.count == 5 },
+              "Twenty piano systems fit four balanced pages using the full safe gap range")
+        check(pianoPlan.pages.flatMap(\.placements).allSatisfy { abs($0.destinationRect.height - 118.4) < 0.00001 },
+              "Twenty-system packing preserves notation scale")
+
+        var uniform = project()
+        var narrow = uniform.bands[0]
+        narrow.id = UUID()
+        narrow.pageIndex = 1
+        narrow.leftFraction = 0.51
+        uniform.bands.append(narrow)
+        let uniformPlacements = try plan(uniform).pages.flatMap(\.placements)
+        check(abs(uniformPlacements[0].destinationRect.height - uniformPlacements[1].destinationRect.height) < 0.00001,
+              "Narrow short systems retain the same source scale as full-width systems")
+
+        var shared = project()
+        shared.bands[0].sourceMarkings = [BandSourceMarking(topFraction: 0.05, bottomFraction: 0.075,
+                                                          leftFraction: 0.4, rightFraction: 0.5)]
+        let sharedPlan = try plan(shared)
+        let sharedBand = sharedPlan.pages[0].placements[0]
+        let marking = sharedBand.sourceMarkings[0]
+        check(abs(marking.destinationRect.height - 20) < 0.00001 && marking.destinationRect.minY >= sharedBand.destinationRect.maxY + 4,
+              "Shared original glyphs reserve a separate row above the target notes")
+        check(abs(marking.destinationRect.minX - sharedBand.destinationRect.minX -
+                  (marking.sourceRect.minX - sharedBand.sourceRect.minX)) < 0.00001,
+              "Shared markings preserve their original horizontal bar position")
+        let sharedRoundtrip = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(shared))
+        check(sharedRoundtrip == shared,
+              "Shared source markings persist with their exact source coordinates")
+        var overlappingMarkings = shared
+        overlappingMarkings.bands[0].sourceMarkings.append(BandSourceMarking(
+            topFraction: 0.1, bottomFraction: 0.125, leftFraction: 0.45, rightFraction: 0.45))
+        expectError(overlappingMarkings, matches: { if case .overlappingSourceMarkings = $0 { return true }; return false },
+                    "Separate source rows cannot silently overpaint shared directions in the output row")
+        overlappingMarkings.bands[0].sourceMarkings[1] = overlappingMarkings.bands[0].sourceMarkings[0]
+        expectError(overlappingMarkings, matches: { if case .overlappingSourceMarkings = $0 { return true }; return false },
+                    "Duplicate source fragments require explicit resolution before export")
+        var adjacentMarkings = shared
+        adjacentMarkings.bands[0].sourceMarkings.append(BandSourceMarking(
+            topFraction: 0.1, bottomFraction: 0.125, leftFraction: 0.5, rightFraction: 0.4))
+        let adjacentPlacement = try plan(adjacentMarkings).pages[0].placements[0]
+        check(adjacentPlacement.sourceMarkings[1].destinationRect.minX >= adjacentPlacement.sourceMarkings[0].destinationRect.maxX,
+              "Touching source spans remain valid and render without overlapping")
+        check(adjacentPlacement.destinationRect == sharedBand.destinationRect && adjacentPlacement.sourceMarkings[0].destinationRect == marking.destinationRect,
+              "Valid nonoverlapping fragments keep the existing staff and marking geometry")
+        shared.bands[0].sourceMarkings[0].leftFraction = 0.01
+        expectError(shared, matches: { if case .invalidSourceMarking = $0 { return true }; return false },
+                    "A shared marking outside the horizontal crop fails instead of being clipped")
+
         // Exercise page breaks, sparse pages, exclusions, narrow/tall crops, high zoom, and asymmetric margins together.
         for index in 0..<80 {
             var generated = project()

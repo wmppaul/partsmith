@@ -1,0 +1,51 @@
+{
+  "status": "pass",
+  "notationPolicy": "preserve-target",
+  "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+  "sourceMapSHA256": "c886016796708fbae5c830c780aa28b06a6ed53396d560809ead4a54d7e0b6fa",
+  "visualReviewReports": [
+    "../evidence/brahms-quartet-review.md",
+    "../evidence/quartet-independent-review.md"
+  ],
+  "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
+  "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
+  "manualStaffPositionCorrections": 0,
+  "explicitCropRectangleOverrides": 0,
+  "whiteoutMasks": 0,
+  "pageFooterChecks": 75,
+  "geometryReport": "geometry-review.json",
+  "fidelityReport": "pixel-fidelity.json",
+  "fidelityReportSHA256": "326ee5fd38f3ea43bc70df2490876ed5e772bf4d73dc9f74304202e10118d0d6",
+  "parts": [
+    {
+      "name": "Violin I",
+      "file": "Violin I.pdf",
+      "sha256": "5e6facc3a865f443b84a211a22014af0eedef87d06fd73794f8240c7d03d9939",
+      "bandCount": 120,
+      "outputPages": 18
+    },
+    {
+      "name": "Violin II",
+      "file": "Violin II.pdf",
+      "sha256": "82bb0fe3785be15beb0f4fcf44c74290ef5f42b2b2a5193e9cb97077b2b6c280",
+      "bandCount": 120,
+      "outputPages": 19
+    },
+    {
+      "name": "Viola",
+      "file": "Viola.pdf",
+      "sha256": "5d9049bfc16c992b66fdb3d5390f2dde17800ee89b4132f5f005405aeae01414",
+      "bandCount": 120,
+      "outputPages": 19
+    },
+    {
+      "name": "Violoncello",
+      "file": "Violoncello.pdf",
+      "sha256": "c4da25990dbdeed026e4c0f7f183fb7e585413404c4e61cfd7095aa5c49ead8e",
+      "bandCount": 120,
+      "outputPages": 19
+    }
+  ],
+  "manifestSHA256": "30d605cbf22e02032f2f33ab5be3bfe74c52249a1493fe32ddb78ab71c56e276",
+  "generationManifestSHA256": "32107f6cfde8cd76703da6bbcf339ce58dc0488c3df8eb36561ffd2881261eba"
+}

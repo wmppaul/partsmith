@@ -15,6 +15,7 @@ struct StaffBandCandidate: Identifiable, Equatable {
 struct StaffDetectionResult {
     var candidates: [StaffBandCandidate]
     var warnings: [String]
+    var estimatedSkewDegrees: Double = 0
 }
 
 /// Finds repeated, widely supported five-line patterns entirely on the Mac.
@@ -26,7 +27,8 @@ enum StaffBandDetector {
             return StaffDetectionResult(candidates: [], warnings: ["This page could not be analyzed."])
         }
 
-        let profile = rowProfile(raster, isCancelled: isCancelled)
+        let slope = estimatedSlope(raster, isCancelled: isCancelled)
+        let profile = rowProfile(raster, slope: slope, isCancelled: isCancelled)
         if isCancelled() { return StaffDetectionResult(candidates: [], warnings: []) }
         let peaks = linePeaks(profile)
         var staffs = staffPatterns(peaks, width: raster.width, isCancelled: isCancelled)
@@ -35,7 +37,7 @@ enum StaffBandDetector {
         // only add a missed staff when at least two windows support it.
         let windows = [(0.08, 0.40), (0.34, 0.66), (0.60, 0.92)]
         let localStaffs = windows.map { left, right in
-            let local = rowProfile(raster, leftFraction: left, rightFraction: right, isCancelled: isCancelled)
+            let local = rowProfile(raster, leftFraction: left, rightFraction: right, slope: slope, isCancelled: isCancelled)
             return staffPatterns(linePeaks(local), width: raster.width, isCancelled: isCancelled)
         }
         for (windowIndex, windowStaffs) in localStaffs.enumerated() {
@@ -59,6 +61,22 @@ enum StaffBandDetector {
                 ))
             }
         }
+        // Before the first note, the staff lines usually remain clear even
+        // when long repeated piano beams merge with them farther to the right.
+        // Use this independent anchor only to resolve the line phase of an
+        // existing five-line group; it cannot invent additional staves.
+        let anchorProfile = rowProfile(raster, leftFraction: 0.045, rightFraction: 0.15, slope: slope, isCancelled: isCancelled)
+        let anchors = staffPatterns(linePeaks(anchorProfile), width: raster.width, isCancelled: isCancelled)
+        staffs = staffs.map { staff in
+            let space = (staff.lines[4] - staff.lines[0]) / 4
+            let compatible = anchors.filter {
+                let candidateSpace = ($0.lines[4] - $0.lines[0]) / 4
+                return $0.confidence >= 0.60 && abs(candidateSpace - space) < space * 0.18
+                    && abs($0.lines[0] - staff.lines[0]) <= space * 2.5
+            }
+            guard let anchor = compatible.min(by: { abs($0.lines[0] - staff.lines[0]) < abs($1.lines[0] - staff.lines[0]) }) else { return staff }
+            return Staff(lines: anchor.lines, confidence: min(staff.confidence, anchor.confidence), usesLocalEvidence: true)
+        }
         staffs.sort { $0.lines[0] < $1.lines[0] }
         if isCancelled() { return StaffDetectionResult(candidates: [], warnings: []) }
         guard !staffs.isEmpty else {
@@ -68,6 +86,7 @@ enum StaffBandDetector {
         }
 
         let height = Double(raster.height)
+        let skewPadding = abs(slope) * Double(raster.width) / 2
         var candidates: [StaffBandCandidate] = []
         for (index, staff) in staffs.enumerated() {
             let first = staff.lines[0]
@@ -92,6 +111,7 @@ enum StaffBandDetector {
                 profile: profile
             )
             var warnings: [String] = []
+            if abs(slope) > 0.001 { warnings.append("Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.") }
             if staff.usesLocalEvidence {
                 warnings.append("Staff lines may be tilted, curved, or interrupted. Check both ends of this band.")
             }
@@ -105,15 +125,15 @@ enum StaffBandDetector {
             candidates.append(StaffBandCandidate(
                 id: index,
                 staffLineFractions: staff.lines.map { $0 / height },
-                topFraction: max(0, min(top, first - 0.5 * space)) / height,
-                bottomFraction: min(height, max(bottom, last + 0.5 * space)) / height,
+                topFraction: max(0, min(top, first - 0.5 * space) - skewPadding) / height,
+                bottomFraction: min(height, max(bottom, last + 0.5 * space) + skewPadding) / height,
                 confidence: staff.confidence,
                 warnings: warnings
             ))
         }
         return StaffDetectionResult(candidates: candidates, warnings: [
             "Staff proposals need review. Instrument identity, changing staff order, shared markings, and multi-staff instruments are not inferred."
-        ])
+        ], estimatedSkewDegrees: atan(slope) * 180 / .pi)
     }
 
     private struct Raster {
@@ -159,9 +179,50 @@ enum StaffBandDetector {
         var usesLocalEvidence = false
     }
 
+    /// Maximize horizontal ink alignment without resampling or changing source
+    /// coordinates. Staff centers remain at the original image's center x.
+    private static func estimatedSlope(_ raster: Raster, isCancelled: () -> Bool) -> Double {
+        var points: [(x: Double, y: Double)] = []
+        let center = Double(raster.width) / 2
+        for y in 0..<raster.height {
+            if isCancelled() { return 0 }
+            for x in stride(from: Int(Double(raster.width) * 0.06), to: Int(Double(raster.width) * 0.94), by: 6) {
+                if raster.pixels[y * raster.width + x] < 150 { points.append((Double(x) - center, Double(y))) }
+            }
+        }
+        guard points.count > 1000 else { return 0 }
+        func score(_ slope: Double) -> Double {
+            var bins = [Double](repeating: 0, count: raster.height + 100)
+            for point in points {
+                let projected = point.y - slope * point.x + 50
+                let index = Int(projected)
+                if index >= 0 && index + 1 < bins.count {
+                    let fraction = projected - Double(index)
+                    bins[index] += 1 - fraction; bins[index + 1] += fraction
+                }
+            }
+            return bins.reduce(0) { $0 + $1 * $1 }
+        }
+        let zeroScore = score(0)
+        var best = 0.0, bestScore = zeroScore
+        for step in -20...20 {
+            if isCancelled() { return 0 }
+            let slope = tan(Double(step) * 0.1 * .pi / 180)
+            let value = score(slope)
+            if value > bestScore { best = slope; bestScore = value }
+        }
+        let coarseAngle = atan(best) * 180 / .pi
+        for step in -5...5 {
+            let slope = tan((coarseAngle + Double(step) * 0.02) * .pi / 180)
+            let value = score(slope)
+            if value > bestScore { best = slope; bestScore = value }
+        }
+        return bestScore > zeroScore * 1.08 ? best : 0
+    }
+
     private static func rowProfile(
         _ raster: Raster, leftFraction: Double = 0.035, rightFraction: Double = 0.965,
-        isCancelled: () -> Bool
+        slope: Double = 0, isCancelled: () -> Bool
     ) -> [Row] {
         let left = Int(Double(raster.width) * leftFraction)
         let right = max(left + 1, Int(Double(raster.width) * rightFraction))
@@ -177,8 +238,9 @@ enum StaffBandDetector {
                 let end = left + (right - left) * (column + 1) / columnCount
                 guard end > start else { continue }
                 var count = 0
-                for x in start..<end where raster.pixels[y * raster.width + x] < 195 {
-                    count += 1
+                for x in start..<end {
+                    let sourceY = y + Int((slope * (Double(x) - Double(raster.width) / 2)).rounded())
+                    if sourceY >= 0 && sourceY < raster.height && raster.pixels[sourceY * raster.width + x] < 195 { count += 1 }
                 }
                 totalInk += count
                 if Double(count) / Double(end - start) >= 0.32 { supportedColumns += 1 }
@@ -274,6 +336,23 @@ enum StaffBandDetector {
                 let confidence = min(1, max(0, 0.45 * min(1, meanStrength / 0.65)
                     + 0.40 * meanSupport + 0.15 * (1 - spacingError / 3)))
                 patterns.append(Staff(lines: indices.map { peaks[$0].y }, confidence: confidence))
+            }
+        }
+
+        // Reject staff harmonics and tight parallel beam groups while allowing
+        // the two real engraving sizes often used for soloists and piano.
+        let adjacentGaps = zip(peaks, peaks.dropFirst()).map { $1.y - $0.y }
+            .filter { $0 >= minimumSpace && $0 <= maximumSpace }
+        if let typicalSpace = adjacentGaps.max(by: { a, b in
+            func support(_ value: Double) -> Int {
+                adjacentGaps.filter { abs($0 - value) <= max(1.0, value * 0.12) }.count
+            }
+            let sa = support(a), sb = support(b)
+            return sa == sb ? a > b : sa < sb
+        }) {
+            patterns.removeAll {
+                let spacing = ($0.lines[4] - $0.lines[0]) / 4
+                return spacing > typicalSpace * 1.85 || spacing < typicalSpace * 0.65
             }
         }
 

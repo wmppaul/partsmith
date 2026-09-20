@@ -281,7 +281,7 @@ struct InspectorView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text("System Gap")
+                    Text("Preferred System Gap")
                     Spacer()
                     Text("\(Int(document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap)) pt")
                         .monospacedDigit()
@@ -297,6 +297,18 @@ struct InspectorView: View {
                     step: 2
                 )
             }
+
+            Toggle("Balance Page Fill", isOn: Binding(
+                get: { document.part(withID: part.id)?.layoutSettings.balancePages ?? true },
+                set: { document.updatePartBalancedPages(part.id, enabled: $0) }
+            ))
+            .help("Balance complete systems between explicit section breaks. Spacing may reduce to 4 points to avoid an extra page; notation keeps its scale.")
+
+            Toggle("Use Consistent Scale", isOn: Binding(
+                get: { document.part(withID: part.id)?.layoutSettings.useConsistentScale ?? true },
+                set: { document.updatePartConsistentScale(part.id, enabled: $0) }
+            ))
+            .help("Use one scale for this part's systems, preserving relative notation sizes from the source.")
 
             bandOrderSection(part)
         }
@@ -369,6 +381,25 @@ struct InspectorView: View {
             Divider()
 
             bandExclusionsSection(currentBand)
+
+            if !currentBand.sourceMarkings.isEmpty {
+                Divider()
+                Text("Shared Score Markings").font(.subheadline.weight(.semibold))
+                Text("Verified source fragments appear above this staff at their original horizontal positions.")
+                    .font(.caption).foregroundStyle(.secondary)
+                ForEach(currentBand.sourceMarkings.indices, id: \.self) { index in
+                    HStack {
+                        Text("Marking \(index + 1)")
+                        Spacer()
+                        Button("Remove", role: .destructive) {
+                            var markings = (document.band(withID: band.id) ?? band).sourceMarkings
+                            guard markings.indices.contains(index) else { return }
+                            markings.remove(at: index)
+                            document.updateBandSourceMarkings(band.id, markings: markings)
+                        }
+                    }
+                }
+            }
 
             Divider()
 

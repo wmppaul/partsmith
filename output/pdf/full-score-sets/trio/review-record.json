@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "notationPolicy": "preserve-target",
+  "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+  "sourceMapSHA256": "18cbee34957ed782aca61764db2c1f14b5c0375de06ca164b8f420a466abf49c",
+  "visualReviewReports": [
+    "../evidence/brahms-trio-review.md",
+    "../evidence/trio-independent-review.md"
+  ],
+  "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
+  "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
+  "manualStaffPositionCorrections": 0,
+  "explicitCropRectangleOverrides": 0,
+  "whiteoutMasks": 0,
+  "pageFooterChecks": 64,
+  "geometryReport": "geometry-review.json",
+  "fidelityReport": "pixel-fidelity.json",
+  "fidelityReportSHA256": "4cea14448e71c9056636d4bf41208f6d72c09d75b13f371fbd750cf1bcedc3a9",
+  "parts": [
+    {
+      "name": "Clarinet in A",
+      "file": "Clarinet in A.pdf",
+      "sha256": "44f87da8782a9de417bb15fb1971298216b65b5ee954d8c328755d157a025cf7",
+      "bandCount": 131,
+      "outputPages": 16
+    },
+    {
+      "name": "Violoncello",
+      "file": "Violoncello.pdf",
+      "sha256": "0c29268631a6f4a735464aae309f1322e5a201099d0b1972ed801c1d66958cc2",
+      "bandCount": 131,
+      "outputPages": 16
+    },
+    {
+      "name": "Piano",
+      "file": "Piano.pdf",
+      "sha256": "eaa62546870815ebf28942166bc74644e9c5e1bcb9034fecd7885819c572f90d",
+      "bandCount": 131,
+      "outputPages": 32
+    }
+  ],
+  "manifestSHA256": "cd791d3da29d69629e28a17e67e15adf36f820ba6c4f251a53c961e54002b578",
+  "generationManifestSHA256": "3864adf7756ab9754bcd8dd89e0d170808adedd2f83b640cd1bfb48e080cbbc0"
+}

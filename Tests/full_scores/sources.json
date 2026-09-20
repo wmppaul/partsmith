@@ -1,0 +1,142 @@
+{
+  "ave": {
+    "source": "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+    "title": "Ave verum corpus, K. 618",
+    "composer": "Wolfgang Amadeus Mozart",
+    "profile": {
+      "parts": [
+        {
+          "id": "soprano",
+          "name": "Soprano",
+          "staffCount": 1
+        },
+        {
+          "id": "alto",
+          "name": "Alto",
+          "staffCount": 1
+        },
+        {
+          "id": "tenore",
+          "name": "Tenore",
+          "staffCount": 1
+        },
+        {
+          "id": "basso",
+          "name": "Basso",
+          "staffCount": 1
+        },
+        {
+          "id": "violin1",
+          "name": "Violino I",
+          "staffCount": 1
+        },
+        {
+          "id": "violin2",
+          "name": "Violino II",
+          "staffCount": 1
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "staffCount": 1
+        },
+        {
+          "id": "bass_organ",
+          "name": "Basso ed Organo",
+          "staffCount": 1
+        }
+      ]
+    }
+  },
+  "notte": {
+    "source": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+    "title": "Notte e giorno",
+    "composer": "Wolfgang Amadeus Mozart",
+    "profile": {
+      "parts": [
+        {
+          "id": "voice",
+          "name": "Voice (Leporello)",
+          "staffCount": 1
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "staffCount": 2
+        }
+      ]
+    }
+  },
+  "quartet": {
+    "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+    "title": "String Quartet No. 3, Op. 67",
+    "composer": "Johannes Brahms",
+    "profile": {
+      "parts": [
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "staffCount": 1
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "staffCount": 1
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "staffCount": 1
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "staffCount": 1
+        }
+      ]
+    }
+  },
+  "schumann": {
+    "source": "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+    "title": "Frauenliebe und Leben, Op. 42",
+    "composer": "Robert Schumann",
+    "profile": {
+      "parts": [
+        {
+          "id": "voice",
+          "name": "Voice",
+          "staffCount": 1
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "staffCount": 2
+        }
+      ]
+    }
+  },
+  "trio": {
+    "source": "sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+    "title": "Clarinet Trio, Op. 114",
+    "composer": "Johannes Brahms",
+    "profile": {
+      "parts": [
+        {
+          "id": "clarinet",
+          "name": "Clarinet in A",
+          "staffCount": 1
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "staffCount": 1
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "staffCount": 2
+        }
+      ]
+    }
+  }
+}

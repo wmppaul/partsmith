@@ -8,7 +8,8 @@ struct PartPreviewView: View {
     var body: some View {
         if let selectedPart = document.selectedPart {
             Group {
-                if let previewDocument = try? PartPDFExporter.previewDocument(for: selectedPart.id, in: document) {
+                switch Result(catching: { try PartPDFExporter.previewDocument(for: selectedPart.id, in: document) }) {
+                case .success(let previewDocument):
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
@@ -29,11 +30,11 @@ struct PartPreviewView: View {
 
                         PDFPreviewRepresentable(pdfDocument: previewDocument)
                     }
-                } else {
+                case .failure(let error):
                     ContentUnavailableView {
-                        Label("No Preview Yet", systemImage: "music.note")
+                        Label("Preview Unavailable", systemImage: "exclamationmark.triangle")
                     } description: {
-                        Text("Create bands for the selected part to generate its stacked part preview.")
+                        Text(error.localizedDescription)
                     }
                 }
             }

@@ -63,7 +63,13 @@ enum PartPDFExporter {
 
         for page in plan.pages {
             context.beginPDFPage(nil as CFDictionary?)
-            render(page: page, plan: plan, project: document.project, sourcePageCache: sourcePageCache, in: context)
+            do {
+                try render(page: page, plan: plan, project: document.project, sourcePageCache: sourcePageCache, in: context)
+            } catch {
+                context.endPDFPage()
+                context.closePDF()
+                throw error
+            }
             context.endPDFPage()
         }
 
@@ -77,8 +83,9 @@ enum PartPDFExporter {
         project: ProjectData,
         sourcePageCache: SourcePageRenderCache,
         in context: CGContext
-    ) {
+    ) throws {
         context.saveGState()
+        defer { context.restoreGState() }
         context.setFillColor(NSColor.white.cgColor)
         context.fill(CGRect(origin: .zero, size: plan.pageSize))
 
@@ -88,7 +95,7 @@ enum PartPDFExporter {
 
         if page.drawsTitle {
             if let headerPlacement = plan.headerPlacement {
-                draw(headerPlacement: headerPlacement, project: project, sourcePageCache: sourcePageCache, in: context)
+                try draw(headerPlacement: headerPlacement, project: project, sourcePageCache: sourcePageCache, in: context)
             } else {
                 drawTitle(for: plan, in: context)
             }
@@ -96,12 +103,36 @@ enum PartPDFExporter {
 
         for placement in page.placements {
             drawEditorialLabel(for: placement, in: context)
-            draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
+            for marking in placement.sourceMarkings {
+                try sourcePageCache.draw(pageIndex: placement.sourcePageIndex,
+                    rectification: project.pageRectifications.first(where: { $0.pageIndex == placement.sourcePageIndex }),
+                    sourceRect: marking.sourceRect, destinationRect: marking.destinationRect, in: context)
+            }
+            try draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
             drawExclusions(for: placement, in: context)
             drawBarNumber(for: placement, project: project, in: context)
         }
 
-        context.restoreGState()
+        // Keep output page numbers distinct from printed source-page numbers
+        // that may remain inside the preserved score strips.
+        if project.projectSettings.margins.bottom >= 20 {
+            let paragraph = NSMutableParagraphStyle()
+            paragraph.alignment = .center
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: NSFont.systemFont(ofSize: 9),
+                .foregroundColor: NSColor.darkGray,
+                .paragraphStyle: paragraph
+            ]
+            let footer = CGRect(x: project.projectSettings.margins.leading,
+                                y: max(3, (project.projectSettings.margins.bottom - 12) / 2),
+                                width: plan.pageSize.width - project.projectSettings.margins.leading - project.projectSettings.margins.trailing,
+                                height: 12)
+            NSGraphicsContext.saveGraphicsState()
+            NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
+            ("\(page.index + 1) / \(plan.pages.count)" as NSString).draw(in: footer, withAttributes: attributes)
+            NSGraphicsContext.restoreGraphicsState()
+        }
+
     }
 
     private static func drawEditorialLabel(for placement: BandPlacement, in context: CGContext) {
@@ -174,8 +205,8 @@ enum PartPDFExporter {
         project: ProjectData,
         sourcePageCache: SourcePageRenderCache,
         in context: CGContext
-    ) {
-        sourcePageCache.draw(
+    ) throws {
+        try sourcePageCache.draw(
             pageIndex: placement.sourcePageIndex,
             rectification: project.pageRectifications.first(where: { $0.pageIndex == placement.sourcePageIndex }),
             sourceRect: placement.sourceRect,
@@ -255,8 +286,8 @@ enum PartPDFExporter {
         project: ProjectData,
         sourcePageCache: SourcePageRenderCache,
         in context: CGContext
-    ) {
-        sourcePageCache.draw(
+    ) throws {
+        try sourcePageCache.draw(
             pageIndex: headerPlacement.sourcePageIndex,
             rectification: project.pageRectifications.first(where: { $0.pageIndex == headerPlacement.sourcePageIndex }),
             sourceRect: headerPlacement.sourceRect,

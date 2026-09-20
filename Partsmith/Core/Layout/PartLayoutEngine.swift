@@ -29,6 +29,12 @@ struct BandPlacement {
     var exclusionRects: [CGRect]
     var editorialLabel: String
     var editorialLabelRect: CGRect?
+    var sourceMarkings: [SourceMarkingPlacement] = []
+}
+
+struct SourceMarkingPlacement {
+    var sourceRect: CGRect
+    var destinationRect: CGRect
 }
 
 struct HeaderPlacement {
@@ -47,6 +53,9 @@ enum PartLayoutError: LocalizedError {
     case invalidHeader
     case invalidLayoutSettings
     case editorialLabelDoesNotFit(Int)
+    case invalidSourceMarking(Int)
+    case overlappingSourceMarkings(Int)
+    case failedRectification(Int)
 
     var errorDescription: String? {
         switch self {
@@ -68,6 +77,12 @@ enum PartLayoutError: LocalizedError {
             return "The output margins, scale, or spacing leave no usable space. Adjust the layout settings before exporting."
         case .editorialLabelDoesNotFit(let pageIndex):
             return "The editorial label for a crop on source page \(pageIndex + 1) is too long to fit with its music. Shorten the label or adjust the output margins before exporting."
+        case .invalidSourceMarking(let pageIndex):
+            return "A shared source marking on page \(pageIndex + 1) has invalid bounds or extends outside its band's horizontal crop. Widen the crop or review the marking."
+        case .overlappingSourceMarkings(let pageIndex):
+            return "Shared source markings on page \(pageIndex + 1) overlap in the annotation row. Combine them into one source selection or remove the overlap before exporting."
+        case .failedRectification(let pageIndex):
+            return "The correction for source page \(pageIndex + 1) could not be rendered. Adjust its correction points, or reset the correction and review that page's crops before previewing or exporting."
         }
     }
 }
@@ -92,6 +107,59 @@ enum BandEditorialLabelStyle {
 }
 
 enum PartLayoutEngine {
+    private struct PreparedBand {
+        var band: BandModel
+        var pageBounds: CGRect
+        var sourceRect: CGRect
+        var label: String
+        var labelHeight: Double
+        var scale: Double
+        var markingRects: [CGRect] = []
+        var markingSourceHeight: Double { Double(markingRects.map(\.height).max() ?? 0) }
+        var markingGap: Double { markingRects.isEmpty ? 0 : 4 }
+        var height: Double { labelHeight + (sourceRect.height + markingSourceHeight) * scale + markingGap }
+    }
+
+    /// Minimize pages first, then uneven fill and solitary systems. A requested
+    /// musical break is a hard boundary; source-page boundaries have no effect.
+    private static func paginate(_ bands: [PreparedBand], firstCapacity: Double,
+                                 continuationCapacity: Double, gap: Double, balanced: Bool) -> [Range<Int>] {
+        let count = bands.count
+        guard count > 0 else { return [] }
+        var pageCounts = Array(repeating: Int.max, count: count + 1)
+        var costs = Array(repeating: Double.infinity, count: count + 1)
+        var next = Array(repeating: count, count: count)
+        pageCounts[count] = 0
+        costs[count] = 0
+        for start in stride(from: count - 1, through: 0, by: -1) {
+            let capacity = start == 0 ? firstCapacity : continuationCapacity
+            var used = 0.0
+            for end in start..<count {
+                if end > start && bands[end].band.pageBreakBefore { break }
+                used += bands[end].height + (end > start ? gap : 0)
+                if used > capacity + 0.000001 && end > start { break }
+                let occupied = min(used, capacity)
+                let pages = 1 + pageCounts[end + 1]
+                let emptyFraction = max(0, 1 - occupied / capacity)
+                let orphanPenalty = end == start && count > 1 ? 0.35 : 0
+                let cost = costs[end + 1] + (balanced ? emptyFraction * emptyFraction + orphanPenalty : 0)
+                if pages < pageCounts[start] || (pages == pageCounts[start] && cost <= costs[start]) {
+                    pageCounts[start] = pages
+                    costs[start] = cost
+                    next[start] = end + 1
+                }
+                if used > capacity { break }
+            }
+        }
+        var ranges: [Range<Int>] = []
+        var start = 0
+        while start < count {
+            ranges.append(start..<next[start])
+            start = next[start]
+        }
+        return ranges
+    }
+
     static func makePlan(
         project: ProjectData,
         pageBoundsProvider: (Int) -> CGRect?,
@@ -157,96 +225,115 @@ enum PartLayoutEngine {
             x: contentRect.minX, y: pageMusicTop - 60, width: contentRect.width, height: 60
         ) : nil
 
-        var pages: [PartRenderPage] = []
-        var currentPlacements: [BandPlacement] = []
-        var pageIndex = 0
-        var cursorTop = pageMusicTop - headerBlockHeight
-
+        var prepared: [PreparedBand] = []
         for band in includedBands {
             guard validCrop(top: band.topFraction, bottom: band.bottomFraction,
                             left: band.leftFraction, right: band.rightFraction) else {
                 throw PartLayoutError.invalidBand(band.pageIndex)
             }
-            let pageBounds = try sourcePageBounds(at: band.pageIndex, provider: pageBoundsProvider)
-            // Use the validated geometry exactly; silently widening a short crop can include another staff.
+            let bounds = try sourcePageBounds(at: band.pageIndex, provider: pageBoundsProvider)
             let sourceRect = cropRect(top: band.topFraction, bottom: band.bottomFraction,
-                                      left: band.leftFraction, right: band.rightFraction, in: pageBounds)
+                                      left: band.leftFraction, right: band.rightFraction, in: bounds)
             guard band.exclusions.allSatisfy({ $0.isValid(in: band) }) else {
                 throw PartLayoutError.invalidExclusion(band.pageIndex)
             }
-            let fitScale = contentRect.width / sourceRect.width
-            // Enlargement must never send the first or last measures outside the printable area.
-            let desiredScale = min(fitScale * partScale, fitScale)
-            let desiredHeight = sourceRect.height * desiredScale
+            guard band.sourceMarkings.allSatisfy({ $0.isValid(in: band) }) else {
+                throw PartLayoutError.invalidSourceMarking(band.pageIndex)
+            }
             let label = band.editorialLabel.trimmingCharacters(in: .whitespacesAndNewlines)
             let labelHeight = label.isEmpty ? 0 : BandEditorialLabelStyle.height(for: label, width: contentRect.width)
-            // Measured height already includes bottom padding; don't charge it twice in pagination.
-            let labelBlockHeight = labelHeight
-
-            let requiresNewPage = !currentPlacements.isEmpty &&
-                (band.pageBreakBefore || cursorTop - labelBlockHeight - desiredHeight < margins.bottom)
-            if requiresNewPage {
-                pages.append(
-                    PartRenderPage(
-                        index: pageIndex,
-                        drawsTitle: pageIndex == 0 && project.projectSettings.showTitleBlock,
-                        placements: currentPlacements
-                    )
-                )
-                pageIndex += 1
-                currentPlacements = []
-                cursorTop = pageMusicTop
-            }
-            guard labelHeight.isFinite, labelBlockHeight < cursorTop - contentRect.minY else {
+            let capacity = pageMusicTop - contentRect.minY - (prepared.isEmpty ? headerBlockHeight : 0)
+            guard labelHeight.isFinite, labelHeight < capacity else {
                 throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
             }
-            let labelRect = label.isEmpty ? nil : CGRect(
-                x: contentRect.minX, y: cursorTop - labelHeight, width: contentRect.width, height: labelHeight
-            )
-            let bandTop = cursorTop - labelBlockHeight
-
-            // A crop is indivisible. Fit an unusually tall band below the first-page header or
-            // inside a fresh continuation page instead of clamping its bottom and losing its top.
-            let renderScale = min(desiredScale, (bandTop - contentRect.minY) / sourceRect.height)
-            let targetHeight = sourceRect.height * renderScale
-            let targetWidth = sourceRect.width * renderScale
-            let destinationRect = CGRect(
-                x: contentRect.minX + (contentRect.width - targetWidth) / 2,
-                y: bandTop - targetHeight,
-                width: targetWidth,
-                height: targetHeight
-            )
-            let exclusionRects = band.exclusions.map { exclusion in
-                let rect = cropRect(top: exclusion.topFraction, bottom: exclusion.bottomFraction,
-                                    left: exclusion.leftFraction, right: exclusion.rightFraction, in: pageBounds)
-                return CGRect(x: destinationRect.minX + (rect.minX - sourceRect.minX) * renderScale,
-                              y: destinationRect.minY + (rect.minY - sourceRect.minY) * renderScale,
-                              width: rect.width * renderScale, height: rect.height * renderScale)
+            let markingRects = band.sourceMarkings.map {
+                cropRect(top: $0.topFraction, bottom: $0.bottomFraction,
+                         left: $0.leftFraction, right: $0.rightFraction, in: bounds)
             }
-
-            currentPlacements.append(
-                BandPlacement(
-                    bandID: band.id,
-                    sourcePageIndex: band.pageIndex,
-                    sourceRect: sourceRect,
-                    destinationRect: destinationRect,
-                    exclusionRects: exclusionRects,
-                    editorialLabel: label,
-                    editorialLabelRect: labelRect
-                )
-            )
-
-            cursorTop = destinationRect.minY - interSystemGap
+            // Every fragment shares the row's top edge, so overlapping source
+            // x spans would overpaint each other even at different source y positions.
+            for (index, rect) in markingRects.enumerated() {
+                guard markingRects.prefix(index).allSatisfy({
+                    min(rect.maxX, $0.maxX) - max(rect.minX, $0.minX) <= 0.0000001
+                }) else {
+                    throw PartLayoutError.overlappingSourceMarkings(band.pageIndex)
+                }
+            }
+            guard labelHeight + (markingRects.isEmpty ? 0 : 4) < capacity else {
+                throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
+            }
+            prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: sourceRect,
+                                         label: label, labelHeight: labelHeight, scale: 1, markingRects: markingRects))
         }
-
-        if currentPlacements.isEmpty == false {
-            pages.append(
-                PartRenderPage(
-                    index: pageIndex,
-                    drawsTitle: pageIndex == 0 && project.projectSettings.showTitleBlock,
-                    placements: currentPlacements
-                )
-            )
+        let maximumSourceWidth = prepared.map { $0.sourceRect.width }.max() ?? contentRect.width
+        for index in prepared.indices {
+            let width = part.layoutSettings.useConsistentScale ? maximumSourceWidth : prepared[index].sourceRect.width
+            prepared[index].scale = contentRect.width / width * min(partScale, 1)
+        }
+        let firstCapacity = pageMusicTop - headerBlockHeight - contentRect.minY
+        let continuationCapacity = pageMusicTop - contentRect.minY
+        var actualGap = interSystemGap
+        var ranges = paginate(prepared, firstCapacity: firstCapacity, continuationCapacity: continuationCapacity,
+                              gap: actualGap, balanced: part.layoutSettings.balancePages)
+        if part.layoutSettings.balancePages, interSystemGap > 4 {
+            let compact = paginate(prepared, firstCapacity: firstCapacity, continuationCapacity: continuationCapacity,
+                                   gap: 4, balanced: true)
+            if compact.count < ranges.count {
+                // Page count is monotonic in the gap. Keep the widest spacing that
+                // reaches the minimum page count, without changing crops or scale.
+                var lower = 4.0
+                var upper = interSystemGap
+                for _ in 0..<28 {
+                    let candidate = (lower + upper) / 2
+                    let candidateRanges = paginate(prepared, firstCapacity: firstCapacity,
+                        continuationCapacity: continuationCapacity, gap: candidate, balanced: true)
+                    if candidateRanges.count == compact.count { lower = candidate } else { upper = candidate }
+                }
+                actualGap = lower
+                ranges = paginate(prepared, firstCapacity: firstCapacity,
+                    continuationCapacity: continuationCapacity, gap: actualGap, balanced: true)
+            }
+        }
+        var pages: [PartRenderPage] = []
+        for (pageIndex, range) in ranges.enumerated() {
+            var cursorTop = pageMusicTop - (pageIndex == 0 ? headerBlockHeight : 0)
+            var placements: [BandPlacement] = []
+            for index in range {
+                let item = prepared[index]
+                let band = item.band
+                let labelRect = item.label.isEmpty ? nil : CGRect(
+                    x: contentRect.minX, y: cursorTop - item.labelHeight,
+                    width: contentRect.width, height: item.labelHeight)
+                let markingsTop = cursorTop - item.labelHeight
+                // Only an individually oversized crop is fitted to one page. Page balancing
+                // itself never reduces music scale or removes any source notation.
+                let renderScale = min(item.scale, (markingsTop - contentRect.minY - item.markingGap) /
+                                      (item.sourceRect.height + item.markingSourceHeight))
+                let bandTop = markingsTop - item.markingSourceHeight * renderScale - item.markingGap
+                let targetWidth = item.sourceRect.width * renderScale
+                let destinationRect = CGRect(x: contentRect.minX + (contentRect.width - targetWidth) / 2,
+                    y: bandTop - item.sourceRect.height * renderScale,
+                    width: targetWidth, height: item.sourceRect.height * renderScale)
+                let exclusionRects = band.exclusions.map { exclusion in
+                    let rect = cropRect(top: exclusion.topFraction, bottom: exclusion.bottomFraction,
+                                        left: exclusion.leftFraction, right: exclusion.rightFraction, in: item.pageBounds)
+                    return CGRect(x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
+                                  y: destinationRect.minY + (rect.minY - item.sourceRect.minY) * renderScale,
+                                  width: rect.width * renderScale, height: rect.height * renderScale)
+                }
+                placements.append(BandPlacement(bandID: band.id, sourcePageIndex: band.pageIndex,
+                    sourceRect: item.sourceRect, destinationRect: destinationRect, exclusionRects: exclusionRects,
+                    editorialLabel: item.label, editorialLabelRect: labelRect,
+                    sourceMarkings: item.markingRects.map { rect in
+                        SourceMarkingPlacement(sourceRect: rect, destinationRect: CGRect(
+                            x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
+                            y: markingsTop - rect.height * renderScale,
+                            width: rect.width * renderScale, height: rect.height * renderScale))
+                    }))
+                cursorTop = destinationRect.minY - actualGap
+            }
+            pages.append(PartRenderPage(index: pageIndex,
+                drawsTitle: pageIndex == 0 && project.projectSettings.showTitleBlock, placements: placements))
         }
 
         return PartRenderPlan(

@@ -138,6 +138,54 @@ struct ExclusionRegressionTests {
                              leftFraction: 0.1, rightFraction: 0.1, excluded: false, createdAt: .now, barNumberMode: .hidden)
         project.bands = [band]
         let source = sourcePDF()
+        // A singular correction cannot map corrected-space crops back to the
+        // original source. Preview and export must reject it, not fall back.
+        var failedCorrectionProject = project
+        let coincidentPoint = FractionPoint(x: 0.5, y: 0.5)
+        failedCorrectionProject.pageRectifications = [PageRectification(pageIndex: 0,
+            topLeft: coincidentPoint, topRight: coincidentPoint,
+            bottomRight: coincidentPoint, bottomLeft: coincidentPoint)]
+        let failedCorrectionDocument = PartsmithDocument(project: failedCorrectionProject, sourcePDFData: source)
+        do {
+            _ = try PartPDFExporter.previewDocument(for: part.id, in: failedCorrectionDocument)
+            fatalError("Failed rectification must not preview original-space music")
+        } catch PartLayoutError.failedRectification(let pageIndex) {
+            check(pageIndex == 0, "Preview reports the exact source page whose correction failed")
+        }
+        let existingOutput = output.appendingPathComponent("failed-correction-sentinel.pdf")
+        let existingBytes = Data("existing reviewed output".utf8)
+        try existingBytes.write(to: existingOutput)
+        do {
+            try PartPDFExporter.export(partID: part.id, document: failedCorrectionDocument, to: existingOutput)
+            fatalError("Failed rectification must not overwrite an existing PDF")
+        } catch PartLayoutError.failedRectification {
+            let survivingBytes = try Data(contentsOf: existingOutput)
+            check(survivingBytes == existingBytes,
+                  "Failed correction preserves the previously exported file without partial output")
+        }
+        try FileManager.default.removeItem(at: existingOutput)
+        var failedMarkingProject = failedCorrectionProject
+        failedMarkingProject.bands[0].sourceMarkings = [BandSourceMarking(
+            topFraction: 0.175, bottomFraction: 0.19, leftFraction: 0.49, rightFraction: 0.42)]
+        do {
+            _ = try PartPDFExporter.previewDocument(for: part.id,
+                in: PartsmithDocument(project: failedMarkingProject, sourcePDFData: source))
+            fatalError("Shared markings must not bypass a failed correction")
+        } catch PartLayoutError.failedRectification {
+            check(true, "Shared source markings propagate correction failures")
+        }
+        var failedHeaderProject = failedCorrectionProject
+        failedHeaderProject.projectSettings.showTitleBlock = true
+        failedHeaderProject.projectSettings.headerDisplayMode = .sourceSelection
+        failedHeaderProject.projectSettings.headerSelection = SourceHeaderSelection(
+            pageIndex: 0, topFraction: 0, bottomFraction: 0.1, leftFraction: 0, rightFraction: 0)
+        do {
+            _ = try PartPDFExporter.previewDocument(for: part.id,
+                in: PartsmithDocument(project: failedHeaderProject, sourcePDFData: source))
+            fatalError("Source headers must not bypass a failed correction")
+        } catch PartLayoutError.failedRectification {
+            check(true, "Source headers propagate correction failures")
+        }
         let document = PartsmithDocument(project: project, sourcePDFData: source)
         let undo = UndoManager()
         undo.groupsByEvent = false
@@ -237,6 +285,40 @@ struct ExclusionRegressionTests {
         check(!contextDocument.expandBandCrop(UUID(), by: 6), "Missing band cannot be expanded")
         let sourceMissingDocument = PartsmithDocument(project: reopened, sourcePDFData: nil)
         check(!sourceMissingDocument.expandBandCrop(band.id, by: 6), "Missing source cannot guess point geometry")
+
+        var sharedProject = project
+        // Copy the complete small glyph at (300,650) from above the target staff.
+        sharedProject.bands[0].sourceMarkings = [BandSourceMarking(topFraction: 0.175, bottomFraction: 0.19,
+                                                                  leftFraction: 0.49, rightFraction: 0.42)]
+        let sharedDocument = PartsmithDocument(project: sharedProject, sourcePDFData: source)
+        let sharedPlan = try PartLayoutEngine.makePlan(project: sharedProject,
+            pageBoundsProvider: { _ in CGRect(x: 0, y: 0, width: 600, height: 800) }, partID: part.id)
+        let sharedPlacement = sharedPlan.pages[0].placements[0]
+        let markingPlacement = sharedPlacement.sourceMarkings[0]
+        let sharedScale = markingPlacement.destinationRect.width / markingPlacement.sourceRect.width
+        let sharedBitmap = raster(try PartPDFExporter.previewDocument(for: part.id, in: sharedDocument))
+        for x in [302.0, 320, 338] {
+            for y in [652.0, 656] {
+                let destination = CGPoint(x: markingPlacement.destinationRect.minX + (x - markingPlacement.sourceRect.minX) * sharedScale,
+                    y: markingPlacement.destinationRect.minY + (y - markingPlacement.sourceRect.minY) * sharedScale)
+                check(luma(sharedBitmap, point: destination) < 0.01, "Shared source glyph is copied completely at its original horizontal position")
+            }
+        }
+        let targetDestination = CGPoint(x: sharedPlacement.destinationRect.minX + (240 - sharedPlacement.sourceRect.minX) * sharedScale,
+            y: sharedPlacement.destinationRect.minY + (560 - sharedPlacement.sourceRect.minY) * sharedScale)
+        check(luma(sharedBitmap, point: targetDestination) < 0.01, "Reserving a shared marking row preserves target notation")
+        check(markingPlacement.destinationRect.minY >= sharedPlacement.destinationRect.maxY + 4,
+              "Shared source glyph and staff crop render in nonoverlapping rows")
+        var overlappingMarkingsProject = sharedProject
+        overlappingMarkingsProject.bands[0].sourceMarkings.append(BandSourceMarking(
+            topFraction: 0.1, bottomFraction: 0.115, leftFraction: 0.5, rightFraction: 0.43))
+        do {
+            _ = try PartPDFExporter.previewDocument(for: part.id,
+                in: PartsmithDocument(project: overlappingMarkingsProject, sourcePDFData: source))
+            fatalError("Exporter must not emit a PDF that overwrites a shared source glyph")
+        } catch PartLayoutError.overlappingSourceMarkings {
+            check(true, "Production exporter rejects overpainting source fragments before producing PDF data")
+        }
 
         var labeledProject = project
         var secondBand = band

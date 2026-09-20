@@ -40,6 +40,7 @@ struct DocumentRootView: View {
     @State private var presentedError: PresentedError?
     @State private var showingAddPartSheet = false
     @State private var showingStaffDetectionSheet = false
+    @State private var showingScoreExtractionSheet = false
 
     var body: some View {
         NavigationSplitView {
@@ -134,6 +135,14 @@ struct DocumentRootView: View {
                     .disabled(document.project.parts.isEmpty || document.isAutoEstimatingPageRectifications)
                     .help("Find editable staff bands on this page using offline image analysis. Create a part first.")
 
+                    Button("Auto Extract", systemImage: "wand.and.stars") {
+                        document.setHeaderSelectionEditing(false)
+                        document.setPageRectificationEditing(false)
+                        showingScoreExtractionSheet = true
+                    }
+                    .disabled(document.isAutoEstimatingPageRectifications)
+                    .help("Set the instrument order and extract all parts throughout this score using offline analysis.")
+
                     Menu("Copy Bands") {
                         Button("All Parts to Next Page") {
                             document.copyCurrentPageBandsToNextPage()
@@ -206,6 +215,9 @@ struct DocumentRootView: View {
         }
         .sheet(isPresented: $showingStaffDetectionSheet) {
             StaffDetectionView(document: document)
+        }
+        .sheet(isPresented: $showingScoreExtractionSheet) {
+            ScoreExtractionView(document: document)
         }
         .onDeleteCommand(perform: deleteSelectedBand)
         .alert(item: $presentedError) { error in

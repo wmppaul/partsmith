@@ -1,12 +1,7 @@
-# Partsmith macOS Build
+# Partsmith macOS builds
 
-This folder contains a built macOS app bundle for quick testing without opening Xcode.
+Use [Partsmith-extraction-preview-macos.zip](Partsmith-extraction-preview-macos.zip) for the current extraction workflow. Unzip it and open the contained `Partsmith.app`. This is an unsigned universal arm64/x86_64 build for macOS 14 or later, not a notarized public release.
 
-The current local workflow preview is [Partsmith-extraction-preview-macos.zip](Partsmith-extraction-preview-macos.zip). It adds offline staff proposals, reviewed grouping, outward-only Expand Crop with undo, preservation guidance, precise whiteout areas, editorial labels, page breaks and safer export layout. It is an unsigned universal macOS build; it has not been published as a release. See [the workflow evaluation](../../EXTRACTION_WORKFLOW.md) for reviewed examples and limits.
+This preview adds whole-score offline Auto, saved instrumentation and crop settings, reviewed assignments, mixed staff-size detection, shared source marking support, balanced pagination, output page numbers and one undoable apply. See [the complete-score evaluation](../../EXTRACTION_WORKFLOW.md) and [all 19 reviewed parts](../../output/pdf/full-score-sets/README.md).
 
-- Open `Partsmith.app`
-- Or download `Partsmith-v0.1.0-alpha.2-macos.zip` for a single-file transfer
-- If macOS warns that the app is from an unidentified developer, right-click it and choose `Open`
-- If macOS says `Apple could not verify "Partsmith.app" is free of malware that may harm your Mac or compromise your privacy`, open `System Settings > Privacy & Security`, scroll down, and click `Open Anyway`
-
-The source for rebuilding the app lives in this repository.
+The older `Partsmith.app` and `Partsmith-v0.1.0-alpha.2-macos.zip` in this directory are historical builds and do not include the current extraction changes. The source for rebuilding the preview lives in this repository.

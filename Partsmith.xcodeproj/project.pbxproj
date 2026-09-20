@@ -21,6 +21,9 @@
 		20000000000000000000000C /* BarNumberDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000E /* BarNumberDetector.swift */; };
 		20000000000000000000000D /* StaffBandDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000F /* StaffBandDetector.swift */; };
 		20000000000000000000000E /* StaffDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* StaffDetectionView.swift */; };
+		20000000000000000000000F /* ScoreExtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* ScoreExtractionView.swift */; };
+		200000000000000000000010 /* ScoreExtractionPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* ScoreExtractionPlanner.swift */; };
+		200000000000000000000011 /* NativeScorePageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000013 /* NativeScorePageAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		10000000000000000000000E /* BarNumberDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNumberDetector.swift; sourceTree = "<group>"; };
 		10000000000000000000000F /* StaffBandDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffBandDetector.swift; sourceTree = "<group>"; };
 		100000000000000000000010 /* StaffDetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetectionView.swift; sourceTree = "<group>"; };
+		100000000000000000000011 /* ScoreExtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreExtractionView.swift; sourceTree = "<group>"; };
+		100000000000000000000012 /* ScoreExtractionPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreExtractionPlanner.swift; sourceTree = "<group>"; };
+		100000000000000000000013 /* NativeScorePageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeScorePageAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			children = (
 				100000000000000000000006 /* DocumentRootView.swift */,
 				100000000000000000000010 /* StaffDetectionView.swift */,
+				100000000000000000000011 /* ScoreExtractionView.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -173,7 +180,11 @@
 		};
 		40000000000000000000000E /* Detection */ = {
 			isa = PBXGroup;
-			children = (10000000000000000000000F /* StaffBandDetector.swift */,);
+			children = (
+				10000000000000000000000F /* StaffBandDetector.swift */,
+				100000000000000000000012 /* ScoreExtractionPlanner.swift */,
+				100000000000000000000013 /* NativeScorePageAnalyzer.swift */,
+			);
 			path = Detection;
 			sourceTree = "<group>";
 		};
@@ -257,6 +268,9 @@
 				20000000000000000000000C /* BarNumberDetector.swift in Sources */,
 				20000000000000000000000D /* StaffBandDetector.swift in Sources */,
 				20000000000000000000000E /* StaffDetectionView.swift in Sources */,
+				200000000000000000000011 /* NativeScorePageAnalyzer.swift in Sources */,
+				200000000000000000000010 /* ScoreExtractionPlanner.swift in Sources */,
+				20000000000000000000000F /* ScoreExtractionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

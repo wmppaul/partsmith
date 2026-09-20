@@ -1,4 +1,69 @@
-# Part extraction: workflow and evaluation
+# Part extraction: complete-score native workflow
+
+The current deliverable is **19 complete parts from five complete scores**, generated through Partsmith's native whole-score Auto planner, document transaction, layout engine and PDF exporter. The reusable [score-part-extraction skill](skills/score-part-extraction/SKILL.md) now documents this offline path alongside the portable Python workflow. [All outputs and editable projects](output/pdf/full-score-sets/README.md); [download the complete set](artifacts/Partsmith-complete-score-parts.zip).
+
+The original project was checkpointed at `6b422ea`; the earlier reviewed extraction workflow was checkpointed at `3aa78d1` before this complete-score iteration.
+
+| Complete source | Parts | Output pages by part |
+|---|---:|---|
+| Mozart, Ave verum corpus | 8 | One page each: SATB, two violins, viola, and the printed combined Basso ed Organo staff |
+| Mozart, Notte e giorno | 2 | Voice 3; Piano 4 |
+| Brahms, String Quartet No. 3, Op. 67 | 4 | Violin I 18; Violin II 19; Viola 19; Cello 19 |
+| Schumann, Frauenliebe und Leben, all eight songs | 2 | Voice 13; Piano 17 |
+| Brahms, Clarinet Trio, Op. 114, all four movements | 3 | Clarinet in A 16; Cello 16; Piano 32 |
+
+There are 184 output pages and 1,131 part bands. All 84 input PDF pages were analyzed; the Trio's blank page and publisher catalog were explicitly reviewed and excluded. The native detector finds all **1,357 physical music staves** in this corpus with **zero manual staff-position corrections**. These are corpus results, not a claim of arbitrary-score reliability.
+
+## What Auto does, and what is initialized manually
+
+The user or assistant enters instrument names, printed order and staff counts once. The app saves that setup and automatically analyzes every source page, proposes systems/parts and crops, presents a review, and adds all approved parts in one undoable transaction. Manual instrument naming is intentional; no OCR or remote model is required. Per-instrument crop padding is adjustable in the app.
+
+All 1,131 final crop rectangles come from native detected geometry and saved padding/margin profiles. There are no hand-drawn geometry overrides or cleanup masks in these full outputs. Reviewed metadata handles Notte's two piano-only introduction systems (clearly labeled cues in the voice part), movement/song boundaries, and shared printed directions. Shared tempo/rehearsal/return glyphs are copied from verified source rectangles; automatically understanding those markings is still outside Auto's capability. The app retains/removes such fragments; their creation in this evaluation uses the reviewed batch plan.
+
+The actual Auto interface was exercised through computer use on complete Ave: eight instruments initialized, organ lower padding changed from seven to nine spaces, setup saved/reopened, all four review overlays inspected, and 64 bands applied. Every resulting crop matches the batch geometry to numerical precision. [UI evidence](Tests/full_scores/ave-ui-auto-results.json).
+
+## Corrections driven by independent review
+
+- Skew-aware sampling across multiple horizontal regions recovers weak staff lines and rejects dense note/beam harmonics. Different staff sizes on the same page are supported; the Trio's smaller clarinet/cello staves and dense page 16 now work.
+- A Quartet p9 false narrow Cello pattern had the right count but wrong five-line spacing. Left-edge evidence and a regression on line height corrected it. Staff count alone is never the acceptance gate.
+- Quartet crops needed wider top/bottom context to retain high slurs, ledger notes and rehearsal boxes G, M and D. Target preservation takes precedence over removing neighboring notes.
+- Ave's combined bass/organ part needed extra lower padding for the third figured-bass row.
+- Independent Trio review rejected horizontal margins that cut a final barline and the `1` in measure number `122`. Full-width crops corrected both across the entire score.
+- Final safety review added visible per-band detector warnings, rejected overlapping shared-direction fragments, and stopped preview/export when requested scan correction fails; wrong-coordinate fallback cannot silently produce a part.
+- Layout now minimizes pages and balances systems within musical sections, reducing spacing before changing page count. It keeps a consistent scale, preserves crop geometry and ignores source-page boundaries. Export adds `page / total` footers. Musical page-turn timing still needs a player's judgment.
+
+## Review and verification
+
+Independent agents reviewed source pages, crop boundaries and final outputs. Every final PDF page received visual inspection. The reports distinguish complete source comparisons, output layout inspection and magnified vulnerable passages: [small scores](Tests/full_scores/small-score-independent-review.md), [Quartet source](Tests/full_scores/brahms-quartet-review.md), [Quartet output](Tests/full_scores/quartet-independent-review.md), [Trio source](Tests/full_scores/brahms-trio-review.md), [Trio independent review](Tests/full_scores/trio-independent-review.md).
+
+The automated review validates independently counted system coverage, output order, crop/placement bounds, staff containment and exact source/output hashes. Protected source regions are independently reviewed musical envelopes, not inferred note recognition. They supplement, rather than replace, visual comparison. All 1,326 protected/source-direction regions pass exact comparison at 216 dpi (382,119,104 grayscale pixels). Main target regions use an untrimmed source reference; copied directions use the independently reviewed fragment extent. Scanned scores compare directly against the original. For the two vector Mozart scores, an independent full-source CoreGraphics serialization accounts for path/glyph rounding at export; raw direct-render differences are retained in the reports. There is no image-similarity tolerance, smoothing or source-ink modification. Per-set fidelity records describe the method and limits. The [fidelity review](Tests/full_scores/pixel-fidelity-review.md) records successful negative controls for deliberately removed notes, staves, tempo glyphs and clipped guards. The [finalization audit](Tests/full_scores/review-finalization-audit.md) verifies stale maps/reviews/placements are rejected before publication.
+
+Native checks pass 126 complete-corpus planner assertions, 35 whole-score document assertions, 5,315 layout assertions and 161 rendering/export checks. The 362-check legacy preservation bridge still passes. Both Debug and universal arm64/x86_64 Release builds succeed. The [macOS preview archive](artifacts/macos/Partsmith-extraction-preview-macos.zip) is an unsigned local build, not a notarized public release.
+
+## Reproduce the complete native path
+
+```sh
+bash tools/test_score_planner.sh --corpus
+bash tools/test_score_document.sh
+bash tools/test_layout_export.sh
+bash tools/test_preservation_exports.sh
+.build/extraction-venv/bin/python Tests/full_scores/test_pixel_comparator.py
+bash tools/score_extraction_batch.sh inventory --source SCORE.pdf --out WORK/inventory
+bash tools/export_score_plan.sh --inventory WORK/inventory/inventory.json \
+  --profile Tests/full_scores/SCORE-profile.json \
+  --overrides Tests/full_scores/SCORE-overrides.json \
+  --title 'Work title' --composer 'Composer' --out WORK/parts
+.build/extraction-venv/bin/python tools/review_score_output.py WORK/parts \
+  --map Tests/full_scores/SCORE-map.json --pixels
+```
+
+Exact source filenames/hashes, profiles, reviewed mappings and exceptions are under [Tests/full_scores](Tests/full_scores). The two Brahms map filenames use the `brahms-` prefix. Regenerating a map requires fresh source review; do not overwrite reviewed envelopes merely to satisfy a new crop.
+
+The remaining sections document earlier excerpts and historical limitations. They are retained as failure/review evidence; the complete-score results above supersede their source coverage, detector counts and UI limitations.
+
+---
+
+# Earlier excerpt workflow and evaluation
 
 The result is two parallel workflows: a reusable [ChatGPT/Codex skill](skills/score-part-extraction/SKILL.md), and an improved native macOS application that runs without internet access. They share an editable project format. The skill is installed in the local personal skills directory as `score-part-extraction`.
 

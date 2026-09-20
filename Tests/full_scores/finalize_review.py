@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+"""Bind completed human reviews and passing automated checks to the frozen corpus.
+
+This does not review music. Run only after the named independent review reports
+are complete; their exact output hashes must already match every delivered PDF.
+"""
+import copy
+import hashlib
+import json
+from pathlib import Path
+import shutil
+
+import pymupdf
+
+ROOT = Path(__file__).resolve().parents[2]
+BASE = ROOT / "output/pdf/full-score-sets"
+FIXTURES = ROOT / "Tests/full_scores"
+SCORES = ["ave", "notte", "quartet", "schumann", "trio"]
+MAPS = {key: f"{key}-map.json" for key in SCORES}
+MAPS.update(quartet="brahms-quartet-map.json", trio="brahms-trio-map.json")
+REVIEWS = {key: ["small-score-independent-review.md"] for key in SCORES}
+REVIEWS.update(quartet=["brahms-quartet-review.md", "quartet-independent-review.md"],
+               trio=["brahms-trio-review.md", "trio-independent-review.md"])
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_text())
+
+
+def write(path, data):
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+
+
+def normalized_manifest(data):
+    value = copy.deepcopy(data)
+    value.pop("status", None)
+    value.pop("reviewRecord", None)
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"),
+                                     ensure_ascii=False).encode()).hexdigest()
+
+
+def main():
+    prepared = []
+    for key in SCORES:
+        folder = BASE / key
+        manifest_path = folder / "manifest.json"
+        m = read(manifest_path)
+        original = copy.deepcopy(m)
+        geometry = read(folder / "review/geometry.json")
+        fidelity = read(folder / "review/pixel-fidelity.json")
+        map_hash = sha(FIXTURES / MAPS[key])
+        manifest_hash = normalized_manifest(m)
+        for report in (geometry, fidelity):
+            assert report["sourceMapSHA256"] == map_hash, (key, "Stale reviewed source map")
+            assert report["normalizedManifestSHA256"] == manifest_hash, (key, "Stale placement review")
+        assert fidelity["status"] == "pass", (key, "Fidelity review failed")
+        assert geometry["status"] == "geometry_pass_visual_review_pending"
+        assert m["sourceSHA256"] == geometry["sourceSHA256"] == fidelity["sourceSHA256"]
+        assert sha(Path(m["source"])) == m["sourceSHA256"]
+        project = folder / m["project"]
+        assert sha(project / "source.pdf") == m["sourceSHA256"]
+        model = read(project / "project.json")["project"]
+        assert len(model["parts"]) == len(m["parts"])
+        assert len(model["bands"]) == sum(p["bandCount"] for p in m["parts"])
+        assert model["projectSettings"]["instrumentationSetup"]["instruments"] == m["profile"]["parts"]
+        assert all(not b.get("exclusions") and not b.get("excluded") for b in model["bands"])
+        assert all(not b.get("rect") for page in m["reviewedOverrides"]
+                   for system in page.get("systems", []) for b in system["bands"])
+        review_text = "\n".join((FIXTURES / name).read_text() for name in REVIEWS[key])
+        generation = folder / "generation-manifest.json"
+        if generation.exists():
+            assert normalized_manifest(read(generation)) == manifest_hash, (key, "Generation changed after review")
+        visual = folder / "visual-review.json"
+        visual_data = read(visual) if visual.exists() else None
+        if visual_data:
+            assert visual_data["status"] == "visual-review-pass", (key, "Visual review failed")
+            assert visual_data["manifestSHA256"] == sha(manifest_path), (key, "Stale visual manifest binding")
+            assert visual_data["sourceMapSHA256"] == map_hash, (key, "Stale visual source-map binding")
+            assert visual_data["sourceSHA256"] == m["sourceSHA256"]
+        else:
+            assert map_hash in review_text, (key, "Missing independent source-map review binding")
+        for p in m["parts"]:
+            assert sha(folder / p["file"]) == p["sha256"] == fidelity["outputs"][p["file"]]
+            assert p["sha256"] in review_text, (key, p["name"], "Missing independent review binding")
+            with pymupdf.open(folder / p["file"]) as pdf:
+                assert len(pdf) == p["outputPages"]
+                for index, page in enumerate(pdf):
+                    footer = page.get_text(clip=pymupdf.Rect(0, 756, 612, 792)).strip()
+                    assert footer == f"{index + 1} / {len(pdf)}"
+        m["status"] = "reviewed — target preservation and complete-page layout pass"
+        m["reviewRecord"] = "review-record.json"
+        before, after = copy.deepcopy(original), copy.deepcopy(m)
+        for value in (before, after):
+            value.pop("status", None)
+            value.pop("reviewRecord", None)
+        assert before == after, "Finalization must not change musical content or geometry"
+        record = {
+            "status": "pass", "notationPolicy": "preserve-target",
+            "sourceSHA256": m["sourceSHA256"], "sourceMapSHA256": sha(FIXTURES / MAPS[key]),
+            "visualReviewReports": [f"../evidence/{name}" for name in REVIEWS[key]],
+            "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
+            "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
+            "manualStaffPositionCorrections": 0, "explicitCropRectangleOverrides": 0,
+            "whiteoutMasks": 0, "pageFooterChecks": sum(p["outputPages"] for p in m["parts"]),
+            "geometryReport": "geometry-review.json", "fidelityReport": "pixel-fidelity.json",
+            "fidelityReportSHA256": sha(folder / "review/pixel-fidelity.json"),
+            "parts": [{k: p[k] for k in ("name", "file", "sha256", "bandCount", "outputPages")} for p in m["parts"]],
+        }
+        prepared.append((key, m, record, visual_data))
+
+    # Validation above completes for every score before publishing any status.
+    assert (sum(len(m["parts"]) for _, m, _, _ in prepared),
+            sum(r["pageFooterChecks"] for _, _, r, _ in prepared),
+            sum(p["bandCount"] for _, m, _, _ in prepared for p in m["parts"])) == (19, 184, 1131)
+    evidence = BASE / "evidence"
+    evidence.mkdir(exist_ok=True)
+    for path in FIXTURES.iterdir():
+        if path.suffix in (".json", ".md"):
+            shutil.copy2(path, evidence / path.name)
+    for key, m, record, visual_data in prepared:
+        folder = BASE / key
+        manifest_path = folder / "manifest.json"
+        generation = folder / "generation-manifest.json"
+        if not generation.exists():
+            shutil.copy2(manifest_path, generation)
+        write(manifest_path, m)
+        record["manifestSHA256"] = sha(manifest_path)
+        record["generationManifestSHA256"] = sha(generation)
+        visual = folder / "visual-review.json"
+        if visual_data:
+            data = visual_data
+            data.setdefault("reviewedGenerationManifestSHA256", data["manifestSHA256"])
+            data["manifestSHA256"] = sha(manifest_path)
+            data["metadataFinalization"] = "Only manifest status/reviewRecord changed; all original geometry and PDF hashes verified unchanged. Original manifest retained."
+            write(visual, data)
+        shutil.copy2(folder / "review/geometry.json", folder / "geometry-review.json")
+        shutil.copy2(folder / "review/pixel-fidelity.json", folder / "pixel-fidelity.json")
+        write(folder / "review-record.json", record)
+    summary = {
+        "status": "pass", "parts": sum(len(m["parts"]) for _, m, _, _ in prepared),
+        "outputPages": sum(r["pageFooterChecks"] for _, _, r, _ in prepared),
+        "partBands": sum(p["bandCount"] for _, m, _, _ in prepared for p in m["parts"]),
+        "sourcePDFPages": 84, "physicalMusicStaves": 1357,
+        "independentReview": "Complete source/crop and final-page reviews; exact hashes bound in per-set records.",
+        "scores": {key: f"{key}/review-record.json" for key in SCORES},
+    }
+    write(BASE / "review-summary.json", summary)
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()

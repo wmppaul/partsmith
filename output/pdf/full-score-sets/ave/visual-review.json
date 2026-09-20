@@ -1,0 +1,701 @@
+{
+  "reviewVersion": 2,
+  "reviewer": "offline_detection",
+  "notationPolicy": "preserve-target",
+  "status": "visual-review-pass",
+  "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+  "sourceMapSHA256": "1081a2af3531b17264285896a44041526a3a4029475d5a274fedc8280043b273",
+  "manifestSHA256": "4acaebf5fc5b332e6544765203e67378cfdbb35a42b78e8dc06248b03cd4f285",
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "targetPreservation": "pass",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "layout": "pass",
+    "pageTurns": "system-boundaries-only; not optimized for performance"
+  },
+  "method": "All source bands compared with outside-edge original context; all final exported pages viewed at 120 dpi for layout, reading scale, source order, headings, shared cues and footer clearance. Final v7 geometry changes reviewed separately; no target ink loss found.",
+  "parts": [
+    {
+      "partID": "soprano",
+      "file": "Soprano.pdf",
+      "outputSHA256": "5369b140addf0add45766224fe684659444e221748f94d6cb973352f7e0cb551",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-soprano",
+        "p1-s2-soprano",
+        "p2-s1-soprano",
+        "p2-s2-soprano",
+        "p3-s1-soprano",
+        "p3-s2-soprano",
+        "p4-s1-soprano",
+        "p4-s2-soprano"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-soprano",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "alto",
+      "file": "Alto.pdf",
+      "outputSHA256": "8b70de00c9665b8b496e89619692f31a11ea389443c3c7ada43f3b5d59c345cc",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-alto",
+        "p1-s2-alto",
+        "p2-s1-alto",
+        "p2-s2-alto",
+        "p3-s1-alto",
+        "p3-s2-alto",
+        "p4-s1-alto",
+        "p4-s2-alto"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-alto",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "tenore",
+      "file": "Tenore.pdf",
+      "outputSHA256": "c18575a3a7e67aa19436b0c9c4dbaa56ec7fc957b1cbb504e5efade0b4e1851c",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-tenore",
+        "p1-s2-tenore",
+        "p2-s1-tenore",
+        "p2-s2-tenore",
+        "p3-s1-tenore",
+        "p3-s2-tenore",
+        "p4-s1-tenore",
+        "p4-s2-tenore"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-tenore",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "basso",
+      "file": "Basso.pdf",
+      "outputSHA256": "a0bc4b3f025ebafb9453e2df04ddf8eb1c70764e060fca0d5d6c7aecaee7ddee",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-basso",
+        "p1-s2-basso",
+        "p2-s1-basso",
+        "p2-s2-basso",
+        "p3-s1-basso",
+        "p3-s2-basso",
+        "p4-s1-basso",
+        "p4-s2-basso"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-basso",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "violin1",
+      "file": "Violino I.pdf",
+      "outputSHA256": "f403db3e3e5a37e9db1d6ed24721eff851b2368bde51f6e2c7e2701326bdafce",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-violin1",
+        "p1-s2-violin1",
+        "p2-s1-violin1",
+        "p2-s2-violin1",
+        "p3-s1-violin1",
+        "p3-s2-violin1",
+        "p4-s1-violin1",
+        "p4-s2-violin1"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-violin1",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "violin2",
+      "file": "Violino II.pdf",
+      "outputSHA256": "1bb4c2f457f2d474c6cccb7cb205a37a724e03dd7998091517da12ed610059f6",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-violin2",
+        "p1-s2-violin2",
+        "p2-s1-violin2",
+        "p2-s2-violin2",
+        "p3-s1-violin2",
+        "p3-s2-violin2",
+        "p4-s1-violin2",
+        "p4-s2-violin2"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-violin2",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "viola",
+      "file": "Viola.pdf",
+      "outputSHA256": "64dfdd3cf32681d1d139b9afb1ae729d681999f31bcc3698b7135423a11c692f",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-viola",
+        "p1-s2-viola",
+        "p2-s1-viola",
+        "p2-s2-viola",
+        "p3-s1-viola",
+        "p3-s2-viola",
+        "p4-s1-viola",
+        "p4-s2-viola"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-viola",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    },
+    {
+      "partID": "bass_organ",
+      "file": "Basso ed Organo.pdf",
+      "outputSHA256": "d6b3baea434e7299349ba05173f67c3e2c411a8ff0a443341fcf370b2e566489",
+      "reviewedPages": [
+        1
+      ],
+      "reviewedBandIDs": [
+        "p1-s1-bass_organ",
+        "p1-s2-bass_organ",
+        "p2-s1-bass_organ",
+        "p2-s2-bass_organ",
+        "p3-s1-bass_organ",
+        "p3-s2-bass_organ",
+        "p4-s1-bass_organ",
+        "p4-s2-bass_organ"
+      ],
+      "bandReviews": [
+        {
+          "bandID": "p1-s1-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p1-s2-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 1,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s1-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p2-s2-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 2,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s1-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p3-s2-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 3,
+          "system": 2,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s1-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 1,
+          "outputPage": 1
+        },
+        {
+          "bandID": "p4-s2-bass_organ",
+          "targetPreservation": "pass",
+          "neighborNotation": "present",
+          "sourcePage": 4,
+          "system": 2,
+          "outputPage": 1
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Neighboring notation and duplicated direction fragments are retained and visibly present.",
+    "Visual source comparison supplies target membership; staff counts and pixel equality cannot discover every missed note.",
+    "Reading was inspected on screen; no physical print or performed page-turn trial.",
+    "Automated protected-region pixel verification is separate evidence, not asserted by this visual review."
+  ],
+  "reviewedGenerationManifestSHA256": "ce87b0c64561a09be43005d2b1c9ce10985bdf0a0c4cb7b472e4d97aee541593",
+  "metadataFinalization": "Only manifest status/reviewRecord changed; all original geometry and PDF hashes verified unchanged. Original manifest retained."
+}
