@@ -1755,6 +1755,22 @@ private final class BandOverlayView: NSView {
             let color = partColors[band.partID] ?? .systemBlue
             let isSelectedBand = selectedBandID == band.id
             let isSelectedPartBand = selectedPartID == band.partID
+            if let rest = band.generatedRest {
+                // This is a reference to a source system, not another crop of
+                // the instruments printed there. Avoid stacking absent parts.
+                guard isSelectedBand, let rect = bandFrame(for: band) else { continue }
+                color.withAlphaComponent(0.8).setStroke()
+                let outline = NSBezierPath(roundedRect: rect, xRadius: 6, yRadius: 6)
+                outline.lineWidth = 2
+                outline.setLineDash([5, 4], count: 2, phase: 0)
+                outline.stroke()
+                let label = "\(rest.barCount) bars of inserted rest · no printed staff · system \(rest.sourceSystemIndex + 1)"
+                label.draw(at: CGPoint(x: rect.minX + 8, y: rect.maxY + 6), withAttributes: [
+                    .font: NSFont.systemFont(ofSize: 11, weight: .semibold),
+                    .foregroundColor: NSColor.labelColor
+                ])
+                continue
+            }
             let fillAlpha: CGFloat
             let strokeAlpha: CGFloat
             let borderWidth: CGFloat
@@ -1807,7 +1823,7 @@ private final class BandOverlayView: NSView {
 
             drawBarNumberBadge(for: band, in: bandRect, color: color)
 
-            if isSelectedBand {
+            if isSelectedBand && band.generatedRest == nil {
                 drawEdgeGuide(
                     rect: edgeGuideRect(for: bandRect, edge: .bottom),
                     color: strokeColor,
@@ -1824,7 +1840,8 @@ private final class BandOverlayView: NSView {
             }
 
             if isSelectedBand {
-                let restLabel = band.restReplacement.map { " · \($0.barCount)-bar rest in output" } ?? ""
+                let restLabel = band.generatedRest.map { " · \($0.barCount) bars of inserted rest · no printed staff" }
+                    ?? band.restReplacement.map { " · \($0.barCount)-bar rest in output" } ?? ""
                 let label = "P\(band.pageIndex + 1)\(restLabel)"
                 let attributes: [NSAttributedString.Key: Any] = [
                     .font: NSFont.systemFont(ofSize: 11, weight: .semibold),
@@ -2014,7 +2031,17 @@ private final class BandOverlayView: NSView {
         }
 
         for band in orderedBandsForDisplay.reversed() {
+            if band.generatedRest != nil && band.id != selectedBandID { continue }
             guard let bandRect = bandFrame(for: band) else { continue }
+            if band.generatedRest != nil {
+                if bandRect.contains(point) {
+                    selectedBandID = band.id
+                    onSelectBand?(band.id)
+                    needsDisplay = true
+                    return
+                }
+                continue
+            }
             if edgeHitRect(for: bandRect, edge: .top).contains(point) {
                 selectedBandID = band.id
                 onSelectBand?(band.id)
@@ -2498,7 +2525,12 @@ private final class BandOverlayView: NSView {
         }
 
         for band in orderedBandsForDisplay.reversed() {
+            if band.generatedRest != nil && band.id != selectedBandID { continue }
             guard let bandRect = bandFrame(for: band) else { continue }
+            if band.generatedRest != nil {
+                if bandRect.contains(point) { return .none }
+                continue
+            }
             if edgeHitRect(for: bandRect, edge: .top).contains(point) ||
                 edgeHitRect(for: bandRect, edge: .bottom).contains(point)
             {

@@ -50,7 +50,7 @@ enum RestDetectionTests {
         let supplied = StaffDetectionResult(candidates: [StaffBandCandidate(
             id: 0, staffLineFractions: (0..<5).map { (staffTop + Double($0) * space) / Double(height) },
             topFraction: band.minY, bottomFraction: band.maxY, confidence: 1, warnings: [])], warnings: [])
-        let names = ["plain-three", "first-note-plus-rest", "first-whole-note-plus-rest",
+        let names = ["plain-three", "attached-line-spur", "detached-small-dot", "ink-outside-crop", "ink-inside-crop", "first-note-plus-rest", "first-whole-note-plus-rest",
                      "first-whole-note", "later-whole-note", "half-rest", "missing-barline",
                      "interior-repeat-dots", "fermata", "first-ledger-note-plus-rest",
                      "near-opening-note-plus-rest", "near-opening-whole-note-plus-rest",
@@ -72,6 +72,16 @@ enum RestDetectionTests {
             }
             for x in [80, 440, 740, 1100] where !(name == "missing-barline" && x == 740) {
                 context.fill(CGRect(x: Double(x), y: staffTop, width: 2, height: space * 4 + 1))
+            }
+            if name == "attached-line-spur" {
+                context.fill(CGRect(x: 600, y: staffTop + space * 4 - 5, width: 3, height: 6))
+            }
+            if name == "detached-small-dot" {
+                context.fill(CGRect(x: 600, y: staffTop + space * 4 - 5, width: 3, height: 2))
+            }
+            if name == "ink-outside-crop" || name == "ink-inside-crop" {
+                let bottom = Int(ceil(band.maxY * Double(height)))
+                context.fill(CGRect(x: 590, y: name == "ink-outside-crop" ? bottom : bottom - 2, width: 14, height: 2))
             }
             func note(_ centerX: Double, _ centerY: Double, hollow: Bool, stem: Bool) {
                 context.setFillColor(gray: 0, alpha: 1)
@@ -136,7 +146,7 @@ enum RestDetectionTests {
             var diagnostic: String?
             let result = ScoreRestDetector.detect(in: image, band: band, staffDetection: supplied,
                                                   diagnostic: { diagnostic = $0 })
-            let expected: Int? = name == "plain-three" ? 3 : nil
+            let expected: Int? = ["plain-three", "attached-line-spur", "ink-outside-crop"].contains(name) ? 3 : nil
             check(result?.barCount == expected,
                   "synthetic \(name): expected \(expected.map(String.init) ?? "decline"), got \(result?.barCount.description ?? "none"); \(diagnostic ?? "")")
             print("SYNTHETIC \(name): \(result?.barCount.description ?? "declined") \(diagnostic ?? "")")

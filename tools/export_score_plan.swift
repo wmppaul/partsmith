@@ -27,6 +27,7 @@ enum ExportScorePlan {
         var kind: String
         var provenance: String
         var sourceMarkings: [Marking]
+        var generatedRest: ScoreGeneratedRest?
     }
     struct Part: Encodable {
         var id: String
@@ -43,7 +44,7 @@ enum ExportScorePlan {
         var notationPolicy = "preserve-target"
         var status = "draft — visual review required"
         var renderer = "Partsmith native Auto planner, addScoreParts, PartLayoutEngine and PartPDFExporter"
-        var coordinates = "top-down PDF points; source/output pages and systems are one-based"
+        var coordinates = "top-down PDF points; source/output pages and systems are one-based. For generated-rest items, sourceRect is an ordering/inspection anchor, not a source crop."
         var source: String
         var sourceSHA256: String
         var profile: ScoreExtractionProfile
@@ -131,7 +132,8 @@ enum ExportScorePlan {
                         system: band.systemIndex + 1, candidateIDs: band.candidateIDs, outputPage: page.index + 1,
                         sourceRect: topDown(placed.sourceRect, bounds), destinationRect: topDown(placed.destinationRect, outputBounds),
                         staffLineYs: lineYs, editorialLabel: band.editorialLabel, kind: band.kind, provenance: band.provenance,
-                        sourceMarkings: placed.sourceMarkings.map { Marking(sourceRect: topDown($0.sourceRect, bounds), destinationRect: topDown($0.destinationRect, outputBounds)) }))
+                        sourceMarkings: placed.sourceMarkings.map { Marking(sourceRect: topDown($0.sourceRect, bounds), destinationRect: topDown($0.destinationRect, outputBounds)) },
+                        generatedRest: band.generatedRest))
                 }
             }
             parts.append(Part(id: definition.id, name: definition.name, file: filename, sha256: hash(data),

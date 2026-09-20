@@ -13,13 +13,21 @@ struct ScoreExtractionView: View {
     @State private var selectedStaves = Set<Int>()
     @State private var correctionSystem = 1
     @State private var correctionPart = ""
+    @State private var assigningSystems = false
+    @State private var previewFitsWidth = false
+    @State private var previewZoom = 1.0
+    @State private var selectionAnchor: Int?
+    @State private var printedPartIDs = Set<String>()
+    @State private var systemFirstBar = ""
+    @State private var systemBarCount = ""
+    @State private var assignmentStatus: String?
     @State private var movementTitle = ""
     @State private var replaceListOnNextPick = false
     @State private var pickedInstrumentList = ScoreInstrumentPickList()
     @State private var pickStatus: String?
     @State private var deskewRunID: UUID?
     @State private var deskewStatus: String?
-    @State private var showingDetectorNotes = true
+    @State private var showingDetectorNotes = false
     @State private var focusedCropID: String?
     @State private var errorMessage: String?
     @State private var findPrintedHeader = true
@@ -101,7 +109,11 @@ struct ScoreExtractionView: View {
             } else if let review {
                 HSplitView {
                     pagePreview(review).frame(minWidth: 380, maxWidth: .infinity, maxHeight: .infinity)
-                    reviewControls(review).frame(minWidth: 340, idealWidth: 390, maxWidth: 450)
+                    if assigningSystems {
+                        systemAssignmentControls(review).frame(minWidth: 270, idealWidth: 290, maxWidth: 330)
+                    } else {
+                        reviewControls(review).frame(minWidth: 300, idealWidth: 350, maxWidth: 400)
+                    }
                 }
             } else {
                 HSplitView {
@@ -127,7 +139,7 @@ struct ScoreExtractionView: View {
             }
         }
         .padding(20)
-        .frame(minWidth: 800, idealWidth: 980, minHeight: 580, idealHeight: 760)
+        .frame(minWidth: 800, idealWidth: 1200, minHeight: 580, idealHeight: 820)
         .onAppear {
             if let saved = document.savedScoreProfile {
                 profile = saved
@@ -301,6 +313,12 @@ struct ScoreExtractionView: View {
                 Button("Add Instrument", systemImage: "plus") {
                     profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: "New Instrument", staffCount: 1))
                 }
+                Toggle("Instrument layout changes between systems", isOn: Binding(
+                    get: { profile.requiresSystemAssignment ?? false },
+                    set: { profile.requiresSystemAssignment = $0 }))
+                    .toggleStyle(.checkbox)
+                Text("For scores that hide silent instruments, Auto finds the staves, then you choose the printed instruments for each system and enter its bar count. Absent instruments receive counted rests.")
+                    .font(.caption).foregroundStyle(.secondary)
                 Divider()
                 Text("3. Printed score header").font(.headline)
                 if document.headerSelection != nil {
@@ -398,56 +416,275 @@ struct ScoreExtractionView: View {
         }
     }
 
+    private func pageNavigation(_ review: ScoreDetectionReview) -> some View {
+        let pages = review.analyses.map(\.pageIndex).sorted()
+        let position = pages.firstIndex(of: selectedPage) ?? 0
+        return HStack(spacing: 8) {
+            Button {
+                guard position > 0 else { return }
+                selectedPage = pages[position - 1]
+            } label: { Image(systemName: "chevron.left") }
+                .disabled(position == 0).accessibilityLabel("Previous selected page")
+            Picker("Page", selection: $selectedPage) {
+                ForEach(pages, id: \.self) { Text("\($0 + 1)").tag($0) }
+            }.frame(maxWidth: 135)
+            Button {
+                guard position + 1 < pages.count else { return }
+                selectedPage = pages[position + 1]
+            } label: { Image(systemName: "chevron.right") }
+                .disabled(position + 1 >= pages.count).accessibilityLabel("Next selected page")
+        }
+    }
+
     private func pagePreview(_ review: ScoreDetectionReview) -> some View {
-        GeometryReader { geometry in
-            if let image = pageImage {
-                let aspect = Double(image.width) / Double(image.height)
-                let width = min(geometry.size.width, geometry.size.height * aspect)
-                let height = width / aspect
-                ZStack(alignment: .topLeading) {
-                    Image(decorative: image, scale: 1).resizable().frame(width: width, height: height)
-                    ForEach(currentPlan?.assignments ?? []) { band in
-                        let color = bandColor(band.partID)
-                        Rectangle().fill(color.opacity(focusedCropID == band.id ? 0.18 : 0.06))
-                            .overlay(Rectangle().stroke(color, lineWidth: focusedCropID == band.id ? 3 : 1))
-                            .overlay(alignment: .topLeading) {
-                                Text("\(partName(band.partID)) · \(band.systemIndex + 1)")
-                                    .font(.system(size: 9, weight: .semibold)).padding(2).background(.regularMaterial)
-                            }
-                            .frame(width: width * (1 - band.leftFraction - band.rightFraction),
-                                   height: height * (band.bottomFraction - band.topFraction))
-                            .offset(x: width * band.leftFraction, y: height * band.topFraction)
-                            .allowsHitTesting(false)
+        VStack(spacing: 8) {
+            HStack(spacing: 8) {
+                pageNavigation(review)
+                Spacer(minLength: 0)
+                Button("Fit Page") { previewFitsWidth = false; previewZoom = 1 }
+                Button("Fit Width") { previewFitsWidth = true; previewZoom = 1 }
+                Button { previewZoom = max(0.5, previewZoom / 1.25) } label: { Image(systemName: "minus.magnifyingglass") }
+                    .accessibilityLabel("Zoom out")
+                Button { previewZoom = min(4, previewZoom * 1.25) } label: { Image(systemName: "plus.magnifyingglass") }
+                    .accessibilityLabel("Zoom in")
+            }.controlSize(.small)
+            GeometryReader { geometry in
+                if let image = pageImage {
+                    let aspect = Double(image.width) / Double(image.height)
+                    let availableWidth = max(100, geometry.size.width - 28)
+                    let fitWidth = previewFitsWidth ? availableWidth : min(availableWidth, geometry.size.height * aspect)
+                    let width = fitWidth * previewZoom
+                    let height = width / aspect
+                    ScrollView([.horizontal, .vertical]) {
+                        scorePageOverlay(image: image, width: width, height: height)
+                            .padding(.leading, 28)
+                            .frame(minWidth: geometry.size.width, minHeight: geometry.size.height, alignment: .topLeading)
+                    }.id(selectedPage)
+                } else {
+                    Text("Source page could not be rendered.").frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }.background(Color(nsColor: .underPageBackgroundColor)).clipped()
+            HStack {
+                Text(assigningSystems ? "Click staves to select. Shift-click selects a range." : "Zoom or choose Assign Instruments to change the staff layout.")
+                    .font(.caption).foregroundStyle(.secondary)
+                Spacer(minLength: 0)
+                Button(assigningSystems ? "Crop Review" : "Assign Instruments") { toggleAssignmentMode() }
+            }
+        }
+    }
+
+    private func scorePageOverlay(image: CGImage, width: Double, height: Double) -> some View {
+        ZStack(alignment: .topLeading) {
+            Image(decorative: image, scale: 1).resizable().frame(width: width, height: height)
+            ForEach((currentPlan?.assignments ?? []).filter { $0.generatedRest == nil }) { band in
+                let color = bandColor(band.partID)
+                Rectangle().fill(color.opacity(focusedCropID == band.id ? 0.18 : 0.04))
+                    .overlay(Rectangle().stroke(color, lineWidth: focusedCropID == band.id ? 3 : 1))
+                    .overlay(alignment: .topLeading) {
+                        if !assigningSystems {
+                            Text("\(partName(band.partID)) · \(band.systemIndex + 1)")
+                                .font(.system(size: 10, weight: .semibold)).padding(2).background(.regularMaterial)
+                        }
                     }
-                    ForEach(currentAnalysis?.staves ?? []) { staff in
-                        let center = (staff.staffLineFractions.first! + staff.staffLineFractions.last!) / 2
-                        Button { toggleStaff(staff.id) } label: {
-                            Text("\(staff.id + 1)").font(.caption2.bold()).foregroundStyle(.white)
-                                .padding(3).background(selectedStaves.contains(staff.id) ? Color.orange : Color.blue, in: Capsule())
-                        }.buttonStyle(.plain).offset(x: 0, y: height * center - 8)
+                    .frame(width: width * (1 - band.leftFraction - band.rightFraction),
+                           height: height * (band.bottomFraction - band.topFraction))
+                    .offset(x: width * band.leftFraction, y: height * band.topFraction)
+                    .allowsHitTesting(false)
+            }
+            ForEach(currentAnalysis?.staves ?? []) { staff in
+                staffSelectionRow(staff, width: width, height: height)
+            }
+        }.frame(width: width, height: height)
+    }
+
+    private func staffSelectionRow(_ staff: ScoreObservedStaff, width: Double, height: Double) -> some View {
+        let top = staff.staffLineFractions.first ?? staff.topFraction
+        let bottom = staff.staffLineFractions.last ?? staff.bottomFraction
+        let selected = selectedStaves.contains(staff.id)
+        let assignment = staffAssignment(staff.id)
+        let color = selected ? Color.orange : assignment.map { bandColor($0.partID) } ?? Color.blue
+        let rowHeight = max(12, height * (bottom - top))
+        return Button { toggleStaff(staff.id) } label: {
+            HStack(spacing: 0) {
+                Text("\(staff.id + 1)").font(.caption2.bold()).foregroundStyle(.white)
+                    .frame(width: 24, height: 20).background(color, in: Capsule())
+                Rectangle().fill(selected ? Color.orange.opacity(0.22) : .clear)
+                    .overlay(Rectangle().stroke(selected ? Color.orange : .clear, lineWidth: 2))
+                    .frame(width: width, height: rowHeight)
+            }.contentShape(Rectangle())
+        }.buttonStyle(.plain)
+            .frame(width: width + 24, height: rowHeight)
+            .offset(x: -24, y: height * top)
+            .accessibilityLabel("Staff \(staff.id + 1)" + (assignment.map { ", \(partName($0.partID)), system \($0.system + 1)" } ?? ", unassigned"))
+            .accessibilityValue(selected ? "Selected" : "Not selected")
+            .help(assignment.map { "\(partName($0.partID)) · System \($0.system + 1). Click to select." } ?? "Click to select this staff")
+    }
+
+    private func staffAssignment(_ id: Int) -> (partID: String, system: Int)? {
+        if let correction = review?.overrides.first(where: { $0.pageIndex == selectedPage }) {
+            for system in correction.systems {
+                if let band = system.bands.first(where: { ($0.candidateIDs ?? []).contains(id) }) {
+                    return (band.partID, system.systemIndex)
+                }
+            }
+            return nil
+        }
+        return currentPlan?.assignments.first(where: { $0.candidateIDs.contains(id) }).map { ($0.partID, $0.systemIndex) }
+    }
+
+    private func toggleAssignmentMode() {
+        assigningSystems.toggle()
+        if assigningSystems {
+            previewFitsWidth = true
+            previewZoom = 1
+            if printedPartIDs.isEmpty { printedPartIDs = Set(profile.parts.map(\.id)) }
+        }
+    }
+
+    private func systemAssignmentControls(_ review: ScoreDetectionReview) -> some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Assign a System").font(.headline)
+                Text("Select every printed staff in one system. Check the instruments shown, in score order. The same choices stay ready for the next system.")
+                    .font(.caption).foregroundStyle(.secondary)
+                HStack {
+                    Stepper("System \(correctionSystem)", value: $correctionSystem, in: 1...32)
+                    Button("Load") { loadSystemAssignment() }.help("Select this system's current staves and instrument choices")
+                }
+                HStack {
+                    Text("\(selectedStaves.count) staves selected")
+                    Spacer()
+                    Button("Clear") { selectedStaves.removeAll(); selectionAnchor = nil }
+                }.font(.caption)
+                Text("Instruments printed in this system").font(.subheadline.bold())
+                ForEach(profile.parts) { part in
+                    Toggle(isOn: Binding(get: { printedPartIDs.contains(part.id) }, set: { included in
+                        if included { printedPartIDs.insert(part.id) } else { printedPartIDs.remove(part.id) }
+                    })) {
+                        HStack {
+                            Text(part.name)
+                            Spacer()
+                            Text("\(part.staffCount)").foregroundStyle(.secondary).font(.caption)
+                        }
+                    }.toggleStyle(.checkbox)
+                }
+                HStack {
+                    Button("All") { printedPartIDs = Set(profile.parts.map(\.id)) }
+                    Button("None") { printedPartIDs.removeAll() }
+                    Spacer()
+                    Text("\(expectedSelectedStaffCount) staves expected").font(.caption).foregroundStyle(.secondary)
+                }.controlSize(.small)
+                Divider()
+                HStack {
+                    Text("First bar")
+                    TextField("Optional", text: $systemFirstBar).textFieldStyle(.roundedBorder).frame(width: 80)
+                }
+                HStack {
+                    Text("Bars in system")
+                    TextField("Count", text: $systemBarCount).textFieldStyle(.roundedBorder).frame(width: 80)
+                }
+                if printedPartIDs.count < profile.parts.count {
+                    Text("Unchecked instruments receive this many bars of rest. Confirm they are silent, and keep any tempo, meter or rehearsal changes at their original bar.")
+                        .font(.caption).foregroundStyle(.secondary)
+                } else {
+                    Text("The bar count is required when silent instruments are omitted.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                Button("Assign System", action: assignSystemSelection)
+                    .buttonStyle(.borderedProminent)
+                    .disabled(selectedStaves.isEmpty || selectedStaves.count != expectedSelectedStaffCount || printedPartIDs.isEmpty)
+                if let assignmentStatus { Text(assignmentStatus).font(.caption).foregroundStyle(.secondary) }
+                Divider()
+                if let correction = review.overrides.first(where: { $0.pageIndex == selectedPage }) {
+                    ForEach(correction.systems, id: \.systemIndex) { system in
+                        Button {
+                            correctionSystem = system.systemIndex + 1
+                            loadSystemAssignment()
+                        } label: {
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text("System \(system.systemIndex + 1)").font(.subheadline.bold())
+                                Text(system.bands.map { partName($0.partID) }.joined(separator: ", "))
+                                    .font(.caption).foregroundStyle(.secondary)
+                                if let count = system.barCount {
+                                    if let first = system.startBarNumber, first <= Int.max - count + 1 {
+                                        Text("Bars \(first)–\(first + count - 1)").font(.caption)
+                                    } else {
+                                        Text("\(count) bars").font(.caption)
+                                    }
+                                    if let omitted = system.omittedParts, !omitted.isEmpty {
+                                        Text("\(count)-bar rest: " + omitted.map { partName($0.partID) }.joined(separator: ", "))
+                                            .font(.caption).foregroundStyle(.secondary)
+                                    }
+                                }
+                            }.frame(maxWidth: .infinity, alignment: .leading)
+                        }.buttonStyle(.plain)
                     }
-                }.frame(width: geometry.size.width, height: geometry.size.height)
-            } else { Text("Source page could not be rendered.").frame(maxWidth: .infinity, maxHeight: .infinity) }
-        }.background(Color(nsColor: .underPageBackgroundColor)).clipped()
+                }
+                ForEach(currentPlan?.unresolvedReasons ?? [], id: \.self) {
+                    Text($0).font(.caption).foregroundStyle(.orange)
+                }
+                Button("Ignore Selected False Detections", action: ignoreSelected).disabled(selectedStaves.isEmpty)
+                Button("Restore Automatic Assignments") {
+                    changeReview { $0.overrides.removeAll { $0.pageIndex == selectedPage } }
+                    selectedStaves.removeAll(); assignmentStatus = nil
+                }
+                Button("Show Score Window", action: onShowScore)
+            }.padding(.leading, 12).padding(.bottom, 8)
+        }
+    }
+
+    private var expectedSelectedStaffCount: Int {
+        profile.parts.filter { printedPartIDs.contains($0.id) }.reduce(0) { $0 + $1.staffCount }
+    }
+
+    private func loadSystemAssignment() {
+        guard let review else { return }
+        let correction = pageOverride(review)
+        guard let system = correction.systems.first(where: { $0.systemIndex == correctionSystem - 1 }) else { return }
+        selectedStaves = Set(system.bands.flatMap { $0.candidateIDs ?? [] })
+        printedPartIDs = Set(system.bands.map(\.partID))
+        systemFirstBar = system.startBarNumber.map(String.init) ?? ""
+        systemBarCount = system.barCount.map(String.init) ?? ""
+        selectionAnchor = nil
+        assignmentStatus = nil
+    }
+
+    private func assignSystemSelection() {
+        guard var value = review, let analysis = currentAnalysis else { return }
+        let firstText = systemFirstBar.trimmingCharacters(in: .whitespacesAndNewlines)
+        let countText = systemBarCount.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard firstText.isEmpty || Int(firstText).map({ $0 > 0 }) == true,
+              countText.isEmpty || Int(countText).map({ (1...999).contains($0) }) == true else {
+            errorMessage = "Use a positive first bar and a bar count from 1 to 999."
+            return
+        }
+        do {
+            let correction = try ScoreSystemAssignment.assign(page: analysis, profile: profile,
+                pagePlan: currentPlan, existingOverride: value.overrides.first(where: { $0.pageIndex == selectedPage }),
+                systemIndex: correctionSystem - 1, candidateIDs: selectedStaves.sorted(), presentPartIDs: printedPartIDs,
+                startBarNumber: Int(firstText), barCount: Int(countText))
+            value.overrides.removeAll { $0.pageIndex == selectedPage }
+            value.overrides.append(correction)
+            value.replan()
+            review = value
+            let restParts = profile.parts.count - printedPartIDs.count
+            assignmentStatus = "System \(correctionSystem) assigned." + (restParts > 0 ? " Added \(countText)-bar rests for \(restParts) absent instruments." : "")
+            correctionSystem = min(32, correctionSystem + 1)
+            selectedStaves.removeAll(); selectionAnchor = nil
+            // A repeated instrument layout does not imply a repeated measure count.
+            if let first = Int(firstText), let count = Int(countText), first <= Int.max - count {
+                systemFirstBar = String(first + count)
+            } else { systemFirstBar = "" }
+            systemBarCount = ""
+            errorMessage = nil
+        } catch { errorMessage = error.localizedDescription }
     }
 
     private func reviewControls(_ review: ScoreDetectionReview) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                let pages = review.analyses.map(\.pageIndex).sorted()
-                let position = pages.firstIndex(of: selectedPage) ?? 0
-                HStack {
-                    Picker("Source page", selection: $selectedPage) {
-                        ForEach(pages, id: \.self) { Text("\($0 + 1)").tag($0) }
-                    }.frame(maxWidth: 180)
-                    Spacer()
-                    Button { selectedPage = pages[max(0, position - 1)] } label: {
-                        Image(systemName: "chevron.left")
-                    }.disabled(position == 0).accessibilityLabel("Previous selected page")
-                    Button { selectedPage = pages[min(pages.count - 1, position + 1)] } label: {
-                        Image(systemName: "chevron.right")
-                    }.disabled(position >= pages.count - 1).accessibilityLabel("Next selected page")
-                }
+                Button("Assign Instruments on Enlarged Score") { toggleAssignmentMode() }
+                    .buttonStyle(.borderedProminent)
                 let unresolved = review.plan.pages.filter { !$0.unresolvedReasons.isEmpty }
                 let assignedCount = review.plan.pages.filter { !$0.assignments.isEmpty }.count
                 Text("\(assignedCount) pages assigned · \(review.excludedPageReasons.count) excluded · \(unresolved.count) need review")
@@ -502,7 +739,14 @@ struct ScoreExtractionView: View {
                 if !(currentPlan?.assignments.isEmpty ?? true) {
                     ForEach(profile.parts) { part in
                         let count = (currentPlan?.assignments ?? []).filter { $0.partID == part.id }.count
-                        HStack { Text(part.name); Spacer(); Text("\(count) systems").foregroundStyle(.secondary) }
+                        let restingBars = (currentPlan?.assignments ?? []).filter { $0.partID == part.id }
+                            .compactMap(\.generatedRest).reduce(0) { $0 + $1.barCount }
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack { Text(part.name); Spacer(); Text("\(count) systems").foregroundStyle(.secondary) }
+                            if restingBars > 0 {
+                                Text("\(restingBars) bars of inserted rest").font(.caption).foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
                 Text("You can click through to check the notes, slurs, lyrics and shared markings. Crop edges remain editable after adding the parts.")
@@ -512,7 +756,7 @@ struct ScoreExtractionView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             Text("Source-page points measured down from the top. Decrease Top or increase Bottom to retain more notation. Check complete notes and detached marks before tightening an edge.")
                                 .font(.caption).foregroundStyle(.secondary)
-                            ForEach(currentPlan?.assignments ?? []) { band in
+                            ForEach((currentPlan?.assignments ?? []).filter { $0.generatedRest == nil }) { band in
                                 VStack(alignment: .leading, spacing: 6) {
                                     Button("\(partName(band.partID)) · System \(band.systemIndex + 1)") { focusedCropID = band.id }
                                         .buttonStyle(.link).help("Highlight this crop on the source page")
@@ -539,7 +783,7 @@ struct ScoreExtractionView: View {
                             ForEach(profile.parts) { Text($0.name).tag($0.id) }
                         }
                         Button("Assign Selected Staves", action: assignSelected).disabled(selectedStaves.isEmpty)
-                        Button("No Printed Staff for This Part", action: omitPart)
+                        Button("Set Absent Instruments & Rests") { toggleAssignmentMode(); loadSystemAssignment() }
                         Button("Ignore Selected False Detections", action: ignoreSelected)
                             .disabled(selectedStaves.isEmpty)
                         Button("Exclude Page Without Score Music") {
@@ -730,6 +974,12 @@ struct ScoreExtractionView: View {
                              pageIndices: inputPages) { result in
             guard let result else { errorMessage = "The source or rectification changed. Run Auto again."; return }
             review = result
+            if profile.requiresSystemAssignment == true {
+                assigningSystems = true
+                previewFitsWidth = true
+                previewZoom = 1
+                printedPartIDs = Set(profile.parts.map(\.id))
+            }
             includeSuggestedHeader = true
             updateHeaderPreview()
             selectedPage = result.plan.pages.first(where: { !$0.unresolvedReasons.isEmpty })?.pageIndex
@@ -742,11 +992,21 @@ struct ScoreExtractionView: View {
         selectedStaves.removeAll()
         focusedCropID = nil
         correctionSystem = 1
+        selectionAnchor = nil
+        systemFirstBar = ""
+        systemBarCount = ""
+        assignmentStatus = nil
         pageImage = document.scoreReviewImage(pageIndex: selectedPage)
     }
 
     private func toggleStaff(_ id: Int) {
-        if selectedStaves.contains(id) { selectedStaves.remove(id) } else { selectedStaves.insert(id) }
+        if NSEvent.modifierFlags.contains(.shift), let anchor = selectionAnchor {
+            let lower = min(anchor, id), upper = max(anchor, id)
+            selectedStaves.formUnion((currentAnalysis?.staves ?? []).filter { (lower...upper).contains($0.id) }.map(\.id))
+        } else {
+            if selectedStaves.contains(id) { selectedStaves.remove(id) } else { selectedStaves.insert(id) }
+            selectionAnchor = id
+        }
     }
 
     private func partName(_ id: String) -> String { profile.parts.first { $0.id == id }?.name ?? id }
@@ -800,16 +1060,12 @@ struct ScoreExtractionView: View {
     }
 
     private func pageOverride(_ review: ScoreDetectionReview) -> ScorePageOverride {
-        if let existing = review.overrides.first(where: { $0.pageIndex == selectedPage }) { return existing }
-        let assignments = review.plan.pages.first { $0.pageIndex == selectedPage }?.assignments ?? []
-        let systems = Set(assignments.map(\.systemIndex)).sorted().map { system in
-            ScoreSystemOverride(systemIndex: system, label: nil, movementLabel: nil,
-                bands: assignments.filter { $0.systemIndex == system }.map {
-                    ScoreBandOverride(partID: $0.partID, candidateIDs: $0.candidateIDs, rect: nil,
-                                      label: nil, kind: nil, pageBreakBefore: nil)
-                }, omittedParts: nil)
+        guard let page = review.analyses.first(where: { $0.pageIndex == selectedPage }) else {
+            return ScorePageOverride(pageIndex: selectedPage, reason: "Instrument assignments reviewed in Auto Extract.", systems: [])
         }
-        return ScorePageOverride(pageIndex: selectedPage, reason: "Instrument assignments reviewed in Auto Extract.", systems: systems)
+        return ScoreSystemAssignment.pageOverride(page: page,
+            pagePlan: review.plan.pages.first { $0.pageIndex == selectedPage },
+            existingOverride: review.overrides.first { $0.pageIndex == selectedPage })
     }
 
     private func editOverride(_ edit: (inout ScorePageOverride) -> Void) {
@@ -843,16 +1099,6 @@ struct ScoreExtractionView: View {
             }
         }
         selectedStaves.removeAll()
-    }
-
-    private func omitPart() {
-        editOverride { correction in
-            correction.systems[correctionSystem - 1].bands.removeAll { $0.partID == correctionPart }
-            var omissions = correction.systems[correctionSystem - 1].omittedParts ?? []
-            omissions.removeAll { $0.partID == correctionPart }
-            omissions.append(ScorePartOmission(partID: correctionPart, reason: "No printed staff for this part."))
-            correction.systems[correctionSystem - 1].omittedParts = omissions
-        }
     }
 
     private func ignoreSelected() {

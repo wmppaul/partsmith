@@ -31,6 +31,10 @@ Reviewed examples and the evaluation record are in [output/pdf](output/pdf) and 
 9. For existing parts, choose **Find & Compress Rests** in the part inspector, or select a strip and choose **Count & Compress This Strip**. The local detector counts complete resting measures on a single staff, retains its printed opening and ending context, and leaves uncertain strips unchanged. **Restore Original Crop** and Undo recover the source. **Set Count Manually** remains available for reviewed exceptions.
 10. Use **Export All** in Source mode to create a folder containing one PDF per part. Manual **New Part** and crop drawing remain available.
 
+For scores that hide silent instruments, enable **Instrument layout changes between systems** before Auto. In **Assign Instruments**, use **Fit Width** or zoom, then click the first staff and Shift-click the last staff of one system. Check the instruments actually printed, enter the system's bar count, and choose **Assign System**. A piano grand staff counts as two staves but one measure sequence. Instrument choices carry forward; the bar count must be set for each system with absent instruments. **Load** revisits a completed system. Unchecked instruments receive inserted rests, so their parts retain the missing measures. These rests are saved separately from source crops, support Undo, and have an editable count in the Inspector.
+
+For example, Mozart K.488 movement I, source page 17, has piano and strings in bars 144–149, piano alone in bars 150–152, and the full ensemble in bars 153–156. The strings need a three-bar rest for the middle system; the winds need six bars followed by three bars. Instrument identity and silence still need confirmation from the score; equal staff counts do not establish the same instrumentation. Keep tempo, meter, rehearsal and other shared changes at their correct measure when preparing rests.
+
 ## What Is Implemented
 
 - Native SwiftUI macOS app shell with a `.partsmithproject` document type
@@ -41,6 +45,7 @@ Reviewed examples and the evaluation record are in [output/pdf](output/pdf) and 
 - Whole-score offline Auto with saved instrumentation, skew-aware multi-region staff detection, mixed staff sizes, review/correction, and one undoable apply
 - Global and per-instrument crop context settings; source-marking copies retained in editable projects
 - Automatic offline counting of eligible single-staff whole-rest strips, retained printed opening/ending context, reversible replacements, and optional manual counts
+- Zoomable system assignment with reusable instrument choices and counted rests for confirmed silent instruments omitted from the score
 - Balanced system pagination at consistent scale with explicit musical breaks and output page numbers
 - PDFKit-backed source page viewer with fit-width and fit-page
 - Editable horizontal crop bands with visible top and bottom drag handles

@@ -62,7 +62,9 @@ enum ScoreRestDetector {
         let left = max(0, Int(ceil(band.minX * Double(width))))
         let right = min(width - 1, Int(floor(band.maxX * Double(width))) - 1)
         let top = max(0, Int(floor(band.minY * Double(height))))
-        let bottom = min(height - 1, Int(ceil(band.maxY * Double(height))))
+        // Pixel rows are half-open intervals. Including ceil(maxY) itself
+        // would inspect one complete row beyond the user's visible crop.
+        let bottom = min(height - 1, Int(ceil(band.maxY * Double(height))) - 1)
         guard right > left, bottom > top else { return reject("Empty band") }
         func black(_ x: Int, _ y: Int) -> Bool {
             x >= 0 && x < width && y >= 0 && y < height && pixels[y * width + x] < 170
@@ -215,8 +217,31 @@ enum ScoreRestDetector {
                 let centerY = Double(box.top + box.bottom) / 2
                 let onLine = localLines.contains { abs($0 - centerY) < space * 0.28 }
                 if onLine && box.width >= space * 0.35 && box.height <= space * 0.22 { continue }
+                // Scanned lines sometimes have tiny attached ink spurs. Keep
+                // detached dots and larger glyphs: a spur must be both very
+                // small and continuously connected to an identified line in
+                // the original raster, not just close to its expected row.
+                if box.width <= space * 0.3 && box.height <= space * 0.3
+                    && Double(box.area) <= space * space * 0.06,
+                   let line = localLines.min(by: { abs($0 - centerY) < abs($1 - centerY) }),
+                   abs(line - centerY) <= space * 0.5 {
+                    let x = (box.left + box.right) / 2
+                    let shift = slope * (Double(x) - Double(width) / 2) + offsets[x]
+                    let lineRow = Int(line.rounded()), objectRow = Int(centerY.rounded())
+                    let attached = (min(lineRow, objectRow)...max(lineRow, objectRow)).allSatisfy { row in
+                        black(x, Int((Double(top + row) + shift).rounded()))
+                    }
+                    if attached { continue }
+                }
                 let barTail = boundaries.contains { bar in
-                    box.left >= bar.left - 1 && box.right <= bar.right + 1
+                    // A scanned connecting bar may drift sideways by a pixel
+                    // where it enters the staff. Require physical overlap and
+                    // the same narrow stroke width; do not discard adjacent
+                    // symbols merely because they are near a barline.
+                    let drift = max(1, Int((space * 0.2).rounded()))
+                    return box.left <= bar.right && box.right >= bar.left
+                        && box.width <= Double(bar.right - bar.left + 3)
+                        && box.left >= bar.left - drift && box.right <= bar.right + drift
                         && ((box.top < coreTop - radius && box.bottom >= coreTop - radius - 1)
                             || (box.bottom > coreBottom + radius && box.top <= coreBottom + radius + 1))
                 }
@@ -428,6 +453,12 @@ enum ScoreRestDetector {
             let objects = components.filter { Double($0.right) > a.center && Double($0.left) < b.center }
             var openingBodyRight = Double(staffLeft)
             if measure == 0 {
+                // A scanned score's system edge may stand farther from the
+                // clef than ordinary inter-glyph spacing. Seed the signature
+                // from verified clef geometry, not an arbitrary left margin.
+                if let clefRight = openingClefRight(objects) {
+                    openingBodyRight = max(openingBodyRight, clefRight - space * 0.7)
+                }
                 let body = objects.filter { Double($0.bottom) >= localLines[0] - space * 0.7
                     && Double($0.top) <= localLines[4] + space * 0.7 }.sorted { $0.left < $1.left }
                 for object in body {

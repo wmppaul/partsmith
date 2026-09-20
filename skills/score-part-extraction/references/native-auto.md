@@ -154,3 +154,42 @@ Broad neighboring context can prevent an otherwise silent strip from matching.
 Automatic replacements do not join across strips, because their individual
 opening and ending context must remain. Original crops remain available through
 **Restore Original Crop** and Undo. Recheck output layout after any replacement.
+
+## Scores with omitted silent staves
+
+Enable **Instrument layout changes between systems** in the magic-wand setup.
+This disables automatic instrument cadence guesses even when a page's total
+staff count happens to be divisible by the complete profile. Auto still detects
+staff geometry. In **Assign Instruments**, use **Fit Width** and zoom; click the
+first staff and Shift-click the last staff of one printed system. Check the
+printed instruments in profile order, enter an optional first bar and the
+system's bar count, then **Assign System**. Piano uses two staves but counts each
+measure once. Instrument choices persist for the next system; counts do not.
+Use **Load** to revisit an assignment.
+
+An unassigned staff is not evidence of silence. Only explicitly unchecked,
+confirmed silent instruments receive generated rests. Their counts are required
+before adding the reviewed parts, because dropping an absent system would
+silently shorten the part. Page exclusions retain their separate non-music
+meaning. A system that loses staves to another assignment requires reassignment.
+Legacy omissions without counts are unresolved when replanned, rather than
+silently discarded.
+
+Generated rests use separate saved metadata (`generatedRest`), with count,
+optional first bar and source-system reference. Their source rectangle is only
+an ordering/inspection anchor; never treat it as a crop of that instrument.
+There is no Restore Original Crop action for an instrument that was not printed.
+The Inspector permits changing the inserted rest count; saving, Undo and native
+PDF export preserve its distinction from a detected rest replacement. Counts
+of one render as a whole-measure rest. No automatic joining across source
+systems is assumed.
+
+Verify measure coverage and all shared changes. Split rests at tempo/meter/key
+changes, rehearsal marks, repeats and other significant events; do not assume
+that absence of a staff makes those events irrelevant. The assignment workflow
+does not yet infer omitted instruments or their measure counts from the score.
+Mozart K.488 movement I page 17 is a regression case: bars 144–149 show piano and
+strings, 150–152 show piano only, and 153–156 show the full ensemble. The silent
+strings need three bars in the middle, and winds need both the six-bar and
+three-bar silent systems. The source only prints instrument labels on its
+opening system, so later identities cannot be recovered by label OCR alone.

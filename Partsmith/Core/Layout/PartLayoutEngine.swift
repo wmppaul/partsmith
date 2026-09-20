@@ -34,6 +34,9 @@ struct BandPlacement {
     var sourceBandIDs: [UUID] = []
     var restReplacement: BandRestReplacement? = nil
     var restSourcePlacement: RestSourcePlacement? = nil
+    var generatedRest: BandGeneratedRest? = nil
+
+    var restBarCount: Int? { generatedRest?.barCount ?? restReplacement?.barCount }
 }
 
 struct RestSourcePlacement {
@@ -69,6 +72,7 @@ enum PartLayoutError: LocalizedError {
     case overlappingSourceMarkings(Int)
     case failedRectification(Int)
     case invalidRestReplacement(Int)
+    case invalidGeneratedRest(Int)
 
     var errorDescription: String? {
         switch self {
@@ -96,6 +100,8 @@ enum PartLayoutError: LocalizedError {
             return "Shared source markings on page \(pageIndex + 1) overlap in the annotation row. Combine them into one source selection or remove the overlap before exporting."
         case .invalidRestReplacement(let pageIndex):
             return "The multi-bar rest on source page \(pageIndex + 1) needs a verified count between 2 and 999 bars. Restore the source crop or correct the count before exporting."
+        case .invalidGeneratedRest(let pageIndex):
+            return "A silent part on source page \(pageIndex + 1) needs a confirmed count between 1 and 999 bars and a valid source system. Review its silence count before exporting."
         case .failedRectification(let pageIndex):
             return "The correction for source page \(pageIndex + 1) could not be rendered. Adjust its correction points, or reset the correction and review that page's crops before previewing or exporting."
         }
@@ -138,6 +144,7 @@ enum PartLayoutEngine {
         var restReplacement: BandRestReplacement?
         var restStartNumber: Int?
         var renderedSourceHeight: Double {
+            if band.generatedRest != nil { return PartLayoutEngine.restStripHeight }
             guard let replacement = restReplacement else { return sourceRect.height }
             if let context = replacement.sourceContext {
                 let space = (context.staffLineFractions[4] - context.staffLineFractions[0]) * pageBounds.height / 4
@@ -266,6 +273,10 @@ enum PartLayoutEngine {
 
         var prepared: [PreparedBand] = []
         for (sourceOrder, band) in sourceBands.enumerated() where !band.excluded {
+            if let generated = band.generatedRest,
+               !generated.isValid || band.restReplacement != nil || !band.exclusions.isEmpty {
+                throw PartLayoutError.invalidGeneratedRest(band.pageIndex)
+            }
             if let replacement = band.restReplacement, !replacement.isValid {
                 throw PartLayoutError.invalidRestReplacement(band.pageIndex)
             }
@@ -389,7 +400,7 @@ enum PartLayoutEngine {
                 let destinationRect = CGRect(x: contentRect.minX + (contentRect.width - targetWidth) / 2,
                     y: bandTop - item.renderedSourceHeight * renderScale,
                     width: targetWidth, height: item.renderedSourceHeight * renderScale)
-                let exclusionRects = (item.restReplacement == nil ? band.exclusions : []).map { exclusion in
+                let exclusionRects = (item.restReplacement == nil && band.generatedRest == nil ? band.exclusions : []).map { exclusion in
                     let rect = cropRect(top: exclusion.topFraction, bottom: exclusion.bottomFraction,
                                         left: exclusion.leftFraction, right: exclusion.rightFraction, in: item.pageBounds)
                     return CGRect(x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
@@ -405,7 +416,8 @@ enum PartLayoutEngine {
                             y: markingsTop - rect.height * renderScale,
                             width: rect.width * renderScale, height: rect.height * renderScale))
                     }, sourceBandIDs: item.sourceBandIDs, restReplacement: item.restReplacement,
-                    restSourcePlacement: restSourcePlacement(for: item, destination: destinationRect, scale: renderScale)))
+                    restSourcePlacement: restSourcePlacement(for: item, destination: destinationRect, scale: renderScale),
+                    generatedRest: band.generatedRest))
                 cursorTop = destinationRect.minY - actualGap
             }
             pages.append(PartRenderPage(index: pageIndex,

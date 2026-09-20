@@ -17,6 +17,9 @@ struct ScoreExtractionProfile: Codable, Equatable {
     var rightTrimPoints: Double?
     /// Missing keeps the original fixed-padding behavior of saved profiles.
     var cropMode: String?
+    /// Variable instrumentation needs explicit system identity even if a page's
+    /// total staff count happens to fit the full-profile cadence.
+    var requiresSystemAssignment: Bool? = nil
 }
 
 struct ScoreObservedStaff: Codable, Equatable, Identifiable {
@@ -81,6 +84,11 @@ struct ScoreSystemOverride: Codable, Equatable {
     var movementLabel: String?
     var bands: [ScoreBandOverride]
     var omittedParts: [ScorePartOmission]?
+    /// A reviewed measure span, used to preserve silent time when staves are omitted.
+    var startBarNumber: Int? = nil
+    var barCount: Int? = nil
+    /// Moving staves to another system leaves the old system incomplete until reassigned.
+    var requiresAssignmentReview: Bool? = nil
 }
 
 struct ScorePageOverride: Codable, Equatable {
@@ -115,6 +123,151 @@ struct ScorePlannedBand: Codable, Equatable, Identifiable {
     var sourceMarkings: [ScoreSourceMarking] = []
     var provenance: String
     var warnings: [String]
+    /// An explicitly confirmed silent part, with no printed staff to crop.
+    var generatedRest: ScoreGeneratedRest? = nil
+}
+
+struct ScoreGeneratedRest: Codable, Equatable {
+    var barCount: Int
+    var startBarNumber: Int?
+
+    var isValid: Bool {
+        guard (1...999).contains(barCount), startBarNumber == nil || startBarNumber! > 0 else { return false }
+        if let startBarNumber { return !startBarNumber.addingReportingOverflow(barCount - 1).overflow }
+        return true
+    }
+}
+
+/// Builds one explicit system mapping. The selection says which source staves
+/// belong together; the checked parts say whose staves they are. Staff count
+/// alone never identifies omitted instruments or carries a mapping forward.
+enum ScoreSystemAssignment {
+    enum AssignmentError: LocalizedError {
+        case invalidPage, invalidSystem, invalidProfile, unknownPart, invalidSelection
+        case wrongStaffCount(expected: Int, actual: Int), missingRestCount, invalidMeasureSpan
+
+        var errorDescription: String? {
+            switch self {
+            case .invalidPage: return "This page is no longer available. Run Auto again."
+            case .invalidSystem: return "Choose a valid system number."
+            case .invalidProfile: return "Review the instrument names and staff counts first."
+            case .unknownPart: return "A selected instrument is no longer in the setup."
+            case .invalidSelection: return "Select consecutive detected staves belonging to one printed system."
+            case let .wrongStaffCount(expected, actual):
+                return "The checked instruments need \(expected) staves; \(actual) are selected. Check the printed parts and the piano staff grouping."
+            case .missingRestCount: return "Enter this system’s bar count so absent instruments receive counted rests."
+            case .invalidMeasureSpan: return "Use 1–999 bars and, if supplied, a positive starting bar number."
+            }
+        }
+    }
+
+    static func assign(
+        page: ScorePageAnalysis, profile: ScoreExtractionProfile,
+        pagePlan: ScorePagePlan?, existingOverride: ScorePageOverride?,
+        systemIndex: Int, candidateIDs: [Int], presentPartIDs: Set<String>,
+        startBarNumber: Int?, barCount: Int?
+    ) throws -> ScorePageOverride {
+        guard page.pageWidth.isFinite, page.pageWidth > 0, page.pageHeight.isFinite, page.pageHeight > 0,
+              existingOverride == nil || existingOverride?.pageIndex == page.pageIndex,
+              pagePlan == nil || pagePlan?.pageIndex == page.pageIndex else { throw AssignmentError.invalidPage }
+        guard (0..<32).contains(systemIndex) else { throw AssignmentError.invalidSystem }
+        let partIDs = Set(profile.parts.map(\.id))
+        guard !profile.parts.isEmpty, partIDs.count == profile.parts.count,
+              profile.parts.allSatisfy({ !$0.id.isEmpty && !$0.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && (1...4).contains($0.staffCount) }) else {
+            throw AssignmentError.invalidProfile
+        }
+        guard presentPartIDs.isSubset(of: partIDs) else { throw AssignmentError.unknownPart }
+        let selected = Set(candidateIDs)
+        let ordered = page.staves.sorted { ($0.staffLineFractions.first ?? -1) < ($1.staffLineFractions.first ?? -1) }
+        let positions = ordered.indices.filter { selected.contains(ordered[$0].id) }
+        guard !selected.isEmpty, selected.count == candidateIDs.count,
+              Set(ordered.map(\.id)).count == ordered.count,
+              positions.count == selected.count,
+              positions == Array(positions.first!...positions.last!),
+              ordered.filter({ selected.contains($0.id) }).allSatisfy({ staff in
+                  staff.staffLineFractions.count == 5
+                      && staff.staffLineFractions.allSatisfy({ $0.isFinite && (0...1).contains($0) })
+                      && zip(staff.staffLineFractions, staff.staffLineFractions.dropFirst()).allSatisfy({ $0 < $1 })
+              }) else { throw AssignmentError.invalidSelection }
+        let printedParts = profile.parts.filter { presentPartIDs.contains($0.id) }
+        let expected = printedParts.reduce(0) { $0 + $1.staffCount }
+        guard expected == selected.count else { throw AssignmentError.wrongStaffCount(expected: expected, actual: selected.count) }
+        if presentPartIDs != partIDs, barCount == nil { throw AssignmentError.missingRestCount }
+        guard (barCount == nil || (1...999).contains(barCount!)),
+              startBarNumber == nil || startBarNumber! > 0,
+              barCount == nil || ScoreGeneratedRest(barCount: barCount!, startBarNumber: startBarNumber).isValid else {
+            throw AssignmentError.invalidMeasureSpan
+        }
+        var correction = pageOverride(page: page, pagePlan: pagePlan, existingOverride: existingOverride)
+        guard correction.systems.map(\.systemIndex) == Array(0..<correction.systems.count) else {
+            throw AssignmentError.invalidSystem
+        }
+        while correction.systems.count <= systemIndex {
+            correction.systems.append(ScoreSystemOverride(systemIndex: correction.systems.count, bands: [], omittedParts: []))
+        }
+        // Preserve unrelated systems exactly. If this selection takes staves
+        // from another system, that system must be explicitly reassigned next.
+        for index in correction.systems.indices where index != systemIndex {
+            var changed = false
+            for bandIndex in correction.systems[index].bands.indices {
+                guard (correction.systems[index].bands[bandIndex].kind ?? "music") == "music" else { continue }
+                let before = correction.systems[index].bands[bandIndex].candidateIDs ?? []
+                let after = before.filter { !selected.contains($0) }
+                if before != after {
+                    correction.systems[index].bands[bandIndex].candidateIDs = after
+                    changed = true
+                }
+            }
+            if changed { correction.systems[index].requiresAssignmentReview = true }
+        }
+        let ids = positions.map { ordered[$0].id }
+        var offset = 0
+        let previous = correction.systems[systemIndex]
+        correction.systems[systemIndex].bands = printedParts.map { part in
+            let group = Array(ids[offset..<(offset + part.staffCount)])
+            offset += part.staffCount
+            return previous.bands.first { $0.partID == part.id && ($0.kind ?? "music") == "music" && $0.candidateIDs == group }
+                ?? ScoreBandOverride(partID: part.id, candidateIDs: group)
+        }
+        correction.systems[systemIndex].omittedParts = profile.parts.filter { !presentPartIDs.contains($0.id) }.map {
+            ScorePartOmission(partID: $0.id, reason: "Confirmed silent: no staff is printed in this system.")
+        }
+        correction.systems[systemIndex].startBarNumber = startBarNumber
+        correction.systems[systemIndex].barCount = barCount
+        correction.systems[systemIndex].requiresAssignmentReview = nil
+        correction.ignoredCandidateIDs?.removeAll { selected.contains($0) }
+        correction.nonMusicReason = nil
+        return correction
+    }
+
+    /// Converts a current plan into an editable override without dropping
+    /// reviewed crops or shared markings. Generated rests remain omissions.
+    static func pageOverride(page: ScorePageAnalysis, pagePlan: ScorePagePlan?,
+                             existingOverride: ScorePageOverride?) -> ScorePageOverride {
+        if let existingOverride { return existingOverride }
+        var correction = ScorePageOverride(pageIndex: page.pageIndex,
+            reason: "Instrument assignments reviewed in Auto Extract.", systems: [])
+        guard let pagePlan else { return correction }
+        correction.systems = Set(pagePlan.assignments.map(\.systemIndex)).sorted().map { index in
+            let assignments = pagePlan.assignments.filter { $0.systemIndex == index }
+            let generated = assignments.compactMap(\.generatedRest).first
+            return ScoreSystemOverride(systemIndex: index,
+                bands: assignments.filter { $0.generatedRest == nil }.map { band in
+                    ScoreBandOverride(partID: band.partID, candidateIDs: band.candidateIDs,
+                        rect: [band.leftFraction * page.pageWidth, band.topFraction * page.pageHeight,
+                               (1 - band.rightFraction) * page.pageWidth, band.bottomFraction * page.pageHeight],
+                        label: band.editorialLabel.isEmpty ? nil : band.editorialLabel,
+                        kind: band.kind, pageBreakBefore: band.pageBreakBefore,
+                        sourceMarkings: band.sourceMarkings.map {
+                            [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+                             (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+                        })
+                }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
+                    ScorePartOmission(partID: $0.partID, reason: $0.reason)
+                }, startBarNumber: generated?.startBarNumber, barCount: generated?.barCount)
+        }
+        return correction
+    }
 }
 
 struct ScoreSystemOmission: Codable, Equatable {
@@ -184,6 +337,10 @@ enum ScoreExtractionPlanner {
 
     private static func automaticPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile) -> ScorePagePlan {
         var output = ScorePagePlan(pageIndex: page.pageIndex, assignments: [], omissions: [], unresolvedReasons: [], warnings: page.warnings)
+        if profile.requiresSystemAssignment == true {
+            output.unresolvedReasons = ["The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."]
+            return output
+        }
         let stride = profile.parts.map(\.staffCount).reduce(0, +)
         guard page.pageWidth > 0, page.pageHeight > 0, !page.staves.isEmpty,
               page.staves.count % stride == 0 else {
@@ -263,14 +420,49 @@ enum ScoreExtractionPlanner {
         let lyrics = lyricComponents(page: page, staffIDs: lyricIDs)
         for system in override.systems {
             let omitted = system.omittedParts ?? []
+            if system.requiresAssignmentReview == true {
+                output.unresolvedReasons.append("System \(system.systemIndex + 1) lost staves to another assignment. Select and assign its complete printed system again.")
+                continue
+            }
             let coverage = system.bands.map(\.partID) + omitted.map(\.partID)
             guard Set(coverage) == partIDs, coverage.count == partIDs.count,
                   omitted.allSatisfy({ !$0.reason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }) else {
                 output.unresolvedReasons.append("System \(system.systemIndex + 1) must account for every part exactly once, with reasons for omitted staves.")
                 continue
             }
+            guard (system.startBarNumber == nil || system.startBarNumber! > 0),
+                  system.barCount == nil || ScoreGeneratedRest(barCount: system.barCount!, startBarNumber: system.startBarNumber).isValid else {
+                output.unresolvedReasons.append("System \(system.systemIndex + 1) needs a valid measure span: 1–999 bars and an optional positive starting bar number.")
+                continue
+            }
+            if !omitted.isEmpty, system.barCount == nil {
+                output.unresolvedReasons.append("Enter system \(system.systemIndex + 1)’s bar count so absent instruments receive counted rests instead of skipped measures.")
+                continue
+            }
+            let systemStaffIDs = Set(system.bands.filter { ($0.kind ?? "music") == "music" }.flatMap { $0.candidateIDs ?? [] })
+            let systemStaves = page.staves.filter { systemStaffIDs.contains($0.id) }.sorted {
+                ($0.staffLineFractions.first ?? 0) < ($1.staffLineFractions.first ?? 0)
+            }
+            if !omitted.isEmpty, systemStaves.isEmpty || !systemStaves.allSatisfy({ validStaff($0) }) {
+                output.unresolvedReasons.append("System \(system.systemIndex + 1) needs detected printed staves to anchor its generated rests.")
+                continue
+            }
             for omission in omitted {
                 output.omissions.append(ScoreSystemOmission(systemIndex: system.systemIndex, partID: omission.partID, reason: omission.reason))
+                // The geometry locates the source system for ordering and
+                // inspection only. No other instrument's source image is used
+                // as this absent instrument's music or a restorable crop.
+                let first = systemStaves.first!, last = systemStaves.last!
+                let rect = [profile.leftTrimPoints ?? 0,
+                    first.staffLineFractions[0] * page.pageHeight,
+                    page.pageWidth - (profile.rightTrimPoints ?? 0),
+                    last.staffLineFractions[4] * page.pageHeight]
+                var rest = band(partID: omission.partID, page: page, system: system.systemIndex,
+                    staves: [], rect: rect, label: system.movementLabel ?? "", kind: "generated-rest",
+                    breakBefore: !(system.movementLabel ?? "").isEmpty,
+                    provenance: "reviewed-silent-omission", warnings: [])
+                rest.generatedRest = ScoreGeneratedRest(barCount: system.barCount!, startBarNumber: system.startBarNumber)
+                output.assignments.append(rest)
             }
             for assigned in system.bands {
                 let ids = assigned.candidateIDs ?? []

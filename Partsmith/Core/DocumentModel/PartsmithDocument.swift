@@ -156,6 +156,7 @@ struct ScoreDetectionReview {
     /// Edits only the proposal. Applying the complete review remains one undoable edit.
     mutating func setCropEdges(for bandID: String, top: Double, bottom: Double) throws {
         guard let band = plan.bands.first(where: { $0.id == bandID }),
+              band.generatedRest == nil,
               let page = analyses.first(where: { $0.pageIndex == band.pageIndex }) else {
             throw CropEditError.unavailableBand
         }
@@ -172,7 +173,7 @@ struct ScoreDetectionReview {
     }
 
     mutating func resetCropEdges(for bandID: String) throws {
-        guard let band = plan.bands.first(where: { $0.id == bandID }) else { throw CropEditError.unavailableBand }
+        guard let band = plan.bands.first(where: { $0.id == bandID }), band.generatedRest == nil else { throw CropEditError.unavailableBand }
         try setCrop(for: band, rect: nil)
     }
 
@@ -654,7 +655,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             ScorePartDefinition(id: $0.id, name: $0.name, staffCount: $0.staffCount,
                 topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces, hasLyrics: $0.hasLyrics)
         }, topPaddingStaffSpaces: setup.topPaddingStaffSpaces, bottomPaddingStaffSpaces: setup.bottomPaddingStaffSpaces,
-           leftTrimPoints: setup.leftTrimPoints, rightTrimPoints: setup.rightTrimPoints, cropMode: setup.cropMode)
+           leftTrimPoints: setup.leftTrimPoints, rightTrimPoints: setup.rightTrimPoints, cropMode: setup.cropMode,
+           requiresSystemAssignment: setup.requiresSystemAssignment)
     }
 
     private static func instrumentationSetup(for profile: ScoreExtractionProfile) -> ScoreInstrumentationSetup {
@@ -662,7 +664,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             ScoreInstrumentationSetup.Instrument(id: $0.id, name: $0.name, staffCount: $0.staffCount,
                 topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces, hasLyrics: $0.hasLyrics)
         }, topPaddingStaffSpaces: profile.topPaddingStaffSpaces, bottomPaddingStaffSpaces: profile.bottomPaddingStaffSpaces,
-           leftTrimPoints: profile.leftTrimPoints, rightTrimPoints: profile.rightTrimPoints, cropMode: profile.cropMode)
+           leftTrimPoints: profile.leftTrimPoints, rightTrimPoints: profile.rightTrimPoints, cropMode: profile.cropMode,
+           requiresSystemAssignment: profile.requiresSystemAssignment)
     }
 
     func saveScoreProfile(_ profile: ScoreExtractionProfile) {
@@ -844,13 +847,22 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                   review.excludedPageReasons[planned.pageIndex] == nil,
                   [planned.topFraction, planned.bottomFraction, planned.leftFraction, planned.rightFraction].allSatisfy({ $0.isFinite && $0 >= 0 && $0 <= 1 }),
                   planned.topFraction < planned.bottomFraction, planned.leftFraction + planned.rightFraction < 1 else { return nil }
+            let generated = planned.generatedRest.map {
+                BandGeneratedRest(barCount: $0.barCount, startBarNumber: $0.startBarNumber,
+                                  sourceSystemIndex: planned.systemIndex)
+            }
+            if let generated {
+                guard generated.isValid, planned.kind == "generated-rest", planned.candidateIDs.isEmpty else { return nil }
+            } else if planned.kind == "generated-rest" { return nil }
             let band = BandModel(id: UUID(), pageIndex: planned.pageIndex, partID: partID,
                 topFraction: planned.topFraction, bottomFraction: planned.bottomFraction,
                 leftFraction: planned.leftFraction, rightFraction: planned.rightFraction,
-                excluded: false, createdAt: now, barNumberMode: .hidden,
+                excluded: false, createdAt: now, barNumberMode: generated?.startBarNumber == nil ? .hidden : .manual,
+                barNumberValue: generated?.startBarNumber,
                 editorialLabel: planned.editorialLabel, pageBreakBefore: planned.pageBreakBefore,
                 sourceMarkings: planned.sourceMarkings.map { BandSourceMarking(topFraction: $0.topFraction,
-                    bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction) })
+                    bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction) },
+                generatedRest: generated)
             guard band.sourceMarkings.allSatisfy({ $0.isValid(in: band) }) else { return nil }
             bands.append(band)
         }
@@ -1326,6 +1338,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func updateBand(_ bandID: UUID, topFraction: Double, bottomFraction: Double) {
+        guard band(withID: bandID)?.generatedRest == nil else { return }
         commit(actionName: "Resize Band") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].topFraction = topFraction
@@ -1346,6 +1359,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     func expandBandCrop(_ bandID: UUID, by points: Double) -> Bool {
         guard points.isFinite, points > 0,
               let band = project.bands.first(where: { $0.id == bandID }), band.pageIndex >= 0,
+              band.generatedRest == nil,
               let bounds = pdfDocument?.page(at: band.pageIndex)?.bounds(for: .mediaBox),
               bounds.width.isFinite, bounds.height.isFinite, bounds.width > 0, bounds.height > 0,
               [band.topFraction, band.bottomFraction, band.leftFraction, band.rightFraction]
@@ -1369,7 +1383,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func updateBandExclusions(_ bandID: UUID, exclusions: [BandExclusion]) {
-        guard project.bands.contains(where: { $0.id == bandID }) else { return }
+        guard let band = band(withID: bandID), band.generatedRest == nil else { return }
         commit(actionName: "Edit Band Exclusions") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].exclusions = exclusions
@@ -1381,7 +1395,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @discardableResult
     func updateBandRestReplacement(_ bandID: UUID, barCount: Int?, joinWithPrevious: Bool = false) -> Bool {
         if let barCount, !(2...999).contains(barCount) { return false }
-        guard let band = project.bands.first(where: { $0.id == bandID }) else { return false }
+        guard let band = project.bands.first(where: { $0.id == bandID }), band.generatedRest == nil else { return false }
         let replacement = barCount.map {
             BandRestReplacement(barCount: $0, joinWithPrevious: joinWithPrevious,
                                 sourceContext: band.restReplacement?.sourceContext)
@@ -1390,6 +1404,21 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         commit(actionName: replacement == nil ? "Restore Source Music" : "Replace With Multi-Bar Rest") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].restReplacement = replacement
+        }
+        return true
+    }
+
+    /// A silent omitted part has no source strip to restore. Its confirmed
+    /// duration remains a distinct, undoable choice tied to the source system.
+    @discardableResult
+    func updateBandGeneratedRestCount(_ bandID: UUID, barCount: Int) -> Bool {
+        guard let band = band(withID: bandID), var generated = band.generatedRest else { return false }
+        generated.barCount = barCount
+        guard generated.isValid else { return false }
+        guard generated != band.generatedRest else { return true }
+        commit(actionName: "Change Silent Part Rest Count") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].generatedRest = generated
         }
         return true
     }
@@ -1413,7 +1442,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
         let partIDs = Set(project.parts.map(\.id))
         let startingBands = project.bands.filter {
-            !$0.excluded && $0.restReplacement == nil && partIDs.contains($0.partID)
+            !$0.excluded && $0.restReplacement == nil && $0.generatedRest == nil && partIDs.contains($0.partID)
                 && (partID == nil || $0.partID == partID)
                 && (bandIDs == nil || bandIDs!.contains($0.id))
         }
@@ -1585,7 +1614,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
         // A manual choice made during recognition takes precedence over its
         // background proposal, even when the source geometry is unchanged.
-        let replacements = proposals.filter { currentBands[$0.key]?.restReplacement == nil }
+        let replacements = proposals.filter {
+            currentBands[$0.key]?.restReplacement == nil && currentBands[$0.key]?.generatedRest == nil
+        }
         let totalBars = replacements.values.reduce(0) { $0 + $1.barCount }
         if !replacements.isEmpty {
             commit(actionName: "Automatically Compress Rests") { project, _ in
@@ -1705,6 +1736,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func updateBandBarNumberMode(_ bandID: UUID, mode: BarNumberMode) {
+        if mode == .automatic, band(withID: bandID)?.generatedRest != nil { return }
         commit(actionName: "Change Bar Number Mode") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].barNumberMode = mode
@@ -1720,6 +1752,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 }
                 project.bands[index].barNumberConfidence = nil
                 project.bands[index].barNumberDetectionMethod = nil
+                if project.bands[index].generatedRest != nil {
+                    let startBarNumber = project.bands[index].barNumberValue
+                    project.bands[index].generatedRest?.startBarNumber = startBarNumber
+                }
             case .hidden:
                 break
             }
@@ -1738,12 +1774,15 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             project.bands[index].barNumberValue = clampedValue
             project.bands[index].barNumberConfidence = nil
             project.bands[index].barNumberDetectionMethod = nil
+            if project.bands[index].generatedRest != nil {
+                project.bands[index].generatedRest?.startBarNumber = clampedValue
+            }
         }
     }
 
     func refreshBarNumber(for bandID: UUID) {
         guard let band = band(withID: bandID) else { return }
-        guard band.barNumberMode == .automatic else { return }
+        guard band.barNumberMode == .automatic, band.generatedRest == nil else { return }
         guard let sourcePDFData else { return }
 
         let bandSnapshot = band
@@ -1836,6 +1875,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
     private func sourceBandsForCopy(on pageIndex: Int, scope: BandCopyScope) -> [BandModel] {
         project.bands(on: pageIndex).filter { band in
+            guard band.generatedRest == nil else { return false }
             switch scope {
             case .allParts:
                 return true
@@ -1865,6 +1905,11 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
         for destinationPageIndex in destinationPageIndices {
             for band in sourceBands {
+                // A source crop template does not establish that an explicitly
+                // silent part is printed on the destination page.
+                guard !project.bands.contains(where: {
+                    $0.pageIndex == destinationPageIndex && $0.partID == band.partID && $0.generatedRest != nil
+                }) else { continue }
                 var copy = band
                 copy.id = UUID()
                 copy.pageIndex = destinationPageIndex
@@ -1881,11 +1926,17 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
         commit(actionName: actionName) { project, _ in
             for destinationPageIndex in destinationPageIndices {
+                let silentParts = Set(project.bands.filter {
+                    $0.pageIndex == destinationPageIndex && $0.generatedRest != nil
+                }.map(\.partID))
                 switch scope {
                 case .allParts:
-                    project.bands.removeAll { $0.pageIndex == destinationPageIndex }
+                    project.bands.removeAll { $0.pageIndex == destinationPageIndex && $0.generatedRest == nil
+                        && !silentParts.contains($0.partID) }
                 case .selectedPart(let partID):
-                    project.bands.removeAll { $0.pageIndex == destinationPageIndex && $0.partID == partID }
+                    if !silentParts.contains(partID) {
+                        project.bands.removeAll { $0.pageIndex == destinationPageIndex && $0.partID == partID }
+                    }
                 }
             }
             project.bands.append(contentsOf: copiedBands)

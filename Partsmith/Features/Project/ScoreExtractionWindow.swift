@@ -31,7 +31,7 @@ final class ScoreExtractionWindowController: NSObject, ObservableObject, NSWindo
         let view = ScoreExtractionView(document: document,
             onClose: { [weak self] in self?.close() },
             onShowScore: { [weak self] in self?.showScore() })
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 980, height: 760),
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1200, height: 820),
             styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
         window.title = "Auto Extract Parts"
         window.isReleasedWhenClosed = false
@@ -41,6 +41,9 @@ final class ScoreExtractionWindowController: NSObject, ObservableObject, NSWindo
         extractionWindow = window
         isPresented = true
         if !window.setFrameUsingName("AutoExtractParts") {
+            // Hosting can initially resize a new window to the view's minimum.
+            // Give the score a useful opening size after installing its view.
+            window.setContentSize(NSSize(width: 1200, height: 820))
             window.center()
         }
         // Restore on the source screen if a saved position belongs to a disconnected display.

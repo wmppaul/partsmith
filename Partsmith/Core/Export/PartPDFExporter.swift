@@ -126,7 +126,7 @@ enum PartPDFExporter {
                     rectification: project.pageRectifications.first(where: { $0.pageIndex == placement.sourcePageIndex }),
                     sourceRect: marking.sourceRect, destinationRect: marking.destinationRect, in: context)
             }
-            if placement.restReplacement != nil {
+            if placement.restBarCount != nil {
                 if let preserved = placement.restSourcePlacement {
                     for fragment in preserved.fragments {
                         try sourcePageCache.draw(pageIndex: placement.sourcePageIndex,
@@ -199,12 +199,13 @@ enum PartPDFExporter {
     }
 
     private static func drawMultiBarRest(for placement: BandPlacement, in context: CGContext) {
-        guard let rest = placement.restReplacement else { return }
+        guard let barCount = placement.restBarCount else { return }
         let rect = placement.destinationRect
         let scale = rect.height / PartLayoutEngine.restStripHeight
         let staffBottom = rect.minY + 7 * scale
         let space = 5 * scale
         context.saveGState()
+        defer { context.restoreGState() }
         context.setStrokeColor(NSColor.black.cgColor)
         context.setFillColor(NSColor.black.cgColor)
         context.setLineWidth(0.55 * scale)
@@ -215,6 +216,18 @@ enum PartPDFExporter {
             context.addLine(to: CGPoint(x: rect.maxX - inset, y: y))
         }
         context.strokePath()
+        if barCount == 1 {
+            // A single complete silent measure uses the ordinary hanging rest,
+            // not an H-bar with a misleading multi-measure count of one.
+            context.fill(CGRect(x: rect.midX - 4 * scale, y: staffBottom + 3 * space - 3 * scale,
+                                width: 8 * scale, height: 3 * scale))
+            for x in [rect.minX + inset, rect.maxX - inset] {
+                context.move(to: CGPoint(x: x, y: staffBottom))
+                context.addLine(to: CGPoint(x: x, y: staffBottom + 4 * space))
+            }
+            context.strokePath()
+            return
+        }
         let centerY = staffBottom + 2 * space
         let halfWidth = min(34 * scale, rect.width * 0.23)
         let stemHeight = 10 * scale
@@ -233,10 +246,9 @@ enum PartPDFExporter {
             .font: NSFont(name: "Times-Bold", size: 15 * scale) ?? NSFont.systemFont(ofSize: 15 * scale, weight: .semibold),
             .foregroundColor: NSColor.black, .paragraphStyle: paragraph
         ]
-        ("\(rest.barCount)" as NSString).draw(in: CGRect(x: rect.minX, y: staffBottom + 4 * space + 2 * scale,
+        ("\(barCount)" as NSString).draw(in: CGRect(x: rect.minX, y: staffBottom + 4 * space + 2 * scale,
             width: rect.width, height: 18 * scale), withAttributes: attributes)
         NSGraphicsContext.restoreGraphicsState()
-        context.restoreGState()
     }
 
     private static func drawEditorialLabel(for placement: BandPlacement, in context: CGContext) {

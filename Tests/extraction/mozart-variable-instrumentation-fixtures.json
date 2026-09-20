@@ -1,0 +1,292 @@
+{
+  "source": "sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf",
+  "sha256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+  "sourcePages": 36,
+  "indexConvention": "pageIndex, systemIndex and candidateIDs are zero-based; printed measure numbers are one-based",
+  "profile": {
+    "parts": [
+      {
+        "id": "flute",
+        "name": "Flute",
+        "staffCount": 1
+      },
+      {
+        "id": "clarinet",
+        "name": "Clarinet in A",
+        "staffCount": 1
+      },
+      {
+        "id": "bassoon",
+        "name": "Bassoon",
+        "staffCount": 1
+      },
+      {
+        "id": "horn",
+        "name": "French Horn in A",
+        "staffCount": 1
+      },
+      {
+        "id": "piano",
+        "name": "Piano",
+        "staffCount": 2
+      },
+      {
+        "id": "violin1",
+        "name": "Violin I",
+        "staffCount": 1
+      },
+      {
+        "id": "violin2",
+        "name": "Violin II",
+        "staffCount": 1
+      },
+      {
+        "id": "viola",
+        "name": "Viola",
+        "staffCount": 1
+      },
+      {
+        "id": "cello-bass",
+        "name": "Cello and Bass",
+        "staffCount": 1
+      }
+    ],
+    "cropMode": "compact",
+    "requiresSystemAssignment": true
+  },
+  "pages": [
+    {
+      "pageIndex": 0,
+      "detectedStaffCount": 18,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "startBarNumber": 1,
+          "barCount": 5,
+          "candidateIDs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "presentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn",
+            "piano",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": []
+        },
+        {
+          "systemIndex": 1,
+          "startBarNumber": 6,
+          "barCount": 5,
+          "candidateIDs": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "presentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": [
+            "piano"
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 7,
+      "detectedStaffCount": 22,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "startBarNumber": 66,
+          "barCount": 6,
+          "candidateIDs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "presentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn",
+            "piano",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": []
+        },
+        {
+          "systemIndex": 1,
+          "startBarNumber": 72,
+          "barCount": 4,
+          "candidateIDs": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "presentPartIDs": [
+            "piano",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn"
+          ]
+        },
+        {
+          "systemIndex": 2,
+          "startBarNumber": 76,
+          "barCount": 4,
+          "candidateIDs": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "presentPartIDs": [
+            "piano",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn"
+          ]
+        }
+      ]
+    },
+    {
+      "pageIndex": 16,
+      "detectedStaffCount": 18,
+      "systems": [
+        {
+          "systemIndex": 0,
+          "startBarNumber": 144,
+          "barCount": 6,
+          "candidateIDs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "presentPartIDs": [
+            "piano",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn"
+          ]
+        },
+        {
+          "systemIndex": 1,
+          "startBarNumber": 150,
+          "barCount": 3,
+          "candidateIDs": [
+            6,
+            7
+          ],
+          "presentPartIDs": [
+            "piano"
+          ],
+          "silentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ]
+        },
+        {
+          "systemIndex": 2,
+          "startBarNumber": 153,
+          "barCount": 4,
+          "candidateIDs": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "presentPartIDs": [
+            "flute",
+            "clarinet",
+            "bassoon",
+            "horn",
+            "piano",
+            "violin1",
+            "violin2",
+            "viola",
+            "cello-bass"
+          ],
+          "silentPartIDs": []
+        }
+      ]
+    }
+  ]
+}

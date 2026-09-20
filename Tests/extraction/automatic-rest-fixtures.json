@@ -17,6 +17,16 @@
     "schumann-light": {
       "path": "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
       "sha256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975"
+    },
+    "beethoven-five-scan": {
+      "path": "Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "sha256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "originalPath": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "originalSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "sourcePageMap": [
+        6,
+        7
+      ]
     }
   },
   "fixtures": [
@@ -442,6 +452,387 @@
       "expectedBarCount": null,
       "reason": "The intended flute has five whole-bar rests, but the broad upper edge includes clipped contrabass stem/clef fragments from the preceding system. Without reliable staff attribution, automatic replacement must retain the source.",
       "sourceRestCount": 5
+    },
+    {
+      "id": "beethoven-scan-flute-twelve",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.516,
+        1,
+        0.55
+      ],
+      "staffRanges": [
+        [
+          0.52618,
+          0.54265
+        ]
+      ],
+      "expectedBarCount": 12,
+      "reason": "Twelve individually counted complete whole-bar rests. The reviewed lower edge retains the entire treble-clef tail and excludes the next oboe beam; no sounding notes or directions occur in the target staff.",
+      "prefixLandmarks": [
+        [
+          0.067,
+          0.52,
+          0.1,
+          0.5498
+        ]
+      ]
+    },
+    {
+      "id": "beethoven-scan-timpani-twelve",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Timpani",
+      "band": [
+        0,
+        0.731,
+        1,
+        0.758
+      ],
+      "staffRanges": [
+        [
+          0.73585,
+          0.75253
+        ]
+      ],
+      "expectedBarCount": 12,
+      "reason": "Twelve individually counted complete whole-bar rests. The full bass clef and all five staff lines remain; the next violin staff is outside the reviewed crop.",
+      "prefixLandmarks": [
+        [
+          0.067,
+          0.734,
+          0.081,
+          0.753
+        ]
+      ]
+    },
+    {
+      "id": "beethoven-scan-trumpet-twelve-neighbor-dynamic",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Trumpet",
+      "band": [
+        0,
+        0.697,
+        1,
+        0.732
+      ],
+      "staffRanges": [
+        [
+          0.70608,
+          0.72297
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "The target trumpet has twelve full-bar rests, but retaining the complete treble clef also retains the preceding horn p marking near the sixth measure. Unknown additional ink within the compressed span must preserve the original strip.",
+      "sourceRestCount": 12
+    },
+    {
+      "id": "beethoven-scan-flute-opening-fermatas",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.307,
+        1,
+        0.367
+      ],
+      "staffRanges": [
+        [
+          0.34164,
+          0.3579
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Thirteen whole-bar rests include fermatas in the second and fifth measures. A count-only replacement would erase their timing information.",
+      "sourceRestCount": 13
+    },
+    {
+      "id": "beethoven-scan-oboe-opening-fermatas",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Oboe",
+      "band": [
+        0,
+        0.37,
+        1,
+        0.413
+      ],
+      "staffRanges": [
+        [
+          0.3845,
+          0.40118
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Thirteen whole-bar rests include fermatas in the second and fifth measures. A count-only replacement would erase their timing information.",
+      "sourceRestCount": 13
+    },
+    {
+      "id": "beethoven-scan-horn-opening-fermatas",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Horn",
+      "band": [
+        0,
+        0.522,
+        1,
+        0.56
+      ],
+      "staffRanges": [
+        [
+          0.53611,
+          0.55258
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Thirteen whole-bar rests include fermatas in the second and fifth measures. A count-only replacement would erase their timing information.",
+      "sourceRestCount": 13
+    },
+    {
+      "id": "beethoven-scan-trumpet-opening-fermatas",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Trumpet",
+      "band": [
+        0,
+        0.567,
+        1,
+        0.607
+      ],
+      "staffRanges": [
+        [
+          0.5796,
+          0.59607
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Thirteen whole-bar rests include fermatas in the second and fifth measures. A count-only replacement would erase their timing information.",
+      "sourceRestCount": 13
+    },
+    {
+      "id": "beethoven-scan-timpani-opening-fermatas",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Timpani",
+      "band": [
+        0,
+        0.612,
+        1,
+        0.649
+      ],
+      "staffRanges": [
+        [
+          0.62373,
+          0.6402
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Thirteen whole-bar rests include fermatas in the second and fifth measures. A count-only replacement would erase their timing information.",
+      "sourceRestCount": 13
+    },
+    {
+      "id": "beethoven-scan-clarinet-opening-notes",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Clarinet",
+      "band": [
+        0,
+        0.42,
+        1,
+        0.476
+      ],
+      "staffRanges": [
+        [
+          0.43412,
+          0.45122
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Sounding opening notes and fermatas precede eight whole-bar rests. Replacing the whole strip would omit music.",
+      "sourceRestCount": 8
+    },
+    {
+      "id": "beethoven-scan-bass-opening-notes",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 0,
+      "systemIndex": 0,
+      "instrument": "Bass",
+      "band": [
+        0,
+        0.859,
+        1,
+        0.916
+      ],
+      "staffRanges": [
+        [
+          0.8807,
+          0.89717
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Sounding opening notes and fermatas precede eight whole-bar rests. Replacing the whole strip would omit music.",
+      "sourceRestCount": 8
+    },
+    {
+      "id": "beethoven-scan-flute-first-system-notes",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.016,
+        1,
+        0.09
+      ],
+      "staffRanges": [
+        [
+          0.05785,
+          0.07454
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Initial rests lead to sounding high notes, dynamics, and fermatas before the final rests. Retain all high ledger notes and the complete strip."
+    },
+    {
+      "id": "beethoven-scan-oboe-second-system-entry",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Oboe",
+      "band": [
+        0,
+        0.551,
+        1,
+        0.599
+      ],
+      "staffRanges": [
+        [
+          0.56419,
+          0.58087
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "This complete target staff includes sounding notes, partial rests, and/or dynamics. Any initial whole-bar rests are only part of the strip and must not replace its music."
+    },
+    {
+      "id": "beethoven-scan-clarinet-second-system-entry",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Clarinet",
+      "band": [
+        0,
+        0.589,
+        1,
+        0.633
+      ],
+      "staffRanges": [
+        [
+          0.59861,
+          0.61529
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "This complete target staff includes sounding notes, partial rests, and/or dynamics. Any initial whole-bar rests are only part of the strip and must not replace its music."
+    },
+    {
+      "id": "beethoven-scan-bassoon-second-system-entry",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Bassoon",
+      "band": [
+        0,
+        0.625,
+        1,
+        0.668
+      ],
+      "staffRanges": [
+        [
+          0.63936,
+          0.65604
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "This complete target staff includes sounding notes, partial rests, and/or dynamics. Any initial whole-bar rests are only part of the strip and must not replace its music."
+    },
+    {
+      "id": "beethoven-scan-horn-second-system-entry",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Horn",
+      "band": [
+        0,
+        0.66,
+        1,
+        0.703
+      ],
+      "staffRanges": [
+        [
+          0.67209,
+          0.68877
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "This complete target staff includes sounding notes, partial rests, and/or dynamics. Any initial whole-bar rests are only part of the strip and must not replace its music."
+    },
+    {
+      "id": "beethoven-scan-violin-i-second-system-entry",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Violin I",
+      "band": [
+        0,
+        0.756,
+        1,
+        0.801
+      ],
+      "staffRanges": [
+        [
+          0.769,
+          0.78568
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "This complete target staff includes sounding notes, partial rests, and/or dynamics. Any initial whole-bar rests are only part of the strip and must not replace its music."
+    },
+    {
+      "id": "beethoven-scan-cello-second-system-entry",
+      "sourceID": "beethoven-five-scan",
+      "pageIndex": 1,
+      "systemIndex": 1,
+      "instrument": "Cello",
+      "band": [
+        0,
+        0.869,
+        1,
+        0.921
+      ],
+      "staffRanges": [
+        [
+          0.88408,
+          0.9008
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "This complete target staff includes sounding notes, partial rests, and/or dynamics. Any initial whole-bar rests are only part of the strip and must not replace its music."
     }
   ]
 }

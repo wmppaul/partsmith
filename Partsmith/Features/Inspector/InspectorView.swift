@@ -308,6 +308,11 @@ struct InspectorView: View {
 
         return inspectorCard(title: "Selected Band") {
             inspectorRow(label: "Page", value: "\(currentBand.pageIndex + 1)")
+            if let rest = currentBand.generatedRest {
+                inspectorRow(label: "Source system", value: "\(rest.sourceSystemIndex + 1)")
+                Text("This instrument has no printed staff in this system. Its counted rest keeps the part in time with the score.")
+                    .font(.caption).foregroundStyle(.secondary)
+            } else {
             inspectorRow(
                 label: "Top Crop",
                 value: currentBand.topFraction.formatted(.percent.precision(.fractionLength(0)))
@@ -336,6 +341,7 @@ struct InspectorView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            }
 
             Toggle(
                 "Include In Output",
@@ -347,12 +353,18 @@ struct InspectorView: View {
 
             Divider()
 
+            if currentBand.generatedRest != nil {
+                GeneratedRestEditor(band: currentBand) { count in
+                    document.updateBandGeneratedRestCount(band.id, barCount: count)
+                }.id(currentBand.id)
+            } else {
             BandRestEditor(band: currentBand, isDetecting: document.restAutoProgress != nil, findRest: {
                 document.autoDetectRestReplacements(bandIDs: [band.id])
             }) { count, join in
                 document.updateBandRestReplacement(band.id, barCount: count, joinWithPrevious: join)
             }
             .id(currentBand.id)
+            }
 
             Divider()
 
@@ -375,7 +387,7 @@ struct InspectorView: View {
 
             Divider()
 
-            bandExclusionsSection(currentBand)
+            if currentBand.generatedRest == nil { bandExclusionsSection(currentBand) }
 
             if !currentBand.sourceMarkings.isEmpty {
                 Divider()
@@ -409,7 +421,7 @@ struct InspectorView: View {
                         set: { document.updateBandBarNumberMode(band.id, mode: $0) }
                     )
                 ) {
-                    ForEach(BarNumberMode.allCases) { mode in
+                    ForEach(BarNumberMode.allCases.filter { currentBand.generatedRest == nil || $0 != .automatic }) { mode in
                         Text(mode.title).tag(mode)
                     }
                 }
@@ -648,6 +660,9 @@ struct InspectorView: View {
     }
 
     private func bandPositionDescription(for band: BandModel) -> String {
+        if let rest = band.generatedRest {
+            return "System \(rest.sourceSystemIndex + 1) • \(rest.barCount) bars of inserted rest" + (rest.startBarNumber.map { " • Bar \($0)" } ?? "")
+        }
         let normalizedBand = band.normalized()
         let topPercent = Int((normalizedBand.topFraction * 100).rounded())
         let bottomPercent = Int((normalizedBand.bottomFraction * 100).rounded())
@@ -702,6 +717,36 @@ struct InspectorView: View {
             Text(value)
         }
         .font(.subheadline)
+    }
+}
+
+private struct GeneratedRestEditor: View {
+    let band: BandModel
+    let apply: (Int) -> Void
+    @State private var countText = ""
+
+    private var count: Int? {
+        guard let value = Int(countText.trimmingCharacters(in: .whitespacesAndNewlines)),
+              (1...999).contains(value) else { return nil }
+        return value
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Inserted Rest").font(.subheadline.weight(.semibold))
+            HStack {
+                Text("Bars of rest")
+                TextField("Count", text: $countText).textFieldStyle(.roundedBorder)
+                    .accessibilityLabel("Inserted bars of rest")
+                    .onSubmit { if let count { apply(count) } }
+            }
+            Button("Update Rest Count") { if let count { apply(count) } }
+                .disabled(count == nil || count == band.generatedRest?.barCount)
+            Text("Use 1–999 bars. No source crop exists for this silent instrument.")
+                .font(.caption).foregroundStyle(.secondary)
+        }
+        .onAppear { countText = band.generatedRest.map { String($0.barCount) } ?? "" }
+        .onChange(of: band.generatedRest) { countText = band.generatedRest.map { String($0.barCount) } ?? "" }
     }
 }
 

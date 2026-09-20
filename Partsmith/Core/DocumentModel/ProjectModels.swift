@@ -203,6 +203,7 @@ struct ScoreInstrumentationSetup: Codable, Equatable {
     var leftTrimPoints: Double?
     var rightTrimPoints: Double?
     var cropMode: String?
+    var requiresSystemAssignment: Bool?
 }
 
 struct ProjectSettings: Codable, Equatable {
@@ -558,6 +559,24 @@ struct BandRestReplacement: Codable, Equatable {
     }
 }
 
+/// Confirmed silence where this part has no printed staff. Its band's geometry
+/// identifies the source system only; there is no source music to restore.
+struct BandGeneratedRest: Codable, Equatable {
+    var barCount: Int
+    var startBarNumber: Int?
+    var sourceSystemIndex: Int
+
+    var isValid: Bool {
+        (1...999).contains(barCount) && sourceSystemIndex >= 0
+            && (startBarNumber.map { $0 > 0 && $0 <= Int.max - (barCount - 1) } ?? true)
+    }
+
+    var endBarNumber: Int? {
+        guard isValid, let startBarNumber else { return nil }
+        return startBarNumber + barCount - 1
+    }
+}
+
 struct BandModel: Codable, Identifiable, Equatable {
     var id: UUID
     var pageIndex: Int
@@ -577,6 +596,7 @@ struct BandModel: Codable, Identifiable, Equatable {
     var pageBreakBefore: Bool
     var sourceMarkings: [BandSourceMarking]
     var restReplacement: BandRestReplacement?
+    var generatedRest: BandGeneratedRest?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -597,6 +617,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         case pageBreakBefore
         case sourceMarkings
         case restReplacement
+        case generatedRest
     }
 
     init(
@@ -617,7 +638,8 @@ struct BandModel: Codable, Identifiable, Equatable {
         editorialLabel: String = "",
         pageBreakBefore: Bool = false,
         sourceMarkings: [BandSourceMarking] = [],
-        restReplacement: BandRestReplacement? = nil
+        restReplacement: BandRestReplacement? = nil,
+        generatedRest: BandGeneratedRest? = nil
     ) {
         self.id = id
         self.pageIndex = pageIndex
@@ -637,6 +659,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         self.pageBreakBefore = pageBreakBefore
         self.sourceMarkings = sourceMarkings
         self.restReplacement = restReplacement
+        self.generatedRest = generatedRest
     }
 
     init(from decoder: Decoder) throws {
@@ -662,6 +685,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         pageBreakBefore = try container.decodeIfPresent(Bool.self, forKey: .pageBreakBefore) ?? false
         sourceMarkings = try container.decodeIfPresent([BandSourceMarking].self, forKey: .sourceMarkings) ?? []
         restReplacement = try container.decodeIfPresent(BandRestReplacement.self, forKey: .restReplacement)
+        generatedRest = try container.decodeIfPresent(BandGeneratedRest.self, forKey: .generatedRest)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -692,6 +716,7 @@ struct BandModel: Codable, Identifiable, Equatable {
             try container.encode(sourceMarkings, forKey: .sourceMarkings)
         }
         try container.encodeIfPresent(restReplacement, forKey: .restReplacement)
+        try container.encodeIfPresent(generatedRest, forKey: .generatedRest)
     }
 
     func normalized() -> BandModel {
