@@ -174,6 +174,14 @@ Live UI testing clicked all three printed Brahms Trio instrument labels and veri
 
 Run the additional checks with `bash tools/test_source_headers.sh` and `bash tools/test_score_document.sh --source-header`.
 
+### Input page selection and optional skipped-page review
+
+Auto Extract now has a scrollable thumbnail picker, **All Pages** / **Selected Pages**, and ranges such as `1-8, 12`. Both deskew and extraction use only the selected source pages. Review navigation, source headers, crop coordinates, and exports retain their original source indices even for nonconsecutive selections. Thumbnails render at small sizes on a separate worker; invalid or empty ranges cannot start processing.
+
+Successfully rendered pages with no detected staves are skipped automatically. **View Skipped Pages** and **Restore Page** allow optional inspection, while the blue **Add Parts** button remains available when the music assignments are complete. An unreadable raster remains an error rather than being silently treated as blank. Selecting only blank pages creates no empty parts.
+
+Validation: **154 document assertions**, including real Ave Verum scoped-header detection and export, plus **37 deskew workflow checks**. Coverage includes sparse indices, selected-page progress, range parsing, empty/invalid input, skip/restore behavior, rendering failures, original-coordinate export, and undo/redo. Independent review checked both core and UI integration. The universal Release build and archive checks pass. Live visual verification of this page-picker update remains pending because the Mac was locked.
+
 ## Practical limits
 
 This workflow is robust about preserving source geometry, exposing uncertain results, retaining review evidence and refusing failed output. It is not unattended extraction for arbitrary scores. Staff detection cannot infer all instrument changes, shared markings or tacet duration. Small overlapping fragments can be masked only when the target ink is separately identifiable. Truly interleaved notation, severe scan distortion and musical page-turn planning still need informed review. The original failed clean-isolation test remains as evidence of unsafe cleanup; the new preservation result demonstrates the accepted alternative of retaining neighboring context.

@@ -80,6 +80,24 @@ enum RectificationFlowTests {
         undo.undo()
         check(all.project.pageRectifications.isEmpty, "Whole-score corrections undo in one step")
 
+        let selected = PartsmithDocument(project: fixtureProject, sourcePDFData: source)
+        var selectedResult: RectificationAutoResult?
+        let selectedRun = selected.autoEstimateAllPageRectifications(pageIndices: [1]) { selectedResult = $0 }
+        check(selectedRun != nil && selected.rectificationAutoProgress?.totalPageCount == 1,
+              "Page-limited deskew counts only its selected source pages")
+        waitFor { selectedResult != nil }
+        check(selectedResult == .completed(appliedPageCount: 1)
+              && selected.project.pageRectifications.map(\.pageIndex) == [1],
+              "Deskew corrects the selected later page without modifying or renumbering earlier pages")
+        for badSelection: Set<Int> in [[], [-1], [2], [0, 2]] {
+            let invalid = PartsmithDocument(project: fixtureProject, sourcePDFData: source)
+            var invalidResult: RectificationAutoResult?
+            let run = invalid.autoEstimateAllPageRectifications(pageIndices: badSelection) { invalidResult = $0 }
+            check(run == nil && invalidResult == .unavailable && !invalid.isAutoEstimatingPageRectifications
+                  && invalid.project.pageRectifications.isEmpty,
+                  "Empty or unavailable deskew page selections never expand to the full score")
+        }
+
         let manual = PageRectification.default(pageIndex: 0)
         var existingProject = fixtureProject
         existingProject.pageRectifications = [manual]
@@ -98,6 +116,16 @@ enum RectificationFlowTests {
         waitFor { nothingNeeded != nil }
         check(nothingNeeded == .completed(appliedPageCount: 0),
               "Already-corrected source completes successfully without replacing corrections")
+
+        let selectedPreserving = PartsmithDocument(project: existingProject, sourcePDFData: source)
+        var selectedPreservedResult: RectificationAutoResult?
+        selectedPreserving.autoEstimateAllPageRectifications(onlyUnrectified: true, pageIndices: [0]) {
+            selectedPreservedResult = $0
+        }
+        waitFor { selectedPreservedResult != nil }
+        check(selectedPreservedResult == .completed(appliedPageCount: 0)
+              && selectedPreserving.project.pageRectifications == [manual],
+              "A selected already-corrected page stays exact and unselected pages are not deskewed")
 
         let cancelling = PartsmithDocument(project: fixtureProject, sourcePDFData: source)
         var cancellationResults: [RectificationAutoResult] = []

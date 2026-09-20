@@ -1,4 +1,5 @@
 import AppKit
+import Combine
 import Foundation
 import PDFKit
 
@@ -14,6 +15,178 @@ enum ScoreDocumentTests {
         while !complete() && Date() < deadline { RunLoop.main.run(until: Date().addingTimeInterval(0.01)) }
         check(complete(), "Background operation completed within the fixture timeout")
     }
+    static func paddedScore(_ source: Data) -> Data {
+        let blankData = NSMutableData()
+        var mediaBox = CGRect(x: 0, y: 0, width: 600, height: 800)
+        let context = CGContext(consumer: CGDataConsumer(data: blankData)!, mediaBox: &mediaBox, nil)!
+        context.beginPDFPage(nil)
+        context.endPDFPage()
+        context.closePDF()
+        let padded = PDFDocument()
+        padded.insert(PDFDocument(data: blankData as Data)!.page(at: 0)!, at: 0)
+        let score = PDFDocument(data: source)!
+        for pageIndex in 0..<score.pageCount {
+            padded.insert(score.page(at: pageIndex)!, at: padded.pageCount)
+        }
+        padded.insert(PDFDocument(data: blankData as Data)!.page(at: 0)!, at: padded.pageCount)
+        return padded.dataRepresentation()!
+    }
+
+    static func checkInputPageSelection() {
+        check(ScoreInputPageSelection.parse("1, 3-5, 8", pageCount: 8) == [0, 2, 3, 4, 7],
+              "Printed page ranges translate to noncontiguous original zero-based source indices")
+        check(ScoreInputPageSelection.parse(" 2–4, 3, 6—7 ", pageCount: 8) == [1, 2, 3, 5, 6],
+              "Page ranges accept typographic dashes, spaces and repeated selections")
+        check(ScoreInputPageSelection.parse("  ", pageCount: 8) == [],
+              "Clearing the page field produces an empty selection instead of silently selecting everything")
+        for invalid in ["0", "9", "4-2", "1-9", "1,,2", "1-", "-2", "one", "1.5", "1-2-3"] {
+            check(ScoreInputPageSelection.parse(invalid, pageCount: 8) == nil,
+                  "Invalid page input is rejected: \(invalid)")
+        }
+        let selection: Set<Int> = [0, 2, 3, 4, 7]
+        let formatted = ScoreInputPageSelection.formatted(selection)
+        check(formatted == "1, 3–5, 8" || formatted == "1, 3-5, 8",
+              "The selected pages are displayed as a compact, readable printed-page range")
+        check(ScoreInputPageSelection.parse(formatted, pageCount: 8) == selection
+              && ScoreInputPageSelection.formatted([]).isEmpty,
+              "Page range formatting round trips without adding pages or filling an empty selection")
+    }
+
+    static func checkInputPageFlow(source: Data, profile: ScoreExtractionProfile) throws {
+        let paddedSource = paddedScore(source)
+        let document = PartsmithDocument(sourcePDFData: paddedSource)
+        document.project.pageCount = 4
+        var callback = false
+        var detected: ScoreDetectionReview?
+        document.detectScore(profile: profile) { callback = true; detected = $0 }
+        waitFor { callback }
+        guard let review = detected else { fatalError("Padded score must produce a review") }
+        check(review.autoSkippedPageIndices == [0, 3] && Set(review.excludedPageReasons.keys) == [0, 3],
+              "Successfully analyzed blank pages are automatically skipped without manual confirmation")
+        check(review.plan.canApply && review.plan.bands.count == 4
+              && review.plan.pages.map(\.pageIndex) == [1, 2],
+              "Blank-page skipping leaves every music page ready to add at its original source index")
+        var restored = review
+        restored.restoreExcludedPage(0)
+        check(!restored.plan.canApply && restored.autoSkippedPageIndices == [3]
+              && restored.excludedPageReasons[0] == nil
+              && restored.plan.pages.contains { $0.pageIndex == 0 && !$0.unresolvedReasons.isEmpty },
+              "Restoring a skipped page includes it for staff correction without silently skipping it again")
+        restored.replan()
+        check(restored.excludedPageReasons[0] == nil && !restored.plan.canApply,
+              "Later replanning respects a restored blank page")
+        try restored.excludePageAsNonMusic(0, reason: "No music on this page")
+        check(restored.plan.canApply && restored.autoSkippedPageIndices == [3],
+              "An optional manual exclusion after restoring a page allows accepting the music again")
+        let undo = UndoManager()
+        undo.groupsByEvent = false
+        document.undoManager = undo
+        let before = document.project
+        undo.beginUndoGrouping()
+        check(document.addScoreParts(from: review) == 4,
+              "Add Parts accepts a real score containing untouched auto-skipped blank pages")
+        undo.endUndoGrouping()
+        let after = document.project
+        check(Set(after.bands.map(\.pageIndex)) == [1, 2] && document.sourcePDFData == paddedSource,
+              "Applying a padded score retains original source pages and source bytes")
+        undo.undo()
+        check(document.project == before, "Accepting automatic blank skips is one undoable all-part edit")
+        undo.redo()
+        check(document.project == after, "Redo restores every music crop exactly after automatic blank skips")
+
+        let subset = PartsmithDocument(sourcePDFData: paddedSource)
+        subset.project.pageCount = 4
+        callback = false
+        detected = nil
+        var selectedProgress: [(completed: Int, total: Int)] = []
+        let progressObserver = subset.$scoreDetectionProgress.sink {
+            if let progress = $0 { selectedProgress.append((progress.completedPages, progress.totalPages)) }
+        }
+        defer { progressObserver.cancel() }
+        subset.detectScore(profile: profile, pageIndices: [2]) { callback = true; detected = $0 }
+        check(subset.scoreDetectionProgress?.totalPages == 1,
+              "Input-page detection progress counts only selected pages")
+        waitFor { callback }
+        guard let selected = detected else { fatalError("Selected source page must produce a review") }
+        check(selectedProgress.map(\.completed) == [0, 1] && selectedProgress.allSatisfy { $0.total == 1 },
+              "Progress advances by processed selections, not the selected original page number")
+        check(selected.selectedPageIndices == [2] && selected.analyses.map(\.pageIndex) == [2]
+              && selected.autoSkippedPageIndices.isEmpty && selected.excludedPageReasons.isEmpty,
+              "Selecting a later page analyzes only that original page and never inventories unselected blanks")
+        check(subset.isScoreDetectionCurrent(selected) && selected.plan.canApply
+              && selected.plan.bands.count == 2 && selected.plan.bands.allSatisfy { $0.pageIndex == 2 },
+              "A selected-page review is complete while keeping its original source coordinates")
+        var changedScope = selected
+        changedScope.selectedPageIndices = [1, 2]
+        check(!subset.isScoreDetectionCurrent(changedScope) && subset.addScoreParts(from: changedScope) == nil,
+              "Expanding the reviewed input range without analyzing its missing pages is rejected")
+        changedScope = selected
+        changedScope.selectedPageIndices = []
+        check(!subset.isScoreDetectionCurrent(changedScope), "An empty review scope cannot be accepted")
+        changedScope = selected
+        changedScope.analyses.append(selected.analyses[0])
+        check(!subset.isScoreDetectionCurrent(changedScope), "Duplicated analyses cannot masquerade as a complete page selection")
+        let selectedUndo = UndoManager()
+        selectedUndo.groupsByEvent = false
+        subset.undoManager = selectedUndo
+        let beforeSubset = subset.project
+        selectedUndo.beginUndoGrouping()
+        check(subset.addScoreParts(from: selected) == 2,
+              "Add Parts accepts a later original page even when its index exceeds selected-page count")
+        selectedUndo.endUndoGrouping()
+        let selectedProject = subset.project
+        check(selectedProject.bands.allSatisfy { $0.pageIndex == 2 },
+              "Selected input pages are never renumbered to the start of the source PDF")
+        for part in selectedProject.parts {
+            let layout = try PartLayoutEngine.makePlan(project: selectedProject,
+                pageBoundsProvider: { subset.pdfDocument?.page(at: $0)?.bounds(for: .mediaBox) }, partID: part.id)
+            check(layout.pages.flatMap(\.placements).allSatisfy { $0.sourcePageIndex == 2 },
+                  "Production layout reads selected crops from their original source page")
+            let pdf = try PartPDFExporter.previewDocument(for: part.id, in: subset)
+            check(pdf.pageCount > 0, "Every selected-page part reaches the production exporter")
+        }
+        selectedUndo.undo()
+        check(subset.project == beforeSubset, "Selected-page extraction undoes in one step")
+        selectedUndo.redo()
+        check(subset.project == selectedProject, "Selected-page extraction redoes with exact source coordinates")
+
+        for badSelection: Set<Int> in [[], [-1], [4], [0, 4]] {
+            let invalid = PartsmithDocument(sourcePDFData: paddedSource)
+            var invalidCallback = false
+            var invalidReview: ScoreDetectionReview?
+            invalid.detectScore(profile: profile, pageIndices: badSelection) {
+                invalidCallback = true; invalidReview = $0
+            }
+            check(invalidCallback && invalidReview == nil && invalid.scoreDetectionProgress == nil,
+                  "Empty or unavailable input-page selections fail promptly instead of expanding to the full score")
+        }
+        let blanks = PartsmithDocument(sourcePDFData: paddedSource)
+        callback = false
+        detected = nil
+        blanks.detectScore(profile: profile, pageIndices: [0, 3]) { callback = true; detected = $0 }
+        waitFor { callback }
+        guard let blankReview = detected else { fatalError("All-blank selection must remain inspectable") }
+        check(blankReview.autoSkippedPageIndices == [0, 3] && blankReview.plan.bands.isEmpty
+              && blanks.addScoreParts(from: blankReview) == nil && blanks.project.parts.isEmpty,
+              "Selecting only blank pages yields no accidental empty parts")
+
+        var failedRender = review
+        failedRender.restoreExcludedPage(0)
+        failedRender.analyses[0].imageWidth = 0
+        failedRender.analyses[0].imageHeight = 0
+        failedRender.analyses[0].warnings = ["Page could not be rendered; review or restore the source."]
+        failedRender.automaticallyExcludePagesWithoutStaves()
+        check(failedRender.excludedPageReasons[0] == nil && !failedRender.autoSkippedPageIndices.contains(0)
+              && !failedRender.plan.canApply,
+              "An unavailable page raster remains unresolved and cannot silently become an automatic blank skip")
+        failedRender.autoSkippedPageIndices.insert(0)
+        failedRender.excludedPageReasons[0] = "No staves found"
+        failedRender.replan()
+        let failureDocument = PartsmithDocument(sourcePDFData: paddedSource)
+        check(failureDocument.addScoreParts(from: failedRender) == nil && failureDocument.project.parts.isEmpty,
+              "A malformed review cannot label a failed render as a successful automatic blank skip")
+    }
+
     static func checkRealSourceHeaderFlow() throws {
         let source = try Data(contentsOf: URL(fileURLWithPath:
             "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf"))
@@ -59,6 +232,43 @@ enum ScoreDocumentTests {
               "The production layout uses the detected printed crop from the saved source page")
         let pdf = try PartPDFExporter.previewDocument(for: reopened.project.parts[0].id, in: reopened)
         check(pdf.pageCount > 0, "The reopened automatic printed header reaches the production part exporter")
+        let paddedSource = paddedScore(source)
+        let selectedDocument = PartsmithDocument(sourcePDFData: paddedSource)
+        selectedDocument.project.pageCount = PDFDocument(data: paddedSource)!.pageCount
+        var selectedReview: ScoreDetectionReview?
+        completed = false
+        selectedDocument.detectScore(profile: profile, findSourceHeader: true, pageIndices: [0, 1]) {
+            completed = true; selectedReview = $0
+        }
+        waitFor { completed }
+        guard let scopedReview = selectedReview, let scopedHeader = scopedReview.suggestedSourceHeader else {
+            fatalError("Selected-page Auto must find a header after an included blank page")
+        }
+        check(scopedReview.analyses.map(\.pageIndex) == [0, 1]
+              && scopedReview.autoSkippedPageIndices == [0] && scopedHeader.pageIndex == 1,
+              "Printed-header detection searches the first included music page after selected blank pages")
+        check(scopedReview.plan.canApply && scopedReview.plan.bands.allSatisfy { $0.pageIndex == 1 }
+              && selectedDocument.addScoreParts(from: scopedReview, sourceHeader: scopedHeader) == scopedReview.plan.bands.count,
+              "A detected header and its selected music page add successfully at original source indices")
+        let selectedPart = selectedDocument.project.parts[0]
+        let scopedPlan = try PartLayoutEngine.makePlan(project: selectedDocument.project,
+            pageBoundsProvider: { selectedDocument.pdfDocument?.page(at: $0)?.bounds(for: .mediaBox) },
+            partID: selectedPart.id)
+        check(scopedPlan.headerPlacement?.sourcePageIndex == 1
+              && scopedPlan.pages.flatMap(\.placements).allSatisfy { $0.sourcePageIndex == 1 },
+              "A scoped extraction exports both header and notes from the original included page")
+        let scopedPDF = try PartPDFExporter.previewDocument(for: selectedPart.id, in: selectedDocument)
+        check(scopedPDF.pageCount > 0,
+              "The printed header in a page-limited score reaches production export")
+        let continuation = PartsmithDocument(sourcePDFData: paddedSource)
+        completed = false
+        selectedReview = nil
+        continuation.detectScore(profile: profile, findSourceHeader: true, pageIndices: [2]) {
+            completed = true; selectedReview = $0
+        }
+        waitFor { completed }
+        check(selectedReview?.analyses.map(\.pageIndex) == [2] && selectedReview?.suggestedSourceHeader == nil,
+              "Selecting only a continuation page does not borrow a printed header from an unselected opening page")
         print("Ave Verum opt-in header: page \(header.pageIndex + 1), top \(header.topFraction), bottom \(header.bottomFraction)")
     }
     static func main() throws {
@@ -83,42 +293,8 @@ enum ScoreDocumentTests {
         check(document.isScoreDetectionCurrent(review), "Unchanged full-source review is current")
         check(review.suggestedSourceHeader == nil, "Existing Auto callers do not opt into printed-header detection implicitly")
 
-        var nonMusicReview = review
-        nonMusicReview.analyses += [2, 3].map { page in
-            ScorePageAnalysis(pageIndex: page, pageWidth: 600, pageHeight: 800,
-                imageWidth: 1200, imageHeight: 1600, staves: [], warnings: [])
-        }
-        nonMusicReview.replan()
-        check(nonMusicReview.excludedPageReasons.isEmpty && !nonMusicReview.plan.canApply
-              && nonMusicReview.plan.pages.filter { !$0.unresolvedReasons.isEmpty }.map(\.pageIndex) == [2, 3],
-              "Zero-staff pages remain included and unresolved until explicitly reviewed")
-        check(nonMusicReview.nextPageNeedingReview(after: 2) == 3 && nonMusicReview.nextPageNeedingReview(after: 3) == 2,
-              "Flagged-page navigation advances in source order and wraps")
-        let beforeExclusion = nonMusicReview.plan
-        do {
-            try nonMusicReview.excludePageAsNonMusic(2, reason: "   ")
-            fatalError("Nonmusic page excluded without a reviewed reason")
-        } catch {
-            check(nonMusicReview.plan == beforeExclusion && nonMusicReview.excludedPageReasons.isEmpty,
-                  "Missing exclusion reason rejects the action without mutating the review")
-        }
-        let nextCatalog = try nonMusicReview.excludePageAsNonMusic(2, reason: "  Blank page reviewed  ")
-        check(nextCatalog == 3 && nonMusicReview.excludedPageReasons == [2: "Blank page reviewed"],
-              "Explicit blank-page exclusion records its reason and advances to the next flagged page")
-        check(!nonMusicReview.plan.canApply && nonMusicReview.plan.pages.contains { $0.pageIndex == 3 && !$0.unresolvedReasons.isEmpty },
-              "Excluding one empty page never silently excludes the next")
-        let nextMusic = try nonMusicReview.excludePageAsNonMusic(3, reason: "Publisher catalogue reviewed")
-        check(nextMusic == 0 && nonMusicReview.plan.canApply && nonMusicReview.excludedPageReasons.count == 2,
-              "Resolving the last nonmusic page returns to music with the remaining assignments ready for review")
-        check(nonMusicReview.plan.bands == review.plan.bands,
-              "Nonmusic-page exclusions preserve every music assignment and crop exactly")
-        do {
-            try nonMusicReview.excludePageAsNonMusic(99, reason: "Not a source page")
-            fatalError("Unavailable source page accepted for exclusion")
-        } catch {
-            check(nonMusicReview.excludedPageReasons.count == 2 && nonMusicReview.plan.bands == review.plan.bands,
-                  "Invalid exclusion page leaves the review unchanged")
-        }
+        checkInputPageSelection()
+        try checkInputPageFlow(source: source, profile: profile)
 
         var cropReview = review
         let cropPage = review.analyses[0]

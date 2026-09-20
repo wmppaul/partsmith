@@ -1,4 +1,5 @@
 import AppKit
+import PDFKit
 import SwiftUI
 
 struct ScoreExtractionView: View {
@@ -25,6 +26,15 @@ struct ScoreExtractionView: View {
     @State private var headerPreviewImage: CGImage?
     @State private var headerSourceImage: CGImage?
     @State private var headerSourcePageIndex: Int?
+    @State private var usesAllPages = true
+    @State private var selectedInputPages = Set<Int>()
+    @State private var pageRangeText = ""
+    @State private var pageRangeInvalid = false
+    @StateObject private var thumbnails = ScoreInputThumbnails()
+
+    private var sourcePageCount: Int { document.pdfDocument?.pageCount ?? 0 }
+    private var inputPages: Set<Int> { usesAllPages ? Set(0..<sourcePageCount) : selectedInputPages }
+    private var inputPagesValid: Bool { (usesAllPages || !pageRangeInvalid) && !inputPages.isEmpty }
 
     private var proposedHeader: SourceHeaderSelection? {
         guard let review, let header = review.suggestedSourceHeader,
@@ -92,7 +102,10 @@ struct ScoreExtractionView: View {
                     reviewControls(review).frame(minWidth: 340, idealWidth: 390, maxWidth: 450)
                 }
             } else {
-                setupControls
+                HSplitView {
+                    inputPagePicker.frame(minWidth: 240, idealWidth: 260, maxWidth: 320)
+                    setupControls.frame(minWidth: 460, maxWidth: .infinity)
+                }
             }
             if let errorMessage { Text(errorMessage).foregroundStyle(.red).fixedSize(horizontal: false, vertical: true) }
             Divider()
@@ -107,7 +120,7 @@ struct ScoreExtractionView: View {
                         .disabled(!review.plan.canApply || review.plan.bands.isEmpty)
                 } else {
                     Button("Auto", action: runAuto).buttonStyle(.borderedProminent)
-                        .disabled(!profileValid || isRunning)
+                        .disabled(!profileValid || !inputPagesValid || isRunning)
                 }
             }
         }
@@ -123,13 +136,103 @@ struct ScoreExtractionView: View {
             correctionPart = profile.parts.first?.id ?? ""
             findPrintedHeader = document.headerSelection == nil && document.project.projectSettings.headerDisplayMode == .sourceSelection
             updateHeaderPreview()
+            resetInputPages()
         }
         .onDisappear(perform: cancelWork)
         .onChange(of: document.instrumentNamePick?.id) { receiveInstrumentNamePick() }
-        .onChange(of: document.sourcePDFData) { invalidateSourceReview() }
-        .onChange(of: document.project.pageRectifications) { invalidateSourceReview() }
+        .onChange(of: document.sourcePDFData) { invalidateSourceReview(); resetInputPages() }
+        .onChange(of: document.project.pageRectifications) { invalidateSourceReview(); refreshThumbnails() }
         .onChange(of: selectedPage) { updatePageImage() }
         .onChange(of: document.headerSelection) { updateHeaderPreview() }
+    }
+
+    private var inputPagePicker: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Pages to extract").font(.headline)
+            Picker("Pages to extract", selection: $usesAllPages) {
+                Text("All Pages").tag(true)
+                Text("Selected Pages").tag(false)
+            }.pickerStyle(.segmented)
+            if !usesAllPages {
+                TextField("For example: 1-8, 12", text: $pageRangeText)
+                    .textFieldStyle(.roundedBorder).accessibilityLabel("Page range")
+                    .onChange(of: pageRangeText) {
+                        if let pages = ScoreInputPageSelection.parse(pageRangeText, pageCount: sourcePageCount) {
+                            selectedInputPages = pages
+                            pageRangeInvalid = false
+                        } else { pageRangeInvalid = true }
+                    }
+                if pageRangeInvalid {
+                    Text("Use page numbers from 1 to \(sourcePageCount), such as 1-4, 7.")
+                        .font(.caption).foregroundStyle(.red)
+                }
+            }
+            HStack {
+                Button("Current Page") { setInputPages([document.currentPageIndex]) }
+                Button("Clear") { setInputPages([]) }
+                Spacer()
+            }.controlSize(.small)
+            Text("\(inputPages.count) of \(sourcePageCount) pages selected")
+                .font(.caption).foregroundStyle(.secondary)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                    ForEach(0..<sourcePageCount, id: \.self) { page in
+                        inputThumbnail(page)
+                    }
+                }.padding(5).id(thumbnails.generation)
+            }
+            Text("Click previews to include or leave out pages. Deskew and Auto use this selection.")
+                .font(.caption).foregroundStyle(.secondary)
+        }.padding(.trailing, 12).disabled(isRunning)
+    }
+
+    private func inputThumbnail(_ page: Int) -> some View {
+        let included = inputPages.contains(page)
+        return Button {
+            var pages = inputPages
+            if included { pages.remove(page) } else { pages.insert(page) }
+            setInputPages(pages)
+        } label: {
+            VStack(spacing: 5) {
+                ZStack {
+                    Rectangle().fill(.white)
+                    if let image = thumbnails.images[page] {
+                        Image(decorative: image, scale: 1).resizable().scaledToFit()
+                    } else if thumbnails.failedPages.contains(page) {
+                        Image(systemName: "doc").foregroundStyle(.gray)
+                    } else { ProgressView().controlSize(.small) }
+                }.frame(height: 140)
+                    .clipShape(RoundedRectangle(cornerRadius: 3))
+                    .overlay(RoundedRectangle(cornerRadius: 3)
+                        .stroke(included ? Color.accentColor : Color.secondary.opacity(0.3), lineWidth: included ? 3 : 1))
+                    .opacity(included ? 1 : 0.55)
+                Label("Page \(page + 1)", systemImage: included ? "checkmark.circle.fill" : "circle")
+                    .font(.caption).foregroundStyle(included ? Color.accentColor : .secondary)
+            }.contentShape(Rectangle())
+        }.buttonStyle(.plain)
+            .accessibilityLabel("Source page \(page + 1)")
+            .accessibilityValue(included ? "Included" : "Not included")
+            .help(included ? "Leave page \(page + 1) out of extraction" : "Include page \(page + 1)")
+            .onAppear { thumbnails.request(page) }
+    }
+
+    private func setInputPages(_ pages: Set<Int>) {
+        usesAllPages = false
+        selectedInputPages = pages
+        pageRangeText = ScoreInputPageSelection.formatted(pages)
+        pageRangeInvalid = false
+    }
+
+    private func resetInputPages() {
+        usesAllPages = true
+        selectedInputPages = Set(0..<sourcePageCount)
+        pageRangeText = ScoreInputPageSelection.formatted(selectedInputPages)
+        pageRangeInvalid = false
+        refreshThumbnails()
+    }
+
+    private func refreshThumbnails() {
+        thumbnails.configure(data: document.sourcePDFData, rectifications: document.project.pageRectifications)
     }
 
     private var setupControls: some View {
@@ -141,7 +244,7 @@ struct ScoreExtractionView: View {
                         .foregroundStyle(.secondary)
                     HStack {
                         Button("Deskew & Align Pages", systemImage: "viewfinder", action: deskewPages)
-                            .disabled(isRunning || hasSourceCrops)
+                            .disabled(isRunning || hasSourceCrops || !inputPagesValid)
                         if let progress = document.rectificationAutoProgress {
                             ProgressView(value: progress.fractionComplete).frame(width: 140)
                             Text("\(progress.completedPageCount) of \(progress.totalPageCount) pages").foregroundStyle(.secondary)
@@ -217,7 +320,7 @@ struct ScoreExtractionView: View {
                     : "Fixed padding uses the space set below for every staff. It may include neighboring staves.")
                     .font(.caption).foregroundStyle(.secondary)
                 cropContextControls
-                Text("Auto processes all \(document.pdfDocument?.pageCount ?? 0) source pages. Review assignments, changed layouts, shared directions and crop edges before adding. Some neighboring notation may remain.")
+                Text("Auto processes the \(inputPages.count) selected source pages. Pages with no detected staves are skipped automatically. You can review assignments and crop edges before adding; some neighboring notation may remain.")
                     .font(.callout).foregroundStyle(.secondary)
                 Text("Your instrumentation setup is saved with the project when you run Auto.")
                     .font(.caption).foregroundStyle(.secondary)
@@ -324,33 +427,52 @@ struct ScoreExtractionView: View {
     private func reviewControls(_ review: ScoreDetectionReview) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
+                let pages = review.analyses.map(\.pageIndex).sorted()
+                let position = pages.firstIndex(of: selectedPage) ?? 0
                 HStack {
-                    Text("Source page")
-                    TextField("Source page", value: Binding(
-                        get: { selectedPage + 1 },
-                        set: { selectedPage = min(max(1, $0), max(1, review.analyses.count)) - 1 }), format: .number)
-                        .textFieldStyle(.roundedBorder).frame(width: 48)
-                        .accessibilityLabel("Source page number")
-                    Text("of \(review.analyses.count)")
-                    Stepper("Change source page", value: $selectedPage,
-                            in: 0...max(0, review.analyses.count - 1)).labelsHidden()
+                    Picker("Source page", selection: $selectedPage) {
+                        ForEach(pages, id: \.self) { Text("\($0 + 1)").tag($0) }
+                    }.frame(maxWidth: 180)
+                    Spacer()
+                    Button { selectedPage = pages[max(0, position - 1)] } label: {
+                        Image(systemName: "chevron.left")
+                    }.disabled(position == 0).accessibilityLabel("Previous selected page")
+                    Button { selectedPage = pages[min(pages.count - 1, position + 1)] } label: {
+                        Image(systemName: "chevron.right")
+                    }.disabled(position >= pages.count - 1).accessibilityLabel("Next selected page")
                 }
                 let unresolved = review.plan.pages.filter { !$0.unresolvedReasons.isEmpty }
                 let assignedCount = review.plan.pages.filter { !$0.assignments.isEmpty }.count
                 Text("\(assignedCount) pages assigned · \(review.excludedPageReasons.count) excluded · \(unresolved.count) need review")
                     .font(.headline).foregroundStyle(unresolved.isEmpty ? Color.primary : .orange)
+                if !review.autoSkippedPageIndices.isEmpty {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("\(review.autoSkippedPageIndices.count) pages skipped — no staves found.")
+                            .font(.subheadline.bold())
+                        Text("These skipped pages won’t block adding parts. You can look through them if you’d like.")
+                            .font(.caption).foregroundStyle(.secondary)
+                        let skipped = review.autoSkippedPageIndices.sorted()
+                        Button("View Skipped Pages") {
+                            selectedPage = skipped.first(where: { $0 > selectedPage }) ?? skipped[0]
+                        }
+                    }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
+                }
+                if review.plan.bands.isEmpty && unresolved.isEmpty {
+                    Text("No music was found in the selected pages. Choose Change Setup to select other pages.")
+                        .foregroundStyle(.secondary)
+                }
                 if let next = review.nextPageNeedingReview(after: selectedPage), next != selectedPage {
                     Button("Go to Flagged Page \(next + 1)") { selectedPage = next }
                 }
                 if let excluded = review.excludedPageReasons[selectedPage] {
                     Text("Excluded: \(excluded)").foregroundStyle(.secondary)
-                    Button("Restore Page") { changeReview { $0.excludedPageReasons.removeValue(forKey: selectedPage) } }
+                    Button("Restore Page") { changeReview { $0.restoreExcludedPage(selectedPage) } }
                 }
                 ForEach(currentPlan?.unresolvedReasons ?? [], id: \.self) { Text($0).font(.callout).foregroundStyle(.orange) }
                 if currentAnalysis?.staves.isEmpty == true && review.excludedPageReasons[selectedPage] == nil {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("No staves detected — no part bands assigned on this page.").font(.subheadline.bold())
-                        Text("Review the source. A blank page, cover, or publisher catalogue can be excluded. If it contains music, leave it included. Cancel and check its orientation or rectification before rerunning Auto.")
+                        Text("This page can be skipped if it is blank or has no score music. If music is missing, check its orientation or alignment before rerunning Auto.")
                             .font(.caption).foregroundStyle(.secondary)
                         Button("Exclude This Page") { excludeCurrentPage(reason: "Non-music page excluded in Auto Extract.") }
                     }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
@@ -376,7 +498,7 @@ struct ScoreExtractionView: View {
                         HStack { Text(part.name); Spacer(); Text("\(count) systems").foregroundStyle(.secondary) }
                     }
                 }
-                Text("Check every target note, ledger line, slur, lyric and shared tempo/rehearsal mark. Neighboring ink is allowed. After adding, crop expansion and source-marking review remain available in the Inspector.")
+                Text("You can click through to check the notes, slurs, lyrics and shared markings. Crop edges remain editable after adding the parts.")
                     .font(.caption).foregroundStyle(.secondary)
                 if !(currentPlan?.assignments.isEmpty ?? true), let analysis = currentAnalysis {
                     DisclosureGroup("Adjust crop edges on this page") {
@@ -518,13 +640,13 @@ struct ScoreExtractionView: View {
     }
 
     private func deskewPages() {
-        guard !isRunning, !hasSourceCrops else { return }
+        guard !isRunning, !hasSourceCrops, inputPagesValid else { return }
         document.cancelInstrumentNamePicking()
         document.setHeaderSelectionEditing(false)
         document.setPageRectificationEditing(false)
         deskewStatus = nil
         errorMessage = nil
-        deskewRunID = document.autoEstimateAllPageRectifications(onlyUnrectified: true) { result in
+        deskewRunID = document.autoEstimateAllPageRectifications(onlyUnrectified: true, pageIndices: inputPages) { result in
             deskewRunID = nil
             switch result {
             case .completed(let count):
@@ -584,17 +706,19 @@ struct ScoreExtractionView: View {
     }
 
     private func runAuto() {
-        guard profileValid, !isRunning else { return }
+        guard profileValid, inputPagesValid, !isRunning else { return }
         document.cancelInstrumentNamePicking()
         errorMessage = nil
         correctionPart = profile.parts.first?.id ?? ""
         document.saveScoreProfile(profile)
-        document.detectScore(profile: profile, findSourceHeader: findPrintedHeader && document.headerSelection == nil) { result in
+        document.detectScore(profile: profile, findSourceHeader: findPrintedHeader && document.headerSelection == nil,
+                             pageIndices: inputPages) { result in
             guard let result else { errorMessage = "The source or rectification changed. Run Auto again."; return }
             review = result
             includeSuggestedHeader = true
             updateHeaderPreview()
-            selectedPage = result.plan.pages.first(where: { !$0.unresolvedReasons.isEmpty })?.pageIndex ?? 0
+            selectedPage = result.plan.pages.first(where: { !$0.unresolvedReasons.isEmpty })?.pageIndex
+                ?? result.plan.pages.first?.pageIndex ?? result.analyses.first?.pageIndex ?? 0
             updatePageImage()
         }
     }
@@ -740,4 +864,60 @@ struct ScoreExtractionView: View {
         document.setHeaderSelectionEditing(false)
         onClose()
     }
+}
+
+/// Small previews are made off the main thread with worker-owned PDFKit
+/// objects. Full-size detection rasters never accumulate in the page picker.
+private final class ScoreInputThumbnails: ObservableObject {
+    @Published private(set) var images: [Int: CGImage] = [:]
+    @Published private(set) var failedPages = Set<Int>()
+    @Published private(set) var generation = UUID()
+    private var sourceData: Data?
+    private var rectifications: [PageRectification] = []
+    private var requested = Set<Int>()
+    private let queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .userInitiated
+        return queue
+    }()
+
+    func configure(data: Data?, rectifications: [PageRectification]) {
+        queue.cancelAllOperations()
+        sourceData = data
+        self.rectifications = rectifications
+        requested = []
+        images = [:]
+        failedPages = []
+        generation = UUID()
+    }
+
+    func request(_ pageIndex: Int) {
+        guard !requested.contains(pageIndex), let data = sourceData else { return }
+        requested.insert(pageIndex)
+        let token = generation
+        let rectification = rectifications.first { $0.pageIndex == pageIndex }
+        let operation = BlockOperation()
+        operation.addExecutionBlock { [weak self, weak operation] in
+            guard let operation, !operation.isCancelled else { return }
+            let image: CGImage? = autoreleasepool {
+                guard let pdf = PDFDocument(data: data), let page = pdf.page(at: pageIndex) else { return nil }
+                if let rectification {
+                    let bounds = page.bounds(for: .mediaBox)
+                    let scale = min(240 / max(bounds.width, 1), 340 / max(bounds.height, 1))
+                    return SourcePageRenderCache(pdfDocument: pdf, rasterScale: scale)
+                        .rectifiedDisplayImage(for: pageIndex, rectification: rectification)
+                }
+                return NativeScorePageAnalyzer.render(page, maximumWidth: 240, maximumHeight: 340)
+            }
+            DispatchQueue.main.async { [weak self] in
+                guard let self, !operation.isCancelled, self.generation == token else { return }
+                if let image { self.images[pageIndex] = image }
+                else { self.failedPages.insert(pageIndex) }
+            }
+        }
+        queue.addOperation(operation)
+    }
+
+    deinit { queue.cancelAllOperations() }
 }

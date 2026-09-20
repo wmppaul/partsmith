@@ -23,9 +23,9 @@ Reviewed examples and the evaluation record are in [output/pdf](output/pdf) and 
 1. Create a new project in Partsmith.
 2. Drag a full-score PDF into the center pane.
 3. Click the prominent **Auto Extract** magic wand. You can move and resize its window while using the score.
-4. For scanned pages, optionally choose **Deskew & Align Pages** first. Existing corrections are kept. This step is available before crop bands have been created.
+4. Use **All Pages**, click the scrollable page previews, or enter a range such as `1-8, 12` under **Selected Pages**. For scans, optionally choose **Deskew & Align Pages** first. Deskew and Auto process only the selected pages; existing corrections are kept. Deskew is available before crop bands have been created.
 5. Choose a starting profile, type instrument names, or use **Pick Names from Score → Start a New List** and click the printed labels from top to bottom. **Add to This List** keeps existing entries. Recognized names stay highlighted on the score with readable labels. Names and staff counts stay editable; a piano grand staff uses two.
-6. Leave **Find the printed title and composer automatically** enabled to copy the score header. Run **Auto**, then check the header preview, proposed crops, and any flagged assignments. Use **Adjust on Score** to refine the header or turn off **Use Printed Header** to skip it. Blank or catalogue pages can be excluded with one click and restored if needed.
+6. Leave **Find the printed title and composer automatically** enabled to copy the score header. Run **Auto**, then check the header preview, proposed crops, and any flagged assignments. Use **Adjust on Score** to refine the header or turn off **Use Printed Header** to skip it. Pages with no detected staves are skipped automatically and do not block **Add Parts**. **View Skipped Pages** is optional; any skipped page can be restored.
 7. Choose **Add Parts**. No acknowledgement checkbox or typed exclusion reason is required; adding remains one undoable edit.
 8. Inspect each part in **Preview**. The detected printed header is copied to the first page of each part; existing manual headers and typed titles are kept unless you change them. Adjust crop edges, section breaks, or padding as needed.
 9. Use **Export All** in Source mode to create a folder containing one PDF per part. Manual **New Part** and crop drawing remain available.
@@ -36,7 +36,7 @@ Reviewed examples and the evaluation record are in [output/pdf](output/pdf) and 
 - Embedded source PDF inside the project bundle
 - Drag-and-drop PDF import
 - Parts sidebar with part creation, color assignment, selection, and deletion
-- Movable Auto Extract window with optional cancellable deskew, printed-name picking, presets, and manual instrument setup
+- Movable Auto Extract window with scrollable page selection, optional cancellable deskew, printed-name picking, presets, and manual instrument setup
 - Whole-score offline Auto with saved instrumentation, skew-aware multi-region staff detection, mixed staff sizes, review/correction, and one undoable apply
 - Global and per-instrument crop context settings; source-marking copies retained in editable projects
 - Balanced system pagination at consistent scale with explicit musical breaks and output page numbers

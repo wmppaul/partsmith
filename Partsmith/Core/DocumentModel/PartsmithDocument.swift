@@ -57,7 +57,11 @@ struct ScoreDetectionReview {
     var analyses: [ScorePageAnalysis]
     var plan: ScoreExtractionPlan
     var overrides: [ScorePageOverride] = []
+    /// Nil retains the whole-source scope used by existing callers. Explicit
+    /// selections keep their original PDF indices, even when they are sparse.
+    var selectedPageIndices: Set<Int>? = nil
     var excludedPageReasons: [Int: String] = [:]
+    var autoSkippedPageIndices: Set<Int> = []
     var suggestedSourceHeader: SourceHeaderSelection? = nil
     var sourcePDFData: Data
     var rectifications: [PageRectification]
@@ -82,14 +86,36 @@ struct ScoreDetectionReview {
         }
     }
 
-    /// No-staff detection alone never excludes a page. This records the user's
-    /// explicit source review and returns a useful next page to inspect.
+    /// Successfully read pages without detected staves are optional to inspect.
+    /// Call only for a new detection result so restoring a page remains effective.
+    mutating func automaticallyExcludePagesWithoutStaves() {
+        for page in analyses where Self.canAutomaticallySkip(page) && excludedPageReasons[page.pageIndex] == nil {
+            excludedPageReasons[page.pageIndex] = "No staves were detected on this page."
+            autoSkippedPageIndices.insert(page.pageIndex)
+        }
+        replan()
+    }
+
+    fileprivate static func canAutomaticallySkip(_ page: ScorePageAnalysis) -> Bool {
+        page.staves.isEmpty && page.imageWidth > 0 && page.imageHeight > 0
+            && page.pageWidth.isFinite && page.pageWidth > 0
+            && page.pageHeight.isFinite && page.pageHeight > 0
+    }
+
+    mutating func restoreExcludedPage(_ pageIndex: Int) {
+        excludedPageReasons.removeValue(forKey: pageIndex)
+        autoSkippedPageIndices.remove(pageIndex)
+        replan()
+    }
+
+    /// Records an optional explicit exclusion and returns a useful next page to inspect.
     @discardableResult
     mutating func excludePageAsNonMusic(_ pageIndex: Int, reason: String) throws -> Int? {
         guard analyses.contains(where: { $0.pageIndex == pageIndex }) else { throw PageExclusionError.unavailablePage }
         let reviewedReason = reason.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !reviewedReason.isEmpty else { throw PageExclusionError.missingReason }
         excludedPageReasons[pageIndex] = reviewedReason
+        autoSkippedPageIndices.remove(pageIndex)
         replan()
         return nextPageNeedingReview(after: pageIndex)
             ?? plan.pages.first(where: { !$0.assignments.isEmpty })?.pageIndex
@@ -497,25 +523,30 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         staffDetectionOperation = nil
     }
 
-    /// Analyze every source page with an explicitly supplied instrument order.
+    /// Analyze the selected source pages with an explicitly supplied instrument order.
     /// Each worker owns its PDFKit objects; only small geometric results return to the UI.
     func detectScore(profile: ScoreExtractionProfile, findSourceHeader: Bool = false,
+                     pageIndices: Set<Int>? = nil,
                      completion: @escaping (ScoreDetectionReview?) -> Void) {
         cancelScoreDetection()
         cancelStaffDetection()
         guard let data = sourcePDFData, let pageCount = pdfDocument?.pageCount, pageCount > 0 else {
             completion(nil); return
         }
+        let selectedPages = pageIndices?.sorted() ?? Array(0..<pageCount)
+        guard !selectedPages.isEmpty, selectedPages.allSatisfy({ (0..<pageCount).contains($0) }) else {
+            completion(nil); return
+        }
         let rectifications = project.pageRectifications
         let operation = BlockOperation()
         scoreDetectionOperation = operation
-        scoreDetectionProgress = ScoreDetectionProgress(completedPages: 0, totalPages: pageCount)
+        scoreDetectionProgress = ScoreDetectionProgress(completedPages: 0, totalPages: selectedPages.count)
         operation.addExecutionBlock { [weak self, weak operation] in
             guard let operation, !operation.isCancelled, let pdf = PDFDocument(data: data) else { return }
             var analyses: [ScorePageAnalysis] = []
             var suggestedSourceHeader: SourceHeaderSelection?
             var triedSourceHeader = false
-            for pageIndex in 0..<pdf.pageCount {
+            for (selectedOffset, pageIndex) in selectedPages.enumerated() {
                 guard !operation.isCancelled else { return }
                 let analysis: ScorePageAnalysis = autoreleasepool {
                     let page = pdf.page(at: pageIndex)
@@ -545,13 +576,15 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 analyses.append(analysis)
                 DispatchQueue.main.async { [weak self, weak operation] in
                     guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
-                    self.scoreDetectionProgress = ScoreDetectionProgress(completedPages: pageIndex + 1, totalPages: pageCount)
+                    self.scoreDetectionProgress = ScoreDetectionProgress(completedPages: selectedOffset + 1, totalPages: selectedPages.count)
                 }
             }
             let plan = ScoreExtractionPlanner.plan(pages: analyses, profile: profile, isCancelled: { operation.isCancelled })
-            let review = ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan,
+            var review = ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan,
+                                               selectedPageIndices: pageIndices,
                                                suggestedSourceHeader: suggestedSourceHeader,
                                                sourcePDFData: data, rectifications: rectifications)
+            review.automaticallyExcludePagesWithoutStaves()
             DispatchQueue.main.async { [weak self, weak operation] in
                 guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
                 self.scoreDetectionOperation = nil
@@ -594,8 +627,11 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func isScoreDetectionCurrent(_ review: ScoreDetectionReview) -> Bool {
-        review.sourcePDFData == sourcePDFData && review.rectifications == project.pageRectifications &&
-            review.analyses.map(\.pageIndex) == Array(0..<(pdfDocument?.pageCount ?? 0))
+        let pageCount = pdfDocument?.pageCount ?? 0
+        let selectedPages = review.selectedPageIndices?.sorted() ?? Array(0..<pageCount)
+        return !selectedPages.isEmpty && selectedPages.allSatisfy({ (0..<pageCount).contains($0) })
+            && review.sourcePDFData == sourcePDFData && review.rectifications == project.pageRectifications
+            && review.analyses.map(\.pageIndex) == selectedPages
     }
 
     func scoreReviewImage(pageIndex: Int) -> CGImage? {
@@ -696,6 +732,11 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     func addScoreParts(from review: ScoreDetectionReview, sourceHeader: SourceHeaderSelection? = nil) -> Int? {
         guard isScoreDetectionCurrent(review), review.plan.canApply, !review.plan.bands.isEmpty,
               review.excludedPageReasons.values.allSatisfy({ !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }),
+              review.autoSkippedPageIndices.allSatisfy({ pageIndex in
+                  review.excludedPageReasons[pageIndex] != nil && review.analyses.contains {
+                      $0.pageIndex == pageIndex && ScoreDetectionReview.canAutomaticallySkip($0)
+                  }
+              }),
               Set(review.plan.pages.map(\.pageIndex)) == Set(review.analyses.map(\.pageIndex)).subtracting(review.excludedPageReasons.keys),
               review.plan.parts == review.profile.parts,
               Set(review.profile.parts.map { $0.name.lowercased() }).count == review.profile.parts.count else { return nil }
@@ -728,7 +769,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
         var bands: [BandModel] = []
         for planned in review.plan.bands {
-            guard let partID = partIDs[planned.partID], planned.pageIndex >= 0, planned.pageIndex < review.analyses.count,
+            guard let partID = partIDs[planned.partID],
+                  review.analyses.contains(where: { $0.pageIndex == planned.pageIndex }),
+                  review.excludedPageReasons[planned.pageIndex] == nil,
                   [planned.topFraction, planned.bottomFraction, planned.leftFraction, planned.rightFraction].allSatisfy({ $0.isFinite && $0 >= 0 && $0 <= 1 }),
                   planned.topFraction < planned.bottomFraction, planned.leftFraction + planned.rightFraction < 1 else { return nil }
             let band = BandModel(id: UUID(), pageIndex: planned.pageIndex, partID: partID,
@@ -1084,17 +1127,20 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @discardableResult
     func autoEstimateAllPageRectifications(
         onlyUnrectified: Bool = false,
+        pageIndices: Set<Int>? = nil,
         completion: ((RectificationAutoResult) -> Void)? = nil
     ) -> UUID? {
         guard isAutoEstimatingPageRectifications == false, let sourcePDFData else {
             completion?(.unavailable)
             return nil
         }
-        let totalPageCount = pdfDocument?.pageCount ?? 0
-        guard totalPageCount > 0 else {
+        let sourcePageCount = pdfDocument?.pageCount ?? 0
+        let selectedPages = pageIndices?.sorted() ?? Array(0..<sourcePageCount)
+        guard !selectedPages.isEmpty, selectedPages.allSatisfy({ (0..<sourcePageCount).contains($0) }) else {
             completion?(.unavailable)
             return nil
         }
+        let totalPageCount = selectedPages.count
 
         let runID = UUID()
         let startingRectifications = project.pageRectifications
@@ -1129,9 +1175,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             }
 
             var estimatedRectifications: [PageRectification] = []
-            estimatedRectifications.reserveCapacity(backgroundDocument.pageCount)
+            estimatedRectifications.reserveCapacity(selectedPages.count)
 
-            for pageIndex in 0..<backgroundDocument.pageCount {
+            for (selectedOffset, pageIndex) in selectedPages.enumerated() {
                 guard !operation.isCancelled else { return }
                 if !excludedPageIndices.contains(pageIndex) {
                     let estimate = autoreleasepool {
@@ -1142,7 +1188,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 guard !operation.isCancelled else { return }
 
                 let progress = RectificationAutoProgress(
-                    completedPageCount: pageIndex + 1,
+                    completedPageCount: selectedOffset + 1,
                     totalPageCount: totalPageCount,
                     estimatedPageCount: estimatedRectifications.count
                 )
