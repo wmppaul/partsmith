@@ -172,6 +172,21 @@ enum ScorePlannerTests {
         let overlappingDynamic = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[0]
         try check(overlappingDynamic.bottomFraction < 0.5 && !overlappingDynamic.warnings.isEmpty,
                   "A nearby foreign-staff component was silently adopted wholesale instead of requesting local edge review")
+
+        // Brahms Trio's high piano slur crowns sit nearer the preceding cello
+        // staff, while lying immediately above their own connected high notes.
+        // Recover that relationship without following an unrelated slur chain.
+        page.inkComponents = [
+            ScoreInkComponent(bounds: [200.0/600, 268.0/600, 240.0/600, 316.0/600], staffIDs: [1]),
+            ScoreInkComponent(bounds: [210.0/600, 260.0/600, 240.0/600, 264.0/600], staffIDs: []),
+            ScoreInkComponent(bounds: [215.0/600, 242.0/600, 250.0/600, 254.0/600], staffIDs: []),
+            ScoreInkComponent(bounds: [80.0/600, 248.0/600, 120.0/600, 260.0/600], staffIDs: [])
+        ]
+        let highSlur = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[1]
+        try check(highSlur.topFraction * 600 < 260,
+                  "A detached high target slur was clipped because its nearest staff was the preceding instrument")
+        try check(highSlur.topFraction * 600 > 244,
+                  "Recovery walked through detached marks into the preceding instrument's envelope")
     }
     struct SourceConfig: Decodable { var source: String; var profile: ScoreExtractionProfile }
     static func corpusTests() throws {

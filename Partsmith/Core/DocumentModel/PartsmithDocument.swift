@@ -58,6 +58,34 @@ struct ScoreDetectionReview {
                                            profile: profile, overrides: overrides.filter { excludedPageReasons[$0.pageIndex] == nil })
     }
 
+    func nextPageNeedingReview(after pageIndex: Int) -> Int? {
+        let unresolved = plan.pages.filter { !$0.unresolvedReasons.isEmpty }.map(\.pageIndex).sorted()
+        return unresolved.first { $0 > pageIndex } ?? unresolved.first
+    }
+
+    enum PageExclusionError: LocalizedError {
+        case unavailablePage, missingReason
+        var errorDescription: String? {
+            switch self {
+            case .unavailablePage: return "This source page is no longer available. Run Auto again."
+            case .missingReason: return "Enter why this page has no score music, such as a blank page or publisher catalogue."
+            }
+        }
+    }
+
+    /// No-staff detection alone never excludes a page. This records the user's
+    /// explicit source review and returns a useful next page to inspect.
+    @discardableResult
+    mutating func excludePageAsNonMusic(_ pageIndex: Int, reason: String) throws -> Int? {
+        guard analyses.contains(where: { $0.pageIndex == pageIndex }) else { throw PageExclusionError.unavailablePage }
+        let reviewedReason = reason.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !reviewedReason.isEmpty else { throw PageExclusionError.missingReason }
+        excludedPageReasons[pageIndex] = reviewedReason
+        replan()
+        return nextPageNeedingReview(after: pageIndex)
+            ?? plan.pages.first(where: { !$0.assignments.isEmpty })?.pageIndex
+    }
+
     enum CropEditError: LocalizedError {
         case unavailableBand, invalidEdges, incompletePage
         var errorDescription: String? {

@@ -18,6 +18,8 @@ struct ScoreExtractionView: View {
     @State private var correctionPart = ""
     @State private var correctionReason = ""
     @State private var movementTitle = ""
+    @State private var nonMusicReason = ""
+    @State private var instrumentationReviewed = false
     @State private var confirmedReview = false
     @State private var showingDetectorNotes = true
     @State private var focusedCropID: String?
@@ -96,7 +98,7 @@ struct ScoreExtractionView: View {
                         .disabled(!review.plan.canApply || !confirmedReview || review.plan.bands.isEmpty)
                 } else {
                     Button("Auto", action: runAuto).buttonStyle(.borderedProminent)
-                        .disabled(!profileValid || isRunning)
+                        .disabled(!profileValid || !instrumentationReviewed || isRunning)
                 }
             }
         }
@@ -105,6 +107,7 @@ struct ScoreExtractionView: View {
         .onAppear {
             if let saved = document.savedScoreProfile {
                 profile = saved
+                instrumentationReviewed = true
             } else if !document.project.parts.isEmpty {
                 profile.parts = document.project.parts.map { ScorePartDefinition(id: $0.id.uuidString, name: $0.name,
                     staffCount: $0.name.localizedCaseInsensitiveContains("piano") ? 2 : 1) }
@@ -127,6 +130,10 @@ struct ScoreExtractionView: View {
                     Button("Voice and Piano") { setProfile([("Voice", 1), ("Piano", 2)], lyricIndices: [0]) }
                     Button("SATB Choir") { setProfile([("Soprano", 1), ("Alto", 1), ("Tenor", 1), ("Bass", 1)], lyricIndices: [0, 1, 2, 3]) }
                 }
+                if !instrumentationReviewed {
+                    Text("Choose a starting profile above, or edit and confirm the instrument order below before running Auto.")
+                        .font(.callout).foregroundStyle(.secondary)
+                }
                 ForEach(profile.parts.indices, id: \.self) { index in
                     HStack {
                         Text("\(index + 1).").frame(width: 24)
@@ -145,6 +152,8 @@ struct ScoreExtractionView: View {
                 Button("Add Instrument", systemImage: "plus") {
                     profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: "New Instrument", staffCount: 1))
                 }
+                Toggle("I reviewed these instrument names, order, and staff counts", isOn: $instrumentationReviewed)
+                    .toggleStyle(.checkbox)
                 Picker("Crop mode", selection: Binding(get: { profile.cropMode ?? "fixed" }, set: { profile.cropMode = $0 })) {
                     Text("Compact — follow notation").tag("compact")
                     Text("Fixed padding").tag("fixed")
@@ -261,19 +270,40 @@ struct ScoreExtractionView: View {
     private func reviewControls(_ review: ScoreDetectionReview) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Stepper("Source page \(selectedPage + 1) of \(review.analyses.count)", value: $selectedPage,
-                        in: 0...max(0, review.analyses.count - 1))
+                HStack {
+                    Text("Source page")
+                    TextField("Source page", value: Binding(
+                        get: { selectedPage + 1 },
+                        set: { selectedPage = min(max(1, $0), max(1, review.analyses.count)) - 1 }), format: .number)
+                        .textFieldStyle(.roundedBorder).frame(width: 48)
+                        .accessibilityLabel("Source page number")
+                    Text("of \(review.analyses.count)")
+                    Stepper("Change source page", value: $selectedPage,
+                            in: 0...max(0, review.analyses.count - 1)).labelsHidden()
+                }
                 let unresolved = review.plan.pages.filter { !$0.unresolvedReasons.isEmpty }
-                Text(unresolved.isEmpty ? "All pages have assignments or explicit exclusions." : "\(unresolved.count) pages need layout corrections.")
+                let assignedCount = review.plan.pages.filter { !$0.assignments.isEmpty }.count
+                Text("\(assignedCount) pages assigned · \(review.excludedPageReasons.count) excluded · \(unresolved.count) need review")
                     .font(.headline).foregroundStyle(unresolved.isEmpty ? Color.primary : .orange)
-                if let next = unresolved.first(where: { $0.pageIndex != selectedPage }) {
-                    Button("Go to Flagged Page \(next.pageIndex + 1)") { selectedPage = next.pageIndex }
+                if let next = review.nextPageNeedingReview(after: selectedPage), next != selectedPage {
+                    Button("Go to Flagged Page \(next + 1)") { selectedPage = next }
                 }
                 if let excluded = review.excludedPageReasons[selectedPage] {
                     Text("Excluded: \(excluded)").foregroundStyle(.secondary)
                     Button("Restore Page") { changeReview { $0.excludedPageReasons.removeValue(forKey: selectedPage) } }
                 }
                 ForEach(currentPlan?.unresolvedReasons ?? [], id: \.self) { Text($0).font(.callout).foregroundStyle(.orange) }
+                if currentAnalysis?.staves.isEmpty == true && review.excludedPageReasons[selectedPage] == nil {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("No staves detected — no part bands assigned on this page.").font(.subheadline.bold())
+                        Text("Review the source. A blank page, cover, or publisher catalogue can be excluded. If it contains music, leave it included. Cancel and check its orientation or rectification before rerunning Auto.")
+                            .font(.caption).foregroundStyle(.secondary)
+                        TextField("Reason: blank page, publisher catalogue…", text: $nonMusicReason)
+                            .textFieldStyle(.roundedBorder)
+                        Button("Exclude This Non-Music Page", action: excludeCurrentNonMusicPage)
+                            .disabled(nonMusicReason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
+                }
                 if !currentDetectorNotes.isEmpty {
                     DisclosureGroup("Detector notes (\(currentDetectorNotes.count))", isExpanded: $showingDetectorNotes) {
                         VStack(alignment: .leading, spacing: 10) {
@@ -286,9 +316,11 @@ struct ScoreExtractionView: View {
                         }.padding(.top, 6)
                     }.foregroundStyle(.orange)
                 }
-                ForEach(profile.parts) { part in
-                    let count = (currentPlan?.assignments ?? []).filter { $0.partID == part.id }.count
-                    HStack { Text(part.name); Spacer(); Text("\(count) systems").foregroundStyle(.secondary) }
+                if !(currentPlan?.assignments.isEmpty ?? true) {
+                    ForEach(profile.parts) { part in
+                        let count = (currentPlan?.assignments ?? []).filter { $0.partID == part.id }.count
+                        HStack { Text(part.name); Spacer(); Text("\(count) systems").foregroundStyle(.secondary) }
+                    }
                 }
                 Text("Check every target note, ledger line, slur, lyric and shared tempo/rehearsal mark. Neighboring ink is allowed. After adding, crop expansion and source-marking review remain available in the Inspector.")
                     .font(.caption).foregroundStyle(.secondary)
@@ -329,8 +361,8 @@ struct ScoreExtractionView: View {
                         Button("Ignore Selected False Detections", action: ignoreSelected)
                             .disabled(correctionReason.isEmpty || selectedStaves.isEmpty)
                         Button("Exclude Page Without Score Music") {
-                            changeReview { $0.excludedPageReasons[selectedPage] = correctionReason }
-                        }.disabled(correctionReason.isEmpty)
+                            excludeCurrentPage(reason: correctionReason)
+                        }.disabled(correctionReason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                         Button("Restore Automatic Assignments") {
                             changeReview { $0.overrides.removeAll { $0.pageIndex == selectedPage } }
                         }
@@ -361,9 +393,11 @@ struct ScoreExtractionView: View {
             ScorePartDefinition(id: UUID().uuidString, name: part.0, staffCount: part.1, hasLyrics: lyricIndices.contains(index))
         }
         correctionPart = profile.parts.first?.id ?? ""
+        instrumentationReviewed = true
     }
 
     private func runAuto() {
+        guard profileValid, instrumentationReviewed else { return }
         errorMessage = nil
         confirmedReview = false
         correctionPart = profile.parts.first?.id ?? ""
@@ -378,6 +412,7 @@ struct ScoreExtractionView: View {
 
     private func updatePageImage() {
         selectedStaves.removeAll()
+        nonMusicReason = ""
         focusedCropID = nil
         correctionSystem = 1
         pageImage = document.scoreReviewImage(pageIndex: selectedPage)
@@ -400,6 +435,22 @@ struct ScoreExtractionView: View {
         review = value
         confirmedReview = false
         errorMessage = nil
+    }
+
+    private func excludeCurrentNonMusicPage() {
+        excludeCurrentPage(reason: nonMusicReason)
+    }
+
+    private func excludeCurrentPage(reason: String) {
+        guard var value = review else { return }
+        do {
+            let next = try value.excludePageAsNonMusic(selectedPage, reason: reason)
+            review = value
+            confirmedReview = false
+            errorMessage = nil
+            nonMusicReason = ""
+            if let next { selectedPage = next }
+        } catch { errorMessage = error.localizedDescription }
     }
 
     private func cropEdgeBinding(_ band: ScorePlannedBand, height: Double, top: Bool) -> Binding<Double> {

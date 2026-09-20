@@ -1,0 +1,69 @@
+{
+  "reviewVersion": 2,
+  "status": "reviewed-preservation-pass",
+  "notationPolicy": "preserve-target",
+  "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+  "sourceMapSHA256": "2a629058d0dce4e951f2cd8002e19463cb9dd9951ac6591b5a4befa9250d94c2",
+  "normalizedManifestSHA256": "4538a9a1ce81fb0103463ef4e2fa5da112627ac9377d2a665224dec5fd3a8528",
+  "sourcePages": 35,
+  "musicPages": 33,
+  "excludedNonMusicPages": [
+    34,
+    35
+  ],
+  "physicalStaves": 524,
+  "systemsPerPart": 131,
+  "partBands": 393,
+  "parts": [
+    {
+      "id": "clarinet",
+      "name": "Clarinet in A",
+      "file": "Clarinet in A.pdf",
+      "sha256": "3a469fb4035f239d2ce7f417fe27b8d18f401cf10e7e0290e64922c5c4bd5b9f",
+      "outputPages": 12,
+      "bandCount": 131
+    },
+    {
+      "id": "cello",
+      "name": "Cello",
+      "file": "Cello.pdf",
+      "sha256": "0e608ec2b69955169eb8b838e72e576fc5bbbbe002cdeeb960fcb7f9b38f90fb",
+      "outputPages": 12,
+      "bandCount": 131
+    },
+    {
+      "id": "piano",
+      "name": "Piano",
+      "file": "Piano.pdf",
+      "sha256": "63a5c5d8e34e8fbddd46f569971013dbe5ee292d888b356e752f09959f9ee1f3",
+      "outputPages": 24,
+      "bandCount": 131
+    }
+  ],
+  "totalOutputPages": 48,
+  "allFinalPagesVisuallyReviewed": true,
+  "protectedRegions": 393,
+  "copiedSourceFragments": 261,
+  "pixelRegionsCompared": 654,
+  "pixelTolerance": 0,
+  "pixelResult": "pass",
+  "manualCropRectangles": 224,
+  "manualContextTrims": 222,
+  "manualGuardMarginExpansions": 2,
+  "automaticCropRectanglesRetained": 169,
+  "manualStaffDetectionCorrections": 0,
+  "neighborLineCenters": 4,
+  "wholeNeighborStaves": 0,
+  "instrumentSetup": "Reviewed Clarinet in A / Cello / Piano with 1/1/2 printed staves",
+  "visualReviews": [
+    "review/clarinet-cello-visual.json",
+    "review/piano-visual.json"
+  ],
+  "limitations": [
+    "Small neighboring glyph and slur fragments retained where target notation shares their height.",
+    "Clarinet/Cello source staff size is approximately 4mm on Letter paper.",
+    "Movement boundaries are reviewed; individual performance page turns were not rehearsal-tested.",
+    "Final cropped outputs include score-specific manual context corrections and shared directions; they are not untouched Auto results."
+  ],
+  "appVerification": "Opened the final source-embedded project in the running Partsmith; all three parts show 131 bands and Clarinet Preview shows 12 pages. The current older app was preserved; the updated app is supplied separately."
+}

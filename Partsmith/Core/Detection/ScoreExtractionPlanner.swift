@@ -470,7 +470,23 @@ enum ScoreExtractionPlanner {
                     // low slur or lyric row. High target ink connected to this
                     // staff is already retained; detached inter-staff ink needs
                     // source review rather than transitive bbox ownership.
-                    if nearest.map({ !ids.contains($0.id) }) == true { continue }
+                    if nearest.map({ !ids.contains($0.id) }) == true {
+                        // A high note's detached slur can lie nearer the staff
+                        // above. Retain a small mark directly above connected
+                        // target ink, without walking through detached marks
+                        // into the preceding instrument's entire envelope.
+                        let directlyAboveTarget = component.staffIDs.isEmpty
+                            && box[3] - box[1] <= 2 * space
+                            && components.contains { other in
+                                let owners = Set(other.staffIDs), ink = other.bounds
+                                return !owners.isEmpty && owners.isSubset(of: ids)
+                                    && ink[1] < firstLine - space
+                                    && ink[1] >= box[1]
+                                    && min(box[2], ink[2]) > max(box[0], ink[0])
+                                    && max(ink[1] - box[3], 0) <= 0.75 * space
+                            }
+                        if !directlyAboveTarget { continue }
+                    }
                 }
                 var touchesNeighbor = false
                 if !component.staffIDs.isEmpty {
@@ -497,12 +513,16 @@ enum ScoreExtractionPlanner {
             if additional.isEmpty { break }
             selected.formUnion(additional)
         }
-        let clearance = max(space * 0.5, 2 / page.pageHeight)
+        // Detached slur crowns, dots and text ascenders in scans can extend
+        // just beyond the selected component envelope. Keep a modest margin
+        // above it; this remains local instead of retaining a whole neighbor.
+        let topClearance = max(1.5 * space, 6 / page.pageHeight)
+        let bottomClearance = max(space * 0.5, 2 / page.pageHeight)
         var top = firstLine - max(0.5, explicitTop ?? 0.5) * space - skew
         var bottom = lastLine + max(0.5, explicitBottom ?? 0.5) * space + skew
         for index in selected.union(ambiguous) {
-            top = min(top, components[index].bounds[1] - clearance)
-            bottom = max(bottom, components[index].bounds[3] + clearance)
+            top = min(top, components[index].bounds[1] - topClearance)
+            bottom = max(bottom, components[index].bounds[3] + bottomClearance)
         }
         var warnings: [String] = []
         if !ambiguous.isEmpty {

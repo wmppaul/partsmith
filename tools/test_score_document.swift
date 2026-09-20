@@ -35,6 +35,43 @@ enum ScoreDocumentTests {
         check(document.scoreDetectionProgress == nil, "Completed Auto clears its progress state")
         check(document.isScoreDetectionCurrent(review), "Unchanged full-source review is current")
 
+        var nonMusicReview = review
+        nonMusicReview.analyses += [2, 3].map { page in
+            ScorePageAnalysis(pageIndex: page, pageWidth: 600, pageHeight: 800,
+                imageWidth: 1200, imageHeight: 1600, staves: [], warnings: [])
+        }
+        nonMusicReview.replan()
+        check(nonMusicReview.excludedPageReasons.isEmpty && !nonMusicReview.plan.canApply
+              && nonMusicReview.plan.pages.filter { !$0.unresolvedReasons.isEmpty }.map(\.pageIndex) == [2, 3],
+              "Zero-staff pages remain included and unresolved until explicitly reviewed")
+        check(nonMusicReview.nextPageNeedingReview(after: 2) == 3 && nonMusicReview.nextPageNeedingReview(after: 3) == 2,
+              "Flagged-page navigation advances in source order and wraps")
+        let beforeExclusion = nonMusicReview.plan
+        do {
+            try nonMusicReview.excludePageAsNonMusic(2, reason: "   ")
+            fatalError("Nonmusic page excluded without a reviewed reason")
+        } catch {
+            check(nonMusicReview.plan == beforeExclusion && nonMusicReview.excludedPageReasons.isEmpty,
+                  "Missing exclusion reason rejects the action without mutating the review")
+        }
+        let nextCatalog = try nonMusicReview.excludePageAsNonMusic(2, reason: "  Blank page reviewed  ")
+        check(nextCatalog == 3 && nonMusicReview.excludedPageReasons == [2: "Blank page reviewed"],
+              "Explicit blank-page exclusion records its reason and advances to the next flagged page")
+        check(!nonMusicReview.plan.canApply && nonMusicReview.plan.pages.contains { $0.pageIndex == 3 && !$0.unresolvedReasons.isEmpty },
+              "Excluding one empty page never silently excludes the next")
+        let nextMusic = try nonMusicReview.excludePageAsNonMusic(3, reason: "Publisher catalogue reviewed")
+        check(nextMusic == 0 && nonMusicReview.plan.canApply && nonMusicReview.excludedPageReasons.count == 2,
+              "Resolving the last nonmusic page returns to music with the remaining assignments ready for review")
+        check(nonMusicReview.plan.bands == review.plan.bands,
+              "Nonmusic-page exclusions preserve every music assignment and crop exactly")
+        do {
+            try nonMusicReview.excludePageAsNonMusic(99, reason: "Not a source page")
+            fatalError("Unavailable source page accepted for exclusion")
+        } catch {
+            check(nonMusicReview.excludedPageReasons.count == 2 && nonMusicReview.plan.bands == review.plan.bands,
+                  "Invalid exclusion page leaves the review unchanged")
+        }
+
         var cropReview = review
         let cropPage = review.analyses[0]
         let originalBands = review.plan.pages[0].assignments

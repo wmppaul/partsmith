@@ -1,0 +1,536 @@
+{
+  "status": "fresh_source_layout_review_complete_crop_review_pending",
+  "source": "sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+  "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+  "reviewer": "score_survey",
+  "method": "All35 original medium114012 source pages freshly inspected in9 contact sheets, plus opening and cadence/dense-context enlargements. No prior114011 geometry or output approval reused.",
+  "parts": [
+    {
+      "id": "clarinet",
+      "name": "Clarinet in A",
+      "staffCount": 1,
+      "printedLabel": "Klarinette in A"
+    },
+    {
+      "id": "cello",
+      "name": "Violoncello",
+      "staffCount": 1,
+      "printedLabel": "Violoncell"
+    },
+    {
+      "id": "piano",
+      "name": "Piano",
+      "staffCount": 2,
+      "printedLabel": "Pianoforte"
+    }
+  ],
+  "expectedSystems": 131,
+  "expectedPhysicalStaves": 524,
+  "movements": [
+    {
+      "pageNumber": 1,
+      "systemIndex": 0,
+      "text": "Allegro"
+    },
+    {
+      "pageNumber": 12,
+      "systemIndex": 0,
+      "text": "Adagio"
+    },
+    {
+      "pageNumber": 18,
+      "systemIndex": 0,
+      "text": "Andante grazioso"
+    },
+    {
+      "pageNumber": 26,
+      "systemIndex": 0,
+      "text": "Allegro"
+    }
+  ],
+  "cadencePages": [
+    11,
+    17,
+    25,
+    33
+  ],
+  "pages": [
+    {
+      "pageIndex": 0,
+      "classification": "music",
+      "expectedSystems": 3,
+      "expectedPhysicalStaves": 12,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Opening title and labels; three systems; deep tied bass ledger notes already present."
+    },
+    {
+      "pageIndex": 1,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Four systems; piano high triplet chords and deep bass notes. Rightmost barlines near page edge."
+    },
+    {
+      "pageIndex": 2,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Clarinet printed rest systems retained; cello tenor-clef changes; piano bass ties and deep notes."
+    },
+    {
+      "pageIndex": 3,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Long upper ties and hairpins; piano sustained low bass line."
+    },
+    {
+      "pageIndex": 4,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Mid-score signature changes; clarinet/cello low notes; piano deep opening/final bass."
+    },
+    {
+      "pageIndex": 5,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Low pp and descending clarinet/cello runs; deep piano chords; final espressivo/crescendo."
+    },
+    {
+      "pageIndex": 6,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Piano arpeggios span wide registers; left gutter printed122 on system2 is close to source edge."
+    },
+    {
+      "pageIndex": 7,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Deep piano bass ties; upper clarinet/cello slurs and low dynamics."
+    },
+    {
+      "pageIndex": 8,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "High clarinet/cello opening notes; long piano bass slurs; final clef change."
+    },
+    {
+      "pageIndex": 9,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Clarinet/cello low pp and upper slurs; deep piano bass ties."
+    },
+    {
+      "pageIndex": 10,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Movement1 cadence; rit. system1 and Poco meno Allegro system2; piano final pedal, octave indications and fermatas below/above grand staff."
+    },
+    {
+      "pageIndex": 11,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Adagio begins; cello low pp/tenor clef; piano dense beams and high/low ledger chords."
+    },
+    {
+      "pageIndex": 12,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Dense piano upper/lower beaming; staff-line phase can be confused with beams."
+    },
+    {
+      "pageIndex": 13,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Cello pizz./arco above staff; piano low bass and pedal system3."
+    },
+    {
+      "pageIndex": 14,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Very dense piano system3 upper chords and low ledger notes; broad register and changing clefs."
+    },
+    {
+      "pageIndex": 15,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Four short dense systems; piano long beams, upper slurs and final low bass stems/ties. Check correct staff-line phase."
+    },
+    {
+      "pageIndex": 16,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Movement2 final cadence; cello pizz./arco and double stops; piano low pedal, final low bass and both fermatas."
+    },
+    {
+      "pageIndex": 17,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Andante grazioso begins; cello pizz./arco; high/low piano arpeggios."
+    },
+    {
+      "pageIndex": 18,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Cello pizz./arco and sustained phrases; piano high ledger chords and long bass slurs."
+    },
+    {
+      "pageIndex": 19,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Low sf dynamics, upper slurs; piano deep bass beams."
+    },
+    {
+      "pageIndex": 20,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Upper clarinet/cello phrases and low hairpins; piano low bass ties."
+    },
+    {
+      "pageIndex": 21,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Signature changes and long rest systems preserved; piano bass chords/slurs."
+    },
+    {
+      "pageIndex": 22,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Low clarinet ledger phrases and high cello runs; piano deep tied bass."
+    },
+    {
+      "pageIndex": 23,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "High runs and signature changes; broad piano arpeggios/slurs."
+    },
+    {
+      "pageIndex": 24,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Un poco sostenuto system3; complete movement3 cadence system4 with low rolled piano chord and fermatas."
+    },
+    {
+      "pageIndex": 25,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Allegro begins with alternating meter indications; low cello dynamics; broad piano triplets and cross-staff slur."
+    },
+    {
+      "pageIndex": 26,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Alternating meters, cello espressivo and piano lower slurs."
+    },
+    {
+      "pageIndex": 27,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "High triplet/ledger passages, clef and meter changes; piano deep final bass."
+    },
+    {
+      "pageIndex": 28,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Low tied clarinet/cello passages; piano low tied chords; piu p sempre."
+    },
+    {
+      "pageIndex": 29,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Low ledger notes/dynamics; final piano cross-staff slur."
+    },
+    {
+      "pageIndex": 30,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Printed rest systems and meter changes; low piano stem/slur endpoints."
+    },
+    {
+      "pageIndex": 31,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "High ledger runs and tuplets; piano deep lower beams and high chords."
+    },
+    {
+      "pageIndex": 32,
+      "classification": "music",
+      "expectedSystems": 4,
+      "expectedPhysicalStaves": 16,
+      "staffOrder": [
+        "clarinet",
+        "cello",
+        "piano-rh",
+        "piano-lh"
+      ],
+      "observations": "Final cadence; high clarinet/cello ledger runs; piano6/7-note tuplets, deep final tied bass octave, both fermatas and terminal barline."
+    },
+    {
+      "pageIndex": 33,
+      "classification": "blank",
+      "expectedSystems": 0,
+      "expectedPhysicalStaves": 0,
+      "staffOrder": [],
+      "observations": "Blank source page; no music."
+    },
+    {
+      "pageIndex": 34,
+      "classification": "publisher_catalog",
+      "expectedSystems": 0,
+      "expectedPhysicalStaves": 0,
+      "staffOrder": [],
+      "observations": "Publisher work catalog; no music."
+    }
+  ],
+  "requirements": [
+    "No instrument staves are suppressed; every music system accounts for all3parts and4physical staves.",
+    "Piano RH/LH remain one band, including intervening dynamics, cross-staff figures and pedal/octave markings outside the stafflines.",
+    "No masks. Start horizontal trims0/0 because alternating margins carry barlines and piano measure numbers close to the source page edges.",
+    "Title optional viola alternative is not a printed staff; no fourth part is invented.",
+    "Printed measure-gutter numbers belong to the piano row geometrically but provide sharednavigation; separate source fragments may be needed for compact clarinet/cello parts."
+  ],
+  "evidence": [
+    "source-contact-01-04.jpg",
+    "source-contact-05-08.jpg",
+    "source-contact-09-12.jpg",
+    "source-contact-13-16.jpg",
+    "source-contact-17-20.jpg",
+    "source-contact-21-24.jpg",
+    "source-contact-25-28.jpg",
+    "source-contact-29-32.jpg",
+    "source-contact-33-35.jpg"
+  ],
+  "outputReviewStatus": "No current Auto candidate output has yet been inspected; this record is not an output pass.",
+  "nativeInventoryCheck": {
+    "path": ".build/trio-auto-current/inventory/inventory.json",
+    "sha256": "5caf521f4dd2f33cab34cae96c89ea1bcea6aa9304f381fa840572ce193a028b",
+    "sourceSHA256Matches": true,
+    "allPageCountsMatch": true,
+    "totalDetectedStaves": 524,
+    "densePhaseSpotReviewPages": [
+      13,
+      16,
+      33
+    ],
+    "phaseObservations": "Five-line identities visually matched raw medium source on all four systems of the three inspected dense/cadence pages, including page16 final piano RH. This does not constitute an all-page crop review."
+  }
+}

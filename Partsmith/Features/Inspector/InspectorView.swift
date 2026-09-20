@@ -149,18 +149,19 @@ struct InspectorView: View {
                 }
 
                 HStack {
-                    Button("Auto All") {
-                        document.autoEstimateAllPageRectifications()
-                    }
-                    .disabled(document.canAutoEstimateAllPageRectifications == false)
-                    .help("Estimate rectification for every page in the source PDF.")
-
-                    Button("Auto") {
+                    Button("Auto Rectify Page") {
                         document.autoEstimateCurrentPageRectification()
                     }
                     .disabled(document.canAutoEstimateCurrentPageRectification == false)
-                    .help("Estimate rectification for the current page.")
+                    .help("Estimate page alignment and perspective for the current page; this does not extract parts.")
 
+                    Button("Auto Rectify All") {
+                        document.autoEstimateAllPageRectifications()
+                    }
+                    .disabled(document.canAutoEstimateAllPageRectifications == false)
+                    .help("Estimate page alignment and perspective for every source page; this does not extract parts.")
+                }
+                HStack {
                     Button(document.isEditingPageRectification ? "Done" : "Manual") {
                         document.setPageRectificationEditing(document.isEditingPageRectification == false)
                     }

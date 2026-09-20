@@ -13,6 +13,12 @@ Read the labels and braces yourself; these names are a reviewed setup, not OCR
 recognition. Partsmith saves the setup with the project. Computer use may perform
 this initialization when the user authorizes the extraction.
 
+Choose the preset explicitly for a new setup. A four-staff system is ambiguous:
+a string quartet is four one-staff parts, while a clarinet trio is Clarinet,
+Cello, and two-staff Piano. A correct staff count cannot distinguish them. The
+Inspector's **Auto Rectify Page/All** controls page alignment; **Auto Extract**
+in the toolbar creates parts.
+
 New setups use **Compact — follow notation** in **Crop Context**. The analyzer
 measures connected ink beyond the staff and preserves a small safety margin.
 Enable **Lyrics** for vocal staves; figured bass and additional verses may need
@@ -37,6 +43,9 @@ can assign detected staves, record a missing/tacet part, exclude a non-music pag
 with a reason, and add a verified movement/song heading and page break. A piano
 introduction with no printed voice should be represented by a clearly labeled
 cue or a verified rest instruction, never an unexplained missing opening.
+For zero-staff pages, inspect the source and use **Exclude This Non-Music Page**
+with an explicit reason for a blank leaf or publisher catalog. The review moves
+to the next unresolved page. A page with undetected music must stay included.
 
 Use **Adjust crop edges on this page** for a source-reviewed local correction.
 Top and Bottom are source-page points measured downward; select the part/system
@@ -68,6 +77,10 @@ when every target note survives. Compare context before and after changes, and
 ensure the intended staff remains identifiable. Fix a systematic edge failure by improving detection or a
 saved profile before introducing per-band geometry corrections. Never reduce a
 crop to make a page fit, or shrink a protected region merely to pass a test.
+On scans, inspect detached high slur crowns, fermatas and text ascenders, not
+just noteheads and stems. A crop can preserve the notes while clipping those
+marks by only one or two points. Verify the exact source file hash: separately
+skewed versions of the same edition need fresh source-coordinate guards.
 
 ## Reproducible repository evaluation
 
