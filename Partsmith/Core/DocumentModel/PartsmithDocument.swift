@@ -31,6 +31,14 @@ struct RectificationAutoProgress {
     }
 }
 
+enum RectificationAutoResult: Equatable {
+    case completed(appliedPageCount: Int)
+    case cancelled
+    /// The source PDF or its coordinate-bound edits changed while estimating.
+    case sourceChanged
+    case unavailable
+}
+
 struct StaffDetectionPage {
     var pageIndex: Int
     var image: CGImage
@@ -183,6 +191,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @Published var isEditingPageRectification: Bool
     @Published private(set) var rectificationAutoProgress: RectificationAutoProgress?
     @Published private(set) var scoreDetectionProgress: ScoreDetectionProgress?
+    @Published var isPickingInstrumentNames = false
+    @Published private(set) var instrumentNamePick: ScoreInstrumentNamePick?
+    @Published private(set) var instrumentNamePickMessage: String?
+    @Published private(set) var isRecognizingInstrumentName = false
 
     weak var undoManager: UndoManager?
 
@@ -190,9 +202,19 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private var sourcePageRenderCache: SourcePageRenderCache?
     private var bandTemplateHalfHeight: Double?
     private var rectificationAutoRunID: UUID?
+    private var rectificationAutoOperation: BlockOperation?
+    private var rectificationAutoCompletion: ((RectificationAutoResult) -> Void)?
     private let barNumberDetectionQueue = DispatchQueue(label: "Partsmith.BarNumberDetection", qos: .userInitiated)
     private var staffDetectionOperation: BlockOperation?
     private var scoreDetectionOperation: BlockOperation?
+    private var instrumentNameOperation: BlockOperation?
+    private let instrumentNameQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "Partsmith.InstrumentNameRecognition"
+        queue.qualityOfService = .userInitiated
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
     private let staffDetectionQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.name = "Partsmith.StaffDetection"
@@ -560,6 +582,61 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             return sourcePageRenderCache?.rectifiedDisplayImage(for: pageIndex, rectification: rectification)
         }
         return NativeScorePageAnalyzer.render(page)
+    }
+
+    /// The point is normalized in the currently displayed page, top to bottom.
+    /// No project data changes until the user accepts the instrument setup.
+    func pickInstrumentName(at point: CGPoint, pageIndex: Int) {
+        instrumentNameOperation?.cancel()
+        instrumentNameOperation = nil
+        instrumentNamePick = nil
+        instrumentNamePickMessage = nil
+        isRecognizingInstrumentName = false
+        guard isPickingInstrumentNames else { return }
+        guard pageIndex == currentPageIndex, !isEditingPageRectification,
+              point.x.isFinite, point.y.isFinite, (0...1).contains(point.x), (0...1).contains(point.y),
+              let data = sourcePDFData, let image = scoreReviewImage(pageIndex: pageIndex) else {
+            instrumentNamePickMessage = "Show a score page, then click a printed instrument name."
+            return
+        }
+        let rectification = currentPageRectification
+        let operation = BlockOperation()
+        instrumentNameOperation = operation
+        isRecognizingInstrumentName = true
+        operation.addExecutionBlock { [weak self, weak operation] in
+            guard let operation, !operation.isCancelled else { return }
+            let candidate = ScoreInstrumentNameDetector.recognize(in: image, at: point,
+                                                                  isCancelled: { operation.isCancelled })
+            DispatchQueue.main.async { [weak self, weak operation] in
+                guard let self, let operation, self.instrumentNameOperation === operation,
+                      !operation.isCancelled else { return }
+                self.instrumentNameOperation = nil
+                self.isRecognizingInstrumentName = false
+                guard self.isPickingInstrumentNames else { return }
+                guard self.sourcePDFData == data, self.currentPageIndex == pageIndex,
+                      self.currentPageRectification == rectification, !self.isEditingPageRectification else {
+                    self.instrumentNamePickMessage = "The displayed page changed. Click its instrument name again."
+                    return
+                }
+                guard let candidate else {
+                    self.instrumentNamePickMessage = "Couldn’t read a name there. Click the printed letters, or type the name in the list."
+                    return
+                }
+                self.instrumentNamePick = ScoreInstrumentNamePick(id: UUID(), name: candidate.text,
+                    suggestedStaffCount: ScoreInstrumentNameDetector.suggestedStaffCount(for: candidate.text),
+                    pageIndex: pageIndex)
+            }
+        }
+        instrumentNameQueue.addOperation(operation)
+    }
+
+    func cancelInstrumentNamePicking() {
+        isPickingInstrumentNames = false
+        instrumentNameOperation?.cancel()
+        instrumentNameOperation = nil
+        instrumentNamePick = nil
+        instrumentNamePickMessage = nil
+        isRecognizingInstrumentName = false
     }
 
     /// Add every reviewed part atomically. Existing populated parts of the same
@@ -936,14 +1013,30 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         isEditingPageRectification = false
     }
 
-    func autoEstimateAllPageRectifications() {
-        guard isAutoEstimatingPageRectifications == false else { return }
-        guard let sourcePDFData else { return }
+    /// Returns an ownership token so a temporary workflow can cancel its own run
+    /// without interrupting an estimate started elsewhere in the document.
+    @discardableResult
+    func autoEstimateAllPageRectifications(
+        onlyUnrectified: Bool = false,
+        completion: ((RectificationAutoResult) -> Void)? = nil
+    ) -> UUID? {
+        guard isAutoEstimatingPageRectifications == false, let sourcePDFData else {
+            completion?(.unavailable)
+            return nil
+        }
         let totalPageCount = pdfDocument?.pageCount ?? 0
-        guard totalPageCount > 0 else { return }
+        guard totalPageCount > 0 else {
+            completion?(.unavailable)
+            return nil
+        }
 
         let runID = UUID()
+        let startingRectifications = project.pageRectifications
+        let excludedPageIndices = onlyUnrectified ? Set(startingRectifications.map(\.pageIndex)) : []
+        let operation = BlockOperation()
         rectificationAutoRunID = runID
+        rectificationAutoOperation = operation
+        rectificationAutoCompletion = completion
         rectificationAutoProgress = RectificationAutoProgress(
             completedPageCount: 0,
             totalPageCount: totalPageCount,
@@ -952,14 +1045,18 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         isEditingPageRectification = false
         Self.rectificationLogger.notice("Auto All started for \(totalPageCount, privacy: .public) pages")
 
-        DispatchQueue.global(qos: .userInitiated).async { [weak self, sourcePDFData] in
+        operation.addExecutionBlock { [weak self, weak operation, sourcePDFData] in
+            guard let operation, !operation.isCancelled else { return }
             guard let backgroundDocument = PDFDocument(data: sourcePDFData) else {
                 Self.rectificationLogger.error("Auto All failed to open background PDF document")
                 DispatchQueue.main.async { [weak self] in
                     self?.finishAutoEstimateAllPageRectifications(
                         [],
                         sourcePDFData: sourcePDFData,
-                        runID: runID
+                        startingRectifications: startingRectifications,
+                        runID: runID,
+                        preserveExistingCrops: onlyUnrectified,
+                        failed: true
                     )
                 }
                 return
@@ -969,9 +1066,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             estimatedRectifications.reserveCapacity(backgroundDocument.pageCount)
 
             for pageIndex in 0..<backgroundDocument.pageCount {
-                if let rectification = Self.estimatedRectification(for: pageIndex, in: backgroundDocument) {
-                    estimatedRectifications.append(rectification)
+                guard !operation.isCancelled else { return }
+                if !excludedPageIndices.contains(pageIndex) {
+                    let estimate = autoreleasepool {
+                        Self.estimatedRectification(for: pageIndex, in: backgroundDocument)
+                    }
+                    if let estimate { estimatedRectifications.append(estimate) }
                 }
+                guard !operation.isCancelled else { return }
 
                 let progress = RectificationAutoProgress(
                     completedPageCount: pageIndex + 1,
@@ -993,10 +1095,28 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 self?.finishAutoEstimateAllPageRectifications(
                     estimatedRectifications,
                     sourcePDFData: sourcePDFData,
-                    runID: runID
+                    startingRectifications: startingRectifications,
+                    runID: runID,
+                    preserveExistingCrops: onlyUnrectified
                 )
             }
         }
+        DispatchQueue.global(qos: .userInitiated).async { operation.start() }
+        return runID
+    }
+
+    @discardableResult
+    func cancelAutoEstimateAllPageRectifications(runID: UUID? = nil) -> Bool {
+        guard let activeRunID = rectificationAutoRunID,
+              runID == nil || runID == activeRunID else { return false }
+        rectificationAutoOperation?.cancel()
+        let completion = rectificationAutoCompletion
+        rectificationAutoRunID = nil
+        rectificationAutoOperation = nil
+        rectificationAutoCompletion = nil
+        rectificationAutoProgress = nil
+        completion?(.cancelled)
+        return true
     }
 
     func createBand(on pageIndex: Int, centerFraction: Double, partID: UUID) {
@@ -1379,26 +1499,42 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private func finishAutoEstimateAllPageRectifications(
         _ estimatedRectifications: [PageRectification],
         sourcePDFData: Data,
-        runID: UUID
+        startingRectifications: [PageRectification],
+        runID: UUID,
+        preserveExistingCrops: Bool,
+        failed: Bool = false
     ) {
-        defer {
-            if rectificationAutoRunID == runID {
-                rectificationAutoProgress = nil
-                rectificationAutoRunID = nil
-            }
-        }
-
         guard rectificationAutoRunID == runID else { return }
-        guard self.sourcePDFData == sourcePDFData else {
-            Self.rectificationLogger.notice("Auto All ignored because the source PDF changed during processing")
+        let completion = rectificationAutoCompletion
+        rectificationAutoRunID = nil
+        rectificationAutoOperation = nil
+        rectificationAutoCompletion = nil
+        rectificationAutoProgress = nil
+        var result = RectificationAutoResult.unavailable
+        defer { completion?(result) }
+
+        guard self.sourcePDFData == sourcePDFData, project.pageRectifications == startingRectifications else {
+            Self.rectificationLogger.notice("Auto All ignored because the source PDF or corrections changed during processing")
+            result = .sourceChanged
             return
         }
+        guard !failed else { return }
+        let estimatedPageIndices = Set(estimatedRectifications.map(\.pageIndex))
+        let affectsBands = project.bands.contains { estimatedPageIndices.contains($0.pageIndex) }
+        let affectsHeader = project.projectSettings.headerSelection.map {
+            estimatedPageIndices.contains($0.pageIndex)
+        } ?? false
+        guard !preserveExistingCrops || (!affectsBands && !affectsHeader) else {
+            Self.rectificationLogger.notice("Auto All ignored because an affected page now has crops or a selected header")
+            result = .sourceChanged
+            return
+        }
+        result = .completed(appliedPageCount: estimatedRectifications.count)
         guard estimatedRectifications.isEmpty == false else {
             Self.rectificationLogger.notice("Auto All finished with no estimated rectifications")
             return
         }
 
-        let estimatedPageIndices = Set(estimatedRectifications.map(\.pageIndex))
         commit(actionName: "Auto Rectify All Pages") { project, _ in
             project.pageRectifications.removeAll { estimatedPageIndices.contains($0.pageIndex) }
             project.pageRectifications.append(contentsOf: estimatedRectifications)

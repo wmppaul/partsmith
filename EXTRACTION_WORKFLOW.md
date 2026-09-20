@@ -150,6 +150,18 @@ The revised Release build and native rendering tests pass. A live UI spot-check 
 
 The resulting app is `.build/DerivedData/Build/Products/Release/Partsmith.app`; the local preview archive is [Partsmith-extraction-preview-macos.zip](artifacts/macos/Partsmith-extraction-preview-macos.zip). This is a local unsigned preview build, not a published/notarized release.
 
+## Movable magic-wand workflow (September 20, 2026)
+
+After import, the source view promotes **Auto Extract** as the starting action. It opens a document-owned, movable and resizable window, leaving the score interactive. Optional **Deskew & Align Pages** runs before instrument identification, preserves existing corrections, and cancels with the window. Existing bands and source-header coordinates are protected from a late geometry change.
+
+Instrumentation can be entered manually, chosen from presets, or populated by clicking printed names on either the raw or rectified score. Local Apple Vision recognition isolates the clicked label from adjoining staff symbols; names and staff counts remain editable. A new project starts with no assumed quartet profile. Starting a new clicked list replaces entries only after the first successful pick; choosing a preset cancels pending recognition.
+
+Both acknowledgement checkboxes and mandatory typed omission/exclusion reasons have been removed. **Add Parts** applies valid proposals directly as one undoable edit. **Exclude This Page** records an explicit exclusion and advances to the next flagged page. Warnings and genuine missing-assignment checks remain.
+
+Validation: **55 instrument-name checks**, including the actual Brahms labels before and after native deskew; **28 deskew lifecycle checks**, including cancellation ownership, stale geometry, bands and source headers; and **64 whole-score document checks**. The universal Release app builds successfully. Live UI testing moved the window, selected printed labels, ran deskew on the 35-page medium-skewed Brahms scan (7 corrected pages), assigned all 393 bands, excluded pages 34 and 35 with one click each, and added three 131-band parts. Reopening and Escape closing were also checked. An early UI build still included an adjoining OCR character in the clarinet name; the final detector passes exact-name tests on the production raw and corrected rasters. These are workflow checks, not a fresh review of every musical crop.
+
+Run the focused suites with `bash tools/test_instrument_names.sh`, `bash tools/test_rectification_flow.sh`, and `bash tools/test_score_document.sh`. Apple Vision and corrected-image rendering need ordinary local graphics service access.
+
 ## Practical limits
 
 This workflow is robust about preserving source geometry, exposing uncertain results, retaining review evidence and refusing failed output. It is not unattended extraction for arbitrary scores. Staff detection cannot infer all instrument changes, shared markings or tacet duration. Small overlapping fragments can be masked only when the target ink is separately identifiable. Truly interleaved notation, severe scan distortion and musical page-turn planning still need informed review. The original failed clean-isolation test remains as evidence of unsafe cleanup; the new preservation result demonstrates the accepted alternative of retaining neighboring context.

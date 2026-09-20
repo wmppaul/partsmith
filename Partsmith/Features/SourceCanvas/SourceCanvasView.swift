@@ -8,6 +8,7 @@ struct SourceCanvasView: View {
     var onImportRequested: () -> Void
     var onImportDropped: (URL) -> Void
     var onNewPartRequested: () -> Void
+    var onAutoExtractRequested: () -> Void
 
     @State private var isImportDropTargeted = false
 
@@ -25,11 +26,37 @@ struct SourceCanvasView: View {
                         Text(document.sourceInstruction.body)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
+                        if document.isPickingInstrumentNames {
+                            if document.isRecognizingInstrumentName {
+                                HStack(spacing: 8) {
+                                    ProgressView().controlSize(.small)
+                                    Text("Reading the instrument name…")
+                                }
+                                .font(.subheadline)
+                            } else if let message = document.instrumentNamePickMessage {
+                                Text(message)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            } else if let pick = document.instrumentNamePick {
+                                Text("Recognized: \(pick.name). Click the next instrument name, or choose Done.")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                     Spacer()
-                    if document.selectedPartID == nil {
-                        Button("New Part", systemImage: "plus") {
-                            onNewPartRequested()
+                    if document.isPickingInstrumentNames {
+                        Button("Done", action: document.cancelInstrumentNamePicking)
+                    } else {
+                        if document.project.bands.isEmpty && !document.isEditingHeaderSelection && !document.isEditingPageRectification {
+                            Button("Auto Extract", systemImage: "wand.and.stars", action: onAutoExtractRequested)
+                                .buttonStyle(.borderedProminent)
+                                .disabled(document.isAutoEstimatingPageRectifications)
+                        }
+                        if document.selectedPartID == nil {
+                            Button("New Part", systemImage: "plus") {
+                                onNewPartRequested()
+                            }
                         }
                     }
                 }
@@ -38,7 +65,7 @@ struct SourceCanvasView: View {
                 Divider()
 
                 Group {
-                    if document.isEditingPageRectification {
+                    if document.isEditingPageRectification && !document.isPickingInstrumentNames {
                         PDFPageRectificationEditorRepresentable(
                             pdfDocument: pdfDocument,
                             pageIndex: document.currentPageIndex,
@@ -63,7 +90,12 @@ struct SourceCanvasView: View {
                             partColors: document.colorMap(),
                             zoomMode: document.zoomMode,
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
+                            isPickingInstrumentNames: document.isPickingInstrumentNames,
                             renderIdentity: document.bandEditorIdentity,
+                            onPickInstrumentName: { point in
+                                guard !document.isRecognizingInstrumentName else { return }
+                                document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex)
+                            },
                             onSelectBand: document.selectBand(_:),
                             onCreateBand: { centerFraction in
                                 guard let selectedPartID = document.selectedPartID else { return }
@@ -98,6 +130,11 @@ struct SourceCanvasView: View {
                             partColors: document.colorMap(),
                             zoomMode: document.zoomMode,
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
+                            isPickingInstrumentNames: document.isPickingInstrumentNames,
+                            onPickInstrumentName: { point in
+                                guard !document.isRecognizingInstrumentName else { return }
+                                document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex)
+                            },
                             onSelectBand: document.selectBand(_:),
                             onCreateBand: { centerFraction in
                                 guard let selectedPartID = document.selectedPartID else { return }
@@ -238,6 +275,13 @@ private extension PartsmithDocument {
     }
 
     var sourceInstruction: (title: String, body: String) {
+        if isPickingInstrumentNames {
+            return (
+                title: "Pick instrument names",
+                body: "Click instrument names from top to bottom. Return to Auto Extract to review the setup."
+            )
+        }
+
         if isEditingPageRectification {
             return (
                 title: "Rectifying page \(currentPageIndex + 1)",
@@ -249,6 +293,13 @@ private extension PartsmithDocument {
             return (
                 title: "Selecting a shared source header",
                 body: "Drag a rectangle over the engraved score header, or adjust its corner handles. Click Save in the inspector, or just click elsewhere to finish."
+            )
+        }
+
+        if project.bands.isEmpty {
+            return (
+                title: "Start with Auto Extract",
+                body: "Use the magic wand to straighten scans if needed, set the instrument order, and extract parts throughout the score."
             )
         }
 
@@ -300,6 +351,8 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
     var partColors: [UUID: NSColor]
     var zoomMode: ZoomMode
     var canCreateBands: Bool
+    var isPickingInstrumentNames: Bool
+    var onPickInstrumentName: (CGPoint) -> Void
     var onSelectBand: (UUID?) -> Void
     var onCreateBand: (Double) -> Void
     var onUpdateBand: (UUID, Double, Double) -> Void
@@ -322,6 +375,8 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
             partColors: partColors,
             zoomMode: zoomMode,
             canCreateBands: canCreateBands,
+            isPickingInstrumentNames: isPickingInstrumentNames,
+            onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
             onUpdateBand: onUpdateBand,
@@ -343,7 +398,9 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
     var partColors: [UUID: NSColor]
     var zoomMode: ZoomMode
     var canCreateBands: Bool
+    var isPickingInstrumentNames: Bool
     var renderIdentity: String
+    var onPickInstrumentName: (CGPoint) -> Void
     var onSelectBand: (UUID?) -> Void
     var onCreateBand: (Double) -> Void
     var onUpdateBand: (UUID, Double, Double) -> Void
@@ -367,7 +424,9 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
             partColors: partColors,
             zoomMode: zoomMode,
             canCreateBands: canCreateBands,
+            isPickingInstrumentNames: isPickingInstrumentNames,
             renderIdentity: renderIdentity,
+            onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
             onUpdateBand: onUpdateBand,
@@ -470,7 +529,9 @@ final class RectifiedBandEditorContainerView: NSView {
         partColors: [UUID: NSColor],
         zoomMode: ZoomMode,
         canCreateBands: Bool,
+        isPickingInstrumentNames: Bool,
         renderIdentity: String,
+        onPickInstrumentName: @escaping (CGPoint) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
@@ -509,6 +570,8 @@ final class RectifiedBandEditorContainerView: NSView {
             selectedBandID: selectedBandID,
             partColors: partColors,
             canCreateBands: canCreateBands,
+            isPickingInstrumentNames: isPickingInstrumentNames,
+            onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
             onUpdateBand: onUpdateBand,
@@ -1227,6 +1290,8 @@ final class PDFBandEditorContainerView: NSView {
         partColors: [UUID: NSColor],
         zoomMode: ZoomMode,
         canCreateBands: Bool,
+        isPickingInstrumentNames: Bool,
+        onPickInstrumentName: @escaping (CGPoint) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
@@ -1265,6 +1330,8 @@ final class PDFBandEditorContainerView: NSView {
             selectedBandID: selectedBandID,
             partColors: partColors,
             canCreateBands: canCreateBands,
+            isPickingInstrumentNames: isPickingInstrumentNames,
+            onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
             onUpdateBand: onUpdateBand,
@@ -1501,6 +1568,7 @@ private final class BandOverlayView: NSView {
 
     private enum HoverTarget: Equatable {
         case none
+        case instrumentName
         case bandCreate
         case bandMove
         case bandResize
@@ -1522,6 +1590,9 @@ private final class BandOverlayView: NSView {
     private var selectedBandID: UUID?
     private var partColors: [UUID: NSColor] = [:]
     private var canCreateBands = false
+    private var isPickingInstrumentNames = false
+    private var onPickInstrumentName: ((CGPoint) -> Void)?
+    private var instrumentNameMouseDownPoint: CGPoint?
     private var onSelectBand: ((UUID?) -> Void)?
     private var onCreateBand: ((Double) -> Void)?
     private var onUpdateBand: ((UUID, Double, Double) -> Void)?
@@ -1533,6 +1604,10 @@ private final class BandOverlayView: NSView {
     private var trackingArea: NSTrackingArea?
 
     override var acceptsFirstResponder: Bool { true }
+
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+        isPickingInstrumentNames || super.acceptsFirstMouse(for: event)
+    }
 
     private static let addBandCursor: NSCursor = {
         let size = NSSize(width: 24, height: 24)
@@ -1615,12 +1690,17 @@ private final class BandOverlayView: NSView {
         selectedBandID: UUID?,
         partColors: [UUID: NSColor],
         canCreateBands: Bool,
+        isPickingInstrumentNames: Bool,
+        onPickInstrumentName: @escaping (CGPoint) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
         onUpdateHeaderSelection: @escaping (Int, Double, Double, Double, Double) -> Void,
         onFinishHeaderSelection: @escaping () -> Void
     ) {
+        if self.isPickingInstrumentNames != isPickingInstrumentNames || self.pageIndex != pageIndex {
+            instrumentNameMouseDownPoint = nil
+        }
         self.pageIndex = pageIndex
         self.page = page
         self.bands = bands
@@ -1630,12 +1710,18 @@ private final class BandOverlayView: NSView {
         self.selectedBandID = selectedBandID
         self.partColors = partColors
         self.canCreateBands = canCreateBands
+        self.isPickingInstrumentNames = isPickingInstrumentNames
+        self.onPickInstrumentName = onPickInstrumentName
         self.onSelectBand = onSelectBand
         self.onCreateBand = onCreateBand
         self.onUpdateBand = onUpdateBand
         self.onUpdateHeaderSelection = onUpdateHeaderSelection
         self.onFinishHeaderSelection = onFinishHeaderSelection
-        if isEditingHeaderSelection == false {
+        if isPickingInstrumentNames {
+            dragState = nil
+            headerDragState = nil
+            headerDraft = nil
+        } else if isEditingHeaderSelection == false {
             headerDragState = nil
             headerDraft = nil
         }
@@ -1772,6 +1858,12 @@ private final class BandOverlayView: NSView {
 
         guard let pageFrame = pageFrameInView() else { return }
 
+        if isPickingInstrumentNames {
+            instrumentNameMouseDownPoint = event.clickCount == 1 && pageFrame.contains(point) ? point : nil
+            updateCursor(for: point)
+            return
+        }
+
         if isEditingHeaderSelection {
             let target = hoverTarget(at: point)
             let existingHeaderSelection = displayedHeaderSelection
@@ -1880,6 +1972,14 @@ private final class BandOverlayView: NSView {
     }
 
     override func mouseDragged(with event: NSEvent) {
+        if isPickingInstrumentNames {
+            let point = convert(event.locationInWindow, from: nil)
+            if let start = instrumentNameMouseDownPoint, hypot(point.x - start.x, point.y - start.y) > 4 {
+                instrumentNameMouseDownPoint = nil
+            }
+            return
+        }
+
         if var headerDragState {
             let point = convert(event.locationInWindow, from: nil)
             headerDragState.currentPoint = headerFractionPointFromViewPoint(point)
@@ -1925,6 +2025,19 @@ private final class BandOverlayView: NSView {
     }
 
     override func mouseUp(with event: NSEvent) {
+        if isPickingInstrumentNames {
+            let point = convert(event.locationInWindow, from: nil)
+            let start = instrumentNameMouseDownPoint
+            instrumentNameMouseDownPoint = nil
+            guard event.clickCount == 1, let start,
+                  hypot(point.x - start.x, point.y - start.y) <= 4,
+                  let pageFrame = pageFrameInView(), pageFrame.contains(point)
+            else { return }
+            onPickInstrumentName?(headerFractionPointFromViewPoint(point))
+            updateCursor(for: point)
+            return
+        }
+
         if let headerDragState {
             let preservedViewportOrigin = currentViewportOrigin()
             let selection = headerSelection(from: headerDragState)
@@ -2249,6 +2362,10 @@ private final class BandOverlayView: NSView {
     private func hoverTarget(at point: CGPoint) -> HoverTarget {
         guard let pageFrame = pageFrameInView() else { return .none }
 
+        if isPickingInstrumentNames {
+            return pageFrame.contains(point) ? .instrumentName : .none
+        }
+
         if isEditingHeaderSelection {
             if let headerSelection = displayedHeaderSelection,
                let headerRect = headerFrame(for: headerSelection)
@@ -2296,6 +2413,8 @@ private final class BandOverlayView: NSView {
         switch hoverTarget {
         case .none:
             return .arrow
+        case .instrumentName:
+            return .crosshair
         case .bandCreate, .headerCreate:
             return Self.addBandCursor
         case .bandResize:

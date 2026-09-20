@@ -40,7 +40,7 @@ struct DocumentRootView: View {
     @State private var presentedError: PresentedError?
     @State private var showingAddPartSheet = false
     @State private var showingStaffDetectionSheet = false
-    @State private var showingScoreExtractionSheet = false
+    @StateObject private var scoreExtractionWindow = ScoreExtractionWindowController()
 
     var body: some View {
         NavigationSplitView {
@@ -66,7 +66,8 @@ struct DocumentRootView: View {
                                     document.setHeaderSelectionEditing(false)
                                     document.setPageRectificationEditing(false)
                                     showingAddPartSheet = true
-                                }
+                                },
+                                onAutoExtractRequested: showAutoExtract
                             )
                         case .preview:
                             PartPreviewView(
@@ -110,6 +111,11 @@ struct DocumentRootView: View {
                 }
 
                 if document.canvasMode == .source, document.project.pageCount > 0 {
+                    Button("Auto Extract", systemImage: "wand.and.stars", action: showAutoExtract)
+                        .labelStyle(.titleAndIcon)
+                        .disabled(document.isAutoEstimatingPageRectifications && !scoreExtractionWindow.isPresented)
+                        .help("Start here: optionally align scanned pages, choose instruments, and extract parts offline.")
+
                     Button {
                         document.previousPage()
                     } label: {
@@ -135,13 +141,7 @@ struct DocumentRootView: View {
                     .disabled(document.project.parts.isEmpty || document.isAutoEstimatingPageRectifications)
                     .help("Find editable staff bands on this page using offline image analysis. Create a part first.")
 
-                    Button("Auto Extract", systemImage: "wand.and.stars") {
-                        document.setHeaderSelectionEditing(false)
-                        document.setPageRectificationEditing(false)
-                        showingScoreExtractionSheet = true
-                    }
-                    .disabled(document.isAutoEstimatingPageRectifications)
-                    .help("Set the instrument order and extract all parts throughout this score using offline analysis.")
+
 
                     Menu("Copy Bands") {
                         Button("All Parts to Next Page") {
@@ -216,9 +216,8 @@ struct DocumentRootView: View {
         .sheet(isPresented: $showingStaffDetectionSheet) {
             StaffDetectionView(document: document)
         }
-        .sheet(isPresented: $showingScoreExtractionSheet) {
-            ScoreExtractionView(document: document)
-        }
+        .background(ScoreExtractionWindowAnchor(controller: scoreExtractionWindow).frame(width: 0, height: 0))
+        .onDisappear { scoreExtractionWindow.close() }
         .onDeleteCommand(perform: deleteSelectedBand)
         .alert(item: $presentedError) { error in
             Alert(
@@ -227,6 +226,12 @@ struct DocumentRootView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
+    }
+
+    private func showAutoExtract() {
+        document.setHeaderSelectionEditing(false)
+        document.setPageRectificationEditing(false)
+        scoreExtractionWindow.show(document: document)
     }
 
     private var exportableParts: [PartModel] {

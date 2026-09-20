@@ -3,29 +3,26 @@ import SwiftUI
 
 struct ScoreExtractionView: View {
     @ObservedObject var document: PartsmithDocument
-    @Environment(\.dismiss) private var dismiss
-    @State private var profile = ScoreExtractionProfile(parts: [
-        ScorePartDefinition(id: "violin1", name: "Violin I", staffCount: 1),
-        ScorePartDefinition(id: "violin2", name: "Violin II", staffCount: 1),
-        ScorePartDefinition(id: "viola", name: "Viola", staffCount: 1),
-        ScorePartDefinition(id: "cello", name: "Cello", staffCount: 1)
-    ], cropMode: "compact")
+    var onClose: () -> Void
+    var onShowScore: () -> Void
+    @State private var profile = ScoreExtractionProfile(parts: [], cropMode: "compact")
     @State private var review: ScoreDetectionReview?
     @State private var selectedPage = 0
     @State private var pageImage: CGImage?
     @State private var selectedStaves = Set<Int>()
     @State private var correctionSystem = 1
     @State private var correctionPart = ""
-    @State private var correctionReason = ""
     @State private var movementTitle = ""
-    @State private var nonMusicReason = ""
-    @State private var instrumentationReviewed = false
-    @State private var confirmedReview = false
+    @State private var replaceListOnNextPick = false
+    @State private var pickStatus: String?
+    @State private var deskewRunID: UUID?
+    @State private var deskewStatus: String?
     @State private var showingDetectorNotes = true
     @State private var focusedCropID: String?
     @State private var errorMessage: String?
 
-    private var isRunning: Bool { document.scoreDetectionProgress != nil }
+    private var hasSourceCrops: Bool { !document.project.bands.isEmpty || document.project.projectSettings.headerSelection != nil }
+    private var isRunning: Bool { document.scoreDetectionProgress != nil || document.isAutoEstimatingPageRectifications }
     private var currentAnalysis: ScorePageAnalysis? { review?.analyses.first { $0.pageIndex == selectedPage } }
     private var currentPlan: ScorePagePlan? { review?.plan.pages.first { $0.pageIndex == selectedPage } }
     private struct DetectorNote: Identifiable {
@@ -67,7 +64,7 @@ struct ScoreExtractionView: View {
                 }
                 Spacer()
                 if review != nil {
-                    Button("Change Setup") { review = nil; confirmedReview = false; errorMessage = nil }
+                    Button("Change Setup") { review = nil; errorMessage = nil }
                 }
             }
             if let progress = document.scoreDetectionProgress {
@@ -88,41 +85,62 @@ struct ScoreExtractionView: View {
             if let errorMessage { Text(errorMessage).foregroundStyle(.red).fixedSize(horizontal: false, vertical: true) }
             Divider()
             HStack {
-                Button("Cancel") { document.cancelScoreDetection(); dismiss() }.keyboardShortcut(.cancelAction)
+                Button("Cancel") { cancelWork(); onClose() }.keyboardShortcut(.cancelAction)
                 Spacer()
                 if let review {
                     Text("\(review.plan.parts.count) parts · \(review.plan.bands.count) bands")
                         .foregroundStyle(.secondary)
-                    Button("Add Reviewed Parts", action: applyReview)
+                    Button("Add Parts", action: applyReview)
                         .buttonStyle(.borderedProminent)
-                        .disabled(!review.plan.canApply || !confirmedReview || review.plan.bands.isEmpty)
+                        .disabled(!review.plan.canApply || review.plan.bands.isEmpty)
                 } else {
                     Button("Auto", action: runAuto).buttonStyle(.borderedProminent)
-                        .disabled(!profileValid || !instrumentationReviewed || isRunning)
+                        .disabled(!profileValid || isRunning)
                 }
             }
         }
         .padding(20)
-        .frame(minWidth: 960, idealWidth: 1100, minHeight: 740, idealHeight: 860)
+        .frame(minWidth: 800, idealWidth: 980, minHeight: 580, idealHeight: 760)
         .onAppear {
             if let saved = document.savedScoreProfile {
                 profile = saved
-                instrumentationReviewed = true
             } else if !document.project.parts.isEmpty {
                 profile.parts = document.project.parts.map { ScorePartDefinition(id: $0.id.uuidString, name: $0.name,
                     staffCount: $0.name.localizedCaseInsensitiveContains("piano") ? 2 : 1) }
             }
             correctionPart = profile.parts.first?.id ?? ""
         }
-        .onDisappear { document.cancelScoreDetection() }
+        .onDisappear(perform: cancelWork)
+        .onChange(of: document.instrumentNamePick?.id) { receiveInstrumentNamePick() }
+        .onChange(of: document.sourcePDFData) { invalidateSourceReview() }
+        .onChange(of: document.project.pageRectifications) { invalidateSourceReview() }
         .onChange(of: selectedPage) { updatePageImage() }
     }
 
     private var setupControls: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                Text("Instrumentation, from top to bottom in each system").font(.headline)
-                Text("Names and staff counts are your reviewed setup, not automatic instrument recognition. Use two staves for a piano grand staff. A changed or missing staff order needs page review.")
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("1. Straighten scanned pages (optional)").font(.headline)
+                    Text("Deskew and align the pages before identifying instruments and staves. Existing page corrections are kept.")
+                        .foregroundStyle(.secondary)
+                    HStack {
+                        Button("Deskew & Align Pages", systemImage: "viewfinder", action: deskewPages)
+                            .disabled(isRunning || hasSourceCrops)
+                        if let progress = document.rectificationAutoProgress {
+                            ProgressView(value: progress.fractionComplete).frame(width: 140)
+                            Text("\(progress.completedPageCount) of \(progress.totalPageCount) pages").foregroundStyle(.secondary)
+                        }
+                    }
+                    if hasSourceCrops {
+                        Text("This project already has crops or a selected header. Page alignment can be adjusted in the Inspector.")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
+                    if let deskewStatus { Text(deskewStatus).font(.callout).foregroundStyle(.secondary) }
+                }.padding(12).frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
+                Text("2. Instruments, from top to bottom in each system").font(.headline)
+                Text("Type names, choose a starting profile, or click the printed names on the score. Use two staves for a piano grand staff. You can edit every name and staff count.")
                     .foregroundStyle(.secondary)
                 Menu("Use a Starting Profile") {
                     Button("String Quartet") { setProfile([("Violin I", 1), ("Violin II", 1), ("Viola", 1), ("Cello", 1)]) }
@@ -130,15 +148,26 @@ struct ScoreExtractionView: View {
                     Button("Voice and Piano") { setProfile([("Voice", 1), ("Piano", 2)], lyricIndices: [0]) }
                     Button("SATB Choir") { setProfile([("Soprano", 1), ("Alto", 1), ("Tenor", 1), ("Bass", 1)], lyricIndices: [0, 1, 2, 3]) }
                 }
-                if !instrumentationReviewed {
-                    Text("Choose a starting profile above, or edit and confirm the instrument order below before running Auto.")
+                HStack {
+                    Menu("Pick Names from Score", systemImage: "cursorarrow.click") {
+                        Button("Start a New List") { startPickingNames(replacingList: true) }
+                        Button("Add to This List") { startPickingNames(replacingList: false) }
+                    }.disabled(isRunning)
+                    if document.isPickingInstrumentNames {
+                        Button("Show Score", action: onShowScore)
+                        Button("Done Picking") { document.cancelInstrumentNamePicking() }
+                    }
+                }
+                if document.isPickingInstrumentNames {
+                    Text("Click printed instrument names from top to bottom. Names are read on this Mac and stay editable.")
                         .font(.callout).foregroundStyle(.secondary)
                 }
+                if let pickStatus { Text(pickStatus).font(.callout).foregroundStyle(.secondary) }
                 ForEach(profile.parts.indices, id: \.self) { index in
                     HStack {
                         Text("\(index + 1).").frame(width: 24)
                         TextField("Instrument name", text: $profile.parts[index].name).textFieldStyle(.roundedBorder)
-                        Stepper("\(profile.parts[index].staffCount) staff\(profile.parts[index].staffCount == 1 ? "" : "s")",
+                        Stepper(profile.parts[index].staffCount == 1 ? "1 staff" : "\(profile.parts[index].staffCount) staves",
                                 value: $profile.parts[index].staffCount, in: 1...4).frame(width: 140)
                         Toggle("Lyrics", isOn: Binding(get: { profile.parts[index].hasLyrics ?? false },
                             set: { profile.parts[index].hasLyrics = $0 })).toggleStyle(.checkbox)
@@ -152,8 +181,6 @@ struct ScoreExtractionView: View {
                 Button("Add Instrument", systemImage: "plus") {
                     profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: "New Instrument", staffCount: 1))
                 }
-                Toggle("I reviewed these instrument names, order, and staff counts", isOn: $instrumentationReviewed)
-                    .toggleStyle(.checkbox)
                 Picker("Crop mode", selection: Binding(get: { profile.cropMode ?? "fixed" }, set: { profile.cropMode = $0 })) {
                     Text("Compact — follow notation").tag("compact")
                     Text("Fixed padding").tag("fixed")
@@ -298,10 +325,7 @@ struct ScoreExtractionView: View {
                         Text("No staves detected — no part bands assigned on this page.").font(.subheadline.bold())
                         Text("Review the source. A blank page, cover, or publisher catalogue can be excluded. If it contains music, leave it included. Cancel and check its orientation or rectification before rerunning Auto.")
                             .font(.caption).foregroundStyle(.secondary)
-                        TextField("Reason: blank page, publisher catalogue…", text: $nonMusicReason)
-                            .textFieldStyle(.roundedBorder)
-                        Button("Exclude This Non-Music Page", action: excludeCurrentNonMusicPage)
-                            .disabled(nonMusicReason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                        Button("Exclude This Page") { excludeCurrentPage(reason: "Non-music page excluded in Auto Extract.") }
                     }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
                 }
                 if !currentDetectorNotes.isEmpty {
@@ -356,13 +380,12 @@ struct ScoreExtractionView: View {
                             ForEach(profile.parts) { Text($0.name).tag($0.id) }
                         }
                         Button("Assign Selected Staves", action: assignSelected).disabled(selectedStaves.isEmpty)
-                        TextField("Reason for omission or exclusion", text: $correctionReason).textFieldStyle(.roundedBorder)
-                        Button("No Printed Staff for This Part", action: omitPart).disabled(correctionReason.isEmpty)
+                        Button("No Printed Staff for This Part", action: omitPart)
                         Button("Ignore Selected False Detections", action: ignoreSelected)
-                            .disabled(correctionReason.isEmpty || selectedStaves.isEmpty)
+                            .disabled(selectedStaves.isEmpty)
                         Button("Exclude Page Without Score Music") {
-                            excludeCurrentPage(reason: correctionReason)
-                        }.disabled(correctionReason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                            excludeCurrentPage(reason: "Non-music page excluded in Auto Extract.")
+                        }
                         Button("Restore Automatic Assignments") {
                             changeReview { $0.overrides.removeAll { $0.pageIndex == selectedPage } }
                         }
@@ -380,8 +403,6 @@ struct ScoreExtractionView: View {
                     }.padding(.top, 8)
                 }
                 Divider()
-                Toggle("I reviewed the assignments and crop edges", isOn: $confirmedReview)
-                    .toggleStyle(.checkbox)
                 Text("Adding is one undoable edit. Existing populated parts with the same names must be resolved first.")
                     .font(.caption).foregroundStyle(.secondary)
             }.padding(.leading, 12)
@@ -389,17 +410,82 @@ struct ScoreExtractionView: View {
     }
 
     private func setProfile(_ parts: [(String, Int)], lyricIndices: Set<Int> = []) {
+        document.cancelInstrumentNamePicking()
+        replaceListOnNextPick = false
+        pickStatus = nil
         profile.parts = parts.enumerated().map { index, part in
             ScorePartDefinition(id: UUID().uuidString, name: part.0, staffCount: part.1, hasLyrics: lyricIndices.contains(index))
         }
         correctionPart = profile.parts.first?.id ?? ""
-        instrumentationReviewed = true
+    }
+
+    private func deskewPages() {
+        guard !isRunning, !hasSourceCrops else { return }
+        document.cancelInstrumentNamePicking()
+        document.setHeaderSelectionEditing(false)
+        document.setPageRectificationEditing(false)
+        deskewStatus = nil
+        errorMessage = nil
+        deskewRunID = document.autoEstimateAllPageRectifications(onlyUnrectified: true) { result in
+            deskewRunID = nil
+            switch result {
+            case .completed(let count):
+                deskewStatus = count == 0 ? "Page preparation complete. No new alignment corrections were needed."
+                    : "Aligned \(count) pages. Choose or click the instrument names next."
+            case .cancelled: deskewStatus = "Page preparation cancelled."
+            case .sourceChanged: errorMessage = "The source, page alignment, or crops changed. Run page preparation again."
+            case .unavailable: errorMessage = "The source pages could not be prepared. You can continue with the original pages."
+            }
+        }
+    }
+
+    private func cancelWork() {
+        document.cancelScoreDetection()
+        document.cancelInstrumentNamePicking()
+        if let deskewRunID { document.cancelAutoEstimateAllPageRectifications(runID: deskewRunID) }
+    }
+
+    private func startPickingNames(replacingList: Bool) {
+        guard !isRunning else { return }
+        document.cancelInstrumentNamePicking()
+        document.setHeaderSelectionEditing(false)
+        document.setPageRectificationEditing(false)
+        replaceListOnNextPick = replacingList
+        pickStatus = replacingList ? "The first name you click starts a new list." : "Clicked names will be added to this list."
+        document.isPickingInstrumentNames = true
+        onShowScore()
+    }
+
+    private func receiveInstrumentNamePick() {
+        guard document.isPickingInstrumentNames, let pick = document.instrumentNamePick else { return }
+        if replaceListOnNextPick {
+            profile.parts.removeAll()
+            replaceListOnNextPick = false
+        }
+        let normalized = pick.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if profile.parts.contains(where: { $0.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == normalized }) {
+            pickStatus = "\(pick.name) is already in the list. Edit its name if you need another part with the same printed label."
+            return
+        }
+        profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: pick.name, staffCount: pick.suggestedStaffCount))
+        correctionPart = profile.parts.first?.id ?? ""
+        pickStatus = "Added \(pick.name). Click the next printed name or choose Done."
+    }
+
+    private func invalidateSourceReview() {
+        let hadAnalysis = review != nil || isRunning
+        document.cancelScoreDetection()
+        document.cancelInstrumentNamePicking()
+        review = nil
+        pageImage = nil
+        selectedStaves.removeAll()
+        if hadAnalysis { errorMessage = "The source or page alignment changed. Run Auto again to update the crops." }
     }
 
     private func runAuto() {
-        guard profileValid, instrumentationReviewed else { return }
+        guard profileValid, !isRunning else { return }
+        document.cancelInstrumentNamePicking()
         errorMessage = nil
-        confirmedReview = false
         correctionPart = profile.parts.first?.id ?? ""
         document.saveScoreProfile(profile)
         document.detectScore(profile: profile) { result in
@@ -412,7 +498,6 @@ struct ScoreExtractionView: View {
 
     private func updatePageImage() {
         selectedStaves.removeAll()
-        nonMusicReason = ""
         focusedCropID = nil
         correctionSystem = 1
         pageImage = document.scoreReviewImage(pageIndex: selectedPage)
@@ -433,12 +518,7 @@ struct ScoreExtractionView: View {
         change(&value)
         value.replan()
         review = value
-        confirmedReview = false
         errorMessage = nil
-    }
-
-    private func excludeCurrentNonMusicPage() {
-        excludeCurrentPage(reason: nonMusicReason)
     }
 
     private func excludeCurrentPage(reason: String) {
@@ -446,9 +526,7 @@ struct ScoreExtractionView: View {
         do {
             let next = try value.excludePageAsNonMusic(selectedPage, reason: reason)
             review = value
-            confirmedReview = false
             errorMessage = nil
-            nonMusicReason = ""
             if let next { selectedPage = next }
         } catch { errorMessage = error.localizedDescription }
     }
@@ -470,11 +548,9 @@ struct ScoreExtractionView: View {
             if let top, let bottom { try value.setCropEdges(for: bandID, top: top, bottom: bottom) }
             else { try value.resetCropEdges(for: bandID) }
             review = value
-            confirmedReview = false
             focusedCropID = bandID
             errorMessage = nil
         } catch {
-            confirmedReview = false
             errorMessage = error.localizedDescription
         }
     }
@@ -530,14 +606,14 @@ struct ScoreExtractionView: View {
             correction.systems[correctionSystem - 1].bands.removeAll { $0.partID == correctionPart }
             var omissions = correction.systems[correctionSystem - 1].omittedParts ?? []
             omissions.removeAll { $0.partID == correctionPart }
-            omissions.append(ScorePartOmission(partID: correctionPart, reason: correctionReason))
+            omissions.append(ScorePartOmission(partID: correctionPart, reason: "No printed staff for this part."))
             correction.systems[correctionSystem - 1].omittedParts = omissions
         }
     }
 
     private func ignoreSelected() {
         editOverride { correction in
-            correction.reason = correctionReason
+            correction.reason = "False staff detections ignored in Auto Extract."
             correction.ignoredCandidateIDs = Array(Set(correction.ignoredCandidateIDs ?? []).union(selectedStaves)).sorted()
             for system in correction.systems.indices {
                 for index in correction.systems[system].bands.indices {
@@ -550,11 +626,11 @@ struct ScoreExtractionView: View {
     }
 
     private func applyReview() {
-        guard let review, confirmedReview else { return }
+        guard let review else { return }
         guard document.addScoreParts(from: review) != nil else {
             errorMessage = "The review is stale, incomplete, or a populated part already has one of these names. Resolve it before adding."
             return
         }
-        dismiss()
+        onClose()
     }
 }

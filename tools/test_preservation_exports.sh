@@ -11,6 +11,7 @@ xcrun swiftc -O -module-cache-path .build/ModuleCache \
   Partsmith/Core/Detection/StaffBandDetector.swift \
   Partsmith/Core/Detection/ScoreExtractionPlanner.swift \
   Partsmith/Core/Detection/NativeScorePageAnalyzer.swift \
+  Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift \
   Partsmith/Core/Layout/PartLayoutEngine.swift \
   Partsmith/Core/Export/PartPDFExporter.swift \
   tools/test_preservation_exports.swift -o .build/test_preservation_exports
