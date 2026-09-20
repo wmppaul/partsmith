@@ -30,6 +30,7 @@
 		200000000000000000000014 /* ScoreSourceHeaderDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000016 /* ScoreSourceHeaderDetector.swift */; };
 		200000000000000000000015 /* ScoreInputPageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000017 /* ScoreInputPageSelection.swift */; };
 		200000000000000000000016 /* ScoreInstrumentPickList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000018 /* ScoreInstrumentPickList.swift */; };
+		200000000000000000000018 /* ScoreRestDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001A /* ScoreRestDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		100000000000000000000016 /* ScoreSourceHeaderDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSourceHeaderDetector.swift; sourceTree = "<group>"; };
 		100000000000000000000017 /* ScoreInputPageSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputPageSelection.swift; sourceTree = "<group>"; };
 		100000000000000000000018 /* ScoreInstrumentPickList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInstrumentPickList.swift; sourceTree = "<group>"; };
+		10000000000000000000001A /* ScoreRestDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRestDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				100000000000000000000016 /* ScoreSourceHeaderDetector.swift */,
 				100000000000000000000017 /* ScoreInputPageSelection.swift */,
 				100000000000000000000018 /* ScoreInstrumentPickList.swift */,
+				10000000000000000000001A /* ScoreRestDetector.swift */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				200000000000000000000014 /* ScoreSourceHeaderDetector.swift in Sources */,
 				200000000000000000000015 /* ScoreInputPageSelection.swift in Sources */,
 				200000000000000000000016 /* ScoreInstrumentPickList.swift in Sources */,
+				200000000000000000000018 /* ScoreRestDetector.swift in Sources */,
 				200000000000000000000010 /* ScoreExtractionPlanner.swift in Sources */,
 				20000000000000000000000F /* ScoreExtractionView.swift in Sources */,
 				200000000000000000000013 /* ScoreExtractionWindow.swift in Sources */,

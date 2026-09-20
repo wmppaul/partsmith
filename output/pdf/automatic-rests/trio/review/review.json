@@ -1,0 +1,154 @@
+{
+  "status": "automatic-rest-delta-preservation-pass",
+  "reviewScope": "Complete 48-page visual overview; detailed source comparison of the two automatically replaced rest strips and their following entries; structural and drawing-stream comparison against the previously reviewed project/export.",
+  "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+  "sourceBytesUnchanged": true,
+  "projectSHA256": "c657e9a853a74285d9853cea6bfd01d4ce0eda24a0ec295bf8cf4c1017feb985",
+  "partCount": 3,
+  "bandCount": 393,
+  "originalBandsPreserved": true,
+  "bandChanges": [
+    {
+      "bandID": "722F70DA-D570-45ED-8E3D-AFB4EE91F90C",
+      "changedFields": [
+        "restReplacement"
+      ],
+      "restCount": 6
+    },
+    {
+      "bandID": "A3A8BF25-E66D-4089-BD38-71247C6D05C3",
+      "changedFields": [
+        "restReplacement"
+      ],
+      "restCount": 7
+    }
+  ],
+  "otherProjectChanges": [
+    "modifiedAt"
+  ],
+  "parts": [
+    {
+      "name": "Clarinet in A",
+      "file": "Clarinet in A.pdf",
+      "sha256": "985b2d3ae5f3d14fa4571c6c9050fc3e942fc8333f73b1ed6d87e0623e3a65d0",
+      "pages": 12,
+      "baselinePages": 12,
+      "changedDrawingPages": [
+        1
+      ],
+      "allPagesVisuallyReviewed": true
+    },
+    {
+      "name": "Cello",
+      "file": "Cello.pdf",
+      "sha256": "eb6cfb8756f0e640805b78656ad5bdef79d097368a10a57f146f7ae0c62e26be",
+      "pages": 12,
+      "baselinePages": 12,
+      "changedDrawingPages": [
+        2
+      ],
+      "allPagesVisuallyReviewed": true
+    },
+    {
+      "name": "Piano",
+      "file": "Piano.pdf",
+      "sha256": "22a2e44733c25a70f26b7f55fd363ce3f9bb868d41d7c69bab76dc2f34873e35",
+      "pages": 24,
+      "baselinePages": 24,
+      "changedDrawingPages": [],
+      "allPagesVisuallyReviewed": true
+    }
+  ],
+  "totalOutputPages": 48,
+  "all48PagesVisuallyReviewed": true,
+  "pianoPixelComparison": {
+    "dpi": 100,
+    "pages": 24,
+    "allIdentical": true
+  },
+  "detailedSourceChecks": [
+    {
+      "part": "Clarinet in A",
+      "sourcePage": 3,
+      "sourceSystem": 1,
+      "bars": "42\u201347",
+      "count": 6,
+      "outputPage": 1,
+      "followingEntry": "Bar 51 p, partial rests, notes and slur preserved in following source band starting 48.",
+      "context": "Scanned treble clef/key, ending barline, copied bar 42 retained."
+    },
+    {
+      "part": "Cello",
+      "sourcePage": 4,
+      "sourceSystem": 4,
+      "bars": "76\u201382",
+      "count": 7,
+      "outputPage": 2,
+      "followingEntry": "Bar 83 mf and complete following phrase with slurs, accidental, hairpins and f match source page 5.",
+      "context": "Scanned bass clef, ending barline, copied bar 76 retained."
+    }
+  ],
+  "pagination": "Unchanged 12/12/24 pages; no added turns, empty pages, overlap or clipping introduced by rest replacements.",
+  "provenanceLimit": "Automatic rest detection ran on the previously reviewed 393-band project, which already contains score-specific crop/shared-marking corrections. This is not a new untouched Auto extraction.",
+  "evidence": [
+    "clarinet-sheet-01.png",
+    "clarinet-sheet-02.png",
+    "cello-sheet-01.png",
+    "cello-sheet-02.png",
+    "piano-sheet-01.png",
+    "piano-sheet-02.png",
+    "piano-sheet-03.png",
+    "piano-sheet-04.png",
+    "clarinet-rest-and-entry.png",
+    "cello-rest-and-entry.png",
+    "source-03.png",
+    "source-04.png",
+    "source-05.png"
+  ],
+  "priorReviewedHashes": {
+    "projectSHA256": "4a8e4d35b8c443be9a67a4a050a36d536b2531f3f75388f2cb7eb53678722186",
+    "parts": [
+      {
+        "file": "Clarinet in A.pdf",
+        "sha256": "b7b669ec9e7ebe0668882664d7891cd71ac36936d93bd5bec31c079042d6b7f2"
+      },
+      {
+        "file": "Cello.pdf",
+        "sha256": "06ba800e7696bc3f322cbb07c0ae9f1dfa8c2469c8c06e8e9341215ab29103f4"
+      },
+      {
+        "file": "Piano.pdf",
+        "sha256": "5e7e2e69c49c00b8068fa06ab297866f07ce3fbffe4e5d198bb93ae7101abf1a"
+      }
+    ]
+  },
+  "releaseDrawingStreamsIdentical": {
+    "comparedTo": ".build/automatic-rest-trio-final",
+    "allIdentical": true,
+    "pages": 48,
+    "recognitionReportAndSourceContextIdentical": true,
+    "projectIdenticalExceptModifiedAt": true,
+    "renderedPixelsIdenticalAt72DPI": true,
+    "parts": [
+      {
+        "file": "Clarinet in A.pdf",
+        "pages": 12,
+        "drawingStreamsIdentical": true,
+        "renderedPixelsIdenticalAt72DPI": true
+      },
+      {
+        "file": "Cello.pdf",
+        "pages": 12,
+        "drawingStreamsIdentical": true,
+        "renderedPixelsIdenticalAt72DPI": true
+      },
+      {
+        "file": "Piano.pdf",
+        "pages": 24,
+        "drawingStreamsIdentical": true,
+        "renderedPixelsIdenticalAt72DPI": true
+      }
+    ],
+    "auditNote": "Final detector release rerun preserved all reviewed PDF page drawing streams and all 48 rendered pages. Top-level visual review evidence was copied unchanged; current project/PDF hashes above refer to this release rerun."
+  }
+}

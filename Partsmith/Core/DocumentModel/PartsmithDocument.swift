@@ -39,6 +39,27 @@ enum RectificationAutoResult: Equatable {
     case unavailable
 }
 
+struct RestAutoProgress {
+    var completedBands: Int
+    var totalBands: Int
+    var recognizedBands: Int
+
+    var fractionComplete: Double {
+        totalBands > 0 ? Double(completedBands) / Double(totalBands) : 0
+    }
+}
+
+enum RestAutoResult: Equatable {
+    case completed(replacedBands: Int, totalBars: Int, examinedBands: Int)
+    case cancelled
+    case sourceChanged
+    case unavailable
+}
+
+/// Keeping recognition independent from document mutation also permits exact
+/// cancellation and stale-source checks without relying on OCR timing.
+typealias RestAutoBandRecognizer = (CGImage, CGRect, StaffDetectionResult, () -> Bool) -> ScoreRestDetector.Detection?
+
 struct StaffDetectionPage {
     var pageIndex: Int
     var image: CGImage
@@ -238,6 +259,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @Published var isEditingPageRectification: Bool
     @Published private(set) var rectificationAutoProgress: RectificationAutoProgress?
     @Published private(set) var scoreDetectionProgress: ScoreDetectionProgress?
+    @Published private(set) var restAutoProgress: RestAutoProgress?
+    @Published private(set) var restAutoStatus: String?
     @Published var isPickingInstrumentNames = false
     @Published private(set) var instrumentNamePick: ScoreInstrumentNamePick?
     @Published private(set) var instrumentNameHighlights: [ScoreInstrumentNamePick] = []
@@ -252,6 +275,16 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private var rectificationAutoRunID: UUID?
     private var rectificationAutoOperation: BlockOperation?
     private var rectificationAutoCompletion: ((RectificationAutoResult) -> Void)?
+    private var restAutoRunID: UUID?
+    private var restAutoOperation: BlockOperation?
+    private var restAutoCompletion: ((RestAutoResult) -> Void)?
+    private let restDetectionQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "Partsmith.RestDetection"
+        queue.qualityOfService = .userInitiated
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
     private let barNumberDetectionQueue = DispatchQueue(label: "Partsmith.BarNumberDetection", qos: .userInitiated)
     private var staffDetectionOperation: BlockOperation?
     private var scoreDetectionOperation: BlockOperation?
@@ -290,6 +323,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             Self.bandHalfHeight(for: band)
         }
         rebuildPDFCache()
+    }
+
+    deinit {
+        restAutoOperation?.cancel()
     }
 
     required init(configuration: ReadConfiguration) throws {
@@ -1345,13 +1382,234 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     func updateBandRestReplacement(_ bandID: UUID, barCount: Int?, joinWithPrevious: Bool = false) -> Bool {
         if let barCount, !(2...999).contains(barCount) { return false }
         guard let band = project.bands.first(where: { $0.id == bandID }) else { return false }
-        let replacement = barCount.map { BandRestReplacement(barCount: $0, joinWithPrevious: joinWithPrevious) }
+        let replacement = barCount.map {
+            BandRestReplacement(barCount: $0, joinWithPrevious: joinWithPrevious,
+                                sourceContext: band.restReplacement?.sourceContext)
+        }
         guard replacement != band.restReplacement else { return true }
         commit(actionName: replacement == nil ? "Restore Source Music" : "Replace With Multi-Bar Rest") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].restReplacement = replacement
         }
         return true
+    }
+
+    /// Recognizes complete rest-only strips using an independent PDF document.
+    /// Nil scope means every part; an explicit band set intersects that scope.
+    /// Existing rest choices are preserved, and every new choice is one undo.
+    @discardableResult
+    func autoDetectRestReplacements(
+        partID: UUID? = nil,
+        bandIDs: Set<UUID>? = nil,
+        recognizer: RestAutoBandRecognizer? = nil,
+        completion: ((RestAutoResult) -> Void)? = nil
+    ) -> UUID? {
+        cancelAutoDetectRestReplacements()
+        guard let sourcePDFData, let pdfDocument, pdfDocument.pageCount > 0,
+              partID == nil || project.parts.contains(where: { $0.id == partID }) else {
+            restAutoStatus = "Open a score and extract its parts before finding rests."
+            completion?(.unavailable)
+            return nil
+        }
+        let partIDs = Set(project.parts.map(\.id))
+        let startingBands = project.bands.filter {
+            !$0.excluded && $0.restReplacement == nil && partIDs.contains($0.partID)
+                && (partID == nil || $0.partID == partID)
+                && (bandIDs == nil || bandIDs!.contains($0.id))
+        }
+        guard !startingBands.isEmpty else {
+            restAutoStatus = "No original music strips to check. Existing rest choices were kept."
+            completion?(.completed(replacedBands: 0, totalBars: 0, examinedBands: 0))
+            return nil
+        }
+        let pageIndices = Set(startingBands.map(\.pageIndex))
+        let startingRectifications = project.pageRectifications.filter { pageIndices.contains($0.pageIndex) }
+        let recognize = recognizer ?? { image, band, staves, isCancelled in
+            ScoreRestDetector.detect(in: image, band: band, staffDetection: staves, isCancelled: isCancelled)
+        }
+        let runID = UUID()
+        let operation = BlockOperation()
+        restAutoRunID = runID
+        restAutoOperation = operation
+        restAutoCompletion = completion
+        restAutoStatus = nil
+        restAutoProgress = RestAutoProgress(completedBands: 0, totalBands: startingBands.count, recognizedBands: 0)
+
+        operation.addExecutionBlock { [weak self, weak operation, sourcePDFData] in
+            guard let operation, !operation.isCancelled else { return }
+            guard let pdf = PDFDocument(data: sourcePDFData) else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.finishAutoDetectRestReplacements([:], startingBands: startingBands,
+                        sourcePDFData: sourcePDFData, startingRectifications: startingRectifications,
+                        unreadablePages: pageIndices.count, runID: runID, failed: true)
+                }
+                return
+            }
+            let bandsByPage = Dictionary(grouping: startingBands, by: \.pageIndex)
+            var replacements: [UUID: BandRestReplacement] = [:]
+            var completedBands = 0
+            var unreadablePages = 0
+            for pageIndex in pageIndices.sorted() {
+                guard !operation.isCancelled else { return }
+                let pageBands = bandsByPage[pageIndex] ?? []
+                autoreleasepool {
+                    let image: CGImage?
+                    let page = pageIndex >= 0 ? pdf.page(at: pageIndex) : nil
+                    if let page,
+                       let correction = startingRectifications.first(where: { $0.pageIndex == pageIndex }) {
+                        // Each page owns a temporary cache so a long scanned score
+                        // never retains all its full-size corrected rasters.
+                        let bounds = page.bounds(for: .mediaBox)
+                        let scale = min(1800 / bounds.width, 2600 / bounds.height)
+                        image = scale.isFinite && scale > 0
+                            ? SourcePageRenderCache(pdfDocument: pdf, rasterScale: scale)
+                                .rectifiedDisplayImage(for: pageIndex, rectification: correction)
+                            : nil
+                    } else {
+                        image = page.flatMap { NativeScorePageAnalyzer.render($0) }
+                    }
+                    guard let image else {
+                        unreadablePages += 1
+                        completedBands += pageBands.count
+                        return
+                    }
+                    let staves = StaffBandDetector.detect(in: image, isCancelled: { operation.isCancelled })
+                    for band in pageBands {
+                        guard !operation.isCancelled else { return }
+                        let crop = CGRect(x: band.leftFraction, y: band.topFraction,
+                            width: 1 - band.leftFraction - band.rightFraction,
+                            height: band.bottomFraction - band.topFraction)
+                        // Copied opening labels stay before the compressed run.
+                        // A direction farther right could change an internal
+                        // bar, whose exact position cannot survive a bare count.
+                        if let found = recognize(image, crop, staves, { operation.isCancelled }),
+                           band.sourceMarkings.allSatisfy({ $0.isValid(in: band)
+                               && 1 - $0.rightFraction <= found.prefixBounds.maxX + 1e-9 }),
+                           let replacement = Self.restReplacement(from: found, in: band) {
+                            replacements[band.id] = replacement
+                        }
+                        completedBands += 1
+                    }
+                }
+                guard !operation.isCancelled else { return }
+                let progress = RestAutoProgress(completedBands: completedBands, totalBands: startingBands.count,
+                                                recognizedBands: replacements.count)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self, self.restAutoRunID == runID else { return }
+                    self.restAutoProgress = progress
+                }
+            }
+            guard !operation.isCancelled else { return }
+            DispatchQueue.main.async { [weak self] in
+                self?.finishAutoDetectRestReplacements(replacements, startingBands: startingBands,
+                    sourcePDFData: sourcePDFData, startingRectifications: startingRectifications,
+                    unreadablePages: unreadablePages, runID: runID)
+            }
+        }
+        restDetectionQueue.addOperation(operation)
+        return runID
+    }
+
+    @discardableResult
+    func cancelAutoDetectRestReplacements(runID: UUID? = nil) -> Bool {
+        guard let activeRunID = restAutoRunID, runID == nil || runID == activeRunID else { return false }
+        restAutoOperation?.cancel()
+        let completion = restAutoCompletion
+        restAutoRunID = nil
+        restAutoOperation = nil
+        restAutoCompletion = nil
+        restAutoProgress = nil
+        restAutoStatus = "Rest compression cancelled. Original music was kept."
+        completion?(.cancelled)
+        return true
+    }
+
+    private static func restReplacement(from detection: ScoreRestDetector.Detection,
+                                        in band: BandModel) -> BandRestReplacement? {
+        func snapped(_ value: Double, to edge: Double) -> Double {
+            abs(value - edge) < 1e-9 ? edge : value
+        }
+        func marking(_ rect: CGRect) -> BandSourceMarking {
+            // CGRect's origin + extent can move an exact crop boundary by one
+            // floating-point step. Snap only that numerical noise, never a
+            // genuinely out-of-crop fragment returned by a recognizer.
+            BandSourceMarking(topFraction: snapped(rect.minY, to: band.topFraction),
+                bottomFraction: snapped(rect.maxY, to: band.bottomFraction),
+                leftFraction: snapped(rect.minX, to: band.leftFraction),
+                rightFraction: snapped(1 - rect.maxX, to: band.rightFraction))
+        }
+        let context = BandRestSourceContext(prefix: marking(detection.prefixBounds),
+            suffix: detection.suffixBounds.map(marking), staffLineFractions: detection.staffLineFractions,
+            skewDegrees: detection.skewDegrees, staffLeftFraction: detection.staffLeftFraction,
+            staffRightFraction: detection.staffRightFraction)
+        let replacement = BandRestReplacement(barCount: detection.barCount, sourceContext: context)
+        return replacement.isValid && context.isValid(in: band) ? replacement : nil
+    }
+
+    private func finishAutoDetectRestReplacements(
+        _ proposals: [UUID: BandRestReplacement],
+        startingBands: [BandModel],
+        sourcePDFData: Data,
+        startingRectifications: [PageRectification],
+        unreadablePages: Int,
+        runID: UUID,
+        failed: Bool = false
+    ) {
+        guard restAutoRunID == runID else { return }
+        let completion = restAutoCompletion
+        restAutoRunID = nil
+        restAutoOperation = nil
+        restAutoCompletion = nil
+        restAutoProgress = nil
+        let pageIndices = Set(startingBands.map(\.pageIndex))
+        let currentBands = Dictionary(project.bands.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        let currentPartIDs = Set(project.parts.map(\.id))
+        guard self.sourcePDFData == sourcePDFData,
+              project.pageRectifications.filter({ pageIndices.contains($0.pageIndex) }) == startingRectifications,
+              startingBands.allSatisfy({ previous in
+                  guard let current = currentBands[previous.id], currentPartIDs.contains(current.partID) else { return false }
+                  return previous.pageIndex == current.pageIndex && previous.partID == current.partID
+                      && previous.topFraction == current.topFraction && previous.bottomFraction == current.bottomFraction
+                      && previous.leftFraction == current.leftFraction && previous.rightFraction == current.rightFraction
+                      && previous.excluded == current.excluded && previous.exclusions == current.exclusions
+                      && previous.sourceMarkings == current.sourceMarkings
+              }) else {
+            restAutoStatus = "The source or crops changed. Run Find Rests again to check the current music."
+            completion?(.sourceChanged)
+            return
+        }
+        guard !failed else {
+            restAutoStatus = "The source score could not be read. Original music was kept."
+            completion?(.unavailable)
+            return
+        }
+        // A manual choice made during recognition takes precedence over its
+        // background proposal, even when the source geometry is unchanged.
+        let replacements = proposals.filter { currentBands[$0.key]?.restReplacement == nil }
+        let totalBars = replacements.values.reduce(0) { $0 + $1.barCount }
+        if !replacements.isEmpty {
+            commit(actionName: "Automatically Compress Rests") { project, _ in
+                for index in project.bands.indices {
+                    if let replacement = replacements[project.bands[index].id] {
+                        project.bands[index].restReplacement = replacement
+                    }
+                }
+            }
+        }
+        let unchanged = startingBands.count - replacements.count
+        if replacements.isEmpty {
+            restAutoStatus = "No complete rest runs were confidently recognized. Original music was kept."
+        } else {
+            let strips = replacements.count == 1 ? "strip" : "strips"
+            restAutoStatus = "Compressed \(replacements.count) rest \(strips) (\(totalBars) bars)."
+            if unchanged > 0 {
+                restAutoStatus! += " \(unchanged) \(unchanged == 1 ? "strip was" : "strips were") left unchanged."
+            }
+        }
+        if unreadablePages > 0 {
+            restAutoStatus! += " \(unreadablePages) source \(unreadablePages == 1 ? "page could" : "pages could") not be read."
+        }
+        completion?(.completed(replacedBands: replacements.count, totalBars: totalBars, examinedBands: startingBands.count))
     }
 
     func updateBandEditorialLabel(_ bandID: UUID, label: String) {
@@ -1870,6 +2128,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         // replacement state. Do not invalidate the replacement being restored.
         isApplyingStateSnapshot = true
         defer { isApplyingStateSnapshot = false }
+        restAutoStatus = nil
         let sourceChanged = sourcePDFData != snapshot.sourcePDFData
         project = snapshot.project
         sourcePDFData = snapshot.sourcePDFData

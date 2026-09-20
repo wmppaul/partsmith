@@ -196,13 +196,37 @@ Run `bash tools/test_instrument_names.sh` and `bash tools/test_preview_performan
 
 Select a rest-only band and expand **Multi-bar Rest** in the inspector. Enter 2–999 full bars and choose **Replace with Rest**. The renderer draws a vector five-line staff, H-bar and count, while the project retains the original source coordinates, whiteouts, labels and copied source markings. **Restore Original Crop** and Undo recover the source. Crop, source, instrument-assignment, whiteout, copied-marking or correction changes clear the affected replacement; copying a band to another page never copies its rest count.
 
-**Join with previous rest** is an explicit choice, off by default. Joining stops at ordinary music, excluded strips, annotations, copied markings, explicit page breaks, conflicting known bar numbers, or a total above 999. Individual source bands and their original counts remain in the project. Preview retains excluded strips as ordering barriers, matching Export. No automatic rest recognition or partial-system cutting is performed.
+**Join with previous rest** is an explicit choice, off by default. Joining stops at ordinary music, excluded strips, annotations, copied markings, explicit page breaks, conflicting known bar numbers, or a total above 999. Individual source bands and their original counts remain in the project. Preview retains excluded strips as ordering barriers, matching Export. The manual tool does not perform recognition or partial-system cutting. Automatic recognition is described below.
 
 The [source audit](Tests/extraction/rest-compression-review.md) identifies real whole-rest bands in Brahms, Mozart and Schumann, plus counterexamples containing a playing entrance, a fermata and changing meters. The [Brahms demonstration](output/pdf/rest-compression-example/README.md) replaces only bars 42–47 with a six-bar rest and retains the following mixed system, including the entrance in bar 51. This is an explicitly labeled one-page excerpt, not a revised full part. New tempo/key/meter changes, repeats, cues and fermatas need their original notation or separately preserved markings.
 
 Validation: **44 rest layout/export checks**, **55 rest document checks**, **24 preview checks**, **5,315 existing layout assertions**, and **161 native crop/export checks** pass. A synthetic 4+5 example renders one nine-bar rest. Live UI testing restored the original Brahms strip, entered six bars, applied the replacement, and verified the result and following music in Preview. Source bytes remain unchanged. The universal Release app builds successfully.
 
 Run `bash tools/test_multibar_rests.sh`, `bash tools/test_rest_document.sh`, and `bash tools/test_preview_performance.sh`.
+
+### Automatic multi-bar rests
+
+The magic-wand setup now defaults to **Count and compress full-bar rests automatically**. After **Add Parts**, the native document worker examines only the newly added strips. **Find & Compress Rests** examines an existing part, and **Count & Compress This Strip** examines one selected strip. All run offline in the background with progress, cancellation and one undoable apply; no count entry is required. Manual replacements take precedence. Source/crop/correction changes reject stale results.
+
+The detector establishes a complete single staff, follows modest skew and curvature for analysis, locates measure boundaries, and requires one hanging whole-bar rest in each measure. It checks opening symbols for possible sounding notes rather than assuming every nearby shape belongs to the signature. Unknown ink, playing entries, interior changes, fermatas and repeats keep the original strip. Cropped-away notation cannot be recovered by this recognizer, so target-preserving crops remain a prerequisite.
+
+Automatic replacements keep the actual printed opening context (clef, key, meter and any opening direction) and ending barline. Copied source markings are allowed only when their entire horizontal extent lies before the retained opening boundary; a copied midrun or ending direction keeps the original notation. The native renderer joins these source fragments with a vector staff, H-bar and counted number. Original crops stay saved, and **Restore Original Crop** recovers them. Automatic contexts are not joined across strips, because doing so could lose an intervening signature or direction.
+
+Grand staffs, partial-system runs and automatic cross-strip joining remain unsupported. Broad crops can contain neighboring ink that prevents recognition: this occurs in the older Schumann project and some default Magic Flute flute crops. A fresh deskewed Brahms page-3 Auto crop also includes the printed page identifier and is kept unchanged; a separately source-reviewed crop retaining the complete staff while excluding that identifier correctly produces six bars through the real document worker. The app preserves those strips instead of guessing. This is a bounded whole-rest recognizer, not general optical music recognition.
+
+The [independent rest corpus](Tests/extraction/automatic-rest-review.md) records source hashes, exact positive counts, negative counterexamples, opening-context landmarks and a whole-score candidate audit. A live magic-wand test on Brahms source page 3 added all three instruments and automatically generated the six-bar clarinet rest; the following playing entrance stayed intact. **Find & Compress Rests**, selected-strip counting, Restore and Undo were exercised in the app.
+
+Validation: **182 detector checks**, **147 document workflow checks**, and **96 source-context checks** pass. All 77,412 sampled retained-context pixels exactly match independently drawn, PDF-roundtripped source controls. The full 43-page Magic Flute test examines 644 automatic crop bands and finds 77 independently reviewed replacements totaling 384 bars. The existing 44 manual-rest checks and 5,315 layout assertions also pass. The universal Release app builds and its ZIP verifies successfully.
+
+The [complete automatically counted Brahms parts](output/pdf/automatic-rests/README.md) contain two replacements: Clarinet bars 42–47 become six bars of rest, and Cello bars 76–82 become seven. All 48 pages were reviewed; all 46 unaffected drawing streams match the previous reviewed export. The final release rerun matches the reviewed pages and replacement contexts.
+
+The same document worker and exporter are available for saved projects:
+
+```sh
+bash tools/compress_score_rests.sh --project PATH/Score.partsmithproject --out NEW_OUTPUT_DIRECTORY
+```
+
+This writes every part PDF, the editable project and a source-hashed `automatic-rest-report.json`; the input stays unchanged. Run `bash tools/test_rest_detection.sh`, `bash tools/test_rest_auto_flow.sh` and `bash tools/test_rest_context.sh` for the detector, document lifecycle and source-fragment fidelity checks. Corrected-page checks require ordinary macOS Core Image access.
 
 ## Practical limits
 

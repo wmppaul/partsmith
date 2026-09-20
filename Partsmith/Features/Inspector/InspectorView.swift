@@ -287,6 +287,15 @@ struct InspectorView: View {
             ))
             .help("Use one scale for this part's systems, preserving relative notation sizes from the source.")
 
+            Divider()
+            Button("Find & Compress Rests", systemImage: "wand.and.stars") {
+                document.autoDetectRestReplacements(partID: part.id)
+            }
+            .disabled(document.restAutoProgress != nil || document.sourcePDFData == nil)
+            .help("Count and compress confidently recognized full-bar rest strips in this part. Original crops remain available.")
+            Text("Whole-bar rests are counted on this Mac. Notes and uncertain passages keep their original notation.")
+                .font(.caption).foregroundStyle(.secondary)
+
             bandOrderSection(part)
         }
         .padding(14)
@@ -338,7 +347,9 @@ struct InspectorView: View {
 
             Divider()
 
-            BandRestEditor(band: currentBand) { count, join in
+            BandRestEditor(band: currentBand, isDetecting: document.restAutoProgress != nil, findRest: {
+                document.autoDetectRestReplacements(bandIDs: [band.id])
+            }) { count, join in
                 document.updateBandRestReplacement(band.id, barCount: count, joinWithPrevious: join)
             }
             .id(currentBand.id)
@@ -696,13 +707,17 @@ struct InspectorView: View {
 
 private struct BandRestEditor: View {
     let band: BandModel
+    let isDetecting: Bool
+    let findRest: () -> Void
     let apply: (Int?, Bool) -> Void
     @State private var countText: String
     @State private var joinWithPrevious: Bool
     @State private var expanded: Bool
 
-    init(band: BandModel, apply: @escaping (Int?, Bool) -> Void) {
+    init(band: BandModel, isDetecting: Bool, findRest: @escaping () -> Void, apply: @escaping (Int?, Bool) -> Void) {
         self.band = band
+        self.isDetecting = isDetecting
+        self.findRest = findRest
         self.apply = apply
         _countText = State(initialValue: band.restReplacement.map { String($0.barCount) } ?? "")
         _joinWithPrevious = State(initialValue: band.restReplacement?.joinWithPrevious ?? false)
@@ -718,28 +733,39 @@ private struct BandRestEditor: View {
     var body: some View {
         DisclosureGroup("Multi-bar Rest", isExpanded: $expanded) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("For a strip containing only full bars of rest. Keep the original crop when there are tempo, key or meter changes, repeats, cues or fermatas.")
-                    .font(.caption).foregroundStyle(.secondary)
-                HStack {
-                    Text("Bars of rest")
-                    TextField("Count", text: $countText)
-                        .textFieldStyle(.roundedBorder)
-                        .accessibilityLabel("Bars of rest")
-                        .onSubmit { if let count { apply(count, joinWithPrevious) } }
-                }
-                Toggle("Join with previous rest", isOn: $joinWithPrevious)
-                    .help("Combine with the immediately preceding rest when there is no marking, page break or conflicting bar number between them.")
-                Button(band.restReplacement == nil ? "Replace with Rest" : "Update Rest") {
-                    if let count { apply(count, joinWithPrevious) }
-                }
-                .disabled(count == nil || band.excluded)
                 if let replacement = band.restReplacement {
                     Text("This strip: \(replacement.barCount) bars of rest. The source crop is saved.")
                         .font(.caption).foregroundStyle(.secondary)
+                    if replacement.sourceContext != nil {
+                        Text("Printed opening and ending context is retained.")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
                     Button("Restore Original Crop") { apply(nil, false) }
                 } else {
-                    Text("Enter 2–999 bars. The source stays editable; Undo or Restore brings the original notation back.")
+                    Button("Count & Compress This Strip", action: findRest)
+                        .disabled(isDetecting || band.excluded)
+                    Text("Find full-bar rests automatically. Notes, internal changes and uncertain passages stay unchanged.")
                         .font(.caption).foregroundStyle(.secondary)
+                }
+                DisclosureGroup("Set Count Manually") {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Text("Bars of rest")
+                            TextField("Count", text: $countText)
+                                .textFieldStyle(.roundedBorder)
+                                .accessibilityLabel("Bars of rest")
+                                .onSubmit { if let count { apply(count, joinWithPrevious) } }
+                        }
+                        if band.restReplacement?.sourceContext == nil {
+                            Toggle("Join with previous rest", isOn: $joinWithPrevious)
+                                .help("Combine adjacent manually counted rests when no marking, page break or conflicting bar number separates them.")
+                        }
+                        Button(band.restReplacement == nil ? "Replace with Rest" : "Update Rest") {
+                            if let count { apply(count, joinWithPrevious) }
+                        }.disabled(count == nil || band.excluded || isDetecting)
+                        Text("Use 2–999 whole resting bars. Keep source notation for internal changes, repeats, cues or fermatas.")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }.padding(.top, 6)
                 }
             }
             .padding(.top, 6)
@@ -747,6 +773,22 @@ private struct BandRestEditor: View {
         .onChange(of: band.restReplacement) {
             countText = band.restReplacement.map { String($0.barCount) } ?? ""
             joinWithPrevious = band.restReplacement?.joinWithPrevious ?? false
+        }
+    }
+}
+
+struct RestAutoStatusView: View {
+    @ObservedObject var document: PartsmithDocument
+
+    var body: some View {
+        if let progress = document.restAutoProgress {
+            HStack(spacing: 8) {
+                ProgressView(value: progress.fractionComplete).frame(width: 100)
+                Text("Finding full-bar rests: \(progress.completedBands) of \(progress.totalBands) strips")
+                Button("Cancel") { document.cancelAutoDetectRestReplacements() }
+            }.font(.caption)
+        } else if let status = document.restAutoStatus {
+            Text(status).font(.caption).foregroundStyle(.secondary)
         }
     }
 }

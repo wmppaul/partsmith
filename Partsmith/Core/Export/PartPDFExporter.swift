@@ -127,7 +127,16 @@ enum PartPDFExporter {
                     sourceRect: marking.sourceRect, destinationRect: marking.destinationRect, in: context)
             }
             if placement.restReplacement != nil {
-                drawMultiBarRest(for: placement, in: context)
+                if let preserved = placement.restSourcePlacement {
+                    for fragment in preserved.fragments {
+                        try sourcePageCache.draw(pageIndex: placement.sourcePageIndex,
+                            rectification: project.pageRectifications.first(where: { $0.pageIndex == placement.sourcePageIndex }),
+                            sourceRect: fragment.sourceRect, destinationRect: fragment.destinationRect, in: context)
+                    }
+                    drawSourceAlignedRest(for: placement, geometry: preserved, in: context)
+                } else {
+                    drawMultiBarRest(for: placement, in: context)
+                }
             } else {
                 try draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
                 drawExclusions(for: placement, in: context)
@@ -155,6 +164,38 @@ enum PartPDFExporter {
             NSGraphicsContext.restoreGraphicsState()
         }
 
+    }
+
+    private static func drawSourceAlignedRest(for placement: BandPlacement, geometry: RestSourcePlacement,
+                                              in context: CGContext) {
+        guard let replacement = placement.restReplacement else { return }
+        let space = geometry.staffSpace
+        let center = geometry.restCenter
+        context.saveGState()
+        defer { context.restoreGState() }
+        context.setStrokeColor(NSColor.black.cgColor)
+        context.setFillColor(NSColor.black.cgColor)
+        context.setLineWidth(space * 0.10)
+        for line in geometry.staffLines {
+            context.move(to: line[0]); context.addLine(to: line[1])
+        }
+        context.strokePath()
+        let halfWidth = min(space * 6, geometry.restSpan * 0.27)
+        context.fill(CGRect(x: center.x - halfWidth, y: center.y - space * 0.24,
+                            width: halfWidth * 2, height: space * 0.48))
+        for x in [center.x - halfWidth, center.x + halfWidth] {
+            context.fill(CGRect(x: x - space * 0.12, y: center.y - space,
+                                width: space * 0.24, height: space * 2))
+        }
+        let paragraph = NSMutableParagraphStyle(); paragraph.alignment = .center
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
+        ("\(replacement.barCount)" as NSString).draw(in: CGRect(x: center.x - geometry.restSpan / 2,
+            y: center.y + 2.35 * space, width: geometry.restSpan, height: space * 3.2), withAttributes: [
+                .font: NSFont(name: "Times-Bold", size: space * 2.5) ?? NSFont.boldSystemFont(ofSize: space * 2.5),
+                .foregroundColor: NSColor.black, .paragraphStyle: paragraph
+            ])
+        NSGraphicsContext.restoreGraphicsState()
     }
 
     private static func drawMultiBarRest(for placement: BandPlacement, in context: CGContext) {
@@ -286,6 +327,20 @@ enum PartPDFExporter {
         guard let band = project.bands.first(where: { $0.id == placement.bandID }),
               let barNumber = band.displayedBarNumber
         else {
+            return
+        }
+
+        if let geometry = placement.restSourcePlacement {
+            let scale = placement.destinationRect.width / placement.sourceRect.width
+            let sourceTop = placement.destinationRect.minY + placement.sourceRect.height * scale
+            NSGraphicsContext.saveGraphicsState()
+            NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
+            ("\(barNumber)" as NSString).draw(at: CGPoint(x: placement.destinationRect.minX,
+                y: sourceTop + geometry.staffSpace * 0.3), withAttributes: [
+                    .font: NSFont.systemFont(ofSize: geometry.staffSpace * 2.2, weight: .semibold),
+                    .foregroundColor: NSColor.black
+                ])
+            NSGraphicsContext.restoreGraphicsState()
             return
         }
 

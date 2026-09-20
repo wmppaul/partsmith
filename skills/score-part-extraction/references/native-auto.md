@@ -43,9 +43,10 @@ can assign detected staves, record a missing/tacet part, exclude a non-music pag
 with a reason, and add a verified movement/song heading and page break. A piano
 introduction with no printed voice should be represented by a clearly labeled
 cue or a verified rest instruction, never an unexplained missing opening.
-For zero-staff pages, inspect the source and use **Exclude This Non-Music Page**
-with an explicit reason for a blank leaf or publisher catalog. The review moves
-to the next unresolved page. A page with undetected music must stay included.
+The app skips readable zero-staff pages without requiring a typed reason or
+acknowledgement. Use **View Skipped Pages** for source review and **Restore Page**
+when music was missed. A page with undetected music must stay included; a failed
+raster is an error, not evidence of a blank page.
 
 Use **Adjust crop edges on this page** for a source-reviewed local correction.
 Top and Bottom are source-page points measured downward; select the part/system
@@ -117,3 +118,39 @@ tolerance is used. Pixel agreement establishes export fidelity only
 within those reviewed regions. It does not identify an instrument, discover
 unrecorded notes, or replace a visual review. Keep output/source hashes and
 independent review findings with each delivered set.
+
+
+## Automatic multi-bar rests
+
+The magic-wand setup offers **Count and compress full-bar rests automatically**,
+enabled by default. After **Add Parts**, a separate background operation counts
+eligible rest-only strips and applies all replacements in one Undo. Existing
+parts expose **Find & Compress Rests**; the selected-band inspector exposes
+**Count & Compress This Strip**. No count entry is required. **Set Count Manually**
+is an optional fallback after a source review.
+
+For a saved native project, the same document worker and PDF exporter are
+available through:
+
+```sh
+bash tools/compress_score_rests.sh --project WORK/Score.partsmithproject \
+  --out WORK/automatic-rests
+```
+
+Use a new output directory. This saves every part PDF, an editable project and
+`automatic-rest-report.json` recording source hash, replaced band identities,
+original rectangles, counts and retained source context. It never changes the
+input project. Compare every replacement with the complete original score;
+review also needs to account for shared directions outside the target staff.
+
+The recognizer is deliberately narrow: one complete five-line staff, clear bar
+boundaries and hanging whole-measure rests. It preserves opening source context
+and the ending barline, and leaves unknown ink or ambiguous notation unchanged.
+Grand staffs, mixed playing/resting strips, interior meter/tempo changes,
+fermatas, repeats and copied shared markings within the compressed span are not
+automatically compressed. Copied opening markings entirely before the retained
+prefix boundary remain eligible.
+Broad neighboring context can prevent an otherwise silent strip from matching.
+Automatic replacements do not join across strips, because their individual
+opening and ending context must remain. Original crops remain available through
+**Restore Original Crop** and Undo. Recheck output layout after any replacement.

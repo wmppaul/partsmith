@@ -23,6 +23,7 @@ struct ScoreExtractionView: View {
     @State private var focusedCropID: String?
     @State private var errorMessage: String?
     @State private var findPrintedHeader = true
+    @AppStorage("automaticallyCompressRestStrips") private var compressRests = true
     @State private var includeSuggestedHeader = true
     @State private var headerPreviewImage: CGImage?
     @State private var headerSourceImage: CGImage?
@@ -311,6 +312,11 @@ struct ScoreExtractionView: View {
                     Text("Auto finds a header above the first music system and shows a preview. The original score image will appear on the first page of each part.")
                         .font(.caption).foregroundStyle(.secondary)
                 }
+                Divider()
+                Toggle("Count and compress full-bar rests automatically", isOn: $compressRests)
+                    .toggleStyle(.checkbox)
+                Text("After adding parts, Partsmith checks for rest-only strips and keeps their printed opening and ending context. Uncertain passages stay as source notation.")
+                    .font(.caption).foregroundStyle(.secondary)
                 Divider()
                 Picker("Crop mode", selection: Binding(get: { profile.cropMode ?? "fixed" }, set: { profile.cropMode = $0 })) {
                     Text("Compact — follow notation").tag("compact")
@@ -866,11 +872,16 @@ struct ScoreExtractionView: View {
     private func applyReview() {
         guard let review else { return }
         let header = includeSuggestedHeader && document.headerSelection == nil ? proposedHeader : nil
+        let previousBandIDs = Set(document.project.bands.map(\.id))
         guard document.addScoreParts(from: review, sourceHeader: header) != nil else {
             errorMessage = "The review is stale, incomplete, or a populated part already has one of these names. Resolve it before adding."
             return
         }
         document.setHeaderSelectionEditing(false)
+        if compressRests {
+            let addedBandIDs = Set(document.project.bands.map(\.id)).subtracting(previousBandIDs)
+            document.autoDetectRestReplacements(bandIDs: addedBandIDs)
+        }
         onClose()
     }
 }

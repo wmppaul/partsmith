@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": "Normalized displayed page; top-down [left, top, right, bottom]. Source page and system indices are zero-based.",
+  "sources": {
+    "trio-medium": {
+      "path": "sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sha256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b"
+    },
+    "trio-light": {
+      "path": "sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "sha256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d"
+    },
+    "magic-flute": {
+      "path": "sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "sha256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d"
+    },
+    "schumann-light": {
+      "path": "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sha256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975"
+    }
+  },
+  "fixtures": [
+    {
+      "id": "trio-medium-clarinet-six",
+      "sourceID": "trio-medium",
+      "pageIndex": 2,
+      "systemIndex": 0,
+      "instrument": "Clarinet in A",
+      "band": [
+        0,
+        0.06873109461240759,
+        1,
+        0.10457915294890398
+      ],
+      "staffRanges": [
+        [
+          0.079,
+          0.097
+        ]
+      ],
+      "expectedBarCount": 6,
+      "reason": "Printed bars 42-47 each contain one full-bar rest. Preserve the continuing clef and key prefix."
+    },
+    {
+      "id": "trio-medium-clarinet-entry",
+      "sourceID": "trio-medium",
+      "pageIndex": 2,
+      "systemIndex": 1,
+      "instrument": "Clarinet in A",
+      "band": [
+        0,
+        0.27981600027278497,
+        1,
+        0.32509802087343226
+      ],
+      "staffRanges": [
+        [
+          0.295,
+          0.314
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Bars 48-50 rest, but bar 51 has partial rests and a sounding entry marked p. Whole-band replacement would omit music."
+    },
+    {
+      "id": "trio-medium-cello-entry",
+      "sourceID": "trio-medium",
+      "pageIndex": 2,
+      "systemIndex": 0,
+      "instrument": "Violoncello",
+      "band": [
+        0,
+        0.106,
+        1,
+        0.154
+      ],
+      "staffRanges": [
+        [
+          0.115,
+          0.135
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Opening whole-bar rest is followed by a sounding cello phrase and clef change."
+    },
+    {
+      "id": "trio-medium-piano-grand-staff",
+      "sourceID": "trio-medium",
+      "pageIndex": 2,
+      "systemIndex": 1,
+      "instrument": "Piano",
+      "band": [
+        0,
+        0.367,
+        1,
+        0.491
+      ],
+      "staffRanges": [
+        [
+          0.386,
+          0.411
+        ],
+        [
+          0.44,
+          0.466
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Both piano staves contain sounding music. Do not reduce a grand staff based on sparse ink in one voice."
+    },
+    {
+      "id": "trio-light-internal-meter-change",
+      "sourceID": "trio-light",
+      "pageIndex": 26,
+      "systemIndex": 3,
+      "instrument": "Clarinet in A",
+      "band": [
+        0,
+        0.72948,
+        1,
+        0.77013
+      ],
+      "staffRanges": [
+        [
+          0.743,
+          0.762
+        ]
+      ],
+      "expectedBarCount": null,
+      "sourceRestCount": 6,
+      "reason": "Six full-bar rests at bars 40-45 contain an internal 9/8 to 6/8 meter change. A bare count is unsafe."
+    },
+    {
+      "id": "magic-flute-flute-eight",
+      "sourceID": "magic-flute",
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.022,
+        1,
+        0.061
+      ],
+      "staffRanges": [
+        [
+          0.035,
+          0.050625
+        ]
+      ],
+      "expectedBarCount": 8,
+      "reason": "Adagio bars 8-15 contain eight full-bar rests. The final double bar must remain a boundary.",
+      "suffixLandmarks": [
+        [
+          0.947,
+          0.035,
+          0.952,
+          0.050625
+        ]
+      ]
+    },
+    {
+      "id": "magic-flute-trumpet-eight",
+      "sourceID": "magic-flute",
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "instrument": "Trumpets",
+      "band": [
+        0,
+        0.325,
+        1,
+        0.365
+      ],
+      "staffRanges": [
+        [
+          0.335625,
+          0.35125
+        ]
+      ],
+      "expectedBarCount": 8,
+      "reason": "Adagio bars 8-15 contain eight full-bar rests.",
+      "suffixLandmarks": [
+        [
+          0.947,
+          0.335625,
+          0.952,
+          0.35125
+        ]
+      ]
+    },
+    {
+      "id": "magic-flute-timpani-eight",
+      "sourceID": "magic-flute",
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "instrument": "Timpani",
+      "band": [
+        0,
+        0.513,
+        1,
+        0.553
+      ],
+      "staffRanges": [
+        [
+          0.525,
+          0.540625
+        ]
+      ],
+      "expectedBarCount": 8,
+      "reason": "Adagio bars 8-15 contain eight full-bar rests; bass-clef prefix differs from the treble examples.",
+      "suffixLandmarks": [
+        [
+          0.947,
+          0.525,
+          0.952,
+          0.540625
+        ]
+      ]
+    },
+    {
+      "id": "magic-flute-contrabass-late-entry",
+      "sourceID": "magic-flute",
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "instrument": "Contrabass",
+      "band": [
+        0,
+        0.827,
+        1,
+        0.872
+      ],
+      "staffRanges": [
+        [
+          0.841875,
+          0.8575
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Seven whole-bar rests are followed by a sounding note in bar 15."
+    },
+    {
+      "id": "magic-flute-clarinet-partial-rests",
+      "sourceID": "magic-flute",
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "instrument": "Clarinet",
+      "band": [
+        0,
+        0.134,
+        1,
+        0.18
+      ],
+      "staffRanges": [
+        [
+          0.14625,
+          0.161875
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "Five complete resting bars lead to sounding notes with rests in later measures."
+    },
+    {
+      "id": "magic-flute-allegro-flute-four",
+      "sourceID": "magic-flute",
+      "pageIndex": 2,
+      "systemIndex": 0,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.033,
+        1,
+        0.078
+      ],
+      "staffRanges": [
+        [
+          0.054375,
+          0.07
+        ]
+      ],
+      "expectedBarCount": 4,
+      "prefixLandmarks": [
+        [
+          0.10512367491166077,
+          0.034375,
+          0.15459363957597172,
+          0.045
+        ],
+        [
+          0.11925795053003534,
+          0.046875,
+          0.17491166077738515,
+          0.07625
+        ]
+      ],
+      "reason": "Allegro bars 1-4 rest completely. Required leading context includes Allegro, clef, key, and common time; preserve it in the automatic result. Lower crop edge independently tightened above the following oboe a2 marking; full target clef, Allegro, meter and staff remain."
+    },
+    {
+      "id": "magic-flute-allegro-flute-five",
+      "sourceID": "magic-flute",
+      "pageIndex": 2,
+      "systemIndex": 1,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.5121,
+        1,
+        0.548
+      ],
+      "staffRanges": [
+        [
+          0.52125,
+          0.53625
+        ]
+      ],
+      "expectedBarCount": 5,
+      "reason": "Allegro bars 5-9 rest completely. Safe count must remain distinct from the preceding Adagio movement boundary. Upper crop edge independently tightened below the preceding contrabass fragments; bar-5 label and entire target clef remain."
+    },
+    {
+      "id": "magic-flute-allegro-violin-opening-note",
+      "sourceID": "magic-flute",
+      "pageIndex": 2,
+      "systemIndex": 0,
+      "instrument": "Violin I",
+      "band": [
+        0,
+        0.343,
+        1,
+        0.384
+      ],
+      "staffRanges": [
+        [
+          0.354375,
+          0.37
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "A single opening note precedes rests across the rest of the system. Counting only obvious rest glyphs would omit the note."
+    },
+    {
+      "id": "schumann-voice-eight",
+      "sourceID": "schumann-light",
+      "pageIndex": 15,
+      "systemIndex": 2,
+      "instrument": "Voice",
+      "band": [
+        0,
+        0.50115,
+        1,
+        0.55538
+      ],
+      "staffRanges": [
+        [
+          0.51847,
+          0.53809
+        ]
+      ],
+      "expectedBarCount": 8,
+      "reason": "All eight complete vocal measures contain only full-bar rests."
+    },
+    {
+      "id": "schumann-voice-final-fermata",
+      "sourceID": "schumann-light",
+      "pageIndex": 15,
+      "systemIndex": 3,
+      "instrument": "Voice",
+      "band": [
+        0,
+        0.701,
+        1,
+        0.764
+      ],
+      "staffRanges": [
+        [
+          0.72386,
+          0.74345
+        ]
+      ],
+      "expectedBarCount": null,
+      "sourceRestCount": 8,
+      "reason": "Eight full-bar rests include a final fermata. A count-only result loses the fermata."
+    },
+    {
+      "id": "magic-flute-allegro-flute-four-neighbor-fragment",
+      "sourceID": "magic-flute",
+      "pageIndex": 2,
+      "systemIndex": 0,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.033,
+        1,
+        0.08
+      ],
+      "staffRanges": [
+        [
+          0.054375,
+          0.07
+        ]
+      ],
+      "expectedBarCount": 4,
+      "prefixLandmarks": [
+        [
+          0.10512367491166077,
+          0.034375,
+          0.15459363957597172,
+          0.045
+        ],
+        [
+          0.11925795053003534,
+          0.046875,
+          0.17491166077738515,
+          0.07625
+        ],
+        [
+          0.1855123674911661,
+          0.07875,
+          0.20053003533568906,
+          0.08
+        ]
+      ],
+      "reason": "The intended flute has four whole-bar rests. The broad lower edge includes the top of the following oboe a2 marking, but this extra ink is safely retained in the complete source prefix. Prefix coverage is explicitly checked.",
+      "sourceRestCount": 4
+    },
+    {
+      "id": "magic-flute-allegro-flute-five-neighbor-fragment",
+      "sourceID": "magic-flute",
+      "pageIndex": 2,
+      "systemIndex": 1,
+      "instrument": "Flute",
+      "band": [
+        0,
+        0.508,
+        1,
+        0.548
+      ],
+      "staffRanges": [
+        [
+          0.52125,
+          0.53625
+        ]
+      ],
+      "expectedBarCount": null,
+      "reason": "The intended flute has five whole-bar rests, but the broad upper edge includes clipped contrabass stem/clef fragments from the preceding system. Without reliable staff attribution, automatic replacement must retain the source.",
+      "sourceRestCount": 5
+    }
+  ]
+}

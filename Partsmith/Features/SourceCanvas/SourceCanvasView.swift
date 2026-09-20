@@ -26,6 +26,7 @@ struct SourceCanvasView: View {
                         Text(document.sourceInstruction.body)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
+                        RestAutoStatusView(document: document)
                         if document.isPickingInstrumentNames {
                             if document.isRecognizingInstrumentName {
                                 HStack(spacing: 8) {

@@ -506,25 +506,55 @@ struct BandSourceMarking: Codable, Equatable {
     }
 }
 
-/// An explicit editorial replacement for a verified, whole-band run of rests.
+/// Source fragments and staff geometry retained by automatic rest compression.
+/// Fractions refer to the same unmodified source page as the containing band.
+struct BandRestSourceContext: Codable, Equatable {
+    var prefix: BandSourceMarking
+    var suffix: BandSourceMarking?
+    var staffLineFractions: [Double]
+    var skewDegrees: Double
+    var staffLeftFraction: Double
+    var staffRightFraction: Double
+
+    func isValid(in band: BandModel) -> Bool {
+        let fragments = [prefix] + (suffix.map { [$0] } ?? [])
+        guard fragments.allSatisfy({ $0.isValid(in: band)
+            && $0.topFraction >= band.topFraction && $0.bottomFraction <= band.bottomFraction }),
+              staffLineFractions.count == 5,
+              staffLineFractions.allSatisfy({ $0.isFinite && $0 >= band.topFraction && $0 <= band.bottomFraction }),
+              zip(staffLineFractions, staffLineFractions.dropFirst()).allSatisfy({ $0.0 < $0.1 }),
+              skewDegrees.isFinite, abs(skewDegrees) <= 3,
+              staffLeftFraction.isFinite, staffRightFraction.isFinite,
+              staffLeftFraction >= band.leftFraction, staffRightFraction <= 1 - band.rightFraction,
+              staffLeftFraction < staffRightFraction else { return false }
+        let start = max(staffLeftFraction, 1 - prefix.rightFraction)
+        let end = min(staffRightFraction, suffix?.leftFraction ?? staffRightFraction)
+        return start < end
+    }
+}
+
+/// An editorial replacement for a verified, whole-band run of rests.
 /// The original source crop remains stored on its band and can be restored.
 struct BandRestReplacement: Codable, Equatable {
     var barCount: Int
     var joinWithPrevious: Bool
+    var sourceContext: BandRestSourceContext?
 
-    init(barCount: Int, joinWithPrevious: Bool = false) {
+    init(barCount: Int, joinWithPrevious: Bool = false, sourceContext: BandRestSourceContext? = nil) {
         self.barCount = barCount
         self.joinWithPrevious = joinWithPrevious
+        self.sourceContext = sourceContext
     }
 
     var isValid: Bool { (2...999).contains(barCount) }
 
-    private enum CodingKeys: String, CodingKey { case barCount, joinWithPrevious }
+    private enum CodingKeys: String, CodingKey { case barCount, joinWithPrevious, sourceContext }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         barCount = try container.decode(Int.self, forKey: .barCount)
         joinWithPrevious = try container.decodeIfPresent(Bool.self, forKey: .joinWithPrevious) ?? false
+        sourceContext = try container.decodeIfPresent(BandRestSourceContext.self, forKey: .sourceContext)
     }
 }
 

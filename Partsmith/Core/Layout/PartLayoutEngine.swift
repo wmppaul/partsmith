@@ -33,6 +33,15 @@ struct BandPlacement {
     /// Joined rest strips still identify every original source band.
     var sourceBandIDs: [UUID] = []
     var restReplacement: BandRestReplacement? = nil
+    var restSourcePlacement: RestSourcePlacement? = nil
+}
+
+struct RestSourcePlacement {
+    var fragments: [SourceMarkingPlacement]
+    var staffLines: [[CGPoint]]
+    var staffSpace: CGFloat
+    var restCenter: CGPoint
+    var restSpan: CGFloat
 }
 
 struct SourceMarkingPlacement {
@@ -129,7 +138,16 @@ enum PartLayoutEngine {
         var restReplacement: BandRestReplacement?
         var restStartNumber: Int?
         var renderedSourceHeight: Double {
-            restReplacement == nil ? sourceRect.height : min(PartLayoutEngine.restStripHeight, max(32, sourceRect.height))
+            guard let replacement = restReplacement else { return sourceRect.height }
+            if let context = replacement.sourceContext {
+                let space = (context.staffLineFractions[4] - context.staffLineFractions[0]) * pageBounds.height / 4
+                let slope = tan(context.skewDegrees * .pi / 180)
+                let top = pageBounds.maxY - context.staffLineFractions[0] * pageBounds.height
+                    + abs(slope) * sourceRect.width / 2
+                let barLabelRoom = band.displayedBarNumber == nil ? 0 : 4 * space
+                return sourceRect.height + max(barLabelRoom, top + 4 * space - sourceRect.maxY)
+            }
+            return min(PartLayoutEngine.restStripHeight, max(32, sourceRect.height))
         }
         var markingSourceHeight: Double { Double(markingRects.map(\.height).max() ?? 0) }
         var markingGap: Double { markingRects.isEmpty ? 0 : 4 }
@@ -251,6 +269,9 @@ enum PartLayoutEngine {
             if let replacement = band.restReplacement, !replacement.isValid {
                 throw PartLayoutError.invalidRestReplacement(band.pageIndex)
             }
+            if let context = band.restReplacement?.sourceContext, !context.isValid(in: band) {
+                throw PartLayoutError.invalidRestReplacement(band.pageIndex)
+            }
             guard validCrop(top: band.topFraction, bottom: band.bottomFraction,
                             left: band.leftFraction, right: band.rightFraction) else {
                 throw PartLayoutError.invalidBand(band.pageIndex)
@@ -296,6 +317,7 @@ enum PartLayoutEngine {
         for item in prepared {
             if let current = item.restReplacement, current.joinWithPrevious,
                let previous = joined.last, let previousRest = previous.restReplacement,
+               current.sourceContext == nil, previousRest.sourceContext == nil,
                previous.lastSourceOrder + 1 == item.lastSourceOrder,
                !item.band.pageBreakBefore,
                previous.label.isEmpty, item.label.isEmpty,
@@ -313,7 +335,7 @@ enum PartLayoutEngine {
             } else {
                 var separate = item
                 if let rest = separate.restReplacement {
-                    separate.restReplacement = BandRestReplacement(barCount: rest.barCount)
+                    separate.restReplacement = BandRestReplacement(barCount: rest.barCount, sourceContext: rest.sourceContext)
                 }
                 joined.append(separate)
             }
@@ -382,7 +404,8 @@ enum PartLayoutEngine {
                             x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
                             y: markingsTop - rect.height * renderScale,
                             width: rect.width * renderScale, height: rect.height * renderScale))
-                    }, sourceBandIDs: item.sourceBandIDs, restReplacement: item.restReplacement))
+                    }, sourceBandIDs: item.sourceBandIDs, restReplacement: item.restReplacement,
+                    restSourcePlacement: restSourcePlacement(for: item, destination: destinationRect, scale: renderScale)))
                 cursorTop = destinationRect.minY - actualGap
             }
             pages.append(PartRenderPage(index: pageIndex,
@@ -400,6 +423,38 @@ enum PartLayoutEngine {
             headerPlacement: headerPlacement,
             pages: pages
         )
+    }
+
+    private static func restSourcePlacement(for item: PreparedBand, destination: CGRect,
+                                            scale: CGFloat) -> RestSourcePlacement? {
+        guard let context = item.restReplacement?.sourceContext else { return nil }
+        let bounds = item.pageBounds
+        func rect(_ fragment: BandSourceMarking) -> CGRect {
+            cropRect(top: fragment.topFraction, bottom: fragment.bottomFraction,
+                     left: fragment.leftFraction, right: fragment.rightFraction, in: bounds)
+        }
+        func point(_ source: CGPoint) -> CGPoint {
+            CGPoint(x: destination.minX + (source.x - item.sourceRect.minX) * scale,
+                    y: destination.minY + (source.y - item.sourceRect.minY) * scale)
+        }
+        let fragmentRects = ([context.prefix] + (context.suffix.map { [$0] } ?? [])).map(rect)
+        let startX = max(bounds.minX + context.staffLeftFraction * bounds.width, fragmentRects[0].maxX)
+        let endX = min(bounds.minX + context.staffRightFraction * bounds.width,
+                       fragmentRects.count > 1 ? fragmentRects[1].minX : item.sourceRect.maxX)
+        let slope = tan(context.skewDegrees * .pi / 180)
+        func staffY(_ fraction: Double, at x: CGFloat) -> CGFloat {
+            bounds.maxY - fraction * bounds.height - slope * (x - bounds.midX)
+        }
+        let centerX = (startX + endX) / 2
+        return RestSourcePlacement(fragments: fragmentRects.map { source in
+            SourceMarkingPlacement(sourceRect: source,
+                destinationRect: CGRect(origin: point(source.origin), size: CGSize(width: source.width * scale, height: source.height * scale)))
+        }, staffLines: context.staffLineFractions.map { fraction in
+            [point(CGPoint(x: startX, y: staffY(fraction, at: startX))),
+             point(CGPoint(x: endX, y: staffY(fraction, at: endX)))]
+        }, staffSpace: (context.staffLineFractions[4] - context.staffLineFractions[0]) * bounds.height * scale / 4,
+            restCenter: point(CGPoint(x: centerX, y: staffY(context.staffLineFractions[2], at: centerX))),
+            restSpan: max(0, (endX - startX) * scale))
     }
 
     private static func sourceHeaderPlacement(

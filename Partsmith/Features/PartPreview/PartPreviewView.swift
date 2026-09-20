@@ -20,6 +20,7 @@ struct PartPreviewView: View {
                             Text("Previewing \(selectedPart.name)").font(.headline)
                             Text("This preview is generated from the same renderer used for PDF export.")
                                 .font(.subheadline).foregroundStyle(.secondary)
+                            RestAutoStatusView(document: document)
                         }
                         Spacer()
                         Button("Export PDF", systemImage: "square.and.arrow.up", action: onExportRequested)

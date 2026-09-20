@@ -1,6 +1,6 @@
 # Known limitations
 
-Partsmith remains a geometry-first, assisted extraction app. The score-part-extraction skill is a parallel workflow for ChatGPT/Codex; neither performs general note recognition or re-engraving. The app can generate explicitly counted multi-bar rests for selected rest-only strips.
+Partsmith remains a geometry-first, assisted extraction app. The score-part-extraction skill is a parallel workflow for ChatGPT/Codex; neither performs general note recognition or re-engraving. The app can automatically count and replace eligible single-staff, whole-rest strips; this is a narrow notation recognizer, not general optical music recognition.
 
 ## Detection and musical review
 
@@ -17,7 +17,8 @@ Partsmith remains a geometry-first, assisted extraction app. The score-part-extr
 - Whiteout areas are edited numerically in the inspector and checked in Preview; direct drawing/dragging of whiteouts on the source canvas is not implemented.
 - Bands retain left/right trims, but the source overlay still emphasizes full-width top/bottom editing. Inspect Preview to judge horizontal trimming.
 - **Expand Crop** moves all four edges outward by a chosen number of source PDF points, clamps at page edges, and supports undo. It does not recognize missing notes or remove existing whiteouts. The skill's protected-region guards are not yet enforced by native project editing.
-- No general notation reflow, transposition, automatic rest recognition, or understanding of musically convenient rests for turns. Multi-bar rests use an explicit count on a selected rest-only strip; tempo/key/meter changes, repeats, cues and fermatas still require the original notation or separately preserved markings. Balanced pagination minimizes page count and avoids sparse final pages; it does not choose turns by listening or reading notes.
+- Automatic rest compression requires a complete single staff with clear barlines and one hanging whole-measure rest per bar. Playing entries, ambiguous opening symbols, interior changes, fermatas, repeat notation and unknown ink cause the original strip to be kept. Opening-symbol recognition currently handles treble and bass clefs; uncertain alto/tenor clefs stay unchanged. Grand staffs, partial-system rest runs and automatically joining successive source strips are not supported. Broad crops with neighboring ink can prevent recognition even when the target staff is silent. Manual counts remain available; original crops are always retained.
+- No general notation reflow, transposition or understanding of musically convenient rests for turns. Balanced pagination minimizes page count and avoids sparse final pages; it does not choose turns by listening or reading notes.
 - Explicit page breaks and editorial strip labels are editable in the native band inspector. Drag reordering and automated musical page-turn planning remain absent.
 - Shared source marking rectangles render at the same scale and horizontal source position above a part. The app preserves and can remove these rectangles; creating new ones currently uses a reviewed plan/template. Editorial text directions can be added directly in the app. Auto does not discover or propagate shared rehearsal letters, endings, or tempos automatically.
 - Native export respects printable margins. Scale above 100% is capped at the available width; unusually tall indivisible bands shrink to fit and may need manual readability correction.
