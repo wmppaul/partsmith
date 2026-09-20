@@ -38,7 +38,7 @@ struct SourceCanvasView: View {
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
                             } else if let pick = document.instrumentNamePick {
-                                Text("Recognized: \(pick.name). Click the next instrument name, or choose Done.")
+                                Text("Recognized: \(pick.name). Click another name, or drag a box to reread a label.")
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
                             }
@@ -93,9 +93,10 @@ struct SourceCanvasView: View {
                             isPickingInstrumentNames: document.isPickingInstrumentNames,
                             instrumentNameHighlights: document.instrumentNameHighlights,
                             renderIdentity: document.bandEditorIdentity,
-                            onPickInstrumentName: { point in
+                            onPickInstrumentName: { point, region in
                                 guard !document.isRecognizingInstrumentName else { return }
-                                document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex)
+                                if let region { document.pickInstrumentName(in: region, pageIndex: document.currentPageIndex) }
+                                else { document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex) }
                             },
                             onSelectBand: document.selectBand(_:),
                             onCreateBand: { centerFraction in
@@ -133,9 +134,10 @@ struct SourceCanvasView: View {
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
                             isPickingInstrumentNames: document.isPickingInstrumentNames,
                             instrumentNameHighlights: document.instrumentNameHighlights,
-                            onPickInstrumentName: { point in
+                            onPickInstrumentName: { point, region in
                                 guard !document.isRecognizingInstrumentName else { return }
-                                document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex)
+                                if let region { document.pickInstrumentName(in: region, pageIndex: document.currentPageIndex) }
+                                else { document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex) }
                             },
                             onSelectBand: document.selectBand(_:),
                             onCreateBand: { centerFraction in
@@ -280,7 +282,7 @@ private extension PartsmithDocument {
         if isPickingInstrumentNames {
             return (
                 title: "Pick instrument names",
-                body: "Click instrument names from top to bottom. Return to Auto Extract to review the setup."
+                body: "Click names from top to bottom, or drag a box around a complete label. Drag a green corner to adjust it."
             )
         }
 
@@ -355,7 +357,7 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
     var canCreateBands: Bool
     var isPickingInstrumentNames: Bool
     var instrumentNameHighlights: [ScoreInstrumentNamePick]
-    var onPickInstrumentName: (CGPoint) -> Void
+    var onPickInstrumentName: (CGPoint, CGRect?) -> Void
     var onSelectBand: (UUID?) -> Void
     var onCreateBand: (Double) -> Void
     var onUpdateBand: (UUID, Double, Double) -> Void
@@ -405,7 +407,7 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
     var isPickingInstrumentNames: Bool
     var instrumentNameHighlights: [ScoreInstrumentNamePick]
     var renderIdentity: String
-    var onPickInstrumentName: (CGPoint) -> Void
+    var onPickInstrumentName: (CGPoint, CGRect?) -> Void
     var onSelectBand: (UUID?) -> Void
     var onCreateBand: (Double) -> Void
     var onUpdateBand: (UUID, Double, Double) -> Void
@@ -538,7 +540,7 @@ final class RectifiedBandEditorContainerView: NSView {
         isPickingInstrumentNames: Bool,
         instrumentNameHighlights: [ScoreInstrumentNamePick],
         renderIdentity: String,
-        onPickInstrumentName: @escaping (CGPoint) -> Void,
+        onPickInstrumentName: @escaping (CGPoint, CGRect?) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
@@ -1300,7 +1302,7 @@ final class PDFBandEditorContainerView: NSView {
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
         instrumentNameHighlights: [ScoreInstrumentNamePick],
-        onPickInstrumentName: @escaping (CGPoint) -> Void,
+        onPickInstrumentName: @escaping (CGPoint, CGRect?) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
@@ -1602,8 +1604,9 @@ private final class BandOverlayView: NSView {
     private var canCreateBands = false
     private var isPickingInstrumentNames = false
     private var instrumentNameHighlights: [ScoreInstrumentNamePick] = []
-    private var onPickInstrumentName: ((CGPoint) -> Void)?
+    private var onPickInstrumentName: ((CGPoint, CGRect?) -> Void)?
     private var instrumentNameMouseDownPoint: CGPoint?
+    private var instrumentNameDragPoint: CGPoint?
     private var onSelectBand: ((UUID?) -> Void)?
     private var onCreateBand: ((Double) -> Void)?
     private var onUpdateBand: ((UUID, Double, Double) -> Void)?
@@ -1703,7 +1706,7 @@ private final class BandOverlayView: NSView {
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
         instrumentNameHighlights: [ScoreInstrumentNamePick],
-        onPickInstrumentName: @escaping (CGPoint) -> Void,
+        onPickInstrumentName: @escaping (CGPoint, CGRect?) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
         onUpdateBand: @escaping (UUID, Double, Double) -> Void,
@@ -1712,6 +1715,7 @@ private final class BandOverlayView: NSView {
     ) {
         if self.isPickingInstrumentNames != isPickingInstrumentNames || self.pageIndex != pageIndex {
             instrumentNameMouseDownPoint = nil
+            instrumentNameDragPoint = nil
         }
         self.pageIndex = pageIndex
         self.page = page
@@ -1819,7 +1823,8 @@ private final class BandOverlayView: NSView {
             }
 
             if isSelectedBand {
-                let label = "P\(band.pageIndex + 1)"
+                let restLabel = band.restReplacement.map { " · \($0.barCount)-bar rest in output" } ?? ""
+                let label = "P\(band.pageIndex + 1)\(restLabel)"
                 let attributes: [NSAttributedString.Key: Any] = [
                     .font: NSFont.systemFont(ofSize: 11, weight: .semibold),
                     .foregroundColor: NSColor.labelColor
@@ -1895,6 +1900,12 @@ private final class BandOverlayView: NSView {
             color.setStroke()
             outline.lineWidth = 2
             outline.stroke()
+            for corner in [CGPoint(x: box.minX, y: box.minY), CGPoint(x: box.minX, y: box.maxY),
+                           CGPoint(x: box.maxX, y: box.minY), CGPoint(x: box.maxX, y: box.maxY)] {
+                let handle = NSBezierPath(ovalIn: CGRect(x: corner.x - 3, y: corner.y - 3, width: 6, height: 6))
+                NSColor.white.setFill(); handle.fill()
+                color.setStroke(); handle.stroke()
+            }
 
             // Show the actual recognized spelling beside the ink, large enough
             // to read even when the whole source page is fitted to the window.
@@ -1909,6 +1920,17 @@ private final class BandOverlayView: NSView {
             NSBezierPath(roundedRect: badge, xRadius: 5, yRadius: 5).fill()
             label.draw(in: badge.insetBy(dx: 7, dy: 3), withAttributes: textAttributes)
         }
+        if let start = instrumentNameMouseDownPoint, let end = instrumentNameDragPoint {
+            let rect = CGRect(x: min(start.x, end.x), y: min(start.y, end.y),
+                              width: abs(end.x - start.x), height: abs(end.y - start.y)).intersection(pageFrame)
+            NSColor.controlAccentColor.withAlphaComponent(0.12).setFill()
+            NSBezierPath(rect: rect).fill()
+            let outline = NSBezierPath(rect: rect)
+            NSColor.controlAccentColor.setStroke()
+            outline.lineWidth = 2
+            outline.setLineDash([5, 3], count: 2, phase: 0)
+            outline.stroke()
+        }
     }
 
     override func mouseDown(with event: NSEvent) {
@@ -1919,7 +1941,25 @@ private final class BandOverlayView: NSView {
 
         if isPickingInstrumentNames {
             instrumentNameMouseDownPoint = event.clickCount == 1 && pageFrame.contains(point) ? point : nil
+            instrumentNameDragPoint = nil
+            if instrumentNameMouseDownPoint != nil {
+                // Drag a highlighted corner to adjust that label's OCR box.
+                for pick in instrumentNameHighlights.reversed() where pick.pageIndex == pageIndex {
+                    let box = CGRect(x: pageFrame.minX + pick.bounds.minX * pageFrame.width,
+                        y: pageFrame.maxY - pick.bounds.maxY * pageFrame.height,
+                        width: pick.bounds.width * pageFrame.width,
+                        height: pick.bounds.height * pageFrame.height).insetBy(dx: -3, dy: -3)
+                    let corners = [CGPoint(x: box.minX, y: box.minY), CGPoint(x: box.minX, y: box.maxY),
+                                   CGPoint(x: box.maxX, y: box.minY), CGPoint(x: box.maxX, y: box.maxY)]
+                    if let corner = corners.first(where: { hypot(point.x - $0.x, point.y - $0.y) <= 6 }) {
+                        instrumentNameMouseDownPoint = CGPoint(x: box.midX * 2 - corner.x, y: box.midY * 2 - corner.y)
+                        instrumentNameDragPoint = point
+                        break
+                    }
+                }
+            }
             updateCursor(for: point)
+            needsDisplay = true
             return
         }
 
@@ -2034,7 +2074,8 @@ private final class BandOverlayView: NSView {
         if isPickingInstrumentNames {
             let point = convert(event.locationInWindow, from: nil)
             if let start = instrumentNameMouseDownPoint, hypot(point.x - start.x, point.y - start.y) > 4 {
-                instrumentNameMouseDownPoint = nil
+                instrumentNameDragPoint = point
+                needsDisplay = true
             }
             return
         }
@@ -2087,12 +2128,24 @@ private final class BandOverlayView: NSView {
         if isPickingInstrumentNames {
             let point = convert(event.locationInWindow, from: nil)
             let start = instrumentNameMouseDownPoint
+            let wasDrag = instrumentNameDragPoint != nil
             instrumentNameMouseDownPoint = nil
+            instrumentNameDragPoint = nil
+            needsDisplay = true
             guard event.clickCount == 1, let start,
-                  hypot(point.x - start.x, point.y - start.y) <= 4,
-                  let pageFrame = pageFrameInView(), pageFrame.contains(point)
+                  let pageFrame = pageFrameInView()
             else { return }
-            onPickInstrumentName?(headerFractionPointFromViewPoint(point))
+            if wasDrag || hypot(point.x - start.x, point.y - start.y) > 4 {
+                let box = CGRect(x: min(start.x, point.x), y: min(start.y, point.y),
+                    width: abs(point.x - start.x), height: abs(point.y - start.y)).intersection(pageFrame)
+                guard box.width >= 6, box.height >= 4 else { return }
+                let region = CGRect(x: (box.minX - pageFrame.minX) / pageFrame.width,
+                    y: (pageFrame.maxY - box.maxY) / pageFrame.height,
+                    width: box.width / pageFrame.width, height: box.height / pageFrame.height)
+                onPickInstrumentName?(CGPoint(x: region.midX, y: region.midY), region)
+            } else if pageFrame.contains(point) {
+                onPickInstrumentName?(headerFractionPointFromViewPoint(point), nil)
+            }
             updateCursor(for: point)
             return
         }

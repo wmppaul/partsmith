@@ -12,6 +12,10 @@ struct InspectorView: View {
                 rectificationSection
                 projectInfoSection
 
+                if let selectedBand = document.selectedBand {
+                    selectedBandSection(selectedBand)
+                }
+
                 if let part = document.selectedPart {
                     partSection(part)
                 } else {
@@ -21,9 +25,6 @@ struct InspectorView: View {
                     )
                 }
 
-                if let selectedBand = document.selectedBand {
-                    selectedBandSection(selectedBand)
-                }
             }
             .padding(18)
         }
@@ -261,43 +262,18 @@ struct InspectorView: View {
                     .foregroundStyle(.secondary)
             }
 
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("Scale")
-                    Spacer()
-                    Text((document.part(withID: part.id)?.layoutSettings.scale ?? part.layoutSettings.scale).formatted(.number.precision(.fractionLength(2))))
-                        .monospacedDigit()
-                        .foregroundStyle(.secondary)
-                }
+            DeferredLayoutSlider(title: "Scale",
+                value: document.part(withID: part.id)?.layoutSettings.scale ?? part.layoutSettings.scale,
+                range: 0.6...1.4, step: 0.05,
+                format: { $0.formatted(.number.precision(.fractionLength(2))) },
+                commit: { document.updatePartScale(part.id, scale: $0) })
+                .id("scale-\(part.id)")
 
-                Slider(
-                    value: Binding(
-                        get: { document.part(withID: part.id)?.layoutSettings.scale ?? part.layoutSettings.scale },
-                        set: { document.updatePartScale(part.id, scale: $0) }
-                    ),
-                    in: 0.6...1.4,
-                    step: 0.05
-                )
-            }
-
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("Preferred System Gap")
-                    Spacer()
-                    Text("\(Int(document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap)) pt")
-                        .monospacedDigit()
-                        .foregroundStyle(.secondary)
-                }
-
-                Slider(
-                    value: Binding(
-                        get: { document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap },
-                        set: { document.updatePartGap(part.id, gap: $0) }
-                    ),
-                    in: 4...48,
-                    step: 2
-                )
-            }
+            DeferredLayoutSlider(title: "Preferred System Gap",
+                value: document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap,
+                range: 4...48, step: 2, format: { "\(Int($0)) pt" },
+                commit: { document.updatePartGap(part.id, gap: $0) })
+                .id("gap-\(part.id)")
 
             Toggle("Balance Page Fill", isOn: Binding(
                 get: { document.part(withID: part.id)?.layoutSettings.balancePages ?? true },
@@ -359,6 +335,13 @@ struct InspectorView: View {
                     set: { document.toggleBandExclusion(band.id, excluded: !$0) }
                 )
             )
+
+            Divider()
+
+            BandRestEditor(band: currentBand) { count, join in
+                document.updateBandRestReplacement(band.id, barCount: count, joinWithPrevious: join)
+            }
+            .id(currentBand.id)
 
             Divider()
 
@@ -663,7 +646,8 @@ struct InspectorView: View {
         } else {
             barDescription = ""
         }
-        return "Top \(topPercent)% • Bottom \(bottomPercent)%\(barDescription)"
+        let restDescription = band.restReplacement.map { " • \($0.barCount)-bar rest" } ?? ""
+        return "Top \(topPercent)% • Bottom \(bottomPercent)%\(barDescription)\(restDescription)"
     }
 
     private func manualBarNumberBinding(for bandID: UUID) -> Binding<Int> {
@@ -707,5 +691,128 @@ struct InspectorView: View {
             Text(value)
         }
         .font(.subheadline)
+    }
+}
+
+private struct BandRestEditor: View {
+    let band: BandModel
+    let apply: (Int?, Bool) -> Void
+    @State private var countText: String
+    @State private var joinWithPrevious: Bool
+    @State private var expanded: Bool
+
+    init(band: BandModel, apply: @escaping (Int?, Bool) -> Void) {
+        self.band = band
+        self.apply = apply
+        _countText = State(initialValue: band.restReplacement.map { String($0.barCount) } ?? "")
+        _joinWithPrevious = State(initialValue: band.restReplacement?.joinWithPrevious ?? false)
+        _expanded = State(initialValue: band.restReplacement != nil)
+    }
+
+    private var count: Int? {
+        guard let value = Int(countText.trimmingCharacters(in: .whitespacesAndNewlines)),
+              (2...999).contains(value) else { return nil }
+        return value
+    }
+
+    var body: some View {
+        DisclosureGroup("Multi-bar Rest", isExpanded: $expanded) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("For a strip containing only full bars of rest. Keep the original crop when there are tempo, key or meter changes, repeats, cues or fermatas.")
+                    .font(.caption).foregroundStyle(.secondary)
+                HStack {
+                    Text("Bars of rest")
+                    TextField("Count", text: $countText)
+                        .textFieldStyle(.roundedBorder)
+                        .accessibilityLabel("Bars of rest")
+                        .onSubmit { if let count { apply(count, joinWithPrevious) } }
+                }
+                Toggle("Join with previous rest", isOn: $joinWithPrevious)
+                    .help("Combine with the immediately preceding rest when there is no marking, page break or conflicting bar number between them.")
+                Button(band.restReplacement == nil ? "Replace with Rest" : "Update Rest") {
+                    if let count { apply(count, joinWithPrevious) }
+                }
+                .disabled(count == nil || band.excluded)
+                if let replacement = band.restReplacement {
+                    Text("This strip: \(replacement.barCount) bars of rest. The source crop is saved.")
+                        .font(.caption).foregroundStyle(.secondary)
+                    Button("Restore Original Crop") { apply(nil, false) }
+                } else {
+                    Text("Enter 2–999 bars. The source stays editable; Undo or Restore brings the original notation back.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+            }
+            .padding(.top, 6)
+        }
+        .onChange(of: band.restReplacement) {
+            countText = band.restReplacement.map { String($0.barCount) } ?? ""
+            joinWithPrevious = band.restReplacement?.joinWithPrevious ?? false
+        }
+    }
+}
+
+/// Dragging changes only this small control. One final document edit creates
+/// one undo action and one new preview, regardless of how far the knob moved.
+private struct DeferredLayoutSlider: View {
+    let title: String
+    let value: Double
+    let range: ClosedRange<Double>
+    let step: Double
+    let format: (Double) -> String
+    let commit: (Double) -> Void
+    @State private var draft: Double
+    @State private var isEditing = false
+    @State private var pendingKeyboardCommit: DispatchWorkItem?
+
+    init(title: String, value: Double, range: ClosedRange<Double>, step: Double,
+         format: @escaping (Double) -> String, commit: @escaping (Double) -> Void) {
+        self.title = title
+        self.value = value
+        self.range = range
+        self.step = step
+        self.format = format
+        self.commit = commit
+        _draft = State(initialValue: value)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text(title)
+                Spacer()
+                Text(format(draft)).monospacedDigit().foregroundStyle(.secondary)
+            }
+            Slider(value: Binding(get: { draft }, set: { newValue in
+                draft = newValue
+                pendingKeyboardCommit?.cancel()
+                // Keyboard/accessibility changes may have no drag callback.
+                // The next main-loop turn also lets a mouse-down callback run
+                // before deciding whether this change needs its own commit.
+                let work = DispatchWorkItem { if !isEditing { commitDraft() } }
+                pendingKeyboardCommit = work
+                DispatchQueue.main.async(execute: work)
+            }), in: range, step: step, onEditingChanged: { editing in
+                pendingKeyboardCommit?.cancel()
+                isEditing = editing
+                if !editing { commitDraft() }
+            })
+            .accessibilityLabel(title)
+            .accessibilityValue(format(draft))
+            .help("The preview updates when you release the slider.")
+        }
+        .onChange(of: value) {
+            guard !isEditing else { return }
+            pendingKeyboardCommit?.cancel()
+            draft = value
+        }
+        .onDisappear {
+            pendingKeyboardCommit?.cancel()
+            if !isEditing { commitDraft() }
+        }
+    }
+
+    private func commitDraft() {
+        guard abs(draft - value) > 0.000001 else { return }
+        commit(draft)
     }
 }

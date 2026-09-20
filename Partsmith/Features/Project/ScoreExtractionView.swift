@@ -15,6 +15,7 @@ struct ScoreExtractionView: View {
     @State private var correctionPart = ""
     @State private var movementTitle = ""
     @State private var replaceListOnNextPick = false
+    @State private var pickedInstrumentList = ScoreInstrumentPickList()
     @State private var pickStatus: String?
     @State private var deskewRunID: UUID?
     @State private var deskewStatus: String?
@@ -277,7 +278,7 @@ struct ScoreExtractionView: View {
                     }
                 }
                 if document.isPickingInstrumentNames {
-                    Text("Click printed instrument names from top to bottom. Names are read on this Mac and stay editable.")
+                    Text("Click a printed instrument name, or drag around its full label. Work from top to bottom; repeated names become separate numbered parts.")
                         .font(.callout).foregroundStyle(.secondary)
                 }
                 if let pickStatus { Text(pickStatus).font(.callout).foregroundStyle(.secondary) }
@@ -631,6 +632,7 @@ struct ScoreExtractionView: View {
 
     private func setProfile(_ parts: [(String, Int)], lyricIndices: Set<Int> = []) {
         document.cancelInstrumentNamePicking()
+        pickedInstrumentList.reset()
         replaceListOnNextPick = false
         pickStatus = nil
         profile.parts = parts.enumerated().map { index, part in
@@ -671,31 +673,38 @@ struct ScoreExtractionView: View {
         document.setHeaderSelectionEditing(false)
         document.setPageRectificationEditing(false)
         replaceListOnNextPick = replacingList
-        pickStatus = replacingList ? "The first name you click starts a new list." : "Clicked names will be added to this list."
+        pickStatus = replacingList ? "The first name you select starts a new list." : "Selected names will be added to this list."
         document.isPickingInstrumentNames = true
         onShowScore()
     }
 
     private func receiveInstrumentNamePick() {
         guard document.isPickingInstrumentNames, let pick = document.instrumentNamePick else { return }
-        if replaceListOnNextPick {
-            profile.parts.removeAll()
-            replaceListOnNextPick = false
-        }
-        let normalized = pick.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        if profile.parts.contains(where: { $0.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == normalized }) {
-            pickStatus = "\(pick.name) is already in the list. Edit its name if you need another part with the same printed label."
-            return
-        }
-        profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: pick.name, staffCount: pick.suggestedStaffCount))
+        var nextParts = replaceListOnNextPick ? [] : profile.parts
+        var nextPickList = replaceListOnNextPick ? ScoreInstrumentPickList() : pickedInstrumentList
+        guard let result = nextPickList.apply(pick, to: &nextParts) else { return }
+        profile.parts = nextParts
+        pickedInstrumentList = nextPickList
+        replaceListOnNextPick = false
         correctionPart = profile.parts.first?.id ?? ""
-        pickStatus = "Added \(pick.name). Click the next printed name or choose Done."
+        switch result {
+        case .added(_, let name):
+            document.updateInstrumentNameHighlight(id: pick.id, name: name)
+            pickStatus = "Added \(name). Click or drag around the next name, or choose Done."
+        case .updated(_, let name):
+            document.updateInstrumentNameHighlight(id: pick.id, name: name)
+            pickStatus = "Updated \(name). Click or drag around the next name, or choose Done."
+        case .existing(_, let name):
+            document.updateInstrumentNameHighlight(id: pick.id, name: name)
+            pickStatus = "\(name) is already added. Click or drag around a different printed label to add another part."
+        }
     }
 
     private func invalidateSourceReview() {
         let hadAnalysis = review != nil || isRunning
         document.cancelScoreDetection()
         document.cancelInstrumentNamePicking()
+        pickedInstrumentList.reset()
         review = nil
         pageImage = nil
         headerPreviewImage = nil

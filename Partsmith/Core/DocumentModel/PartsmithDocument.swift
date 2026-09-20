@@ -206,17 +206,27 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     ]
     private static let rectificationLogger = Logger(subsystem: "Partsmith", category: "Rectification")
     private static let barNumberLogger = Logger(subsystem: "Partsmith", category: "BarNumbers")
+    private var isApplyingStateSnapshot = false
+    private var isInvalidatingRestReplacements = false
 
     @Published var project: ProjectData {
         didSet {
             if project.pageRectifications != oldValue.pageRectifications {
                 invalidateInstrumentNameHighlights()
             }
+            if !isApplyingStateSnapshot && !isInvalidatingRestReplacements {
+                invalidateRestReplacements(relativeTo: oldValue, sourceChanged: false)
+            }
         }
     }
     @Published var sourcePDFData: Data? {
         didSet {
-            if sourcePDFData != oldValue { invalidateInstrumentNameHighlights() }
+            if sourcePDFData != oldValue {
+                invalidateInstrumentNameHighlights()
+                if !isApplyingStateSnapshot {
+                    invalidateRestReplacements(relativeTo: project, sourceChanged: true)
+                }
+            }
         }
     }
     @Published var selectedPartID: UUID?
@@ -645,6 +655,15 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     /// The point is normalized in the currently displayed page, top to bottom.
     /// No project data changes until the user accepts the instrument setup.
     func pickInstrumentName(at point: CGPoint, pageIndex: Int) {
+        pickInstrumentName(at: point, region: nil, pageIndex: pageIndex)
+    }
+
+    /// Reread a user-drawn box in displayed-page coordinates.
+    func pickInstrumentName(in region: CGRect, pageIndex: Int) {
+        pickInstrumentName(at: CGPoint(x: region.midX, y: region.midY), region: region, pageIndex: pageIndex)
+    }
+
+    private func pickInstrumentName(at point: CGPoint, region: CGRect?, pageIndex: Int) {
         instrumentNameOperation?.cancel()
         instrumentNameOperation = nil
         instrumentNamePick = nil
@@ -663,8 +682,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         isRecognizingInstrumentName = true
         operation.addExecutionBlock { [weak self, weak operation] in
             guard let operation, !operation.isCancelled else { return }
-            let candidate = ScoreInstrumentNameDetector.recognize(in: image, at: point,
-                                                                  isCancelled: { operation.isCancelled })
+            let candidate: ScoreInstrumentNameDetector.Candidate?
+            if let region {
+                candidate = ScoreInstrumentNameDetector.recognize(in: image, region: region,
+                    isCancelled: { operation.isCancelled })
+            } else {
+                candidate = ScoreInstrumentNameDetector.recognize(in: image, at: point,
+                    isCancelled: { operation.isCancelled })
+            }
             DispatchQueue.main.async { [weak self, weak operation] in
                 guard let self, let operation, self.instrumentNameOperation === operation,
                       !operation.isCancelled else { return }
@@ -677,7 +702,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                     return
                 }
                 guard let candidate else {
-                    self.instrumentNamePickMessage = "Couldn’t read a name there. Click the printed letters, or type the name in the list."
+                    self.instrumentNamePickMessage = "Couldn’t read a name there. Drag a box around the complete label, or type its name in the list."
                     return
                 }
                 let pick = ScoreInstrumentNamePick(id: UUID(), name: candidate.text,
@@ -701,6 +726,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             }
         }
         instrumentNameQueue.addOperation(operation)
+    }
+
+    /// Keep on-score feedback consistent with an automatically unique list name.
+    func updateInstrumentNameHighlight(id: UUID, name: String) {
+        guard let index = instrumentNameHighlights.firstIndex(where: { $0.id == id }) else { return }
+        let pick = instrumentNameHighlights[index]
+        instrumentNameHighlights[index] = ScoreInstrumentNamePick(id: pick.id, name: name,
+            suggestedStaffCount: pick.suggestedStaffCount, pageIndex: pick.pageIndex, bounds: pick.bounds)
     }
 
     func cancelInstrumentNamePicking() {
@@ -1306,6 +1339,21 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
     }
 
+    /// The source crop and its markings remain stored verbatim. A replacement
+    /// is an explicit output choice, restored together with its count by Undo.
+    @discardableResult
+    func updateBandRestReplacement(_ bandID: UUID, barCount: Int?, joinWithPrevious: Bool = false) -> Bool {
+        if let barCount, !(2...999).contains(barCount) { return false }
+        guard let band = project.bands.first(where: { $0.id == bandID }) else { return false }
+        let replacement = barCount.map { BandRestReplacement(barCount: $0, joinWithPrevious: joinWithPrevious) }
+        guard replacement != band.restReplacement else { return true }
+        commit(actionName: replacement == nil ? "Restore Source Music" : "Replace With Multi-Bar Rest") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index].restReplacement = replacement
+        }
+        return true
+    }
+
     func updateBandEditorialLabel(_ bandID: UUID, label: String) {
         guard project.bands.contains(where: { $0.id == bandID }) else { return }
         commit(actionName: "Edit Band Label") { project, _ in
@@ -1562,6 +1610,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 var copy = band
                 copy.id = UUID()
                 copy.pageIndex = destinationPageIndex
+                copy.restReplacement = nil
                 copy.createdAt = copyStartDate.addingTimeInterval(Double(copyIndex) * 0.001)
                 copy.barNumberMode = .automatic
                 copy.barNumberValue = nil
@@ -1662,6 +1711,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         var sourceCopy = previousState.sourcePDFData
 
         mutation(&projectCopy, &sourceCopy)
+        projectCopy = Self.invalidatingRestReplacements(in: projectCopy, relativeTo: previousState.project,
+                                                       sourceChanged: sourceCopy != previousState.sourcePDFData)
         projectCopy.modifiedAt = .now
 
         applyState(DocumentStateSnapshot(project: projectCopy, sourcePDFData: sourceCopy))
@@ -1815,6 +1866,10 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     private func applyState(_ snapshot: DocumentStateSnapshot) {
+        // A complete undo/load snapshot already contains the correct source and
+        // replacement state. Do not invalidate the replacement being restored.
+        isApplyingStateSnapshot = true
+        defer { isApplyingStateSnapshot = false }
         let sourceChanged = sourcePDFData != snapshot.sourcePDFData
         project = snapshot.project
         sourcePDFData = snapshot.sourcePDFData
@@ -1822,6 +1877,44 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             rebuildPDFCache()
         }
         clampSelectionsToCurrentState()
+    }
+
+    private func invalidateRestReplacements(relativeTo previous: ProjectData, sourceChanged: Bool) {
+        guard !isInvalidatingRestReplacements else { return }
+        let updated = Self.invalidatingRestReplacements(in: project, relativeTo: previous, sourceChanged: sourceChanged)
+        guard updated != project else { return }
+        isInvalidatingRestReplacements = true
+        defer { isInvalidatingRestReplacements = false }
+        project = updated
+    }
+
+    private static func invalidatingRestReplacements(in project: ProjectData, relativeTo previous: ProjectData,
+                                                     sourceChanged: Bool) -> ProjectData {
+        guard project.bands.contains(where: { $0.restReplacement != nil }) else { return project }
+        var updated = project
+        var oldBands: [UUID: BandModel] = [:]
+        for band in previous.bands where oldBands[band.id] == nil { oldBands[band.id] = band }
+        var oldCorrections: [Int: PageRectification] = [:]
+        for correction in previous.pageRectifications where oldCorrections[correction.pageIndex] == nil {
+            oldCorrections[correction.pageIndex] = correction
+        }
+        var newCorrections: [Int: PageRectification] = [:]
+        for correction in project.pageRectifications where newCorrections[correction.pageIndex] == nil {
+            newCorrections[correction.pageIndex] = correction
+        }
+        for index in updated.bands.indices where updated.bands[index].restReplacement != nil {
+            let band = updated.bands[index]
+            guard !sourceChanged, let old = oldBands[band.id],
+                  old.pageIndex == band.pageIndex, old.partID == band.partID,
+                  old.topFraction == band.topFraction, old.bottomFraction == band.bottomFraction,
+                  old.leftFraction == band.leftFraction, old.rightFraction == band.rightFraction,
+                  old.exclusions == band.exclusions, old.sourceMarkings == band.sourceMarkings,
+                  oldCorrections[band.pageIndex] == newCorrections[band.pageIndex] else {
+                updated.bands[index].restReplacement = nil
+                continue
+            }
+        }
+        return updated
     }
 
     private func rebuildPDFCache() {

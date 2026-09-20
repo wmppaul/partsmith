@@ -4,47 +4,66 @@ import SwiftUI
 struct PartPreviewView: View {
     @ObservedObject var document: PartsmithDocument
     var onExportRequested: () -> Void
+    @StateObject private var renderer = PartPreviewRenderer()
+
+    private var snapshot: PartPreviewSnapshot? {
+        guard let part = document.selectedPart, let source = document.sourcePDFData else { return nil }
+        return PartPreviewSnapshot(partID: part.id, project: document.project, sourcePDFData: source)
+    }
 
     var body: some View {
-        if let selectedPart = document.selectedPart {
-            Group {
-                switch Result(catching: { try PartPDFExporter.previewDocument(for: selectedPart.id, in: document) }) {
-                case .success(let previewDocument):
-                    VStack(alignment: .leading, spacing: 0) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Previewing \(selectedPart.name)")
-                                    .font(.headline)
-                                Text("This preview is generated from the same renderer used for PDF export.")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            }
-                            Spacer()
-                            Button("Export PDF", systemImage: "square.and.arrow.up") {
-                                onExportRequested()
-                            }
+        Group {
+            if let selectedPart = document.selectedPart {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Previewing \(selectedPart.name)").font(.headline)
+                            Text("This preview is generated from the same renderer used for PDF export.")
+                                .font(.subheadline).foregroundStyle(.secondary)
                         }
-                        .padding(16)
-
-                        Divider()
-
-                        PDFPreviewRepresentable(pdfDocument: previewDocument)
+                        Spacer()
+                        Button("Export PDF", systemImage: "square.and.arrow.up", action: onExportRequested)
+                            .disabled(renderer.isRendering || renderer.pdfDocument == nil || renderer.errorMessage != nil)
                     }
-                case .failure(let error):
-                    ContentUnavailableView {
-                        Label("Preview Unavailable", systemImage: "exclamationmark.triangle")
-                    } description: {
-                        Text(error.localizedDescription)
+                    .padding(16)
+                    Divider()
+                    ZStack(alignment: .topTrailing) {
+                        if document.sourcePDFData == nil {
+                            ContentUnavailableView("Source PDF Needed", systemImage: "doc",
+                                description: Text("Import a score PDF to preview this part."))
+                        } else if let error = renderer.errorMessage {
+                            ContentUnavailableView {
+                                Label("Preview Unavailable", systemImage: "exclamationmark.triangle")
+                            } description: { Text(error) }
+                        } else if let pdf = renderer.pdfDocument {
+                            PDFPreviewRepresentable(pdfDocument: pdf)
+                        } else {
+                            Color.clear.frame(maxWidth: .infinity, maxHeight: .infinity)
+                        }
+                        if renderer.isRendering {
+                            HStack(spacing: 8) {
+                                ProgressView().controlSize(.small)
+                                Text(renderer.pdfDocument == nil ? "Preparing preview…" : "Updating preview…")
+                            }.padding(10).background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8)).padding(12)
+                        }
                     }
                 }
-            }
-        } else {
-            ContentUnavailableView {
-                Label("Select a Part", systemImage: "sidebar.left")
-            } description: {
-                Text("Choose a part in the sidebar to preview the extracted output layout.")
+            } else {
+                ContentUnavailableView {
+                    Label("Select a Part", systemImage: "sidebar.left")
+                } description: {
+                    Text("Choose a part in the sidebar to preview the extracted output layout.")
+                }
             }
         }
+        .onAppear(perform: updatePreview)
+        .onChange(of: snapshot) { updatePreview() }
+        .onDisappear { renderer.cancel() }
+    }
+
+    private func updatePreview() {
+        if let snapshot { renderer.update(snapshot) }
+        else { renderer.cancel(clearPreview: true) }
     }
 }
 
@@ -63,6 +82,8 @@ private struct PDFPreviewRepresentable: NSViewRepresentable {
 final class PDFPreviewContainerView: NSView {
     private let pdfView = PDFView()
     private var refreshGeneration = 0
+    private var lastLayoutSize: CGSize = .zero
+    private var pendingPageIndex: Int?
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -89,52 +110,36 @@ final class PDFPreviewContainerView: NSView {
     }
 
     func update(pdfDocument: PDFDocument) {
-        let documentChanged = pdfView.document !== pdfDocument
-        if documentChanged {
-            pdfView.document = pdfDocument
-        }
-
+        guard pdfView.document !== pdfDocument else { return }
+        let currentIndex = pdfView.currentPage.flatMap { pdfView.document?.index(for: $0) } ?? 0
+        pendingPageIndex = min(max(0, currentIndex), max(0, pdfDocument.pageCount - 1))
+        pdfView.document = pdfDocument
         pdfView.autoScales = true
         guard bounds.size != .zero else { return }
-
         refreshGeneration &+= 1
         refreshPDFView(generation: refreshGeneration)
     }
 
     override func layout() {
         super.layout()
-        guard bounds.size != .zero else { return }
+        guard bounds.size != .zero, bounds.size != lastLayoutSize else { return }
+        lastLayoutSize = bounds.size
         refreshGeneration &+= 1
         refreshPDFView(generation: refreshGeneration)
     }
 
     private func refreshPDFView(generation: Int) {
-        guard generation == refreshGeneration else { return }
-
-        let firstPage = pdfView.document?.page(at: 0)
-        pdfView.layoutDocumentView()
-        pdfView.documentView?.needsLayout = true
-        pdfView.documentView?.layoutSubtreeIfNeeded()
-        pdfView.documentView?.needsDisplay = true
-        pdfView.needsDisplay = true
-        pdfView.displayIfNeeded()
-        if let firstPage {
-            pdfView.go(to: firstPage)
-        }
-        forceScrollViewRefresh()
-
         DispatchQueue.main.async { [weak self] in
             guard let self, generation == self.refreshGeneration else { return }
-            let firstPage = self.pdfView.document?.page(at: 0)
             self.pdfView.layoutDocumentView()
             self.pdfView.documentView?.needsLayout = true
             self.pdfView.documentView?.layoutSubtreeIfNeeded()
             self.pdfView.documentView?.needsDisplay = true
             self.pdfView.needsDisplay = true
-            self.pdfView.displayIfNeeded()
-            if let firstPage {
-                self.pdfView.go(to: firstPage)
+            if let index = self.pendingPageIndex, let page = self.pdfView.document?.page(at: index) {
+                self.pdfView.go(to: page)
             }
+            self.pendingPageIndex = nil
             self.forceScrollViewRefresh()
         }
     }

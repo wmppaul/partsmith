@@ -180,7 +180,29 @@ Auto Extract now has a scrollable thumbnail picker, **All Pages** / **Selected P
 
 Successfully rendered pages with no detected staves are skipped automatically. **View Skipped Pages** and **Restore Page** allow optional inspection, while the blue **Add Parts** button remains available when the music assignments are complete. An unreadable raster remains an error rather than being silently treated as blank. Selecting only blank pages creates no empty parts.
 
-Validation: **154 document assertions**, including real Ave Verum scoped-header detection and export, plus **37 deskew workflow checks**. Coverage includes sparse indices, selected-page progress, range parsing, empty/invalid input, skip/restore behavior, rendering failures, original-coordinate export, and undo/redo. Independent review checked both core and UI integration. The universal Release build and archive checks pass. Live visual verification of this page-picker update remains pending because the Mac was locked.
+Validation: **154 document assertions**, including real Ave Verum scoped-header detection and export, plus **37 deskew workflow checks**. Coverage includes sparse indices, selected-page progress, range parsing, empty/invalid input, skip/restore behavior, rendering failures, original-coordinate export, and undo/redo. Independent review checked both core and UI integration. The universal Release build and archive checks pass. Subsequent live testing verified the thumbnail selector, Current Page, and the sparse range `1-3, 25` selecting exactly four pages.
+
+### Numbered instruments, editable name boxes, and responsive preview
+
+Printed ordinals are retained with instrument names, including Arabic and Roman prefixes. Spatially distinct labels remain distinct instruments even when their recognized names match; unique suffixes distinguish them. Clicking a label again or adjusting its green selection box updates the existing row. Manual name edits are preserved. The source canvas supports both clicking and dragging an exact recognition box.
+
+Scale and Preferred System Gap keep a local draft during a slider gesture and commit one undoable edit on release. Preview generation uses immutable snapshots and a separate background PDF document, cancels superseded work, and retains the current page. Unchanged inputs reuse the preview. Export and preview continue to use the same layout and drawing code.
+
+Validation: **205 instrument-name checks** cover actual numbered quartet labels on raw and rectified scans, ordinal clicks, region edits, and separate identical labels. **24 preview checks** cover rapid superseding changes on the 131-band Brahms part, cancellation, reuse, missing-source clearing, exact preview/export pixels on first/middle/last pages, and excluded-strip barriers for rest joining. Enqueuing the measured preview request took under 1 ms. Independent review found no snapshot, cancellation, or renderer isolation defects. Live testing confirmed numbered highlights, separate same-name rows, resizing a recognition box, slider track clicks, accessibility increments, and one-step Undo. The automation's native slider drag produced no callbacks, so live drag behavior remains unverified; standard SwiftUI tracking handles the local draft.
+
+Run `bash tools/test_instrument_names.sh` and `bash tools/test_preview_performance.sh`.
+
+### Explicit multi-bar rests
+
+Select a rest-only band and expand **Multi-bar Rest** in the inspector. Enter 2–999 full bars and choose **Replace with Rest**. The renderer draws a vector five-line staff, H-bar and count, while the project retains the original source coordinates, whiteouts, labels and copied source markings. **Restore Original Crop** and Undo recover the source. Crop, source, instrument-assignment, whiteout, copied-marking or correction changes clear the affected replacement; copying a band to another page never copies its rest count.
+
+**Join with previous rest** is an explicit choice, off by default. Joining stops at ordinary music, excluded strips, annotations, copied markings, explicit page breaks, conflicting known bar numbers, or a total above 999. Individual source bands and their original counts remain in the project. Preview retains excluded strips as ordering barriers, matching Export. No automatic rest recognition or partial-system cutting is performed.
+
+The [source audit](Tests/extraction/rest-compression-review.md) identifies real whole-rest bands in Brahms, Mozart and Schumann, plus counterexamples containing a playing entrance, a fermata and changing meters. The [Brahms demonstration](output/pdf/rest-compression-example/README.md) replaces only bars 42–47 with a six-bar rest and retains the following mixed system, including the entrance in bar 51. This is an explicitly labeled one-page excerpt, not a revised full part. New tempo/key/meter changes, repeats, cues and fermatas need their original notation or separately preserved markings.
+
+Validation: **44 rest layout/export checks**, **55 rest document checks**, **24 preview checks**, **5,315 existing layout assertions**, and **161 native crop/export checks** pass. A synthetic 4+5 example renders one nine-bar rest. Live UI testing restored the original Brahms strip, entered six bars, applied the replacement, and verified the result and following music in Preview. Source bytes remain unchanged. The universal Release app builds successfully.
+
+Run `bash tools/test_multibar_rests.sh`, `bash tools/test_rest_document.sh`, and `bash tools/test_preview_performance.sh`.
 
 ## Practical limits
 

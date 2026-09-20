@@ -26,6 +26,196 @@ enum InstrumentNameTests {
               "\(description): highlight encloses the clicked printed label in top-down coordinates")
     }
 
+    static func checkPickedListIdentity() {
+        func pick(_ name: String = "Violine", page: Int = 0, y: Double = 0.22, staffCount: Int = 1,
+                  bounds: CGRect? = nil) -> ScoreInstrumentNamePick {
+            ScoreInstrumentNamePick(id: UUID(), name: name, suggestedStaffCount: staffCount,
+                pageIndex: page, bounds: bounds ?? CGRect(x: 0.08, y: y, width: 0.075, height: 0.012))
+        }
+        var list = ScoreInstrumentPickList()
+        var parts: [ScorePartDefinition] = []
+        guard case let .added(firstID, firstName) = list.apply(pick(), to: &parts) else {
+            fatalError("The first recognized instrument must create a list row")
+        }
+        check(firstName == "Violine" && parts.count == 1, "The first printed name keeps its original text")
+        guard case let .added(secondID, secondName) = list.apply(pick(y: 0.26), to: &parts) else {
+            fatalError("A second printed occurrence must create a separate row")
+        }
+        check(secondName == "Violine 2" && parts.map(\.name) == ["Violine", "Violine 2"],
+              "Identical names on different staves receive distinct editable names")
+        guard case let .added(thirdID, thirdName) = list.apply(pick(page: 1), to: &parts) else {
+            fatalError("An identical label on another page must remain a separate occurrence")
+        }
+        check(thirdName == "Violine 3" && Set(parts.map(\.id)).count == 3,
+              "Page identity distinguishes matching label coordinates on different pages")
+        check(list.apply(pick(y: 0.26), to: &parts) == .existing(partID: secondID, name: "Violine 2")
+              && parts.count == 3,
+              "Rereading the same printed label reuses its existing row rather than suffixing it again")
+        parts.removeAll { $0.id == firstID }
+        check(list.apply(pick(y: 0.26), to: &parts) == .existing(partID: secondID, name: "Violine 2"),
+              "A repeated reading keeps its assigned name when an earlier same-name row is removed")
+        check(list.apply(pick("2. Violine", y: 0.26), to: &parts) == .updated(partID: secondID, name: "2. Violine")
+              && parts.count == 2,
+              "Expanding a selection to recover a printed number updates the same instrument row")
+        let secondIndex = parts.firstIndex { $0.id == secondID }!
+        parts[secondIndex].name = "Solo violin"
+        parts[secondIndex].staffCount = 3
+        check(list.apply(pick("Violin II", y: 0.26, staffCount: 2), to: &parts)
+                == .existing(partID: secondID, name: "Solo violin")
+              && parts[secondIndex].staffCount == 3,
+              "Rereading a label preserves both manually edited names and staff counts")
+        parts.removeAll { $0.id == secondID }
+        guard case let .added(replacedID, _) = list.apply(pick("2. Violine", y: 0.26), to: &parts) else {
+            fatalError("A deleted instrument row may be added again by picking its source label")
+        }
+        check(replacedID != secondID && parts.count == 2,
+              "A deleted row does not leave stale source identity that suppresses a new pick")
+        list.reset()
+        guard case let .added(resetID, _) = list.apply(pick(page: 1), to: &parts) else {
+            fatalError("Resetting source identity must allow a new pick")
+        }
+        check(resetID != thirdID && parts.count == 3, "A new picking list resets remembered source-label identities")
+
+        var collisions = ScoreInstrumentPickList()
+        var manualParts = [ScorePartDefinition(id: "manual-first", name: "VIOLINE", staffCount: 1),
+                           ScorePartDefinition(id: "manual-second", name: "  Violine   2  ", staffCount: 1)]
+        let originalManualParts = manualParts
+        guard case let .added(_, uniqueName) = collisions.apply(pick(), to: &manualParts) else {
+            fatalError("A printed name matching a manually entered name still creates its own row")
+        }
+        check(uniqueName == "Violine 3" && Array(manualParts.prefix(2)) == originalManualParts,
+              "Automatic suffixes avoid case and whitespace collisions without renaming existing rows")
+        let beforeInvalid = manualParts
+        for invalid in [pick("   "), pick(page: -1), pick(staffCount: 0),
+                        pick(bounds: CGRect(x: -0.1, y: 0.2, width: 0.1, height: 0.01)),
+                        pick(bounds: .zero), pick(bounds: CGRect(x: 0.98, y: 0.2, width: 0.1, height: 0.01))] {
+            check(collisions.apply(invalid, to: &manualParts) == nil && manualParts == beforeInvalid,
+                  "Invalid picked labels cannot mutate or renumber the editable instrument list")
+        }
+    }
+
+    static func checkRegionPicking() throws {
+        let source = try Data(contentsOf: URL(fileURLWithPath:
+            "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf"))
+        let document = PartsmithDocument(sourcePDFData: source)
+        let image = document.scoreReviewImage(pageIndex: 0)!
+        let completeBox = CGRect(x: 0.072, y: 0.217, width: 0.087, height: 0.019)
+        let wordBox = CGRect(x: 0.093, y: 0.217, width: 0.066, height: 0.019)
+        let result = ScoreInstrumentNameDetector.recognize(in: image, region: completeBox)
+        check(result?.text == "1. Violine", "A drawn box reads the complete printed instrument label including its number")
+        check(result != nil && completeBox.contains(result!.bounds)
+              && result!.bounds.minX < 0.09 && result!.bounds.maxX > 0.145,
+              "Box recognition returns tight source bounds enclosing both the number and instrument word")
+        let wordOnly = ScoreInstrumentNameDetector.recognize(in: image, region: wordBox)
+        check(wordOnly?.text == "Violine" && wordOnly!.bounds.minX >= wordBox.minX,
+              "An explicit box controls the OCR input and does not borrow a number outside its edges")
+        check(ScoreInstrumentNameDetector.recognize(in: image, region: completeBox, isCancelled: { true }) == nil,
+              "Cancelled box recognition produces no label")
+        for invalid in [CGRect.zero, CGRect.null,
+                        CGRect(x: -0.01, y: 0.2, width: 0.1, height: 0.02),
+                        CGRect(x: 0.95, y: 0.2, width: 0.1, height: 0.02),
+                        CGRect(x: CGFloat.nan, y: 0.2, width: 0.1, height: 0.02)] {
+            check(ScoreInstrumentNameDetector.recognize(in: image, region: invalid) == nil,
+                  "Invalid OCR selection geometry never reads a different score region")
+        }
+        let blankBox = CGRect(x: 0.08, y: 0.14, width: 0.07, height: 0.02)
+        check(ScoreInstrumentNameDetector.recognize(in: image, region: blankBox) == nil,
+              "A box over blank margin cannot borrow a neighboring title or instrument")
+        document.pickInstrumentName(in: completeBox, pageIndex: 0)
+        check(!document.isRecognizingInstrumentName && document.instrumentNamePick == nil,
+              "Drawing an OCR box outside picking mode cannot change the current result")
+        document.isPickingInstrumentNames = true
+        document.pickInstrumentName(in: wordBox, pageIndex: 0)
+        waitFor { !document.isRecognizingInstrumentName }
+        check(document.instrumentNamePick?.name == "Violine" && document.instrumentNameHighlights.count == 1,
+              "Document box recognition publishes the selected partial label")
+        document.pickInstrumentName(in: completeBox, pageIndex: 0)
+        waitFor { !document.isRecognizingInstrumentName }
+        check(document.instrumentNamePick?.name == "1. Violine" && document.instrumentNameHighlights.count == 1
+              && document.instrumentNameHighlights[0].bounds == result?.bounds,
+              "Expanding a label box replaces the previous highlight with its complete numbered text and bounds")
+        let pickedID = document.instrumentNamePick!.id
+        document.updateInstrumentNameHighlight(id: pickedID, name: "Violine 2")
+        check(document.instrumentNameHighlights[0].name == "Violine 2"
+              && document.instrumentNameHighlights[0].bounds == result?.bounds,
+              "A unique editable list name can be shown on score without moving its source highlight")
+        let previousHighlights = document.instrumentNameHighlights
+        document.pickInstrumentName(in: blankBox, pageIndex: 0)
+        waitFor { !document.isRecognizingInstrumentName }
+        check(document.instrumentNamePick == nil && document.instrumentNameHighlights == previousHighlights,
+              "An empty box leaves earlier successfully recognized labels visible")
+        document.pickInstrumentName(in: completeBox, pageIndex: 0)
+        document.cancelInstrumentNamePicking()
+        RunLoop.main.run(until: Date().addingTimeInterval(0.15))
+        check(!document.isRecognizingInstrumentName && document.instrumentNamePick == nil
+              && document.instrumentNameHighlights.isEmpty,
+              "Finishing picking cancels a pending box read and clears all transient highlights")
+        document.isPickingInstrumentNames = true
+        document.pickInstrumentName(in: completeBox, pageIndex: 0)
+        document.sourcePDFData = nil
+        waitFor { !document.isRecognizingInstrumentName }
+        check(document.instrumentNamePick == nil && document.instrumentNameHighlights.isEmpty,
+              "Replacing the score invalidates an in-flight box read and its geometry")
+    }
+
+    static func checkNumberedStringLabels() throws {
+        let fixtures: [(path: String, clicks: [CGPoint])] = [
+            ("sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+             [CGPoint(x: 0.115, y: 0.227), CGPoint(x: 0.115, y: 0.268)]),
+            ("sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+             [CGPoint(x: 0.115, y: 0.213), CGPoint(x: 0.115, y: 0.253)])
+        ]
+        let expectedNames = ["1. Violine", "2. Violine"]
+        for (fixtureIndex, fixture) in fixtures.enumerated() {
+            let source = try Data(contentsOf: URL(fileURLWithPath: fixture.path))
+            let document = PartsmithDocument(sourcePDFData: source)
+            document.project.pageCount = document.pdfDocument!.pageCount
+            for corrected in [false, true] {
+                if corrected {
+                    // These quartet openings are nearly level, so automatic
+                    // deskew correctly proposes no change. A small explicit
+                    // correction exercises the displayed corrected-raster path.
+                    document.updatePageRectification(PageRectification(pageIndex: 0,
+                        topLeft: FractionPoint(x: 0, y: 0.002), topRight: FractionPoint(x: 1, y: 0),
+                        bottomRight: FractionPoint(x: 1, y: 0.998), bottomLeft: FractionPoint(x: 0, y: 1)))
+                }
+                let image = document.scoreReviewImage(pageIndex: 0)!
+                let description = "Quartet \(fixtureIndex + 1) \(corrected ? "rectified" : "raw")"
+                for (index, point) in fixture.clicks.enumerated() {
+                    let expected = expectedNames[index]
+                    let result = ScoreInstrumentNameDetector.recognize(in: image, at: point)
+                    print("\(description) click \(point): \(result?.text ?? "nil")")
+                    check(result?.text == expected,
+                          "\(description): clicking the instrument word preserves its printed ordinal: \(expected)")
+                    checkLabelBounds(result!.bounds, at: point, description: "\(description) \(expected)")
+                    let numberPoint = CGPoint(x: 0.082, y: point.y)
+                    check(result!.bounds.insetBy(dx: -0.002, dy: -0.004).contains(numberPoint),
+                          "\(description): the highlight covers the printed number as well as Violine")
+                    let numberResult = ScoreInstrumentNameDetector.recognize(in: image, at: numberPoint)
+                    check(numberResult?.text == expected,
+                          "\(description): clicking the ordinal selects the complete numbered instrument name")
+                    if fixtureIndex == 0 {
+                        document.isPickingInstrumentNames = true
+                        document.pickInstrumentName(at: point, pageIndex: 0)
+                        waitFor { !document.isRecognizingInstrumentName }
+                        check(document.instrumentNamePick?.name == expected,
+                              "\(description): document picking publishes the distinct numbered name")
+                    }
+                }
+                if fixtureIndex == 0 {
+                    check(document.instrumentNameHighlights.map(\.name) == expectedNames,
+                          "\(description): first and second violins remain distinct simultaneous labels")
+                    document.pickInstrumentName(at: fixture.clicks[0], pageIndex: 0)
+                    waitFor { !document.isRecognizingInstrumentName }
+                    check(document.instrumentNameHighlights.count == 2
+                          && Set(document.instrumentNameHighlights.map(\.name)) == Set(expectedNames),
+                          "\(description): repeating the first violin click never erases or duplicates the second violin")
+                    document.cancelInstrumentNamePicking()
+                }
+            }
+        }
+    }
+
     static func main() throws {
         typealias Candidate = ScoreInstrumentNameDetector.Candidate
         let clarinet = Candidate(text: "  Klarinette   in A  ", bounds: CGRect(x: 0.02, y: 0.22, width: 0.13, height: 0.015), confidence: 0.9)
@@ -40,6 +230,32 @@ enum InstrumentNameTests {
         check(ScoreInstrumentNameDetector.selectCandidate(from: candidates, at: CGPoint(x: .nan, y: 0.226)) == nil, "Invalid source coordinates do not produce a label")
         let invalid = [Candidate(text: "123", bounds: clarinet.bounds, confidence: 1), Candidate(text: "Piano", bounds: clarinet.bounds, confidence: 0.1)]
         check(ScoreInstrumentNameDetector.selectCandidate(from: invalid, at: CGPoint(x: 0.1, y: 0.226)) == nil, "Digits and uncertain OCR do not create instrument rows")
+        let violin = Candidate(text: "Violine", bounds: CGRect(x: 0.10, y: 0.22, width: 0.06, height: 0.012), confidence: 1)
+        let violinPoint = CGPoint(x: 0.13, y: 0.226)
+        let firstNumber = Candidate(text: "1.", bounds: CGRect(x: 0.085, y: 0.22, width: 0.009, height: 0.012), confidence: 1)
+        let combined = ScoreInstrumentNameDetector.selectCandidate(from: [violin, firstNumber], at: violinPoint)
+        check(combined?.text == "1. Violine" && combined?.bounds == violin.bounds.union(firstNumber.bounds),
+              "A separately recognized ordinal joins its instrument name and expands the highlight to include it")
+        check(ScoreInstrumentNameDetector.selectCandidate(from: [violin, firstNumber],
+                at: CGPoint(x: firstNumber.bounds.midX, y: firstNumber.bounds.midY))?.text == "1. Violine",
+              "A click on a separately recognized ordinal selects the complete name")
+        let suffix = Candidate(text: "II", bounds: CGRect(x: 0.165, y: 0.22, width: 0.009, height: 0.012), confidence: 1)
+        check(ScoreInstrumentNameDetector.selectCandidate(from: [violin, suffix], at: violinPoint)?.text == "Violine II",
+              "A same-line Roman instrument number is retained after its name")
+        let otherRow = Candidate(text: "2.", bounds: CGRect(x: 0.085, y: 0.26, width: 0.009, height: 0.012), confidence: 1)
+        let farNumber = Candidate(text: "3.", bounds: CGRect(x: 0.04, y: 0.22, width: 0.009, height: 0.012), confidence: 1)
+        let meter = Candidate(text: "6/8", bounds: firstNumber.bounds, confidence: 1)
+        let uncertainNumber = Candidate(text: "2.", bounds: firstNumber.bounds, confidence: 0.1)
+        for unrelated in [otherRow, farNumber, meter, uncertainNumber] {
+            check(ScoreInstrumentNameDetector.selectCandidate(from: [violin, unrelated], at: violinPoint)?.text == "Violine",
+                  "Unrelated, distant, meter or uncertain numbers never attach themselves to an instrument name")
+        }
+        check(ScoreInstrumentNameDetector.selectCandidate(from: [suffix],
+                at: CGPoint(x: suffix.bounds.midX, y: suffix.bounds.midY)) == nil,
+              "A Roman number without an instrument label cannot create a part")
+        let alreadyNumbered = Candidate(text: "1. Violine", bounds: violin.bounds.union(firstNumber.bounds), confidence: 1)
+        check(ScoreInstrumentNameDetector.selectCandidate(from: [alreadyNumbered, suffix], at: violinPoint)?.text == "1. Violine",
+              "A complete numbered label does not acquire a second nearby number")
         for name in ["Piano", "Pianoforte", "KLAVIER", "Harpsichord", "Cembalo", "Clavecin I"] {
             check(ScoreInstrumentNameDetector.suggestedStaffCount(for: name) == 2, "Keyboard suggestion has two staves: \(name)")
         }
@@ -194,6 +410,9 @@ enum InstrumentNameTests {
         check(undoDocument.currentPageRectification == nil && undoDocument.instrumentNameHighlights.isEmpty,
               "Undoing deskew invalidates highlights bound to the corrected page geometry")
         undoDocument.cancelInstrumentNamePicking()
+        checkPickedListIdentity()
+        try checkNumberedStringLabels()
+        try checkRegionPicking()
         print("\(checks) instrument-name recognition checks passed.")
     }
 }

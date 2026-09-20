@@ -12,6 +12,7 @@
 		200000000000000000000003 /* PartsmithDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* PartsmithDocument.swift */; };
 		200000000000000000000004 /* PartLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* PartLayoutEngine.swift */; };
 		200000000000000000000005 /* PartPDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* PartPDFExporter.swift */; };
+		200000000000000000000017 /* PartPreviewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000019 /* PartPreviewRenderer.swift */; };
 		200000000000000000000006 /* DocumentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* DocumentRootView.swift */; };
 		200000000000000000000007 /* PartsSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* PartsSidebarView.swift */; };
 		200000000000000000000008 /* SourceCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* SourceCanvasView.swift */; };
@@ -28,6 +29,7 @@
 		200000000000000000000013 /* ScoreExtractionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* ScoreExtractionWindow.swift */; };
 		200000000000000000000014 /* ScoreSourceHeaderDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000016 /* ScoreSourceHeaderDetector.swift */; };
 		200000000000000000000015 /* ScoreInputPageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000017 /* ScoreInputPageSelection.swift */; };
+		200000000000000000000016 /* ScoreInstrumentPickList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000018 /* ScoreInstrumentPickList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		100000000000000000000003 /* PartsmithDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsmithDocument.swift; sourceTree = "<group>"; };
 		100000000000000000000004 /* PartLayoutEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartLayoutEngine.swift; sourceTree = "<group>"; };
 		100000000000000000000005 /* PartPDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPDFExporter.swift; sourceTree = "<group>"; };
+		100000000000000000000019 /* PartPreviewRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPreviewRenderer.swift; sourceTree = "<group>"; };
 		100000000000000000000006 /* DocumentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRootView.swift; sourceTree = "<group>"; };
 		100000000000000000000007 /* PartsSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsSidebarView.swift; sourceTree = "<group>"; };
 		100000000000000000000008 /* SourceCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCanvasView.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		100000000000000000000015 /* ScoreExtractionWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreExtractionWindow.swift; sourceTree = "<group>"; };
 		100000000000000000000016 /* ScoreSourceHeaderDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSourceHeaderDetector.swift; sourceTree = "<group>"; };
 		100000000000000000000017 /* ScoreInputPageSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputPageSelection.swift; sourceTree = "<group>"; };
+		100000000000000000000018 /* ScoreInstrumentPickList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInstrumentPickList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				100000000000000000000005 /* PartPDFExporter.swift */,
+				100000000000000000000019 /* PartPreviewRenderer.swift */,
 			);
 			path = Export;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				100000000000000000000014 /* ScoreInstrumentNameDetector.swift */,
 				100000000000000000000016 /* ScoreSourceHeaderDetector.swift */,
 				100000000000000000000017 /* ScoreInputPageSelection.swift */,
+				100000000000000000000018 /* ScoreInstrumentPickList.swift */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 				200000000000000000000003 /* PartsmithDocument.swift in Sources */,
 				200000000000000000000004 /* PartLayoutEngine.swift in Sources */,
 				200000000000000000000005 /* PartPDFExporter.swift in Sources */,
+				200000000000000000000017 /* PartPreviewRenderer.swift in Sources */,
 				200000000000000000000006 /* DocumentRootView.swift in Sources */,
 				200000000000000000000007 /* PartsSidebarView.swift in Sources */,
 				200000000000000000000008 /* SourceCanvasView.swift in Sources */,
@@ -284,6 +291,7 @@
 				200000000000000000000012 /* ScoreInstrumentNameDetector.swift in Sources */,
 				200000000000000000000014 /* ScoreSourceHeaderDetector.swift in Sources */,
 				200000000000000000000015 /* ScoreInputPageSelection.swift in Sources */,
+				200000000000000000000016 /* ScoreInstrumentPickList.swift in Sources */,
 				200000000000000000000010 /* ScoreExtractionPlanner.swift in Sources */,
 				20000000000000000000000F /* ScoreExtractionView.swift in Sources */,
 				200000000000000000000013 /* ScoreExtractionWindow.swift in Sources */,

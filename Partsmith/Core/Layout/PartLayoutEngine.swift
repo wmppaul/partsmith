@@ -30,6 +30,9 @@ struct BandPlacement {
     var editorialLabel: String
     var editorialLabelRect: CGRect?
     var sourceMarkings: [SourceMarkingPlacement] = []
+    /// Joined rest strips still identify every original source band.
+    var sourceBandIDs: [UUID] = []
+    var restReplacement: BandRestReplacement? = nil
 }
 
 struct SourceMarkingPlacement {
@@ -56,6 +59,7 @@ enum PartLayoutError: LocalizedError {
     case invalidSourceMarking(Int)
     case overlappingSourceMarkings(Int)
     case failedRectification(Int)
+    case invalidRestReplacement(Int)
 
     var errorDescription: String? {
         switch self {
@@ -81,6 +85,8 @@ enum PartLayoutError: LocalizedError {
             return "A shared source marking on page \(pageIndex + 1) has invalid bounds or extends outside its band's horizontal crop. Widen the crop or review the marking."
         case .overlappingSourceMarkings(let pageIndex):
             return "Shared source markings on page \(pageIndex + 1) overlap in the annotation row. Combine them into one source selection or remove the overlap before exporting."
+        case .invalidRestReplacement(let pageIndex):
+            return "The multi-bar rest on source page \(pageIndex + 1) needs a verified count between 2 and 999 bars. Restore the source crop or correct the count before exporting."
         case .failedRectification(let pageIndex):
             return "The correction for source page \(pageIndex + 1) could not be rendered. Adjust its correction points, or reset the correction and review that page's crops before previewing or exporting."
         }
@@ -107,6 +113,9 @@ enum BandEditorialLabelStyle {
 }
 
 enum PartLayoutEngine {
+    /// Source-point height shared with the generated-rest renderer. Scaling the
+    /// strip uses the same page-width factor as its surrounding music.
+    static let restStripHeight: Double = 48
     private struct PreparedBand {
         var band: BandModel
         var pageBounds: CGRect
@@ -115,9 +124,16 @@ enum PartLayoutEngine {
         var labelHeight: Double
         var scale: Double
         var markingRects: [CGRect] = []
+        var sourceBandIDs: [UUID]
+        var lastSourceOrder: Int
+        var restReplacement: BandRestReplacement?
+        var restStartNumber: Int?
+        var renderedSourceHeight: Double {
+            restReplacement == nil ? sourceRect.height : min(PartLayoutEngine.restStripHeight, max(32, sourceRect.height))
+        }
         var markingSourceHeight: Double { Double(markingRects.map(\.height).max() ?? 0) }
         var markingGap: Double { markingRects.isEmpty ? 0 : 4 }
-        var height: Double { labelHeight + (sourceRect.height + markingSourceHeight) * scale + markingGap }
+        var height: Double { labelHeight + (renderedSourceHeight + markingSourceHeight) * scale + markingGap }
     }
 
     /// Minimize pages first, then uneven fill and solitary systems. A requested
@@ -160,6 +176,12 @@ enum PartLayoutEngine {
         return ranges
     }
 
+    private static func restStartNumbersAgree(_ start: Int?, count: Int, next: Int?) -> Bool {
+        guard let start, let next else { return true }
+        let (expected, overflow) = start.addingReportingOverflow(count)
+        return !overflow && next == expected
+    }
+
     static func makePlan(
         project: ProjectData,
         pageBoundsProvider: (Int) -> CGRect?,
@@ -169,9 +191,8 @@ enum PartLayoutEngine {
             throw PartLayoutError.missingPart
         }
 
-        let includedBands = project
-            .sortedBands(for: partID)
-            .filter { !$0.excluded }
+        let sourceBands = project.sortedBands(for: partID)
+        let includedBands = sourceBands.filter { !$0.excluded }
 
         guard includedBands.isEmpty == false else {
             throw PartLayoutError.noBands
@@ -226,7 +247,10 @@ enum PartLayoutEngine {
         ) : nil
 
         var prepared: [PreparedBand] = []
-        for band in includedBands {
+        for (sourceOrder, band) in sourceBands.enumerated() where !band.excluded {
+            if let replacement = band.restReplacement, !replacement.isValid {
+                throw PartLayoutError.invalidRestReplacement(band.pageIndex)
+            }
             guard validCrop(top: band.topFraction, bottom: band.bottomFraction,
                             left: band.leftFraction, right: band.rightFraction) else {
                 throw PartLayoutError.invalidBand(band.pageIndex)
@@ -263,9 +287,38 @@ enum PartLayoutEngine {
                 throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
             }
             prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: sourceRect,
-                                         label: label, labelHeight: labelHeight, scale: 1, markingRects: markingRects))
+                                         label: label, labelHeight: labelHeight, scale: 1, markingRects: markingRects,
+                                         sourceBandIDs: [band.id], lastSourceOrder: sourceOrder,
+                                         restReplacement: band.restReplacement, restStartNumber: band.barNumberValue))
         }
         let maximumSourceWidth = prepared.map { $0.sourceRect.width }.max() ?? contentRect.width
+        var joined: [PreparedBand] = []
+        for item in prepared {
+            if let current = item.restReplacement, current.joinWithPrevious,
+               let previous = joined.last, let previousRest = previous.restReplacement,
+               previous.lastSourceOrder + 1 == item.lastSourceOrder,
+               !item.band.pageBreakBefore,
+               previous.label.isEmpty, item.label.isEmpty,
+               previous.markingRects.isEmpty, item.markingRects.isEmpty,
+               previousRest.barCount + current.barCount <= 999,
+               restStartNumbersAgree(previous.restStartNumber, count: previousRest.barCount,
+                                     next: item.restStartNumber) {
+                joined[joined.count - 1].restReplacement = BandRestReplacement(barCount: previousRest.barCount + current.barCount)
+                joined[joined.count - 1].sourceBandIDs.append(contentsOf: item.sourceBandIDs)
+                joined[joined.count - 1].lastSourceOrder = item.lastSourceOrder
+                if previous.restStartNumber == nil, let currentStart = item.restStartNumber {
+                    let (derivedStart, overflow) = currentStart.subtractingReportingOverflow(previousRest.barCount)
+                    if !overflow { joined[joined.count - 1].restStartNumber = derivedStart }
+                }
+            } else {
+                var separate = item
+                if let rest = separate.restReplacement {
+                    separate.restReplacement = BandRestReplacement(barCount: rest.barCount)
+                }
+                joined.append(separate)
+            }
+        }
+        prepared = joined
         for index in prepared.indices {
             let width = part.layoutSettings.useConsistentScale ? maximumSourceWidth : prepared[index].sourceRect.width
             prepared[index].scale = contentRect.width / width * min(partScale, 1)
@@ -308,13 +361,13 @@ enum PartLayoutEngine {
                 // Only an individually oversized crop is fitted to one page. Page balancing
                 // itself never reduces music scale or removes any source notation.
                 let renderScale = min(item.scale, (markingsTop - contentRect.minY - item.markingGap) /
-                                      (item.sourceRect.height + item.markingSourceHeight))
+                                      (item.renderedSourceHeight + item.markingSourceHeight))
                 let bandTop = markingsTop - item.markingSourceHeight * renderScale - item.markingGap
                 let targetWidth = item.sourceRect.width * renderScale
                 let destinationRect = CGRect(x: contentRect.minX + (contentRect.width - targetWidth) / 2,
-                    y: bandTop - item.sourceRect.height * renderScale,
-                    width: targetWidth, height: item.sourceRect.height * renderScale)
-                let exclusionRects = band.exclusions.map { exclusion in
+                    y: bandTop - item.renderedSourceHeight * renderScale,
+                    width: targetWidth, height: item.renderedSourceHeight * renderScale)
+                let exclusionRects = (item.restReplacement == nil ? band.exclusions : []).map { exclusion in
                     let rect = cropRect(top: exclusion.topFraction, bottom: exclusion.bottomFraction,
                                         left: exclusion.leftFraction, right: exclusion.rightFraction, in: item.pageBounds)
                     return CGRect(x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
@@ -329,7 +382,7 @@ enum PartLayoutEngine {
                             x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
                             y: markingsTop - rect.height * renderScale,
                             width: rect.width * renderScale, height: rect.height * renderScale))
-                    }))
+                    }, sourceBandIDs: item.sourceBandIDs, restReplacement: item.restReplacement))
                 cursorTop = destinationRect.minY - actualGap
             }
             pages.append(PartRenderPage(index: pageIndex,

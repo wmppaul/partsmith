@@ -506,6 +506,28 @@ struct BandSourceMarking: Codable, Equatable {
     }
 }
 
+/// An explicit editorial replacement for a verified, whole-band run of rests.
+/// The original source crop remains stored on its band and can be restored.
+struct BandRestReplacement: Codable, Equatable {
+    var barCount: Int
+    var joinWithPrevious: Bool
+
+    init(barCount: Int, joinWithPrevious: Bool = false) {
+        self.barCount = barCount
+        self.joinWithPrevious = joinWithPrevious
+    }
+
+    var isValid: Bool { (2...999).contains(barCount) }
+
+    private enum CodingKeys: String, CodingKey { case barCount, joinWithPrevious }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        barCount = try container.decode(Int.self, forKey: .barCount)
+        joinWithPrevious = try container.decodeIfPresent(Bool.self, forKey: .joinWithPrevious) ?? false
+    }
+}
+
 struct BandModel: Codable, Identifiable, Equatable {
     var id: UUID
     var pageIndex: Int
@@ -524,6 +546,7 @@ struct BandModel: Codable, Identifiable, Equatable {
     var editorialLabel: String
     var pageBreakBefore: Bool
     var sourceMarkings: [BandSourceMarking]
+    var restReplacement: BandRestReplacement?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -543,6 +566,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         case editorialLabel
         case pageBreakBefore
         case sourceMarkings
+        case restReplacement
     }
 
     init(
@@ -562,7 +586,8 @@ struct BandModel: Codable, Identifiable, Equatable {
         exclusions: [BandExclusion] = [],
         editorialLabel: String = "",
         pageBreakBefore: Bool = false,
-        sourceMarkings: [BandSourceMarking] = []
+        sourceMarkings: [BandSourceMarking] = [],
+        restReplacement: BandRestReplacement? = nil
     ) {
         self.id = id
         self.pageIndex = pageIndex
@@ -581,6 +606,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         self.editorialLabel = editorialLabel
         self.pageBreakBefore = pageBreakBefore
         self.sourceMarkings = sourceMarkings
+        self.restReplacement = restReplacement
     }
 
     init(from decoder: Decoder) throws {
@@ -605,6 +631,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         editorialLabel = try container.decodeIfPresent(String.self, forKey: .editorialLabel) ?? ""
         pageBreakBefore = try container.decodeIfPresent(Bool.self, forKey: .pageBreakBefore) ?? false
         sourceMarkings = try container.decodeIfPresent([BandSourceMarking].self, forKey: .sourceMarkings) ?? []
+        restReplacement = try container.decodeIfPresent(BandRestReplacement.self, forKey: .restReplacement)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -634,6 +661,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         if !sourceMarkings.isEmpty {
             try container.encode(sourceMarkings, forKey: .sourceMarkings)
         }
+        try container.encodeIfPresent(restReplacement, forKey: .restReplacement)
     }
 
     func normalized() -> BandModel {

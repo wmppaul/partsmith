@@ -41,10 +41,24 @@ enum PartPDFExporter {
         guard let pdfDocument = document.pdfDocument else {
             throw PartLayoutError.missingPDF
         }
+        return try pdfData(for: partID, project: document.project, pdfDocument: pdfDocument)
+    }
 
+    /// Immutable input for background previews. Each caller owns its PDFKit
+    /// document and render cache, using exactly the export layout and renderer.
+    static func pdfData(for partID: UUID, project: ProjectData, sourcePDFData: Data,
+                        isCancelled: () -> Bool = { false }) throws -> Data {
+        guard !isCancelled() else { throw CancellationError() }
+        guard let pdfDocument = PDFDocument(data: sourcePDFData) else { throw PartLayoutError.missingPDF }
+        return try pdfData(for: partID, project: project, pdfDocument: pdfDocument, isCancelled: isCancelled)
+    }
+
+    private static func pdfData(for partID: UUID, project: ProjectData, pdfDocument: PDFDocument,
+                                isCancelled: () -> Bool = { false }) throws -> Data {
+        guard !isCancelled() else { throw CancellationError() }
         let sourcePageCache = SourcePageRenderCache(pdfDocument: pdfDocument)
         let plan = try PartLayoutEngine.makePlan(
-            project: document.project,
+            project: project,
             pageBoundsProvider: { sourcePageCache.pageBounds(for: $0) },
             partID: partID
         )
@@ -62,9 +76,11 @@ enum PartPDFExporter {
         }
 
         for page in plan.pages {
+            guard !isCancelled() else { context.closePDF(); throw CancellationError() }
             context.beginPDFPage(nil as CFDictionary?)
             do {
-                try render(page: page, plan: plan, project: document.project, sourcePageCache: sourcePageCache, in: context)
+                try render(page: page, plan: plan, project: project, sourcePageCache: sourcePageCache,
+                           in: context, isCancelled: isCancelled)
             } catch {
                 context.endPDFPage()
                 context.closePDF()
@@ -82,7 +98,8 @@ enum PartPDFExporter {
         plan: PartRenderPlan,
         project: ProjectData,
         sourcePageCache: SourcePageRenderCache,
-        in context: CGContext
+        in context: CGContext,
+        isCancelled: () -> Bool = { false }
     ) throws {
         context.saveGState()
         defer { context.restoreGState() }
@@ -102,14 +119,19 @@ enum PartPDFExporter {
         }
 
         for placement in page.placements {
+            guard !isCancelled() else { throw CancellationError() }
             drawEditorialLabel(for: placement, in: context)
             for marking in placement.sourceMarkings {
                 try sourcePageCache.draw(pageIndex: placement.sourcePageIndex,
                     rectification: project.pageRectifications.first(where: { $0.pageIndex == placement.sourcePageIndex }),
                     sourceRect: marking.sourceRect, destinationRect: marking.destinationRect, in: context)
             }
-            try draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
-            drawExclusions(for: placement, in: context)
+            if placement.restReplacement != nil {
+                drawMultiBarRest(for: placement, in: context)
+            } else {
+                try draw(placement: placement, project: project, sourcePageCache: sourcePageCache, in: context)
+                drawExclusions(for: placement, in: context)
+            }
             drawBarNumber(for: placement, project: project, in: context)
         }
 
@@ -133,6 +155,47 @@ enum PartPDFExporter {
             NSGraphicsContext.restoreGraphicsState()
         }
 
+    }
+
+    private static func drawMultiBarRest(for placement: BandPlacement, in context: CGContext) {
+        guard let rest = placement.restReplacement else { return }
+        let rect = placement.destinationRect
+        let scale = rect.height / PartLayoutEngine.restStripHeight
+        let staffBottom = rect.minY + 7 * scale
+        let space = 5 * scale
+        context.saveGState()
+        context.setStrokeColor(NSColor.black.cgColor)
+        context.setFillColor(NSColor.black.cgColor)
+        context.setLineWidth(0.55 * scale)
+        let inset = min(8 * scale, rect.width * 0.05)
+        for line in 0..<5 {
+            let y = staffBottom + CGFloat(line) * space
+            context.move(to: CGPoint(x: rect.minX + inset, y: y))
+            context.addLine(to: CGPoint(x: rect.maxX - inset, y: y))
+        }
+        context.strokePath()
+        let centerY = staffBottom + 2 * space
+        let halfWidth = min(34 * scale, rect.width * 0.23)
+        let stemHeight = 10 * scale
+        let thickness = 2.8 * scale
+        context.fill(CGRect(x: rect.midX - halfWidth, y: centerY - thickness / 2,
+                            width: halfWidth * 2, height: thickness))
+        for x in [rect.midX - halfWidth, rect.midX + halfWidth] {
+            context.fill(CGRect(x: x - 0.65 * scale, y: centerY - stemHeight / 2,
+                                width: 1.3 * scale, height: stemHeight))
+        }
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont(name: "Times-Bold", size: 15 * scale) ?? NSFont.systemFont(ofSize: 15 * scale, weight: .semibold),
+            .foregroundColor: NSColor.black, .paragraphStyle: paragraph
+        ]
+        ("\(rest.barCount)" as NSString).draw(in: CGRect(x: rect.minX, y: staffBottom + 4 * space + 2 * scale,
+            width: rect.width, height: 18 * scale), withAttributes: attributes)
+        NSGraphicsContext.restoreGraphicsState()
+        context.restoreGState()
     }
 
     private static func drawEditorialLabel(for placement: BandPlacement, in context: CGContext) {
