@@ -1,0 +1,59 @@
+{
+  "status": "visual-review-pass",
+  "reviewer": "score_survey",
+  "reviewedAtUTC": "2026-09-20T17:17:37.244895+00:00",
+  "manifestSHA256": "3fa5c1de85ac50e9bde16a72490bd56833c1b4aaee670aa88a8562c60424daef",
+  "sourceMapSHA256": "8dbea51d4b20edc38a29e710d0a1ff64e334d7961acebc90da10af4639483dbb",
+  "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+  "outputs": {
+    "Violin I.pdf": "b2b316edfca8094ab3b9756cf524150d5ca6e3f04d0e3baeb259dc96f6b3eeae",
+    "Violin II.pdf": "9705bb6aa0b65c1d8eec93d63354278587924510e3f81fbb97eaaad3eb662fe9",
+    "Viola.pdf": "a52a7e56b914a7eeb5ecad5b97ef09d1c29bab55cbd3dfe47b70751f9783ac8d",
+    "Violoncello.pdf": "482fc16afd4795e2ab7b466ce4bb0c8ce91089b7a3e41e44de0fe556f5a940ec"
+  },
+  "scope": {
+    "sourcePages": 25,
+    "systemsPerPart": 120,
+    "bands": 480,
+    "outputPages": 47,
+    "partPages": {
+      "violin1": 13,
+      "violin2": 11,
+      "viola": 11,
+      "cello": 12
+    }
+  },
+  "checks": {
+    "allFinalPagesVisuallyInspected": true,
+    "pageSequenceMovementStartsEndingsAndNavigation": "pass",
+    "titlesHeadersAndPageFooters": "pass",
+    "stripAndCueSeparation": "pass",
+    "independentProtectedEnvelopeContainment": "pass",
+    "sourceCueCoverage": "624/624",
+    "wholeNeighboringStaves": 0,
+    "maskCount": 0
+  },
+  "method": "Fresh source-ink review of all480 bands is bound by the frozen source map. Inspected all47 final rendered pages in13 contact sheets; inspected eight high-risk final strips at216dpi. Native manifest source rectangles match the reviewed plan for all480 bands. The separate canonical geometry/pixel reports are required in addition to this visual record.",
+  "closeups": [
+    "p5-s3-violin1",
+    "p9-s1-violin1",
+    "p12-s2-violin1",
+    "p10-s3-violin2",
+    "p22-s5-viola",
+    "p15-s5-cello",
+    "p16-s5-cello",
+    "p25-s2-cello"
+  ],
+  "observations": [
+    "G/M/D boxes, associated tempo words, high slurs, deepest dynamics, low Cello staccato dot and final downward beams are complete.",
+    "All original printed measure-number fragments are retained in the main crop or copied from source. Four movement starts and Trio/Coda/DaCapo/ending navigation are present.",
+    "Isolated neighboring note/dynamic/slur fragments, occasional partial next-system cue and catalog text remain when target notation shares their height. These are not cleanly re-engraved parts.",
+    "121 conservative guard-bound failures prompted review corrections; that count must not be represented as121 proven omitted-note failures."
+  ],
+  "automaticGeometryRetained": 159,
+  "explicitReviewedGeometryCorrections": 321,
+  "sourceFragmentCopies": 355,
+  "requiredCuesRetainedInMain": 269,
+  "reviewedGenerationManifestSHA256": "b8baf380e0b54e4f1712bbfe1aa97acb848452616461b5ba6b2d0c13a10cbf59",
+  "metadataFinalization": "Only manifest status/reviewRecord changed; all original geometry and PDF hashes verified unchanged. Original manifest retained."
+}

@@ -1,3 +1,13 @@
+# Current finalization audit — September 20 crop revision
+
+The revised preflight validates all 19 parts, 1,131 bands and 156 pages before writing any review status. It accepts the disclosed 8 Ave and 321 Quartet crop overrides only when their rectangles match the delivered placement manifest. The other three sets have zero explicit rectangle corrections. Each stored project band is now compared with its PDF manifest/plan for source page, crop, editorial label, source fragments and section break.
+
+An isolated-copy negative control first passed with unchanged reviewed data, then rejected a changed native project crop with `Editable project crop differs from PDF manifest`. `--validate-only` made no publication writes. Exact result and finalizer hash: `Tests/tight_crops/finalizer-project-negative.json`. Existing map/manifest/PDF/visual-review bindings still apply. The finalization code does not substitute for musical review.
+
+The earlier audit below describes the broader 184-page generation and the initial stale-review fixes. Its padding defaults, counts and source-code hash are historical.
+
+---
+
 # Review finalization audit
 
 Reviewer: `offline_detection`. Scope: the current complete-score sections of `EXTRACTION_WORKFLOW.md`, `skills/score-part-extraction/SKILL.md`, `references/native-auto.md`, and the corpus finalization script. No production code or delivered PDFs were changed by this audit.

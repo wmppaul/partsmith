@@ -39,18 +39,19 @@ def transform_region(region, placement):
                      destination.y0 + (region.y1 - source.y0) * scale)
 
 
-def run_case(base, sets, name, score, part_id, source_page, damage=None):
+def run_case(base, sets, name, score, part_id, source_page, damage=None, system_number=1):
     original = sets / score
     manifest = json.loads((original / "manifest.json").read_text())
     map_name = f"brahms-{score}" if score in {"trio", "quartet"} else score
-    mapping = json.loads((ROOT / f"Tests/full_scores/{map_name}-map.json").read_text())
+    tight = "-tight" if manifest["profile"].get("cropMode") == "compact" and score in {"ave", "quartet"} else ""
+    mapping = json.loads((ROOT / f"Tests/full_scores/{map_name}{tight}-map.json").read_text())
     part = copy.deepcopy(next(p for p in manifest["parts"] if p["id"] == part_id))
     original_pdf_path = original / part["file"]
     original_pdf_digest = reviewer.digest(original_pdf_path)
     placement = copy.deepcopy(next(p for p in part["placements"]
-                                   if p["sourcePage"] == source_page and p["system"] == 1))
+                                   if p["sourcePage"] == source_page and p["system"] == system_number))
     page = next(p for p in mapping["pages"] if p["pageIndex"] == source_page - 1)
-    system = next(s for s in page["systems"] if s["systemIndex"] == 0)
+    system = next(s for s in page["systems"] if s["systemIndex"] == system_number - 1)
     band = copy.deepcopy(next(b for b in system["bands"] if b["partID"] == part_id))
     work = base / name
     work.mkdir(parents=True, exist_ok=True)
@@ -69,7 +70,9 @@ def run_case(base, sets, name, score, part_id, source_page, damage=None):
         elif damage == "cue":
             region = fitz.Rect(placement["sourceMarkings"][0]["destinationRect"])
             pdf[0].draw_rect(region, color=None, fill=(1, 1, 1), overlay=True)
-        elif damage == "vector_staff":
+        elif damage == "missing_cue":
+            placement["sourceMarkings"] = []
+        elif damage in {"vector_staff", "raster_staff"}:
             region = transform_region(fitz.Rect(band["protectedRegions"][0]["rect"]), placement)
             pdf[0].draw_rect(region, color=None, fill=(1, 1, 1), overlay=True)
         elif damage == "crop":
@@ -87,8 +90,17 @@ def run_case(base, sets, name, score, part_id, source_page, damage=None):
     manifest["status"] = "isolated_regression_fixture"
     manifest.pop("reviewRecord", None)
     (work / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+    # Renumber this single selected system in both independent map and manifest.
+    # Its source geometry and original band identifier remain unchanged.
+    placement["system"] = 1
+    (work / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
     mapping["pages"] = [{"pageIndex": source_page - 1, "expectedSystems": 1,
                          "systems": [{"systemIndex": 0, "bands": [band]}]}]
+    mapping["sharedMarkings"] = [dict(cue, systemIndex=0, targetPartIDs=[part_id])
+                                for cue in mapping.get("sharedMarkings", [])
+                                if cue["pageIndex"] == source_page - 1
+                                and cue["systemIndex"] == system_number - 1
+                                and part_id in cue["targetPartIDs"]]
     (work / "map.json").write_text(json.dumps(mapping, indent=2, ensure_ascii=False) + "\n")
     log = io.StringIO()
     error = None
@@ -112,6 +124,8 @@ def run_case(base, sets, name, score, part_id, source_page, damage=None):
               "log": recorded_path(log_path)}
     if damage == "crop":
         assert error and error.startswith("Crop cuts protected target:"), result
+    elif damage == "missing_cue":
+        assert error and error.startswith("Missing required shared source marking:"), result
     elif damage:
         assert report and report["status"] == "fail" and result["differentPixels"] > 0, result
     else:
@@ -146,8 +160,13 @@ def main():
              ("removed-clarinet-note", "trio", "clarinet", 2, "note"),
              ("crop-cuts-protected-target", "trio", "clarinet", 2, "crop"),
              ("removed-shared-tempo", "quartet", "violin2", 1, "cue"),
+             ("missing-required-shared-tempo", "quartet", "violin2", 1, "missing_cue"),
              ("real-vector-positive", "ave", "soprano", 1, None),
-             ("removed-vector-staff", "ave", "soprano", 1, "vector_staff")]
+             ("removed-vector-staff", "ave", "soprano", 1, "vector_staff"),
+             ("real-scanned-crop-positive", "quartet", "violin1", 1, None, 3),
+             ("removed-scanned-staff", "quartet", "violin1", 1, "raster_staff", 3),
+             ("real-scanned-rounding-positive", "quartet", "violin1", 10, None, 3),
+             ("removed-scanned-rounding-staff", "quartet", "violin1", 10, "raster_staff", 3)]
     results = [run_case(args.output_dir, args.sets_dir, *case) for case in cases]
     (args.output_dir / "regression-results.json").write_text(json.dumps(results, indent=2) + "\n")
     (args.output_dir / "binding-control-results.json").write_text(json.dumps(bindings, indent=2) + "\n")

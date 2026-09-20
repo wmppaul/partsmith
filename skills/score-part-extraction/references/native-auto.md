@@ -13,10 +13,16 @@ Read the labels and braces yourself; these names are a reviewed setup, not OCR
 recognition. Partsmith saves the setup with the project. Computer use may perform
 this initialization when the user authorizes the extraction.
 
-Open **Crop Context — Padding and Source Margins** when additional context is
-needed. Padding is in staff spaces above/below the outer staff lines. The default
-is seven spaces on each side; dense overlapping notation and figured bass can
-need more. Per-instrument overrides are available. Start with zero left/right
+New setups use **Compact — follow notation** in **Crop Context**. The analyzer
+measures connected ink beyond the staff and preserves a small safety margin.
+Enable **Lyrics** for vocal staves; figured bass and additional verses may need
+extra lower padding. Padding overrides are minimum context, in staff spaces,
+not maximum crop extents. Existing saved setups retain their original fixed
+padding until Compact is selected. Review uncertain touching notation: ink
+connected to multiple staves is retained with a warning. Detached markings that
+touch a neighboring staff can require a local expansion; a warning alone does
+not establish preservation.
+Per-instrument overrides are available. Start with zero left/right
 trimming, especially on scans with alternating margins. Check every final
 barline and printed measure number before removing horizontal margins.
 
@@ -31,6 +37,13 @@ can assign detected staves, record a missing/tacet part, exclude a non-music pag
 with a reason, and add a verified movement/song heading and page break. A piano
 introduction with no printed voice should be represented by a clearly labeled
 cue or a verified rest instruction, never an unexplained missing opening.
+
+Use **Adjust crop edges on this page** for a source-reviewed local correction.
+Top and Bottom are source-page points measured downward; select the part/system
+button to highlight its rectangle. **Restore Automatic Edges** removes that
+correction. The editor keeps assigned staff lines inside the crop, but cannot
+recognize every detached note or marking. Inspect outside both edges before
+accepting the review. Count and disclose these corrections separately from Auto.
 
 Adding the reviewed parts is one undoable transaction. Stale source/rectification
 results and duplicate populated parts are rejected. Inspect Preview and export
@@ -49,8 +62,10 @@ rectangles; the app can retain and remove them, and can edit editorial labels.
 Automatic staff assignment does not automatically understand shared directions.
 
 Review all output pages against the source. Retained neighboring notes are
-permitted under `preserve-target`, but report them and ensure the intended staff
-remains identifiable. Fix a systematic edge failure by improving detection or a
+permitted under `preserve-target` when target ink needs the same space. Unnecessary
+neighboring staff lines or complete lyric rows are crop-quality defects even
+when every target note survives. Compare context before and after changes, and
+ensure the intended staff remains identifiable. Fix a systematic edge failure by improving detection or a
 saved profile before introducing per-band geometry corrections. Never reduce a
 crop to make a page fit, or shrink a protected region merely to pass a test.
 
@@ -74,7 +89,14 @@ source in an editable project, and records every source-to-output placement.
 
 The review utility renders every output page, checks coverage against independent
 source counts, and compares protected target regions and copied directions with
-unclipped source renderings. Scanned-source checks compare directly against the original; vector sources use
+the immutable original source. Scanned-source checks first use the full original
+page. When a bitonal image's resampling phase depends on the visible crop extent,
+a second independent reference uses that same reviewed extent; the raw untrimmed
+differences remain recorded and protected-region containment is still required.
+When native PDF matrix serialization also changes raster sampling phase, a
+standalone CoreGraphics reference draws the original source at the reviewed
+placement. It never uses exported music as reference content.
+Vector sources use
 an independently serialized full-source CoreGraphics reference to account for
 export path/glyph rounding, while retaining raw direct-render differences. Shared
 cues use their independently reviewed fragment extent. No broad pixel-similarity

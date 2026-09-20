@@ -58,8 +58,120 @@ enum ScorePlannerTests {
         let omitted = ScoreExtractionPlanner.plan(pages: [page, blank], profile: profile, overrides: [nonmusic])
         try check(omitted.canApply && omitted.pages[1].omissions.count == 2, "Explicit nonmusic page is not accounted for")
         try check(!ScoreExtractionPlanner.plan(pages: [blank], profile: profile, overrides: [nonmusic]).canApply, "All-nonmusic score permits empty extraction")
+        try compactCropTests()
         if CommandLine.arguments.contains("--corpus") { try corpusTests() }
         print("PASS \(assertions) native planner checks: cadence, grouping, crop padding, skew bounds, invalid counts, ignored candidates, nonmusic pages, shared markings and cancellation.")
+    }
+    static func compactCropTests() throws {
+        let legacyData = Data(#"{"parts":[{"id":"upper","name":"Upper","staffCount":1},{"id":"lower","name":"Lower","staffCount":1}]}"#.utf8)
+        let fixed = try JSONDecoder().decode(ScoreExtractionProfile.self, from: legacyData)
+        try check(fixed.cropMode == nil && fixed.parts[0].hasLyrics == nil, "Old profile requires new crop or lyric keys")
+        let width = 600, height = 600
+        var pixels = [UInt8](repeating: 255, count: width * height)
+        func black(_ left: Int, _ top: Int, _ right: Int, _ bottom: Int) {
+            for y in top..<bottom { for x in left..<right { pixels[y * width + x] = 0 } }
+        }
+        let candidates = [200, 300].enumerated().map { index, y in
+            StaffBandCandidate(id: index, staffLineFractions: (0..<5).map { Double(y + $0 * 8) / 600 },
+                topFraction: Double(y - 16) / 600, bottomFraction: Double(y + 48) / 600, confidence: 1, warnings: [])
+        }
+        for top in [200, 300] { for line in 0..<5 { black(20, top + line * 8, 580, top + line * 8 + 1) } }
+        black(20, 200, 22, 333) // Inter-staff system barline must not join all notes.
+        black(100, 166, 103, 219); black(100, 166, 190, 169) // Target high stem and slur.
+        black(95, 212, 108, 219)
+        black(130, 260, 142, 269) // Detached lyric below the geometric midpoint.
+        black(180, 310, 194, 316) // Lower neighbor note.
+        let data = Data(pixels)
+        let provider = CGDataProvider(data: data as CFData)!
+        let image = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8, bytesPerRow: width,
+            space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: 0), provider: provider,
+            decode: nil, shouldInterpolate: false, intent: .defaultIntent)!
+        let components = NativeScorePageAnalyzer.notationComponents(image: image, candidates: candidates, skewDegrees: 0)!
+        try check(components.contains { $0.staffIDs == [0] && $0.bounds[1] <= 166.0 / 600 }, "Analysis lost outward target stem/slur reach")
+        try check(!components.contains { $0.staffIDs.count > 1 }, "Thin system barline made neighboring staff ownership ambiguous")
+        black(8, 130, 10, 217); black(7, 212, 17, 219)
+        let edgeProvider = CGDataProvider(data: Data(pixels) as CFData)!
+        let edgeImage = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8, bytesPerRow: width,
+            space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: 0), provider: edgeProvider,
+            decode: nil, shouldInterpolate: false, intent: .defaultIntent)!
+        let edgeComponents = NativeScorePageAnalyzer.notationComponents(image: edgeImage, candidates: candidates, skewDegrees: 0)!
+        try check(edgeComponents.contains { $0.staffIDs == [0] && $0.bounds[0] < 0.03 && $0.bounds[1] <= 130.0 / 600 },
+                  "A long target stem at the left edge was incorrectly discarded as a system connector")
+        black(550, 200, 552, 333) // Same barline near the far edge of a tilted scan.
+        let degrees = -2.0, slope = tan(degrees * .pi / 180)
+        var tiltedPixels = [UInt8](repeating: 255, count: width * height)
+        for x in 0..<width {
+            let shift = Int((slope * (Double(x) - Double(width) / 2)).rounded())
+            for y in 0..<height where y + shift >= 0 && y + shift < height {
+                tiltedPixels[(y + shift) * width + x] = pixels[y * width + x]
+            }
+        }
+        let tiltedImage = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8, bytesPerRow: width,
+            space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: 0),
+            provider: CGDataProvider(data: Data(tiltedPixels) as CFData)!, decode: nil, shouldInterpolate: false, intent: .defaultIntent)!
+        let tiltedComponents = NativeScorePageAnalyzer.notationComponents(image: tiltedImage, candidates: candidates, skewDegrees: degrees)!
+        try check(!tiltedComponents.contains { $0.staffIDs.count > 1 },
+                  "Skewed edge barline was tested against unshifted staff cores and joined both instruments")
+        try check(tiltedComponents.contains { $0.staffIDs == [0] && $0.bounds[1] < 175.0 / 600 && $0.bounds[0] > 0.1 },
+                  "Skew-aware barline separation lost a target high stem/slur")
+        var page = ScorePageAnalysis(pageIndex: 0, pageWidth: 600, pageHeight: 600, imageWidth: width, imageHeight: height,
+            staves: candidates.map(ScoreObservedStaff.init), warnings: [], inkComponents: components)
+        var compact = fixed; compact.cropMode = "compact"; compact.parts[0].hasLyrics = true
+        let bands = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands
+        try check(bands.count == 2 && bands[0].topFraction * 600 < 166, "Compact crop clipped a high connected slur")
+        try check(bands[0].bottomFraction * 600 > 269, "Explicit lyric floor failed to preserve the whole detached lyric")
+        try check(bands[0].bottomFraction * 600 < 300, "Compact crop retains the whole neighboring staff despite separated ink")
+        try check(bands[0].warnings.isEmpty, "Unambiguous synthetic notation has unexpected crop warnings")
+        let original = ScoreExtractionPlanner.plan(pages: [page], profile: fixed).bands
+        try check(original[0].topFraction * 600 < bands[0].topFraction * 600, "Legacy fixed profile silently uses compact geometry")
+        compact.parts[0].bottomPaddingStaffSpaces = 9
+        let figuredBass = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[0]
+        try check(figuredBass.bottomFraction * 600 >= 232 + 9 * 8 - 0.001, "Explicit nine-space figured-bass padding was capped by compact defaults")
+        compact.parts[0].bottomPaddingStaffSpaces = nil
+        page.inkComponents!.append(ScoreInkComponent(bounds: [0.3, 0.3, 0.5, 0.6], staffIDs: [0, 1]))
+        let touching = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[0]
+        try check(!touching.warnings.isEmpty && touching.topFraction < 0.3
+                  && touching.bottomFraction > 0.6, "Touching notation's full component was silently clipped instead of preserving and flagging")
+        page.inkComponents = nil
+        let oldInventory = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[0]
+        try check(oldInventory.topFraction == original[0].topFraction && !oldInventory.warnings.isEmpty,
+                  "Old inventory without ink evidence silently claims compact crops")
+        try check(NativeScorePageAnalyzer.notationComponents(image: image, candidates: candidates, skewDegrees: 0, isCancelled: { true }) == nil,
+                  "Cancelled ink analysis returned apparently complete evidence")
+        let encoded = try JSONEncoder().encode(compact)
+        let decoded = try JSONDecoder().decode(ScoreExtractionProfile.self, from: encoded)
+        try check(decoded == compact,
+                  "Compact mode and explicit lyric profile did not round trip")
+
+        page.inkComponents = components
+        page.inkComponents!.append(ScoreInkComponent(bounds: [175.0/600, 144.0/600, 190.0/600, 162.0/600], staffIDs: []))
+        let rehearsal = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[0]
+        try check(rehearsal.topFraction * 600 < 144,
+                  "Detached rehearsal box outside the initial search seed was not followed from adjacent target ink")
+
+        page.inkComponents = components
+        for index in 0..<8 {
+            let left = Double(60 + index * 45)
+            page.inkComponents!.append(ScoreInkComponent(bounds: [left/600, 274.0/600, (left+6)/600, 280.0/600], staffIDs: []))
+        }
+        let lyricPlan = ScoreExtractionPlanner.plan(pages: [page], profile: compact)
+        try check(lyricPlan.bands[0].bottomFraction * 600 > 280,
+                  "A detached lyric baseline nearer the next staff was lost from its explicit vocal owner")
+        try check(lyricPlan.bands[1].topFraction * 600 > 280,
+                  "The following instrument inherited the preceding part's full lyric line")
+        page.inkComponents!.append(ScoreInkComponent(bounds: [540.0/600, 276.5/600, 543.0/600, 277.5/600], staffIDs: []))
+        let hyphenPlan = ScoreExtractionPlanner.plan(pages: [page], profile: compact)
+        try check(hyphenPlan.bands[1].topFraction == lyricPlan.bands[1].topFraction,
+                  "A trailing lyric hyphen beyond the letter span pulled the following instrument up into the whole preceding lyric row")
+
+        compact.parts[0].hasLyrics = false
+        page.inkComponents = components + [
+            ScoreInkComponent(bounds: [0.28, 0.35, 0.35, 0.44], staffIDs: [0]),
+            ScoreInkComponent(bounds: [0.30, 0.44, 0.70, 0.58], staffIDs: [1])
+        ]
+        let overlappingDynamic = ScoreExtractionPlanner.plan(pages: [page], profile: compact).bands[0]
+        try check(overlappingDynamic.bottomFraction < 0.5 && !overlappingDynamic.warnings.isEmpty,
+                  "A nearby foreign-staff component was silently adopted wholesale instead of requesting local edge review")
     }
     struct SourceConfig: Decodable { var source: String; var profile: ScoreExtractionProfile }
     static func corpusTests() throws {

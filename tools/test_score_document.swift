@@ -35,6 +35,86 @@ enum ScoreDocumentTests {
         check(document.scoreDetectionProgress == nil, "Completed Auto clears its progress state")
         check(document.isScoreDetectionCurrent(review), "Unchanged full-source review is current")
 
+        var cropReview = review
+        let cropPage = review.analyses[0]
+        let originalBands = review.plan.pages[0].assignments
+        let firstBand = originalBands[0]
+        let newTop = max(0, firstBand.topFraction * cropPage.pageHeight - 4)
+        let newBottom = min(cropPage.pageHeight, firstBand.bottomFraction * cropPage.pageHeight + 6)
+        try cropReview.setCropEdges(for: firstBand.id, top: newTop, bottom: newBottom)
+        let expanded = cropReview.plan.bands.first { $0.id == firstBand.id }!
+        check(abs(expanded.topFraction * cropPage.pageHeight - newTop) < 0.000001
+              && abs(expanded.bottomFraction * cropPage.pageHeight - newBottom) < 0.000001,
+              "Auto review applies explicit source-point crop edges before adding")
+        check(expanded.candidateIDs == firstBand.candidateIDs && expanded.leftFraction == firstBand.leftFraction
+              && expanded.rightFraction == firstBand.rightFraction,
+              "Crop edits preserve instrument assignments and horizontal bounds")
+        let untouched = cropReview.plan.bands.first { $0.id == originalBands[1].id }!
+        check(untouched.topFraction == originalBands[1].topFraction && untouched.bottomFraction == originalBands[1].bottomFraction,
+              "Editing one crop does not expand neighboring instruments")
+        check(cropReview.plan.pages[1] == review.plan.pages[1] && document.project.bands.isEmpty,
+              "Review crop edits do not touch other pages or the live document")
+        let previousPlan = cropReview.plan
+        let previousOverrides = cropReview.overrides
+        let firstLine = cropPage.staves.first { firstBand.candidateIDs.contains($0.id) }!.staffLineFractions[0] * cropPage.pageHeight
+        for (top, bottom) in [(Double.nan, newBottom), (-1.0, newBottom), (newTop, cropPage.pageHeight + 1),
+                              (firstLine + 1, newBottom), (newBottom, newTop)] {
+            do {
+                try cropReview.setCropEdges(for: firstBand.id, top: top, bottom: bottom)
+                fatalError("Invalid crop edge was accepted")
+            } catch {
+                check(cropReview.plan == previousPlan && cropReview.overrides == previousOverrides,
+                      "Invalid crop edit is rejected atomically without losing assignments")
+            }
+        }
+        var tiltedReview = review
+        tiltedReview.analyses[0].analysisSkewDegrees = -1
+        tiltedReview.replan()
+        let skewReach = tan(Double.pi / 180) * cropPage.pageWidth / 2
+        let lastLine = cropPage.staves.first { firstBand.candidateIDs.contains($0.id) }!.staffLineFractions[4] * cropPage.pageHeight
+        let tiltedPlan = tiltedReview.plan
+        for (top, bottom) in [(firstLine - skewReach + 0.1, newBottom),
+                              (newTop, lastLine + skewReach - 0.1)] {
+            do {
+                try tiltedReview.setCropEdges(for: firstBand.id, top: top, bottom: bottom)
+                fatalError("Crop cutting the tilted end of a staff line was accepted")
+            } catch {
+                check(tiltedReview.plan == tiltedPlan && tiltedReview.overrides.isEmpty,
+                      "Crop edit rejects clipped tilted staff ends without mutating the review")
+            }
+        }
+        try tiltedReview.setCropEdges(for: firstBand.id, top: firstLine - skewReach - 1, bottom: lastLine + skewReach + 1)
+        check(tiltedReview.plan.canApply, "Crop containing both tilted staff ends remains editable")
+        cropReview.overrides[0].systems[0].movementLabel = "Andante"
+        cropReview.overrides[0].systems[0].bands[0].label = "espressivo"
+        cropReview.overrides[0].systems[0].bands[0].pageBreakBefore = true
+        cropReview.overrides[0].systems[0].bands[0].sourceMarkings = [[12, 5, 50, 10]]
+        cropReview.replan()
+        check(cropReview.plan.canApply, "Metadata-bearing crop fixture remains a valid reviewed page")
+        try cropReview.setCropEdges(for: firstBand.id, top: newTop, bottom: newBottom + 1)
+        let marked = cropReview.plan.bands.first { $0.id == firstBand.id }!
+        check(marked.editorialLabel == "Andante — espressivo" && marked.pageBreakBefore && marked.sourceMarkings.count == 1,
+              "Crop editing retains movement, local direction, page break and shared source glyphs")
+        try cropReview.resetCropEdges(for: firstBand.id)
+        let reset = cropReview.plan.bands.first { $0.id == firstBand.id }!
+        check(reset.topFraction == firstBand.topFraction && reset.bottomFraction == firstBand.bottomFraction
+              && reset.editorialLabel == marked.editorialLabel && reset.sourceMarkings == marked.sourceMarkings,
+              "Restoring automatic edges preserves reviewed musical metadata")
+        try cropReview.setCropEdges(for: firstBand.id, top: newTop, bottom: newBottom)
+        let croppedDocument = PartsmithDocument(sourcePDFData: source)
+        let cropUndo = UndoManager()
+        cropUndo.groupsByEvent = false
+        croppedDocument.undoManager = cropUndo
+        cropUndo.beginUndoGrouping()
+        check(croppedDocument.addScoreParts(from: cropReview) == 4, "Locally corrected crops use the same all-part apply transaction")
+        cropUndo.endUndoGrouping()
+        check(croppedDocument.project.bands.contains { abs($0.topFraction * cropPage.pageHeight - newTop) < 0.000001
+              && abs($0.bottomFraction * cropPage.pageHeight - newBottom) < 0.000001 && $0.editorialLabel == "Andante — espressivo" },
+              "Applied native band retains the exact reviewed crop and heading")
+        cropUndo.undo()
+        check(croppedDocument.project.bands.isEmpty && croppedDocument.project.parts.isEmpty,
+              "One undo removes all locally corrected Auto parts together")
+
         let undo = UndoManager()
         undo.groupsByEvent = false
         document.undoManager = undo
@@ -111,6 +191,19 @@ enum ScoreDocumentTests {
         check(setup.savedScoreProfile == nil, "Saved setup is undoable")
         setupUndo.redo()
         check(setup.savedScoreProfile == profile, "Saved setup redo is exact")
+
+        var compactProfile = profile
+        compactProfile.cropMode = "compact"
+        compactProfile.parts[0].hasLyrics = true
+        setupUndo.beginUndoGrouping()
+        setup.saveScoreProfile(compactProfile)
+        setupUndo.endUndoGrouping()
+        check(setup.savedScoreProfile == compactProfile, "Compact mode and explicit lyric hints survive model conversion")
+        let compactProject = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(setup.project))
+        check(PartsmithDocument(project: compactProject).savedScoreProfile == compactProfile,
+              "Compact mode and lyric settings survive saving and reopening")
+        check(profile.cropMode == nil && document.savedScoreProfile?.cropMode == nil,
+              "Legacy profiles retain fixed crop behavior instead of silently changing")
 
         callback = false
         setup.detectScore(profile: profile) { _ in callback = true }

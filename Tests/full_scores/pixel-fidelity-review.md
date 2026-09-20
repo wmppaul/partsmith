@@ -1,3 +1,25 @@
+# Current full-score fidelity review — September 20 crop revision
+
+The reviewed complete set now passes **1,563 protected/source-cue regions and 312,753,822 compared pixels with zero normalized differences** at 216 dpi. Ave and Quartet are the revised compact sets; the other three sets retain their previous reviewed generation.
+
+| Score | Regions | Pixels | Raw full-source differences | Normalized differences |
+|---|---:|---:|---:|---:|
+| Ave verum corpus | 106 | 10,667,192 | 301 | 0 |
+| Notte e giorno | 40 | 16,094,162 | 5,288 | 0 |
+| Quartet Op. 67 | 835 | 77,806,936 | 495,448 | 0 |
+| Frauenliebe und Leben | 175 | 59,121,204 | 0 | 0 |
+| Clarinet Trio Op. 114 | 407 | 149,064,328 | 0 | 0 |
+
+Raw differences remain evidence rather than being discarded. Tight scan crops can change a bitonal renderer's sampling phase; the reviewer first compares the full original source, then independently draws the original with the reviewed crop extent when necessary. A standalone Foundation/CoreGraphics reference also handles native PDF matrix/path serialization. It takes only immutable original source content and checked placement geometry, never exported music. Target guards must fit before comparison, and required shared cues must appear in main crops or copied fragments. No pixel tolerance, smoothing, source-ink modification or new cleanup mask is used.
+
+A separate reference Quartet generation exposed one source-page-10 matrix-rounding case: the unchanged decoded 2532×3396 source image retained its exact digest, while direct MuPDF placement differed. An independent original-only CoreGraphics placement compared exactly. The final revised Quartet requires only 18 crop-extent normalizations; all other 817 regions compare directly. This is export fidelity within reviewed regions, not automatic musical ownership or completeness.
+
+All **11 real-output controls** pass their expected outcomes. Positive vector/scan/rounding cases pass; deliberately erased notes/staves/tempo glyphs, missing required cue metadata and crops crossing protected envelopes fail. Source/map/normalized-manifest bindings are checked, and original production files remain unchanged. Durable results: `compact-pixel-comparator-regressions.json` and `compact-pixel-binding-controls.json`. Reproduce with `Tests/full_scores/test_pixel_comparator.py`; scratch fixtures go under `.build`.
+
+The older review below is retained as historical evidence for the 184-page generation. Its totals and six-control count are superseded above.
+
+---
+
 # Full-score pixel fidelity review
 
 All five final score sets pass **1,326 protected/source-cue regions and 382,119,104 compared pixels with zero canonical differences**. This is exact 216-dpi grayscale comparison with zero pixel tolerance; it supplements the independently reviewed musical maps and visual page checks.

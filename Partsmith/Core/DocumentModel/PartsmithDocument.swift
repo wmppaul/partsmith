@@ -57,6 +57,76 @@ struct ScoreDetectionReview {
         plan = ScoreExtractionPlanner.plan(pages: analyses.filter { excludedPageReasons[$0.pageIndex] == nil },
                                            profile: profile, overrides: overrides.filter { excludedPageReasons[$0.pageIndex] == nil })
     }
+
+    enum CropEditError: LocalizedError {
+        case unavailableBand, invalidEdges, incompletePage
+        var errorDescription: String? {
+            switch self {
+            case .unavailableBand: return "This crop is no longer available. Review the current page assignments first."
+            case .invalidEdges: return "Keep the crop inside the source page, with Top above Bottom and every assigned staff line, including its tilted ends, inside it."
+            case .incompletePage: return "Resolve this page's staff assignments before changing crop edges."
+            }
+        }
+    }
+
+    /// Edits only the proposal. Applying the complete review remains one undoable edit.
+    mutating func setCropEdges(for bandID: String, top: Double, bottom: Double) throws {
+        guard let band = plan.bands.first(where: { $0.id == bandID }),
+              let page = analyses.first(where: { $0.pageIndex == band.pageIndex }) else {
+            throw CropEditError.unavailableBand
+        }
+        let staves = page.staves.filter { band.candidateIDs.contains($0.id) }
+        let skewReach = abs(tan(page.analysisSkewDegrees * .pi / 180)) * page.pageWidth / 2
+        guard top.isFinite, bottom.isFinite, top >= 0, top < bottom, bottom <= page.pageHeight,
+              skewReach.isFinite,
+              staves.allSatisfy({
+                  max(0, ($0.staffLineFractions.first ?? -1) * page.pageHeight - skewReach) >= top
+                      && min(page.pageHeight, ($0.staffLineFractions.last ?? 2) * page.pageHeight + skewReach) <= bottom
+              }) else { throw CropEditError.invalidEdges }
+        try setCrop(for: band, rect: [band.leftFraction * page.pageWidth, top,
+                                      (1 - band.rightFraction) * page.pageWidth, bottom])
+    }
+
+    mutating func resetCropEdges(for bandID: String) throws {
+        guard let band = plan.bands.first(where: { $0.id == bandID }) else { throw CropEditError.unavailableBand }
+        try setCrop(for: band, rect: nil)
+    }
+
+    private mutating func setCrop(for band: ScorePlannedBand, rect: [Double]?) throws {
+        guard let page = analyses.first(where: { $0.pageIndex == band.pageIndex }),
+              let pagePlan = plan.pages.first(where: { $0.pageIndex == band.pageIndex }),
+              pagePlan.unresolvedReasons.isEmpty, excludedPageReasons[band.pageIndex] == nil else {
+            throw CropEditError.incompletePage
+        }
+        // Existing overrides carry omission reasons, movement headings, cues and
+        // shared markings. Preserve them verbatim when changing a single edge.
+        var correction = overrides.first(where: { $0.pageIndex == band.pageIndex })
+            ?? ScorePageOverride(pageIndex: band.pageIndex, reason: "Crop edges reviewed in Auto Extract.",
+                systems: Set(pagePlan.assignments.map(\.systemIndex)).sorted().map { system in
+                    ScoreSystemOverride(systemIndex: system, label: nil, movementLabel: nil,
+                        bands: pagePlan.assignments.filter { $0.systemIndex == system }.map { item in
+                            ScoreBandOverride(partID: item.partID, candidateIDs: item.candidateIDs,
+                                rect: nil, label: item.editorialLabel, kind: item.kind,
+                                pageBreakBefore: item.pageBreakBefore, sourceMarkings: item.sourceMarkings.map {
+                                    [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+                                     (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+                                })
+                        }, omittedParts: nil)
+                })
+        guard let systemIndex = correction.systems.firstIndex(where: { $0.systemIndex == band.systemIndex }),
+              let bandIndex = correction.systems[systemIndex].bands.firstIndex(where: { $0.partID == band.partID }) else {
+            throw CropEditError.unavailableBand
+        }
+        correction.systems[systemIndex].bands[bandIndex].rect = rect
+        var proposal = self
+        proposal.overrides.removeAll { $0.pageIndex == band.pageIndex }
+        proposal.overrides.append(correction)
+        proposal.replan()
+        guard proposal.plan.pages.first(where: { $0.pageIndex == band.pageIndex })?.unresolvedReasons.isEmpty == true else {
+            throw CropEditError.incompletePage
+        }
+        self = proposal
+    }
 }
 
 final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
@@ -430,17 +500,17 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         guard let setup = project.projectSettings.instrumentationSetup else { return nil }
         return ScoreExtractionProfile(parts: setup.instruments.map {
             ScorePartDefinition(id: $0.id, name: $0.name, staffCount: $0.staffCount,
-                topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces)
+                topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces, hasLyrics: $0.hasLyrics)
         }, topPaddingStaffSpaces: setup.topPaddingStaffSpaces, bottomPaddingStaffSpaces: setup.bottomPaddingStaffSpaces,
-           leftTrimPoints: setup.leftTrimPoints, rightTrimPoints: setup.rightTrimPoints)
+           leftTrimPoints: setup.leftTrimPoints, rightTrimPoints: setup.rightTrimPoints, cropMode: setup.cropMode)
     }
 
     private static func instrumentationSetup(for profile: ScoreExtractionProfile) -> ScoreInstrumentationSetup {
         ScoreInstrumentationSetup(instruments: profile.parts.map {
             ScoreInstrumentationSetup.Instrument(id: $0.id, name: $0.name, staffCount: $0.staffCount,
-                topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces)
+                topPaddingStaffSpaces: $0.topPaddingStaffSpaces, bottomPaddingStaffSpaces: $0.bottomPaddingStaffSpaces, hasLyrics: $0.hasLyrics)
         }, topPaddingStaffSpaces: profile.topPaddingStaffSpaces, bottomPaddingStaffSpaces: profile.bottomPaddingStaffSpaces,
-           leftTrimPoints: profile.leftTrimPoints, rightTrimPoints: profile.rightTrimPoints)
+           leftTrimPoints: profile.leftTrimPoints, rightTrimPoints: profile.rightTrimPoints, cropMode: profile.cropMode)
     }
 
     func saveScoreProfile(_ profile: ScoreExtractionProfile) {

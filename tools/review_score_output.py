@@ -64,30 +64,31 @@ context.closePDF()
 '''
 
 
-def vector_references(directory, manifest, source):
-    """Normalize vector PDF serialization without altering source ink geometry.
+def serialized_references(directory, manifest, source):
+    """Normalize PDF serialization without altering source ink geometry.
 
     CoreGraphics rewrites vector path/glyph transforms at export precision. A
     direct MuPDF rendering can consequently differ along anti-aliased edges.
-    Independently serialize the FULL original page at the checked placement;
-    never use any native output content as the reference. Raw MuPDF differences
-    remain in the report. Raster source pages use the direct source oracle.
+    Independently serialize the original page at the checked placement, with
+    both full-page and reviewed-clip variants for scans. Never use native output
+    content as the reference. Direct MuPDF differences remain in the report;
+    scans use this fallback only after both direct references differ.
     """
     vector_pages = {i for i, page in enumerate(source) if not page.get_images()}
     jobs, lookup = [], {}
     for part in manifest["parts"]:
         with fitz.open(directory / part["file"]) as output:
             for p in part["placements"]:
-                if p["sourcePage"] - 1 not in vector_pages:
-                    continue
+                vector = p["sourcePage"] - 1 in vector_pages
                 page = output[p["outputPage"] - 1]
                 placements = [(p["sourceRect"], p["destinationRect"], False)]
                 placements += [(m["sourceRect"], m["destinationRect"], True) for m in p["sourceMarkings"]]
                 for index, (src, dst, shared) in enumerate(placements):
-                    lookup[(part["id"], p["id"], index - 1)] = len(jobs)
-                    jobs.append({"sourcePage": p["sourcePage"], "sourceRect": src,
-                                 "destinationRect": dst, "outputWidth": page.rect.width,
-                                 "outputHeight": page.rect.height, "sharedFragment": shared})
+                    for clipped in ([shared] if vector or shared else [False, True]):
+                        lookup[(part["id"], p["id"], index - 1, clipped)] = len(jobs)
+                        jobs.append({"sourcePage": p["sourcePage"], "sourceRect": src,
+                                     "destinationRect": dst, "outputWidth": page.rect.width,
+                                     "outputHeight": page.rect.height, "sharedFragment": clipped})
     if not jobs:
         return None, None, lookup
     compiler = shutil.which("swiftc")
@@ -122,7 +123,7 @@ def rect(values):
 
 
 def source_reference(output_page, source, source_index, source_rect, destination_rect, scale,
-                     shared_fragment=False):
+                     shared_fragment=False, match_reviewed_crop=False):
     """Place the untrimmed original at the independently specified transform.
 
     show_pdf_page serializes its wrapper matrix with only five decimal places.
@@ -155,11 +156,14 @@ def source_reference(output_page, source, source_index, source_rect, destination
     ty = output_page.rect.height - destination.y1 - bounds.y0 * scale
     reference.xref_set_key(wrappers[0], "Matrix",
                            f"[{scale:.12f} 0 0 {scale:.12f} {tx:.12f} {ty:.12f}]")
-    if shared_fragment:
+    if shared_fragment or match_reviewed_crop:
         # A shared cue is the independently reviewed source rectangle itself.
         # Match that rectangle's clip: MuPDF's bitonal resampling phase depends
         # on the visible image extent, even when its image transform is equal.
-        # Main staff guards deliberately keep the untrimmed reference instead.
+        # A separately checked target guard can also use the reviewed main
+        # crop's extent to distinguish resampling phase from changed ink. The
+        # untrimmed comparison is always recorded first, and target containment
+        # is independently required before either comparison is attempted.
         streams = baseline_page.get_contents()
         assert len(streams) == 1
         clip = (f"q {destination_rect.x0:.12f} "
@@ -188,8 +192,18 @@ def review(directory, map_path=None, pixels=False):
             for system in page.get("systems", []):
                 for band in system["bands"]:
                     protected[(page["pageIndex"] + 1, system["systemIndex"] + 1, band["partID"])] = band.get("protectedRegions", [])
+        placements = {(b["sourcePage"] - 1, b["system"] - 1, p["id"]): b
+                      for p in manifest["parts"] for b in p["placements"]}
+        for cue in mapping.get("sharedMarkings", []):
+            region = rect(cue["rect"])
+            for part_id in cue["targetPartIDs"]:
+                band = placements[(cue["pageIndex"], cue["systemIndex"], part_id)]
+                extents = [band["sourceRect"]] + [m["sourceRect"] for m in band["sourceMarkings"]]
+                assert any((rect(r) + (-0.0001, -0.0001, 0.0001, 0.0001)).contains(region) for r in extents), \
+                    f"Missing required shared source marking: {band['id']}: {cue['text']}"
     pixel_results = []
-    vector_work, vector_pdf, vector_lookup = vector_references(directory, manifest, source) if pixels else (None, None, {})
+    vector_work, vector_pdf, vector_lookup = serialized_references(directory, manifest, source) if pixels else (None, None, {})
+    vector_pages = {i for i, page in enumerate(source) if not page.get_images()} if pixels else set()
     for part in manifest["parts"]:
         assert digest(directory / part["file"]) == part["sha256"]
         pdf = fitz.open(directory / part["file"])
@@ -242,13 +256,33 @@ def review(directory, map_path=None, pixels=False):
                     assert aa.size > 0 and (a.width, a.height) == (b.width, b.height) and aa.shape == bb.shape
                     raw_difference = difference = int(np.count_nonzero(aa != bb))
                     normalization = "none"
-                    vector_index = vector_lookup.get((part["id"], p["id"], fragment_index))
-                    if vector_index is not None:
+                    vector_index = vector_lookup.get((part["id"], p["id"], fragment_index, shared_fragment))
+                    if p["sourcePage"] - 1 in vector_pages:
                         canonical = vector_pdf[vector_index].get_pixmap(dpi=216, clip=target, colorspace=fitz.csGRAY)
                         cc = np.frombuffer(canonical.samples, dtype=np.uint8)
                         assert (canonical.width, canonical.height) == (a.width, a.height) and cc.shape == aa.shape
                         difference = int(np.count_nonzero(aa != cc))
                         normalization = "independent_full_source_CoreGraphics_vector_serialization"
+                    elif difference and not shared_fragment:
+                        clipped_reference, clipped_page = source_reference(
+                            output_page, source, p["sourcePage"] - 1, source_rect,
+                            destination_rect, scale, match_reviewed_crop=True)
+                        canonical = clipped_page.get_pixmap(dpi=216, clip=target, colorspace=fitz.csGRAY)
+                        cc = np.frombuffer(canonical.samples, dtype=np.uint8)
+                        assert (canonical.width, canonical.height) == (a.width, a.height) and cc.shape == aa.shape
+                        difference = int(np.count_nonzero(aa != cc))
+                        normalization = "independent_original_scan_reviewed_crop_resampling_extent"
+                        clipped_reference.close()
+                    if difference and p["sourcePage"] - 1 not in vector_pages:
+                        for clipped in ([True] if shared_fragment else [False, True]):
+                            serial_index = vector_lookup[(part["id"], p["id"], fragment_index, clipped)]
+                            canonical = vector_pdf[serial_index].get_pixmap(dpi=216, clip=target, colorspace=fitz.csGRAY)
+                            cc = np.frombuffer(canonical.samples, dtype=np.uint8)
+                            assert (canonical.width, canonical.height) == (a.width, a.height) and cc.shape == aa.shape
+                            difference = int(np.count_nonzero(aa != cc))
+                            normalization = "independent_original_scan_CoreGraphics_serialization_" + ("reviewed_crop" if clipped else "full_page")
+                            if difference == 0:
+                                break
                     pixel_results.append({"bandID": p["id"], "description": description,
                                           "referenceExtent": "reviewed_shared_fragment" if shared_fragment else "untrimmed_source",
                                           "normalization": normalization, "rawDifferentPixels": raw_difference,
@@ -278,7 +312,7 @@ def review(directory, map_path=None, pixels=False):
     if pixels:
         pixel_report = {"sourceSHA256": manifest["sourceSHA256"], **bindings,
                         "outputs": {p["file"]: p["sha256"] for p in manifest["parts"]},
-                        "method": "exact_216dpi_grayscale_source_comparison; 12_digit_reference_transform; independent_CoreGraphics_serialization_for_vector_sources",
+                        "method": "exact_216dpi_grayscale_source_comparison; 12_digit_reference_transform; independent_original_source_CoreGraphics_serialization; scan_crop_extent_and_serialization_normalization_only_when_needed_with_untrimmed_differences_retained",
                         "tolerance": 0, "sourceContentOrImageDictionariesModified": False,
                         "status": "pass" if all(p["differentPixels"] == 0 for p in pixel_results) else "fail", "regions": pixel_results}
         (out / "pixel-fidelity.json").write_text(json.dumps(pixel_report, indent=2) + "\n")

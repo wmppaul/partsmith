@@ -3,13 +3,15 @@
   "notationPolicy": "preserve-target",
   "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
   "sourceMapSHA256": "091b8356d6b3b8cf665a1d1f0c2b23e7321890ff187b8db7e6f5efcf53d864a1",
+  "sourceMap": "../evidence/schumann-map.json",
   "visualReviewReports": [
     "../evidence/small-score-independent-review.md"
   ],
-  "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
-  "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
+  "scope": "Every source band and final output page reviewed; target preservation and remaining neighboring context assessed separately.",
+  "limits": "Manual instrument setup and shared-direction review. Explicit crop corrections are counted below; these are reviewed native exports, not unattended musical interpretation or performance-tested page turns.",
   "manualStaffPositionCorrections": 0,
   "explicitCropRectangleOverrides": 0,
+  "correctedBandIDs": [],
   "whiteoutMasks": 0,
   "pageFooterChecks": 30,
   "geometryReport": "geometry-review.json",

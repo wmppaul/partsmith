@@ -1,65 +1,65 @@
 # Part extraction: complete-score native workflow
 
-The current deliverable is **19 complete parts from five complete scores**, generated through Partsmith's native whole-score Auto planner, document transaction, layout engine and PDF exporter. The reusable [score-part-extraction skill](skills/score-part-extraction/SKILL.md) now documents this offline path alongside the portable Python workflow. [All outputs and editable projects](output/pdf/full-score-sets/README.md); [download the complete set](artifacts/Partsmith-complete-score-parts.zip).
+The current deliverable contains **19 complete parts from five complete scores**, generated through Partsmith's offline analyzer, planner, document transaction, layout engine and PDF exporter. The [reusable extraction skill](skills/score-part-extraction/SKILL.md) documents both the native macOS path and the portable workflow. [All outputs and editable projects](output/pdf/full-score-sets/README.md); [complete download](artifacts/Partsmith-complete-score-parts.zip).
 
-The original project was checkpointed at `6b422ea`; the earlier reviewed extraction workflow was checkpointed at `3aa78d1` before this complete-score iteration.
+The September 20 crop revision removes excessive neighboring staff context from Ave and the Quartet. **These are reviewed outputs, not unattended Auto results:** Ave retains 56 of 64 automatic crop rectangles and uses 8 local corrections; the Quartet retains 159 of 480 and uses 321 explicit corrections. Instrument setup and shared musical directions remain reviewed inputs. The Quartet still needs substantial crop review before Auto alone can be considered robust.
 
 | Complete source | Parts | Output pages by part |
 |---|---:|---|
-| Mozart, Ave verum corpus | 8 | One page each: SATB, two violins, viola, and the printed combined Basso ed Organo staff |
+| Mozart, Ave verum corpus | 8 | One page each: SATB, two violins, viola, combined Basso ed Organo |
 | Mozart, Notte e giorno | 2 | Voice 3; Piano 4 |
-| Brahms, String Quartet No. 3, Op. 67 | 4 | Violin I 18; Violin II 19; Viola 19; Cello 19 |
+| Brahms, String Quartet No. 3, Op. 67 | 4 | Violin I 13; Violin II 11; Viola 11; Cello 12 |
 | Schumann, Frauenliebe und Leben, all eight songs | 2 | Voice 13; Piano 17 |
 | Brahms, Clarinet Trio, Op. 114, all four movements | 3 | Clarinet in A 16; Cello 16; Piano 32 |
 
-There are 184 output pages and 1,131 part bands. All 84 input PDF pages were analyzed; the Trio's blank page and publisher catalog were explicitly reviewed and excluded. The native detector finds all **1,357 physical music staves** in this corpus with **zero manual staff-position corrections**. These are corpus results, not a claim of arbitrary-score reliability.
+The set contains **156 output pages and 1,131 part bands**. All 84 input PDF pages were analyzed; the Trio's blank page and catalog were explicitly excluded. The native detector finds all **1,357 physical music staves**, with zero manual staff-position corrections. These are corpus results, not a guarantee for arbitrary scores. The original state was checkpointed at `6b422ea`, the excerpt workflow at `3aa78d1`, and the broader complete-score generation at `9df1d62` before this refinement.
 
-## What Auto does, and what is initialized manually
+## Crop quality and remaining context
 
-The user or assistant enters instrument names, printed order and staff counts once. The app saves that setup and automatically analyzes every source page, proposes systems/parts and crops, presents a review, and adds all approved parts in one undoable transaction. Manual instrument naming is intentional; no OCR or remote model is required. Per-instrument crop padding is adjustable in the app.
+| Score | Previously delivered neighboring line centers | Revised | Complete neighboring staves, before → after | Pages, before → after |
+|---|---:|---:|---:|---:|
+| Ave | 227 | 12 | 0 → 0 | 8 → 8 |
+| Quartet | 3,629 | 148 | 589 → 0 | 75 → 47 |
 
-All 1,131 final crop rectangles come from native detected geometry and saved padding/margin profiles. There are no hand-drawn geometry overrides or cleanup masks in these full outputs. Reviewed metadata handles Notte's two piano-only introduction systems (clearly labeled cues in the voice part), movement/song boundaries, and shared printed directions. Shared tempo/rehearsal/return glyphs are copied from verified source rectangles; automatically understanding those markings is still outside Auto's capability. The app retains/removes such fragments; their creation in this evaluation uses the reviewed batch plan.
+These counts measure detected line centers inside main crops; they are an approximate context metric, not musical recognition. Every revised band and output page was also reviewed visually against the source. Ave's duplicated lyric rows and broad adjacent staff areas are gone. Some isolated neighboring notes, slur arcs, glyph tips and directions remain where vertical ranges overlap; two publisher copyright lines remain in the organ part. The Quartet retains overlapping fragments and occasional printed catalog-number fragments. No masks were used, and all independently reviewed target regions remain intact.
 
-The actual Auto interface was exercised through computer use on complete Ave: eight instruments initialized, organ lower padding changed from seven to nine spaces, setup saved/reopened, all four review overlays inspected, and 64 bands applied. Every resulting crop matches the batch geometry to numerical precision. [UI evidence](Tests/full_scores/ave-ui-auto-results.json).
+The final native Auto proposal itself improved to 14 neighboring line centers in Ave and 470 in the Quartet, with 0 and 38 complete extra staves respectively. Ave's 64 protected envelopes fit that proposal; 121 of the Quartet's conservative source envelopes did not. Those envelope failures are not a count of missing notes, but they require review and cannot be passed merely by issuing warnings. The final corrections and their reasons are recorded in the reviewed overrides and [Quartet correction report](Tests/full_scores/quartet-compact-correction-report.json).
 
-## Corrections driven by independent review
+## What the app now does
 
-- Skew-aware sampling across multiple horizontal regions recovers weak staff lines and rejects dense note/beam harmonics. Different staff sizes on the same page are supported; the Trio's smaller clarinet/cello staves and dense page 16 now work.
-- A Quartet p9 false narrow Cello pattern had the right count but wrong five-line spacing. Left-edge evidence and a regression on line height corrected it. Staff count alone is never the acceptance gate.
-- Quartet crops needed wider top/bottom context to retain high slurs, ledger notes and rehearsal boxes G, M and D. Target preservation takes precedence over removing neighboring notes.
-- Ave's combined bass/organ part needed extra lower padding for the third figured-bass row.
-- Independent Trio review rejected horizontal margins that cut a final barline and the `1` in measure number `122`. Full-width crops corrected both across the entire score.
-- Final safety review added visible per-band detector warnings, rejected overlapping shared-direction fragments, and stopped preview/export when requested scan correction fails; wrong-coordinate fallback cannot silently produce a part.
-- Layout now minimizes pages and balances systems within musical sections, reducing spacing before changing page count. It keeps a consistent scale, preserves crop geometry and ignores source-page boundaries. Export adds `page / total` footers. Musical page-turn timing still needs a player's judgment.
+Initialize printed instrument order and staff counts once; enable Lyrics for vocal staves. New setups use **Compact — follow notation**. Analysis separates staff lines and tilted system barlines before measuring connected ink. Lyric rows and trailing hyphens stay with their vocal staff. Compact defaults follow detected ink with a small margin; explicitly entered padding is minimum context. Existing saved fixed-padding setups retain their behavior.
+
+Run Auto over the whole source and inspect its review. **Adjust crop edges on this page** provides source-point Top/Bottom controls, highlights the selected band, and can restore automatic edges. Edits preserve assignments, labels, source cues and section breaks. The editor rejects edges outside the page or through assigned staff lines, including tilted ends. It cannot recognize every detached note or dynamic: compare the surrounding source before accepting an edit. Adding the reviewed parts remains one undoable transaction.
+
+Ambiguous connected notation is retained and flagged; detached marks touching another staff may need a local correction. Names, changing instrumentation, shared directions and page-turn timing are not inferred musically. Shared tempo/rehearsal/return glyphs are copied from verified source rectangles; overlapping cue boxes are completed in the main crop when possible to avoid duplicate glyphs. The native app runs without Python, a network connection or an AI service.
+
+Layout balances complete systems within movements/songs at a consistent scale, removes source-page breaks and prints page-number footers. It reduces spacing before increasing page count. The new full sets preserve the original engraving and scan resolution; performance page turns have not been tested by players.
 
 ## Review and verification
 
-Independent agents reviewed source pages, crop boundaries and final outputs. Every final PDF page received visual inspection. The reports distinguish complete source comparisons, output layout inspection and magnified vulnerable passages: [small scores](Tests/full_scores/small-score-independent-review.md), [Quartet source](Tests/full_scores/brahms-quartet-review.md), [Quartet output](Tests/full_scores/quartet-independent-review.md), [Trio source](Tests/full_scores/brahms-trio-review.md), [Trio independent review](Tests/full_scores/trio-independent-review.md).
+Independent agents reviewed every revised source band and final page. See [Ave final review](Tests/full_scores/ave-compact-final-review.md), [Quartet final review](Tests/full_scores/quartet-compact-independent-review.md), and the unchanged [small-score](Tests/full_scores/small-score-independent-review.md) and [Trio](Tests/full_scores/trio-independent-review.md) reviews. Previous failed compact generations remain clearly labeled as historical evidence.
 
-The automated review validates independently counted system coverage, output order, crop/placement bounds, staff containment and exact source/output hashes. Protected source regions are independently reviewed musical envelopes, not inferred note recognition. They supplement, rather than replace, visual comparison. All 1,326 protected/source-direction regions pass exact comparison at 216 dpi (382,119,104 grayscale pixels). Main target regions use an untrimmed source reference; copied directions use the independently reviewed fragment extent. Scanned scores compare directly against the original. For the two vector Mozart scores, an independent full-source CoreGraphics serialization accounts for path/glyph rounding at export; raw direct-render differences are retained in the reports. There is no image-similarity tolerance, smoothing or source-ink modification. Per-set fidelity records describe the method and limits. The [fidelity review](Tests/full_scores/pixel-fidelity-review.md) records successful negative controls for deliberately removed notes, staves, tempo glyphs and clipped guards. The [finalization audit](Tests/full_scores/review-finalization-audit.md) verifies stale maps/reviews/placements are rejected before publication.
+All 1,563 protected/source-direction regions in the complete deliverable pass exact 216 dpi comparison: **312,753,822 grayscale pixels**, zero differences after documented reference normalization. Source envelopes were established independently from raw scores; they are not chosen to fit the output. The checker also requires every inventoried shared cue to exist in its main crop or a copied fragment. It records raw full-source differences, uses independently serialized original vector content, and when needed matches a scan's reviewed crop extent or CoreGraphics matrix serialization to avoid sampling-phase false positives. No exported music is used as reference content; no similarity tolerance, smoothing or whiteout is introduced. Negative controls deliberately remove notes/staves/cues, omit required cue metadata and cut a protected edge, and must fail.
 
-Native checks pass 126 complete-corpus planner assertions, 35 whole-score document assertions, 5,315 layout assertions and 161 rendering/export checks. The 362-check legacy preservation bridge still passes. Both Debug and universal arm64/x86_64 Release builds succeed. The [macOS preview archive](artifacts/macos/Partsmith-extraction-preview-macos.zip) is an unsigned local build, not a notarized public release.
+Finalization rejects stale maps, manifests or PDF hashes, and compares the editable project's crop rectangles, source pages, labels, cues and section breaks with the delivered plan. Explicit geometry correction counts and band IDs are part of each review record. The three unchanged score sets retain their prior reviewed generation.
 
-## Reproduce the complete native path
+Native validation passes **147 planner/corpus assertions, 56 document assertions, 5,315 layout assertions and 161 rendering/export checks**. The legacy bridge also passes 362 preservation checks. Debug and universal arm64/x86_64 Release builds succeed. The [macOS preview archive](artifacts/macos/Partsmith-extraction-preview-macos.zip) is an unsigned local build. Exact build hashes and validation logs are recorded in [native-validation.json](Tests/full_scores/native-validation.json).
+
+## Reproduce a reviewed revised set
 
 ```sh
-bash tools/test_score_planner.sh --corpus
-bash tools/test_score_document.sh
-bash tools/test_layout_export.sh
-bash tools/test_preservation_exports.sh
-.build/extraction-venv/bin/python Tests/full_scores/test_pixel_comparator.py
 bash tools/score_extraction_batch.sh inventory --source SCORE.pdf --out WORK/inventory
 bash tools/export_score_plan.sh --inventory WORK/inventory/inventory.json \
-  --profile Tests/full_scores/SCORE-profile.json \
-  --overrides Tests/full_scores/SCORE-overrides.json \
-  --title 'Work title' --composer 'Composer' --out WORK/parts
+  --profile Tests/full_scores/ave-compact-profile.json \
+  --overrides Tests/full_scores/ave-compact-overrides.json \
+  --title 'Ave verum corpus, K. 618' --composer 'Wolfgang Amadeus Mozart' --out WORK/parts
 .build/extraction-venv/bin/python tools/review_score_output.py WORK/parts \
-  --map Tests/full_scores/SCORE-map.json --pixels
+  --map Tests/full_scores/ave-tight-map.json --pixels
 ```
 
-Exact source filenames/hashes, profiles, reviewed mappings and exceptions are under [Tests/full_scores](Tests/full_scores). The two Brahms map filenames use the `brahms-` prefix. Regenerating a map requires fresh source review; do not overwrite reviewed envelopes merely to satisfy a new crop.
+Use the matching Ave source PDF for this example. Quartet settings use `quartet-compact-profile.json`, `quartet-compact-overrides.json` and `brahms-quartet-tight-map.json`; exact sources and hashes are in the maps. These overrides include disclosed local corrections and are valid only for their reviewed source. For a new score, initialize its setup and review fresh Auto proposals instead of reusing these rectangles. The other three full-score profiles/overrides remain unchanged.
 
-The remaining sections document earlier excerpts and historical limitations. They are retained as failure/review evidence; the complete-score results above supersede their source coverage, detector counts and UI limitations.
+The sections below document historical excerpts. The complete-score results above supersede their coverage, detector counts and app limitations.
 
 ---
 

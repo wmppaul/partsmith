@@ -1,26 +1,90 @@
 {
   "reviewVersion": 2,
   "reviewer": "offline_detection",
-  "notationPolicy": "preserve-target",
   "status": "visual-review-pass",
+  "extractionMode": "native-auto-with-eight-explicit-local-crop-corrections",
+  "notationPolicy": "preserve-target",
+  "manifestSHA256": "56ad2fe0374422332fa9196344015f06613f27320af4414bfcd91dbd554c4f6e",
   "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
-  "sourceMapSHA256": "1081a2af3531b17264285896a44041526a3a4029475d5a274fedc8280043b273",
-  "manifestSHA256": "4acaebf5fc5b332e6544765203e67378cfdbb35a42b78e8dc06248b03cd4f285",
+  "sourceMapSHA256": "57408271c90103e87171de618ad14d19e4e719677f2cfafbfdf3c8bf5a5c925d",
+  "normalizedManifestSHA256": "6e51fc628579a16167ec72605d2f49a356d6ebfad7d8d31f8c0de3c7ec514dcf",
+  "sourceMap": "../evidence/ave-tight-map.json",
+  "automaticBaselineManifestSHA256": "3a261641667617d129296d8d94b43d0deb78eec5e13b28d3bb8a0b6608a79c1b",
   "checks": {
     "identity": "pass",
     "coverage": "pass",
     "targetPreservation": "pass",
-    "globalMarkings": "pass",
-    "readability": "pass",
+    "requiredSharedMarkings": "pass",
     "layout": "pass",
-    "pageTurns": "system-boundaries-only; not optimized for performance"
+    "readability": "pass",
+    "neighborContext": "pass-with-disclosed-small-overlap-and-cosmetic-fragments",
+    "duplicateLyricRows": "none-observed",
+    "largeAdjacentStaffAreas": "none-observed",
+    "duplicatedMeasureNumberGlyphs": "none-observed",
+    "pageTurns": "not-applicable-one-page-per-part"
   },
-  "method": "All source bands compared with outside-edge original context; all final exported pages viewed at 120 dpi for layout, reading scale, source order, headings, shared cues and footer clearance. Final v7 geometry changes reviewed separately; no target ink loss found.",
+  "method": "Independently reviewed all 64 target envelopes against original source pages before derivation, then inspected all eight final native PDF pages at 150 dpi and source/output crop comparisons. The final exact eight changed rectangles equal the independently reviewed tight reference bounds; 56 automatic rectangles are unchanged. All 64 target envelopes and 42 copied source fragments pass a 216 dpi source comparison, with independent full-source CoreGraphics serialization for this vector source. These pixel and containment checks verify nominated regions; musical ownership/completeness depends on source visual review, not geometry alone.",
+  "cropSelection": {
+    "automaticRectanglesRetained": 56,
+    "explicitLocalCorrections": 8,
+    "correctedBandIDs": [
+      "p1-s2-tenore",
+      "p1-s2-viola",
+      "p2-s2-tenore",
+      "p3-s1-viola",
+      "p3-s1-violin2",
+      "p3-s2-tenore",
+      "p3-s2-viola",
+      "p4-s1-tenore"
+    ],
+    "baselineManifest": "../evidence/ave-compact-auto-baseline.json",
+    "setup": "Instrument names, Lyrics flags, horizontal x38..578 settings, system association and copied source bar-number metadata were reviewed setup; this is not a claim of automatic instrument recognition or automatic source-label attribution."
+  },
+  "pixelFidelity": {
+    "report": "review/pixel-fidelity.json",
+    "reportSHA256": "a227554bfcdeeb249651eab0561a03860eaf503bcc2c2f88bab7edd32a8848a7",
+    "geometryReportSHA256": "b3727fb31392750d8b2c6009c46d06037a64f3084e1f8e39a4fc5e88e266ebc0",
+    "status": "pass",
+    "regions": 106,
+    "differentPixels": 0,
+    "rawDifferentPixelsBeforeVectorSerializationNormalization": 301,
+    "checkedPixels": 10667192
+  },
+  "statistics": {
+    "parts": 8,
+    "outputPages": 8,
+    "systemsPerPart": 8,
+    "mainBands": 64,
+    "copiedSourceFragments": 42,
+    "neighborStaffLineIntersections": 12,
+    "wholeNeighboringStaves": 0,
+    "sourceCropHorizontalBounds": [
+      38,
+      578
+    ],
+    "sourceCropWidthPoints": 540,
+    "destinationWidthPoints": 516,
+    "scale": 0.9555555555555556,
+    "pageSizePoints": [
+      612,
+      792
+    ],
+    "sumSourceStripHeightsPoints": 2783.421357410868,
+    "extraHeightVersusManualReferencePoints": 235.6413574108679
+  },
+  "limitations": [
+    "Eight rectangles are explicit source-reviewed local corrections; 56 retain native Auto geometry. Automatic layout/crop success is not claimed for all 64 without review.",
+    "Small isolated neighboring slurs, glyph tips, directions, group brackets and 12 single neighboring staff-line centers remain. No masks were used; source overlap limits rectangular isolation.",
+    "Opening Violino I retains partial Basso lyrics at its own Adagio height. Opening Basso retains neighboring Adagio context. These are disclosed overlap cases rather than whole duplicated lyric rows.",
+    "Basso ed Organo retains two publisher copyright lines; these are cosmetic source context and do not omit or obscure any figured bass.",
+    "No duplicate measure-number glyphs were observed across the 56 numbered strips; all 42 copied source numbers are complete.",
+    "Every part is one page, so performance page-turn decisions were not evaluated."
+  ],
   "parts": [
     {
       "partID": "soprano",
       "file": "Soprano.pdf",
-      "outputSHA256": "5369b140addf0add45766224fe684659444e221748f94d6cb973352f7e0cb551",
+      "outputSHA256": "41900e28a8ff3ce14adf2a27db3c6c05388794d7b2627a4de5db1ccea6b25f5e",
       "reviewedPages": [
         1
       ],
@@ -34,77 +98,186 @@
         "p4-s1-soprano",
         "p4-s2-soprano"
       ],
+      "staffHeightPoints": [
+        14.460111635895307,
+        14.62258480034358
+      ],
+      "observations": "Eight systems preserve all own notes, high phrase arches, lyrics and printed measure numbers. No whole duplicated lyric row. Opening adjacent sotto voce and a single following line/arch on p4s1 remain disclosed source context.",
       "bandReviews": [
         {
           "bandID": "p1-s1-soprano",
+          "sourceRect": [
+            38,
+            126.88278231000436,
+            578,
+            176.11077715757835
+          ],
+          "ownGuard": [
+            39.7,
+            128.65,
+            576.3,
+            167.39
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Opening Adagio and sotto voce, full clef/key/time signature, two initial rests, Ave/ave/verum/Corpus lyrics and complete phrase slurs.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p1-s2-soprano",
+          "sourceRect": [
+            38,
+            443.13868613138686,
+            578,
+            488.28595963933014
+          ],
+          "ownGuard": [
+            39.7,
+            444.85,
+            576.3,
+            486.31
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 7, natum de Maria Virgine and Vere passum lyric syllables, complete high phrase arcs and terminal notes.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s1-soprano",
+          "sourceRect": [
+            38,
+            89.13610991841995,
+            578,
+            134.62344353799915
+          ],
+          "ownGuard": [
+            39.7,
+            90.96,
+            576.3,
+            132.48
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 13, immolatum / in cruce / pro homine lyrics; two high slurs above in cruce and low lyric descenders.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s2-soprano",
+          "sourceRect": [
+            38,
+            425.4555603263203,
+            578,
+            470.94289394589947
+          ],
+          "ownGuard": [
+            39.7,
+            427.24,
+            576.3,
+            468.77
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 19, leading rests, Cujus latus perfo- lyrics, full descending phrase and slur.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Following Alto clef/key tips overlap the lyric lower edge."
         },
         {
           "bandID": "p3-s1-soprano",
+          "sourceRect": [
+            38,
+            89.13610991841995,
+            578,
+            133.94332331472742
+          ],
+          "ownGuard": [
+            39.7,
+            90.96,
+            576.3,
+            132.02
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 25, ratum unda fluxit et sanguine lyrics, full ties/slurs and terminal rest.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s2-soprano",
+          "sourceRect": [
+            38,
+            432.59682267067416,
+            578,
+            478.76427651352515
+          ],
+          "ownGuard": [
+            39.7,
+            434.57,
+            576.3,
+            476.75
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 30, Esto nobis praegustatum in mor- lyrics, low lyric extenders and both long upper arches.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p4-s1-soprano",
+          "sourceRect": [
+            38,
+            88.4559896951481,
+            578,
+            140.74452554744528
+          ],
+          "ownGuard": [
+            39.7,
+            90.4,
+            576.3,
+            131.18
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 35, tis examine / in mortis exami- lyric material. Highest long phrase arch reaches y90.65, above staff top104.06.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Following Alto high arch reaches into the own lyric range."
         },
         {
           "bandID": "p4-s2-soprano",
+          "sourceRect": [
+            38,
+            434.6371833404895,
+            578,
+            478.42421640188917
+          ],
+          "ownGuard": [
+            39.7,
+            436.65,
+            576.3,
+            476.38
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 41, final tis examine text, complete high opening arch, ending sustained notes, rests and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         }
       ]
     },
     {
       "partID": "alto",
       "file": "Alto.pdf",
-      "outputSHA256": "8b70de00c9665b8b496e89619692f31a11ea389443c3c7ada43f3b5d59c345cc",
+      "outputSHA256": "20ed2653d55e5be40d36421e4d0818a19ae59bcf74bbecdf1c7655d2ea83d232",
       "reviewedPages": [
         1
       ],
@@ -118,77 +291,186 @@
         "p4-s1-alto",
         "p4-s2-alto"
       ],
+      "staffHeightPoints": [
+        14.622462860112003,
+        14.622584800343526
+      ],
+      "observations": "Eight systems preserve low ledger notes, all lyric syllables/extenders and the final long tie. The p2s2 whole duplicated Soprano lyric row is removed by the native hyphen ownership fix. Tiny preceding glyph bottoms and small clef/slur fragments remain at some edges.",
       "bandReviews": [
         {
           "bandID": "p1-s1-alto",
+          "sourceRect": [
+            38,
+            167.00987548303988,
+            578,
+            213.17732932589092
+          ],
+          "ownGuard": [
+            39.7,
+            168.91,
+            576.3,
+            205.96
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Own sotto voce and Ave/ave/verum/Corpus lyrics, all rests, note stems, ties and final lyric descenders.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "The following Tenore sotto voce is close to the lyric lower edge."
         },
         {
           "bandID": "p1-s2-alto",
+          "sourceRect": [
+            38,
+            487.3465006440532,
+            578,
+            527.732932589094
+          ],
+          "ownGuard": [
+            39.7,
+            488.97,
+            576.3,
+            525.67
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Complete natum de Maria Virgine / Vere passum lyrics including g descenders; complete melodic phrase and rests.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s1-alto",
+          "sourceRect": [
+            38,
+            133.3439244310863,
+            578,
+            171.3499355946758
+          ],
+          "ownGuard": [
+            39.7,
+            135.16,
+            576.3,
+            169.3
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Full immolatum / in cruce / pro homine lyric line, high stems and phrase arcs, and terminal rest.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s2-alto",
+          "sourceRect": [
+            38,
+            466.9428939458995,
+            578,
+            511.0699871189351
+          ],
+          "ownGuard": [
+            39.7,
+            468.57,
+            576.3,
+            502.24
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Opening rest followed by Cujus latus perfo-; full low lyrics, stems and long upper phrase.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "The whole preceding Soprano lyric row is gone after the native trailing-hyphen ownership fix; own Cujus latus perfo- lyrics are complete. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Soprano lyric descenders touch the upper retained range."
         },
         {
           "bandID": "p3-s1-alto",
+          "sourceRect": [
+            38,
+            133.3439244310863,
+            578,
+            173.73035637612702
+          ],
+          "ownGuard": [
+            39.7,
+            135.16,
+            576.3,
+            171.54
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Ratum unda fluxit et sanguine, all repeated notes and ties, complete lyric descenders and terminal rest.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s2-alto",
+          "sourceRect": [
+            38,
+            477.1446972949764,
+            578,
+            519.5714899098325
+          ],
+          "ownGuard": [
+            39.7,
+            478.77,
+            576.3,
+            517.39
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Low Esto nobis lyrics and extender reach y517.13 beneath staff bottom499.89; preserve low ledger notes and both phrase arches.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p4-s1-alto",
+          "sourceRect": [
+            38,
+            129.6032632030915,
+            578,
+            171.00987548303988
+          ],
+          "ownGuard": [
+            39.7,
+            131.43,
+            576.3,
+            169.27
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Highest long arch reaches y131.69 and low ending slur y164.44. Preserve tis examine / in mortis exami- lyrics and ledger notes.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Soprano lyric descenders share the own high-arch range."
         },
         {
           "bandID": "p4-s2-alto",
+          "sourceRect": [
+            38,
+            479.18505796479184,
+            578,
+            518.2112494632889
+          ],
+          "ownGuard": [
+            39.7,
+            480.84,
+            576.3,
+            515.91
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Final tis examine lyric line including descenders, sustained notes, final rests and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         }
       ]
     },
     {
       "partID": "tenore",
       "file": "Tenore.pdf",
-      "outputSHA256": "c18575a3a7e67aa19436b0c9c4dbaa56ec7fc957b1cbb504e5efade0b4e1851c",
+      "outputSHA256": "c991300d2d69558c7cd6bbeee715428d3aa498460d70bdd74d857e8af0dc75d2",
       "reviewedPages": [
         1
       ],
@@ -202,77 +484,186 @@
         "p4-s1-tenore",
         "p4-s2-tenore"
       ],
+      "staffHeightPoints": [
+        14.622515391096893,
+        14.622584800343635
+      ],
+      "observations": "Eight systems preserve octave-clef 8, complete lyrics and high long arches. Four local crop corrections remove separate lower Basso note groups. The native fix removes the p3s2 duplicated Alto lyric row; all final lyric syllables remain. Single neighboring line/arc fragments and an opening adjacent sotto voce remain.",
       "bandReviews": [
         {
           "bandID": "p1-s1-tenore",
+          "sourceRect": [
+            38,
+            204.07642765135245,
+            578,
+            248.88364104765992
+          ],
+          "ownGuard": [
+            39.7,
+            205.88,
+            576.3,
+            241.66
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Octave treble-clef 8, own sotto voce y206.14–210.75 and Ave/ave/verum/Corpus lyrics through y241.40, all ties and rests.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Alto lyric descenders above and the following Basso sotto voce below share the retained vertical range."
         },
         {
           "bandID": "p1-s2-tenore",
+          "sourceRect": [
+            38,
+            525.65,
+            578,
+            560.71
+          ],
+          "ownGuard": [
+            39.7,
+            526.9,
+            576.3,
+            559.46
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8, complete natum de Maria Virgine / Vere passum lyrics and ties; no neighboring Basso staff line required.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Removed clearly separate following Basso right-side notehead/slur group.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s1-tenore",
+          "sourceRect": [
+            38,
+            171.43065693430663,
+            578,
+            215.21768999570634
+          ],
+          "ownGuard": [
+            39.7,
+            173.09,
+            576.3,
+            206.91
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8, full immolatum / in cruce / pro homine lyrics, high stems, phrase arcs and rest.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s2-tenore",
+          "sourceRect": [
+            38,
+            502.38,
+            578,
+            538.39
+          ],
+          "ownGuard": [
+            39.7,
+            503.63,
+            576.3,
+            537.14
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8, rests then Cujus latus perfo-, full lyric extenders and tied ending phrase.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Removed clearly separate following Basso entry-passage noteheads/slurs.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s1-tenore",
+          "sourceRect": [
+            38,
+            172.79089738085008,
+            578,
+            211.81708887934735
+          ],
+          "ownGuard": [
+            39.7,
+            174.68,
+            576.3,
+            209.63
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8, ratum unda fluxit et sanguine text, ties and complete terminal syllables.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s2-tenore",
+          "sourceRect": [
+            38,
+            518.32,
+            578,
+            554.82
+          ],
+          "ownGuard": [
+            39.7,
+            519.57,
+            576.3,
+            553.57
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8, Esto nobis praegustatum in mor- lyrics, complete lower lyric extenders and upper note stems.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "The whole preceding Alto lyric row is gone; local crop also removes the lower Basso note group. Own Esto nobis praegustatum in lyrics and extenders are complete.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p4-s1-tenore",
+          "sourceRect": [
+            38,
+            169.43999999999994,
+            578,
+            207.64999999999998
+          ],
+          "ownGuard": [
+            39.7,
+            170.69,
+            576.3,
+            206.4
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8 and long high arch y170.95; full mortis examine / repeated phrase text and low descenders.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own long upper arch and all mortis/examine lyric syllables preserved; local crop removes the following Basso note group.",
+          "sourceEnvelopeOverlapEvidence": "Following Basso high arch is close to the own lyric lower edge."
         },
         {
           "bandID": "p4-s2-tenore",
+          "sourceRect": [
+            38,
+            515.9115500214684,
+            578,
+            555.6178617432374
+          ],
+          "ownGuard": [
+            39.7,
+            517.61,
+            576.3,
+            548.9
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Octave clef 8, final examine lyrics through y548.64, sustained ending notes, rests and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Initial slur, final lyric syllables, rests and terminal bar are complete. Only tiny preceding glyph bottoms and a lower slur tip remain.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         }
       ]
     },
     {
       "partID": "basso",
       "file": "Basso.pdf",
-      "outputSHA256": "a0bc4b3f025ebafb9453e2df04ddf8eb1c70764e060fca0d5d6c7aecaee7ddee",
+      "outputSHA256": "e77608d4bf85712754bc9a3d5230c7c6c9cf8a4e2c95f5aa42745ef32c542d5a",
       "reviewedPages": [
         1
       ],
@@ -286,77 +677,186 @@
         "p4-s1-basso",
         "p4-s2-basso"
       ],
+      "staffHeightPoints": [
+        14.62252383022771,
+        14.622584800343635
+      ],
+      "observations": "Eight systems preserve complete own lyrics, slurs, chromatic notes and final rests/bar. No whole duplicated Tenore lyric row. Opening neighboring Adagio and an isolated high arc share the lyric-height envelope; a complete editorial Adagio is also shown. Final strips retain tiny preceding glyph bottoms.",
       "bandReviews": [
         {
           "bandID": "p1-s1-basso",
+          "sourceRect": [
+            38,
+            239.78273937312144,
+            578,
+            284.93001288106484
+          ],
+          "ownGuard": [
+            39.7,
+            241.58,
+            576.3,
+            277.52
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Own sotto voce and complete Ave/ave/verum/Corpus lyric line through y277.26; the following Violin I Adagio begins y274.74 in the same vertical range.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own opening lyrics and sotto voce remain. Neighboring source Adagio and an arc share the required lower envelope; complete editorial Adagio remains above.",
+          "sourceEnvelopeOverlapEvidence": "Tenore octave-clef/lyric fragments and the following Violin I Adagio overlap the own lyric/direction range."
         },
         {
           "bandID": "p1-s2-basso",
+          "sourceRect": [
+            38,
+            560.1193645341348,
+            578,
+            600.5057964791755
+          ],
+          "ownGuard": [
+            39.7,
+            561.79,
+            576.3,
+            598.35
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Full natum de Maria Virgine / Vere passum lyrics, high slurs above bass staff and final low descenders.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s1-basso",
+          "sourceRect": [
+            38,
+            207.47702876771143,
+            578,
+            243.10261914984972
+          ],
+          "ownGuard": [
+            39.7,
+            209.29,
+            576.3,
+            241.02
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Complete immolatum / in cruce / pro homine lyric line, all stems and phrase slurs, final rest.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s2-basso",
+          "sourceRect": [
+            38,
+            536.995276942894,
+            578,
+            575.0012881064833
+          ],
+          "ownGuard": [
+            39.7,
+            538.67,
+            576.3,
+            573.0
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Rests and full Cujus latus perfo- lyric line including continuation and terminal hyphen.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s1-basso",
+          "sourceRect": [
+            38,
+            209.17732932589092,
+            578,
+            247.52340060111635
+          ],
+          "ownGuard": [
+            39.7,
+            210.84,
+            576.3,
+            245.65
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Complete ratum unda fluxit et sanguine phrase, lyrics and descenders, ties and terminal rest.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s2-basso",
+          "sourceRect": [
+            38,
+            553.9982825246886,
+            578,
+            592.68441391155
+          ],
+          "ownGuard": [
+            39.7,
+            555.88,
+            576.3,
+            590.54
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Complete Esto nobis praegustatum in mor- phrase and high slurs above bass staff; low lyrics retained.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p4-s1-basso",
+          "sourceRect": [
+            38,
+            205.43666809789613,
+            578,
+            247.18334048948054
+          ],
+          "ownGuard": [
+            39.7,
+            207.25,
+            576.3,
+            245.45
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Long high arch reaches y207.50, above staff top218.49. Preserve full mortis examine text and repeated phrase ending.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Tenore lyric descenders share the own high-arch range."
         },
         {
           "bandID": "p4-s2-basso",
+          "sourceRect": [
+            38,
+            548.5573207385145,
+            578,
+            584.1829111206526
+          ],
+          "ownGuard": [
+            39.7,
+            550.51,
+            576.3,
+            581.89
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Final examine lyric line, low descenders and complete final sustained notes, rests and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         }
       ]
     },
     {
       "partID": "violin1",
       "file": "Violino I.pdf",
-      "outputSHA256": "f403db3e3e5a37e9db1d6ed24721eff851b2368bde51f6e2c7e2701326bdafce",
+      "outputSHA256": "b736f220baef31fa27852a88aab57b21412e5b1fa7bfe9ef68a22b6e23979e06",
       "reviewedPages": [
         1
       ],
@@ -370,77 +870,186 @@
         "p4-s1-violin1",
         "p4-s2-violin1"
       ],
+      "staffHeightPoints": [
+        14.622584800343418,
+        14.622584800343526
+      ],
+      "observations": "Eight systems preserve own Adagio/sotto voce, low ledger notes, long slurs and final trill/grace notes. Opening Basso lyric fragments overlap the required own Adagio range. A few following top lines and isolated long arches remain; no large adjacent staff area remains.",
       "bandReviews": [
         {
           "bandID": "p1-s1-violin1",
+          "sourceRect": [
+            38,
+            272.7685702018034,
+            578,
+            327.7775869471877
+          ],
+          "ownGuard": [
+            39.7,
+            274.48,
+            576.3,
+            319.32
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Own Adagio y274.74–282.70 and sotto voce, opening part label, clef/key, ledger notes and lower phrase arch through y319.06.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own Adagio, sotto voce and low ledger notes are complete. Partial Basso lyrics above share the own Adagio height. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Basso lyrics overlap the own Adagio range."
         },
         {
           "bandID": "p1-s2-violin1",
+          "sourceRect": [
+            38,
+            602.9669386002577,
+            578,
+            644.373550880206
+          ],
+          "ownGuard": [
+            39.7,
+            604.38,
+            576.3,
+            642.49
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 7 and complete lower ledger-note slurs through y642.23; both final notes and rests retained.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Following Violin II clef/key tips overlap the low own ledger/slur range."
         },
         {
           "bandID": "p2-s1-violin1",
+          "sourceRect": [
+            38,
+            246.5839416058394,
+            578,
+            288.6706741090597
+          ],
+          "ownGuard": [
+            39.7,
+            248.43,
+            576.3,
+            286.96
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 13, low ledger notes and slur through y286.71, complete upper phrase arcs.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s2-violin1",
+          "sourceRect": [
+            38,
+            579.5027908973808,
+            578,
+            621.589523400601
+          ],
+          "ownGuard": [
+            39.7,
+            581.36,
+            576.3,
+            619.63
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 19 and long lower arch through y619.37; full accidentals, stems and phrase endings.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s1-violin1",
+          "sourceRect": [
+            38,
+            248.96436238729063,
+            578,
+            295.8119364534135
+          ],
+          "ownGuard": [
+            39.7,
+            250.97,
+            576.3,
+            293.94
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 25. Low ledger note x188.54–194.02 reaches y290.948 and its slur x192.10–212.07 reaches y293.687; these belong to Violin I, not II.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Following Violin II clef/key tips overlap the own low ledger/slur range."
         },
         {
           "bandID": "p3-s2-violin1",
+          "sourceRect": [
+            38,
+            592.425075139545,
+            578,
+            633.4916273078575
+          ],
+          "ownGuard": [
+            39.7,
+            594.1,
+            576.3,
+            631.83
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 30, complete lower phrase and slur through y631.57; final repeated notes retained.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Following Violin II clef/key tips overlap the low own phrase range."
         },
         {
           "bandID": "p4-s1-violin1",
+          "sourceRect": [
+            38,
+            254.0652640618291,
+            578,
+            301.59295835122373
+          ],
+          "ownGuard": [
+            39.7,
+            256.09,
+            576.3,
+            291.64
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 35, both high and low phrase arcs, complete ledger notes and ending slur; shared bracket is not target notation.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p4-s2-violin1",
+          "sourceRect": [
+            38,
+            589.0244740231859,
+            578,
+            636.2121082009446
+          ],
+          "ownGuard": [
+            39.7,
+            590.76,
+            576.3,
+            627.94
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Printed bar 41, trill marking, grace/beamed figure, complete ending slur through y627.68 and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Following Violin II clef/key tips overlap the own low ending arch."
         }
       ]
     },
     {
       "partID": "violin2",
       "file": "Violino II.pdf",
-      "outputSHA256": "1bb4c2f457f2d474c6cccb7cb205a37a724e03dd7998091517da12ed610059f6",
+      "outputSHA256": "58ea4a93a81d5df0f78ef58003905cb214bbea9ac625dc8f9c8e0aed2331e52f",
       "reviewedPages": [
         1
       ],
@@ -454,77 +1063,186 @@
         "p4-s1-violin2",
         "p4-s2-violin2"
       ],
+      "staffHeightPoints": [
+        14.62258480034331,
+        14.622653914332155
+      ],
+      "observations": "Eight systems preserve low ledger notes, low slurs and final long tie. The p3s1 local correction removes several preceding VlnI low noteheads/bows. Isolated neighboring slur arcs still overlap target height, especially source p3, and some single following line/clef fragments remain. No broad Viola staff region remains.",
       "bandReviews": [
         {
           "bandID": "p1-s1-violin2",
+          "sourceRect": [
+            38,
+            317.6565049377415,
+            578,
+            363.82395878059253
+          ],
+          "ownGuard": [
+            39.7,
+            320.63,
+            576.3,
+            355.4
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Own sotto voce, opening part label and low ledger notes; long lower slur through y355.14.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p1-s2-violin2",
+          "sourceRect": [
+            38,
+            640.373550880206,
+            578,
+            678.3795620437955
+          ],
+          "ownGuard": [
+            39.7,
+            642.29,
+            576.3,
+            676.53
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Two low own slurs at x335–353 and x374–391, reaching y676.28, belong to Violin II rather than Viola; all ledger notes preserved.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin I low slurs overlap the upper retained range."
         },
         {
           "bandID": "p2-s1-violin2",
+          "sourceRect": [
+            38,
+            286.71103477887505,
+            578,
+            333.8986689566338
+          ],
+          "ownGuard": [
+            39.7,
+            288.32,
+            576.3,
+            326.2
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "High sharp and low ledger-note phrase; lower slur reaches y325.95.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Following Viola high slur overlaps the low own phrase range."
         },
         {
           "bandID": "p2-s2-violin2",
+          "sourceRect": [
+            38,
+            619.9699441820524,
+            578,
+            657.6358952340061
+          ],
+          "ownGuard": [
+            39.7,
+            621.89,
+            576.3,
+            655.89
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Complete lower arch through y655.64, upper stems/accidentals and tied phrase.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Following Viola stems/high slur overlap the low own phrase range."
         },
         {
           "bandID": "p3-s1-violin2",
+          "sourceRect": [
+            38,
+            290.73,
+            578,
+            328.99
+          ],
+          "ownGuard": [
+            39.7,
+            291.98,
+            576.3,
+            327.74
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Complete own slur through y327.49 and all note stems; preceding Violin I low ledger note is neighboring notation.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Removed preceding VlnI low ledger noteheads/bows; target chromatic notes and low slurs remain.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin I low ledger note/slur and following Viola upper arch overlap the own vertical range."
         },
         {
           "bandID": "p3-s2-violin2",
+          "sourceRect": [
+            38,
+            630.1717475311292,
+            578,
+            668.5178188063546
+          ],
+          "ownGuard": [
+            39.7,
+            632.09,
+            576.3,
+            666.69
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Low phrase arch through y666.43, accidentals and complete terminal notes; its low position overlaps following Viola context.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin I low arch and following Viola key/stems/high arch overlap the own range."
         },
         {
           "bandID": "p4-s1-violin2",
+          "sourceRect": [
+            38,
+            292.15199656504933,
+            578,
+            337.9793902962645
+          ],
+          "ownGuard": [
+            39.7,
+            294.05,
+            576.3,
+            326.82
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Low natural reaches y326.56; all upper stems and phrase slurs remain.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Following Viola high slur shares the own low-natural range."
         },
         {
           "bandID": "p4-s2-violin2",
+          "sourceRect": [
+            38,
+            627.1112065264062,
+            578,
+            662.7367969085444
+          ],
+          "ownGuard": [
+            39.7,
+            628.74,
+            576.3,
+            661.05
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Long upper arch and lower arch through y660.80, final whole note/rest and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin I low ending arch overlaps the upper own range."
         }
       ]
     },
     {
       "partID": "viola",
       "file": "Viola.pdf",
-      "outputSHA256": "64dfdd3cf32681d1d139b9afb1ae729d681999f31bcc3698b7135423a11c692f",
+      "outputSHA256": "23305e4ecf90abb13e8cfdbec7d702bcd0f9682a2a9c6525a0cf168c00a470cb",
       "reviewedPages": [
         1
       ],
@@ -538,77 +1256,186 @@
         "p4-s1-viola",
         "p4-s2-viola"
       ],
+      "staffHeightPoints": [
+        14.460111635895252,
+        14.622584800343526
+      ],
+      "observations": "Eight systems preserve clefs, accidentals, low ledger notes and full phrase slurs. Three local corrections remove substantial neighboring note groups. Isolated neighboring slur arcs and the small overlapping VlnII head/slur fragment at p2s2 remain. Opening adjacent tasto solo and a few single bass top-line fragments remain. No broad bass staff region remains.",
       "bandReviews": [
         {
           "bandID": "p1-s1-viola",
+          "sourceRect": [
+            38,
+            354.7230571060541,
+            578,
+            395.1094890510949
+          ],
+          "ownGuard": [
+            39.7,
+            356.65,
+            576.3,
+            385.51
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Own alto clef and sotto voce, opening part label, all notes and lower phrase arch through y385.26.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p1-s2-viola",
+          "sourceRect": [
+            38,
+            676.4199999999998,
+            578,
+            704.88
+          ],
+          "ownGuard": [
+            39.7,
+            677.67,
+            576.3,
+            703.63
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Own lower arch through y703.38; preceding two low Violin II slurs do not belong to Viola.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Removed separate neighboring low ledger noteheads/bows and following bass head tips.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s1-viola",
+          "sourceRect": [
+            38,
+            323.7775869471876,
+            578,
+            364.5040790038643
+          ],
+          "ownGuard": [
+            39.7,
+            325.73,
+            576.3,
+            353.44
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Upper arch reaches y325.99 and lower arch y353.18; complete alto clef, accidentals and note stems.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 1,
+          "observations": "Own target remains complete and readable on the final page. The crop retains 1 single neighboring staff-line center, with edge fragments; no complete neighboring staff.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin II low sharp/slur overlaps the upper own phrase range."
         },
         {
           "bandID": "p2-s2-viola",
+          "sourceRect": [
+            38,
+            649.2151137827395,
+            578,
+            685.8608844997854
+          ],
+          "ownGuard": [
+            39.7,
+            654.45,
+            576.3,
+            684.16
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "High arch y654.71 and lower phrase y683.91; all ledger notes and stems retained.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Small isolated neighboring VlnII notehead/slur fragment remains above own complete phrase; accepted as overlapping context, not an entire neighboring group.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin II low slur overlaps the own high-arc range."
         },
         {
           "bandID": "p3-s1-viola",
+          "sourceRect": [
+            38,
+            325.08000000000004,
+            578,
+            357.67
+          ],
+          "ownGuard": [
+            39.7,
+            326.33,
+            576.3,
+            356.42
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "High arch y326.58 and low stem through y356.17; preceding Violin II low arch is neighboring context.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Removed separate upper VlnII low-note fragments and lower bass noteheads/top line.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin II low arch overlaps the own upper arch."
         },
         {
           "bandID": "p3-s2-viola",
+          "sourceRect": [
+            38,
+            662.31,
+            578,
+            694.09
+          ],
+          "ownGuard": [
+            39.7,
+            663.56,
+            576.3,
+            692.84
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "High arch y663.81 and low half-note ledger through y692.59; both must remain despite overlap with adjacent parts.",
+          "cropMode": "explicit-local-correction",
+          "neighborStaffLineCenters": 0,
+          "observations": "Removed separate neighboring upper/lower notehead groups; own low ledger note and high phrase arches remain.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin II low arch and following Basso ed Organo high slur overlap the own range."
         },
         {
           "bandID": "p4-s1-viola",
+          "sourceRect": [
+            38,
+            325.1378273937312,
+            578,
+            360.76341777586947
+          ],
+          "ownGuard": [
+            39.7,
+            327.1,
+            576.3,
+            358.79
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "High arch y327.36 and low ledger notation through y358.54; low Violin II natural is neighboring context.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Violin II low natural shares the own high-arch range."
         },
         {
           "bandID": "p4-s2-viola",
+          "sourceRect": [
+            38,
+            661.7973379132676,
+            578,
+            692.3220266208673
+          ],
+          "ownGuard": [
+            39.7,
+            663.61,
+            576.3,
+            690.4
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Ordinary quarter-note stem through y665.994 and slur y663.867 near x300–375 verified at high resolution; low ending arch reaches y690.15.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         }
       ]
     },
     {
       "partID": "bass_organ",
       "file": "Basso ed Organo.pdf",
-      "outputSHA256": "d6b3baea434e7299349ba05173f67c3e2c411a8ff0a443341fcf370b2e566489",
+      "outputSHA256": "1282b2d6b542282fcd5fdddcd5ca472b45bece7c535736b81af7323f9979a8aa",
       "reviewedPages": [
         1
       ],
@@ -622,80 +1449,187 @@
         "p4-s1-bass_organ",
         "p4-s2-bass_organ"
       ],
+      "staffHeightPoints": [
+        14.621960401519035,
+        14.622584800343526
+      ],
+      "observations": "Eight systems preserve the two-line instrument label, tasto solo/sotto voce, all multi-row figured bass, altered figures and continuation lines. Complete publisher copyright lines remain at p1s2 and p3s2 under the saved 9-point lower-padding setting. There is no large neighboring staff region. The final figures fit above the footer.",
       "bandReviews": [
         {
           "bandID": "p1-s1-bass_organ",
+          "sourceRect": [
+            38,
+            384.98840704164877,
+            578,
+            444.71361099184196
+          ],
+          "ownGuard": [
+            39.7,
+            386.76,
+            576.3,
+            441.05
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Combined Basso ed Organo staff, own tasto solo y387.02–392.76 and sotto voce; all three figured-bass rows including lowest 2 through y440.80.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p1-s2-bass_organ",
+          "sourceRect": [
+            38,
+            703.6247316444826,
+            578,
+            765.0948905109489
+          ],
+          "ownGuard": [
+            39.7,
+            705.52,
+            576.3,
+            754.47
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 1,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Complete figured-bass continuation lines and lowest 3 through y754.22. Publisher copyright immediately below is not target notation.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Complete own figures and continuation line; full publisher copyright below is retained cosmetic context.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s1-bass_organ",
+          "sourceRect": [
+            38,
+            354.7230571060541,
+            578,
+            412.40790038643195
+          ],
+          "ownGuard": [
+            39.7,
+            356.55,
+            576.3,
+            400.5
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Complete figures through y400.25 plus right-side tasto solo x538–570, y380–388; all bass notes retained.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p2-s2-bass_organ",
+          "sourceRect": [
+            38,
+            688.6620867325032,
+            578,
+            746.8548972541674
+          ],
+          "ownGuard": [
+            39.7,
+            690.58,
+            576.3,
+            742.52
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 2,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "All three figured-bass rows, flats/sharps/naturals and continuation lines; lowest 3 through y742.27.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s1-bass_organ",
+          "sourceRect": [
+            38,
+            359.82395878059253,
+            578,
+            417.5088020609704
+          ],
+          "ownGuard": [
+            39.7,
+            361.78,
+            576.3,
+            413.48
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "All figured-bass accidentals and third-row 2 through y413.23; complete tied bass phrase.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p3-s2-bass_organ",
+          "sourceRect": [
+            38,
+            691.0425075139545,
+            578,
+            765.0948905109489
+          ],
+          "ownGuard": [
+            39.7,
+            692.78,
+            576.3,
+            740.93
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 3,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Complete two-row figures, lowest 5 through y740.67 and horizontal continuation lines; high own slur retained.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Complete own figures and low continuation lines; full publisher copyright below is retained cosmetic context.",
+          "sourceEnvelopeOverlapEvidence": "Preceding Viola low half-note ledger shares the upper own slur range."
         },
         {
           "bandID": "p4-s1-bass_organ",
+          "sourceRect": [
+            38,
+            358.46371833404896,
+            578,
+            419.5491627307858
+          ],
+          "ownGuard": [
+            39.7,
+            360.09,
+            576.3,
+            413.09
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 1,
-          "outputPage": 1
+          "sourceLandmarks": "Complete three-row figured bass including low 3-flat through y412.84; all bass notes, accidentals and phrase ties.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         },
         {
           "bandID": "p4-s2-bass_organ",
+          "sourceRect": [
+            38,
+            694.7831687419492,
+            578,
+            750.2554983705267
+          ],
+          "ownGuard": [
+            39.7,
+            696.48,
+            576.3,
+            746.98
+          ],
           "targetPreservation": "pass",
-          "neighborNotation": "present",
-          "sourcePage": 4,
-          "system": 2,
-          "outputPage": 1
+          "sourceLandmarks": "Complete final figure 3 through y746.73, continuation lines, ending sustained bass notes and double bar.",
+          "cropMode": "automatic-rectangle-retained",
+          "neighborStaffLineCenters": 0,
+          "observations": "Own target remains complete and readable on the final page.",
+          "sourceEnvelopeOverlapEvidence": "No neighboring notation enters the reviewed own-ink vertical envelope."
         }
       ]
     }
   ],
-  "limitations": [
-    "Neighboring notation and duplicated direction fragments are retained and visibly present.",
-    "Visual source comparison supplies target membership; staff counts and pixel equality cannot discover every missed note.",
-    "Reading was inspected on screen; no physical print or performed page-turn trial.",
-    "Automated protected-region pixel verification is separate evidence, not asserted by this visual review."
-  ],
-  "reviewedGenerationManifestSHA256": "ce87b0c64561a09be43005d2b1c9ce10985bdf0a0c4cb7b472e4d97aee541593",
+  "nativeSourceHashesFile": "../evidence/ave-compact-native-source-hashes.json",
+  "inputProfileSHA256": "f44098f806a6c478d72106d9e7998553bb7f7c640dc0889b75794bdae4bd0b97",
+  "inputOverridesSHA256": "db63c963cf720e39e7d93f02801e542e438403e7c37b8dc71753d015b4656ed8",
+  "publicationNote": "Only evidence paths relocated during publication; reviewed PDFs, placement manifest, maps and verdict unchanged.",
+  "reviewedGenerationManifestSHA256": "4cb6b2b47b0934e71c2a6c29af551ffcbde920ffdbdc6142cadb357797daf974",
   "metadataFinalization": "Only manifest status/reviewRecord changed; all original geometry and PDF hashes verified unchanged. Original manifest retained."
 }

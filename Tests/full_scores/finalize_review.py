@@ -4,6 +4,7 @@
 This does not review music. Run only after the named independent review reports
 are complete; their exact output hashes must already match every delivered PDF.
 """
+import argparse
 import copy
 import hashlib
 import json
@@ -43,16 +44,21 @@ def normalized_manifest(data):
                                      ensure_ascii=False).encode()).hexdigest()
 
 
-def main():
+def main(validate_only=False):
     prepared = []
     for key in SCORES:
         folder = BASE / key
         manifest_path = folder / "manifest.json"
         m = read(manifest_path)
+        compact = m["profile"].get("cropMode") == "compact"
+        map_name = ({"ave": "ave-tight-map.json", "quartet": "brahms-quartet-tight-map.json"}.get(key)
+                    if compact else None) or MAPS[key]
+        review_names = (["ave-compact-final-review.md" if key == "ave" else "quartet-compact-independent-review.md"]
+                        if compact and key in ("ave", "quartet") else REVIEWS[key])
         original = copy.deepcopy(m)
         geometry = read(folder / "review/geometry.json")
         fidelity = read(folder / "review/pixel-fidelity.json")
-        map_hash = sha(FIXTURES / MAPS[key])
+        map_hash = sha(FIXTURES / map_name)
         manifest_hash = normalized_manifest(m)
         for report in (geometry, fidelity):
             assert report["sourceMapSHA256"] == map_hash, (key, "Stale reviewed source map")
@@ -68,9 +74,45 @@ def main():
         assert len(model["bands"]) == sum(p["bandCount"] for p in m["parts"])
         assert model["projectSettings"]["instrumentationSetup"]["instruments"] == m["profile"]["parts"]
         assert all(not b.get("exclusions") and not b.get("excluded") for b in model["bands"])
-        assert all(not b.get("rect") for page in m["reviewedOverrides"]
-                   for system in page.get("systems", []) for b in system["bands"])
-        review_text = "\n".join((FIXTURES / name).read_text() for name in REVIEWS[key])
+        plan = read(folder / "plan.json")
+        planned = {b["id"]: b for page in plan["pages"] for b in page["assignments"]}
+        with pymupdf.open(project / "source.pdf") as source_pdf:
+            for part in m["parts"]:
+                native_parts = [p for p in model["parts"] if p["name"] == part["name"]]
+                assert len(native_parts) == 1, (key, "Ambiguous native project part")
+                stored = sorted((b for b in model["bands"] if b["partID"] == native_parts[0]["id"]),
+                                key=lambda b: (b["pageIndex"], b["topFraction"]))
+                assert len(stored) == len(part["placements"])
+                for band, placement in zip(stored, part["placements"]):
+                    assert band["pageIndex"] == placement["sourcePage"] - 1
+                    page_size = source_pdf[band["pageIndex"]].rect
+                    def source_rect(item):
+                        return [item.get("leftFraction", 0) * page_size.width,
+                                item["topFraction"] * page_size.height,
+                                (1 - item.get("rightFraction", 0)) * page_size.width,
+                                item["bottomFraction"] * page_size.height]
+                    assert all(abs(a-b) < 0.0001 for a, b in zip(source_rect(band), placement["sourceRect"])), \
+                        (key, placement["id"], "Editable project crop differs from PDF manifest")
+                    assert band.get("editorialLabel", "") == placement["editorialLabel"]
+                    assert band.get("pageBreakBefore", False) == planned[placement["id"]]["pageBreakBefore"]
+                    fragments = band.get("sourceMarkings", [])
+                    assert len(fragments) == len(placement["sourceMarkings"])
+                    for fragment, checked in zip(fragments, placement["sourceMarkings"]):
+                        assert all(abs(a-b) < 0.0001 for a, b in zip(source_rect(fragment), checked["sourceRect"])), \
+                            (key, placement["id"], "Editable project marking differs from PDF manifest")
+        placements = {(b["sourcePage"] - 1, b["system"] - 1, p["id"]): b
+                      for p in m["parts"] for b in p["placements"]}
+        crop_corrections = []
+        for page in m["reviewedOverrides"]:
+            for system in page.get("systems", []):
+                for band in system["bands"]:
+                    if band.get("rect"):
+                        key_tuple = (page["pageIndex"], system["systemIndex"], band["partID"])
+                        placement = placements[key_tuple]
+                        assert all(abs(a-b) < 0.0001 for a, b in zip(band["rect"], placement["sourceRect"])), \
+                            (key, placement["id"], "Reviewed correction differs from delivered geometry")
+                        crop_corrections.append(placement["id"])
+        review_text = "\n".join((FIXTURES / name).read_text() for name in review_names)
         generation = folder / "generation-manifest.json"
         if generation.exists():
             assert normalized_manifest(read(generation)) == manifest_hash, (key, "Generation changed after review")
@@ -100,11 +142,13 @@ def main():
         assert before == after, "Finalization must not change musical content or geometry"
         record = {
             "status": "pass", "notationPolicy": "preserve-target",
-            "sourceSHA256": m["sourceSHA256"], "sourceMapSHA256": sha(FIXTURES / MAPS[key]),
-            "visualReviewReports": [f"../evidence/{name}" for name in REVIEWS[key]],
-            "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
-            "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
-            "manualStaffPositionCorrections": 0, "explicitCropRectangleOverrides": 0,
+            "sourceSHA256": m["sourceSHA256"], "sourceMapSHA256": map_hash,
+            "sourceMap": f"../evidence/{map_name}",
+            "visualReviewReports": [f"../evidence/{name}" for name in review_names],
+            "scope": "Every source band and final output page reviewed; target preservation and remaining neighboring context assessed separately.",
+            "limits": "Manual instrument setup and shared-direction review. Explicit crop corrections are counted below; these are reviewed native exports, not unattended musical interpretation or performance-tested page turns.",
+            "manualStaffPositionCorrections": 0, "explicitCropRectangleOverrides": len(crop_corrections),
+            "correctedBandIDs": crop_corrections,
             "whiteoutMasks": 0, "pageFooterChecks": sum(p["outputPages"] for p in m["parts"]),
             "geometryReport": "geometry-review.json", "fidelityReport": "pixel-fidelity.json",
             "fidelityReportSHA256": sha(folder / "review/pixel-fidelity.json"),
@@ -113,9 +157,16 @@ def main():
         prepared.append((key, m, record, visual_data))
 
     # Validation above completes for every score before publishing any status.
+    # Pagination changes when reviewed crops improve. Coverage is invariant;
+    # actual page counts were checked against every PDF and footer above.
     assert (sum(len(m["parts"]) for _, m, _, _ in prepared),
-            sum(r["pageFooterChecks"] for _, _, r, _ in prepared),
-            sum(p["bandCount"] for _, m, _, _ in prepared for p in m["parts"])) == (19, 184, 1131)
+            sum(p["bandCount"] for _, m, _, _ in prepared for p in m["parts"])) == (19, 1131)
+    if validate_only:
+        print(json.dumps({"status": "ready_for_finalization", "parts": 19, "bands": 1131,
+                          "outputPages": sum(r["pageFooterChecks"] for _, _, r, _ in prepared),
+                          "explicitCropRectangleOverrides": {key: record["explicitCropRectangleOverrides"]
+                                                             for key, _, record, _ in prepared}}, indent=2))
+        return
     evidence = BASE / "evidence"
     evidence.mkdir(exist_ok=True)
     for path in FIXTURES.iterdir():
@@ -153,4 +204,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sets-dir", type=Path, default=BASE)
+    parser.add_argument("--validate-only", action="store_true")
+    args = parser.parse_args()
+    BASE = args.sets_dir.resolve()
+    main(args.validate_only)

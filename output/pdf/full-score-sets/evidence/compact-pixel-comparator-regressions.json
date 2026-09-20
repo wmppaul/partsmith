@@ -1,0 +1,101 @@
+[
+  {
+    "case": "real-trio-positive",
+    "expected": "pass",
+    "actual": "pass",
+    "error": null,
+    "differentPixels": 0,
+    "report": ".build/tight-crops/final-comparator-controls/real-trio-positive/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/real-trio-positive/review.log"
+  },
+  {
+    "case": "removed-clarinet-note",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Native output differs from untrimmed source in protected regions; inspect pixel-fidelity.json",
+    "differentPixels": 285,
+    "report": ".build/tight-crops/final-comparator-controls/removed-clarinet-note/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/removed-clarinet-note/review.log"
+  },
+  {
+    "case": "crop-cuts-protected-target",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Crop cuts protected target: p2-s1-clarinet: Source-space staff and surrounding target notation envelope reviewed against original source; includes noteheads, stems, beams, ledger lines, slurs, articulation and dynamics. Neighbor notation inside the envelope is tolerated.",
+    "differentPixels": null,
+    "report": null,
+    "log": ".build/tight-crops/final-comparator-controls/crop-cuts-protected-target/review.log"
+  },
+  {
+    "case": "removed-shared-tempo",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Native output differs from untrimmed source in protected regions; inspect pixel-fidelity.json",
+    "differentPixels": 1140,
+    "report": ".build/tight-crops/final-comparator-controls/removed-shared-tempo/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/removed-shared-tempo/review.log"
+  },
+  {
+    "case": "missing-required-shared-tempo",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Missing required shared source marking: p1-s1-violin2: Vivace",
+    "differentPixels": null,
+    "report": null,
+    "log": ".build/tight-crops/final-comparator-controls/missing-required-shared-tempo/review.log"
+  },
+  {
+    "case": "real-vector-positive",
+    "expected": "pass",
+    "actual": "pass",
+    "error": null,
+    "differentPixels": 0,
+    "report": ".build/tight-crops/final-comparator-controls/real-vector-positive/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/real-vector-positive/review.log"
+  },
+  {
+    "case": "removed-vector-staff",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Native output differs from untrimmed source in protected regions; inspect pixel-fidelity.json",
+    "differentPixels": 24444,
+    "report": ".build/tight-crops/final-comparator-controls/removed-vector-staff/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/removed-vector-staff/review.log"
+  },
+  {
+    "case": "real-scanned-crop-positive",
+    "expected": "pass",
+    "actual": "pass",
+    "error": null,
+    "differentPixels": 0,
+    "report": ".build/tight-crops/final-comparator-controls/real-scanned-crop-positive/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/real-scanned-crop-positive/review.log"
+  },
+  {
+    "case": "removed-scanned-staff",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Native output differs from untrimmed source in protected regions; inspect pixel-fidelity.json",
+    "differentPixels": 39202,
+    "report": ".build/tight-crops/final-comparator-controls/removed-scanned-staff/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/removed-scanned-staff/review.log"
+  },
+  {
+    "case": "real-scanned-rounding-positive",
+    "expected": "pass",
+    "actual": "pass",
+    "error": null,
+    "differentPixels": 0,
+    "report": ".build/tight-crops/final-comparator-controls/real-scanned-rounding-positive/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/real-scanned-rounding-positive/review.log"
+  },
+  {
+    "case": "removed-scanned-rounding-staff",
+    "expected": "fail",
+    "actual": "fail",
+    "error": "Native output differs from untrimmed source in protected regions; inspect pixel-fidelity.json",
+    "differentPixels": 42261,
+    "report": ".build/tight-crops/final-comparator-controls/removed-scanned-rounding-staff/review/pixel-fidelity.json",
+    "log": ".build/tight-crops/final-comparator-controls/removed-scanned-rounding-staff/review.log"
+  }
+]

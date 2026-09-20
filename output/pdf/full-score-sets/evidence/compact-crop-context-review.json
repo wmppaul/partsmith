@@ -1,0 +1,59 @@
+{
+  "method": "Detected neighboring line centers intersecting main crop; approximate context metric, supplemented by independent full source/page review. No cleanup masks.",
+  "scores": {
+    "ave": {
+      "previousDelivered": {
+        "neighborLineCenters": 227,
+        "wholeNeighboringStaves": 0,
+        "outputPages": 8
+      },
+      "finalAutoProposal": {
+        "neighborLineCenters": 14,
+        "wholeNeighboringStaves": 0,
+        "outputPages": 8
+      },
+      "reviewedDelivered": {
+        "neighborLineCenters": 12,
+        "wholeNeighboringStaves": 0,
+        "outputPages": 8
+      },
+      "deliveredPDFs": {
+        "Soprano.pdf": "41900e28a8ff3ce14adf2a27db3c6c05388794d7b2627a4de5db1ccea6b25f5e",
+        "Alto.pdf": "20ed2653d55e5be40d36421e4d0818a19ae59bcf74bbecdf1c7655d2ea83d232",
+        "Tenore.pdf": "c991300d2d69558c7cd6bbeee715428d3aa498460d70bdd74d857e8af0dc75d2",
+        "Basso.pdf": "e77608d4bf85712754bc9a3d5230c7c6c9cf8a4e2c95f5aa42745ef32c542d5a",
+        "Violino I.pdf": "b736f220baef31fa27852a88aab57b21412e5b1fa7bfe9ef68a22b6e23979e06",
+        "Violino II.pdf": "58ea4a93a81d5df0f78ef58003905cb214bbea9ac625dc8f9c8e0aed2331e52f",
+        "Viola.pdf": "23305e4ecf90abb13e8cfdbec7d702bcd0f9682a2a9c6525a0cf168c00a470cb",
+        "Basso ed Organo.pdf": "1282b2d6b542282fcd5fdddcd5ca472b45bece7c535736b81af7323f9979a8aa"
+      },
+      "explicitCropCorrections": 8
+    },
+    "quartet": {
+      "previousDelivered": {
+        "neighborLineCenters": 3629,
+        "wholeNeighboringStaves": 589,
+        "outputPages": 75
+      },
+      "finalAutoProposal": {
+        "neighborLineCenters": 470,
+        "wholeNeighboringStaves": 38,
+        "outputPages": 52
+      },
+      "reviewedDelivered": {
+        "neighborLineCenters": 148,
+        "wholeNeighboringStaves": 0,
+        "outputPages": 47
+      },
+      "deliveredPDFs": {
+        "Violin I.pdf": "b2b316edfca8094ab3b9756cf524150d5ca6e3f04d0e3baeb259dc96f6b3eeae",
+        "Violin II.pdf": "9705bb6aa0b65c1d8eec93d63354278587924510e3f81fbb97eaaad3eb662fe9",
+        "Viola.pdf": "a52a7e56b914a7eeb5ecad5b97ef09d1c29bab55cbd3dfe47b70751f9783ac8d",
+        "Violoncello.pdf": "482fc16afd4795e2ab7b466ce4bb0c8ce91089b7a3e41e44de0fe556f5a940ec"
+      },
+      "explicitCropCorrections": 321
+    }
+  },
+  "finalWholeNeighboringStaves": 0,
+  "automaticReliabilityLimit": "Brahms still needs substantial local crop review; final outputs include disclosed manual corrections."
+}

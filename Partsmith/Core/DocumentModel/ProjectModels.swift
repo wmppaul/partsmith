@@ -195,12 +195,14 @@ struct ScoreInstrumentationSetup: Codable, Equatable {
         var staffCount: Int
         var topPaddingStaffSpaces: Double?
         var bottomPaddingStaffSpaces: Double?
+        var hasLyrics: Bool?
     }
     var instruments: [Instrument]
     var topPaddingStaffSpaces: Double?
     var bottomPaddingStaffSpaces: Double?
     var leftTrimPoints: Double?
     var rightTrimPoints: Double?
+    var cropMode: String?
 }
 
 struct ProjectSettings: Codable, Equatable {

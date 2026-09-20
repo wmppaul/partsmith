@@ -9,7 +9,7 @@ struct ScoreExtractionView: View {
         ScorePartDefinition(id: "violin2", name: "Violin II", staffCount: 1),
         ScorePartDefinition(id: "viola", name: "Viola", staffCount: 1),
         ScorePartDefinition(id: "cello", name: "Cello", staffCount: 1)
-    ])
+    ], cropMode: "compact")
     @State private var review: ScoreDetectionReview?
     @State private var selectedPage = 0
     @State private var pageImage: CGImage?
@@ -20,6 +20,7 @@ struct ScoreExtractionView: View {
     @State private var movementTitle = ""
     @State private var confirmedReview = false
     @State private var showingDetectorNotes = true
+    @State private var focusedCropID: String?
     @State private var errorMessage: String?
 
     private var isRunning: Bool { document.scoreDetectionProgress != nil }
@@ -123,8 +124,8 @@ struct ScoreExtractionView: View {
                 Menu("Use a Starting Profile") {
                     Button("String Quartet") { setProfile([("Violin I", 1), ("Violin II", 1), ("Viola", 1), ("Cello", 1)]) }
                     Button("Clarinet Trio") { setProfile([("Clarinet in A", 1), ("Cello", 1), ("Piano", 2)]) }
-                    Button("Voice and Piano") { setProfile([("Voice", 1), ("Piano", 2)]) }
-                    Button("SATB Choir") { setProfile([("Soprano", 1), ("Alto", 1), ("Tenor", 1), ("Bass", 1)]) }
+                    Button("Voice and Piano") { setProfile([("Voice", 1), ("Piano", 2)], lyricIndices: [0]) }
+                    Button("SATB Choir") { setProfile([("Soprano", 1), ("Alto", 1), ("Tenor", 1), ("Bass", 1)], lyricIndices: [0, 1, 2, 3]) }
                 }
                 ForEach(profile.parts.indices, id: \.self) { index in
                     HStack {
@@ -132,6 +133,9 @@ struct ScoreExtractionView: View {
                         TextField("Instrument name", text: $profile.parts[index].name).textFieldStyle(.roundedBorder)
                         Stepper("\(profile.parts[index].staffCount) staff\(profile.parts[index].staffCount == 1 ? "" : "s")",
                                 value: $profile.parts[index].staffCount, in: 1...4).frame(width: 140)
+                        Toggle("Lyrics", isOn: Binding(get: { profile.parts[index].hasLyrics ?? false },
+                            set: { profile.parts[index].hasLyrics = $0 })).toggleStyle(.checkbox)
+                            .help("Search below this part for lyric rows and keep their complete letters. Review additional verses and shared directions.")
                         Button { profile.parts.swapAt(index, index - 1) } label: { Image(systemName: "arrow.up") }
                             .disabled(index == 0).help("Move this instrument up in the source score order")
                         Button { profile.parts.remove(at: index) } label: { Image(systemName: "minus.circle") }
@@ -141,8 +145,16 @@ struct ScoreExtractionView: View {
                 Button("Add Instrument", systemImage: "plus") {
                     profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: "New Instrument", staffCount: 1))
                 }
+                Picker("Crop mode", selection: Binding(get: { profile.cropMode ?? "fixed" }, set: { profile.cropMode = $0 })) {
+                    Text("Compact — follow notation").tag("compact")
+                    Text("Fixed padding").tag("fixed")
+                }.pickerStyle(.segmented)
+                Text(profile.cropMode == "compact"
+                    ? "Compact crops follow nearby connected ink and lyric rows. Review detached directions and ink touching neighboring staves; uncertain ownership is flagged. Check Lyrics for vocal staves; multiple verses may need extra lower padding."
+                    : "Fixed padding uses the space set below for every staff. It may include neighboring staves.")
+                    .font(.caption).foregroundStyle(.secondary)
                 cropContextControls
-                Text("Auto processes all \(document.pdfDocument?.pageCount ?? 0) source pages. Review assignments, changed layouts, shared directions and crop edges before adding. Generous crops may retain neighboring notation.")
+                Text("Auto processes all \(document.pdfDocument?.pageCount ?? 0) source pages. Review assignments, changed layouts, shared directions and crop edges before adding. Some neighboring notation may remain.")
                     .font(.callout).foregroundStyle(.secondary)
                 Text("Your instrumentation setup is saved with the project when you run Auto.")
                     .font(.caption).foregroundStyle(.secondary)
@@ -153,14 +165,14 @@ struct ScoreExtractionView: View {
     private var cropContextControls: some View {
         DisclosureGroup("Crop Context — Padding and Source Margins") {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Padding is measured from the outer staff lines in staff spaces. Increase it to keep high notes, low dynamics, lyrics, and slurs; neighboring notation may remain.")
+                Text("Padding is measured from the outer staff lines in staff spaces. Compact mode follows detected ink; enter optional minimum padding here for extra context. Zero uses the ink bounds. Fixed mode uses these distances directly. Increase them for detached directions, multiple verses or figured bass.")
                     .font(.caption).foregroundStyle(.secondary)
                 HStack(spacing: 16) {
                     cropNumberField("Above all parts", value: Binding(
-                        get: { profile.topPaddingStaffSpaces ?? 7 },
+                        get: { profile.topPaddingStaffSpaces ?? defaultTopPadding },
                         set: { profile.topPaddingStaffSpaces = $0 }), unit: "spaces")
                     cropNumberField("Below all parts", value: Binding(
-                        get: { profile.bottomPaddingStaffSpaces ?? 7 },
+                        get: { profile.bottomPaddingStaffSpaces ?? defaultBottomPadding },
                         set: { profile.bottomPaddingStaffSpaces = $0 }), unit: "spaces")
                 }
                 HStack(spacing: 16) {
@@ -180,17 +192,17 @@ struct ScoreExtractionView: View {
                         Toggle("Custom padding for \(profile.parts[index].name)", isOn: Binding(
                             get: { profile.parts[index].topPaddingStaffSpaces != nil || profile.parts[index].bottomPaddingStaffSpaces != nil },
                             set: { enabled in
-                                profile.parts[index].topPaddingStaffSpaces = enabled ? (profile.parts[index].topPaddingStaffSpaces ?? profile.topPaddingStaffSpaces ?? 7) : nil
-                                profile.parts[index].bottomPaddingStaffSpaces = enabled ? (profile.parts[index].bottomPaddingStaffSpaces ?? profile.bottomPaddingStaffSpaces ?? 7) : nil
+                                profile.parts[index].topPaddingStaffSpaces = enabled ? (profile.parts[index].topPaddingStaffSpaces ?? profile.topPaddingStaffSpaces ?? defaultTopPadding) : nil
+                                profile.parts[index].bottomPaddingStaffSpaces = enabled ? (profile.parts[index].bottomPaddingStaffSpaces ?? profile.bottomPaddingStaffSpaces ?? defaultBottomPadding) : nil
                             }))
                             .toggleStyle(.checkbox)
                         if profile.parts[index].topPaddingStaffSpaces != nil || profile.parts[index].bottomPaddingStaffSpaces != nil {
                             HStack(spacing: 16) {
                                 cropNumberField("Above", value: Binding(
-                                    get: { profile.parts[index].topPaddingStaffSpaces ?? profile.topPaddingStaffSpaces ?? 7 },
+                                    get: { profile.parts[index].topPaddingStaffSpaces ?? profile.topPaddingStaffSpaces ?? defaultTopPadding },
                                     set: { profile.parts[index].topPaddingStaffSpaces = $0 }), unit: "spaces")
                                 cropNumberField("Below", value: Binding(
-                                    get: { profile.parts[index].bottomPaddingStaffSpaces ?? profile.bottomPaddingStaffSpaces ?? 7 },
+                                    get: { profile.parts[index].bottomPaddingStaffSpaces ?? profile.bottomPaddingStaffSpaces ?? defaultBottomPadding },
                                     set: { profile.parts[index].bottomPaddingStaffSpaces = $0 }), unit: "spaces")
                             }.padding(.leading, 20)
                         }
@@ -199,6 +211,9 @@ struct ScoreExtractionView: View {
             }.padding(.top, 10)
         }
     }
+
+    private var defaultTopPadding: Double { profile.cropMode == "compact" ? 0 : 7 }
+    private var defaultBottomPadding: Double { profile.cropMode == "compact" ? 0 : 7 }
 
     private func cropNumberField(_ title: String, value: Binding<Double>, unit: String) -> some View {
         HStack(spacing: 6) {
@@ -220,7 +235,8 @@ struct ScoreExtractionView: View {
                     Image(decorative: image, scale: 1).resizable().frame(width: width, height: height)
                     ForEach(currentPlan?.assignments ?? []) { band in
                         let color = bandColor(band.partID)
-                        Rectangle().fill(color.opacity(0.09)).overlay(Rectangle().stroke(color, lineWidth: 1))
+                        Rectangle().fill(color.opacity(focusedCropID == band.id ? 0.18 : 0.06))
+                            .overlay(Rectangle().stroke(color, lineWidth: focusedCropID == band.id ? 3 : 1))
                             .overlay(alignment: .topLeading) {
                                 Text("\(partName(band.partID)) · \(band.systemIndex + 1)")
                                     .font(.system(size: 9, weight: .semibold)).padding(2).background(.regularMaterial)
@@ -276,6 +292,26 @@ struct ScoreExtractionView: View {
                 }
                 Text("Check every target note, ledger line, slur, lyric and shared tempo/rehearsal mark. Neighboring ink is allowed. After adding, crop expansion and source-marking review remain available in the Inspector.")
                     .font(.caption).foregroundStyle(.secondary)
+                if !(currentPlan?.assignments.isEmpty ?? true), let analysis = currentAnalysis {
+                    DisclosureGroup("Adjust crop edges on this page") {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Source-page points measured down from the top. Decrease Top or increase Bottom to retain more notation. Check complete notes and detached marks before tightening an edge.")
+                                .font(.caption).foregroundStyle(.secondary)
+                            ForEach(currentPlan?.assignments ?? []) { band in
+                                VStack(alignment: .leading, spacing: 6) {
+                                    Button("\(partName(band.partID)) · System \(band.systemIndex + 1)") { focusedCropID = band.id }
+                                        .buttonStyle(.link).help("Highlight this crop on the source page")
+                                    HStack {
+                                        cropNumberField("Top", value: cropEdgeBinding(band, height: analysis.pageHeight, top: true), unit: "pt")
+                                        cropNumberField("Bottom", value: cropEdgeBinding(band, height: analysis.pageHeight, top: false), unit: "pt")
+                                    }
+                                    Button("Restore Automatic Edges") { editCrop(band.id, top: nil, bottom: nil) }
+                                        .font(.caption)
+                                }
+                            }
+                        }.padding(.top, 8)
+                    }
+                }
                 Divider()
                 DisclosureGroup("Correct this page's staff assignments") {
                     VStack(alignment: .leading, spacing: 10) {
@@ -320,8 +356,10 @@ struct ScoreExtractionView: View {
         }
     }
 
-    private func setProfile(_ parts: [(String, Int)]) {
-        profile.parts = parts.map { ScorePartDefinition(id: UUID().uuidString, name: $0.0, staffCount: $0.1) }
+    private func setProfile(_ parts: [(String, Int)], lyricIndices: Set<Int> = []) {
+        profile.parts = parts.enumerated().map { index, part in
+            ScorePartDefinition(id: UUID().uuidString, name: part.0, staffCount: part.1, hasLyrics: lyricIndices.contains(index))
+        }
         correctionPart = profile.parts.first?.id ?? ""
     }
 
@@ -340,6 +378,7 @@ struct ScoreExtractionView: View {
 
     private func updatePageImage() {
         selectedStaves.removeAll()
+        focusedCropID = nil
         correctionSystem = 1
         pageImage = document.scoreReviewImage(pageIndex: selectedPage)
     }
@@ -361,6 +400,32 @@ struct ScoreExtractionView: View {
         review = value
         confirmedReview = false
         errorMessage = nil
+    }
+
+    private func cropEdgeBinding(_ band: ScorePlannedBand, height: Double, top: Bool) -> Binding<Double> {
+        Binding(get: {
+            let current = review?.plan.bands.first { $0.id == band.id } ?? band
+            return (top ? current.topFraction : current.bottomFraction) * height
+        }, set: { value in
+            guard let current = review?.plan.bands.first(where: { $0.id == band.id }) else { return }
+            editCrop(band.id, top: top ? value : current.topFraction * height,
+                     bottom: top ? current.bottomFraction * height : value)
+        })
+    }
+
+    private func editCrop(_ bandID: String, top: Double?, bottom: Double?) {
+        guard var value = review else { return }
+        do {
+            if let top, let bottom { try value.setCropEdges(for: bandID, top: top, bottom: bottom) }
+            else { try value.resetCropEdges(for: bandID) }
+            review = value
+            confirmedReview = false
+            focusedCropID = bandID
+            errorMessage = nil
+        } catch {
+            confirmedReview = false
+            errorMessage = error.localizedDescription
+        }
     }
 
     private func pageOverride(_ review: ScoreDetectionReview) -> ScorePageOverride {

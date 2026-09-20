@@ -6,6 +6,7 @@ struct ScorePartDefinition: Codable, Equatable, Identifiable {
     var staffCount: Int
     var topPaddingStaffSpaces: Double?
     var bottomPaddingStaffSpaces: Double?
+    var hasLyrics: Bool?
 }
 
 struct ScoreExtractionProfile: Codable, Equatable {
@@ -14,6 +15,8 @@ struct ScoreExtractionProfile: Codable, Equatable {
     var bottomPaddingStaffSpaces: Double?
     var leftTrimPoints: Double?
     var rightTrimPoints: Double?
+    /// Missing keeps the original fixed-padding behavior of saved profiles.
+    var cropMode: String?
 }
 
 struct ScoreObservedStaff: Codable, Equatable, Identifiable {
@@ -44,6 +47,15 @@ struct ScorePageAnalysis: Codable, Equatable {
     var warnings: [String]
     var textSuggestions: [String] = []
     var analysisSkewDegrees: Double = 0
+    /// Analysis-only components in the original image coordinate system. No
+    /// staff removal or connector separation is applied to exported pixels.
+    var inkComponents: [ScoreInkComponent]?
+}
+
+struct ScoreInkComponent: Codable, Equatable {
+    /// [left, top, right, bottom] as page fractions (right is an edge, not trim).
+    var bounds: [Double]
+    var staffIDs: [Int]
 }
 
 struct ScorePartOmission: Codable, Equatable {
@@ -138,6 +150,7 @@ enum ScoreExtractionPlanner {
         let names = profile.parts.map(\.id)
         let invalidProfile = profile.parts.isEmpty || Set(names).count != names.count
             || profile.parts.contains { $0.id.isEmpty || $0.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || $0.staffCount < 1 }
+            || ![nil, "fixed", "compact"].contains(profile.cropMode)
         let padding = [profile.topPaddingStaffSpaces, profile.bottomPaddingStaffSpaces, profile.leftTrimPoints, profile.rightTrimPoints]
             + profile.parts.flatMap { [$0.topPaddingStaffSpaces, $0.bottomPaddingStaffSpaces] }
         let invalidPadding = padding.compactMap { $0 }.contains { !$0.isFinite || $0 < 0 }
@@ -165,7 +178,7 @@ enum ScoreExtractionPlanner {
         }
         return ScoreExtractionPlan(parts: profile.parts, pages: planned, warnings: [
             "Part names and staff grouping come from the reviewed instrumentation profile, not automatic instrument recognition.",
-            "Inspect all target notation and source context before export. Generous crops may retain neighboring notes."
+            "Inspect all target notation and source context before export. Compact crops follow detected ink; detached directions and touching notation still need review."
         ])
     }
 
@@ -201,13 +214,19 @@ enum ScoreExtractionPlanner {
                 return output
             }
         }
+        let lyricOffsets = profile.parts.reduce(into: (offset: 0, indices: Set<Int>())) { result, part in
+            if part.hasLyrics == true { result.indices.insert(result.offset + part.staffCount - 1) }
+            result.offset += part.staffCount
+        }.indices
+        let lyricIDs = Set(ordered.enumerated().filter { lyricOffsets.contains($0.offset % stride) }.map { $0.element.id })
+        let lyrics = lyricComponents(page: page, staffIDs: lyricIDs)
         for system in 0..<(ordered.count / stride) {
             var offset = system * stride
             for part in profile.parts {
                 let staves = Array(ordered[offset..<(offset + part.staffCount)])
-                let rect = generousRect(staves, page: page, profile: profile, part: part)
-                output.assignments.append(band(partID: part.id, page: page, system: system, staves: staves, rect: rect,
-                    label: "", kind: "music", breakBefore: false, provenance: "native-profile-cadence", warnings: staves.flatMap(\.warnings)))
+                let crop = cropBounds(staves, page: page, profile: profile, part: part, lyricOwners: lyrics)
+                output.assignments.append(band(partID: part.id, page: page, system: system, staves: staves, rect: crop.rect,
+                    label: "", kind: "music", breakBefore: false, provenance: "native-profile-cadence", warnings: staves.flatMap(\.warnings) + crop.warnings))
                 offset += part.staffCount
             }
         }
@@ -238,6 +257,10 @@ enum ScoreExtractionPlanner {
             output.unresolvedReasons = ["Account for every detected staff exactly once as music or an explicitly ignored candidate; only labeled cue bands may reuse staves."]
             return output
         }
+        let lyricIDs = Set(override.systems.flatMap(\.bands).filter { assigned in
+            profile.parts.first { $0.id == assigned.partID }?.hasLyrics == true
+        }.compactMap { $0.candidateIDs?.last })
+        let lyrics = lyricComponents(page: page, staffIDs: lyricIDs)
         for system in override.systems {
             let omitted = system.omittedParts ?? []
             let coverage = system.bands.map(\.partID) + omitted.map(\.partID)
@@ -262,7 +285,9 @@ enum ScoreExtractionPlanner {
                     output.unresolvedReasons.append("A music band must group consecutive candidates in reading order.")
                     continue
                 }
-                let rect = assigned.rect ?? generousRect(staves, page: page, profile: profile, part: profile.parts.first { $0.id == assigned.partID }!)
+                let crop = assigned.rect.map { CropBounds(rect: $0, warnings: []) }
+                    ?? cropBounds(staves, page: page, profile: profile, part: profile.parts.first { $0.id == assigned.partID }!, lyricOwners: lyrics)
+                let rect = crop.rect
                 guard validRect(rect, page: page), staves.allSatisfy({
                     $0.staffLineFractions[0] * page.pageHeight >= rect[1] && $0.staffLineFractions[4] * page.pageHeight <= rect[3]
                 }) else {
@@ -282,7 +307,7 @@ enum ScoreExtractionPlanner {
                 let label = [system.movementLabel, assigned.label].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " — ")
                 output.assignments.append(band(partID: assigned.partID, page: page, system: system.systemIndex,
                     staves: staves, rect: rect, label: label, kind: kind, breakBefore: assigned.pageBreakBefore ?? false,
-                    provenance: "reviewed-override", warnings: ids.isEmpty ? ["Crop supplied by source review; not supported by detected staff IDs."] : []))
+                    provenance: "reviewed-override", warnings: (ids.isEmpty ? ["Crop supplied by source review; not supported by detected staff IDs."] : []) + crop.warnings))
                 output.assignments[output.assignments.count - 1].sourceMarkings = markingRects.map {
                     ScoreSourceMarking(topFraction: $0[1] / page.pageHeight, bottomFraction: $0[3] / page.pageHeight,
                         leftFraction: $0[0] / page.pageWidth, rightFraction: 1 - $0[2] / page.pageWidth)
@@ -316,6 +341,177 @@ enum ScoreExtractionPlanner {
                 max(0, first.staffLineFractions[0] - space * topPadding - skewPadding) * page.pageHeight,
                 page.pageWidth - (profile.rightTrimPoints ?? 0),
                 min(1, last.staffLineFractions[4] + space * bottomPadding + skewPadding) * page.pageHeight]
+    }
+
+    private struct CropBounds {
+        var rect: [Double]
+        var warnings: [String]
+    }
+
+    /// Lyric rows are explicit profile evidence, not a general text/dynamic
+    /// classifier. A repeated baseline spanning several measures is kept with
+    /// its vocal staff even when descenders are nearer the following staff.
+    private static func lyricComponents(page: ScorePageAnalysis, staffIDs: Set<Int>) -> [Int: Int] {
+        guard !staffIDs.isEmpty, let components = page.inkComponents,
+              components.allSatisfy({ $0.bounds.count == 4 && $0.bounds.allSatisfy(\.isFinite) }) else { return [:] }
+        var result: [Int: Int] = [:]
+        for staff in page.staves where staffIDs.contains(staff.id) && validStaff(staff) {
+            let space = (staff.staffLineFractions[4] - staff.staffLineFractions[0]) / 4
+            let lastLine = staff.staffLineFractions[4]
+            var rows: [[(index: Int, center: Double)]] = []
+            for (index, component) in components.enumerated() where component.staffIDs.isEmpty {
+                let box = component.bounds, center = (box[1] + box[3]) / 2
+                let height = box[3] - box[1], width = (box[2] - box[0]) * page.pageWidth / page.pageHeight
+                guard center > lastLine, center < lastLine + 6 * space,
+                      height > 0.4 * space, height < 2.8 * space,
+                      width > 0.12 * space, width < 6 * space else { continue }
+                if let row = rows.firstIndex(where: { values in
+                    abs(values.map(\.center).reduce(0, +) / Double(values.count) - center) < 0.6 * space
+                }) { rows[row].append((index, center)) }
+                else { rows.append([(index, center)]) }
+            }
+            for row in rows where row.count >= 8 {
+                let left = row.map { components[$0.index].bounds[0] }.min()!
+                let right = row.map { components[$0.index].bounds[2] }.max()!
+                guard right - left >= 0.22 else { continue }
+                let center = row.map(\.center).reduce(0, +) / Double(row.count)
+                for (index, component) in components.enumerated() where component.staffIDs.isEmpty {
+                    let box = component.bounds
+                    let height = box[3] - box[1]
+                    let width = (box[2] - box[0]) * page.pageWidth / page.pageHeight
+                    let distance = abs((box[1] + box[3]) / 2 - center)
+                    let inTextSpan = box[0] >= left - space * page.pageHeight / page.pageWidth
+                        && box[2] <= right + space * page.pageHeight / page.pageWidth
+                    // Syllable hyphens can continue across a melisma after the
+                    // last letter. Keep short, thin marks on this established
+                    // lyric baseline with its voice, even outside the text span.
+                    let trailingHyphen = distance < 0.35 * space && height <= 0.5 * space
+                        && width >= height * 1.5 && width <= 2 * space
+                    if (distance < 0.85 * space && height < 3 * space && inTextSpan) || trailingHyphen {
+                        result[index] = staff.id
+                    }
+                }
+            }
+        }
+        return result
+    }
+
+    private static func cropBounds(_ staves: [ScoreObservedStaff], page: ScorePageAnalysis,
+                                   profile: ScoreExtractionProfile, part: ScorePartDefinition,
+                                   lyricOwners: [Int: Int]) -> CropBounds {
+        let broad = generousRect(staves, page: page, profile: profile, part: part)
+        guard profile.cropMode == "compact" else { return CropBounds(rect: broad, warnings: []) }
+        guard let components = page.inkComponents,
+              components.allSatisfy({ component in
+                  component.bounds.count == 4 && component.bounds.allSatisfy { $0.isFinite && $0 >= 0 && $0 <= 1 }
+                    && component.bounds[0] < component.bounds[2] && component.bounds[1] < component.bounds[3]
+                    && component.staffIDs.allSatisfy { id in page.staves.contains { $0.id == id } }
+              }) else {
+            return CropBounds(rect: broad, warnings: ["Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."])
+        }
+        let first = staves.first!, last = staves.last!
+        let space = max((first.staffLineFractions[4] - first.staffLineFractions[0]) / 4,
+                        (last.staffLineFractions[4] - last.staffLineFractions[0]) / 4)
+        let firstLine = first.staffLineFractions[0], lastLine = last.staffLineFractions[4]
+        let skew = abs(tan(page.analysisSkewDegrees * .pi / 180)) * page.pageWidth / page.pageHeight / 2
+        let explicitTop = part.topPaddingStaffSpaces ?? profile.topPaddingStaffSpaces
+        let explicitBottom = part.bottomPaddingStaffSpaces ?? profile.bottomPaddingStaffSpaces
+        // Defaults guide discovery. Only explicitly entered padding forces blank
+        // output space; otherwise the crop follows the selected notation below.
+        let seedTop = min(first.topFraction, firstLine - max(3, explicitTop ?? 3) * space - skew)
+        let seedBottom = max(last.bottomFraction,
+            lastLine + max(part.hasLyrics == true ? 4 : 2.5, explicitBottom ?? 2.5) * space + skew)
+        let ids = Set(staves.map(\.id))
+        let allStaves = page.staves.filter(validStaff)
+        let staffLookup = Dictionary(allStaves.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        var selected = Set<Int>(), ambiguous = Set<Int>()
+        var foreignEdgeNeedsReview = false
+        for (index, component) in components.enumerated() {
+            let owners = Set(component.staffIDs), box = component.bounds
+            if !owners.isDisjoint(with: ids) {
+                if owners.isSubset(of: ids) { selected.insert(index) }
+                else { ambiguous.insert(index) }
+                continue
+            }
+            guard owners.isEmpty else { continue }
+            if let lyricOwner = lyricOwners[index] {
+                if ids.contains(lyricOwner) { selected.insert(index) }
+                continue
+            }
+            guard box[1] < seedBottom, box[3] > seedTop else { continue }
+            let center = (box[1] + box[3]) / 2
+            let nearest = allStaves.min { lhs, rhs in
+                max(lhs.staffLineFractions[0] - center, center - lhs.staffLineFractions[4], 0)
+                    < max(rhs.staffLineFractions[0] - center, center - rhs.staffLineFractions[4], 0)
+            }
+            // A preceding detached low slur should not automatically become the
+            // following instrument's upper envelope. Proximity to the target's
+            // connected ink can still recover a genuinely high detached mark.
+            if nearest.map({ ids.contains($0.id) }) == true || box[3] > firstLine {
+                selected.insert(index)
+            }
+        }
+        // Follow detached articulations and directions locally, rather than
+        // growing the full-width seed into another staff. Do not propagate from
+        // ambiguous multi-staff components: that would join the entire score.
+        for _ in 0..<4 {
+            var additional = Set<Int>()
+            for (index, component) in components.enumerated() where !selected.contains(index) && !ambiguous.contains(index) {
+                if let lyricOwner = lyricOwners[index], !ids.contains(lyricOwner) { continue }
+                let box = component.bounds
+                if part.hasLyrics == true && box[1] >= lastLine { continue }
+                if box[3] < firstLine, part.id != profile.parts.first?.id {
+                    let center = (box[1] + box[3]) / 2
+                    let nearest = allStaves.min { lhs, rhs in
+                        max(lhs.staffLineFractions[0] - center, center - lhs.staffLineFractions[4], 0)
+                            < max(rhs.staffLineFractions[0] - center, center - rhs.staffLineFractions[4], 0)
+                    }
+                    // Do not walk upward through a preceding part's detached
+                    // low slur or lyric row. High target ink connected to this
+                    // staff is already retained; detached inter-staff ink needs
+                    // source review rather than transitive bbox ownership.
+                    if nearest.map({ !ids.contains($0.id) }) == true { continue }
+                }
+                var touchesNeighbor = false
+                if !component.staffIDs.isEmpty {
+                    let neighbors = component.staffIDs.compactMap { staffLookup[$0] }
+                    guard neighbors.count == component.staffIDs.count,
+                          neighbors.allSatisfy({ $0.staffLineFractions[0] > lastLine }),
+                          box[1] > lastLine, box[1] < lastLine + 6 * space,
+                          neighbors.allSatisfy({ box[1] < $0.staffLineFractions[0] - 1.5 * space }) else { continue }
+                    // A low f/pp may physically touch the next part's beamed
+                    // group. The whole foreign group is not evidence of target
+                    // ownership; surface a specific lower-edge review instead.
+                    touchesNeighbor = true
+                }
+                if selected.contains(where: { otherIndex in
+                    let other = components[otherIndex].bounds
+                    let horizontalGap = max(box[0] - other[2], other[0] - box[2], 0) * page.pageWidth / page.pageHeight
+                    let verticalGap = max(box[1] - other[3], other[1] - box[3], 0)
+                    return horizontalGap <= space && verticalGap <= 1.75 * space
+                }) {
+                    if touchesNeighbor { foreignEdgeNeedsReview = true }
+                    else { additional.insert(index) }
+                }
+            }
+            if additional.isEmpty { break }
+            selected.formUnion(additional)
+        }
+        let clearance = max(space * 0.5, 2 / page.pageHeight)
+        var top = firstLine - max(0.5, explicitTop ?? 0.5) * space - skew
+        var bottom = lastLine + max(0.5, explicitBottom ?? 0.5) * space + skew
+        for index in selected.union(ambiguous) {
+            top = min(top, components[index].bounds[1] - clearance)
+            bottom = max(bottom, components[index].bounds[3] + clearance)
+        }
+        var warnings: [String] = []
+        if !ambiguous.isEmpty {
+            warnings.append("Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.")
+        }
+        if foreignEdgeNeedsReview {
+            warnings.append("Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it.")
+        }
+        return CropBounds(rect: [broad[0], max(0, top) * page.pageHeight, broad[2], min(1, bottom) * page.pageHeight], warnings: warnings)
     }
 
     private static func band(partID: String, page: ScorePageAnalysis, system: Int, staves: [ScoreObservedStaff], rect: [Double],

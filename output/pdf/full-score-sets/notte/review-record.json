@@ -3,13 +3,15 @@
   "notationPolicy": "preserve-target",
   "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
   "sourceMapSHA256": "52f686995b10c969137109a5d43e2573bd9d0428fc52d292527b6fb1220c838f",
+  "sourceMap": "../evidence/notte-map.json",
   "visualReviewReports": [
     "../evidence/small-score-independent-review.md"
   ],
-  "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
-  "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
+  "scope": "Every source band and final output page reviewed; target preservation and remaining neighboring context assessed separately.",
+  "limits": "Manual instrument setup and shared-direction review. Explicit crop corrections are counted below; these are reviewed native exports, not unattended musical interpretation or performance-tested page turns.",
   "manualStaffPositionCorrections": 0,
   "explicitCropRectangleOverrides": 0,
+  "correctedBandIDs": [],
   "whiteoutMasks": 0,
   "pageFooterChecks": 7,
   "geometryReport": "geometry-review.json",

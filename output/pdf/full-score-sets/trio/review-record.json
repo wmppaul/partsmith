@@ -3,14 +3,16 @@
   "notationPolicy": "preserve-target",
   "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
   "sourceMapSHA256": "18cbee34957ed782aca61764db2c1f14b5c0375de06ca164b8f420a466abf49c",
+  "sourceMap": "../evidence/brahms-trio-map.json",
   "visualReviewReports": [
     "../evidence/brahms-trio-review.md",
     "../evidence/trio-independent-review.md"
   ],
-  "scope": "Every source band and final output page reviewed; neighboring notation accepted.",
-  "limits": "Manual instrument setup, padding and shared-direction review; no automatic musical interpretation or performance-tested page turns.",
+  "scope": "Every source band and final output page reviewed; target preservation and remaining neighboring context assessed separately.",
+  "limits": "Manual instrument setup and shared-direction review. Explicit crop corrections are counted below; these are reviewed native exports, not unattended musical interpretation or performance-tested page turns.",
   "manualStaffPositionCorrections": 0,
   "explicitCropRectangleOverrides": 0,
+  "correctedBandIDs": [],
   "whiteoutMasks": 0,
   "pageFooterChecks": 64,
   "geometryReport": "geometry-review.json",
