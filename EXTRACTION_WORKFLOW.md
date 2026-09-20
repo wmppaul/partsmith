@@ -43,7 +43,7 @@ All 1,563 protected/source-direction regions in the complete deliverable pass ex
 
 Finalization rejects stale maps, manifests or PDF hashes, and compares the editable project's crop rectangles, source pages, labels, cues and section breaks with the delivered plan. Explicit geometry correction counts and band IDs are part of each review record. The three unchanged score sets retain their prior reviewed generation.
 
-Native validation passes **147 planner/corpus assertions, 56 document assertions, 5,315 layout assertions and 161 rendering/export checks**. The legacy bridge also passes 362 preservation checks. Debug and universal arm64/x86_64 Release builds succeed. The [macOS preview archive](artifacts/macos/Partsmith-extraction-preview-macos.zip) is an unsigned local build. Exact build hashes and validation logs are recorded in [native-validation.json](Tests/full_scores/native-validation.json).
+Native validation passes **147 planner/corpus assertions, 56 document assertions, 5,315 layout assertions and 161 rendering/export checks**. The legacy bridge also passes 362 preservation checks. Debug and universal arm64/x86_64 Release builds succeed. The [macOS preview archive](artifacts/macos/Partsmith-extraction-preview-macos.zip) is an unsigned local build. Exact build hashes and validation logs are recorded in [native-validation.json](Tests/full_scores/native-validation.json). The isolated live UI smoke check could not start: computer use returned no app state before being stopped. No new UI interactions are claimed; the crop editor is covered by the document tests and successful builds.
 
 ## Reproduce a reviewed revised set
 

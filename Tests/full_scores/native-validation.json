@@ -73,5 +73,11 @@
     "unchangedAutomaticRectangles": 215,
     "finalWholeNeighboringStaves": 0,
     "limitation": "Brahms still needs substantial crop review; passing staff detection and native tests do not establish unattended extraction."
+  },
+  "liveUISmoke": {
+    "status": "unverified",
+    "scope": "Isolated QA app and copied Ave project; original app/project untouched",
+    "blocker": "The initial computer-use app lookup returned no UI state and was stopped after 605.6 seconds. No controls were exercised.",
+    "automatedCoverage": "56 document checks cover edit validation, tilted ends, reset, metadata retention and undo; Debug/Release builds passed."
   }
 }
