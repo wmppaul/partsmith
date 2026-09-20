@@ -1,0 +1,98 @@
+{
+  "reviewVersion": 2,
+  "notationPolicy": "preserve-target",
+  "reviewer": "offline_detection — independent original-source and final-output reviewer",
+  "outputSHA256": {
+    "Clarinet in A.pdf": "33c5887955402accf520cba484449d281a0914d7b7a2585a3aded817fd6132fd"
+  },
+  "reviewedBandIDs": [
+    "trio-p1-s1",
+    "trio-p1-s2",
+    "trio-p1-s3",
+    "trio-p2-s1",
+    "trio-p2-s2",
+    "trio-p2-s3",
+    "trio-p2-s4",
+    "trio-p3-s1",
+    "trio-p3-s2",
+    "trio-p3-s3",
+    "trio-p3-s4"
+  ],
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "targetPreservation": "pass",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "pageTurns": "pass"
+  },
+  "bandReviews": [
+    {
+      "bandID": "trio-p1-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "none",
+      "observations": "Complete printed Klarinette in A, Allegro, clef, three-flat key signature and common time; all opening rests, poco f, initial slurred entry, dotted notes and final high triplet groups/3 numerals/upper arch are preserved."
+    },
+    {
+      "bandID": "trio-p1-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "none",
+      "observations": "Opening dotted figure and dim., low descending groups, all ledger lines and natural sign, full low p including descender, all lower ties/slurs, and the final sustained-note tie extending to the right edge are intact."
+    },
+    {
+      "bandID": "trio-p1-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "none",
+      "observations": "Opening low tied ledger note and four-note figure, both hairpins and natural signs, rests, full pp under the high four-note entry, highest ledger note and arch, later low slurred figure and final rest match the original."
+    },
+    {
+      "bandID": "trio-p2-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "First two rest bars and subsequent f entry are complete; both triplet numerals and highest note/arch, dotted/slurred following notes, articulated group, and final low-to-high beamed figure are intact. Neighboring cello slur and high note fragments remain at the lower boundary."
+    },
+    {
+      "bandID": "trio-p2-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "All repeated dotted and high ledger-note figures are present, including naturals, final chromatic run with every sharp/natural, and both lower/upper slurs. A neighboring high cello note fragment is visible at lower left."
+    },
+    {
+      "bandID": "trio-p2-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening articulated note and chromatic ascent, complete high sustained-note ties through the middle, both f glyphs of ff, and final low ledger notes/naturals/lower slurs are complete. Neighboring cello arches and note peaks are retained below."
+    },
+    {
+      "bandID": "trio-p2-s4",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening low sustained-note slur, subsequent low sharp notes and both full sf markings including descenders, all high flats/naturals and ties, final low flat/slurred groups and rest match the original. Adjacent cello ink remains below; a previous-system dot remains near the top."
+    },
+    {
+      "bandID": "trio-p3-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "none",
+      "observations": "All six whole-bar rests, six measure widths/barlines, clef and three-flat key signature are present. No cello note or marking is assigned to the clarinet rest system."
+    },
+    {
+      "bandID": "trio-p3-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Three whole-bar rests, fourth-measure rests and p entry, complete high arch and final two sustained notes are preserved. A small neighboring cello-slur fragment is retained at the lower middle."
+    },
+    {
+      "bandID": "trio-p3-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "none",
+      "observations": "Opening dotted sustained note and slur, all following alternating upper/lower slurred pairs, full two-measure crescendo wedge, and final sharp sustained note/slur are intact."
+    },
+    {
+      "bandID": "trio-p3-s4",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Both opening high arches and ledger notes, triplet numeral and arch, lower sharp notes/slurs, full opening f and diminuendo hairpin, central crescendo wedge, rests and final f entry with outgoing slur are complete. Cello slur/note/3 fragments remain below. Source page 4 starts bar 63; the continuing phrase lies beyond this labeled excerpt."
+    }
+  ],
+  "notes": "Independently rendered and inspected all three original source pages, then chose wider original-source contexts before inspecting recipe rectangles. Compared all 11 source systems with enlarged final output strips and all three complete final pages. Source page 4 confirms the next system starts bar 63. No omitted or clipped target notation was found; all target landmarks listed in Tests/extraction/trio-independent-review.md match. No whiteout exclusions are applied. Six bands retain neighboring/previous-system fragments, permitted by preserve-target; five have no neighboring notation visible. The target staff remains identifiable and readable. Scope is Clarinet in A, bars 1–62, PDF pages 1–3, not the complete trio; the excerpt intentionally ends during a continuing phrase. Original source-page boundaries before bars 22 and 42 are retained; comfortable performance turns are not certified. No transposition or re-engraving is performed, and source notation size remains approximately 97–98%."
+}

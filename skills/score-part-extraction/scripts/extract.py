@@ -159,6 +159,9 @@ def validate_recipe(recipe, source, doc):
         raise ValueError("Recipe schemaVersion must be 1.")
     if recipe.get("sourceSHA256") != digest(source):
         raise ValueError("Source SHA256 mismatch; re-analyze the intended PDF.")
+    policy = recipe.get("notationPolicy", "clean-isolation")
+    if policy not in ("preserve-target", "clean-isolation"):
+        raise ValueError("notationPolicy must be preserve-target or clean-isolation.")
     scope = recipe.get("scopePages", [])
     if not scope or scope != sorted(set(scope)) or any(type(p) is not int or p < 1 or p > len(doc) for p in scope):
         raise ValueError("scopePages must be sorted, unique existing one-based pages.")
@@ -199,6 +202,18 @@ def validate_recipe(recipe, source, doc):
                 if (len(mask) != 4 or not all(isinstance(x,(float,int)) and math.isfinite(x) for x in mask)
                     or not (r[0] <= mask[0] < mask[2] <= r[2] and r[1] <= mask[1] < mask[3] <= r[3])):
                     raise ValueError(f"Exclusion must be a finite rectangle inside its crop: {band['id']}")
+            protected = band.get("protectedRegions", [])
+            if not isinstance(protected, list) or (policy == "preserve-target" and not protected):
+                raise ValueError(f"Preservation requires reviewed protectedRegions for every band: {band['id']}")
+            for region in protected:
+                pr = region.get("rect", []) if isinstance(region, dict) else []
+                if (len(pr) != 4 or not all(type(x) in (float, int) and math.isfinite(x) for x in pr)
+                    or not (r[0] <= pr[0] < pr[2] <= r[2] and r[1] <= pr[1] < pr[3] <= r[3])
+                    or not isinstance(region.get("description"), str) or not region["description"].strip()):
+                    raise ValueError(f"Protected target region must be described and fully inside its crop: {band['id']}")
+                if any(max(pr[0], m[0]) < min(pr[2], m[2]) and max(pr[1], m[1]) < min(pr[3], m[3])
+                       for m in band.get("exclusions", [])):
+                    raise ValueError(f"Exclusion overlaps protected target notation: {band['id']}")
             accounted.add(str(page_number))
             # Do not silently accept PDF geometry incompatible with the native bridge.
             if doc[page_number-1].rotation or doc[page_number-1].cropbox != doc[page_number-1].mediabox:
@@ -264,7 +279,8 @@ def _build(args):
                                   "showPartNameInHeader":True,"headerDisplayMode":"typed", "defaultTitleText":recipe["title"],
                                   "defaultComposerText":recipe.get("composer","")}}
     manifest = {"schemaVersion":1, "sourceSHA256":digest(source), "inputRecipeSHA256":digest(recipe_path),
-                "scopePages":recipe["scopePages"], "status":"draft_needs_visual_review", "parts":[]}
+                "scopePages":recipe["scopePages"], "notationPolicy":recipe.get("notationPolicy", "clean-isolation"),
+                "status":"draft_needs_visual_review", "parts":[]}
     palette = [(0.15,0.4,0.85),(.8,.2,.2),(.15,.6,.3),(.7,.3,.7)]
     for pi, part in enumerate(recipe["parts"]):
         pid = str(uuid.uuid4())
@@ -309,7 +325,7 @@ def _build(args):
                                color=None, fill=(1,1,1), overlay=True)
             placements.append({"id":band["id"],"sourcePage":band["page"],"system":band["system"],
                                "outputPage":len(result),"sourceRect":list(rect),"destinationRect":list(target),
-                               "exclusions":band.get("exclusions",[])})
+                               "exclusions":band.get("exclusions",[]), "protectedRegions":band.get("protectedRegions",[])})
             bpage = doc[band["page"]-1]
             project["bands"].append({"id":str(uuid.uuid4()),"pageIndex":band["page"]-1,"partID":pid,
                 "topFraction":rect.y0/bpage.rect.height,"bottomFraction":rect.y1/bpage.rect.height,
@@ -322,6 +338,22 @@ def _build(args):
             # A side-by-side crop/output comparison preserves row identity for reviewers.
             src_image = bpage.get_pixmap(matrix=fitz.Matrix(1.5,1.5),clip=rect,alpha=False)
             src_image.save(review/f"{safe_name(part['name'])}-{band['id']}-source.png")
+            if recipe.get("notationPolicy") == "preserve-target":
+                # Show ink OUTSIDE the crop, too: a tight crop cannot expose its own omissions.
+                context = fitz.Rect(rect.x0-24, rect.y0-24, rect.x1+24, rect.y1+24) & bpage.rect
+                pix = bpage.get_pixmap(matrix=fitz.Matrix(3,3),clip=context,alpha=False)
+                im = Image.frombytes("RGB", (pix.width,pix.height),pix.samples)
+                draw = ImageDraw.Draw(im)
+                def overlay(region, color):
+                    box = [region[0]*3-pix.x,region[1]*3-pix.y,region[2]*3-pix.x,region[3]*3-pix.y]
+                    draw.rectangle(box,outline=color,width=2)
+                overlay(list(rect),"#cf3c1d")
+                for region in band["protectedRegions"]:
+                    overlay(region["rect"],"#168340")
+                context_file = f"{safe_name(part['name'])}-{band['id']}-context.png"
+                im.save(review/context_file)
+                placements[-1]["sourceContext"] = {"rect":list(context),"image":"review/"+context_file,
+                    "legend":"Red: crop boundary; green: protected target regions. Inspect surrounding source ink for omissions."}
             cursor += height+18
         filename = safe_name(part["name"])+".pdf"
         result.set_metadata({"title":recipe["title"]+" - "+part["name"],"author":recipe.get("composer",""),"creator":"Score Part Extraction"})
@@ -352,13 +384,36 @@ def verify(args):
     recipe = json.loads((out/"recipe.json").read_text())
     if digest(out/recipe["source"]) != manifest["sourceSHA256"]:
         raise ValueError("Embedded source changed after build.")
+    with fitz.open(out/recipe["source"]) as source_doc:
+        validate_recipe(recipe, out/recipe["source"], source_doc)
     expected = {p["file"]:p["sha256"] for p in manifest["parts"]}
     if report.get("outputSHA256") != expected:
         raise ValueError("Review must name the exact hashes of every current output.")
     ids = {b["id"] for p in manifest["parts"] for b in p["placements"]}
     if set(report.get("reviewedBandIDs",[])) != ids:
         raise ValueError("Visual review must account for every band.")
+    # A current reinspection supersedes the old verdict, including when it fails.
+    # Keep its evidence, but never leave a known failed result labeled reviewed.
+    manifest["status"] = "draft_needs_visual_review"
+    manifest.pop("review", None)
+    manifest["reviewAttempt"] = report
+    save_json(out/"manifest.json", manifest)
+    policy = recipe.get("notationPolicy", "clean-isolation")
     checks = ["identity", "coverage", "cropEdges", "globalMarkings", "readability", "pageTurns"]
+    if policy == "preserve-target":
+        if report.get("reviewVersion") != 2 or report.get("notationPolicy") != policy:
+            raise ValueError("Preservation review requires reviewVersion 2 and the matching notationPolicy; legacy clean reviews cannot be relabeled.")
+        checks[2] = "targetPreservation"
+        bands = report.get("bandReviews", [])
+        if (not isinstance(bands, list) or len(bands) != len(ids)
+            or any(not isinstance(b, dict) for b in bands)
+            or {b.get("bandID") for b in bands} != ids):
+            raise ValueError("Preservation review requires one observation for every band.")
+        if any(b.get("targetPreservation") != "pass" or b.get("neighborNotation") not in ("present", "none")
+               or not isinstance(b.get("observations"), str) or not b["observations"].strip() for b in bands):
+            raise ValueError("Every band must pass target preservation and disclose neighboring notation with observed evidence.")
+    if report.get("issues"):
+        raise ValueError("Unresolved issues stay draft; record tolerated neighbor context in band observations.")
     if any(report.get("checks",{}).get(k) != "pass" for k in checks) or not report.get("reviewer") or not report.get("notes"):
         raise ValueError("Review requires reviewer, notes and six passing checks; unresolved issues stay draft.")
     for p in manifest["parts"]:
@@ -368,6 +423,8 @@ def verify(args):
         if len(pdf) != p["outputPages"]:
             raise ValueError("Output page count changed.")
     manifest["status"] = "reviewed"
+    manifest["notationPolicy"] = policy
+    manifest.pop("reviewAttempt", None)
     manifest["review"] = report
     save_json(out/"manifest.json",manifest)
     print("Reviewed output hashes, band coverage and visual checklist verified.")

@@ -26,7 +26,9 @@ struct ExclusionRegressionTests {
         for rect in [CGRect(x: 125, y: 530, width: 50, height: 60),
                      CGRect(x: 215, y: 530, width: 50, height: 60),
                      CGRect(x: 130, y: 610, width: 40, height: 20),
-                     CGRect(x: 130, y: 490, width: 40, height: 20)] {
+                     CGRect(x: 130, y: 490, width: 40, height: 20),
+                     // A target mark just above the initial crop, recoverable by outward expansion.
+                     CGRect(x: 300, y: 650, width: 40, height: 8)] {
             context.fill(rect)
         }
         context.endPDFPage()
@@ -178,6 +180,64 @@ struct ExclusionRegressionTests {
         let restoredBitmap = raster(try PartPDFExporter.previewDocument(for: part.id, in: document))
         check(luma(restoredBitmap, point: mapped(150, 560)) < 0.01, "Undo restores source ink in actual PDF renderer")
 
+        let contextDocument = PartsmithDocument(project: reopened, sourcePDFData: source)
+        let contextUndo = UndoManager()
+        contextUndo.groupsByEvent = false
+        contextDocument.undoManager = contextUndo
+        let beforeExpansion = contextDocument.project
+        for invalidAmount in [0.0, -6, .infinity, .nan] {
+            check(!contextDocument.expandBandCrop(band.id, by: invalidAmount), "Invalid expansion never shrinks or corrupts a crop")
+        }
+        check(contextDocument.project == beforeExpansion && !contextUndo.canUndo,
+              "Rejected expansion leaves the project and undo history untouched")
+        contextUndo.beginUndoGrouping()
+        check(contextDocument.expandBandCrop(band.id, by: 20), "Context expansion succeeds")
+        contextUndo.endUndoGrouping()
+        let afterExpansion = contextDocument.project
+        let expandedBand = contextDocument.band(withID: band.id)!
+        let expandedPlan = try PartLayoutEngine.makePlan(project: afterExpansion,
+            pageBoundsProvider: { _ in CGRect(x: 0, y: 0, width: 600, height: 800) }, partID: part.id)
+        let expandedPlacement = expandedPlan.pages[0].placements[0]
+        check(expandedPlacement.sourceRect.contains(placement.sourceRect), "Expansion retains every previously included source point")
+        let expectedRect = placement.sourceRect.insetBy(dx: -20, dy: -20)
+        check(abs(expandedPlacement.sourceRect.minX - expectedRect.minX) < 0.000001 &&
+              abs(expandedPlacement.sourceRect.minY - expectedRect.minY) < 0.000001 &&
+              abs(expandedPlacement.sourceRect.width - expectedRect.width) < 0.000001 &&
+              abs(expandedPlacement.sourceRect.height - expectedRect.height) < 0.000001,
+              "Expansion adds the requested source points on all four sides")
+        check(expandedBand.exclusions == [exclusion] && expandedBand.exclusions.allSatisfy { $0.isValid(in: expandedBand) },
+              "Existing whiteout coordinates remain exact and valid after expansion")
+        check(contextDocument.sourcePDFData == source, "Expansion leaves embedded source immutable")
+        let recoveredMark = CGPoint(x: 320, y: 654)
+        check(!placement.sourceRect.contains(recoveredMark) && expandedPlacement.sourceRect.contains(recoveredMark),
+              "Previously cropped target mark is now included")
+        let expandedScale = expandedPlacement.destinationRect.width / expandedPlacement.sourceRect.width
+        let recoveredDestination = CGPoint(
+            x: expandedPlacement.destinationRect.minX + (recoveredMark.x - expandedPlacement.sourceRect.minX) * expandedScale,
+            y: expandedPlacement.destinationRect.minY + (recoveredMark.y - expandedPlacement.sourceRect.minY) * expandedScale)
+        let expandedBitmap = raster(try PartPDFExporter.previewDocument(for: part.id, in: contextDocument))
+        check(luma(expandedBitmap, point: recoveredDestination) < 0.01, "Native export restores the target mark beyond the old crop")
+        contextUndo.undo()
+        check(contextDocument.project == beforeExpansion, "One undo restores all original crop edges")
+        contextUndo.redo()
+        check(contextDocument.project == afterExpansion, "Redo restores exact expanded geometry")
+        let savedExpansion = try decoder.decode(Envelope.self,
+            from: encoder.encode(Envelope(project: contextDocument.project))).project
+        check(savedExpansion.bands == afterExpansion.bands, "Expanded geometry persists without a schema change")
+        contextUndo.beginUndoGrouping()
+        check(contextDocument.expandBandCrop(band.id, by: .greatestFiniteMagnitude), "Large expansion reaches page edges")
+        contextUndo.endUndoGrouping()
+        let fullPageBand = contextDocument.band(withID: band.id)!
+        check(fullPageBand.topFraction == 0 && fullPageBand.bottomFraction == 1 &&
+              fullPageBand.leftFraction == 0 && fullPageBand.rightFraction == 0,
+              "Outward expansion clamps to all four source page edges")
+        check(!contextDocument.expandBandCrop(band.id, by: 6), "Expansion at all page edges is a no-op")
+        contextUndo.undo()
+        check(contextDocument.project == afterExpansion, "No-op expansion adds no undo step")
+        check(!contextDocument.expandBandCrop(UUID(), by: 6), "Missing band cannot be expanded")
+        let sourceMissingDocument = PartsmithDocument(project: reopened, sourcePDFData: nil)
+        check(!sourceMissingDocument.expandBandCrop(band.id, by: 6), "Missing source cannot guess point geometry")
+
         var labeledProject = project
         var secondBand = band
         secondBand.id = UUID()
@@ -224,6 +284,6 @@ struct ExclusionRegressionTests {
             }
             try assertMasksRender(PartsmithDocument(project: imported, sourcePDFData: importedSource), output: output)
         }
-        print("PASS: \(checks) native mask checks, including persisted geometry, undo/redo and rasterized exports")
+        print("PASS: \(checks) native crop and export checks, including persisted geometry, undo/redo and rasterized notation")
     }
 }

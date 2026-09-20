@@ -189,15 +189,16 @@ enum StaffDetectionTests {
             "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
             "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
             "sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
-            "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf"
+            "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+            "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf"
         ]
-        let expectedCounts = [[2, 2], [16, 16, 16], [16, 20, 20], [16, 16, 16], [12, 16, 16], [16, 20, 20]]
+        let expectedCounts = [[2, 2], [16, 16, 16], [16, 20, 20], [16, 16, 16], [12, 16, 16], [16, 20, 20], [12, 15]]
         var samples: [Sample] = []
         for (fileIndex, path) in paths.enumerated() {
             guard let document = PDFDocument(url: root.appendingPathComponent(path)) else {
                 throw NSError(domain: "StaffDetectionTests", code: 2, userInfo: [NSLocalizedDescriptionKey: "Cannot open \(path)"])
             }
-            for pageIndex in 0..<min(document.pageCount, 3) {
+            for pageIndex in 0..<min(document.pageCount, expectedCounts[fileIndex].count) {
                 guard let page = document.page(at: pageIndex), let raster = rasterize(page) else { continue }
                 let result = StaffBandDetector.detect(in: raster)
                 let expected = expectedCounts[fileIndex][pageIndex]
@@ -210,7 +211,7 @@ enum StaffDetectionTests {
                 )
                 samples.append(sample)
                 print("\(path) page \(pageIndex + 1): \(sample.count)/\(expected) staves")
-                if fileIndex < 5 {
+                if fileIndex != 5 {
                     try check(sample.count == expected, "Regression in \(path) page \(pageIndex + 1): expected \(expected), found \(sample.count).")
                 }
                 if fileIndex >= 4,

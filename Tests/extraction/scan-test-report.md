@@ -1,5 +1,7 @@
 # Brahms scan: bounded independent forward test — FAILED CLEAN-PART REVIEW
 
+Historical clean-isolation test. A later preservation workflow, explicitly allowing neighboring notation, expanded and freshly reviewed all fourteen target strips: see [the preservation review](brahms-preservation-review-notes.md). This original failed result and its exact hash are unchanged.
+
 The scan test did not produce a verified clean Violin I part. The conservative draft is intentionally left `draft_needs_visual_review`. It contains neighboring musical fragments, so it is not a performance-ready deliverable.
 
 ## Tested scope and evidence

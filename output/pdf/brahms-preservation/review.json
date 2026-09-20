@@ -1,0 +1,119 @@
+{
+  "reviewVersion": 2,
+  "notationPolicy": "preserve-target",
+  "reviewer": "offline_detection — independent source-context and final-render audit",
+  "outputSHA256": {
+    "Violin I.pdf": "40c3e53cd8ec54edc03a5053ad33d55952d88aec9b9444e7ba052b8ca76bfa71"
+  },
+  "reviewedBandIDs": [
+    "brahms-p1-s1",
+    "brahms-p1-s2",
+    "brahms-p1-s3",
+    "brahms-p1-s4",
+    "brahms-p2-s1",
+    "brahms-p2-s2",
+    "brahms-p2-s3",
+    "brahms-p2-s4",
+    "brahms-p2-s5",
+    "brahms-p3-s1",
+    "brahms-p3-s2",
+    "brahms-p3-s3",
+    "brahms-p3-s4",
+    "brahms-p3-s5"
+  ],
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "targetPreservation": "pass",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "pageTurns": "pass"
+  },
+  "bandReviews": [
+    {
+      "bandID": "brahms-p1-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening clef/key/6/8 and Vivace, full-bar rests, first high staccato figure and dots, f/sf/sf and later f, and final notes/barline are complete. The fragment beneath the staff is neighboring notation; target dynamics remain distinct."
+    },
+    {
+      "bandID": "brahms-p1-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "All nine measures are complete, including middle high ledger notes and accents, both low f markings, right-hand accidentals and final rests. Neighbor fragments occur below the crop, without obscuring the target staff."
+    },
+    {
+      "bandID": "brahms-p1-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening two rest measures, full entry f, complete rehearsal A frame, both seven-note runs and numerals, and upper slurs/high terminal noteheads match the original. Adjacent-staff fragments below are retained."
+    },
+    {
+      "bandID": "brahms-p1-s4",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening high note and short slur, complete seven-note run and long slur, sustained flats/accents, all high dots/ledger notes/accidentals at the right, and all four sf markings are intact. Nearby unrelated ink is retained around target dynamics."
+    },
+    {
+      "bandID": "brahms-p2-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening descending groups and high slurs, naturals, full rehearsal B frame, fp, and ending sustained paired notes with slurs are complete. Neighboring material below remains visible and separable."
+    },
+    {
+      "bandID": "brahms-p2-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Every continuous beamed figure and accidental is intact, including complete upper slurs, the long diminuendo hairpin below the middle, full dolce legg. text, and the low right-hand note/natural/slur. Neighboring notation remains below."
+    },
+    {
+      "bandID": "brahms-p2-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening note/rests, complete fp descenders, sustained flat-note figures and slurs, following rising/falling runs, low flats and ledger notes are preserved. In particular the adjacent second-violin upward flag remains beside fp rather than removing part of the dynamic."
+    },
+    {
+      "bandID": "brahms-p2-s4",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "All five measures preserve the first two runs and lower slurs, low accidentals, third-measure high peak/slur, complete dim. including initial d, and final low ledger notes. Adjacent-staff fragments are retained below."
+    },
+    {
+      "bandID": "brahms-p2-s5",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Complete rehearsal C frame, opening flat/rests and full-bar rest, both pp markings, full long upper slur, ending lower ties/slurs and the right-edge 2/4 change are present. Neighbor fragments remain outside the target staff."
+    },
+    {
+      "bandID": "brahms-p3-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening 2/4, clef/key and articulated groups, central 6/8 with sustained tied notes, later 2/4 and final beams/short slurs match the original. Both high and low target edges are complete; neighboring notation is retained below."
+    },
+    {
+      "bandID": "brahms-p3-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening low figures and ties, crescendo wedge, full poco cresc. text and continuation dashes, high final run with accidentals and long slur, complete f and long diminuendo hairpin are intact. Some previous/adjacent system ink is retained."
+    },
+    {
+      "bandID": "brahms-p3-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening pp, accidentals and upper slurs, both paired hairpin figures, low notes/rests into D, complete D frame and p, and high right-hand sharp/ledger notes/slur are preserved. Neighbor fragments below do not replace target markings."
+    },
+    {
+      "bandID": "brahms-p3-s4",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "All seven measures preserve every rapid note group, high ledger peaks, small upper slurs and naturals, clef/key and final barline. Previous-system and neighboring fragments are retained above/below; the target five-line staff remains clear."
+    },
+    {
+      "bandID": "brahms-p3-s5",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "All descending groups, upper/lower slurs, ledger notes, naturals/flats, full p cresc. descenders, and final low groups/dots through the last barline are complete. Neighboring material above/below is retained."
+    }
+  ],
+  "notes": "Independently inspected all three original score pages and 14 enlarged source contexts chosen before consulting crop bounds, then all 14 output strips at source-matched resolution and all three output pages. Every target note group and edge-sensitive marking listed in Tests/extraction/brahms-independent-review.md is present. No whiteout exclusions are applied. Final PDF renders are byte-identical at 216 dpi to the fully inspected preview, and source/destination geometry and band order match. Neighboring notation is intentionally retained under preserve-target and does not make the target staff unreadable. Scope is Violin I, PDF pages 1–3, bars 1–98 only; this is not the complete work or a pitch-by-pitch edition proof. Output retains original source-page boundaries at bars 29 and 58; comfortable performance turns have not been certified. Source scan print size is retained at approximately 96.8% scale."
+}

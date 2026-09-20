@@ -14,6 +14,7 @@ Numbers are detected five-line staves, not verified playable parts. Page numbers
 | `normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf` | 16 / 16 / 16 | 16 / 16 / 16 | — |
 | `lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf` | 12 / 16 / 16 | 12 / 16 / 16 | 12 / — / 16 |
 | `medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf` | 16 / 20 / 20 | 16 / 20 / **19** | — / — / **20** |
+| `lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf` (pages 1–2) | 12 / 15 | 12 / 15 | — |
 
 Score paths are under `sample_scores/` except the fixture. The medium quartet's third PDF page needs the existing 0.675° app rectification to recover the omitted staff. A dash means no correction was estimated above the app's threshold, or no correction was requested for that sample. Corrected images in the report come from the actual `SourcePageRenderCache`, with no fallback to the original image.
 

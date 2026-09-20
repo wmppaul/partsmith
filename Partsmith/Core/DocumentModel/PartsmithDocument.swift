@@ -754,6 +754,33 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         }
     }
 
+    /// Adds source context without moving any crop edge inward or changing whiteout areas.
+    @discardableResult
+    func expandBandCrop(_ bandID: UUID, by points: Double) -> Bool {
+        guard points.isFinite, points > 0,
+              let band = project.bands.first(where: { $0.id == bandID }), band.pageIndex >= 0,
+              let bounds = pdfDocument?.page(at: band.pageIndex)?.bounds(for: .mediaBox),
+              bounds.width.isFinite, bounds.height.isFinite, bounds.width > 0, bounds.height > 0,
+              [band.topFraction, band.bottomFraction, band.leftFraction, band.rightFraction]
+                .allSatisfy({ $0.isFinite && $0 >= 0 && $0 <= 1 }),
+              band.topFraction < band.bottomFraction, band.leftFraction + band.rightFraction < 1
+        else { return false }
+
+        var expanded = band
+        expanded.topFraction = max(0, band.topFraction - points / bounds.height)
+        expanded.bottomFraction = min(1, band.bottomFraction + points / bounds.height)
+        expanded.leftFraction = max(0, band.leftFraction - points / bounds.width)
+        expanded.rightFraction = max(0, band.rightFraction - points / bounds.width)
+        guard expanded != band else { return false }
+
+        commit(actionName: "Expand Band Crop") { project, _ in
+            guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
+            project.bands[index] = expanded
+        }
+        bandTemplateHalfHeight = Self.bandHalfHeight(for: expanded)
+        return true
+    }
+
     func updateBandExclusions(_ bandID: UUID, exclusions: [BandExclusion]) {
         guard project.bands.contains(where: { $0.id == bandID }) else { return }
         commit(actionName: "Edit Band Exclusions") { project, _ in

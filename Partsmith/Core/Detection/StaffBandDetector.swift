@@ -100,7 +100,7 @@ enum StaffBandDetector {
             }
             if (index > 0 && first - previous < 5 * space)
                 || (index + 1 < staffs.count && next - last < 5 * space) {
-                warnings.append("A neighboring staff is close. Check ledger lines, dynamics, and lyrics at the crop edges.")
+                warnings.append("A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.")
             }
             candidates.append(StaffBandCandidate(
                 id: index,

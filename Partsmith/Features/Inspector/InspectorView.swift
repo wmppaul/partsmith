@@ -3,6 +3,7 @@ import SwiftUI
 
 struct InspectorView: View {
     @ObservedObject var document: PartsmithDocument
+    @State private var cropExpansionPoints = 6.0
 
     var body: some View {
         ScrollView {
@@ -318,6 +319,26 @@ struct InspectorView: View {
                 value: currentBand.bottomFraction.formatted(.percent.precision(.fractionLength(0)))
             )
 
+            VStack(alignment: .leading, spacing: 8) {
+                Stepper("Extra context: \(Int(cropExpansionPoints)) pt per side",
+                        value: $cropExpansionPoints, in: 1...36, step: 1)
+                Button("Expand Crop", systemImage: "arrow.up.left.and.arrow.down.right") {
+                    document.expandBandCrop(band.id, by: cropExpansionPoints)
+                }
+                .disabled(document.pdfDocument?.page(at: currentBand.pageIndex) == nil ||
+                          (currentBand.topFraction == 0 && currentBand.bottomFraction == 1 &&
+                           currentBand.leftFraction == 0 && currentBand.rightFraction == 0))
+                .help("Move all four crop edges outward by this amount, stopping at the page edges. Repeat if more context is needed, or undo the expansion.")
+                Text("Keep neighboring notation when it protects target notes. Expand, then compare the source and Preview; extra space alone does not guarantee a complete part.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                if !currentBand.exclusions.isEmpty {
+                    Text("Whiteout areas still hide ink inside this crop. Review or delete them below to restore it.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
             Toggle(
                 "Include In Output",
                 isOn: Binding(
@@ -462,7 +483,7 @@ struct InspectorView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Whiteout Areas")
                 .font(.subheadline.weight(.semibold))
-            Text("Hide neighboring ink without changing the source. Check each area in Preview.")
+            Text("Only hide ink after checking that no target notation overlaps it. Keep neighboring notation when uncertain; deleting an area restores the source ink.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 

@@ -10,11 +10,25 @@ The previous project state, including unfinished bar-number work, was preserved 
 | --- | --- | --- |
 | Mozart, Ave verum corpus, complete four-page score | Soprano; eight systems, bars 1–46 | Reviewed one-page PDF. All lyrics, notes, slurs, opening tempo and source measure numbers retained. |
 | Mozart, Notte e giorno, complete four-page score | Piano; twenty grand staffs, bars 1–73 | Reviewed four-page PDF. Seven precise exclusions remove neighboring lyric fragments while preserving nearby notation. Original source page divisions retained. |
-| Brahms, Quartet No. 3 Op. 67, medium scan, PDF pages 1–3 | Violin I; fourteen systems, bars 1–98 | Negative stress test. All systems identified, but clean isolation failed visual review. Dense neighboring notes and tilted slurs require further intervention; not delivered as a clean part. |
+| Brahms, Quartet No. 3 Op. 67, medium scan, PDF pages 1–3 | Violin I; fourteen systems, bars 1–98 | Preservation review passed after expanding every crop, removing all masks, and freshly checking all target notation. Three-page excerpt, with neighboring ink deliberately retained. The earlier clean-isolation test remains a historical failure. |
+| Schumann, Frauenliebe und Leben Op. 42, lightly skewed scan | Voice; complete first song, six systems | One-page reviewed part. All lyrics, directions, phrasing and final fermata retained. No masks; five strips include small neighboring fragments. |
+| Brahms, Clarinet Trio Op. 114, lightly skewed scan, PDF pages 1–3 | Clarinet in A; eleven systems, bars 1–62 | Three-page reviewed excerpt. All target notes and markings retained; six strips retain neighboring fragments. No masks. |
 
 Reviewed results are [Ave verum](output/pdf/ave) and [Notte e giorno](output/pdf/notte), each containing its PDF, portable recipe, immutable source-embedded project and exact-hash review manifest. Preview PNGs are generated locally but omitted from git. Native re-exports also received visual inspection.
 
-The failed scan is retained locally under `.build/extraction/brahms-draft`, outside the reviewed deliverables. Its reproducible recipe, [failed review](Tests/extraction/brahms-failed-review.json) and [passage report](Tests/extraction/scan-test-report.md) are retained as a negative test. A tidy-looking crop was explicitly rejected when experimental masks damaged target dynamics or a rehearsal box.
+The original failed scan is retained locally under `.build/extraction/brahms-draft`. Its [failed review](Tests/extraction/brahms-failed-review.json) and [passage report](Tests/extraction/scan-test-report.md) remain historical evidence. The new [Brahms preservation output](output/pdf/brahms-preservation), [Schumann song](output/pdf/schumann-preservation), and [Clarinet Trio excerpt](output/pdf/trio-preservation) have fresh independent reviews bound to their exact PDF hashes. No failed result was simply relabeled. The user explicitly accepts neighboring notation and requires all intended-staff notes to remain.
+
+## Preservation follow-up
+
+The acceptance criterion separates **target preservation** from **neighboring notation**. Under `preserve-target`, neighbor fragments can remain; missing target notes, slurs, dynamics or other required marks still fail. Original `clean-isolation` recipes keep their original review criteria for compatibility.
+
+The skill now requires source-coordinate protected target regions for preservation recipes. Builds reject crops that cut through these regions and whiteouts that intersect them. Enlarged context images show source ink outside each crop, avoiding the blind spot of checking only an already-clipped image. A version-2 review records an observation and neighbor-context disclosure for every strip. These guards protect reviewed regions; they do not infer instrument identity or automatically discover all notes. Native project edits do not yet enforce protected regions.
+
+For the difficult quartet, two independent agents compared every source system with the new output, including high-right slurs and ledger notes, full fp/dim. markings, rehearsal boxes A–D, ties, articulations and meter changes. All 14 strips now preserve their target notation with no whiteouts. The broader crops intentionally admit adjacent Violin II notes and preceding-system cello fragments. [Author review](Tests/extraction/brahms-preservation-review-notes.md), [independent review](Tests/extraction/brahms-independent-review.md).
+
+The cleaner scans were tested in parallel: the complete Schumann song and an eleven-system Clarinet Trio excerpt. Automatic staff counts were correct, but mapping and crop edges still received manual review. The trio required widening around low dynamics and high slurs; success does not imply one-click extraction. [Schumann independent review](Tests/extraction/schumann-independent-review.md), [Trio workflow](Tests/extraction/trio-preservation-review.md), [Trio independent review](Tests/extraction/trio-independent-review.md).
+
+All 83 protected regions across these three results match an **unclipped full-source rendering pixel-for-pixel at 216 dpi** after applying the output placement transform. This supplements the musical comparisons; the regions themselves were established visually. [Pixel results](Tests/extraction/preservation-pixel-results.json).
 
 ## Iterations that changed the implementation
 
@@ -33,9 +47,9 @@ Import a score, create/select a part, then use **Find Staves**. The offline revi
 
 Detection uses a background worker with its own PDFKit document, cancellation and stale-result checks. Rectification uses local CoreImage; a failed requested correction cannot silently supply proposals in the wrong coordinate space.
 
-The band inspector provides whiteout areas, editorial labels and page breaks. Preview and export use the same native renderer. The app requires no Python environment, downloaded model, cloud backend or AI service. Different typography can affect pagination relative to the skill, so check native re-exports.
+The band inspector provides **Expand Crop** (1–36 source points per side, clamped at page edges, one-step undo), whiteout areas, editorial labels and page breaks. Expansion never moves edges inward; existing whiteouts remain unchanged and need separate review. Preview and export use the same native renderer. The app requires no Python environment, downloaded model, cloud backend or AI service. Different typography can affect pagination relative to the skill, so check native re-exports.
 
-Native detector evaluation covers seventeen source pages and 256 expected staves. The first fourteen pages find all 200 expected staves. The medium quartet yields 16/20/19 raw; applying the existing 0.675-degree correction on page 3 recovers the twentieth staff. These are geometry results, not claims of complete playable extraction. [Exact filenames and findings](Tests/extraction/native-detection-report.md).
+Native detector evaluation covers nineteen source pages and 283 expected staves. Sixteen asserted pages find all 227 expected staves, including both new Schumann pages. The medium quartet yields 16/20/19 raw; applying the existing 0.675-degree correction on page 3 recovers the twentieth staff. These are geometry results, not claims of complete playable extraction. [Exact filenames and findings](Tests/extraction/native-detection-report.md).
 
 ## Reproduce the checks
 
@@ -48,13 +62,16 @@ python3 -m venv .build/extraction-venv
 .build/extraction-venv/bin/python Tests/extraction/regression_review.py output/pdf/notte
 bash tools/test_staff_detection.sh --samples
 bash tools/test_layout_export.sh
+bash tools/test_preservation_exports.sh
+.build/extraction-venv/bin/python Tests/extraction/check_preservation.py \
+  output/pdf/brahms-preservation output/pdf/schumann-preservation output/pdf/trio-preservation
 ```
 
 Python tests cover actual score counts, source immutability, vector preservation, bounds and coverage validation, portable project coordinates, whiteout transforms, review hashes, Unicode text, and failed/reduced-part rebuilds. Seven mask-edge pixel checks detect residual fragments; three critical clef/slur/chord regions must match an unmasked reference exactly.
 
-All fourteen Python tests pass. Fresh rebuilds using the final skill reproduce all five reviewed output pages pixel-for-pixel at 144 dpi; [comparison record](Tests/extraction/final-rebuild-results.json). Independent agents both operated the skill and reviewed the implementation, with original failure repros rerun after fixes.
+All eighteen Python tests pass, including real regressions for a cropped Brahms slur and masks over fp, dim. and rehearsal D. Fresh rebuilds using the final skill reproduce all five reviewed output pages pixel-for-pixel at 144 dpi; [comparison record](Tests/extraction/final-rebuild-results.json). Independent agents both operated the skill and reviewed the implementation, with original failure repros rerun after fixes.
 
-Native harnesses pass 5,295 layout assertions and 127 export assertions, covering layout boundaries, tall crops, invalid geometry, explicit page breaks and labels, whiteout persistence, undo/redo, and real piano project re-export. The detector suite separately checks grouping, undo/redo and stale/cancelled detection. Rendering checks compare all pixels outside native masks with the unmasked native renderer. The final native piano export has four pages of five systems each, with all eighteen supplied labels and seven masks preserved; every page received independent visual inspection. The macOS graphics sandbox can prevent CoreImage from rendering; corrected scan benchmarks were verified with ordinary local graphics access.
+Native harnesses pass 5,295 layout assertions and 148 crop/export assertions, covering layout boundaries, tall crops, invalid geometry, explicit page breaks and labels, whiteout persistence, undo/redo, and real piano project re-export. An additional 362 preservation-bridge checks re-export all three scanned projects through the production native renderer: all 31 bands and 83 protected regions survive, with 3/1/3 output pages, all labels, and explicit breaks retained. The maximum source-coordinate deviation is about 0.000014 point due to PDFKit/PyMuPDF page-size precision (tolerance 0.0001 point). All seven scanned native output pages also passed visual review; [native result record](Tests/extraction/native-preservation-results.json). The detector suite separately checks grouping, undo/redo and stale/cancelled detection. Rendering checks compare all pixels outside native masks with the unmasked native renderer. The final native piano export has four pages of five systems each, with all eighteen supplied labels and seven masks preserved; every page received independent visual inspection. The macOS graphics sandbox can prevent CoreImage from rendering; corrected scan benchmarks were verified with ordinary local graphics access.
 
 Debug and Release builds use:
 
@@ -64,8 +81,10 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
   -derivedDataPath .build/DerivedData CODE_SIGNING_ALLOWED=NO build
 ```
 
+The revised Release build and native rendering tests pass. A live UI spot-check of the new Expand Crop control could not run because the Mac was locked; the control’s document operation, edge clamping, persistence, undo and recovered-ink rendering were exercised by the native harness.
+
 The resulting app is `.build/DerivedData/Build/Products/Release/Partsmith.app`; the local preview archive is [Partsmith-extraction-preview-macos.zip](artifacts/macos/Partsmith-extraction-preview-macos.zip). This is a local unsigned preview build, not a published/notarized release.
 
 ## Practical limits
 
-This workflow is robust about preserving source geometry, exposing uncertain results, retaining review evidence and refusing failed output. It is not unattended extraction for arbitrary scores. Staff detection cannot infer all instrument changes, shared markings or tacet duration. Small overlapping fragments can be masked only when the target ink is separately identifiable. Truly interleaved notation, severe scan distortion and musical page-turn planning still need informed review. The retained negative scan test documents that boundary rather than hiding it.
+This workflow is robust about preserving source geometry, exposing uncertain results, retaining review evidence and refusing failed output. It is not unattended extraction for arbitrary scores. Staff detection cannot infer all instrument changes, shared markings or tacet duration. Small overlapping fragments can be masked only when the target ink is separately identifiable. Truly interleaved notation, severe scan distortion and musical page-turn planning still need informed review. The original failed clean-isolation test remains as evidence of unsafe cleanup; the new preservation result demonstrates the accepted alternative of retaining neighboring context.

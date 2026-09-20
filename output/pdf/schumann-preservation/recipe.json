@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "notationPolicy": "preserve-target",
+  "source": "Seit ich ihn gesehen - Op. 42- No. 1.partsmithproject/source.pdf",
+  "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+  "title": "Seit ich ihn gesehen - Op. 42, No. 1",
+  "composer": "Robert Schumann",
+  "scopePages": [
+    1,
+    2
+  ],
+  "parts": [
+    {
+      "name": "Voice",
+      "bands": [
+        {
+          "id": "schumann-p1-s1",
+          "page": 1,
+          "system": "1",
+          "rect": [
+            20,
+            150,
+            496,
+            202
+          ],
+          "label": "Source page 1, system 1",
+          "exclusions": [],
+          "protectedRegions": [
+            {
+              "rect": [
+                28,
+                153,
+                491,
+                199
+              ],
+              "description": "Opening Larghetto, p, clef, key/time signatures, every note and complete lyric line"
+            }
+          ]
+        },
+        {
+          "id": "schumann-p1-s2",
+          "page": 1,
+          "system": "2",
+          "rect": [
+            20,
+            275,
+            496,
+            326
+          ],
+          "label": "Source page 1, system 2",
+          "exclusions": [],
+          "protectedRegions": [
+            {
+              "rect": [
+                27,
+                281,
+                491,
+                323
+              ],
+              "description": "Ritard., full high slur, accidentals, all vocal notes and lyrics"
+            }
+          ]
+        },
+        {
+          "id": "schumann-p1-s3",
+          "page": 1,
+          "system": "3",
+          "rect": [
+            20,
+            405,
+            496,
+            452
+          ],
+          "label": "Source page 1, system 3",
+          "exclusions": [],
+          "protectedRegions": [
+            {
+              "rect": [
+                27,
+                411,
+                491,
+                449
+              ],
+              "description": "High opening slur and ledger note, complete lyric and rests, final entry"
+            }
+          ]
+        },
+        {
+          "id": "schumann-p1-s4",
+          "page": 1,
+          "system": "4",
+          "rect": [
+            20,
+            539,
+            496,
+            590
+          ],
+          "label": "Source page 1, system 4",
+          "exclusions": [],
+          "protectedRegions": [
+            {
+              "rect": [
+                27,
+                543,
+                491,
+                587
+              ],
+              "description": "Ritard. and grace note, all notes, accidentals and full lyric syllables"
+            }
+          ]
+        },
+        {
+          "id": "schumann-p2-s1",
+          "page": 2,
+          "system": "1",
+          "rect": [
+            20,
+            52,
+            496,
+            100
+          ],
+          "label": "Source page 2, system 1",
+          "exclusions": [],
+          "protectedRegions": [
+            {
+              "rect": [
+                27,
+                56,
+                491,
+                97
+              ],
+              "description": "Opening tie and high phrase slur, all notes and lyric line"
+            }
+          ]
+        },
+        {
+          "id": "schumann-p2-s2",
+          "page": 2,
+          "system": "2",
+          "rect": [
+            20,
+            172,
+            496,
+            220
+          ],
+          "label": "Source page 2, system 2",
+          "exclusions": [],
+          "protectedRegions": [
+            {
+              "rect": [
+                27,
+                178,
+                492,
+                217
+              ],
+              "description": "Final vocal phrase, whole-bar rests, final fermata and double bar, complete lyrics"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "coverageNotes": "Complete first song only: all four systems on PDF page1 and the first two systems on PDF page2, ending at the double bar before song2. Piano-only ending is accounted for by the printed vocal rests and final fermata. Later systems on PDFpage2 belong to song2 and are intentionally outside scope. Source scan retained without deskew.",
+  "sharedMarkings": "Original Larghetto and p at opening, both ritard. indications, phrasing, final fermata, original clefs/key/time signatures and all lyrics retained. No masks; adjacent piano fragments allowed."
+}

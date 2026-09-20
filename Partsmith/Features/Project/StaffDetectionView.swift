@@ -34,7 +34,7 @@ struct StaffDetectionView: View {
                     selectionControls(review)
                         .frame(minWidth: 340, idealWidth: 370, maxWidth: 400)
                 }
-                Text("Check crop edges for ledger notes, slurs, dynamics, lyrics, and shared tempo or rehearsal markings. Missed staves and changing instrument order require manual review. Crop boundaries remain editable after adding. Existing overlapping bands are skipped.")
+                Text("Suggested crop edges can omit target notation. Check ledger notes, slurs, dynamics, lyrics, and shared tempo or rehearsal markings. After adding, use Expand Crop in the Inspector to keep more context, including neighboring notation when needed. Missed staves and changing instrument order require manual review. Existing overlapping bands are skipped.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

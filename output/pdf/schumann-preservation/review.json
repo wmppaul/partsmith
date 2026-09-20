@@ -1,0 +1,64 @@
+{
+  "reviewVersion": 2,
+  "notationPolicy": "preserve-target",
+  "reviewer": "Independent score-survey agent: raw-source, six context-strip and final-page visual review",
+  "outputSHA256": {
+    "Voice.pdf": "7882b5475e0938c6f39e135291fe36f19a762831a2fb20f5077650076aeb216f"
+  },
+  "reviewedBandIDs": [
+    "schumann-p1-s1",
+    "schumann-p1-s2",
+    "schumann-p1-s3",
+    "schumann-p1-s4",
+    "schumann-p2-s1",
+    "schumann-p2-s2"
+  ],
+  "checks": {
+    "identity": "pass",
+    "coverage": "pass",
+    "targetPreservation": "pass",
+    "globalMarkings": "pass",
+    "readability": "pass",
+    "pageTurns": "pass"
+  },
+  "bandReviews": [
+    {
+      "bandID": "schumann-p1-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Compared the complete opening with raw source and context beyond all four edges: Larghetto, p, initial full-bar rest, clef/key/3/4, every vocal note/accidental and the entire lyric through nur are present. Minor piano slur residue remains below; partial song-ordinal/composition-year ink remains above. Neither is target notation."
+    },
+    {
+      "bandID": "schumann-p1-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "none",
+      "observations": "All vocal notes, small grace note, naturals, high phrase slurs, full ritard. and every lyric syllable from bli-cke through taucht aus are intact. The connecting left system bar extends below the voice; no neighboring notes or piano directions intrude into this crop."
+    },
+    {
+      "bandID": "schumann-p1-s3",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Opening high phrase slur, full beamed group, all subsequent notes/rests and lyric from tief-stem through Sonst ist licht-und are present. The two printed full-bar rests and final vocal entry remain. Piano upper-stem/slur fragments enter the bottom margin, outside the vocal staff."
+    },
+    {
+      "bandID": "schumann-p1-s4",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Full lyric from farb-los through moech-te, vocal accidentals, small grace notes, all note stems/flags, complete ritard. and accent at right remain. Neighboring piano ritard./slur/stem fragments appear below; a previous-system piano slur fragment appears above."
+    },
+    {
+      "bandID": "schumann-p2-s1",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "All phrase slurs, dotted notes, natural signs, beamed high-to-low group, final rest and full lyric from lie-ber through ge-se-hen remain. Piano slur fragments intrude into the bottom margin but do not obscure the intended notes or lyric."
+    },
+    {
+      "bandID": "schumann-p2-s2",
+      "targetPreservation": "pass",
+      "neighborNotation": "present",
+      "observations": "Final phrase glaub ich blind zu sein, note/rest that ends the vocal entry, all subsequent printed full-bar vocal rests, final fermata and closing double bar are complete. Piano high slur/beam/stem fragments remain below. Ending retained through the end of song1; song2 is excluded."
+    }
+  ],
+  "issues": [],
+  "notes": "Fresh independent review against both raw source pages, all six context images showing ink beyond the crops, and the complete output page. Correct Voice identity: top staff of the three-staff voice/piano systems. Complete first song only: all four systems of PDFpage1 and first two of PDFpage2, through final fermata/double bar before song2. No target note, lyric or meaningful mark omission found. Opening Larghetto/p, both ritard. indications, phrase slurs, accidentals, grace notes, all vocal rests and final fermata preserved; no whiteouts. Neighboring piano/previous-system and nonmusical fragments are disclosed and accepted under preservation policy. One output page, so no internal page turn; all six strips, labels and footer fit and aspect ratio is unchanged. The exact final output render is byte-identical to the independently inspected draft render (PNG SHA256 ca8513bdd74a6c2b82d0e2acef1c25a8465964d85a185853aedc8001b6dd7b22). This review binds the final PDF hash above; it does not claim clean isolation."
+}

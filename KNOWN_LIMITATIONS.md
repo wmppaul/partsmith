@@ -7,6 +7,7 @@ Partsmith remains a geometry-first, assisted extraction app. The score-part-extr
 - Find Staves runs offline on one page at a time. It detects five-line staff geometry, not instrument identity or musical completeness.
 - Staff counts can be wrong on severe skew, curved scans, faint or broken lines, and dense engraving. Line confidence does not certify crop boundaries.
 - Lyrics, dynamics, slurs, ledger notes and shared tempo/rehearsal marks require visual review. Instruments can disappear during tacet passages, so repeated staff order must be checked before applying it.
+- Neighboring notes can remain when complete target preservation is the goal. A preservation pass does not mean a cleanly isolated part. Missing target notation always fails; a cleaner-looking strip is not evidence of musical correctness.
 - Scan rectification and staff detection are separate steps. Rectification remains editable; failed rectification cannot be silently used for staff proposals.
 - Rectangular whiteout areas can remove spatially separate neighboring fragments. They cannot separate ink that physically overlaps target notation. Changes to a crop or rectification require reviewing its whiteouts again.
 
@@ -14,6 +15,7 @@ Partsmith remains a geometry-first, assisted extraction app. The score-part-extr
 
 - Whiteout areas are edited numerically in the inspector and checked in Preview; direct drawing/dragging of whiteouts on the source canvas is not implemented.
 - Bands retain left/right trims, but the source overlay still emphasizes full-width top/bottom editing. Inspect Preview to judge horizontal trimming.
+- **Expand Crop** moves all four edges outward by a chosen number of source PDF points, clamps at page edges, and supports undo. It does not recognize missing notes or remove existing whiteouts. The skill's protected-region guards are not yet enforced by native project editing.
 - No notation reflow, transposition, generated multimeasure rests or automatic page-turn optimization.
 - Explicit page breaks and editorial strip labels are editable in the native band inspector. Drag reordering and automated musical page-turn planning remain absent.
 - Native export respects printable margins. Scale above 100% is capped at the available width; unusually tall indivisible bands shrink to fit and may need manual readability correction.

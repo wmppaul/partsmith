@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "command": "bash tools/test_preservation_exports.sh",
+  "renderer": "Production Partsmith PartLayoutEngine and PartPDFExporter",
+  "assertionsPassed": 362,
+  "caseCount": 3,
+  "bandCount": 31,
+  "nativePageCount": 7,
+  "protectedRegionsRetained": 83,
+  "exclusionCount": 0,
+  "geometryTolerancePoints": 0.0001,
+  "geometryToleranceReason": "PDFKit double MediaBox decimals versus PyMuPDF float-rounded page dimensions; maximum actual deviation0.0000132277pt, far below one raster pixel.",
+  "visualReviewer": "app_audit agent: all7native output pages rendered at144dpi and inspected; Schumann compared with both raw source pages, other sources already reviewed.",
+  "cases": [
+    {
+      "case": "brahms-preservation",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "maximumSourceCoordinateDeviationPoints": 5.684341886080802e-14,
+      "parts": [
+        {
+          "part": "Violin I",
+          "nativePDFSHA256": "19a237821373113ff9efda588e228189e1331c498b849da874cc9f63a89eec97",
+          "bandCount": 14,
+          "nativePages": 3,
+          "bandsPerPage": [
+            4,
+            5,
+            5
+          ],
+          "protectedRegionsRetained": 45,
+          "exclusionCount": 0
+        }
+      ],
+      "visualReview": "pass",
+      "visualObservations": [
+        "All14 labeled Violin I strips are complete within the reviewed source rectangles; 4/5/5 bands occupy3pages.",
+        "Vivace, rehearsal frames A/B/C/D, high runs/slurs and low dynamics remain present; accepted surrounding staff fragments remain visible.",
+        "Long title fits; all labels are separated from source strips; right edges and page ends remain within the output page."
+      ]
+    },
+    {
+      "case": "schumann-preservation",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "maximumSourceCoordinateDeviationPoints": 5.684341886080802e-14,
+      "parts": [
+        {
+          "part": "Voice",
+          "nativePDFSHA256": "d85b4436c941003e5f7ae5360c31c78bfb65ceb98885b5f583a510383a99de5f",
+          "bandCount": 6,
+          "nativePages": 1,
+          "bandsPerPage": [
+            6
+          ],
+          "protectedRegionsRetained": 6,
+          "exclusionCount": 0
+        }
+      ],
+      "visualReview": "pass",
+      "visualObservations": [
+        "All6 voice strips fit on one native page; compared with both original source pages of song1.",
+        "Larghetto, opening p, both ritard. markings, vocal notes/slurs, complete lyric syllables/descenders, final written rests and fermata remain visible.",
+        "Piano fragments and scan text remnants remain accepted context; none of the reviewed vocal text or notes is masked."
+      ]
+    },
+    {
+      "case": "trio-preservation",
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "maximumSourceCoordinateDeviationPoints": 1.3227621593614458e-05,
+      "parts": [
+        {
+          "part": "Clarinet in A",
+          "nativePDFSHA256": "f052b1765f71db1a92bb63d2798201a7db30fd63fc9df1fe4cc78bc36d89904c",
+          "bandCount": 11,
+          "nativePages": 3,
+          "bandsPerPage": [
+            3,
+            4,
+            4
+          ],
+          "protectedRegionsRetained": 32,
+          "exclusionCount": 0
+        }
+      ],
+      "visualReview": "pass",
+      "visualObservations": [
+        "All11 Clarinet in A strips retain the reviewed3/4/4 source divisions on3native pages.",
+        "Opening Allegro/part label, low p/sf/ff, high phrase arches, ledger notes, full rests, hairpins and final source-edge continuation remain visible.",
+        "The same6 bands retain cello fragments and5 are isolated; no clipping or label/page-end collision observed."
+      ]
+    }
+  ],
+  "qualifications": [
+    "This validates native re-export of visually reviewed recipe crops; it does not validate automatic instrument identity or automatic completeness.",
+    "Neighboring source notation remains by explicit preservation policy. No cleanup masks are present.",
+    "Different font layout, rasterization and pagination from the Python exporter are permitted; cross-renderer pixel identity is not asserted.",
+    "Native editing does not enforce recipe protected-region guards. New edits require another review.",
+    "Brahms quartet and trio are explicit3source-page excerpts; Schumann covers the complete first song."
+  ]
+}
