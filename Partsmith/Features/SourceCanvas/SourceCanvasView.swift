@@ -91,6 +91,7 @@ struct SourceCanvasView: View {
                             zoomMode: document.zoomMode,
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
                             isPickingInstrumentNames: document.isPickingInstrumentNames,
+                            instrumentNameHighlights: document.instrumentNameHighlights,
                             renderIdentity: document.bandEditorIdentity,
                             onPickInstrumentName: { point in
                                 guard !document.isRecognizingInstrumentName else { return }
@@ -131,6 +132,7 @@ struct SourceCanvasView: View {
                             zoomMode: document.zoomMode,
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
                             isPickingInstrumentNames: document.isPickingInstrumentNames,
+                            instrumentNameHighlights: document.instrumentNameHighlights,
                             onPickInstrumentName: { point in
                                 guard !document.isRecognizingInstrumentName else { return }
                                 document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex)
@@ -352,6 +354,7 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
     var zoomMode: ZoomMode
     var canCreateBands: Bool
     var isPickingInstrumentNames: Bool
+    var instrumentNameHighlights: [ScoreInstrumentNamePick]
     var onPickInstrumentName: (CGPoint) -> Void
     var onSelectBand: (UUID?) -> Void
     var onCreateBand: (Double) -> Void
@@ -376,6 +379,7 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
             zoomMode: zoomMode,
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
+            instrumentNameHighlights: instrumentNameHighlights,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
@@ -399,6 +403,7 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
     var zoomMode: ZoomMode
     var canCreateBands: Bool
     var isPickingInstrumentNames: Bool
+    var instrumentNameHighlights: [ScoreInstrumentNamePick]
     var renderIdentity: String
     var onPickInstrumentName: (CGPoint) -> Void
     var onSelectBand: (UUID?) -> Void
@@ -425,6 +430,7 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
             zoomMode: zoomMode,
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
+            instrumentNameHighlights: instrumentNameHighlights,
             renderIdentity: renderIdentity,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
@@ -530,6 +536,7 @@ final class RectifiedBandEditorContainerView: NSView {
         zoomMode: ZoomMode,
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
+        instrumentNameHighlights: [ScoreInstrumentNamePick],
         renderIdentity: String,
         onPickInstrumentName: @escaping (CGPoint) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
@@ -571,6 +578,7 @@ final class RectifiedBandEditorContainerView: NSView {
             partColors: partColors,
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
+            instrumentNameHighlights: instrumentNameHighlights,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
@@ -1291,6 +1299,7 @@ final class PDFBandEditorContainerView: NSView {
         zoomMode: ZoomMode,
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
+        instrumentNameHighlights: [ScoreInstrumentNamePick],
         onPickInstrumentName: @escaping (CGPoint) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
@@ -1331,6 +1340,7 @@ final class PDFBandEditorContainerView: NSView {
             partColors: partColors,
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
+            instrumentNameHighlights: instrumentNameHighlights,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
@@ -1591,6 +1601,7 @@ private final class BandOverlayView: NSView {
     private var partColors: [UUID: NSColor] = [:]
     private var canCreateBands = false
     private var isPickingInstrumentNames = false
+    private var instrumentNameHighlights: [ScoreInstrumentNamePick] = []
     private var onPickInstrumentName: ((CGPoint) -> Void)?
     private var instrumentNameMouseDownPoint: CGPoint?
     private var onSelectBand: ((UUID?) -> Void)?
@@ -1691,6 +1702,7 @@ private final class BandOverlayView: NSView {
         partColors: [UUID: NSColor],
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
+        instrumentNameHighlights: [ScoreInstrumentNamePick],
         onPickInstrumentName: @escaping (CGPoint) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
@@ -1711,6 +1723,7 @@ private final class BandOverlayView: NSView {
         self.partColors = partColors
         self.canCreateBands = canCreateBands
         self.isPickingInstrumentNames = isPickingInstrumentNames
+        self.instrumentNameHighlights = instrumentNameHighlights
         self.onPickInstrumentName = onPickInstrumentName
         self.onSelectBand = onSelectBand
         self.onCreateBand = onCreateBand
@@ -1850,6 +1863,52 @@ private final class BandOverlayView: NSView {
             )
         }
 
+        drawInstrumentNameHighlights()
+    }
+
+    /// These annotations live only in the picking overlay, never in the score
+    /// geometry or export. Convert from the same displayed page used for OCR.
+    private func drawInstrumentNameHighlights() {
+        guard isPickingInstrumentNames, let pageFrame = pageFrameInView(),
+              pageFrame.width > 0, pageFrame.height > 0 else { return }
+        let color = NSColor.systemGreen
+        let labelAttributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 12, weight: .semibold),
+            .foregroundColor: NSColor.white
+        ]
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = .byTruncatingTail
+        let textAttributes = labelAttributes.merging([.paragraphStyle: paragraphStyle]) { _, new in new }
+
+        NSGraphicsContext.saveGraphicsState()
+        defer { NSGraphicsContext.restoreGraphicsState() }
+        NSBezierPath(rect: pageFrame).addClip()
+        for pick in instrumentNameHighlights where pick.pageIndex == pageIndex {
+            let box = CGRect(x: pageFrame.minX + pick.bounds.minX * pageFrame.width,
+                y: pageFrame.maxY - pick.bounds.maxY * pageFrame.height,
+                width: pick.bounds.width * pageFrame.width,
+                height: pick.bounds.height * pageFrame.height).insetBy(dx: -3, dy: -3)
+            guard box.intersects(visibleRect) else { continue }
+            let outline = NSBezierPath(roundedRect: box, xRadius: 4, yRadius: 4)
+            color.withAlphaComponent(0.20).setFill()
+            outline.fill()
+            color.setStroke()
+            outline.lineWidth = 2
+            outline.stroke()
+
+            // Show the actual recognized spelling beside the ink, large enough
+            // to read even when the whole source page is fitted to the window.
+            let label = "✓ \(pick.name)" as NSString
+            let textSize = label.size(withAttributes: labelAttributes)
+            let size = NSSize(width: min(textSize.width + 14, pageFrame.width - 8), height: textSize.height + 6)
+            let x = max(pageFrame.minX + 4, min(box.minX, pageFrame.maxX - size.width - 4))
+            let y = box.maxY + size.height + 4 <= pageFrame.maxY
+                ? box.maxY + 4 : max(pageFrame.minY + 4, box.minY - size.height - 4)
+            let badge = CGRect(origin: CGPoint(x: x, y: y), size: size)
+            NSColor(calibratedRed: 0.10, green: 0.38, blue: 0.20, alpha: 0.97).setFill()
+            NSBezierPath(roundedRect: badge, xRadius: 5, yRadius: 5).fill()
+            label.draw(in: badge.insetBy(dx: 7, dy: 3), withAttributes: textAttributes)
+        }
     }
 
     override func mouseDown(with event: NSEvent) {

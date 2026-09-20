@@ -6,5 +6,5 @@ export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Develope
 core_sources=(Partsmith/Core/DocumentModel/*.swift Partsmith/Core/Detection/*.swift
               Partsmith/Core/Layout/*.swift Partsmith/Core/Export/*.swift)
 xcrun swiftc -O -module-cache-path .build/ModuleCache \
-  "${core_sources[@]}" tools/test_score_document.swift -o .build/test_score_document
-.build/test_score_document "$@"
+  "${core_sources[@]}" tools/test_source_headers.swift -o .build/test_source_headers
+.build/test_source_headers

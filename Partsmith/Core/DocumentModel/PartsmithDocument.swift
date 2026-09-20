@@ -58,6 +58,7 @@ struct ScoreDetectionReview {
     var plan: ScoreExtractionPlan
     var overrides: [ScorePageOverride] = []
     var excludedPageReasons: [Int: String] = [:]
+    var suggestedSourceHeader: SourceHeaderSelection? = nil
     var sourcePDFData: Data
     var rectifications: [PageRectification]
 
@@ -180,8 +181,18 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private static let rectificationLogger = Logger(subsystem: "Partsmith", category: "Rectification")
     private static let barNumberLogger = Logger(subsystem: "Partsmith", category: "BarNumbers")
 
-    @Published var project: ProjectData
-    @Published var sourcePDFData: Data?
+    @Published var project: ProjectData {
+        didSet {
+            if project.pageRectifications != oldValue.pageRectifications {
+                invalidateInstrumentNameHighlights()
+            }
+        }
+    }
+    @Published var sourcePDFData: Data? {
+        didSet {
+            if sourcePDFData != oldValue { invalidateInstrumentNameHighlights() }
+        }
+    }
     @Published var selectedPartID: UUID?
     @Published var selectedBandID: UUID?
     @Published var currentPageIndex: Int
@@ -193,6 +204,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @Published private(set) var scoreDetectionProgress: ScoreDetectionProgress?
     @Published var isPickingInstrumentNames = false
     @Published private(set) var instrumentNamePick: ScoreInstrumentNamePick?
+    @Published private(set) var instrumentNameHighlights: [ScoreInstrumentNamePick] = []
     @Published private(set) var instrumentNamePickMessage: String?
     @Published private(set) var isRecognizingInstrumentName = false
 
@@ -487,7 +499,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
     /// Analyze every source page with an explicitly supplied instrument order.
     /// Each worker owns its PDFKit objects; only small geometric results return to the UI.
-    func detectScore(profile: ScoreExtractionProfile, completion: @escaping (ScoreDetectionReview?) -> Void) {
+    func detectScore(profile: ScoreExtractionProfile, findSourceHeader: Bool = false,
+                     completion: @escaping (ScoreDetectionReview?) -> Void) {
         cancelScoreDetection()
         cancelStaffDetection()
         guard let data = sourcePDFData, let pageCount = pdfDocument?.pageCount, pageCount > 0 else {
@@ -500,6 +513,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         operation.addExecutionBlock { [weak self, weak operation] in
             guard let operation, !operation.isCancelled, let pdf = PDFDocument(data: data) else { return }
             var analyses: [ScorePageAnalysis] = []
+            var suggestedSourceHeader: SourceHeaderSelection?
+            var triedSourceHeader = false
             for pageIndex in 0..<pdf.pageCount {
                 guard !operation.isCancelled else { return }
                 let analysis: ScorePageAnalysis = autoreleasepool {
@@ -518,8 +533,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                         return ScorePageAnalysis(pageIndex: pageIndex, pageWidth: bounds.width, pageHeight: bounds.height,
                             imageWidth: 0, imageHeight: 0, staves: [], warnings: ["Page could not be rendered; review or restore the source."])
                     }
-                    return NativeScorePageAnalyzer.analyze(pageIndex: pageIndex, image: image,
+                    let analysis = NativeScorePageAnalyzer.analyze(pageIndex: pageIndex, image: image,
                         pageWidth: bounds.width, pageHeight: bounds.height, isCancelled: { operation.isCancelled })
+                    if findSourceHeader, !triedSourceHeader, !analysis.staves.isEmpty {
+                        triedSourceHeader = true
+                        suggestedSourceHeader = ScoreSourceHeaderDetector.detect(in: image, pageIndex: pageIndex,
+                            staves: analysis.staves, isCancelled: { operation.isCancelled })?.selection
+                    }
+                    return analysis
                 }
                 analyses.append(analysis)
                 DispatchQueue.main.async { [weak self, weak operation] in
@@ -529,6 +550,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             }
             let plan = ScoreExtractionPlanner.plan(pages: analyses, profile: profile, isCancelled: { operation.isCancelled })
             let review = ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan,
+                                               suggestedSourceHeader: suggestedSourceHeader,
                                                sourcePDFData: data, rectifications: rectifications)
             DispatchQueue.main.async { [weak self, weak operation] in
                 guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
@@ -622,9 +644,24 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                     self.instrumentNamePickMessage = "Couldn’t read a name there. Click the printed letters, or type the name in the list."
                     return
                 }
-                self.instrumentNamePick = ScoreInstrumentNamePick(id: UUID(), name: candidate.text,
+                let pick = ScoreInstrumentNamePick(id: UUID(), name: candidate.text,
                     suggestedStaffCount: ScoreInstrumentNameDetector.suggestedStaffCount(for: candidate.text),
-                    pageIndex: pageIndex)
+                    pageIndex: pageIndex, bounds: candidate.bounds)
+                // A repeat click updates its existing label; it never leaves
+                // stacked highlights over the same printed word.
+                if let index = self.instrumentNameHighlights.firstIndex(where: { previous in
+                    guard previous.pageIndex == pick.pageIndex else { return false }
+                    let intersection = previous.bounds.intersection(pick.bounds)
+                    let smallerArea = min(previous.bounds.width * previous.bounds.height,
+                                          pick.bounds.width * pick.bounds.height)
+                    return !intersection.isNull && smallerArea > 0
+                        && intersection.width * intersection.height >= smallerArea * 0.5
+                }) {
+                    self.instrumentNameHighlights[index] = pick
+                } else {
+                    self.instrumentNameHighlights.append(pick)
+                }
+                self.instrumentNamePick = pick
             }
         }
         instrumentNameQueue.addOperation(operation)
@@ -635,19 +672,43 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         instrumentNameOperation?.cancel()
         instrumentNameOperation = nil
         instrumentNamePick = nil
+        instrumentNameHighlights = []
         instrumentNamePickMessage = nil
         isRecognizingInstrumentName = false
+    }
+
+    /// Rectification, source import, and undo can replace the displayed page
+    /// while the picker stays open. Never retain boxes from the old geometry.
+    private func invalidateInstrumentNameHighlights() {
+        guard isPickingInstrumentNames || !instrumentNameHighlights.isEmpty || instrumentNameOperation != nil else { return }
+        instrumentNameOperation?.cancel()
+        instrumentNameOperation = nil
+        instrumentNamePick = nil
+        instrumentNameHighlights = []
+        isRecognizingInstrumentName = false
+        instrumentNamePickMessage = isPickingInstrumentNames
+            ? "The displayed page changed. Click its instrument name again." : nil
     }
 
     /// Add every reviewed part atomically. Existing populated parts of the same
     /// name are rejected, so re-running Auto cannot silently duplicate their music.
     @discardableResult
-    func addScoreParts(from review: ScoreDetectionReview) -> Int? {
+    func addScoreParts(from review: ScoreDetectionReview, sourceHeader: SourceHeaderSelection? = nil) -> Int? {
         guard isScoreDetectionCurrent(review), review.plan.canApply, !review.plan.bands.isEmpty,
               review.excludedPageReasons.values.allSatisfy({ !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }),
               Set(review.plan.pages.map(\.pageIndex)) == Set(review.analyses.map(\.pageIndex)).subtracting(review.excludedPageReasons.keys),
               review.plan.parts == review.profile.parts,
               Set(review.profile.parts.map { $0.name.lowercased() }).count == review.profile.parts.count else { return nil }
+        if let sourceHeader {
+            guard project.projectSettings.headerSelection == nil,
+                  sourceHeader.pageIndex >= 0, sourceHeader.pageIndex < project.pageCount,
+                  review.analyses.contains(where: { $0.pageIndex == sourceHeader.pageIndex }),
+                  review.excludedPageReasons[sourceHeader.pageIndex] == nil,
+                  [sourceHeader.topFraction, sourceHeader.bottomFraction, sourceHeader.leftFraction, sourceHeader.rightFraction]
+                    .allSatisfy({ $0.isFinite && $0 >= 0 && $0 <= 1 }),
+                  sourceHeader.topFraction < sourceHeader.bottomFraction,
+                  sourceHeader.leftFraction + sourceHeader.rightFraction < 1 else { return nil }
+        }
         let now = Date()
         var parts: [PartModel] = []
         var partIDs: [String: UUID] = [:]
@@ -685,6 +746,11 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             project.bands.append(contentsOf: bands)
             project.projectSettings.showPartNameInHeader = true
             project.projectSettings.instrumentationSetup = Self.instrumentationSetup(for: review.profile)
+            if let sourceHeader {
+                project.projectSettings.headerSelection = sourceHeader.normalized()
+                project.projectSettings.headerDisplayMode = .sourceSelection
+                project.projectSettings.showTitleBlock = true
+            }
         }
         selectedPartID = review.profile.parts.first.flatMap { partIDs[$0.id] }
         selectedBandID = bands.first?.id

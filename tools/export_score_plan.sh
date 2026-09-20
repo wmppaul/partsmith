@@ -12,6 +12,7 @@ xcrun swiftc -O -module-cache-path .build/ModuleCache \
   Partsmith/Core/Detection/ScoreExtractionPlanner.swift \
   Partsmith/Core/Detection/NativeScorePageAnalyzer.swift \
   Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift \
+  Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift \
   Partsmith/Core/Layout/PartLayoutEngine.swift \
   Partsmith/Core/Export/PartPDFExporter.swift \
   tools/export_score_plan.swift -o .build/export_score_plan

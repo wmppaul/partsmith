@@ -17,6 +17,15 @@ enum InstrumentNameTests {
         check(complete(), "OCR operation completed within the fixture timeout")
     }
 
+    static func checkLabelBounds(_ bounds: CGRect, at point: CGPoint, description: String) {
+        check(bounds.minX >= 0 && bounds.minY >= 0 && bounds.maxX <= 1 && bounds.maxY <= 1,
+              "\(description): highlight stays in normalized displayed-page space")
+        check(bounds.width > 0.025 && bounds.width < 0.20 && bounds.height > 0.004 && bounds.height < 0.03,
+              "\(description): highlight is a printed label, not the OCR search region or whole staff")
+        check(bounds.insetBy(dx: -0.008, dy: -0.004).contains(point),
+              "\(description): highlight encloses the clicked printed label in top-down coordinates")
+    }
+
     static func main() throws {
         typealias Candidate = ScoreInstrumentNameDetector.Candidate
         let clarinet = Candidate(text: "  Klarinette   in A  ", bounds: CGRect(x: 0.02, y: 0.22, width: 0.13, height: 0.015), confidence: 0.9)
@@ -55,6 +64,7 @@ enum InstrumentNameTests {
             print("Scan click \(point): \(result?.text ?? "nil")")
             check(result?.text == expected, "Real Trio label OCR matches clicked source: expected \(expected), got \(String(describing: result))")
             check(ScoreInstrumentNameDetector.suggestedStaffCount(for: result!.text) == staffCount, "Real label gives appropriate editable staff count")
+            checkLabelBounds(result!.bounds, at: point, description: "Raw \(expected)")
         }
         check(ScoreInstrumentNameDetector.recognize(in: image, at: CGPoint(x: 0.07, y: 0.15)) == nil, "Real blank margin creates no spurious part")
         check(ScoreInstrumentNameDetector.recognize(in: image, at: targets[0].0, isCancelled: { true }) == nil, "Cancelled request does no recognition")
@@ -71,14 +81,20 @@ enum InstrumentNameTests {
             let result = ScoreInstrumentNameDetector.recognize(in: correctedImage, at: point)
             check(result?.text == expected,
                   "Deskewed displayed label remains exact: expected \(expected), got \(String(describing: result))")
+            checkLabelBounds(result!.bounds, at: point, description: "Deskewed \(expected)")
             rectifiedDocument.isPickingInstrumentNames = true
             rectifiedDocument.pickInstrumentName(at: point, pageIndex: 0)
             waitFor { !rectifiedDocument.isRecognizingInstrumentName }
             check(rectifiedDocument.instrumentNamePick?.name == expected
                   && rectifiedDocument.instrumentNamePick?.suggestedStaffCount == staffCount,
                   "Document picking uses the deskewed display raster: \(expected)")
+            check(rectifiedDocument.instrumentNamePick?.bounds == result?.bounds,
+                  "The displayed highlight uses the recognized deskewed geometry without converting it back to the source")
         }
+        check(rectifiedDocument.instrumentNameHighlights.map(\.name) == targets.map { $0.1 },
+              "All three deskewed names remain highlighted in click order")
         rectifiedDocument.cancelInstrumentNamePicking()
+        check(rectifiedDocument.instrumentNameHighlights.isEmpty, "Finishing a deskewed picking session clears its highlights")
         let document = PartsmithDocument(sourcePDFData: sourceData)
         document.pickInstrumentName(at: targets[0].0, pageIndex: 0)
         check(document.instrumentNamePick == nil && !document.isRecognizingInstrumentName,
@@ -89,6 +105,9 @@ enum InstrumentNameTests {
         waitFor { !document.isRecognizingInstrumentName }
         check(document.instrumentNamePick?.name == "Klarinette in A" && document.instrumentNamePick?.pageIndex == 0,
               "Document returns clicked label as one event in displayed page coordinates")
+        checkLabelBounds(document.instrumentNamePick!.bounds, at: targets[0].0, description: "Document raw Klarinette")
+        check(document.instrumentNameHighlights == [document.instrumentNamePick!],
+              "Successful recognition immediately adds its visible label highlight")
         check(document.project.parts.isEmpty && document.project.bands.isEmpty,
               "A recognized label never directly creates score parts or crops")
         let firstEventID = document.instrumentNamePick?.id
@@ -96,16 +115,35 @@ enum InstrumentNameTests {
         waitFor { !document.isRecognizingInstrumentName }
         check(document.instrumentNamePick?.id != firstEventID,
               "Repeated deliberate clicks publish distinct events for UI review")
+        check(document.instrumentNameHighlights.count == 1
+              && document.instrumentNameHighlights.first == document.instrumentNamePick,
+              "Repeated clicks refresh a label without stacking duplicate highlights")
+        let firstHighlights = document.instrumentNameHighlights
         document.pickInstrumentName(at: targets[0].0, pageIndex: 0)
         document.pickInstrumentName(at: targets[2].0, pageIndex: 0)
+        check(document.instrumentNameHighlights == firstHighlights,
+              "Existing successful highlights stay visible while another label is being read")
         waitFor { !document.isRecognizingInstrumentName }
         check(document.instrumentNamePick?.name == "Pianoforte" && document.instrumentNamePick?.suggestedStaffCount == 2,
               "A newer click supersedes the pending result")
+        check(document.instrumentNameHighlights.map(\.name) == ["Klarinette in A", "Pianoforte"],
+              "A second instrument adds to the visible highlighted list")
+        let successfulHighlights = document.instrumentNameHighlights
+        document.pickInstrumentName(at: CGPoint(x: 0.07, y: 0.15), pageIndex: 0)
+        waitFor { !document.isRecognizingInstrumentName }
+        check(document.instrumentNamePick == nil && document.instrumentNamePickMessage != nil
+              && document.instrumentNameHighlights == successfulHighlights,
+              "An unreadable click leaves earlier successful labels highlighted")
+        document.currentPageIndex = 1
+        check(document.instrumentNameHighlights == successfulHighlights,
+              "Navigating keeps successful highlights associated with their original source page")
+        document.currentPageIndex = 0
         document.pickInstrumentName(at: targets[0].0, pageIndex: 0)
         document.cancelInstrumentNamePicking()
         RunLoop.main.run(until: Date().addingTimeInterval(0.15))
         check(!document.isPickingInstrumentNames && !document.isRecognizingInstrumentName
-              && document.instrumentNamePick == nil && document.instrumentNamePickMessage == nil,
+              && document.instrumentNamePick == nil && document.instrumentNamePickMessage == nil
+              && document.instrumentNameHighlights.isEmpty,
               "Stopping picking cancels pending recognition and clears transient results")
         document.isPickingInstrumentNames = true
         document.pickInstrumentName(at: CGPoint(x: 0.07, y: 0.15), pageIndex: 0)
@@ -119,17 +157,43 @@ enum InstrumentNameTests {
               "Page navigation rejects a stale OCR result")
         document.currentPageIndex = 0
         document.pickInstrumentName(at: targets[0].0, pageIndex: 0)
+        waitFor { !document.isRecognizingInstrumentName }
+        check(!document.instrumentNameHighlights.isEmpty, "A fresh session displays a successfully recognized name")
+        document.pickInstrumentName(at: targets[2].0, pageIndex: 0)
         document.project.pageRectifications = [.default(pageIndex: 0)]
+        check(document.instrumentNameHighlights.isEmpty && document.instrumentNamePick == nil,
+              "Rectification clears old highlight geometry immediately, before any pending OCR finishes")
         waitFor { !document.isRecognizingInstrumentName }
         check(document.instrumentNamePick == nil && document.instrumentNamePickMessage != nil,
               "Rectification changes reject a stale OCR result")
         document.project.pageRectifications = []
         document.pickInstrumentName(at: targets[0].0, pageIndex: 0)
+        waitFor { !document.isRecognizingInstrumentName }
+        check(!document.instrumentNameHighlights.isEmpty, "Recognizing on the restored raw page produces a current highlight")
+        document.pickInstrumentName(at: targets[2].0, pageIndex: 0)
         document.sourcePDFData = nil
+        check(document.instrumentNameHighlights.isEmpty && document.instrumentNamePick == nil,
+              "Replacing the source immediately removes old score highlights")
         waitFor { !document.isRecognizingInstrumentName }
         check(document.instrumentNamePick == nil && document.instrumentNamePickMessage != nil,
               "Source replacement rejects a stale OCR result")
         document.cancelInstrumentNamePicking()
+
+        let undoDocument = PartsmithDocument(sourcePDFData: sourceData)
+        undoDocument.project.pageCount = pdf.pageCount
+        let undoManager = UndoManager()
+        undoDocument.undoManager = undoManager
+        undoManager.beginUndoGrouping()
+        undoDocument.autoEstimateCurrentPageRectification()
+        undoManager.endUndoGrouping()
+        undoDocument.isPickingInstrumentNames = true
+        undoDocument.pickInstrumentName(at: targets[0].0, pageIndex: 0)
+        waitFor { !undoDocument.isRecognizingInstrumentName }
+        check(!undoDocument.instrumentNameHighlights.isEmpty, "A deskewed score has a visible highlight before undo")
+        undoManager.undo()
+        check(undoDocument.currentPageRectification == nil && undoDocument.instrumentNameHighlights.isEmpty,
+              "Undoing deskew invalidates highlights bound to the corrected page geometry")
+        undoDocument.cancelInstrumentNamePicking()
         print("\(checks) instrument-name recognition checks passed.")
     }
 }

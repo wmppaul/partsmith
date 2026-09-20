@@ -14,6 +14,53 @@ enum ScoreDocumentTests {
         while !complete() && Date() < deadline { RunLoop.main.run(until: Date().addingTimeInterval(0.01)) }
         check(complete(), "Background operation completed within the fixture timeout")
     }
+    static func checkRealSourceHeaderFlow() throws {
+        let source = try Data(contentsOf: URL(fileURLWithPath:
+            "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf"))
+        let profile = try JSONDecoder().decode(ScoreExtractionProfile.self,
+            from: Data(contentsOf: URL(fileURLWithPath: "Tests/full_scores/ave-compact-profile.json")))
+        let document = PartsmithDocument(sourcePDFData: source)
+        document.project.pageCount = PDFDocument(data: source)!.pageCount
+        let before = document.project
+        var completed = false
+        var detected: ScoreDetectionReview?
+        document.detectScore(profile: profile, findSourceHeader: true) { completed = true; detected = $0 }
+        waitFor { completed }
+        guard let review = detected, let header = review.suggestedSourceHeader else {
+            fatalError("Opt-in Auto must return the Ave Verum printed source header")
+        }
+        check(document.project == before && document.sourcePDFData == source,
+              "Real printed-header detection proposes its crop without changing the source or project")
+        check(header.pageIndex == 0 && header.bottomFraction < review.analyses[0].staves[0].staffLineFractions[0],
+              "Real opt-in Auto locates the opening printed header entirely above the first staff")
+        check(review.plan.canApply && review.plan.bands.count == 64,
+              "Printed-header detection preserves all 64 Ave Verum instrument assignments")
+        check(document.addScoreParts(from: review, sourceHeader: header) == 64
+              && document.project.parts.count == 8
+              && document.project.projectSettings.headerSelection == header.normalized(),
+              "The real detected header passes the native all-part transaction with every instrument")
+        let persisted = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(document.project))
+        let reopened = PartsmithDocument(project: persisted, sourcePDFData: source)
+        check(reopened.project.projectSettings.headerSelection == header.normalized()
+              && reopened.project.projectSettings.headerDisplayMode == .sourceSelection
+              && reopened.project.projectSettings.showTitleBlock,
+              "The real automatic header remains selected after saving and reopening the project")
+        let plan = try PartLayoutEngine.makePlan(project: reopened.project,
+            pageBoundsProvider: { reopened.pdfDocument?.page(at: $0)?.bounds(for: .mediaBox) },
+            partID: reopened.project.parts[0].id)
+        let sourceBounds = reopened.pdfDocument!.page(at: header.pageIndex)!.bounds(for: .mediaBox)
+        let expectedHeaderRect = header.cropRect(in: sourceBounds)
+        let actualHeaderRect = plan.headerPlacement?.sourceRect ?? .zero
+        check(plan.headerPlacement?.sourcePageIndex == header.pageIndex
+              && abs(actualHeaderRect.minX - expectedHeaderRect.minX) < 0.000001
+              && abs(actualHeaderRect.minY - expectedHeaderRect.minY) < 0.000001
+              && abs(actualHeaderRect.width - expectedHeaderRect.width) < 0.000001
+              && abs(actualHeaderRect.height - expectedHeaderRect.height) < 0.000001,
+              "The production layout uses the detected printed crop from the saved source page")
+        let pdf = try PartPDFExporter.previewDocument(for: reopened.project.parts[0].id, in: reopened)
+        check(pdf.pageCount > 0, "The reopened automatic printed header reaches the production part exporter")
+        print("Ave Verum opt-in header: page \(header.pageIndex + 1), top \(header.topFraction), bottom \(header.bottomFraction)")
+    }
     static func main() throws {
         let source = try Data(contentsOf: URL(fileURLWithPath: "Partsmith/Resources/Fixtures/SampleScoreFixture.pdf"))
         let profile = ScoreExtractionProfile(parts: [
@@ -34,6 +81,7 @@ enum ScoreDocumentTests {
               "Detection alone never mutates parts or crops before review")
         check(document.scoreDetectionProgress == nil, "Completed Auto clears its progress state")
         check(document.isScoreDetectionCurrent(review), "Unchanged full-source review is current")
+        check(review.suggestedSourceHeader == nil, "Existing Auto callers do not opt into printed-header detection implicitly")
 
         var nonMusicReview = review
         nonMusicReview.analyses += [2, 3].map { page in
@@ -179,6 +227,110 @@ enum ScoreDocumentTests {
             check(pdf.pageCount > 0, "Every native Auto part reaches the production PDF exporter")
         }
 
+        let sourceHeader = SourceHeaderSelection(pageIndex: 0, topFraction: 0.025, bottomFraction: 0.12,
+            leftFraction: 0.08, rightFraction: 0.06)
+        let withHeader = PartsmithDocument(sourcePDFData: source)
+        withHeader.project.pageCount = PDFDocument(data: source)!.pageCount
+        withHeader.project.projectSettings.headerDisplayMode = .typed
+        withHeader.project.projectSettings.showTitleBlock = false
+        withHeader.project.projectSettings.defaultTitleText = "Existing typed title"
+        let headerUndo = UndoManager()
+        headerUndo.groupsByEvent = false
+        withHeader.undoManager = headerUndo
+        let beforeHeader = withHeader.project
+        headerUndo.beginUndoGrouping()
+        check(withHeader.addScoreParts(from: review, sourceHeader: sourceHeader) == 4,
+              "Auto can add the selected printed header with all instrument bands")
+        headerUndo.endUndoGrouping()
+        let afterHeader = withHeader.project
+        check(afterHeader.projectSettings.headerSelection == sourceHeader
+              && afterHeader.projectSettings.headerDisplayMode == .sourceSelection
+              && afterHeader.projectSettings.showTitleBlock,
+              "Accepting a printed header enables its exact source crop on every part")
+        check(afterHeader.projectSettings.defaultTitleText == "Existing typed title",
+              "Choosing a printed header retains the existing editable title text")
+        headerUndo.undo()
+        check(withHeader.project == beforeHeader,
+              "One undo removes the automatic header and every part together, restoring header settings")
+        headerUndo.redo()
+        check(withHeader.project == afterHeader,
+              "One redo restores the exact source header and all instrument parts")
+        let persistedHeader = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(afterHeader))
+        check(persistedHeader.projectSettings.headerSelection == sourceHeader
+              && persistedHeader.projectSettings.headerDisplayMode == .sourceSelection,
+              "Saving and reopening retains the accepted printed header crop")
+        for part in afterHeader.parts {
+            let pdf = try PartPDFExporter.previewDocument(for: part.id, in: withHeader)
+            check(pdf.pageCount > 0, "A part with the accepted printed header reaches the production exporter")
+        }
+
+        let typedHeader = PartsmithDocument(sourcePDFData: source)
+        typedHeader.project.pageCount = withHeader.project.pageCount
+        typedHeader.project.projectSettings.headerDisplayMode = .typed
+        typedHeader.project.projectSettings.showTitleBlock = false
+        typedHeader.project.projectSettings.defaultTitleText = "Keep my title"
+        typedHeader.project.projectSettings.defaultComposerText = "Keep my composer"
+        check(typedHeader.addScoreParts(from: review) == 4
+              && typedHeader.project.projectSettings.headerDisplayMode == .typed
+              && !typedHeader.project.projectSettings.showTitleBlock
+              && typedHeader.project.projectSettings.headerSelection == nil
+              && typedHeader.project.projectSettings.defaultTitleText == "Keep my title"
+              && typedHeader.project.projectSettings.defaultComposerText == "Keep my composer",
+              "Adding parts without a source header preserves typed title, composer and visibility")
+
+        let manualHeader = PartsmithDocument(sourcePDFData: source)
+        manualHeader.project.pageCount = withHeader.project.pageCount
+        let priorHeader = SourceHeaderSelection(pageIndex: 1, topFraction: 0.04, bottomFraction: 0.15,
+            leftFraction: 0.12, rightFraction: 0.09)
+        manualHeader.project.projectSettings.headerSelection = priorHeader
+        let beforeManualHeader = manualHeader.project
+        check(manualHeader.addScoreParts(from: review, sourceHeader: sourceHeader) == nil
+              && manualHeader.project == beforeManualHeader,
+              "A competing automatic header cannot overwrite an existing manual header or partially add parts")
+        check(manualHeader.addScoreParts(from: review) == 4
+              && manualHeader.project.projectSettings.headerSelection == priorHeader,
+              "Auto still adds all parts while preserving an existing manually selected header")
+
+        var malformedHeaders: [SourceHeaderSelection] = []
+        for keyPath in [\SourceHeaderSelection.topFraction, \.bottomFraction, \.leftFraction, \.rightFraction] {
+            for badValue in [Double.nan, Double.infinity, -0.01, 1.01] {
+                var malformed = sourceHeader
+                malformed[keyPath: keyPath] = badValue
+                malformedHeaders.append(malformed)
+            }
+        }
+        var reversedHeader = sourceHeader
+        reversedHeader.topFraction = sourceHeader.bottomFraction
+        reversedHeader.bottomFraction = sourceHeader.topFraction
+        malformedHeaders.append(reversedHeader)
+        var zeroHeightHeader = sourceHeader
+        zeroHeightHeader.bottomFraction = sourceHeader.topFraction
+        malformedHeaders.append(zeroHeightHeader)
+        var zeroWidthHeader = sourceHeader
+        zeroWidthHeader.leftFraction = 0.5
+        zeroWidthHeader.rightFraction = 0.5
+        malformedHeaders.append(zeroWidthHeader)
+        for badPage in [-1, 2] {
+            var malformed = sourceHeader
+            malformed.pageIndex = badPage
+            malformedHeaders.append(malformed)
+        }
+        let invalidHeaderDocument = PartsmithDocument(sourcePDFData: source)
+        invalidHeaderDocument.project.pageCount = withHeader.project.pageCount
+        let beforeInvalidHeader = invalidHeaderDocument.project
+        for malformed in malformedHeaders {
+            check(invalidHeaderDocument.addScoreParts(from: review, sourceHeader: malformed) == nil
+                  && invalidHeaderDocument.project == beforeInvalidHeader
+                  && invalidHeaderDocument.sourcePDFData == source,
+                  "Invalid automatic header geometry or source page rejects the entire addition without mutation")
+        }
+        var excludedHeaderReview = review
+        excludedHeaderReview.excludedPageReasons[0] = "Blank page"
+        excludedHeaderReview.replan()
+        check(invalidHeaderDocument.addScoreParts(from: excludedHeaderReview, sourceHeader: sourceHeader) == nil
+              && invalidHeaderDocument.project == beforeInvalidHeader,
+              "A header on an excluded page cannot be applied with the remaining parts")
+
         let empty = PartsmithDocument(sourcePDFData: source)
         var invalid = review
         invalid.analyses.removeLast()
@@ -253,6 +405,9 @@ enum ScoreDocumentTests {
         setup.project.pageRectifications = [.default(pageIndex: 0)]
         waitFor { callback }
         check(stale == nil && setup.scoreDetectionProgress == nil, "In-flight rectification changes reject stale whole-score results")
+        // Apple Vision requires its local system service, so this integration
+        // check is opt-in when running the compiled test binary outside a restricted sandbox.
+        if CommandLine.arguments.contains("--source-header") { try checkRealSourceHeaderFlow() }
         print("PASS: \(checks) whole-score document assertions (background Auto, review gate, all-part apply, undo, persistence, production export, cancellation, stale guards)")
     }
 }

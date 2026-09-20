@@ -162,6 +162,18 @@ Validation: **55 instrument-name checks**, including the actual Brahms labels be
 
 Run the focused suites with `bash tools/test_instrument_names.sh`, `bash tools/test_rectification_flow.sh`, and `bash tools/test_score_document.sh`. Apple Vision and corrected-image rendering need ordinary local graphics service access.
 
+### On-score name feedback and automatic printed headers
+
+Recognized instrument names now keep a green outline and readable badge beside the printed label while picking. Earlier successful picks remain visible after later clicks, including unsuccessful clicks. Highlights follow the displayed raw or rectified page, clear when its source geometry changes, and never enter exported parts.
+
+The magic-wand setup also offers **Find the printed title and composer automatically**. Offline recognition locates a conservative source-image crop above the first music system. The review shows that crop with **Use Printed Header** and **Adjust on Score**; adding parts applies the untouched automatic header in the same undoable edit. Existing manual selections and typed-header preferences are preserved. Manual selection remains available if no suitable title is found.
+
+Validation for this update: **97 instrument-name checks**, **38 source-header checks**, and **106 document assertions** including the real Ave Verum detection/export path. Header crops received visual inspection on raw and deskewed Brahms Trio, Ave Verum, and Notte e giorno; continuation-page titles were rejected. Document checks cover persistence, per-part export, invalid bounds, existing manual selections, and combined header/parts undo and redo. The universal Release build passes.
+
+Live UI testing clicked all three printed Brahms Trio instrument labels and verified all three highlights and badges together. Auto produced a printed-header preview, assigned 393 bands, and added three 131-band parts after excluding the two non-music pages. The production part preview displayed the copied title and composer above the music. The smoke-test project is saved locally as `.build/Name-Header-UI-Smoke.partsmithproject`. These checks validate the new workflow; they do not constitute a fresh musical review of every crop.
+
+Run the additional checks with `bash tools/test_source_headers.sh` and `bash tools/test_score_document.sh --source-header`.
+
 ## Practical limits
 
 This workflow is robust about preserving source geometry, exposing uncertain results, retaining review evidence and refusing failed output. It is not unattended extraction for arbitrary scores. Staff detection cannot infer all instrument changes, shared markings or tacet duration. Small overlapping fragments can be masked only when the target ink is separately identifiable. Truly interleaved notation, severe scan distortion and musical page-turn planning still need informed review. The original failed clean-isolation test remains as evidence of unsafe cleanup; the new preservation result demonstrates the accepted alternative of retaining neighboring context.

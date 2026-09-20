@@ -20,6 +20,18 @@ struct ScoreExtractionView: View {
     @State private var showingDetectorNotes = true
     @State private var focusedCropID: String?
     @State private var errorMessage: String?
+    @State private var findPrintedHeader = true
+    @State private var includeSuggestedHeader = true
+    @State private var headerPreviewImage: CGImage?
+    @State private var headerSourceImage: CGImage?
+    @State private var headerSourcePageIndex: Int?
+
+    private var proposedHeader: SourceHeaderSelection? {
+        guard let review, let header = review.suggestedSourceHeader,
+              review.excludedPageReasons[header.pageIndex] == nil else { return nil }
+        return header
+    }
+    private var displayedHeader: SourceHeaderSelection? { document.headerSelection ?? proposedHeader }
 
     private var hasSourceCrops: Bool { !document.project.bands.isEmpty || document.project.projectSettings.headerSelection != nil }
     private var isRunning: Bool { document.scoreDetectionProgress != nil || document.isAutoEstimatingPageRectifications }
@@ -109,12 +121,15 @@ struct ScoreExtractionView: View {
                     staffCount: $0.name.localizedCaseInsensitiveContains("piano") ? 2 : 1) }
             }
             correctionPart = profile.parts.first?.id ?? ""
+            findPrintedHeader = document.headerSelection == nil && document.project.projectSettings.headerDisplayMode == .sourceSelection
+            updateHeaderPreview()
         }
         .onDisappear(perform: cancelWork)
         .onChange(of: document.instrumentNamePick?.id) { receiveInstrumentNamePick() }
         .onChange(of: document.sourcePDFData) { invalidateSourceReview() }
         .onChange(of: document.project.pageRectifications) { invalidateSourceReview() }
         .onChange(of: selectedPage) { updatePageImage() }
+        .onChange(of: document.headerSelection) { updateHeaderPreview() }
     }
 
     private var setupControls: some View {
@@ -181,6 +196,18 @@ struct ScoreExtractionView: View {
                 Button("Add Instrument", systemImage: "plus") {
                     profile.parts.append(ScorePartDefinition(id: UUID().uuidString, name: "New Instrument", staffCount: 1))
                 }
+                Divider()
+                Text("3. Printed score header").font(.headline)
+                if document.headerSelection != nil {
+                    Text("Your existing header selection will be kept.").foregroundStyle(.secondary)
+                    Button("Adjust Header on Score") { editHeaderOnScore() }
+                } else {
+                    Toggle("Find the printed title and composer automatically", isOn: $findPrintedHeader)
+                        .toggleStyle(.checkbox)
+                    Text("Auto finds a header above the first music system and shows a preview. The original score image will appear on the first page of each part.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                Divider()
                 Picker("Crop mode", selection: Binding(get: { profile.cropMode ?? "fixed" }, set: { profile.cropMode = $0 })) {
                     Text("Compact — follow notation").tag("compact")
                     Text("Fixed padding").tag("fixed")
@@ -328,6 +355,9 @@ struct ScoreExtractionView: View {
                         Button("Exclude This Page") { excludeCurrentPage(reason: "Non-music page excluded in Auto Extract.") }
                     }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
                 }
+                if findPrintedHeader || document.headerSelection != nil {
+                    sourceHeaderReview
+                }
                 if !currentDetectorNotes.isEmpty {
                     DisclosureGroup("Detector notes (\(currentDetectorNotes.count))", isExpanded: $showingDetectorNotes) {
                         VStack(alignment: .leading, spacing: 10) {
@@ -409,6 +439,74 @@ struct ScoreExtractionView: View {
         }
     }
 
+    private var sourceHeaderReview: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if let header = displayedHeader {
+                if document.headerSelection == nil {
+                    Toggle("Use Printed Header", isOn: $includeSuggestedHeader).toggleStyle(.checkbox)
+                } else {
+                    Text("Printed Header").font(.subheadline.bold())
+                    if document.project.projectSettings.headerDisplayMode != .sourceSelection || !document.project.projectSettings.showTitleBlock {
+                        Text("This saved header is not currently shown in the parts.")
+                            .font(.caption).foregroundStyle(.secondary)
+                        Button("Use This Header", action: activatePrintedHeader)
+                    }
+                }
+                if let image = headerPreviewImage {
+                    Image(decorative: image, scale: 1).resizable().scaledToFit()
+                        .frame(maxHeight: 110).background(.white)
+                        .accessibilityLabel("Printed score header from source page \(header.pageIndex + 1)")
+                }
+                HStack {
+                    Text("Source page \(header.pageIndex + 1)").font(.caption).foregroundStyle(.secondary)
+                    Spacer()
+                    Button("Adjust on Score") { editHeaderOnScore() }
+                }
+            } else {
+                Text("No printed header found").font(.subheadline.bold())
+                Button("Select Header on Score") { editHeaderOnScore() }
+            }
+        }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
+    }
+
+    private func updateHeaderPreview() {
+        guard let header = displayedHeader else { headerPreviewImage = nil; return }
+        if headerSourcePageIndex != header.pageIndex || headerSourceImage == nil {
+            headerSourceImage = document.scoreReviewImage(pageIndex: header.pageIndex)
+            headerSourcePageIndex = header.pageIndex
+        }
+        guard let image = headerSourceImage else { headerPreviewImage = nil; return }
+        let rect = CGRect(x: header.leftFraction * Double(image.width),
+            y: header.topFraction * Double(image.height),
+            width: (1 - header.leftFraction - header.rightFraction) * Double(image.width),
+            height: (header.bottomFraction - header.topFraction) * Double(image.height))
+        headerPreviewImage = image.cropping(to: rect.integral)
+    }
+
+    private func activatePrintedHeader() {
+        if document.project.projectSettings.headerDisplayMode != .sourceSelection {
+            document.updateProjectHeaderDisplayMode(.sourceSelection)
+        }
+        if !document.project.projectSettings.showTitleBlock {
+            document.updateProjectShowTitleBlock(true)
+        }
+    }
+
+    private func editHeaderOnScore() {
+        document.cancelInstrumentNamePicking()
+        if document.headerSelection == nil, let header = proposedHeader {
+            document.updateHeaderSelection(pageIndex: header.pageIndex,
+                topFraction: header.topFraction, bottomFraction: header.bottomFraction,
+                leftFraction: header.leftFraction, rightFraction: header.rightFraction)
+        }
+        if document.headerSelection == nil {
+            document.currentPageIndex = review?.analyses.first(where: { !$0.staves.isEmpty })?.pageIndex ?? 0
+        }
+        activatePrintedHeader()
+        document.setHeaderSelectionEditing(true)
+        onShowScore()
+    }
+
     private func setProfile(_ parts: [(String, Int)], lyricIndices: Set<Int> = []) {
         document.cancelInstrumentNamePicking()
         replaceListOnNextPick = false
@@ -478,6 +576,9 @@ struct ScoreExtractionView: View {
         document.cancelInstrumentNamePicking()
         review = nil
         pageImage = nil
+        headerPreviewImage = nil
+        headerSourceImage = nil
+        headerSourcePageIndex = nil
         selectedStaves.removeAll()
         if hadAnalysis { errorMessage = "The source or page alignment changed. Run Auto again to update the crops." }
     }
@@ -488,9 +589,11 @@ struct ScoreExtractionView: View {
         errorMessage = nil
         correctionPart = profile.parts.first?.id ?? ""
         document.saveScoreProfile(profile)
-        document.detectScore(profile: profile) { result in
+        document.detectScore(profile: profile, findSourceHeader: findPrintedHeader && document.headerSelection == nil) { result in
             guard let result else { errorMessage = "The source or rectification changed. Run Auto again."; return }
             review = result
+            includeSuggestedHeader = true
+            updateHeaderPreview()
             selectedPage = result.plan.pages.first(where: { !$0.unresolvedReasons.isEmpty })?.pageIndex ?? 0
             updatePageImage()
         }
@@ -518,6 +621,7 @@ struct ScoreExtractionView: View {
         change(&value)
         value.replan()
         review = value
+        updateHeaderPreview()
         errorMessage = nil
     }
 
@@ -526,6 +630,7 @@ struct ScoreExtractionView: View {
         do {
             let next = try value.excludePageAsNonMusic(selectedPage, reason: reason)
             review = value
+            updateHeaderPreview()
             errorMessage = nil
             if let next { selectedPage = next }
         } catch { errorMessage = error.localizedDescription }
@@ -627,10 +732,12 @@ struct ScoreExtractionView: View {
 
     private func applyReview() {
         guard let review else { return }
-        guard document.addScoreParts(from: review) != nil else {
+        let header = includeSuggestedHeader && document.headerSelection == nil ? proposedHeader : nil
+        guard document.addScoreParts(from: review, sourceHeader: header) != nil else {
             errorMessage = "The review is stale, incomplete, or a populated part already has one of these names. Resolve it before adding."
             return
         }
+        document.setHeaderSelectionEditing(false)
         onClose()
     }
 }

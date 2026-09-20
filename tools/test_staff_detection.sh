@@ -8,6 +8,7 @@ xcrun swiftc -O -module-cache-path .build/ModuleCache \
   Partsmith/Core/Detection/ScoreExtractionPlanner.swift \
   Partsmith/Core/Detection/NativeScorePageAnalyzer.swift \
   Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift \
+  Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift \
   Partsmith/Core/DocumentModel/ProjectModels.swift \
   Partsmith/Core/DocumentModel/PageRectificationEstimator.swift \
   Partsmith/Core/DocumentModel/BarNumberDetector.swift \

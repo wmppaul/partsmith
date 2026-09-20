@@ -24,10 +24,10 @@ Reviewed examples and the evaluation record are in [output/pdf](output/pdf) and 
 2. Drag a full-score PDF into the center pane.
 3. Click the prominent **Auto Extract** magic wand. You can move and resize its window while using the score.
 4. For scanned pages, optionally choose **Deskew & Align Pages** first. Existing corrections are kept. This step is available before crop bands have been created.
-5. Choose a starting profile, type instrument names, or use **Pick Names from Score → Start a New List** and click the printed labels from top to bottom. **Add to This List** keeps existing entries. Names and staff counts stay editable; a piano grand staff uses two.
-6. Run **Auto**. Check the proposed crops and any flagged assignments. Blank or catalogue pages can be excluded with one click and restored if needed.
+5. Choose a starting profile, type instrument names, or use **Pick Names from Score → Start a New List** and click the printed labels from top to bottom. **Add to This List** keeps existing entries. Recognized names stay highlighted on the score with readable labels. Names and staff counts stay editable; a piano grand staff uses two.
+6. Leave **Find the printed title and composer automatically** enabled to copy the score header. Run **Auto**, then check the header preview, proposed crops, and any flagged assignments. Use **Adjust on Score** to refine the header or turn off **Use Printed Header** to skip it. Blank or catalogue pages can be excluded with one click and restored if needed.
 7. Choose **Add Parts**. No acknowledgement checkbox or typed exclusion reason is required; adding remains one undoable edit.
-8. Set a source header or typed title in the Inspector, then inspect each part in **Preview**. Adjust crop edges, section breaks, or padding as needed.
+8. Inspect each part in **Preview**. The detected printed header is copied to the first page of each part; existing manual headers and typed titles are kept unless you change them. Adjust crop edges, section breaks, or padding as needed.
 9. Use **Export All** in Source mode to create a folder containing one PDF per part. Manual **New Part** and crop drawing remain available.
 
 ## What Is Implemented

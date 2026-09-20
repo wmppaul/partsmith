@@ -9,6 +9,8 @@ struct ScoreInstrumentNamePick: Identifiable, Equatable {
     let name: String
     let suggestedStaffCount: Int
     let pageIndex: Int
+    /// Tight label bounds in the same normalized top-down page space as clicks.
+    let bounds: CGRect
 }
 
 enum ScoreInstrumentNameDetector {
