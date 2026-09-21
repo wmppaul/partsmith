@@ -39,7 +39,7 @@ def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
-def live_native_process(progress_path, executable, score):
+def live_native_process(progress_path, executable, score, exporter=None):
     """Validate an orphan worker before any resumed invocation touches its files."""
     if not progress_path.exists():
         return None
@@ -53,7 +53,8 @@ def live_native_process(progress_path, executable, score):
     except (ProcessLookupError, subprocess.CalledProcessError):
         return None
     # PID alone could have been reused. Confirm the actual executable too.
-    if str(executable) not in command:
+    expected = exporter if previous.get("phase") == "export" else executable
+    if expected is None or str(expected) not in command:
         return None
     return {"processID": pid, "observedCommand": command, "observedAt": now(),
             "progressPath": str(progress_path)}
@@ -68,6 +69,64 @@ def validate_inventory(path, score):
     if [page["pageIndex"] for page in inventory["pages"]] != list(range(score["pageCount"])):
         raise ValueError("Native inventory page indices missing, duplicated or reordered")
     return inventory
+
+
+def validate_exports(directory, score, profile, plan):
+    """Bind all generated parts to the complete plan, without claiming musical QA."""
+    manifest = read(directory / "manifest.json")
+    if manifest["sourceSHA256"] != score["sha256"] or manifest.get("reviewedOverrides"):
+        raise ValueError("Export changed source identity or introduced unrequested manual overrides")
+    if manifest["profile"] != profile or manifest.get("rectifications"):
+        raise ValueError("Export does not match the selected raw-profile workflow")
+    planned = collections.defaultdict(list)
+    for page in plan["pages"]:
+        for band in page["assignments"]:
+            planned[band["partID"]].append(band)
+    parts = manifest["parts"]
+    if [part["id"] for part in parts] != [part["id"] for part in profile["parts"]]:
+        raise ValueError("Export omitted, duplicated or reordered requested instruments")
+    for part in parts:
+        expected = planned[part["id"]]
+        actual = part["placements"]
+        if part["bandCount"] != len(expected) or len(actual) != len(expected) or part["outputPages"] < 1:
+            raise ValueError("Export does not contain every planned band")
+        for band, placement in zip(expected, actual):
+            if (placement["id"], placement["sourcePage"], placement["system"], placement["candidateIDs"]) != \
+               (band["id"], band["pageIndex"] + 1, band["systemIndex"] + 1, band["candidateIDs"]):
+                raise ValueError("Export changed planned source identity or order")
+        if digest(directory / part["file"]) != part["sha256"]:
+            raise ValueError("Exported PDF hash differs from its manifest")
+    package = directory / manifest["project"]
+    if not package.is_dir() or digest(package / "source.pdf") != score["sha256"]:
+        raise ValueError("Editable project is absent or does not embed the immutable source")
+    project = read(package / "project.json")["project"]
+    if project["pageCount"] != score["pageCount"] or project.get("pageRectifications"):
+        raise ValueError("Editable project changed the source page scope or correction geometry")
+    if [p["name"] for p in project["parts"]] != [p["name"] for p in profile["parts"]]:
+        raise ValueError("Editable project changed requested instruments or their order")
+    if len(project["bands"]) != sum(len(bands) for bands in planned.values()):
+        raise ValueError("Editable project omitted or added source bands")
+    for requested, saved in zip(profile["parts"], project["parts"]):
+        expected = planned[requested["id"]]
+        actual = [b for b in project["bands"] if b["partID"] == saved["id"]]
+        if len(actual) != len(expected):
+            raise ValueError("Editable project changed an instrument's source bands")
+        for band, saved_band in zip(expected, actual):
+            if saved_band["pageIndex"] != band["pageIndex"] or saved_band.get("excluded", False):
+                raise ValueError("Editable project changed band order or excluded notation")
+            for edge in ("topFraction", "bottomFraction", "leftFraction", "rightFraction"):
+                if abs(saved_band.get(edge, 0) - band.get(edge, 0)) > 1e-9:
+                    raise ValueError("Editable project changed a planned crop boundary")
+    return manifest
+
+
+def export_title(score):
+    # The input filename is a source identifier, not a transcription of the
+    # printed title. Keep that distinction explicit in these diagnostic exports.
+    title = re.sub(r"^\d+_", "", Path(score["path"]).stem)
+    title = re.sub(r"_?(?:imslp_?|cpdl|mutopia)\d+", "", title, flags=re.I)
+    title = title.replace("_", " ").replace("-", " ").strip().title()
+    return title + (" — Excerpt QC" if score["sourceKind"] != "original_download" else " — Auto QC")
 
 
 def run_logged(command, log_path, progress_path, progress):
@@ -100,6 +159,7 @@ def main():
     parser.add_argument("--executable", default=".build/score_extraction_batch")
     parser.add_argument("--out", default=".build/auto-qc/baseline")
     parser.add_argument("--inventory-only", action="store_true")
+    parser.add_argument("--exporter", help="Frozen native exporter; writes every part when the complete plan is resolved")
     parser.add_argument("--jobs", type=int, default=1, choices=(1, 2, 3), help="Independent native inventory workers; default 1")
     parser.add_argument("--id", action="append", help="Limit to exact corpus ID; repeatable")
     parser.add_argument("--baseline-git-revision", help="Defaults to current git HEAD")
@@ -108,6 +168,9 @@ def main():
     args = parser.parse_args()
     corpus_path = (ROOT / args.corpus).resolve()
     executable = (ROOT / args.executable).resolve()
+    exporter = (ROOT / args.exporter).resolve() if args.exporter else None
+    if exporter is not None and (args.inventory_only or not exporter.is_file() or not os.access(exporter, os.X_OK)):
+        raise SystemExit("--exporter needs an executable file and cannot be combined with --inventory-only")
     out = (ROOT / args.out).resolve()
     out.mkdir(parents=True, exist_ok=True)
     lock = (out / "runner.lock").open("a+")
@@ -125,7 +188,9 @@ def main():
     revision = args.baseline_git_revision or subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     exe_hash = digest(executable)
     binding = {"nativeExecutable": str(executable), "nativeExecutableSHA256": exe_hash,
-               "baselineGitRevision": revision, "corpusSHA256": digest(corpus_path)}
+              "baselineGitRevision": revision, "corpusSHA256": digest(corpus_path)}
+    if exporter:
+        binding.update(exporterExecutable=str(exporter), exporterSHA256=digest(exporter))
     adopted = {}
     for value in args.adopt_inventory:
         path = (ROOT / value).resolve()
@@ -168,7 +233,7 @@ def main():
         publish(row)
         print(f"[{index}/{len(selected)}] {score['id']} ({score['pageCount']} pages)", flush=True)
         try:
-            live = live_native_process(progress_path, executable, score)
+            live = live_native_process(progress_path, executable, score, exporter)
             if live is not None:
                 row.update(analysisStatus="already_running", liveProcess=live)
                 publish(row)
@@ -235,11 +300,45 @@ def main():
                     row.update(planPath=str(plan_path), profilePath=score["profilePath"],
                                profileSHA256=digest(profile_path), bandCount=len(bands), unresolvedPages=unresolved,
                                extractionStatus="unresolved_native_plan" if unresolved else "planned_visual_review_pending")
+                    if not bands and not unresolved:
+                        row["extractionStatus"] = "no_musical_bands"
+                    if exporter and bands and not unresolved:
+                        row["extractionStatus"] = "exporting"
+                        if digest(exporter) != binding["exporterSHA256"]:
+                            raise RuntimeError("Frozen exporter changed during the run")
+                        export_dir = target / "parts"
+                        title = export_title(score)
+                        export_key = {"inventorySHA256": digest(inventory_path), "planSHA256": digest(plan_path),
+                                      "profileSHA256": digest(profile_path), "exporterSHA256": binding["exporterSHA256"],
+                                      "title": title}
+                        export_cache = target / "export-cache.json"
+                        reused = False
+                        if export_cache.exists() and read(export_cache).get("key") == export_key:
+                            try:
+                                manifest = validate_exports(export_dir, score, read(profile_path), plan)
+                                reused = digest(export_dir / "manifest.json") == read(export_cache)["manifestSHA256"]
+                            except (OSError, KeyError, ValueError):
+                                pass
+                        if not reused:
+                            command = [str(exporter), "--inventory", str(inventory_path), "--profile", str(profile_path),
+                                       "--title", title, "--out", str(export_dir)]
+                            code = run_logged(command, target / "export.log", progress_path,
+                                              {**row, **binding, "phase": "export"})
+                            if code:
+                                raise RuntimeError(f"Native export exited {code}; inspect {target / 'export.log'}")
+                            manifest = validate_exports(export_dir, score, read(profile_path), plan)
+                            write(export_cache, {"key": export_key, "manifestSHA256": digest(export_dir / "manifest.json")})
+                        row.update(extractionStatus="exported_visual_review_pending", exportDirectory=str(export_dir),
+                                   exportManifestSHA256=digest(export_dir / "manifest.json"), reusedExport=reused,
+                                   projectMetadataSHA256=digest(export_dir / manifest["project"] / "project.json"),
+                                   exportedParts=len(manifest["parts"]), outputPages=sum(p["outputPages"] for p in manifest["parts"]))
             write(target / "result.json", {**row, **binding})
             write(progress_path, {**row, **binding, "phase": "finished", "processID": None, "finishedAt": now()})
         except Exception as error:
             if row["analysisStatus"] != "complete":
                 row["analysisStatus"] = "error"
+            if row["extractionStatus"] == "exporting":
+                row["extractionStatus"] = "native_export_error"
             row["error"] = str(error)
             write(target / "result.json", {**row, **binding})
             write(progress_path, {**row, **binding, "phase": "error", "processID": None, "finishedAt": now()})

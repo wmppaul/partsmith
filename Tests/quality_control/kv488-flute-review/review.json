@@ -1,0 +1,126 @@
+{
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/02_multibar_rest_parts/mozart_piano_concerto_no23_kv488_flute_mutopia2229.pdf",
+  "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+  "scope": "All five physical input pages; 36 printed music systems on pages1\u20134. Page5 is an unfinished third-movement placeholder, not a complete third movement.",
+  "reviewer": "root full-source/full-output visual comparison",
+  "sourceMusicSystemsPerPage": [
+    9,
+    10,
+    10,
+    7,
+    0
+  ],
+  "sourcePrintedSystemStartBars": [
+    [
+      1,
+      14,
+      20,
+      26,
+      42,
+      47,
+      54,
+      60,
+      66
+    ],
+    [
+      86,
+      106,
+      111,
+      129,
+      143,
+      164,
+      174,
+      182,
+      190,
+      204
+    ],
+    [
+      210,
+      218,
+      237,
+      242,
+      253,
+      283,
+      290,
+      297,
+      304,
+      310
+    ],
+    [
+      1,
+      19,
+      39,
+      52,
+      71,
+      81,
+      93
+    ],
+    []
+  ],
+  "baseline": {
+    "manifestSHA256": "1e7e845d6786636e7f1917328b89ee683153fdd3d155c2d32325f8a1f939889e",
+    "pdfSHA256": "5cb2e284c6d0c0b801daa8f6b3d9376e7468d775fc27509aa2f5b97397580f36",
+    "outputPages": 4,
+    "systems": 36,
+    "reviewedOutputPages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "targetNotes": "No omitted or clipped own-staff notes, ledger lines, slurs, articulations or dynamics seen across the36 systems.",
+    "printedRests": "Existing multi-bar rest counts, SOLO/TUTTI labels, source bar numbers and fermata retained visually; this does not test automatic rest counting.",
+    "defects": [
+      "Allegro on sourcepage1 and Andante on sourcepage4 absent.",
+      "Movement labels/title/composer are not retained by the diagnostic filename header.",
+      "Original publisher footer is included after page1 final system; original running headers/page number fragments occur within output.",
+      "Clipped KV488 header fragments remain above first music in movementsI/II."
+    ],
+    "layout": "Four pages, music in source order, no observed clipping at output page edges or strip overprint; substantial fill. MovementII begins mid outputpage4 without its original heading in baseline.",
+    "qualityStatus": "draft_quality_failed"
+  },
+  "experimentalHeadingRun": {
+    "inventory": ".build/auto-qc/flute-directions/inventory.json",
+    "inventorySHA256": "b6890d657a9276c629d6c326b027a8c8429b8d1e9b72b64b5e1ac9aed8a65a14",
+    "manifestSHA256": "0cc434867f29f4c69105f9c3b0ec811454ebe23df12007d498a56354e7c27630",
+    "pdfSHA256": "8b4b089833c44e9af1f1da828688bba25ab51456647aad042956e6bdaadede2f",
+    "outputPages": 4,
+    "all36MainCropsUnchanged": true,
+    "detectedHeadings": [
+      {
+        "sourcePage": 1,
+        "text": "Allegro",
+        "sourceFontBounds": [
+          128.66127014160156,
+          104.30812072753906,
+          175.09231567382812,
+          118.25434875488281
+        ],
+        "exportedSourceRect": [
+          125.32441266352279,
+          98.68058188288376,
+          176.64175041146558,
+          121.19554936986663
+        ]
+      },
+      {
+        "sourcePage": 4,
+        "text": "Andante",
+        "sourceFontBounds": [
+          120.15625,
+          106.14912414550781,
+          175.43194580078125,
+          120.09535217285156
+        ],
+        "exportedSourceRect": [
+          119.25026508932582,
+          101.28724353115354,
+          177.52450305553606,
+          120.50995805301466
+        ]
+      }
+    ],
+    "visualResult": "Both complete original tempo labels retained in actual exported source fragments with clean space around letters. Both inspected at216dpi. The other recorded header/footer defects remain.",
+    "scope": "CLI-only shared-heading recognition, not enabled in the app default. Candidate review covers two added copies and exact equality of all36 main source rectangles, not a new all-page visual pass."
+  }
+}

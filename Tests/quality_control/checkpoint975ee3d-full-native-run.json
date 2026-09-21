@@ -1,0 +1,1302 @@
+{
+  "schemaVersion": 1,
+  "baselineGitRevision": "975ee3d",
+  "nativeExecutableSHA256": "7d699e00fe21c82eb9a9892be9e1bdf906f68053d3d997e34bdcb4c90dfd6aca",
+  "exporterSHA256": "22b5619fac1db2096ae38ba885e6581578a0a1120a60d0a5cd4c3843c8f4783e",
+  "corpusSHA256": "03a6c870bc0529f6daa575bdbb7d2f21651d0398e1810663f9983c985b8eff09",
+  "aggregateSHA256": "2e2b39ed910e2647b6a84d7ca4f29722a28832bee239b0639666784a8f4d5821",
+  "scope": "Every PDF in sample_scores recursively plus Tests/extraction/sources. Excludes generated extraction outputs, app bundles, build artifacts and exported parts elsewhere.",
+  "summary": {
+    "completedInputPDFs": 36,
+    "completedInputPages": 1477,
+    "analysisStatuses": {
+      "complete": 36
+    },
+    "extractionStatuses": {
+      "exported_visual_review_pending": 16,
+      "unresolved_native_plan": 20
+    }
+  },
+  "exportedParts": 77,
+  "outputPages": 597,
+  "outputBands": 6324,
+  "all36InventoriesReusedOnResume": true,
+  "all16ExportsReusedOnResume": true,
+  "all16GeometryChecksPassed": true,
+  "workflow": "Raw original pages; complete initialized roster profiles; native analyzer/planner/apply/layout/export. No crop overrides or excerpt substitution. Diagnostic filename titles. Experimental heading/navigation recognition, printed-header selection, automatic rest compression and optional rectification not enabled.",
+  "qualityStatus": "drafts_only; visual musical comparison and unresolved system assignments remain required",
+  "scores": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "path": "Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "pageCount": 2,
+      "totalDetectedStaves": 36,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 36,
+      "profilePath": "Tests/quality_control/profiles/excerpt-beethoven-op67-pages-7-8.json",
+      "profileSHA256": "d1998d086414c831b3e22031fff15b9cad1e4916f5886250858666405fce2e82",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/excerpt-beethoven-op67-pages-7-8/parts",
+      "manifestSHA256": "30e846dd8dadd37fb128233a4d37694c1c9f6ef2798b2582e741156a41c4653b",
+      "projectMetadataSHA256": "63039b14f75d22c01a39bc0d9e66a025a7ccce0b0c5334a3231a67d6ed61f9dc",
+      "reusedExport": true,
+      "geometryReportSHA256": "aeed1f8ba5ca1510cc4981ff9da622a921c129ba878681a998a4be7dc9de569a",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "flutes",
+          "name": "Flutes I\u2013II",
+          "file": "Flutes I\u2013II.pdf",
+          "sha256": "840b4cd8dac4599f30c067ea26a8923c45528774edccc08b38ec287367e5fc44",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "oboes",
+          "name": "Oboes I\u2013II",
+          "file": "Oboes I\u2013II.pdf",
+          "sha256": "105dbeb1315e24ba5fd7a0fc1b2ecd605d0932c605fd1b3d286a42f81cfb385f",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "clarinets",
+          "name": "Clarinets I\u2013II",
+          "file": "Clarinets I\u2013II.pdf",
+          "sha256": "df490ebd13a7777cdc09688de9d7e5321b6d0e1a1ca98ca5d4e35708c47ff78a",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "bassoons",
+          "name": "Bassoons I\u2013II",
+          "file": "Bassoons I\u2013II.pdf",
+          "sha256": "30ae77f2e4bcc972407c194a4bf908f842bba66a17cfb771966d6932e45d1bbd",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "horns",
+          "name": "Horns I\u2013II",
+          "file": "Horns I\u2013II.pdf",
+          "sha256": "87d4288f93431e65c560d9d4cfe2d970e332515ae088d684c32ffc4f6e797d0a",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "trumpets",
+          "name": "Trumpets I\u2013II",
+          "file": "Trumpets I\u2013II.pdf",
+          "sha256": "895b665ef918b2eea351bf65f6a970fc8836309b03741ed038f34eb778a41cbb",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "timpani",
+          "name": "Timpani",
+          "file": "Timpani.pdf",
+          "sha256": "9a385a83317c21729a8bf7ce4784b272b37e70acb00ea13cc4093c215209414b",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "baac65597ad906797319fb6098e71adf506f814debf2ce0bc7dfc15afd05193a",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "f0fa9081859aecea6bf3d246986a414a7ab60aceafd04dddf62647c74e51a1c0",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "509d72ad4e386dd096d2b184d29e462b4fa6d79a730636454cbfcb85a7b26236",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "7fdf312c2991f230c57fb04ac6d5638a6091d9a9ba0e6727eabc49bcfab40615",
+          "outputPages": 1,
+          "bandCount": 3
+        },
+        {
+          "id": "bass",
+          "name": "Double bass",
+          "file": "Double bass.pdf",
+          "sha256": "43f8e83efd0e2b89b47b7c846c51eb4c98310d772148037d8e3451ac4fd3f6c9",
+          "outputPages": 1,
+          "bandCount": 3
+        }
+      ]
+    },
+    {
+      "id": "excerpt-mozart-k488-page-17",
+      "path": "Tests/extraction/sources/mozart-k488-page-17.pdf",
+      "sourceSHA256": "9e7a091795bbc85fc8da0794afd791c8540ec3268a1e516204a08aa82244f121",
+      "pageCount": 1,
+      "totalDetectedStaves": 18,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/excerpt-mozart-k488-page-17.json",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec",
+      "reusedInventory": true,
+      "unresolvedPageCount": 1,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 1
+      }
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "path": "sample_scores/lightly_skewed/01_mozart_piano_quartet_k478_imslp_478563.pdf",
+      "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "pageCount": 52,
+      "totalDetectedStaves": 781,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 612,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "reusedInventory": true,
+      "unresolvedPageCount": 1,
+      "unresolvedReasons": {
+        "Found 16 staves; the reviewed profile expects 5 per system. Review missing staves or changing instrumentation; no assignments were guessed.": 1
+      }
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "path": "sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "pageCount": 35,
+      "totalDetectedStaves": 524,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 393,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+      "profileSHA256": "a304d05dd5337eb342c7dc5de489a797ce9be9e6ef9385b5f218c198b04632d4",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/parts",
+      "manifestSHA256": "cde71eabc03b8dca875329952933dcd8930fadf01e812c0e3344b6c3628d05c9",
+      "projectMetadataSHA256": "5526ba683823c58ca9d1b62cfaf96b4bbea8f4c7e95a63d064deedfb97fe36ff",
+      "reusedExport": true,
+      "geometryReportSHA256": "c27725328f8b66ccd08246a74b133aa5eefb8d4282c61fd143c4865e9d4cd450",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "clarinet",
+          "name": "Clarinet in A",
+          "file": "Clarinet in A.pdf",
+          "sha256": "3363800da237b044da518fd715939c9e056a8c6ae878376685b57f22015cb031",
+          "outputPages": 10,
+          "bandCount": 131
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "ee86bd607a79e24404384d8d8a3c8389b8bb4f89b53383197c18075c1eb68e59",
+          "outputPages": 10,
+          "bandCount": 131
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "238f60a82d157ef0a95a6d511631dcdb222bd5c48720c2df33d90d13916f80fe",
+          "outputPages": 23,
+          "bandCount": 131
+        }
+      ]
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803",
+      "path": "sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "pageCount": 86,
+      "totalDetectedStaves": 1926,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803.json",
+      "profileSHA256": "f1ef4af7e76f2c94d86046b2ce2329c3bb936636f60a50805fdb682592a915a7",
+      "reusedInventory": true,
+      "unresolvedPageCount": 86,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 86
+      }
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222",
+      "path": "sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "pageCount": 77,
+      "totalDetectedStaves": 1465,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222.json",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2",
+      "reusedInventory": true,
+      "unresolvedPageCount": 77,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 77
+      }
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "path": "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "pageCount": 16,
+      "totalDetectedStaves": 231,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 154,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922.json",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/parts",
+      "manifestSHA256": "866a977e3b25b0a4f584be0275ad60de93e385af056279f5ef06525cb3c93a28",
+      "projectMetadataSHA256": "c46441c14898e95ea181c5895a0f966e9bf331b5c42a5559ce6b7ec84f0a147c",
+      "reusedExport": true,
+      "geometryReportSHA256": "c15bb48429390698d8df86a0e0b75260298b06c3be6468b3029bc6e26a90fe0f",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "voice",
+          "name": "Voice",
+          "file": "Voice.pdf",
+          "sha256": "19a2ec83977ddb26c85d4299e20c07cf95198c016b5b618a8feffb7b06d756f8",
+          "outputPages": 7,
+          "bandCount": 77
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "655a380ba004aa54ae0c0d2176f94fe125a0601f24890c16ad8edd17d4dd087c",
+          "outputPages": 12,
+          "bandCount": 77
+        }
+      ]
+    },
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "path": "sample_scores/lightly_skewed/06_puccini_la_boheme_sc67_imslp_885132.pdf",
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "pageCount": 277,
+      "totalDetectedStaves": 3249,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132.json",
+      "profileSHA256": "65053ac9613472e147df337c0e9dd6dbde87e69b68ff6d2357fdc04aa63cc066",
+      "reusedInventory": true,
+      "unresolvedPageCount": 277,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 277
+      }
+    },
+    {
+      "id": "lightly-skewed-07-brahms-2-motets-op74-imslp-101579",
+      "path": "sample_scores/lightly_skewed/07_brahms_2_motets_op74_imslp_101579.pdf",
+      "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+      "pageCount": 18,
+      "totalDetectedStaves": 292,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-07-brahms-2-motets-op74-imslp-101579.json",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e",
+      "reusedInventory": true,
+      "unresolvedPageCount": 17,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 17
+      }
+    },
+    {
+      "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+      "path": "sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+      "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+      "pageCount": 10,
+      "totalDetectedStaves": 186,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+      "profileSHA256": "9d669e5786b2c44264242b1c28b63897f92c5932943b49ac39d5c4a3a14d5675",
+      "reusedInventory": true,
+      "unresolvedPageCount": 10,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 10
+      }
+    },
+    {
+      "id": "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040",
+      "path": "sample_scores/lightly_skewed/09_brahms_gesang_der_parzen_op89_imslp_109040.pdf",
+      "sourceSHA256": "9ba9d999930da2d109304c745fcf5e5568b8a33fd4349a77d95317da9a1c0ea4",
+      "pageCount": 27,
+      "totalDetectedStaves": 568,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040.json",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d",
+      "reusedInventory": true,
+      "unresolvedPageCount": 26,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 26
+      }
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "path": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "pageCount": 26,
+      "totalDetectedStaves": 480,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 480,
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/parts",
+      "manifestSHA256": "7b3ea4703b54f320632dec44f2d8ced401b8d25199058a4eda42d82b4022c0a4",
+      "projectMetadataSHA256": "9df67acd18abd7dc57c34729bc3ef169efe93ed6e80b1ca24a501af376d13639",
+      "reusedExport": true,
+      "geometryReportSHA256": "bb6aad666d4128f74a0edd2bca13e41f513aa42d102bb0ccb95b73aec1ce19a1",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "4debfd4fd263c7caebc7a15652aad742509f9c4a22503b4bdf0b27754aa92889",
+          "outputPages": 11,
+          "bandCount": 120
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "fea02925d34f1493ababf0a0f797586a5b4821edc0eed7e57807aec4f5639d70",
+          "outputPages": 10,
+          "bandCount": 120
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "d4802bd918217f7d64a099aa0ec561415d2b7e3c23787f0bfbd0fe1b8c76d63a",
+          "outputPages": 10,
+          "bandCount": 120
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "b5921d14a8a660030c8a41cff017dddbb1433cef699873cc0819385023bbb06a",
+          "outputPages": 10,
+          "bandCount": 120
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "path": "sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "pageCount": 30,
+      "totalDetectedStaves": 595,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 476,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/parts",
+      "manifestSHA256": "82db7a9ce431cdbb8112d554303e5d68894861f5c9e99bb006e0c75d3da06335",
+      "projectMetadataSHA256": "679e51901e7b76cb1aafd8ce32f2cf226288cba5b2514a76cd6cbc1ec2940d1c",
+      "reusedExport": true,
+      "geometryReportSHA256": "97523f4f77823ad865b66dea1caaf7e9c5c6ec8410d90cbe4fc3c5a8119ed43f",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin",
+          "name": "Violin",
+          "file": "Violin.pdf",
+          "sha256": "8ffc22a029e8067eab3e5e2a50f08b27a45f7d2fdb2efea7398a8e8d9f78e5e3",
+          "outputPages": 8,
+          "bandCount": 119
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "5cefe61eac3765db1f1608838926d74c3188f32ebb8eeb03b817d30d4aa1d3b3",
+          "outputPages": 8,
+          "bandCount": 119
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "754911e8009053b78a4ce1d9cb683af840fe8a81e138d437bb3156d53a898970",
+          "outputPages": 9,
+          "bandCount": 119
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "2a0342201beb052abd7f703d2a74a3a1238a13bd0c8edd45f10425d95bb9eb36",
+          "outputPages": 18,
+          "bandCount": 119
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "path": "sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "pageCount": 35,
+      "totalDetectedStaves": 524,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 393,
+      "profilePath": "Tests/trio_medium/profile.json",
+      "profileSHA256": "d91fe375f2a3f4582d889b588ffdcbe637a42d45caf0cfccbf3cb9263dc5b9ee",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/parts",
+      "manifestSHA256": "78b16283646055603b2d65510eb4c28190eca1086a8f976b3730b805f093ad8f",
+      "projectMetadataSHA256": "a19d1ec9b767e45778ce70d5ae4e7534367d5675a9314c5a23073ae8384997ec",
+      "reusedExport": true,
+      "geometryReportSHA256": "041940120004fa881c789d900b4e7ce934235946d0c692ea70bdec40c95d3c4c",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "clarinet",
+          "name": "Clarinet in A",
+          "file": "Clarinet in A.pdf",
+          "sha256": "a080c19f5c78e6d94f2657329a60ff6e849b547df94895e769654d5ad441dcd7",
+          "outputPages": 10,
+          "bandCount": 131
+        },
+        {
+          "id": "cello",
+          "name": "Cello",
+          "file": "Cello.pdf",
+          "sha256": "e45038986baeef1effe137f123ab0fbdd7fe1bb2d11ef421119a6d23177264ea",
+          "outputPages": 10,
+          "bandCount": 131
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "9b85dd7159b3a43dcb2a3f14fb62dd9b1b0719bb15f02ac8e75627bcada9d61f",
+          "outputPages": 23,
+          "bandCount": 131
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "path": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "pageCount": 56,
+      "totalDetectedStaves": 990,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 825,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "profileSHA256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts",
+      "manifestSHA256": "4b7608cd5f7dcd5749afcc3e2c3b952e5918ddbad782561a744729b25ace1967",
+      "projectMetadataSHA256": "a465cbf8998916e752545863cc902c17b0a23a5bc1ac282352891dfa73d85d18",
+      "reusedExport": true,
+      "geometryReportSHA256": "6071884072e5f477a783fa78e7ba29755c29f22bf264eddcd4f3f8f9c4347d54",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "6dee3dd221845e4704451d0796f3bd4256215e6f37e785859e99bfe7b9c430a0",
+          "outputPages": 12,
+          "bandCount": 165
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "33591b147655beea68df9a17064fb02675443569a30a5cc1d8eadce468679e37",
+          "outputPages": 12,
+          "bandCount": 165
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "fdb5991d55cbf770b9a7e1659799a2e01e84bd0d57bc7aea6ee9f3510c783c1e",
+          "outputPages": 12,
+          "bandCount": 165
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "9fa80205e3bbaf109bff1dce59dde705c3a7eb650ef8a7f0a9040472282e79df",
+          "outputPages": 11,
+          "bandCount": 165
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "b2da151b2a2917ab13d93dadd010ac0f204ef9065be6113af1523a77d2f696e0",
+          "outputPages": 26,
+          "bandCount": 165
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506",
+      "path": "sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "pageCount": 80,
+      "totalDetectedStaves": 1465,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506.json",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2",
+      "reusedInventory": true,
+      "unresolvedPageCount": 77,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 77
+      }
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "path": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "pageCount": 25,
+      "totalDetectedStaves": 480,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 480,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/parts",
+      "manifestSHA256": "b28fa215a8c83af4ad4b89d8b27f7b5ae4608142fa26fb7bf49682c5cbe96ed5",
+      "projectMetadataSHA256": "3ded465d70363dd46e31e66819bcb294e12cfd11c52eda32d890afaddf3cbe54",
+      "reusedExport": true,
+      "geometryReportSHA256": "93859e8a3a4ce69d1fbc41a6efc137ad60e82084fabe17773eb8d4c2e9829faa",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "424f8c04d0dd3c15879a6fab08dbdb6a0f1728722a3c9a70cee7f53fc4e7a914",
+          "outputPages": 11,
+          "bandCount": 120
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "359fbb1ba3d34c703743eaf7d518d7e1e5b6e63d924442b901e4dd0e48323e7b",
+          "outputPages": 10,
+          "bandCount": 120
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "d3c5fa7aebb07716af2ce5bc8653775905340e33625e4dd52c70a06da63ddefb",
+          "outputPages": 10,
+          "bandCount": 120
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "15d25c03235e9f9d0c2fc82287b139127dafb3553f1bdd96cb9fa086f151f4e0",
+          "outputPages": 10,
+          "bandCount": 120
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "pageCount": 39,
+      "totalDetectedStaves": 604,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 604,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/parts",
+      "manifestSHA256": "42ddc5022ef0e22512d8ccb0c350253bd9483a136d520592d0840ec3df647672",
+      "projectMetadataSHA256": "fda60df5f23386f2d244a6f701728b170ec3430a6ccc36b00c108ee076f14e0d",
+      "reusedExport": true,
+      "geometryReportSHA256": "4b70b22ff0909bf50de8eac870b95f4da32cbe69ebf4711c407ec713ca77efc2",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "d4f0ceb088fc854d55f19e054da04c8e8bee75843cc7ee0b642c449dce6037af",
+          "outputPages": 17,
+          "bandCount": 151
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "1d17335962e785b0614a765d7c6dcc07d93e29f7e46fa565170fcb734e2c89de",
+          "outputPages": 16,
+          "bandCount": 151
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "5616bb8e859c42bb707b02cfd414d781fd5149a5da06f774de97da10ffe5b22a",
+          "outputPages": 16,
+          "bandCount": 151
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "2a92bc59edc8fea04c957267988698a5f203456c24d2cb862e060f98913e1e41",
+          "outputPages": 15,
+          "bandCount": 151
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-07-brahms-2-motets-op74-imslp-101580",
+      "path": "sample_scores/medium_skewed/07_brahms_2_motets_op74_imslp_101580.pdf",
+      "sourceSHA256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+      "pageCount": 18,
+      "totalDetectedStaves": 292,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-07-brahms-2-motets-op74-imslp-101580.json",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e",
+      "reusedInventory": true,
+      "unresolvedPageCount": 17,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 17
+      }
+    },
+    {
+      "id": "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041",
+      "path": "sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+      "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+      "pageCount": 27,
+      "totalDetectedStaves": 568,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d",
+      "reusedInventory": true,
+      "unresolvedPageCount": 26,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 26
+      }
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "path": "sample_scores/medium_skewed/09_schumann_frauenliebe_und_leben_op42_imslp_51733.pdf",
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "pageCount": 18,
+      "totalDetectedStaves": 231,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 154,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/parts",
+      "manifestSHA256": "b32f3fd30b54c6ce66d4c2dae4486f817e5db6f840825c989dfd8b0d1f8de526",
+      "projectMetadataSHA256": "bc3d380630e8f49d819f00b649d5be69a2ad9bf95ab39c9526568972fad073b3",
+      "reusedExport": true,
+      "geometryReportSHA256": "21fba8ea47ef95ee3280d85406eae85b5977da1c99505d76b7c12e445d8ad101",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "voice",
+          "name": "Voice",
+          "file": "Voice.pdf",
+          "sha256": "e7f56391f078ebfc64c18a11a88d4f28f1f94f34caf50fd6fb54e305b92af976",
+          "outputPages": 7,
+          "bandCount": 77
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "42a2019d84f7a71d1c5d2e6c8de950ad2167fe41d5c7ce8e1de68d315e5c3aee",
+          "outputPages": 12,
+          "bandCount": 77
+        }
+      ]
+    },
+    {
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "path": "sample_scores/medium_skewed/10_schubert_winterreise_d911_imslp_00414.pdf",
+      "sourceSHA256": "030e03434d994e1974719f13f62861c21091d22af35ee832a0e1ffde17a4efc3",
+      "pageCount": 70,
+      "totalDetectedStaves": 1023,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "reusedInventory": true,
+      "unresolvedPageCount": 68,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 68
+      }
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "path": "sample_scores/normal/01_chamber/mozart_piano_quartet_kv478_score.pdf",
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "pageCount": 55,
+      "totalDetectedStaves": 825,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 660,
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-piano-quartet-kv478-score.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/normal-mozart-piano-quartet-kv478-score/parts",
+      "manifestSHA256": "fecbc333b1eac56647ead9a487a719b69d4589f6be12b2e39ae1a8a930f00e69",
+      "projectMetadataSHA256": "8422e94d9a83930d0395ca161b92340fe049f2c58f8b787e011bf84f849bc889",
+      "reusedExport": true,
+      "geometryReportSHA256": "14d6c7c358a8c532dd5c0a6d5017bf4954beb359ade8c0ac3eb05e3b5f722547",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin",
+          "name": "Violin",
+          "file": "Violin.pdf",
+          "sha256": "403a39518ef81b32f1a51cdfe6a5ac3a728f68ec7c60152aa8c6ab91445ce39b",
+          "outputPages": 12,
+          "bandCount": 165
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "56a8ed33276af540f6508b73f3a3a7f73fe1462c77455e542dc5fe6db9b4d340",
+          "outputPages": 10,
+          "bandCount": 165
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "508e9959d8e3b363dafa23a130766a9386f95d9a6c3bfb91b6e873f25d5475d6",
+          "outputPages": 11,
+          "bandCount": 165
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "fda4023b5bd450ca6f84c0f8a5cea82b8215fc359a544adc30178e1812410537",
+          "outputPages": 25,
+          "bandCount": 165
+        }
+      ]
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "path": "sample_scores/normal/01_chamber/mozart_string_quartet_kv387_score.pdf",
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "pageCount": 31,
+      "totalDetectedStaves": 520,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 520,
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-string-quartet-kv387-score.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/normal-mozart-string-quartet-kv387-score/parts",
+      "manifestSHA256": "02433519c1635319831ae2e05952fbdd2bcc869fbf1e4618ab635ff344072e4b",
+      "projectMetadataSHA256": "bf6776c23f3dcc64ae14e16d9f3c29d609fbce88763492fcec520f33588d9627",
+      "reusedExport": true,
+      "geometryReportSHA256": "1a618273cf569418cbf1e5a42711be4fdb9c07f765858b9b43335f8ed5baa9dd",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "b119f69bad131c4fbd0f660bc1b936a8e9f8fc6b5feaf53d5ef084cfaa75cfc3",
+          "outputPages": 12,
+          "bandCount": 130
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "c070d90357f86c0ba16e312eb2178195e32aaf387470758d6b8707bd147f9f5b",
+          "outputPages": 11,
+          "bandCount": 130
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "a3f998511afce924ff59d61e9e52e48b527ba0a4dcc161a0622c4b519e65c766",
+          "outputPages": 11,
+          "bandCount": 130
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "f2592a2b6a07f5d87a1e82dc1b23dd57e00dac4a2ee26aec48cc72c69c33aabe",
+          "outputPages": 10,
+          "bandCount": 130
+        }
+      ]
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "pageCount": 29,
+      "totalDetectedStaves": 540,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 405,
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+      "profileSHA256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/normal-mozart-trio-eb-major-kv498-score/parts",
+      "manifestSHA256": "9e75e263aab07c54bb72bda65ef6acc174cfcf427c75ce2616664018af9f50f7",
+      "projectMetadataSHA256": "9050e499597397aeb1a1a0f09cdb6c2075024138d14a9dd5d51b1ddcb2a59b3c",
+      "reusedExport": true,
+      "geometryReportSHA256": "5bd8967f394baa9aab1d44d9a43afc84d6a396d2c35719f3e313fbb5615cc7d9",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "clarinet",
+          "name": "Clarinet in B-flat",
+          "file": "Clarinet in B-flat.pdf",
+          "sha256": "4563fd3c9814d1dcafe49cb6ffcab18cc103682587c879f735ca1358206b6c72",
+          "outputPages": 11,
+          "bandCount": 135
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "c89bd299ac2564a689bb2c14d4f31c59da53ccba5083ad617152b4215f87a570",
+          "outputPages": 10,
+          "bandCount": 135
+        },
+        {
+          "id": "piano",
+          "name": "Piano",
+          "file": "Piano.pdf",
+          "sha256": "ee40e0108fb44edd3aa3eb7d38a95e4cdb64a2f62c74a8b377064139d0ff318b",
+          "outputPages": 17,
+          "bandCount": 135
+        }
+      ]
+    },
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score",
+      "path": "sample_scores/normal/02_orchestra/beethoven_egmont_overture_op84_score.pdf",
+      "sourceSHA256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "pageCount": 50,
+      "totalDetectedStaves": 700,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/normal-beethoven-egmont-overture-op84-score.json",
+      "profileSHA256": "07091c381ca6849b1eca060704eca5db8558f6e0796bed089a6bbdae600d67c0",
+      "reusedInventory": true,
+      "unresolvedPageCount": 50,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 50
+      }
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "path": "sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "pageCount": 43,
+      "totalDetectedStaves": 644,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 644,
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-magic-flute-overture-kv620-score.json",
+      "profileSHA256": "5e24430e52731c391582d8202bbaa49076b35abd301d2a687439ff9f6e358bd9",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/normal-mozart-magic-flute-overture-kv620-score/parts",
+      "manifestSHA256": "9fb0f511c0538e929862026d2a5c8fb1ed3a9cdca7ef9be06383dbf0709026bb",
+      "projectMetadataSHA256": "28310cd42c7111795d30f5508aa3e8cca8dba30635464db1ea234d8a33538946",
+      "reusedExport": true,
+      "geometryReportSHA256": "1c595bc7db545a179a819710cda45807a69388750e647b141a098ad391872ed6",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "flutes",
+          "name": "Flutes I\u2013II",
+          "file": "Flutes I\u2013II.pdf",
+          "sha256": "4cc8812346960709d4916e539fc0a5ec4ace20ab5b9ad2bb2304a6479fa8245f",
+          "outputPages": 4,
+          "bandCount": 46
+        },
+        {
+          "id": "oboes",
+          "name": "Oboes I\u2013II",
+          "file": "Oboes I\u2013II.pdf",
+          "sha256": "075484472aa08afffba525a7a4bdc766057ef087e46c0dbc6e97e3978d60c320",
+          "outputPages": 4,
+          "bandCount": 46
+        },
+        {
+          "id": "clarinets",
+          "name": "Clarinets I\u2013II",
+          "file": "Clarinets I\u2013II.pdf",
+          "sha256": "71f710339e4170a3d2f55bee3db63bd9389d6ba0f6a5331796c2e240f5558241",
+          "outputPages": 4,
+          "bandCount": 46
+        },
+        {
+          "id": "bassoons",
+          "name": "Bassoons I\u2013II",
+          "file": "Bassoons I\u2013II.pdf",
+          "sha256": "a2b3077c997b2f8c64af8f9ac2c7ac156c31c6db636314c069220c1a0d681986",
+          "outputPages": 4,
+          "bandCount": 46
+        },
+        {
+          "id": "horns",
+          "name": "Horns I\u2013II",
+          "file": "Horns I\u2013II.pdf",
+          "sha256": "1a827d3141cc6c8d57a22ad5a69388af82122eb2b6624ce52e36a8fed5829e1c",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "trumpets",
+          "name": "Trumpets I\u2013II",
+          "file": "Trumpets I\u2013II.pdf",
+          "sha256": "50e840294fa0ad7803c1b270eaa82615a63d662b24f5e95d5f2023895c51fbc1",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "trombones12",
+          "name": "Alto and tenor trombones",
+          "file": "Alto and tenor trombones.pdf",
+          "sha256": "3096f87dc5a40a4c7e8184a28fa4868cac4982d29181358b6e10d8c0687748b8",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "trombone3",
+          "name": "Bass trombone",
+          "file": "Bass trombone.pdf",
+          "sha256": "e8d816625481eb5938d65ba7d1085c6f5d2708dce5d45bc7a2d955672119f7ef",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "timpani",
+          "name": "Timpani",
+          "file": "Timpani.pdf",
+          "sha256": "27f504687fe785b6728ae1cabd11ef3110b439c65ed9c17ffc295bfc7eec914b",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "violin1",
+          "name": "Violin I",
+          "file": "Violin I.pdf",
+          "sha256": "24a2c741dfac219536e09b6142828f8771a9947c51badc8eb581a659028147fe",
+          "outputPages": 4,
+          "bandCount": 46
+        },
+        {
+          "id": "violin2",
+          "name": "Violin II",
+          "file": "Violin II.pdf",
+          "sha256": "cb0ac300086f028042fd9a8072d3c5b6a0e7822271a4d7b14e673099eb20ea4f",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "4c90e4125e3f15326204a44657e4aef06b2b321345d6c02fcdd7bd19cf598977",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "cello",
+          "name": "Violoncello",
+          "file": "Violoncello.pdf",
+          "sha256": "fb8a8b5c2c740ab8f9fd831a25327c1657cc67889105c4382831e05b98dca8a8",
+          "outputPages": 3,
+          "bandCount": 46
+        },
+        {
+          "id": "bass",
+          "name": "Double bass",
+          "file": "Double bass.pdf",
+          "sha256": "af2104cedb6ee4e21b117929c2c2ea67d1060cd37c22cf831f708a128dd1ab1e",
+          "outputPages": 3,
+          "bandCount": 46
+        }
+      ]
+    },
+    {
+      "id": "normal-mozart-symphony-no18-kv130-score",
+      "path": "sample_scores/normal/02_orchestra/mozart_symphony_no18_kv130_score.pdf",
+      "sourceSHA256": "250d3c5c97b013174ca4fea63a9e856c268e1cdbc76a6445efb86b02df82119e",
+      "pageCount": 37,
+      "totalDetectedStaves": 567,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-symphony-no18-kv130-score.json",
+      "profileSHA256": "5ae22ebcd4ec9563788365159711ffdcb1c66b2c6d871fdb9037a82428cd21d6",
+      "reusedInventory": true,
+      "unresolvedPageCount": 37,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 37
+      }
+    },
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "path": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "pageCount": 4,
+      "totalDetectedStaves": 58,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/notte-variable-initialization.json",
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac",
+      "reusedInventory": true,
+      "unresolvedPageCount": 4,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 4
+      }
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "path": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "pageCount": 11,
+      "totalDetectedStaves": 140,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/normal-schubert-erlkonig-d328-score.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "reusedInventory": true,
+      "unresolvedPageCount": 11,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 11
+      }
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "path": "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+      "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+      "pageCount": 6,
+      "totalDetectedStaves": 77,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+      "profileSHA256": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a",
+      "reusedInventory": true,
+      "unresolvedPageCount": 6,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 6
+      }
+    },
+    {
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+      "path": "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+      "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "pageCount": 4,
+      "totalDetectedStaves": 64,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 64,
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json",
+      "profileSHA256": "e48364de833ac87180e5b8c20f54b91d4bc86972d576c9c6a34797d54291d310",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/parts",
+      "manifestSHA256": "a1071eead1a90d6f8d33758503e86865b097f55da1402bbd80eb44ffec9274df",
+      "projectMetadataSHA256": "0a4b6f32bc78f332718dc80f985bf1dbbb78e6d3b6ba0b36dbf028ca9dbdef9f",
+      "reusedExport": true,
+      "geometryReportSHA256": "fbb3ab373242edd6c11694ce9da369ed9dc224f4c08e8a0ad1a06b16fffd774b",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "soprano",
+          "name": "Soprano",
+          "file": "Soprano.pdf",
+          "sha256": "734eb63582f33c7c25b41468b7eb283f53874ab190a2a5b3ee1d1ce48368c589",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "alto",
+          "name": "Alto",
+          "file": "Alto.pdf",
+          "sha256": "11bb32bfa89f3f4de257e2b89b1bd0e2192a89c6136a2d87af42ba5ef83a9c49",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "tenore",
+          "name": "Tenore",
+          "file": "Tenore.pdf",
+          "sha256": "50ebbf96f42491c5097f4050b6486d11a4edd2872aee757b380f7247766b32a7",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "basso",
+          "name": "Basso",
+          "file": "Basso.pdf",
+          "sha256": "cd1695fc18746063a5f3f735d09841dc1d544d4edc273dd10b8571df94d43c35",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "violin1",
+          "name": "Violino I",
+          "file": "Violino I.pdf",
+          "sha256": "8f109b7cfe9512343a4a77f4fd42cb90e908d03c8f8ca1c8ec50ce94a765f868",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "violin2",
+          "name": "Violino II",
+          "file": "Violino II.pdf",
+          "sha256": "2fa09b6afd38192f207383290eeb56c462f4f2e99da4164ee22e9c10c3b62d6b",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "viola",
+          "name": "Viola",
+          "file": "Viola.pdf",
+          "sha256": "b681cdb05c7e1ef37e8c849ee8080e0b8b38189d21850cc315f721ad7c98e40a",
+          "outputPages": 1,
+          "bandCount": 8
+        },
+        {
+          "id": "bass_organ",
+          "name": "Basso ed Organo",
+          "file": "Basso ed Organo.pdf",
+          "sha256": "9cdd59905a905faaac9c3301fe065a8a604c1a8a3351f29bf01cc246fc5bf771",
+          "outputPages": 1,
+          "bandCount": 8
+        }
+      ]
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "pageCount": 106,
+      "totalDetectedStaves": 1997,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624.json",
+      "profileSHA256": "9acfd39a14077691c38143b1ebc3e9d6f41585d9f9505c32518bfd357da5761d",
+      "reusedInventory": true,
+      "unresolvedPageCount": 99,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 99
+      }
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437",
+      "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_mvt2_mutopia1437.pdf",
+      "sourceSHA256": "1fc0bc2c8942c65d25f4939ae272b20b37e112b63f9bb2f5b63ddf8826c88cb3",
+      "pageCount": 35,
+      "totalDetectedStaves": 440,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437.json",
+      "profileSHA256": "a1299f6cc3dc14ffb4dea12bedbcf255ea88da203e5a6d88c9feb089f8e5ab9e",
+      "reusedInventory": true,
+      "unresolvedPageCount": 35,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 35
+      }
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229",
+      "path": "sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf",
+      "sourceSHA256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+      "pageCount": 36,
+      "totalDetectedStaves": 662,
+      "extractionStatus": "unresolved_native_plan",
+      "bandCount": 0,
+      "profilePath": "Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec",
+      "reusedInventory": true,
+      "unresolvedPageCount": 36,
+      "unresolvedReasons": {
+        "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions.": 36
+      }
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+      "path": "sample_scores/rest_detection/02_multibar_rest_parts/mozart_piano_concerto_no23_kv488_flute_mutopia2229.pdf",
+      "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "pageCount": 5,
+      "totalDetectedStaves": 36,
+      "extractionStatus": "exported_visual_review_pending",
+      "bandCount": 36,
+      "profilePath": "Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229.json",
+      "profileSHA256": "c7fcc6cf0d738d7926e3d4825e05ad14fcf5cc72c87f276d2c76054e2fbdb435",
+      "reusedInventory": true,
+      "exportDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/checkpoint975ee3d/corpus/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/parts",
+      "manifestSHA256": "1e7e845d6786636e7f1917328b89ee683153fdd3d155c2d32325f8a1f939889e",
+      "projectMetadataSHA256": "0b49a4044a42cd1536ed07b754ea239bb1acc65a1b3d336616cf6abe79de6279",
+      "reusedExport": true,
+      "geometryReportSHA256": "66a464756e2ab88a11cb9ef86617a26a150e2f643ba96e150f35f642f9e615cf",
+      "geometryStatus": "pass",
+      "musicalQuality": "not_established_by_automated_checks",
+      "parts": [
+        {
+          "id": "flute",
+          "name": "Flute",
+          "file": "Flute.pdf",
+          "sha256": "5cb2e284c6d0c0b801daa8f6b3d9376e7468d775fc27509aa2f5b97397580f36",
+          "outputPages": 4,
+          "bandCount": 36
+        }
+      ]
+    }
+  ]
+}

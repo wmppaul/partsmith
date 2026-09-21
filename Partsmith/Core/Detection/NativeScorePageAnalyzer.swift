@@ -173,7 +173,87 @@ enum NativeScorePageAnalyzer {
                             }
                             return Double(rows) >= Double(coreBottom - coreTop) * 0.88
                         }
-                        guard throughBothCores else { continue }
+                        // Local page curl can move all five
+                        // staff lines away from their page-center estimates. Only
+                        // sustained horizontal ink at every predicted line can
+                        // translate the core used for this connector check.
+                        // The original 88% core support threshold is unchanged.
+                        func localCoreShift(_ staffIndex: Int) -> Double? {
+                            let staffSpace = spaces[staffIndex]
+                            let radius = max(1, Int((staffSpace * 0.75).rounded()))
+                            let flankLength = max(8, Int((staffSpace * 3).rounded()))
+                            let flankGap = max(3, Int((staffSpace * 0.5).rounded()))
+                            let flanks = [max(0, clearLeft - flankGap - flankLength)..<max(0, clearLeft - flankGap),
+                                          min(width, clearRight + flankGap)..<min(width, clearRight + flankGap + flankLength)]
+                            var bestShift: Int? = nil
+                            var bestScore = -1.0
+                            for shift in -radius...radius {
+                                var total = 0.0
+                                var weakest = 1.0
+                                for line in lines[staffIndex] {
+                                    var bestFlank = 0.0
+                                    for flank in flanks where flank.count >= flankLength {
+                                        var supported = 0
+                                        for column in flank {
+                                            let y = Int((line + slope * (Double(column) - Double(width) / 2)).rounded()) + shift
+                                            if (-1...1).contains(where: { delta in
+                                                y + delta >= 0 && y + delta < height && original[(y + delta) * width + column]
+                                            }) { supported += 1 }
+                                        }
+                                        bestFlank = max(bestFlank, Double(supported) / Double(flank.count))
+                                    }
+                                    weakest = min(weakest, bestFlank)
+                                    total += bestFlank
+                                }
+                                guard weakest >= 0.80 else { continue }
+                                if total > bestScore || (total == bestScore && abs(shift) < abs(bestShift ?? radius + 1)) {
+                                    bestScore = total
+                                    bestShift = shift
+                                }
+                            }
+                            return bestShift.map { Double($0) }
+                        }
+                        var upperCoreShift = localShift, lowerCoreShift = localShift
+                        if !throughBothCores {
+                            guard let upper = localCoreShift(index), let lower = localCoreShift(index + 1) else { continue }
+                            upperCoreShift += upper
+                            lowerCoreShift += lower
+                            let localCoresSupported = [(index, upperCoreShift), (index + 1, lowerCoreShift)].allSatisfy { staffIndex, shift in
+                                let top = max(0, Int((lines[staffIndex][0] + shift).rounded()))
+                                let bottom = min(height, Int((lines[staffIndex][4] + shift).rounded()) + 1)
+                                guard top < bottom else { return false }
+                                let supported = (top..<bottom).filter { y in
+                                    (clearLeft..<clearRight).contains { original[y * width + $0] }
+                                }.count
+                                return Double(supported) >= Double(bottom - top) * 0.88
+                            }
+                            guard localCoresSupported else { continue }
+                            // A translated core can meet 88% support merely
+                            // because staff lines fill the missing end of a long
+                            // musical stem. Require a real vertical junction at
+                            // every line, including both outer staff boundaries.
+                            let allJunctionsIntact = [(index, upperCoreShift), (index + 1, lowerCoreShift)].allSatisfy { staffIndex, shift in
+                                let radius = max(2, Int((spaces[staffIndex] * 0.18).rounded()))
+                                return lines[staffIndex].enumerated().allSatisfy { lineIndex, line in
+                                    let center = Int((line + shift).rounded())
+                                    let lower = lineIndex == 0 ? 0 : -radius
+                                    let upper = lineIndex == 4 ? 0 : radius
+                                    // The staff detector stores fractional rows;
+                                    // permit one pixel of raster rounding at a
+                                    // junction, still requiring the full vertical
+                                    // run rather than horizontal line occupancy.
+                                    return (-1...1).contains { rounding in
+                                        (clearLeft..<clearRight).contains { column in
+                                            (lower...upper).allSatisfy { delta in
+                                                let row = center + rounding + delta
+                                                return row >= 0 && row < height && original[row * width + column]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            guard allJunctionsIntact else { continue }
+                        }
                         // Cutting only at the midpoint leaves long connector
                         // tails that spuriously enlarge both crops. Remove the
                         // inter-staff structure while retaining horizontal ink
@@ -181,8 +261,8 @@ enum NativeScorePageAnalyzer {
                         // Staff positions describe the page center. Applying the
                         // same tilt here avoids rejecting true edge barlines or
                         // leaving connector tails on skewed source pages.
-                        let localStart = min(height, max(0, Int((Double(start) + localShift).rounded())))
-                        let localEnd = max(0, min(height, Int((Double(end) + localShift).rounded())))
+                        let localStart = min(height, max(0, Int((Double(start) + upperCoreShift).rounded())))
+                        let localEnd = max(0, min(height, Int((Double(end) + lowerCoreShift).rounded())))
                         guard localStart < localEnd else { continue }
                         for y in localStart..<localEnd {
                             let branchesLeft = (max(0, clearLeft - 2)..<clearLeft).contains { original[y * width + $0] }

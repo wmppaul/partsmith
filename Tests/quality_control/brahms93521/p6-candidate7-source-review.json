@@ -1,0 +1,45 @@
+{
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "guardSHA256": "68cfb8129745ee811fb0712ac21b700251484c2ae54350302cd5c1761efaa743",
+  "manifestSHA256": "bbccb75b44492bd81726acaca5cca20bb1a947237aab9ce6ae67d4260cdea35a",
+  "reviewer": "root independent source-first visual review",
+  "scope": "Only page6 system1 Viola and Violoncello; complete Quartet quality remains unresolved.",
+  "results": [
+    {
+      "part": "Viola",
+      "pdf": ".build/qc-algorithm-audit/candidate7-parts/Viola.pdf",
+      "pdfSHA256": "3bed9aaa1f489c8cd41f655e2d8c2ae2924487e20a42b76e66e843d3ac8bb520",
+      "outputPage": 2,
+      "sourceRect": [
+        0,
+        88.42503863987633,
+        427,
+        139.60432766615145
+      ],
+      "sourceEnvelopeContained": true,
+      "landmarksContained": true,
+      "targetPreservation": "All source notes, clef, key signature, ledger lines, slurs, hairpins and p retained in inspected actual exported strip.",
+      "neighborNotation": "Violin II low notes, slurs and dynamics remain above; Cello high notes and slurs remain below, but no complete Cello staff.",
+      "layout": "No overprint with previous or next exported band in inspected page2 context.",
+      "reviewImage": ".build/qc-algorithm-audit/candidate7-parts/Viola-p6s1-review.png"
+    },
+    {
+      "part": "Violoncello",
+      "pdf": ".build/qc-algorithm-audit/candidate7-parts/Violoncello.pdf",
+      "pdfSHA256": "b123b8b861f0b5746b9ca48e7a7fd9d3793aca329bc43a1cb95b231f020d10fc",
+      "outputPage": 2,
+      "sourceRect": [
+        0,
+        117.84389489953634,
+        427,
+        171.15842349304484
+      ],
+      "sourceEnvelopeContained": true,
+      "landmarksContained": true,
+      "targetPreservation": "All source notes, clef, key signature, ledger lines, slurs, hairpins and p retained in inspected actual exported strip.",
+      "neighborNotation": "Lower portion of Viola staff with beam, hairpin and p remains above; no complete Viola staff.",
+      "layout": "No overprint with previous or next exported band in inspected page2 context.",
+      "reviewImage": ".build/qc-algorithm-audit/candidate7-parts/Violoncello-p6s1-review.png"
+    }
+  ]
+}

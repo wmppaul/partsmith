@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "status": "promoted with root authorization after full-corpus and focused validation",
+  "date": "2026-09-21",
+  "frozenDetectorSHA256": "fc94f285d300167d9010ed47b9cfcf1fee92f036ee8472e73a14939d38a30c9e",
+  "candidateDetector": ".build/staff-harmonic-v1/StaffBandDetector-candidate2.swift",
+  "candidateDetectorSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+  "fullCorpusExecutableSHA256": "2aa3bd4a8d9119261bddc56adfbf891f76477dbb9a53253c39a044fe7df0161c",
+  "corpusSHA256": "03a6c870bc0529f6daa575bdbb7d2f21651d0398e1810663f9983c985b8eff09",
+  "aggregate": ".build/staff-harmonic-v1/corpus2-aggregate.json",
+  "aggregateSHA256": "e3bcfe9d9955f24c5ef0eb3429db318fc713a60c7e3c798c62df8d4d47b3360f",
+  "sourceCount": 36,
+  "physicalPageCount": 1477,
+  "detectedPatternsBefore": 23798,
+  "detectedPatternsAfter": 23801,
+  "unchangedPagesExactFiveLineArrays": 1476,
+  "changes": [
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "page": 167,
+      "beforeStaffLineFractions": [
+        [
+          0.5776698019931064,
+          0.5807939313022452,
+          0.5835102608026894,
+          0.5868534709443127,
+          0.5897497468707618
+        ],
+        [
+          0.7194944923254449,
+          0.7224335312775962,
+          0.7255156603790223,
+          0.7282460952111053,
+          0.7313742080274358
+        ],
+        [
+          0.8714862852839231,
+          0.8740108288213244,
+          0.8773354660925436,
+          0.8804640664972466,
+          0.8833721616236314
+        ]
+      ],
+      "afterStaffLineFractions": [
+        [
+          0.5176985812614918,
+          0.5235313693574204,
+          0.5297740927969268,
+          0.5360292768122753,
+          0.5424781370588586
+        ],
+        [
+          0.5776698019931064,
+          0.5835102608026894,
+          0.5897497468707618,
+          0.5960076383843401,
+          0.6026503100577628
+        ],
+        [
+          0.6680473804539626,
+          0.6738918146649161,
+          0.6803173559627708,
+          0.6867961279374318,
+          0.6930444704842739
+        ],
+        [
+          0.7194944923254449,
+          0.7255156603790223,
+          0.7313742080274358,
+          0.7379971479771753,
+          0.7442631568162493
+        ],
+        [
+          0.8154845665105271,
+          0.821316649818118,
+          0.8275501549077305,
+          0.8338031904003542,
+          0.8402604073078958
+        ],
+        [
+          0.8714862852839231,
+          0.8773354660925436,
+          0.8833721616236314,
+          0.8896506538113462,
+          0.8962722190403828
+        ]
+      ]
+    }
+  ],
+  "independentOracle": "Tests/quality_control/staff-anomaly-source-oracle.json",
+  "independentOracleSHA256": "cb3d2d2770a295e586c88d7aef018245192f965bd21baa696e4dd91e5d366214",
+  "sourceFixture": {
+    "id": "boheme-167",
+    "source": "sample_scores/lightly_skewed/06_puccini_la_boheme_sc67_imslp_885132.pdf",
+    "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+    "pageOneBased": 167,
+    "imageSize": [
+      1800,
+      2401
+    ],
+    "expectedLines": [
+      [
+        1242,
+        1257,
+        1271,
+        1286.5,
+        1302
+      ],
+      [
+        1387,
+        1401,
+        1415.5,
+        1431,
+        1447
+      ],
+      [
+        1603.5,
+        1618,
+        1633,
+        1648.5,
+        1663.5
+      ],
+      [
+        1728,
+        1741.5,
+        1756.5,
+        1771.5,
+        1787
+      ],
+      [
+        1958,
+        1972,
+        1986.5,
+        2002,
+        2017
+      ],
+      [
+        2092,
+        2106.5,
+        2120.5,
+        2137,
+        2152
+      ]
+    ],
+    "measuredClearColumnRanges": [
+      [
+        940,
+        1000
+      ],
+      [
+        500,
+        565
+      ],
+      [
+        600,
+        700
+      ]
+    ],
+    "linePositionTolerancePixels": 3,
+    "evidence": "Three printed piano grand-staff systems beneath Act III stage directions. All six physical five-line staves visible; the selected clear bar/column ranges show every line. Frozen detector returns three half-spacing patterns, not three correctly delimited complete staves."
+  },
+  "actualLinesPixels": [
+    [
+      1242.9942936088419,
+      1256.9988178271665,
+      1271.9875968054212,
+      1287.006293626273,
+      1302.4900070783194
+    ],
+    [
+      1386.9851945854484,
+      1401.0081361872574,
+      1415.989142236699,
+      1431.0143397608006,
+      1446.9633944486886
+    ],
+    [
+      1603.9817604699642,
+      1618.0142470104636,
+      1633.4419716666125,
+      1648.9975031777738,
+      1663.9997736327416
+    ],
+    [
+      1727.5062760733933,
+      1741.9631005700326,
+      1756.0294734738734,
+      1771.931152293198,
+      1786.9758395158146
+    ],
+    [
+      1957.9784441917757,
+      1971.9812762133013,
+      1986.947921933461,
+      2001.9614601512505,
+      2017.4652379462577
+    ],
+    [
+      2092.4385709666994,
+      2106.4824540881973,
+      2120.976560058339,
+      2136.0512198010424,
+      2151.949597915959
+    ]
+  ],
+  "maximumPositionErrorPixels": 0.9942936088418719,
+  "strengthEvidence": {
+    "rawAdjacentGapModePixels": 7.400191972523999,
+    "strongPeakAdjacentGapModePixels": 14.456824496639229,
+    "rawPeakCount": 62,
+    "strongPeakCount": 30,
+    "realLineInkRange": [
+      0.64,
+      0.81
+    ],
+    "interlineBeamInkRange": [
+      0.23,
+      0.33
+    ]
+  },
+  "controls": [
+    "Existing nonlinear tilt, bowed staff, short-beam, disconnected, four-line, flat-block and cancellation tests",
+    "Both source-verified recall additions remain intact",
+    "Existing source title, blank, prose and ledger negatives remain intact",
+    "Weak interline beams cannot halve genuine staff spacing",
+    "Genuine simultaneous small and large staves retained",
+    "Two close small staves retained even with a larger spacing mode elsewhere",
+    "Two close normal staves cannot join into double-spacing harmonic",
+    "Existing staff/document grouping, undo/redo, stale-result and background-detection suite passed"
+  ],
+  "focusedTestsLog": ".build/staff-harmonic-v1/focused-tests2.log",
+  "focusedTestsLogSHA256": "7115fd607a89bd935827961955757fd53c330df89dcf95c8df692425c93c2e18",
+  "replacementGuardTestLog": ".build/staff-harmonic-v1/replacement-guard-tests.log",
+  "replacementGuardTestLogSHA256": "7115fd607a89bd935827961955757fd53c330df89dcf95c8df692425c93c2e18",
+  "existingTestsLog": ".build/staff-harmonic-v1/existing-tests2.log",
+  "existingTestsLogSHA256": "3b0e9a0aa3edd1918151ed3a4605701eed74e9a3a001dfa8a86066c47cb7e13a",
+  "limitations": [
+    "This rescues only stronger full-width five-line patterns. Shorter, faded or heavily curved staffs with no sufficiently strong global peaks may remain unresolved.",
+    "Existing Beethoven52624 ornamental cover false detections are unchanged, not fixed.",
+    "All other corpus line geometry is exact-equal, but this is not an instrument assignment, crop or extracted-output musical quality pass.",
+    "The algorithm uses image evidence only; source IDs, expected staff counts and instrument labels are test data, not detector inputs."
+  ],
+  "informalDetectorOnlyBenchmark": {
+    "before": {
+      "seconds": [
+        0.04785609245300293,
+        0.034004926681518555,
+        0.035672903060913086,
+        0.034013986587524414,
+        0.03372502326965332,
+        0.03329801559448242,
+        0.03380405902862549,
+        0.033030033111572266,
+        0.033067941665649414,
+        0.03306901454925537
+      ],
+      "medianSeconds": 0.033764541149139404,
+      "sourcePage": 167,
+      "limitation": "Single loaded Boh\u00e8me render,10 calls, simultaneous corpus work; not a controlled end-to-end performance benchmark."
+    },
+    "after": {
+      "seconds": [
+        0.05306100845336914,
+        0.0452800989151001,
+        0.0399090051651001,
+        0.03721809387207031,
+        0.037351012229919434,
+        0.03653907775878906,
+        0.03933894634246826,
+        0.041555047035217285,
+        0.03864908218383789,
+        0.035923004150390625
+      ],
+      "medianSeconds": 0.038994014263153076,
+      "sourcePage": 167,
+      "limitation": "Single loaded Boh\u00e8me render,10 calls, simultaneous corpus work; not a controlled end-to-end performance benchmark."
+    }
+  },
+  "sourceComparisonImage": "Tests/quality_control/staff-harmonic-boheme-comparison.png",
+  "sourceComparisonImageSHA256": "a570d04abddef0e98125aee1688ace791c1a6f91b5e1b27780d1d429640af73a",
+  "persistentTestSource": "tools/test_staff_harmonics.swift",
+  "persistentTestSourceSHA256": "e31f0e86915413c1918eeff423b2c7b8f89ea53457b8ebff87934c937db63679",
+  "persistentTestWrapper": "tools/test_staff_harmonics.sh",
+  "persistentTestWrapperSHA256": "f14bcd8ec218e3382181ba808958da69e42fec9dc4d35f07d0a9ee72cb4e30f0",
+  "persistentTestLog": ".build/staff-harmonic-v1/final-persistent-tests.log",
+  "persistentTestLogSHA256": "4806a252d28fbc1a6aca88a55581588e19071e3fb453f7d5131fabab2c3b78e7",
+  "productionSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+}

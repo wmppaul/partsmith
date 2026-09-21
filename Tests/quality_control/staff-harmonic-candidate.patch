@@ -1,0 +1,78 @@
+--- a/Partsmith/Core/Detection/StaffBandDetector.swift
++++ b/Partsmith/Core/Detection/StaffBandDetector.swift
+@@ -123,6 +123,32 @@
+                 }
+                 if supported { staffs.append(recovered) }
+             }
++        }
++        // Preserve established line coordinates when their spacing is already
++        // correct. Only replace an overlapping half-spacing interpretation if
++        // its extra interline peaks are demonstrably weaker than real lines.
++        let strongPatterns = staffPatterns(peaks, width: raster.width,
++                                           allowStrongHarmonicRescue: true, isCancelled: isCancelled)
++        for recovered in strongPatterns {
++            let space = (recovered.lines[4] - recovered.lines[0]) / 4
++            let conflicts = staffs.indices.filter { overlaps(recovered, staffs[$0]) }
++            let canReplace = conflicts.allSatisfy { index in
++                let old = staffs[index]
++                let oldSpace = (old.lines[4] - old.lines[0]) / 4
++                guard space > oldSpace * 1.75 && space < oldSpace * 2.25 else { return false }
++                let interlines = old.lines.filter { oldLine in
++                    !recovered.lines.contains { abs($0 - oldLine) <= max(1.25, space * 0.18) }
++                }
++                guard interlines.count >= 2 else { return false }
++                return interlines.allSatisfy { line in
++                    guard let peak = nearestPeak(peaks, startingAt: 0, to: line) else { return false }
++                    return abs(peaks[peak].y - line) <= max(1.25, oldSpace * 0.25)
++                        && peaks[peak].strength < 0.55
++                }
++            }
++            guard canReplace else { continue }
++            for index in conflicts.reversed() { staffs.remove(at: index) }
++            staffs.append(recovered)
+         }
+         // Repeated ledger lines and prose may have regularly spaced row peaks,
+         // but do not sustain multiple staff lines over a horizontal distance.
+@@ -375,7 +401,7 @@
+         return peaks
+     }
+ 
+-    private static func staffPatterns(_ peaks: [Peak], width: Int, isCancelled: () -> Bool) -> [Staff] {
++    private static func staffPatterns(_ peaks: [Peak], width: Int, allowStrongHarmonicRescue: Bool = false, isCancelled: () -> Bool) -> [Staff] {
+         guard peaks.count >= 5 else { return [] }
+         let minimumSpace = max(3.0, Double(width) / 600)
+         let maximumSpace = max(12.0, Double(width) / 40)
+@@ -426,9 +452,30 @@
+             let sa = support(a), sb = support(b)
+             return sa == sb ? a > b : sa < sb
+         }) {
+-            patterns.removeAll {
+-                let spacing = ($0.lines[4] - $0.lines[0]) / 4
+-                return spacing > typicalSpace * 1.85 || spacing < typicalSpace * 0.65
++            // Weak inter-line beams and prose can outnumber true staff-line
++            // intervals. An independent mode among strong, distributed peaks
++            // can rescue a larger five-line pattern without removing any
++            // existing smaller pattern or relaxing the lower spacing bound.
++            let strongPeaks = allowStrongHarmonicRescue
++                ? peaks.filter { $0.strength >= 0.55 && $0.support >= 0.58 } : []
++            let strongGaps = zip(strongPeaks, strongPeaks.dropFirst()).map { $1.y - $0.y }
++                .filter { $0 >= minimumSpace && $0 <= maximumSpace }
++            let strongSpace = strongGaps.max(by: { a, b in
++                func support(_ value: Double) -> Int {
++                    strongGaps.filter { abs($0 - value) <= max(1.0, value * 0.12) }.count
++                }
++                let sa = support(a), sb = support(b)
++                return sa == sb ? a > b : sa < sb
++            })
++            patterns.removeAll { staff in
++                let spacing = (staff.lines[4] - staff.lines[0]) / 4
++                if spacing < typicalSpace * 0.65 { return true }
++                guard spacing > typicalSpace * 1.85 else { return false }
++                guard allowStrongHarmonicRescue else { return true }
++                guard let strongSpace, abs(spacing - strongSpace) <= max(1.0, strongSpace * 0.12) else { return true }
++                return !staff.lines.allSatisfy { line in
++                    strongPeaks.contains { abs($0.y - line) < 0.001 }
++                }
+             }
+         }
+ 

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "source": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "pageOneBased": 6,
+  "systemOneBased": 1,
+  "coordinateSpace": "original PDF points, top-down; page is unrectified in recorded deskew",
+  "pageSize": [
+    427,
+    614
+  ],
+  "reviewMethod": "Independent source-only 720 dpi render plus 360 dpi coordinate grid; frozen before reading candidate7 crop coordinates or output. Complete viola and cello notation assessed across the entire first system.",
+  "sourceOnlyRaster": ".build/qc-algorithm-audit/p6-system1-source-only-720dpi.png",
+  "bands": [
+    {
+      "part": "Viola",
+      "protectedRect": [
+        41,
+        94.5,
+        393.5,
+        132.5
+      ],
+      "landmarks": [
+        {
+          "name": "first-bar high slur and ledger notes",
+          "rect": [
+            84,
+            94.5,
+            117,
+            115
+          ]
+        },
+        {
+          "name": "last-bar piano dynamic",
+          "rect": [
+            335,
+            123.5,
+            348,
+            132.5
+          ]
+        },
+        {
+          "name": "middle and penultimate hairpins below viola",
+          "rect": [
+            218,
+            123,
+            332,
+            129.5
+          ]
+        }
+      ],
+      "observation": "No musical stem or beam joins the Viola and Cello. The interior barlines cross the inter-staff gap. Viola lower hairpins and final p share vertical space with the Cello upper slurs."
+    },
+    {
+      "part": "Violoncello",
+      "protectedRect": [
+        41,
+        123.5,
+        393.5,
+        170.5
+      ],
+      "landmarks": [
+        {
+          "name": "high fifth-bar slur and ledger note",
+          "rect": [
+            270,
+            123.5,
+            302,
+            142
+          ]
+        },
+        {
+          "name": "last two bars low notes, slur, hairpin and piano",
+          "rect": [
+            289,
+            139,
+            347,
+            170.5
+          ]
+        },
+        {
+          "name": "first-bar high slur and ledger note",
+          "rect": [
+            85,
+            125.5,
+            104,
+            141
+          ]
+        }
+      ],
+      "observation": "Cello high slurs extend into the Viola lower-dynamic height. Final low note, slur, hairpin and p are well below the staff. No following-system notation belongs to Cello system1."
+    }
+  ],
+  "qualityScope": "Source envelopes guard these two bands; no claim about all source pages or all shared directions."
+}

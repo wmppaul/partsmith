@@ -12,7 +12,7 @@ import PDFKit
         guard value() else { fputs("FAIL: \(description)\n", stderr); exit(1) }
     }
 
-    static func fixture(skewDegrees: Double = 0, notationBridge: Bool = false, wideBracket: Bool = false, narrowNotationBridge: Bool = false, rasterScale: Double = 1, localBow: Double = 0, nearFullNotationBridge: Bool = false) -> ([ScoreInkComponent], [ScoreObservedStaff]) {
+    static func fixture(skewDegrees: Double = 0, notationBridge: Bool = false, wideBracket: Bool = false, narrowNotationBridge: Bool = false, rasterScale: Double = 1, localBow: Double = 0, nearFullNotationBridge: Bool = false, localBarline: Bool = false) -> ([ScoreInkComponent], [ScoreObservedStaff]) {
         let width = 720, height = 600, space = 12
         var pixels = [UInt8](repeating: 255, count: width * height)
         func black(_ left: Int, _ top: Int, _ right: Int, _ bottom: Int) {
@@ -72,6 +72,7 @@ import PDFKit
             black(443, 209, 459, 217)
             black(443, 382, 459, 390)
         }
+        if localBarline { black(450, 200, 453, 399) }
         let slope = tan(skewDegrees * .pi / 180)
         if skewDegrees != 0 || localBow != 0 {
             let original = pixels
@@ -173,6 +174,11 @@ import PDFKit
                         "Near-full musical stem remains ambiguous at bow \(bow), tilt \(degrees), scale \(rasterScale)")
                 }
             }
+        }
+        for bow in [7.0, -7.0] {
+            let (structure, _) = fixture(localBow: bow, localBarline: true)
+            check(!structure.contains { $0.staffIDs == [0, 1] && $0.bounds[2] > 440.0 / 720 },
+                "Intact locally bowed barline separated at bow \(bow)")
         }
         print("PASS: \(checks) crop quality checks")
     }

@@ -1,0 +1,37 @@
+{
+  "builtAtUTC": "2026-09-21T20:33:45.752987+00:00",
+  "configuration": "Release; unsigned universal x86_64 + arm64",
+  "archive": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "archiveSHA256": "5e067cc8c9b87eca123111599c7d118d29650dd530d54f8d12a8fee067483c97",
+  "executableSHA256": "4fea0319c659c2faf530b78b6fcce8160cd810fa0b49b6e897cc1ad849c2c473",
+  "archiveIntegrity": "pass; all entries tested and contained executable equals successful Release build",
+  "buildLog": ".build/auto-qc/app-connector8-harmonic-release-build.log",
+  "productionSources": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "b214e6a5b04fbf843c9b6faecd844ed761f1ad54c2743c3371a561210f380a07",
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "02c0e6d105f4141089bb96c2344064ed6dd29c34eff52dfad59905c816942a3e",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "059737369942a036932c555018ad456f0117591631e57048394aefc4cd8574ff",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+    "Partsmith/Features/Inspector/InspectorView.swift": "90542a52182907f953b5e59d140f9d42a264917c60fcf880d8d5740fd1112ed7"
+  },
+  "experimentalDetectorsInApp": false,
+  "validation": {
+    "structuralCropChecks": 102,
+    "connectorReport": "Tests/quality_control/connector-separation-v8.json",
+    "staffReport": "Tests/quality_control/staff-harmonic-validation.json",
+    "independentChangedStripReview": "Tests/quality_control/connector8-review/review.json",
+    "staffCorpusPDFs": 36,
+    "staffCorpusPages": 1477,
+    "onlyStaffPageChanged": "Boh\u00e8me885132p167:3 erroneous half-spacing patterns replaced by6 actual staves; all other1476 line arrays exact",
+    "recordedDeskewQuartetWholeNeighborStavesBefore": 20,
+    "recordedDeskewQuartetWholeNeighborStavesAfter": 11
+  },
+  "limits": [
+    "Whole corpus geometry comparison is not full musical review.",
+    "Remaining whole/partial neighboring staves and shared-direction omissions keep difficult Quartet draft.",
+    "Experimental heading/navigation/destination recognition remains CLI-only, absent from app default.",
+    "Changing instrumentation and omitted-rest durations still need source assignments."
+  ],
+  "runningUserApp": "Not replaced or relaunched; existing unsaved documents untouched."
+}
