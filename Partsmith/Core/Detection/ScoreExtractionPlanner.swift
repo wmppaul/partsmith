@@ -616,6 +616,14 @@ enum ScoreExtractionPlanner {
         let ids = Set(staves.map(\.id))
         let allStaves = page.staves.filter(validStaff)
         let staffLookup = Dictionary(allStaves.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        // This evidence is constant for the band. Detached marks can query it
+        // many times while the envelope grows, so avoid scanning the whole
+        // page and rebuilding ownership sets for every candidate mark.
+        let highTargetInk = components.filter { component in
+            let owners = Set(component.staffIDs)
+            return !owners.isEmpty && owners.isSubset(of: ids)
+                && component.bounds[1] < firstLine - space
+        }
         var selected = Set<Int>(), ambiguous = Set<Int>()
         var foreignEdgeNeedsReview = false
         for (index, component) in components.enumerated() {
@@ -669,11 +677,9 @@ enum ScoreExtractionPlanner {
                         // into the preceding instrument's entire envelope.
                         let directlyAboveTarget = component.staffIDs.isEmpty
                             && box[3] - box[1] <= 2 * space
-                            && components.contains { other in
-                                let owners = Set(other.staffIDs), ink = other.bounds
-                                return !owners.isEmpty && owners.isSubset(of: ids)
-                                    && ink[1] < firstLine - space
-                                    && ink[1] >= box[1]
+                            && highTargetInk.contains { other in
+                                let ink = other.bounds
+                                return ink[1] >= box[1]
                                     && min(box[2], ink[2]) > max(box[0], ink[0])
                                     && max(ink[1] - box[3], 0) <= 0.75 * space
                             }

@@ -87,6 +87,24 @@ struct ScoreDetectionReview {
     var sourcePDFData: Data
     var rectifications: [PageRectification]
 
+    /// Establish optional nonmusic exclusions before the first expensive crop
+    /// plan. Keep every analysis so restoring an excluded page still works.
+    static func initial(
+        profile: ScoreExtractionProfile, analyses: [ScorePageAnalysis],
+        overrides: [ScorePageOverride] = [], selectedPageIndices: Set<Int>? = nil,
+        suggestedSourceHeader: SourceHeaderSelection? = nil,
+        sourcePDFData: Data, rectifications: [PageRectification],
+        isCancelled: () -> Bool = { false }
+    ) -> ScoreDetectionReview {
+        let skipped = Set(analyses.filter(canAutomaticallySkip).map(\.pageIndex))
+        let reasons = Dictionary(uniqueKeysWithValues: skipped.map { ($0, "No staves were detected on this page.") })
+        let plan = ScoreExtractionPlanner.plan(pages: analyses.filter { !skipped.contains($0.pageIndex) },
+            profile: profile, overrides: overrides.filter { !skipped.contains($0.pageIndex) }, isCancelled: isCancelled)
+        return ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan, overrides: overrides,
+            selectedPageIndices: selectedPageIndices, excludedPageReasons: reasons, autoSkippedPageIndices: skipped,
+            suggestedSourceHeader: suggestedSourceHeader, sourcePDFData: sourcePDFData, rectifications: rectifications)
+    }
+
     mutating func replan() {
         plan = ScoreExtractionPlanner.plan(pages: analyses.filter { excludedPageReasons[$0.pageIndex] == nil },
                                            profile: profile, overrides: overrides.filter { excludedPageReasons[$0.pageIndex] == nil })
@@ -628,12 +646,11 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                     self.scoreDetectionProgress = ScoreDetectionProgress(completedPages: selectedOffset + 1, totalPages: selectedPages.count)
                 }
             }
-            let plan = ScoreExtractionPlanner.plan(pages: analyses, profile: profile, isCancelled: { operation.isCancelled })
-            var review = ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan,
+            let review = ScoreDetectionReview.initial(profile: profile, analyses: analyses,
                                                selectedPageIndices: pageIndices,
                                                suggestedSourceHeader: suggestedSourceHeader,
-                                               sourcePDFData: data, rectifications: rectifications)
-            review.automaticallyExcludePagesWithoutStaves()
+                                               sourcePDFData: data, rectifications: rectifications,
+                                               isCancelled: { operation.isCancelled })
             DispatchQueue.main.async { [weak self, weak operation] in
                 guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
                 self.scoreDetectionOperation = nil

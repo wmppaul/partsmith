@@ -1,0 +1,414 @@
+{
+  "baselinePlannerSHA256": "5f2e9cbc00ee95ff874a2faa19039f7816a8687ee1a91d774f73ed600e374ed6",
+  "baselineSourceSnapshot": ".build/planner-perf/Planner.swift",
+  "benchmarkInventory": ".build/auto-qc/candidate3/quartet93521-deskew/inventory.json",
+  "benchmarkInventorySHA256": "5ec163623d0bbb062434f84b71724fcd5501c3be775f62273856b038bcd27abd",
+  "candidatePlannerSHA256": "62f6a757b424cbf087e25a6c8ff7f8e3fc7e4055858e93fcaf864c3021237df1",
+  "comparisons": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "pages": 2,
+      "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 0,
+      "candidateSeconds": 5.602836608886719e-05,
+      "id": "excerpt-mozart-k488-page-17",
+      "inventorySHA256": "a3287f319083c673cbce25a95851c5c5d775bf526c2b7818f46d058a44b17be7",
+      "pages": 1,
+      "planSHA256": "565b6ae52808967fb8eb226b6533d89c70f90cb4b86f6888f1e2f97ef7490d3f",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec",
+      "referenceSeconds": 0.00013303756713867188,
+      "sourceSHA256": "9e7a091795bbc85fc8da0794afd791c8540ec3268a1e516204a08aa82244f121",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 612,
+      "candidateSeconds": 0.6385269165039062,
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "inventorySHA256": "9bda426dde6ae86a865867bda6057f296d7c57660878ba7da8309b07a2c158a2",
+      "pages": 52,
+      "planSHA256": "adb3ef65c9fb1a9351386818021b32bdf9e66ec79ea6b54724b443361edf6230",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "referenceSeconds": 21.115053057670593,
+      "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 393,
+      "candidateSeconds": 0.4530290365219116,
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "inventorySHA256": "e208209acec0396f251e38ff9cea2847279ce46c3a6d54e3bf037b4da5b97d04",
+      "pages": 35,
+      "planSHA256": "ab3ea3639e59790e5980d4839ea86cf4446b55c58289e522fdbbd8497f79eb87",
+      "profileSHA256": "a304d05dd5337eb342c7dc5de489a797ce9be9e6ef9385b5f218c198b04632d4",
+      "referenceSeconds": 13.917454957962036,
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803",
+      "pages": 86,
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222",
+      "pages": 77,
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 154,
+      "candidateSeconds": 0.23409497737884521,
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "inventorySHA256": "e8cd1762e87eb2b377b2d1e13d778c101ab9a00b5c9fdead7d1b129ced49bd9c",
+      "pages": 16,
+      "planSHA256": "9d7f7ae7cdf6589ee2de4b63492027a57d50114de96813c2eb34e11453d5ad46",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "referenceSeconds": 6.84275209903717,
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "pages": 277,
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "lightly-skewed-07-brahms-2-motets-op74-imslp-101579",
+      "pages": 18,
+      "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+      "pages": 10,
+      "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040",
+      "pages": 27,
+      "sourceSHA256": "9ba9d999930da2d109304c745fcf5e5568b8a33fd4349a77d95317da9a1c0ea4",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 480,
+      "candidateSeconds": 0.7493569850921631,
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "inventorySHA256": "914916e43ef3466d6cb8f869ef150b50beece09808b01ea1db10d34938ee95e7",
+      "pages": 26,
+      "planSHA256": "cd94b4520e5cfa6840bf07a8a651b73017409b0e487805bed435d7680f329134",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "referenceSeconds": 39.29784905910492,
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 460,
+      "candidateSeconds": 0.8230699300765991,
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "inventorySHA256": "c7f4727bdfcae0318e140334d25289376afbcd75e568299136645ddcceee94d4",
+      "pages": 30,
+      "planSHA256": "828b1076a77fd1cbdecff45bc32bce211cada3030eff9384da2b465055a4339d",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "referenceSeconds": 35.17959797382355,
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 393,
+      "candidateSeconds": 0.3962550163269043,
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "inventorySHA256": "186386e779d803d8ce70442365ec02f2e4ebccd7afda32e51e9a9aea5cf7fe9a",
+      "pages": 35,
+      "planSHA256": "ed601a82acd6762c65e571ef4719fffe0cb3d6afb92e23c37c969457f546db07",
+      "profileSHA256": "d91fe375f2a3f4582d889b588ffdcbe637a42d45caf0cfccbf3cb9263dc5b9ee",
+      "referenceSeconds": 10.84534204006195,
+      "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 825,
+      "candidateSeconds": 0.616320013999939,
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "inventorySHA256": "215d4de3c9277996a2fc5c92da135dd8f7a2ed2c940a058591c3556107f93d77",
+      "pages": 56,
+      "planSHA256": "5de886ed19c257c04c734d63bd78213a20a1e937e9a48f55f6f728f4a0d02fc8",
+      "profileSHA256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33",
+      "referenceSeconds": 85.43025207519531,
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506",
+      "pages": 80,
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 480,
+      "candidateSeconds": 0.9625250101089478,
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "inventorySHA256": "fd7e34e7c729b1ede5da8cc2183dc976c3e809475de9a7e79539bbdb407f0eed",
+      "pages": 25,
+      "planSHA256": "f98ef73efd415525aeb0309a815930696b210f4480e2a8ee3e65b27c3df0e99b",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "referenceSeconds": 59.32649505138397,
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 604,
+      "candidateSeconds": 0.6847859621047974,
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "inventorySHA256": "a04b494f98fe24a97f2c65385df42078f8a2c41e4589c69184ac0440dfa76907",
+      "pages": 39,
+      "planSHA256": "98da4c8b009fc15ec57d5bcf8a081779f9fe334a49ee474ac66228e5fcdebde7",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "referenceSeconds": 142.39314210414886,
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "medium-skewed-07-brahms-2-motets-op74-imslp-101580",
+      "pages": 18,
+      "sourceSHA256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041",
+      "pages": 27,
+      "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 144,
+      "candidateSeconds": 0.05797696113586426,
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "inventorySHA256": "ee29e3ab2d1c912b194f8328035348e0ac767ab4bb782917e207d786f0d90d0b",
+      "pages": 18,
+      "planSHA256": "eb99ca7e3b9cda5ea24d077d6a45654f45621510920ea6c0ab3799e2405991d7",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "referenceSeconds": 1.5859789848327637,
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 0,
+      "candidateSeconds": 0.008056998252868652,
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "inventorySHA256": "096fe1f28ca2c6033f497a647c041a8900f0b8f409a13ff17caa648498d6625b",
+      "pages": 70,
+      "planSHA256": "01dabf9e8574934b03649d0d186c24d3fec5752488b232f52844ecb4d2e4a00d",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "referenceSeconds": 0.00011301040649414062,
+      "sourceSHA256": "030e03434d994e1974719f13f62861c21091d22af35ee832a0e1ffde17a4efc3",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 660,
+      "candidateSeconds": 0.19624698162078857,
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "inventorySHA256": "2e2071c91dbd64e01edaff7df96c1916a85032d37e1fccb983ee96e3cc8ad015",
+      "pages": 55,
+      "planSHA256": "859c146c2d76dcfed61ccd81230fb26fdab851a74c2e88536130ad5b4cbdc602",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "referenceSeconds": 1.7376669645309448,
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 520,
+      "candidateSeconds": 0.13172006607055664,
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "inventorySHA256": "db074eeb201c7815e802a0437c150776ae766c65134ee0ab65c962faee8d1c7d",
+      "pages": 31,
+      "planSHA256": "a52dac6b5269825b774bc77dfbaf0607683db4941b66fb75e0fc4d5531585967",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "referenceSeconds": 2.222365975379944,
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 405,
+      "candidateSeconds": 0.16195106506347656,
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "inventorySHA256": "a009bd227b17c3588abc21b4a7ed2378557bbe9af5c2dca71e3b10f738133852",
+      "pages": 29,
+      "planSHA256": "0252cfb5e36f8904abb0841cb1651afe88b6663346d19b369310fced66a80baf",
+      "profileSHA256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+      "referenceSeconds": 1.6756800413131714,
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score",
+      "pages": 50,
+      "sourceSHA256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "pages": 43,
+      "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "normal-mozart-symphony-no18-kv130-score",
+      "pages": 37,
+      "sourceSHA256": "250d3c5c97b013174ca4fea63a9e856c268e1cdbc76a6445efb86b02df82119e",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 0,
+      "candidateSeconds": 0.00026094913482666016,
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "inventorySHA256": "e40592ad760e8fb2f85d1752d6015bbb6e1819bd54c75b92fa173927d59393ac",
+      "pages": 4,
+      "planSHA256": "1af4ca90d30b96d71b0aef5fa17d28445cb412763228a808f3184022cd14abb2",
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac",
+      "referenceSeconds": 1.5974044799804688e-05,
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 0,
+      "candidateSeconds": 0.00017893314361572266,
+      "id": "normal-schubert-erlkonig-d328-score",
+      "inventorySHA256": "953361262bc1fdcda7d0fb0a7ee37f5f7eae8e23d3e236834c23260f618df5b3",
+      "pages": 11,
+      "planSHA256": "28ff7d90e9f955e79bee85f338e5d2e735e3014833adc21db8adb4aa2e678fd2",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "referenceSeconds": 7.033348083496094e-06,
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "pages": 6,
+      "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 64,
+      "candidateSeconds": 0.03474998474121094,
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+      "inventorySHA256": "50d675a6bbdf92a0ff7cfbc3e3311634ff3a0a62971746c5a7a6495bacfc06db",
+      "pages": 4,
+      "planSHA256": "fe3112e77bee4490d58ea4e7cacb5fc9f48c663f831c97e222f0fcbd4dc33dd1",
+      "profileSHA256": "e48364de833ac87180e5b8c20f54b91d4bc86972d576c9c6a34797d54291d310",
+      "referenceSeconds": 0.6985989809036255,
+      "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "status": "exact_plan_equality"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "pages": 106,
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437",
+      "pages": 35,
+      "sourceSHA256": "1fc0bc2c8942c65d25f4939ae272b20b37e112b63f9bb2f5b63ddf8826c88cb3",
+      "status": "missing_profile_not_evaluated"
+    },
+    {
+      "bands": 0,
+      "candidateSeconds": 0.001708984375,
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229",
+      "inventorySHA256": "36db9f83bb3aa8eab57afd6632af74eea4b0d4c737cec58040fb28ac03957aae",
+      "pages": 36,
+      "planSHA256": "14e75d6787176f695ac1addeae488cef60ce94294902fae512992044483310a6",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec",
+      "referenceSeconds": 3.1948089599609375e-05,
+      "sourceSHA256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+      "status": "exact_plan_equality"
+    },
+    {
+      "bands": 36,
+      "candidateSeconds": 0.015280008316040039,
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+      "inventorySHA256": "5df3b8327e542d846b1b44511fa6f367452265be299c30a4039ea929acbe9947",
+      "pages": 5,
+      "planSHA256": "4f11559218a3e3a6b5d9f6def8a5719c550a9c68d95861116452874a175baa48",
+      "profileSHA256": "c7fcc6cf0d738d7926e3d4825e05ad14fcf5cc72c87f276d2c76054e2fbdb435",
+      "referenceSeconds": 0.015141010284423828,
+      "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "status": "exact_plan_equality"
+    }
+  ],
+  "corpus": {
+    "bandsCompared": 6230,
+    "changedPlans": 0,
+    "inputFiles": 36,
+    "nonemptyPlans": 15,
+    "profiledPages": 578,
+    "profilesCompared": 20,
+    "unprofiledNotEvaluated": 16,
+    "zeroBandVariableLayoutPlans": 5
+  },
+  "date": "2026-09-20",
+  "instrumentedCandidate": {
+    "aboveComparisons": 814577,
+    "aboveQueries": 895769,
+    "aboveSeconds": 0.06113100051879883,
+    "bands": 604,
+    "cropSeconds": 1.887752890586853,
+    "crops": 604,
+    "pages": 39,
+    "planSHA256": "58736df7c2a40c4b3d2733d6d3b9f07db94f48737c60a8abb55ddf066dd3794f",
+    "planningSeconds": 1.8915849924087524,
+    "propagationSeconds": 1.540995717048645,
+    "seedSeconds": 0.1685478687286377,
+    "touchComparisons": 59311903,
+    "touchQueries": 490288,
+    "touchSeconds": 0.9348807334899902
+  },
+  "instrumentedReference": {
+    "aboveComparisons": 558042038,
+    "aboveQueries": 895769,
+    "aboveSeconds": 68.44368660449982,
+    "bands": 604,
+    "cropSeconds": 69.83574402332306,
+    "crops": 604,
+    "pages": 39,
+    "planSHA256": "58736df7c2a40c4b3d2733d6d3b9f07db94f48737c60a8abb55ddf066dd3794f",
+    "planningSeconds": 69.84085702896118,
+    "propagationSeconds": 69.67847609519958,
+    "seedSeconds": 0.14040660858154297,
+    "touchComparisons": 59321808,
+    "touchQueries": 490288,
+    "touchSeconds": 0.7376750707626343
+  },
+  "limitations": [
+    "Wall timings are local measurements, not portable CI budgets. Instrumented predicate timings include lightweight counters/clock overhead.",
+    "Equality compares all fields, warning order and encoded JSON. It preserves prior behavior, including unresolved variable-layout plans, rather than proving musical correctness.",
+    "Sixteen sources have no initialized profile and were explicitly not assigned a planner-quality pass.",
+    "The baseline source snapshot includes the in-progress shared-heading metadata/helper; those were retained unchanged by the performance patch."
+  ],
+  "referenceComparatorSHA256": "42ebcb8accf104f0b3a5da177b34ea059b346fc5943c608b8ec7da570e4f64b3",
+  "releaseCLIBands": 604,
+  "releaseCLIExactReferenceAfterSameExclusion": true,
+  "releaseCLIPlanSHA256": "28b61935d2a813bc9a5de48f6c5012bc25211650a7249babd76abbb35cd78ef3",
+  "releaseCLISkippedPages": [
+    1
+  ],
+  "releaseCLISystemSeconds": 0.01,
+  "releaseCLIUnresolvedPages": [],
+  "releaseCLIUserSeconds": 0.99,
+  "releaseCLIWallSeconds": 1.27,
+  "schemaVersion": 1,
+  "tests": {
+    "cropQuality": 82,
+    "freshRecoveredStaffPages": "Fresh native analyses of Mozart86903 p25 (20 staffs/16 bands) and Frauenliebe51733 p14 (15 staffs/10 bands) exactly match the reference plan and can apply.",
+    "peerAudit": "Independent review found no factory blocker; tested restoration, failed rasters, sparse page scope, retained overrides/source metadata and cancellation. App still rejects canceled callbacks.",
+    "reviewInitialization": 63,
+    "scoreDocument": 139,
+    "scorePlanner": 83
+  }
+}
