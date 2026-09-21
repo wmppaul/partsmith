@@ -11,6 +11,7 @@ enum ExportScorePlan {
         var source: String
         var sourceSHA256: String
         var pages: [ScorePageAnalysis]
+        var rectifications: [PageRectification]? = nil
     }
     struct Envelope: Encodable { var project: ProjectData }
     struct Marking: Encodable { var sourceRect: [Double]; var destinationRect: [Double] }
@@ -40,7 +41,7 @@ enum ExportScorePlan {
         var placements: [Placement]
     }
     struct Manifest: Encodable {
-        var schemaVersion = 1
+        var schemaVersion = 2
         var notationPolicy = "preserve-target"
         var status = "draft — visual review required"
         var renderer = "Partsmith native Auto planner, addScoreParts, PartLayoutEngine and PartPDFExporter"
@@ -49,6 +50,9 @@ enum ExportScorePlan {
         var sourceSHA256: String
         var profile: ScoreExtractionProfile
         var reviewedOverrides: [ScorePageOverride]
+        var rectifications: [PageRectification]
+        var reviewSourceFile: String?
+        var reviewSourceSHA256: String?
         var project: String
         var parts: [Part]
     }
@@ -58,6 +62,26 @@ enum ExportScorePlan {
     static func hash(_ data: Data) -> String { SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined() }
     static func topDown(_ rect: CGRect, _ bounds: CGRect) -> [Double] {
         [rect.minX - bounds.minX, bounds.maxY - rect.maxY, rect.maxX - bounds.minX, bounds.maxY - rect.minY]
+    }
+    /// Full corrected pages for source-context review. No part crops, masks or
+    /// assignments participate; the embedded original PDF remains immutable.
+    static func writeReviewSource(_ pdf: PDFDocument, corrections: [PageRectification], to url: URL) throws {
+        guard let consumer = CGDataConsumer(url: url as CFURL) else { throw error("Cannot create review source") }
+        var box = CGRect(x: 0, y: 0, width: 612, height: 792)
+        guard let context = CGContext(consumer: consumer, mediaBox: &box, nil) else { throw error("Cannot create review source context") }
+        for index in 0..<pdf.pageCount {
+            try autoreleasepool {
+                guard let page = pdf.page(at: index) else { throw error("Missing review source page") }
+                var bounds = page.bounds(for: .mediaBox)
+                let info = [kCGPDFContextMediaBox as String: NSData(bytes: &bounds, length: MemoryLayout<CGRect>.size)] as CFDictionary
+                context.beginPDFPage(info)
+                try SourcePageRenderCache(pdfDocument: pdf).draw(pageIndex: index,
+                    rectification: corrections.first { $0.pageIndex == index },
+                    sourceRect: bounds, destinationRect: bounds, in: context)
+                context.endPDFPage()
+            }
+        }
+        context.closePDF()
     }
     static func main() throws {
         let args = Array(CommandLine.arguments.dropFirst())
@@ -75,20 +99,21 @@ enum ExportScorePlan {
         let overrides = try option("--overrides").map { try decoder.decode([ScorePageOverride].self, from: Data(contentsOf: URL(fileURLWithPath: $0))) } ?? []
         let source = try Data(contentsOf: URL(fileURLWithPath: inventory.source))
         guard hash(source) == inventory.sourceSHA256 else { throw error("Source hash differs from detector inventory") }
-        let plan = ScoreExtractionPlanner.plan(pages: inventory.pages, profile: profile, overrides: overrides)
+        let review = ScoreDetectionReview.initial(profile: profile, analyses: inventory.pages,
+            overrides: overrides, sourcePDFData: source, rectifications: inventory.rectifications ?? [])
+        let plan = review.plan
         guard plan.canApply else { throw error("Unresolved plan: \(plan.pages.filter { !$0.unresolvedReasons.isEmpty })") }
         var project = ProjectData.empty
         project.id = UUID()
         project.projectName = title
         project.pageCount = inventory.pages.count
         project.sourceFilename = URL(fileURLWithPath: inventory.source).lastPathComponent
+        project.pageRectifications = inventory.rectifications ?? []
         project.projectSettings.headerDisplayMode = .typed
         project.projectSettings.defaultTitleText = title
         project.projectSettings.defaultComposerText = option("--composer") ?? ""
         project.projectSettings.showPartNameInHeader = true
         let document = PartsmithDocument(project: project, sourcePDFData: source)
-        let review = ScoreDetectionReview(profile: profile, analyses: inventory.pages, plan: plan,
-            overrides: overrides, sourcePDFData: source, rectifications: [])
         guard document.addScoreParts(from: review) == plan.bands.count else { throw error("Native Auto apply rejected the review") }
         guard let pdf = document.pdfDocument else { throw error("Source unavailable after native apply") }
         let manager = FileManager.default
@@ -106,6 +131,14 @@ enum ExportScorePlan {
         try encoder.encode(Envelope(project: document.project)).write(to: package.appendingPathComponent("project.json"))
         try source.write(to: package.appendingPathComponent("source.pdf"))
         try encoder.encode(plan).write(to: staging.appendingPathComponent("plan.json"))
+        var reviewSourceFile: String?, reviewSourceHash: String?
+        if !project.pageRectifications.isEmpty {
+            let filename = "rectified-review-source.pdf"
+            let url = staging.appendingPathComponent(filename)
+            try writeReviewSource(pdf, corrections: project.pageRectifications, to: url)
+            reviewSourceFile = filename
+            reviewSourceHash = hash(try Data(contentsOf: url))
+        }
         var parts: [Part] = []
         for definition in profile.parts {
             guard let part = document.project.parts.first(where: { $0.name == definition.name }) else { throw error("Missing part") }
@@ -140,8 +173,12 @@ enum ExportScorePlan {
                 outputPages: layout.pages.count, bandCount: placements.count, systemsPerPage: layout.pages.map { $0.placements.count }, placements: placements))
             print("\(definition.name): \(placements.count) systems on \(layout.pages.count) pages \(layout.pages.map { $0.placements.count })")
         }
-        let manifest = Manifest(source: inventory.source, sourceSHA256: inventory.sourceSHA256,
-            profile: profile, reviewedOverrides: overrides, project: packageName, parts: parts)
+        var manifest = Manifest(source: inventory.source, sourceSHA256: inventory.sourceSHA256,
+            profile: profile, reviewedOverrides: overrides, rectifications: inventory.rectifications ?? [],
+            reviewSourceFile: reviewSourceFile, reviewSourceSHA256: reviewSourceHash, project: packageName, parts: parts)
+        if reviewSourceFile != nil {
+            manifest.coordinates += " Source rectangles refer to the recorded corrected page coordinates; use reviewSourceFile for geometric source comparison and inspect the immutable original for deskew preservation."
+        }
         try encoder.encode(manifest).write(to: staging.appendingPathComponent("manifest.json"))
         if manager.fileExists(atPath: output.path) {
             let backup = output.deletingLastPathComponent().appendingPathComponent(".\(output.lastPathComponent)-previous-\(UUID().uuidString)")

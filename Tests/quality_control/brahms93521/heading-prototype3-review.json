@@ -1,0 +1,192 @@
+{
+  "status": "seven-heading detection and visible glyph containment pass; extra ink and full shared-direction scope remain unresolved",
+  "headingInventory": ".build/auto-qc/ocr-probe/quartet93521-deskew-headings-v3.json",
+  "headingInventorySHA256": "8c66d0918bbc69a974a3bdc5e733d0727f3dbd6a7e472b4ed15e4acf3138f9a5",
+  "oracleFile": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+  "oracleSHA256": "3bfce48f871486cfcb1c444377dd1ab76980bead90aaa9fca8f59f6d14f23e3c",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "reviewSourceSHA256": "49fc54096ebcb15658bc35914d5224f048abda2a90bb0ca387387c2258742a82",
+  "rectificationsMatch": true,
+  "matchedHeadings": 7,
+  "expectedHeadings": 7,
+  "predictedCount": 7,
+  "results": [
+    {
+      "oracleID": "93521-p02-s1-01",
+      "page": 2,
+      "system": 1,
+      "expectedText": "Vivace",
+      "oracleRect": [
+        134.2,
+        129.7,
+        176.9,
+        143.8
+      ],
+      "detected": true,
+      "predictedRect": [
+        134.52818250025973,
+        126.4278764117443,
+        176.82598553043474,
+        143.0052852352953
+      ],
+      "recognizedText": "Vivace.",
+      "oracleRectangleCoverage": 0.9347490061667509,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    },
+    {
+      "oracleID": "93521-p16-s1-19",
+      "page": 16,
+      "system": 1,
+      "expectedText": "Andante",
+      "oracleRect": [
+        78,
+        40,
+        122,
+        53
+      ],
+      "detected": true,
+      "predictedRect": [
+        78.65772288616829,
+        38.68312716554137,
+        121.02494993345593,
+        52.74011986257847
+      ],
+      "recognizedText": "Andantr.",
+      "oracleRectangleCoverage": 0.9436425713767849,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    },
+    {
+      "oracleID": "93521-p22-s1-27",
+      "page": 22,
+      "system": 1,
+      "expectedText": "Agitato (Allegretto non troppo)",
+      "oracleRect": [
+        76,
+        25,
+        220,
+        41
+      ],
+      "detected": true,
+      "predictedRect": [
+        77.0321726961759,
+        24.42017353825343,
+        218.6519300597167,
+        40.37045540040842
+      ],
+      "recognizedText": "AfItato. (Allekrettp non troppo.)",
+      "oracleRectangleCoverage": 0.9447743768979885,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    },
+    {
+      "oracleID": "93521-p26-s3-34",
+      "page": 26,
+      "system": 3,
+      "expectedText": "Trio",
+      "oracleRect": [
+        54,
+        301,
+        85,
+        315
+      ],
+      "detected": true,
+      "predictedRect": [
+        53.93699876560636,
+        299.92937715727936,
+        91.29265291142852,
+        319.48502787994556
+      ],
+      "recognizedText": "Trio.",
+      "oracleRectangleCoverage": 1.0,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    },
+    {
+      "oracleID": "93521-p28-s3-38",
+      "page": 28,
+      "system": 3,
+      "expectedText": "Coda",
+      "oracleRect": [
+        66.8,
+        310.4,
+        104.5,
+        328.5
+      ],
+      "detected": true,
+      "predictedRect": [
+        67.60314228043713,
+        310.24307793154185,
+        103.69336984398153,
+        327.34850269535264
+      ],
+      "recognizedText": "Coda.",
+      "oracleRectangleCoverage": 0.8963983163630029,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    },
+    {
+      "oracleID": "93521-p29-s1-39",
+      "page": 29,
+      "system": 1,
+      "expectedText": "Poco Allegretto con Variazioni",
+      "oracleRect": [
+        76,
+        22,
+        233,
+        36
+      ],
+      "detected": true,
+      "predictedRect": [
+        76.14353021712526,
+        20.650425169392992,
+        234.17585144159045,
+        38.77061657310516
+      ],
+      "recognizedText": "Poco Allegretto con Variazioni.",
+      "oracleRectangleCoverage": 0.9990857947953805,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    },
+    {
+      "oracleID": "93521-p34-s3-45",
+      "page": 34,
+      "system": 3,
+      "expectedText": "Doppio Movimento",
+      "oracleRect": [
+        69.7,
+        306.5,
+        165.4,
+        322.3
+      ],
+      "detected": true,
+      "predictedRect": [
+        70.69433429499003,
+        305.7428314776698,
+        165.92182992433962,
+        321.5070615444788
+      ],
+      "recognizedText": "Doppio Movimento.",
+      "oracleRectangleCoverage": 0.9399453420141523,
+      "warning": "Coverage measures oracle box whitespace too; visual glyph containment decides clipping.",
+      "glyphContainment": "pass_visual",
+      "notes": "Source pixels compared against frozen oracle at432dpi; rectangle-whitespace overlap alone is not the verdict."
+    }
+  ],
+  "visualReview": {
+    "allSevenBoundsViewedAtDPI": 432,
+    "completeGlyphs": 7,
+    "clippedGlyphs": 0,
+    "falsePositiveHeadingsObserved": 0,
+    "upperAllowanceResult": "Agitato initial A, i dot, opening and closing parentheses now complete. Other six headings remain complete. No new visible upper neighboring ink in these seven cases.",
+    "extraInk": "Agitato lower strip includes con Sord. and slur fragments; Trio includes unrelated beam; Coda is very close to staff line.",
+    "scope": "Recognition experiment covers7largeheadings from49independent source direction regions. No claim of complete parts, all musical directions, or clean heading copying."
+  }
+}

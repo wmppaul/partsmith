@@ -1,0 +1,728 @@
+{
+  "reviewScope": "Native planning diagnostics on reviewed initialization profiles; no exports or visual crop-quality pass implied.",
+  "results": [
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "exitCode": 0,
+      "stdout": "Planned 612 bands; unresolved pages: [38]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 38,
+          "reasons": [
+            "Found 16 staves; the reviewed profile expects 5 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        }
+      ],
+      "assignedBands": 612,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "exitCode": 0,
+      "stdout": "Planned 480 bands; unresolved pages: [26]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 26,
+          "reasons": [
+            "Found 0 staves; the reviewed profile expects 4 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        }
+      ],
+      "assignedBands": 480,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "exitCode": 0,
+      "stdout": "Planned 460 bands; unresolved pages: [25]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 25,
+          "reasons": [
+            "Found 19 staves; the reviewed profile expects 5 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        }
+      ],
+      "assignedBands": 460,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33",
+      "exitCode": 0,
+      "stdout": "Planned 825 bands; unresolved pages: [1]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 1,
+          "reasons": [
+            "Found 0 staves; the reviewed profile expects 6 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        }
+      ],
+      "assignedBands": 825,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "exitCode": 0,
+      "stdout": "Planned 604 bands; unresolved pages: [1]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 1,
+          "reasons": [
+            "Found 0 staves; the reviewed profile expects 4 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        }
+      ],
+      "assignedBands": 604,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "exitCode": 0,
+      "stdout": "Planned 144 bands; unresolved pages: [1, 14, 18]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 1,
+          "reasons": [
+            "Found 0 staves; the reviewed profile expects 3 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        },
+        {
+          "page": 14,
+          "reasons": [
+            "Found 14 staves; the reviewed profile expects 3 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        },
+        {
+          "page": 18,
+          "reasons": [
+            "Found 0 staves; the reviewed profile expects 3 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+          ]
+        }
+      ],
+      "assignedBands": 144,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "sourceSHA256": "030e03434d994e1974719f13f62861c21091d22af35ee832a0e1ffde17a4efc3",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "exitCode": 0,
+      "stdout": "Planned 0 bands; unresolved pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 1,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 2,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 3,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 4,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 5,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 6,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 7,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 8,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 9,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 10,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 11,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 12,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 13,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 14,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 15,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 16,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 17,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 18,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 19,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 20,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 21,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 22,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 23,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 24,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 25,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 26,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 27,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 28,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 29,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 30,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 31,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 32,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 33,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 34,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 35,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 36,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 37,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 38,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 39,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 40,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 41,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 42,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 43,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 44,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 45,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 46,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 47,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 48,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 49,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 50,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 51,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 52,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 53,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 54,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 55,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 56,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 57,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 58,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 59,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 60,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 61,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 62,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 63,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 64,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 65,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 66,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 67,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 68,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 69,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 70,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        }
+      ],
+      "assignedBands": 0,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "exitCode": 0,
+      "stdout": "Planned 660 bands; unresolved pages: []; canApply: true\n",
+      "stderr": "",
+      "unresolvedPages": [],
+      "assignedBands": 660,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/normal-mozart-piano-quartet-kv478-score.json",
+      "status": "planned_visual_review_pending"
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "exitCode": 0,
+      "stdout": "Planned 520 bands; unresolved pages: []; canApply: true\n",
+      "stderr": "",
+      "unresolvedPages": [],
+      "assignedBands": 520,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/normal-mozart-string-quartet-kv387-score.json",
+      "status": "planned_visual_review_pending"
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+      "exitCode": 0,
+      "stdout": "Planned 405 bands; unresolved pages: []; canApply: true\n",
+      "stderr": "",
+      "unresolvedPages": [],
+      "assignedBands": 405,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/normal-mozart-trio-eb-major-kv498-score.json",
+      "status": "planned_visual_review_pending"
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "exitCode": 0,
+      "stdout": "Planned 0 bands; unresolved pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 1,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 2,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 3,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 4,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 5,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 6,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 7,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 8,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 9,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 10,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 11,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        }
+      ],
+      "assignedBands": 0,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/normal-schubert-erlkonig-d328-score.json",
+      "status": "unresolved"
+    },
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "nativeExecutableSHA256": "3c912d44c29b55fc88cc25cc64130d8ea4914b7f6142f1352ec728cd4e5cdf05",
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac",
+      "exitCode": 0,
+      "stdout": "Planned 0 bands; unresolved pages: [1, 2, 3, 4]; canApply: false\n",
+      "stderr": "",
+      "unresolvedPages": [
+        {
+          "page": 1,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 2,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 3,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        },
+        {
+          "page": 4,
+          "reasons": [
+            "The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."
+          ]
+        }
+      ],
+      "assignedBands": 0,
+      "planPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/profile-review/plans/normal-mozart-notte-e-giorno-don-giovanni-score.json",
+      "status": "unresolved"
+    }
+  ]
+}

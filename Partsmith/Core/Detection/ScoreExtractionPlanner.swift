@@ -53,6 +53,16 @@ struct ScorePageAnalysis: Codable, Equatable {
     /// Analysis-only components in the original image coordinate system. No
     /// staff removal or connector separation is applied to exported pixels.
     var inkComponents: [ScoreInkComponent]?
+    /// Printed headings recognized above a known system's first staff. Optional
+    /// so inventories made before heading recognition remain readable.
+    var sharedHeadings: [ScoreSharedHeading]? = nil
+}
+
+struct ScoreSharedHeading: Codable, Equatable {
+    var anchorStaffID: Int
+    /// Top-down normalized edges, in the same display space as the staff inventory.
+    var bounds: [Double]
+    var recognizedText: String
 }
 
 struct ScoreInkComponent: Codable, Equatable {
@@ -379,15 +389,42 @@ enum ScoreExtractionPlanner {
         let lyrics = lyricComponents(page: page, staffIDs: lyricIDs)
         for system in 0..<(ordered.count / stride) {
             var offset = system * stride
+            let headingAnchor = ordered[offset].id
             for part in profile.parts {
                 let staves = Array(ordered[offset..<(offset + part.staffCount)])
                 let crop = cropBounds(staves, page: page, profile: profile, part: part, lyricOwners: lyrics)
                 output.assignments.append(band(partID: part.id, page: page, system: system, staves: staves, rect: crop.rect,
                     label: "", kind: "music", breakBefore: false, provenance: "native-profile-cadence", warnings: staves.flatMap(\.warnings) + crop.warnings))
+                copySharedHeadings(page: page, anchor: headingAnchor,
+                    to: &output.assignments[output.assignments.count - 1])
                 offset += part.staffCount
             }
         }
         return output
+    }
+
+    /// Retain printed pixels at their horizontal score position. Never replace
+    /// a heading with OCR text, trim it to fit, or copy it twice when contained.
+    private static func copySharedHeadings(page: ScorePageAnalysis, anchor: Int,
+                                           to band: inout ScorePlannedBand) {
+        let candidates = (page.sharedHeadings ?? []).filter { $0.anchorStaffID == anchor }
+        for heading in candidates {
+            let r = heading.bounds
+            guard r.count == 4, r.allSatisfy(\.isFinite),
+                  r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1 else { continue }
+            if r[0] >= band.leftFraction, r[2] <= 1 - band.rightFraction,
+               r[1] >= band.topFraction, r[3] <= band.bottomFraction { continue }
+            // Two stacked fragments in the same horizontal position cannot be
+            // placed in one copied-mark row. Keep the earlier complete heading.
+            guard band.sourceMarkings.allSatisfy({ min(1 - $0.rightFraction, r[2]) <= max($0.leftFraction, r[0]) }) else {
+                band.warnings.append("More than one shared heading occupies the same horizontal position; check the source directions.")
+                continue
+            }
+            band.leftFraction = min(band.leftFraction, r[0])
+            band.rightFraction = min(band.rightFraction, 1 - r[2])
+            band.sourceMarkings.append(ScoreSourceMarking(topFraction: r[1], bottomFraction: r[3],
+                leftFraction: r[0], rightFraction: 1 - r[2]))
+        }
     }
 
     private static func reviewedPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, override: ScorePageOverride) -> ScorePagePlan {

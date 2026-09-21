@@ -1,0 +1,1113 @@
+{
+  "schemaVersion": 1,
+  "scope": "Every PDF in sample_scores recursively plus Tests/extraction/sources. Excludes generated extraction outputs, app bundles, build artifacts and exported parts elsewhere.",
+  "inventoryDate": "2026-09-20",
+  "summary": {
+    "inputPDFs": 36,
+    "inputPages": 1477,
+    "originalPDFs": 34,
+    "originalPages": 1474,
+    "excerptPDFs": 2,
+    "duplicateHashes": [],
+    "profilesAvailable": 36
+  },
+  "limitations": [
+    "Corpus metadata is not detector accuracy evidence.",
+    "Existing profiles initialize instrument identity manually; they do not test OCR name discovery.",
+    "Raw inventory CLI does not execute Magic Wand rectification before detection.",
+    "Legacy reviewed maps and overrides need separate hash binding and review before reuse."
+  ],
+  "scores": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "path": "Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "sha256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "bytes": 824698,
+      "pageCount": 2,
+      "corpusFamily": "excerpt",
+      "sourceKind": "lossless_excerpt",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_excerpt_only",
+      "profilePath": "Tests/quality_control/profiles/excerpt-beethoven-op67-pages-7-8.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Excerpt regression only; completion does not establish full-source coverage."
+      ],
+      "profileSHA256": "d1998d086414c831b3e22031fff15b9cad1e4916f5886250858666405fce2e82",
+      "rosterStatus": "fixed_roster_established_for_excerpt_only",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2
+      ],
+      "derivedFrom": {
+        "sha256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+        "sourcePagesOneBased": [
+          7,
+          8
+        ],
+        "method": "PDFKit page copy, preserving PDF image content without rasterization. Source file unchanged.",
+        "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf"
+      }
+    },
+    {
+      "id": "excerpt-mozart-k488-page-17",
+      "path": "Tests/extraction/sources/mozart-k488-page-17.pdf",
+      "sha256": "9e7a091795bbc85fc8da0794afd791c8540ec3268a1e516204a08aa82244f121",
+      "bytes": 49920,
+      "pageCount": 1,
+      "corpusFamily": "excerpt",
+      "sourceKind": "lossless_excerpt",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_verified",
+      "profilePath": "Tests/quality_control/profiles/excerpt-mozart-k488-page-17.json",
+      "profileEvidence": "Nine instruments from existing Mozart variable-instrumentation fixtures. Explicit system assignment required.",
+      "legacyEvidence": [
+        "Tests/extraction/mozart-variable-instrumentation-fixtures.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Each omitted instrument needs a counted rest span; do not apply a fixed staff cadence.",
+        "Excerpt regression only; completion does not establish full-source coverage."
+      ],
+      "derivedFrom": {
+        "sha256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+        "sourcePagesOneBased": [
+          17
+        ],
+        "method": "Lossless PDF page copy using PyMuPDF insert_pdf; source PDF unchanged.",
+        "path": "sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf"
+      }
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "path": "sample_scores/lightly_skewed/01_mozart_piano_quartet_k478_imslp_478563.pdf",
+      "sha256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "bytes": 6857729,
+      "pageCount": 52,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_roster_with_editorial_ossia",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        18,
+        35,
+        38,
+        51,
+        52
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "path": "sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "sha256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "bytes": 5576231,
+      "pageCount": 35,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_profile_previously_reviewed",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+      "profileEvidence": "Instrument identity/order from Tests/full_scores/sources.json; compact crop mode with no historical padding or crop overrides.",
+      "legacyEvidence": [
+        "Tests/full_scores/brahms-trio-map.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently."
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803",
+      "path": "sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sha256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "bytes": 19004675,
+      "pageCount": 86,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "f1ef4af7e76f2c94d86046b2ce2329c3bb936636f60a50805fdb682592a915a7",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        28,
+        37,
+        46
+      ]
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222",
+      "path": "sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sha256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "bytes": 16869181,
+      "pageCount": 77,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        31,
+        36,
+        37,
+        41
+      ]
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "path": "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sha256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "bytes": 2422810,
+      "pageCount": 16,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_profile_previously_reviewed",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922.json",
+      "profileEvidence": "Instrument identity/order from Tests/full_scores/sources.json; compact crop mode with no historical padding or crop overrides.",
+      "legacyEvidence": [
+        "Tests/full_scores/schumann-map.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently."
+    },
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "path": "sample_scores/lightly_skewed/06_puccini_la_boheme_sc67_imslp_885132.pdf",
+      "sha256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "bytes": 14263780,
+      "pageCount": 277,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "65053ac9613472e147df337c0e9dd6dbde87e69b68ff6d2357fdc04aa63cc066",
+      "rosterStatus": "initial_roster_only_full_cast_not_established",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        3,
+        4,
+        83,
+        167,
+        223
+      ]
+    },
+    {
+      "id": "lightly-skewed-07-brahms-2-motets-op74-imslp-101579",
+      "path": "sample_scores/lightly_skewed/07_brahms_2_motets_op74_imslp_101579.pdf",
+      "sha256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+      "bytes": 2897954,
+      "pageCount": 18,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-07-brahms-2-motets-op74-imslp-101579.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "profileSourcePagesCheckedOneBased": [
+        2,
+        6,
+        11,
+        12,
+        18
+      ]
+    },
+    {
+      "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+      "path": "sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+      "sha256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+      "bytes": 7911341,
+      "pageCount": 10,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "9d669e5786b2c44264242b1c28b63897f92c5932943b49ac39d5c4a3a14d5675",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        3,
+        6,
+        10
+      ]
+    },
+    {
+      "id": "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040",
+      "path": "sample_scores/lightly_skewed/09_brahms_gesang_der_parzen_op89_imslp_109040.pdf",
+      "sha256": "9ba9d999930da2d109304c745fcf5e5568b8a33fd4349a77d95317da9a1c0ea4",
+      "bytes": 4901501,
+      "pageCount": 27,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "profileSourcePagesCheckedOneBased": [
+        2,
+        4,
+        27
+      ]
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "path": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sha256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "bytes": 5240229,
+      "pageCount": 26,
+      "corpusFamily": "lightly_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_roster_sampled",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        9,
+        18,
+        25,
+        26
+      ]
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "path": "sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sha256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "bytes": 2168600,
+      "pageCount": 30,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_roster_with_editorial_ossia",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        11,
+        21,
+        25,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "path": "sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sha256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "bytes": 4243898,
+      "pageCount": 35,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_profile_previously_reviewed",
+      "profilePath": "Tests/trio_medium/profile.json",
+      "profileEvidence": "Existing full 35-page medium Trio source review.",
+      "legacyEvidence": [
+        "Tests/trio_medium/source-layout.json",
+        "Tests/trio_medium/source-map.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently."
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "path": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "bytes": 8801313,
+      "pageCount": 56,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_roster_sampled",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        19,
+        38,
+        55,
+        56
+      ]
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506",
+      "path": "sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sha256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "bytes": 17307257,
+      "pageCount": 80,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "profileSourcePagesCheckedOneBased": [
+        3,
+        33,
+        38,
+        39,
+        43
+      ]
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "path": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sha256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "bytes": 2104615,
+      "pageCount": 25,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_profile_previously_reviewed",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+      "profileEvidence": "Instrument identity/order from Tests/full_scores/sources.json; compact crop mode with no historical padding or crop overrides.",
+      "legacyEvidence": [
+        "Tests/full_scores/brahms-quartet-map.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently."
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "bytes": 2747941,
+      "pageCount": 39,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_roster_sampled",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        14,
+        27,
+        38,
+        39
+      ]
+    },
+    {
+      "id": "medium-skewed-07-brahms-2-motets-op74-imslp-101580",
+      "path": "sample_scores/medium_skewed/07_brahms_2_motets_op74_imslp_101580.pdf",
+      "sha256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+      "bytes": 2265587,
+      "pageCount": 18,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-07-brahms-2-motets-op74-imslp-101580.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "profileSourcePagesCheckedOneBased": [
+        2,
+        6,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041",
+      "path": "sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+      "sha256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+      "bytes": 3662726,
+      "pageCount": 27,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "profileSourcePagesCheckedOneBased": [
+        2,
+        4,
+        27
+      ]
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "path": "sample_scores/medium_skewed/09_schumann_frauenliebe_und_leben_op42_imslp_51733.pdf",
+      "sha256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "bytes": 3636514,
+      "pageCount": 18,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "fixed_roster_sampled",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        7,
+        13,
+        14,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "path": "sample_scores/medium_skewed/10_schubert_winterreise_d911_imslp_00414.pdf",
+      "sha256": "030e03434d994e1974719f13f62861c21091d22af35ee832a0e1ffde17a4efc3",
+      "bytes": 23890560,
+      "pageCount": 70,
+      "corpusFamily": "medium_skewed",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_verified",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "scanVariantNote": "Separate downloaded edition/filter/scan identified in sibling shortlist; not a synthetically distorted copy. Evaluate independently.",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        24,
+        47,
+        69,
+        70
+      ]
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "path": "sample_scores/normal/01_chamber/mozart_piano_quartet_kv478_score.pdf",
+      "sha256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "bytes": 979378,
+      "pageCount": 55,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "fixed_roster_movements_verified",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-piano-quartet-kv478-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        19,
+        23,
+        34,
+        37,
+        54,
+        55
+      ]
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "path": "sample_scores/normal/01_chamber/mozart_string_quartet_kv387_score.pdf",
+      "sha256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "bytes": 625852,
+      "pageCount": 31,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "fixed_roster_movements_verified",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-string-quartet-kv387-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        11,
+        12,
+        14,
+        16,
+        21,
+        24,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "bytes": 686236,
+      "pageCount": 29,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "fixed_roster_movements_verified",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        10,
+        12,
+        13,
+        17,
+        20,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score",
+      "path": "sample_scores/normal/02_orchestra/beethoven_egmont_overture_op84_score.pdf",
+      "sha256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "bytes": 737677,
+      "pageCount": 50,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/normal-beethoven-egmont-overture-op84-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "profileSHA256": "07091c381ca6849b1eca060704eca5db8558f6e0796bed089a6bbdae600d67c0",
+      "rosterStatus": "complete_named_groups_fixed_positions_with_doubling",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        6,
+        36,
+        37,
+        38,
+        47,
+        50
+      ]
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "path": "sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "sha256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "bytes": 537203,
+      "pageCount": 43,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "fixed_roster_sampled",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-magic-flute-overture-kv620-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "profileSHA256": "5e24430e52731c391582d8202bbaa49076b35abd301d2a687439ff9f6e358bd9",
+      "rosterStatus": "fixed_named_staff_roster_supported_at_all_section_boundaries",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        3,
+        18,
+        19,
+        25,
+        43
+      ]
+    },
+    {
+      "id": "normal-mozart-symphony-no18-kv130-score",
+      "path": "sample_scores/normal/02_orchestra/mozart_symphony_no18_kv130_score.pdf",
+      "sha256": "250d3c5c97b013174ca4fea63a9e856c268e1cdbc76a6445efb86b02df82119e",
+      "bytes": 711412,
+      "pageCount": 37,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-symphony-no18-kv130-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "profileSHA256": "5ae22ebcd4ec9563788365159711ffdcb1c66b2c6d871fdb9037a82428cd21d6",
+      "rosterStatus": "complete_named_groups_fixed_positions_with_crook_changes",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        16,
+        22,
+        23,
+        24,
+        37
+      ]
+    },
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "path": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sha256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "bytes": 224852,
+      "pageCount": 4,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_opening_independently_verified",
+      "profilePath": "Tests/quality_control/profiles/notte-variable-initialization.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [
+        "Tests/full_scores/notte-map.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac",
+      "profileSourcePagesCheckedOneBased": []
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "path": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+      "sha256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "bytes": 211642,
+      "pageCount": 11,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_verified",
+      "profilePath": "Tests/quality_control/profiles/normal-schubert-erlkonig-d328-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/corpus-profile-additions.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        4,
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "path": "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+      "sha256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+      "bytes": 152585,
+      "pageCount": 6,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+      "path": "sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+      "sha256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "bytes": 148248,
+      "pageCount": 4,
+      "corpusFamily": "normal",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "fixed_profile_previously_reviewed",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json",
+      "profileEvidence": "Instrument identity/order from Tests/full_scores/sources.json; compact crop mode with no historical padding or crop overrides.",
+      "legacyEvidence": [
+        "Tests/full_scores/ave-map.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ]
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sha256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "bytes": 17324581,
+      "pageCount": 106,
+      "corpusFamily": "rest_detection",
+      "sourceKind": "original_download",
+      "renderContent": "raster_scan",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Verify instrument roster in each system/movement; a single fixed profile has not been established for this complete source."
+      ],
+      "profileSHA256": "9acfd39a14077691c38143b1ebc3e9d6f41585d9f9505c32518bfd357da5761d",
+      "rosterStatus": "complete_named_group_union_variable_movements",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        7,
+        26,
+        41,
+        56,
+        104,
+        105,
+        106
+      ]
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437",
+      "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_mvt2_mutopia1437.pdf",
+      "sha256": "1fc0bc2c8942c65d25f4939ae272b20b37e112b63f9bb2f5b63ddf8826c88cb3",
+      "bytes": 574940,
+      "pageCount": 35,
+      "corpusFamily": "rest_detection",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profilePath": "Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437.json",
+      "profileEvidence": "Source-render initialization recorded in Tests/quality_control/profile-additions-2.json; consult its explicit scope and roster limitations.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness."
+      ],
+      "profileSHA256": "a1299f6cc3dc14ffb4dea12bedbcf255ea88da203e5a6d88c9feb089f8e5ab9e",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "profileSourcePagesCheckedOneBased": [
+        1,
+        2,
+        7,
+        35
+      ]
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229",
+      "path": "sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf",
+      "sha256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+      "bytes": 690212,
+      "pageCount": 36,
+      "corpusFamily": "rest_detection",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "variable_verified",
+      "profilePath": "Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+      "profileEvidence": "Nine instruments from existing Mozart variable-instrumentation fixtures. Explicit system assignment required.",
+      "legacyEvidence": [
+        "Tests/extraction/mozart-variable-instrumentation-fixtures.json"
+      ],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Each omitted instrument needs a counted rest span; do not apply a fixed staff cadence."
+      ]
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+      "path": "sample_scores/rest_detection/02_multibar_rest_parts/mozart_piano_concerto_no23_kv488_flute_mutopia2229.pdf",
+      "sha256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "bytes": 229543,
+      "pageCount": 5,
+      "corpusFamily": "rest_detection",
+      "sourceKind": "original_download",
+      "renderContent": "vector_or_mixed",
+      "instrumentation": "single_part",
+      "profilePath": "Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229.json",
+      "profileEvidence": "Publisher flute part named on pages; existing rest README visually reviewed page 1.",
+      "legacyEvidence": [],
+      "currentReviewStatus": "not_run_or_visually_reviewed",
+      "evaluationRequirements": [
+        "Every physical PDF page analyzed, including covers, blanks and movement boundaries.",
+        "All intended staves and outlying target notation retained; staff-count divisibility alone is insufficient.",
+        "Part identity/order and every system reconciled against the source.",
+        "Full output rendered and independently reviewed; generated bands are not proof of correctness.",
+        "Preserve printed multibar-rest counts and context. One compressed symbol is not one bar. Preserve incomplete finale material as supplied."
+      ]
+    }
+  ]
+}

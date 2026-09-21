@@ -96,7 +96,7 @@ def serialized_references(directory, manifest, source):
     temporary = tempfile.TemporaryDirectory(prefix="partsmith-pixel-reference-")
     work = Path(temporary.name)
     (work / "reference.swift").write_text(CORE_GRAPHICS_REFERENCE)
-    (work / "request.json").write_text(json.dumps({"source": str(Path(manifest["source"]).resolve()),
+    (work / "request.json").write_text(json.dumps({"source": str(Path(source.name).resolve()),
                                                   "placements": jobs}))
     subprocess.run([compiler, "-module-cache-path", str(work / "module-cache"),
                     str(work / "reference.swift"), "-o", str(work / "reference")], check=True)
@@ -173,6 +173,26 @@ def source_reference(output_page, source, source_index, source_rect, destination
     return reference, baseline_page
 
 
+def review_source_path(directory, manifest, mapping=None):
+    """Bind independent guards to the exact source and display geometry."""
+    assert digest(manifest["source"]) == manifest["sourceSHA256"], "Original source hash differs"
+    if mapping is not None:
+        assert mapping.get("sourceSHA256") == manifest["sourceSHA256"], "Source map belongs to a different score"
+        assert (mapping.get("rectifications") or []) == (manifest.get("rectifications") or []), \
+            "Source map must match the saved page corrections; raw and corrected guards are not interchangeable"
+    source_path = Path(manifest["source"])
+    if manifest.get("rectifications"):
+        assert manifest.get("reviewSourceFile") and manifest.get("reviewSourceSHA256"), \
+            "Corrected crop coordinates require a hashed, full-page corrected review source"
+        source_path = Path(directory) / manifest["reviewSourceFile"]
+        assert digest(source_path) == manifest["reviewSourceSHA256"], "Corrected review source hash differs"
+        with fitz.open(manifest["source"]) as original, fitz.open(source_path) as corrected:
+            assert len(original) == len(corrected), "Corrected review source must retain every source page"
+            assert all(a.rect == b.rect for a, b in zip(original, corrected)), \
+                "Corrected review source must retain original page dimensions"
+    return source_path
+
+
 def review(directory, map_path=None, pixels=False):
     directory = Path(directory)
     manifest = json.loads((directory / "manifest.json").read_text())
@@ -180,12 +200,12 @@ def review(directory, map_path=None, pixels=False):
     mapping = json.loads(map_bytes) if map_bytes is not None else None
     bindings = {"sourceMapSHA256": hashlib.sha256(map_bytes).hexdigest() if map_bytes is not None else None,
                 "normalizedManifestSHA256": normalized_manifest_digest(manifest)}
-    assert digest(manifest["source"]) == manifest["sourceSHA256"]
-    source = fitz.open(manifest["source"])
+    source_path = review_source_path(directory, manifest, mapping)
+    source = fitz.open(source_path)
     out = directory / "review"
     out.mkdir(exist_ok=True)
     report = {"status": "geometry_pass_visual_review_pending", "sourceSHA256": manifest["sourceSHA256"],
-              **bindings, "parts": []}
+              **bindings, "reviewSourceSHA256": digest(source_path), "rectifications": manifest.get("rectifications", []), "parts": []}
     protected = {}
     if mapping:
         for page in mapping["pages"]:

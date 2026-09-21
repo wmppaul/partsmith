@@ -1,0 +1,227 @@
+{
+  "status": "candidate1 draft_quality_failed; independent source oracle verified",
+  "files": {
+    "sourceOriginal": {
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    "correctedReference": {
+      "path": ".build/auto-qc/candidate/quartet93521-deskew-parts/rectified-review-source.pdf",
+      "sha256": "49fc54096ebcb15658bc35914d5224f048abda2a90bb0ca387387c2258742a82"
+    },
+    "candidate1Manifest": {
+      "path": ".build/auto-qc/candidate/quartet93521-deskew-parts/manifest.json",
+      "sha256": "b739d17015480611505c2a69f691459b0c091e9aa2f11e3bb51c8975715ad6eb"
+    },
+    "candidate1Violin1": {
+      "path": ".build/auto-qc/candidate/quartet93521-deskew-parts/Violin I.pdf",
+      "sha256": "1f0d933362fc24285f391fb0ed1d4557939cec39310838d5f11ecbd845ac03ac"
+    },
+    "candidate1Violin2": {
+      "path": ".build/auto-qc/candidate/quartet93521-deskew-parts/Violin II.pdf",
+      "sha256": "25fd0f429258b2230aab4f9ca32a806dc955d6ba5767c2c28ed8743a638f11d1"
+    },
+    "rawOracle": {
+      "path": "Tests/quality_control/brahms93521/shared-directions-raw.json",
+      "sha256": "ca3468046baf5ebe168f7fd9a6b5a39e6076fe421f6847706daa3d32f1bdef6b"
+    },
+    "correctedOracle": {
+      "path": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+      "sha256": "3bfce48f871486cfcb1c444377dd1ab76980bead90aaa9fca8f59f6d14f23e3c"
+    },
+    "candidate1PageReview": {
+      "path": "Tests/quality_control/brahms93521/candidate1-violin-page-review.json",
+      "sha256": "2616eb52696782cd03390609859a8c09203497684a81eca88eb2745c0bc6e33d"
+    },
+    "candidate1StructureReview": {
+      "path": "Tests/quality_control/brahms93521/candidate1-violin-structure-check.json",
+      "sha256": "72e22b8c57df756555cb1c4cde9d4661a14f7a6d184083d73ead7fc4bf7e7847"
+    }
+  },
+  "rectifications": [
+    {
+      "bottomLeft": {
+        "x": 0.022452219281807972,
+        "y": 0.9934585845001322
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9830891962180598
+      },
+      "pageIndex": 1,
+      "topLeft": {
+        "x": 0.001000000000000035,
+        "y": 0.01691080378194021
+      },
+      "topRight": {
+        "x": 0.977547780718192,
+        "y": 0.006541415499867753
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.001000000000000126,
+        "y": 0.9893711972992971
+      },
+      "bottomRight": {
+        "x": 0.9860176774355548,
+        "y": 0.9956464801362577
+      },
+      "pageIndex": 6,
+      "topLeft": {
+        "x": 0.013982322564445161,
+        "y": 0.004353519863742328
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.010628802700702766
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.015843354839884468,
+        "y": 0.9951491787679413
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9880074663921742
+      },
+      "pageIndex": 16,
+      "topLeft": {
+        "x": 0.0010000000000000646,
+        "y": 0.011992533607825706
+      },
+      "topRight": {
+        "x": 0.9841566451601157,
+        "y": 0.004850821232058711
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0010000000000000009,
+        "y": 0.9907265824906225
+      },
+      "bottomRight": {
+        "x": 0.9878324989484448,
+        "y": 0.9961059164578222
+      },
+      "pageIndex": 18,
+      "topLeft": {
+        "x": 0.012167501051555252,
+        "y": 0.0038940835421777953
+      },
+      "topRight": {
+        "x": 0.9990000000000001,
+        "y": 0.00927341750937749
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.000999999999999995,
+        "y": 0.9911813734416057
+      },
+      "bottomRight": {
+        "x": 0.988446378088182,
+        "y": 0.9962650046465762
+      },
+      "pageIndex": 22,
+      "topLeft": {
+        "x": 0.011553621911818033,
+        "y": 0.003734995353423809
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.008818626558394271
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0009999999999999595,
+        "y": 0.983525543271109
+      },
+      "bottomRight": {
+        "x": 0.9781124995691003,
+        "y": 0.9935869562979912
+      },
+      "pageIndex": 27,
+      "topLeft": {
+        "x": 0.021887500430899803,
+        "y": 0.006413043702008903
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.01647445672889103
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0009999999999999076,
+        "y": 0.9844263100779589
+      },
+      "bottomRight": {
+        "x": 0.9793505846569762,
+        "y": 0.9939242745790171
+      },
+      "pageIndex": 33,
+      "topLeft": {
+        "x": 0.020649415343023954,
+        "y": 0.0060757254209828915
+      },
+      "topRight": {
+        "x": 0.9990000000000001,
+        "y": 0.015573689922041112
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0010000000000000497,
+        "y": 0.9889130266602368
+      },
+      "bottomRight": {
+        "x": 0.985384552060725,
+        "y": 0.9954715254004882
+      },
+      "pageIndex": 37,
+      "topLeft": {
+        "x": 0.01461544793927505,
+        "y": 0.004528474599511889
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.011086973339763162
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.015843354839884468,
+        "y": 0.9951491787679413
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9880074663921742
+      },
+      "pageIndex": 38,
+      "topLeft": {
+        "x": 0.0010000000000000646,
+        "y": 0.011992533607825706
+      },
+      "topRight": {
+        "x": 0.9841566451601157,
+        "y": 0.004850821232058711
+      }
+    }
+  ],
+  "oracleCounts": {
+    "allEntries": 49,
+    "changedCoordinates": 9,
+    "unchangedCoordinates": 40,
+    "sharedCopyObligations": 41,
+    "sharedTargetAssignments": 123,
+    "alreadyRepeatedControls": 8
+  },
+  "reviewedOutputPages": {
+    "violin1": 24,
+    "violin2": 21
+  },
+  "scopeLimit": "A source direction oracle and indexed output overview do not establish all-note preservation or whole-score pass."
+}

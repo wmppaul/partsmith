@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "scope": "Manual instrument initialization for the 16 previously unprofiled corpus entries. Not an extraction/output quality pass. Main corpus.json and inventory scripts were intentionally not changed.",
+  "reviewDate": "2026-09-20",
+  "reviewer": "sample_corpus agent",
+  "bindingPolicy": "Before using an addition, verify exact sourceSHA256 and profileSHA256. Native profile JSON itself does not enforce this binding; the registry supplies it.",
+  "limitations": [
+    "Only the explicitly listed full-size pages received roster/brace review. Thumbnail browsing and machine staff counts are separately described and are not full-page musical review.",
+    "Profiles initialize grouped printed staves, not necessarily individual players. Cropping cannot separate independent voices or instruments sharing a printed staff.",
+    "All changing rosters, divisi, hidden staves, doubling or movement crook changes set requiresSystemAssignment=true. No overrides, omitted-part durations, or rest counts are inferred here.",
+    "For sections that alternate one/two staves, staffCount is the opening count only. Explicit band overrides can group variable candidate counts; the current fixed-count selection helper does not directly express this.",
+    "No entry is safe for unreviewed full export; La Bohème is explicitly only an incomplete opening-role roster."
+  ],
+  "additions": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "path": "Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "sourcePageCount": 2,
+      "title": "Beethoven Symphony No. 5, opening two-page excerpt",
+      "profilePath": "Tests/quality_control/profiles/excerpt-beethoven-op67-pages-7-8.json",
+      "profileSHA256": "d1998d086414c831b3e22031fff15b9cad1e4916f5886250858666405fce2e82",
+      "sourceScope": "lossless_excerpt_only",
+      "rosterStatus": "fixed_roster_established_for_excerpt_only",
+      "requiresSystemAssignment": false,
+      "nominalProfilePhysicalStaves": 12,
+      "namedProfileGroups": 12,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Both excerpt pages are visually checked: one complete 12-staff system on page 1 and two 12-staff systems on page 2. Printed opening names, wind-pair numbers and clefs establish the order.",
+        "This is source PDF 52624 pages 7–8 only. The later piccolo, contrabassoon and trombones in the complete symphony are outside this excerpt; this profile must not be applied to that entire source."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": true,
+      "safeForUnreviewedFullExport": false,
+      "derivedFrom": {
+        "sha256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+        "sourcePagesOneBased": [
+          7,
+          8
+        ],
+        "method": "PDFKit page copy, preserving PDF image content without rasterization. Source file unchanged.",
+        "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf"
+      },
+      "fixedPhysicalCountsSupportedByReviewedPages": true,
+      "instrumentation": "fixed_excerpt_only",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803",
+      "path": "sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePageCount": 86,
+      "title": "Brahms Symphony No. 1, IMSLP 317803",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803.json",
+      "profileSHA256": "f1ef4af7e76f2c94d86046b2ce2329c3bb936636f60a50805fdb682592a915a7",
+      "sourceScope": "complete_work",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 16,
+      "namedProfileGroups": 16,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        28,
+        37,
+        46
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        28,
+        37,
+        46
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Opening printed roster has 14 physical staves: paired flutes, oboes, clarinets, bassoons; contrabassoon; two horn pairs; trumpets; timpani; five string staves. The profile is the union of these roles plus the two trombone staves printed at the finale opening (page 46).",
+        "Page 28 opens Andante sostenuto with 13 staves, then a reduced 10-staff system. Page 37 opens Un poco Allegretto e grazioso with 12 staves and then 11. Page 46 opens the finale Adagio with 16, including an alto/tenor trombone staff and bass trombone staff.",
+        "All 86 page thumbnails were browsed to locate boundaries; only the listed pages received full-size roster review. Clarinet/horn crooks change; part names preserve player identity without imposing an opening transposition on later music."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222",
+      "path": "sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "sourcePageCount": 77,
+      "title": "Schumann Concertpiece for four horns, IMSLP 291222",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222.json",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2",
+      "sourceScope": "complete_work",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 19,
+      "namedProfileGroups": 19,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        31,
+        36,
+        37,
+        41
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        31,
+        41
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Opening has 19 physical staves. The separate orchestral horn staff is ad libitum; the four individually printed solo horn staves follow Viola and precede Violoncello. These must not be conflated.",
+        "Romanze begins on page 31 and Sehr lebhaft on page 41. Pages 36–37 have a real extra cello staff: I. Violoncell. and II. Violoncell. are printed on page 36 above separate staves. The 20-staff count is not a detection error.",
+        "Profile keeps one Violoncello section role with an initial count of one. It requires explicit variable-size band grouping on divisi systems; the fixed-count selection helper cannot yet express this directly."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "requiresVariableStaffGrouping": true,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "path": "sample_scores/lightly_skewed/06_puccini_la_boheme_sc67_imslp_885132.pdf",
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "sourcePageCount": 277,
+      "title": "Puccini La Bohème, IMSLP 885132 vocal/piano score",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132.json",
+      "profileSHA256": "65053ac9613472e147df337c0e9dd6dbde87e69b68ff6d2357fdc04aa63cc066",
+      "sourceScope": "complete_vocal_score",
+      "rosterStatus": "initial_roster_only_full_cast_not_established",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 4,
+      "namedProfileGroups": 3,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": false,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        3,
+        4,
+        83,
+        167,
+        223
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        83,
+        167,
+        223
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "This file is a vocal/piano reduction. The first page has three piano-only grand-staff systems. Marcello first appears on page 2; page 4 prints Rodolfo above Marcello, then Rodolfo alone. Profile initializes only these two verified opening roles plus Piano.",
+        "Act openings are pages 1, 83, 167 and 223. Act II page 83 includes crowd/vendor groups Bassi, Soprani, Tenori and Monelli in a system above piano. This changing cast and order cannot use a fixed voice/piano stride.",
+        "Full cast/chorus role inventory is not established; these three profile entries are explicitly incomplete for the opera. No silent intervals may be inferred from a missing named voice.",
+        "Page 167 (Act III opening) visibly contains three piano grand-staff systems, six real staves. Raw candidate1 inventory detects only three. This unresolved recall issue is separately recorded."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "missingInitializationCoverage": "Later cast and chorus groups are not fully catalogued; extend the roster before any full-opera assignments.",
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "lightly-skewed-07-brahms-2-motets-op74-imslp-101579",
+      "path": "sample_scores/lightly_skewed/07_brahms_2_motets_op74_imslp_101579.pdf",
+      "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+      "sourcePageCount": 18,
+      "title": "Brahms Two Motets op. 74, IMSLP 101579",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-07-brahms-2-motets-op74-imslp-101579.json",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e",
+      "sourceScope": "complete_two_motet_collection",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 6,
+      "namedProfileGroups": 5,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        2,
+        6,
+        11,
+        12,
+        18
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        2,
+        6,
+        11,
+        12
+      ],
+      "firstMusicPageOneBased": 2,
+      "evidence": [
+        "Opening printed voices are Soprano, Alto, Tenor, Bass with a two-staff piano reduction. The footnote says the piano is only an aid for rehearsal, not a performed accompaniment.",
+        "Page 6 expands to Soprano I/II, Alto, Tenor, Bass I/II plus two piano staves (eight physical staves). Page 11 returns from that layout to SATB plus piano for the Choral; page 12 starts the second motet in SATB plus piano. Page 18 closes with that six-staff layout.",
+        "One Soprano section and one Bass section initialize the combined opening staves; separate I/II passages require explicit variable-size group mappings. Individual singers cannot be separated from a shared printed staff by cropping."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "requiresVariableStaffGrouping": true,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+      "path": "sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+      "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+      "sourcePageCount": 10,
+      "title": "Mendelssohn Hear My Prayer, IMSLP 40163",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+      "profileSHA256": "9d669e5786b2c44264242b1c28b63897f92c5932943b49ac39d5c4a3a14d5675",
+      "sourceScope": "complete_work",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 7,
+      "namedProfileGroups": 6,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        3,
+        6,
+        10
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        2,
+        6
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Title names solo soprano, choir and organ. Page 1 has four solo-soprano-plus-organ systems, three staves each; the organ brace contains two staves.",
+        "Page 2 starts with solo plus organ but its last system introduces the full seven-staff roster: Solo soprano, Chorus soprano, Alto, Tenor, Bass, Organ (two). Solo and chorus soprano are separate parts.",
+        "Page 6 mixes reduced solo systems and full choir systems; page 10 retains the full roster through the ending. Absent choir staves need source-derived, reviewed measure spans before rests can be generated."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040",
+      "path": "sample_scores/lightly_skewed/09_brahms_gesang_der_parzen_op89_imslp_109040.pdf",
+      "sourceSHA256": "9ba9d999930da2d109304c745fcf5e5568b8a33fd4349a77d95317da9a1c0ea4",
+      "sourcePageCount": 27,
+      "title": "Brahms Gesang der Parzen, IMSLP 109040",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040.json",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d",
+      "sourceScope": "complete_work",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 20,
+      "namedProfileGroups": 20,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        2,
+        4,
+        27
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        2
+      ],
+      "firstMusicPageOneBased": 2,
+      "evidence": [
+        "Opening page 2 has 20 physical staves. Altos I–II share one staff and Basses I–II share one staff; page 4 separates both groups, producing 22 physical staves, retained at the ending on page 27.",
+        "The lowest trombone and bass tuba share one printed staff; the upper two trombones share another. The flute staff includes piccolo doubling, explicitly visible near the ending.",
+        "Profile preserves the combined opening voice sections and shared instrumental staves. It cannot produce independent player or individual choral-division parts from those shared staves. Divided voice systems need explicit variable-size band grouping."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "requiresVariableStaffGrouping": true,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506",
+      "path": "sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePageCount": 80,
+      "title": "Schumann Concertpiece for four horns, IMSLP 51506",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506.json",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2",
+      "sourceScope": "complete_work",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 19,
+      "namedProfileGroups": 19,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        3,
+        33,
+        38,
+        39,
+        43
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        3,
+        33,
+        43
+      ],
+      "firstMusicPageOneBased": 3,
+      "evidence": [
+        "Independently inspected opening page 3 has the same 19-role order as IMSLP 291222: a separate ad-libitum orchestral horn staff and four solo horn staves between Viola and Violoncello.",
+        "Romanze starts on PDF page 33 and Sehr lebhaft on page 43. Pages 38–39 have 20 real staves: page 38 prints I. Violoncell. and II. Violoncell. on two separate staves above Double bass.",
+        "This is a separate source edition/scan and remains separately hash-bound. One initial cello-section staff is not a fixed count for the full work."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "requiresVariableStaffGrouping": true,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "medium-skewed-07-brahms-2-motets-op74-imslp-101580",
+      "path": "sample_scores/medium_skewed/07_brahms_2_motets_op74_imslp_101580.pdf",
+      "sourceSHA256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+      "sourcePageCount": 18,
+      "title": "Brahms Two Motets op. 74, IMSLP 101580",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-07-brahms-2-motets-op74-imslp-101580.json",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e",
+      "sourceScope": "complete_two_motet_collection",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 6,
+      "namedProfileGroups": 5,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        2,
+        6,
+        11,
+        12
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        2,
+        6,
+        11,
+        12
+      ],
+      "firstMusicPageOneBased": 2,
+      "evidence": [
+        "Independently inspected opening page 2 is SATB plus a two-staff rehearsal piano reduction. Page 6 expands to SSATBB plus piano; page 11 returns to SATB plus piano in the Choral; page 12 starts the second motet.",
+        "Initial Soprano and Bass section roles each cover a combined staff and must expand to two candidate staves in divided passages. Fixed modulo-six assignment would misidentify the music.",
+        "The piano is labelled as rehearsal assistance. This source is independently hash-bound even where page layout matches IMSLP 101579."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "requiresVariableStaffGrouping": true,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041",
+      "path": "sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+      "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+      "sourcePageCount": 27,
+      "title": "Brahms Gesang der Parzen, IMSLP 109041",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d",
+      "sourceScope": "complete_work",
+      "rosterStatus": "initial_staff_group_roster_with_variable_divisi",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 20,
+      "namedProfileGroups": 20,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        2,
+        4,
+        27
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        2
+      ],
+      "firstMusicPageOneBased": 2,
+      "evidence": [
+        "Independently inspected page 2 has the 20-staff combined-voice opening. Page 4 divides both Alto and Bass sections into two staves each, yielding 22; the ending on page 27 remains divided.",
+        "Trombone III and bass tuba share a staff; upper trombones share another. Flutes include piccolo doubling. Shared printed staves remain grouped in initialization.",
+        "This is a separate source hash, not a generated distortion of IMSLP 109040. Initial staff counts do not establish full-source assignment."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "requiresVariableStaffGrouping": true,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score",
+      "path": "sample_scores/normal/02_orchestra/beethoven_egmont_overture_op84_score.pdf",
+      "sourceSHA256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "sourcePageCount": 50,
+      "title": "Beethoven Egmont Overture, normal digital score",
+      "profilePath": "Tests/quality_control/profiles/normal-beethoven-egmont-overture-op84-score.json",
+      "profileSHA256": "07091c381ca6849b1eca060704eca5db8558f6e0796bed089a6bbdae600d67c0",
+      "sourceScope": "complete_work",
+      "rosterStatus": "complete_named_groups_fixed_positions_with_doubling",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 14,
+      "namedProfileGroups": 14,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        6,
+        36,
+        37,
+        38,
+        47,
+        50
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        6,
+        37
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Opening establishes 14 physical staves: separate Flutes I and II; paired oboes, clarinets and bassoons; two horn pairs; trumpets; timpani; five string staves. The horn pairs open in F and E-flat.",
+        "Flauto piccolo is printed above the second flute staff on pages 36 and 38. This is a doubling/instrument change on that staff, not an extra staff. Manual system confirmation remains enabled for this change.",
+        "Boundary pages 6 (Allegro), 37 (Allegro con brio), and ending page 50 retain the 14 physical positions. Page 47 has 14 real staves, while candidate1 detects 15 due to high ledger lines above Violin I. That false positive needs separate detector review."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": true,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "path": "sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "sourcePageCount": 43,
+      "title": "Mozart Magic Flute Overture KV620, normal digital score",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-magic-flute-overture-kv620-score.json",
+      "profileSHA256": "5e24430e52731c391582d8202bbaa49076b35abd301d2a687439ff9f6e358bd9",
+      "sourceScope": "complete_work",
+      "rosterStatus": "fixed_named_staff_roster_supported_at_all_section_boundaries",
+      "requiresSystemAssignment": false,
+      "nominalProfilePhysicalStaves": 14,
+      "namedProfileGroups": 14,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        3,
+        18,
+        19,
+        25,
+        43
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        3,
+        18,
+        19
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Four labelled section openings (Adagio page 1, Allegro page 3, Adagio page 18, Allegro page 19) retain the same 14-staff roster/order. Page 25 shows two complete systems with repeated abbreviations and page 43 the complete final system.",
+        "Wind pairs share staves. Alto and tenor trombones share one staff; bass trombone has its own. These groups are retained rather than claiming separate individual-player extraction.",
+        "Native inventory counts of 14 or 28 agree with sampled one/two-system layouts, but count divisibility is only supporting evidence and does not constitute crop/output verification."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": true,
+      "instrumentation": "fixed_roster_sampled",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "normal-mozart-symphony-no18-kv130-score",
+      "path": "sample_scores/normal/02_orchestra/mozart_symphony_no18_kv130_score.pdf",
+      "sourceSHA256": "250d3c5c97b013174ca4fea63a9e856c268e1cdbc76a6445efb86b02df82119e",
+      "sourcePageCount": 37,
+      "title": "Mozart Symphony No. 18 KV130, normal digital score",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-symphony-no18-kv130-score.json",
+      "profileSHA256": "5ae22ebcd4ec9563788365159711ffdcb1c66b2c6d871fdb9037a82428cd21d6",
+      "sourceScope": "complete_work",
+      "rosterStatus": "complete_named_groups_fixed_positions_with_crook_changes",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 7,
+      "namedProfileGroups": 7,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        16,
+        22,
+        23,
+        24,
+        37
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1,
+        16,
+        22,
+        23,
+        24
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Seven physical groups: paired flutes, upper horn pair, lower horn pair, Violin I, Violin II, Viola, combined Violoncello/Double bass. The last shared staff cannot be cropped into separate cello and bass players.",
+        "Page 16 starts Andantino grazioso in its lower system and changes horn crooks from opening C alto/F to F/B-flat. Page 22 Menuetto returns to C alto/F; page 23 Trio and page 24 Allegro molto retain seven physical groups. Page 37 ends with all seven.",
+        "Part names identify upper/lower horn pairs across changes; source notation is preserved without transposition. System confirmation is conservatively enabled for movement/instrument changes although sampled physical positions remain constant."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": true,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "path": "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+      "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+      "sourcePageCount": 6,
+      "title": "Mendelssohn Verleih uns Frieden, CPDL63797 organ arrangement",
+      "profilePath": "Tests/quality_control/profiles/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+      "profileSHA256": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a",
+      "sourceScope": "complete_arrangement",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 7,
+      "namedProfileGroups": 5,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "This is Benjamin Righetti’s choir-and-organ transcription, as printed on the title; the file name full_score does not mean orchestral score. The organ is three staves: two manual staves within a brace plus a pedal staff.",
+        "Page 1 has SATB plus three-staff organ. Page 2 starts with organ alone, then Bass plus organ. Page 3 is Alto/Bass plus organ. Page 4 changes from that five-staff layout to full SATB plus organ; pages 5–6 retain the full seven-staff layout.",
+        "All six source pages were visually inspected for roster and grouping. This establishes named groups and layout changes, not successful output crops or counted silent intervals."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": true,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "sourcePageCount": 106,
+      "title": "Beethoven Symphony No. 5 complete, IMSLP52624",
+      "profilePath": "Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624.json",
+      "profileSHA256": "9acfd39a14077691c38143b1ebc3e9d6f41585d9f9505c32518bfd357da5761d",
+      "sourceScope": "complete_work_with_front_and_back_matter",
+      "rosterStatus": "complete_named_group_union_variable_movements",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 17,
+      "namedProfileGroups": 17,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        7,
+        26,
+        41,
+        56,
+        104,
+        105,
+        106
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        7,
+        26,
+        41,
+        56
+      ],
+      "firstMusicPageOneBased": 7,
+      "evidence": [
+        "The actual score starts on physical PDF page 7. The opening three movements use 12 physical staves. Movement starts are pages 7, 26 (Andante con moto), 41 (Allegro scherzo), and 56 (Allegro finale).",
+        "The finale opening page 56 adds separate piccolo, contrabassoon, alto trombone, tenor trombone and bass trombone, producing 17 physical staves. The profile is the union in finale printed order; earlier systems require explicit omissions/assignment and reviewed measure spans.",
+        "Clarinet and horn crooks differ between movements. Generic player/group identities are retained rather than applying opening key names to the finale.",
+        "Music ends on page 104. Pages 1–6 are front matter and 105–106 back matter; all-page top thumbnails were inspected, and pages 1, 105 and 106 inspected in full. The ornate page 1 and prose page 106 contain no staves, despite raw candidate1 counts of 7 and 5. These are existing nonmusic false positives, not musical examples."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "musicPageRangeOneBased": [
+        7,
+        104
+      ],
+      "nonMusicPagesOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        105,
+        106
+      ],
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437",
+      "path": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_mvt2_mutopia1437.pdf",
+      "sourceSHA256": "1fc0bc2c8942c65d25f4939ae272b20b37e112b63f9bb2f5b63ddf8826c88cb3",
+      "sourcePageCount": 35,
+      "title": "Beethoven Symphony No. 5 movement II, Mutopia1437",
+      "profilePath": "Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437.json",
+      "profileSHA256": "a1299f6cc3dc14ffb4dea12bedbcf255ea88da203e5a6d88c9feb089f8e5ab9e",
+      "sourceScope": "standalone_second_movement_only",
+      "rosterStatus": "complete_named_group_union_variable_layout",
+      "requiresSystemAssignment": true,
+      "nominalProfilePhysicalStaves": 12,
+      "namedProfileGroups": 12,
+      "profileIncludesAllNamedGroupsEstablishedByThisReview": true,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        7,
+        35
+      ],
+      "movementOrSectionStartsVisuallyCheckedOneBased": [
+        1
+      ],
+      "firstMusicPageOneBased": 1,
+      "evidence": [
+        "Opening has 12 physical groups matching movement II. Page 2 abbreviations Vi1, Vi2, Va, Vc, Cb verify the five string identities omitted from the opening left margin. Wind/brass/percussion names are printed at the opening and in abbreviations at the ending.",
+        "Page 2 hides horns, trumpets and timpani, leaving nine staves. Page 7 has seven staves in its upper system (bassoons, horns, five strings) and six in the lower (clarinets, five strings). Page 35 returns to all 12.",
+        "This file covers only the second movement, not the full symphony. Missing staves require source-derived measure counts; no silent duration is encoded by this initialization profile."
+      ],
+      "reviewScope": "Source instrument initialization and documented layout changes only; no output-quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false,
+      "fixedPhysicalCountsSupportedByReviewedPages": false,
+      "instrumentation": "variable_or_movement_changes_require_review",
+      "profileEvidence": "Tests/quality_control/orchestral-choral-profile-review.md"
+    }
+  ],
+  "summary": {
+    "sources": 16,
+    "physicalPages": 899,
+    "fixedStrideInitializations": 2,
+    "requiresSystemAssignment": 14,
+    "incompleteNamedRoleRosters": 1,
+    "qualityPasses": 0
+  },
+  "unresolvedDetectorObservations": [
+    {
+      "sourceID": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "pageOneBased": 167,
+      "expectedPhysicalStaves": 6,
+      "candidate1ObservedStaves": 3,
+      "type": "missed_staves",
+      "evidence": "Three piano-only grand-staff systems visible at Act III opening. Source pages are not altered."
+    },
+    {
+      "sourceID": "normal-beethoven-egmont-overture-op84-score",
+      "sourceSHA256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "pageOneBased": 47,
+      "expectedPhysicalStaves": 14,
+      "candidate1ObservedStaves": 15,
+      "type": "false_positive_staff",
+      "evidence": "High ledger lines above the true Violin I staff create a candidate. Profile does not delete it or reinterpret it as a real instrument."
+    },
+    {
+      "sourceID": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "pageOneBased": 1,
+      "expectedPhysicalStaves": 0,
+      "candidate1ObservedStaves": 7,
+      "type": "false_positive_nonmusic",
+      "evidence": "Ornate cover, no music staves."
+    },
+    {
+      "sourceID": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "pageOneBased": 106,
+      "expectedPhysicalStaves": 0,
+      "candidate1ObservedStaves": 5,
+      "type": "false_positive_nonmusic",
+      "evidence": "Publisher prose, no music staves."
+    }
+  ]
+}

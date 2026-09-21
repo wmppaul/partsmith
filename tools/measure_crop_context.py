@@ -16,6 +16,8 @@ def measure(directory, inventory_path):
     manifest = json.loads((directory / "manifest.json").read_text())
     inventory = json.loads(Path(inventory_path).read_text())
     assert manifest["sourceSHA256"] == inventory["sourceSHA256"]
+    assert (manifest.get("rectifications") or []) == (inventory.get("rectifications") or []), \
+        "Inventory and exported crops must use the same corrected coordinate system"
     pages = {p["pageIndex"] + 1: p for p in inventory["pages"]}
     results = []
     for part in manifest["parts"]:

@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "scope": "Additional manual instrument initialization profiles from rendered source pages. Main corpus.json intentionally untouched during baseline run.",
+  "reviewDate": "2026-09-20",
+  "reviewer": "sample_corpus agent",
+  "limitations": [
+    "Sampled source layout review establishes instrument roster and known exceptions; it is not an exhaustive output-quality assessment.",
+    "Profiles do not supply crop rectangles, detector corrections, inferred missing notes or automatic OCR evidence.",
+    "No changing-instrumentation page is made fixed solely because its staff total happens to divide the profile stride."
+  ],
+  "additions": [
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "path": "sample_scores/lightly_skewed/01_mozart_piano_quartet_k478_imslp_478563.pdf",
+      "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "instrumentation": "fixed_roster_with_editorial_ossia",
+      "nominalPhysicalStavesPerCompleteSystem": 5,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        18,
+        35,
+        38,
+        51,
+        52
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [],
+      "evidence": [
+        "Opening printed names: Violine, Viola, Violoncello, Klavier; piano brace spans two staves.",
+        "PDFp38 has a real short editorial piano variant below the last system. Baseline16 versus15 is not a false positive. PDFp51 also has a tiny printed variant chord footnote. These must remain associated with piano context."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "path": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "profilePath": "Tests/quality_control/profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "instrumentation": "fixed_roster_sampled",
+      "nominalPhysicalStavesPerCompleteSystem": 4,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        9,
+        18,
+        25,
+        26
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [
+        26
+      ],
+      "evidence": [
+        "Opening names distinguish 1.Violine and2.Violine, followed by Bratsche and Violoncell.",
+        "PDFp26 is publisher catalogue, not music. All sampled musical systems retain all four staves."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "path": "sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "instrumentation": "fixed_roster_with_editorial_ossia",
+      "nominalPhysicalStavesPerCompleteSystem": 5,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        11,
+        21,
+        25,
+        29,
+        30
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [],
+      "evidence": [
+        "Opening printed labels: Violino, Viola, Violoncello, Pianoforte(two-staff brace).",
+        "PDFp1 has a short alternative bass staff below last piano system, with Autograph/earliest-edition text. Baseline does not count this short staff, so primary-staff count alone cannot prove notation coverage.",
+        "PDFp25 visibly contains four five-staff systems. Baseline19 misses first-system Violin staff."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "path": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "profileSHA256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33",
+      "instrumentation": "fixed_roster_sampled",
+      "nominalPhysicalStavesPerCompleteSystem": 6,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        19,
+        38,
+        55,
+        56
+      ],
+      "firstMusicPageOneBased": 2,
+      "nonMusicPagesVisuallyCheckedOneBased": [
+        1
+      ],
+      "evidence": [
+        "PDFp1 is cover. Music p2 explicitly labels ViolinoI, ViolinoII, Viola, Violoncello then Pianoforte(two-staff brace).",
+        "Sampled interior, coda and closing systems retain the same six physical staves."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "instrumentation": "fixed_roster_sampled",
+      "nominalPhysicalStavesPerCompleteSystem": 4,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        14,
+        27,
+        38,
+        39
+      ],
+      "firstMusicPageOneBased": 2,
+      "nonMusicPagesVisuallyCheckedOneBased": [
+        1
+      ],
+      "evidence": [
+        "PDFp1 is cover. PDFp2 printed labels are ViolineI, ViolineII, Bratsche, Violoncell.",
+        "Sampled later and closing systems retain all four staves."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "path": "sample_scores/medium_skewed/09_schumann_frauenliebe_und_leben_op42_imslp_51733.pdf",
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8",
+      "instrumentation": "fixed_roster_sampled",
+      "nominalPhysicalStavesPerCompleteSystem": 3,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        7,
+        13,
+        14,
+        17,
+        18
+      ],
+      "firstMusicPageOneBased": 2,
+      "nonMusicPagesVisuallyCheckedOneBased": [
+        1,
+        18
+      ],
+      "evidence": [
+        "Cover explicitly says one voice with Pianoforte. Music p2 has lyric-bearing voice above two-staff piano brace.",
+        "PDFp17 piano postlude retains the voice staff with printed rests, so it is not an omitted-voice case. PDFp18 is blank apart from scan identifier.",
+        "PDFp14 visibly has five three-staff systems. Baseline14 misses last-system lower piano staff."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "path": "sample_scores/medium_skewed/10_schubert_winterreise_d911_imslp_00414.pdf",
+      "sourceSHA256": "030e03434d994e1974719f13f62861c21091d22af35ee832a0e1ffde17a4efc3",
+      "profilePath": "Tests/quality_control/profiles/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "instrumentation": "variable_verified",
+      "nominalPhysicalStavesPerCompleteSystem": 3,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        24,
+        47,
+        69,
+        70
+      ],
+      "firstMusicPageOneBased": 3,
+      "nonMusicPagesVisuallyCheckedOneBased": [
+        1,
+        2
+      ],
+      "evidence": [
+        "Cover specifies one voice with piano; first music PDFp3 shows voice+grand piano.",
+        "PDFp47 (DieKrähe) and69(DerLeiermann) open with a piano-only two-staff system before voice enters. Other checked passages have three-staff systems. Count omitted voice time; do not force a fixed3 cadence."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "path": "sample_scores/normal/01_chamber/mozart_piano_quartet_kv478_score.pdf",
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-piano-quartet-kv478-score.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+      "instrumentation": "fixed_roster_movements_verified",
+      "nominalPhysicalStavesPerCompleteSystem": 5,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        19,
+        23,
+        34,
+        37,
+        54,
+        55
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [],
+      "evidence": [
+        "Printed labels Violin, Viola, Cello, Pianoforte. Piano is a two-staff brace.",
+        "Andante begins on PDFp23 and Rondo onp34, each explicitly relabels same four parts in same order, with strings retained through silence."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "path": "sample_scores/normal/01_chamber/mozart_string_quartet_kv387_score.pdf",
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-string-quartet-kv387-score.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "instrumentation": "fixed_roster_movements_verified",
+      "nominalPhysicalStavesPerCompleteSystem": 4,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        11,
+        12,
+        14,
+        16,
+        21,
+        24,
+        30,
+        31
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [],
+      "evidence": [
+        "Opening and repeated labels: ViolinoI, ViolinoII, Viola, Violoncello.",
+        "Menuetto PDFp12, Trio p14, Andante p16, MoltoAllegro p24 keep all four staves/order. Lastp31 contains two complete four-staff systems."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "profilePath": "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+      "profileSHA256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+      "instrumentation": "fixed_roster_movements_verified",
+      "nominalPhysicalStavesPerCompleteSystem": 4,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        10,
+        12,
+        13,
+        17,
+        20,
+        28,
+        29
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [],
+      "evidence": [
+        "Printed Clarinetto inB has one flat while piano/viola have three flats: transposing B-flat clarinet. Order is clarinet, viola, grand piano.",
+        "Menuetto p12, Trio p13, Rondo p17 and finalp29 retain same four physical staves."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "path": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "profilePath": "Tests/quality_control/profiles/normal-schubert-erlkonig-d328-score.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "instrumentation": "variable_verified",
+      "nominalPhysicalStavesPerCompleteSystem": 3,
+      "sourcePagesVisuallyCheckedOneBased": [
+        1,
+        2,
+        4,
+        8,
+        10,
+        11
+      ],
+      "firstMusicPageOneBased": 1,
+      "nonMusicPagesVisuallyCheckedOneBased": [],
+      "evidence": [
+        "PDFp1 has four piano-only two-staff systems starting bars1,4,7,10, then a three-staff voice+piano system atbar13.",
+        "Voice opening silence is twelve bars across those four systems. Preserve piano music and add/represent counted voice silence instead of dropping time.",
+        "Sampled continuation pages retain lyric-bearing voice and two-staff piano, including recitative in last systemp11."
+      ],
+      "reviewScope": "Instrument initialization, sampled roster changes and named anomalies; not a full crop/export quality pass.",
+      "allSourcePagesVisuallyReviewed": false,
+      "safeForUnreviewedFullExport": false
+    },
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "path": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "profilePath": "Tests/quality_control/profiles/notte-variable-initialization.json",
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac",
+      "instrumentation": "variable_opening_independently_verified",
+      "sourcePagesVisuallyCheckedOneBased": [],
+      "independentEvidence": "Root quartet reviewer checked PDFp1:2+2+3+3+3 staves across five systems; first two piano-only systems total bars1-9. Historical source map expects13 staves, matching current raw detector.",
+      "legacyMapPath": "Tests/full_scores/notte-map.json",
+      "legacyOverridesPath": "Tests/full_scores/notte-overrides.json",
+      "caution": "Existing reviewed overrides use an editorial voice cue, not automatically generated counted rests; report as reviewed output, not pure Auto.",
+      "safeForUnreviewedFullExport": false
+    }
+  ],
+  "alreadyCovered": [
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "profilePath": "Tests/trio_medium/profile.json",
+      "reason": "Already mapped in corpus.json with earlier full source review; no duplicate profile created."
+    }
+  ]
+}
