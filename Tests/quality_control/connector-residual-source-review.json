@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "scope": "All20 remaining whole-neighbor bands in ten system pairs of the recorded-deskew candidate3 plan",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "planSHA256": "d5cddeb34b6d6597c0e6faaa08c386d48a9fac3c8df4f06ea2b52b9ffa093802",
+  "reviewMethod": "Original-source4x full-width pair-context images inspected visually. This classifies necessity of full neighboring staves; it does not prove exact join pixels or full output fidelity. p28 corrected geometry is not tested against raw coordinates.",
+  "trueMusicalCrossingPairs": 0,
+  "falseStructuralPairs": 10,
+  "cases": [
+    {
+      "key": "p6-s1",
+      "sourcePage": 6,
+      "bandIDs": [
+        "p6-s1-viola",
+        "p6-s1-cello"
+      ],
+      "sourceClip": [
+        0.0,
+        80.42503863987635,
+        427.0,
+        179.15842349304484
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p6-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "Viola high accidental/slur crowns and lower hairpins remain distinct from Cello high slurs and low p. Staff-line/barline structure joins them; complete adjacent staves are unnecessary.",
+      "imageSHA256": "8020de3c11dad896f14c51dfed68facc5c9a06b444c8ea1dc8d40399d790494b"
+    },
+    {
+      "key": "p24-s1",
+      "sourcePage": 24,
+      "bandIDs": [
+        "p24-s1-viola",
+        "p24-s1-cello"
+      ],
+      "sourceClip": [
+        0.0,
+        86.8002313922098,
+        427.0,
+        178.63285769379098
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p24-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "Both parts have their own poco a poco in tempo text. Viola low tie/hairpins and Cello upper rests/notes remain separate; preserve those directions while separating the structure.",
+      "imageSHA256": "9c24ece8311485cac0f88fa8986d4b47a572e8e30c3a4f9d312659b8fdb9dd31"
+    },
+    {
+      "key": "p24-s2",
+      "sourcePage": 24,
+      "bandIDs": [
+        "p24-s2-viola",
+        "p24-s2-cello"
+      ],
+      "sourceClip": [
+        0.0,
+        233.13844967219435,
+        427.0,
+        324.4967219436946
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p24-s2.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "Viola lower cresc./f/hairpins and Cello high phrase notes fit distinct musical envelopes. Interleaving vertical ranges can retain fragments, but cannot justify a whole adjacent staff.",
+      "imageSHA256": "8a0348075b9fd674398dbb02a55c133ed0b88f971ca3563651ce043cc01a9a5f"
+    },
+    {
+      "key": "p28-s1",
+      "sourcePage": 28,
+      "bandIDs": [
+        "p28-s1-violin1",
+        "p28-s1-violin2"
+      ],
+      "sourceClip": [
+        0.0,
+        9.592327698309493,
+        427.0,
+        115.56566970091028
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p28-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "ViolinI low hairpin/f and ViolinII upper staff/rests are musically separate. Magnified first interior barline has missing core ink; existing88% criterion rejects its82.1% support. No threshold was relaxed.",
+      "imageSHA256": "b2a1877cf5251143a53589ed1117c08f63f2724324682a157476fa7f34287bab"
+    },
+    {
+      "key": "p29-s1",
+      "sourcePage": 29,
+      "bandIDs": [
+        "p29-s1-violin1",
+        "p29-s1-violin2"
+      ],
+      "sourceClip": [
+        0.0,
+        10.90358657925183,
+        427.0,
+        118.6270728885461
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p29-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "Two independent beamed violin phrases with separate low p/pp, slurs and hairpins. The right repeat/end structure spans both; no true cross-staff musical figure is present.",
+      "imageSHA256": "01a14c241c99d824433fcf3d8169104563893f0a3a0f45df2e3f522f5e6521f4"
+    },
+    {
+      "key": "p31-s1",
+      "sourcePage": 31,
+      "bandIDs": [
+        "p31-s1-violin1",
+        "p31-s1-violin2"
+      ],
+      "sourceClip": [
+        0.0,
+        13.512533744697262,
+        427.0,
+        118.8642499035866
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p31-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "ViolinI high triplet/slur figures and dolce are distinct from ViolinII rests/lower phrase and hairpin. The residual component is a narrow right-side barline; no note bridge crosses the gap.",
+      "imageSHA256": "67b879aee85a89477b19ad78db5e4f7ab62683b57d8b6b464d3c8e9c830a26c1"
+    },
+    {
+      "key": "p33-s1",
+      "sourcePage": 33,
+      "bandIDs": [
+        "p33-s1-violin1",
+        "p33-s1-violin2"
+      ],
+      "sourceClip": [
+        0.0,
+        11.852294639413802,
+        427.0,
+        114.35788661781721
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p33-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "Both violin lines have separate slur systems and dol./hairpins. Their close vertical ranges require local context, but the entire neighboring staff is unnecessary.",
+      "imageSHA256": "49dcddff4940b006de56e3188356fd791ec0e03032b2996793748b257dcc155e"
+    },
+    {
+      "key": "p35-s1",
+      "sourcePage": 35,
+      "bandIDs": [
+        "p35-s1-violin1",
+        "p35-s1-violin2"
+      ],
+      "sourceClip": [
+        0.0,
+        14.877409406322286,
+        426.0,
+        121.7224363916731
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p35-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "ViolinI high accents and ViolinII rising beam/low-slur figures are separate. Shared end barline/staff structure, not a musical cross-staff figure, accounts for the whole-staff join.",
+      "imageSHA256": "f925b1f1d3d7a0843b54d5696e60a32758788f34480a95d06254d2eafe4f4132"
+    },
+    {
+      "key": "p37-s1",
+      "sourcePage": 37,
+      "bandIDs": [
+        "p37-s1-violin1",
+        "p37-s1-violin2"
+      ],
+      "sourceClip": [
+        0.0,
+        11.090208172706244,
+        426.0,
+        105.62683114880494
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p37-s1.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "The two violin phrases, separate f marks and lower slurs/hairpins do not cross between staff cores. A structural connector still combines their components.",
+      "imageSHA256": "42c5a2f62440669c5ab73da8fcc9a20613a4aac4c4c54c0c4a4b99b76a5af4bc"
+    },
+    {
+      "key": "p37-s3",
+      "sourcePage": 37,
+      "bandIDs": [
+        "p37-s3-viola",
+        "p37-s3-cello"
+      ],
+      "sourceClip": [
+        0.0,
+        365.19352351580574,
+        426.0,
+        454.99614494988435
+      ],
+      "file": ".build/qc-algorithm-audit/residual-source/p37-s3.png",
+      "coordinateNote": "Original source; p28 has a recorded correction, so crop context is deliberately expanded and not a direct boundary assertion.",
+      "classification": "false_structural_whole_staff_inclusion",
+      "sourceObservation": "Viola descending/low slurs and Cello low ledger phrase plus upper short slur are distinct. No target note requires carrying the other complete staff.",
+      "imageSHA256": "08aafb18051f791029a1ebc9b9a5706d52da8949e1ba70cbdac515d12ec507d3"
+    }
+  ],
+  "nextCandidatePolicy": "Require independent printed-structure evidence for any interrupted-barline fallback. Do not lower the global core threshold or geometrically truncate an ambiguous musical component."
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "status": "measured_improvement_with_remaining_defects",
+  "source": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "conditions": {
+    "cropMode": "compact",
+    "geometryOverrides": false,
+    "rawRasterMaximum": [
+      1800,
+      2600
+    ],
+    "correctedRasterScale": 2.5,
+    "correctedPages": [
+      2,
+      7,
+      17,
+      19,
+      23,
+      28,
+      34,
+      38,
+      39
+    ],
+    "corrections": "exact recorded baseline, no re-estimation",
+    "sourcePixelsModified": false,
+    "staffGeometryUnchangedAll39Pages": true,
+    "coreContinuityRequired": 0.88,
+    "interStaffContinuityRequired": 0.8
+  },
+  "controlledComparisons": {
+    "raw": {
+      "candidate1": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 732,
+        "wholeNeighbors": 29,
+        "affectedBands": 29,
+        "multiStaffComponents": 17
+      },
+      "candidate3": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 708,
+        "wholeNeighbors": 23,
+        "affectedBands": 23,
+        "multiStaffComponents": 13
+      }
+    },
+    "deskew": {
+      "candidate1": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 2617,
+        "wholeNeighbors": 430,
+        "affectedBands": 160,
+        "multiStaffComponents": 72
+      },
+      "candidate3": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 688,
+        "wholeNeighbors": 20,
+        "affectedBands": 20,
+        "multiStaffComponents": 11
+      }
+    }
+  },
+  "historical09200": {
+    "before": {
+      "pageCount": 25,
+      "bandCount": 480,
+      "neighborLines": 812,
+      "wholeNeighbors": 38,
+      "affectedBands": 37,
+      "multiStaffComponents": 19
+    },
+    "after": {
+      "pageCount": 25,
+      "bandCount": 480,
+      "neighborLines": 804,
+      "wholeNeighbors": 36,
+      "affectedBands": 35,
+      "multiStaffComponents": 18
+    },
+    "beforeFrozenGuardFailures": 44,
+    "afterFrozenGuardFailures": 44,
+    "newOrWorseFrozenGuardFailures": 0
+  },
+  "regressions": {
+    "newAssertions": 82,
+    "existingPlannerAssertions": 83,
+    "candidate1RejectedBy": "wider separated bracket",
+    "candidate2RejectedBy": "paired bracket at0.6 rasterScale",
+    "negativeControls": "Genuine wide and comparable-width cross-staff figures retain complete ambiguous components at three resolutions and three tilts."
+  },
+  "reviewLimitations": [
+    "Metrics count neighboring staff-line centers, not musical correctness.",
+    "Raw frozen source guards cannot certify corrected-coordinate output.",
+    "Twenty remaining whole-neighbor bands were independently classified from source as unnecessary structural joins.",
+    "Historical09200 still has44 independently frozen envelope failures; no new failures were introduced."
+  ],
+  "bindings": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "1c665c0cdf52bdca028b46cf1d6c1dd3108efe3ef61217c5c1d5370787a361f9",
+    "tools/test_crop_quality.swift": "45d74cea388dcfa905c704cdef6fbcefd556a7b3917db7ff1b284e255bec8901",
+    ".build/qc-algorithm-audit/StaffBandDetector.baseline.swift": "0e09a8b8d6120739ab62224f8e4f2141f126c85714a990775a741f48a0159321",
+    ".build/qc-algorithm-audit/quartet93521-candidate3-frozen-staff.json": "17baa28f5dd7ab35b9295a16e07709f746bbc3f0b0b8abb760bfba6e0aad4935",
+    ".build/qc-algorithm-audit/quartet93521-deskew-candidate3-frozen-staff.json": "d5cddeb34b6d6597c0e6faaa08c386d48a9fac3c8df4f06ea2b52b9ffa093802",
+    ".build/qc-algorithm-audit/quartet93521-exact-corrected-candidate3.json": "dc3d691da1bb19de01356047cdbd9bcd828627dfa2aab822d28b9d4c51dbb10b",
+    ".build/qc-algorithm-audit/quartet09200-candidate3.json": "7e6c54addc64d2930c303f479bfe8a41d19b1077cd6a1b78c5cd9e1eb338a6e8"
+  }
+}

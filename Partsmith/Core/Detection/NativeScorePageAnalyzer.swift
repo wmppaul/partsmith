@@ -96,24 +96,72 @@ enum NativeScorePageAnalyzer {
                 let start = max(0, Int((lines[index][4] + space * 0.6).rounded()))
                 let end = min(height, Int((lines[index + 1][0] - space * 0.6).rounded()))
                 guard Double(end - start) >= space else { continue }
+                // The support halo tolerates a slanted or interrupted scan
+                // stroke. Its pixels are evidence-search padding, not part of
+                // the structural stroke's measured width.
+                let supportRadius = 2
+                let supportHalo = 2 * supportRadius
                 var occupancy = [Int](repeating: 0, count: width)
+                var directOccupancy = [Int](repeating: 0, count: width)
                 for y in start..<end {
                     for x in 0..<width {
-                        if (-2...2).contains(where: { dx in
+                        if original[y * width + x] { directOccupancy[x] += 1 }
+                        if (-supportRadius...supportRadius).contains(where: { dx in
                             let column = x + dx
                             return column >= 0 && column < width && original[y * width + column]
                         }) { occupancy[x] += 1 }
                     }
                 }
+                var connectors: [(left: Int, right: Int, strokes: Int)] = []
                 var x = 0
                 while x < width {
                     if Double(occupancy[x]) <= Double(end - start) * 0.8 { x += 1; continue }
                     let left = x
                     while x < width && Double(occupancy[x]) > Double(end - start) * 0.8 { x += 1 }
-                    // Only thin, nearly continuous vertical connectors are split.
-                    // Wider beams and slurs retain their multi-staff ambiguity.
-                    if Double(x - left) < space * 1.8 {
-                        let clearLeft = max(0, left - 2), clearRight = min(width, x + 2)
+                    // A bracket and its adjacent thin system line, or a double
+                    // barline, are one structural connector. Processing the
+                    // strokes separately makes each look like a horizontal
+                    // notation branch of the other, so neither gets separated.
+                    if let previous = connectors.last, previous.strokes == 1,
+                       Double(max(1, previous.right - previous.left - supportHalo)) < space * 1.8,
+                       Double(max(1, x - left - supportHalo)) < space * 1.8,
+                       Double(left - previous.right) <= max(3, space * 0.25),
+                       Double(max(1, x - previous.left - supportHalo)) < space * 2.25 {
+                        connectors[connectors.count - 1] = (previous.left, x, 2)
+                    } else {
+                        connectors.append((left, x, 1))
+                    }
+                }
+                for connector in connectors {
+                    let left = connector.left, x = connector.right
+                    // A pair may be wider than one stroke, but each stroke is
+                    // independently thin and almost touches its partner. Never
+                    // accumulate a chain of strokes into a wide notation group.
+                    // Both staff cores and the near-continuous gap still have
+                    // to support the connector; partial-core musical stems do
+                    // not qualify just because two of them stand close together.
+                    // At the lower resolution of a corrected display raster,
+                    // two separated strokes can have overlapping support halos
+                    // and appear as one wide run. Recover a pair only from two
+                    // distinct, sustained peaks in the undilated source ink.
+                    // The 60% peak support classifies the shape; the original
+                    // 80% gap continuity and 88% core support still gate removal.
+                    var physicalStrokes: [(left: Int, right: Int)] = []
+                    var column = max(0, left - supportRadius)
+                    let lastColumn = min(width, x + supportRadius)
+                    while column < lastColumn {
+                        if Double(directOccupancy[column]) < Double(end - start) * 0.60 { column += 1; continue }
+                        let strokeLeft = column
+                        while column < lastColumn && Double(directOccupancy[column]) >= Double(end - start) * 0.60 { column += 1 }
+                        physicalStrokes.append((strokeLeft, column))
+                    }
+                    let mergedPair = physicalStrokes.count == 2
+                        && physicalStrokes.allSatisfy { Double($0.right - $0.left) < space * 1.8 }
+                        && Double(physicalStrokes[1].left - physicalStrokes[0].right) <= max(3, space * 0.25) + Double(supportHalo)
+                        && Double(physicalStrokes[1].right - physicalStrokes[0].left) < space * 2.25
+                    let maximumWidth = space * (connector.strokes == 2 || mergedPair ? 2.25 : 1.8)
+                    if Double(max(1, x - left - supportHalo)) < maximumWidth {
+                        let clearLeft = max(0, left - supportRadius), clearRight = min(width, x + supportRadius)
                         let localShift = slope * (Double(clearLeft + clearRight) / 2 - Double(width) / 2)
                         let throughBothCores = [index, index + 1].allSatisfy { staffIndex in
                             let coreTop = min(height, max(0, Int((lines[staffIndex][0] + localShift).rounded())))
