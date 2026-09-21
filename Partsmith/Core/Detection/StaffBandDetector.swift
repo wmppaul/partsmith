@@ -36,10 +36,10 @@ enum StaffBandDetector {
         // Seek agreeing five-line patterns in independent horizontal windows;
         // only add a missed staff when at least two windows support it.
         let windows = [(0.08, 0.40), (0.34, 0.66), (0.60, 0.92)]
-        let localStaffs = windows.map { left, right in
-            let local = rowProfile(raster, leftFraction: left, rightFraction: right, slope: slope, isCancelled: isCancelled)
-            return staffPatterns(linePeaks(local), width: raster.width, isCancelled: isCancelled)
+        let localPeaks = windows.map { left, right in
+            linePeaks(rowProfile(raster, leftFraction: left, rightFraction: right, slope: slope, isCancelled: isCancelled))
         }
+        let localStaffs = localPeaks.map { staffPatterns($0, width: raster.width, isCancelled: isCancelled) }
         for (windowIndex, windowStaffs) in localStaffs.enumerated() {
             for localStaff in windowStaffs {
                 let space = (localStaff.lines[4] - localStaff.lines[0]) / 4
@@ -76,6 +76,53 @@ enum StaffBandDetector {
             }
             guard let anchor = compatible.min(by: { abs($0.lines[0] - staff.lines[0]) < abs($1.lines[0] - staff.lines[0]) }) else { return staff }
             return Staff(lines: anchor.lines, confidence: min(staff.confidence, anchor.confidence), usesLocalEvidence: true)
+        }
+        // Repeated beams can join two staff-line peaks into one wide ink
+        // plateau. Splitting typography the same way would invent staves on
+        // title pages, so these peaks never enter the primary detector. A
+        // recovery needs complete, unsplit patterns in both the clef margin
+        // and a wide window, plus three ordinary full-width line peaks.
+        let joinedPatterns = staffPatterns(linePeaks(profile, recoverJoinedLines: true),
+                                          width: raster.width, isCancelled: isCancelled)
+        for recovered in joinedPatterns {
+            guard !staffs.contains(where: { overlaps(recovered, $0) }) else { continue }
+            let space = (recovered.lines[4] - recovered.lines[0]) / 4
+            func agrees(_ other: Staff) -> Bool {
+                let otherSpace = (other.lines[4] - other.lines[0]) / 4
+                return abs(otherSpace - space) < space * 0.18
+                    && abs(other.lines[0] - recovered.lines[0]) < space * 0.5
+            }
+            guard anchors.contains(where: { $0.confidence >= 0.60 && agrees($0) }),
+                  localStaffs.contains(where: { $0.contains(where: agrees) }) else { continue }
+            let ordinaryLines = recovered.lines.filter { line in
+                guard let peak = nearestPeak(peaks, startingAt: 0, to: line) else { return false }
+                return abs(peaks[peak].y - line) <= max(1.25, space * 0.25)
+            }
+            guard ordinaryLines.count >= 3 else { continue }
+            staffs.append(Staff(lines: recovered.lines, confidence: recovered.confidence * 0.85,
+                                usesLocalEvidence: true))
+        }
+        // Page-wide skew can differ from an individual system's tilt on a
+        // scanned page. A wider vertical agreement allowance is safe only
+        // when the outer windows each contain all five lines and the middle
+        // independently supports every interpolated line. Keep the estimated
+        // page-center position instead of replacing it with the left anchor.
+        for left in localStaffs[0] {
+            let space = (left.lines[4] - left.lines[0]) / 4
+            for right in localStaffs[2] {
+                let rightSpace = (right.lines[4] - right.lines[0]) / 4
+                guard abs(space - rightSpace) < space * 0.20,
+                      abs(left.lines[0] - right.lines[0]) < space * 1.5 else { continue }
+                let lines = zip(left.lines, right.lines).map { ($0 + $1) / 2 }
+                let recovered = Staff(lines: lines, confidence: min(left.confidence, right.confidence) * 0.85,
+                                      usesLocalEvidence: true)
+                guard !staffs.contains(where: { overlaps(recovered, $0) }) else { continue }
+                let supported = lines.allSatisfy { line in
+                    guard let peak = nearestPeak(localPeaks[1], startingAt: 0, to: line) else { return false }
+                    return abs(localPeaks[1][peak].y - line) <= max(1.25, space * 0.25)
+                }
+                if supported { staffs.append(recovered) }
+            }
         }
         staffs.sort { $0.lines[0] < $1.lines[0] }
         if isCancelled() { return StaffDetectionResult(candidates: [], warnings: []) }
@@ -253,7 +300,7 @@ enum StaffBandDetector {
         return profile
     }
 
-    private static func linePeaks(_ profile: [Row]) -> [Peak] {
+    private static func linePeaks(_ profile: [Row], recoverJoinedLines: Bool = false) -> [Peak] {
         // Dense beamed passages can keep the entire staff above the absolute
         // ink threshold. A local threshold still separates the long staff
         // lines from the shorter beams between them.
@@ -293,6 +340,30 @@ enum StaffBandDetector {
                     strength: profile[strongest].ink,
                     support: profile[strongest].support
                 ))
+            } else if recoverJoinedLines {
+                // A long beam can bridge two real staff lines into a broad
+                // ink plateau. Recover separate local maxima only when a
+                // substantial valley separates them. A flat text/beam block
+                // still produces no peaks, and five regularly spaced lines
+                // with distributed support are still required downstream.
+                var maxima: [Int] = []
+                for row in start...end {
+                    let lower = max(start, row - 2), upper = min(end, row + 2)
+                    guard profile[row].ink >= 0.28, profile[row].support >= 0.45,
+                          (lower...upper).allSatisfy({ profile[$0].ink <= profile[row].ink }) else { continue }
+                    if let previous = maxima.last, row - previous <= 2 { continue }
+                    maxima.append(row)
+                }
+                let separated = maxima.filter { row in
+                    maxima.contains { other in
+                        guard abs(row - other) >= 4 else { return false }
+                        let valley = (min(row, other)...max(row, other)).map { profile[$0].ink }.min() ?? 1
+                        return valley <= min(profile[row].ink, profile[other].ink) * 0.88
+                    }
+                }
+                for row in separated {
+                    peaks.append(Peak(y: Double(row) + 0.5, strength: profile[row].ink, support: profile[row].support))
+                }
             }
             index += 1
         }
