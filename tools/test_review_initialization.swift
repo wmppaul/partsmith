@@ -1,11 +1,13 @@
 import Foundation
+import AppKit
+import PDFKit
 
 @main enum ReviewInitializationTests {
     static var checks = 0
     static func check(_ condition: @autoclosure () -> Bool, _ message: String) {
         checks += 1; if !condition() { fatalError(message) }
     }
-    static func main() {
+    static func main() throws {
         let source = Data([1, 2, 3])
         let header = SourceHeaderSelection(pageIndex: 5, topFraction: 0.02, bottomFraction: 0.10,
                                            leftFraction: 0.08, rightFraction: 0.08)
@@ -64,6 +66,86 @@ import Foundation
                                                     rectifications: [], isCancelled: { true })
         check(canceled.plan.pages.isEmpty && !canceled.plan.canApply && canceled.analyses.count == 2,
               "Canceled initial planning exposed partial output or dropped source analyses")
+        var navigationPage = music
+        navigationPage.pageIndex = 0
+        navigationPage.sharedHeadings = nil
+        navigationPage.staves = (0..<4).map { index in
+            let top = 0.2 + Double(index) * 0.18
+            return ScoreObservedStaff(StaffBandCandidate(id: index,
+                staffLineFractions: (0..<5).map { top + Double($0) * 0.005 },
+                topFraction: top - 0.02, bottomFraction: top + 0.04, confidence: 1, warnings: []))
+        }
+        navigationPage.sharedNavigation = [.init(anchorStaffID: 1,
+            bounds: [0.4, 0.405, 0.85, 0.43], recognizedText: "Da Capo", isBelow: true)]
+        let pairProfile = ScoreExtractionProfile(parts: [.init(id: "vln", name: "Violin", staffCount: 1),
+            .init(id: "vc", name: "Cello", staffCount: 1)], cropMode: "compact")
+        let data = NSMutableData()
+        var bounds = CGRect(x: 0, y: 0, width: 600, height: 800)
+        let context = CGContext(consumer: CGDataConsumer(data: data as CFMutableData)!, mediaBox: &bounds, nil)!
+        context.beginPDFPage(nil); context.endPDFPage(); context.closePDF()
+        let sourcePDF = data as Data
+        var navigationReview = ScoreDetectionReview.initial(profile: pairProfile, analyses: [navigationPage],
+            sourcePDFData: sourcePDF, rectifications: [])
+        check(navigationReview.plan.canApply && navigationReview.plan.bands.count == 4,
+              "Shared navigation keeps complete ordered system assignment")
+        let recipient = navigationReview.plan.bands.first { $0.partID == "vln" && $0.systemIndex == 0 }!
+        let owner = navigationReview.plan.bands.first { $0.partID == "vc" && $0.systemIndex == 0 }!
+        check(recipient.sourceMarkings.count == 1 && recipient.sourceMarkings[0].isBelow == true,
+              "Shared end-of-system direction is copied below the correct recipient")
+        check(owner.sourceMarkings.isEmpty && owner.bottomFraction >= 0.43,
+              "Original instruction expands its crop without a duplicate annotation row")
+        check(navigationReview.plan.bands.filter { $0.systemIndex == 1 }.allSatisfy { $0.sourceMarkings.isEmpty },
+              "Instruction found before another system is not reassigned to it")
+        var navigationOverride = ScoreSystemAssignment.pageOverride(page: navigationPage,
+            pagePlan: navigationReview.plan.pages[0], existingOverride: nil)
+        let replanned = ScoreExtractionPlanner.plan(pages: [navigationPage], profile: pairProfile, overrides: [navigationOverride])
+        check(replanned.bands.first { $0.id == recipient.id }?.sourceMarkings == recipient.sourceMarkings,
+              "Assignment review preserves direction side and source rectangle")
+        try navigationReview.setCropEdges(for: recipient.id, top: recipient.topFraction * 800,
+            bottom: recipient.bottomFraction * 800)
+        check(navigationReview.plan.bands.first { $0.id == recipient.id }?.sourceMarkings == recipient.sourceMarkings,
+              "Crop editing preserves below-system source directions")
+        let ownerAfterRecipientEdit = navigationReview.plan.bands.first { $0.id == owner.id }!
+        check([ownerAfterRecipientEdit.topFraction, ownerAfterRecipientEdit.bottomFraction,
+               ownerAfterRecipientEdit.leftFraction, ownerAfterRecipientEdit.rightFraction]
+              == [owner.topFraction, owner.bottomFraction, owner.leftFraction, owner.rightFraction],
+              "Editing a recipient preserves the source owner's entire expanded crop")
+        var unrelatedEdit = ScoreDetectionReview.initial(profile: pairProfile, analyses: [navigationPage],
+            sourcePDFData: sourcePDF, rectifications: [])
+        let unrelated = unrelatedEdit.plan.bands.first { $0.partID == "vln" && $0.systemIndex == 1 }!
+        try unrelatedEdit.setCropEdges(for: unrelated.id, top: unrelated.topFraction * 800,
+            bottom: unrelated.bottomFraction * 800)
+        let ownerAfterUnrelatedEdit = unrelatedEdit.plan.bands.first { $0.id == owner.id }!
+        check([ownerAfterUnrelatedEdit.topFraction, ownerAfterUnrelatedEdit.bottomFraction,
+               ownerAfterUnrelatedEdit.leftFraction, ownerAfterUnrelatedEdit.rightFraction]
+              == [owner.topFraction, owner.bottomFraction, owner.leftFraction, owner.rightFraction],
+              "Editing an unrelated system preserves the source owner's entire expanded crop")
+        try navigationReview.resetCropEdges(for: owner.id)
+        let resetOwner = navigationReview.plan.bands.first { $0.id == owner.id }!
+        check(resetOwner.bottomFraction >= 0.43 && resetOwner.sourceMarkings.isEmpty,
+              "Resetting automatic owner cropping restores its complete printed instruction")
+        let afterReset = navigationReview.plan.bands.first { $0.id == recipient.id }!
+        check(afterReset.sourceMarkings == recipient.sourceMarkings
+              && !afterReset.warnings.contains { $0.contains("repeat directions overlap") },
+              "Replanning copied navigation is idempotent without false collision warnings")
+        var recroppedOverride = ScoreSystemAssignment.pageOverride(page: navigationPage,
+            pagePlan: navigationReview.plan.pages[0], existingOverride: nil)
+        for s in recroppedOverride.systems.indices {
+            for b in recroppedOverride.systems[s].bands.indices { recroppedOverride.systems[s].bands[b].rect = nil }
+        }
+        let recomputed = ScoreExtractionPlanner.plan(pages: [navigationPage], profile: pairProfile, overrides: [recroppedOverride])
+        check(recomputed.bands.first { $0.id == owner.id }!.bottomFraction >= 0.43
+              && recomputed.bands.first { $0.id == recipient.id }!.sourceMarkings == recipient.sourceMarkings,
+              "Reviewed assignment recomputation retains original and copied directions")
+        let document = PartsmithDocument(sourcePDFData: sourcePDF)
+        check(document.addScoreParts(from: navigationReview) == 4, "Auto apply accepts valid navigation review")
+        let applied = document.project.bands.flatMap(\.sourceMarkings)
+        check(applied.count == 1 && applied[0].isBelow == true, "Auto apply persists navigation placement in the native project")
+        let saved = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(document.project))
+        check(saved.bands.flatMap(\.sourceMarkings) == applied, "Native save/reopen retains direction placement")
+        navigationOverride.systems[0].bands[0].sourceMarkingsBelow = [true, false]
+        check(!ScoreExtractionPlanner.plan(pages: [navigationPage], profile: pairProfile, overrides: [navigationOverride]).canApply,
+              "Mismatched position metadata fails before silently assigning the wrong side")
         print("PASS: \(checks) initial-review equality, source metadata, exclusion/restoration, shared heading, global validation and cancellation checks")
     }
 }

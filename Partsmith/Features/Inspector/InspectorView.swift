@@ -414,11 +414,11 @@ struct InspectorView: View {
             if !currentBand.sourceMarkings.isEmpty {
                 Divider()
                 Text("Shared Score Markings").font(.subheadline.weight(.semibold))
-                Text("Verified source fragments appear above this staff at their original horizontal positions.")
+                Text("Copied directions keep their horizontal position and appear above or below this system.")
                     .font(.caption).foregroundStyle(.secondary)
                 ForEach(currentBand.sourceMarkings.indices, id: \.self) { index in
                     HStack {
-                        Text("Marking \(index + 1)")
+                        Text("Marking \(index + 1) · \(currentBand.sourceMarkings[index].isBelow == true ? "Below" : "Above")")
                         Spacer()
                         Button("Remove", role: .destructive) {
                             var markings = (document.band(withID: band.id) ?? band).sourceMarkings

@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "status": "native_competing_ownership_candidate_validated_awaiting_regenerated_output_review",
+  "scope": "At confirmed system boundaries, detached lower marks close to exclusively next-system-owned ink require direct target-owned support. Without competing local evidence, lower annotation chains such as figured bass retain existing propagation. Seeds, target-owned/ambiguous components, lyrics, explicit crops and all other system positions remain.",
+  "source": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "comparison": {
+    "93521-raw": {
+      "before": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 708,
+        "wholeNeighbors": 23,
+        "affectedBands": 23,
+        "multiStaffComponents": 13
+      },
+      "after": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 688,
+        "wholeNeighbors": 23,
+        "affectedBands": 23,
+        "multiStaffComponents": 13
+      },
+      "changedBands": [
+        "p3-s1-cello",
+        "p4-s1-cello",
+        "p7-s1-cello",
+        "p8-s1-cello",
+        "p8-s3-cello",
+        "p9-s3-cello",
+        "p12-s1-cello",
+        "p15-s1-cello",
+        "p17-s2-cello",
+        "p18-s1-cello",
+        "p18-s2-cello",
+        "p20-s1-cello",
+        "p21-s1-cello",
+        "p21-s3-cello",
+        "p22-s1-cello",
+        "p22-s2-cello",
+        "p22-s3-cello",
+        "p23-s3-cello",
+        "p27-s2-cello",
+        "p27-s3-cello",
+        "p32-s1-cello",
+        "p32-s3-cello",
+        "p33-s1-cello",
+        "p33-s3-cello",
+        "p34-s1-cello",
+        "p34-s2-cello",
+        "p35-s1-cello",
+        "p35-s3-cello",
+        "p36-s1-cello",
+        "p37-s1-cello",
+        "p38-s1-cello",
+        "p39-s1-cello",
+        "p39-s3-cello"
+      ]
+    },
+    "93521-deskew": {
+      "before": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 688,
+        "wholeNeighbors": 20,
+        "affectedBands": 20,
+        "multiStaffComponents": 11
+      },
+      "after": {
+        "pageCount": 39,
+        "bandCount": 604,
+        "neighborLines": 669,
+        "wholeNeighbors": 20,
+        "affectedBands": 20,
+        "multiStaffComponents": 11
+      },
+      "changedBands": [
+        "p3-s1-cello",
+        "p4-s1-cello",
+        "p7-s1-cello",
+        "p8-s1-cello",
+        "p8-s3-cello",
+        "p9-s3-cello",
+        "p12-s1-cello",
+        "p15-s1-cello",
+        "p17-s2-cello",
+        "p18-s1-cello",
+        "p18-s2-cello",
+        "p20-s1-cello",
+        "p21-s1-cello",
+        "p21-s3-cello",
+        "p22-s1-cello",
+        "p22-s2-cello",
+        "p22-s3-cello",
+        "p23-s3-cello",
+        "p27-s2-cello",
+        "p27-s3-cello",
+        "p32-s1-cello",
+        "p32-s3-cello",
+        "p33-s1-cello",
+        "p33-s3-cello",
+        "p35-s1-cello",
+        "p35-s3-cello",
+        "p36-s1-cello",
+        "p37-s1-cello",
+        "p38-s1-cello",
+        "p39-s1-cello"
+      ]
+    },
+    "09200-raw": {
+      "before": {
+        "pageCount": 25,
+        "bandCount": 480,
+        "neighborLines": 804,
+        "wholeNeighbors": 36,
+        "affectedBands": 35,
+        "multiStaffComponents": 18
+      },
+      "after": {
+        "pageCount": 25,
+        "bandCount": 480,
+        "neighborLines": 793,
+        "wholeNeighbors": 36,
+        "affectedBands": 35,
+        "multiStaffComponents": 18
+      },
+      "changedBands": [
+        "p1-s2-cello",
+        "p1-s3-cello",
+        "p3-s2-cello",
+        "p4-s1-cello",
+        "p4-s2-cello",
+        "p4-s3-cello",
+        "p4-s4-cello",
+        "p5-s1-cello",
+        "p5-s2-cello",
+        "p5-s3-cello",
+        "p5-s4-cello",
+        "p6-s4-cello",
+        "p7-s3-cello",
+        "p8-s2-cello",
+        "p9-s2-cello",
+        "p10-s1-cello",
+        "p10-s2-cello",
+        "p10-s3-cello",
+        "p10-s4-cello",
+        "p15-s1-cello",
+        "p15-s2-cello",
+        "p16-s1-cello",
+        "p16-s2-cello",
+        "p16-s4-cello",
+        "p18-s1-cello",
+        "p19-s4-cello",
+        "p20-s1-cello",
+        "p22-s1-cello",
+        "p22-s2-cello",
+        "p23-s2-cello",
+        "p23-s3-cello",
+        "p23-s4-cello",
+        "p24-s3-cello"
+      ],
+      "beforeGuardFailures": 44,
+      "afterGuardFailures": 46,
+      "newOrWorseGuardFailures": [
+        {
+          "id": "p5-s3-cello",
+          "top": 0,
+          "bottom": 0.2910874897792155,
+          "description": "Triplet3s, lowledger notes, dots andaccents retained; original sourcewhitegap in earlystaff left unchanged."
+        },
+        {
+          "id": "p22-s2-cello",
+          "top": 0,
+          "bottom": 0.7732893652102462,
+          "description": "Ownhighstaccatodots,arco andlongrightslur/hairpin preserved."
+        }
+      ]
+    },
+    "ave": {
+      "bandCount": 64,
+      "changedCropGeometry": 0,
+      "all64FrozenGuardsContained": true
+    }
+  },
+  "sourceLandmarks": {
+    "cases": 4,
+    "landmarks": 7,
+    "allActualTargetInkRetained": true,
+    "correctedGuardComparison": {
+      "priorCorrectedGuardFailures": [
+        {
+          "id": "p2-s1-violin1",
+          "description": "Opening Vivace, high notes, detached dots and low f/sf/sf. Printed composer is header material separately.",
+          "lossPoints": 1.3000000000000114,
+          "oldContained": false
+        },
+        {
+          "id": "p2-s2-viola",
+          "description": "High naturals and ledger notes/dots; lower beam endpoints and p/f.",
+          "lossPoints": 1.2999999999999545,
+          "oldContained": false
+        },
+        {
+          "id": "p2-s2-cello",
+          "description": "Detached > above staff, low ledger notes and both f glyphs.",
+          "lossPoints": 2.3999999999999773,
+          "oldContained": false
+        },
+        {
+          "id": "p2-s3-violin1",
+          "description": "High ledger notes, natural/sharp and low f.",
+          "lossPoints": 0.0999999999999659,
+          "oldContained": false
+        },
+        {
+          "id": "p37-s2-cello",
+          "description": "Upper/lower beam endpoints, low ledger notes/dots, slur crowns, p/dol.",
+          "lossPoints": 0.20740169622206395,
+          "oldContained": false
+        }
+      ],
+      "newIndependentLowerGuards": [
+        {
+          "id": "p17-s2-cello",
+          "guardBottom": 306,
+          "cropBottom": 312.40000000000003,
+          "lossPoints": 0
+        },
+        {
+          "id": "p18-s1-cello",
+          "guardBottom": 171,
+          "cropBottom": 172.34466769706336,
+          "lossPoints": 0
+        },
+        {
+          "id": "p22-s3-cello",
+          "guardBottom": 448,
+          "cropBottom": 447.65561126108753,
+          "lossPoints": 0.3443887389124711
+        },
+        {
+          "id": "p32-s3-cello",
+          "guardBottom": 441,
+          "cropBottom": 442.43771693019676,
+          "lossPoints": 0
+        }
+      ]
+    },
+    "p22s3SourceInkBottomPoints": 445.7,
+    "p22s3CropBottomPoints": 447.65561126108753,
+    "p22s3RemainingClearancePoints": 1.95561126108753,
+    "p22s3GuardMarginException": "Frozen448pt lower envelope remains unchanged. Excluded0.3443887389pt is empty margin; original reference inspected at720dpi."
+  },
+  "historicalGuardExceptionSourceReview": {
+    "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+    "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+    "scope": "Independent source-context check of two requested lower crop edges, not entire historical score QC",
+    "results": [
+      {
+        "page": 5,
+        "system": 3,
+        "candidateBottom": 476.7089125102,
+        "guardBottom": 477,
+        "darkPixelsInExcludedSliver": 0,
+        "visualConclusion": "No target cello ink lost. p5s3 excludes blank space; p22s2 excludes next-system first-violin slur tips. Current cello hairpin stays above proposed edge."
+      },
+      {
+        "page": 22,
+        "system": 2,
+        "candidateBottom": 342.2267106348,
+        "guardBottom": 343,
+        "darkPixelsInExcludedSliver": 2541,
+        "visualConclusion": "No target cello ink lost. p5s3 excludes blank space; p22s2 excludes next-system first-violin slur tips. Current cello hairpin stays above proposed edge."
+      }
+    ]
+  },
+  "tests": {
+    "newSourceAndNegativeAssertions": 423,
+    "baselineFailsNewRegression": "p17-s2-cello: Next-system detached notes/ending still enlarge the Cello crop",
+    "existingPlannerAssertions": 83,
+    "existingCropAssertions": 82,
+    "productionRerunStatus": "passed: 423 source/negative boundary checks, 83 native planner checks and 82 structural crop checks; final 423-check binary compiled from exact frozen production source after concurrent review-helper changes",
+    "boundaryOnlyRejectedBy": "All four actual Ave first-system figured-bass cases; lower source numbers and accidentals would be cut.",
+    "productionBoundarySourceSHA256": "02c0e6d105f4141089bb96c2344064ed6dd29c34eff52dfad59905c816942a3e"
+  },
+  "limits": [
+    "Twenty whole neighboring staves from structural joins remain on the corrected source.",
+    "Detached initial seeds can still include next-system ink, notably p17s2; this change only limits further downward propagation.",
+    "Complete source fidelity outside independently reviewed landmarks is not established by component-containment assertions.",
+    "Raw global direct-anchor rule was rejected because it worsened low within-system directions."
+  ],
+  "bindings": {
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "02c0e6d105f4141089bb96c2344064ed6dd29c34eff52dfad59905c816942a3e",
+    "tools/test_system_boundary_crops.swift": "dc2027f5428627c339a0f201aa995c040cfdc929616f88e9820ca29ebfed4d86",
+    "tools/test_system_boundary_crops.sh": "b9cd53a3ea9b626eeabcbfd00de5c9077a6464406f75917a5a2a584217d39233",
+    "Tests/quality_control/brahms93521/system-boundary-components.json": "b88a0bccef5b75e079350ba050ebc73c6c48f98befc74fe181e7d47f604895e3",
+    "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json": "ff35d389289c1bb04f19d90abb77f280779ecbabbf0654f89a21a496b777df71",
+    ".build/qc-quartet-review/09200-boundary-check/review.json": "5f99099922aab404956bb4bf00c9d57f361f9e16bf94786715b81acf3de3013f",
+    "Tests/quality_control/ave-system-boundary-components.json": "6c1dbad09d43fe0275cd7d01018dd7597420d0007819ef476a4e2d1cb15e2f07",
+    ".build/qc-algorithm-audit/93521-raw-native-affinity-plan.json": "de71b5a31c5bfb1d8d53a9f1aff76bdd86982997f7ea29bd287dd419b90506a0",
+    ".build/qc-algorithm-audit/93521-deskew-native-affinity-plan.json": "fd1eb1daba4cf14de3a16221e31044f06b6e32cb6821020417ad1207fafae328",
+    ".build/qc-algorithm-audit/09200-raw-native-affinity-plan.json": "c4a08be4751ac61534cea5a6349727a20d94b682aefd658867393ce5dfbf3781",
+    ".build/qc-algorithm-audit/ave-native-affinity-plan.json": "d390b2fc639793805b11bb1d4abb15d3aa0098443b31b5aa61d5fd74c46acd02"
+  },
+  "cropBoundsSHA256": "c8b145a506772e571d5e53fbc19a7dbc700a2f7bb023bd288140d9a37839b04a",
+  "initialSecondSourceRegression": "Ave loses real lower figured-bass rows on the first system of all four pages. Boundary-only direct support is not sufficient without competing next-system ownership evidence. Guards were not relaxed.",
+  "secondSourceResolution": {
+    "source": "Ave verum corpus CPDL18715",
+    "all64CropGeometriesUnchangedFromCandidate3": true,
+    "all64FrozenGuardsContained": true,
+    "partNameExceptions": false,
+    "paddingOrLyricsWorkarounds": false,
+    "newFourSourceFixtures": "Tests/quality_control/ave-system-boundary-components.json"
+  },
+  "nativePlanBandCounts": {
+    "raw93521": 604,
+    "exactCorrected93521": 604,
+    "raw09200": 480,
+    "ave": 64,
+    "conditions": "All native plans consume frozen inventories. No staff detection or rectification is rerun. Current source fixture tests preserve root review/navigation model changes."
+  }
+}

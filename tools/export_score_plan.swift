@@ -14,7 +14,7 @@ enum ExportScorePlan {
         var rectifications: [PageRectification]? = nil
     }
     struct Envelope: Encodable { var project: ProjectData }
-    struct Marking: Encodable { var sourceRect: [Double]; var destinationRect: [Double] }
+    struct Marking: Encodable { var sourceRect: [Double]; var destinationRect: [Double]; var isBelow: Bool? }
     struct Placement: Encodable {
         var id: String
         var sourcePage: Int
@@ -165,7 +165,7 @@ enum ExportScorePlan {
                         system: band.systemIndex + 1, candidateIDs: band.candidateIDs, outputPage: page.index + 1,
                         sourceRect: topDown(placed.sourceRect, bounds), destinationRect: topDown(placed.destinationRect, outputBounds),
                         staffLineYs: lineYs, editorialLabel: band.editorialLabel, kind: band.kind, provenance: band.provenance,
-                        sourceMarkings: placed.sourceMarkings.map { Marking(sourceRect: topDown($0.sourceRect, bounds), destinationRect: topDown($0.destinationRect, outputBounds)) },
+                        sourceMarkings: placed.sourceMarkings.map { Marking(sourceRect: topDown($0.sourceRect, bounds), destinationRect: topDown($0.destinationRect, outputBounds), isBelow: $0.isBelow ? true : nil) },
                         generatedRest: band.generatedRest))
                 }
             }

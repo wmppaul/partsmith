@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "scope": "Independent source geometry and genuine nonmusic/ledger negatives. No instrument count is an algorithm input.",
+  "coordinateSystem": "Pixel positions on native PDFKit renders at maximum 1800 by 2600, origin top left; source staves measured on original notation at clear columns, not from detector assignments.",
+  "fixtures": [
+    {
+      "id": "boheme-167",
+      "source": "sample_scores/lightly_skewed/06_puccini_la_boheme_sc67_imslp_885132.pdf",
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "pageOneBased": 167,
+      "imageSize": [1800, 2401],
+      "expectedLines": [[1242,1257,1271,1286.5,1302],[1387,1401,1415.5,1431,1447],[1603.5,1618,1633,1648.5,1663.5],[1728,1741.5,1756.5,1771.5,1787],[1958,1972,1986.5,2002,2017],[2092,2106.5,2120.5,2137,2152]],
+      "measuredClearColumnRanges": [[940,1000],[500,565],[600,700]],
+      "linePositionTolerancePixels": 3,
+      "evidence": "Three printed piano grand-staff systems beneath Act III stage directions. All six physical five-line staves visible; the selected clear bar/column ranges show every line. Frozen detector returns three half-spacing patterns, not three correctly delimited complete staves."
+    },
+    {
+      "id": "egmont-47",
+      "source": "sample_scores/normal/02_orchestra/beethoven_egmont_overture_op84_score.pdf",
+      "sourceSHA256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "pageOneBased": 47,
+      "imageSize": [1800,2546],
+      "expectedStaffTopPixels": [215,323.5,450,558.5,667,793.5,909,1036,1176,1316,1424,1551,1678,1786],
+      "expectedStaffSpacePixels": 12,
+      "linePositionTolerancePixels": 2,
+      "negativePatternLinesPixels": [1255.5,1267.5,1279.5,1291.5,1303.5],
+      "evidence": "Fourteen physical staves, independently followed at their clefs and continuous horizontal lines. The extra pattern consists of isolated ledger-line fragments around repeated high Violin I notes, immediately above the actual Violin I staff starting at 1316."
+    },
+    {
+      "id": "beethoven-1",
+      "source": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "pageOneBased": 1,
+      "imageSize": [1800,2368],
+      "expectedLines": [],
+      "negativeRegion": [0,0,1800,2368],
+      "evidence": "Decorative border and title typography only. Border hatching has repeated lines but no musical stave."
+    },
+    {
+      "id": "beethoven-106",
+      "source": "sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "pageOneBased": 106,
+      "imageSize": [1800,2368],
+      "expectedLines": [],
+      "negativeRegion": [0,0,1800,2368],
+      "evidence": "Publisher subscription invitation in two prose columns and headings, with a decorative page frame; no music or musical examples."
+    }
+  ]
+}

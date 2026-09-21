@@ -53,6 +53,8 @@ The corpus runner uses raw source pages with internal analysis skew handling. Se
 
 The experimental `headings --inventory JSON --profile JSON --out JSON` command adds locally recognized printed movement/tempo headings to a copy of an inventory. It preserves source pixels through the existing shared-marking export mechanism. It does not recognize all rehearsal letters, endings, repeat directions, or omitted rests, and is not yet enabled in the app. Compare its complete result against independent source-direction oracles before enabling it.
 
+The experimental `navigation --inventory JSON --profile JSON --out JSON` command similarly locates printed Da Capo / Dal Segno / Fine instructions. The 39-page Quartet supplies one verified Da Capo positive; other spellings have classifier tests but no real-score recall claim yet. Source ownership follows the nearest verified system, independently of the OCR search window. Directions below a system are copied below the recipient's music, while the source owner's original crop retains its instruction. Existing projects without a placement field keep their source markings above the staff. `test_review_marking_positions.py` checks legacy placement, both annotation rows, overprinting, and collisions with the next system.
+
 `compare_corpus.py BEFORE_AGGREGATE AFTER_AGGREGATE --out JSON` records staff geometry changes and component ownership across complete runs. These counts diagnose missed structural separation but do not establish musical preservation. `test_review_coordinate_binding.py` rejects mismatched source hashes, raw/corrected coordinate swaps and truncated or resized corrected reference PDFs.
 
 ## Completion requirements

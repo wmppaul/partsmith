@@ -124,6 +124,11 @@ enum StaffBandDetector {
                 if supported { staffs.append(recovered) }
             }
         }
+        // Repeated ledger lines and prose may have regularly spaced row peaks,
+        // but do not sustain multiple staff lines over a horizontal distance.
+        // A short run of three supported lines tolerates faded/interrupted
+        // lines and local curvature without accepting a series of noteheads.
+        staffs.removeAll { !hasSustainedLines($0, raster: raster, slope: slope) }
         staffs.sort { $0.lines[0] < $1.lines[0] }
         if isCancelled() { return StaffDetectionResult(candidates: [], warnings: []) }
         guard !staffs.isEmpty else {
@@ -439,6 +444,27 @@ enum StaffBandDetector {
             accepted.append(pattern)
         }
         return accepted.sorted { $0.lines[0] < $1.lines[0] }
+    }
+
+    private static func hasSustainedLines(_ staff: Staff, raster: Raster, slope: Double) -> Bool {
+        let space = (staff.lines[4] - staff.lines[0]) / 4
+        let tolerance = max(1, Int((space * 0.10).rounded()))
+        let requiredRun = max(12, Int((space * 4).rounded(.up)))
+        var run = 0
+        for x in 0..<raster.width {
+            let tilt = slope * (Double(x) - Double(raster.width) / 2)
+            var votes = 0
+            for line in staff.lines {
+                let y = Int((line + tilt).rounded(.down))
+                if (-tolerance...tolerance).contains(where: { offset in
+                    let row = y + offset
+                    return row >= 0 && row < raster.height && raster.pixels[row * raster.width + x] < 195
+                }) { votes += 1 }
+            }
+            run = votes >= 3 ? run + 1 : 0
+            if run >= requiredRun { return true }
+        }
+        return false
     }
 
     private static func overlaps(_ first: Staff, _ second: Staff) -> Bool {

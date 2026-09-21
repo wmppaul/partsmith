@@ -244,16 +244,24 @@ def review(directory, map_path=None, pixels=False):
             for lines in p["staffLineYs"]:
                 assert len(lines) == 5 and src.y0 <= min(lines) < max(lines) <= src.y1
                 heights.append((max(lines) - min(lines)) * scale)
-            previous = by_page.get(p["outputPage"])
-            if previous:
-                assert previous.y1 <= dst.y0, "Music strips overlap"
-            by_page[p["outputPage"]] = dst
+            group = fitz.Rect(dst)
+            marking_destinations = []
             for marking in p["sourceMarkings"]:
                 ms, md = rect(marking["sourceRect"]), rect(marking["destinationRect"])
                 assert pdf[p["outputPage"] - 1].rect.contains(md)
-                assert md.y1 <= dst.y0, "Shared direction overlaps target music"
+                if marking.get("isBelow", False):
+                    assert md.y0 >= dst.y1, "End-of-system direction overlaps or precedes target music"
+                else:
+                    assert md.y1 <= dst.y0, "Shared direction overlaps target music"
+                assert all((md & other).is_empty for other in marking_destinations), "Shared directions overlap"
+                marking_destinations.append(md)
+                group |= md
                 assert abs(md.width / ms.width - scale) < 1e-6
                 assert abs(md.height / ms.height - scale) < 1e-6
+            previous = by_page.get(p["outputPage"])
+            if previous:
+                assert previous.y1 <= group.y0, "Music strips or their directions overlap"
+            by_page[p["outputPage"]] = group
             if pixels:
                 guards = protected.get((p["sourcePage"], p["system"], part["id"]), [])
                 assert guards, f"No independent protected regions for {p['id']}"

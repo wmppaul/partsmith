@@ -1,0 +1,114 @@
+{
+  "status": "Rejected diagnostic experiment; patch archived only, not applied to production",
+  "source": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "page": 31,
+  "hypothesis": "Local scan curvature shifts all five printed staff lines relative to page-center estimates, causing an intact interior barline to fail the unchanged 88% core-support test.",
+  "upperCoreMeasuredRows": [
+    189,
+    245
+  ],
+  "actualLocalStaffLinesPixels": [
+    196,
+    210,
+    224,
+    238,
+    252
+  ],
+  "oldUpperCoreSupport": 0.875,
+  "algorithm": "For a connector failing the ordinary test, require >=80% sustained horizontal support for each of five staff lines in a local side flank, then translate the core within +/-0.75 staff spaces. Retest the unchanged 88% criterion and translate only the analysis connector interval.",
+  "syntheticControls": {
+    "existing82": "pass",
+    "newNegativeOnlyBaseline100": "pass",
+    "candidateExtended": "FAIL: Near-full musical stem remains ambiguous at bow -7.0, tilt -1.5, scale 0.6",
+    "conclusion": "A real near-full cross-staff stem is split only by the candidate. This is a preservation regression, so candidate6 is not safe to promote."
+  },
+  "bindings": {
+    ".build/qc-algorithm-audit/NativeScorePageAnalyzer.candidate6.swift": "c1f5c470ccf24711decea7a3829687a75397eec156fc8e6ebc86020099d1f518",
+    ".build/qc-algorithm-audit/test_crop_quality.candidate6.swift": "98c1c1840f0148c8673c25502dea843af37b659e51d66acb80690de1a48daefe",
+    ".build/qc-algorithm-audit/test_crop_quality.candidate6-negative-only.swift": "c6bc59bdc8e583a32081f34330d812755bba9dc7785c7c62571fa3e136edb82e",
+    ".build/qc-algorithm-audit/p31-residual.json": "ade2c7e24948e302b99b69bafd6b6aead2211d97cdca6180927d775e8cbdb404",
+    ".build/qc-algorithm-audit/p31-candidate6.json": "952f985dd9da4690a4fa202b9d00a3aaac46ca24459f2dfa1ba469ab628f96ae"
+  },
+  "residual": {
+    "multiOwnerComponents": 2,
+    "foreignStaffLineCenters": 20,
+    "wholeNeighborStaves": 2,
+    "firstSystemBandBoundsPoints": {
+      "p31-s1-violin1": [
+        21.51253374469726,
+        97.34516004627845
+      ],
+      "p31-s1-violin2": [
+        31.94832240647898,
+        110.8642499035866
+      ],
+      "p31-s1-viola": [
+        91.24257616660239,
+        141.22290782876976
+      ],
+      "p31-s1-cello": [
+        119.22946394138063,
+        170.15850366370998
+      ]
+    }
+  },
+  "candidate6": {
+    "multiOwnerComponents": 1,
+    "foreignStaffLineCenters": 18,
+    "wholeNeighborStaves": 1,
+    "firstSystemBandBoundsPoints": {
+      "p31-s1-violin1": [
+        21.038179714616273,
+        85.01195526417278
+      ],
+      "p31-s1-violin2": [
+        41.43540300809873,
+        110.8642499035866
+      ],
+      "p31-s1-viola": [
+        91.24257616660239,
+        141.22290782876976
+      ],
+      "p31-s1-cello": [
+        119.22946394138063,
+        170.15850366370998
+      ]
+    }
+  },
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "productionFilesChanged": [
+    "tools/test_crop_quality.swift (18 additional preservation controls only)"
+  ],
+  "durableBindings": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "1c665c0cdf52bdca028b46cf1d6c1dd3108efe3ef61217c5c1d5370787a361f9",
+    "Tests/quality_control/connector-local-core-rejected.patch": "8e5d75cf9118b623ab58bb9e8fd20ccf74506b60e51425139be4a87510192242",
+    "tools/test_crop_quality.swift": "7ad98f1b2f51c68cc457446e248e473da4d597eaf1533af6e419e8ca85ad5ad1",
+    "tools/test_crop_quality.sh": "07d51b9199e08bc1abdd22dfd145f8a8a8fb6c97f8ecbd8ec6922060168391f2"
+  },
+  "productionNative100CheckRerun": {
+    "command": "bash tools/test_crop_quality.sh",
+    "result": "PASS: 100 crop quality checks",
+    "existingAssertions": 82,
+    "newAssertions": 18,
+    "productionAnalyzerUnchanged": true
+  },
+  "newControlParameters": {
+    "localBowPixels": [
+      7,
+      -7
+    ],
+    "skewDegrees": [
+      0,
+      -1.5,
+      1.5
+    ],
+    "rasterScale": [
+      1,
+      0.6,
+      0.5
+    ],
+    "count": 18,
+    "expected": "Source-connected musical stem and both noteheads remain one component with ambiguous ownership across the two intended staves."
+  },
+  "noFurtherScope": "Only source page31 and focused synthetic tests were run for this rejected candidate. It was not promoted or tested as a whole-corpus replacement."
+}

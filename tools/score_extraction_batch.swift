@@ -73,7 +73,7 @@ enum ScoreExtractionBatch {
             }
             try encoder.encode(inventory).write(to: out.appendingPathComponent("inventory.json"), options: .atomic)
             print("Inventory: \(out.path)/inventory.json")
-        } else if command == "headings" {
+        } else if command == "headings" || command == "navigation" {
             guard let input = option("--inventory"), let profilePath = option("--profile"), let destination = option("--out") else { throw failure("Missing inventory/profile/output") }
             let decoder = JSONDecoder()
             var inventory = try decoder.decode(NativeScoreInventory.self, from: Data(contentsOf: URL(fileURLWithPath: input)))
@@ -83,23 +83,30 @@ enum ScoreExtractionBatch {
             let profile = try decoder.decode(ScoreExtractionProfile.self, from: Data(contentsOf: URL(fileURLWithPath: profilePath)))
             for index in inventory.pages.indices {
                 let analysis = inventory.pages[index]
-                let headings: [ScoreSharedHeading] = try autoreleasepool {
+                try autoreleasepool {
                     guard let page = pdf.page(at: analysis.pageIndex) else { throw failure("Cannot read heading page") }
                     let bounds = page.bounds(for: .mediaBox)
+                    let maximumWidth = command == "navigation" ? 2400 : 2200
+                    let maximumHeight = command == "navigation" ? 3500 : 3200
                     let image: CGImage?
                     if let correction = inventory.rectifications?.first(where: { $0.pageIndex == analysis.pageIndex }) {
                         image = SourcePageRenderCache(pdfDocument: pdf,
-                            rasterScale: min(2200 / bounds.width, 3200 / bounds.height))
+                            rasterScale: min(CGFloat(maximumWidth) / bounds.width, CGFloat(maximumHeight) / bounds.height))
                             .rectifiedDisplayImage(for: analysis.pageIndex, rectification: correction)
-                    } else { image = NativeScorePageAnalyzer.render(page, maximumWidth: 2200, maximumHeight: 3200) }
+                    } else { image = NativeScorePageAnalyzer.render(page, maximumWidth: maximumWidth, maximumHeight: maximumHeight) }
                     guard let image else { throw failure("Cannot render heading page") }
-                    return ScoreSharedHeadingDetector.detect(in: image, page: analysis, profile: profile)
+                    if command == "navigation" {
+                        inventory.pages[index].sharedNavigation = ScoreSharedNavigationDetector.detect(in: image, page: analysis, profile: profile)
+                    } else {
+                        inventory.pages[index].sharedHeadings = ScoreSharedHeadingDetector.detect(in: image, page: analysis, profile: profile)
+                    }
                 }
-                inventory.pages[index].sharedHeadings = headings
-                print("Page \(analysis.pageIndex + 1): \(headings.count) shared headings")
+                let count = command == "navigation" ? inventory.pages[index].sharedNavigation?.count : inventory.pages[index].sharedHeadings?.count
+                print("Page \(analysis.pageIndex + 1): \(count ?? 0) shared \(command)")
                 fflush(stdout)
             }
-            inventory.analysisConfiguration = (inventory.analysisConfiguration ?? "legacy-inventory") + "+shared-headings-v3"
+            inventory.analysisConfiguration = (inventory.analysisConfiguration ?? "legacy-inventory")
+                + (command == "navigation" ? "+shared-navigation-v1" : "+shared-headings-v3")
             try encoder.encode(inventory).write(to: URL(fileURLWithPath: destination), options: .atomic)
         } else if command == "plan" {
             guard let input = option("--inventory"), let profilePath = option("--profile"), let destination = option("--out") else { throw failure("Missing inventory/profile/output") }

@@ -500,12 +500,15 @@ struct BandExclusion: Codable, Identifiable, Equatable {
 }
 
 /// A verified shared score direction copied from this band's source page.
-/// Right is a trim amount; its horizontal source position is retained above the part.
+/// Right is a trim amount; its horizontal source position is retained.
 struct BandSourceMarking: Codable, Equatable {
     var topFraction: Double
     var bottomFraction: Double
     var leftFraction: Double
     var rightFraction: Double
+    /// Older projects place fragments above the staff. Navigation instructions
+    /// can instead follow their system without being moved before its music.
+    var isBelow: Bool? = nil
 
     func isValid(in band: BandModel) -> Bool {
         [topFraction, bottomFraction, leftFraction, rightFraction].allSatisfy { $0.isFinite && $0 >= 0 && $0 <= 1 }

@@ -1,0 +1,42 @@
+{
+  "builtAtUTC": "2026-09-21T20:02:31.872792+00:00",
+  "configuration": "Release; unsigned universal x86_64 + arm64",
+  "archive": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "archiveSHA256": "b2188a6acd04c224835e8cdbcf49bcbd703389d4b029b72eb9b6657478fb4374",
+  "executableSHA256": "e31b5da06fc1aa088e2a0eced7dd3388e7cc936a4babf6b7a3b22f4c5f3cd129",
+  "archiveIntegrity": "pass; packaged executable equals successful Release build",
+  "productionSources": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "1c665c0cdf52bdca028b46cf1d6c1dd3108efe3ef61217c5c1d5370787a361f9",
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "fc94f285d300167d9010ed47b9cfcf1fee92f036ee8472e73a14939d38a30c9e",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "02c0e6d105f4141089bb96c2344064ed6dd29c34eff52dfad59905c816942a3e",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "059737369942a036932c555018ad456f0117591631e57048394aefc4cd8574ff",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+    "Partsmith/Features/Inspector/InspectorView.swift": "90542a52182907f953b5e59d140f9d42a264917c60fcf880d8d5740fd1112ed7"
+  },
+  "experimentalDetectorsInApp": false,
+  "validation": {
+    "staffCorpus": {
+      "PDFs": 36,
+      "pages": 1477,
+      "sourceVerifiedFalseStavesRemoved": 6,
+      "retainedLineArraysChanged": 0
+    },
+    "boundaryRegressionChecks": 423,
+    "existingPlannerChecks": 83,
+    "structuralCropChecks": 100,
+    "layoutAssertions": 5389,
+    "nativePixelExportChecks": 169,
+    "initializationAndDirectionPersistenceChecks": 78,
+    "navigationClassifierGeometryChecks": 61,
+    "reviewerAnnotationDamageControls": 6,
+    "coordinateBindingControls": 10,
+    "structuralCropNote": "Original82 plus18 post-build musical-bridge controls; production analyzer unchanged."
+  },
+  "limits": [
+    "Staff detection comparison is not complete musical review of all corpus outputs.",
+    "The difficult Quartet still has20 whole-neighbor inclusions and unresolved shared directions.",
+    "Printed heading/navigation recognition remains CLI-only and experimental.",
+    "Changing instrumentation and silent durations still require source assignments."
+  ]
+}

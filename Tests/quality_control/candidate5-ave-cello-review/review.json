@@ -1,0 +1,3721 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-09-21",
+  "reviewer": "independent sample_corpus subagent",
+  "scope": "All Ave parts and Violoncello only from quartet candidate5; no overall quality certification",
+  "ave": {
+    "manifest": ".build/auto-qc/candidate5/ave-parts/manifest.json",
+    "manifestSHA256": "dcafc4a8a1c7f30d6f3a2e4d5c0f71c40a074f2a160c2aa02c2b04734ea30e89",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+    "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+    "sourceMatchesManifest": true,
+    "planSHA256": "45c484bd270f8e4caa9ac15ebbf509c3c1366a86f5da7295b31a90208974b11e",
+    "rectifications": [],
+    "parts": [
+      {
+        "id": "soprano",
+        "file": ".build/auto-qc/candidate5/ave-parts/Soprano.pdf",
+        "sha256": "a5502e1f3f25f6d1ca4102c66af5c150d92dc622ebc73d5636e5cfd5feded889",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              176.87850545971935
+            ]
+          },
+          {
+            "id": "p1-s2-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              192.87850545971935,
+              564,
+              234.31640273112248
+            ]
+          },
+          {
+            "id": "p2-s1-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              250.31640273112248,
+              564,
+              292.041017351552
+            ]
+          },
+          {
+            "id": "p2-s2-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              308.041017351552,
+              564,
+              349.7656319719815
+            ]
+          },
+          {
+            "id": "p3-s1-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              365.7656319719815,
+              564,
+              406.9168118943584
+            ]
+          },
+          {
+            "id": "p3-s2-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              422.9168118943584,
+              564,
+              465.21486121284056
+            ]
+          },
+          {
+            "id": "p4-s1-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              481.21486121284056,
+              564,
+              528.673822813797
+            ]
+          },
+          {
+            "id": "p4-s2-soprano",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              544.673822813797,
+              564,
+              584.9648506890948
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alto",
+        "file": ".build/auto-qc/candidate5/ave-parts/Alto.pdf",
+        "sha256": "cf74dec8743d2c6d05e5ce30560ccaae8c0dea1d0d80f4487164c872bd4e5a91",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              190.63612511385224
+            ]
+          },
+          {
+            "id": "p1-s2-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              206.63612511385224,
+              564,
+              244.05997949888672
+            ]
+          },
+          {
+            "id": "p2-s1-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              260.0599794988867,
+              564,
+              295.47681244073675
+            ]
+          },
+          {
+            "id": "p2-s2-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              311.47681244073675,
+              564,
+              352.0545576650609
+            ]
+          },
+          {
+            "id": "p3-s1-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              368.0545576650609,
+              564,
+              405.47841205009524
+            ]
+          },
+          {
+            "id": "p3-s2-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              421.47841205009524,
+              564,
+              460.62257052928766
+            ]
+          },
+          {
+            "id": "p4-s1-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              476.62257052928766,
+              564,
+              514.906576961401
+            ]
+          },
+          {
+            "id": "p4-s2-alto",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              530.906576961401,
+              564,
+              567.1835619503299
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tenore",
+        "file": ".build/auto-qc/candidate5/ave-parts/Tenore.pdf",
+        "sha256": "471b2a09eac47734afa7978e8827caf129df1713d701c64a06e396544e4a7d24",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              189.48925571774691
+            ]
+          },
+          {
+            "id": "p1-s2-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              205.48925571774691,
+              564,
+              244.92013154596566
+            ]
+          },
+          {
+            "id": "p2-s1-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              260.92013154596566,
+              564,
+              301.2111594212635
+            ]
+          },
+          {
+            "id": "p2-s2-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              317.2111594212635,
+              564,
+              356.9287525985086
+            ]
+          },
+          {
+            "id": "p3-s1-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              372.9287525985086,
+              564,
+              409.2057375874376
+            ]
+          },
+          {
+            "id": "p3-s2-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              425.2057375874376,
+              564,
+              466.64363485884076
+            ]
+          },
+          {
+            "id": "p4-s1-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              482.64363485884076,
+              564,
+              529.5291617617445
+            ]
+          },
+          {
+            "id": "p4-s2-tenore",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              545.5291617617445,
+              564,
+              582.3795814487261
+            ]
+          }
+        ]
+      },
+      {
+        "id": "basso",
+        "file": ".build/auto-qc/candidate5/ave-parts/Basso.pdf",
+        "sha256": "dbf44c769ffffe364d87b58b624743cb7630b456401f8ba77abe5a45459a0f6c",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              189.7759730667733
+            ]
+          },
+          {
+            "id": "p1-s2-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              205.7759730667733,
+              564,
+              243.19982745180766
+            ]
+          },
+          {
+            "id": "p2-s1-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              259.19982745180766,
+              564,
+              292.60963895047325
+            ]
+          },
+          {
+            "id": "p2-s2-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              308.60963895047325,
+              564,
+              344.0264718923231
+            ]
+          },
+          {
+            "id": "p3-s1-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              360.0264718923231,
+              564,
+              395.7300221831995
+            ]
+          },
+          {
+            "id": "p3-s2-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              411.7300221831995,
+              564,
+              447.7202898231022
+            ]
+          },
+          {
+            "id": "p4-s1-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              463.7202898231022,
+              564,
+              502.2910136042419
+            ]
+          },
+          {
+            "id": "p4-s2-basso",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              518.2910136042419,
+              564,
+              551.7008251029074
+            ]
+          }
+        ]
+      },
+      {
+        "id": "violin1",
+        "file": ".build/auto-qc/candidate5/ave-parts/Violino I.pdf",
+        "sha256": "81096d3d196a6400b52087a72ec0298d7a02a64802b87de55bdc1ce1ae64248d",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              198.09077618853723
+            ]
+          },
+          {
+            "id": "p1-s2-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              214.09077618853735,
+              564,
+              252.37478262065065
+            ]
+          },
+          {
+            "id": "p2-s1-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              268.37478262065065,
+              564,
+              307.2322237508168
+            ]
+          },
+          {
+            "id": "p2-s2-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              323.2322237508168,
+              564,
+              362.08966488098287
+            ]
+          },
+          {
+            "id": "p3-s1-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              378.0896648809828,
+              564,
+              420.9611488975178
+            ]
+          },
+          {
+            "id": "p3-s2-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              436.9611488975178,
+              564,
+              474.9584379806048
+            ]
+          },
+          {
+            "id": "p4-s1-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              490.9584379806048,
+              564,
+              534.4033566951924
+            ]
+          },
+          {
+            "id": "p4-s2-violin1",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              550.4033566951924,
+              564,
+              593.5615580607537
+            ]
+          }
+        ]
+      },
+      {
+        "id": "violin2",
+        "file": ".build/auto-qc/candidate5/ave-parts/Violino II.pdf",
+        "sha256": "f8dc3d35a3b9f7783b51356f514b573da6d086bcc976c4625265a12a31255b3f",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              190.63612511385236
+            ]
+          },
+          {
+            "id": "p1-s2-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              206.63612511385236,
+              564,
+              242.05295805570233
+            ]
+          },
+          {
+            "id": "p2-s1-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              258.05295805570233,
+              564,
+              301.2111594212636
+            ]
+          },
+          {
+            "id": "p2-s2-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              317.2111594212636,
+              564,
+              352.3412750140873
+            ]
+          },
+          {
+            "id": "p3-s1-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              368.3412750140873,
+              564,
+              414.6533672189383
+            ]
+          },
+          {
+            "id": "p3-s2-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              430.6533672189383,
+              564,
+              466.3569175098146
+            ]
+          },
+          {
+            "id": "p4-s1-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              482.3569175098146,
+              564,
+              524.3682494792705
+            ]
+          },
+          {
+            "id": "p4-s2-violin2",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              540.3682494792705,
+              564,
+              573.7780609779361
+            ]
+          }
+        ]
+      },
+      {
+        "id": "viola",
+        "file": ".build/auto-qc/candidate5/ave-parts/Viola.pdf",
+        "sha256": "97cd7e14588ca43a28d2bc7a5f815fa4447d669bd1807e40c4cee3233a984ca7",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              185.76193018040442
+            ]
+          },
+          {
+            "id": "p1-s2-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              201.76193018040453,
+              564,
+              240.04593661251783
+            ]
+          },
+          {
+            "id": "p2-s1-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              256.04593661251783,
+              564,
+              293.7565083465785
+            ]
+          },
+          {
+            "id": "p2-s2-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              309.7565083465785,
+              564,
+              344.0264718923231
+            ]
+          },
+          {
+            "id": "p3-s1-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              360.0264718923231,
+              564,
+              404.33154265398974
+            ]
+          },
+          {
+            "id": "p3-s2-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              420.33154265398974,
+              564,
+              463.7764613685773
+            ]
+          },
+          {
+            "id": "p4-s1-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              479.7764613685773,
+              564,
+              513.1862728672429
+            ]
+          },
+          {
+            "id": "p4-s2-viola",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              529.1862728672429,
+              564,
+              558.2953241305132
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bass_organ",
+        "file": ".build/auto-qc/candidate5/ave-parts/Basso ed Organo.pdf",
+        "sha256": "8031f525c7c8515e7ddef8a62e57335ec6ee052748144e9c2fcf2f22b106d29e",
+        "hashMatchesManifest": true,
+        "actualPages": 1,
+        "systems": 8,
+        "systemsPerPage": [
+          8
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p1-s1-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              200.67123232977428
+            ]
+          },
+          {
+            "id": "p1-s2-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              216.67123232977428,
+              564,
+              271.87156235444183
+            ]
+          },
+          {
+            "id": "p2-s1-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              287.87156235444183,
+              564,
+              332.46335046513474
+            ]
+          },
+          {
+            "id": "p2-s2-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              348.46335046513474,
+              564,
+              398.7894855563546
+            ]
+          },
+          {
+            "id": "p3-s1-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              414.7894855563546,
+              564,
+              465.11562064757436
+            ]
+          },
+          {
+            "id": "p3-s2-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              481.11562064757436,
+              564,
+              528.0011475504781
+            ]
+          },
+          {
+            "id": "p4-s1-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              544.0011475504781,
+              564,
+              594.9007173397506
+            ]
+          },
+          {
+            "id": "p4-s2-bass_organ",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              610.9007173397506,
+              564,
+              659.7932656858386
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "own-notation-preservation and page-layout pass; overall draft: duplicate Adagio, missing shared bar numbers, neighboring fragments",
+    "frozenGuardMap": "Tests/full_scores/ave-tight-map.json",
+    "frozenGuardMapSHA256": "57408271c90103e87171de618ad14d19e4e719677f2cfafbfdf3c8bf5a5c925d",
+    "frozenGuardMapModified": false,
+    "targetChecks": [
+      {
+        "id": "p1-s1-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s1-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p1-s2-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s1-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p2-s2-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s1-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p3-s2-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s1-bass_organ",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-soprano",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-alto",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-tenore",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-basso",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-violin1",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-violin2",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-viola",
+        "containsFrozenGuard": true
+      },
+      {
+        "id": "p4-s2-bass_organ",
+        "containsFrozenGuard": true
+      }
+    ],
+    "all64FrozenGuardsContained": true,
+    "all64MainSourceRectanglesUnchangedFromCandidate3": true,
+    "candidate3ManifestSHA256": "5f2019f174486fd7b67a99ed12e5784570597f0d4adbe33aa679abc01f4209db",
+    "figuredBassRowsVisuallyComparedToSource": [
+      "p1-s1-bass_organ",
+      "p2-s1-bass_organ",
+      "p3-s1-bass_organ",
+      "p4-s1-bass_organ"
+    ],
+    "figuredBassResult": "all numerals, alterations, continuation dashes and local instructions remain within final output crops",
+    "headingResult": {
+      "allEightPartsContainAdagio": true,
+      "duplicateParts": [
+        "basso",
+        "violin1"
+      ],
+      "duplicateDetails": {
+        "basso": "New copy above the staff plus the following Violin I printed heading captured below the Basso staff.",
+        "violin1": "New copied soprano heading plus its own printed Violin I heading, both above the staff."
+      },
+      "glyphs": "All copied Adagio glyphs appear intact; no overlap with target music."
+    },
+    "sharedBarNumbers": {
+      "missingCopies": 42,
+      "reason": "Main crops unchanged and only Adagio source fragments added; seven source bar labels remain absent from six designated recipients in the frozen map."
+    },
+    "visualLimitations": [
+      "All eight complete output pages reviewed for layout; detailed prior unchanged-band notation review inherited via exact main source rectangles and same immutable source, not a new note-by-note reading of all64 bands.",
+      "All four first-system continuo rows rechecked visually against source at enlarged scale.",
+      "Significant partial neighboring notes, staff fragments, duplicated lyrics and source footer remain."
+    ]
+  },
+  "cello": {
+    "manifest": ".build/auto-qc/candidate5/quartet93521-parts/manifest.json",
+    "manifestSHA256": "c424d8e5c8c21e2d696e2ab0e7f6e14283983c4fee79c2ae40b4fd8d3d0d68a8",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "sourceMatchesManifest": true,
+    "planSHA256": "e27c5802b8ab5c7e46eabfa3892c7186261a49a8dd05f15a56fe6fffda657b42",
+    "rectifications": [
+      {
+        "bottomLeft": {
+          "x": 0.022452219281807972,
+          "y": 0.9934585845001322
+        },
+        "bottomRight": {
+          "x": 0.999,
+          "y": 0.9830891962180598
+        },
+        "pageIndex": 1,
+        "topLeft": {
+          "x": 0.001000000000000035,
+          "y": 0.01691080378194021
+        },
+        "topRight": {
+          "x": 0.977547780718192,
+          "y": 0.006541415499867753
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.001000000000000126,
+          "y": 0.9893711972992971
+        },
+        "bottomRight": {
+          "x": 0.9860176774355548,
+          "y": 0.9956464801362577
+        },
+        "pageIndex": 6,
+        "topLeft": {
+          "x": 0.013982322564445161,
+          "y": 0.004353519863742328
+        },
+        "topRight": {
+          "x": 0.999,
+          "y": 0.010628802700702766
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.015843354839884468,
+          "y": 0.9951491787679413
+        },
+        "bottomRight": {
+          "x": 0.999,
+          "y": 0.9880074663921742
+        },
+        "pageIndex": 16,
+        "topLeft": {
+          "x": 0.0010000000000000646,
+          "y": 0.011992533607825706
+        },
+        "topRight": {
+          "x": 0.9841566451601157,
+          "y": 0.004850821232058711
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.0010000000000000009,
+          "y": 0.9907265824906225
+        },
+        "bottomRight": {
+          "x": 0.9878324989484448,
+          "y": 0.9961059164578222
+        },
+        "pageIndex": 18,
+        "topLeft": {
+          "x": 0.012167501051555252,
+          "y": 0.0038940835421777953
+        },
+        "topRight": {
+          "x": 0.9990000000000001,
+          "y": 0.00927341750937749
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.000999999999999995,
+          "y": 0.9911813734416057
+        },
+        "bottomRight": {
+          "x": 0.988446378088182,
+          "y": 0.9962650046465762
+        },
+        "pageIndex": 22,
+        "topLeft": {
+          "x": 0.011553621911818033,
+          "y": 0.003734995353423809
+        },
+        "topRight": {
+          "x": 0.999,
+          "y": 0.008818626558394271
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.0009999999999999595,
+          "y": 0.983525543271109
+        },
+        "bottomRight": {
+          "x": 0.9781124995691003,
+          "y": 0.9935869562979912
+        },
+        "pageIndex": 27,
+        "topLeft": {
+          "x": 0.021887500430899803,
+          "y": 0.006413043702008903
+        },
+        "topRight": {
+          "x": 0.999,
+          "y": 0.01647445672889103
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.0009999999999999076,
+          "y": 0.9844263100779589
+        },
+        "bottomRight": {
+          "x": 0.9793505846569762,
+          "y": 0.9939242745790171
+        },
+        "pageIndex": 33,
+        "topLeft": {
+          "x": 0.020649415343023954,
+          "y": 0.0060757254209828915
+        },
+        "topRight": {
+          "x": 0.9990000000000001,
+          "y": 0.015573689922041112
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.0010000000000000497,
+          "y": 0.9889130266602368
+        },
+        "bottomRight": {
+          "x": 0.985384552060725,
+          "y": 0.9954715254004882
+        },
+        "pageIndex": 37,
+        "topLeft": {
+          "x": 0.01461544793927505,
+          "y": 0.004528474599511889
+        },
+        "topRight": {
+          "x": 0.999,
+          "y": 0.011086973339763162
+        }
+      },
+      {
+        "bottomLeft": {
+          "x": 0.015843354839884468,
+          "y": 0.9951491787679413
+        },
+        "bottomRight": {
+          "x": 0.999,
+          "y": 0.9880074663921742
+        },
+        "pageIndex": 38,
+        "topLeft": {
+          "x": 0.0010000000000000646,
+          "y": 0.011992533607825706
+        },
+        "topRight": {
+          "x": 0.9841566451601157,
+          "y": 0.004850821232058711
+        }
+      }
+    ],
+    "parts": [
+      {
+        "id": "cello",
+        "file": ".build/auto-qc/candidate5/quartet93521-parts/Violoncello.pdf",
+        "sha256": "259150b9f0d46bd576aa157387825b34b303ce9485c1b87d6a5507593c2cf60f",
+        "hashMatchesManifest": true,
+        "actualPages": 15,
+        "systems": 151,
+        "systemsPerPage": [
+          9,
+          10,
+          10,
+          11,
+          11,
+          10,
+          11,
+          10,
+          9,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "allOutputPagesVisuallyReviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "layoutIssues": [],
+        "groups": [
+          {
+            "id": "p2-s1-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              132,
+              564,
+              216.9375713183896
+            ]
+          },
+          {
+            "id": "p2-s2-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              221.81030661010902,
+              564,
+              279.81499045085843
+            ]
+          },
+          {
+            "id": "p2-s3-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              284.68772574257787,
+              564,
+              338.3420582952712
+            ]
+          },
+          {
+            "id": "p3-s1-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              343.21479358699065,
+              564,
+              403.3412355692616
+            ]
+          },
+          {
+            "id": "p3-s2-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              408.213970860981,
+              564,
+              476.65467901137066
+            ]
+          },
+          {
+            "id": "p3-s3-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              481.5274143030901,
+              564,
+              539.6469644516773
+            ]
+          },
+          {
+            "id": "p3-s4-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              544.5196997433967,
+              564,
+              604.3594428922842
+            ]
+          },
+          {
+            "id": "p4-s1-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              609.2321781840036,
+              564,
+              670.5054154998081
+            ]
+          },
+          {
+            "id": "p4-s2-cello",
+            "outputPage": 1,
+            "wholeGroupRect": [
+              48,
+              675.3781507915276,
+              564,
+              723.176542938312
+            ]
+          },
+          {
+            "id": "p4-s3-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              128.97275481505346
+            ]
+          },
+          {
+            "id": "p4-s4-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              133.8454901067729,
+              564,
+              208.88027142498095
+            ]
+          },
+          {
+            "id": "p5-s1-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              213.75300671670038,
+              564,
+              263.8449895305521
+            ]
+          },
+          {
+            "id": "p5-s2-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              268.7177248222715,
+              564,
+              329.70426330469263
+            ]
+          },
+          {
+            "id": "p5-s3-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              334.57699859641207,
+              564,
+              396.99703124575024
+            ]
+          },
+          {
+            "id": "p5-s4-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              401.8697665374697,
+              564,
+              449.09476101748743
+            ]
+          },
+          {
+            "id": "p6-s1-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              453.96749630920687,
+              564,
+              551.9381842980872
+            ]
+          },
+          {
+            "id": "p6-s2-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              556.8109195898066,
+              564,
+              592.8546595678715
+            ]
+          },
+          {
+            "id": "p6-s3-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              597.727394859591,
+              564,
+              648.6794741735928
+            ]
+          },
+          {
+            "id": "p6-s4-cello",
+            "outputPage": 2,
+            "wholeGroupRect": [
+              48,
+              653.5522094653122,
+              564,
+              716.8323386148006
+            ]
+          },
+          {
+            "id": "p7-s1-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              149.8229508196722
+            ]
+          },
+          {
+            "id": "p7-s2-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              154.69568611139164,
+              564,
+              208.83339102942443
+            ]
+          },
+          {
+            "id": "p7-s3-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              213.70612632114376,
+              564,
+              263.49347995112043
+            ]
+          },
+          {
+            "id": "p7-s4-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              268.36621524283987,
+              564,
+              331.6879951023248
+            ]
+          },
+          {
+            "id": "p8-s1-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              336.56073039404424,
+              564,
+              398.1206665432322
+            ]
+          },
+          {
+            "id": "p8-s2-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              402.9934018349516,
+              564,
+              461.68634965030554
+            ]
+          },
+          {
+            "id": "p8-s3-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              466.559084942025,
+              564,
+              527.8323222578296
+            ]
+          },
+          {
+            "id": "p8-s4-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              532.705057549549,
+              564,
+              580.21675086295
+            ]
+          },
+          {
+            "id": "p9-s1-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              585.0894861546694,
+              564,
+              638.621854969122
+            ]
+          },
+          {
+            "id": "p9-s2-cello",
+            "outputPage": 3,
+            "wholeGroupRect": [
+              48,
+              643.4945902608414,
+              564,
+              691.5796812410093
+            ]
+          },
+          {
+            "id": "p9-s3-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              127.82595948151982
+            ]
+          },
+          {
+            "id": "p9-s4-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              132.69869477323925,
+              564,
+              183.07737642047448
+            ]
+          },
+          {
+            "id": "p10-s1-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              187.9501117121938,
+              564,
+              247.50315602769797
+            ]
+          },
+          {
+            "id": "p10-s2-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              252.3758913194174,
+              564,
+              313.07573096845505
+            ]
+          },
+          {
+            "id": "p10-s3-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              317.9484662601745,
+              564,
+              370.04734090771007
+            ]
+          },
+          {
+            "id": "p10-s4-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              374.9200761994295,
+              564,
+              432.17952984786655
+            ]
+          },
+          {
+            "id": "p11-s1-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              437.052265139586,
+              564,
+              494.8851164547896
+            ]
+          },
+          {
+            "id": "p11-s2-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              499.75785174650906,
+              564,
+              557.8774018950961
+            ]
+          },
+          {
+            "id": "p11-s3-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              562.7501371868156,
+              564,
+              617.1426025014184
+            ]
+          },
+          {
+            "id": "p11-s4-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              622.0153377931379,
+              564,
+              671.5339229402227
+            ]
+          },
+          {
+            "id": "p12-s1-cello",
+            "outputPage": 4,
+            "wholeGroupRect": [
+              48,
+              676.4066582319422,
+              564,
+              731.6592200466953
+            ]
+          },
+          {
+            "id": "p12-s2-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              124.09887464753558
+            ]
+          },
+          {
+            "id": "p12-s3-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              128.97160993925502,
+              564,
+              186.8044612544586
+            ]
+          },
+          {
+            "id": "p12-s4-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              191.67719654617804,
+              564,
+              249.51004786138162
+            ]
+          },
+          {
+            "id": "p13-s1-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              254.38278315310106,
+              564,
+              296.44719863221746
+            ]
+          },
+          {
+            "id": "p13-s2-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              301.3199339239369,
+              564,
+              353.4188085714725
+            ]
+          },
+          {
+            "id": "p13-s3-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              358.2915438631919,
+              564,
+              410.6771173441109
+            ]
+          },
+          {
+            "id": "p13-s4-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              415.54985263583035,
+              564,
+              472.80930628426717
+            ]
+          },
+          {
+            "id": "p14-s1-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              477.6820415759866,
+              564,
+              538.095182391641
+            ]
+          },
+          {
+            "id": "p14-s2-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              542.9679176833604,
+              564,
+              579.0116576614253
+            ]
+          },
+          {
+            "id": "p14-s3-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              583.8843929531447,
+              564,
+              641.1438466015816
+            ]
+          },
+          {
+            "id": "p14-s4-cello",
+            "outputPage": 5,
+            "wholeGroupRect": [
+              48,
+              646.016581893301,
+              564,
+              704.7095297086548
+            ]
+          },
+          {
+            "id": "p15-s1-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48.60421545667447,
+              72,
+              563.3957845433256,
+              128.00522914526232
+            ]
+          },
+          {
+            "id": "p15-s2-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48.60421545667447,
+              132.87796443698176,
+              563.3957845433256,
+              181.44626563285976
+            ]
+          },
+          {
+            "id": "p15-s3-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48.60421545667447,
+              186.3190009245792,
+              563.3957845433256,
+              240.89405161803688
+            ]
+          },
+          {
+            "id": "p15-s4-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48.60421545667447,
+              245.76678690975632,
+              563.3957845433256,
+              306.34858710079357
+            ]
+          },
+          {
+            "id": "p16-s1-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48,
+              311.221322392513,
+              564,
+              384.30710156386857
+            ]
+          },
+          {
+            "id": "p16-s2-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48,
+              389.179836855588,
+              564,
+              438.1250243359061
+            ]
+          },
+          {
+            "id": "p16-s3-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48,
+              442.99775962762556,
+              564,
+              499.970514442679
+            ]
+          },
+          {
+            "id": "p16-s4-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48,
+              504.84324973439846,
+              564,
+              570.1302707175705
+            ]
+          },
+          {
+            "id": "p17-s1-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48.60421545667447,
+              575.00300600929,
+              563.3957845433256,
+              622.3734978125688
+            ]
+          },
+          {
+            "id": "p17-s2-cello",
+            "outputPage": 6,
+            "wholeGroupRect": [
+              48.60421545667447,
+              627.2462331042882,
+              563.3957845433256,
+              686.7010340410563
+            ]
+          },
+          {
+            "id": "p17-s3-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48.60421545667447,
+              72,
+              563.3957845433256,
+              127.58782201405154
+            ]
+          },
+          {
+            "id": "p17-s4-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48.60421545667447,
+              132.46055730577098,
+              563.3957845433256,
+              189.49849641584115
+            ]
+          },
+          {
+            "id": "p18-s1-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              194.37123170756058,
+              564,
+              259.08485502396593
+            ]
+          },
+          {
+            "id": "p18-s2-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              263.95759031568537,
+              564,
+              317.20326029675454
+            ]
+          },
+          {
+            "id": "p18-s3-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              322.075995588474,
+              564,
+              381.3423410705946
+            ]
+          },
+          {
+            "id": "p18-s4-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              386.21507636231405,
+              564,
+              446.6282171779683
+            ]
+          },
+          {
+            "id": "p19-s1-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              451.5009524696877,
+              564,
+              496.4431109954656
+            ]
+          },
+          {
+            "id": "p19-s2-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              501.315846287185,
+              564,
+              557.3719549230545
+            ]
+          },
+          {
+            "id": "p19-s3-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              562.244690214774,
+              564,
+              617.3343684062876
+            ]
+          },
+          {
+            "id": "p19-s4-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48,
+              622.207103698007,
+              564,
+              675.8471362229869
+            ]
+          },
+          {
+            "id": "p20-s1-cello",
+            "outputPage": 7,
+            "wholeGroupRect": [
+              48.00000270799438,
+              680.7198715147064,
+              563.9999972920057,
+              744
+            ]
+          },
+          {
+            "id": "p20-s2-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              121.51858514708488
+            ]
+          },
+          {
+            "id": "p20-s3-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              126.39132043880431,
+              564,
+              185.08426825415825
+            ]
+          },
+          {
+            "id": "p20-s4-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              189.95700354587768,
+              564,
+              253.23713269536597
+            ]
+          },
+          {
+            "id": "p21-s1-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              258.1098679870854,
+              564,
+              313.0620171257771
+            ]
+          },
+          {
+            "id": "p21-s2-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              317.93475241749655,
+              564,
+              372.31367748236676
+            ]
+          },
+          {
+            "id": "p21-s3-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              377.1864127740862,
+              564,
+              441.8833711677438
+            ]
+          },
+          {
+            "id": "p21-s4-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              446.75610645946324,
+              564,
+              506.5806602256379
+            ]
+          },
+          {
+            "id": "p22-s1-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              511.45339551735736,
+              564,
+              590.5401944456385
+            ]
+          },
+          {
+            "id": "p22-s2-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              595.4129297373579,
+              564,
+              653.2311992451572
+            ]
+          },
+          {
+            "id": "p22-s3-cello",
+            "outputPage": 8,
+            "wholeGroupRect": [
+              48,
+              658.1039345368766,
+              564,
+              720.2213845983374
+            ]
+          },
+          {
+            "id": "p22-s4-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              138.13001857821132
+            ]
+          },
+          {
+            "id": "p23-s1-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              143.00275386993076,
+              564,
+              199.05886250580022
+            ]
+          },
+          {
+            "id": "p23-s2-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              203.93159779751966,
+              564,
+              261.92056732210074
+            ]
+          },
+          {
+            "id": "p23-s3-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              266.7933026138202,
+              564,
+              328.64799391582443
+            ]
+          },
+          {
+            "id": "p23-s4-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              333.52072920754387,
+              564,
+              395.85863573172594
+            ]
+          },
+          {
+            "id": "p24-s1-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              400.7313710234454,
+              564,
+              490.3635766283391
+            ]
+          },
+          {
+            "id": "p24-s2-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              495.23631192005854,
+              564,
+              586.3015777095061
+            ]
+          },
+          {
+            "id": "p24-s3-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              591.1743130012255,
+              564,
+              640.3942214017021
+            ]
+          },
+          {
+            "id": "p24-s4-cello",
+            "outputPage": 9,
+            "wholeGroupRect": [
+              48,
+              645.2669566934215,
+              564,
+              693.0538049093442
+            ]
+          },
+          {
+            "id": "p25-s1-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              132.39777783999614
+            ]
+          },
+          {
+            "id": "p25-s2-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              137.27051313171557,
+              564,
+              196.235230787158
+            ]
+          },
+          {
+            "id": "p25-s3-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              201.10796607887744,
+              564,
+              261.2191318819629
+            ]
+          },
+          {
+            "id": "p25-s4-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              266.0918671736823,
+              564,
+              326.4896450136785
+            ]
+          },
+          {
+            "id": "p26-s1-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              331.36238030539795,
+              564,
+              371.98392759855165
+            ]
+          },
+          {
+            "id": "p26-s2-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              376.8566628902711,
+              564,
+              428.6560796229445
+            ]
+          },
+          {
+            "id": "p26-s3-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              433.52881491466394,
+              564,
+              511.2402122897972
+            ]
+          },
+          {
+            "id": "p26-s4-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              516.1129475815167,
+              564,
+              579.6634578275311
+            ]
+          },
+          {
+            "id": "p27-s1-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              584.5361931192506,
+              564,
+              645.793807069979
+            ]
+          },
+          {
+            "id": "p27-s2-cello",
+            "outputPage": 10,
+            "wholeGroupRect": [
+              48,
+              650.6665423616985,
+              564,
+              712.2107683493377
+            ]
+          },
+          {
+            "id": "p27-s3-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              131.53794172926393
+            ]
+          },
+          {
+            "id": "p27-s4-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              136.41067702098337,
+              564,
+              188.2100937536568
+            ]
+          },
+          {
+            "id": "p28-s1-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              193.08282904537623,
+              564,
+              253.0046594586688
+            ]
+          },
+          {
+            "id": "p28-s2-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              257.87739475038825,
+              564,
+              315.6755545746602
+            ]
+          },
+          {
+            "id": "p28-s3-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              320.54828986637966,
+              564,
+              398.8590464619132
+            ]
+          },
+          {
+            "id": "p28-s4-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              403.7317817536326,
+              564,
+              464.13682738910313
+            ]
+          },
+          {
+            "id": "p29-s1-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              469.00956268082257,
+              564,
+              550.4319353413814
+            ]
+          },
+          {
+            "id": "p29-s2-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              555.3046706331008,
+              564,
+              608.5371475503281
+            ]
+          },
+          {
+            "id": "p29-s3-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              613.4098828420475,
+              564,
+              670.0817042022039
+            ]
+          },
+          {
+            "id": "p29-s4-cello",
+            "outputPage": 11,
+            "wholeGroupRect": [
+              48,
+              674.9544394939234,
+              564,
+              729.6199765957044
+            ]
+          },
+          {
+            "id": "p30-s1-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              143.2890352426051
+            ]
+          },
+          {
+            "id": "p30-s2-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              148.16177053432455,
+              564,
+              200.53441134081947
+            ]
+          },
+          {
+            "id": "p30-s3-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              205.4071466325389,
+              564,
+              265.23170039871366
+            ]
+          },
+          {
+            "id": "p30-s4-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              270.1044356904331,
+              564,
+              329.6423774196971
+            ]
+          },
+          {
+            "id": "p31-s1-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              334.5151127114165,
+              564,
+              396.05933869905573
+            ]
+          },
+          {
+            "id": "p31-s2-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              400.93207399077517,
+              564,
+              456.4574472032885
+            ]
+          },
+          {
+            "id": "p31-s3-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              461.33018249500793,
+              564,
+              523.4476325564686
+            ]
+          },
+          {
+            "id": "p31-s4-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              528.3203678481881,
+              564,
+              590.1512058727378
+            ]
+          },
+          {
+            "id": "p32-s1-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              595.0239411644573,
+              564,
+              653.4154347460781
+            ]
+          },
+          {
+            "id": "p32-s2-cello",
+            "outputPage": 12,
+            "wholeGroupRect": [
+              48,
+              658.2881700377975,
+              564,
+              716.1064395455969
+            ]
+          },
+          {
+            "id": "p32-s3-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              72,
+              564,
+              125.80570099104875
+            ]
+          },
+          {
+            "id": "p32-s4-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              130.6784362827682,
+              564,
+              181.3314048677986
+            ]
+          },
+          {
+            "id": "p33-s1-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              186.20414015951803,
+              564,
+              247.4617541102465
+            ]
+          },
+          {
+            "id": "p33-s2-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              252.33448940196593,
+              564,
+              314.165327426516
+            ]
+          },
+          {
+            "id": "p33-s3-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              319.03806271823544,
+              564,
+              376.56972018912404
+            ]
+          },
+          {
+            "id": "p33-s4-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              381.4424554808435,
+              564,
+              438.4008888779105
+            ]
+          },
+          {
+            "id": "p34-s1-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              443.27362416962995,
+              564,
+              501.27830801037936
+            ]
+          },
+          {
+            "id": "p34-s2-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              506.1510433020988,
+              564,
+              554.9716522013963
+            ]
+          },
+          {
+            "id": "p34-s3-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              559.8443874931157,
+              564,
+              639.9323095410629
+            ]
+          },
+          {
+            "id": "p34-s4-cello",
+            "outputPage": 13,
+            "wholeGroupRect": [
+              48,
+              644.8050448327823,
+              564,
+              707.6434523269274
+            ]
+          },
+          {
+            "id": "p35-s1-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48.60421545667447,
+              72,
+              563.3957845433256,
+              128.57730052598413
+            ]
+          },
+          {
+            "id": "p35-s2-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48.60421545667447,
+              133.45003581770357,
+              563.3957845433256,
+              185.73680098827379
+            ]
+          },
+          {
+            "id": "p35-s3-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48.60421545667447,
+              190.60953627999322,
+              563.3957845433256,
+              255.19583613608336
+            ]
+          },
+          {
+            "id": "p35-s4-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48.60421545667447,
+              260.0685714278028,
+              563.3957845433256,
+              314.9296578116213
+            ]
+          },
+          {
+            "id": "p36-s1-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48,
+              319.80239310334076,
+              564,
+              382.2064552017123
+            ]
+          },
+          {
+            "id": "p36-s2-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48,
+              387.0791904934317,
+              564,
+              434.2928146355329
+            ]
+          },
+          {
+            "id": "p36-s3-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48,
+              439.16554992725236,
+              564,
+              487.5256222169966
+            ]
+          },
+          {
+            "id": "p36-s4-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48,
+              492.39835750871606,
+              564,
+              559.6748242345706
+            ]
+          },
+          {
+            "id": "p37-s1-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48.60421545667447,
+              564.54755952629,
+              563.3957845433256,
+              634.282501808877
+            ]
+          },
+          {
+            "id": "p37-s2-cello",
+            "outputPage": 14,
+            "wholeGroupRect": [
+              48.60421545667447,
+              639.1552371005964,
+              563.3957845433256,
+              692.8721807229712
+            ]
+          },
+          {
+            "id": "p37-s3-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48.60421545667447,
+              72,
+              563.3957845433256,
+              151.74619144521955
+            ]
+          },
+          {
+            "id": "p37-s4-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48.60421545667447,
+              156.618926736939,
+              563.3957845433256,
+              218.91694107014166
+            ]
+          },
+          {
+            "id": "p38-s1-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48,
+              223.7896763618611,
+              564,
+              278.3961393311969
+            ]
+          },
+          {
+            "id": "p38-s2-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48,
+              283.2688746229163,
+              564,
+              346.0899963692763
+            ]
+          },
+          {
+            "id": "p38-s3-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48,
+              350.96273166099576,
+              564,
+              409.43491640775477
+            ]
+          },
+          {
+            "id": "p38-s4-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48,
+              414.3076516994742,
+              564,
+              477.1287734458342
+            ]
+          },
+          {
+            "id": "p39-s1-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48.60421545667447,
+              482.00150873755365,
+              563.3957845433256,
+              533.238979463549
+            ]
+          },
+          {
+            "id": "p39-s2-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48.60421545667447,
+              538.1117147552684,
+              563.3957845433256,
+              598.5332604227158
+            ]
+          },
+          {
+            "id": "p39-s3-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48.60421545667447,
+              603.4059957144352,
+              563.3957845433256,
+              661.4106795551846
+            ]
+          },
+          {
+            "id": "p39-s4-cello",
+            "outputPage": 15,
+            "wholeGroupRect": [
+              48.60421545667447,
+              666.2834148469041,
+              563.3957845433256,
+              732.9888012637659
+            ]
+          }
+        ]
+      }
+    ],
+    "reviewSource": ".build/auto-qc/candidate5/quartet93521-parts/rectified-review-source.pdf",
+    "reviewSourceSHA256": "da52d7a67eb047a551733acade3b202dd2bdb34e1df7f6c7b2840dd3804ca88f",
+    "status": "page-layout and changed-edge preservation pass; overall draft: incomplete shared navigation and neighboring fragments",
+    "all151BandsInExpectedSourceOrder": true,
+    "changedBandCount": 31,
+    "changedBands": [
+      {
+        "id": "p3-s1-cello",
+        "outputPage": 1,
+        "oldRect": [
+          0,
+          113.3361669242658,
+          427,
+          180.64837712519318
+        ],
+        "newRect": [
+          0,
+          113.3361669242658,
+          427,
+          163.09196290571867
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p4-s1-cello",
+        "outputPage": 1,
+        "oldRect": [
+          0,
+          112.86166924265842,
+          427,
+          178.98763523956723
+        ],
+        "newRect": [
+          0,
+          112.86166924265842,
+          427,
+          163.5664605873261
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p7-s1-cello",
+        "outputPage": 3,
+        "oldRect": [
+          0,
+          113.59999999999997,
+          427,
+          180
+        ],
+        "newRect": [
+          0,
+          113.59999999999997,
+          427,
+          178
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p8-s1-cello",
+        "outputPage": 3,
+        "oldRect": [
+          0,
+          119.50463678516229,
+          427,
+          171.87017001545598
+        ],
+        "newRect": [
+          0,
+          119.50463678516229,
+          427,
+          170.4466769706337
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p8-s3-cello",
+        "outputPage": 3,
+        "oldRect": [
+          0,
+          404.20324574961353,
+          427,
+          462.97449768160743
+        ],
+        "newRect": [
+          0,
+          404.2032457496136,
+          427,
+          454.9080370942813
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p9-s3-cello",
+        "outputPage": 4,
+        "oldRect": [
+          0,
+          402.7797527047913,
+          427,
+          470.8037094281298
+        ],
+        "newRect": [
+          0,
+          402.7797527047913,
+          427,
+          448.97681607418855
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p12-s1-cello",
+        "outputPage": 4,
+        "oldRect": [
+          0,
+          121.16537867078824,
+          427,
+          187.52859350850076
+        ],
+        "newRect": [
+          0,
+          121.16537867078819,
+          427,
+          166.887944358578
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p15-s1-cello",
+        "outputPage": 6,
+        "oldRect": [
+          0,
+          124.89514263685425,
+          426,
+          187.0994602929838
+        ],
+        "newRect": [
+          0,
+          124.8951426368543,
+          426,
+          171.24055512721668
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p17-s2-cello",
+        "outputPage": 6,
+        "oldRect": [
+          0,
+          263.2,
+          426,
+          324
+        ],
+        "newRect": [
+          0,
+          263.2,
+          426,
+          312.40000000000003
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p18-s1-cello",
+        "outputPage": 7,
+        "oldRect": [
+          0,
+          118.79289026275114,
+          427,
+          182.5463678516229
+        ],
+        "newRect": [
+          0,
+          118.79289026275114,
+          427,
+          172.34466769706336
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p18-s2-cello",
+        "outputPage": 7,
+        "oldRect": [
+          0,
+          260.90494590417313,
+          427,
+          327.2681607418856
+        ],
+        "newRect": [
+          0,
+          260.90494590417313,
+          427,
+          304.96676970633695
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p20-s1-cello",
+        "outputPage": 7,
+        "oldRect": [
+          0,
+          120.4536321483771,
+          427,
+          184.91885625965995
+        ],
+        "newRect": [
+          0,
+          120.4536321483771,
+          427,
+          172.8191653786708
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p21-s1-cello",
+        "outputPage": 8,
+        "oldRect": [
+          0,
+          118.75510991129966,
+          427,
+          185.10065561126112
+        ],
+        "newRect": [
+          0,
+          118.75510991129966,
+          427,
+          164.22907828769763
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p21-s3-cello",
+        "outputPage": 8,
+        "oldRect": [
+          0,
+          400.75858079444663,
+          427,
+          470.6617817200154
+        ],
+        "newRect": [
+          0,
+          400.75858079444663,
+          427,
+          454.2965676822214
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p22-s1-cello",
+        "outputPage": 8,
+        "oldRect": [
+          0,
+          125.15888931739295,
+          427,
+          183.2032394909371
+        ],
+        "newRect": [
+          0,
+          125.158889317393,
+          427,
+          171.34438873891247
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p22-s2-cello",
+        "outputPage": 8,
+        "oldRect": [
+          0,
+          260.5869649055149,
+          427,
+          320.2915541843425
+        ],
+        "newRect": [
+          0,
+          260.58696490551483,
+          427,
+          308.4327034323178
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p22-s3-cello",
+        "outputPage": 8,
+        "oldRect": [
+          0,
+          396.25221750867723,
+          427,
+          459.75163902815274
+        ],
+        "newRect": [
+          0,
+          396.2522175086772,
+          427,
+          447.65561126108753
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p23-s3-cello",
+        "outputPage": 9,
+        "oldRect": [
+          0,
+          401.8673602080624,
+          427,
+          462.6501950585176
+        ],
+        "newRect": [
+          0,
+          401.86736020806234,
+          427,
+          453.0533159947984
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p27-s2-cello",
+        "outputPage": 10,
+        "oldRect": [
+          0,
+          263.67026610104125,
+          427,
+          332.8619359814886
+        ],
+        "newRect": [
+          0,
+          263.67026610104125,
+          427,
+          314.5993058233706
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p27-s3-cello",
+        "outputPage": 11,
+        "oldRect": [
+          0,
+          406.45082915541843,
+          427,
+          474.4566139606634
+        ],
+        "newRect": [
+          0,
+          406.45082915541843,
+          427,
+          455.7196297724644
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p28-s2-cello",
+        "outputPage": 11,
+        "oldRect": [
+          0,
+          259.11378413524056,
+          427,
+          305.501300390117
+        ],
+        "newRect": [
+          0,
+          259.11378413524056,
+          427,
+          306.94288150920204
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p32-s1-cello",
+        "outputPage": 12,
+        "oldRect": [
+          0,
+          118.04357886617822,
+          427,
+          187.23524874662553
+        ],
+        "newRect": [
+          0,
+          118.04357886617817,
+          427,
+          166.3636714230621
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p32-s3-cello",
+        "outputPage": 13,
+        "oldRect": [
+          0,
+          397.91245661396067,
+          427,
+          469.001542614732
+        ],
+        "newRect": [
+          0,
+          397.91245661396067,
+          427,
+          442.43771693019676
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p33-s1-cello",
+        "outputPage": 13,
+        "oldRect": [
+          0,
+          116.38333976089473,
+          427,
+          182.25453143077516
+        ],
+        "newRect": [
+          0,
+          116.38333976089473,
+          427,
+          167.07520246818353
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p33-s3-cello",
+        "outputPage": 13,
+        "oldRect": [
+          0,
+          404.0790590050135,
+          427,
+          461.4118781334362
+        ],
+        "newRect": [
+          0,
+          404.07905900501356,
+          427,
+          451.687620516776
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p35-s1-cello",
+        "outputPage": 14,
+        "oldRect": [
+          0,
+          127.2621434078643,
+          426,
+          180.47185813415575
+        ],
+        "newRect": [
+          0,
+          127.2621434078643,
+          426,
+          174.0809560524287
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p35-s3-cello",
+        "outputPage": 14,
+        "oldRect": [
+          0,
+          408.6985350809561,
+          426,
+          472.7964533538936
+        ],
+        "newRect": [
+          0,
+          408.69853508095605,
+          426,
+          462.1449498843485
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p36-s1-cello",
+        "outputPage": 14,
+        "oldRect": [
+          0,
+          120.65252603162361,
+          427,
+          187.23524874662553
+        ],
+        "newRect": [
+          0,
+          120.65252603162355,
+          427,
+          172.29309679907442
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p37-s1-cello",
+        "outputPage": 14,
+        "oldRect": [
+          0,
+          110.69313801079414,
+          426,
+          173.13415574402467
+        ],
+        "newRect": [
+          0,
+          110.69313801079409,
+          426,
+          168.40015420200461
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p38-s1-cello",
+        "outputPage": 15,
+        "oldRect": [
+          0,
+          119.95903771131339,
+          427,
+          173.14434330299088
+        ],
+        "newRect": [
+          0,
+          119.95903771131339,
+          427,
+          165.14694408322498
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      },
+      {
+        "id": "p39-s1-cello",
+        "outputPage": 15,
+        "oldRect": [
+          0,
+          118.79999999999995,
+          426,
+          180.39999999999998
+        ],
+        "newRect": [
+          0,
+          118.80000000000001,
+          426,
+          161.20000000000005
+        ],
+        "sourceContextVisuallyReviewed": true,
+        "finding": "No target cello note, dynamic, slur, hairpin or local instruction found cut at changed edge; remaining sliced next-system ink is neighboring notation."
+      }
+    ],
+    "mainSourceRectsUnchangedForOtherBands": 120,
+    "reviewSourceRenderedPixelsMatchCandidate3All39Pages144DPI": true,
+    "lowerGuardMap": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json",
+    "lowerGuardMapSHA256": "ff35d389289c1bb04f19d90abb77f280779ecbabbf0654f89a21a496b777df71",
+    "lowerGuardChecks": [
+      {
+        "id": "p17-s2-cello",
+        "containsFrozenLowerEnvelope": true,
+        "sourceRect": [
+          0,
+          263.2,
+          426,
+          312.40000000000003
+        ],
+        "guardRect": [
+          38,
+          278,
+          393,
+          306
+        ],
+        "disposition": "contained"
+      },
+      {
+        "id": "p18-s1-cello",
+        "containsFrozenLowerEnvelope": true,
+        "sourceRect": [
+          0,
+          118.79289026275114,
+          427,
+          172.34466769706336
+        ],
+        "guardRect": [
+          38,
+          140,
+          393,
+          171
+        ],
+        "disposition": "contained"
+      },
+      {
+        "id": "p22-s3-cello",
+        "containsFrozenLowerEnvelope": false,
+        "sourceRect": [
+          0,
+          396.2522175086772,
+          427,
+          447.65561126108753
+        ],
+        "guardRect": [
+          38,
+          415,
+          393,
+          448
+        ],
+        "disposition": "0.3444pt lower-envelope mismatch at p22-s3; enlarged source check confirms both target hairpins remain fully above crop. Excluded strip meets next-system rehearsal A, not target cello ink. Frozen oracle unchanged."
+      },
+      {
+        "id": "p32-s3-cello",
+        "containsFrozenLowerEnvelope": true,
+        "sourceRect": [
+          0,
+          397.91245661396067,
+          427,
+          442.43771693019676
+        ],
+        "guardRect": [
+          38,
+          415,
+          393,
+          441
+        ],
+        "disposition": "contained"
+      }
+    ],
+    "headings": [
+      {
+        "id": "p2-s1-cello",
+        "text": "Vivace",
+        "outputPage": 1,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              210.5680144499626,
+              132,
+              261.6819871983708,
+              152.0326532856027
+            ],
+            "sourceRect": [
+              134.52818250025973,
+              126.42787641174431,
+              176.82598553043474,
+              143.00528523529533
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p16-s1-cello",
+        "text": "Andante",
+        "outputPage": 6,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              143.05242390928066,
+              311.221322392513,
+              194.25029078609666,
+              328.208226916333
+            ],
+            "sourceRect": [
+              78.65772288616829,
+              38.68312716554135,
+              121.02494993345594,
+              52.74011986257847
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p22-s1-cello",
+        "text": "Agitato (Allegretto non troppo)",
+        "outputPage": 8,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              141.0880588084936,
+              511.45339551735736,
+              312.2257515475733,
+              530.7282091962145
+            ],
+            "sourceRect": [
+              77.0321726961759,
+              24.420173538253493,
+              218.65193005971668,
+              40.370455400408446
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p26-s3-cello",
+        "text": "Trio",
+        "outputPage": 10,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              113.17913668162268,
+              433.52881491466394,
+              158.3208639398059,
+              457.16046777858844
+            ],
+            "sourceRect": [
+              53.93699876560636,
+              299.92937715727936,
+              91.29265291142852,
+              319.48502787994556
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p28-s3-cello",
+        "text": "Coda",
+        "outputPage": 11,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              129.6937269712074,
+              320.54828986637966,
+              173.30627362879275,
+              341.2190139369332
+            ],
+            "sourceRect": [
+              67.60314228043713,
+              310.24307793154185,
+              103.69336984398157,
+              327.34850269535264
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p29-s1-cello",
+        "text": "Poco Allegretto con Variazioni",
+        "outputPage": 11,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              140.01419576589376,
+              469.00956268082257,
+              330.9853380418283,
+              490.9065621288682
+            ],
+            "sourceRect": [
+              76.14353021712526,
+              20.650425169392975,
+              234.17585144159045,
+              38.770616573105144
+            ]
+          }
+        ]
+      },
+      {
+        "id": "p34-s3-cello",
+        "text": "Doppio Movimento",
+        "outputPage": 13,
+        "glyphsIntact": true,
+        "placement": "above correct target system",
+        "sourceMarkings": [
+          {
+            "destinationRect": [
+              133.42921896069055,
+              559.8443874931157,
+              248.50506847999827,
+              578.8943704309926
+            ],
+            "sourceRect": [
+              70.69433429499003,
+              305.7428314776698,
+              165.92182992433965,
+              321.5070615444788
+            ]
+          }
+        ]
+      }
+    ],
+    "navigationOwner": {
+      "id": "p28-s2-cello",
+      "outputPage": 11,
+      "text": "Da Capo sin al [coda sign] e poi il Coda",
+      "completeSourcePrintedLineRetained": true,
+      "duplicated": false
+    },
+    "visualLimitations": [
+      "All15 full output pages reviewed for layout. All31 revised main crop boundaries inspected in enlarged corrected source context. This is not a fresh note-by-note source comparison of all151 unchanged/changed systems.",
+      "All seven copied heading rows and the original owner Da Capo line visually reviewed in enlarged final-output snippets. Trio and Agitato retain small neighboring fragments with their heading boxes.",
+      "Numerous partial neighboring notes, some full neighboring staff rows and repeated local instructions remain. Missing shared rehearsal labels/repeat alternatives are not repaired by this candidate.",
+      "Page count and readable group placement pass; musical page-turn convenience has not been optimized."
+    ]
+  },
+  "evidence": [
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/p1-s1-bass_organ-comparison.png",
+      "sha256": "550c1b4af875da29fa9f0355c3097876c59466c47622173370a578e9a2ec5dbb"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/p2-s1-bass_organ-comparison.png",
+      "sha256": "0b83e78060e282b8adc4980655c02b7272959dad3f60aa2fc8995d8d5912aac4"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/p3-s1-bass_organ-comparison.png",
+      "sha256": "d4f8eec5811a8a26b9a0ec06e008c6110c75218dc9de7688183d6b803b41cff0"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/p4-s1-bass_organ-comparison.png",
+      "sha256": "391e56fcfbf341adf5cf8051888e3b0b7bb2a038f83e7b45f4844ee7c8472b6f"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-directions-1.png",
+      "sha256": "f9987489ac572a5c1ead4442e140f3b639fe4abff4c592f420fb1c526d343108"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-directions-2.png",
+      "sha256": "9a012affa07a1eb5404bae0d72083ace31c4a7f0dd4ce82e47700d750a0fff92"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-p22-s3-lower-guard-zoom.png",
+      "sha256": "13297145abd7c087c499a74d66c5cb6cd18aa60cdc5717ea48c0b28797e06d0f"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-01.png",
+      "sha256": "9f9910041b41f4d65ae7d79bfae23ff8e2b6903a575ce71abb787362b4ba871a"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-02.png",
+      "sha256": "e0b953bafe5ee00ef7a36721dd0c2ba1f3030ee9b27adc1e41c5929f3f25a122"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-03.png",
+      "sha256": "ea79114b4fb05e84d5a1ca1a6d42c36d5f55921a945988eb3f2691ed0f0a2fba"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-04.png",
+      "sha256": "6db43c5096b4061e16de225f144e99be87cf9b1848394ce6141bafda6186a3b2"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-05.png",
+      "sha256": "72a1955ea3f929ab952ab5b0a3685ffb646aec43c2009eb386d91cce4b891e51"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-06.png",
+      "sha256": "1117c34f2b65595307cd20a751ea045815a6faeaf83d57e07bc2f96b7ad79ba2"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-changed-context-07.png",
+      "sha256": "7f8466503b4cb57c08b3fde64eecc1e8f7a65d95be34f5f9882edb7f737d081f"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/ave-contact-1.jpg",
+      "sha256": "80c767cd2e765a4e57de1ac2360542217f7efe4a46999a9145993f4a4c18d1ec"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/ave-contact-2.jpg",
+      "sha256": "c5882a31c4793e2482b1338e869091aeced3703283fbfc48419d1c7ef2ed3452"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-contact-01.jpg",
+      "sha256": "e16c519a0034df5d285e7e8fc4e8a19d7e40076b1daa83cb5f41966d1647ab34"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-contact-02.jpg",
+      "sha256": "025476df30fef4832357c64abb56c358bcd33ced033f8ad0efd47f239add6746"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-contact-03.jpg",
+      "sha256": "46c2849f1b1674d91e5ec0607e43903304614a115fdf0334f289f04e49365933"
+    },
+    {
+      "file": "Tests/quality_control/candidate5-ave-cello-review/cello-contact-04.jpg",
+      "sha256": "ad01eb9a30fb60b40b700e780838cff6105ca1ec46c258b05d0fdeaa157b9745"
+    }
+  ]
+}

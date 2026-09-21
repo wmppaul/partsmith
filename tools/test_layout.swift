@@ -254,6 +254,47 @@ struct LayoutRegressionTests {
         let sharedRoundtrip = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(shared))
         check(sharedRoundtrip == shared,
               "Shared source markings persist with their exact source coordinates")
+        var below = shared
+        below.bands[0].sourceMarkings[0].isBelow = true
+        let belowBand = try plan(below).pages[0].placements[0]
+        let belowMark = belowBand.sourceMarkings[0]
+        check(belowMark.destinationRect.maxY <= belowBand.destinationRect.minY - 4,
+              "End-of-system navigation stays below the target music")
+        check(belowMark.sourceRect == marking.sourceRect && belowMark.destinationRect.size == marking.destinationRect.size,
+              "Changing direction placement preserves complete source glyphs and scale")
+        check(abs(belowMark.destinationRect.minX - belowBand.destinationRect.minX -
+                  (belowMark.sourceRect.minX - belowBand.sourceRect.minX)) < 0.00001,
+              "Below-system directions retain their horizontal bar position")
+        let belowRoundtrip = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(below))
+        check(belowRoundtrip == below,
+              "Below-system placement survives project persistence")
+        let oldMarking = Data(#"{"topFraction":0.05,"bottomFraction":0.075,"leftFraction":0.4,"rightFraction":0.5}"#.utf8)
+        let legacyMarking = try JSONDecoder().decode(BandSourceMarking.self, from: oldMarking)
+        check(legacyMarking.isBelow == nil,
+              "Existing projects retain above-system placement without migration")
+        var bothSides = shared
+        bothSides.bands[0].sourceMarkings.append(below.bands[0].sourceMarkings[0])
+        let bothPlacement = try plan(bothSides).pages[0].placements[0]
+        check(bothPlacement.sourceMarkings[0].destinationRect.minY >= bothPlacement.destinationRect.maxY + 4
+              && bothPlacement.sourceMarkings[1].destinationRect.maxY <= bothPlacement.destinationRect.minY - 4,
+              "Directions can share a bar position on opposite sides without overlap")
+        var crowdedDirections = bothSides
+        for i in 1..<18 {
+            var next = bothSides.bands[0]; next.id = UUID(); next.pageIndex = i % 3
+            crowdedDirections.bands.append(next)
+        }
+        let crowdedPlan = try plan(crowdedDirections)
+        check(crowdedPlan.pages.flatMap(\.placements).count == 18, "Pagination retains every annotated system")
+        for page in crowdedPlan.pages {
+            var previousBottom = crowdedPlan.pageSize.height
+            for placement in page.placements {
+                let boxes = [placement.destinationRect] + placement.sourceMarkings.map(\.destinationRect)
+                let top = boxes.map(\.maxY).max()!, bottom = boxes.map(\.minY).min()!
+                check(top <= previousBottom + 0.00001 && bottom >= crowdedDirections.projectSettings.margins.bottom - 0.00001,
+                      "Pagination reserves both annotation rows inside the page and before the next system")
+                previousBottom = bottom
+            }
+        }
         var overlappingMarkings = shared
         overlappingMarkings.bands[0].sourceMarkings.append(BandSourceMarking(
             topFraction: 0.1, bottomFraction: 0.125, leftFraction: 0.45, rightFraction: 0.45))

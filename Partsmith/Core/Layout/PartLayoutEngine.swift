@@ -62,6 +62,7 @@ struct RestSourcePlacement {
 struct SourceMarkingPlacement {
     var sourceRect: CGRect
     var destinationRect: CGRect
+    var isBelow: Bool = false
 }
 
 struct HeaderPlacement {
@@ -152,6 +153,7 @@ enum PartLayoutEngine {
         var scale: Double
         var originalSourceWidth: Double
         var markingRects: [CGRect] = []
+        var belowMarkingIndices: Set<Int> = []
         var sourceBandIDs: [UUID]
         var lastSourceOrder: Int
         var restReplacement: BandRestReplacement?
@@ -173,8 +175,16 @@ enum PartLayoutEngine {
             }
             return min(PartLayoutEngine.restStripHeight, max(32, sourceRect.height))
         }
-        var markingSourceHeight: Double { Double(markingRects.map(\.height).max() ?? 0) }
-        var markingGap: Double { markingRects.isEmpty ? 0 : 4 }
+        var aboveMarkingHeight: Double {
+            markingRects.enumerated().filter { !belowMarkingIndices.contains($0.offset) }.map { Double($0.element.height) }.max() ?? 0
+        }
+        var belowMarkingHeight: Double {
+            markingRects.enumerated().filter { belowMarkingIndices.contains($0.offset) }.map { Double($0.element.height) }.max() ?? 0
+        }
+        var markingSourceHeight: Double { aboveMarkingHeight + belowMarkingHeight }
+        var aboveMarkingGap: Double { aboveMarkingHeight > 0 ? 4 : 0 }
+        var belowMarkingGap: Double { belowMarkingHeight > 0 ? 4 : 0 }
+        var markingGap: Double { aboveMarkingGap + belowMarkingGap }
         var height: Double { labelHeight + (renderedSourceHeight + markingSourceHeight) * scale + markingGap }
     }
 
@@ -328,16 +338,20 @@ enum PartLayoutEngine {
                 cropRect(top: $0.topFraction, bottom: $0.bottomFraction,
                          left: $0.leftFraction, right: $0.rightFraction, in: bounds)
             }
-            // Every fragment shares the row's top edge, so overlapping source
-            // x spans would overpaint each other even at different source y positions.
+            let belowMarkingIndices = Set(band.sourceMarkings.indices.filter { band.sourceMarkings[$0].isBelow == true })
+            // Fragments on the same side share a row. Opposite sides can retain
+            // the same bar position without painting over one another.
             for (index, rect) in markingRects.enumerated() {
-                guard markingRects.prefix(index).allSatisfy({
-                    min(rect.maxX, $0.maxX) - max(rect.minX, $0.minX) <= 0.0000001
+                guard markingRects.prefix(index).enumerated().allSatisfy({ previous, other in
+                    belowMarkingIndices.contains(index) != belowMarkingIndices.contains(previous)
+                        || min(rect.maxX, other.maxX) - max(rect.minX, other.minX) <= 0.0000001
                 }) else {
                     throw PartLayoutError.overlappingSourceMarkings(band.pageIndex)
                 }
             }
-            guard labelHeight + (markingRects.isEmpty ? 0 : 4) < capacity else {
+            let markingGaps = (belowMarkingIndices.isEmpty ? 0 : 4)
+                + (belowMarkingIndices.count < markingRects.count ? 4 : 0)
+            guard labelHeight + Double(markingGaps) < capacity else {
                 throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
             }
             var renderedSourceRect = sourceRect
@@ -366,6 +380,7 @@ enum PartLayoutEngine {
             prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: renderedSourceRect,
                                          label: label, labelHeight: labelHeight, scale: 1,
                                          originalSourceWidth: sourceRect.width, markingRects: markingRects,
+                                         belowMarkingIndices: belowMarkingIndices,
                                          sourceBandIDs: [band.id], lastSourceOrder: sourceOrder,
                                          restReplacement: band.restReplacement, restStartNumber: band.barNumberValue))
         }
@@ -454,7 +469,7 @@ enum PartLayoutEngine {
                 // itself never reduces music scale or removes any source notation.
                 let renderScale = min(item.scale, (markingsTop - contentRect.minY - item.markingGap) /
                                       (item.renderedSourceHeight + item.markingSourceHeight))
-                let bandTop = markingsTop - item.markingSourceHeight * renderScale - item.markingGap
+                let bandTop = markingsTop - item.aboveMarkingHeight * renderScale - item.aboveMarkingGap
                 // Newly drawn rest lines can shorten to the available width
                 // without constraining the size of surrounding source notation.
                 let targetWidth = item.hasFlexibleRestWidth ? min(contentRect.width, item.sourceRect.width * renderScale)
@@ -472,15 +487,17 @@ enum PartLayoutEngine {
                 placements.append(BandPlacement(bandID: band.id, sourcePageIndex: band.pageIndex,
                     sourceRect: item.sourceRect, destinationRect: destinationRect, exclusionRects: exclusionRects,
                     editorialLabel: item.label, editorialLabelRect: labelRect,
-                    sourceMarkings: item.markingRects.map { rect in
+                    sourceMarkings: item.markingRects.enumerated().map { index, rect in
                         SourceMarkingPlacement(sourceRect: rect, destinationRect: CGRect(
                             x: destinationRect.minX + (rect.minX - item.sourceRect.minX) * renderScale,
-                            y: markingsTop - rect.height * renderScale,
-                            width: rect.width * renderScale, height: rect.height * renderScale))
+                            y: (item.belowMarkingIndices.contains(index)
+                                ? destinationRect.minY - item.belowMarkingGap : markingsTop) - rect.height * renderScale,
+                            width: rect.width * renderScale, height: rect.height * renderScale),
+                            isBelow: item.belowMarkingIndices.contains(index))
                     }, sourceBandIDs: item.sourceBandIDs, restReplacement: item.restReplacement,
                     restSourcePlacement: restSourcePlacement(for: item, destination: destinationRect, scale: renderScale),
                     generatedRest: band.generatedRest))
-                cursorTop = destinationRect.minY - actualGap
+                cursorTop = destinationRect.minY - item.belowMarkingGap - item.belowMarkingHeight * renderScale - actualGap
             }
             pages.append(PartRenderPage(index: pageIndex,
                 drawsTitle: pageIndex == 0 && project.projectSettings.showTitleBlock, placements: placements))

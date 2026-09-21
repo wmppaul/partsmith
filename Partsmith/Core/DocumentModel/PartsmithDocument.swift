@@ -209,11 +209,14 @@ struct ScoreDetectionReview {
                     ScoreSystemOverride(systemIndex: system, label: nil, movementLabel: nil,
                         bands: pagePlan.assignments.filter { $0.systemIndex == system }.map { item in
                             ScoreBandOverride(partID: item.partID, candidateIDs: item.candidateIDs,
-                                rect: nil, label: item.editorialLabel, kind: item.kind,
+                                rect: [item.leftFraction * page.pageWidth, item.topFraction * page.pageHeight,
+                                       (1 - item.rightFraction) * page.pageWidth, item.bottomFraction * page.pageHeight],
+                                label: item.editorialLabel, kind: item.kind,
                                 pageBreakBefore: item.pageBreakBefore, sourceMarkings: item.sourceMarkings.map {
                                     [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
                                      (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
-                                })
+                                }, sourceMarkingsBelow: item.sourceMarkings.contains { $0.isBelow == true }
+                                    ? item.sourceMarkings.map { $0.isBelow == true } : nil)
                         }, omittedParts: nil)
                 })
         guard let systemIndex = correction.systems.firstIndex(where: { $0.systemIndex == band.systemIndex }),
@@ -879,7 +882,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 barNumberValue: generated?.startBarNumber,
                 editorialLabel: planned.editorialLabel, pageBreakBefore: planned.pageBreakBefore,
                 sourceMarkings: planned.sourceMarkings.map { BandSourceMarking(topFraction: $0.topFraction,
-                    bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction) },
+                    bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction,
+                    isBelow: $0.isBelow) },
                 generatedRest: generated)
             guard band.sourceMarkings.allSatisfy({ $0.isValid(in: band) }) else { return nil }
             bands.append(band)

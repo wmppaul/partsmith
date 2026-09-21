@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "frozenProductionDetectorSHA256": "6dc75edcd2a784963941a827b2ebebb090c2767843533c415fcd0497282ee781",
+  "candidateDetectorSHA256": "fc94f285d300167d9010ed47b9cfcf1fee92f036ee8472e73a14939d38a30c9e",
+  "candidateExecutableSHA256": "d4d3123603d3319b6fe328a972d33bfac3bf2fdf36a65eba02ae815fccd10eb7",
+  "harnessSHA256": "18758fb57564725fc72835d1e9e5d289ff007350b3e1970e40584580da2ecdf9",
+  "sourceOracleSHA256": "cb3d2d2770a295e586c88d7aef018245192f965bd21baa696e4dd91e5d366214",
+  "corpusSHA256": "03a6c870bc0529f6daa575bdbb7d2f21651d0398e1810663f9983c985b8eff09",
+  "sources": 36,
+  "physicalPages": 1477,
+  "beforeStaves": 23804,
+  "afterStaves": 23798,
+  "removedSourceVerifiedFalsePatterns": 6,
+  "retainedLineGeometryExactlyEqual": true,
+  "addedOrMovedPatterns": 0,
+  "changedPages": [
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score",
+      "pageOneBased": 47,
+      "beforeCount": 15,
+      "afterCount": 14,
+      "addedExactLineArrays": [],
+      "removedExactLineArrays": [
+        [
+          0.49312106936980427,
+          0.4978354106894655,
+          0.5025499254572812,
+          0.5072716252584094,
+          0.5119850141165874
+        ]
+      ]
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "pageOneBased": 106,
+      "beforeCount": 5,
+      "afterCount": 0,
+      "addedExactLineArrays": [],
+      "removedExactLineArrays": [
+        [
+          0.5281149838302912,
+          0.533401646932232,
+          0.5398979858093534,
+          0.5453793783896304,
+          0.5517652947426768
+        ],
+        [
+          0.5921200787556672,
+          0.598618389994547,
+          0.6036962498132054,
+          0.6102032459797498,
+          0.6154640636835405
+        ],
+        [
+          0.6535306576939454,
+          0.6577498713267775,
+          0.6619073652140512,
+          0.6653149259401132,
+          0.669149241111145
+        ],
+        [
+          0.7631188464172713,
+          0.7669471414892941,
+          0.7714987303952775,
+          0.7747082233388762,
+          0.7788517419456994
+        ],
+        [
+          0.7863608966171847,
+          0.7903010982739689,
+          0.7947467805844477,
+          0.7981258563265979,
+          0.8027789462614365
+        ]
+      ]
+    }
+  ],
+  "focusedRegressions": "PASS: prior nonlinear/warp/recall/nonmusic tests plus all14 real Egmont source staff positions, Beethoven prose negative, distributed ledger negative and interrupted real staff positive.",
+  "existingStaffSuite": "PASS; existing-staff-tests.log",
+  "remainingKnownFailures": [
+    "Boh\u00e8me885132 p167 still returns three half-spacing patterns instead of six true staves.",
+    "Beethoven52624 p1 decorative cover still returns seven nonmusic patterns."
+  ],
+  "limitations": [
+    "Only detector line geometry is compared. Removing false patterns can change neighboring suggested crop boundaries and part planning; those outputs require their own review.",
+    "This bounded candidate addresses horizontal continuity only. It does not alter harmonic-spacing estimation or reject long ornamental hatching.",
+    "No page ID, source hash, expected staff count or instrument profile is an input to detection."
+  ],
+  "productionEditedDuringExperiment": false,
+  "promotionDate": "2026-09-21",
+  "promotedDetectorSHA256": "fc94f285d300167d9010ed47b9cfcf1fee92f036ee8472e73a14939d38a30c9e",
+  "candidatePatchSHA256": "48bbb2ee4272dad1d48c7a2744bd69304e4acfc7324688ec348873c9c69e48eb",
+  "focusedHarnessPath": "tools/test_staff_continuity.swift",
+  "sourceOraclePath": "Tests/quality_control/staff-anomaly-source-oracle.json",
+  "fullGeometryReportPath": ".build/staff-anomalies-v1/continuity-aggregate.json",
+  "independentLogicReview": "Quartet reviewer found no corpus-supported blocker. Strict consecutive support resets at any column with fewer than three surviving lines; hypothetical aligned scan damage more frequent than four staff spaces can reject a real staff. The broken-line positive fixture uses longer segments and does not exercise that limit."
+}

@@ -12,7 +12,7 @@ import PDFKit
         guard value() else { fputs("FAIL: \(description)\n", stderr); exit(1) }
     }
 
-    static func fixture(skewDegrees: Double = 0, notationBridge: Bool = false, wideBracket: Bool = false, narrowNotationBridge: Bool = false, rasterScale: Double = 1) -> ([ScoreInkComponent], [ScoreObservedStaff]) {
+    static func fixture(skewDegrees: Double = 0, notationBridge: Bool = false, wideBracket: Bool = false, narrowNotationBridge: Bool = false, rasterScale: Double = 1, localBow: Double = 0, nearFullNotationBridge: Bool = false) -> ([ScoreInkComponent], [ScoreObservedStaff]) {
         let width = 720, height = 600, space = 12
         var pixels = [UInt8](repeating: 255, count: width * height)
         func black(_ left: Int, _ top: Int, _ right: Int, _ bottom: Int) {
@@ -64,12 +64,23 @@ import PDFKit
             black(442, 238, 460, 245)
             black(466, 358, 480, 365)
         }
+        if nearFullNotationBridge {
+            // A long cross-staff stem still falls short of both outer staff
+            // edges. Local staff curvature must not make it a structural
+            // barline. The source noteheads establish musical ownership.
+            black(450, 210, 453, 389)
+            black(443, 209, 459, 217)
+            black(443, 382, 459, 390)
+        }
         let slope = tan(skewDegrees * .pi / 180)
-        if skewDegrees != 0 {
+        if skewDegrees != 0 || localBow != 0 {
             let original = pixels
             pixels = [UInt8](repeating: 255, count: width * height)
             for x in 0..<width {
-                let shift = Int((slope * (Double(x) - Double(width) / 2)).rounded())
+                // A local bend shifts the right-hand notation independently
+                // of the page-wide skew and the detected central staff lines.
+                let bow = localBow * min(1, max(0, (Double(x) - 300) / 100))
+                let shift = Int((slope * (Double(x) - Double(width) / 2) + bow).rounded())
                 for y in 0..<height where y + shift >= 0 && y + shift < height {
                     pixels[(y + shift) * width + x] = original[y * width + x]
                 }
@@ -150,6 +161,17 @@ import PDFKit
                 check(narrowBridge.contains { $0.staffIDs == [0, 1] && $0.bounds[0] > 0.5
                     && $0.bounds[1] <= 245.0 / 600 && $0.bounds[3] >= 358.0 / 600 },
                     "Comparable-width musical bridge remains complete at \(degrees) degrees, raster scale \(rasterScale)")
+            }
+        }
+        for rasterScale in [1.0, 0.6, 0.5] {
+            for degrees in [0.0, -1.5, 1.5] {
+                for bow in [7.0, -7.0] {
+                    let (music, _) = fixture(skewDegrees: degrees, rasterScale: rasterScale,
+                        localBow: bow, nearFullNotationBridge: true)
+                    check(music.contains { $0.staffIDs == [0, 1] && $0.bounds[2] >= 459.0 / 720
+                        && $0.bounds[1] < 230.0 / 600 && $0.bounds[3] > 370.0 / 600 },
+                        "Near-full musical stem remains ambiguous at bow \(bow), tilt \(degrees), scale \(rasterScale)")
+                }
             }
         }
         print("PASS: \(checks) crop quality checks")

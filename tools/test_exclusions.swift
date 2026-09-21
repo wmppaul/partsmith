@@ -309,6 +309,26 @@ struct ExclusionRegressionTests {
         check(luma(sharedBitmap, point: targetDestination) < 0.01, "Reserving a shared marking row preserves target notation")
         check(markingPlacement.destinationRect.minY >= sharedPlacement.destinationRect.maxY + 4,
               "Shared source glyph and staff crop render in nonoverlapping rows")
+        var belowProject = sharedProject
+        belowProject.bands[0].sourceMarkings[0].isBelow = true
+        let belowDocument = PartsmithDocument(project: belowProject, sourcePDFData: source)
+        let belowPlan = try PartLayoutEngine.makePlan(project: belowProject,
+            pageBoundsProvider: { _ in CGRect(x: 0, y: 0, width: 600, height: 800) }, partID: part.id)
+        let belowPlacement = belowPlan.pages[0].placements[0], belowMarking = belowPlacement.sourceMarkings[0]
+        let belowBitmap = raster(try PartPDFExporter.previewDocument(for: part.id, in: belowDocument))
+        for x in [302.0, 320, 338] {
+            for y in [652.0, 656] {
+                let destination = CGPoint(x: belowMarking.destinationRect.minX + (x - belowMarking.sourceRect.minX) * sharedScale,
+                    y: belowMarking.destinationRect.minY + (y - belowMarking.sourceRect.minY) * sharedScale)
+                check(luma(belowBitmap, point: destination) < 0.01,
+                      "Production PDF preserves complete source glyphs below a system")
+            }
+        }
+        check(belowMarking.destinationRect.maxY <= belowPlacement.destinationRect.minY - 4,
+              "Navigation export follows its music without overlap")
+        let belowTarget = CGPoint(x: belowPlacement.destinationRect.minX + (240 - belowPlacement.sourceRect.minX) * sharedScale,
+            y: belowPlacement.destinationRect.minY + (560 - belowPlacement.sourceRect.minY) * sharedScale)
+        check(luma(belowBitmap, point: belowTarget) < 0.01, "Below-system directions preserve target notation")
         var overlappingMarkingsProject = sharedProject
         overlappingMarkingsProject.bands[0].sourceMarkings.append(BandSourceMarking(
             topFraction: 0.1, bottomFraction: 0.115, leftFraction: 0.5, rightFraction: 0.43))

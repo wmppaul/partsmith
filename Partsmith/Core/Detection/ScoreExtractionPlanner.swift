@@ -56,6 +56,7 @@ struct ScorePageAnalysis: Codable, Equatable {
     /// Printed headings recognized above a known system's first staff. Optional
     /// so inventories made before heading recognition remain readable.
     var sharedHeadings: [ScoreSharedHeading]? = nil
+    var sharedNavigation: [ScoreSharedNavigation]? = nil
 }
 
 struct ScoreSharedHeading: Codable, Equatable {
@@ -63,6 +64,14 @@ struct ScoreSharedHeading: Codable, Equatable {
     /// Top-down normalized edges, in the same display space as the staff inventory.
     var bounds: [Double]
     var recognizedText: String
+}
+
+struct ScoreSharedNavigation: Codable, Equatable {
+    var anchorStaffID: Int
+    /// Padded source rectangle in the analysis display coordinate space.
+    var bounds: [Double]
+    var recognizedText: String
+    var isBelow: Bool
 }
 
 struct ScoreInkComponent: Codable, Equatable {
@@ -86,6 +95,7 @@ struct ScoreBandOverride: Codable, Equatable {
     var kind: String?
     var pageBreakBefore: Bool?
     var sourceMarkings: [[Double]]?
+    var sourceMarkingsBelow: [Bool]? = nil
 }
 
 struct ScoreSystemOverride: Codable, Equatable {
@@ -114,6 +124,7 @@ struct ScoreSourceMarking: Codable, Equatable {
     var bottomFraction: Double
     var leftFraction: Double
     var rightFraction: Double
+    var isBelow: Bool? = nil
 }
 
 struct ScorePlannedBand: Codable, Equatable, Identifiable {
@@ -271,7 +282,8 @@ enum ScoreSystemAssignment {
                         sourceMarkings: band.sourceMarkings.map {
                             [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
                              (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
-                        })
+                        }, sourceMarkingsBelow: band.sourceMarkings.contains { $0.isBelow == true }
+                            ? band.sourceMarkings.map { $0.isBelow == true } : nil)
                 }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
                     ScorePartOmission(partID: $0.partID, reason: $0.reason)
                 }, startBarNumber: generated?.startBarNumber, barCount: generated?.barCount)
@@ -392,7 +404,10 @@ enum ScoreExtractionPlanner {
             let headingAnchor = ordered[offset].id
             for part in profile.parts {
                 let staves = Array(ordered[offset..<(offset + part.staffCount)])
-                let crop = cropBounds(staves, page: page, profile: profile, part: part, lyricOwners: lyrics)
+                let end = offset + part.staffCount
+                let followingSystemStaffID = end == (system + 1) * stride && end < ordered.count ? ordered[end].id : nil
+                let crop = cropBounds(staves, page: page, profile: profile, part: part,
+                    lyricOwners: lyrics, followingSystemStaffID: followingSystemStaffID)
                 output.assignments.append(band(partID: part.id, page: page, system: system, staves: staves, rect: crop.rect,
                     label: "", kind: "music", breakBefore: false, provenance: "native-profile-cadence", warnings: staves.flatMap(\.warnings) + crop.warnings))
                 copySharedHeadings(page: page, anchor: headingAnchor,
@@ -400,7 +415,52 @@ enum ScoreExtractionPlanner {
                 offset += part.staffCount
             }
         }
+        copySharedNavigation(page: page, to: &output.assignments)
         return output
+    }
+
+    /// Navigation belongs to its recognized source system, even when OCR finds
+    /// it in the gap preceding the next one. Keep the source owner's pixels in
+    /// place and copy the complete printed instruction for the other parts.
+    private static func copySharedNavigation(page: ScorePageAnalysis, to bands: inout [ScorePlannedBand],
+                                             preservingOwnerCrops: Set<String> = []) {
+        for direction in page.sharedNavigation ?? [] {
+            let r = direction.bounds
+            guard r.count == 4, r.allSatisfy(\.isFinite),
+                  r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1,
+                  let owner = bands.firstIndex(where: { $0.candidateIDs.contains(direction.anchorStaffID) }) else { continue }
+            let system = bands[owner].systemIndex
+            for i in bands.indices where bands[i].systemIndex == system {
+                if i == owner {
+                    // An explicitly edited owner crop remains the user's
+                    // choice. A reset to automatic cropping restores padding.
+                    if preservingOwnerCrops.contains(bands[i].id) { continue }
+                    // The recognition padding can extend beyond an already
+                    // complete crop into white space. Expand it once instead of
+                    // emitting a second copy of its existing printed direction.
+                    bands[i].topFraction = min(bands[i].topFraction, r[1])
+                    bands[i].bottomFraction = max(bands[i].bottomFraction, r[3])
+                } else if r[1] < bands[i].topFraction || r[3] > bands[i].bottomFraction
+                            || r[0] < bands[i].leftFraction || r[2] > 1 - bands[i].rightFraction {
+                    if bands[i].sourceMarkings.contains(where: { marking in
+                        (marking.isBelow == true) == direction.isBelow
+                            && marking.leftFraction <= r[0] + 1e-9 && 1 - marking.rightFraction >= r[2] - 1e-9
+                            && marking.topFraction <= r[1] + 1e-9 && marking.bottomFraction >= r[3] - 1e-9
+                    }) { continue }
+                    guard bands[i].sourceMarkings.allSatisfy({ marking in
+                        (marking.isBelow == true) != direction.isBelow
+                            || min(1 - marking.rightFraction, r[2]) <= max(marking.leftFraction, r[0])
+                    }) else {
+                        bands[i].warnings.append("Shared repeat directions overlap; check the printed source instruction.")
+                        continue
+                    }
+                    bands[i].sourceMarkings.append(ScoreSourceMarking(topFraction: r[1], bottomFraction: r[3],
+                        leftFraction: r[0], rightFraction: 1 - r[2], isBelow: direction.isBelow ? true : nil))
+                }
+                bands[i].leftFraction = min(bands[i].leftFraction, r[0])
+                bands[i].rightFraction = min(bands[i].rightFraction, 1 - r[2])
+            }
+        }
     }
 
     /// Retain printed pixels at their horizontal score position. Never replace
@@ -429,6 +489,7 @@ enum ScoreExtractionPlanner {
 
     private static func reviewedPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, override: ScorePageOverride) -> ScorePagePlan {
         var output = ScorePagePlan(pageIndex: page.pageIndex, assignments: [], omissions: [], unresolvedReasons: [], warnings: ["Reviewed page override: \(override.reason)"])
+        var explicitOwnerCrops = Set<String>()
         let partIDs = Set(profile.parts.map(\.id))
         if let reason = override.nonMusicReason, !reason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, override.systems.isEmpty {
             output.omissions = profile.parts.map { ScoreSystemOmission(systemIndex: -1, partID: $0.id, reason: reason) }
@@ -484,6 +545,10 @@ enum ScoreExtractionPlanner {
                 output.unresolvedReasons.append("System \(system.systemIndex + 1) needs detected printed staves to anchor its generated rests.")
                 continue
             }
+            let followingSystemIDs = Set(override.systems.first { $0.systemIndex == system.systemIndex + 1 }?
+                .bands.filter { ($0.kind ?? "music") == "music" }.flatMap { $0.candidateIDs ?? [] } ?? [])
+            let followingSystemFirst = page.staves.filter { followingSystemIDs.contains($0.id) && validStaff($0) }
+                .min { $0.staffLineFractions[0] < $1.staffLineFractions[0] }
             for omission in omitted {
                 output.omissions.append(ScoreSystemOmission(systemIndex: system.systemIndex, partID: omission.partID, reason: omission.reason))
                 // The geometry locates the source system for ordering and
@@ -514,8 +579,12 @@ enum ScoreExtractionPlanner {
                     output.unresolvedReasons.append("A music band must group consecutive candidates in reading order.")
                     continue
                 }
+                let followingSystemStaffID = (assigned.kind ?? "music") == "music"
+                    && staves.last?.id == systemStaves.last?.id ? followingSystemFirst?.id : nil
                 let crop = assigned.rect.map { CropBounds(rect: $0, warnings: []) }
-                    ?? cropBounds(staves, page: page, profile: profile, part: profile.parts.first { $0.id == assigned.partID }!, lyricOwners: lyrics)
+                    ?? cropBounds(staves, page: page, profile: profile,
+                        part: profile.parts.first { $0.id == assigned.partID }!, lyricOwners: lyrics,
+                        followingSystemStaffID: followingSystemStaffID)
                 let rect = crop.rect
                 guard validRect(rect, page: page), staves.allSatisfy({
                     $0.staffLineFractions[0] * page.pageHeight >= rect[1] && $0.staffLineFractions[4] * page.pageHeight <= rect[3]
@@ -524,6 +593,10 @@ enum ScoreExtractionPlanner {
                     continue
                 }
                 let markingRects = assigned.sourceMarkings ?? []
+                guard assigned.sourceMarkingsBelow == nil || assigned.sourceMarkingsBelow?.count == markingRects.count else {
+                    output.unresolvedReasons.append("Shared source marking positions must match their source rectangles.")
+                    continue
+                }
                 guard markingRects.allSatisfy({ validRect($0, page: page) && $0[0] >= rect[0] && $0[2] <= rect[2] }) else {
                     output.unresolvedReasons.append("Shared source markings must be valid page rectangles inside the crop's horizontal span.")
                     continue
@@ -537,13 +610,16 @@ enum ScoreExtractionPlanner {
                 output.assignments.append(band(partID: assigned.partID, page: page, system: system.systemIndex,
                     staves: staves, rect: rect, label: label, kind: kind, breakBefore: assigned.pageBreakBefore ?? false,
                     provenance: "reviewed-override", warnings: (ids.isEmpty ? ["Crop supplied by source review; not supported by detected staff IDs."] : []) + crop.warnings))
-                output.assignments[output.assignments.count - 1].sourceMarkings = markingRects.map {
-                    ScoreSourceMarking(topFraction: $0[1] / page.pageHeight, bottomFraction: $0[3] / page.pageHeight,
-                        leftFraction: $0[0] / page.pageWidth, rightFraction: 1 - $0[2] / page.pageWidth)
+                output.assignments[output.assignments.count - 1].sourceMarkings = markingRects.enumerated().map { index, r in
+                    ScoreSourceMarking(topFraction: r[1] / page.pageHeight, bottomFraction: r[3] / page.pageHeight,
+                        leftFraction: r[0] / page.pageWidth, rightFraction: 1 - r[2] / page.pageWidth,
+                        isBelow: assigned.sourceMarkingsBelow?[index] == true ? true : nil)
                 }
+                if assigned.rect != nil { explicitOwnerCrops.insert(output.assignments.last!.id) }
             }
         }
         if !output.unresolvedReasons.isEmpty { output.assignments = []; output.omissions = [] }
+        else { copySharedNavigation(page: page, to: &output.assignments, preservingOwnerCrops: explicitOwnerCrops) }
         return output
     }
 
@@ -627,7 +703,7 @@ enum ScoreExtractionPlanner {
 
     private static func cropBounds(_ staves: [ScoreObservedStaff], page: ScorePageAnalysis,
                                    profile: ScoreExtractionProfile, part: ScorePartDefinition,
-                                   lyricOwners: [Int: Int]) -> CropBounds {
+                                   lyricOwners: [Int: Int], followingSystemStaffID: Int? = nil) -> CropBounds {
         let broad = generousRect(staves, page: page, profile: profile, part: part)
         guard profile.cropMode == "compact" else { return CropBounds(rect: broad, warnings: []) }
         guard let components = page.inkComponents,
@@ -661,12 +737,22 @@ enum ScoreExtractionPlanner {
             return !owners.isEmpty && owners.isSubset(of: ids)
                 && component.bounds[1] < firstLine - space
         }
-        var selected = Set<Int>(), ambiguous = Set<Int>()
+        // Profile cadence or reviewed assignments establish this boundary;
+        // staff IDs and instrument names alone do not imply a new system.
+        let endsBeforeFollowingSystem = followingSystemStaffID.flatMap { staffLookup[$0] }
+            .map { $0.staffLineFractions[0] > lastLine } ?? false
+        // Lower annotation rows alone are not proof of a spillover: figures
+        // and stacked directions may need detached relays. Require competing
+        // ownership evidence from the following system's connected notation.
+        let followingSystemInk = endsBeforeFollowingSystem ? components.filter {
+            $0.staffIDs.count == 1 && $0.staffIDs.first == followingSystemStaffID
+        } : []
+        var selected = Set<Int>(), ambiguous = Set<Int>(), targetOwned = Set<Int>()
         var foreignEdgeNeedsReview = false
         for (index, component) in components.enumerated() {
             let owners = Set(component.staffIDs), box = component.bounds
             if !owners.isDisjoint(with: ids) {
-                if owners.isSubset(of: ids) { selected.insert(index) }
+                if owners.isSubset(of: ids) { selected.insert(index); targetOwned.insert(index) }
                 else { ambiguous.insert(index) }
                 continue
             }
@@ -735,7 +821,20 @@ enum ScoreExtractionPlanner {
                     // ownership; surface a specific lower-edge review instead.
                     touchesNeighbor = true
                 }
-                if selected.contains(where: { otherIndex in
+                // A lower mark near connected notation in the next system
+                // needs direct target support. Otherwise a detached hairpin
+                // can relay ownership into its neighbor's endings and notes.
+                // Without that competing evidence, preserve lower annotation
+                // chains such as figured bass. All target-owned/ambiguous ink,
+                // seeds and lyrics remain; no geometric cap is introduced.
+                let competesWithFollowingSystem = box[1] > lastLine && followingSystemInk.contains { other in
+                    let ink = other.bounds
+                    let horizontalGap = max(box[0] - ink[2], ink[0] - box[2], 0) * page.pageWidth / page.pageHeight
+                    let verticalGap = max(box[1] - ink[3], ink[1] - box[3], 0)
+                    return horizontalGap <= space && verticalGap <= 1.75 * space
+                }
+                let supporters = competesWithFollowingSystem ? targetOwned : selected
+                if supporters.contains(where: { otherIndex in
                     let other = components[otherIndex].bounds
                     let horizontalGap = max(box[0] - other[2], other[0] - box[2], 0) * page.pageWidth / page.pageHeight
                     let verticalGap = max(box[1] - other[3], other[1] - box[3], 0)
