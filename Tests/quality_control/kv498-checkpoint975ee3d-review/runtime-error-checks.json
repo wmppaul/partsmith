@@ -1,0 +1,43 @@
+{
+  "binarySHA256": "a03f80f0748349e09de27858c52ec1032134d52d6306763ec7a8f9aadf5d6aae",
+  "environment": "sandboxed macOS Vision known runtime-error path",
+  "scope": "Actual service failure distinct from zero matches; existing and absent output behavior. Does not simulate skipped or canceled plans.",
+  "cases": [
+    {
+      "command": "headings",
+      "existingOutput": false,
+      "exitCode": -5,
+      "explicitRuntimeFailure": true,
+      "destinationPreserved": true,
+      "log": ".build/auto-qc/kv498-headings/error-headings-existing-False.log",
+      "logSHA256": "48561d4086d6b10218792e184fd1cfbbe93ad58be14b9a21430415b478713a58"
+    },
+    {
+      "command": "headings",
+      "existingOutput": true,
+      "exitCode": -5,
+      "explicitRuntimeFailure": true,
+      "destinationPreserved": true,
+      "log": ".build/auto-qc/kv498-headings/error-headings-existing-True.log",
+      "logSHA256": "48561d4086d6b10218792e184fd1cfbbe93ad58be14b9a21430415b478713a58"
+    },
+    {
+      "command": "navigation",
+      "existingOutput": false,
+      "exitCode": -5,
+      "explicitRuntimeFailure": true,
+      "destinationPreserved": true,
+      "log": ".build/auto-qc/kv498-headings/error-navigation-existing-False.log",
+      "logSHA256": "285691d72fe149a980f15a9204c082f9e9fb4b7ce62ead09f02c2ca5a1a88da6"
+    },
+    {
+      "command": "navigation",
+      "existingOutput": true,
+      "exitCode": -5,
+      "explicitRuntimeFailure": true,
+      "destinationPreserved": true,
+      "log": ".build/auto-qc/kv498-headings/error-navigation-existing-True.log",
+      "logSHA256": "285691d72fe149a980f15a9204c082f9e9fb4b7ce62ead09f02c2ca5a1a88da6"
+    }
+  ]
+}

@@ -18,13 +18,13 @@ import Foundation
         let select: ([Line]) -> [ScoreSharedHeading] = {
             ScoreSharedHeadingDetector.select(from: $0, anchor: anchor, previousStaffBottom: 0.12, imageSize: size)
         }
-        for name in ["Vivace.", "Andantr.", "Agitato. (Allegretto non troppo.)", "Poco Allegretto con Variazioni.", "Trio.", "Irio.", "Coda."] {
+        for name in ["Vivace.", "Andantr.", "Agitato. (Allegretto non troppo.)", "Poco Allegretto con Variazioni.", "Trio.", "Irio.", "Coda.", "Menuetto.", "MENUETTO"] {
             let line = Line(text: name, bounds: CGRect(x: 0.15, y: 0.175, width: 0.3, height: 0.017), confidence: 1)
             let result = select([line])
             check(result.count == 1, "Printed heading survives a normal scan/OCR variant: \(name)")
             check(CGRect(x: result[0].bounds[0], y: result[0].bounds[1], width: result[0].bounds[2] - result[0].bounds[0], height: result[0].bounds[3] - result[0].bounds[1]).contains(line.bounds), "Entire source heading is padded")
         }
-        for name in ["Violine", "Violoncello", "poco cresc.", "con sordino", "pizz.", "dolce", "in tempo", "Doppio", "Johannes Brahms", "Da Capo sin al segno e poi la Coda"] {
+        for name in ["Violine", "Violoncello", "poco cresc.", "con sordino", "pizz.", "dolce", "in tempo", "Doppio", "Johannes Brahms", "Da Capo sin al segno e poi la Coda", "Menu", "Menuetxo.", "Menuetto Viola"] {
             check(select([Line(text: name, bounds: CGRect(x: 0.15, y: 0.175, width: 0.3, height: 0.017), confidence: 1)]).isEmpty,
                   "Staff expressions, credits and end-of-system navigation are not movement headings: \(name)")
         }

@@ -1,0 +1,500 @@
+{
+  "status": "heading recall improved; still draft: duplicate Clarinet Rondo, missing lower-part endings and heavy neighboring notation",
+  "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+  "baselineManifestSHA256": "9e75e263aab07c54bb72bda65ef6acc174cfcf427c75ce2616664018af9f50f7",
+  "candidateManifest": ".build/auto-qc/kv498-headings/menuetto-parts/manifest.json",
+  "candidateManifestSHA256": "b001b25e7f0a80bccb0d84b9ff60a4deed0ee6edade2d957524faca6263ec14e",
+  "sourceOracleSHA256": "364aceecb60b29135df6502a8288f439555c5e91c02cbd7ddd7e2119eb20b39a",
+  "candidateInventorySHA256": "361a55e17c0effe102f3affa338beae52396b1b73f25c48692530d8a60dc6cd4",
+  "analyzerSHA256": "e91bb6158d9cf7adcfe4e05434db52fcb9494732ca5769f875409310d1c22653",
+  "exporterSHA256": "22b5619fac1db2096ae38ba885e6581578a0a1120a60d0a5cd4c3843c8f4783e",
+  "mainCropComparisons": 405,
+  "mainCropChanges": [],
+  "directions": [
+    {
+      "partID": "clarinet",
+      "guardID": "andante",
+      "preserved": true,
+      "containedIn": [
+        "main-crop"
+      ],
+      "outputPage": 1,
+      "bandID": "p1-s1-clarinet"
+    },
+    {
+      "partID": "clarinet",
+      "guardID": "menuetto",
+      "preserved": true,
+      "containedIn": [
+        "main-crop"
+      ],
+      "outputPage": 5,
+      "bandID": "p12-s3-clarinet"
+    },
+    {
+      "partID": "clarinet",
+      "guardID": "trio",
+      "preserved": true,
+      "containedIn": [
+        "main-crop"
+      ],
+      "outputPage": 5,
+      "bandID": "p13-s3-clarinet"
+    },
+    {
+      "partID": "clarinet",
+      "guardID": "rondo",
+      "preserved": true,
+      "containedIn": [
+        "main-crop",
+        "copied-marking-1"
+      ],
+      "outputPage": 6,
+      "bandID": "p17-s1-clarinet"
+    },
+    {
+      "partID": "clarinet",
+      "guardID": "allegretto",
+      "preserved": true,
+      "containedIn": [
+        "main-crop",
+        "copied-marking-1"
+      ],
+      "outputPage": 6,
+      "bandID": "p17-s1-clarinet"
+    },
+    {
+      "partID": "clarinet",
+      "guardID": "volta-1-2",
+      "preserved": true,
+      "containedIn": [
+        "main-crop"
+      ],
+      "outputPage": 10,
+      "bandID": "p25-s3-clarinet"
+    },
+    {
+      "partID": "viola",
+      "guardID": "andante",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 1,
+      "bandID": "p1-s1-viola"
+    },
+    {
+      "partID": "viola",
+      "guardID": "menuetto",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 5,
+      "bandID": "p12-s3-viola"
+    },
+    {
+      "partID": "viola",
+      "guardID": "trio",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 5,
+      "bandID": "p13-s3-viola"
+    },
+    {
+      "partID": "viola",
+      "guardID": "rondo",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 6,
+      "bandID": "p17-s1-viola"
+    },
+    {
+      "partID": "viola",
+      "guardID": "allegretto",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 6,
+      "bandID": "p17-s1-viola"
+    },
+    {
+      "partID": "viola",
+      "guardID": "volta-1-2",
+      "preserved": false,
+      "containedIn": [],
+      "outputPage": 9,
+      "bandID": "p25-s3-viola"
+    },
+    {
+      "partID": "piano",
+      "guardID": "andante",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 1,
+      "bandID": "p1-s1-piano"
+    },
+    {
+      "partID": "piano",
+      "guardID": "menuetto",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 8,
+      "bandID": "p12-s3-piano"
+    },
+    {
+      "partID": "piano",
+      "guardID": "trio",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 8,
+      "bandID": "p13-s3-piano"
+    },
+    {
+      "partID": "piano",
+      "guardID": "rondo",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 10,
+      "bandID": "p17-s1-piano"
+    },
+    {
+      "partID": "piano",
+      "guardID": "allegretto",
+      "preserved": true,
+      "containedIn": [
+        "copied-marking-1"
+      ],
+      "outputPage": 10,
+      "bandID": "p17-s1-piano"
+    },
+    {
+      "partID": "piano",
+      "guardID": "volta-1-2",
+      "preserved": false,
+      "containedIn": [],
+      "outputPage": 16,
+      "bandID": "p25-s3-piano"
+    }
+  ],
+  "parts": [
+    {
+      "id": "clarinet",
+      "file": ".build/auto-qc/kv498-headings/menuetto-parts/Clarinet in B-flat.pdf",
+      "sha256": "a7f5b0946efc0204fd76c53ea7cd4d361bbd64a6d9fb57ff64c774ea783cf091",
+      "outputPages": 11,
+      "baselinePages": 11,
+      "systemsPerPage": [
+        13,
+        13,
+        13,
+        12,
+        12,
+        12,
+        12,
+        13,
+        12,
+        12,
+        11
+      ],
+      "markings": 1,
+      "pageReview": [
+        {
+          "page": 1,
+          "renderSHA256": "631ce4a8d6c7ee6df508e87beaf45231245532134b3db28f6d6f1a99e4dd6732",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 2,
+          "renderSHA256": "4722c3c3ea74fb97e2da5063a85e8a41c3d90265b86ae205684e22c78f9eec0b",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 3,
+          "renderSHA256": "a9529ca331bdeff8342fa487b5e943a6bca7ac9dc0d4cbe1c66853c9ac51ccba",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 4,
+          "renderSHA256": "e282f0f2cb703d2057b5f457baaf6389ad7517c695295b608c34e530585244ef",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 5,
+          "renderSHA256": "afb39efd9c35bd611052437a399955bb69574dbddc3808481f6f75bddd81740c",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 6,
+          "renderSHA256": "c274352a0b6407fe55964cdfb9edfb92b3a15d07e045f0475c1366a397f362ef",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 7,
+          "renderSHA256": "948caf46d5a97af3bb75bf1331e3cc5a88a69bb60d152b08c4737e944c7dfb39",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 8,
+          "renderSHA256": "e7641cbb090bba33348c3b3e8e5d527c548927898fd8078513c66415585cfef8",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 9,
+          "renderSHA256": "6e16c7c6bcf364c6afd4099ddeec165cdb0afdbc4642f891c2ddde699891be19",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 10,
+          "renderSHA256": "68690c8f689f78db86e0fccb1dab39e2300363592f5a05e18eedf998b834ddab",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 11,
+          "renderSHA256": "ce56b5004aee11a2b50338be27a8e1dfa1e188cc7e0210fde2594ccbcc8561f3",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        }
+      ]
+    },
+    {
+      "id": "viola",
+      "file": ".build/auto-qc/kv498-headings/menuetto-parts/Viola.pdf",
+      "sha256": "ce48e650a6736712d4a301b31ab90b3523f6914f9cde8c628f831fb40849d907",
+      "outputPages": 10,
+      "baselinePages": 10,
+      "systemsPerPage": [
+        14,
+        14,
+        14,
+        14,
+        12,
+        13,
+        13,
+        13,
+        15,
+        13
+      ],
+      "markings": 4,
+      "pageReview": [
+        {
+          "page": 1,
+          "renderSHA256": "c166d4afddb0c749e7ba5e396a0d24c9a1d54b112c60a3467ddaafe8a50758f7",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 2,
+          "renderSHA256": "80d9995d760509c576d89495d45fb4bafb91b984607b3c6427ce79c8921ba81b",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 3,
+          "renderSHA256": "b2db721230acd1b96723ca8164c6ac966758f9da443e636c64724b36039b6fc0",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 4,
+          "renderSHA256": "1d2f01ba0eb62fcca3cdf3abc2a0c24ddadaf1d326109445dbc96643e0e554df",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 5,
+          "renderSHA256": "4d810fc8b347f12c7125b3bb8e9ae49fb4b0692e634441654e383360511955d8",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 6,
+          "renderSHA256": "7e6de474d23251fb2bbafff69a0c53ef704cace50ed9cbc2d5fa01d7d0327837",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 7,
+          "renderSHA256": "30b9af10890d6460c9df0b11682774bd4d919a0925ac115c5b7051ca07d6d151",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 8,
+          "renderSHA256": "c94923c2b2fbc9253235c5e8a4ea6faa74959c7615e9f8e5d84c2420729b7631",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 9,
+          "renderSHA256": "9c1c378b9f28056098d0ef35af58cde24b63431bc0461aedaab5ef1d947db586",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 10,
+          "renderSHA256": "7a30372a96ee55d13022b9ebeeefaffaf437f50c90f1457507ae09526ac2ebc7",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        }
+      ]
+    },
+    {
+      "id": "piano",
+      "file": ".build/auto-qc/kv498-headings/menuetto-parts/Piano.pdf",
+      "sha256": "8923bf6fbad69997b4b88e281f83e35e27519871a2686f08650c7a811f2842cd",
+      "outputPages": 18,
+      "baselinePages": 17,
+      "systemsPerPage": [
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        6,
+        7,
+        7,
+        7,
+        8,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8
+      ],
+      "markings": 4,
+      "pageReview": [
+        {
+          "page": 1,
+          "renderSHA256": "2c312e5af69d8a678b80c97add60480badef2e3c50f866c762677c08e41493ab",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 2,
+          "renderSHA256": "d4aebeabfdaf7b68c4f8d8a44ba47454b26ac032948d80e4f02c0cc78d9090a6",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 3,
+          "renderSHA256": "169e34b6ee7b72f3cf146e8b676fae70610e700ef742f4bc23d3e0d2c3fcb2f0",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 4,
+          "renderSHA256": "e36b8d4a72fd8ab1e555ba857d8510ec87885badd13db66a9a3fdf76ba816eb4",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 5,
+          "renderSHA256": "d497a153e323fcb05dce0de3cc70d318ec11d08f7dc8fe8d7c5571b6ee7f94b1",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 6,
+          "renderSHA256": "6e9a2b9aeedd0a60c46a7b7f8faf5de1030590fda3b7c392bb8b4e67cd03fbfa",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 7,
+          "renderSHA256": "7bcc3a6e896fc651f97ebdbee0220bd5d409374eb41942d47ae5fb546380574b",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 8,
+          "renderSHA256": "b4bc92708f9b5d879df177b62797b8dc1efb541a0270724c736eeea059204e43",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 9,
+          "renderSHA256": "d44c57f74dcd8268ca53ee7c1f7a8d75def08de1048ac57c2cdcb4ad2059b9dd",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 10,
+          "renderSHA256": "bc6760a5952b43067587765e53a38a9919ea0571ebb1d8f25e01b7c577882646",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 11,
+          "renderSHA256": "634a24763a25d1be07f4cd6d60f0cce5fedec6a410f1fc547f8fd3b3c368fbac",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 12,
+          "renderSHA256": "db2fee6173fe01f3e3e4808e965b269bd45013eda970d21e2bd927b27baae6a0",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 13,
+          "renderSHA256": "e667dfba5c490efcb762f9ab767dc62ed028ac8494664c701ee7bd22ae203426",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 14,
+          "renderSHA256": "0838b57cac1a95b4608408ae74d3e1336e4d24a1cda3031e3f763908d2793891",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 15,
+          "renderSHA256": "794a124c8fe6c78b5f02b5513aa3ad54add72e03834d6ede93cf2598d2a7eead",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 16,
+          "renderSHA256": "d5f65b3f2089f8d2e3fcd963cae6adf49d6d52841a082258905b320341954456",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 17,
+          "renderSHA256": "003fdc1a3ef61a188f0453e32cf2ca59e3df9bb3c428483e4c5c1c7500f411e7",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        },
+        {
+          "page": 18,
+          "renderSHA256": "87a41e717f86d65da7aa38dca18a3db8d888e1c4f555feb3195c897d6c3f5072",
+          "layout": "No obvious overflow/collision; neighboring ink persists"
+        }
+      ]
+    }
+  ],
+  "allOutputPagesVisuallyReviewed": 39,
+  "coveragePreserved": true,
+  "preservedObligations": 16,
+  "requiredObligations": 18,
+  "duplicateHeadingObligations": [
+    {
+      "partID": "clarinet",
+      "guardID": "rondo",
+      "preserved": true,
+      "containedIn": [
+        "main-crop",
+        "copied-marking-1"
+      ],
+      "outputPage": 6,
+      "bandID": "p17-s1-clarinet"
+    },
+    {
+      "partID": "clarinet",
+      "guardID": "allegretto",
+      "preserved": true,
+      "containedIn": [
+        "main-crop",
+        "copied-marking-1"
+      ],
+      "outputPage": 6,
+      "bandID": "p17-s1-clarinet"
+    }
+  ],
+  "limitations": [
+    "No added runtime acceptance gate in app; experimental metadata only.",
+    "No full note-by-note source comparison; unchanged main crops retain baseline bounded edge evidence.",
+    "First/second ending brackets remain missing in Viola/Piano.",
+    "Clarinet Rondo/Allegretto duplicated: padded OCR copy extends0.334pt above main crop although both actual frozen word envelopes were already inside.",
+    "Piano grows17 to18 pages; movement still can begin near page bottom; page turns not optimized."
+  ]
+}

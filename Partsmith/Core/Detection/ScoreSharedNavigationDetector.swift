@@ -34,6 +34,7 @@ enum ScoreSharedNavigationDetector {
     static func detect(in image: CGImage, page: ScorePageAnalysis,
                        profile: ScoreExtractionProfile,
                        observedText: ((OCRRegion, [TextLine]) -> Void)? = nil,
+                       observedFailure: ((OCRRegion, Error) -> Void)? = nil,
                        isCancelled: () -> Bool = { false }) -> [ScoreSharedNavigation] {
         guard image.width > 0, image.height > 0, !isCancelled() else { return [] }
         // Recognition must not turn an uncertain roster into shared ownership.
@@ -58,7 +59,7 @@ enum ScoreSharedNavigationDetector {
                 request.minimumTextHeight = 0.012
                 request.customWords = ["Da Capo", "Dal Segno", "D.C.", "D.S.", "Fine", "Coda", "Capo", "Segno", "sin", "poi"]
                 do { try VNImageRequestHandler(cgImage: crop, options: [:]).perform([request]) }
-                catch { return [] }
+                catch { observedFailure?(region, error); return [] }
                 return (request.results ?? []).compactMap { observation in
                     guard let candidate = observation.topCandidates(1).first else { return nil }
                     let b = observation.boundingBox

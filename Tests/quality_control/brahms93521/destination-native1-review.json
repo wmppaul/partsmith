@@ -1,0 +1,2260 @@
+{
+  "schemaVersion": 1,
+  "status": "experimental destination feature verified on this source; complete part outputs remain draft",
+  "scope": "All 39 source pages examined by native symbol detection; all 27 copied-cue fragments and the 3 added destination contexts visually inspected. Complete 64-page output geometry checked. This is a targeted direction review, not a new exhaustive per-note review of 604 crops.",
+  "bindings": {
+    "source": {
+      "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    "sourceOracle": {
+      "path": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+      "sha256": "3bfce48f871486cfcb1c444377dd1ab76980bead90aaa9fca8f59f6d14f23e3c"
+    },
+    "correctedReference": {
+      "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/rectified-review-source.pdf",
+      "sha256": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983"
+    },
+    "exportInput": {
+      "path": ".build/qc-repeat-symbols/native/candidate8-headings-navigation-destinations.json",
+      "sha256": "794203cafc4d1adbfe86d297bb22174b22e3bdf0b1d70a2fac6f8b7ca015de3b"
+    },
+    "manifest": {
+      "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/manifest.json",
+      "sha256": "7c1d153260e10ef652090e47fbce140d8bbdfaaefd0e76fb9ffe0edfb1383fd3"
+    },
+    "plan": {
+      "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/plan.json",
+      "sha256": "b97de474dfe78c9a17b1e95502621a4a96d416e49937e92068b7201989e9717b"
+    },
+    "nativeRerunInput": {
+      "path": ".build/qc-repeat-symbols/native/candidate8-native-rerun-input.json",
+      "sha256": "4e3d87a150d07e7b30b468fba5bc98cda9ca4d49f7d3652d19bd9d3c2cf557b5"
+    },
+    "nativeRerunOutput": {
+      "path": ".build/qc-repeat-symbols/native/candidate8-destinations-rerun.json",
+      "sha256": "e10941abccfae80282f3ad1aed2741c1a8714924eb71e3418b10dba464f9f810"
+    },
+    "nativeRerunLog": {
+      "path": ".build/qc-repeat-symbols/native/candidate8-rerun.log",
+      "sha256": "bd934ae8604430bd20e562ba989ef1b2535a3f21144cc82d148bddf50591a881"
+    },
+    "detector": {
+      "path": "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    "testedCLI": {
+      "path": ".build/qc-repeat-symbols/native/score_extraction_batch-tested.swift",
+      "sha256": "6d1d0274eb31b6c21a94bc54ee25d72ea3596cc96fd35f845b17b194da8cac75"
+    },
+    "testSource": {
+      "path": "tools/test_shared_destinations.swift",
+      "sha256": "e98174ac44a1520310e03beaa8caea732696db1839b38d188efa85daaf3bb904"
+    },
+    "testScript": {
+      "path": "tools/test_shared_destinations.sh",
+      "sha256": "313400a36587cd73435670c457400ec9d87a45a01a3bfa2ddcaf486712738d0c"
+    },
+    "testLog": {
+      "path": ".build/qc-repeat-symbols/native/test-result.log",
+      "sha256": "d032d276cda7ca4be64c96fc8eee827f4db2a949beec212a48347628f0d14c3d"
+    },
+    "metadataTransferProof": {
+      "path": ".build/qc-repeat-symbols/native/metadata-transfer-proof.json",
+      "sha256": "1ac99e48a34ed2349cfdb65bd4739ba8692570d711d3bc6e35ae1c719c7e8f7c"
+    },
+    "geometryCheck": {
+      "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/review/geometry.json",
+      "sha256": "32f998b2c64cd6020304cddd6734eb0bfc33a59613603cb69857a3b96d6cf819"
+    }
+  },
+  "rectifications": [
+    {
+      "bottomLeft": {
+        "x": 0.022452219281807972,
+        "y": 0.9934585845001322
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9830891962180598
+      },
+      "pageIndex": 1,
+      "topLeft": {
+        "x": 0.001000000000000035,
+        "y": 0.01691080378194021
+      },
+      "topRight": {
+        "x": 0.977547780718192,
+        "y": 0.006541415499867753
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.001000000000000126,
+        "y": 0.9893711972992971
+      },
+      "bottomRight": {
+        "x": 0.9860176774355548,
+        "y": 0.9956464801362577
+      },
+      "pageIndex": 6,
+      "topLeft": {
+        "x": 0.013982322564445161,
+        "y": 0.004353519863742328
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.010628802700702766
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.015843354839884468,
+        "y": 0.9951491787679413
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9880074663921742
+      },
+      "pageIndex": 16,
+      "topLeft": {
+        "x": 0.0010000000000000646,
+        "y": 0.011992533607825706
+      },
+      "topRight": {
+        "x": 0.9841566451601157,
+        "y": 0.004850821232058711
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0010000000000000009,
+        "y": 0.9907265824906225
+      },
+      "bottomRight": {
+        "x": 0.9878324989484448,
+        "y": 0.9961059164578222
+      },
+      "pageIndex": 18,
+      "topLeft": {
+        "x": 0.012167501051555252,
+        "y": 0.0038940835421777953
+      },
+      "topRight": {
+        "x": 0.9990000000000001,
+        "y": 0.00927341750937749
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.000999999999999995,
+        "y": 0.9911813734416057
+      },
+      "bottomRight": {
+        "x": 0.988446378088182,
+        "y": 0.9962650046465762
+      },
+      "pageIndex": 22,
+      "topLeft": {
+        "x": 0.011553621911818033,
+        "y": 0.003734995353423809
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.008818626558394271
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0009999999999999595,
+        "y": 0.983525543271109
+      },
+      "bottomRight": {
+        "x": 0.9781124995691003,
+        "y": 0.9935869562979912
+      },
+      "pageIndex": 27,
+      "topLeft": {
+        "x": 0.021887500430899803,
+        "y": 0.006413043702008903
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.01647445672889103
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0009999999999999076,
+        "y": 0.9844263100779589
+      },
+      "bottomRight": {
+        "x": 0.9793505846569762,
+        "y": 0.9939242745790171
+      },
+      "pageIndex": 33,
+      "topLeft": {
+        "x": 0.020649415343023954,
+        "y": 0.0060757254209828915
+      },
+      "topRight": {
+        "x": 0.9990000000000001,
+        "y": 0.015573689922041112
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0010000000000000497,
+        "y": 0.9889130266602368
+      },
+      "bottomRight": {
+        "x": 0.985384552060725,
+        "y": 0.9954715254004882
+      },
+      "pageIndex": 37,
+      "topLeft": {
+        "x": 0.01461544793927505,
+        "y": 0.004528474599511889
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.011086973339763162
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.015843354839884468,
+        "y": 0.9951491787679413
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9880074663921742
+      },
+      "pageIndex": 38,
+      "topLeft": {
+        "x": 0.0010000000000000646,
+        "y": 0.011992533607825706
+      },
+      "topRight": {
+        "x": 0.9841566451601157,
+        "y": 0.004850821232058711
+      }
+    }
+  ],
+  "recognition": {
+    "sourcePageCount": 39,
+    "musicPageCount": 38,
+    "verifiedSystemCount": 151,
+    "sourceTemplateCount": 1,
+    "sourceTemplatePage": 28,
+    "sourceTemplateBounds": [
+      0.7619751468300286,
+      0.4732211282875574,
+      0.7863581865033047,
+      0.49438083873587335
+    ],
+    "destinationCount": 1,
+    "otherDestinationCount": 0,
+    "pageNumber": 26,
+    "systemNumber": 2,
+    "sourcePartID": "violin1",
+    "anchorStaffID": 4,
+    "sourceRectanglePoints": [
+      219.86714558480497,
+      169.78587693140122,
+      232.04118774852847,
+      184.59075020195135
+    ],
+    "independentOracleRectangle": [
+      220,
+      170,
+      232,
+      182
+    ],
+    "independentOracleFullyContained": true,
+    "templateCorrelation": 0.7520194660461883,
+    "acceptanceThreshold": 0.7,
+    "inlineInstructionExcluded": true,
+    "printedSourceOnly": true,
+    "newGlyphTranscription": false
+  },
+  "tests": {
+    "assertionsPassed": 24,
+    "sourcePositiveCorrelation": 0.7434196354142396,
+    "realBeamNearMissCorrelation": 0.4628429262319163,
+    "publicAPI": "Verified system 2 association, inline exclusion, unresolved ownership rejection, cancellation, and copied-glyph self-seeding rejection.",
+    "scanVariationScratchCases": "18/18 real-source variants across 0.8/1/1.2 scale, ±1.5 degrees and contrast 0.8/1.0; not a broad corpus guarantee."
+  },
+  "rerunAndGeometryProof": {
+    "all39PageAnalysesExactlyEqualAfterEmptyArrayNormalization": true,
+    "nilToEmptyArrayPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "destinationRegionCount": 1,
+    "existingTextInstructionCount": 1,
+    "headings": 7,
+    "correctedSourceEquivalence": {
+      "old": ".build/auto-qc/candidate5/quartet93521-parts/rectified-review-source.pdf",
+      "oldSHA256": "da52d7a67eb047a551733acade3b202dd2bdb34e1df7f6c7b2840dd3804ca88f",
+      "new": ".build/auto-qc/candidate8-directions/quartet93521-parts/rectified-review-source.pdf",
+      "newSHA256": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983",
+      "dpi": 108,
+      "pages": [
+        {
+          "pageNumber": 1,
+          "identical": true,
+          "renderSHA256": "24589dc053d010165fc0c843ae11934f5bde370bbeeeeaf0d7cacb9c61215ec1"
+        },
+        {
+          "pageNumber": 2,
+          "identical": true,
+          "renderSHA256": "8c5cf7830df9ce394d96a95809e795d96fa2af7e1c52614ceca12340c6bdac67"
+        },
+        {
+          "pageNumber": 3,
+          "identical": true,
+          "renderSHA256": "6a2d9c6fb998ca2a97108ba4ecb1cf8937a48e10d6aa0c5adc5245b9a20f7a30"
+        },
+        {
+          "pageNumber": 4,
+          "identical": true,
+          "renderSHA256": "038e86d6b23fa6c722cb31a19907883a8660089a6adbf6bd4be01e83bbaf9bba"
+        },
+        {
+          "pageNumber": 5,
+          "identical": true,
+          "renderSHA256": "5f089e2d10eb686287dd4e23b062d8531aebffd23cf81056b3a6f505f51a952f"
+        },
+        {
+          "pageNumber": 6,
+          "identical": true,
+          "renderSHA256": "8e0378aaa5e7d76fc2695e7b90c5bc410a9ace07f0abb1dfde91af2bea219774"
+        },
+        {
+          "pageNumber": 7,
+          "identical": true,
+          "renderSHA256": "8f16a5f12220617160c1366b23feff91b043ed6dab2492cfcb73c364acee6a05"
+        },
+        {
+          "pageNumber": 8,
+          "identical": true,
+          "renderSHA256": "0d69a6075a5834eb25b9714c2227dcb7564a820d32b6ddc6d189fae0f2b5c939"
+        },
+        {
+          "pageNumber": 9,
+          "identical": true,
+          "renderSHA256": "9aba887e0c4bb0b2c1a219cc8d7652414af24668f011f2e3758670585fb768f2"
+        },
+        {
+          "pageNumber": 10,
+          "identical": true,
+          "renderSHA256": "19ee5c9706e28a06af15de449ef03821905093784f9068bd4e96038abef86b35"
+        },
+        {
+          "pageNumber": 11,
+          "identical": true,
+          "renderSHA256": "be6d14bd12d78dd14b86071034c73a91b1c2aeaa13bd240debd0546d8a04e75f"
+        },
+        {
+          "pageNumber": 12,
+          "identical": true,
+          "renderSHA256": "3d3037c6a8056f5f5001f6b5ffa8da5255cc91332314a6b09076afaee1efdd37"
+        },
+        {
+          "pageNumber": 13,
+          "identical": true,
+          "renderSHA256": "844360a9e871d4a50f08be92c0adbe0bd2feef8360326cb7044114ba84f72ee5"
+        },
+        {
+          "pageNumber": 14,
+          "identical": true,
+          "renderSHA256": "65eef15d9a9de359c610cd9f5d8af79bb8775a8dc0fdbb928e7ec40f95bb1825"
+        },
+        {
+          "pageNumber": 15,
+          "identical": true,
+          "renderSHA256": "0e09e4a4b2a301da02185df48b2446bed2f58114ac11d33db452a8011e191b9d"
+        },
+        {
+          "pageNumber": 16,
+          "identical": true,
+          "renderSHA256": "e80d75ca944ce9af7461adcab67dc54e582c5c5a7f68d0b2cff3829c9f1ac560"
+        },
+        {
+          "pageNumber": 17,
+          "identical": true,
+          "renderSHA256": "fb7c0f7bc9e36f261a8ae64c40bd867482c435a4dfba689f6ac4d2b6821cea16"
+        },
+        {
+          "pageNumber": 18,
+          "identical": true,
+          "renderSHA256": "1394ed93cea1be06ceddf5996c329130bec42f1cbd8c6c1c64253cad8b9bc3f9"
+        },
+        {
+          "pageNumber": 19,
+          "identical": true,
+          "renderSHA256": "5c25c091a19dabc043ac514226667204c5a2657fb073a3ecd34df78a82cae6e1"
+        },
+        {
+          "pageNumber": 20,
+          "identical": true,
+          "renderSHA256": "0acb64fb48fdd0913639e7221fcfe920ce5810c733ef9bb3e180e10344f40e29"
+        },
+        {
+          "pageNumber": 21,
+          "identical": true,
+          "renderSHA256": "f73f79711588edb7f3947d0d3d7850465b466772320dbd3a1a0525ea2320d25c"
+        },
+        {
+          "pageNumber": 22,
+          "identical": true,
+          "renderSHA256": "c86ee8be2982abdbaaf693349222093528752fbcd297c1c45063c273c98d94fb"
+        },
+        {
+          "pageNumber": 23,
+          "identical": true,
+          "renderSHA256": "c854327ac1ad0d77f3bfec0092a3776c498c86e263ecfc24ff465014a9ed8ab8"
+        },
+        {
+          "pageNumber": 24,
+          "identical": true,
+          "renderSHA256": "ac229e3f018cb9e47a63b6b0a62b9d2c9137be9a6c5ad2b4e146d554a7f1d5c6"
+        },
+        {
+          "pageNumber": 25,
+          "identical": true,
+          "renderSHA256": "825653afb53de54a323ada12390836f443c5a94844411d8315cc41850be74801"
+        },
+        {
+          "pageNumber": 26,
+          "identical": true,
+          "renderSHA256": "f6271eab8dfc971d9d7225e1b175762037e0c12f61bb28bf8ee1f49412549939"
+        },
+        {
+          "pageNumber": 27,
+          "identical": true,
+          "renderSHA256": "5c9ebdcca2d07e1f5c2278b2cc7f0c0bb769a5e6b76f81822f68719ab021df39"
+        },
+        {
+          "pageNumber": 28,
+          "identical": true,
+          "renderSHA256": "2f511a7d93f533bc255972f48eed81a4e6b444f799ac91377d6a9fbdc99ba348"
+        },
+        {
+          "pageNumber": 29,
+          "identical": true,
+          "renderSHA256": "b70f7872e6eeaa86f928a3a91653107fbcd7e99b9cdba0a899fc0820a9297996"
+        },
+        {
+          "pageNumber": 30,
+          "identical": true,
+          "renderSHA256": "f3f449d2a477232f64d340acd75a89e2daf4f6bd2449dbf5d0d87510ddc82c21"
+        },
+        {
+          "pageNumber": 31,
+          "identical": true,
+          "renderSHA256": "ca20bd912d5e1b1d207a55b80c3c1c691a8903be81697d6199feaa115fec7ab3"
+        },
+        {
+          "pageNumber": 32,
+          "identical": true,
+          "renderSHA256": "3f64e17f90b84d2faca6462345f86480ddfca0d0d160948793f025a2cd279e95"
+        },
+        {
+          "pageNumber": 33,
+          "identical": true,
+          "renderSHA256": "f2830be6e50d2d4a327294b1d3fdc77910040c29b4e785167bd8f50a68d8383c"
+        },
+        {
+          "pageNumber": 34,
+          "identical": true,
+          "renderSHA256": "8f1c794919d0a69e0287c8ebc7d62a202e2d384a46470771af9642a121c7222f"
+        },
+        {
+          "pageNumber": 35,
+          "identical": true,
+          "renderSHA256": "9c64a00ca05886e3b71a604473eb21ca857117c2d7ef55e06d1bb044f38cc16b"
+        },
+        {
+          "pageNumber": 36,
+          "identical": true,
+          "renderSHA256": "d58132ae61c51f87d807bea2955f00a953dd8b9358a731409ac092672571906d"
+        },
+        {
+          "pageNumber": 37,
+          "identical": true,
+          "renderSHA256": "34168b32e1ee498725c6051a29b977ab5090e6eeb8b1dc20ef236342d14777fe"
+        },
+        {
+          "pageNumber": 38,
+          "identical": true,
+          "renderSHA256": "f416c565afaece5552db7ad74a7c70b18c61ef77efec555043fddcefa87f0a9f"
+        },
+        {
+          "pageNumber": 39,
+          "identical": true,
+          "renderSHA256": "7c39360f8b0a4d112eb8d5711854c3b43b4d666dba66c899ef2ee95c5ac75c77"
+        }
+      ]
+    },
+    "neighborMetrics": {
+      "wholeNeighborOccurrences": 11,
+      "wholeNeighborCases": [
+        {
+          "partID": "violin1",
+          "bandID": "p28-s1-violin1",
+          "neighborStaffID": 1,
+          "lineCount": 5
+        },
+        {
+          "partID": "violin1",
+          "bandID": "p29-s1-violin1",
+          "neighborStaffID": 1,
+          "lineCount": 5
+        },
+        {
+          "partID": "violin1",
+          "bandID": "p35-s1-violin1",
+          "neighborStaffID": 1,
+          "lineCount": 5
+        },
+        {
+          "partID": "violin2",
+          "bandID": "p28-s1-violin2",
+          "neighborStaffID": 0,
+          "lineCount": 5
+        },
+        {
+          "partID": "violin2",
+          "bandID": "p29-s1-violin2",
+          "neighborStaffID": 0,
+          "lineCount": 5
+        },
+        {
+          "partID": "violin2",
+          "bandID": "p31-s1-violin2",
+          "neighborStaffID": 0,
+          "lineCount": 5
+        },
+        {
+          "partID": "violin2",
+          "bandID": "p35-s1-violin2",
+          "neighborStaffID": 0,
+          "lineCount": 5
+        },
+        {
+          "partID": "viola",
+          "bandID": "p24-s1-viola",
+          "neighborStaffID": 3,
+          "lineCount": 5
+        },
+        {
+          "partID": "viola",
+          "bandID": "p24-s2-viola",
+          "neighborStaffID": 7,
+          "lineCount": 5
+        },
+        {
+          "partID": "cello",
+          "bandID": "p24-s1-cello",
+          "neighborStaffID": 2,
+          "lineCount": 5
+        },
+        {
+          "partID": "cello",
+          "bandID": "p24-s2-cello",
+          "neighborStaffID": 6,
+          "lineCount": 5
+        }
+      ],
+      "strictZeroToleranceNeighborLineCenters": 632,
+      "neighborLineCentersWith1eMinus6PointTolerance": 633
+    }
+  },
+  "output": {
+    "directory": ".build/auto-qc/candidate8-directions/quartet93521-parts",
+    "totalPages": 64,
+    "totalBands": 604,
+    "parts": [
+      {
+        "id": "violin1",
+        "name": "Violin I",
+        "pages": 17,
+        "bands": 151,
+        "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/Violin I.pdf",
+        "sha256": "567729482e94d2f796f6fcaaf5d33ee2b2fb362b95ca526b7195e0822b861911"
+      },
+      {
+        "id": "violin2",
+        "name": "Violin II",
+        "pages": 16,
+        "bands": 151,
+        "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/Violin II.pdf",
+        "sha256": "633169336fae8f4be91c98e36d9b51acdbb39a915288e21a7b6a56e607787bea"
+      },
+      {
+        "id": "viola",
+        "name": "Viola",
+        "pages": 16,
+        "bands": 151,
+        "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/Viola.pdf",
+        "sha256": "2cec1658d8f9fb5635f28f9475c4f65899c100f7b1fc59a0c1abf4c6aee825b6"
+      },
+      {
+        "id": "cello",
+        "name": "Violoncello",
+        "pages": 15,
+        "bands": 151,
+        "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/Violoncello.pdf",
+        "sha256": "0a3e43856b230f13d788ae9b97ef2be9433a4b5eea72f303b0d9422f45daadb3"
+      }
+    ],
+    "sameMainCropAsCandidate8": 603,
+    "mainCropExceptions": [
+      {
+        "id": "p28-s2-cello",
+        "before": [
+          0,
+          259.11378413524056,
+          427,
+          305.501300390117
+        ],
+        "after": [
+          0,
+          259.11378413524056,
+          427,
+          306.94288150920204
+        ]
+      }
+    ],
+    "exceptionReason": "The p28s2 Cello crop extends 1.441581119085 points to retain the full Da Capo source instruction, exactly matching its previously reviewed candidate 5 rectangle. No additional main-crop changes are introduced by destination detection.",
+    "allSevenHeadingsRetained": true,
+    "daCapoRetained": true,
+    "existingCueSourceRectanglesUnchanged": 24,
+    "newDestinationCopies": 3,
+    "cuePlacements": [
+      {
+        "partID": "violin1",
+        "bandID": "p28-s2-violin1",
+        "sourcePage": 28,
+        "system": 2,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          368.0686041123831,
+          564.4154536880013,
+          518.4313966876169,
+          585.6650903408267
+        ],
+        "isBelow": true,
+        "sourceRect": [
+          264.8629727829217,
+          289.35839536432525,
+          389.2910976465357,
+          306.94288150920204
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p2-s1-violin2",
+        "sourcePage": 2,
+        "system": 1,
+        "outputPage": 1,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          210.5680144499626,
+          132,
+          261.6819871983708,
+          152.0326532856027
+        ],
+        "sourceRect": [
+          134.52818250025973,
+          126.42787641174431,
+          176.82598553043474,
+          143.00528523529533
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p16-s1-violin2",
+        "sourcePage": 16,
+        "system": 1,
+        "outputPage": 6,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          143.05242390928066,
+          587.2689871489465,
+          194.25029078609666,
+          604.2558916727664
+        ],
+        "sourceRect": [
+          78.65772288616829,
+          38.68312716554135,
+          121.02494993345594,
+          52.74011986257847
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p22-s1-violin2",
+        "sourcePage": 22,
+        "system": 1,
+        "outputPage": 9,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          141.0880588084936,
+          197.60843071068666,
+          312.2257515475733,
+          216.88324438954373
+        ],
+        "sourceRect": [
+          77.0321726961759,
+          24.420173538253493,
+          218.65193005971668,
+          40.370455400408446
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p26-s2-violin2",
+        "sourcePage": 26,
+        "system": 2,
+        "outputPage": 11,
+        "sameSourceRectangleAsCandidate5": false,
+        "destinationRect": [
+          313.69425555447157,
+          72,
+          328.4057444455285,
+          89.89066652834629
+        ],
+        "sourceRect": [
+          219.86714558480497,
+          169.78587693140116,
+          232.04118774852847,
+          184.59075020195132
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p26-s3-violin2",
+        "sourcePage": 26,
+        "system": 3,
+        "outputPage": 11,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          113.17913668162268,
+          162.140510584994,
+          158.3208639398059,
+          185.7721634489185
+        ],
+        "sourceRect": [
+          53.93699876560636,
+          299.92937715727936,
+          91.29265291142852,
+          319.48502787994556
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p28-s2-violin2",
+        "sourcePage": 28,
+        "system": 2,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          368.0686041123831,
+          123.8414498588453,
+          518.4313966876169,
+          145.0910865116706
+        ],
+        "isBelow": true,
+        "sourceRect": [
+          264.8629727829217,
+          289.35839536432525,
+          389.2910976465357,
+          306.94288150920204
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p28-s3-violin2",
+        "sourcePage": 28,
+        "system": 3,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          129.6937269712074,
+          150.36364439612532,
+          173.30627362879275,
+          171.03436846667887
+        ],
+        "sourceRect": [
+          67.60314228043713,
+          310.24307793154185,
+          103.69336984398157,
+          327.34850269535264
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p29-s1-violin2",
+        "sourcePage": 29,
+        "system": 1,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          140.01419576589376,
+          303.0070689512842,
+          330.9853380418283,
+          324.90406839932984
+        ],
+        "sourceRect": [
+          76.14353021712526,
+          20.650425169392975,
+          234.17585144159045,
+          38.770616573105144
+        ]
+      },
+      {
+        "partID": "violin2",
+        "bandID": "p34-s3-violin2",
+        "sourcePage": 34,
+        "system": 3,
+        "outputPage": 14,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          133.42921896069055,
+          469.90698225255164,
+          248.50506847999827,
+          488.9569651904285
+        ],
+        "sourceRect": [
+          70.69433429499003,
+          305.7428314776698,
+          165.92182992433965,
+          321.5070615444788
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p2-s1-viola",
+        "sourcePage": 2,
+        "system": 1,
+        "outputPage": 1,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          210.5680144499626,
+          132,
+          261.6819871983708,
+          152.0326532856027
+        ],
+        "sourceRect": [
+          134.52818250025973,
+          126.42787641174431,
+          176.82598553043474,
+          143.00528523529533
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p16-s1-viola",
+        "sourcePage": 16,
+        "system": 1,
+        "outputPage": 6,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          143.05242390928066,
+          464.85219644717455,
+          194.25029078609666,
+          481.83910097099454
+        ],
+        "sourceRect": [
+          78.65772288616829,
+          38.68312716554135,
+          121.02494993345594,
+          52.74011986257847
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p22-s1-viola",
+        "sourcePage": 22,
+        "system": 1,
+        "outputPage": 9,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          141.0880588084936,
+          269.47027888307935,
+          312.2257515475733,
+          288.7450925619364
+        ],
+        "sourceRect": [
+          77.0321726961759,
+          24.420173538253493,
+          218.65193005971668,
+          40.370455400408446
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p26-s2-viola",
+        "sourcePage": 26,
+        "system": 2,
+        "outputPage": 11,
+        "sameSourceRectangleAsCandidate5": false,
+        "destinationRect": [
+          313.69425555447157,
+          189.2207133975446,
+          328.4057444455285,
+          207.1113799258909
+        ],
+        "sourceRect": [
+          219.86714558480497,
+          169.78587693140116,
+          232.04118774852847,
+          184.59075020195132
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p26-s3-viola",
+        "sourcePage": 26,
+        "system": 3,
+        "outputPage": 11,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          113.17913668162268,
+          271.87132690149383,
+          158.3208639398059,
+          295.50297976541833
+        ],
+        "sourceRect": [
+          53.93699876560636,
+          299.92937715727936,
+          91.29265291142852,
+          319.48502787994556
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p28-s2-viola",
+        "sourcePage": 28,
+        "system": 2,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          368.0686041123831,
+          132.53932385804728,
+          518.4313966876169,
+          153.78896051087258
+        ],
+        "isBelow": true,
+        "sourceRect": [
+          264.8629727829217,
+          289.35839536432525,
+          389.2910976465357,
+          306.94288150920204
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p28-s3-viola",
+        "sourcePage": 28,
+        "system": 3,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          129.6937269712074,
+          160.74320649542688,
+          173.30627362879275,
+          181.41393056598042
+        ],
+        "sourceRect": [
+          67.60314228043713,
+          310.24307793154185,
+          103.69336984398157,
+          327.34850269535264
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p29-s1-viola",
+        "sourcePage": 29,
+        "system": 1,
+        "outputPage": 12,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          140.01419576589376,
+          323.9982355834532,
+          330.9853380418283,
+          345.8952350314988
+        ],
+        "sourceRect": [
+          76.14353021712526,
+          20.650425169392975,
+          234.17585144159045,
+          38.770616573105144
+        ]
+      },
+      {
+        "partID": "viola",
+        "bandID": "p34-s3-viola",
+        "sourcePage": 34,
+        "system": 3,
+        "outputPage": 14,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          133.42921896069055,
+          491.8551129864371,
+          248.50506847999827,
+          510.90509592431397
+        ],
+        "sourceRect": [
+          70.69433429499003,
+          305.7428314776698,
+          165.92182992433965,
+          321.5070615444788
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p2-s1-cello",
+        "sourcePage": 2,
+        "system": 1,
+        "outputPage": 1,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          210.5680144499626,
+          132,
+          261.6819871983708,
+          152.0326532856027
+        ],
+        "sourceRect": [
+          134.52818250025973,
+          126.42787641174431,
+          176.82598553043474,
+          143.00528523529533
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p16-s1-cello",
+        "sourcePage": 16,
+        "system": 1,
+        "outputPage": 6,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          143.05242390928066,
+          311.221322392513,
+          194.25029078609666,
+          328.208226916333
+        ],
+        "sourceRect": [
+          78.65772288616829,
+          38.68312716554135,
+          121.02494993345594,
+          52.74011986257847
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p22-s1-cello",
+        "sourcePage": 22,
+        "system": 1,
+        "outputPage": 8,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          141.0880588084936,
+          511.45339551735736,
+          312.2257515475733,
+          530.7282091962145
+        ],
+        "sourceRect": [
+          77.0321726961759,
+          24.420173538253493,
+          218.65193005971668,
+          40.370455400408446
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p26-s2-cello",
+        "sourcePage": 26,
+        "system": 2,
+        "outputPage": 10,
+        "sameSourceRectangleAsCandidate5": false,
+        "destinationRect": [
+          313.69425555447157,
+          376.8566628902711,
+          328.4057444455285,
+          394.74732941861737
+        ],
+        "sourceRect": [
+          219.86714558480497,
+          169.78587693140116,
+          232.04118774852847,
+          184.59075020195132
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p26-s3-cello",
+        "sourcePage": 26,
+        "system": 3,
+        "outputPage": 10,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          113.17913668162268,
+          455.4194814430102,
+          158.3208639398059,
+          479.0511343069347
+        ],
+        "sourceRect": [
+          53.93699876560636,
+          299.92937715727936,
+          91.29265291142852,
+          319.48502787994556
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p28-s3-cello",
+        "sourcePage": 28,
+        "system": 3,
+        "outputPage": 11,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          129.6937269712074,
+          320.54828986637966,
+          173.30627362879275,
+          341.2190139369332
+        ],
+        "sourceRect": [
+          67.60314228043713,
+          310.24307793154185,
+          103.69336984398157,
+          327.34850269535264
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p29-s1-cello",
+        "sourcePage": 29,
+        "system": 1,
+        "outputPage": 11,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          140.01419576589376,
+          469.00956268082257,
+          330.9853380418283,
+          490.9065621288682
+        ],
+        "sourceRect": [
+          76.14353021712526,
+          20.650425169392975,
+          234.17585144159045,
+          38.770616573105144
+        ]
+      },
+      {
+        "partID": "cello",
+        "bandID": "p34-s3-cello",
+        "sourcePage": 34,
+        "system": 3,
+        "outputPage": 13,
+        "sameSourceRectangleAsCandidate5": true,
+        "destinationRect": [
+          133.42921896069055,
+          559.8443874931157,
+          248.50506847999827,
+          578.8943704309926
+        ],
+        "sourceRect": [
+          70.69433429499003,
+          305.7428314776698,
+          165.92182992433965,
+          321.5070615444788
+        ]
+      }
+    ],
+    "pageRecords": [
+      {
+        "partID": "violin1",
+        "pageNumber": 1,
+        "systemCount": 8,
+        "firstSourceBand": "p2-s1-violin1",
+        "lastSourceBand": "p4-s1-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 2,
+        "systemCount": 10,
+        "firstSourceBand": "p4-s2-violin1",
+        "lastSourceBand": "p6-s3-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 3,
+        "systemCount": 8,
+        "firstSourceBand": "p6-s4-violin1",
+        "lastSourceBand": "p8-s3-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 4,
+        "systemCount": 9,
+        "firstSourceBand": "p8-s4-violin1",
+        "lastSourceBand": "p10-s4-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 5,
+        "systemCount": 9,
+        "firstSourceBand": "p11-s1-violin1",
+        "lastSourceBand": "p13-s1-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 6,
+        "systemCount": 9,
+        "firstSourceBand": "p13-s2-violin1",
+        "lastSourceBand": "p15-s2-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 7,
+        "systemCount": 9,
+        "firstSourceBand": "p15-s3-violin1",
+        "lastSourceBand": "p17-s3-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 8,
+        "systemCount": 9,
+        "firstSourceBand": "p17-s4-violin1",
+        "lastSourceBand": "p19-s4-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 9,
+        "systemCount": 9,
+        "firstSourceBand": "p20-s1-violin1",
+        "lastSourceBand": "p22-s1-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 10,
+        "systemCount": 9,
+        "firstSourceBand": "p22-s2-violin1",
+        "lastSourceBand": "p24-s2-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 11,
+        "systemCount": 10,
+        "firstSourceBand": "p24-s3-violin1",
+        "lastSourceBand": "p26-s4-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 12,
+        "systemCount": 8,
+        "firstSourceBand": "p27-s1-violin1",
+        "lastSourceBand": "p28-s4-violin1",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 13,
+        "systemCount": 9,
+        "firstSourceBand": "p29-s1-violin1",
+        "lastSourceBand": "p31-s1-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 14,
+        "systemCount": 9,
+        "firstSourceBand": "p31-s2-violin1",
+        "lastSourceBand": "p33-s2-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 15,
+        "systemCount": 8,
+        "firstSourceBand": "p33-s3-violin1",
+        "lastSourceBand": "p35-s2-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 16,
+        "systemCount": 9,
+        "firstSourceBand": "p35-s3-violin1",
+        "lastSourceBand": "p37-s3-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin1",
+        "pageNumber": 17,
+        "systemCount": 9,
+        "firstSourceBand": "p37-s4-violin1",
+        "lastSourceBand": "p39-s4-violin1",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 1,
+        "systemCount": 8,
+        "firstSourceBand": "p2-s1-violin2",
+        "lastSourceBand": "p4-s1-violin2",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 2,
+        "systemCount": 10,
+        "firstSourceBand": "p4-s2-violin2",
+        "lastSourceBand": "p6-s3-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 3,
+        "systemCount": 9,
+        "firstSourceBand": "p6-s4-violin2",
+        "lastSourceBand": "p8-s4-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 4,
+        "systemCount": 10,
+        "firstSourceBand": "p9-s1-violin2",
+        "lastSourceBand": "p11-s2-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 5,
+        "systemCount": 10,
+        "firstSourceBand": "p11-s3-violin2",
+        "lastSourceBand": "p13-s4-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 6,
+        "systemCount": 10,
+        "firstSourceBand": "p14-s1-violin2",
+        "lastSourceBand": "p16-s2-violin2",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 7,
+        "systemCount": 10,
+        "firstSourceBand": "p16-s3-violin2",
+        "lastSourceBand": "p18-s4-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 8,
+        "systemCount": 10,
+        "firstSourceBand": "p19-s1-violin2",
+        "lastSourceBand": "p21-s2-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 9,
+        "systemCount": 9,
+        "firstSourceBand": "p21-s3-violin2",
+        "lastSourceBand": "p23-s3-violin2",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 10,
+        "systemCount": 10,
+        "firstSourceBand": "p23-s4-violin2",
+        "lastSourceBand": "p26-s1-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 11,
+        "systemCount": 8,
+        "firstSourceBand": "p26-s2-violin2",
+        "lastSourceBand": "p28-s1-violin2",
+        "sharedCopyCount": 2,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 12,
+        "systemCount": 9,
+        "firstSourceBand": "p28-s2-violin2",
+        "lastSourceBand": "p30-s2-violin2",
+        "sharedCopyCount": 3,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 13,
+        "systemCount": 10,
+        "firstSourceBand": "p30-s3-violin2",
+        "lastSourceBand": "p32-s4-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 14,
+        "systemCount": 9,
+        "firstSourceBand": "p33-s1-violin2",
+        "lastSourceBand": "p35-s1-violin2",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 15,
+        "systemCount": 9,
+        "firstSourceBand": "p35-s2-violin2",
+        "lastSourceBand": "p37-s2-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "violin2",
+        "pageNumber": 16,
+        "systemCount": 10,
+        "firstSourceBand": "p37-s3-violin2",
+        "lastSourceBand": "p39-s4-violin2",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 1,
+        "systemCount": 8,
+        "firstSourceBand": "p2-s1-viola",
+        "lastSourceBand": "p4-s1-viola",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 2,
+        "systemCount": 11,
+        "firstSourceBand": "p4-s2-viola",
+        "lastSourceBand": "p6-s4-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 3,
+        "systemCount": 10,
+        "firstSourceBand": "p7-s1-viola",
+        "lastSourceBand": "p9-s2-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 4,
+        "systemCount": 10,
+        "firstSourceBand": "p9-s3-viola",
+        "lastSourceBand": "p11-s4-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 5,
+        "systemCount": 10,
+        "firstSourceBand": "p12-s1-viola",
+        "lastSourceBand": "p14-s2-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 6,
+        "systemCount": 9,
+        "firstSourceBand": "p14-s3-viola",
+        "lastSourceBand": "p16-s3-viola",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 7,
+        "systemCount": 9,
+        "firstSourceBand": "p16-s4-viola",
+        "lastSourceBand": "p18-s4-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 8,
+        "systemCount": 9,
+        "firstSourceBand": "p19-s1-viola",
+        "lastSourceBand": "p21-s1-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 9,
+        "systemCount": 9,
+        "firstSourceBand": "p21-s2-viola",
+        "lastSourceBand": "p23-s2-viola",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 10,
+        "systemCount": 9,
+        "firstSourceBand": "p23-s3-viola",
+        "lastSourceBand": "p25-s3-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 11,
+        "systemCount": 10,
+        "firstSourceBand": "p25-s4-viola",
+        "lastSourceBand": "p28-s1-viola",
+        "sharedCopyCount": 2,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 12,
+        "systemCount": 9,
+        "firstSourceBand": "p28-s2-viola",
+        "lastSourceBand": "p30-s2-viola",
+        "sharedCopyCount": 3,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 13,
+        "systemCount": 10,
+        "firstSourceBand": "p30-s3-viola",
+        "lastSourceBand": "p32-s4-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 14,
+        "systemCount": 9,
+        "firstSourceBand": "p33-s1-viola",
+        "lastSourceBand": "p35-s1-viola",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 15,
+        "systemCount": 10,
+        "firstSourceBand": "p35-s2-viola",
+        "lastSourceBand": "p37-s3-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "viola",
+        "pageNumber": 16,
+        "systemCount": 9,
+        "firstSourceBand": "p37-s4-viola",
+        "lastSourceBand": "p39-s4-viola",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 1,
+        "systemCount": 9,
+        "firstSourceBand": "p2-s1-cello",
+        "lastSourceBand": "p4-s2-cello",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 2,
+        "systemCount": 10,
+        "firstSourceBand": "p4-s3-cello",
+        "lastSourceBand": "p6-s4-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 3,
+        "systemCount": 10,
+        "firstSourceBand": "p7-s1-cello",
+        "lastSourceBand": "p9-s2-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 4,
+        "systemCount": 11,
+        "firstSourceBand": "p9-s3-cello",
+        "lastSourceBand": "p12-s1-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 5,
+        "systemCount": 11,
+        "firstSourceBand": "p12-s2-cello",
+        "lastSourceBand": "p14-s4-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 6,
+        "systemCount": 10,
+        "firstSourceBand": "p15-s1-cello",
+        "lastSourceBand": "p17-s2-cello",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 7,
+        "systemCount": 11,
+        "firstSourceBand": "p17-s3-cello",
+        "lastSourceBand": "p20-s1-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 8,
+        "systemCount": 10,
+        "firstSourceBand": "p20-s2-cello",
+        "lastSourceBand": "p22-s3-cello",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 9,
+        "systemCount": 9,
+        "firstSourceBand": "p22-s4-cello",
+        "lastSourceBand": "p24-s4-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 10,
+        "systemCount": 10,
+        "firstSourceBand": "p25-s1-cello",
+        "lastSourceBand": "p27-s2-cello",
+        "sharedCopyCount": 2,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 11,
+        "systemCount": 10,
+        "firstSourceBand": "p27-s3-cello",
+        "lastSourceBand": "p29-s4-cello",
+        "sharedCopyCount": 2,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 12,
+        "systemCount": 10,
+        "firstSourceBand": "p30-s1-cello",
+        "lastSourceBand": "p32-s2-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 13,
+        "systemCount": 10,
+        "firstSourceBand": "p32-s3-cello",
+        "lastSourceBand": "p34-s4-cello",
+        "sharedCopyCount": 1,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 14,
+        "systemCount": 10,
+        "firstSourceBand": "p35-s1-cello",
+        "lastSourceBand": "p37-s2-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      },
+      {
+        "partID": "cello",
+        "pageNumber": 15,
+        "systemCount": 10,
+        "firstSourceBand": "p37-s3-cello",
+        "lastSourceBand": "p39-s4-cello",
+        "sharedCopyCount": 0,
+        "mechanicalGeometryChecked": true,
+        "visualScope": "copied source directions only, where present; no fresh exhaustive per-note main-crop review"
+      }
+    ]
+  },
+  "visualReview": {
+    "reviewer": "quartet_quality",
+    "sourceGlyph": "Full oval, cross, upper stem and lower junction are contained; independent source oracle unchanged. The attached source staff/barline fragment remains visible.",
+    "threeAddedCopies": "Violin II output 11, Viola 11, Cello 10. Complete glyph, correct system 2/barline horizontal position, no overprint; source fragments remain below it. Violin I retains the original in its main crop on output 11.",
+    "all27CueFragments": "Every heading, instruction and added destination copy was inspected in exported PDFs at 360 DPI. Original source shapes preserved; known clipped local text/slur fragments under Agitato and beam fragment under Trio remain.",
+    "independentReview": "Root independently inspected original p26 context at 360 DPI and all 3 exported destinations at 288 DPI, confirming complete glyph, correct ownership and horizontal position, and no overprint. Crop_algorithm_audit found no concrete blocking defect in a bounded read-only algorithm audit.",
+    "layout": "All 64 pages pass structural geometry checks with 151 systems per part in source order, no overlapping/outside-page placements, consistent aspect ratios; source staff heights approximately 15.06–16.81 points."
+  },
+  "remainingObligations": [
+    {
+      "id": "93521-p03-s1-02",
+      "pageNumber": 3,
+      "systemNumber": 1,
+      "text": "A",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p03-s3-03",
+      "pageNumber": 3,
+      "systemNumber": 3,
+      "text": "B",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p04-s3-04",
+      "pageNumber": 4,
+      "systemNumber": 3,
+      "text": "C",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p05-s4-05",
+      "pageNumber": 5,
+      "systemNumber": 4,
+      "text": "D",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p06-s3-06",
+      "pageNumber": 6,
+      "systemNumber": 3,
+      "text": "1. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p06-s4-07",
+      "pageNumber": 6,
+      "systemNumber": 4,
+      "text": "2. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p07-s3-08",
+      "pageNumber": 7,
+      "systemNumber": 3,
+      "text": "E",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p08-s2-10",
+      "pageNumber": 8,
+      "systemNumber": 2,
+      "text": "F; in tempo",
+      "kind": "rehearsal-tempo",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p08-s4-11",
+      "pageNumber": 8,
+      "systemNumber": 4,
+      "text": "G",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p09-s3-12",
+      "pageNumber": 9,
+      "systemNumber": 3,
+      "text": "H",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p11-s3-15",
+      "pageNumber": 11,
+      "systemNumber": 3,
+      "text": "I",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p12-s3-16",
+      "pageNumber": 12,
+      "systemNumber": 3,
+      "text": "K",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p13-s3-17",
+      "pageNumber": 13,
+      "systemNumber": 3,
+      "text": "L",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p14-s3-18",
+      "pageNumber": 14,
+      "systemNumber": 3,
+      "text": "M",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p16-s3-20",
+      "pageNumber": 16,
+      "systemNumber": 3,
+      "text": "A",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p17-s3-21",
+      "pageNumber": 17,
+      "systemNumber": 3,
+      "text": "B",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p18-s2-22",
+      "pageNumber": 18,
+      "systemNumber": 2,
+      "text": "C",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p19-s3-25",
+      "pageNumber": 19,
+      "systemNumber": 3,
+      "text": "D; in tempo",
+      "kind": "rehearsal-tempo",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p21-s1-26",
+      "pageNumber": 21,
+      "systemNumber": 1,
+      "text": "E",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p22-s4-28",
+      "pageNumber": 22,
+      "systemNumber": 4,
+      "text": "A",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p24-s1-30",
+      "pageNumber": 24,
+      "systemNumber": 1,
+      "text": "B; poco a poco in tempo",
+      "kind": "rehearsal-tempo",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p25-s1-31",
+      "pageNumber": 25,
+      "systemNumber": 1,
+      "text": "C",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p25-s4-32",
+      "pageNumber": 25,
+      "systemNumber": 4,
+      "text": "D",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p27-s1-35",
+      "pageNumber": 27,
+      "systemNumber": 1,
+      "text": "E",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p27-s3-36",
+      "pageNumber": 27,
+      "systemNumber": 3,
+      "text": "F",
+      "kind": "rehearsal",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p31-s4-40",
+      "pageNumber": 31,
+      "systemNumber": 4,
+      "text": "Fermata over repeat barline",
+      "kind": "navigation-symbol",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p32-s4-41",
+      "pageNumber": 32,
+      "systemNumber": 4,
+      "text": "1. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p32-s4-42",
+      "pageNumber": 32,
+      "systemNumber": 4,
+      "text": "2. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p36-s1-46",
+      "pageNumber": 36,
+      "systemNumber": 1,
+      "text": "1. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p36-s1-47",
+      "pageNumber": 36,
+      "systemNumber": 1,
+      "text": "2. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p37-s2-48",
+      "pageNumber": 37,
+      "systemNumber": 2,
+      "text": "1. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    },
+    {
+      "id": "93521-p37-s2-49",
+      "pageNumber": 37,
+      "systemNumber": 2,
+      "text": "2. ending bracket",
+      "kind": "ending",
+      "copyTargetPartIDs": [
+        "violin2",
+        "viola",
+        "cello"
+      ]
+    }
+  ],
+  "limitations": [
+    "The detector is experimental CLI-only and is not enabled in the app.",
+    "The whole-score musical quality result remains draft: 32 independent shared-direction regions (including rehearsal letters, first/second endings and repeat fermata) still lack support.",
+    "Eleven whole-neighbor occurrences and 633 neighboring line centers remain using 0.000001-point tolerance; symbol copying does not repair this crop-quality limitation.",
+    "A source-template match in the gap above a resolved system is a bounded association rule. Broader scores, alternative navigation glyphs and variable instrumentation still need independent tests.",
+    "This report does not certify every note on every newly repaginated page; it carries forward unchanged reviewed crop geometry and audits new direction copies explicitly."
+  ]
+}

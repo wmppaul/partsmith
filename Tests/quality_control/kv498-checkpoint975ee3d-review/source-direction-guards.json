@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "source": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+  "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+  "coordinates": "top-down PDF points [left,top,right,bottom] on unrectified source",
+  "frozenBeforeExperiment": true,
+  "regions": [
+    {
+      "id": "andante",
+      "sourcePage": 1,
+      "system": 1,
+      "label": "Andante",
+      "sourceRect": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "method": "Visible dark-pixel envelope inside independently source-verified PDF word box, plus 0.5 point guard. Rendered source and output evidence visually inspected.",
+      "requiredParts": [
+        "clarinet",
+        "viola",
+        "piano"
+      ],
+      "baselinePresentParts": [
+        "clarinet"
+      ],
+      "baselineMissingParts": [
+        "viola",
+        "piano"
+      ],
+      "baselineOutputPages": {
+        "clarinet": 1,
+        "viola": 1,
+        "piano": 1
+      }
+    },
+    {
+      "id": "menuetto",
+      "sourcePage": 12,
+      "system": 3,
+      "label": "Menuetto",
+      "sourceRect": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "method": "Visible dark-pixel envelope inside independently source-verified PDF word box, plus 0.5 point guard. Rendered source and output evidence visually inspected.",
+      "requiredParts": [
+        "clarinet",
+        "viola",
+        "piano"
+      ],
+      "baselinePresentParts": [
+        "clarinet"
+      ],
+      "baselineMissingParts": [
+        "viola",
+        "piano"
+      ],
+      "baselineOutputPages": {
+        "clarinet": 5,
+        "viola": 5,
+        "piano": 7
+      }
+    },
+    {
+      "id": "trio",
+      "sourcePage": 13,
+      "system": 3,
+      "label": "Trio",
+      "sourceRect": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "method": "Visible dark-pixel envelope inside independently source-verified PDF word box, plus 0.5 point guard. Rendered source and output evidence visually inspected.",
+      "requiredParts": [
+        "clarinet",
+        "viola",
+        "piano"
+      ],
+      "baselinePresentParts": [
+        "clarinet"
+      ],
+      "baselineMissingParts": [
+        "viola",
+        "piano"
+      ],
+      "baselineOutputPages": {
+        "clarinet": 5,
+        "viola": 5,
+        "piano": 8
+      }
+    },
+    {
+      "id": "rondo",
+      "sourcePage": 17,
+      "system": 1,
+      "label": "Rondo",
+      "sourceRect": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "method": "Visible dark-pixel envelope inside independently source-verified PDF word box, plus 0.5 point guard. Rendered source and output evidence visually inspected.",
+      "requiredParts": [
+        "clarinet",
+        "viola",
+        "piano"
+      ],
+      "baselinePresentParts": [
+        "clarinet"
+      ],
+      "baselineMissingParts": [
+        "viola",
+        "piano"
+      ],
+      "baselineOutputPages": {
+        "clarinet": 6,
+        "viola": 6,
+        "piano": 10
+      }
+    },
+    {
+      "id": "allegretto",
+      "sourcePage": 17,
+      "system": 1,
+      "label": "Allegretto",
+      "sourceRect": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "method": "Visible dark-pixel envelope inside independently source-verified PDF word box, plus 0.5 point guard. Rendered source and output evidence visually inspected.",
+      "requiredParts": [
+        "clarinet",
+        "viola",
+        "piano"
+      ],
+      "baselinePresentParts": [
+        "clarinet"
+      ],
+      "baselineMissingParts": [
+        "viola",
+        "piano"
+      ],
+      "baselineOutputPages": {
+        "clarinet": 6,
+        "viola": 6,
+        "piano": 10
+      }
+    },
+    {
+      "id": "volta-1-2",
+      "sourcePage": 25,
+      "system": 3,
+      "label": "First and second ending brackets",
+      "sourceRect": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "method": "Independent source drawing lines and rendered printed digits/brackets; excludes music staff below.",
+      "requiredParts": [
+        "clarinet",
+        "viola",
+        "piano"
+      ],
+      "baselinePresentParts": [
+        "clarinet"
+      ],
+      "baselineMissingParts": [
+        "viola",
+        "piano"
+      ],
+      "baselineOutputPages": {
+        "clarinet": 10,
+        "viola": 9,
+        "piano": 15
+      },
+      "status": "unresolved; heading experiment must not drop this obligation"
+    }
+  ]
+}

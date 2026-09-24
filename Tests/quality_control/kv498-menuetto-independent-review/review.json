@@ -1,0 +1,1014 @@
+{
+  "schemaVersion": 1,
+  "status": "Heading-word preservation passes all 15 obligations; overall draft with duplicate heading and missing repeat endings.",
+  "scope": "Independent visual review of all source/part heading contexts at 360 DPI, ending context at 360 DPI, and all 39 final output page overviews. Not a fresh note-by-note source comparison of all 405 main crops.",
+  "bindings": {
+    "source": {
+      "path": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9"
+    },
+    "frozenGuards": {
+      "path": "Tests/quality_control/kv498-checkpoint975ee3d-review/source-direction-guards.json",
+      "sha256": "364aceecb60b29135df6502a8288f439555c5e91c02cbd7ddd7e2119eb20b39a"
+    },
+    "manifest": {
+      "path": ".build/auto-qc/kv498-headings/menuetto-parts/manifest.json",
+      "sha256": "b001b25e7f0a80bccb0d84b9ff60a4deed0ee6edade2d957524faca6263ec14e"
+    },
+    "plan": {
+      "path": ".build/auto-qc/kv498-headings/menuetto-parts/plan.json",
+      "sha256": "f173121778b92b04ac4743fc10e08abcf4b3c659c0d30bbfc006c1bb4497be2a"
+    },
+    "inventory": {
+      "path": ".build/auto-qc/kv498-headings/menuetto-inventory.json",
+      "sha256": "361a55e17c0effe102f3affa338beae52396b1b73f25c48692530d8a60dc6cd4"
+    },
+    "baselineManifest": {
+      "path": ".build/auto-qc/checkpoint975ee3d/corpus/normal-mozart-trio-eb-major-kv498-score/parts/manifest.json",
+      "sha256": "9e75e263aab07c54bb72bda65ef6acc174cfcf427c75ce2616664018af9f50f7"
+    },
+    "geometryCheck": {
+      "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/geometry.json",
+      "sha256": "ff8369acbbb81a953006e0a7a9a74e31f88373e0cb2e44513b364b9658280774"
+    },
+    "parts": [
+      {
+        "id": "clarinet",
+        "pages": 11,
+        "bands": 135,
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/Clarinet in B-flat.pdf",
+        "sha256": "a7f5b0946efc0204fd76c53ea7cd4d361bbd64a6d9fb57ff64c774ea783cf091"
+      },
+      {
+        "id": "viola",
+        "pages": 10,
+        "bands": 135,
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/Viola.pdf",
+        "sha256": "ce48e650a6736712d4a301b31ab90b3523f6914f9cde8c628f831fb40849d907"
+      },
+      {
+        "id": "piano",
+        "pages": 18,
+        "bands": 135,
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/Piano.pdf",
+        "sha256": "8923bf6fbad69997b4b88e281f83e35e27519871a2686f08650c7a811f2842cd"
+      }
+    ]
+  },
+  "identityAndCoverage": {
+    "parts": [
+      "clarinet",
+      "viola",
+      "piano"
+    ],
+    "totalBands": 405,
+    "systemsPerPart": 135,
+    "allMainSourceCropsEqualBaseline": true,
+    "grandStaffPairingPreserved": true
+  },
+  "headingReview": [
+    {
+      "regionID": "andante",
+      "label": "Andante",
+      "partID": "clarinet",
+      "outputPage": 1,
+      "sourcePage": 1,
+      "system": 1,
+      "sourceGuard": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "fullyContainedBy": [
+        "main"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "menuetto",
+      "label": "Menuetto",
+      "partID": "clarinet",
+      "outputPage": 5,
+      "sourcePage": 12,
+      "system": 3,
+      "sourceGuard": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "fullyContainedBy": [
+        "main"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "trio",
+      "label": "Trio",
+      "partID": "clarinet",
+      "outputPage": 5,
+      "sourcePage": 13,
+      "system": 3,
+      "sourceGuard": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "fullyContainedBy": [
+        "main"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "rondo",
+      "label": "Rondo",
+      "partID": "clarinet",
+      "outputPage": 6,
+      "sourcePage": 17,
+      "system": 1,
+      "sourceGuard": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "fullyContainedBy": [
+        "main",
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": true,
+      "status": "complete but duplicated"
+    },
+    {
+      "regionID": "allegretto",
+      "label": "Allegretto",
+      "partID": "clarinet",
+      "outputPage": 6,
+      "sourcePage": 17,
+      "system": 1,
+      "sourceGuard": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "fullyContainedBy": [
+        "main",
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": true,
+      "status": "complete but duplicated"
+    },
+    {
+      "regionID": "volta-1-2",
+      "label": "First and second ending brackets",
+      "partID": "clarinet",
+      "outputPage": 10,
+      "sourcePage": 25,
+      "system": 3,
+      "sourceGuard": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "fullyContainedBy": [
+        "main"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "andante",
+      "label": "Andante",
+      "partID": "viola",
+      "outputPage": 1,
+      "sourcePage": 1,
+      "system": 1,
+      "sourceGuard": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "menuetto",
+      "label": "Menuetto",
+      "partID": "viola",
+      "outputPage": 5,
+      "sourcePage": 12,
+      "system": 3,
+      "sourceGuard": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "trio",
+      "label": "Trio",
+      "partID": "viola",
+      "outputPage": 5,
+      "sourcePage": 13,
+      "system": 3,
+      "sourceGuard": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "rondo",
+      "label": "Rondo",
+      "partID": "viola",
+      "outputPage": 6,
+      "sourcePage": 17,
+      "system": 1,
+      "sourceGuard": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "allegretto",
+      "label": "Allegretto",
+      "partID": "viola",
+      "outputPage": 6,
+      "sourcePage": 17,
+      "system": 1,
+      "sourceGuard": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "volta-1-2",
+      "label": "First and second ending brackets",
+      "partID": "viola",
+      "outputPage": 9,
+      "sourcePage": 25,
+      "system": 3,
+      "sourceGuard": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "fullyContainedBy": [],
+      "visuallyComplete": false,
+      "duplicate": false,
+      "status": "unresolved missing bracket"
+    },
+    {
+      "regionID": "andante",
+      "label": "Andante",
+      "partID": "piano",
+      "outputPage": 1,
+      "sourcePage": 1,
+      "system": 1,
+      "sourceGuard": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "menuetto",
+      "label": "Menuetto",
+      "partID": "piano",
+      "outputPage": 8,
+      "sourcePage": 12,
+      "system": 3,
+      "sourceGuard": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "trio",
+      "label": "Trio",
+      "partID": "piano",
+      "outputPage": 8,
+      "sourcePage": 13,
+      "system": 3,
+      "sourceGuard": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "rondo",
+      "label": "Rondo",
+      "partID": "piano",
+      "outputPage": 10,
+      "sourcePage": 17,
+      "system": 1,
+      "sourceGuard": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "allegretto",
+      "label": "Allegretto",
+      "partID": "piano",
+      "outputPage": 10,
+      "sourcePage": 17,
+      "system": 1,
+      "sourceGuard": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "fullyContainedBy": [
+        "copy-0"
+      ],
+      "visuallyComplete": true,
+      "duplicate": false,
+      "status": "complete and correctly associated"
+    },
+    {
+      "regionID": "volta-1-2",
+      "label": "First and second ending brackets",
+      "partID": "piano",
+      "outputPage": 16,
+      "sourcePage": 25,
+      "system": 3,
+      "sourceGuard": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "fullyContainedBy": [],
+      "visuallyComplete": false,
+      "duplicate": false,
+      "status": "unresolved missing bracket"
+    }
+  ],
+  "pageReview": [
+    {
+      "partID": "clarinet",
+      "outputPage": 1,
+      "systemCount": 13,
+      "firstBandID": "p1-s1-clarinet",
+      "lastBandID": "p3-s4-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-001.png",
+        "sha256": "631ce4a8d6c7ee6df508e87beaf45231245532134b3db28f6d6f1a99e4dd6732"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 2,
+      "systemCount": 13,
+      "firstBandID": "p3-s5-clarinet",
+      "lastBandID": "p6-s2-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-002.png",
+        "sha256": "4722c3c3ea74fb97e2da5063a85e8a41c3d90265b86ae205684e22c78f9eec0b"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 3,
+      "systemCount": 13,
+      "firstBandID": "p6-s3-clarinet",
+      "lastBandID": "p8-s5-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-003.png",
+        "sha256": "a9529ca331bdeff8342fa487b5e943a6bca7ac9dc0d4cbe1c66853c9ac51ccba"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 4,
+      "systemCount": 12,
+      "firstBandID": "p9-s1-clarinet",
+      "lastBandID": "p11-s2-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-004.png",
+        "sha256": "e282f0f2cb703d2057b5f457baaf6389ad7517c695295b608c34e530585244ef"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 5,
+      "systemCount": 12,
+      "firstBandID": "p11-s3-clarinet",
+      "lastBandID": "p14-s1-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-005.png",
+        "sha256": "afb39efd9c35bd611052437a399955bb69574dbddc3808481f6f75bddd81740c"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 6,
+      "systemCount": 12,
+      "firstBandID": "p14-s2-clarinet",
+      "lastBandID": "p17-s1-clarinet",
+      "notes": [
+        "Duplicate Rondo / Allegretto source heading above the same complete original heading in the final system; otherwise no new layout defect."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-006.png",
+        "sha256": "c274352a0b6407fe55964cdfb9edfb92b3a15d07e045f0475c1366a397f362ef"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 7,
+      "systemCount": 12,
+      "firstBandID": "p17-s2-clarinet",
+      "lastBandID": "p19-s4-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-007.png",
+        "sha256": "948caf46d5a97af3bb75bf1331e3cc5a88a69bb60d152b08c4737e944c7dfb39"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 8,
+      "systemCount": 13,
+      "firstBandID": "p19-s5-clarinet",
+      "lastBandID": "p22-s2-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-008.png",
+        "sha256": "e7641cbb090bba33348c3b3e8e5d527c548927898fd8078513c66415585cfef8"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 9,
+      "systemCount": 12,
+      "firstBandID": "p22-s3-clarinet",
+      "lastBandID": "p24-s4-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-009.png",
+        "sha256": "6e16c7c6bcf364c6afd4099ddeec165cdb0afdbc4642f891c2ddde699891be19"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 10,
+      "systemCount": 12,
+      "firstBandID": "p24-s5-clarinet",
+      "lastBandID": "p27-s2-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-010.png",
+        "sha256": "68690c8f689f78db86e0fccb1dab39e2300363592f5a05e18eedf998b834ddab"
+      }
+    },
+    {
+      "partID": "clarinet",
+      "outputPage": 11,
+      "systemCount": 11,
+      "firstBandID": "p27-s3-clarinet",
+      "lastBandID": "p29-s4-clarinet",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/clarinet-011.png",
+        "sha256": "ce56b5004aee11a2b50338be27a8e1dfa1e188cc7e0210fde2594ccbcc8561f3"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 1,
+      "systemCount": 14,
+      "firstBandID": "p1-s1-viola",
+      "lastBandID": "p3-s5-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-001.png",
+        "sha256": "c166d4afddb0c749e7ba5e396a0d24c9a1d54b112c60a3467ddaafe8a50758f7"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 2,
+      "systemCount": 14,
+      "firstBandID": "p4-s1-viola",
+      "lastBandID": "p6-s4-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-002.png",
+        "sha256": "80d9995d760509c576d89495d45fb4bafb91b984607b3c6427ce79c8921ba81b"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 3,
+      "systemCount": 14,
+      "firstBandID": "p6-s5-viola",
+      "lastBandID": "p9-s3-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-003.png",
+        "sha256": "b2db721230acd1b96723ca8164c6ac966758f9da443e636c64724b36039b6fc0"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 4,
+      "systemCount": 14,
+      "firstBandID": "p9-s4-viola",
+      "lastBandID": "p12-s2-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-004.png",
+        "sha256": "1d2f01ba0eb62fcca3cdf3abc2a0c24ddadaf1d326109445dbc96643e0e554df"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 5,
+      "systemCount": 12,
+      "firstBandID": "p12-s3-viola",
+      "lastBandID": "p15-s2-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-005.png",
+        "sha256": "4d810fc8b347f12c7125b3bb8e9ae49fb4b0692e634441654e383360511955d8"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 6,
+      "systemCount": 13,
+      "firstBandID": "p15-s3-viola",
+      "lastBandID": "p18-s3-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-006.png",
+        "sha256": "7e6de474d23251fb2bbafff69a0c53ef704cace50ed9cbc2d5fa01d7d0327837"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 7,
+      "systemCount": 13,
+      "firstBandID": "p18-s4-viola",
+      "lastBandID": "p21-s1-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-007.png",
+        "sha256": "30b9af10890d6460c9df0b11682774bd4d919a0925ac115c5b7051ca07d6d151"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 8,
+      "systemCount": 13,
+      "firstBandID": "p21-s2-viola",
+      "lastBandID": "p23-s4-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-008.png",
+        "sha256": "c94923c2b2fbc9253235c5e8a4ea6faa74959c7615e9f8e5d84c2420729b7631"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 9,
+      "systemCount": 15,
+      "firstBandID": "p23-s5-viola",
+      "lastBandID": "p26-s4-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain.",
+        "Frozen p25s3 first/second-ending bracket obligation absent."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-009.png",
+        "sha256": "9c1c378b9f28056098d0ef35af58cde24b63431bc0461aedaab5ef1d947db586"
+      }
+    },
+    {
+      "partID": "viola",
+      "outputPage": 10,
+      "systemCount": 13,
+      "firstBandID": "p27-s1-viola",
+      "lastBandID": "p29-s4-viola",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/viola-010.png",
+        "sha256": "7a30372a96ee55d13022b9ebeeefaffaf437f50c90f1457507ae09526ac2ebc7"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 1,
+      "systemCount": 7,
+      "firstBandID": "p1-s1-piano",
+      "lastBandID": "p2-s3-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-001.png",
+        "sha256": "2c312e5af69d8a678b80c97add60480badef2e3c50f866c762677c08e41493ab"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 2,
+      "systemCount": 8,
+      "firstBandID": "p2-s4-piano",
+      "lastBandID": "p4-s1-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-002.png",
+        "sha256": "d4aebeabfdaf7b68c4f8d8a44ba47454b26ac032948d80e4f02c0cc78d9090a6"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 3,
+      "systemCount": 8,
+      "firstBandID": "p4-s2-piano",
+      "lastBandID": "p5-s4-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-003.png",
+        "sha256": "169e34b6ee7b72f3cf146e8b676fae70610e700ef742f4bc23d3e0d2c3fcb2f0"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 4,
+      "systemCount": 8,
+      "firstBandID": "p5-s5-piano",
+      "lastBandID": "p7-s2-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-004.png",
+        "sha256": "e36b8d4a72fd8ab1e555ba857d8510ec87885badd13db66a9a3fdf76ba816eb4"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 5,
+      "systemCount": 8,
+      "firstBandID": "p7-s3-piano",
+      "lastBandID": "p8-s5-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-005.png",
+        "sha256": "d497a153e323fcb05dce0de3cc70d318ec11d08f7dc8fe8d7c5571b6ee7f94b1"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 6,
+      "systemCount": 8,
+      "firstBandID": "p9-s1-piano",
+      "lastBandID": "p10-s3-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-006.png",
+        "sha256": "6e9a2b9aeedd0a60c46a7b7f8faf5de1030590fda3b7c392bb8b4e67cd03fbfa"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 7,
+      "systemCount": 8,
+      "firstBandID": "p10-s4-piano",
+      "lastBandID": "p12-s1-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-007.png",
+        "sha256": "7bcc3a6e896fc651f97ebdbee0220bd5d409374eb41942d47ae5fb546380574b"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 8,
+      "systemCount": 6,
+      "firstBandID": "p12-s2-piano",
+      "lastBandID": "p13-s3-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-008.png",
+        "sha256": "b4bc92708f9b5d879df177b62797b8dc1efb541a0270724c736eeea059204e43"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 9,
+      "systemCount": 7,
+      "firstBandID": "p13-s4-piano",
+      "lastBandID": "p15-s2-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-009.png",
+        "sha256": "d44c57f74dcd8268ca53ee7c1f7a8d75def08de1048ac57c2cdcb4ad2059b9dd"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 10,
+      "systemCount": 7,
+      "firstBandID": "p15-s3-piano",
+      "lastBandID": "p17-s1-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-010.png",
+        "sha256": "bc6760a5952b43067587765e53a38a9919ea0571ebb1d8f25e01b7c577882646"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 11,
+      "systemCount": 7,
+      "firstBandID": "p17-s2-piano",
+      "lastBandID": "p18-s4-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-011.png",
+        "sha256": "634a24763a25d1be07f4cd6d60f0cce5fedec6a410f1fc547f8fd3b3c368fbac"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 12,
+      "systemCount": 8,
+      "firstBandID": "p18-s5-piano",
+      "lastBandID": "p20-s2-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-012.png",
+        "sha256": "db2fee6173fe01f3e3e4808e965b269bd45013eda970d21e2bd927b27baae6a0"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 13,
+      "systemCount": 7,
+      "firstBandID": "p20-s3-piano",
+      "lastBandID": "p21-s4-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-013.png",
+        "sha256": "e667dfba5c490efcb762f9ab767dc62ed028ac8494664c701ee7bd22ae203426"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 14,
+      "systemCount": 7,
+      "firstBandID": "p21-s5-piano",
+      "lastBandID": "p23-s1-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-014.png",
+        "sha256": "0838b57cac1a95b4608408ae74d3e1336e4d24a1cda3031e3f763908d2793891"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 15,
+      "systemCount": 7,
+      "firstBandID": "p23-s2-piano",
+      "lastBandID": "p24-s3-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-015.png",
+        "sha256": "794a124c8fe6c78b5f02b5513aa3ad54add72e03834d6ede93cf2598d2a7eead"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 16,
+      "systemCount": 8,
+      "firstBandID": "p24-s4-piano",
+      "lastBandID": "p26-s1-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain.",
+        "Frozen p25s3 first/second-ending bracket obligation absent."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-016.png",
+        "sha256": "d5f65b3f2089f8d2e3fcd963cae6adf49d6d52841a082258905b320341954456"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 17,
+      "systemCount": 8,
+      "firstBandID": "p26-s2-piano",
+      "lastBandID": "p28-s1-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-017.png",
+        "sha256": "003fdc1a3ef61a188f0453e32cf2ca59e3df9bb3c428483e4c5c1c7500f411e7"
+      }
+    },
+    {
+      "partID": "piano",
+      "outputPage": 18,
+      "systemCount": 8,
+      "firstBandID": "p28-s2-piano",
+      "lastBandID": "p29-s4-piano",
+      "notes": [
+        "Page overview inspected: no new overlap, overflow, blank page or poorly filled final page. Existing neighboring fragments remain."
+      ],
+      "render": {
+        "path": ".build/auto-qc/kv498-headings/menuetto-parts/review/piano-018.png",
+        "sha256": "87a41e717f86d65da7aa38dca18a3db8d888e1c4f555feb3195c897d6c3f5072"
+      }
+    }
+  ],
+  "images": [
+    {
+      "path": "Tests/quality_control/kv498-menuetto-independent-review/endings-source-and-outputs.png",
+      "sha256": "765ca9a291d7c2afc0c0a8ea4c127964c6025dae48b041677f5737e2b6101cdf"
+    },
+    {
+      "path": "Tests/quality_control/kv498-menuetto-independent-review/trio-source-and-outputs.png",
+      "sha256": "1122b18310c49d9f34012c4d7f4a461c0a53194451c0a08df20b1abbc09cc601"
+    },
+    {
+      "path": "Tests/quality_control/kv498-menuetto-independent-review/andante-source-and-outputs.png",
+      "sha256": "8c21616774aca4f899a683250a5bb69c2f23292fb15893e0744a60aaee8e81fc"
+    },
+    {
+      "path": "Tests/quality_control/kv498-menuetto-independent-review/menuetto-source-and-outputs.png",
+      "sha256": "8a9ce70fb72f572faeb1a346e0fcd3bd35f737171bbcd2d7a3d3004548b8dede"
+    },
+    {
+      "path": "Tests/quality_control/kv498-menuetto-independent-review/rondo-allegretto-source-and-outputs.png",
+      "sha256": "1ba4d624107931b5b39158b05e31cabb09545ade818d79741d1e427168cd69b3"
+    }
+  ],
+  "findings": [
+    "All 15 frozen heading-word obligations are fully contained and visually complete. Andante, Menuetto, Trio and Rondo/Allegretto appear at their correct source systems and matching horizontal locations.",
+    "Clarinet output page 6 displays Rondo/Allegretto twice. The complete source glyphs already fit in the main crop; 0.33407857160137 points of additional top padding in the recognized heading caused a second copied rectangle. Other Clarinet headings occur once.",
+    "Copied Menuetto, Trio and Rondo/Allegretto retain small slur fragments below the word. The fragments do not cut the heading glyphs or overprint the target staff.",
+    "All 39 page overviews were inspected. No new overlap, page overflow, blank page or mostly empty final page was observed. The added direction space increases Piano from 17 to 18 pages; final page 18 has 8 systems and is sensibly filled.",
+    "The frozen first/second-ending bracket region at source page 25, system 3 is still absent from Viola output 9 and Piano 16. Clarinet 10 preserves both endings.",
+    "Main crop geometry is identical across all 405 bands; existing sliced neighboring notation and previous-system fragments persist, including Clarinet 10. Movement starts/page turns remain unoptimized."
+  ],
+  "limitations": [
+    "Experimental recognizer remains outside app default.",
+    "The duplicate Clarinet Rondo heading is a quality defect; this report does not treat complete glyph containment as a clean output pass.",
+    "The lower-part ending-bracket obligations remain unresolved, and other shared directions have not been exhaustively inventoried."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "referenceSHA256": "da52d7a67eb047a551733acade3b202dd2bdb34e1df7f6c7b2840dd3804ca88f",
+  "fixtures": [
+    {
+      "name": "destination-gap",
+      "pageNumber": 26,
+      "sourceRect": [
+        0,
+        149.22471392022686,
+        427,
+        188.104733911562
+      ],
+      "staffSpacePixels": 18.491644990538813,
+      "expectedTopologyCandidateCount": 1,
+      "expectedSourceMatch": true,
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "imageSHA256": "a8c07476c6ce03f829ca2a1d0f7c9d9520e1282c87dc8127950753605598874f",
+      "searchRect": [
+        0,
+        149.22471392022686,
+        427,
+        181.52479023576194
+      ]
+    },
+    {
+      "name": "beam-gap",
+      "pageNumber": 4,
+      "sourceRect": [
+        0,
+        0,
+        427,
+        42.84636597388724
+      ],
+      "staffSpacePixels": 18.503878037185824,
+      "expectedTopologyCandidateCount": 1,
+      "expectedSourceMatch": false,
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "imageSHA256": "f3f1effd663b49f15684a1873b6f739a41595f7b0370aa61c013efd0686c5805",
+      "searchRect": [
+        0,
+        0,
+        427,
+        36.262069372321946
+      ]
+    },
+    {
+      "name": "navigation-context",
+      "pageNumber": 28,
+      "staffSpacePixels": 18.28555774105054,
+      "expectedTopologyCandidateCount": 1,
+      "role": "source template, never its own destination",
+      "imageSHA256": "54115b54b34594381f1a51b576a75a0705a63c7863cdb1160a99e4f8a8016b6f"
+    }
+  ]
+}

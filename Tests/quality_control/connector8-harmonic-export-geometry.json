@@ -1,0 +1,1161 @@
+{
+  "status": "passed",
+  "candidateSourceCheckpoint": "627cb04",
+  "sourceAggregateSHA256": "6e3b0dff08d5829a5f1bde5b3276c63a2bebddfadb4553c06c588c12dee6cb92",
+  "reviewToolSHA256": "b5f8cf177d1996f5937c97fbe4e10b5ea697c8344b227cb99af36e3d4ba470a4",
+  "startedAt": "2026-09-21T20:39:10.313133+00:00",
+  "parallelJobs": 2,
+  "scope": "Automated full native export geometry, page rendering, ordering, aspect ratio, staff containment and non-overlap only; no new independent visual/music review or protected-region pixel comparison. The 14 changed crop bands were independently visually/source-reviewed separately; this full-output run makes no additional visual/music correctness claim.",
+  "expectedExportSets": 16,
+  "expectedParts": 77,
+  "expectedOutputPages": 596,
+  "results": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/excerpt-beethoven-op67-pages-7-8/parts",
+      "outputPages": 12,
+      "exportedParts": 12,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/excerpt-beethoven-op67-pages-7-8/parts/automated-geometry-review.log",
+      "logSHA256": "8d1b04a8fcc034c0ea8efcd4d636292b8bcaccef4170374df5295ca836d081fa",
+      "status": "passed",
+      "geometryReportSHA256": "10e705fc80d9318a9af050481004f6e03a472475697b029162bb96e129538fcf",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "102373b94fe038b251e50b6838a592aca5fff59224c84ebceef1200a4fe9d7e9",
+        "reviewSourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "flutes",
+            "sha256": "2b8d7d1fc7babd12eb3bdf5d0db82ec92a18c257652aa4af5ba7b064cb7a4ccf",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.038223075299221,
+              11.44351850687587
+            ]
+          },
+          {
+            "id": "oboes",
+            "sha256": "d85b0e436fac9dd6cf23fb37d38014b656b23317c3820b18c0b038eb01091045",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.192623623582925,
+              11.461731992848138
+            ]
+          },
+          {
+            "id": "clarinets",
+            "sha256": "e5f0148c43ef2a038a7d96bb648fe5fd9d3559610f0906cba683410d276cf9b4",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.311029937239281,
+              11.489480239841695
+            ]
+          },
+          {
+            "id": "bassoons",
+            "sha256": "ae35607bd59391aef929017ce96b2a250a032c2b6c0c1018d6a77bfbf0ab8ad2",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.325427382901179,
+              11.46444395214882
+            ]
+          },
+          {
+            "id": "horns",
+            "sha256": "2ae54e93ea976cd252746e76392a93356b2f76ec1079b22bf7aeba8263de3e7b",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.18146357142605,
+              11.46709481321812
+            ]
+          },
+          {
+            "id": "trumpets",
+            "sha256": "21bd9b2fa5d912bf4c03ba1e7369e6da0cbe727bb5963bb99c5854dbdfb5c6d9",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.289564410038063,
+              11.463953683420117
+            ]
+          },
+          {
+            "id": "timpani",
+            "sha256": "d177adac0d15d3f3d9fa50a2f1d37c9269a7d2847a604a7dd2ec5bef44790ea7",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.177832853345102,
+              11.322506638091548
+            ]
+          },
+          {
+            "id": "violin1",
+            "sha256": "a413abb6bcfd55d27767d6298a08e6a043631bec32d5facc6cd0967020c525cc",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.20533458503635,
+              11.463040371841213
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "4ea2114bd35ffbb434fef0464dcf764105e35d45e1953cf4eea735b411cec494",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.18853068642132,
+              11.464443952148864
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "d4fe53110fdff94c3dc63e7f8cb64d164eeedc3a22b82e6d67ac58d347589010",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.318489332800084,
+              11.47529145155936
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "15c4e9497d2196d7e18e937f931461a60d5e63ce2aa3de34eb203e7dde5e4915",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.178319790312141,
+              11.331400167831235
+            ]
+          },
+          {
+            "id": "bass",
+            "sha256": "34662d58846f9890658ba9ce6f1ee961ec23c512e4f485c9485488fa622d6137",
+            "outputPages": 1,
+            "systems": 3,
+            "staffHeightPoints": [
+              11.319045661070213,
+              11.325477977942528
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 12,
+      "pagePNGNamesAndHashesSHA256": "1f4078f11328cc1042d4c2e47f8adcba01c5f486ddadf53e66ededc200aba712"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/parts",
+      "outputPages": 43,
+      "exportedParts": 3,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/parts/automated-geometry-review.log",
+      "logSHA256": "4dcee53dc4bf310c8cb8cf19235e0febbf84a18ad4fc6d80194afe5c5e1c2392",
+      "status": "passed",
+      "geometryReportSHA256": "bf1d426fcb41fd8c93d25e4803bd32261b175c32254bdb6a4bb1b0c32f91f5a4",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "f2219f9ce94f7ba3842433da63c4f085fba632dfd665c8728dcc6e238a1c9c99",
+        "reviewSourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "clarinet",
+            "sha256": "64213c458a01e4bb898293a2641efcc09739662276cb8e6e8180308cdb10e1c0",
+            "outputPages": 10,
+            "systems": 131,
+            "staffHeightPoints": [
+              10.748709464504842,
+              11.884319289181153
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "f2043a0fccac04eea98a2f1020431e0b5ca3fbe1e482db02cd14c02ab9ce8a7c",
+            "outputPages": 10,
+            "systems": 131,
+            "staffHeightPoints": [
+              10.595265278846638,
+              11.752887030894426
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "0d5d71403791fd613de4195ff8831d7552d7f79c80e164c8f60f9656adf5b31c",
+            "outputPages": 23,
+            "systems": 131,
+            "staffHeightPoints": [
+              15.476190358979867,
+              16.761763821584484
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 43,
+      "pagePNGNamesAndHashesSHA256": "19a55888c896ee40571703883ee4517f7c455b4fac4af01a2cd10bcce85d120e"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/parts",
+      "outputPages": 19,
+      "exportedParts": 2,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/parts/automated-geometry-review.log",
+      "logSHA256": "0acd7d2815f97b17b6aa386ca1b9ccafa09ef5b8cbe9058716621e0b2b25ea38",
+      "status": "passed",
+      "geometryReportSHA256": "7a53d744e034db9a35b8752a655b0b874923fc9cfd86a6b2e3e6df56b76ccc11",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "1fb4359050f12de18dc0b3851bd668c18669a661d6fe75bd6e71e7d2ca4044f7",
+        "reviewSourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "voice",
+            "sha256": "d787011350a481d401da0df5ba59a288656c79bc2263c1c9654704cda3a3d8f4",
+            "outputPages": 7,
+            "systems": 77,
+            "staffHeightPoints": [
+              14.421904131391855,
+              14.855769230769226
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "ab561c889cd8d904f33501a24b4e4da3d0473a0d47e34bd4bee144116b52834f",
+            "outputPages": 12,
+            "systems": 77,
+            "staffHeightPoints": [
+              14.416340503164736,
+              15.0
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 19,
+      "pagePNGNamesAndHashesSHA256": "078a4c7370eec54389bd7e3afaae2170e2ae14dcf0719ef9162b9e88c6d4848e"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/parts",
+      "outputPages": 41,
+      "exportedParts": 4,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/parts/automated-geometry-review.log",
+      "logSHA256": "284e2f7dfb8703769195f1a5a281327998b2c48bd242ec0c66551e7ac1a00b84",
+      "status": "passed",
+      "geometryReportSHA256": "f1ba3441228c4c0d47320e95ab419b2c56f652a68dd17259b7eb3928cc374a3b",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "f379940addf4d2f63c1708128b8801288d5821f1035acee49b68683afd80e1eb",
+        "reviewSourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin1",
+            "sha256": "dd69a6b35b68c3e0c72c243fc0203465ed9d1755dcbe979fc3444c04124c3501",
+            "outputPages": 11,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.78360419698789,
+              13.007975998262765
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "61ce3546561f746a6de8d4c6785c9c407ab1c3977857cbaec79baf7617ce5f73",
+            "outputPages": 10,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.88227721123792,
+              13.019610176928047
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "7491a5bc42a424a51691aad28958e7f1fa28cf64d8c1832ca3107598ee755612",
+            "outputPages": 10,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.74901252438994,
+              13.032035387771309
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "e1878c883f09cbc5f328909a13e0daea4b437693fcd6186977635e3aef2e3c7e",
+            "outputPages": 10,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.891782095273513,
+              13.038789852612242
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 41,
+      "pagePNGNamesAndHashesSHA256": "57a5075755534fde0ffdde8f52a0cac327aee4c090ad97f01a430d03acf4a5f8"
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/parts",
+      "outputPages": 43,
+      "exportedParts": 4,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/parts/automated-geometry-review.log",
+      "logSHA256": "917681ee252cd5080755da55320b1048fa571de18945e064d01e5f22713ea478",
+      "status": "passed",
+      "geometryReportSHA256": "ce591da620ed236f09a28fb7182b4ad4447a3a4f82dcad353ad9a30545e0876a",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "b6e023bcd22f08ae712e8c285c7204bb922e184468daada343460c811b7d80d1",
+        "reviewSourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin",
+            "sha256": "b43de99aac431b67440360a750b56b96aaa46ad0d42f0824667177f217247da0",
+            "outputPages": 8,
+            "systems": 119,
+            "staffHeightPoints": [
+              10.472109099417036,
+              11.468590312006544
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "bb2185a17a1d94876b1cb6ebb94639c6ae6bcebbd7aed6b6b3370b1cc4b1d01b",
+            "outputPages": 8,
+            "systems": 119,
+            "staffHeightPoints": [
+              10.465536231916088,
+              11.325232933106452
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "c5bbda6f554e4c5ff0eae6c696e2b883b0c0ac78a1138f69a13edbd7f43b01a8",
+            "outputPages": 9,
+            "systems": 119,
+            "staffHeightPoints": [
+              10.465986607585043,
+              11.32642114180017
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "8202b0202bdf87975db753426a60d9c7908670027bb6b75cc712b7434d66395a",
+            "outputPages": 18,
+            "systems": 119,
+            "staffHeightPoints": [
+              15.059545224219544,
+              16.6294559524095
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 43,
+      "pagePNGNamesAndHashesSHA256": "6cbf208c6ce10ac50a8039d92882c3c66a1ca971a47e419e2c33b99c9081ec40"
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/parts",
+      "outputPages": 43,
+      "exportedParts": 3,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/parts/automated-geometry-review.log",
+      "logSHA256": "d80d87d2f5fa6743ef1390e4037a67bd48392101250e0203ab94aa2df78264d0",
+      "status": "passed",
+      "geometryReportSHA256": "1acb9dcc579addd1dd6892152bcb3eeedbd82cecf2780eab7a7c1fe7e2f24144",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "f6e11c4189e6ac804d52884d9f628e485ac752ceb1d513e2d2e81bee82fc6e27",
+        "reviewSourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "clarinet",
+            "sha256": "8643530caee29f53c3ed829393dc22e457f545ed712b81733008beac2060e72b",
+            "outputPages": 10,
+            "systems": 131,
+            "staffHeightPoints": [
+              10.748262039713929,
+              11.885776615178608
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "b762f04790c0186b223f71f6b115371ab7878e1f17cf65c0d70eccb06c0de9b8",
+            "outputPages": 10,
+            "systems": 131,
+            "staffHeightPoints": [
+              10.596490465334375,
+              11.752850630677809
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "08bf303f142a86b7227b13def4f71ed91e9b7e30dc05890970c9defb24047645",
+            "outputPages": 23,
+            "systems": 131,
+            "staffHeightPoints": [
+              15.47622989597426,
+              16.854721397610316
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 43,
+      "pagePNGNamesAndHashesSHA256": "90fb70709a1e7ec9f1a826d73d292def75de6e1df0052d32d284fe049c56e3d7"
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts",
+      "outputPages": 73,
+      "exportedParts": 5,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/automated-geometry-review.log",
+      "logSHA256": "34cc0c9a036622c3d575eb42b1b843691c5f0c9099bd2d758a3c4a2a9e061e43",
+      "status": "passed",
+      "geometryReportSHA256": "0ff4e6480cd7b36161481553a086c20782cdae61e6c15047863dc79cae06ac60",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "94ece9cd8f342a8984804d620d1ea34706fac358c2c97c8bc730351f7b256897",
+        "reviewSourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin1",
+            "sha256": "43870b1d8cd9b83b2163759f33e2199be8b5d84f98a46c40048f4e93134e765b",
+            "outputPages": 12,
+            "systems": 165,
+            "staffHeightPoints": [
+              10.30862239339659,
+              10.889129014964775
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "b0c2c0008cfff4efbca680bd4a427f5547a5fcc04aa556185b69aca9184a1b42",
+            "outputPages": 12,
+            "systems": 165,
+            "staffHeightPoints": [
+              10.19885489809852,
+              10.893259630629446
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "0c13e6214fb25c46f08ba62384e92fb2722bc604b799ee77f792d5654b1dd511",
+            "outputPages": 12,
+            "systems": 165,
+            "staffHeightPoints": [
+              10.183829873657752,
+              10.893259630629318
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "dfb56a639384a9bd53ba1cd0c33b6f867e3b2f5737d362ea760630d11bf84f7c",
+            "outputPages": 11,
+            "systems": 165,
+            "staffHeightPoints": [
+              10.18786844203137,
+              10.891464048248249
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "5b2f619919a685073f8203bdd24a936a270228074d048e5a72a88b8bd0a83d4e",
+            "outputPages": 26,
+            "systems": 165,
+            "staffHeightPoints": [
+              14.634685899277297,
+              15.470090593640204
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 73,
+      "pagePNGNamesAndHashesSHA256": "d1ed50eba3d8a2e9af1f064d59d8f1d20eb111e375449cefcc494db08ca7cde2"
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/parts",
+      "outputPages": 41,
+      "exportedParts": 4,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/parts/automated-geometry-review.log",
+      "logSHA256": "7c6214c14fa30159651117132265874b1412166368bc5f9a3b72dfc976f9c8b9",
+      "status": "passed",
+      "geometryReportSHA256": "48614381cee0cf092b164de2a6c7c7a40fde4839080cfff56d5c07142175dfbb",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "1f2ecc6414232e7c7f0b37913875409eea3bfd1a4cb6fb47c5ca2163a84ed7dd",
+        "reviewSourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin1",
+            "sha256": "5140343995dd33395465aa08084276253a02ab7032dad6ee71efed480e2d01bd",
+            "outputPages": 11,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.190363440260006,
+              12.396772680988116
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "7dd0356e8befadda136957120183ce838d58f9921368697f16b9bde18ac861e7",
+            "outputPages": 10,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.19669568875977,
+              12.401611831848596
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "cc589626378e62659a376d0bc75f136f6b99ab3c80a73188dbfd861f6f1ace88",
+            "outputPages": 10,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.30819691855109,
+              12.51383379278907
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "15e0f0a2b81afa2502d24cadb2454faefd73120676b5ce5ef253f48eff68b266",
+            "outputPages": 10,
+            "systems": 120,
+            "staffHeightPoints": [
+              10.444736379575957,
+              12.50708080181078
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 41,
+      "pagePNGNamesAndHashesSHA256": "688ad7e0bad08d79df03277366c7298b70a8efd7009bd7b8eb30225c22d67c9d"
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/parts",
+      "outputPages": 63,
+      "exportedParts": 4,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/parts/automated-geometry-review.log",
+      "logSHA256": "ff8e389ab4eff01146808dcd117f2ad628a501e2aa505c8ba32ff188cc5f1259",
+      "status": "passed",
+      "geometryReportSHA256": "26674cb3159c90f66049d0ce86fa71a4a4ac7944ca924a4626cfddea272cef45",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "32f2af0b65e3e980cc0d33918e83a35f06ee41b32c6c9d5424945b7801743f1d",
+        "reviewSourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin1",
+            "sha256": "766be1c35b5031a6d58d3b33b8d6acc40226d92703e9ae97267b67a7eb112bcd",
+            "outputPages": 17,
+            "systems": 151,
+            "staffHeightPoints": [
+              15.614909075715493,
+              16.140358422717973
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "46aee1a6b38ccf73e61314a7dc82d6182c4904ecd61a50d236b53352d5e68750",
+            "outputPages": 16,
+            "systems": 151,
+            "staffHeightPoints": [
+              15.063103423303735,
+              16.19924688397834
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "b159ef330a1e46b141bf558ed771e3a814aa7bdc37e2225895860da8052fbb41",
+            "outputPages": 15,
+            "systems": 151,
+            "staffHeightPoints": [
+              15.249200028911483,
+              16.145684849298235
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "3ab3900c95c527a18c952f6c353c054c8c30ca435118d96ca49dc726600b6004",
+            "outputPages": 15,
+            "systems": 151,
+            "staffHeightPoints": [
+              15.613247044771475,
+              16.805928074436167
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 63,
+      "pagePNGNamesAndHashesSHA256": "c5e5962aa8e4184f82b97a885f3baed8ee1e13b385f65c64cc11c5a4581f57f5"
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/parts",
+      "outputPages": 19,
+      "exportedParts": 2,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/parts/automated-geometry-review.log",
+      "logSHA256": "b3ef96edd52a625509e5af2129d9d724c2ba4e2542faa5eef75fbf6205c182b8",
+      "status": "passed",
+      "geometryReportSHA256": "97bcd0610fce1e6f1092f9a7ccd50d9197a55d82fcdab0ca3d0a6ac292733ad3",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "f131f5c7847bb78be112267708cc0cf201dba2e91bb553238d756ac2615f4031",
+        "reviewSourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "voice",
+            "sha256": "8d99901863c9aae78170b469f2b56ef62dd20f6182b93e8838f49a93cf12e986",
+            "outputPages": 7,
+            "systems": 77,
+            "staffHeightPoints": [
+              13.774542522935768,
+              15.030868000225324
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "8e9ba3b81b0018fd239a3a32d9e38bc27ef5591da7bcdc46b87b91bc384c5a63",
+            "outputPages": 12,
+            "systems": 77,
+            "staffHeightPoints": [
+              13.781974817089097,
+              15.475192195496115
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 19,
+      "pagePNGNamesAndHashesSHA256": "2831c08ffb5410269867c8728d2330563dce8eeb7602a46824bac26561ad5766"
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-piano-quartet-kv478-score/parts",
+      "outputPages": 58,
+      "exportedParts": 4,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-piano-quartet-kv478-score/parts/automated-geometry-review.log",
+      "logSHA256": "ce42647ed86926d5d15c16bea9fec4369fd6896a2d57ca163c4bd55079fd9f20",
+      "status": "passed",
+      "geometryReportSHA256": "e84c54533670bed4f3f69be78eb8f6840051ea7a5dd2ed5eba3f5d765bd6538a",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "2f1f81c0c9302132229739559694baa68b5c3501444ffaf2c843b5bfbcf2bdba",
+        "reviewSourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin",
+            "sha256": "a36d98576b58466b331f0bd346047bd841246517df540dbe63812cc6850e0107",
+            "outputPages": 12,
+            "systems": 165,
+            "staffHeightPoints": [
+              11.754380338707854,
+              12.327764745474155
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "5595101204198f637ba9d9fac685567f9532486994a31cf4baed04420e867ec9",
+            "outputPages": 10,
+            "systems": 165,
+            "staffHeightPoints": [
+              11.754380338707755,
+              12.327764745474253
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "c3fdce5af437c3013bace0bd61a573a2d881d6c157864b9d296cd21c627c2972",
+            "outputPages": 11,
+            "systems": 165,
+            "staffHeightPoints": [
+              11.754380338707804,
+              12.327764745474303
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "92ca4d6f0a5072dbfb8312e90b50f23cc70026ec23d081214a7a43cab714cf7d",
+            "outputPages": 25,
+            "systems": 165,
+            "staffHeightPoints": [
+              14.90799457592207,
+              15.194686779305465
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 58,
+      "pagePNGNamesAndHashesSHA256": "bb9cadc1c25720012a4b27b5360dc865184c68c83d996c2f825426833f0ca60e"
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-string-quartet-kv387-score/parts",
+      "outputPages": 44,
+      "exportedParts": 4,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-string-quartet-kv387-score/parts/automated-geometry-review.log",
+      "logSHA256": "602efe30e022852bd2ece67bd73f4bc0ffec2373439ab2d78b689c16a6e63629",
+      "status": "passed",
+      "geometryReportSHA256": "76a157f2c2086b35dad98ba8f3398a3a831cb90bd3dc1a85738329f5ae1f448b",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "21365e002b898ad916dac52c5ed2e4b68b835542463a4fdead8aab9fb691fa74",
+        "reviewSourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "violin1",
+            "sha256": "109bce7739de9ba6acbd5e5d1adaf9c65d3289a52cf64b43ea66d609bab47f3f",
+            "outputPages": 12,
+            "systems": 130,
+            "staffHeightPoints": [
+              13.757901566004204,
+              14.044938517870335
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "27f817dabf01a16933b6bf94ce97638004a8883f5eb9572d6029b5e34c3afa95",
+            "outputPages": 11,
+            "systems": 130,
+            "staffHeightPoints": [
+              13.758243718782582,
+              14.044990241642378
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "1b3ee74dc93598bbe32ffabb5cfef1d9b39ce365882e8132eb7a5693f1118897",
+            "outputPages": 11,
+            "systems": 130,
+            "staffHeightPoints": [
+              13.758243718782532,
+              14.044990241642378
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "f0e466658738a5c80110291541504a0e485cdf2eed18de42e7d462ca12115259",
+            "outputPages": 10,
+            "systems": 130,
+            "staffHeightPoints": [
+              13.75790180228094,
+              14.044835032978437
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 44,
+      "pagePNGNamesAndHashesSHA256": "19fef379fc5437a85f3fb4319228d23b9c300e0b25509109863d3159a25269a8"
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-trio-eb-major-kv498-score/parts",
+      "outputPages": 38,
+      "exportedParts": 3,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-trio-eb-major-kv498-score/parts/automated-geometry-review.log",
+      "logSHA256": "8ee0378b1038c4cd7728c0c34d3effa36d618265b7ffd086762f0ce6271dfde9",
+      "status": "passed",
+      "geometryReportSHA256": "8c61b18c473d9bffa724b914f55306eb5af71a18826cb3a6168d86d909b69389",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "05adc3857157bcea52e5a3f762df60fdd5ebf2384fe34e49070275edfdb48b4d",
+        "reviewSourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "clarinet",
+            "sha256": "64a4f6edadd65407cc3470fe74d92a6d9717fe2bedc33a2e9eb4a82c474ea2c3",
+            "outputPages": 11,
+            "systems": 135,
+            "staffHeightPoints": [
+              13.757901594009248,
+              14.053298237913076
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "bfb21519af50058c73e4dbcffe38b02e86bff89288f29af3f58f5761d65d524e",
+            "outputPages": 10,
+            "systems": 135,
+            "staffHeightPoints": [
+              13.758243171426729,
+              14.044990241642328
+            ]
+          },
+          {
+            "id": "piano",
+            "sha256": "4079447343c4e4b891729b0e7eec3d0cd8a639897f594dd6068c08e6f7642323",
+            "outputPages": 17,
+            "systems": 135,
+            "staffHeightPoints": [
+              13.757904535209676,
+              14.044990241642278
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 38,
+      "pagePNGNamesAndHashesSHA256": "5942d92f45c9d8f698719f9a2ae617a643dc089a94a90f450c08b705c807d798"
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-magic-flute-overture-kv620-score/parts",
+      "outputPages": 47,
+      "exportedParts": 14,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-magic-flute-overture-kv620-score/parts/automated-geometry-review.log",
+      "logSHA256": "3bddde7277fbf95af1e7be1c4b11a788b3a6dee47c7b3764be6ef5ea355d78c1",
+      "status": "passed",
+      "geometryReportSHA256": "49b4a1d964406589619f58764931e9a1f20ebf3b2045265529ace08ee7943d5d",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "c388ff522fb4d42974d592c714a77accb8936d88d52438ac4e252426da231d72",
+        "reviewSourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "flutes",
+            "sha256": "14946da70ac8fdffd98fc3bd78de13e6852bc7bbf4bb6d5208f3fa07c4553551",
+            "outputPages": 4,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.17820959195496,
+              11.46535514555781
+            ]
+          },
+          {
+            "id": "oboes",
+            "sha256": "ce6edb9553f736d54c9630ffc2184ebe67da49b362d4adbcc268434d61bccf25",
+            "outputPages": 4,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.465298156442609
+            ]
+          },
+          {
+            "id": "clarinets",
+            "sha256": "f7bcc7f915d307a24b8c54e963d715af4f4068d476c0ca10aaaad9290477e80a",
+            "outputPages": 4,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531546,
+              11.321981929487116
+            ]
+          },
+          {
+            "id": "bassoons",
+            "sha256": "3b1696de326b9cf32d99bd07e6d8a30fea48dc9e9b6a545a5f9c34824e7c31d6",
+            "outputPages": 4,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.321981929487116
+            ]
+          },
+          {
+            "id": "horns",
+            "sha256": "8dbde3f29bb971727b6e96132108a8e52a288cbac4dec3709f022f9ebc3f5460",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665551969406,
+              11.47841262754055
+            ]
+          },
+          {
+            "id": "trumpets",
+            "sha256": "5419d6b16a95d10aa8deffdb9ba97606809c5a941b044cdd9295d69a892b4777",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.321981929487116
+            ]
+          },
+          {
+            "id": "trombones12",
+            "sha256": "a32e89dac64bc95873c903d1ddc34723590dfad41307b5d64cf9a8d80d1081b7",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665369052162,
+              11.325951908073131
+            ]
+          },
+          {
+            "id": "trombone3",
+            "sha256": "17501aa0e671f12640de5025359fc7b7488f02296e9c6dc9918f5e40db8968ec",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.321981929487164
+            ]
+          },
+          {
+            "id": "timpani",
+            "sha256": "93364ed8745f8fda8b9cee5be2db7dfdb64fad9f087cc252f2b1a41a70aab486",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.322379273272226
+            ]
+          },
+          {
+            "id": "violin1",
+            "sha256": "127bf61332f0f4e9c5b9eec4b7de3a924865ee241cdec48e9e16a5846406e2a1",
+            "outputPages": 4,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.465298156442634
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "f5c73abdf415cbc721e0246d1e52b17c2bd5f6710e46fcabbe1751f9253df738",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178608894133381,
+              11.321981929487213
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "4234956a5cf48c97b9f32a240dd561a1aa0427cc3dfb526ae34726ad3b482e58",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531497,
+              11.465298156442634
+            ]
+          },
+          {
+            "id": "cello",
+            "sha256": "7b90dd8314d6021a7b62b4afbd4ca84cc1ce16fbcae746d3d1f337d1b15f82f3",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178665702531399,
+              11.321981929487213
+            ]
+          },
+          {
+            "id": "bass",
+            "sha256": "5076cf31992beacc35d6ee36f07c579f005ed0f248350d83894fee826cb4a051",
+            "outputPages": 3,
+            "systems": 46,
+            "staffHeightPoints": [
+              11.178209717081394,
+              11.464842170992531
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 47,
+      "pagePNGNamesAndHashesSHA256": "37f17feaf08eaa99f84150429aeea13ad6ede21568637ed1c9ef12bfb6ad342c"
+    },
+    {
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/parts",
+      "outputPages": 8,
+      "exportedParts": 8,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/parts/automated-geometry-review.log",
+      "logSHA256": "61b5e1589e5091825cc9f3731f7aa1b63e078aa7440c01f2555ef5cda66ff563",
+      "status": "passed",
+      "geometryReportSHA256": "c6703a733da76e7a766fb1ab6ef9b380fddb549c7819db81c1870f2e1b4f1d6d",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "22fa188c936f1fb928c09e8499e23b56b912aec4a37377db2f91d73dace23c9c",
+        "reviewSourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "soprano",
+            "sha256": "03113be2b329bbbb5af0c90c039d57e564a6025600f05009d35cbcda86d6a867",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.758922031672329,
+              12.902280706185511
+            ]
+          },
+          {
+            "id": "alto",
+            "sha256": "c2ba5c0656beee20b92707ad30c4ca8f9236f0363b7d2e82dfb9f84e19d88389",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.902173111863531,
+              12.902280706185463
+            ]
+          },
+          {
+            "id": "tenore",
+            "sha256": "f1527a7eb2ee71531ae1cc506967ee62cb5c4497acbdc2090936abd0d6e376c9",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.902219462732553,
+              12.902280706185559
+            ]
+          },
+          {
+            "id": "basso",
+            "sha256": "7b6c666f62087bdc28fb03119c22b7387277c28286ce84efbb28bd01051fe1f7",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.90222690902445,
+              12.902280706185559
+            ]
+          },
+          {
+            "id": "violin1",
+            "sha256": "41ea4831308a5a089619bc77162c534b3a57e39295bb84d0ce92d314c8b56a95",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.902280706185367,
+              12.902280706185463
+            ]
+          },
+          {
+            "id": "violin2",
+            "sha256": "5504db713884294368c00c6d2cd2c5ac5ed9b4690795a46e755541a824428e53",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.902280706185271,
+              12.902341689116607
+            ]
+          },
+          {
+            "id": "viola",
+            "sha256": "8a73dff36cfc51f75f2570813587468f3b0c5e04f96b6c1fe81fc63be74886cc",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.758922031672281,
+              12.902280706185463
+            ]
+          },
+          {
+            "id": "bass_organ",
+            "sha256": "fe4266bd6d712c93bb8c2ac58943fbb5d321d3878b61a0aed816be0c0ccdab29",
+            "outputPages": 1,
+            "systems": 8,
+            "staffHeightPoints": [
+              12.901729962141932,
+              12.902280706185463
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 8,
+      "pagePNGNamesAndHashesSHA256": "af8fd0bcc545064de14fe25fd1bcc3c8c41a347daf826af949fb7d8a5a622cd1"
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+      "outputDirectory": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/parts",
+      "outputPages": 4,
+      "exportedParts": 1,
+      "exitCode": 0,
+      "logPath": "/Users/will/Documents/git/partsmith/.build/auto-qc/connector8-harmonic/corpus/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/parts/automated-geometry-review.log",
+      "logSHA256": "d9f84bb2344af453f566c55e3030ab25370155b5624ebcf9b73bd0bff05a0caa",
+      "status": "passed",
+      "geometryReportSHA256": "409955b2b307ca146b3be8ad41b34c4aa2b24e14e296e495f13e5930227a67c7",
+      "geometryReport": {
+        "status": "geometry_pass_visual_review_pending",
+        "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+        "sourceMapSHA256": null,
+        "normalizedManifestSHA256": "dc34517887f017be45211680194c5cf945a52dac8ccc54bce7d57d727fd369e6",
+        "reviewSourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+        "rectifications": [],
+        "parts": [
+          {
+            "id": "flute",
+            "sha256": "2563556e61e9f4f0e6cb214e85fb33fa986da4460b22b6f07f31ba4d50ea2b15",
+            "outputPages": 4,
+            "systems": 36,
+            "staffHeightPoints": [
+              16.338049599156545,
+              16.624682326841924
+            ]
+          }
+        ]
+      },
+      "verifiedPagePNGCount": 4,
+      "pagePNGNamesAndHashesSHA256": "791783e3f37396596e04aecc5434f1f4e542836a2fcc266317c9a8d9b7c82b90"
+    }
+  ],
+  "finishedAt": "2026-09-21T20:39:31.563370+00:00",
+  "renderedOutputPages": 596,
+  "validatedParts": 77,
+  "verifiedPagePNGCount": 596,
+  "runnerSessionID": 98906,
+  "runnerExitCode": 0,
+  "sourceGeometryRunReportSHA256": "5bfdf2378b38f27d22128b87def5da8b881ebd8a1987efec609eba91c747347d",
+  "runnerSHA256": "b2d0e672c1f78417fd5a3906323c6484da2b4ffb446675c3453db0389d3c4221",
+  "baselineSourceCheckpoint": "975ee3d"
+}

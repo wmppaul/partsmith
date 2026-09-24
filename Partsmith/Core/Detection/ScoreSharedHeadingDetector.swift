@@ -15,6 +15,7 @@ enum ScoreSharedHeadingDetector {
     static func detect(in image: CGImage, page: ScorePageAnalysis,
                        profile: ScoreExtractionProfile,
                        observedText: ((Int, [TextLine]) -> Void)? = nil,
+                       observedFailure: ((Int, Error) -> Void)? = nil,
                        isCancelled: () -> Bool = { false }) -> [ScoreSharedHeading] {
         guard image.width > 0, image.height > 0, !isCancelled() else { return [] }
         // Reuse the planner's complete geometry/cadence validation. An unknown
@@ -45,7 +46,7 @@ enum ScoreSharedHeadingDetector {
             request.minimumTextHeight = 0.03
             request.customWords = vocabulary
             do { try VNImageRequestHandler(cgImage: crop, options: [:]).perform([request]) }
-            catch { continue }
+            catch { observedFailure?(anchor, error); continue }
             guard !isCancelled() else { return [] }
             let height = Double(image.height)
             let text: [TextLine] = (request.results ?? []).compactMap { observation -> TextLine? in
@@ -86,7 +87,11 @@ enum ScoreSharedHeadingDetector {
                     result += select(from: text, anchor: staff, previousStaffBottom: previousBottom,
                         imageSize: CGSize(width: image.width, height: image.height))
                 }
-            } catch { /* Keep any headings already supported by regional OCR. */ }
+            } catch {
+                // Keep any supported headings for interactive callers, while
+                // batch diagnostics can distinguish OCR failure from no match.
+                observedFailure?(-1, error)
+            }
         }
         guard !isCancelled() else { return [] }
         return result
@@ -138,7 +143,7 @@ enum ScoreSharedHeadingDetector {
 
     private static let vocabulary = ["Allegro", "Allegretto", "Adagio", "Andante", "Andantino",
         "Presto", "Prestissimo", "Largo", "Larghetto", "Lento", "Moderato", "Vivace",
-        "Grave", "Maestoso", "Agitato", "Scherzo", "Trio", "Coda", "Doppio", "Movimento", "Variazioni"]
+        "Grave", "Maestoso", "Agitato", "Scherzo", "Trio", "Coda", "Doppio", "Movimento", "Variazioni", "Menuetto"]
 
     static func isHeading(_ text: String) -> Bool {
         let words = text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "en_US_POSIX"))
@@ -152,7 +157,7 @@ enum ScoreSharedHeadingDetector {
             word == target || (target.count >= 6 && editDistance(word, target) == 1)
         }
         if words.count <= 10, words.prefix(3).contains(where: { word in tempo.contains { matches(word, $0) } }) { return true }
-        if words == ["trio"] || words == ["irio"] || words == ["coda"] { return true }
+        if words == ["trio"] || words == ["irio"] || words == ["coda"] || words == ["menuetto"] { return true }
         return words.count == 2 && matches(words[0], "doppio") && matches(words[1], "movimento")
     }
 

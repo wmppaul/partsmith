@@ -21,7 +21,7 @@ struct NativeScoreInventory: Codable {
 enum ScoreExtractionBatch {
     static func main() throws {
         let args = Array(CommandLine.arguments.dropFirst())
-        guard let command = args.first else { throw failure("Use inventory --source PDF [--deskew] --out DIRECTORY; plan --inventory JSON --profile JSON [--overrides JSON] --out JSON; or experimental headings --inventory JSON --profile JSON --out JSON") }
+        guard let command = args.first else { throw failure("Use inventory --source PDF [--deskew] --out DIRECTORY; plan --inventory JSON --profile JSON [--overrides JSON] --out JSON; or experimental headings|navigation|destinations --inventory JSON --profile JSON --out JSON") }
         func option(_ name: String) -> String? {
             guard let i = args.firstIndex(of: name), i + 1 < args.count else { return nil }
             return args[i + 1]
@@ -73,7 +73,7 @@ enum ScoreExtractionBatch {
             }
             try encoder.encode(inventory).write(to: out.appendingPathComponent("inventory.json"), options: .atomic)
             print("Inventory: \(out.path)/inventory.json")
-        } else if command == "headings" || command == "navigation" {
+        } else if command == "headings" || command == "navigation" || command == "destinations" {
             guard let input = option("--inventory"), let profilePath = option("--profile"), let destination = option("--out") else { throw failure("Missing inventory/profile/output") }
             let decoder = JSONDecoder()
             var inventory = try decoder.decode(NativeScoreInventory.self, from: Data(contentsOf: URL(fileURLWithPath: input)))
@@ -81,32 +81,87 @@ enum ScoreExtractionBatch {
             guard SHA256.hash(data: data).map({ String(format: "%02x", $0) }).joined() == inventory.sourceSHA256,
                   let pdf = PDFDocument(data: data) else { throw failure("Inventory source changed") }
             let profile = try decoder.decode(ScoreExtractionProfile.self, from: Data(contentsOf: URL(fileURLWithPath: profilePath)))
+            let recognitionCorrections = inventory.rectifications ?? []
+            func recognitionImage(_ analysis: ScorePageAnalysis) throws -> CGImage {
+                guard let page = pdf.page(at: analysis.pageIndex) else { throw failure("Cannot read recognition page") }
+                let bounds = page.bounds(for: .mediaBox)
+                let maximumWidth = command == "headings" ? 2200 : 2400
+                let maximumHeight = command == "headings" ? 3200 : 3500
+                let image: CGImage?
+                if let correction = recognitionCorrections.first(where: { $0.pageIndex == analysis.pageIndex }) {
+                    image = SourcePageRenderCache(pdfDocument: pdf,
+                        rasterScale: min(CGFloat(maximumWidth) / bounds.width, CGFloat(maximumHeight) / bounds.height))
+                        .rectifiedDisplayImage(for: analysis.pageIndex, rectification: correction)
+                } else { image = NativeScorePageAnalyzer.render(page, maximumWidth: maximumWidth, maximumHeight: maximumHeight) }
+                guard let image else { throw failure("Cannot render recognition page") }
+                return image
+            }
             for index in inventory.pages.indices {
+                if command == "destinations" { break }
                 let analysis = inventory.pages[index]
                 try autoreleasepool {
-                    guard let page = pdf.page(at: analysis.pageIndex) else { throw failure("Cannot read heading page") }
-                    let bounds = page.bounds(for: .mediaBox)
-                    let maximumWidth = command == "navigation" ? 2400 : 2200
-                    let maximumHeight = command == "navigation" ? 3500 : 3200
-                    let image: CGImage?
-                    if let correction = inventory.rectifications?.first(where: { $0.pageIndex == analysis.pageIndex }) {
-                        image = SourcePageRenderCache(pdfDocument: pdf,
-                            rasterScale: min(CGFloat(maximumWidth) / bounds.width, CGFloat(maximumHeight) / bounds.height))
-                            .rectifiedDisplayImage(for: analysis.pageIndex, rectification: correction)
-                    } else { image = NativeScorePageAnalyzer.render(page, maximumWidth: maximumWidth, maximumHeight: maximumHeight) }
-                    guard let image else { throw failure("Cannot render heading page") }
+                    let image = try recognitionImage(analysis)
+                    var recognitionFailures: [String] = []
+                    func recordFailure(_ pass: String, _ error: Error) {
+                        let detail = error as NSError
+                        recognitionFailures.append("\(pass): \(detail.domain) code \(detail.code): \(detail.localizedDescription)")
+                    }
                     if command == "navigation" {
-                        inventory.pages[index].sharedNavigation = ScoreSharedNavigationDetector.detect(in: image, page: analysis, profile: profile)
+                        inventory.pages[index].sharedNavigation = ScoreSharedNavigationDetector.detect(in: image,
+                            page: analysis, profile: profile, observedFailure: { region, error in
+                                let before = region.beforeStaffID.map(String.init) ?? "none"
+                                let after = region.afterStaffID.map(String.init) ?? "none"
+                                recordFailure("before staff \(before), after staff \(after)", error)
+                            })
                     } else {
-                        inventory.pages[index].sharedHeadings = ScoreSharedHeadingDetector.detect(in: image, page: analysis, profile: profile)
+                        inventory.pages[index].sharedHeadings = ScoreSharedHeadingDetector.detect(in: image,
+                            page: analysis, profile: profile, observedFailure: { anchor, error in
+                                recordFailure(anchor < 0 ? "full-page" : "staff \(anchor)", error)
+                            })
+                    }
+                    guard recognitionFailures.isEmpty else {
+                        throw failure("Page \(analysis.pageIndex + 1) \(command) OCR failed; destination inventory was not updated "
+                            + "(any pre-existing file remains unchanged). " + recognitionFailures.joined(separator: "; "))
                     }
                 }
                 let count = command == "navigation" ? inventory.pages[index].sharedNavigation?.count : inventory.pages[index].sharedHeadings?.count
                 print("Page \(analysis.pageIndex + 1): \(count ?? 0) shared \(command)")
                 fflush(stdout)
             }
+            if command != "headings" {
+                // Source symbols are score-level evidence. The sentence can
+                // appear after its destination, so collect templates first.
+                var templates: [ScoreSharedDestinationDetector.Template] = []
+                for analysis in inventory.pages where analysis.sharedNavigation?.contains(where: { !$0.recognizedText.isEmpty }) == true {
+                    try autoreleasepool {
+                        templates += ScoreSharedDestinationDetector.templates(in: try recognitionImage(analysis),
+                            page: analysis, profile: profile)
+                    }
+                }
+                print("Printed navigation symbol templates: \(templates.count)")
+                for template in templates {
+                    print("Template page \(template.sourcePageIndex + 1): \(template.sourceBounds)")
+                }
+                for index in inventory.pages.indices {
+                    var analysis = inventory.pages[index]
+                    // Rerunning the experimental destination pass replaces its
+                    // own glyph metadata, never duplicates it as new evidence.
+                    analysis.sharedNavigation = analysis.sharedNavigation?.filter { !$0.recognizedText.isEmpty }
+                    let symbols = try autoreleasepool {
+                        ScoreSharedDestinationDetector.detect(in: try recognitionImage(analysis), page: analysis,
+                            profile: profile, templates: templates, observedMatches: { matches in
+                                for match in matches {
+                                    print("Page \(analysis.pageIndex + 1) staff \(match.anchorStaffID): source-symbol match \(match.correlation), template page \(match.templatePageIndex + 1) bounds \(match.templateBounds)")
+                                }
+                            })
+                    }
+                    inventory.pages[index].sharedNavigation = (analysis.sharedNavigation ?? []) + symbols
+                    print("Page \(analysis.pageIndex + 1): \(symbols.count) shared destination symbols")
+                    fflush(stdout)
+                }
+            }
             inventory.analysisConfiguration = (inventory.analysisConfiguration ?? "legacy-inventory")
-                + (command == "navigation" ? "+shared-navigation-v1" : "+shared-headings-v3")
+                + (command == "headings" ? "+shared-headings-v3" : "+shared-navigation-v2-source-symbols")
             try encoder.encode(inventory).write(to: URL(fileURLWithPath: destination), options: .atomic)
         } else if command == "plan" {
             guard let input = option("--inventory"), let profilePath = option("--profile"), let destination = option("--out") else { throw failure("Missing inventory/profile/output") }

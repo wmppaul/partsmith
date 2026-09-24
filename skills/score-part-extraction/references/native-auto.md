@@ -39,8 +39,8 @@ source. Exact staff counts alone are insufficient: check the actual five-line
 positions and spacing, and compare all systems against the raw source.
 
 Changed instrumentation must be reviewed explicitly. The page correction panel
-can assign detected staves, record a missing/tacet part, exclude a non-music page
-with a reason, and add a verified movement/song heading and page break. A piano
+can assign detected staves, record a missing/tacet part, exclude a non-music page,
+and add a verified movement/song heading and page break. A piano
 introduction with no printed voice should be represented by a clearly labeled
 cue or a verified rest instruction, never an unexplained missing opening.
 The app skips readable zero-staff pages without requiring a typed reason or
@@ -76,9 +76,13 @@ Shared rehearsal letters, tempos, endings and return instructions can be printed
 only on the top staff. Read the full score, inventory those directions, and copy
 verified source rectangles or add a faithful editorial direction to the relevant
 parts. Native source-marking rectangles keep their source horizontal positions
-in a separate row above the target crop. The batch reviewed plan can create these
+in separate rows above or below the target crop. Keep an end-of-system return
+instruction below that same system; moving it above the following system can
+change its meaning. The batch reviewed plan can create these
 rectangles; the app can retain and remove them, and can edit editorial labels.
 Automatic staff assignment does not automatically understand shared directions.
+Check both a return instruction and its destination symbol, plus any first/second
+endings. Copying the sentence alone does not make the repeat complete.
 
 Review all output pages against the source. Retained neighboring notes are
 permitted under `preserve-target` when target ink needs the same space. Unnecessary
@@ -127,6 +131,30 @@ tolerance is used. Pixel agreement establishes export fidelity only
 within those reviewed regions. It does not identify an instrument, discover
 unrecorded notes, or replace a visual review. Keep output/source hashes and
 independent review findings with each delivered set.
+
+For detector changes or a requested whole-corpus evaluation, freeze the native
+analyzer and exporter before starting the resumable corpus runner. Supply
+`--exporter` to generate all parts of every completely resolved plan, rather than
+stopping at staff counts. See `Tests/quality_control/README.md` in the checkout.
+The runner checks every physical source page, part/band order, PDF hashes and
+the editable project's source and crop boundaries. Unresolved profiles remain
+unfinished inputs in its aggregate. Its raw-page diagnostic exports do not
+exercise name picking, printed-header selection, optional deskew or automatic
+rest compression. Run those separately when evaluating those app settings.
+Keep raw and corrected coordinates separate, and reuse recorded corrections
+without estimating a different correction for the comparison. A live worker
+or temporary observation timeout is not a reason to restart extraction.
+
+The repository also has experimental CLI-only `headings` and `navigation`
+passes. They add source-image markings to a copy of an inventory before export;
+they do not enable equivalent recognition in the app's Auto button. The
+navigation pass can match a limited class of destination symbols against an
+actual printed glyph in its recognized instruction. It does not infer every
+repeat, ending or rehearsal mark. Keep a source-derived inventory of expected
+directions, check all output copies for complete glyphs and correct system
+ownership, and record omissions. Avoid duplicating a heading already visible in
+the target crop. Font/OCR boxes alone may omit serifs, dots or parentheses;
+inspect the original pixels beyond the proposed bounds.
 
 
 ## Automatic multi-bar rests

@@ -1,0 +1,60 @@
+{
+  "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+  "sourceFiles": {
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "eea83c7c3e2d812d564724944e967b707cd612b1e0b5326fab7f2414d30466b4",
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    "tools/score_extraction_batch.swift": "ed65524bf7314e7882b646c030e4a23de8d615c26e9bd82d5856a7f79d0a3390",
+    "tools/test_shared_headings.swift": "7668ae509940ebc74915a6d2e2a672d1c1401fbc7905649b5c72ace37b67cabd"
+  },
+  "frozenHeadingSourceSHA256": "a72d13dd46fc8238ea198d00ecbef8ec323de458b62aa8b05ab6450529468a49",
+  "headingTests": 49,
+  "navigationTests": 61,
+  "runtimeFailureChecks": {
+    "binarySHA256": "a03f80f0748349e09de27858c52ec1032134d52d6306763ec7a8f9aadf5d6aae",
+    "environment": "sandboxed macOS Vision known runtime-error path",
+    "scope": "Actual service failure distinct from zero matches; existing and absent output behavior. Does not simulate skipped or canceled plans.",
+    "cases": [
+      {
+        "command": "headings",
+        "existingOutput": false,
+        "exitCode": -5,
+        "explicitRuntimeFailure": true,
+        "destinationPreserved": true,
+        "log": ".build/auto-qc/kv498-headings/error-headings-existing-False.log",
+        "logSHA256": "48561d4086d6b10218792e184fd1cfbbe93ad58be14b9a21430415b478713a58"
+      },
+      {
+        "command": "headings",
+        "existingOutput": true,
+        "exitCode": -5,
+        "explicitRuntimeFailure": true,
+        "destinationPreserved": true,
+        "log": ".build/auto-qc/kv498-headings/error-headings-existing-True.log",
+        "logSHA256": "48561d4086d6b10218792e184fd1cfbbe93ad58be14b9a21430415b478713a58"
+      },
+      {
+        "command": "navigation",
+        "existingOutput": false,
+        "exitCode": -5,
+        "explicitRuntimeFailure": true,
+        "destinationPreserved": true,
+        "log": ".build/auto-qc/kv498-headings/error-navigation-existing-False.log",
+        "logSHA256": "285691d72fe149a980f15a9204c082f9e9fb4b7ce62ead09f02c2ca5a1a88da6"
+      },
+      {
+        "command": "navigation",
+        "existingOutput": true,
+        "exitCode": -5,
+        "explicitRuntimeFailure": true,
+        "destinationPreserved": true,
+        "log": ".build/auto-qc/kv498-headings/error-navigation-existing-True.log",
+        "logSHA256": "285691d72fe149a980f15a9204c082f9e9fb4b7ce62ead09f02c2ca5a1a88da6"
+      }
+    ]
+  },
+  "actualUnsandboxedChangePages": [
+    12
+  ],
+  "scope": "ObservedFailure propagates Vision exceptions only. Existing unknown-plan and cancellation empty results are unchanged; no app acceptance block. Experimental CLI aborts on observed runtime failure before final atomic write. Menuetto supports only standalone folded word; does not alter geometry/confidence gates or existing prefix16 tempo tokens.",
+  "diagnosis": "Sandbox regional and full-page OCR failed with Foundation._GenericObjCError code0; exact same rendered p1/p17 requests succeeded outside sandbox. Frozen recognizer then selected Andante, Trio, Rondo.Allegretto; Menuetto text confidence1 passed geometry but keyword rejected. New vocabulary adds only source p12 heading in full29-page comparison."
+}
