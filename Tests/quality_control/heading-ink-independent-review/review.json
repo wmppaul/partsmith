@@ -1,0 +1,84 @@
+{
+  "reviewDate": "2026-09-24",
+  "reviewer": "sample_corpus independent subagent",
+  "nativeCodeVerdict": "approve narrow same-source-ink containment; no remaining code blocker",
+  "rootAuthorityPatchVerdict": "approve reviewed recipient non-nil sourceMarkings authority; no blocker",
+  "nativeSourceHashes": {
+    ".build/heading-ink-independent/frozen/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    ".build/heading-ink-independent/frozen/ScoreExtractionPlanner.swift": "9639cab18992aa6a642b3a0cb77a15732e3998981860de57358900bd99b283be",
+    ".build/heading-ink-independent/frozen/ScoreSharedHeadingDetector.swift": "f6e53ad3ba95b6c6db39ed92d15f106c16a2b94ae967fb51d214c99b2476ec09",
+    ".build/qc-algorithm-audit/heading-dedup/native-only.patch": "bbf71cf7d2e6ea8455cfbce249bbed6a97da0c11df45e71738faff60155c98b9",
+    "Tests/quality_control/heading-ink-independent-review/review_tests.swift": "66f3ccaf0788568cd14f2e25c33f7c15ba76e41b68f4bc9c732d843b412df3ac",
+    "Tests/quality_control/heading-ink-independent-review/compare_outputs.py": "48f4e56538f7fbc2919306b231daf3dea16e0ff148edf70ed11431afbe175216"
+  },
+  "rootAuthorityPatchHashes": {
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "3b9d62e7c728d780de3c96797125e3318d3c9f18879c2d8ae2cf3813d4dc0756",
+    "tools/test_shared_navigation.swift": "9a27e8c72d387914c9e243a3086cc5117a315c1bd10250343bdddcabfc88fd43",
+    "tools/test_shared_navigation.sh": "f0896a92dc3745157f24cd97c305a1b012931f63865cea1651b3d2a0012e3736",
+    "tools/test_review_initialization.swift": "ff861c2623fa9b1f4f504fce2c7e8114177ad1f28a38a77a44a34d48e1d38e09",
+    "tools/test_review_initialization.sh": "755de0fd695a0dc66504bd98f3a072de7e853173fd5fe59655b34ecdcdf362b5",
+    "tools/test_score_planner.swift": "7177b986ff1642a9c3f288d086a0c2244fc45bd21c864543a8a2b37e5ded4b33",
+    "tools/test_score_planner.sh": "bcc7ae5c340ad3aeedd544347525eb820a4e38b678180ff6e7e021eed2a4d797",
+    ".build/heading-ink-independent/authority-only-reviewed.patch": "9abbe09d1a1eb29c8a58cf85f5423c08b7d73350ad3f71acf1f6d2d9b393943e"
+  },
+  "independentTests": {
+    "passed": 14,
+    "results": "Tests/quality_control/heading-ink-independent-review/independent-test-results.json",
+    "resultsSHA256": "1512a8a4e5a8d72a0c5b75a3e7abdfe6196caf0fc31b4f6e233d71162d77ae6f",
+    "durableRunnerExitCode": 0
+  },
+  "rootRunTests": [
+    {
+      "command": "bash tools/test_shared_navigation.sh",
+      "checksPassed": 77
+    },
+    {
+      "command": "bash tools/test_review_initialization.sh",
+      "checksPassed": 78
+    },
+    {
+      "command": "bash tools/test_score_planner.sh",
+      "checksPassed": 83
+    }
+  ],
+  "rootTestAttribution": "Executed by root against authority-only production patch; execution results reported to this reviewer. Independent review inspected the code and test cases, not a duplicate execution. Root also reported git diff --check clean.",
+  "wholeOutputResults": {
+    "path": "Tests/quality_control/heading-ink-independent-review/whole-output-results.json",
+    "sha256": "5a0bacd84f6c4d12c906b743d5f94e354087627bc624f2f79f0983a041697d77",
+    "parts": 15,
+    "pages": 111,
+    "mainCrops": 1073,
+    "identicalOutputPages": 110,
+    "changedOutputPages": [
+      "kv498:clarinet:6"
+    ],
+    "changedMainCrops": 0
+  },
+  "visualReview": {
+    "allPages": "All111 candidate pages contact-sheet checked for layout; every page independently raster-compared144dpi to baseline. All unchanged pages inherit prior detailed source audits only through exact pixels and main geometry, not a fresh note-by-note review.",
+    "changedPage": "Clarinet output6 before/after full-page inspected at144dpi and source-defined guard containment. Complete Rondo. Allegretto. appears once above intended staff. Duplicate row and its extraneous tiny slur fragment disappear. Main staff including notes/slurs retained and moved up into reclaimed row space.",
+    "realSerifNegative": "Enlarged original Brahms source snippet visually shows high A cap, i dot, and parentheses extending above OCR rectangle. Candidate measures original raster, not OCR word bounds; copy retained whenever measured ink extends above hypothetical main crop."
+  },
+  "guardResults": {
+    "ave": "64/64 frozen ave-tight-map own-notation guards remain contained; all8pages exact baseline pixels including all4 figured-bass rows. Earlier ave-map contains broad crop proposals and is not the candidate5 frozen target envelope map. No guard edited.",
+    "kv498": "All15 source-heading obligations retained, plus source-owner ending bracket;16/18 total. Known lower Viola/Piano ending brackets remain missing in this narrow candidate. Combined independently reviewed ending override belongs to another experiment.",
+    "brahms": "All8 applicable frozen original-source note guards contained. All196 broad shared-direction envelopes have exactly unchanged baseline containment results (58contained/138notcontained); this is not a musical recall score because some envelope margins exceed complete copied glyphs, while many unsupported rehearsal/repeat marks are genuinely absent. Raw corrected-page28 note guard explicitly inapplicable; source pixels unchanged on39pages and corrected shared-direction oracle checked. No guard shrunk."
+  },
+  "resolvedFindings": [
+    "Initial planner accepted disjoint ink metadata inside recipient crop; fixed by requiring ink inside padded heading rectangle too.",
+    "Initial threshold<254 discarded faint254 source pixels; fixed to<255, verified with detached254 dot.",
+    "Initial final measurement map ignored cancellation until completion; checks before each heading and after final measurement now discard canceled results."
+  ],
+  "remainingLimitations": [
+    "One CGContext conversion and one rectangular scan are not interrupted mid-call; cancellation is checked at heading boundaries and caller completion.",
+    "Measurement certifies only pixels inside the existing padded copy rectangle. It does not certify that OCR found every glyph outside that rectangle. Independent immutable source guards remain necessary.",
+    "Optional inkBounds with no hash/raster provenance is trusted internal inventory metadata; finite/containment checks reject malformed geometry, not deliberately falsified plausible metadata.",
+    "Background scan speckle can conservatively prevent deduplication.",
+    "Repeated equivalent labels at a different source position are intentionally not matched. Ave Basso/ViolinI duplicateAdagio remain.",
+    "Shared bar/rehearsal/repeat completeness, neighboring fragments and optimized page turns are unresolved output quality concerns. Approval is not full part-extraction certification."
+  ],
+  "evidenceHashes": {
+    "kv498-clarinet-p6-after.png": "4f5cfddaef1d5f50d9315c2c9644f57d29caca6f5c36a3be83468a4cdccf5101",
+    "kv498-clarinet-p6-before.png": "027c7c4557c3daa6c00c230684d66de0c8d914764ee1800e02a7bff4aa8d4e8b"
+  }
+}

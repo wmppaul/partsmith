@@ -1,0 +1,2586 @@
+{
+  "method": "Exact main-placement comparison; all output pages rendered at 144 DPI and byte-compared. Frozen independent source guards tested with original rectangles. No oracle edits.",
+  "scores": [
+    {
+      "name": "ave",
+      "baselineManifest": "output/pdf/auto-qc-2026-09-21/ave-verum/manifest.json",
+      "baselineSHA256": "dcafc4a8a1c7f30d6f3a2e4d5c0f71c40a074f2a160c2aa02c2b04734ea30e89",
+      "candidateManifest": ".build/qc-algorithm-audit/heading-dedup/ave-native-parts/manifest.json",
+      "candidateSHA256": "cbe0828e7e5ee3c140d3bd0c34391d4105f9953aa8b77a3ee04edc5f16a4a442",
+      "originalSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "parts": [
+        {
+          "id": "soprano",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "a5502e1f3f25f6d1ca4102c66af5c150d92dc622ebc73d5636e5cfd5feded889",
+          "candidatePDFSHA256": "3d99b982617d6dd07727ea4fc1af259a09726c97e21eda1ea4c327e21ae897ed",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "c288624713d48ccbadbcc22d79a7186aa2713e8ae61b5add32a057e4754537b6",
+              "candidateRasterSHA256": "c288624713d48ccbadbcc22d79a7186aa2713e8ae61b5add32a057e4754537b6"
+            }
+          ]
+        },
+        {
+          "id": "alto",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "cf74dec8743d2c6d05e5ce30560ccaae8c0dea1d0d80f4487164c872bd4e5a91",
+          "candidatePDFSHA256": "69f8f31d11e6eb5744fe4245d7b81ea429b38fceb210d37b55cdea17c596681a",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "ae6eee50d5b01bead87b48f98fe4350e6f41c07ac5367f81c6ac5c48b3ad7fbf",
+              "candidateRasterSHA256": "ae6eee50d5b01bead87b48f98fe4350e6f41c07ac5367f81c6ac5c48b3ad7fbf"
+            }
+          ]
+        },
+        {
+          "id": "tenore",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "471b2a09eac47734afa7978e8827caf129df1713d701c64a06e396544e4a7d24",
+          "candidatePDFSHA256": "7473fd7cd512153702547d27f60e97326102143566b9a5b8a67096a334303357",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "ec6fda18bbda1c127e8efc675136745f503bffa099c6efa51a232ea460696c35",
+              "candidateRasterSHA256": "ec6fda18bbda1c127e8efc675136745f503bffa099c6efa51a232ea460696c35"
+            }
+          ]
+        },
+        {
+          "id": "basso",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "dbf44c769ffffe364d87b58b624743cb7630b456401f8ba77abe5a45459a0f6c",
+          "candidatePDFSHA256": "4249a9b8a442b83bd28b34a7800f41c0c1254c70d01c025ce1b2f81828831aba",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f7045dfd2e4f14d72a15db9c5d74459e94776b48ce5501f2baed2612a422c90c",
+              "candidateRasterSHA256": "f7045dfd2e4f14d72a15db9c5d74459e94776b48ce5501f2baed2612a422c90c"
+            }
+          ]
+        },
+        {
+          "id": "violin1",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "81096d3d196a6400b52087a72ec0298d7a02a64802b87de55bdc1ce1ae64248d",
+          "candidatePDFSHA256": "23fe5f94633074438431a03efe88d215909d4feb0641691779f5662f77652473",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f14aff8c92222ba6e19828de060e16f9b7e6fa53cf66ca6e29873ac230925a9c",
+              "candidateRasterSHA256": "f14aff8c92222ba6e19828de060e16f9b7e6fa53cf66ca6e29873ac230925a9c"
+            }
+          ]
+        },
+        {
+          "id": "violin2",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "f8dc3d35a3b9f7783b51356f514b573da6d086bcc976c4625265a12a31255b3f",
+          "candidatePDFSHA256": "25f4aa1fd746324ff43e1482ca86e5362e524c25f1bd37bd07f412674d0fe17c",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "777e4558338da7d58a66ceb44d60206255e2bf1ccf155eeedd3ae36a3ca1c2f2",
+              "candidateRasterSHA256": "777e4558338da7d58a66ceb44d60206255e2bf1ccf155eeedd3ae36a3ca1c2f2"
+            }
+          ]
+        },
+        {
+          "id": "viola",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "97cd7e14588ca43a28d2bc7a5f815fa4447d669bd1807e40c4cee3233a984ca7",
+          "candidatePDFSHA256": "1491f490ecb6bb18fe78fb9f53753abf9a195c7a8c38f5a1573950cb7ca72be8",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "50821b44a1d2f87d08af648d45c932e956d5f9a7f2a87a0f782fe1d0412a578c",
+              "candidateRasterSHA256": "50821b44a1d2f87d08af648d45c932e956d5f9a7f2a87a0f782fe1d0412a578c"
+            }
+          ]
+        },
+        {
+          "id": "bass_organ",
+          "bands": 8,
+          "pages": 1,
+          "baselinePDFSHA256": "8031f525c7c8515e7ddef8a62e57335ec6ee052748144e9c2fcf2f22b106d29e",
+          "candidatePDFSHA256": "7ad4b18866245879f1c51a594e80dcb4677cdab01df423ed0c711994daaff4c9",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "8bd7711d9bceb6263650e304a7bc6862feffe58e47a11158993dbf55605a2e51",
+              "candidateRasterSHA256": "8bd7711d9bceb6263650e304a7bc6862feffe58e47a11158993dbf55605a2e51"
+            }
+          ]
+        }
+      ],
+      "changedMainCrops": [],
+      "changedMarkings": [],
+      "guards": [
+        {
+          "id": "p1-s1-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s1-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p1-s2-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s1-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p2-s2-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s1-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p3-s2-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s1-bass_organ",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-soprano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-alto",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-tenore",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-basso",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "p4-s2-bass_organ",
+          "baseline": true,
+          "candidate": true
+        }
+      ],
+      "guardFile": "Tests/full_scores/ave-tight-map.json",
+      "guardSHA256": "57408271c90103e87171de618ad14d19e4e719677f2cfafbfdf3c8bf5a5c925d"
+    },
+    {
+      "name": "kv498",
+      "baselineManifest": ".build/auto-qc/kv498-headings/menuetto-parts/manifest.json",
+      "baselineSHA256": "b001b25e7f0a80bccb0d84b9ff60a4deed0ee6edade2d957524faca6263ec14e",
+      "candidateManifest": ".build/qc-algorithm-audit/heading-dedup/kv498-native-parts/manifest.json",
+      "candidateSHA256": "37656486771b7e1af81674984d66aa884c966e5b6c236df493aa218472352258",
+      "originalSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "parts": [
+        {
+          "id": "clarinet",
+          "bands": 135,
+          "pages": 11,
+          "baselinePDFSHA256": "a7f5b0946efc0204fd76c53ea7cd4d361bbd64a6d9fb57ff64c774ea783cf091",
+          "candidatePDFSHA256": "e5ba6ac563ae1972568375beb55a227cc1f20b82cb8774123f3d4427faaab241",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "63499d50d823a3eb72e656738f167516a3623128e24054c929dc15a9072654f2",
+              "candidateRasterSHA256": "63499d50d823a3eb72e656738f167516a3623128e24054c929dc15a9072654f2"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "5cc26d792322e0aecd9ea5e645eec27bba61023929785f29ecbf03d164f8853b",
+              "candidateRasterSHA256": "5cc26d792322e0aecd9ea5e645eec27bba61023929785f29ecbf03d164f8853b"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "d41fe8510c3f28ff45f6ab940438bc3375b4ded86661d0763aee09f6ab2206cc",
+              "candidateRasterSHA256": "d41fe8510c3f28ff45f6ab940438bc3375b4ded86661d0763aee09f6ab2206cc"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "285f4d2c8b9fc55aa6936b74827d987b5c1611e6b8178565f19ad476f8b9c2dc",
+              "candidateRasterSHA256": "285f4d2c8b9fc55aa6936b74827d987b5c1611e6b8178565f19ad476f8b9c2dc"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2ba9fe4212893234dde2f2953cff6ed350d898640e7bf78f5ef5e1ea4be7396a",
+              "candidateRasterSHA256": "2ba9fe4212893234dde2f2953cff6ed350d898640e7bf78f5ef5e1ea4be7396a"
+            },
+            {
+              "page": 6,
+              "identical": false,
+              "changedPixels": 24175,
+              "baselineRasterSHA256": "270cbe3ff4a9121de806271c49a84a1f0975202805bae3e1dc4b6b1c32998f52",
+              "candidateRasterSHA256": "7b003649632132a05d8e3373c876097cf09d8415aeafcb2d4824490fb5532608",
+              "differencePixelBounds": [
+                138,
+                1329,
+                1079,
+                1462
+              ]
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "0c86e58552c8b58d72c155b0a829c9e2bca075c9b2fe3ef5ac4990b83382a652",
+              "candidateRasterSHA256": "0c86e58552c8b58d72c155b0a829c9e2bca075c9b2fe3ef5ac4990b83382a652"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "84811cbcc94c75da2b6b8414e4635003b3f4db8abec84231ed54984862c6af43",
+              "candidateRasterSHA256": "84811cbcc94c75da2b6b8414e4635003b3f4db8abec84231ed54984862c6af43"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4a08f27095d6473cf4976df0c33c0ad0bc77b389376376b21dbb137c7211f9bd",
+              "candidateRasterSHA256": "4a08f27095d6473cf4976df0c33c0ad0bc77b389376376b21dbb137c7211f9bd"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "12df806bbefa6f885cb682c4b67d4105f223e7ad0f0728e4224b171704868794",
+              "candidateRasterSHA256": "12df806bbefa6f885cb682c4b67d4105f223e7ad0f0728e4224b171704868794"
+            },
+            {
+              "page": 11,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "730de8cab34986786d599f4197fd3d40876f269dabef57ca05e2e1076a703867",
+              "candidateRasterSHA256": "730de8cab34986786d599f4197fd3d40876f269dabef57ca05e2e1076a703867"
+            }
+          ]
+        },
+        {
+          "id": "viola",
+          "bands": 135,
+          "pages": 10,
+          "baselinePDFSHA256": "ce48e650a6736712d4a301b31ab90b3523f6914f9cde8c628f831fb40849d907",
+          "candidatePDFSHA256": "d80a4fb58c8c7da1e6ac0781704caeee011a6db062e3485fe3a059b0956a468c",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "dad1f7b90b586e95f79d4ec8092c4e16378c793370673cf2944544632e6d5aec",
+              "candidateRasterSHA256": "dad1f7b90b586e95f79d4ec8092c4e16378c793370673cf2944544632e6d5aec"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f362dbbc3cf74356a944fa84aa43e94571d02b40fd9c80e57f0731c27bc0bef5",
+              "candidateRasterSHA256": "f362dbbc3cf74356a944fa84aa43e94571d02b40fd9c80e57f0731c27bc0bef5"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "779b715241cc95f156b0d2c0038d3294c36601535fd92614cccd6ca8ff81d0f4",
+              "candidateRasterSHA256": "779b715241cc95f156b0d2c0038d3294c36601535fd92614cccd6ca8ff81d0f4"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "021cefed987acdddf0c30540e410960028f4c1ed13faa0abac62a51d7c9e3457",
+              "candidateRasterSHA256": "021cefed987acdddf0c30540e410960028f4c1ed13faa0abac62a51d7c9e3457"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "7c1fa07970e7fce82230789ea945c27d87657559a0c070e82a806bf2034940f2",
+              "candidateRasterSHA256": "7c1fa07970e7fce82230789ea945c27d87657559a0c070e82a806bf2034940f2"
+            },
+            {
+              "page": 6,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2fe1597b334cd7e204e7b0f222ff36e2044df6a81db33ac610b9d68e6f03651b",
+              "candidateRasterSHA256": "2fe1597b334cd7e204e7b0f222ff36e2044df6a81db33ac610b9d68e6f03651b"
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "dffee7c74d7a0ef04f94c3640b144e227d93111d82a36376650be150ad71de57",
+              "candidateRasterSHA256": "dffee7c74d7a0ef04f94c3640b144e227d93111d82a36376650be150ad71de57"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "dc6cab2b2f10b30ea355eec7427e32cc546ec42898e6c62e66bce46ec6162bdc",
+              "candidateRasterSHA256": "dc6cab2b2f10b30ea355eec7427e32cc546ec42898e6c62e66bce46ec6162bdc"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f915bfd54afd0b3a5e8a22e0307ba8e31630cda6d930681edd01cd0c8025cc77",
+              "candidateRasterSHA256": "f915bfd54afd0b3a5e8a22e0307ba8e31630cda6d930681edd01cd0c8025cc77"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "6272a69c6628ad672bcb36518bcbc45ad79ff0c2f53979ebb384b2a79d6a6e45",
+              "candidateRasterSHA256": "6272a69c6628ad672bcb36518bcbc45ad79ff0c2f53979ebb384b2a79d6a6e45"
+            }
+          ]
+        },
+        {
+          "id": "piano",
+          "bands": 135,
+          "pages": 18,
+          "baselinePDFSHA256": "8923bf6fbad69997b4b88e281f83e35e27519871a2686f08650c7a811f2842cd",
+          "candidatePDFSHA256": "d23031210926a3f1b89e1738387d72ebca8063a0f057fdc71247f92ce67b53cf",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "d39d5585c5ea91bd684d92f380415d640154259c1144ff616e3b95d2425f0157",
+              "candidateRasterSHA256": "d39d5585c5ea91bd684d92f380415d640154259c1144ff616e3b95d2425f0157"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "0fbfd2c907b68302d89decbef6c7924d659480c3fd58597471df71f47d9713d7",
+              "candidateRasterSHA256": "0fbfd2c907b68302d89decbef6c7924d659480c3fd58597471df71f47d9713d7"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "a9a185975dfc4aca288fbc0322fc197225d09406b92a930fcf131c9609cb0642",
+              "candidateRasterSHA256": "a9a185975dfc4aca288fbc0322fc197225d09406b92a930fcf131c9609cb0642"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "513e5f1d831485b5ad3ba223381f926427d25ba8b4579ec664dbf7bd2a8e6fd9",
+              "candidateRasterSHA256": "513e5f1d831485b5ad3ba223381f926427d25ba8b4579ec664dbf7bd2a8e6fd9"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4560db75aa8e4781ebf2b90065b4e8b8ffcb6352d3f84b287239840c465d5ab3",
+              "candidateRasterSHA256": "4560db75aa8e4781ebf2b90065b4e8b8ffcb6352d3f84b287239840c465d5ab3"
+            },
+            {
+              "page": 6,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2624f02212a13fb9f2114e482aa12e0a8bda1dbe4cadf7b3e61a2c083d339603",
+              "candidateRasterSHA256": "2624f02212a13fb9f2114e482aa12e0a8bda1dbe4cadf7b3e61a2c083d339603"
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "bbc8ed1162c25e6fdd191791070ab04d5f247e9191b1efeb257e0265bae7e03c",
+              "candidateRasterSHA256": "bbc8ed1162c25e6fdd191791070ab04d5f247e9191b1efeb257e0265bae7e03c"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "d5b35555bdcf6babd6c029a08d63feee6d1a1dd1b2c05db39054d23832e3b0ac",
+              "candidateRasterSHA256": "d5b35555bdcf6babd6c029a08d63feee6d1a1dd1b2c05db39054d23832e3b0ac"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f4c4ffde6ccae8cf8b868e5cb4ee0c2acabe0eaf53f52487135907f682a625f0",
+              "candidateRasterSHA256": "f4c4ffde6ccae8cf8b868e5cb4ee0c2acabe0eaf53f52487135907f682a625f0"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "fe04c3af943300c2de76ffe3b86a7ecad24b810a389b897231cca3eea82b5ef3",
+              "candidateRasterSHA256": "fe04c3af943300c2de76ffe3b86a7ecad24b810a389b897231cca3eea82b5ef3"
+            },
+            {
+              "page": 11,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f603cff1f768ff5dadcb2ee2755bff68dd0c4de863cb9550de37c56308345c28",
+              "candidateRasterSHA256": "f603cff1f768ff5dadcb2ee2755bff68dd0c4de863cb9550de37c56308345c28"
+            },
+            {
+              "page": 12,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "743b230e323b39e58b2f37d48d7e75d567b0aaf3003dd1f02f41a68890f451cc",
+              "candidateRasterSHA256": "743b230e323b39e58b2f37d48d7e75d567b0aaf3003dd1f02f41a68890f451cc"
+            },
+            {
+              "page": 13,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2a95165eccba9df4c84f69c106f8d63d82ba54874d6135447767f9d7c4e3cb2a",
+              "candidateRasterSHA256": "2a95165eccba9df4c84f69c106f8d63d82ba54874d6135447767f9d7c4e3cb2a"
+            },
+            {
+              "page": 14,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "80b7027bf99ee3c5c587f814ef174874013863faf8909aad7a37cf57b130aa8f",
+              "candidateRasterSHA256": "80b7027bf99ee3c5c587f814ef174874013863faf8909aad7a37cf57b130aa8f"
+            },
+            {
+              "page": 15,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "d8fcf6cd3c141379acee0bf930d5aa2685f6b66ab6ba1da9154ee6754712e222",
+              "candidateRasterSHA256": "d8fcf6cd3c141379acee0bf930d5aa2685f6b66ab6ba1da9154ee6754712e222"
+            },
+            {
+              "page": 16,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4d511764b1124eed0a13b7e40d6a06f942bf93ece4d77148b2806f55479d9fa0",
+              "candidateRasterSHA256": "4d511764b1124eed0a13b7e40d6a06f942bf93ece4d77148b2806f55479d9fa0"
+            },
+            {
+              "page": 17,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f65b9afd4f657d2f8dadb607e99d8bbd665ebda38183133ea7b48533470f5da3",
+              "candidateRasterSHA256": "f65b9afd4f657d2f8dadb607e99d8bbd665ebda38183133ea7b48533470f5da3"
+            },
+            {
+              "page": 18,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "7644d68838730c8c5a882a488508719150ba207d9d6e7e234ce7bb26540a5b52",
+              "candidateRasterSHA256": "7644d68838730c8c5a882a488508719150ba207d9d6e7e234ce7bb26540a5b52"
+            }
+          ]
+        }
+      ],
+      "changedMainCrops": [],
+      "changedMarkings": [
+        {
+          "band": "p17-s1-clarinet",
+          "before": [
+            [
+              [
+                102.10291606310693,
+                28.6374298659058,
+                189.48045745754996,
+                46.13838625633025
+              ],
+              false
+            ]
+          ],
+          "after": []
+        }
+      ],
+      "guards": [
+        {
+          "id": "andante-clarinet",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "andante-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "andante-piano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "menuetto-clarinet",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "menuetto-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "menuetto-piano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "trio-clarinet",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "trio-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "trio-piano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "rondo-clarinet",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "rondo-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "rondo-piano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "allegretto-clarinet",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "allegretto-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "allegretto-piano",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "volta-1-2-clarinet",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "volta-1-2-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "volta-1-2-piano",
+          "baseline": false,
+          "candidate": false
+        }
+      ],
+      "guardFile": "Tests/quality_control/kv498-checkpoint975ee3d-review/source-direction-guards.json",
+      "guardSHA256": "364aceecb60b29135df6502a8288f439555c5e91c02cbd7ddd7e2119eb20b39a"
+    },
+    {
+      "name": "brahms",
+      "baselineManifest": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/manifest.json",
+      "baselineSHA256": "7c1d153260e10ef652090e47fbce140d8bbdfaaefd0e76fb9ffe0edfb1383fd3",
+      "candidateManifest": ".build/qc-algorithm-audit/heading-dedup/brahms-native-parts/manifest.json",
+      "candidateSHA256": "7fb1e4bbf4393375243a321e8693973d824122e1f8ba86a659d0c46a9ddb49e8",
+      "originalSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "parts": [
+        {
+          "id": "violin1",
+          "bands": 151,
+          "pages": 17,
+          "baselinePDFSHA256": "567729482e94d2f796f6fcaaf5d33ee2b2fb362b95ca526b7195e0822b861911",
+          "candidatePDFSHA256": "7683c724852b3ff963de511c1f477a92e75028c4d0aef563903472c6df8a696b",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b2e3417031a1e57393e6bb408025c1e8990da171478c50199645183e2128912c",
+              "candidateRasterSHA256": "b2e3417031a1e57393e6bb408025c1e8990da171478c50199645183e2128912c"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2eaf4e476a7b5a869c70427d9616272bb9b2bbf2199c93154bbc6fec2d3b0a65",
+              "candidateRasterSHA256": "2eaf4e476a7b5a869c70427d9616272bb9b2bbf2199c93154bbc6fec2d3b0a65"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "940e20670fb0ec493beb86f8b9da07437d20939536aba2d271c32bc99b21bf06",
+              "candidateRasterSHA256": "940e20670fb0ec493beb86f8b9da07437d20939536aba2d271c32bc99b21bf06"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "8de09a4b70d95724bcaabd72d64771dc3b416b2a637543c1c82baee12d3d99cf",
+              "candidateRasterSHA256": "8de09a4b70d95724bcaabd72d64771dc3b416b2a637543c1c82baee12d3d99cf"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "ffaec4a12fd73c0125c7f5dac2443ddb7228dd34d11fb449a04f79a327d01bd2",
+              "candidateRasterSHA256": "ffaec4a12fd73c0125c7f5dac2443ddb7228dd34d11fb449a04f79a327d01bd2"
+            },
+            {
+              "page": 6,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2b88e325112fe0450257bc730f903e98a0743d9920d8bf16ce962e1b86eb7a98",
+              "candidateRasterSHA256": "2b88e325112fe0450257bc730f903e98a0743d9920d8bf16ce962e1b86eb7a98"
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "72da44be1c94ae98846f380116127ec91e454cb5afd780f0627337921f0cba43",
+              "candidateRasterSHA256": "72da44be1c94ae98846f380116127ec91e454cb5afd780f0627337921f0cba43"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "ea2e028243154d9d4268c23184fe96bd922b64905c93ea0a9ce433206f494faf",
+              "candidateRasterSHA256": "ea2e028243154d9d4268c23184fe96bd922b64905c93ea0a9ce433206f494faf"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "c4228ec60f2b5e849c2e8ad10065d8d3fc226092e871f1d0c1d6b4b91b57a5c5",
+              "candidateRasterSHA256": "c4228ec60f2b5e849c2e8ad10065d8d3fc226092e871f1d0c1d6b4b91b57a5c5"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b410f0ada5798d2ebaf472b04de02fdbe18acd1c1b0af7628efc14a0ad1a4034",
+              "candidateRasterSHA256": "b410f0ada5798d2ebaf472b04de02fdbe18acd1c1b0af7628efc14a0ad1a4034"
+            },
+            {
+              "page": 11,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "197e5eb5a57134ef919a67507b2df8e20155a0fdfb01d095156b44c2b83b9114",
+              "candidateRasterSHA256": "197e5eb5a57134ef919a67507b2df8e20155a0fdfb01d095156b44c2b83b9114"
+            },
+            {
+              "page": 12,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "628d55f90b87d855691c31043c01edd66ccd56c9ec48f94a455e0091dedd913b",
+              "candidateRasterSHA256": "628d55f90b87d855691c31043c01edd66ccd56c9ec48f94a455e0091dedd913b"
+            },
+            {
+              "page": 13,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b0243d4e0673d2e4c0ce965acf50f251eeb243547e01ddfd406d7f4df4312e05",
+              "candidateRasterSHA256": "b0243d4e0673d2e4c0ce965acf50f251eeb243547e01ddfd406d7f4df4312e05"
+            },
+            {
+              "page": 14,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4d76b5cbadda3ee6dcd22d0bd1777b6b188f7c01236780a7292cc2d3ac67f8cb",
+              "candidateRasterSHA256": "4d76b5cbadda3ee6dcd22d0bd1777b6b188f7c01236780a7292cc2d3ac67f8cb"
+            },
+            {
+              "page": 15,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "0718aeb308eefff5e07350550903e5486e2f3caa938c838a5945008f552d1908",
+              "candidateRasterSHA256": "0718aeb308eefff5e07350550903e5486e2f3caa938c838a5945008f552d1908"
+            },
+            {
+              "page": 16,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "3f6969a2961edf5a1610879f9744214962aaa5b13d84eadff0531e509ae6c664",
+              "candidateRasterSHA256": "3f6969a2961edf5a1610879f9744214962aaa5b13d84eadff0531e509ae6c664"
+            },
+            {
+              "page": 17,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "e8111d1ca9b3279e7300517102455fd7faf96756092259beaaf45dbe07d6d1d8",
+              "candidateRasterSHA256": "e8111d1ca9b3279e7300517102455fd7faf96756092259beaaf45dbe07d6d1d8"
+            }
+          ]
+        },
+        {
+          "id": "violin2",
+          "bands": 151,
+          "pages": 16,
+          "baselinePDFSHA256": "633169336fae8f4be91c98e36d9b51acdbb39a915288e21a7b6a56e607787bea",
+          "candidatePDFSHA256": "06798533517566816ea63c6c810f48eded8ed26896cb1b528155fbc49e695ad7",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "a2f7cc034bae520ed6034961148a47e9fae61baa55272e85258192515192b150",
+              "candidateRasterSHA256": "a2f7cc034bae520ed6034961148a47e9fae61baa55272e85258192515192b150"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "76c2bbdbd61af9a6601c5fac21783a78da0d80bf1f7ad83fb6b7c8a1f3eaf869",
+              "candidateRasterSHA256": "76c2bbdbd61af9a6601c5fac21783a78da0d80bf1f7ad83fb6b7c8a1f3eaf869"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "e81c9be4bd4d9fc0276a3cb821d1792651431a8d1e99c5504227529922edb127",
+              "candidateRasterSHA256": "e81c9be4bd4d9fc0276a3cb821d1792651431a8d1e99c5504227529922edb127"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "63a55fb33d75e172afdcd885c5205211a8aa32c840e5c56bd9db27e3d9b2434c",
+              "candidateRasterSHA256": "63a55fb33d75e172afdcd885c5205211a8aa32c840e5c56bd9db27e3d9b2434c"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f83fd6b239581021c6f3fd45eab29c2f276f4697a0ea26b99ca92c93930bfce4",
+              "candidateRasterSHA256": "f83fd6b239581021c6f3fd45eab29c2f276f4697a0ea26b99ca92c93930bfce4"
+            },
+            {
+              "page": 6,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "724c2ef9ca192a73bb381beb9ed1666d06fc9cedc58083d24e5a63a5777ec428",
+              "candidateRasterSHA256": "724c2ef9ca192a73bb381beb9ed1666d06fc9cedc58083d24e5a63a5777ec428"
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "cabafa632fcad4f9ebf1452f8d0d85cf2c5d74d197e01e45c3f447054f521e6b",
+              "candidateRasterSHA256": "cabafa632fcad4f9ebf1452f8d0d85cf2c5d74d197e01e45c3f447054f521e6b"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "9280d9d973a4d51a60e25d16b1d040507bc8f1a32dae0bc0dbd65606da46fc61",
+              "candidateRasterSHA256": "9280d9d973a4d51a60e25d16b1d040507bc8f1a32dae0bc0dbd65606da46fc61"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b5db62a630d1e60213feb91e564ddaae0709a872e1ea5b92fb81a855f1027ebb",
+              "candidateRasterSHA256": "b5db62a630d1e60213feb91e564ddaae0709a872e1ea5b92fb81a855f1027ebb"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "193ece956ca1df95aba282f7670a852c9a9acdd9b348977f78702a2bd092db11",
+              "candidateRasterSHA256": "193ece956ca1df95aba282f7670a852c9a9acdd9b348977f78702a2bd092db11"
+            },
+            {
+              "page": 11,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "fe6eea938284c684dcc5be09530bb567f4631dc2951a0c456327a2d0183fc21c",
+              "candidateRasterSHA256": "fe6eea938284c684dcc5be09530bb567f4631dc2951a0c456327a2d0183fc21c"
+            },
+            {
+              "page": 12,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "96b32eb4e4195d3115cfad1a29d8f22fac1302338e8dbad0f1168000d6d7e3de",
+              "candidateRasterSHA256": "96b32eb4e4195d3115cfad1a29d8f22fac1302338e8dbad0f1168000d6d7e3de"
+            },
+            {
+              "page": 13,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "6a0d11e5362920e41f908bd972aa139a4be595ce008a4da833779cf4ef0e9e3e",
+              "candidateRasterSHA256": "6a0d11e5362920e41f908bd972aa139a4be595ce008a4da833779cf4ef0e9e3e"
+            },
+            {
+              "page": 14,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "09a7afa9f63ea1df6b5c3e4ebf201fe6ec32eb0ac518a6a7782d997cd3f11a7c",
+              "candidateRasterSHA256": "09a7afa9f63ea1df6b5c3e4ebf201fe6ec32eb0ac518a6a7782d997cd3f11a7c"
+            },
+            {
+              "page": 15,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "d98883c8b65c85c8c0d847a4c962d949be058981c56be0c41f90c13a60737a4b",
+              "candidateRasterSHA256": "d98883c8b65c85c8c0d847a4c962d949be058981c56be0c41f90c13a60737a4b"
+            },
+            {
+              "page": 16,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "c6094f7bdddfc796a2916d8665a952320f07d7d54e25279f674be0e12dc8f5ae",
+              "candidateRasterSHA256": "c6094f7bdddfc796a2916d8665a952320f07d7d54e25279f674be0e12dc8f5ae"
+            }
+          ]
+        },
+        {
+          "id": "viola",
+          "bands": 151,
+          "pages": 16,
+          "baselinePDFSHA256": "2cec1658d8f9fb5635f28f9475c4f65899c100f7b1fc59a0c1abf4c6aee825b6",
+          "candidatePDFSHA256": "0e931c2f77de942c3240690c1d7e1bc336815fc4ed69a4ee008924e17ce4a699",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "f4bdf2cc8819a9b58e5ed40ba21affb92fe7f66d68332bec0e231695a1ff4ea4",
+              "candidateRasterSHA256": "f4bdf2cc8819a9b58e5ed40ba21affb92fe7f66d68332bec0e231695a1ff4ea4"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "74c48ffa0599f31a422441ae4652e4f854288d6cde4f5a4ce449540f354d960c",
+              "candidateRasterSHA256": "74c48ffa0599f31a422441ae4652e4f854288d6cde4f5a4ce449540f354d960c"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "9e41ad3132ae51312b30b0612f66a45e7246a7989fc2c81c4df8b20408e2bf64",
+              "candidateRasterSHA256": "9e41ad3132ae51312b30b0612f66a45e7246a7989fc2c81c4df8b20408e2bf64"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "33d2a4cb2376703fe890d1cc107500266e839eb2a6c85e0cf41acfadb6ac8a42",
+              "candidateRasterSHA256": "33d2a4cb2376703fe890d1cc107500266e839eb2a6c85e0cf41acfadb6ac8a42"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "44a632ef082c1462b94009a213171607a3665aec49668846430b99bc5f6f7e6b",
+              "candidateRasterSHA256": "44a632ef082c1462b94009a213171607a3665aec49668846430b99bc5f6f7e6b"
+            },
+            {
+              "page": 6,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "e23b13ed6a7400c0e0f5ca15e2fbfe1fb414849c8b01dc6819caf0dcb8d828ab",
+              "candidateRasterSHA256": "e23b13ed6a7400c0e0f5ca15e2fbfe1fb414849c8b01dc6819caf0dcb8d828ab"
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "d97ba5025c28320f8bb7b066c4f3c66e5bd948cadcbec95d6ceaf81e484e162d",
+              "candidateRasterSHA256": "d97ba5025c28320f8bb7b066c4f3c66e5bd948cadcbec95d6ceaf81e484e162d"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "df61332eabcf004acda92dc44eac423cc1e0e2044c244fbc615faf501ba4ab79",
+              "candidateRasterSHA256": "df61332eabcf004acda92dc44eac423cc1e0e2044c244fbc615faf501ba4ab79"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "5fa20a8e5bfe4bc98835a9676c2757f06428fce63429f1dd08b15131b0338286",
+              "candidateRasterSHA256": "5fa20a8e5bfe4bc98835a9676c2757f06428fce63429f1dd08b15131b0338286"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "7b1003db9452fda2abe79435c089a6bb531cca183b8036d7ee357610e0cd85d5",
+              "candidateRasterSHA256": "7b1003db9452fda2abe79435c089a6bb531cca183b8036d7ee357610e0cd85d5"
+            },
+            {
+              "page": 11,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "6e448280cf8d73a1f0f1e997736cc68e2562315f9f3c5e1c19d8472d8c7b4118",
+              "candidateRasterSHA256": "6e448280cf8d73a1f0f1e997736cc68e2562315f9f3c5e1c19d8472d8c7b4118"
+            },
+            {
+              "page": 12,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b3eb64b2c9af72476ec397519d3584409fb0d426d647c7088a331343fabd81cb",
+              "candidateRasterSHA256": "b3eb64b2c9af72476ec397519d3584409fb0d426d647c7088a331343fabd81cb"
+            },
+            {
+              "page": 13,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4e22db3b2ade2d99d08b3962ca4e112f249465822f41c8439696303933fa1eb2",
+              "candidateRasterSHA256": "4e22db3b2ade2d99d08b3962ca4e112f249465822f41c8439696303933fa1eb2"
+            },
+            {
+              "page": 14,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "2ebcc039031197d650b163bff8f9fd494186ac16571808fd743df0735d6bc9d8",
+              "candidateRasterSHA256": "2ebcc039031197d650b163bff8f9fd494186ac16571808fd743df0735d6bc9d8"
+            },
+            {
+              "page": 15,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "facac21a09997c5420c776dbaa11fae3724096fd2cdb78497fee13d2e2d78ff1",
+              "candidateRasterSHA256": "facac21a09997c5420c776dbaa11fae3724096fd2cdb78497fee13d2e2d78ff1"
+            },
+            {
+              "page": 16,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "e392701c69905655684e678626722870b9193780405e08383f166b185caf0b85",
+              "candidateRasterSHA256": "e392701c69905655684e678626722870b9193780405e08383f166b185caf0b85"
+            }
+          ]
+        },
+        {
+          "id": "cello",
+          "bands": 151,
+          "pages": 15,
+          "baselinePDFSHA256": "0a3e43856b230f13d788ae9b97ef2be9433a4b5eea72f303b0d9422f45daadb3",
+          "candidatePDFSHA256": "3fe557ebf10e2b41fc067607da8cfe4ad3370529b6807c9cb9c5660f58989ee8",
+          "pageComparison": [
+            {
+              "page": 1,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "75b363b8d0d49d9071e201810d11097fa1e5deae73555b6e12ac473122cc7745",
+              "candidateRasterSHA256": "75b363b8d0d49d9071e201810d11097fa1e5deae73555b6e12ac473122cc7745"
+            },
+            {
+              "page": 2,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "c8235fe09fb254df047a4bdfbbade491d6c35a5c3df734f14d453942f275f445",
+              "candidateRasterSHA256": "c8235fe09fb254df047a4bdfbbade491d6c35a5c3df734f14d453942f275f445"
+            },
+            {
+              "page": 3,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "974dbbeda2d48f9a8b5ac0025ca568d9df8f7d6d2532e89d8a80d271865c4204",
+              "candidateRasterSHA256": "974dbbeda2d48f9a8b5ac0025ca568d9df8f7d6d2532e89d8a80d271865c4204"
+            },
+            {
+              "page": 4,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "1bbaa5b3d3f183d43fa3f214213779e434639a1c170cc47d8afebbb2e2730ec3",
+              "candidateRasterSHA256": "1bbaa5b3d3f183d43fa3f214213779e434639a1c170cc47d8afebbb2e2730ec3"
+            },
+            {
+              "page": 5,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "5f2c6c53d1a6f9775c614f47ce76193884a5d7ef3af9c0645b4c1dedd8dce930",
+              "candidateRasterSHA256": "5f2c6c53d1a6f9775c614f47ce76193884a5d7ef3af9c0645b4c1dedd8dce930"
+            },
+            {
+              "page": 6,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "7b02c8f81a5cc50a7b645f1a9d192e82aa6ff5b026ab33d9350315b76729d7c3",
+              "candidateRasterSHA256": "7b02c8f81a5cc50a7b645f1a9d192e82aa6ff5b026ab33d9350315b76729d7c3"
+            },
+            {
+              "page": 7,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b8c35797865c9e44433f5c472273897ac4bd22437e57f84546daa86150adae5d",
+              "candidateRasterSHA256": "b8c35797865c9e44433f5c472273897ac4bd22437e57f84546daa86150adae5d"
+            },
+            {
+              "page": 8,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "28384e5dfa582c45fcfb3e1c8837cc02c0c9e36cca10d1db67abfc7c461e6f0d",
+              "candidateRasterSHA256": "28384e5dfa582c45fcfb3e1c8837cc02c0c9e36cca10d1db67abfc7c461e6f0d"
+            },
+            {
+              "page": 9,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "976979ffd112cd24181a756407c47de8f62ed521cc5f210a87b705ef7e012d0c",
+              "candidateRasterSHA256": "976979ffd112cd24181a756407c47de8f62ed521cc5f210a87b705ef7e012d0c"
+            },
+            {
+              "page": 10,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "b431969083afa5c7d8640a747dda0f94a9d0480f3f4834360f95067669b678a9",
+              "candidateRasterSHA256": "b431969083afa5c7d8640a747dda0f94a9d0480f3f4834360f95067669b678a9"
+            },
+            {
+              "page": 11,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "a322546f6e2aae08cebe57d91f6c2f5d098bf6e9804dbbca9a45e4e8b5db8e15",
+              "candidateRasterSHA256": "a322546f6e2aae08cebe57d91f6c2f5d098bf6e9804dbbca9a45e4e8b5db8e15"
+            },
+            {
+              "page": 12,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "882b34f67c7dba3dc2ec83729af4a7d42c8678acbfa99ba4bc093287fffef203",
+              "candidateRasterSHA256": "882b34f67c7dba3dc2ec83729af4a7d42c8678acbfa99ba4bc093287fffef203"
+            },
+            {
+              "page": 13,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4d9e24e8ecd2acaf86bbaf13a635ccf90c2347d5bfb3df77e2529b575aa2a1ac",
+              "candidateRasterSHA256": "4d9e24e8ecd2acaf86bbaf13a635ccf90c2347d5bfb3df77e2529b575aa2a1ac"
+            },
+            {
+              "page": 14,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "4e4025f4eaecaa76250f66087e0b2176d1217ea578807e235753872b0ae68903",
+              "candidateRasterSHA256": "4e4025f4eaecaa76250f66087e0b2176d1217ea578807e235753872b0ae68903"
+            },
+            {
+              "page": 15,
+              "identical": true,
+              "changedPixels": 0,
+              "baselineRasterSHA256": "78b3b74a6e768226358717315800a80162fca1845a4d7940b37f49d4313eaa75",
+              "candidateRasterSHA256": "78b3b74a6e768226358717315800a80162fca1845a4d7940b37f49d4313eaa75"
+            }
+          ]
+        }
+      ],
+      "changedMainCrops": [],
+      "changedMarkings": [],
+      "guards": [
+        {
+          "id": "93521-p02-s1-01-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p02-s1-01-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p02-s1-01-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p02-s1-01-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p03-s1-02-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p03-s1-02-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p03-s1-02-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p03-s1-02-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p03-s3-03-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p03-s3-03-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p03-s3-03-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p03-s3-03-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p04-s3-04-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p04-s3-04-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p04-s3-04-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p04-s3-04-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p05-s4-05-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p05-s4-05-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p05-s4-05-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p05-s4-05-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p06-s3-06-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p06-s3-06-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p06-s3-06-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p06-s3-06-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p06-s4-07-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p06-s4-07-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p06-s4-07-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p06-s4-07-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p07-s3-08-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p07-s3-08-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p07-s3-08-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p07-s3-08-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s1-09-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p08-s1-09-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p08-s1-09-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s1-09-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s2-10-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p08-s2-10-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s2-10-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s2-10-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s4-11-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p08-s4-11-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s4-11-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p08-s4-11-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p09-s3-12-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p09-s3-12-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p09-s3-12-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p09-s3-12-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p10-s1-13-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p10-s1-13-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p10-s1-13-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p10-s1-13-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p10-s2-14-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p10-s2-14-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p10-s2-14-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p10-s2-14-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p11-s3-15-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p11-s3-15-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p11-s3-15-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p11-s3-15-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p12-s3-16-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p12-s3-16-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p12-s3-16-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p12-s3-16-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p13-s3-17-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p13-s3-17-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p13-s3-17-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p13-s3-17-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p14-s3-18-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p14-s3-18-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p14-s3-18-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p14-s3-18-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p16-s1-19-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p16-s1-19-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p16-s1-19-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p16-s1-19-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p16-s3-20-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p16-s3-20-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p16-s3-20-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p16-s3-20-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p17-s3-21-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p17-s3-21-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p17-s3-21-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p17-s3-21-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p18-s2-22-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p18-s2-22-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p18-s2-22-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p18-s2-22-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p18-s3-23-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p18-s3-23-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p18-s3-23-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p18-s3-23-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p19-s3-24-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p19-s3-24-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p19-s3-24-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p19-s3-24-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p19-s3-25-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p19-s3-25-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p19-s3-25-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p19-s3-25-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p21-s1-26-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p21-s1-26-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p21-s1-26-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p21-s1-26-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p22-s1-27-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p22-s1-27-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p22-s1-27-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p22-s1-27-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p22-s4-28-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p22-s4-28-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p22-s4-28-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p22-s4-28-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p23-s3-29-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p23-s3-29-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p23-s3-29-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p23-s3-29-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p24-s1-30-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p24-s1-30-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p24-s1-30-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p24-s1-30-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p25-s1-31-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p25-s1-31-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p25-s1-31-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p25-s1-31-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p25-s4-32-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p25-s4-32-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p25-s4-32-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p25-s4-32-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p26-s2-33-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s2-33-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s2-33-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s2-33-cello",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s3-34-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s3-34-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s3-34-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p26-s3-34-cello",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p27-s1-35-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p27-s1-35-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p27-s1-35-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p27-s1-35-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p27-s3-36-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p27-s3-36-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p27-s3-36-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p27-s3-36-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p28-s2-37-violin1",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p28-s2-37-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p28-s2-37-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p28-s2-37-cello",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p28-s3-38-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p28-s3-38-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p28-s3-38-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p28-s3-38-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p29-s1-39-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p29-s1-39-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p29-s1-39-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p29-s1-39-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p31-s4-40-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p31-s4-40-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p31-s4-40-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p31-s4-40-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p32-s4-41-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p32-s4-41-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p32-s4-41-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p32-s4-41-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p32-s4-42-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p32-s4-42-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p32-s4-42-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p32-s4-42-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p33-s3-43-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p33-s3-43-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p33-s3-43-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p33-s3-43-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p33-s4-44-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p33-s4-44-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p33-s4-44-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p33-s4-44-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p34-s3-45-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p34-s3-45-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p34-s3-45-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p34-s3-45-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p36-s1-46-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p36-s1-46-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p36-s1-46-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p36-s1-46-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p36-s1-47-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p36-s1-47-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p36-s1-47-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p36-s1-47-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p37-s2-48-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p37-s2-48-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p37-s2-48-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p37-s2-48-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p37-s2-49-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "93521-p37-s2-49-violin2",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p37-s2-49-viola",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "93521-p37-s2-49-cello",
+          "baseline": false,
+          "candidate": false
+        },
+        {
+          "id": "note-93521-p31-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p31-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p33-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p33-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p37-s1-violin1",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p37-s1-violin2",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p37-s3-viola",
+          "baseline": true,
+          "candidate": true
+        },
+        {
+          "id": "note-93521-p37-s3-cello",
+          "baseline": true,
+          "candidate": true
+        }
+      ],
+      "inapplicableRawGuards": [
+        {
+          "id": "93521-p28-s4-raw",
+          "reason": "Raw-source guard is explicitly not valid on this rectified page; unchanged page pixels and corrected shared-direction oracle are checked separately."
+        }
+      ],
+      "additionalGuardSHA256": "a7ffa13ec2aa42212d86d50bcf5f7179e8cea99527035b2d6341aed463d6ac78",
+      "correctedSources": {
+        "baselineSHA256": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983",
+        "candidateSHA256": "950e08c13fc502a1c9f822411f4cafe81638a98d65b118a242c7828eef4e5aeb",
+        "pages": [
+          {
+            "page": 1,
+            "identical": true
+          },
+          {
+            "page": 2,
+            "identical": true
+          },
+          {
+            "page": 3,
+            "identical": true
+          },
+          {
+            "page": 4,
+            "identical": true
+          },
+          {
+            "page": 5,
+            "identical": true
+          },
+          {
+            "page": 6,
+            "identical": true
+          },
+          {
+            "page": 7,
+            "identical": true
+          },
+          {
+            "page": 8,
+            "identical": true
+          },
+          {
+            "page": 9,
+            "identical": true
+          },
+          {
+            "page": 10,
+            "identical": true
+          },
+          {
+            "page": 11,
+            "identical": true
+          },
+          {
+            "page": 12,
+            "identical": true
+          },
+          {
+            "page": 13,
+            "identical": true
+          },
+          {
+            "page": 14,
+            "identical": true
+          },
+          {
+            "page": 15,
+            "identical": true
+          },
+          {
+            "page": 16,
+            "identical": true
+          },
+          {
+            "page": 17,
+            "identical": true
+          },
+          {
+            "page": 18,
+            "identical": true
+          },
+          {
+            "page": 19,
+            "identical": true
+          },
+          {
+            "page": 20,
+            "identical": true
+          },
+          {
+            "page": 21,
+            "identical": true
+          },
+          {
+            "page": 22,
+            "identical": true
+          },
+          {
+            "page": 23,
+            "identical": true
+          },
+          {
+            "page": 24,
+            "identical": true
+          },
+          {
+            "page": 25,
+            "identical": true
+          },
+          {
+            "page": 26,
+            "identical": true
+          },
+          {
+            "page": 27,
+            "identical": true
+          },
+          {
+            "page": 28,
+            "identical": true
+          },
+          {
+            "page": 29,
+            "identical": true
+          },
+          {
+            "page": 30,
+            "identical": true
+          },
+          {
+            "page": 31,
+            "identical": true
+          },
+          {
+            "page": 32,
+            "identical": true
+          },
+          {
+            "page": 33,
+            "identical": true
+          },
+          {
+            "page": 34,
+            "identical": true
+          },
+          {
+            "page": 35,
+            "identical": true
+          },
+          {
+            "page": 36,
+            "identical": true
+          },
+          {
+            "page": 37,
+            "identical": true
+          },
+          {
+            "page": 38,
+            "identical": true
+          },
+          {
+            "page": 39,
+            "identical": true
+          }
+        ]
+      },
+      "guardFile": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+      "guardSHA256": "3bfce48f871486cfcb1c444377dd1ab76980bead90aaa9fca8f59f6d14f23e3c"
+    }
+  ]
+}

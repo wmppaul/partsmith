@@ -1,0 +1,1358 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-24",
+  "status": "reviewed source-copy directions draft; not whole-score musical-completeness certification",
+  "scope": "Complete 3-part KV498 export using native heading ink evidence plus independently source-reviewed experimental ending pair. No change to 405 main crops or score order.",
+  "bindings": [
+    {
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "bytes": 686236
+    },
+    {
+      "path": "Tests/quality_control/kv498-checkpoint975ee3d-review/source-direction-guards.json",
+      "sha256": "364aceecb60b29135df6502a8288f439555c5e91c02cbd7ddd7e2119eb20b39a",
+      "bytes": 4544
+    },
+    {
+      "path": "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+      "sha256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+      "bytes": 298
+    },
+    {
+      "path": ".build/qc-algorithm-audit/heading-dedup/kv498-native-inventory.json",
+      "sha256": "4faba733d7537b899c7c71d520e2e27b4266883cf1a716d5c4235c5cabfc554a",
+      "bytes": 4131833
+    },
+    {
+      "path": ".build/qc-ending-brackets/kv498-headings-endings-scratch.json",
+      "sha256": "b32be8416e4784f6f558affc92741c439801145ba2e95ff750eb4abf1d8c3333",
+      "bytes": 3971854
+    },
+    {
+      "path": ".build/qc-ending-brackets/kv498-native-headings-ending-pair.json",
+      "sha256": "255be71083db5d36963507480fbd801ac29abadcf1315021a9a5f5daf56bdfc1",
+      "bytes": 3972525
+    },
+    {
+      "path": ".build/qc-algorithm-audit/heading-dedup/native_ink_exporter",
+      "sha256": "4ec45e1bc89188b0835485309247242945395b2c3c14a1454289f53fc10699a8",
+      "bytes": 2280352
+    },
+    {
+      "path": ".build/qc-algorithm-audit/heading-dedup/kv498-native-parts/manifest.json",
+      "sha256": "37656486771b7e1af81674984d66aa884c966e5b6c236df493aa218472352258",
+      "bytes": 380893
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/manifest.json",
+      "sha256": "373bce1a1599c7427c2faeda7b2c72c26be5d50b42719580bc7829d76730e045",
+      "bytes": 381699
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/plan.json",
+      "sha256": "b573740591e539ce74fcf5ee54c693d57de014523be8c171f1499cabe2186425",
+      "bytes": 351541
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/Trio in E-flat Major (Kegelstatt Trio), KV.498.partsmithproject/project.json",
+      "sha256": "5d5e92c704a60ab198e7e32d5e749c84c90b64d54957a9ef528b906194eda8cf",
+      "bytes": 173481
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/Trio in E-flat Major (Kegelstatt Trio), KV.498.partsmithproject/source.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "bytes": 686236
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/Clarinet in B-flat.pdf",
+      "sha256": "c322082b2961151adffb9f3b544373d753ed483bb02ab6221d4f960f7133bc0a",
+      "bytes": 4364993
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/Viola.pdf",
+      "sha256": "652e8849abaa96082c84bf4cece292126912baf386ae233293329fbe420a206e",
+      "bytes": 4519010
+    },
+    {
+      "path": ".build/auto-qc/kv498-directions-final/parts/Piano.pdf",
+      "sha256": "8c236f7d22ccd328f1d5f7dcb89924bef618391adc9eccf67782f2dfd8bc1af5",
+      "bytes": 4521361
+    }
+  ],
+  "parts": [
+    {
+      "id": "clarinet",
+      "file": "Clarinet in B-flat.pdf",
+      "sha256": "c322082b2961151adffb9f3b544373d753ed483bb02ab6221d4f960f7133bc0a",
+      "outputPages": 11,
+      "bandCount": 135,
+      "systemsPerPage": [
+        13,
+        13,
+        13,
+        12,
+        12,
+        12,
+        12,
+        13,
+        12,
+        12,
+        11
+      ]
+    },
+    {
+      "id": "viola",
+      "file": "Viola.pdf",
+      "sha256": "652e8849abaa96082c84bf4cece292126912baf386ae233293329fbe420a206e",
+      "outputPages": 10,
+      "bandCount": 135,
+      "systemsPerPage": [
+        14,
+        14,
+        14,
+        14,
+        12,
+        13,
+        13,
+        14,
+        14,
+        13
+      ]
+    },
+    {
+      "id": "piano",
+      "file": "Piano.pdf",
+      "sha256": "8c236f7d22ccd328f1d5f7dcb89924bef618391adc9eccf67782f2dfd8bc1af5",
+      "outputPages": 18,
+      "bandCount": 135,
+      "systemsPerPage": [
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        6,
+        7,
+        7,
+        7,
+        8,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8
+      ]
+    }
+  ],
+  "project": {
+    "path": "Trio in E-flat Major (Kegelstatt Trio), KV.498.partsmithproject",
+    "bands": 405,
+    "sourceMarkings": 10,
+    "embeddedSourceIdentical": true
+  },
+  "provenance": {
+    "headings": "Native local heading detector with source inkBounds; independently approved native suppression prevents only the padding-only source-owner Rondo duplicate. Production promotion confirmed separately by crop_algorithm_audit.",
+    "endings": "Scratch Python line/hook geometry + local Vision numeral proposal + pair geometry, selected on verified systems and independently visually reviewed. Full source pixels copied; no digits or lines re-engraved. Not a native Auto ending feature.",
+    "scratchExperiment": "Tests/quality_control/ending-brackets-scratch-v1/review.json",
+    "instrumentation": "Frozen verified 1+1+2 staff profile, 135 systems each. Fixed roster case, not a hidden-staff assignment claim."
+  },
+  "geometry": {
+    "mainCropsAndCandidateIDsIdentical": 405,
+    "allBandsRetainedInOrder": true,
+    "parts": 3,
+    "pages": 39,
+    "sameRenderedPagesAt108DPI": 33,
+    "changedRenderedPages": 6,
+    "layoutChanges": [
+      {
+        "bandID": "p23-s5-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 8,
+        "beforeDestinationRect": [
+          48,
+          72,
+          564,
+          101.29188321261586
+        ],
+        "afterDestinationRect": [
+          48,
+          712.0256989304168,
+          564,
+          741.3175821430326
+        ]
+      },
+      {
+        "bandID": "p24-s1-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          108.2165261480111,
+          564,
+          151.28305234814866
+        ],
+        "afterDestinationRect": [
+          48,
+          72,
+          564,
+          115.06652620013756
+        ]
+      },
+      {
+        "bandID": "p24-s2-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          158.2076952835439,
+          564,
+          190.93916794309257
+        ],
+        "afterDestinationRect": [
+          48,
+          121.9911691355328,
+          564,
+          154.72264179508147
+        ]
+      },
+      {
+        "bandID": "p24-s3-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          197.8638108784878,
+          564,
+          237.4744624319021
+        ],
+        "afterDestinationRect": [
+          48,
+          161.6472847304767,
+          564,
+          201.257936283891
+        ]
+      },
+      {
+        "bandID": "p24-s4-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          244.39910536729735,
+          564,
+          286.01618409808907
+        ],
+        "afterDestinationRect": [
+          48,
+          208.18257921928625,
+          564,
+          249.79965795007797
+        ]
+      },
+      {
+        "bandID": "p24-s5-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          292.9408270334843,
+          564,
+          324.8124023312999
+        ],
+        "afterDestinationRect": [
+          48,
+          256.7243008854732,
+          564,
+          288.5958761832888
+        ]
+      },
+      {
+        "bandID": "p25-s1-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          331.73704526669513,
+          564,
+          367.04821001144336
+        ],
+        "afterDestinationRect": [
+          48,
+          295.52051911868404,
+          564,
+          330.83168386343226
+        ]
+      },
+      {
+        "bandID": "p25-s2-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          373.9728529468386,
+          564,
+          412.72360713851964
+        ],
+        "afterDestinationRect": [
+          48,
+          337.7563267988275,
+          564,
+          376.50708099050854
+        ]
+      },
+      {
+        "bandID": "p25-s3-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          419.6482500739149,
+          564,
+          454.6727823647521
+        ],
+        "afterDestinationRect": [
+          48,
+          399.0395008399715,
+          564,
+          434.0640331308087
+        ]
+      },
+      {
+        "bandID": "p25-s4-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          461.59742530014734,
+          564,
+          510.18162623807297
+        ],
+        "afterDestinationRect": [
+          48,
+          440.98867606620394,
+          564,
+          489.57287700412957
+        ]
+      },
+      {
+        "bandID": "p25-s5-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          517.1062691734683,
+          564,
+          557.5768180886157
+        ],
+        "afterDestinationRect": [
+          48,
+          496.4975199395248,
+          564,
+          536.9680688546723
+        ]
+      },
+      {
+        "bandID": "p26-s1-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          564.501461024011,
+          564,
+          596.0864038679154
+        ],
+        "afterDestinationRect": [
+          48,
+          543.8927117900676,
+          564,
+          575.477654633972
+        ]
+      },
+      {
+        "bandID": "p26-s2-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          603.0110468033106,
+          564,
+          628.0197284070512
+        ],
+        "afterDestinationRect": [
+          48,
+          582.4022975693672,
+          564,
+          607.4109791731078
+        ]
+      },
+      {
+        "bandID": "p26-s3-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          634.9443713424464,
+          564,
+          678.0825556560618
+        ],
+        "afterDestinationRect": [
+          48,
+          614.335622108503,
+          564,
+          657.4738064221184
+        ]
+      },
+      {
+        "bandID": "p26-s4-viola",
+        "beforeOutputPage": 9,
+        "afterOutputPage": 9,
+        "beforeDestinationRect": [
+          48,
+          685.007198591457,
+          564,
+          731.2103965848258
+        ],
+        "afterDestinationRect": [
+          48,
+          664.3984493575136,
+          564,
+          710.6016473508826
+        ]
+      },
+      {
+        "bandID": "p25-s3-piano",
+        "beforeOutputPage": 16,
+        "afterOutputPage": 16,
+        "beforeDestinationRect": [
+          48,
+          396.2266407425715,
+          564,
+          463.4419511847164
+        ],
+        "afterDestinationRect": [
+          48,
+          411.8344176566392,
+          564,
+          479.0497280987841
+        ]
+      },
+      {
+        "bandID": "p25-s4-piano",
+        "beforeOutputPage": 16,
+        "afterOutputPage": 16,
+        "beforeDestinationRect": [
+          48,
+          470.8561698190834,
+          564,
+          550.0221000122247
+        ],
+        "afterDestinationRect": [
+          48,
+          486.4639467331511,
+          564,
+          565.6298769262924
+        ]
+      },
+      {
+        "bandID": "p25-s5-piano",
+        "beforeOutputPage": 16,
+        "afterOutputPage": 16,
+        "beforeDestinationRect": [
+          48,
+          557.4363186465916,
+          564,
+          631.1562322154227
+        ],
+        "afterDestinationRect": [
+          48,
+          573.0440955606593,
+          564,
+          646.7640091294904
+        ]
+      },
+      {
+        "bandID": "p26-s1-piano",
+        "beforeOutputPage": 16,
+        "afterOutputPage": 16,
+        "beforeDestinationRect": [
+          48,
+          638.5704508497897,
+          564,
+          714.5834240499092
+        ],
+        "afterDestinationRect": [
+          48,
+          654.1782277638574,
+          564,
+          730.1912009639769
+        ]
+      }
+    ],
+    "sourceGeometryMergeProof": "combined-metadata-proof.json",
+    "layoutChecks": "geometry.json"
+  },
+  "directionObligations": [
+    {
+      "guardID": "andante",
+      "partID": "clarinet",
+      "outputPage": 1,
+      "bandID": "p1-s1-clarinet",
+      "coveredBy": "main",
+      "sourceRect": [
+        0,
+        78.5737614117005,
+        595.28,
+        118.0918058975924
+      ],
+      "frozenGuardRect": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "andante",
+      "partID": "viola",
+      "outputPage": 1,
+      "bandID": "p1-s1-viola",
+      "coveredBy": "copy",
+      "sourceRect": [
+        102.08250420597099,
+        80.53503949466938,
+        147.10447340352786,
+        93.82859658784332
+      ],
+      "frozenGuardRect": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "andante",
+      "partID": "piano",
+      "outputPage": 1,
+      "bandID": "p1-s1-piano",
+      "coveredBy": "copy",
+      "sourceRect": [
+        102.08250420597099,
+        80.53503949466938,
+        147.10447340352786,
+        93.82859658784332
+      ],
+      "frozenGuardRect": [
+        103.25,
+        84.0,
+        144.75,
+        91.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "menuetto",
+      "partID": "clarinet",
+      "outputPage": 5,
+      "bandID": "p12-s3-clarinet",
+      "coveredBy": "main",
+      "sourceRect": [
+        0,
+        438.7533582089552,
+        595.28,
+        489.7406716417911
+      ],
+      "frozenGuardRect": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "menuetto",
+      "partID": "viola",
+      "outputPage": 5,
+      "bandID": "p12-s3-viola",
+      "coveredBy": "copy",
+      "sourceRect": [
+        97.76502036951179,
+        439.65080691384105,
+        147.96102694937932,
+        454.595943847898
+      ],
+      "frozenGuardRect": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "menuetto",
+      "partID": "piano",
+      "outputPage": 8,
+      "bandID": "p12-s3-piano",
+      "coveredBy": "copy",
+      "sourceRect": [
+        97.76502036951179,
+        439.65080691384105,
+        147.96102694937932,
+        454.595943847898
+      ],
+      "frozenGuardRect": [
+        99.75,
+        444.0,
+        146.0,
+        451.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "trio",
+      "partID": "clarinet",
+      "outputPage": 5,
+      "bandID": "p13-s3-clarinet",
+      "coveredBy": "main",
+      "sourceRect": [
+        0,
+        438.0920149253731,
+        595.28,
+        484.7805970149254
+      ],
+      "frozenGuardRect": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "trio",
+      "partID": "viola",
+      "outputPage": 5,
+      "bandID": "p13-s3-viola",
+      "coveredBy": "copy",
+      "sourceRect": [
+        161.8220335639316,
+        441.42783387607903,
+        189.46238486767305,
+        456.92972970802373
+      ],
+      "frozenGuardRect": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "trio",
+      "partID": "piano",
+      "outputPage": 8,
+      "bandID": "p13-s3-piano",
+      "coveredBy": "copy",
+      "sourceRect": [
+        161.8220335639316,
+        441.42783387607903,
+        189.46238486767305,
+        456.92972970802373
+      ],
+      "frozenGuardRect": [
+        163.75,
+        446.5,
+        186.5,
+        454.25
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "rondo",
+      "partID": "clarinet",
+      "outputPage": 6,
+      "bandID": "p17-s1-clarinet",
+      "coveredBy": "main",
+      "sourceRect": [
+        0,
+        28.97150843750717,
+        595.28,
+        83.04111410292057
+      ],
+      "frozenGuardRect": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "rondo",
+      "partID": "viola",
+      "outputPage": 6,
+      "bandID": "p17-s1-viola",
+      "coveredBy": "copy",
+      "sourceRect": [
+        102.10291606310693,
+        28.6374298659058,
+        189.48045745754996,
+        46.13838625633025
+      ],
+      "frozenGuardRect": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "rondo",
+      "partID": "piano",
+      "outputPage": 10,
+      "bandID": "p17-s1-piano",
+      "coveredBy": "copy",
+      "sourceRect": [
+        102.10291606310693,
+        28.6374298659058,
+        189.48045745754996,
+        46.13838625633025
+      ],
+      "frozenGuardRect": [
+        103.5,
+        34.5,
+        136.0,
+        42.25
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "allegretto",
+      "partID": "clarinet",
+      "outputPage": 6,
+      "bandID": "p17-s1-clarinet",
+      "coveredBy": "main",
+      "sourceRect": [
+        0,
+        28.97150843750717,
+        595.28,
+        83.04111410292057
+      ],
+      "frozenGuardRect": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "allegretto",
+      "partID": "viola",
+      "outputPage": 6,
+      "bandID": "p17-s1-viola",
+      "coveredBy": "copy",
+      "sourceRect": [
+        102.10291606310693,
+        28.6374298659058,
+        189.48045745754996,
+        46.13838625633025
+      ],
+      "frozenGuardRect": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "allegretto",
+      "partID": "piano",
+      "outputPage": 10,
+      "bandID": "p17-s1-piano",
+      "coveredBy": "copy",
+      "sourceRect": [
+        102.10291606310693,
+        28.6374298659058,
+        189.48045745754996,
+        46.13838625633025
+      ],
+      "frozenGuardRect": [
+        137.75,
+        34.5,
+        186.5,
+        43.75
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "volta-1-2",
+      "partID": "clarinet",
+      "outputPage": 10,
+      "bandID": "p25-s3-clarinet",
+      "coveredBy": "main",
+      "sourceRect": [
+        0,
+        341.8665671641791,
+        595.28,
+        401.45134328358205
+      ],
+      "frozenGuardRect": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "fullGuardContained": true,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": null
+    },
+    {
+      "guardID": "volta-1-2",
+      "partID": "viola",
+      "outputPage": 9,
+      "bandID": "p25-s3-viola",
+      "coveredBy": "copy",
+      "sourceRect": [
+        53.72415542602539,
+        347.8157043457031,
+        258.5498352050781,
+        361.2069396972656
+      ],
+      "frozenGuardRect": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "fullGuardContained": false,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0.293060302734375
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": "Frozen lower safety guard exceeds copy into blank space by 0.293060302734375 pt; oracle unchanged."
+    },
+    {
+      "guardID": "volta-1-2",
+      "partID": "piano",
+      "outputPage": 16,
+      "bandID": "p25-s3-piano",
+      "coveredBy": "copy",
+      "sourceRect": [
+        53.72415542602539,
+        347.8157043457031,
+        258.5498352050781,
+        361.2069396972656
+      ],
+      "frozenGuardRect": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "fullGuardContained": false,
+      "guardMissPointsLTRBBoundaries": [
+        0,
+        0,
+        0,
+        0.293060302734375
+      ],
+      "visibleIntendedGlyphs": "complete by source and actual-output visual inspection",
+      "limitation": "Frozen lower safety guard exceeds copy into blank space by 0.293060302734375 pt; oracle unchanged."
+    }
+  ],
+  "pageReview": [
+    {
+      "partID": "clarinet",
+      "page": 1,
+      "pixelIdenticalToNativeHeadingsCandidate": false,
+      "sha256": "44d6bfd3883e135c9679e93bcffc849b98fd284a6a9e9707692de0bfea6d4096",
+      "review": "Final full page visually reviewed; no new layout collision or cut in the changed content. Original main source crops remain unchanged.",
+      "change": "Printed score title/composer in output header; visually verified complete and fitting."
+    },
+    {
+      "partID": "clarinet",
+      "page": 2,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "5941782ea8a18e43b90a1f9f16e076687a56362b5f495660d21d0ea112922d30",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 3,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "00ca3235b53f5dda447f24c45fb0f896c395968aa6b507b3e613ca5bfe55e6c0",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 4,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "21feeb6d87406ab626e89955b13fa5d944a1b2ee497237f525fb240945f87430",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 5,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "f0b9351f2b5ccb72799b943229793a064eede37148e0747942bec8cf532b39c0",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 6,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "6109a5fc55c92cd304c4d285da003223542cef7169838267b1d3fd7a2ef4eeee",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 7,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "58da1afd5312a22d4f01fa6dd4b97083448da4f07100b79dc878dba97d77fc88",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 8,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "2e095219210e75ff39b6e6ce5697bca4e413b6905ceddf2a7a6eff3ba2f82faa",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 9,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "c8176769288a00519d3d0d6820f97466b0cc95abf05642828bf9d03c300b7574",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 10,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "a26820f8eb31bdd54426ebaa764c42bde53a0fdfb0fc36af9e0855cd54346017",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "clarinet",
+      "page": 11,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "4a8ae7f8fa4e54d4f6352cd2be27fe52799ca6e2da0e3394981e254ccfa3eb71",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 1,
+      "pixelIdenticalToNativeHeadingsCandidate": false,
+      "sha256": "9303827a1f04e8c5dab7be34fa9c263a61fa8a06ae6b174897761760b6f3a3b0",
+      "review": "Final full page visually reviewed; no new layout collision or cut in the changed content. Original main source crops remain unchanged.",
+      "change": "Printed score title/composer in output header; visually verified complete and fitting."
+    },
+    {
+      "partID": "viola",
+      "page": 2,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "adb4f4014663c20660607dec398c2912b0fe172be102c7883f166b75a1210f88",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 3,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "c8f245328e9fe4aa3c183ffe77eb64b268e131f158fb334ea7922b9d466416e4",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 4,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "9f2c38c4a99f095f32b544abe25983fd9b409510d9c8a5afbe9e1c9a65db276e",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 5,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "b8a05889328a8073eb40242df6cf1429881261b7f12b4a6107dfeeea7ca7b555",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 6,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "409fe4afd5cb11b740ed8e8b601331c514a695dd02aadff1c94d39cb57ac7762",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 7,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "f723af9d1bd4a7193fe929f43cf6af9909c9a6f816f78cab3908334e6a7bc959",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "viola",
+      "page": 8,
+      "pixelIdenticalToNativeHeadingsCandidate": false,
+      "sha256": "c957f616a9516b25cdcd0dbce6a916a2ba140e77a0c3f53ab87ebe94e55ac341",
+      "review": "Final full page visually reviewed; no new layout collision or cut in the changed content. Original main source crops remain unchanged.",
+      "change": "Unchanged p23-s5-viola moves from start of page 9 to end of page 8 during layout balancing; all 14 systems fit."
+    },
+    {
+      "partID": "viola",
+      "page": 9,
+      "pixelIdenticalToNativeHeadingsCandidate": false,
+      "sha256": "934e8212595368eaef89dee5c1474cbf5587dee74b6e8fa20483d3a592f51348",
+      "review": "Final full page visually reviewed; no new layout collision or cut in the changed content. Original main source crops remain unchanged.",
+      "change": "Copied p25-s3 ending pair; 14 systems instead of 15 after previous system moves to page 8. Both digits and all lines/hooks complete, aligned to ending bars."
+    },
+    {
+      "partID": "viola",
+      "page": 10,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "1c45dee1cd3aa816802b805dbc68e15b82826f127ec4e720a571b009cc4991c9",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 1,
+      "pixelIdenticalToNativeHeadingsCandidate": false,
+      "sha256": "bdf6a67a14f0bcf8406b35cce5e2a1d35c7392d33ec435ed1a65ce04bf52d695",
+      "review": "Final full page visually reviewed; no new layout collision or cut in the changed content. Original main source crops remain unchanged.",
+      "change": "Printed score title/composer in output header; visually verified complete and fitting."
+    },
+    {
+      "partID": "piano",
+      "page": 2,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "43ba3d45f4c5858fdf5fdf43b1ffcf3f895d550ae094272d39de6a7f894ee122",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 3,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "08f21ee0d48dde307e94c4f514786bac2166835a809e5bc2a961ecbbcce350c8",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 4,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "cd87311280ee11086820e9402e639c3908c8adbc426d271d88b040c08211d4d7",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 5,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "f89fbf210dec0794f6a2517ea680023e3094db556fceb22be37e398e1ce557c1",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 6,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "78157ff989c410e7e59d0b2102021786edd200bb572a2b81602977cc0ebcb1ab",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 7,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "593c183589e63a17a66fd40a44464b331e18d4dda8f09d8a060e0fa4eb48eebf",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 8,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "a3720585eba077963ea2b07b687cc41df5d9a7c2716f3a189e02d4d44bbdd80e",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 9,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "d2f02fef1c307beb6dd29f3d7018232c91a7d54fa83d02fd8e06961c03485837",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 10,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "d121c2b14be881cbdc0037047dd3529b3b413f8c0d71753fc4ba89828a4b145a",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 11,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "dd961be82e24ed4ddc2bd43470cf90ea114c5bb190f24560f996547e794d28c2",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 12,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "4cc8363702528774f16e7e49d40adb1a9724b83406c1623c8afb70f4dc9623cf",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 13,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "9f06d4354b95a3555139211d04fefce44285d156607a216270974315637dd5e6",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 14,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "d036ad45a333fbecdae947a32f168787cdcd278589b9701860daeb240ec95467",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 15,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "9aa2c4530810fc15a058164cdab8bf09dfc1673ea1d5c6b9a25f698fc2f7d960",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 16,
+      "pixelIdenticalToNativeHeadingsCandidate": false,
+      "sha256": "ced6ca833c23c989e525f257547e9ce48a902135377ce4a78094208eda301a82",
+      "review": "Final full page visually reviewed; no new layout collision or cut in the changed content. Original main source crops remain unchanged.",
+      "change": "Copied p25-s3 ending pair; eight systems retained. Both digits and all lines/hooks complete, aligned to ending bars."
+    },
+    {
+      "partID": "piano",
+      "page": 17,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "fdbbf2340476584c227dad42dcc3642702f7faeba89180ad3d82d3ece4dfbc7e",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    },
+    {
+      "partID": "piano",
+      "page": 18,
+      "pixelIdenticalToNativeHeadingsCandidate": true,
+      "sha256": "1ea5fe03959cf538244a28055b28fc560f8e7bb28cc42d6e719b9da4216ed54b",
+      "review": "Pixel-identical at 108 dpi to independently reviewed native heading candidate. Its complete-page review and known limitations carry forward."
+    }
+  ],
+  "independentReviews": [
+    "sample_corpus approved native same-source suppression: 111 pages compared, sole prior change Clarinet p6; all 39 KV498 page overviews reviewed. Complete Rondo/Allegretto exactly once; unchanged notes/slurs.",
+    "root inspected original source and all three actual p25-s3 ending passages: both digits, hooks and long lines intact; correct bars; no collision. Final copied ending geometry is unchanged from the root-reviewed scratch input."
+  ],
+  "limitations": [
+    "The two lower-part ending copies do not contain the complete frozen lower safety guard: 0.293060302734375 pt extends into blank space. All actual numeral and bracket ink is visibly inside. Guard unchanged.",
+    "Existing neighboring note, staff, clef and slur fragments remain. In particular the previously reported p24-s5 Clarinet neighboring piano fragment is unchanged. This is not a clean-isolation result.",
+    "Other shared musical directions were not exhaustively inventoried. The 18 frozen obligations are a bounded validation set, not a claim of complete musical semantics.",
+    "Page turns have not been optimized for performance.",
+    "Experimental paired-ending recognition remains scratch only and has not been integrated into Mac Auto."
+  ],
+  "evidenceImages": [
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/clarinet-001.png",
+      "sha256": "793685166f81dccc8c5e969aca5e61f5f9fe2790cd13d3a084ac2394073b7c08",
+      "bytes": 105823
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/clarinet-endings.png",
+      "sha256": "81f144d38dd9a008dc6edcd0c9c67a9cd63742739dafb170547b7e4462572000",
+      "bytes": 20835
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/clarinet-rondo.png",
+      "sha256": "5e0813edf9d8b81e985163f099943c4c869277829f3f048abaab753a44bb5446",
+      "bytes": 24056
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/piano-001.png",
+      "sha256": "b347cda01a7afdaf986684303c55764378e25413f6bd8a2b71143fd06497cd8f",
+      "bytes": 130152
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/piano-016.png",
+      "sha256": "81317ffa94f6f19f0872bada30aae2abf67434ac1b7fdaeca9839d529a31cdbd",
+      "bytes": 147481
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/piano-endings.png",
+      "sha256": "3ee82e2024d542dced21b220d3569aa05098d7c70cb121754c675b96b41a678b",
+      "bytes": 29703
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/piano-rondo.png",
+      "sha256": "a9583f99952575ff0a116abb6eba2d3c0fbf6d01a9692e6ee99544ae1352329e",
+      "bytes": 42146
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/viola-001.png",
+      "sha256": "633c563aae00a1cc74ae1004da95c8b08d9ca97dda00ac8dde39672e4679ed9f",
+      "bytes": 106412
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/viola-008.png",
+      "sha256": "c4cbadf466f3fb50ecfc796d2f952f3ef23c87b31d4a9055593f382197484e55",
+      "bytes": 138463
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/viola-009.png",
+      "sha256": "639d940b162769f2a6f32fdfdebc1a76d0697a49ab2170d2909132bd4757df14",
+      "bytes": 106521
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/viola-endings.png",
+      "sha256": "4f3263d86482e4519d896e3702e69bb9acd19af0a7900ff422f3de8fa7fa8f28",
+      "bytes": 21290
+    },
+    {
+      "path": "Tests/quality_control/kv498-directions-final-review/viola-rondo.png",
+      "sha256": "d5f61bb410fc75f31dc0747b49c393677e5afc6e0ee097afd87b06264fd0ab07",
+      "bytes": 11550
+    }
+  ]
+}

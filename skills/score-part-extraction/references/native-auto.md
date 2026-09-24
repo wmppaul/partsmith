@@ -113,6 +113,10 @@ boundaries and shared source markings; any explicit crop rectangles must be
 disclosed separately from automatically generated geometry. The export runner
 uses the same `addScoreParts` transaction as the app, preserves an immutable
 source in an editable project, and records every source-to-output placement.
+An override's supplied `sourceMarkings` list is authoritative, including `[]`
+when copies have been removed. Omit it (or use `null`) to retain automatic
+navigation propagation. Crop-edge resets and unrelated edits must not restore
+a removed copy; the original source owner's crop is a separate decision.
 
 The review utility renders every output page, checks coverage against independent
 source counts, and compares protected target regions and copied directions with
@@ -155,6 +159,11 @@ directions, check all output copies for complete glyphs and correct system
 ownership, and record omissions. Avoid duplicating a heading already visible in
 the target crop. Font/OCR boxes alone may omit serifs, dots or parentheses;
 inspect the original pixels beyond the proposed bounds.
+Suppress a copied heading only when its complete source ink remains visible
+at the correct musical position. Identical wording later in a system is not
+necessarily the same instruction. A neighboring instrument's heading below
+the intended staff is not a substitute for its properly placed heading above.
+Keep duplication unresolved if removing it would leave only that neighbor text.
 
 
 ## Automatic multi-bar rests

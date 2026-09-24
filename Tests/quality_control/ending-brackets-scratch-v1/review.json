@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "status": "Scratch-only source-faithful paired-ending prototype; not native detector or app feature",
+  "scope": "68 full source pages and 286 verified systems processed: 29 KV498 pages and 39 Brahms pages. Known source oracles contain 10 ending brackets in 5 pairs. The 10 selected brackets match those known cases; no extra selected pair was found. This does not establish complete recall for unlisted ending styles or scores.",
+  "counts": {
+    "inputPageCount": 68,
+    "inputSystemCount": 286,
+    "geometryProposalCount": 576,
+    "mergedProposalCount": 415,
+    "numeralCandidateCount": 12,
+    "pairCount": 5
+  },
+  "knownBracketsDetected": 10,
+  "extraSelectedPairs": 0,
+  "unpairedBeamOCRFalsePositives": 2,
+  "geometryOwnershipControlsPassed": 25,
+  "syntheticProseControls": [
+    {
+      "id": "shifted-prose",
+      "image": ".build/qc-ending-brackets/negative-shifted-prose.png",
+      "geometryProposalCount": 2,
+      "expectedPairedEndings": 0,
+      "observations": [
+        {
+          "id": "shifted-prose-0",
+          "mode": "accurate",
+          "lines": []
+        },
+        {
+          "id": "shifted-prose-0",
+          "mode": "fast",
+          "lines": []
+        },
+        {
+          "id": "shifted-prose-1",
+          "mode": "accurate",
+          "lines": [
+            {
+              "alternatives": [
+                "2."
+              ],
+              "bounds": [
+                0.24999999932359304,
+                0.2986111100529101,
+                0.6477272720508658,
+                0.7430555544973545
+              ],
+              "confidence": 1,
+              "text": "2."
+            }
+          ]
+        },
+        {
+          "id": "shifted-prose-1",
+          "mode": "fast",
+          "lines": [
+            {
+              "alternatives": [
+                "2"
+              ],
+              "bounds": [
+                0.2727272727272727,
+                0.26388888888888884,
+                0.4772727272727273,
+                0.6805555555555556
+              ],
+              "confidence": 1,
+              "text": "2"
+            }
+          ]
+        }
+      ],
+      "acceptedPairCount": 0,
+      "passed": true
+    },
+    {
+      "id": "unpaired-roman-i",
+      "image": ".build/qc-ending-brackets/negative-unpaired-roman-i.png",
+      "geometryProposalCount": 1,
+      "expectedPairedEndings": 0,
+      "observations": [
+        {
+          "id": "unpaired-roman-i-0",
+          "mode": "accurate",
+          "lines": []
+        },
+        {
+          "id": "unpaired-roman-i-0",
+          "mode": "fast",
+          "lines": [
+            {
+              "alternatives": [
+                "I"
+              ],
+              "bounds": [
+                0.2727272727272727,
+                0.26388888888888884,
+                0.4090909090909091,
+                0.6805555555555556
+              ],
+              "confidence": 0.5,
+              "text": "I"
+            }
+          ]
+        }
+      ],
+      "acceptedPairCount": 0,
+      "passed": true
+    },
+    {
+      "id": "prose-in-number-cell",
+      "image": ".build/qc-ending-brackets/negative-prose-in-number-cell.png",
+      "geometryProposalCount": 2,
+      "expectedPairedEndings": 0,
+      "observations": [
+        {
+          "id": "prose-in-number-cell-0",
+          "mode": "accurate",
+          "lines": [
+            {
+              "alternatives": [
+                "Ch"
+              ],
+              "bounds": [
+                0.2386363617234849,
+                0.2847222225,
+                0.8124999980871213,
+                0.6875000002777778
+              ],
+              "confidence": 1,
+              "text": "Ch"
+            }
+          ]
+        },
+        {
+          "id": "prose-in-number-cell-0",
+          "mode": "fast",
+          "lines": [
+            {
+              "alternatives": [
+                "Ch"
+              ],
+              "bounds": [
+                0.23863636363636365,
+                0.2847222222222222,
+                0.7954545454545454,
+                0.6736111111111112
+              ],
+              "confidence": 0.5,
+              "text": "Ch"
+            }
+          ]
+        },
+        {
+          "id": "prose-in-number-cell-1",
+          "mode": "accurate",
+          "lines": [
+            {
+              "alternatives": [
+                "2."
+              ],
+              "bounds": [
+                0.24999999932359304,
+                0.2986111100529101,
+                0.6477272720508658,
+                0.7430555544973545
+              ],
+              "confidence": 1,
+              "text": "2."
+            }
+          ]
+        },
+        {
+          "id": "prose-in-number-cell-1",
+          "mode": "fast",
+          "lines": [
+            {
+              "alternatives": [
+                "2"
+              ],
+              "bounds": [
+                0.2727272727272727,
+                0.26388888888888884,
+                0.4772727272727273,
+                0.6805555555555556
+              ],
+              "confidence": 1,
+              "text": "2"
+            }
+          ]
+        }
+      ],
+      "acceptedPairCount": 0,
+      "passed": true
+    }
+  ],
+  "algorithm": "Search only the gap above a verified first staff; require a thin horizontal line and descending left hook, OCR the number cell, coalesce collinear proposals, then require an adjacent 1→2 pair. The first bracket must have a real descending right hook. Adjacent-system pairing requires end-of-system/right-side first bracket followed immediately by a left-side second bracket. All source rectangles remain unchanged pixel copies.",
+  "ambiguity": "Fast Vision reads three Brahms printed 1 glyphs as literal I at 0.5 confidence. Evidence remains literal and ambiguous. It is accepted as a first-position candidate only with a closed bracket and an adjacent exact 2 candidate. No guessed numeral is drawn or transcribed into the score.",
+  "copyGuards": [
+    {
+      "score": "brahms93521",
+      "page": 6,
+      "system": 3,
+      "id": "93521-p06-s3-06",
+      "rect": [
+        363,
+        303,
+        389,
+        317
+      ],
+      "proposedCombinedRegion": [
+        362.9484599511844,
+        302.9071833341249,
+        390.5286233821489,
+        316.4423932072201
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0.5576067927798931
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 6,
+      "system": 4,
+      "id": "93521-p06-s4-07",
+      "rect": [
+        67,
+        447,
+        116,
+        459
+      ],
+      "proposedCombinedRegion": [
+        66.89432783414527,
+        446.8015179075636,
+        115.82608883252138,
+        457.51933331470957
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0.17391116747862156,
+        "bottom": 1.48066668529043
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 32,
+      "system": 4,
+      "id": "93521-p32-s4-41",
+      "rect": [
+        239,
+        442,
+        314,
+        454
+      ],
+      "proposedCombinedRegion": [
+        238.97722558805174,
+        442.29421674281303,
+        371.9886077452817,
+        456.1167244307234
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0.29421674281303467,
+        "right": 0,
+        "bottom": 0
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 32,
+      "system": 4,
+      "id": "93521-p32-s4-42",
+      "rect": [
+        313,
+        442,
+        371,
+        455
+      ],
+      "proposedCombinedRegion": [
+        238.97722558805174,
+        442.29421674281303,
+        371.9886077452817,
+        456.1167244307234
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0.29421674281303467,
+        "right": 0,
+        "bottom": 0
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 36,
+      "system": 1,
+      "id": "93521-p36-s1-46",
+      "rect": [
+        247,
+        28,
+        314,
+        40
+      ],
+      "proposedCombinedRegion": [
+        246.4111925254375,
+        26.68148807407341,
+        376.6529741412291,
+        42.71289354342668
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "wholeFrozenRegionContained": true,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 36,
+      "system": 1,
+      "id": "93521-p36-s1-47",
+      "rect": [
+        314,
+        28,
+        376,
+        41
+      ],
+      "proposedCombinedRegion": [
+        246.4111925254375,
+        26.68148807407341,
+        376.6529741412291,
+        42.71289354342668
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "wholeFrozenRegionContained": true,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 37,
+      "system": 2,
+      "id": "93521-p37-s2-48",
+      "rect": [
+        226,
+        168,
+        259,
+        181
+      ],
+      "proposedCombinedRegion": [
+        225.43796445331515,
+        167.70921469067918,
+        287.35953554668487,
+        179.0557004455981
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 1.9442995544019084
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "brahms93521",
+      "page": 37,
+      "system": 2,
+      "id": "93521-p37-s2-49",
+      "rect": [
+        259,
+        168,
+        285,
+        181
+      ],
+      "proposedCombinedRegion": [
+        225.43796445331515,
+        167.70921469067918,
+        287.35953554668487,
+        179.0557004455981
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 1.9442995544019084
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    },
+    {
+      "score": "kv498",
+      "page": 25,
+      "system": 3,
+      "id": "volta-1-2",
+      "rect": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "proposedCombinedRegion": [
+        53.72415706942668,
+        347.81571873163244,
+        258.5498249658923,
+        361.20692810604174
+      ],
+      "marginMissesPoints": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0.29307189395825617
+      },
+      "wholeFrozenRegionContained": false,
+      "visualGlyphReview": "All intended bracket strokes and ending digits visible inside proposal; unrelated music fragments may be clipped. Safety-envelope mismatch retained."
+    }
+  ],
+  "sourceReview": "All 10 proposed bracket/digit regions visually checked against full source context. Brahms p6 first-ending copy retains a clipped neighboring one-bar-rest count; p32 and p36 retain adjacent note/slur fragments. No cleanup is claimed.",
+  "independentKV498Review": "Root independently inspected all 3 actual KV498 p25s3 exports. Both digits, all hooks and long lines are complete and aligned to their actual ending bars, with no collision. The 0.293-point lower frozen-guard mismatch lies beyond the actual bracket ink; the guard remains unchanged.",
+  "bindings": {
+    "kv498Source": {
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9"
+    },
+    "brahmsCorrectedSource": {
+      "path": ".build/auto-qc/candidate8-directions/quartet93521-parts/rectified-review-source.pdf",
+      "sha256": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983"
+    },
+    "kv498FrozenOracle": {
+      "path": "Tests/quality_control/kv498-checkpoint975ee3d-review/source-direction-guards.json",
+      "sha256": "364aceecb60b29135df6502a8288f439555c5e91c02cbd7ddd7e2119eb20b39a"
+    },
+    "brahmsFrozenOracle": {
+      "path": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+      "sha256": "3bfce48f871486cfcb1c444377dd1ab76980bead90aaa9fca8f59f6d14f23e3c"
+    },
+    "geometryCandidates": {
+      "path": ".build/qc-ending-brackets/geometry-candidates.json",
+      "sha256": "1a215f6a035fca4c51db7e7fb7305d5899f89ed0fcc7d1004cd097ffb56457fc"
+    },
+    "accurateOCR": {
+      "path": ".build/qc-ending-brackets/all-padded-accurate.json",
+      "sha256": "6e92c8ce6f340712d35cb6c0bb60b35cf6d25193eb00313b277f1c4c21296d40"
+    },
+    "fastOCR": {
+      "path": ".build/qc-ending-brackets/all-padded-fast.json",
+      "sha256": "fd66379e42ef54a6bc9dd28535669825793b3a1a21b15dd8334b4ee07224868a"
+    },
+    "scratchInventory": {
+      "path": ".build/qc-ending-brackets/kv498-headings-endings-scratch.json",
+      "sha256": "b32be8416e4784f6f558affc92741c439801145ba2e95ff750eb4abf1d8c3333"
+    },
+    "scratchManifest": {
+      "path": ".build/qc-ending-brackets/kv498-ending-parts/manifest.json",
+      "sha256": "a830612ee72472d1c510efef9b5b5922932f2fe2523555025bb5900443de3974"
+    },
+    "exporter": {
+      "path": ".build/qc-ending-brackets/export_score_plan-frozen",
+      "sha256": "2e63b6f4301f082d85bc733c513f7c8eda84228fb3784def8ecdf9a99f8f8d2b"
+    },
+    "parts": [
+      {
+        "id": "clarinet",
+        "pages": 11,
+        "bands": 135,
+        "path": ".build/qc-ending-brackets/kv498-ending-parts/Clarinet in B-flat.pdf",
+        "sha256": "ad403767c7cd991ee95e09d66b92aa62765e1d6b2b52a1e1bd7e36424ada2f8e"
+      },
+      {
+        "id": "viola",
+        "pages": 10,
+        "bands": 135,
+        "path": ".build/qc-ending-brackets/kv498-ending-parts/Viola.pdf",
+        "sha256": "443a1ceaa3585cefa956cdc4b2152b36566339cf7e8a26e39b2065f597027b2b"
+      },
+      {
+        "id": "piano",
+        "pages": 18,
+        "bands": 135,
+        "path": ".build/qc-ending-brackets/kv498-ending-parts/Piano.pdf",
+        "sha256": "1b962f275ec232c6b29b877069e7a8262ab8d12aabd327ae2444eac19533a915"
+      }
+    ]
+  },
+  "limitations": [
+    "The result remains an experimental paired-ending workflow. Unpaired endings, third endings, unusual number lists and variable staff assignments are unsupported.",
+    "Some measured source rectangles do not contain every blank safety margin in the frozen oracle. The mismatch is reported; no oracle was changed.",
+    "Geometry plus paired OCR has been tested on these 2 scores and 3 synthetic prose controls only. Broad corpus and native tests remain necessary before app integration.",
+    "The scratch KV498 export still contains the separately known duplicate Rondo heading; combined native heading suppression is being reviewed separately."
+  ]
+}

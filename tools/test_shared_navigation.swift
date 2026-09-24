@@ -112,6 +112,55 @@ import Foundation
         let b = real[0].bounds
         check(b[0] * 427 <= 266.4 && b[1] * 615 <= 289.2 && b[2] * 427 >= 387 && b[3] * 615 >= 306.5,
               "Full independent source envelope including destination symbol survives")
+        var navigationPage = realPage
+        navigationPage.sharedNavigation = real
+        let automatic = ScoreExtractionPlanner.plan(pages: [navigationPage], profile: quartet)
+        let target = automatic.bands.first { $0.systemIndex == 1 && $0.partID == "violin1" }!
+        check(target.sourceMarkings.count == 1, "Fixture copies the repeat instruction to the recipient")
+        var reviewed = ScoreSystemAssignment.pageOverride(page: navigationPage,
+            pagePlan: automatic.pages[0], existingOverride: nil)
+        let systemIndex = reviewed.systems.firstIndex { $0.systemIndex == 1 }!
+        let targetIndex = reviewed.systems[systemIndex].bands.firstIndex { $0.partID == "violin1" }!
+        reviewed.systems[systemIndex].bands[targetIndex].sourceMarkings = []
+        reviewed.systems[systemIndex].bands[targetIndex].sourceMarkingsBelow = []
+        func recipient(_ value: ScorePageOverride) -> ScorePlannedBand {
+            let plan = ScoreExtractionPlanner.plan(pages: [navigationPage], profile: quartet, overrides: [value])
+            check(plan.canApply, "A reviewed marking choice must not make its staff assignments unresolved")
+            return plan.bands.first { $0.id == target.id }!
+        }
+        check(recipient(reviewed).sourceMarkings.isEmpty,
+              "An explicit empty marking list must not resurrect a removed navigation copy")
+        let decoded = try JSONDecoder().decode(ScorePageOverride.self, from: JSONEncoder().encode(reviewed))
+        check(decoded.systems[systemIndex].bands[targetIndex].sourceMarkings == [],
+              "Saved explicit empty marking lists remain distinct from absent legacy lists")
+        check(recipient(decoded).sourceMarkings.isEmpty, "Removal survives override serialization and replan")
+        var unrelatedEdit = decoded
+        unrelatedEdit.systems[0].bands[0].label = "Reviewed opening"
+        check(recipient(unrelatedEdit).sourceMarkings.isEmpty, "Unrelated edits do not restore removed copies")
+        var resetCrop = decoded
+        resetCrop.systems[systemIndex].bands[targetIndex].rect = nil
+        check(recipient(resetCrop).sourceMarkings.isEmpty,
+              "Resetting crop edges keeps the separate reviewed marking choice")
+        var legacy = decoded
+        legacy.systems[systemIndex].bands[targetIndex].sourceMarkings = nil
+        legacy.systems[systemIndex].bands[targetIndex].sourceMarkingsBelow = nil
+        check(recipient(legacy).sourceMarkings == target.sourceMarkings,
+              "Legacy nil marking lists still receive the automatic repeat instruction")
+        var custom = decoded
+        custom.systems[systemIndex].bands[targetIndex].sourceMarkings = [[30, 10, 55, 20]]
+        custom.systems[systemIndex].bands[targetIndex].sourceMarkingsBelow = [false]
+        let customResult = recipient(custom)
+        check(customResult.sourceMarkings.count == 1 && customResult.sourceMarkings[0].isBelow != true,
+              "A reviewed nonempty list remains authoritative without an extra below-system copy")
+        let afterRemoval = ScoreExtractionPlanner.plan(pages: [navigationPage], profile: quartet, overrides: [decoded])
+        let originalOwner = automatic.bands.first { $0.systemIndex == 1 && $0.partID == "cello" }!
+        let reviewedOwner = afterRemoval.bands.first { $0.id == originalOwner.id }!
+        check(reviewedOwner.topFraction == originalOwner.topFraction
+              && reviewedOwner.bottomFraction == originalOwner.bottomFraction,
+              "Recipient removal leaves the source owner's printed direction and crop intact")
+        check(afterRemoval.bands.filter { $0.systemIndex == 1 && ["violin2", "viola"].contains($0.partID) }
+            .allSatisfy { $0.sourceMarkings.count == 1 },
+              "One recipient's removal leaves other recipients' copies intact")
         var uncertain = quartet; uncertain.requiresSystemAssignment = true
         let uncertainPlan = ScoreExtractionPlanner.plan(pages: [realPage], profile: uncertain)
         check(Detector.select(from: [direction], page: realPage, plan: uncertainPlan).isEmpty,

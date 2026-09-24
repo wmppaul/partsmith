@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    {
+      "path": ".build/qc-algorithm-audit/heading-dedup/kv498-native-inventory.json",
+      "sha256": "4faba733d7537b899c7c71d520e2e27b4266883cf1a716d5c4235c5cabfc554a"
+    },
+    {
+      "path": ".build/qc-ending-brackets/kv498-headings-endings-scratch.json",
+      "sha256": "b32be8416e4784f6f558affc92741c439801145ba2e95ff750eb4abf1d8c3333"
+    }
+  ],
+  "output": ".build/qc-ending-brackets/kv498-native-headings-ending-pair.json",
+  "outputSHA256": "255be71083db5d36963507480fbd801ac29abadcf1315021a9a5f5daf56bdfc1",
+  "sourceEqual": true,
+  "pageAndStaffAndInkComponentGeometryEqualForPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "headingBoundsTextAndAnchorEqual": true,
+  "nativeInkBoundsRetained": true,
+  "endingSourceRectOnlyAddedOnPage25System3": true
+}

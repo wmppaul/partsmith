@@ -94,7 +94,53 @@ enum ScoreSharedHeadingDetector {
             }
         }
         guard !isCancelled() else { return [] }
-        return result
+        var measured: [ScoreSharedHeading] = []
+        for heading in result {
+            guard !isCancelled() else { return [] }
+            var item = heading
+            item.inkBounds = measuredInkBounds(in: image, bounds: heading.bounds)
+            measured.append(item)
+        }
+        guard !isCancelled() else { return [] }
+        return measured
+    }
+
+    /// Measure all original raster ink inside the padded source copy.
+    /// Never use OCR word bounds to decide that a glyph is already retained:
+    /// OCR can miss cap serifs, dots and parentheses. Failed/empty measurements
+    /// provide no suppression evidence and leave the existing padded copy.
+    static func measuredInkBounds(in image: CGImage, bounds: [Double]) -> [Double]? {
+        guard bounds.count == 4, bounds.allSatisfy(\.isFinite),
+              bounds[0] >= 0, bounds[1] >= 0, bounds[0] < bounds[2], bounds[1] < bounds[3],
+              bounds[2] <= 1, bounds[3] <= 1, image.width > 0, image.height > 0 else { return nil }
+        let width = image.width, height = image.height
+        guard let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8,
+            bytesPerRow: width, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue) else { return nil }
+        context.setFillColor(gray: 1, alpha: 1)
+        context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+        context.interpolationQuality = .none
+        context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
+        guard let pixels = context.data?.assumingMemoryBound(to: UInt8.self) else { return nil }
+        let x0 = max(0, Int(floor(bounds[0] * Double(width))))
+        let x1 = min(width, Int(ceil(bounds[2] * Double(width))))
+        let y0 = max(0, Int(floor(bounds[1] * Double(height))))
+        let y1 = min(height, Int(ceil(bounds[3] * Double(height))))
+        guard x1 > x0, y1 > y0 else { return nil }
+        var left = width, top = height, right = 0, bottom = 0
+        for y in y0..<y1 {
+            for x in x0..<x1 where pixels[y * width + x] < 255 {
+                left = min(left, x); top = min(top, y)
+                right = max(right, x + 1); bottom = max(bottom, y + 1)
+            }
+        }
+        guard right > left, bottom > top else { return nil }
+        // The duplicate copy itself is clipped to these padded bounds. Measure
+        // all nonwhite source pixels with a guard, capped at that exact copy;
+        // ink outside it was never supplied by the copy being suppressed.
+        return [max(bounds[0], Double(max(0, left - 1)) / Double(width)),
+                max(bounds[1], Double(max(0, top - 1)) / Double(height)),
+                min(bounds[2], Double(min(width, right + 1)) / Double(width)),
+                min(bounds[3], Double(min(height, bottom + 1)) / Double(height))]
     }
 
     static func select(from lines: [TextLine], anchor: ScoreObservedStaff,

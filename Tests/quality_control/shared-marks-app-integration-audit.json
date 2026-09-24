@@ -1,0 +1,19 @@
+{
+  "reviewDate": "2026-09-24",
+  "kind": "read-only integration audit",
+  "productionModified": false,
+  "recommendation": "off-by-default fixed-layout-only opt-in, with mark visualization/removal and assignment invalidation in initial feature",
+  "sourceSHA256": {
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "85f7a648d6523468c6f0f0fb8c9d72b648444a1042682eca2cb92c08ae9aa8e6",
+    "Partsmith/Features/Project/ScoreExtractionWindow.swift": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "059737369942a036932c555018ad456f0117591631e57048394aefc4cd8574ff",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "02c0e6d105f4141089bb96c2344064ed6dd29c34eff52dfad59905c816942a3e",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "eea83c7c3e2d812d564724944e967b707cd612b1e0b5326fab7f2414d30466b4",
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+    "Partsmith/Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+    "tools/score_extraction_batch.swift": "ed65524bf7314e7882b646c030e4a23de8d615c26e9bd82d5856a7f79d0a3390"
+  }
+}

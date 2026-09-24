@@ -64,6 +64,9 @@ struct ScoreSharedHeading: Codable, Equatable {
     /// Top-down normalized edges, in the same display space as the staff inventory.
     var bounds: [Double]
     var recognizedText: String
+    /// Conservative bounds of original nonwhite pixels inside the padded copy,
+    /// with a one-pixel raster guard. Absent for legacy or unmeasured headings.
+    var inkBounds: [Double]? = nil
 }
 
 struct ScoreSharedNavigation: Codable, Equatable {
@@ -94,6 +97,8 @@ struct ScoreBandOverride: Codable, Equatable {
     var label: String?
     var kind: String?
     var pageBreakBefore: Bool?
+    /// A supplied list is the reviewed choice, including an empty list after
+    /// removal. Nil permits automatic navigation copies for legacy overrides.
     var sourceMarkings: [[Double]]?
     var sourceMarkingsBelow: [Bool]? = nil
 }
@@ -423,7 +428,8 @@ enum ScoreExtractionPlanner {
     /// it in the gap preceding the next one. Keep the source owner's pixels in
     /// place and copy the complete printed instruction for the other parts.
     private static func copySharedNavigation(page: ScorePageAnalysis, to bands: inout [ScorePlannedBand],
-                                             preservingOwnerCrops: Set<String> = []) {
+                                             preservingOwnerCrops: Set<String> = [],
+                                             preservingMarkings: Set<String> = []) {
         for direction in page.sharedNavigation ?? [] {
             let r = direction.bounds
             guard r.count == 4, r.allSatisfy(\.isFinite),
@@ -431,6 +437,10 @@ enum ScoreExtractionPlanner {
                   let owner = bands.firstIndex(where: { $0.candidateIDs.contains(direction.anchorStaffID) }) else { continue }
             let system = bands[owner].systemIndex
             for i in bands.indices where bands[i].systemIndex == system {
+                // A reviewed recipient list is authoritative. Do not restore
+                // removed copies, add new ones, or widen its crop for them.
+                // The source owner's crop has a separate explicit-edge rule.
+                if i != owner, preservingMarkings.contains(bands[i].id) { continue }
                 if i == owner {
                     // An explicitly edited owner crop remains the user's
                     // choice. A reset to automatic cropping restores padding.
@@ -474,6 +484,15 @@ enum ScoreExtractionPlanner {
                   r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1 else { continue }
             if r[0] >= band.leftFraction, r[2] <= 1 - band.rightFraction,
                r[1] >= band.topFraction, r[3] <= band.bottomFraction { continue }
+            // Keep the padded copy unless its measured original source ink
+            // already lies in this same crop. Missing or invalid evidence keeps
+            // the legacy behavior; unrelated ink cannot certify a heading.
+            if let ink = heading.inkBounds,
+               ink.count == 4, ink.allSatisfy(\.isFinite),
+               ink[0] < ink[2], ink[1] < ink[3],
+               ink[0] >= r[0], ink[1] >= r[1], ink[2] <= r[2], ink[3] <= r[3],
+               ink[0] >= band.leftFraction, ink[2] <= 1 - band.rightFraction,
+               ink[1] >= band.topFraction, ink[3] <= band.bottomFraction { continue }
             // Two stacked fragments in the same horizontal position cannot be
             // placed in one copied-mark row. Keep the earlier complete heading.
             guard band.sourceMarkings.allSatisfy({ min(1 - $0.rightFraction, r[2]) <= max($0.leftFraction, r[0]) }) else {
@@ -490,6 +509,7 @@ enum ScoreExtractionPlanner {
     private static func reviewedPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, override: ScorePageOverride) -> ScorePagePlan {
         var output = ScorePagePlan(pageIndex: page.pageIndex, assignments: [], omissions: [], unresolvedReasons: [], warnings: ["Reviewed page override: \(override.reason)"])
         var explicitOwnerCrops = Set<String>()
+        var explicitMarkingLists = Set<String>()
         let partIDs = Set(profile.parts.map(\.id))
         if let reason = override.nonMusicReason, !reason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, override.systems.isEmpty {
             output.omissions = profile.parts.map { ScoreSystemOmission(systemIndex: -1, partID: $0.id, reason: reason) }
@@ -616,10 +636,13 @@ enum ScoreExtractionPlanner {
                         isBelow: assigned.sourceMarkingsBelow?[index] == true ? true : nil)
                 }
                 if assigned.rect != nil { explicitOwnerCrops.insert(output.assignments.last!.id) }
+                if assigned.sourceMarkings != nil { explicitMarkingLists.insert(output.assignments.last!.id) }
             }
         }
         if !output.unresolvedReasons.isEmpty { output.assignments = []; output.omissions = [] }
-        else { copySharedNavigation(page: page, to: &output.assignments, preservingOwnerCrops: explicitOwnerCrops) }
+        else { copySharedNavigation(page: page, to: &output.assignments,
+                                    preservingOwnerCrops: explicitOwnerCrops,
+                                    preservingMarkings: explicitMarkingLists) }
         return output
     }
 

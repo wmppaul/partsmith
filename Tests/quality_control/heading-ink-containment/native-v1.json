@@ -1,0 +1,254 @@
+{
+  "status": "promoted narrow native same-source containment after independent whole-output approval",
+  "baselineSourceCheckpoint": "33b5619",
+  "scope": "Exact source-heading ink containment only. No repeated-glyph matching, cleanup, re-engraving, crop-edge changes or new app UI integration.",
+  "promotedSourceSHA256": {
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "3b9d62e7c728d780de3c96797125e3318d3c9f18879c2d8ae2cf3813d4dc0756",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "7a42363675a7bb27c56472296283f02f60e8c9563803fd3bb999d3e90f45f9e3",
+    "tools/test_shared_headings.swift": "2d32badec162d921ae69f0d29531fe74330ad0cc944a890a72f9e5e6ed40d2ce",
+    "Tests/quality_control/heading-ink-containment/brahms-p22-serif-negative.png": "b4c8c334c8d57c307c7f078e416ba679573ce02cd8a74e51486c05d65bda3a76",
+    "Tests/quality_control/heading-ink-containment/brahms-p22-serif-negative.json": "ca5b7040ae5fc6d4a69cfd86b389065368058362fa32547f7ae6b477e84b54cc"
+  },
+  "nativeExperiment": {
+    "directory": ".build/qc-algorithm-audit/heading-dedup",
+    "measurementExporterSHA256": "4ec45e1bc89188b0835485309247242945395b2c3c14a1454289f53fc10699a8",
+    "inputs": [
+      {
+        "name": "ave",
+        "inventory": ".build/auto-qc/navigation-v1/ave-headings.json",
+        "manifest": "output/pdf/auto-qc-2026-09-21/ave-verum/manifest.json",
+        "profile": "Tests/quality_control/profiles/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json",
+        "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+        "inputHashes": {
+          ".build/auto-qc/navigation-v1/ave-headings.json": "d210bc0f83f5e045bf8cf0b07c7b79f9d820cee5ed8c942ca04e9a0b0c249f85",
+          "output/pdf/auto-qc-2026-09-21/ave-verum/manifest.json": "dcafc4a8a1c7f30d6f3a2e4d5c0f71c40a074f2a160c2aa02c2b04734ea30e89",
+          "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+          "Tests/quality_control/profiles/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json": "e48364de833ac87180e5b8c20f54b91d4bc86972d576c9c6a34797d54291d310"
+        }
+      },
+      {
+        "name": "kv498",
+        "inventory": ".build/auto-qc/kv498-headings/menuetto-inventory.json",
+        "manifest": ".build/auto-qc/kv498-headings/menuetto-parts/manifest.json",
+        "profile": "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+        "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+        "inputHashes": {
+          ".build/auto-qc/kv498-headings/menuetto-inventory.json": "361a55e17c0effe102f3affa338beae52396b1b73f25c48692530d8a60dc6cd4",
+          ".build/auto-qc/kv498-headings/menuetto-parts/manifest.json": "b001b25e7f0a80bccb0d84b9ff60a4deed0ee6edade2d957524faca6263ec14e",
+          "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+          "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f"
+        }
+      },
+      {
+        "name": "brahms",
+        "inventory": ".build/qc-repeat-symbols/native/candidate8-headings-navigation-destinations.json",
+        "manifest": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/manifest.json",
+        "profile": "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+        "reviewSource": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/rectified-review-source.pdf",
+        "inputHashes": {
+          ".build/qc-repeat-symbols/native/candidate8-headings-navigation-destinations.json": "794203cafc4d1adbfe86d297bb22174b22e3bdf0b1d70a2fac6f8b7ca015de3b",
+          "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/manifest.json": "7c1d153260e10ef652090e47fbce140d8bbdfaaefd0e76fb9ffe0edfb1383fd3",
+          "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/rectified-review-source.pdf": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983",
+          "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+        }
+      }
+    ],
+    "candidateBindings": {
+      "ave": {
+        "manifest": ".build/qc-algorithm-audit/heading-dedup/ave-native-parts/manifest.json",
+        "manifestSHA256": "cbe0828e7e5ee3c140d3bd0c34391d4105f9953aa8b77a3ee04edc5f16a4a442",
+        "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+        "reviewSourceSHA256": null
+      },
+      "kv498": {
+        "manifest": ".build/qc-algorithm-audit/heading-dedup/kv498-native-parts/manifest.json",
+        "manifestSHA256": "37656486771b7e1af81674984d66aa884c966e5b6c236df493aa218472352258",
+        "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+        "reviewSourceSHA256": null
+      },
+      "brahms": {
+        "manifest": ".build/qc-algorithm-audit/heading-dedup/brahms-native-parts/manifest.json",
+        "manifestSHA256": "7fb1e4bbf4393375243a321e8693973d824122e1f8ba86a659d0c46a9ddb49e8",
+        "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "reviewSourceSHA256": "950e08c13fc502a1c9f822411f4cafe81638a98d65b118a242c7828eef4e5aeb"
+      }
+    },
+    "wholeOutputComparison": [
+      {
+        "name": "ave",
+        "baselineManifestSHA256": "dcafc4a8a1c7f30d6f3a2e4d5c0f71c40a074f2a160c2aa02c2b04734ea30e89",
+        "candidateManifest": "/Users/will/Documents/git/partsmith/.build/qc-algorithm-audit/heading-dedup/ave-native-parts/manifest.json",
+        "candidateManifestSHA256": "cbe0828e7e5ee3c140d3bd0c34391d4105f9953aa8b77a3ee04edc5f16a4a442",
+        "bands": 64,
+        "parts": 8,
+        "baselinePages": 8,
+        "candidatePages": 8,
+        "changedMainCrops": [],
+        "addedMarkings": [],
+        "removedMarkings": [],
+        "remainingSourceMarkings": 7,
+        "geometryReviewExitCode": 0,
+        "geometryReportSHA256": "8c67bce470f955695568007b3e51cbf1f83d316e3957703f043f5c7c58fbecf2"
+      },
+      {
+        "name": "kv498",
+        "baselineManifestSHA256": "b001b25e7f0a80bccb0d84b9ff60a4deed0ee6edade2d957524faca6263ec14e",
+        "candidateManifest": "/Users/will/Documents/git/partsmith/.build/qc-algorithm-audit/heading-dedup/kv498-native-parts/manifest.json",
+        "candidateManifestSHA256": "37656486771b7e1af81674984d66aa884c966e5b6c236df493aa218472352258",
+        "bands": 405,
+        "parts": 3,
+        "baselinePages": 39,
+        "candidatePages": 39,
+        "changedMainCrops": [],
+        "addedMarkings": [],
+        "removedMarkings": [
+          {
+            "bandID": "p17-s1-clarinet",
+            "partID": "clarinet",
+            "removed": [
+              {
+                "destinationRect": [
+                  136.5047451427281,
+                  664.7560996042556,
+                  212.24525609477186,
+                  679.9262607006456
+                ],
+                "sourceRect": [
+                  102.10291606310693,
+                  28.6374298659058,
+                  189.48045745754996,
+                  46.13838625633025
+                ]
+              }
+            ],
+            "mainCrop": [
+              0,
+              28.97150843750717,
+              595.28,
+              83.04111410292057
+            ],
+            "outputPage": 6,
+            "destinationRect": [
+              48,
+              664.7560996042556,
+              564,
+              711.6246598168502
+            ]
+          }
+        ],
+        "remainingSourceMarkings": 8,
+        "geometryReviewExitCode": 0,
+        "geometryReportSHA256": "38bb1ff41c79d78801e511a0a4d0f285b707a4d909b6c681e657363493ea0e69"
+      },
+      {
+        "name": "brahms",
+        "baselineManifestSHA256": "7c1d153260e10ef652090e47fbce140d8bbdfaaefd0e76fb9ffe0edfb1383fd3",
+        "candidateManifest": "/Users/will/Documents/git/partsmith/.build/qc-algorithm-audit/heading-dedup/brahms-native-parts/manifest.json",
+        "candidateManifestSHA256": "7fb1e4bbf4393375243a321e8693973d824122e1f8ba86a659d0c46a9ddb49e8",
+        "bands": 604,
+        "parts": 4,
+        "baselinePages": 64,
+        "candidatePages": 64,
+        "changedMainCrops": [],
+        "addedMarkings": [],
+        "removedMarkings": [],
+        "remainingSourceMarkings": 27,
+        "geometryReviewExitCode": 0,
+        "geometryReportSHA256": "ff70efad04278655eaa322e3a8452468fb2b1525e3d8de2edcf86240d329fa48"
+      }
+    ],
+    "nativeMeasurementExportSession": 42415,
+    "nativeMeasurementExportExitCode": 0,
+    "geometryReviewSession": 92372,
+    "geometryReviewExitCode": 0
+  },
+  "implementation": {
+    "source": "Original recognition raster in the same recorded display/rectification space as heading bounds",
+    "raster": "Composite on white at source pixel dimensions and inspect every gray value<255 inside padded copy",
+    "evidence": "Nonwhite-pixel envelope expanded one pixel, capped at exact padded-copy bounds",
+    "validation": "Finite, nonempty evidence must remain inside heading bounds and main source crop; absent/invalid/blank measurements retain copy",
+    "cancellation": "Reject canceled completion before each heading measurement and after entire measurement loop",
+    "legacy": "Optional inkBounds defaults nil; existing inventories retain their previous behavior"
+  },
+  "validation": {
+    "focusedNativeCommand": "bash tools/test_shared_headings.sh",
+    "focusedNativeChecksPassed": 59,
+    "focusedNativeExitCode": 0,
+    "focusedNativeSession": 58232,
+    "independentReview": "Tests/quality_control/heading-ink-independent-review/review.json",
+    "independentReviewSHA256": "69d5ecf1a826a6204b9010cc4154955b1764e558b58ef67aeb95e77a2887d2e9",
+    "independentWholeOutputResults": "Tests/quality_control/heading-ink-independent-review/whole-output-results.json",
+    "independentWholeOutputSHA256": "5a0bacd84f6c4d12c906b743d5f94e354087627bc624f2f79f0983a041697d77",
+    "independentChecksPassedOnFrozenCandidate": 14,
+    "wholeOutputParts": 15,
+    "wholeOutputPages": 111,
+    "mainCropsCompared": 1073,
+    "changedMainCrops": 0,
+    "pixelIdenticalPages": 110,
+    "changedPage": "KV498 Clarinet output6; complete Rondo/Allegretto retained once",
+    "guardResults": "All64 Ave target guards and all15 KV498 heading guards retained; broad Brahms direction-envelope outcomes unchanged, corrected39sourcepages pixel-identical.",
+    "gitDiffCheck": "passed",
+    "independentMergedProductionRun": {
+      "command": "bash Tests/quality_control/heading-ink-independent-review/run_independent_tests.sh",
+      "checksPassed": 14,
+      "sessionID": 94050,
+      "exitCode": 0,
+      "attribution": "Executed by crop_algorithm_audit against promoted production; all14independent cases passed."
+    },
+    "rootMergedNavigationRun": {
+      "command": "bash tools/test_shared_navigation.sh",
+      "checksPassed": 77,
+      "attribution": "Root reported successful post-merge execution; not rerun by this subagent."
+    }
+  },
+  "realSourceNegative": {
+    "kind": "real-source-glyph_with_simulated_truncated_main_crop",
+    "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/rectified-review-source.pdf",
+    "sourceSHA256": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983",
+    "sourcePage": 22,
+    "sourceGlyphRect": [
+      77.2,
+      25.299999999999997,
+      217.7,
+      40.4
+    ],
+    "paddedCopyRect": [
+      77.0321726961759,
+      24.42017353825343,
+      218.6519300597167,
+      40.37045540040842
+    ],
+    "simulatedMainCrop": [
+      0,
+      27.71075586970154,
+      427.0,
+      90
+    ],
+    "originalOCRTop": 27.71075586970154,
+    "sourceInkPixelsAboveSimulatedCropAt720dpi": 1207,
+    "expected": "Keep complete padded copy because actual glyph ink crosses the main crop, even though OCR text box starts inside it.",
+    "oracleUnchanged": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+    "fixture": "Tests/quality_control/heading-ink-containment/brahms-p22-serif-negative.png",
+    "fixtureSHA256": "b4c8c334c8d57c307c7f078e416ba679573ce02cd8a74e51486c05d65bda3a76",
+    "fixtureSourceOriginPoints": [
+      77,
+      24.4
+    ],
+    "fixturePixelsPerPoint": 10,
+    "simulatedMainCropTopRelativePixels": 33.10755869701541
+  },
+  "rejectedBroaderExperiment": {
+    "reason": "Repeated matching incorrectly treated below-staff neighbor Adagio as Basso tempo ownership; full-width matching also lacks later-bar and adjacent-letter constraints",
+    "report": "Tests/quality_control/heading-ink-containment/repeated-matching-rejection.md",
+    "independentAveGuard": "Tests/quality_control/heading-ink-containment/ave-second-adagio-independent-guard.json",
+    "independentAveGuardSHA256": "eacc14c1c0ba660b1060fcbb0b196ff95188c43fa41a45c3e50f486a5914376d",
+    "productionIncludesRepeatedMatching": false
+  },
+  "remainingLimitations": [
+    "Ave duplicated Adagio remains unchanged.",
+    "Two lower-part KV498 ending obligations remain unchanged by this candidate; separate bracket work is independent.",
+    "This delta does not establish complete score-wide direction recognition or overall clean notation.",
+    "Whole outputs used frozen scratch Core preceding root navigation-authority-only change; promotion surgically preserves that independently tested production change.",
+    "Promotion changed comments and replaced singleton-array validation with equivalent direct optional validation; production tests cover the merged result."
+  ]
+}

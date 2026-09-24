@@ -1,0 +1,36 @@
+{
+  "kind": "real-source-glyph_with_simulated_truncated_main_crop",
+  "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-connector8/rectified-review-source.pdf",
+  "sourceSHA256": "0bfd56568167261cc14093770930bde555efdff75f0039586bda17fdac4f4983",
+  "sourcePage": 22,
+  "sourceGlyphRect": [
+    77.2,
+    25.299999999999997,
+    217.7,
+    40.4
+  ],
+  "paddedCopyRect": [
+    77.0321726961759,
+    24.42017353825343,
+    218.6519300597167,
+    40.37045540040842
+  ],
+  "simulatedMainCrop": [
+    0,
+    27.71075586970154,
+    427.0,
+    90
+  ],
+  "originalOCRTop": 27.71075586970154,
+  "sourceInkPixelsAboveSimulatedCropAt720dpi": 1207,
+  "expected": "Keep complete padded copy because actual glyph ink crosses the main crop, even though OCR text box starts inside it.",
+  "oracleUnchanged": "Tests/quality_control/brahms93521/shared-directions-corrected.json",
+  "fixture": "Tests/quality_control/heading-ink-containment/brahms-p22-serif-negative.png",
+  "fixtureSHA256": "b4c8c334c8d57c307c7f078e416ba679573ce02cd8a74e51486c05d65bda3a76",
+  "fixtureSourceOriginPoints": [
+    77,
+    24.4
+  ],
+  "fixturePixelsPerPoint": 10,
+  "simulatedMainCropTopRelativePixels": 33.10755869701541
+}

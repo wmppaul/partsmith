@@ -1,0 +1,13 @@
+# KV498 complete directions draft
+
+The complete ensemble contains Clarinet (11 pages), Viola (10), and Piano (18): 39 pages and 135 systems in each part. All 405 main source rectangles, staff identities and their order are identical to the independently reviewed native heading candidate. The editable project contains the exact original source PDF.
+
+Andante, Menuetto, Trio, and Rondo. Allegretto. are present in all three parts. Native measurement of the original heading ink removes the duplicate Rondo in the Clarinet source-owner crop. The printed first/second ending pair on source page 25, system 3, is now copied into Viola page 9 and Piano page 16. Both original numerals, all bracket hooks and long lines are intact and aligned with the corresponding ending bars. The Clarinet retains its original pair. Root independently reviewed the source and all three ending passages; this final export preserves the same source-copy rectangle.
+
+These endings come from a source-reviewed scratch experiment, not the Mac Auto workflow. Native heading provenance and experimental ending provenance are recorded separately in `review.json`. No numeral, bracket or note was re-engraved. The frozen guard remains unchanged: the lower-part ending copies omit 0.293 points of its blank lower safety margin, while retaining all visible intended ink. Fifteen heading-word guards are fully contained; the Clarinet ending guard is also contained.
+
+All 39 final pages were compared at 108 dpi to the independently reviewed native heading candidate. Thirty-three are pixel-identical. Six changed pages were individually inspected: the three first-page title updates; Viola 8 and 9, where one unchanged system moves from page 9 to page 8 to make room for the ending row; and Piano 16. No new layout collision was found. The complete 39-page candidate review and its existing limitations carry forward, with detailed final Rondo and ending snippets checked again. Page counts remain 11/10/18.
+
+Existing neighboring notation fragments remain, including the previously reported neighboring piano fragment in the Clarinet crop for source page 24, system 5. Other shared directions have not been exhaustively inventoried, and page turns have not been optimized. This is a useful complete draft, not a whole-score musical-completeness or clean-isolation pass.
+
+`review.json` binds source, oracle, profile, merged inventory, exact exporter, plan, manifest, PDFs, and both project files by SHA256. `final-proof.json` records all page comparisons; `combined-metadata-proof.json` records exact input geometry equality. The rendered evidence covers every changed final page plus actual final Rondo and ending passages in all three parts.

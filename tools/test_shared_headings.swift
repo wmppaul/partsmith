@@ -1,5 +1,6 @@
 import CoreGraphics
 import Foundation
+import ImageIO
 
 @main enum SharedHeadingTests {
     static var checks = 0
@@ -54,6 +55,29 @@ import Foundation
         local.confidence = 1; local.bounds.origin.x = .nan
         check(select([local]).isEmpty, "Non-finite geometry is rejected")
 
+        var samples = [UInt8](repeating: 255, count: 100 * 100)
+        samples[30 * 100 + 20] = 0
+        samples[31 * 100 + 21] = 254 // very faint antialiasing remains evidence
+        samples[80 * 100 + 80] = 0 // outside this padded copy
+        let provider = CGDataProvider(data: Data(samples) as CFData)!
+        let raster = CGImage(width: 100, height: 100, bitsPerComponent: 8, bitsPerPixel: 8,
+            bytesPerRow: 100, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue),
+            provider: provider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)!
+        let measuredPixels = ScoreSharedHeadingDetector.measuredInkBounds(in: raster, bounds: [0.1, 0.2, 0.5, 0.5])
+        check(measuredPixels == [0.19, 0.29, 0.23, 0.33], "Original dark and faint source pixels are measured in top-down coordinates with one-pixel guard")
+        check(ScoreSharedHeadingDetector.measuredInkBounds(in: raster, bounds: [0, 0, 0.1, 0.1]) == nil,
+              "Blank source gives no evidence for suppression")
+        check(ScoreSharedHeadingDetector.measuredInkBounds(in: raster, bounds: [.nan, 0, 1, 1]) == nil,
+              "Invalid source rectangle gives no evidence for suppression")
+
+        let serifURL = URL(fileURLWithPath: "Tests/quality_control/heading-ink-containment/brahms-p22-serif-negative.png")
+        let serifSource = CGImageSourceCreateWithURL(serifURL as CFURL, nil)!
+        let serifImage = CGImageSourceCreateImageAtIndex(serifSource, 0, nil)!
+        let serifInk = ScoreSharedHeadingDetector.measuredInkBounds(in: serifImage, bounds: [0, 0, 1, 1])!
+        let ocrBasedCropTop = (27.71075586970154 - 24.4) * 10 / Double(serifImage.height)
+        check(serifInk[1] < ocrBasedCropTop,
+              "Real Brahms A cap extends above OCR-only crop: complete source copy must remain")
+
         let profile = ScoreExtractionProfile(parts: [ScorePartDefinition(id: "v1", name: "Violin I", staffCount: 1),
                                                     ScorePartDefinition(id: "v2", name: "Violin II", staffCount: 1)], cropMode: "compact")
         var page = ScorePageAnalysis(pageIndex: 0, pageWidth: 600, pageHeight: 800,
@@ -78,6 +102,33 @@ import Foundation
         check(contained.bands.first!.sourceMarkings.isEmpty, "Already contained heading is not duplicated")
         page.sharedHeadings = [ScoreSharedHeading(anchorStaffID: 0, bounds: [.nan, 0.1, 0.5, 0.12], recognizedText: "bad")]
         check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands.allSatisfy { $0.sourceMarkings.isEmpty }, "Malformed metadata cannot poison layout")
+        let own = baseline.bands.first!
+        let padded = [0.2, own.topFraction - 0.01, 0.4, own.topFraction + 0.02]
+        let complete = [0.21, own.topFraction + 0.002, 0.39, own.topFraction + 0.015]
+        var measured = ScoreSharedHeading(anchorStaffID: 0, bounds: padded, recognizedText: "Measured")
+        measured.inkBounds = complete
+        page.sharedHeadings = [measured]
+        check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands.first!.sourceMarkings.isEmpty,
+              "Complete source ink inside own crop suppresses padding-only duplicate")
+        check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands[1].sourceMarkings.count == 1,
+              "Lower recipient still receives complete padded source copy")
+        measured.inkBounds = [0.21, own.topFraction - 0.001, 0.39, own.topFraction + 0.015]
+        page.sharedHeadings = [measured]
+        check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands.first!.sourceMarkings.count == 1,
+              "A real glyph outside main crop retains complete padded copy")
+        measured.inkBounds = nil
+        page.sharedHeadings = [measured]
+        check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands.first!.sourceMarkings.count == 1,
+              "Missing source-raster evidence cannot suppress a copy")
+        measured.inkBounds = [.nan, 0, 1, 1]
+        page.sharedHeadings = [measured]
+        check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands.first!.sourceMarkings.count == 1,
+              "Malformed source-raster evidence cannot suppress a copy")
+        measured.inkBounds = complete
+        measured.bounds = [0.6, own.topFraction - 0.01, 0.8, own.topFraction + 0.02]
+        page.sharedHeadings = [measured]
+        check(ScoreExtractionPlanner.plan(pages: [page], profile: profile).bands.first!.sourceMarkings.count == 1,
+              "Disjoint valid ink metadata inside main crop cannot suppress a different source heading")
         page.sharedHeadings = nil
         let oldJSON = try JSONEncoder().encode(page)
         var object = try JSONSerialization.jsonObject(with: oldJSON) as! [String: Any]
