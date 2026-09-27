@@ -1,0 +1,41 @@
+{
+  "builtAtUTC": "2026-09-27T15:34:31.148537+00:00",
+  "configuration": "Release; unsigned universal arm64 + x86_64; macOS 14+",
+  "archive": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "archiveSHA256": "050cf37b890de6aab6c3b263b392238cdbdb61d997dc4a0b77c066797a39d290",
+  "executableSHA256": "5dc3bc9727aa849584190c8c2462e304b9b8aca07a574a65cc505d0fe73230eb",
+  "architectures": "x86_64 arm64",
+  "archiveIntegrity": "All entries pass CRC and contained executable matches successful Release build.",
+  "buildLog": ".build/auto-qc/direction-flow-release-2026-09-27.log",
+  "buildLogSHA256": "7a156ba4bf38db243822e0e65753192ca96fe4bba374a94da3faee6e5833c5c0",
+  "productionSources": {
+    "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": "6dfd6256d2a4b8be4c70c09c067e382bee31afc31c108384b6b6e90c4a22c25e",
+    "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": "2c12382cd6500b998846196d73673a11f8cbf10a70c8f5193b55bc3c63517a57",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f",
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "3b9d62e7c728d780de3c96797125e3318d3c9f18879c2d8ae2cf3813d4dc0756",
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "b5e9e1c50798d42961036862279d44bbe393993a46f52e6290b139e2ceebd985",
+    "Partsmith.xcodeproj/project.pbxproj": "a9d5918c0c57882bc5c63b3bbcc8e10e8882083b0b1afb3eecc0cd05b2be65d4"
+  },
+  "nativeDirectionOption": "Off by default, fixed-layout headings/navigation/linked destinations, visible copies and removal, no new acceptance gate.",
+  "endingDetectorInApp": false,
+  "validation": {
+    "independentAppChecks": 113,
+    "sourcePages": 72,
+    "mainCrops": 1073,
+    "copiedDirections": 42,
+    "parts": 15,
+    "exportPages": 111,
+    "allExportPagesPixelIdenticalAtDPI": 150,
+    "nativeWorkerReview": "Tests/quality_control/native-direction-worker-review/provenance.json",
+    "appReview": "Tests/quality_control/shared-direction-app-review/review.json"
+  },
+  "limits": [
+    "Live SwiftUI interaction with this new build remains unverified: computer-use tools were unavailable when finishing the package.",
+    "No new crop-algorithm candidate or paired-ending detector is enabled in this build.",
+    "Known neighboring notation, missing shared directions and variable-layout assignments remain unfinished."
+  ],
+  "runningUserApp": "Not replaced or relaunched; existing unsaved documents untouched."
+}

@@ -32,6 +32,9 @@ struct ScoreExtractionView: View {
     @State private var errorMessage: String?
     @State private var findPrintedHeader = true
     @AppStorage("automaticallyCompressRestStrips") private var compressRests = true
+    @AppStorage("copySharedDirectionsInAuto") private var copyDirections = false
+    @State private var focusedDirectionPage: Int?
+    @State private var focusedDirectionBounds: [Double]?
     @State private var includeSuggestedHeader = true
     @State private var headerPreviewImage: CGImage?
     @State private var headerSourceImage: CGImage?
@@ -57,6 +60,29 @@ struct ScoreExtractionView: View {
     private var isRunning: Bool { document.scoreDetectionProgress != nil || document.isAutoEstimatingPageRectifications }
     private var currentAnalysis: ScorePageAnalysis? { review?.analyses.first { $0.pageIndex == selectedPage } }
     private var currentPlan: ScorePagePlan? { review?.plan.pages.first { $0.pageIndex == selectedPage } }
+    private struct DirectionCopy: Identifiable {
+        var band: ScorePlannedBand
+        var index: Int
+        var marking: ScoreSourceMarking
+        var label: String
+        var id: String { "\(band.id)-direction-\(index)" }
+        var bounds: [Double] { [marking.leftFraction, marking.topFraction, 1 - marking.rightFraction, marking.bottomFraction] }
+        var boundsKey: String { bounds.map { String(format: "%.9f", $0) }.joined(separator: ":") }
+    }
+    private var currentDirectionCopies: [DirectionCopy] {
+        (currentPlan?.assignments ?? []).flatMap { band in
+            band.sourceMarkings.enumerated().map { index, marking in
+                let bounds = [marking.leftFraction, marking.topFraction, 1 - marking.rightFraction, marking.bottomFraction]
+                let heading = currentAnalysis?.sharedHeadings?.first { sameBounds($0.bounds, bounds) }?.recognizedText
+                let navigation = currentAnalysis?.sharedNavigation?.first { sameBounds($0.bounds, bounds) }?.recognizedText
+                return DirectionCopy(band: band, index: index, marking: marking,
+                    label: heading ?? navigation.map { $0.isEmpty ? "Printed repeat symbol" : $0 } ?? "Printed source marking")
+            }
+        }
+    }
+    private func sameBounds(_ left: [Double], _ right: [Double]) -> Bool {
+        left.count == 4 && right.count == 4 && zip(left, right).allSatisfy { abs($0 - $1) < 1e-7 }
+    }
     private struct DetectorNote: Identifiable {
         var id: String
         var title: String
@@ -102,7 +128,12 @@ struct ScoreExtractionView: View {
             if let progress = document.scoreDetectionProgress {
                 VStack(spacing: 14) {
                     ProgressView(value: Double(progress.completedPages), total: Double(max(progress.totalPages, 1)))
-                    Text("Analyzed \(progress.completedPages) of \(progress.totalPages) pages")
+                    if let phase = progress.directionPhase {
+                        Text(phase.title)
+                        if progress.totalPages > 0 { Text("\(progress.completedPages) of \(progress.totalPages) pages") }
+                    } else {
+                        Text("Analyzed \(progress.completedPages) of \(progress.totalPages) pages")
+                    }
                     Text("Instrument names come from your setup. Uncertain page layouts will be flagged for review.")
                         .foregroundStyle(.secondary)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -157,6 +188,7 @@ struct ScoreExtractionView: View {
         .onChange(of: document.sourcePDFData) { invalidateSourceReview(); resetInputPages() }
         .onChange(of: document.project.pageRectifications) { invalidateSourceReview(); refreshThumbnails() }
         .onChange(of: selectedPage) { updatePageImage() }
+        .onChange(of: review?.plan) { clearDirectionFocus() }
         .onChange(of: document.headerSelection) { updateHeaderPreview() }
     }
 
@@ -331,6 +363,13 @@ struct ScoreExtractionView: View {
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 Divider()
+                Toggle("Copy detected tempos and repeat directions (experimental)", isOn: $copyDirections)
+                    .toggleStyle(.checkbox).disabled(profile.requiresSystemAssignment == true)
+                Text(profile.requiresSystemAssignment == true
+                    ? "Automatic direction copying currently requires a consistent instrument layout. Shared markings remain editable after adding parts."
+                    : "Copies the original printed markings into the parts. Review endings, rehearsal letters and bar numbers separately; not every direction is recognized.")
+                    .font(.caption).foregroundStyle(.secondary)
+                Divider()
                 Toggle("Count and compress full-bar rests automatically", isOn: $compressRests)
                     .toggleStyle(.checkbox)
                 Text("After adding parts, Partsmith checks for rest-only strips and keeps their printed opening and ending context. Uncertain passages stay as source notation.")
@@ -416,6 +455,74 @@ struct ScoreExtractionView: View {
         }
     }
 
+    private func copiedDirectionReview(_ value: ScoreDetectionReview) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Copied directions on this page: \(currentDirectionCopies.count)").font(.subheadline.bold())
+            Text("Dashed purple boxes show source markings copied into the parts. Click a name below to highlight its source; removing a copy keeps the original music crop.")
+                .font(.caption).foregroundStyle(.secondary)
+            ForEach(currentDirectionCopies) { copy in
+                VStack(alignment: .leading, spacing: 4) {
+                    Button {
+                        focusDirection(page: selectedPage, bounds: copy.bounds)
+                        focusedCropID = copy.band.id
+                    } label: {
+                        Text("\(partName(copy.band.partID)) · System \(copy.band.systemIndex + 1): \(copy.label)")
+                            .multilineTextAlignment(.leading)
+                    }.buttonStyle(.link)
+                    HStack {
+                        Text(copy.marking.isBelow == true ? "Below the music" : "Above the music")
+                            .font(.caption).foregroundStyle(.secondary)
+                        Spacer()
+                        Button("Remove Copy") { removeDirection(copy) }.font(.caption)
+                    }
+                    if let reference = value.directionReferences.first(where: {
+                        $0.pageIndex == selectedPage && sameBounds($0.match.bounds, copy.bounds)
+                    }) {
+                        Button("View printed reference on page \(reference.match.templatePageIndex + 1)") {
+                            focusDirection(page: reference.match.templatePageIndex, bounds: reference.match.templateBounds)
+                        }.font(.caption)
+                    }
+                }.padding(.vertical, 4)
+            }
+            if !value.directionIssues.isEmpty {
+                DisclosureGroup("Direction scan notes (\(value.directionIssues.count))") {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(value.directionIssues) { issue in
+                            if issue.pageIndex >= 0 {
+                                Button("Page \(issue.pageIndex + 1): \(issue.message)") { selectedPage = issue.pageIndex }
+                                    .buttonStyle(.link).multilineTextAlignment(.leading)
+                            } else {
+                                Text(issue.message)
+                            }
+                        }
+                    }.font(.caption).padding(.top, 6)
+                }.foregroundStyle(.orange)
+            }
+            Text("Direction scan notes do not block Add Parts. Unrecognized markings may still need additions from the source.")
+                .font(.caption).foregroundStyle(.secondary)
+        }.padding(10).background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
+    }
+
+    private func focusDirection(page: Int, bounds: [Double]) {
+        focusedDirectionPage = page
+        focusedDirectionBounds = bounds
+        selectedPage = page
+        previewFitsWidth = false
+        previewZoom = 1
+    }
+
+    private func removeDirection(_ copy: DirectionCopy) {
+        guard var value = review,
+              let band = value.plan.bands.first(where: { $0.id == copy.band.id }),
+              let index = band.sourceMarkings.firstIndex(of: copy.marking) else { return }
+        do {
+            try value.removeSourceMarking(from: band.id, at: index)
+            review = value
+            focusedDirectionBounds = nil
+            errorMessage = nil
+        } catch { errorMessage = error.localizedDescription }
+    }
+
     private func pageNavigation(_ review: ScoreDetectionReview) -> some View {
         let pages = review.analyses.map(\.pageIndex).sorted()
         let position = pages.firstIndex(of: selectedPage) ?? 0
@@ -489,6 +596,22 @@ struct ScoreExtractionView: View {
                     .frame(width: width * (1 - band.leftFraction - band.rightFraction),
                            height: height * (band.bottomFraction - band.topFraction))
                     .offset(x: width * band.leftFraction, y: height * band.topFraction)
+                    .allowsHitTesting(false)
+            }
+            ForEach(Dictionary(grouping: currentDirectionCopies, by: \.boundsKey).values
+                .compactMap(\.first).sorted { $0.id < $1.id }) { copy in
+                let bounds = copy.bounds
+                Rectangle().stroke(Color.purple, style: StrokeStyle(lineWidth: 1.5, dash: [5, 3]))
+                    .background(Color.purple.opacity(0.06))
+                    .frame(width: width * (bounds[2] - bounds[0]), height: height * (bounds[3] - bounds[1]))
+                    .offset(x: width * bounds[0], y: height * bounds[1])
+                    .allowsHitTesting(false)
+            }
+            if focusedDirectionPage == selectedPage, let bounds = focusedDirectionBounds, bounds.count == 4 {
+                Rectangle().stroke(Color.orange, lineWidth: 3)
+                    .background(Color.orange.opacity(0.12))
+                    .frame(width: width * (bounds[2] - bounds[0]), height: height * (bounds[3] - bounds[1]))
+                    .offset(x: width * bounds[0], y: height * bounds[1])
                     .allowsHitTesting(false)
             }
             ForEach(currentAnalysis?.staves ?? []) { staff in
@@ -723,6 +846,9 @@ struct ScoreExtractionView: View {
                 }
                 if findPrintedHeader || document.headerSelection != nil {
                     sourceHeaderReview
+                }
+                if copyDirections || !currentDirectionCopies.isEmpty || !review.directionIssues.isEmpty {
+                    copiedDirectionReview(review)
                 }
                 if !currentDetectorNotes.isEmpty {
                     DisclosureGroup("Detector notes (\(currentDetectorNotes.count))", isExpanded: $showingDetectorNotes) {
@@ -966,12 +1092,14 @@ struct ScoreExtractionView: View {
 
     private func runAuto() {
         guard profileValid, inputPagesValid, !isRunning else { return }
+        clearDirectionFocus()
         document.cancelInstrumentNamePicking()
         errorMessage = nil
         correctionPart = profile.parts.first?.id ?? ""
         document.saveScoreProfile(profile)
         document.detectScore(profile: profile, findSourceHeader: findPrintedHeader && document.headerSelection == nil,
-                             pageIndices: inputPages) { result in
+                             pageIndices: inputPages,
+                             copySharedDirections: copyDirections && profile.requiresSystemAssignment != true) { result in
             guard let result else { errorMessage = "The source or rectification changed. Run Auto again."; return }
             review = result
             if profile.requiresSystemAssignment == true {
@@ -997,6 +1125,11 @@ struct ScoreExtractionView: View {
         systemBarCount = ""
         assignmentStatus = nil
         pageImage = document.scoreReviewImage(pageIndex: selectedPage)
+    }
+
+    private func clearDirectionFocus() {
+        focusedDirectionPage = nil
+        focusedDirectionBounds = nil
     }
 
     private func toggleStaff(_ id: Int) {

@@ -84,6 +84,20 @@ Automatic staff assignment does not automatically understand shared directions.
 Check both a return instruction and its destination symbol, plus any first/second
 endings. Copying the sentence alone does not make the repeat complete.
 
+The Mac magic-wand setup now has an optional **Copy detected tempos and repeat
+directions (experimental)** setting for consistent instrument layouts. It runs
+the native heading, navigation and linked-symbol passes in the background after
+staff detection. In Auto review, dashed purple boxes identify source copies;
+select a listed direction to highlight its source, or **Remove Copy** for that
+recipient. A matched repeat symbol also links to its printed reference. Scan
+notes are informational and do not block **Add Parts**. Recognition failures
+retain valid music crops and identify the failed pass; they are not evidence
+that a score has no directions. Assignment changes discard stale automatic
+copies while retaining manual source rectangles. Run Auto again to recognize
+directions for the revised setup. Endings, rehearsal letters and bar numbers
+still require separate source review; the paired-ending prototype is not yet
+connected to the app. This option is off by default.
+
 Review all output pages against the source. Retained neighboring notes are
 permitted under `preserve-target` when target ink needs the same space. Unnecessary
 neighboring staff lines or complete lyric rows are crop-quality defects even

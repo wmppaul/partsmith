@@ -1,0 +1,20 @@
+{
+  "description": "The three native full-geometry/OCR negatives already reviewed in native-ending-brackets-v1. Synthetic prose and unpaired Roman-I examples; not score-derived positive oracle crops.",
+  "fixtures": [
+    {
+      "file": "negative-shifted-prose.png",
+      "sha256": "31b6d09018e9692e1c94d03be2924cee0cd74415ef5cb6782b9fc1ea02d79ad1",
+      "source": ".build/qc-ending-brackets/negative-shifted-prose.png"
+    },
+    {
+      "file": "negative-unpaired-roman-i.png",
+      "sha256": "635ac6c066cab4166777e3d92f6e45e164b873e7b8d171bd896e3b56376adcef",
+      "source": ".build/qc-ending-brackets/negative-unpaired-roman-i.png"
+    },
+    {
+      "file": "negative-prose-in-number-cell.png",
+      "sha256": "a8bd63bed56031da3c9cc154f255fde70e34d7792a57e72489045c92d28583ef",
+      "source": ".build/qc-ending-brackets/negative-prose-in-number-cell.png"
+    }
+  ]
+}

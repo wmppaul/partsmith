@@ -20,7 +20,7 @@ enum ScoreSharedHeadingDetector {
         guard image.width > 0, image.height > 0, !isCancelled() else { return [] }
         // Reuse the planner's complete geometry/cadence validation. An unknown
         // system assignment must not make a local instruction a global heading.
-        let plan = ScoreExtractionPlanner.plan(pages: [page], profile: profile)
+        let plan = ScoreExtractionPlanner.plan(pages: [page], profile: profile, isCancelled: isCancelled)
         guard plan.canApply, !plan.bands.isEmpty else { return [] }
         let anchors = Dictionary(grouping: plan.bands, by: \.systemIndex).values.compactMap {
             $0.flatMap(\.candidateIDs).min()

@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-27",
+  "status": "Isolated production detector; no app/workflow integration yet",
+  "logicIdenticalToReviewedPrototype": true,
+  "defaultControlsPassed": 60,
+  "visionControlsPassed": 69,
+  "full68PageOCRRepeated": false,
+  "bindings": [
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "5adb7f35ed5668a80331340db69b4ded4153daf102f079db1041d3489d99db12"
+    },
+    {
+      "path": "tools/test_shared_endings.swift",
+      "sha256": "215a2059cae6068aef2ba44fb8d277fea2a29c9c086d7a2b6c2b6a51fba0c0a4"
+    },
+    {
+      "path": "tools/test_shared_endings.sh",
+      "sha256": "e523b8d5f6c15acc32504b6be778341718c4f3b69932f8589c0701c9014e450c"
+    },
+    {
+      "path": ".build/shared-ending-tests.log",
+      "sha256": "a9e0d95b177ca03b75e7756ef3bd8a18429dfa470c3344c3329b35a38ebd6bbf"
+    },
+    {
+      "path": ".build/shared-ending-tests-vision.log",
+      "sha256": "129e8a9a44454a69ca6170942d05da03b3206e31ec05e3a9ff649f01b51b1441"
+    }
+  ]
+}

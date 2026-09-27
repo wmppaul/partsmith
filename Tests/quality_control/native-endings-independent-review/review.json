@@ -1,0 +1,249 @@
+{
+  "reviewDate": "2026-09-24",
+  "reviewer": "sample_corpus independent subagent",
+  "verdict": "No blocker for the native paired-ending pilot and this complete Brahms output; not general ending detection certification.",
+  "codeReview": {
+    "findingsResolved": [
+      "Unsupplied PDF pages must break musical-system adjacency. Added gap barrier prevents selection p1/p10 from validating a false pair.",
+      "Cancellation after pair traversal must discard final result; final cancellation check added."
+    ],
+    "otherChecks": [
+      "Verified first-staff system ownership required before proposal recognition.",
+      "Same-system pair anchors must agree; mutually unique first/second pairing rejects shared or competing matches.",
+      "Closed first bracket, near-aligned same-system geometry or adjacent-system right-to-left geometry required.",
+      "Literal fast OCR I remains ambiguous evidence; accurate I alone and unpaired I do not create a pair.",
+      "Actual beam false2 and three image-based prose/roman-I negatives remain rejected."
+    ],
+    "testAttribution": "Quartet agent executed66 native controls, including actual unsandboxed Vision negatives; this reviewer inspected test source/output and independently identified the page-gap/cancellation controls. No claim of duplicate execution.",
+    "scopeLimitations": [
+      "Only two complete source scores,68pages, five known pairs/10brackets assessed. Unpaired/third/list endings and variable instrument layouts remain unsupported.",
+      "Runtime Vision failures return unverified result with observedFailure; runner fails rather than treating them as no matches.",
+      "The ending source detector remains scratch-only in this review."
+    ]
+  },
+  "sourceEnvelopeVisualReview": [
+    "KV498 p25s3 first/second",
+    "Brahms p6s3 first and p6s4 second",
+    "Brahms p32s4 first/second",
+    "Brahms p36s1 first/second",
+    "Brahms p37s2 first/second"
+  ],
+  "brahmsOutput": {
+    "baseline": ".build/qc-algorithm-audit/heading-dedup/brahms-native-parts/manifest.json",
+    "baselineSHA256": "7fb1e4bbf4393375243a321e8693973d824122e1f8ba86a659d0c46a9ddb49e8",
+    "candidate": ".build/qc-ending-native-v1/brahms-parts/manifest.json",
+    "candidateSHA256": "ec29c661b3790ac81f71b10de15db5db61de68d56c662a909b44b9f18e50e6cf",
+    "unchangedMainCrops": 604,
+    "newCopiedRows": [
+      [
+        "violin2",
+        "p6-s3-violin2",
+        2
+      ],
+      [
+        "violin2",
+        "p6-s4-violin2",
+        3
+      ],
+      [
+        "violin2",
+        "p32-s4-violin2",
+        13
+      ],
+      [
+        "violin2",
+        "p36-s1-violin2",
+        15
+      ],
+      [
+        "violin2",
+        "p37-s2-violin2",
+        15
+      ],
+      [
+        "viola",
+        "p6-s3-viola",
+        2
+      ],
+      [
+        "viola",
+        "p6-s4-viola",
+        3
+      ],
+      [
+        "viola",
+        "p32-s4-viola",
+        14
+      ],
+      [
+        "viola",
+        "p36-s1-viola",
+        15
+      ],
+      [
+        "viola",
+        "p37-s2-viola",
+        15
+      ],
+      [
+        "cello",
+        "p6-s3-cello",
+        2
+      ],
+      [
+        "cello",
+        "p6-s4-cello",
+        2
+      ],
+      [
+        "cello",
+        "p32-s4-cello",
+        13
+      ],
+      [
+        "cello",
+        "p36-s1-cello",
+        14
+      ],
+      [
+        "cello",
+        "p37-s2-cello",
+        14
+      ]
+    ],
+    "overlapFailures": [],
+    "changedPages": [
+      [
+        "violin2",
+        2
+      ],
+      [
+        "violin2",
+        3
+      ],
+      [
+        "violin2",
+        13
+      ],
+      [
+        "violin2",
+        15
+      ],
+      [
+        "viola",
+        1
+      ],
+      [
+        "viola",
+        2
+      ],
+      [
+        "viola",
+        3
+      ],
+      [
+        "viola",
+        4
+      ],
+      [
+        "viola",
+        5
+      ],
+      [
+        "viola",
+        6
+      ],
+      [
+        "viola",
+        7
+      ],
+      [
+        "viola",
+        8
+      ],
+      [
+        "viola",
+        9
+      ],
+      [
+        "viola",
+        10
+      ],
+      [
+        "viola",
+        11
+      ],
+      [
+        "viola",
+        12
+      ],
+      [
+        "viola",
+        13
+      ],
+      [
+        "viola",
+        14
+      ],
+      [
+        "viola",
+        15
+      ],
+      [
+        "viola",
+        16
+      ],
+      [
+        "cello",
+        2
+      ],
+      [
+        "cello",
+        13
+      ],
+      [
+        "cello",
+        14
+      ]
+    ]
+  },
+  "visualReview": {
+    "newRows": "All15 source-copy rows viewed at enlarged resolution across ViolinII,Viola,Cello: all8 ending brackets per recipient remain complete and positioned above intended source-system music. Source-owner ViolinI unchanged.",
+    "changedPages": "All23 changed output pages reviewed in newly generated contact sheets; no new collision, output overflow, lost title or stray empty page observed. Individual note audit inherited only via exact604 unchanged source crops.",
+    "remainingArtifacts": "p32 ending rows copy neighboring high noteheads/slurs; p36 copies a neighboring note/flag and dots; p6 first copies a small source fragment. These are visible draft artifacts, not missing ending glyphs. Existing neighboring staff/lyric/direction artifacts remain.",
+    "layout": "Part counts/pages stay17/16/16/15; no new page turn claimed optimized."
+  },
+  "hashes": {
+    ".build/qc-ending-native-v1/Core/Detection/ScoreSharedEndingDetector.swift": "5adb7f35ed5668a80331340db69b4ded4153daf102f079db1041d3489d99db12",
+    ".build/qc-ending-native-v1/test_endings.swift": "ea734a8e08110d9b917ae95d309acd891521fdbebaf3c29f6645c190e688f0a2",
+    ".build/qc-ending-native-v1/test_endings.log": "282040b14a04e6a4c378e49dcda5f80057d2f46468ceeddfc2ceda06e822eb25",
+    ".build/qc-ending-native-v1/kv498-native-final.json": "1284335ed9651335809d6003f413b5ba61620cc3672eb59368950ef6a86d0cf4",
+    ".build/qc-ending-native-v1/brahms-native-final.json": "097e41a0a802c7a5f3cf6636fefd35321774b1bd0388b898110db1d5fd7c8425",
+    ".build/qc-ending-native-v1/native-source-envelopes.png": "9c5560e72c8a2f96f9cd5219f8705a970f8c18ec52040edf2fc1bb87454f6d06",
+    ".build/qc-ending-native-v1/merge-proof.json": "a2e6425ea8acce4f46fd858c0fddb4dcf4a89e42e5a6a4e5a933106356c1a89b",
+    ".build/qc-ending-native-v1/output-proof.json": "5d8666c363e7868d4482a82feb7fc5271b75142b814c6629d20494b40cfa70d6",
+    ".build/qc-algorithm-audit/heading-dedup/brahms-native-parts/manifest.json": "7fb1e4bbf4393375243a321e8693973d824122e1f8ba86a659d0c46a9ddb49e8",
+    ".build/qc-ending-native-v1/brahms-parts/manifest.json": "ec29c661b3790ac81f71b10de15db5db61de68d56c662a909b44b9f18e50e6cf"
+  },
+  "viewedRows": {
+    ".build/qc-ending-native-v1/output-contexts/p32-s4-cello.png": "4fc4c09bd53625a5f840870312924823050b7d1f531404393b1bc433cad6e916",
+    ".build/qc-ending-native-v1/output-contexts/p32-s4-viola.png": "20561c3de9724877a473f1c62fb7d266376ebbe2a97460749a915b7a029ed3d5",
+    ".build/qc-ending-native-v1/output-contexts/p32-s4-violin2.png": "89096f294998e37110b00dbbd5a29ae44a32a0c706d24dbdd0ca4c73b04c5d78",
+    ".build/qc-ending-native-v1/output-contexts/p36-s1-cello.png": "be718a75189c01925d51bc9784effde394fa07963641e7eb0b5f57026309608f",
+    ".build/qc-ending-native-v1/output-contexts/p36-s1-viola.png": "6ce5bb1528bf01a45e0ca77732814a8c7610c253a9b378c8c55176ec2e13ea54",
+    ".build/qc-ending-native-v1/output-contexts/p36-s1-violin2.png": "01bada3c0a84012fc349229c44bdc4e0e70e8c5647d336b2cc69e917443878a4",
+    ".build/qc-ending-native-v1/output-contexts/p37-s2-cello.png": "8d5c3ac65a760b46838b8ad1c756f78338bab838f7c998c5f8f78cb8855e5831",
+    ".build/qc-ending-native-v1/output-contexts/p37-s2-viola.png": "789370d079ccf6034305115edbc4129174b3c94c70d2032813557c751257d00e",
+    ".build/qc-ending-native-v1/output-contexts/p37-s2-violin2.png": "99fde834f1edd0d598fd23e3a16b73fa1c58e7b9f1da24731d2eeb13a9d238d3",
+    ".build/qc-ending-native-v1/output-contexts/p6-s3-cello.png": "d21fe915bc286e199a2ada5ab69d75eae950baeb2222ca56b6ed148a486799e3",
+    ".build/qc-ending-native-v1/output-contexts/p6-s3-viola.png": "f5d3470f109a30417800600144a4968d8d1f6e1780352da98d9d7e210589976f",
+    ".build/qc-ending-native-v1/output-contexts/p6-s3-violin2.png": "6779f7087ecfa7f66ccea2b0bccf0e0a65351f12a2ac1777e068325fd5681be0",
+    ".build/qc-ending-native-v1/output-contexts/p6-s4-cello.png": "a2ac7b22c9bab4bff4fec756e779a6a4f424485c815f199e1568284ff544ad3d",
+    ".build/qc-ending-native-v1/output-contexts/p6-s4-viola.png": "ed54150cac6c78186ab42c715a2200e39800fc8c63246b66d63fa391826bca56",
+    ".build/qc-ending-native-v1/output-contexts/p6-s4-violin2.png": "cec51e1cb120efcf3c1eda4017e7ce9d9ece3a93b0784a86c7b6b8b10b6c1535"
+  },
+  "viewedChangedPageSheets": {
+    ".build/shared-direction-app-independent/ending-review/changed-layout-2.jpg": "3a6090f43ae1e744a6a74199715f572571b714df66273132486a0726b43e3bb6",
+    ".build/shared-direction-app-independent/ending-review/changed-layout-1.jpg": "9dc9e6a61816dcaa9cb324756d923619e0668ea7c1fceb49595c49055d7dbe00"
+  }
+}

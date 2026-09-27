@@ -1,0 +1,13 @@
+# Brahms ending draft delivery check — 2026-09-27
+
+Delivered the exact reviewed native scratch export to `output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/`. The PDFs were copied without rebuilding, and the earlier delivery was left intact. This is a complete draft deliverable, not a general extraction or musical-readiness pass.
+
+`deliver.py` verified 55 existing native/independent-review bindings before copying. It then rechecked the four PDFs' page counts (17/16/16/15), all 604 main crop rectangles, physical staff IDs, source order, 151 unique systems per part, 27 existing copied regions, 15 new ending rows, and every copied artifact's SHA256. It also verified the source-embedded project's 604 included bands, all four parts, original 39-page source hash, and nine unchanged saved page corrections. The corrected review PDF hash matches the export manifest. `delivery-check.json` records the evidence.
+
+Source-first visual check used freshly rendered full-width contexts from the immutable original at 216 dpi: p6 systems 3–4, p32 system 4, p36 system 1, and p37 system 2. These ending pages are unrectified in the saved project. I then inspected five corresponding contexts freshly rendered from the delivered PDFs: Violin II p6s3/p6s4, Viola p32s4/p37s2, and Violoncello p36s1. All eight intended ending digits, complete lines, and descending hooks are visible in those representative recipient rows and align above their intended bars. This representative check supplements, rather than repeats, the earlier independent review of all 15 new rows and 23 changed pages.
+
+I also inspected the freshly rendered complete Violoncello output page 14. Its ten systems and two paired-ending rows fit on the page with no new overlap or edge clipping. Dense neighboring notation remains visible in this inherited layout; this delivery does not certify all page turns or all unchanged music.
+
+The copied first-ending row at p6 retains part of the source rest-count `1`; p32 retains neighboring high-note/slur fragments; p36 retains a neighboring note/flag and dots. These artifacts remain visible and documented. There are six unchanged safety-envelope failures among eight Brahms brackets, with maximum overhang 2.1251802563 points. No guard was altered and no full-envelope pass is claimed. The intended ending ink is visually complete within the reviewed copied rows.
+
+The ending detector is retained only in the separately reviewed prototype. This delivery does not enable it in the Mac Auto flow. Existing whole-neighbor occurrences, other shared-direction gaps, and complete musical readiness remain outstanding.

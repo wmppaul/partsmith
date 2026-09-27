@@ -71,6 +71,7 @@ struct StaffDetectionPage {
 struct ScoreDetectionProgress {
     var completedPages: Int
     var totalPages: Int
+    var directionPhase: ScoreDirectionPhase? = nil
 }
 
 struct ScoreDetectionReview {
@@ -86,6 +87,9 @@ struct ScoreDetectionReview {
     var suggestedSourceHeader: SourceHeaderSelection? = nil
     var sourcePDFData: Data
     var rectifications: [PageRectification]
+    var directionIssues: [ScoreDirectionIssue] = []
+    var directionReferences: [ScoreDirectionReference] = []
+    var directionBindings: [Int: ScoreDirectionPageBinding] = [:]
 
     /// Establish optional nonmusic exclusions before the first expensive crop
     /// plan. Keep every analysis so restoring an excluded page still works.
@@ -94,20 +98,39 @@ struct ScoreDetectionReview {
         overrides: [ScorePageOverride] = [], selectedPageIndices: Set<Int>? = nil,
         suggestedSourceHeader: SourceHeaderSelection? = nil,
         sourcePDFData: Data, rectifications: [PageRectification],
+        directionIssues: [ScoreDirectionIssue] = [], directionReferences: [ScoreDirectionReference] = [],
         isCancelled: () -> Bool = { false }
     ) -> ScoreDetectionReview {
         let skipped = Set(analyses.filter(canAutomaticallySkip).map(\.pageIndex))
         let reasons = Dictionary(uniqueKeysWithValues: skipped.map { ($0, "No staves were detected on this page.") })
         let plan = ScoreExtractionPlanner.plan(pages: analyses.filter { !skipped.contains($0.pageIndex) },
             profile: profile, overrides: overrides.filter { !skipped.contains($0.pageIndex) }, isCancelled: isCancelled)
-        return ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan, overrides: overrides,
+        var review = ScoreDetectionReview(profile: profile, analyses: analyses, plan: plan, overrides: overrides,
             selectedPageIndices: selectedPageIndices, excludedPageReasons: reasons, autoSkippedPageIndices: skipped,
-            suggestedSourceHeader: suggestedSourceHeader, sourcePDFData: sourcePDFData, rectifications: rectifications)
+            suggestedSourceHeader: suggestedSourceHeader, sourcePDFData: sourcePDFData, rectifications: rectifications,
+            directionIssues: directionIssues, directionReferences: directionReferences)
+        review.captureDirectionBindings()
+        return review
     }
 
     mutating func replan() {
-        plan = ScoreExtractionPlanner.plan(pages: analyses.filter { excludedPageReasons[$0.pageIndex] == nil },
-                                           profile: profile, overrides: overrides.filter { excludedPageReasons[$0.pageIndex] == nil })
+        captureDirectionBindings()
+        var next = makePlan()
+        let stale = directionBindings.compactMap { pageIndex, binding -> Int? in
+            guard excludedPageReasons[pageIndex] == nil else { return nil }
+            guard let page = analyses.first(where: { $0.pageIndex == pageIndex }) else { return pageIndex }
+            return binding.profile != profile || binding.staves != page.staves
+                || binding.ignoredCandidateIDs != (overrides.first { $0.pageIndex == pageIndex }?.ignoredCandidateIDs?.sorted() ?? [])
+                || binding.assignments != directionAssignments(on: pageIndex, plan: next) ? pageIndex : nil
+        }
+        for pageIndex in stale { clearAutomaticDirections(on: pageIndex) }
+        if !stale.isEmpty { next = makePlan() }
+        plan = next
+    }
+
+    private func makePlan() -> ScoreExtractionPlan {
+        ScoreExtractionPlanner.plan(pages: analyses.filter { excludedPageReasons[$0.pageIndex] == nil },
+            profile: profile, overrides: overrides.filter { excludedPageReasons[$0.pageIndex] == nil })
     }
 
     func nextPageNeedingReview(after pageIndex: Int) -> Int? {
@@ -597,6 +620,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     /// Each worker owns its PDFKit objects; only small geometric results return to the UI.
     func detectScore(profile: ScoreExtractionProfile, findSourceHeader: Bool = false,
                      pageIndices: Set<Int>? = nil,
+                     copySharedDirections: Bool = false, directionRunner: ScoreSharedDirectionRunner? = nil,
                      completion: @escaping (ScoreDetectionReview?) -> Void) {
         cancelScoreDetection()
         cancelStaffDetection()
@@ -649,10 +673,27 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                     self.scoreDetectionProgress = ScoreDetectionProgress(completedPages: selectedOffset + 1, totalPages: selectedPages.count)
                 }
             }
+            var directionIssues: [ScoreDirectionIssue] = []
+            var directionReferences: [ScoreDirectionReference] = []
+            if copySharedDirections, !operation.isCancelled {
+                let runner: ScoreSharedDirectionRunner = directionRunner ?? ScoreSharedDirectionWorkflow.run
+                let result = runner(pdf, analyses, profile, rectifications, { value in
+                    DispatchQueue.main.async { [weak self, weak operation] in
+                        guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
+                        self.scoreDetectionProgress = ScoreDetectionProgress(completedPages: value.completedPages,
+                            totalPages: value.totalPages, directionPhase: value.phase)
+                    }
+                }, { operation.isCancelled })
+                guard !operation.isCancelled else { return }
+                analyses = result.analyses
+                directionIssues = result.issues
+                directionReferences = result.references
+            }
             let review = ScoreDetectionReview.initial(profile: profile, analyses: analyses,
                                                selectedPageIndices: pageIndices,
                                                suggestedSourceHeader: suggestedSourceHeader,
                                                sourcePDFData: data, rectifications: rectifications,
+                                               directionIssues: directionIssues, directionReferences: directionReferences,
                                                isCancelled: { operation.isCancelled })
             DispatchQueue.main.async { [weak self, weak operation] in
                 guard let self, let operation, self.scoreDetectionOperation === operation, !operation.isCancelled else { return }
