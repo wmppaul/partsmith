@@ -209,7 +209,199 @@ import CryptoKit
         }
     }
 
+    // These constructors reproduce the independently frozen source rasters,
+    // not analyzer components. SHA256 checks bind their decoded gray pixels
+    // and owner masks to the original negative-control studies.
+    static func frozenSourceHash(_ bytes: [UInt8]) -> String {
+        SHA256.hash(data: Data(bytes)).map { String(format: "%02x", $0) }.joined()
+    }
+
+    static func frozenSourcePlan(_ pixels: [UInt8], width: Int, height: Int,
+        scale: Double, candidates: [StaffBandCandidate], profile: ScoreExtractionProfile) -> ScoreExtractionPlan {
+        let image = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8,
+            bytesPerRow: width, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: 0),
+            provider: CGDataProvider(data: Data(pixels) as CFData)!, decode: nil,
+            shouldInterpolate: false, intent: .defaultIntent)!
+        let outputWidth = Int(Double(width) * scale), outputHeight = Int(Double(height) * scale)
+        let context = CGContext(data: nil, width: outputWidth, height: outputHeight, bitsPerComponent: 8,
+            bytesPerRow: outputWidth, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue)!
+        context.setFillColor(gray: 1, alpha: 1)
+        context.fill(CGRect(x: 0, y: 0, width: outputWidth, height: outputHeight))
+        context.interpolationQuality = .high
+        context.draw(image, in: CGRect(x: 0, y: 0, width: outputWidth, height: outputHeight))
+        let components = NativeScorePageAnalyzer.notationComponents(image: context.makeImage()!,
+            candidates: candidates, skewDegrees: 0)!
+        let page = ScorePageAnalysis(pageIndex: 0, pageWidth: Double(width), pageHeight: Double(height),
+            imageWidth: outputWidth, imageHeight: outputHeight,
+            staves: candidates.map(ScoreObservedStaff.init), warnings: [], inkComponents: components)
+        return ScoreExtractionPlanner.plan(pages: [page], profile: profile)
+    }
+
+    static func sourcePixelsLost(_ owners: [UInt8], bit: UInt8, width: Int, height: Int,
+        band: ScorePlannedBand) -> Int {
+        let top = band.topFraction * Double(height), bottom = band.bottomFraction * Double(height)
+        return owners.indices.reduce(0) { count, index in
+            let y = index / width
+            return count + (owners[index] & bit != 0
+                && (Double(y) < top - 1e-9 || Double(y + 1) > bottom + 1e-9) ? 1 : 0)
+        }
+    }
+
+    static func thinDiagonalMusicalSourceTests() {
+        // Exact constructors/masks from the rejected max-row-width study:
+        // diagonal-controls.swift SHA256 ee8962d6dcb296a9d858033e71e2edd2dc224d40dba9b5d442732a0eea9043e7.
+        // Only its three fully retained baseline cases are asserted here.
+        // Both physical views own this source-authored cross-staff phrase;
+        // this is not an instrument-name or music-recognition oracle.
+        let width = 720, height = 600, space = 14, tops = [170, 340]
+        let hashes = [
+            "diagonal-glissando": ["21c1011f62ca746855b7cf03efb11081a495b33c366528d8af14ec7afaff351d",
+                "1ce7a1a2137b653906de94b94286f0c22d37fd7d4f3d10577d054e0eb822fc40",
+                "26dffa66ea1b0db81b93a134caa7d923f7578130f46d0fa938e13ff1a5e0c8ec"],
+            "curved-cross-staff-slur": ["84b1bad52806c7ed070e78e04ed3483675e86721a515fe30db371f7990acf90f",
+                "ed5cb4e124abf4c300a5f07296fddf903baa299416aee26a3cf1705a4d18511e",
+                "d815d2d253ac713f3f57bc9d38380511d8ad47a2b7d7cca34fe9a47a99532f3e"]
+        ]
+        let profile = ScoreExtractionProfile(parts: [
+            .init(id: "upper", name: "Upper staff view", staffCount: 1),
+            .init(id: "lower", name: "Lower staff view", staffCount: 1)
+        ], cropMode: "compact")
+        for kind in ["diagonal-glissando", "curved-cross-staff-slur"] {
+            var pixels = [UInt8](repeating: 255, count: width * height)
+            var owners = [UInt8](repeating: 0, count: width * height)
+            func rect(_ x0: Int, _ y0: Int, _ x1: Int, _ y1: Int, _ owner: UInt8 = 0) {
+                for y in y0..<y1 { for x in x0..<x1 {
+                    pixels[y * width + x] = 0; owners[y * width + x] |= owner
+                } }
+            }
+            for (i, top) in tops.enumerated() {
+                for line in 0..<5 { rect(40, top + line * space, 650, top + line * space + 1) }
+                rect(150 + i * 60, top - 20, 153 + i * 60, top + 31, UInt8(1 << i))
+                rect(142 + i * 60, top + 24, 154 + i * 60, top + 30, UInt8(1 << i))
+            }
+            rect(40, tops[0], 43, tops[1] + 4 * space + 1)
+            for y in 190...376 {
+                let t = Double(y - 190) / 186
+                let dx = kind == "diagonal-glissando" ? 70 * t : 70 * t + 20 * sin(Double.pi * t)
+                let x = 360 + Int(dx.rounded())
+                rect(x, y, x + 3, y + 1, 3)
+            }
+            check(frozenSourceHash(pixels) == hashes[kind]![0], "Frozen \(kind) source changed")
+            for owner in 0..<2 {
+                let mask: [UInt8] = owners.map { $0 & UInt8(1 << owner) != 0 ? 0 : 255 }
+                check(frozenSourceHash(mask) == hashes[kind]![owner + 1], "Frozen \(kind) owner \(owner) mask changed")
+            }
+            let candidates = tops.enumerated().map { i, top in
+                StaffBandCandidate(id: i, staffLineFractions: (0..<5).map { Double(top + $0 * space) / Double(height) },
+                    topFraction: Double(top - 3 * space) / Double(height),
+                    bottomFraction: Double(top + 7 * space) / Double(height), confidence: 1, warnings: [])
+            }
+            for scale in kind == "diagonal-glissando" ? [1.0, 1.5] : [1.5] {
+                let plan = frozenSourcePlan(pixels, width: width, height: height,
+                    scale: scale, candidates: candidates, profile: profile)
+                check(plan.canApply && plan.bands.count == 2, "Frozen \(kind) must yield both staff views at \(scale)")
+                for owner in 0..<2 {
+                    let band = plan.bands.first { $0.partID == (owner == 0 ? "upper" : "lower") }!
+                    check(sourcePixelsLost(owners, bit: UInt8(1 << owner), width: width, height: height, band: band) == 0,
+                        "Thin musical \(kind) lost source pixels in owner \(owner) at \(scale)")
+                }
+            }
+        }
+    }
+
+    static func fourCoreUpperOwnerSourceTests() {
+        // Exact damaged full-resolution sources from
+        // Tests/quality_control/four-core-independent-2026-10-03/controls.swift,
+        // SHA256 5dbf6b01298373601a6fdb07f0802486a4c26f67ef377f4c24dd931030ba080d.
+        // Scope is ONLY the previously lossless upper owner. Other owners
+        // have preexisting omissions; this must not claim whole-case success.
+        let width = 720, height = 500, spine = 500
+        let lines = [[103,112,120,128,136], [178,186,194,202,210],
+                     [270,278,287,295,303], [344,352,361,369,377]]
+        let hashes = [
+            "filledOuter": ["21100d353db414c7df2976d2634101cda3c366ba873d8bede3274438d3fdc286",
+                "c2fa06abd5376697e95b516707999eea5ea8c186a4dc23b327e4364ae9110cd0"],
+            "hollowOuter": ["c6c4bc19b87d30b077ba6920062c2f427be3e5cde5d540ddd3d625937670ab3d",
+                "2e6a4b8ee9fdab7761c5c70996603801de227207cca8d997fd5975c381b01b07"],
+            "filledTiedOuter": ["b07b0b327caf71d4e882424a1b8b9fa6141f907f0c737c7bd83e5ad3821ba147",
+                "05dbbd2dc53a7bfb36a6ae829e557bd39148e5dc0ba9c023b3235182995ac46a"],
+            "hollowTiedOuter": ["c54bda93fb3a92e3dfe57b30e2e3a7b398e87db23474411eb0c9fc9e384b430f",
+                "d27022cec00627f0207872ce8777e919891d8c4d1cccbf9f689c9a8dc0f3f76d"]
+        ]
+        let profile = ScoreExtractionProfile(parts: (0..<4).map {
+            .init(id: "staff\($0)", name: "Physical staff view \($0)", staffCount: 1)
+        }, cropMode: "compact")
+        for kind in ["filledOuter", "hollowOuter", "filledTiedOuter", "hollowTiedOuter"] {
+            var pixels = [UInt8](repeating: 255, count: width * height)
+            var owners = [UInt8](repeating: 0, count: width * height)
+            func mark(_ x: Int, _ y: Int, _ owner: UInt8 = 0) {
+                guard x >= 0, x < width, y >= 0, y < height else { return }
+                pixels[y * width + x] = 0; owners[y * width + x] |= owner
+            }
+            func rect(_ x0: Int, _ y0: Int, _ x1: Int, _ y1: Int, _ owner: UInt8 = 0) {
+                for y in y0..<y1 { for x in x0..<x1 { mark(x, y, owner) } }
+            }
+            func head(_ cx: Double, _ cy: Double, _ hollow: Bool, _ owner: UInt8) {
+                for y in Int(cy - 7)...Int(cy + 7) { for x in Int(cx - 9)...Int(cx + 9) {
+                    let dx = Double(x) + 0.5 - cx, dy = Double(y) + 0.5 - cy
+                    let a = -Double.pi / 6, c = cos(a), s = sin(a)
+                    let u = dx * c + dy * s, v = -dx * s + dy * c
+                    let outer = u * u / 49 + v * v / 16 <= 1, inner = u * u / 25 + v * v / 4 < 1
+                    if outer && (!hollow || !inner) { mark(x, y, owner) }
+                } }
+            }
+            for (i, staff) in lines.enumerated() {
+                for y in staff { rect(40, y, 650, y + 1) }
+                let x = 150 + i * 50
+                rect(x, staff[0] - 14, x + 2, staff[0] + 23, UInt8(1 << i))
+                head(Double(x - 4), Double(staff[0] + 22), false, UInt8(1 << i))
+            }
+            rect(40, lines[0][0], 43, lines[3][4] + 1)
+            rect(spine, lines[0][0], spine + 2, lines[3][4] + 1)
+            // The upper two views own a cross-staff chord. Below that chord
+            // this same physical corridor continues as structural ink only.
+            let top = lines[0][0], last = lines[1][4]
+            rect(spine, top, spine + 2, last + 1, 3)
+            let hollow = kind.hasPrefix("hollow")
+            head(Double(spine + 5), Double(top), hollow, 3)
+            head(Double(spine - 5), Double(last), hollow, 3)
+            if kind.contains("Tied") {
+                for x in (spine + 6)...(spine + 75) {
+                    let t = Double(x - spine - 6) / 69, y = Double(top) - 5 - 8 * 4 * t * (1 - t)
+                    mark(x, Int(y.rounded()), 3); mark(x, Int(y.rounded()) + 1, 3)
+                }
+            }
+            for y in [113,114,115,116,122] { for x in spine..<(spine + 2) {
+                pixels[y * width + x] = 255; owners[y * width + x] = 0
+            } }
+            check(frozenSourceHash(pixels) == hashes[kind]![0], "Frozen four-core \(kind) source changed")
+            let upperMask: [UInt8] = owners.map { $0 & 1 != 0 ? 0 : 255 }
+            check(frozenSourceHash(upperMask) == hashes[kind]![1], "Frozen four-core \(kind) upper-owner mask changed")
+            let candidates = lines.enumerated().map { i, ys in
+                StaffBandCandidate(id: i, staffLineFractions: ys.map { Double($0) / Double(height) },
+                    topFraction: Double(ys[0] - 24) / Double(height), bottomFraction: Double(ys[4] + 24) / Double(height),
+                    confidence: 1, warnings: [])
+            }
+            let plan = frozenSourcePlan(pixels, width: width, height: height,
+                scale: 1, candidates: candidates, profile: profile)
+            check(plan.canApply && plan.bands.count == 4, "Four-core \(kind) must yield all physical staff views")
+            let upper = plan.bands.first { $0.partID == "staff0" }!
+            check(sourcePixelsLost(owners, bit: 1, width: width, height: height, band: upper) == 0,
+                "Four-core \(kind) lost source pixels in the previously lossless UPPER owner")
+        }
+    }
+
     static func main() throws {
+        if CommandLine.arguments.contains("--thin-musical-regression") {
+            thinDiagonalMusicalSourceTests()
+            print("PASS: \(checks) thin musical source checks")
+            return
+        }
+        if CommandLine.arguments.contains("--four-core-upper-regression") {
+            fourCoreUpperOwnerSourceTests()
+            print("PASS: \(checks) four-core upper-owner source checks")
+            return
+        }
         if CommandLine.arguments.contains("--ownership-regression") {
             try ownershipAlternativeRasterTests()
             print("PASS: \(checks) ownership raster checks")
@@ -349,6 +541,8 @@ import CryptoKit
             }
         }
         try ownershipAlternativeRasterTests()
+        thinDiagonalMusicalSourceTests()
+        fourCoreUpperOwnerSourceTests()
         print("PASS: \(checks) crop quality checks")
     }
 }

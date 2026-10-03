@@ -34,21 +34,36 @@ extension ScoreDetectionReview {
         }
         var correction = ScoreSystemAssignment.pageOverride(page: page, pagePlan: pagePlan,
             existingOverride: overrides.first { $0.pageIndex == page.pageIndex })
-        guard let system = correction.systems.firstIndex(where: { $0.systemIndex == band.systemIndex }),
-              let part = correction.systems[system].bands.firstIndex(where: { $0.partID == band.partID }) else {
+        guard let system = correction.systems.firstIndex(where: { $0.systemIndex == band.systemIndex }) else {
             throw DirectionEditError.unavailableMarking
         }
         var markings = band.sourceMarkings
         markings.remove(at: index)
-        let removed = band.sourceMarkings[index]
-        let removedPairs = Set((page.sharedEndings ?? []).filter { $0.sourceMarking == removed }.map(\.pairID))
-        correction.systems[system].bands[part].automaticLocalEndingPairIDs?.removeAll { removedPairs.contains($0) }
-        correction.systems[system].bands[part].sourceMarkings = markings.map {
+        let rectangles = markings.map {
             [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
              (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
         }
-        correction.systems[system].bands[part].sourceMarkingsBelow = markings.map { $0.isBelow == true }
+        let below = markings.map { $0.isBelow == true }
+        if band.generatedRest != nil {
+            guard let omitted = correction.systems[system].omittedParts?.firstIndex(where: { $0.partID == band.partID }) else {
+                throw DirectionEditError.unavailableMarking
+            }
+            correction.systems[system].omittedParts![omitted].sourceMarkings = rectangles
+            correction.systems[system].omittedParts![omitted].sourceMarkingsBelow = below
+        } else {
+            guard let part = correction.systems[system].bands.firstIndex(where: { $0.partID == band.partID }) else {
+                throw DirectionEditError.unavailableMarking
+            }
+            let removed = band.sourceMarkings[index]
+            let removedPairs = Set((page.sharedEndings ?? []).filter { $0.sourceMarking == removed }.map(\.pairID))
+            correction.systems[system].bands[part].automaticLocalEndingPairIDs?.removeAll { removedPairs.contains($0) }
+            correction.systems[system].bands[part].sourceMarkings = rectangles
+            correction.systems[system].bands[part].sourceMarkingsBelow = below
+        }
         var proposal = self
+        // Capture before materializing a list: the surviving automatic copies
+        // still need to be invalidated if their source assignment changes later.
+        proposal.captureDirectionBindings()
         proposal.overrides.removeAll { $0.pageIndex == page.pageIndex }
         proposal.overrides.append(correction)
         proposal.replan()
@@ -77,9 +92,11 @@ extension ScoreDetectionReview {
                 // manual choice. Later UI materialization is covered by this
                 // already-captured binding, so automatic copies remain known.
                 !reviewedBands.contains { system in
-                    system.systemIndex == band.systemIndex && system.bands.contains {
+                    system.systemIndex == band.systemIndex && (system.bands.contains {
                         $0.partID == band.partID && $0.sourceMarkings != nil
-                    }
+                    } || (system.omittedParts ?? []).contains {
+                        $0.partID == band.partID && $0.sourceMarkings != nil
+                    })
                 }
             }
             let automaticMarkings = Dictionary(uniqueKeysWithValues: automaticBands.map {
@@ -191,6 +208,33 @@ extension ScoreDetectionReview {
     private mutating func removeKnownAutomaticMarkings(on page: ScorePageAnalysis,
         binding: ScoreDirectionPageBinding?, knownByBand: [String: [ScoreSourceMarking]],
         endingPairIDs: Set<String>, preservingOtherCategories: Bool = false) {
+        func removingOtherCategoryOwnership(from markings: [ScoreSourceMarking]) -> [ScoreSourceMarking] {
+            guard preservingOtherCategories else { return markings }
+            return markings.filter { marking in
+                let bounds = [marking.leftFraction, marking.topFraction,
+                              1 - marking.rightFraction, marking.bottomFraction]
+                let sameBounds: ([Double]) -> Bool = { other in
+                    other.count == 4 && zip(other, bounds).allSatisfy { abs($0 - $1) < 1e-9 }
+                }
+                let headings = page.sharedHeadings ?? []
+                return !(marking.isBelow != true && (headings + ScoreSharedHeading.coalesced(headings)).contains { sameBounds($0.bounds) })
+                    && !(page.sharedNavigation ?? []).contains {
+                        sameBounds($0.bounds) && $0.isBelow == (marking.isBelow == true)
+                    }
+            }
+        }
+        func retainedIndices(rectangles: [[Double]], below: [Bool]?, known: [ScoreSourceMarking]) -> [Int] {
+            rectangles.indices.filter { item in
+                let rect = rectangles[item]
+                guard rect.count == 4 else { return true }
+                return !known.contains { marking in
+                    let expected = [marking.leftFraction * page.pageWidth, marking.topFraction * page.pageHeight,
+                        (1 - marking.rightFraction) * page.pageWidth, marking.bottomFraction * page.pageHeight]
+                    return (marking.isBelow == true) == (below?[item] == true)
+                        && zip(expected, rect).allSatisfy { abs($0 - $1) < 1e-7 }
+                }
+            }
+        }
         for correction in overrides.indices where overrides[correction].pageIndex == page.pageIndex {
             for system in overrides[correction].systems.indices {
                 for band in overrides[correction].systems[system].bands.indices {
@@ -221,38 +265,29 @@ extension ScoreDetectionReview {
                     known += (page.sharedEndings ?? []).filter {
                         automaticPairs.contains($0.pairID)
                     }.map(\.sourceMarking)
-                    if preservingOtherCategories {
-                        known.removeAll { marking in
-                            let bounds = [marking.leftFraction, marking.topFraction,
-                                          1 - marking.rightFraction, marking.bottomFraction]
-                            let sameBounds: ([Double]) -> Bool = { other in
-                                other.count == 4 && zip(other, bounds).allSatisfy { abs($0 - $1) < 1e-9 }
-                            }
-                            let headings = page.sharedHeadings ?? []
-                            return (marking.isBelow != true && (headings + ScoreSharedHeading.coalesced(headings)).contains { sameBounds($0.bounds) })
-                                || (page.sharedNavigation ?? []).contains {
-                                    sameBounds($0.bounds) && $0.isBelow == (marking.isBelow == true)
-                                }
-                        }
-                    }
+                    known = removingOtherCategoryOwnership(from: known)
                     value.automaticLocalEndingPairIDs?.removeAll { endingPairIDs.contains($0) }
                     overrides[correction].systems[system].bands[band] = value
                     guard let rectangles = value.sourceMarkings,
                           value.sourceMarkingsBelow == nil || value.sourceMarkingsBelow?.count == rectangles.count else { continue }
-                    let keep = rectangles.indices.filter { item in
-                        let rect = rectangles[item]
-                        guard rect.count == 4 else { return true }
-                        let below = value.sourceMarkingsBelow?[item] == true
-                        return !known.contains { marking in
-                            let expected = [marking.leftFraction * page.pageWidth, marking.topFraction * page.pageHeight,
-                                (1 - marking.rightFraction) * page.pageWidth, marking.bottomFraction * page.pageHeight]
-                            return (marking.isBelow == true) == below
-                                && zip(expected, rect).allSatisfy { abs($0 - $1) < 1e-7 }
-                        }
-                    }
+                    let keep = retainedIndices(rectangles: rectangles, below: value.sourceMarkingsBelow, known: known)
                     value.sourceMarkings = keep.map { rectangles[$0] }
                     if let sides = value.sourceMarkingsBelow { value.sourceMarkingsBelow = keep.map { sides[$0] } }
                     overrides[correction].systems[system].bands[band] = value
+                }
+                for omitted in (overrides[correction].systems[system].omittedParts ?? []).indices {
+                    var value = overrides[correction].systems[system].omittedParts![omitted]
+                    guard let rectangles = value.sourceMarkings,
+                          value.sourceMarkingsBelow == nil || value.sourceMarkingsBelow?.count == rectangles.count else { continue }
+                    // Silence has no physical staff identity to follow. Its
+                    // stable system/part identity binds automatic copies;
+                    // explicit manual omission lists are absent from this map.
+                    let systemIndex = overrides[correction].systems[system].systemIndex
+                    let known = removingOtherCategoryOwnership(from: knownByBand["\(systemIndex):\(value.partID)"] ?? [])
+                    let keep = retainedIndices(rectangles: rectangles, below: value.sourceMarkingsBelow, known: known)
+                    value.sourceMarkings = keep.map { rectangles[$0] }
+                    if let sides = value.sourceMarkingsBelow { value.sourceMarkingsBelow = keep.map { sides[$0] } }
+                    overrides[correction].systems[system].omittedParts![omitted] = value
                 }
             }
         }

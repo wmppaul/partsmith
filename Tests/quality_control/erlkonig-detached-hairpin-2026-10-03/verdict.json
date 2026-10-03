@@ -1,0 +1,67 @@
+{
+  "status": "Private candidate; not promoted. Positive source recovery, conservative misses, and an explicit footer-ornament ambiguity.",
+  "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+  "candidateAnalyzerSHA256": "ef10b25ae7c9c6b1220bd7ea7fcfc8c061360ef24cafbd23c7515329e889081c",
+  "patchSHA256": "93d44a254df53694d1fe58deb075f3f86b1c70a34ad8854ff1e328e94b945d11",
+  "changedCoreFiles": [
+    "Detection/NativeScorePageAnalyzer.swift"
+  ],
+  "existingCropChecks": 796,
+  "originalSynthetic": {
+    "total": 90,
+    "positives": 18,
+    "targetEnvelopesRetained": 10,
+    "positiveMisses": 8,
+    "positiveClassifications": 6,
+    "negativePlanChanges": 0,
+    "upperStaffPlanChanges": 0
+  },
+  "additionalFooterControls": {
+    "total": 36,
+    "lookalikeClassifications": 3,
+    "lookalikePlanChanges": 2,
+    "otherNegativeClassifications": 0,
+    "otherNegativePlanChanges": 0
+  },
+  "erlkonig": {
+    "bandCount": 96,
+    "allPriorSourceCropsRetained": true,
+    "changes": [
+      {
+        "bandID": "p4-s4-piano",
+        "changedKeys": [
+          "bottomFraction"
+        ],
+        "before": [
+          0,
+          708.4231811352529,
+          595.28,
+          798.8611784275525
+        ],
+        "after": [
+          0,
+          708.4231811352529,
+          595.28,
+          817.3787903678509
+        ]
+      }
+    ],
+    "sourceMarkingsExact": true
+  },
+  "brahms": {
+    "sourcePages": [
+      24,
+      28,
+      31,
+      35,
+      38
+    ],
+    "bandCount": 80,
+    "planExact": true,
+    "addedComponents": 0,
+    "seconds": 19.48931896686554,
+    "note": "Native components replayed from hash-bound existing corrected rasters and frozen staff candidates; original components matched the current frozen inventory on every page; no fresh staff detection or OCR."
+  },
+  "actualDocumentWorkerRun": false,
+  "candidatePDFExport": false
+}

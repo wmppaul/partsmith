@@ -1,5 +1,15 @@
 # Complete input corpus quality control
 
+## October 3 complete Erlkönig and directions on silent parts
+
+The [complete Erlkönig workflow](erlkonig-complete-workflow-2026-10-03/README.md) exports both parts across all 148 measures after source-reviewed initialization: Voice has 4 pages and Piano 8. Five crop edges and the opening tempo copy were corrected, restoring a missing piano diminuendo and metronome-note stem. [Independent source/output review](erlkonig-independent-review-2026-10-03/README.md) verifies those changes; opening meter, combined rests, neighboring fragments and musical page turns remain unresolved.
+
+The production planner now carries shared headings onto confirmed silent parts, with editable/removable copies and assignment invalidation. [Independent checks](generated-rest-heading-independent-2026-10-03/README.md) pass 47 cases and 70 local-ending controls. The [latest build record](macos-build-2026-10-03-rest-headings.json) binds the published universal app; earlier sections below describe historical builds. The existing Scale and Side Margins behavior remains included.
+
+The [796-check crop suite](permanent-musical-preservation-2026-10-03/README.md) adds source-pixel regressions for the rejected [row-width rule](row-width-independent-2026-10-03/README.md) and [multi-core barline fallback](four-core-independent-2026-10-03/README.md). Neither experiment changed production detection. The [source roster audit](variable-profile-roster-audit-2026-10-03/README.md) confirms actual changing instrumentation in three complete short scores; none can safely become a fixed cadence merely by disabling their profile gate.
+
+The [detached-hairpin candidate](erlkonig-detached-hairpin-2026-10-03/README.md) restores the actual low diminuendo but remains outside production after missed positives and footer lookalikes. Its [independent challenge](hairpin-independent-2026-10-03/README.md) preserves the unchanged source tests and scope limits; the published score contains a reviewed manual correction.
+
 ## October 3 complete changing-layout Mozart and reviewed bar numbers
 
 The [complete K.488 workflow](k488-complete-workflow-2026-10-03/README.md) initializes all 78 systems across the 36-page source, producing all nine printed parts with 99 inserted rest passages. [Independent source review](k488-independent-review-2026-10-03/README.md) agrees with every identity and bar count; each part covers measures 1–314. The complete PDFs remain drafts with neighboring fragments, an unfinished cue inside four inserted rests and an overlong opening rest layout.

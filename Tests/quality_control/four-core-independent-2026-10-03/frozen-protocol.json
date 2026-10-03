@@ -1,0 +1,16 @@
+{
+  "fixtureSHA256": "5dbf6b01298373601a6fdb07f0802486a4c26f67ef377f4c24dd931030ba080d",
+  "authoredBeforeBaselineAndCandidateResults": true,
+  "cases": 36,
+  "kinds": 6,
+  "damageVariants": [
+    "intact",
+    "five missing source rows113/114/115/116/122"
+  ],
+  "rasterScales": [
+    0.5,
+    1,
+    1.5
+  ],
+  "oracle": "Source-owned musical pixels, including the upper-two-staff chord and coincident stem, are tagged before analysis. Lower two donor cores continue structurally and own only local notes. Every source damage applies equally to the source image and owner masks. No output crop/component defines ownership."
+}

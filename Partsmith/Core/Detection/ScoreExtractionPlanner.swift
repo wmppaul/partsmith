@@ -165,6 +165,10 @@ struct ScoreInkComponent: Codable, Equatable {
 struct ScorePartOmission: Codable, Equatable {
     var partID: String
     var reason: String
+    /// Source directions alongside generated silence. Nil permits automatic
+    /// copies; an explicit empty list records removal during review.
+    var sourceMarkings: [[Double]]? = nil
+    var sourceMarkingsBelow: [Bool]? = nil
 }
 
 /// Explicitly reviewed source coordinates; these are not detector corrections.
@@ -341,8 +345,12 @@ enum ScoreSystemAssignment {
             return previous.bands.first { $0.partID == part.id && ($0.kind ?? "music") == "music" && $0.candidateIDs == group }
                 ?? ScoreBandOverride(partID: part.id, candidateIDs: group)
         }
-        correction.systems[systemIndex].omittedParts = profile.parts.filter { !presentPartIDs.contains($0.id) }.map {
-            ScorePartOmission(partID: $0.id, reason: "Confirmed silent: no staff is printed in this system.")
+        let samePrintedSystem = previous.bands.flatMap { $0.candidateIDs ?? [] }.sorted() == ids.sorted()
+        correction.systems[systemIndex].omittedParts = profile.parts.filter { !presentPartIDs.contains($0.id) }.map { part in
+            if samePrintedSystem, let existing = previous.omittedParts?.first(where: { $0.partID == part.id }) {
+                return existing
+            }
+            return ScorePartOmission(partID: part.id, reason: "Confirmed silent: no staff is printed in this system.")
         }
         correction.systems[systemIndex].startBarNumber = startBarNumber
         correction.systems[systemIndex].barCount = barCount
@@ -382,8 +390,14 @@ enum ScoreSystemAssignment {
                         }.map(\.pairID)
                             return ids.isEmpty ? nil : ids
                         }())
-                }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
-                    ScorePartOmission(partID: $0.partID, reason: $0.reason)
+                }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map { omission in
+                    let markings = assignments.first { $0.partID == omission.partID }?.sourceMarkings ?? []
+                    return ScorePartOmission(partID: omission.partID, reason: omission.reason,
+                        sourceMarkings: markings.map {
+                            [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+                             (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+                        }, sourceMarkingsBelow: markings.contains { $0.isBelow == true }
+                            ? markings.map { $0.isBelow == true } : nil)
                 }, startBarNumber: assignments.compactMap(\.startBarNumber).first ?? generated?.startBarNumber,
                 barCount: assignments.compactMap(\.barCount).first ?? generated?.barCount)
         }
@@ -436,7 +450,12 @@ enum ScoreExtractionPlanner {
         let system = owners[0].systemIndex
         let assignments = pageBands.filter { $0.systemIndex == system }.sorted { $0.partID < $1.partID }
         let ids = assignments.flatMap(\.candidateIDs)
-        guard system >= 0, assignments.allSatisfy({ $0.kind == "music" && !$0.candidateIDs.isEmpty }),
+        guard system >= 0, assignments.allSatisfy({ band in
+                  if band.kind == "generated-rest" {
+                      return band.candidateIDs.isEmpty && band.generatedRest?.isValid == true
+                  }
+                  return band.kind == "music" && !band.candidateIDs.isEmpty && band.generatedRest == nil
+              }),
               Set(assignments.map(\.partID)).count == assignments.count,
               Set(ids).count == ids.count else { return nil }
         let staves = page.staves.filter { ids.contains($0.id) }.sorted {
@@ -649,12 +668,14 @@ enum ScoreExtractionPlanner {
             let r = heading.bounds
             guard r.count == 4, r.allSatisfy(\.isFinite),
                   r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1 else { return }
-            if r[0] >= band.leftFraction, r[2] <= 1 - band.rightFraction,
+            // A generated rest's rectangle only locates its source system.
+            // Those pixels are not printed, so it cannot already contain a heading.
+            if band.generatedRest == nil, r[0] >= band.leftFraction, r[2] <= 1 - band.rightFraction,
                r[1] >= band.topFraction, r[3] <= band.bottomFraction { return }
             // Keep the padded copy unless its measured original source ink
             // already lies in this same crop. Missing or invalid evidence keeps
             // the legacy behavior; unrelated ink cannot certify a heading.
-            if let ink = heading.inkBounds,
+            if band.generatedRest == nil, let ink = heading.inkBounds,
                ink.count == 4, ink.allSatisfy(\.isFinite),
                ink[0] < ink[2], ink[1] < ink[3],
                ink[0] >= r[0], ink[1] >= r[1], ink[2] <= r[2], ink[3] <= r[3],
@@ -737,6 +758,12 @@ enum ScoreExtractionPlanner {
             let followingSystemFirst = page.staves.filter { followingSystemIDs.contains($0.id) && validStaff($0) }
                 .min { $0.staffLineFractions[0] < $1.staffLineFractions[0] }
             for omission in omitted {
+                let markings = omission.sourceMarkings ?? []
+                guard (omission.sourceMarkingsBelow == nil || omission.sourceMarkingsBelow?.count == markings.count),
+                      markings.allSatisfy({ validRect($0, page: page) }) else {
+                    output.unresolvedReasons.append("Invalid source direction for silent \(omission.partID), system \(system.systemIndex + 1).")
+                    continue
+                }
                 output.omissions.append(ScoreSystemOmission(systemIndex: system.systemIndex, partID: omission.partID, reason: omission.reason))
                 // The geometry locates the source system for ordering and
                 // inspection only. No other instrument's source image is used
@@ -753,6 +780,16 @@ enum ScoreExtractionPlanner {
                 rest.generatedRest = ScoreGeneratedRest(barCount: system.barCount!, startBarNumber: system.startBarNumber)
                 rest.startBarNumber = system.startBarNumber
                 rest.barCount = system.barCount
+                rest.sourceMarkings = markings.enumerated().map { index, r in
+                    ScoreSourceMarking(topFraction: r[1] / page.pageHeight, bottomFraction: r[3] / page.pageHeight,
+                        leftFraction: r[0] / page.pageWidth, rightFraction: 1 - r[2] / page.pageWidth,
+                        isBelow: omission.sourceMarkingsBelow?[index] == true ? true : nil)
+                }
+                for marking in rest.sourceMarkings {
+                    rest.leftFraction = min(rest.leftFraction, marking.leftFraction)
+                    rest.rightFraction = min(rest.rightFraction, marking.rightFraction)
+                }
+                if omission.sourceMarkings != nil { explicitMarkingLists.insert(rest.id) }
                 output.assignments.append(rest)
             }
             for assigned in system.bands {

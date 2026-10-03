@@ -1,0 +1,7 @@
+.build/generated-rest-heading-review-2026-10-03/review.swift:149:7: warning: variable 'trimReview' was never mutated; consider changing to 'let' constant
+147 |   var explicitTrim=correction!;explicitTrim.systems[0].omittedParts![0].sourceMarkings=[[20,145,80,155],[530,145,580,155]]
+148 |   let trimmedPlan=ScoreExtractionPlanner.plan(pages:[page],profile:trimmed,overrides:[explicitTrim])
+149 |   var trimReview=ScoreDetectionReview.initial(profile:trimmed,analyses:[page],overrides:[explicitTrim],sourcePDFData:source,rectifications:[])
+    |       `- warning: variable 'trimReview' was never mutated; consider changing to 'let' constant
+150 |   let trimDocument=PartsmithDocument(sourcePDFData:source);trimDocument.project.pageCount=1
+151 |   check(trimmedPlan.canApply && rest(trimmedPlan).leftFraction==20.0/600 && rest(trimmedPlan).rightFraction==1-580.0/600,"Explicit silence directions expand the unprinted anchor span")

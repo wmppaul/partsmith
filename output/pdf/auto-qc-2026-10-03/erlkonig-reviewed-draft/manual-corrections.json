@@ -1,0 +1,98 @@
+[
+  {
+    "id": "p1-s1-piano",
+    "before": [
+      0,
+      131.1939738805969,
+      595.28,
+      269.41472014925364
+    ],
+    "after": [
+      0,
+      136.5,
+      595.28,
+      269.41472014925364
+    ],
+    "reason": "Exclude sliced work-number header while preserving complete opening tempo and quarter-note stem."
+  },
+  {
+    "id": "p4-s4-piano",
+    "before": [
+      0,
+      708.423181135253,
+      595.28,
+      798.8611784275525
+    ],
+    "after": [
+      0,
+      708.423181135253,
+      595.28,
+      816.5
+    ],
+    "reason": "Retain the independently source-measured diminuendo, whose stroke envelope ends at 814.9606159627438 points."
+  },
+  {
+    "id": "p2-s3-voice",
+    "before": [
+      0,
+      334.10263165120523,
+      595.28,
+      412.9674561162649
+    ],
+    "after": [
+      0,
+      363.5,
+      595.28,
+      412.9674561162649
+    ],
+    "reason": "Remove large previous-piano fragments while preserving printed measure number, clef, key, notes and slurs with a one-point upper margin against independently frozen original-source ink."
+  },
+  {
+    "id": "p4-s4-voice",
+    "before": [
+      0,
+      603.0626782929965,
+      595.28,
+      709.5385848476083
+    ],
+    "after": [
+      0,
+      657.5,
+      595.28,
+      709.5385848476083
+    ],
+    "reason": "Remove large previous-piano fragments while preserving printed measure number, clef, key, notes and slurs with a one-point upper margin against independently frozen original-source ink."
+  },
+  {
+    "id": "p6-s2-voice",
+    "before": [
+      0,
+      175.17357381538432,
+      595.28,
+      260.1558236535783
+    ],
+    "after": [
+      0,
+      209.375,
+      595.28,
+      260.1558236535783
+    ],
+    "reason": "Remove large previous-piano fragments while preserving printed measure number, clef, key, notes and slurs with a one-point upper margin against independently frozen original-source ink."
+  },
+  {
+    "id": "p1-s1-Schnell-copy",
+    "beforeNormalized": [
+      0.20595559007688657,
+      0.16784526306036615,
+      0.3680120193973835,
+      0.1920821949369581
+    ],
+    "after": [
+      121.6,
+      136.5,
+      220.1,
+      155.5
+    ],
+    "reason": "Original source ink starts at 138 and ends at 153.3 points; a blank gap ends before unrelated piano ink at 158.5. Includes the complete quarter-note stem."
+  }
+]

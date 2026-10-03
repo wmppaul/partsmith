@@ -1,0 +1,16 @@
+{
+  "baselineNativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "candidateNativeSHA256": "ef10b25ae7c9c6b1220bd7ea7fcfc8c061360ef24cafbd23c7515329e889081c",
+  "cases": 12,
+  "challengeSHA256": "d62364633aaf31f314ec191aada24a85452e3743a2f8cc9aae9d7a976f2d883a",
+  "frozenBeforeRun": true,
+  "laterStaffCaseScope": "Upstream omitted physical staff is separately labeled; tests robustness of final detected staff, not a correct full staff inventory.",
+  "negativeOwnershipRule": "All other wedges/ornaments are authored as non-final-staff music; only the final staff local notes belong to its part. Identical pixels with different source-defined musical/footer provenance are a deliberate identifiability challenge, not evidence that all wedges in real scores are footers.",
+  "positiveCases": [
+    "musical-diminuendo",
+    "musical-crescendo",
+    "reordered-staff-ids"
+  ],
+  "sourceMaskRule": "Target masks authored before analysis; no detector-derived boxes.",
+  "timing": "Eight serial baseline calls then eight candidate calls per case; small-fixture observation, not production benchmark."
+}

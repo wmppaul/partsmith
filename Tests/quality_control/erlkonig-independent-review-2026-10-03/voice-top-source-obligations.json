@@ -1,0 +1,133 @@
+{
+  "source": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+  "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+  "method": "Original source rendered at8pixels/point; selected target upper regions classified visually before proposed rectangle comparison. Music-font typographic boxes are intentionally not treated as ink boxes. All full systems and complete target glyphs were independently viewed.",
+  "rows": [
+    {
+      "page": 2,
+      "system": 3,
+      "part": "Voice",
+      "sourceSelectionPurpose": "Complete upper-edge target ink, including printed numeral, clef/key tops, all note/stem/slur upper reaches. Lower target remains in unchanged baseline crop; this is not a full glyph mask.",
+      "sourceRegions": [
+        [
+          30,
+          363,
+          380,
+          383
+        ],
+        [
+          380,
+          368,
+          556,
+          383
+        ]
+      ],
+      "rasterScale": 8,
+      "pixelThreshold": 250,
+      "rasterOrigin": [
+        200,
+        2840
+      ],
+      "targetUpperInkEnvelope": [
+        33.875,
+        364.5,
+        552.875,
+        383.0
+      ],
+      "minimalConservativeCropTop": 363.5,
+      "marginAboveFirstTargetInk": 1.0,
+      "sourceImage": "voice-top-obligation-p2-s3.png",
+      "mask": "voice-top-mask-p2-s3.png",
+      "maskSHA256": "e8ab9a0324c36f3f6997e13eea604bbbb2fee430a738c16c4dbaf552b81c9841",
+      "expectedResidualForeignInk": "Small previous Piano tail/mark tips share target vertical range; full-width crop cannot remove every fragment safely."
+    },
+    {
+      "page": 4,
+      "system": 4,
+      "part": "Voice",
+      "sourceSelectionPurpose": "Complete upper-edge target ink, including printed numeral, clef/key tops, all note/stem/slur upper reaches. Lower target remains in unchanged baseline crop; this is not a full glyph mask.",
+      "sourceRegions": [
+        [
+          30,
+          657,
+          230,
+          678
+        ],
+        [
+          230,
+          665,
+          556,
+          678
+        ]
+      ],
+      "rasterScale": 8,
+      "pixelThreshold": 250,
+      "rasterOrigin": [
+        200,
+        5192
+      ],
+      "targetUpperInkEnvelope": [
+        33.875,
+        658.5,
+        552.875,
+        678.0
+      ],
+      "minimalConservativeCropTop": 657.5,
+      "marginAboveFirstTargetInk": 1.0,
+      "sourceImage": "voice-top-obligation-p4-s4.png",
+      "mask": "voice-top-mask-p4-s4.png",
+      "maskSHA256": "28956b9a09f6a4ccaa0b9a1bc2bd2fdbacdf3cbe8c9da4695dad8d929239105b",
+      "expectedResidualForeignInk": "Small previous Piano tail/mark tips share target vertical range; full-width crop cannot remove every fragment safely."
+    },
+    {
+      "page": 6,
+      "system": 2,
+      "part": "Voice",
+      "sourceSelectionPurpose": "Complete upper-edge target ink, including printed numeral, clef/key tops, all note/stem/slur upper reaches. Lower target remains in unchanged baseline crop; this is not a full glyph mask.",
+      "sourceRegions": [
+        [
+          30,
+          209,
+          74,
+          230
+        ],
+        [
+          74,
+          213,
+          230,
+          230
+        ],
+        [
+          230,
+          215,
+          380,
+          230
+        ],
+        [
+          380,
+          217,
+          556,
+          230
+        ]
+      ],
+      "rasterScale": 8,
+      "pixelThreshold": 250,
+      "rasterOrigin": [
+        200,
+        1608
+      ],
+      "targetUpperInkEnvelope": [
+        34.0,
+        210.375,
+        552.875,
+        230.0
+      ],
+      "minimalConservativeCropTop": 209.375,
+      "marginAboveFirstTargetInk": 1.0,
+      "sourceImage": "voice-top-obligation-p6-s2.png",
+      "mask": "voice-top-mask-p6-s2.png",
+      "maskSHA256": "1d8b9d260907824c39e473e58010b877023c7ac43ef7c61efb09bd0ed0bc57ce",
+      "expectedResidualForeignInk": "Small previous Piano tail/mark tips share target vertical range; full-width crop cannot remove every fragment safely."
+    }
+  ]
+}

@@ -69,6 +69,7 @@ import PDFKit
         var review = ScoreDetectionReview(profile: profile, analyses: [page], plan: plan,
             overrides: [correction!], selectedPageIndices: [0], sourcePDFData: sourceData, rectifications: [])
         check(plan.canApply && plan.bands.count == 6, "Every part has an item in each of three systems")
+        try sharedHeadings(page: page, profile: profile, correction: correction!, plan: plan, sourceData: sourceData)
         check(plan.bands.allSatisfy { $0.startBarNumber == [21, 22, 29][$0.systemIndex]
             && $0.barCount == [1, 7, 4][$0.systemIndex] },
               "Entered system measures survive planning on music and inserted rests")
@@ -254,6 +255,102 @@ import PDFKit
               "Copying crop templates preserves a destination part's confirmed silence without adding unrelated source strips")
         try realMozart()
         print("\(checks) generated-rest workflow checks passed")
+    }
+
+    static func sharedHeadings(page: ScorePageAnalysis, profile: ScoreExtractionProfile,
+                               correction: ScorePageOverride, plan: ScoreExtractionPlan, sourceData: Data) throws {
+        let binding = ScoreExtractionPlanner.headingRecognitionBinding(page: page, plan: plan, anchorStaffID: 1)
+        check(binding != nil, "A printed piano system with confirmed silent flute has a physical heading binding")
+        var analyzed = page
+        // The second rectangle lies inside the silent part's inspection anchor.
+        // It still needs a copy because an inserted rest never prints that anchor.
+        analyzed.sharedHeadings = [
+            ScoreSharedHeading(anchorStaffID: 1, bounds: [0.2, 0.30, 0.4, 0.32], recognizedText: "Allegro",
+                recognitionBinding: binding),
+            ScoreSharedHeading(anchorStaffID: 1, bounds: [0.6, 0.38, 0.8, 0.39], recognizedText: "rit.",
+                inkBounds: [0.61, 0.381, 0.79, 0.389], recognitionBinding: binding)
+        ]
+        let copied = ScoreExtractionPlanner.plan(pages: [analyzed], profile: profile, overrides: [correction])
+        let silent = copied.bands.first { $0.partID == "flute" && $0.systemIndex == 1 }!
+        check(copied.canApply && silent.sourceMarkings.count == 2,
+              "Both source headings copy to silence, including ink inside its unprinted anchor")
+        check(silent.generatedRest == plan.bands.first { $0.id == silent.id }!.generatedRest,
+              "Copying a heading cannot change the counted rest")
+        check(copied.bands.filter { $0.systemIndex != 1 }.allSatisfy { $0.sourceMarkings.isEmpty },
+              "Headings remain in their bound source system")
+        let materialized = ScoreSystemAssignment.pageOverride(page: analyzed, pagePlan: copied.pages.first, existingOverride: nil)
+        let restored = ScoreExtractionPlanner.plan(pages: [analyzed], profile: profile, overrides: [materialized])
+        check(restored.bands.first { $0.id == silent.id }?.sourceMarkings == silent.sourceMarkings,
+              "Materializing crop review preserves silent-part source copies")
+        var explicit = correction
+        explicit.systems[1].omittedParts![0].sourceMarkings = []
+        let removed = ScoreExtractionPlanner.plan(pages: [analyzed], profile: profile, overrides: [explicit])
+        check(removed.bands.first { $0.id == silent.id }?.sourceMarkings.isEmpty == true,
+              "An explicitly empty silent-part copy list remains empty")
+        let repeated = try ScoreSystemAssignment.assign(page: analyzed, profile: profile, pagePlan: removed.pages.first,
+            existingOverride: explicit, systemIndex: 1, candidateIDs: [1, 2], presentPartIDs: ["piano"],
+            startBarNumber: 22, barCount: 7)
+        check(repeated.systems[1].omittedParts![0].sourceMarkings == [],
+              "Reconfirming the same printed system keeps a reviewed removal")
+        explicit.systems[1].omittedParts![0].sourceMarkings = [[10, 10, 20, 20]]
+        explicit.systems[1].omittedParts![0].sourceMarkingsBelow = []
+        check(!ScoreExtractionPlanner.plan(pages: [analyzed], profile: profile, overrides: [explicit]).canApply,
+              "Mismatched silent-part copy sides cannot apply")
+        explicit.systems[1].omittedParts![0].sourceMarkings = [[10, 10, 700, 20]]
+        explicit.systems[1].omittedParts![0].sourceMarkingsBelow = nil
+        check(!ScoreExtractionPlanner.plan(pages: [analyzed], profile: profile, overrides: [explicit]).canApply,
+              "Off-page silent-part source copies cannot apply")
+        var invalidPlan = plan
+        let pageIndex = invalidPlan.pages.firstIndex { $0.pageIndex == 0 }!
+        let bandIndex = invalidPlan.pages[pageIndex].assignments.firstIndex { $0.id == silent.id }!
+        invalidPlan.pages[pageIndex].assignments[bandIndex].generatedRest?.barCount = 0
+        check(ScoreExtractionPlanner.headingRecognitionBinding(page: page, plan: invalidPlan, anchorStaffID: 1) == nil,
+              "Malformed rest counts cannot establish heading ownership")
+        invalidPlan = plan
+        invalidPlan.pages[pageIndex].assignments[bandIndex].candidateIDs = [0]
+        check(ScoreExtractionPlanner.headingRecognitionBinding(page: page, plan: invalidPlan, anchorStaffID: 1) == nil,
+              "A synthetic rest cannot claim printed staves")
+        var renamed = profile
+        renamed.parts[0].id = "clarinet"
+        var reassigned = correction
+        for index in reassigned.systems.indices {
+            for b in reassigned.systems[index].bands.indices where reassigned.systems[index].bands[b].partID == "flute" {
+                reassigned.systems[index].bands[b].partID = "clarinet"
+            }
+            for o in (reassigned.systems[index].omittedParts ?? []).indices
+                where reassigned.systems[index].omittedParts![o].partID == "flute" {
+                reassigned.systems[index].omittedParts![o].partID = "clarinet"
+            }
+        }
+        let stale = ScoreExtractionPlanner.plan(pages: [analyzed], profile: renamed, overrides: [reassigned])
+        check(stale.canApply && stale.bands.allSatisfy { $0.sourceMarkings.isEmpty },
+              "Changing a silent recipient invalidates its old heading binding")
+        let document = PartsmithDocument(sourcePDFData: sourceData)
+        document.project.pageCount = 2
+        let review = ScoreDetectionReview(profile: profile, analyses: [analyzed], plan: copied,
+            overrides: [correction], selectedPageIndices: [0], sourcePDFData: sourceData, rectifications: [])
+        check(document.addScoreParts(from: review) == 6, "The app accepts copied source headings on inserted rests")
+        let band = document.project.bands.first { $0.generatedRest?.barCount == 7 }!
+        check(band.sourceMarkings.count == 2, "Apply keeps both source-image copies")
+        document.project.bands = [band]
+        let layout = try PartLayoutEngine.makePlan(project: document.project,
+            pageBoundsProvider: { document.pdfDocument?.page(at: $0)?.bounds(for: .mediaBox) }, partID: band.partID)
+        let placement = layout.pages[0].placements[0]
+        check(placement.sourceMarkings.count == 2 && placement.generatedRest?.barCount == 7,
+              "Layout retains headings alongside the seven-bar rest")
+        check(placement.sourceMarkings.allSatisfy { !$0.destinationRect.intersects(placement.destinationRect) },
+              "Copied headings do not cover generated rest notation")
+        let data = try PartPDFExporter.pdfData(for: band.partID, project: document.project, sourcePDFData: sourceData)
+        let rendered = pixels(data)
+        let redPixels = stride(from: 0, to: rendered.count, by: 4).filter {
+            rendered[$0] > 200 && rendered[$0 + 1] < 80 && rendered[$0 + 2] < 80
+        }.count
+        check(redPixels > 100, "Actual PDF renders the copied source ink beside silence")
+        var withoutCopies = document.project; withoutCopies.bands[0].sourceMarkings = []
+        let clean = pixels(try PartPDFExporter.pdfData(for: band.partID, project: withoutCopies, sourcePDFData: sourceData))
+        check(!stride(from: 0, to: clean.count, by: 4).contains {
+            clean[$0] > 200 && clean[$0 + 1] < 80 && clean[$0 + 2] < 80
+        }, "Generated silence still cannot leak its colored source anchor")
     }
 
     static func realMozart() throws {

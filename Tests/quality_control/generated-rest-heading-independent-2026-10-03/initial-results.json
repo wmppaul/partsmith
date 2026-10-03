@@ -1,0 +1,133 @@
+{
+  "bluePixels" : 861,
+  "checks" : [
+    {
+      "name" : "Reviewed variable layout yields all six rows",
+      "passed" : true
+    },
+    {
+      "name" : "Binding includes silent recipient kind",
+      "passed" : true
+    },
+    {
+      "name" : "Binding contains only actual physical staves",
+      "passed" : true
+    },
+    {
+      "name" : "Rest receives both fully contained and ink-only-contained source headings",
+      "passed" : true
+    },
+    {
+      "name" : "Printed recipient also receives headings in a mixed silent system",
+      "passed" : true
+    },
+    {
+      "name" : "Nothing is copied to later system",
+      "passed" : true
+    },
+    {
+      "name" : "Heading copies cannot alter the 12-bar rest",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 0 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 1 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 2 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 3 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 4 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 5 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 6 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 7 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Music with contradictory rest payload cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Changing rest recipient and printed owner drops stale heading copies",
+      "passed" : true
+    },
+    {
+      "name" : "Changed physical source geometry drops stale copies",
+      "passed" : true
+    },
+    {
+      "name" : "Changing only reviewed duration keeps source heading at the same physical system",
+      "passed" : true
+    },
+    {
+      "name" : "No-op materialization preserves automatic silence copies",
+      "passed" : true
+    },
+    {
+      "name" : "Actual printed crop edit preserves silent-part copies",
+      "passed" : true
+    },
+    {
+      "name" : "Actual Remove Copy works for generated rest",
+      "passed" : false
+    },
+    {
+      "name" : "Invalidation removes automatic rest and printed copies after a crop edit",
+      "passed" : true
+    },
+    {
+      "name" : "Cancelled planning cannot apply source copies",
+      "passed" : true
+    },
+    {
+      "name" : "Repeated unchanged review deterministic",
+      "passed" : true
+    },
+    {
+      "name" : "Actual Add Parts accepts mixed music\/rest headings",
+      "passed" : true
+    },
+    {
+      "name" : "Applied project stores both rest source copies",
+      "passed" : true
+    },
+    {
+      "name" : "Project codec retains source copies and generated rest",
+      "passed" : true
+    },
+    {
+      "name" : "Layout keeps both copies clear of the rest",
+      "passed" : true
+    },
+    {
+      "name" : "Actual exported rest renders both distinct source-ink copies",
+      "passed" : true
+    },
+    {
+      "name" : "Generated rest never prints the colored anchor itself",
+      "passed" : true
+    }
+  ],
+  "count" : 31,
+  "failures" : 1,
+  "greenPixels" : 826,
+  "removalError" : "This copied direction is no longer available. Select it again in the current review."
+}

@@ -1,0 +1,128 @@
+{
+  "baseCommit": "d307507b54ac5b73b6f4a05963f98828c124d27f",
+  "baselineAnalyzerSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "candidateAnalyzerSHA256": "769776e41d5908f1c4bbdff8700493327f93f34bfc6ea9cb8df0cb28051f19ab",
+  "hypothesisSHA256": "aadbc4366738b6ae5bbe4d375240d1563588409e8c81b179dfd96911a3f9a655",
+  "immutableEvidence": {
+    ".build/ownership-alternatives-2026-10-03/actual.json": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/frozen-source-obligations.json": "eaa6dcbe8f9d1d13c3368441e64227276e908228df46dc12ced94886916fa47c",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/manual-proposals-v1.json": "bc80eb816f0ac47ff39f84c4b2363e7e7317e6a0425d08302488657541ab477b",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/source-context-binding.json": "690d36491158d392c42673d26db6b771029df0443798e8728252a64298cd1443",
+    "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+    "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+    "tools/test_crop_quality.swift": "bfe64bd8f6404a1a57b5059945424cc4ea5f3d1caf5d6e99c8835d400d57777f"
+  },
+  "sourceRasterBindings": {
+    ".build/ownership-alternatives-2026-10-03/rasters/page-28.png": "66cbf25e414b3b3f7303fe5d764e2d168b9dd2ea7dafeafc54e0685edcfa8c80",
+    ".build/ownership-alternatives-2026-10-03/rasters/page-31.png": "c71a17943596d53212cf360972d40ce1b93fcdcc2aeb0a4da1c0735fd82c2d6c"
+  },
+  "executablesAndOutputs": {
+    ".build/brahms-remaining-2026-10-03/upper-review/probe": "a4f7ffd78be14ec325a43eb95b4a180352b0316dac33ee1931bdfab0757f60f0",
+    ".build/brahms-remaining-2026-10-03/upper-review/candidate-v1/existing765": "f6214dfafa963185879fd618ee0999ac5773b75fef3258f11de0d27a87433863",
+    ".build/brahms-remaining-2026-10-03/upper-review/candidate-v1/replay": "476c84e22ae8a03b097bfe4f3960fe9eb1acfdfb957c7804bf289a0e70b00758",
+    ".build/brahms-remaining-2026-10-03/upper-review/components.json": "25b5f81b67aaacfe8f49dd0af2fcfd29c094d2e77eff555761cabec6f9dec309",
+    ".build/brahms-remaining-2026-10-03/upper-review/candidate-v1/replay.json": "38a8b51a0be772bf356e62c9560946796665882b409333577a1d70d328992edf"
+  },
+  "loggingOnlyExactCurrentAndFrozen": true,
+  "freshNativeStaffGeometryExact": true,
+  "existing765": {
+    "exitCode": 0,
+    "passed": 765,
+    "knownThreeRowGapAnnotationLimitRetained": true
+  },
+  "fourP28LocalGuards": [
+    {
+      "id": "p28-s1-violin1",
+      "protectedContent": "pre-barline flagged note and slur endpoint",
+      "sourceBounds": [
+        87.5,
+        33,
+        95,
+        52
+      ],
+      "candidateCrop": [
+        0,
+        17.592327698309493,
+        427,
+        70.777633289987
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "protectedContent": "post-barline note and upper slur start",
+      "sourceBounds": [
+        102.5,
+        29,
+        116,
+        49
+      ],
+      "candidateCrop": [
+        0,
+        17.592327698309493,
+        427,
+        70.777633289987
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "protectedContent": "pre-barline low flagged note",
+      "sourceBounds": [
+        88.5,
+        75,
+        97,
+        90
+      ],
+      "candidateCrop": [
+        0,
+        60.77828348504552,
+        427,
+        107.56566970091028
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "protectedContent": "post-barline low note, stem and dot",
+      "sourceBounds": [
+        103,
+        75,
+        110.5,
+        95
+      ],
+      "candidateCrop": [
+        0,
+        60.77828348504552,
+        427,
+        107.56566970091028
+      ],
+      "contains": true
+    }
+  ],
+  "sourceReview": {
+    "originalP28AndP31FullSystemsViewedFirst": true,
+    "correctedP28ViewedSeparately": true,
+    "bothCausalMasksViewedAgainstOriginalPixels": true,
+    "bothChangedSourceStripsViewed": true,
+    "noObservedTargetNotationLossInTwoChangedP28Strips": true,
+    "foreignFragmentsPersist": true,
+    "p31CandidateExactBaseline": true
+  },
+  "readiness": "Unpromoted. Awaiting independent four-core musical negatives, expanded musical envelopes and corpus coverage. No generalized ownership/cleanliness proof.",
+  "promotionVerdict": "rejected: independent four-core musical source loss",
+  "independentRejectionEvidence": {
+    "Tests/quality_control/four-core-independent-2026-10-03/README.md": "c9599fdb6048a0fe1e22cb465c1acc54fb5cf84aa0913d08701f520410825955",
+    "Tests/quality_control/four-core-independent-2026-10-03/controls.swift": "5dbf6b01298373601a6fdb07f0802486a4c26f67ef377f4c24dd931030ba080d",
+    "Tests/quality_control/four-core-independent-2026-10-03/frozen-protocol.json": "7c3dac09192ce4a571f0c62adc110e1b748e0a2fdb086b01a6d696af46da54c6",
+    "Tests/quality_control/four-core-independent-2026-10-03/comparison.json": "8eff0667f4b92a51dea9f300f2d69eb177e5e869d99fcd85d632b7153ae98bb2",
+    "Tests/quality_control/four-core-independent-2026-10-03/report-hashes.json": "fe7f9ca563dbc0a08dcaeddd389bac7b607fb47f8acbe624072c69e1ada5d079"
+  },
+  "independentCounterexampleImagesViewed": [
+    "filledOuter-counterexample.png",
+    "hollowTiedOuter-counterexample.png"
+  ]
+}

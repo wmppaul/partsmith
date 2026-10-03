@@ -1,0 +1,129 @@
+{
+  "candidateAnalyzerSHA256": "769776e41d5908f1c4bbdff8700493327f93f34bfc6ea9cb8df0cb28051f19ab",
+  "candidate765": "PASS:765; known existing three-row-gap annotation limit unchanged",
+  "changedBands": [
+    {
+      "id": "p28-s1-violin1",
+      "before": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "after": [
+        0,
+        17.592327698309493,
+        427,
+        70.777633289987
+      ],
+      "fields": [
+        "warnings",
+        "bottomFraction"
+      ]
+    },
+    {
+      "id": "p28-s1-violin2",
+      "before": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "after": [
+        0,
+        60.77828348504552,
+        427,
+        107.56566970091028
+      ],
+      "fields": [
+        "warnings",
+        "topFraction"
+      ]
+    }
+  ],
+  "componentChanges": [
+    {
+      "page": 28,
+      "sameStaffGeometry": true,
+      "removed": [
+        {
+          "bounds": [
+            0.12359550561797752,
+            0.044863459037711315,
+            0.9073033707865169,
+            0.14889466840052015
+          ],
+          "staffIDs": [
+            0,
+            1
+          ]
+        }
+      ],
+      "added": [
+        {
+          "bounds": [
+            0.12359550561797752,
+            0.044863459037711315,
+            0.9073033707865169,
+            0.10273081924577374
+          ],
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.14606741573033707,
+            0.11053315994798439,
+            0.9073033707865169,
+            0.14889466840052015
+          ],
+          "staffIDs": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "sameStaffGeometry": true,
+      "removed": [],
+      "added": []
+    }
+  ],
+  "fullSourceTargetGuards": [
+    {
+      "id": "p28-s1-violin1",
+      "guard": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "after": [
+        0,
+        17.592327698309493,
+        427,
+        70.777633289987
+      ],
+      "contained": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "guard": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "after": [
+        0,
+        60.77828348504552,
+        427,
+        107.56566970091028
+      ],
+      "contained": true
+    }
+  ],
+  "scope": "Two exact saved source rasters, fresh native staff analysis and current planner. No export/corpus or generalized robustness claim."
+}

@@ -1,0 +1,314 @@
+{
+  "bindings": {
+    ".build/erlkonig-complete-2026-10-03/reviewed-parts/manifest.json": "e2aecc20317cbe019e6c16c6a0e2481a1affb7130fc3d3dbdc5d2eff1bbd4e42",
+    ".build/erlkonig-complete-2026-10-03/reviewed-parts/plan.json": "4238d0c4907d3f0b5a379f3378394ff298791321d0ceebf122ea196a6f1cfeca",
+    ".build/erlkonig-complete-2026-10-03/reviewed-parts/Voice.pdf": "f75b58e09d9316babccfba4d2d903eedf0fbba9f0bd926aaeff44acadc1d6d68",
+    ".build/erlkonig-complete-2026-10-03/reviewed-parts/Piano.pdf": "be733b707c6f86ec55505098350b869b876d11742d29674588ead90d04eb275d"
+  },
+  "same48OrderedSystemsBothParts": true,
+  "allSourceAssignmentsAndGeneratedRestCountsExact": true,
+  "changes": [
+    {
+      "id": "p1-s1-voice",
+      "partID": "voice",
+      "sourcePage": 1,
+      "system": 1,
+      "oldSourceRect": [
+        0,
+        160.045145319452,
+        595.28,
+        242.38231343283587
+      ],
+      "newSourceRect": [
+        0,
+        160.045145319452,
+        595.28,
+        242.38231343283587
+      ],
+      "oldSourceCopies": [
+        [
+          122.60124366096903,
+          141.3072485178916,
+          219.07019490687443,
+          161.7120790954756
+        ]
+      ],
+      "newSourceCopies": [
+        [
+          121.6,
+          136.5,
+          220.10000000000002,
+          155.5
+        ]
+      ],
+      "oldOutputPage": 1,
+      "newOutputPage": 1,
+      "image": "reviewed-rows/p1-s1-voice.png",
+      "imageSHA256": "3d8b3f6a4a371feb58f5d613a45e2bdf08486e9af724965a585300730b64a87f"
+    },
+    {
+      "id": "p2-s3-voice",
+      "partID": "voice",
+      "sourcePage": 2,
+      "system": 3,
+      "oldSourceRect": [
+        0,
+        334.10263165120523,
+        595.28,
+        412.9674561162649
+      ],
+      "newSourceRect": [
+        0,
+        363.5,
+        595.28,
+        412.9674561162649
+      ],
+      "oldSourceCopies": [],
+      "newSourceCopies": [],
+      "oldOutputPage": 1,
+      "newOutputPage": 1,
+      "image": "reviewed-rows/p2-s3-voice.png",
+      "imageSHA256": "828b095dab3cc9ba7b5536e236953896630df0f758e23872414e27d040bff201"
+    },
+    {
+      "id": "p4-s4-voice",
+      "partID": "voice",
+      "sourcePage": 4,
+      "system": 4,
+      "oldSourceRect": [
+        0,
+        603.0626782929965,
+        595.28,
+        709.5385848476083
+      ],
+      "newSourceRect": [
+        0,
+        657.5,
+        595.28,
+        709.5385848476083
+      ],
+      "oldSourceCopies": [],
+      "newSourceCopies": [],
+      "oldOutputPage": 2,
+      "newOutputPage": 2,
+      "image": "reviewed-rows/p4-s4-voice.png",
+      "imageSHA256": "b5052421eea5ccad4d385a26075cfac286468d9da526dc69823be68f359d2908"
+    },
+    {
+      "id": "p6-s2-voice",
+      "partID": "voice",
+      "sourcePage": 6,
+      "system": 2,
+      "oldSourceRect": [
+        0,
+        175.17357381538432,
+        595.28,
+        260.1558236535783
+      ],
+      "newSourceRect": [
+        0,
+        209.375,
+        595.28,
+        260.1558236535783
+      ],
+      "oldSourceCopies": [],
+      "newSourceCopies": [],
+      "oldOutputPage": 3,
+      "newOutputPage": 2,
+      "image": "reviewed-rows/p6-s2-voice.png",
+      "imageSHA256": "efbf9e33cf76ed3f8e2f13e1033c6c5b82d25c5f9e4dd06289957346684dbc5e"
+    },
+    {
+      "id": "p1-s1-piano",
+      "partID": "piano",
+      "sourcePage": 1,
+      "system": 1,
+      "oldSourceRect": [
+        0,
+        131.1939738805969,
+        595.28,
+        269.41472014925364
+      ],
+      "newSourceRect": [
+        0,
+        136.5,
+        595.28,
+        269.41472014925364
+      ],
+      "oldSourceCopies": [],
+      "newSourceCopies": [],
+      "oldOutputPage": 1,
+      "newOutputPage": 1,
+      "image": "reviewed-rows/p1-s1-piano.png",
+      "imageSHA256": "7d046a35048d465161fd85812552b82c8b0c37fc3db7fead9fae2d8de87cf6d2"
+    },
+    {
+      "id": "p4-s4-piano",
+      "partID": "piano",
+      "sourcePage": 4,
+      "system": 4,
+      "oldSourceRect": [
+        0,
+        708.423181135253,
+        595.28,
+        798.8611784275525
+      ],
+      "newSourceRect": [
+        0,
+        708.423181135253,
+        595.28,
+        816.5
+      ],
+      "oldSourceCopies": [],
+      "newSourceCopies": [],
+      "oldOutputPage": 4,
+      "newOutputPage": 4,
+      "image": "reviewed-rows/p4-s4-piano.png",
+      "imageSHA256": "e3f6232b907696fed134a2465c1a70cbde551d8509f0108690d3a87a1448fdcb"
+    }
+  ],
+  "sourceObligationChecks": [
+    {
+      "id": "p2-s3-voice",
+      "topSourceObligationContained": true,
+      "other3EdgesUnchanged": true,
+      "sourceGuardSHA256": "60156d00657298ead35d419e6d018bcd3d195c74b440110e88094c028a8d4b9e"
+    },
+    {
+      "id": "p4-s4-voice",
+      "topSourceObligationContained": true,
+      "other3EdgesUnchanged": true,
+      "sourceGuardSHA256": "60156d00657298ead35d419e6d018bcd3d195c74b440110e88094c028a8d4b9e"
+    },
+    {
+      "id": "p6-s2-voice",
+      "topSourceObligationContained": true,
+      "other3EdgesUnchanged": true,
+      "sourceGuardSHA256": "60156d00657298ead35d419e6d018bcd3d195c74b440110e88094c028a8d4b9e"
+    },
+    {
+      "id": "p4-s4-piano",
+      "completeSourceStrokeEnvelopeContained": true,
+      "sourceGuardSHA256": "f636def9468e6e066909c94bc17a7989a6b27bae7f83e7f1d47f76936fff29c6"
+    }
+  ],
+  "outputPages": [
+    {
+      "partID": "voice",
+      "page": 1,
+      "pixelIdentical": false,
+      "image": "reviewed-output/voice-p01.png",
+      "imageSHA256": "e549442c757403a4bd411792f3af75ec35531e2f95beffb7dc69089e1ebaa3ce"
+    },
+    {
+      "partID": "voice",
+      "page": 2,
+      "pixelIdentical": false,
+      "image": "reviewed-output/voice-p02.png",
+      "imageSHA256": "8b3d5f460651a8751aedfbc0741ab3a48f127b80cd3f674545e34c555192c343"
+    },
+    {
+      "partID": "voice",
+      "page": 3,
+      "pixelIdentical": false,
+      "image": "reviewed-output/voice-p03.png",
+      "imageSHA256": "cb0198a23a3025889cdc24786181a2e1f731ea89ab3ffff7d78d5aed4b80371f"
+    },
+    {
+      "partID": "voice",
+      "page": 4,
+      "pixelIdentical": false,
+      "image": "reviewed-output/voice-p04.png",
+      "imageSHA256": "2f4c1136f1b5b4bcddcf064ee49c205b351427199beb1a7f061ea328376a18b2"
+    },
+    {
+      "partID": "piano",
+      "page": 1,
+      "pixelIdentical": false,
+      "image": "reviewed-output/piano-p01.png",
+      "imageSHA256": "b8c1f391135729f62cf665f068c2adfd141e2c46b3a729919aed1a4d5e37825a"
+    },
+    {
+      "partID": "piano",
+      "page": 2,
+      "pixelIdentical": true,
+      "image": "reviewed-output/piano-p02.png",
+      "imageSHA256": "dc3c11720fff2d39adf8e370dd058cefb06519c99b1ebeaf6330b1f4aa8f56d8"
+    },
+    {
+      "partID": "piano",
+      "page": 3,
+      "pixelIdentical": true,
+      "image": "reviewed-output/piano-p03.png",
+      "imageSHA256": "9fb991eac7c3afe84dfb4e13bd6000cd8d292e3ea8084c15bed34241ae51fdae"
+    },
+    {
+      "partID": "piano",
+      "page": 4,
+      "pixelIdentical": false,
+      "image": "reviewed-output/piano-p04.png",
+      "imageSHA256": "6a9ac8ba4e73c09ea387ebdb94abcf7aea3efe531f8792d5f8cccf2f502cbda5"
+    },
+    {
+      "partID": "piano",
+      "page": 5,
+      "pixelIdentical": true,
+      "image": "reviewed-output/piano-p05.png",
+      "imageSHA256": "532054cba61eccbb9b6e83f5e858336e705a73f3e1d02b9db653c0af57c56788"
+    },
+    {
+      "partID": "piano",
+      "page": 6,
+      "pixelIdentical": true,
+      "image": "reviewed-output/piano-p06.png",
+      "imageSHA256": "e663dd4c1f44b404f1f7980f91da5e5e265da809a0ab8a620f0537d2f9eadf2f"
+    },
+    {
+      "partID": "piano",
+      "page": 7,
+      "pixelIdentical": true,
+      "image": "reviewed-output/piano-p07.png",
+      "imageSHA256": "b8b6049b58678adc3da7dc1aab725164c9e1edaa716c207dd2d5a1077772c37c"
+    },
+    {
+      "partID": "piano",
+      "page": 8,
+      "pixelIdentical": true,
+      "image": "reviewed-output/piano-p08.png",
+      "imageSHA256": "ee037104fb7679c336407d1e5dc82527387ef9d1dfb966ef012a18fd30d54cee"
+    }
+  ],
+  "visuallyReviewed": true,
+  "pageCounts": [
+    {
+      "partID": "voice",
+      "before": 5,
+      "after": 4
+    },
+    {
+      "partID": "piano",
+      "before": 8,
+      "after": 8
+    }
+  ],
+  "removedBaselinePageNumbers": [
+    {
+      "partID": "voice",
+      "pages": [
+        5
+      ],
+      "reason": "All48 Voice items repaginated into4pages; no item omitted."
+    }
+  ],
+  "visualReviewScope": "All6 changed rows against original complete source context; all6 changed final full pages. Other6 final Piano pages are pixel-identical to the baseline pages already viewed. All11 full source pages and all48 both-part system comparisons were viewed before corrections.",
+  "sourceGuardUnchanged": true,
+  "result": "Six corrections verified; complete manually assisted draft with explicit remaining meter, rest-layout, foreign-ink and page-turn limitations.",
+  "remainingLimitations": [
+    "Voice initial generated rests have no common-time indication.",
+    "Four separate3-bar rest rows represent12 initial silent bars; not consolidated.",
+    "All3 final Voice page turns split phrase/pickup: Mein/Sohn at36\u219237; Mein/Vater at72\u219273; ge-/nau at108\u2192109.",
+    "Piano continuously plays across all page turns.",
+    "Small foreign flags, arc/hairpin/beam tips and many truncated Piano vocal-text fragments remain.",
+    "Printed bar numbers coexist with generated margin numbers."
+  ]
+}

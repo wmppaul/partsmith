@@ -305,6 +305,16 @@ PDF export preserve its distinction from a detected rest replacement. Counts
 of one render as a whole-measure rest. No automatic joining across source
 systems is assumed.
 
+Shared printed headings also follow confirmed silent instruments. Review their
+actual copies: a heading inside a generated rest's inspection rectangle is not
+already visible in the exported rest. **Remove Copy** saves an explicit removal
+for that silent recipient, while reassignment invalidates tracked automatic
+copies. An entered manual copy remains separate from automatic ownership.
+Check the original ink beyond OCR text boxes, especially metronome-note stems;
+text geometry alone can omit musical symbols or include neighboring beams.
+Generated silence still needs an opening meter indication, and consecutive
+omissions are not automatically combined into one rest.
+
 Verify measure coverage and all shared changes. Split rests at tempo/meter/key
 changes, rehearsal marks, repeats and other significant events; do not assume
 that absence of a staff makes those events irrelevant. The assignment workflow

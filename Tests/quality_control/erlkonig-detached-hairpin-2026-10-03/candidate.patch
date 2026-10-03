@@ -1,0 +1,75 @@
+--- .build/erlkonig-hairpin-2026-10-03/baseline/Core/Detection/NativeScorePageAnalyzer.swift	2026-10-03 13:15:35
++++ .build/erlkonig-hairpin-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift	2026-10-03 15:21:55
+@@ -659,6 +659,72 @@
+                     var alternative = component
+                     alternative.isOwnershipAlternative = true
+                     result.append(alternative)
++                }
++            }
++        }
++        // Scratch study: source-positive final-staff hairpins supplement the
++        // ordinary component graph without changing any previous attribution.
++        func isFinalStaffHairpin(_ component: ScoreInkComponent) -> Bool {
++            guard component.staffIDs.isEmpty, component.isOwnershipAlternative != true,
++                  let finalLines = lines.last, let finalSpace = spaces.last, finalSpace.isFinite, finalSpace > 0 else { return false }
++            let left = Int((component.bounds[0] * Double(width)).rounded())
++            let right = Int((component.bounds[2] * Double(width)).rounded())
++            let top = Int((component.bounds[1] * Double(height)).rounded())
++            let bottom = Int((component.bounds[3] * Double(height)).rounded())
++            let span = Double(right - left), depth = Double(bottom - top)
++            guard left >= 0, right <= width, top >= 0, bottom <= height,
++                  Double(top) > finalLines[4], Double(top) - finalLines[4] <= 6 * finalSpace,
++                  span >= 4 * finalSpace, span <= 40 * finalSpace,
++                  depth >= 0.5 * finalSpace, depth <= 2.5 * finalSpace else { return false }
++            let maxThickness = max(2, finalSpace * 0.35)
++            var upper: [(Double, Double)] = [], lower: [(Double, Double)] = [], single: [Double] = []
++            var missing = 0
++            for x in left..<right {
++                if (x - left) % 256 == 0 && isCancelled() { return false }
++                var centers: [Double] = [], y = top
++                while y < bottom {
++                    if !original[y * width + x] { y += 1; continue }
++                    let first = y
++                    while y < bottom && original[y * width + x] { y += 1 }
++                    guard Double(y - first) <= maxThickness else { return false }
++                    centers.append(Double(first + y - 1) / 2)
++                    if centers.count > 2 { return false }
++                }
++                let xx = Double(x - left)
++                if centers.count == 2 { upper.append((xx, centers[0])); lower.append((xx, centers[1])) }
++                else if centers.count == 1 { single.append(xx) }
++                else { missing += 1 }
++            }
++            guard Double(missing) <= span * 0.10, Double(upper.count) >= span * 0.65 else { return false }
++            func fit(_ points: [(Double, Double)]) -> (slope: Double, intercept: Double)? {
++                let n = Double(points.count), meanX = points.reduce(0) { $0 + $1.0 } / n,
++                    meanY = points.reduce(0) { $0 + $1.1 } / n
++                let variance = points.reduce(0) { $0 + ($1.0 - meanX) * ($1.0 - meanX) }
++                guard variance > 0 else { return nil }
++                let slope = points.reduce(0) { $0 + ($1.0 - meanX) * ($1.1 - meanY) } / variance
++                let intercept = meanY - slope * meanX
++                guard points.allSatisfy({ abs($0.1 - (slope * $0.0 + intercept)) <= max(1, 0.12 * finalSpace) }) else { return nil }
++                return (slope, intercept)
++            }
++            guard let u = fit(upper), let l = fit(lower) else { return false }
++            let leftGap = l.intercept - u.intercept
++            let rightGap = (l.slope - u.slope) * (span - 1) + leftGap
++            let closesRight = abs(rightGap) < abs(leftGap)
++            let open = closesRight ? leftGap : rightGap, closed = abs(closesRight ? rightGap : leftGap)
++            guard open >= 0.5 * finalSpace, closed <= max(2, 0.2 * finalSpace),
++                  open - closed >= 0.5 * finalSpace,
++                  single.allSatisfy({ closesRight ? $0 >= span * 0.8 : $0 <= span * 0.2 }) else { return false }
++            return true
++        }
++        if retainMusicalEvidence, let finalStaff = ordered.last {
++            let ordinary = result
++            for (index, component) in ordinary.enumerated() {
++                if index % 16 == 0 && isCancelled() { return nil }
++                if isFinalStaffHairpin(component) {
++                    var preserved = component
++                    preserved.staffIDs = [finalStaff.id]
++                    preserved.isOwnershipAlternative = true
++                    result.append(preserved)
+                 }
+             }
+         }

@@ -1,0 +1,197 @@
+{
+  "bluePixels" : 861,
+  "checks" : [
+    {
+      "name" : "Reviewed variable layout yields all six rows",
+      "passed" : true
+    },
+    {
+      "name" : "Binding includes silent recipient kind",
+      "passed" : true
+    },
+    {
+      "name" : "Binding contains only actual physical staves",
+      "passed" : true
+    },
+    {
+      "name" : "Rest receives both fully contained and ink-only-contained source headings",
+      "passed" : true
+    },
+    {
+      "name" : "Printed recipient also receives headings in a mixed silent system",
+      "passed" : true
+    },
+    {
+      "name" : "Nothing is copied to later system",
+      "passed" : true
+    },
+    {
+      "name" : "Heading copies cannot alter the 12-bar rest",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 0 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 1 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 2 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 3 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 4 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 5 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 6 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Malformed generated assignment 7 cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Music with contradictory rest payload cannot bind",
+      "passed" : true
+    },
+    {
+      "name" : "Changing rest recipient and printed owner drops stale heading copies",
+      "passed" : true
+    },
+    {
+      "name" : "Changed physical source geometry drops stale copies",
+      "passed" : true
+    },
+    {
+      "name" : "Changing only reviewed duration keeps source heading at the same physical system",
+      "passed" : true
+    },
+    {
+      "name" : "No-op materialization preserves automatic silence copies",
+      "passed" : true
+    },
+    {
+      "name" : "Actual printed crop edit preserves silent-part copies",
+      "passed" : true
+    },
+    {
+      "name" : "Actual Remove Copy works for generated rest",
+      "passed" : true
+    },
+    {
+      "name" : "Invalidation removes automatic rest and printed copies after a crop edit",
+      "passed" : true
+    },
+    {
+      "name" : "Cancelled planning cannot apply source copies",
+      "passed" : true
+    },
+    {
+      "name" : "Repeated unchanged review deterministic",
+      "passed" : true
+    },
+    {
+      "name" : "Actual Add Parts accepts mixed music\/rest headings",
+      "passed" : true
+    },
+    {
+      "name" : "Applied project stores both rest source copies",
+      "passed" : true
+    },
+    {
+      "name" : "Project codec retains source copies and generated rest",
+      "passed" : true
+    },
+    {
+      "name" : "Layout keeps both copies clear of the rest",
+      "passed" : true
+    },
+    {
+      "name" : "Actual exported rest renders both distinct source-ink copies",
+      "passed" : true
+    },
+    {
+      "name" : "Generated rest never prints the colored anchor itself",
+      "passed" : true
+    },
+    {
+      "name" : "Removed rest copy stays removed after replanning",
+      "passed" : true
+    },
+    {
+      "name" : "Removing rest copy does not edit printed recipient",
+      "passed" : true
+    },
+    {
+      "name" : "Removing final rest copy persists explicit empty list",
+      "passed" : true
+    },
+    {
+      "name" : "Remaining automatic rest copy clears after Remove Copy then invalidation",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid removal fails atomically",
+      "passed" : true
+    },
+    {
+      "name" : "Reconfirming unchanged silence preserves explicit removal",
+      "passed" : true
+    },
+    {
+      "name" : "Explicit omission list remains authoritative, below=false",
+      "passed" : true
+    },
+    {
+      "name" : "Manual omission copy survives invalidation even when rectangle equals automatic heading, below=false",
+      "passed" : true
+    },
+    {
+      "name" : "Explicit omission list remains authoritative, below=true",
+      "passed" : true
+    },
+    {
+      "name" : "Manual omission copy survives invalidation even when rectangle equals automatic heading, below=true",
+      "passed" : true
+    },
+    {
+      "name" : "Cross-page ending fixture copies to silent partner, shared category=false",
+      "passed" : true
+    },
+    {
+      "name" : "Linked ending cleanup honors silent recipient category ownership, shared category=false",
+      "passed" : true
+    },
+    {
+      "name" : "Cross-page ending fixture copies to silent partner, shared category=true",
+      "passed" : true
+    },
+    {
+      "name" : "Linked ending cleanup honors silent recipient category ownership, shared category=true",
+      "passed" : true
+    },
+    {
+      "name" : "Explicit silence directions expand the unprinted anchor span",
+      "passed" : true
+    },
+    {
+      "name" : "Page-valid omission direction outside profile trims remains applicable",
+      "passed" : true
+    }
+  ],
+  "count" : 47,
+  "failures" : 0,
+  "greenPixels" : 826,
+  "removalError" : "none"
+}

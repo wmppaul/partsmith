@@ -1,0 +1,68 @@
+{
+  "everyOriginalLineUnchanged": true,
+  "newChecks": 31,
+  "newObligations": {
+    "diagonalCompleteCases": 3,
+    "diagonalOwnerEnvelopes": 6,
+    "fourCoreUpperOnlyEnvelopes": 4,
+    "planCompletenessChecks": 7,
+    "sourceAndMaskHashChecks": 14
+  },
+  "originalChecks": 765,
+  "originalTestSHA256": "bfe64bd8f6404a1a57b5059945424cc4ea5f3d1caf5d6e99c8835d400d57777f",
+  "runs": {
+    "current": {
+      "binarySHA256": "9f323f9e90db9459c67816b2c4c877ebce3191dff6f83dec79cff93f3e6f49b7",
+      "checks": 796,
+      "exitCode": 0,
+      "log": "KNOWN LIMIT: three-row-gap source annotation [610,295,620,304] remains outside the upper crop\nPASS: 796 crop quality checks\n",
+      "logSHA256": "70dae5f1697a3d8b56afc15657a93011ed44c54bef0a97c99d99f6ff8163fa0b",
+      "sourceHashes": {
+        "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+        "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+        "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+        "Partsmith/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+        "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+        "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+      }
+    },
+    "rejected-four-core": {
+      "arguments": [
+        "--four-core-upper-regression"
+      ],
+      "binarySHA256": "408423343cc9249ea98eaddb86cf8d8c9b80b148e7df601ef0328694cba62409",
+      "exitCode": 1,
+      "log": "FAIL: Four-core filledOuter lost source pixels in the previously lossless UPPER owner\n",
+      "logSHA256": "1cc032ee6d546d964210287d0c905f61befa1a3e13a35c6560090d0d69216ad3",
+      "sourceHashes": {
+        ".build/brahms-remaining-2026-10-03/four-core-independent/candidate/Core/Detection/NativeScorePageAnalyzer.swift": "769776e41d5908f1c4bbdff8700493327f93f34bfc6ea9cb8df0cb28051f19ab",
+        ".build/brahms-remaining-2026-10-03/four-core-independent/candidate/Core/Detection/ScoreExtractionPlanner.swift": "c2db1d31e5c8e2384f42180fa65f0a21e0ca21b3b7fd0ce2ba1234e643669d45",
+        ".build/brahms-remaining-2026-10-03/four-core-independent/candidate/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+        ".build/brahms-remaining-2026-10-03/four-core-independent/candidate/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+        ".build/brahms-remaining-2026-10-03/four-core-independent/candidate/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+        ".build/brahms-remaining-2026-10-03/four-core-independent/candidate/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+      }
+    },
+    "rejected-row-width": {
+      "arguments": [
+        "--thin-musical-regression"
+      ],
+      "binarySHA256": "d572bea344f7fb977b1de9082f5a4b56cf35402c3c1ebbf566cffcd97f916e47",
+      "exitCode": 1,
+      "log": "FAIL: Thin musical diagonal-glissando lost source pixels in owner 0 at 1.0\n",
+      "logSHA256": "58e7bc8ea90c77441eaffb18d3b3dc6c962d58a602adafd231f245a9a8b8411a",
+      "sourceHashes": {
+        ".build/brahms-remaining-2026-10-03/thin-independent/candidate/Core/Detection/NativeScorePageAnalyzer.swift": "fcb481c9fb040269fe3b8d747bb86acb62db115691744ef1465b18e086ff8b2a",
+        ".build/brahms-remaining-2026-10-03/thin-independent/candidate/Core/Detection/ScoreExtractionPlanner.swift": "6b0e20b92abb5c70f6f5c967cb3c1bcafc3425aaffb419cdbe2a0ab4fde11e3a",
+        ".build/brahms-remaining-2026-10-03/thin-independent/candidate/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+        ".build/brahms-remaining-2026-10-03/thin-independent/candidate/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+        ".build/brahms-remaining-2026-10-03/thin-independent/candidate/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+        ".build/brahms-remaining-2026-10-03/thin-independent/candidate/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+      }
+    }
+  },
+  "scope": "Only tools/test_crop_quality.swift edited outside scratch; no production edits.",
+  "testPath": "tools/test_crop_quality.swift",
+  "testSHA256": "a78f09b90b9f9feaf1416ede622d73ffd2d6e43ad52a948f46926bb252f3bf1d",
+  "totalChecks": 796
+}

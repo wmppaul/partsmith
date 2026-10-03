@@ -1,0 +1,20 @@
+{
+  "status": "Frozen before candidate execution; not a production rule",
+  "purpose": "Recover a detached printed hairpin below the last physical staff without changing ordinary component ownership or general crop padding",
+  "scope": "Only ordinary unowned components wholly below the last physical staff; top within six staff spaces of its lowest line; above/between-staff cases untouched",
+  "sourceGeometry": {
+    "widthStaffSpaces": [4, 40],
+    "heightStaffSpaces": [0.5, 2.5],
+    "sourceRuns": "Original threshold pixels within the component bbox, every interior x column; zero or more than two runs rejects except at most ten percent missing columns",
+    "thinRunMaximum": "max(2 pixels, 0.35 staff spaces)",
+    "twoRunFractionMinimum": 0.65,
+    "singleRunLocation": "Only the closing end's final twenty percent of component width",
+    "lineFits": "Least-squares fit to each of two run centers; maximum residual max(1 pixel, 0.12 staff spaces)",
+    "openSeparationMinimum": "0.5 staff spaces",
+    "closedSeparationMaximum": "max(2 pixels, 0.2 staff spaces)",
+    "separationChangeMinimum": "0.5 staff spaces"
+  },
+  "preservation": "Keep every original component; append a typed outward-only component with exactly the detected bbox and the final staff ID. Existing planner clearance applies; no recursive chaining or general padding change.",
+  "negativeControls": ["single rule", "parallel rules", "text-like islands", "solid triangle", "double curved slurs", "truncated wedge", "hairpin above/between staves", "footer-sized tiny wedge"],
+  "acceptance": "Original p4 frozen target retained; no ordinary component or existing crop shrinks; no new staff cores imported; existing controls unchanged; inspect every source-real expansion. Reject any discovered ownership regression."
+}
