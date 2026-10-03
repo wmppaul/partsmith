@@ -1,0 +1,176 @@
+{
+  "allSnapshotAndProductionHashesMatch": true,
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "artifact": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "artifactBytes": 3654915,
+  "artifactSHA256": "fc4225edbfed5832843db5aadba29c69cdafcced0e713e1f7fa9abdb3a891760",
+  "baseCommitAtVerification": "a96ebcbe6723b4a7e59fccda54ab75bf90fd85f8",
+  "buildLogEvidence": {
+    "originalArchive": "Tests/quality_control/system-templates-release-2026-10-03/original-build-log.zip",
+    "originalArchiveSHA256": "bdde59ac0bda78c909d9cab0fa6da07c448918e2dc5cddee1f6548cca7e8d667",
+    "presentationLog": "Tests/quality_control/system-templates-release-2026-10-03/build.log",
+    "presentationNormalization": "Trailing whitespace removed; original bytes preserved in ZIP.",
+    "presentationSHA256": "fe18612630601f2d8b30e4fbe7c2f3b24a80151c9ac0c977171458afc60d6246"
+  },
+  "buildLogSHA256": "71b9ce486fb2d14f3d75bdda23c35718b1bbaf4b855d95a524dff7580927176c",
+  "change": "Reuse explicitly assigned system layouts through source-supported suggestions, atomic batches, and enlarged-score highlighting",
+  "completeProductionSwiftInventoryMatches": true,
+  "executableSHA256": "0c2bd4cf7af1348e3b7ad5fc1123ed24d6b841317d47f13dcdcd6c8703e82176",
+  "minimumMacOS": "14.0",
+  "minimumOSByArchitecture": {
+    "arm64": "14.0",
+    "x86_64": "14.0"
+  },
+  "notarized": false,
+  "previousPublicArtifact": {
+    "backupSHA256": "662b61189e598e56c5d19cfc36f14148a10644af138241232d0eaef40c0f329c",
+    "privateBackup": ".build/system-templates-release-final-2026-10-03/previous-public-662b61189e598e56c5d19cfc36f14148a10644af138241232d0eaef40c0f329c.zip",
+    "sha256": "662b61189e598e56c5d19cfc36f14148a10644af138241232d0eaef40c0f329c"
+  },
+  "publication": {
+    "appLaunched": false,
+    "method": "same-directory verified temporary file and os.replace",
+    "otherAppCopiesOrDocumentsModified": false,
+    "publicHashEqualsFrozenZIP": true,
+    "readmePath": "artifacts/macos/README.md",
+    "readmeSHA256": "2cd44945fe106d850f870250f29af5c6d35852f09372ebce214f4647d818c706"
+  },
+  "signing": "ad hoc linker signatures, no Developer ID, not notarized",
+  "sourceFileCount": 42,
+  "sourceHashes": {
+    "Partsmith.xcodeproj/project.pbxproj": "9993484fa88207c16843951a56fd1a964b48954ddd7582244ce967a9b66d64dc",
+    "Partsmith.xcodeproj/project.xcworkspace/contents.xcworkspacedata": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+    "Partsmith.xcodeproj/xcshareddata/xcschemes/Partsmith.xcscheme": "82859df4ba4df2f10d79f3f62c7b4d82f3053d8ec5f67d892dc337debc39ee8a",
+    "Partsmith/App/PartsmithApp.swift": "fb4a743a4c3b7dac7534b0660a39bc9f1eb52acacbf400b327c5c0edc89eda8e",
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+    "Partsmith/Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+    "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+    "Partsmith/Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+    "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    "Partsmith/Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+    "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+    "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": "ab7f30f7e35dc9680dbe429567e664da2828c4d6bde68b72d5a604b01a5909f8",
+    "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+    "Partsmith/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+    "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift": "6ac5b995b42e0440cd43c86872cd1f7471203ef174b61db65a946f3e97759c2b",
+    "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7",
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+    "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "c15c629dd0a4a068037fd272a66192e4741d92c0413e3a31eac9f253e4084ba3",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    "Partsmith/Core/Export/PartPDFExporter.swift": "127b8b99681e54e173e2222337a8a504903072d2da1a00ffc2219e743fcd55a6",
+    "Partsmith/Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "bcbb339fb8c9de6b2f922ef751c15ac0dba075ec75bcaf9f6804ea2a2f5830c6",
+    "Partsmith/Features/Inspector/InspectorView.swift": "90542a52182907f953b5e59d140f9d42a264917c60fcf880d8d5740fd1112ed7",
+    "Partsmith/Features/PartPreview/PartPreviewView.swift": "70d81c8bfa5455c8ad46533329c4fe936b635cdf2ecd18c8db0df1e039b534d3",
+    "Partsmith/Features/PartsSidebar/PartsSidebarView.swift": "eb2b20e9925b8b48c04b5e9e6b8a18657fbf068c5d3cb1f913ae22326caf6531",
+    "Partsmith/Features/Project/DocumentRootView.swift": "c9f1154d040b91d5eb702fdeb1d8db02670a6ca47defab06c30e4ce41469efd5",
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "117c4bf4ee8ce6e55ba9765f74dd7b45ab4b38f37cd01df428018c1669fdbf83",
+    "Partsmith/Features/Project/ScoreExtractionWindow.swift": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+    "Partsmith/Features/Project/ScoreSystemTemplatePanel.swift": "7c176094a80685d80fa4b1ecbdf38ea284ef6993ab639c27121f93fc212f7099",
+    "Partsmith/Features/Project/StaffDetectionView.swift": "18a44101854171bd5d0200ed83a50e36784df41c18fa0cd4054dc32a3022c7cb",
+    "Partsmith/Features/SourceCanvas/SourceCanvasView.swift": "31fc36a3b724ead99bc4daed9f68ee167cd2a3fd66f22e0fe048bd25934e6e81",
+    "Partsmith/Resources/Fixtures/SampleProject.partsmithproject/project.json": "0bfbadb527ffc7944262795ad3cd5a4eadb38f9b3283a655d06e3087ebb88565",
+    "Partsmith/Resources/Fixtures/SampleProject.partsmithproject/source.pdf": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+    "Partsmith/Resources/Fixtures/SampleScoreFixture.pdf": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+    "Partsmith/Resources/Info.plist": "3ba36f2b477af9c4883c91f44758580b1f5dbfb8c79a43f0aca3e70d3b205e55"
+  },
+  "sourceManifestSHA256": "1421a30a29e5be7aade0622be273ee4f60cbc78cccbba20b762b5c8111348ed0",
+  "sourceSnapshot": ".build/system-templates-release-final-2026-10-03",
+  "status": "Verified frozen universal build and atomically published; app not launched",
+  "swiftFileCount": 35,
+  "validation": {
+    "authorMatcherControls": 23,
+    "batchRegressionChecks": 27,
+    "batchReport": "Tests/quality_control/system-template-batch-independent-2026-10-03/README.md",
+    "correctedSourceReport": "Tests/quality_control/system-template-render-independent-2026-10-03/README.md",
+    "documentChecks": 139,
+    "independentBatchChecks": 23,
+    "independentMatcherChallenges": 32,
+    "independentReport": "Tests/quality_control/system-template-independent-2026-10-03/README.md",
+    "limits": "Three complete digital sources: 56 correct proposals, 8 reviewed examples, 18 unresolved systems. Proposal acceptance is required; unseen same-count instrument changes, original detector misses, crop quality and page turns remain outside this matching claim. UI evidence is recorded separately.",
+    "nativeWorkflowChecks": 18,
+    "panelEventReport": "Tests/quality_control/system-template-panel-events-2026-10-03/README.md",
+    "panelEvents": {
+      "applied": 43,
+      "found": 46,
+      "revealed": 1,
+      "scope": "Production panel in isolated native host; offscreen footer painting unverified"
+    },
+    "plannerChecks": 111,
+    "reportBindings": {
+      "brahms-spine-branches-2026-10-03": {
+        "manifest": "Tests/quality_control/brahms-spine-branches-2026-10-03/manifest.json",
+        "sha256": "29b75983bbb912776a5709e0a6eb47beba5d745b2bb1af2bc64471e1d6adae7f",
+        "verifiedFiles": 17
+      },
+      "system-template-batch-independent-2026-10-03": {
+        "manifest": "Tests/quality_control/system-template-batch-independent-2026-10-03/manifest.json",
+        "sha256": "010266eab8e42181c1e8b662cae5b9964dfae5c03bafba08390be9faee9360c3",
+        "verifiedFiles": 9
+      },
+      "system-template-independent-2026-10-03": {
+        "manifest": "Tests/quality_control/system-template-independent-2026-10-03/report-hashes.json",
+        "sha256": "612191f501b1724b152a6bf1d3e22a0c9634acf199f052a12c5cf97efa7220e7",
+        "verifiedFiles": 71
+      },
+      "system-template-panel-events-2026-10-03": {
+        "manifest": "Tests/quality_control/system-template-panel-events-2026-10-03/report-hashes.json",
+        "sha256": "bfe26078dc3e92d3d6e8bfd824b0f56219ac7a33b35f238def8bb7ed11bc5e5a",
+        "verifiedFiles": 17
+      },
+      "system-template-render-independent-2026-10-03": {
+        "manifest": "Tests/quality_control/system-template-render-independent-2026-10-03/manifest.json",
+        "sha256": "086250780520b8b9cd5abdaede71f917a5ccf06068784c91d03cb21ad19d415e",
+        "verifiedFiles": 10
+      },
+      "system-template-scroll-independent-2026-10-03": {
+        "manifest": "Tests/quality_control/system-template-scroll-independent-2026-10-03/report-hashes.json",
+        "sha256": "ce797a988b7e2936ac6848bd505461ed1dcfb7fe6f7c8b1f7c55ec5cddeef9d6",
+        "verifiedFiles": 16
+      },
+      "system-template-workflow-2026-10-03": {
+        "manifest": "Tests/quality_control/system-template-workflow-2026-10-03/hashes.json",
+        "sha256": "b8d9c78d108cb9b053a5d92e364b4db27d3a1c3f20730a89249f90ec81e8fde2",
+        "verifiedFiles": 23
+      }
+    },
+    "scrollReport": "Tests/quality_control/system-template-scroll-independent-2026-10-03/README.md",
+    "workflowReport": "Tests/quality_control/system-template-workflow-2026-10-03/README.md"
+  },
+  "verificationEvidence": "Tests/quality_control/system-templates-release-2026-10-03",
+  "verificationScriptSHA256": "921c8c46ff952c3a2fd60b8bac7e13c24e30d1a27190c3fa3db6227507734602",
+  "verifiedAtUTC": "2026-10-03T23:02:44.127092+00:00",
+  "zipVerification": {
+    "additionalFiles": "AppleDouble metadata only",
+    "allBundleFileBytesMatch": true,
+    "allZipFileSHA256": {
+      "Partsmith.app/Contents/Info.plist": "659805dc9af7311476d5476da1add0114fe98ea9c0854ae1877744fb22af5587",
+      "Partsmith.app/Contents/MacOS/Partsmith": "0c2bd4cf7af1348e3b7ad5fc1123ed24d6b841317d47f13dcdcd6c8703e82176",
+      "Partsmith.app/Contents/PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "__MACOSX/Partsmith.app/._Contents": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21",
+      "__MACOSX/Partsmith.app/Contents/._Info.plist": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21",
+      "__MACOSX/Partsmith.app/Contents/._MacOS": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21",
+      "__MACOSX/Partsmith.app/Contents/._PkgInfo": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21",
+      "__MACOSX/Partsmith.app/Contents/MacOS/._Partsmith": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+    },
+    "bundleFileCount": 3,
+    "bundleFileSHA256": {
+      "Partsmith.app/Contents/Info.plist": "659805dc9af7311476d5476da1add0114fe98ea9c0854ae1877744fb22af5587",
+      "Partsmith.app/Contents/MacOS/Partsmith": "0c2bd4cf7af1348e3b7ad5fc1123ed24d6b841317d47f13dcdcd6c8703e82176",
+      "Partsmith.app/Contents/PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    "crc": "all entries pass before and after publication",
+    "entryCount": 15,
+    "executablePermissionRetained": true
+  }
+}

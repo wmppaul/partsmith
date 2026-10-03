@@ -1,0 +1,105 @@
+{
+  "status": "Frozen independent evaluation protocol before reading implementation outputs",
+  "sourceTruth": "source-truth.json",
+  "sourceScope": {
+    "completeScores": 3,
+    "completePages": 21,
+    "completeSystems": 82,
+    "printedPhysicalStaves": 275,
+    "musicRowsWithCompleteRosterOutput": 179,
+    "requiredOmissionRowsWithCompleteRosterOutput": 27
+  },
+  "independence": [
+    "Instrument rosters and system groupings come from the earlier full-source visual audit, reverified against unchanged PDF/render hashes.",
+    "System transitions, organ grouping, opening omissions and terminal bar counts were reread before candidate outcomes.",
+    "Staff line coordinates come directly from PDF path objects; no current or proposed detector result defines the source truth.",
+    "The three real documents have no within-document same-count/different-roster transition. A separately authored three-system source fixture tests that ambiguity; do not count it as a real corpus example.",
+    "No candidate thresholds, confidence values or matching outputs may alter these assertions. New findings are additive reports, not changes to source oracles."
+  ],
+  "seedScenarios": [
+    {
+      "name": "no-reviewed-template",
+      "seeds": [],
+      "expectation": "System boundaries may be proposed, but no unreviewed instrument roster may be silently committed."
+    },
+    {
+      "name": "first-real-system-only",
+      "seeds": "First complete system of each document, with its source roster.",
+      "knownTemplateEligibleSystems": {"notte": 2, "erlkonig": 4, "mendelssohn": 6},
+      "unseenRosterSystems": {"notte": 18, "erlkonig": 44, "mendelssohn": 8},
+      "expectation": "Never map an unseen roster by modulo, divisibility, nearest staff count, or truncating a known roster. Report unresolved systems individually."
+    },
+    {
+      "name": "all-real-templates-reviewed",
+      "seeds": {
+        "notte": [[1,1],[1,3]],
+        "erlkonig": [[1,1],[1,5]],
+        "mendelssohn": [[1,1],[2,1],[2,2],[3,1]]
+      },
+      "potentialReuseBeyondEightSeeds": 74,
+      "expectation": "Measure correct complete-system reuse across all82 actual source systems. Abstention is safe but must reduce coverage; zero false assignments is mandatory. Partial matches never count as successful complete systems."
+    }
+  ],
+  "metrics": [
+    "Complete-system boundaries: exact source staff-rank set, correct page, no split, merged, duplicated, skipped or cross-system staff.",
+    "Instrument assignment: every retained physical staff belongs to the correct named part in source order; count matches alone do not pass.",
+    "Coverage: proposals, reused correct assignments, explicit manual seeds, unresolved systems and every false assignment, separately per complete document.",
+    "Unchanged manual decisions: previously reviewed assignments and deliberate corrections are not overwritten by propagation.",
+    "Silence: each omitted roster member is an explicit counted rest or an unresolved count awaiting confirmation; absence is never silently dropped.",
+    "Duration: use target-system source counts or reviewed target counts, never a copied seed count; no fabricated count from staff identity.",
+    "Starting bar numbers belong to the target system; reusing instrumentation must not copy the seed's starting number.",
+    "Repeated proposal/application must be deterministic and must not duplicate systems, staff rows or omitted rests.",
+    "Template source bindings and profile identities must survive unchanged replay but invalidate on conflicting source, staff group or roster edits."
+  ],
+  "silenceTruth": {
+    "notte": {"voice": {"systems": [[1,1,1,4],[1,2,5,5]], "totalBars": 9}},
+    "erlkonig": {"voice": {"systems": [[1,1,1,3],[1,2,4,3],[1,3,7,3],[1,4,10,3]], "totalBars": 12}},
+    "mendelssohn": {
+      "soprano": {"firstBar": 8, "lastBar": 66, "totalBars": 59},
+      "alto": {"firstBar": 8, "lastBar": 36, "totalBars": 29},
+      "tenor": {"firstBar": 8, "lastBar": 66, "totalBars": 59},
+      "bass": {"firstBar": 8, "lastBar": 15, "totalBars": 8}
+    },
+    "mendelssohnPrintedOpeningRests": "All four voice staves are actually printed in the seven bars of page1; do not replace their identities with omissions merely because they contain rests."
+  },
+  "barCountChallenges": [
+    {"score": "notte", "seed": [1,1], "target": [1,2], "seedCount": 4, "targetCount": 5},
+    {"score": "mendelssohn", "seed": [3,1], "target": [3,2], "seedCount": 8, "targetCount": 7},
+    {"score": "mendelssohn", "seed": [3,2], "target": [4,1], "seedCount": 7, "targetCount": 8},
+    {"scenario": "target-count-unavailable", "expectation": "Roster reuse may remain a proposal, but omitted-part rows require target count confirmation before finalized output."}
+  ],
+  "sameCountAmbiguity": {
+    "source": "same-count-source-fixture.png",
+    "truth": "same-count-source-fixture.json",
+    "reviewedSeeds": [1,2],
+    "seedRosters": [["alto","bass","organ"],["soprano","bass","organ"]],
+    "ambiguousTargetSystem": 3,
+    "expectation": "Two structurally identical five-staff templates have different named recipients. The unlabelled third system must remain unresolved. An explicitly reviewed choice may resolve it; array order or last-used template may not."
+  },
+  "boundaryNegatives": [
+    {"id": "notte-cross-two-piano-systems", "score": "notte", "page": 1, "selectedSourceStaffRanks": [2,3], "expectation": "Reject seed/reuse: ranks belong to two different printed systems despite matching two-staff piano count."},
+    {"id": "notte-piano-subgroup-is-not-whole-system", "score": "notte", "page": 1, "selectedSourceStaffRanks": [6,7], "expectation": "Do not learn or apply this as the complete system: printed voice rank5 is part of the same source system."},
+    {"id": "erlkonig-cross-opening-and-voice-entry", "score": "erlkonig", "page": 1, "selectedSourceStaffRanks": [8,9], "expectation": "Reject lower Piano staff from system4 plus Voice from system5 as a new two-staff system."},
+    {"id": "erlkonig-recitative-still-three-staves", "score": "erlkonig", "page": 11, "selectedSourceStaffRanks": [8,9], "expectation": "Final printed Voice rank7 cannot disappear when Piano subgroup is selected or when tempo/notation changes."},
+    {"id": "organ-manuals-omit-pedal", "score": "mendelssohn", "page": 2, "selectedSourceStaffRanks": [1,2], "expectation": "A brace around the two manuals is not the complete three-staff Organ system; rank3 pedal remains required."},
+    {"id": "bass-plus-manuals-mimics-organ-count", "score": "mendelssohn", "page": 2, "selectedSourceStaffRanks": [4,5,6], "expectation": "Reject Bass plus two manuals as Organ-only: same count, wrong identities, excluded pedal7."},
+    {"id": "pedal-and-next-vocal-pair", "score": "mendelssohn", "page": 3, "selectedSourceStaffRanks": [5,6,7], "expectation": "Reject previous pedal plus next Alto/Bass as an Organ-only system."},
+    {"id": "missed-soprano-tenor-mimics-known-five", "score": "mendelssohn", "page": 4, "removeObservedSourceStaffRanks": [6,8], "targetSourceStaffRanks": [6,7,8,9,10,11,12], "expectation": "Five surviving detected staves cannot stand for a complete Alto/Bass/Organ system: source still prints Soprano/Tenor. Defer instead of silently omitting them."},
+    {"id": "missed-pedal-mimics-known-four", "score": "mendelssohn", "page": 3, "removeObservedSourceStaffRanks": [10], "targetSourceStaffRanks": [6,7,8,9,10], "expectation": "Do not relabel Alto/Bass/two manuals as Bass plus three-staff Organ after a pedal miss."},
+    {"id": "phantom-voice-mimics-three-staff-template", "score": "erlkonig", "page": 1, "targetSourceStaffRanks": [1,2], "insertObservedStaff": "Five nominal lines between the two genuine Piano staves where no source staff exists.", "expectation": "Reject a source-unsupported third staff; do not change Piano-only to Voice+Piano."},
+    {"id": "reordered-source-staff-input", "score": "mendelssohn", "page": 2, "selectedSourceStaffRanks": [1,3,2], "expectation": "Ordering must be normalized from physical source or rejected; pedal/manual identities must not follow arbitrary input order."},
+    {"id": "missing-boundary-evidence", "sourceMutation": "Keep source PDF and detected staff positions unchanged; remove/mark unavailable system-boundary evidence from the matcher input.", "expectation": "Abstain when a complete source-supported system cannot be established; do not substitute modulo grouping."}
+  ],
+  "bindingNegatives": [
+    "A template learned from another document must not be silently applied through reused IDs or a stale UI task result.",
+    "If its reviewed part roster/staff counts change, require fresh matching or review instead of preserving old recipient mapping.",
+    "No proposal may consume a staff already committed to a different reviewed source system.",
+    "Cancelled/stale proposal results must not mutate current assignments."
+  ],
+  "scopeLimits": [
+    "This protocol evaluates initialization identity, physical grouping and omitted duration, not crop ink preservation or finished output typography.",
+    "Safe abstention on a negative is success; abstention on a supported complete real system is recorded as reduced usefulness.",
+    "The incomplete-staff input cases are deliberate robustness challenges. Report them separately from clean native page inputs.",
+    "Only21 source pages are represented; no whole-corpus readiness claim follows from passing them."
+  ]
+}

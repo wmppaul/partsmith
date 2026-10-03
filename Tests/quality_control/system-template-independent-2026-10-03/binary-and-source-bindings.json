@@ -1,0 +1,23 @@
+{
+  "dateUTC": "2026-10-03T22:51:39.384476+00:00",
+  "privateBinaries": {
+    "/Users/will/Documents/git/partsmith/.build/system-template-independent-2026-10-03/challenge-v1": "dca21d58b863f9fa7b5a1f3255bb51e2ef0db4db56ecbda40e3db97a1accf18d",
+    "/Users/will/Documents/git/partsmith/.build/system-template-independent-2026-10-03/challenge-v2": "14c51c1c017095bf2c03b64cd3df1df7badf0d58a09a0fcfb3e3aed8d35062d4"
+  },
+  "compiledSharedCore": {
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+    "Partsmith/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+    "v1/ScoreSystemTemplateMatcher.swift": "7fe773ef2cc6ac7b25f5256cd3b1714696627e88de609bf8be552bcc17d69032",
+    "v2/ScoreSystemTemplateMatcher.swift": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7"
+  },
+  "matcherV1": "7fe773ef2cc6ac7b25f5256cd3b1714696627e88de609bf8be552bcc17d69032",
+  "matcherV2": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7",
+  "sourceTruth": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+  "frozenManifest": "f61cef9ce1743cf486ae0e9668bfaa7e9a551579f17d43e7b82fb5206d8e3ce1",
+  "challengeInputs": "6600e6b304757b0580fd773bbd87b71f3791376e53a45d0ca5fe9cae27c524b4",
+  "sourceComparison": "Both full runs compared against all original PDF staff lines and named source rosters; author expected.json was never consulted."
+}

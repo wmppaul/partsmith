@@ -39,6 +39,9 @@
 		200000000000000000000020 /* ScoreSharedEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000020 /* ScoreSharedEnding.swift */; };
 		200000000000000000000021 /* ScoreSharedEndingDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000021 /* ScoreSharedEndingDetector.swift */; };
 		200000000000000000000022 /* ScoreLocalEndingPreservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000022 /* ScoreLocalEndingPreservation.swift */; };
+		200000000000000000000023 /* ScoreSystemTemplateMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000023 /* ScoreSystemTemplateMatcher.swift */; };
+		200000000000000000000024 /* ScoreSystemAssignmentBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000024 /* ScoreSystemAssignmentBatch.swift */; };
+		200000000000000000000025 /* ScoreSystemTemplatePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000025 /* ScoreSystemTemplatePanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		100000000000000000000020 /* ScoreSharedEnding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedEnding.swift; sourceTree = "<group>"; };
 		100000000000000000000021 /* ScoreSharedEndingDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedEndingDetector.swift; sourceTree = "<group>"; };
 		100000000000000000000022 /* ScoreLocalEndingPreservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLocalEndingPreservation.swift; sourceTree = "<group>"; };
+		100000000000000000000023 /* ScoreSystemTemplateMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemTemplateMatcher.swift; sourceTree = "<group>"; };
+		100000000000000000000024 /* ScoreSystemAssignmentBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemAssignmentBatch.swift; sourceTree = "<group>"; };
+		100000000000000000000025 /* ScoreSystemTemplatePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemTemplatePanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 				100000000000000000000006 /* DocumentRootView.swift */,
 				100000000000000000000010 /* StaffDetectionView.swift */,
 				100000000000000000000011 /* ScoreExtractionView.swift */,
+				100000000000000000000025 /* ScoreSystemTemplatePanel.swift */,
 				100000000000000000000015 /* ScoreExtractionWindow.swift */,
 			);
 			path = Project;
@@ -215,6 +222,8 @@
 			children = (
 				10000000000000000000000F /* StaffBandDetector.swift */,
 				100000000000000000000012 /* ScoreExtractionPlanner.swift */,
+				100000000000000000000024 /* ScoreSystemAssignmentBatch.swift */,
+				100000000000000000000023 /* ScoreSystemTemplateMatcher.swift */,
 				100000000000000000000013 /* NativeScorePageAnalyzer.swift */,
 				100000000000000000000014 /* ScoreInstrumentNameDetector.swift */,
 				100000000000000000000016 /* ScoreSourceHeaderDetector.swift */,
@@ -329,7 +338,10 @@
 				20000000000000000000001C /* ScoreSharedNavigationDetector.swift in Sources */,
 				20000000000000000000001B /* ScoreSharedHeadingDetector.swift in Sources */,
 				200000000000000000000010 /* ScoreExtractionPlanner.swift in Sources */,
+				200000000000000000000024 /* ScoreSystemAssignmentBatch.swift in Sources */,
+				200000000000000000000023 /* ScoreSystemTemplateMatcher.swift in Sources */,
 				20000000000000000000000F /* ScoreExtractionView.swift in Sources */,
+				200000000000000000000025 /* ScoreSystemTemplatePanel.swift in Sources */,
 				200000000000000000000013 /* ScoreExtractionWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

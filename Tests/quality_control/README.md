@@ -1,5 +1,13 @@
 # Complete input corpus quality control
 
+## October 3 reviewed layout reuse
+
+The new **Reuse Assigned Layouts** panel proposes complete systems from reviewed examples and applies accepted choices atomically. The [independent source review](system-template-independent-2026-10-03/README.md) covers all 82 systems / 275 printed staves across three complete scores: eight manually assigned examples yield 56 correct new proposals and 18 abstentions. All 32 independent challenges pass after retaining and repairing the first version's missing-Voice failure. This is source-assisted reuse, not automatic instrument recognition or a musical-quality pass.
+
+The [independent batch review](system-template-batch-independent-2026-10-03/README.md) reproduces and repairs physically reordered systems; all 23 controls pass. An [isolated native interface test](system-template-scroll-independent-2026-10-03/README.md) catches the original full-page scroll target and verifies the corrected one-point layout marker on current and newly selected pages. The [complete Erlkönig workflow](system-template-workflow-2026-10-03/README.md) separately exercises proposal acceptance and native export. The [release record](macos-build-2026-10-03-system-templates.json) binds final app sources and packaged bytes.
+
+The bounded [Brahms spine/branch study](brahms-spine-branches-2026-10-03/README.md) preserves source pixels but does not establish exclusive musical ownership. It changes no production crop. Seven whole-neighbor Auto cases and the wider musical-output work remain unresolved.
+
 ## October 3 complete Erlkönig and directions on silent parts
 
 The [complete Erlkönig workflow](erlkonig-complete-workflow-2026-10-03/README.md) exports both parts across all 148 measures after source-reviewed initialization: Voice has 4 pages and Piano 8. Five crop edges and the opening tempo copy were corrected, restoring a missing piano diminuendo and metronome-note stem. [Independent source/output review](erlkonig-independent-review-2026-10-03/README.md) verifies those changes; opening meter, combined rests, neighboring fragments and musical page turns remain unresolved.

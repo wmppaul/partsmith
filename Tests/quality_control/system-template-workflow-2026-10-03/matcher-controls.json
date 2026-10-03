@@ -1,0 +1,94 @@
+[
+  {
+    "name" : "46 correct targets available",
+    "pass" : true
+  },
+  {
+    "name" : "No inferred measure span",
+    "pass" : true
+  },
+  {
+    "name" : "Three silent systems require individual counts",
+    "pass" : true
+  },
+  {
+    "name" : "No learned crop edges copied",
+    "pass" : true
+  },
+  {
+    "name" : "Stable repeated order and equality",
+    "pass" : true
+  },
+  {
+    "name" : "Seed measure spans cannot change output",
+    "pass" : true
+  },
+  {
+    "name" : "No template means no invented roster",
+    "pass" : true
+  },
+  {
+    "name" : "Malformed staff cannot crash or become template",
+    "pass" : true
+  },
+  {
+    "name" : "Duplicate pages rejected",
+    "pass" : true
+  },
+  {
+    "name" : "Duplicate part identifiers rejected",
+    "pass" : true
+  },
+  {
+    "name" : "Duplicate override pages rejected",
+    "pass" : true
+  },
+  {
+    "name" : "Missing source never creates suggestions",
+    "pass" : true
+  },
+  {
+    "name" : "Cancellation discards all partial suggestions",
+    "pass" : true
+  },
+  {
+    "name" : "Cancellation during analysis discards all partial suggestions",
+    "pass" : true
+  },
+  {
+    "name" : "Image coordinate frame mismatch rejected",
+    "pass" : true
+  },
+  {
+    "name" : "Conflicting source-equivalent rosters remain explicit alternatives",
+    "pass" : true
+  },
+  {
+    "name" : "Ambiguous alternatives have different stable IDs",
+    "pass" : true
+  },
+  {
+    "name" : "Existing staff coordinates on blank pixels are not evidence",
+    "pass" : true
+  },
+  {
+    "name" : "Dropped source staff 0 cannot become piano-only",
+    "pass" : true
+  },
+  {
+    "name" : "Dropped source staff 1 cannot become piano-only",
+    "pass" : true
+  },
+  {
+    "name" : "Phantom source staff rejects page",
+    "pass" : true
+  },
+  {
+    "name" : "Ignored candidate cannot silently become missing instrument",
+    "pass" : true
+  },
+  {
+    "name" : "Source spine continuing above outer staff with unchanged inventory rejects page",
+    "pass" : true
+  }
+]

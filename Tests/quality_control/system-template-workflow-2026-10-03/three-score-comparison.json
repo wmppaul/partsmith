@@ -1,0 +1,159 @@
+{
+  "scope": "Complete source-defined roster comparison. User-reviewed identity suggestions, not instrument recognition, measure recognition, crop completeness, or export validation.",
+  "scores": [
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "completeSourceSystems": 20,
+      "reviewedSeedSystems": 2,
+      "unreviewedTargetSystems": 18,
+      "suggestedSystems": 8,
+      "suggestionRows": 8,
+      "wrongLayoutSuggestions": [],
+      "abstainedSystems": [
+        {
+          "pageIndex": 2,
+          "systemIndex": 0
+        },
+        {
+          "pageIndex": 2,
+          "systemIndex": 1
+        },
+        {
+          "pageIndex": 2,
+          "systemIndex": 2
+        },
+        {
+          "pageIndex": 2,
+          "systemIndex": 3
+        },
+        {
+          "pageIndex": 2,
+          "systemIndex": 4
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 0
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 1
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 2
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 3
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 4
+        }
+      ],
+      "requiresSeparateMeasureCount": 1,
+      "v1V2ResultsExact": true,
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 2
+        }
+      ],
+      "sourcePath": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77"
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "completeSourceSystems": 48,
+      "reviewedSeedSystems": 2,
+      "unreviewedTargetSystems": 46,
+      "suggestedSystems": 46,
+      "suggestionRows": 46,
+      "wrongLayoutSuggestions": [],
+      "abstainedSystems": [],
+      "requiresSeparateMeasureCount": 3,
+      "v1V2ResultsExact": true,
+      "diagnostics": [],
+      "sourcePath": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b"
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "completeSourceSystems": 14,
+      "reviewedSeedSystems": 4,
+      "unreviewedTargetSystems": 10,
+      "suggestedSystems": 2,
+      "suggestionRows": 2,
+      "wrongLayoutSuggestions": [],
+      "abstainedSystems": [
+        {
+          "pageIndex": 1,
+          "systemIndex": 2
+        },
+        {
+          "pageIndex": 1,
+          "systemIndex": 3
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 0
+        },
+        {
+          "pageIndex": 3,
+          "systemIndex": 1
+        },
+        {
+          "pageIndex": 4,
+          "systemIndex": 0
+        },
+        {
+          "pageIndex": 4,
+          "systemIndex": 1
+        },
+        {
+          "pageIndex": 5,
+          "systemIndex": 0
+        },
+        {
+          "pageIndex": 5,
+          "systemIndex": 1
+        }
+      ],
+      "requiresSeparateMeasureCount": 2,
+      "v1V2ResultsExact": true,
+      "diagnostics": [
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 4
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 5
+        }
+      ],
+      "sourcePath": "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+      "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706"
+    }
+  ],
+  "totals": {
+    "completeSourceSystems": 82,
+    "reviewedSeedSystems": 8,
+    "unreviewedTargetSystems": 74,
+    "suggestedSystems": 56,
+    "suggestionRows": 56,
+    "requiresSeparateMeasureCount": 6
+  },
+  "allV1V2ResultsExact": true
+}

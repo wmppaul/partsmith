@@ -1,0 +1,2996 @@
+{
+  "scope": "Complete-source initialization identity, not crop or finished-output certification",
+  "scores": [
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "sourceSystems": 20,
+      "sourceStaves": 58,
+      "maximumObservedStaffLineErrorPt": 0.15985074626860296,
+      "geometryFailures": [],
+      "seedCount": 2,
+      "suggestionCount": 8,
+      "sourceSupported": 8,
+      "coveredSystems": 10,
+      "unresolvedSystems": 10,
+      "suggestedCountPendingSystems": 1,
+      "observations": [
+        {
+          "page": 1,
+          "system": 1,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            1,
+            2
+          ],
+          "partStaffRanks": {
+            "piano": [
+              1,
+              2
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 1,
+          "sourceBarCount": 4,
+          "sourceOmitted": [
+            "voice"
+          ]
+        },
+        {
+          "page": 1,
+          "system": 3,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            5,
+            6,
+            7
+          ],
+          "partStaffRanks": {
+            "voice": [
+              5
+            ],
+            "piano": [
+              6,
+              7
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 10,
+          "sourceBarCount": 5,
+          "sourceOmitted": []
+        },
+        {
+          "page": 1,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            3,
+            4
+          ],
+          "partStaffRanks": {
+            "piano": [
+              3,
+              4
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 5,
+          "sourceBarCount": 5,
+          "sourceOmitted": [
+            "voice"
+          ],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": true,
+          "templatePage": 1,
+          "templateSystem": 1
+        },
+        {
+          "page": 1,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            8,
+            9,
+            10
+          ],
+          "partStaffRanks": {
+            "voice": [
+              8
+            ],
+            "piano": [
+              9,
+              10
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 15,
+          "sourceBarCount": 5,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        },
+        {
+          "page": 1,
+          "system": 5,
+          "kind": "suggestion",
+          "sourceRanks": [
+            11,
+            12,
+            13
+          ],
+          "partStaffRanks": {
+            "voice": [
+              11
+            ],
+            "piano": [
+              12,
+              13
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 20,
+          "sourceBarCount": 4,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        },
+        {
+          "page": 2,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 24,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        },
+        {
+          "page": 2,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 27,
+          "sourceBarCount": 2,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        },
+        {
+          "page": 2,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 29,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        },
+        {
+          "page": 2,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 32,
+          "sourceBarCount": 4,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        },
+        {
+          "page": 2,
+          "system": 5,
+          "kind": "suggestion",
+          "sourceRanks": [
+            13,
+            14,
+            15
+          ],
+          "partStaffRanks": {
+            "voice": [
+              13
+            ],
+            "piano": [
+              14,
+              15
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 36,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 3
+        }
+      ],
+      "unresolved": [
+        {
+          "page": 3,
+          "system": 1,
+          "barCount": 3,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 11,
+          "partStaffRanksOneBased": {
+            "piano": [
+              2,
+              3
+            ],
+            "voice": [
+              1
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            39.726,
+            566.6808,
+            163.356
+          ],
+          "staffRanksOneBased": [
+            1,
+            2,
+            3
+          ],
+          "startBarNumber": 39,
+          "startNumberSourceWords": [
+            {
+              "bottom": 36.113116709456676,
+              "direction": "ltr",
+              "doctop": 1711.1953893140367,
+              "height": 8.697727395419975,
+              "text": "39",
+              "top": 27.4153893140367,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 1
+        },
+        {
+          "page": 3,
+          "system": 2,
+          "barCount": 2,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 12,
+          "partStaffRanksOneBased": {
+            "piano": [
+              5,
+              6
+            ],
+            "voice": [
+              4
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            196.812,
+            566.6808,
+            326.1576
+          ],
+          "staffRanksOneBased": [
+            4,
+            5,
+            6
+          ],
+          "startBarNumber": 42,
+          "startNumberSourceWords": [
+            {
+              "bottom": 193.37143122545672,
+              "direction": "ltr",
+              "doctop": 1868.4537038300368,
+              "height": 8.697727395419975,
+              "text": "42",
+              "top": 184.67370383003674,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 2
+        },
+        {
+          "page": 3,
+          "system": 3,
+          "barCount": 2,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 13,
+          "partStaffRanksOneBased": {
+            "piano": [
+              8,
+              9
+            ],
+            "voice": [
+              7
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            359.613,
+            566.6808,
+            487.1574
+          ],
+          "staffRanksOneBased": [
+            7,
+            8,
+            9
+          ],
+          "startBarNumber": 44,
+          "startNumberSourceWords": [
+            {
+              "bottom": 356.17375682945664,
+              "direction": "ltr",
+              "doctop": 2031.2560294340365,
+              "height": 8.697727395420031,
+              "text": "44",
+              "top": 347.4760294340366,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 3
+        },
+        {
+          "page": 3,
+          "system": 4,
+          "barCount": 2,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 14,
+          "partStaffRanksOneBased": {
+            "piano": [
+              11,
+              12
+            ],
+            "voice": [
+              10
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            520.6116,
+            566.6808,
+            654.1146
+          ],
+          "staffRanksOneBased": [
+            10,
+            11,
+            12
+          ],
+          "startBarNumber": 46,
+          "startNumberSourceWords": [
+            {
+              "bottom": 517.0020784854567,
+              "direction": "ltr",
+              "doctop": 2192.0843510900368,
+              "height": 8.697727395420088,
+              "text": "46",
+              "top": 508.30435109003656,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 4
+        },
+        {
+          "page": 3,
+          "system": 5,
+          "barCount": 2,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 15,
+          "partStaffRanksOneBased": {
+            "piano": [
+              14,
+              15
+            ],
+            "voice": [
+              13
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            687.5699999999999,
+            566.6808,
+            814.63992
+          ],
+          "staffRanksOneBased": [
+            13,
+            14,
+            15
+          ],
+          "startBarNumber": 48,
+          "startNumberSourceWords": [
+            {
+              "bottom": 683.9614124034565,
+              "direction": "ltr",
+              "doctop": 2359.0436850080364,
+              "height": 8.697727395419975,
+              "text": "48",
+              "top": 675.2636850080365,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 5
+        },
+        {
+          "page": 4,
+          "system": 1,
+          "barCount": 6,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 16,
+          "partStaffRanksOneBased": {
+            "piano": [
+              2,
+              3
+            ],
+            "voice": [
+              1
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            38.472000000000094,
+            566.6808,
+            173.61
+          ],
+          "staffRanksOneBased": [
+            1,
+            2,
+            3
+          ],
+          "startBarNumber": 50,
+          "startNumberSourceWords": [
+            {
+              "bottom": 34.861114205456715,
+              "direction": "ltr",
+              "doctop": 2551.8333868100367,
+              "height": 8.697727395419975,
+              "text": "50",
+              "top": 26.16338681003674,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 1
+        },
+        {
+          "page": 4,
+          "system": 2,
+          "barCount": 5,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 17,
+          "partStaffRanksOneBased": {
+            "piano": [
+              5,
+              6
+            ],
+            "voice": [
+              4
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            195.06000000000006,
+            566.6808,
+            326.38620000000003
+          ],
+          "staffRanksOneBased": [
+            4,
+            5,
+            6
+          ],
+          "startBarNumber": 56,
+          "startNumberSourceWords": [
+            {
+              "bottom": 191.4504273834566,
+              "direction": "ltr",
+              "doctop": 2708.4226999880366,
+              "height": 8.697727395419975,
+              "text": "56",
+              "top": 182.75269998803662,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 2
+        },
+        {
+          "page": 4,
+          "system": 3,
+          "barCount": 3,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 18,
+          "partStaffRanksOneBased": {
+            "piano": [
+              8,
+              9
+            ],
+            "voice": [
+              7
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            347.83799999999997,
+            566.6808,
+            494.3268
+          ],
+          "staffRanksOneBased": [
+            7,
+            8,
+            9
+          ],
+          "startBarNumber": 61,
+          "startNumberSourceWords": [
+            {
+              "bottom": 344.2287329394566,
+              "direction": "ltr",
+              "doctop": 2861.201005544037,
+              "height": 8.697727395420031,
+              "text": "61",
+              "top": 335.5310055440366,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 3
+        },
+        {
+          "page": 4,
+          "system": 4,
+          "barCount": 6,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 19,
+          "partStaffRanksOneBased": {
+            "piano": [
+              11,
+              12
+            ],
+            "voice": [
+              10
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            515.778,
+            566.6808,
+            652.9116
+          ],
+          "staffRanksOneBased": [
+            10,
+            11,
+            12
+          ],
+          "startBarNumber": 64,
+          "startNumberSourceWords": [
+            {
+              "bottom": 512.1690688194566,
+              "direction": "ltr",
+              "doctop": 3029.1413414240365,
+              "height": 8.697727395420031,
+              "text": "64",
+              "top": 503.47134142403655,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 4
+        },
+        {
+          "page": 4,
+          "system": 5,
+          "barCount": 4,
+          "barEvidence": "Terminal system visually counted from original source barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 20,
+          "partStaffRanksOneBased": {
+            "piano": [
+              14,
+              15
+            ],
+            "voice": [
+              13
+            ]
+          },
+          "roster": [
+            "voice",
+            "piano"
+          ],
+          "sourceCoreBounds": [
+            28.59588,
+            674.3628,
+            566.6808,
+            809.90766
+          ],
+          "staffRanksOneBased": [
+            13,
+            14,
+            15
+          ],
+          "startBarNumber": 70,
+          "startNumberSourceWords": [
+            {
+              "bottom": 670.7533859874566,
+              "direction": "ltr",
+              "doctop": 3187.725658592037,
+              "height": 8.697727395420088,
+              "text": "70",
+              "top": 662.0556585920365,
+              "upright": true,
+              "width": 9.597976884778276,
+              "x0": 18.822037643999995,
+              "x1": 28.42001452877827
+            }
+          ],
+          "systemNumber": 5
+        }
+      ],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 2
+        }
+      ]
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "sourceSystems": 48,
+      "sourceStaves": 140,
+      "maximumObservedStaffLineErrorPt": 0.16125671641793815,
+      "geometryFailures": [],
+      "seedCount": 2,
+      "suggestionCount": 46,
+      "sourceSupported": 46,
+      "coveredSystems": 48,
+      "unresolvedSystems": 0,
+      "suggestedCountPendingSystems": 3,
+      "observations": [
+        {
+          "page": 1,
+          "system": 1,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            1,
+            2
+          ],
+          "partStaffRanks": {
+            "piano": [
+              1,
+              2
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 1,
+          "sourceBarCount": 3,
+          "sourceOmitted": [
+            "voice"
+          ]
+        },
+        {
+          "page": 1,
+          "system": 5,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            9,
+            10,
+            11
+          ],
+          "partStaffRanks": {
+            "voice": [
+              9
+            ],
+            "piano": [
+              10,
+              11
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 13,
+          "sourceBarCount": 3,
+          "sourceOmitted": []
+        },
+        {
+          "page": 1,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            3,
+            4
+          ],
+          "partStaffRanks": {
+            "piano": [
+              3,
+              4
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 4,
+          "sourceBarCount": 3,
+          "sourceOmitted": [
+            "voice"
+          ],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": true,
+          "templatePage": 1,
+          "templateSystem": 1
+        },
+        {
+          "page": 1,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 7,
+          "sourceBarCount": 3,
+          "sourceOmitted": [
+            "voice"
+          ],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": true,
+          "templatePage": 1,
+          "templateSystem": 1
+        },
+        {
+          "page": 1,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8
+          ],
+          "partStaffRanks": {
+            "piano": [
+              7,
+              8
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 10,
+          "sourceBarCount": 3,
+          "sourceOmitted": [
+            "voice"
+          ],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": true,
+          "templatePage": 1,
+          "templateSystem": 1
+        },
+        {
+          "page": 2,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 16,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 2,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 19,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 2,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 22,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 2,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 25,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 2,
+          "system": 5,
+          "kind": "suggestion",
+          "sourceRanks": [
+            13,
+            14,
+            15
+          ],
+          "partStaffRanks": {
+            "voice": [
+              13
+            ],
+            "piano": [
+              14,
+              15
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 28,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 3,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 31,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 3,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 34,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 3,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 37,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 3,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 40,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 4,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 43,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 4,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 46,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 4,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 49,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 4,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 52,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 5,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 55,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 5,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 58,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 5,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 61,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 5,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 64,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 6,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 67,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 6,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 70,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 6,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 73,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 6,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 76,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 6,
+          "system": 5,
+          "kind": "suggestion",
+          "sourceRanks": [
+            13,
+            14,
+            15
+          ],
+          "partStaffRanks": {
+            "voice": [
+              13
+            ],
+            "piano": [
+              14,
+              15
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 79,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 7,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 82,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 7,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 85,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 7,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 88,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 7,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 91,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 7,
+          "system": 5,
+          "kind": "suggestion",
+          "sourceRanks": [
+            13,
+            14,
+            15
+          ],
+          "partStaffRanks": {
+            "voice": [
+              13
+            ],
+            "piano": [
+              14,
+              15
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 94,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 8,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 97,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 8,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 100,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 8,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 103,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 8,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 106,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 8,
+          "system": 5,
+          "kind": "suggestion",
+          "sourceRanks": [
+            13,
+            14,
+            15
+          ],
+          "partStaffRanks": {
+            "voice": [
+              13
+            ],
+            "piano": [
+              14,
+              15
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 109,
+          "sourceBarCount": 4,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 9,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 113,
+          "sourceBarCount": 4,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 9,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 117,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 9,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 120,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 9,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 123,
+          "sourceBarCount": 4,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 10,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 127,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 10,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 130,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 10,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 133,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 10,
+          "system": 4,
+          "kind": "suggestion",
+          "sourceRanks": [
+            10,
+            11,
+            12
+          ],
+          "partStaffRanks": {
+            "voice": [
+              10
+            ],
+            "piano": [
+              11,
+              12
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 136,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 11,
+          "system": 1,
+          "kind": "suggestion",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "voice": [
+              1
+            ],
+            "piano": [
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 139,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 11,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            4,
+            5,
+            6
+          ],
+          "partStaffRanks": {
+            "voice": [
+              4
+            ],
+            "piano": [
+              5,
+              6
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 142,
+          "sourceBarCount": 3,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        },
+        {
+          "page": 11,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            7,
+            8,
+            9
+          ],
+          "partStaffRanks": {
+            "voice": [
+              7
+            ],
+            "piano": [
+              8,
+              9
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 145,
+          "sourceBarCount": 4,
+          "sourceOmitted": [],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": false,
+          "templatePage": 1,
+          "templateSystem": 5
+        }
+      ],
+      "unresolved": [],
+      "diagnostics": []
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "sourceSystems": 14,
+      "sourceStaves": 77,
+      "maximumObservedStaffLineErrorPt": 0.09413982718047009,
+      "geometryFailures": [],
+      "seedCount": 4,
+      "suggestionCount": 2,
+      "sourceSupported": 2,
+      "coveredSystems": 6,
+      "unresolvedSystems": 8,
+      "suggestedCountPendingSystems": 2,
+      "observations": [
+        {
+          "page": 1,
+          "system": 1,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "partStaffRanks": {
+            "soprano": [
+              1
+            ],
+            "alto": [
+              2
+            ],
+            "tenor": [
+              3
+            ],
+            "bass": [
+              4
+            ],
+            "organ": [
+              5,
+              6,
+              7
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 1,
+          "sourceBarCount": 7,
+          "sourceOmitted": []
+        },
+        {
+          "page": 2,
+          "system": 1,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            1,
+            2,
+            3
+          ],
+          "partStaffRanks": {
+            "organ": [
+              1,
+              2,
+              3
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 8,
+          "sourceBarCount": 8,
+          "sourceOmitted": [
+            "soprano",
+            "alto",
+            "tenor",
+            "bass"
+          ]
+        },
+        {
+          "page": 2,
+          "system": 2,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "partStaffRanks": {
+            "bass": [
+              4
+            ],
+            "organ": [
+              5,
+              6,
+              7
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 16,
+          "sourceBarCount": 7,
+          "sourceOmitted": [
+            "soprano",
+            "alto",
+            "tenor"
+          ]
+        },
+        {
+          "page": 3,
+          "system": 1,
+          "kind": "reviewedSeed",
+          "sourceRanks": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "partStaffRanks": {
+            "alto": [
+              1
+            ],
+            "bass": [
+              2
+            ],
+            "organ": [
+              3,
+              4,
+              5
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 37,
+          "sourceBarCount": 8,
+          "sourceOmitted": [
+            "soprano",
+            "tenor"
+          ]
+        },
+        {
+          "page": 3,
+          "system": 2,
+          "kind": "suggestion",
+          "sourceRanks": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "partStaffRanks": {
+            "alto": [
+              6
+            ],
+            "bass": [
+              7
+            ],
+            "organ": [
+              8,
+              9,
+              10
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 45,
+          "sourceBarCount": 7,
+          "sourceOmitted": [
+            "soprano",
+            "tenor"
+          ],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": true,
+          "templatePage": 3,
+          "templateSystem": 1
+        },
+        {
+          "page": 3,
+          "system": 3,
+          "kind": "suggestion",
+          "sourceRanks": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "partStaffRanks": {
+            "alto": [
+              11
+            ],
+            "bass": [
+              12
+            ],
+            "organ": [
+              13,
+              14,
+              15
+            ]
+          },
+          "correctWholeSourceSystem": true,
+          "sourceStart": 52,
+          "sourceBarCount": 7,
+          "sourceOmitted": [
+            "soprano",
+            "tenor"
+          ],
+          "confidence": "sourceSupported",
+          "requiresMeasureCount": true,
+          "templatePage": 3,
+          "templateSystem": 1
+        }
+      ],
+      "unresolved": [
+        {
+          "page": 2,
+          "system": 3,
+          "barCount": 7,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [
+            "soprano",
+            "alto",
+            "tenor"
+          ],
+          "omissionRows": [
+            {
+              "barCount": 7,
+              "partID": "soprano",
+              "startBarNumber": 23
+            },
+            {
+              "barCount": 7,
+              "partID": "alto",
+              "startBarNumber": 23
+            },
+            {
+              "barCount": 7,
+              "partID": "tenor",
+              "startBarNumber": 23
+            }
+          ],
+          "ordinalInScore": 4,
+          "partStaffRanksOneBased": {
+            "bass": [
+              8
+            ],
+            "organ": [
+              9,
+              10,
+              11
+            ]
+          },
+          "roster": [
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.700000000000045,
+            425.94,
+            559.32,
+            582.4799999999996
+          ],
+          "staffRanksOneBased": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "startBarNumber": 23,
+          "startNumberSourceWords": [
+            {
+              "bottom": 419.42688,
+              "direction": "ltr",
+              "doctop": 1254.40688,
+              "height": 7.019999999999982,
+              "text": "23",
+              "top": 412.40688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 472.10688,
+              "direction": "ltr",
+              "doctop": 1307.08688,
+              "height": 7.019999999999982,
+              "text": "23",
+              "top": 465.08688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 3
+        },
+        {
+          "page": 2,
+          "system": 4,
+          "barCount": 7,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [
+            "soprano",
+            "alto",
+            "tenor"
+          ],
+          "omissionRows": [
+            {
+              "barCount": 7,
+              "partID": "soprano",
+              "startBarNumber": 30
+            },
+            {
+              "barCount": 7,
+              "partID": "alto",
+              "startBarNumber": 30
+            },
+            {
+              "barCount": 7,
+              "partID": "tenor",
+              "startBarNumber": 30
+            }
+          ],
+          "ordinalInScore": 5,
+          "partStaffRanksOneBased": {
+            "bass": [
+              12
+            ],
+            "organ": [
+              13,
+              14,
+              15
+            ]
+          },
+          "roster": [
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.700000000000045,
+            633.24,
+            559.32,
+            789.78
+          ],
+          "staffRanksOneBased": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "startBarNumber": 30,
+          "startNumberSourceWords": [
+            {
+              "bottom": 626.72688,
+              "direction": "ltr",
+              "doctop": 1461.70688,
+              "height": 7.0200000000000955,
+              "text": "30",
+              "top": 619.70688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 679.40688,
+              "direction": "ltr",
+              "doctop": 1514.38688,
+              "height": 7.019999999999982,
+              "text": "30",
+              "top": 672.38688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 4
+        },
+        {
+          "page": 4,
+          "system": 1,
+          "barCount": 8,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [
+            "soprano",
+            "tenor"
+          ],
+          "omissionRows": [
+            {
+              "barCount": 8,
+              "partID": "soprano",
+              "startBarNumber": 59
+            },
+            {
+              "barCount": 8,
+              "partID": "tenor",
+              "startBarNumber": 59
+            }
+          ],
+          "ordinalInScore": 9,
+          "partStaffRanksOneBased": {
+            "alto": [
+              1
+            ],
+            "bass": [
+              2
+            ],
+            "organ": [
+              3,
+              4,
+              5
+            ]
+          },
+          "roster": [
+            "alto",
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.700000000000045,
+            92.75999999999999,
+            559.32,
+            300.42000000000064
+          ],
+          "staffRanksOneBased": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "startBarNumber": 59,
+          "startNumberSourceWords": [
+            {
+              "bottom": 86.24688000000003,
+              "direction": "ltr",
+              "doctop": 2605.22688,
+              "height": 7.019999999999982,
+              "text": "59",
+              "top": 79.22688000000005,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 190.04688,
+              "direction": "ltr",
+              "doctop": 2709.02688,
+              "height": 7.019999999999982,
+              "text": "59",
+              "top": 183.02688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 1
+        },
+        {
+          "page": 4,
+          "system": 2,
+          "barCount": 7,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 10,
+          "partStaffRanksOneBased": {
+            "alto": [
+              7
+            ],
+            "bass": [
+              9
+            ],
+            "organ": [
+              10,
+              11,
+              12
+            ],
+            "soprano": [
+              6
+            ],
+            "tenor": [
+              8
+            ]
+          },
+          "roster": [
+            "soprano",
+            "alto",
+            "tenor",
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.69999999999993,
+            409.02,
+            559.3199999999999,
+            718.8599999999996
+          ],
+          "staffRanksOneBased": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "startBarNumber": 67,
+          "startNumberSourceWords": [
+            {
+              "bottom": 402.50687999999997,
+              "direction": "ltr",
+              "doctop": 2921.48688,
+              "height": 7.019999999999982,
+              "text": "67",
+              "top": 395.48688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 608.48688,
+              "direction": "ltr",
+              "doctop": 3127.46688,
+              "height": 7.0200000000000955,
+              "text": "67",
+              "top": 601.46688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 2
+        },
+        {
+          "page": 5,
+          "system": 1,
+          "barCount": 8,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 11,
+          "partStaffRanksOneBased": {
+            "alto": [
+              2
+            ],
+            "bass": [
+              4
+            ],
+            "organ": [
+              5,
+              6,
+              7
+            ],
+            "soprano": [
+              1
+            ],
+            "tenor": [
+              3
+            ]
+          },
+          "roster": [
+            "soprano",
+            "alto",
+            "tenor",
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.69999999999993,
+            78.42000000000007,
+            559.3199999999999,
+            388.26000000000033
+          ],
+          "staffRanksOneBased": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "startBarNumber": 74,
+          "startNumberSourceWords": [
+            {
+              "bottom": 71.90688,
+              "direction": "ltr",
+              "doctop": 3432.88688,
+              "height": 7.019999999999982,
+              "text": "74",
+              "top": 64.88688000000002,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 277.88688,
+              "direction": "ltr",
+              "doctop": 3638.86688,
+              "height": 7.019999999999982,
+              "text": "74",
+              "top": 270.86688000000004,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 1
+        },
+        {
+          "page": 5,
+          "system": 2,
+          "barCount": 7,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 12,
+          "partStaffRanksOneBased": {
+            "alto": [
+              9
+            ],
+            "bass": [
+              11
+            ],
+            "organ": [
+              12,
+              13,
+              14
+            ],
+            "soprano": [
+              8
+            ],
+            "tenor": [
+              10
+            ]
+          },
+          "roster": [
+            "soprano",
+            "alto",
+            "tenor",
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.700000000000045,
+            460.74,
+            559.32,
+            770.5799999999997
+          ],
+          "staffRanksOneBased": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "startBarNumber": 82,
+          "startNumberSourceWords": [
+            {
+              "bottom": 454.22688,
+              "direction": "ltr",
+              "doctop": 3815.20688,
+              "height": 7.019999999999982,
+              "text": "82",
+              "top": 447.20688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 660.26688,
+              "direction": "ltr",
+              "doctop": 4021.24688,
+              "height": 7.019999999999982,
+              "text": "82",
+              "top": 653.24688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 2
+        },
+        {
+          "page": 6,
+          "system": 1,
+          "barCount": 7,
+          "barEvidence": "Printed next-system anchor difference; terminal system counted from original barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 13,
+          "partStaffRanksOneBased": {
+            "alto": [
+              2
+            ],
+            "bass": [
+              4
+            ],
+            "organ": [
+              5,
+              6,
+              7
+            ],
+            "soprano": [
+              1
+            ],
+            "tenor": [
+              3
+            ]
+          },
+          "roster": [
+            "soprano",
+            "alto",
+            "tenor",
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.700000000000045,
+            78.42000000000007,
+            559.32,
+            388.26000000000033
+          ],
+          "staffRanksOneBased": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "startBarNumber": 89,
+          "startNumberSourceWords": [
+            {
+              "bottom": 71.90688,
+              "direction": "ltr",
+              "doctop": 4274.88688,
+              "height": 7.019999999999982,
+              "text": "89",
+              "top": 64.88688000000002,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 277.88688,
+              "direction": "ltr",
+              "doctop": 4480.86688,
+              "height": 7.019999999999982,
+              "text": "89",
+              "top": 270.86688000000004,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 1
+        },
+        {
+          "page": 6,
+          "system": 2,
+          "barCount": 7,
+          "barEvidence": "Terminal system visually counted from original source barlines.",
+          "boundaryEvidence": "Previously reviewed complete printed system, source five-line paths, braces/brackets, aligned measures and printed number anchors; identity from reviewed roster/labels/lyrics, not staff-count divisibility.",
+          "missingParts": [],
+          "omissionRows": [],
+          "ordinalInScore": 14,
+          "partStaffRanksOneBased": {
+            "alto": [
+              9
+            ],
+            "bass": [
+              11
+            ],
+            "organ": [
+              12,
+              13,
+              14
+            ],
+            "soprano": [
+              8
+            ],
+            "tenor": [
+              10
+            ]
+          },
+          "roster": [
+            "soprano",
+            "alto",
+            "tenor",
+            "bass",
+            "organ"
+          ],
+          "sourceCoreBounds": [
+            56.69999999999999,
+            460.74,
+            559.3199999999999,
+            770.5799999999997
+          ],
+          "staffRanksOneBased": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "startBarNumber": 96,
+          "startNumberSourceWords": [
+            {
+              "bottom": 454.22688,
+              "direction": "ltr",
+              "doctop": 4657.20688,
+              "height": 7.019999999999982,
+              "text": "96",
+              "top": 447.20688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            },
+            {
+              "bottom": 660.26688,
+              "direction": "ltr",
+              "doctop": 4863.24688,
+              "height": 7.019999999999982,
+              "text": "96",
+              "top": 653.24688,
+              "upright": true,
+              "width": 8.906274000000003,
+              "x0": 61.02,
+              "x1": 69.926274
+            }
+          ],
+          "systemNumber": 2
+        }
+      ],
+      "diagnostics": [
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 4
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 5
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "totals": {
+    "sourceSystems": 82,
+    "sourceStaves": 275,
+    "seedCount": 8,
+    "suggestionCount": 56,
+    "sourceSupported": 56,
+    "coveredSystems": 64,
+    "unresolvedSystems": 18,
+    "suggestedCountPendingSystems": 6
+  },
+  "bindings": {
+    "sourceTruthSHA256": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+    "files": {
+      "ScoreSystemTemplateMatcher.swift": "7fe773ef2cc6ac7b25f5256cd3b1714696627e88de609bf8be552bcc17d69032",
+      "run.log": "37346876316b7a263e4891eaaa63426c1ff6e9d2373f38cc23b411d7a125e433",
+      "run.swift": "c307c2d1272b6c2402079a55a8b33628ac74a92434143c85f3ea57007bf9b897",
+      "jobs.json": "d179f7617c45fa9ba877a40985410a71c380554f3745c70d4fd9f10a736d8114",
+      "normal-schubert-erlkonig-d328-score/result.json": "3f16b6b0e7e9bf30ba9bbc6cb5d5a77690cbb5dcea4753ab517890456dba3168",
+      "normal-schubert-erlkonig-d328-score/templates.json": "f4aea7942871e91ac8cf570353dbbe341a7e70c76c5765572e6331ee50612132",
+      "normal-schubert-erlkonig-d328-score/inventory.json": "49f8e929bab8539a09a61ebb92caa7889249242a17f8d283a73d490d5f408c7c",
+      "normal-schubert-erlkonig-d328-score/profile.json": "7da7d26f147c44b4f6d29d81f3404a9b95ab68952ae10627a67725f4e5de4720",
+      "normal-mozart-notte-e-giorno-don-giovanni-score/result.json": "2d16109cbb2c2fdf8d08887c8638a93a1fda9317b11a4c5eadbb5112153fee9d",
+      "normal-mozart-notte-e-giorno-don-giovanni-score/templates.json": "f4b726853e6654ec09be2e4a15dff0e1f98bb06f70d1d8859a639555e1028690",
+      "normal-mozart-notte-e-giorno-don-giovanni-score/inventory.json": "343703cf14948cf3c2ca6d4b62202083790bda9e3717d3f80a883185787d1b05",
+      "normal-mozart-notte-e-giorno-don-giovanni-score/profile.json": "a84af5e3abdcf785dfc6f9915ac4bdacb4a12038c5ac84e7e849255be2990974",
+      "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/result.json": "051639df9b6fc3fb580e266c60d468bda30b01e9afe7bfe57de2d6b075cb017a",
+      "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/templates.json": "bbd453f6d2035078f9e9df24763e68a899af3a1786a06d8ea195bf47b2aa4be4",
+      "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/inventory.json": "c0db741020905ca6a2dad87614b6900811360ad22adf4e8d140ac65ab7bb01d7",
+      "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/profile.json": "d129bdf2dfe96651e369054899048c52ca2892a33b7d087b2e2f52e54c9f3d09"
+    }
+  }
+}

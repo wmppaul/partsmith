@@ -1,0 +1,85 @@
+{
+  "cancelled" : false,
+  "diagnostics" : [
+    {
+      "message" : "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+      "pageIndex" : 1
+    },
+    {
+      "message" : "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+      "pageIndex" : 3
+    },
+    {
+      "message" : "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+      "pageIndex" : 4
+    },
+    {
+      "message" : "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+      "pageIndex" : 5
+    }
+  ],
+  "suggestions" : [
+    {
+      "candidateIDs" : [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 2,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "organ"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 5 staves.",
+        "Initial clef shapes resemble reviewed page 3, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.08222222222222228,
+        0.36940298507462693,
+        0.9458333333333333,
+        0.64296936370777669
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 2,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 2,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "organ"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 5 staves.",
+        "Initial clef shapes resemble reviewed page 3, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.082222222222222224,
+        0.67615868028279658,
+        0.9458333333333333,
+        0.94972505891594661
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 2,
+      "templateSystemIndex" : 0
+    }
+  ]
+}

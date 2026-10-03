@@ -1,0 +1,82 @@
+{
+  "checks" : [
+    {
+      "name" : "Two reviewed seeds leave46 correct whole-system suggestions",
+      "pass" : true
+    },
+    {
+      "name" : "Accepting silent omissions without their own counts is refused",
+      "pass" : true
+    },
+    {
+      "name" : "Failed batch leaves seed overrides untouched",
+      "pass" : true
+    },
+    {
+      "name" : "Incomplete initial review cannot apply or export bands",
+      "pass" : true
+    },
+    {
+      "name" : "Complete review can apply",
+      "pass" : true
+    },
+    {
+      "name" : "96 ordered part items",
+      "pass" : true
+    },
+    {
+      "name" : "48 source systems in each part",
+      "pass" : true
+    },
+    {
+      "name" : "All92 printed assignments preserve source identity and order",
+      "pass" : true
+    },
+    {
+      "name" : "No staff duplicated or dropped",
+      "pass" : true
+    },
+    {
+      "name" : "Four confirmed3-bar rests retain12 initial vocal bars",
+      "pass" : true
+    },
+    {
+      "name" : "No measure counts invented for43 new full-roster systems",
+      "pass" : true
+    },
+    {
+      "name" : "Reviewed seed system1 metadata remains exact",
+      "pass" : true
+    },
+    {
+      "name" : "Reviewed seed system1 source crop edges remain exact",
+      "pass" : true
+    },
+    {
+      "name" : "Reviewed seed system1 omission copies remain exact",
+      "pass" : true
+    },
+    {
+      "name" : "Reviewed seed system5 metadata remains exact",
+      "pass" : true
+    },
+    {
+      "name" : "Reviewed seed system5 source crop edges remain exact",
+      "pass" : true
+    },
+    {
+      "name" : "Reviewed seed system5 omission copies remain exact",
+      "pass" : true
+    },
+    {
+      "name" : "Opening reviewed original-source tempo copy retained",
+      "pass" : true
+    }
+  ],
+  "confirmedOmittedBars" : 12,
+  "matchedSystems" : 46,
+  "partItems" : 96,
+  "seedSystems" : 2,
+  "sourceSHA256" : "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+  "status" : "Identity\/rest workflow validated; musical crop quality remains a separate review."
+}

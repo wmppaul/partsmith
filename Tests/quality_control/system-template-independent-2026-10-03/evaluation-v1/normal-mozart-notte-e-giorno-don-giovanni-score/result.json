@@ -1,0 +1,230 @@
+{
+  "cancelled" : false,
+  "diagnostics" : [
+    {
+      "message" : "The printed system connections could not be established. Assign this page on the score.",
+      "pageIndex" : 3
+    },
+    {
+      "message" : "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+      "pageIndex" : 2
+    }
+  ],
+  "suggestions" : [
+    {
+      "candidateIDs" : [
+        2,
+        3
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 0,
+      "presentPartIDs" : [
+        "piano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 2 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.03000000000000003,
+        0.21013354281225455,
+        0.96055555555555561,
+        0.32443047918303214
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        7,
+        8,
+        9
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 0,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.029999999999999936,
+        0.53613511390416335,
+        0.96055555555555561,
+        0.73291437549096627
+      ],
+      "systemIndex" : 3,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    },
+    {
+      "candidateIDs" : [
+        10,
+        11,
+        12
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 0,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.02999955810089432,
+        0.74469709617926738,
+        0.96055577650510837,
+        0.94972552754422046
+      ],
+      "systemIndex" : 4,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.030000000000000009,
+        0.027886881382560891,
+        0.96055555555555561,
+        0.21366849960722703
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    },
+    {
+      "candidateIDs" : [
+        3,
+        4,
+        5
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.029722222222222223,
+        0.21533778476040849,
+        0.96069444444444441,
+        0.39503142183817752
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    },
+    {
+      "candidateIDs" : [
+        6,
+        7,
+        8
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.030000000000000065,
+        0.39670070699135906,
+        0.96055555555555561,
+        0.58130400628436751
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    },
+    {
+      "candidateIDs" : [
+        9,
+        10,
+        11
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.030000000000000065,
+        0.58876669285153194,
+        0.96055555555555561,
+        0.78318994141271803
+      ],
+      "systemIndex" : 3,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    },
+    {
+      "candidateIDs" : [
+        12,
+        13,
+        14
+      ],
+      "confidence" : "sourceSupported",
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "piano",
+        "voice"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 3."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.029999999999999999,
+        0.78554595443833464,
+        0.96055555555555561,
+        0.98546802468058903
+      ],
+      "systemIndex" : 4,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 2
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "pageIndex": 0,
+    "reason": "Two source-reviewed system examples only; source crop and copied tempo edits retained.",
+    "systems": [
+      {
+        "systemIndex": 0,
+        "bands": [
+          {
+            "partID": "piano",
+            "candidateIDs": [
+              0,
+              1
+            ],
+            "rect": [
+              0.0,
+              136.5,
+              595.28,
+              269.41472014925364
+            ],
+            "sourceMarkings": []
+          }
+        ],
+        "omittedParts": [
+          {
+            "partID": "voice",
+            "reason": "Source-confirmed twelve introductory bars; this example is bars1\u20133.",
+            "sourceMarkings": [
+              [
+                121.6,
+                136.5,
+                220.1,
+                155.5
+              ]
+            ]
+          }
+        ],
+        "startBarNumber": 1,
+        "barCount": 3
+      },
+      {
+        "systemIndex": 1,
+        "bands": [],
+        "omittedParts": []
+      },
+      {
+        "systemIndex": 2,
+        "bands": [],
+        "omittedParts": []
+      },
+      {
+        "systemIndex": 3,
+        "bands": [],
+        "omittedParts": []
+      },
+      {
+        "systemIndex": 4,
+        "bands": [
+          {
+            "partID": "voice",
+            "candidateIDs": [
+              8
+            ],
+            "rect": [
+              0.0,
+              634.4762126865671,
+              595.28,
+              683.7462873134327
+            ],
+            "sourceMarkings": []
+          },
+          {
+            "partID": "piano",
+            "candidateIDs": [
+              9,
+              10
+            ],
+            "rect": [
+              0.0,
+              681.7625176428495,
+              595.28,
+              792.2064990941744
+            ],
+            "sourceMarkings": []
+          }
+        ],
+        "omittedParts": [],
+        "startBarNumber": 13,
+        "barCount": 3
+      }
+    ]
+  }
+]

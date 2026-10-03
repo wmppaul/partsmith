@@ -21,6 +21,9 @@ struct ScoreExtractionView: View {
     @State private var systemFirstBar = ""
     @State private var systemBarCount = ""
     @State private var assignmentStatus: String?
+    @State private var pendingTemplateSelection: ScoreSystemTemplateMatcher.Suggestion?
+    @State private var templateFocusBounds: [Double]?
+    @State private var templateFocusID: UUID?
     @State private var movementTitle = ""
     @State private var replaceListOnNextPick = false
     @State private var pickedInstrumentList = ScoreInstrumentPickList()
@@ -194,7 +197,13 @@ struct ScoreExtractionView: View {
         .onChange(of: document.instrumentNamePick?.id) { receiveInstrumentNamePick() }
         .onChange(of: document.sourcePDFData) { invalidateSourceReview(); resetInputPages() }
         .onChange(of: document.project.pageRectifications) { invalidateSourceReview(); refreshThumbnails() }
-        .onChange(of: selectedPage) { updatePageImage() }
+        .onChange(of: selectedPage) {
+            updatePageImage()
+            if let pending = pendingTemplateSelection, pending.pageIndex == selectedPage {
+                selectTemplateSuggestion(pending)
+                pendingTemplateSelection = nil
+            }
+        }
         .onChange(of: review?.plan) { clearDirectionFocus() }
         .onChange(of: document.headerSelection) { updateHeaderPreview() }
     }
@@ -576,10 +585,15 @@ struct ScoreExtractionView: View {
                     let fitWidth = previewFitsWidth ? availableWidth : min(availableWidth, geometry.size.height * aspect)
                     let width = fitWidth * previewZoom
                     let height = width / aspect
-                    ScrollView([.horizontal, .vertical]) {
-                        scorePageOverlay(image: image, width: width, height: height)
-                            .padding(.leading, 28)
-                            .frame(minWidth: geometry.size.width, minHeight: geometry.size.height, alignment: .topLeading)
+                    ScrollViewReader { proxy in
+                        ScrollView([.horizontal, .vertical]) {
+                            scorePageOverlay(image: image, width: width, height: height)
+                                .padding(.leading, 28)
+                                .frame(minWidth: geometry.size.width, minHeight: geometry.size.height, alignment: .topLeading)
+                        }
+                        .onChange(of: templateFocusID, initial: true) {
+                            if templateFocusBounds != nil { proxy.scrollTo("matched-system", anchor: .center) }
+                        }
                     }.id(selectedPage)
                 } else {
                     Text("Source page could not be rendered.").frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -630,6 +644,16 @@ struct ScoreExtractionView: View {
             }
             ForEach(currentAnalysis?.staves ?? []) { staff in
                 staffSelectionRow(staff, width: width, height: height)
+            }
+            if let bounds = templateFocusBounds, bounds.count == 4 {
+                // A positioned view exposes the whole page as its scroll frame.
+                // Give the marker its own one-point frame in the page's layout.
+                VStack(spacing: 0) {
+                    Color.clear.frame(height: height * (bounds[1] + bounds[3]) / 2)
+                    Color.clear.frame(height: 1).id("matched-system")
+                    Spacer(minLength: 0)
+                }.frame(width: 1, height: height)
+                    .offset(x: width / 2).allowsHitTesting(false)
             }
         }.frame(width: width, height: height)
     }
@@ -731,6 +755,15 @@ struct ScoreExtractionView: View {
                     .buttonStyle(.borderedProminent)
                     .disabled(selectedStaves.isEmpty || selectedStaves.count != expectedSelectedStaffCount || printedPartIDs.isEmpty)
                 if let assignmentStatus { Text(assignmentStatus).font(.caption).foregroundStyle(.secondary) }
+                if profile.requiresSystemAssignment == true {
+                    Divider()
+                    ScoreSystemTemplatePanel(review: $review, onReveal: revealTemplateSuggestion, onApplied: { count in
+                        assignmentStatus = "Assigned \(count) matching systems."
+                        selectedStaves.removeAll()
+                        selectionAnchor = nil
+                        errorMessage = nil
+                    })
+                }
                 Divider()
                 if let correction = review.overrides.first(where: { $0.pageIndex == selectedPage }) {
                     ForEach(correction.systems, id: \.systemIndex) { system in
@@ -772,6 +805,28 @@ struct ScoreExtractionView: View {
 
     private var expectedSelectedStaffCount: Int {
         profile.parts.filter { printedPartIDs.contains($0.id) }.reduce(0) { $0 + $1.staffCount }
+    }
+
+    private func revealTemplateSuggestion(_ suggestion: ScoreSystemTemplateMatcher.Suggestion) {
+        assigningSystems = true
+        previewFitsWidth = true
+        previewZoom = 1
+        if selectedPage != suggestion.pageIndex {
+            pendingTemplateSelection = suggestion
+            selectedPage = suggestion.pageIndex
+        } else { selectTemplateSuggestion(suggestion) }
+    }
+
+    private func selectTemplateSuggestion(_ suggestion: ScoreSystemTemplateMatcher.Suggestion) {
+        templateFocusBounds = suggestion.sourceBounds
+        templateFocusID = UUID()
+        selectedStaves = Set(suggestion.candidateIDs)
+        printedPartIDs = suggestion.presentPartIDs
+        correctionSystem = suggestion.systemIndex + 1
+        systemFirstBar = ""
+        systemBarCount = ""
+        selectionAnchor = nil
+        assignmentStatus = "Matching layout highlighted: " + profile.parts.filter { suggestion.presentPartIDs.contains($0.id) }.map(\.name).joined(separator: ", ")
     }
 
     private func loadSystemAssignment() {
@@ -1131,6 +1186,7 @@ struct ScoreExtractionView: View {
     }
 
     private func updatePageImage() {
+        templateFocusBounds = nil
         selectedStaves.removeAll()
         focusedCropID = nil
         correctionSystem = 1

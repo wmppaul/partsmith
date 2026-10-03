@@ -1,0 +1,11 @@
+{
+  "status": "Before corrected rerun and new network adversarial results",
+  "implementationCorrection": "Initial p24 line-channel projection counted its global skew shift twice; corrected to one global slope plus the already frozen local per-staff residual. No hypothesis or threshold change. Initial script and summary retained.",
+  "sourceScopeCorrection": "Use full source extent for four-core fixtures so ties and local-note stems outside the original context remain represented.",
+  "newAdversarialControl": "Add two structural bars at x350:352 and600:602 over y103:378 to the unchanged filledOuter and hollowTiedOuter damaged originals; keep original musical owner masks byte-identical. This tests whether independent aligned barline columns prove a third physical corridor cannot simultaneously carry a cross-staff chord.",
+  "assertions": [
+    "Partition union reconstructs every original pixel in the declared context.",
+    "Each original owner pixel remains in the union; no owner mask is derived from graph labels.",
+    "Unexplained off-axis branch contacts must prevent exclusive structural certification."
+  ]
+}

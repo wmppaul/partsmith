@@ -1,0 +1,117 @@
+[
+  {
+    "evidence" : "cancelled",
+    "name" : "Cancellation checkpoint 1",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after cancellation 1",
+    "passed" : true
+  },
+  {
+    "evidence" : "cancelled",
+    "name" : "Cancellation checkpoint 2",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after cancellation 2",
+    "passed" : true
+  },
+  {
+    "evidence" : "cancelled",
+    "name" : "Cancellation checkpoint 3",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after cancellation 3",
+    "passed" : true
+  },
+  {
+    "evidence" : "cancelled",
+    "name" : "Cancellation checkpoint 4",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after cancellation 4",
+    "passed" : true
+  },
+  {
+    "evidence" : "cancelled",
+    "name" : "Cancellation checkpoint 5",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after cancellation 5",
+    "passed" : true
+  },
+  {
+    "evidence" : "cancelled",
+    "name" : "Cancellation checkpoint 6",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after cancellation 6",
+    "passed" : true
+  },
+  {
+    "evidence" : "invalidSelection",
+    "name" : "Late assignment error is atomic",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Input exact after late assignment error",
+    "passed" : true
+  },
+  {
+    "evidence" : "unavailablePage",
+    "name" : "Duplicated analysis page rejected",
+    "passed" : true
+  },
+  {
+    "evidence" : "existingAssignment",
+    "name" : "Duplicated override page rejected",
+    "passed" : true
+  },
+  {
+    "evidence" : "invalidPage",
+    "name" : "Nonfinite source dimensions rejected",
+    "passed" : true
+  },
+  {
+    "evidence" : "outOfOrder",
+    "name" : "Disjoint new systems must follow physical reading order",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Normal reversed choice list sorts by correct system indices",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Existing explicit source copy and crop survive",
+    "passed" : true
+  },
+  {
+    "evidence" : "existingAssignment",
+    "name" : "Current assigned review rejects stale reuse",
+    "passed" : true
+  },
+  {
+    "evidence" : "outOfOrder",
+    "name" : "New groups cannot precede an existing numbered template physically",
+    "passed" : true
+  },
+  {
+    "evidence" : "",
+    "name" : "Physical order passes when numeric staff IDs are not monotonic",
+    "passed" : true
+  }
+]

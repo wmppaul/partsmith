@@ -1,0 +1,472 @@
+{
+  "mode": "Native NSHostingView, NSScrollView and target NSView physical geometry; no production app interaction",
+  "os": "macOS-26.4-arm64-arm-64bit-Mach-O",
+  "macOSVersion": "26.4",
+  "harnessSHA256": "d8fb740b97c3c75a0450d829efb3d663da396da3d7da65c3e25fbd8316eb7cdd",
+  "privateBinaryPath": ".build/source-scroll-review-2026-10-03/harness",
+  "privateBinarySHA256": "36e704a6acb5ffc85bfcd7632975dcf3999f0284e63fa0a437b70158a29ef035",
+  "results": [
+    {
+      "variant": "idBeforePosition",
+      "initialCallback": false,
+      "visibleTargets": 0,
+      "targets": 4,
+      "maximumCenterErrorY": 767.5,
+      "observations": [
+        {
+          "stage": "same-page-lower",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 767.5
+        },
+        {
+          "stage": "same-page-upper",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            480,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": -719.5
+        },
+        {
+          "stage": "new-page-lower",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 767.5
+        },
+        {
+          "stage": "new-page-followup",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1560,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 360.5
+        }
+      ]
+    },
+    {
+      "variant": "offset",
+      "initialCallback": false,
+      "visibleTargets": 0,
+      "targets": 4,
+      "maximumCenterErrorY": 1717.5,
+      "observations": [
+        {
+          "stage": "same-page-lower",
+          "clipBounds": [
+            0,
+            0,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 1717.5
+        },
+        {
+          "stage": "same-page-upper",
+          "clipBounds": [
+            0,
+            0,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            480,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 230.5
+        },
+        {
+          "stage": "new-page-lower",
+          "clipBounds": [
+            0,
+            0,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 1717.5
+        },
+        {
+          "stage": "new-page-followup",
+          "clipBounds": [
+            0,
+            0,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1560,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 1310.5
+        }
+      ]
+    },
+    {
+      "variant": "position",
+      "initialCallback": true,
+      "visibleTargets": 0,
+      "targets": 4,
+      "maximumCenterErrorY": 767.5,
+      "observations": [
+        {
+          "stage": "same-page-lower",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 767.5
+        },
+        {
+          "stage": "same-page-upper",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            480,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": -719.5
+        },
+        {
+          "stage": "new-page-lower",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 767.5
+        },
+        {
+          "stage": "new-page-followup",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1560,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 360.5
+        }
+      ]
+    },
+    {
+      "variant": "position",
+      "initialCallback": false,
+      "visibleTargets": 0,
+      "targets": 4,
+      "maximumCenterErrorY": 767.5,
+      "observations": [
+        {
+          "stage": "same-page-lower",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 767.5
+        },
+        {
+          "stage": "same-page-upper",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            480,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": -719.5
+        },
+        {
+          "stage": "new-page-lower",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 767.5
+        },
+        {
+          "stage": "new-page-followup",
+          "clipBounds": [
+            318,
+            950,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1560,
+            1,
+            1
+          ],
+          "visible": false,
+          "centerErrorY": 360.5
+        }
+      ]
+    },
+    {
+      "variant": "stack",
+      "initialCallback": true,
+      "visibleTargets": 4,
+      "targets": 4,
+      "maximumCenterErrorY": 0.5,
+      "observations": [
+        {
+          "stage": "same-page-lower",
+          "clipBounds": [
+            319,
+            1718,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": -0.5
+        },
+        {
+          "stage": "same-page-upper",
+          "clipBounds": [
+            319,
+            230,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            480,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": 0.5
+        },
+        {
+          "stage": "new-page-lower",
+          "clipBounds": [
+            319,
+            1718,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": -0.5
+        },
+        {
+          "stage": "new-page-followup",
+          "clipBounds": [
+            319,
+            1310,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1560,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": 0.5
+        }
+      ]
+    },
+    {
+      "variant": "stack",
+      "initialCallback": false,
+      "visibleTargets": 4,
+      "targets": 4,
+      "maximumCenterErrorY": 0.5,
+      "observations": [
+        {
+          "stage": "same-page-lower",
+          "clipBounds": [
+            319,
+            1718,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": -0.5
+        },
+        {
+          "stage": "same-page-upper",
+          "clipBounds": [
+            319,
+            230,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            480,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": 0.5
+        },
+        {
+          "stage": "new-page-lower",
+          "clipBounds": [
+            319,
+            1718,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1967,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": -0.5
+        },
+        {
+          "stage": "new-page-followup",
+          "clipBounds": [
+            319,
+            1310,
+            620,
+            500
+          ],
+          "targetRect": [
+            628,
+            1560,
+            1,
+            1
+          ],
+          "visible": true,
+          "centerErrorY": 0.5
+        }
+      ]
+    }
+  ]
+}

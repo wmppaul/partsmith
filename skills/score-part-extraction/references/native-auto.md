@@ -48,6 +48,24 @@ acknowledgement. Use **View Skipped Pages** for source review and **Restore Page
 when music was missed. A page with undetected music must stay included; a failed
 raster is an error, not evidence of a blank page.
 
+For changing instrumentation, enable **Instrument layout changes between
+systems** before Auto. In **Assign Instruments**, select a complete printed
+system on the enlarged score and assign the instruments actually present.
+Under **Reuse Assigned Layouts**, **Find Similar Systems** compares source
+connections and opening clef shapes with those examples. Add an example of each
+different roster; some layouts still require manual assignment. **Show** selects
+the proposed staves on the score; **Use Selected Layouts** applies the chosen
+systems together while preserving prior assignments and crop edits.
+
+These proposals reuse reviewed identities; they do not read instrument names.
+An unseen roster with the same clefs and staff count can still look similar.
+Check source labels and transitions, especially on orchestral scores. Missing
+or inconsistent staff evidence makes the matcher abstain. Enter the target
+system's own bar count whenever instruments are absent: an example's rest count
+is never copied. Partial matches do not make the whole score complete. Reusing
+a roster also does not fix crop edges, copy all musical directions, or establish
+safe page turns; retain the source/output review below.
+
 Use **Adjust crop edges on this page** for a source-reviewed local correction.
 Top and Bottom are source-page points measured downward; select the part/system
 button to highlight its rectangle. **Restore Automatic Edges** removes that
