@@ -1,0 +1,15 @@
+--- baseline/NativeScorePageAnalyzer.swift
++++ unified-geometry-v1/NativeScorePageAnalyzer.swift
+@@ -308,7 +308,11 @@
+                             return result.map(Double.init)
+                         }
+                         var upperCoreShift = localShift, lowerCoreShift = localShift
+-                        if !throughBothCores {
++                        // Scratch coordinate-provenance experiment: nominal vertical
++                        // occupancy cannot establish where the real staff ends lie.
++                        // Resolve both staff identities and prove every junction
++                        // before applying the existing separator in those coordinates.
++                        do {
+                             guard let upper = localCoreShift(index), let lower = localCoreShift(index + 1) else { continue }
+                             upperCoreShift += upper
+                             lowerCoreShift += lower

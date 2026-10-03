@@ -1,0 +1,751 @@
+{
+  "head": "82b606e",
+  "files": [
+    {
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    {
+      "path": ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/rectified-review-source.pdf",
+      "sha256": "2509460f334bf1f762e376e1f68b1df87a8ec5e0c7db68f8e72fd4cee287a933"
+    },
+    {
+      "path": ".build/qc-brahms-traced-ending-combination/parts/rectified-review-source.pdf",
+      "sha256": "3012da56d772c79a5d319282667b9bbfa25d1da747d876b37150930fb55ede38"
+    },
+    {
+      "path": ".build/brahms-continuation-release-2026-10-03/candidate/brahms-inventory.json",
+      "sha256": "0697f5ac574a298f618efbd1a6937ec1b2693a57231a7ee9d29969a8d66dba78"
+    },
+    {
+      "path": ".build/brahms-continuation-release-2026-10-03/candidate/brahms-plan.json",
+      "sha256": "68dfce41634d33227d1d2efe6c260dc463bcdfcea2691f5ad7c4a4913fa10cb8"
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/candidate-v2/actual.json",
+      "sha256": "cabcee807fcc1eb269119f33acd7a0a569ee6f5ee00828614a7b18066924c574"
+    },
+    {
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source-guards.json",
+      "sha256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c"
+    },
+    {
+      "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "e6541355b65590e66b9f893a12a12f1d66e73f82ebc328436dbb3d52bcd0a353"
+    }
+  ],
+  "all39NativeGeometryAndComponentSignaturesEqual": true,
+  "all604BandIdentitiesEqual": true,
+  "nineRectificationsEqual": true,
+  "mainCropMetadataDifferences": [
+    {
+      "id": "p28-s2-cello",
+      "changes": {
+        "bottomFraction": [
+          0.49675008193514963,
+          0.4990941162751253
+        ]
+      }
+    }
+  ],
+  "remainingSevenCropsExact": true,
+  "regions": [
+    {
+      "page": 24,
+      "context": [
+        0,
+        225,
+        427,
+        326
+      ],
+      "detail": [
+        330,
+        238,
+        399,
+        319
+      ],
+      "staffIDs": [
+        6,
+        7
+      ],
+      "nativeConnector": [
+        1636,
+        1644
+      ],
+      "nativeSize": [
+        1800,
+        2593
+      ],
+      "images": {
+        "original-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p24-original-context.png",
+          "sha256": "2cf788271e0c4f0532b950ac68899eb8794065bef61787dd2a2c9687f9f599fd",
+          "pdfBounds": [
+            0.0,
+            225.0,
+            427.0,
+            326.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1708,
+            404
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            900
+          ]
+        },
+        "original-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p24-original-detail.png",
+          "sha256": "84bc1603b9ff91475688dc05f15a4e4581c911ca1f2052704f3432cd599440d6",
+          "pdfBounds": [
+            330.0,
+            238.0,
+            399.0,
+            319.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            552,
+            648
+          ],
+          "pixelOriginOnFullPage": [
+            2640,
+            1904
+          ]
+        },
+        "current-corrected-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p24-current-corrected-context.png",
+          "sha256": "2cf788271e0c4f0532b950ac68899eb8794065bef61787dd2a2c9687f9f599fd",
+          "pdfBounds": [
+            0.0,
+            225.0,
+            427.0,
+            326.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1708,
+            404
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            900
+          ]
+        },
+        "current-corrected-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p24-current-corrected-detail.png",
+          "sha256": "84bc1603b9ff91475688dc05f15a4e4581c911ca1f2052704f3432cd599440d6",
+          "pdfBounds": [
+            330.0,
+            238.0,
+            399.0,
+            319.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            552,
+            648
+          ],
+          "pixelOriginOnFullPage": [
+            2640,
+            1904
+          ]
+        }
+      },
+      "fullPageRenderSHA256": {
+        "original": "d562f5bf5f4b5e79372c4d6a49447d83e85dbd3a110bff8d2c7e1256052fb75c",
+        "current-corrected": "d562f5bf5f4b5e79372c4d6a49447d83e85dbd3a110bff8d2c7e1256052fb75c",
+        "previous-corrected": "d562f5bf5f4b5e79372c4d6a49447d83e85dbd3a110bff8d2c7e1256052fb75c"
+      },
+      "embeddedImages": {
+        "original": [
+          {
+            "width": 2376,
+            "height": 3417,
+            "bits": 1
+          }
+        ],
+        "current-corrected": [
+          {
+            "width": 2376,
+            "height": 3417,
+            "bits": 1
+          }
+        ]
+      },
+      "appliedRectification": null,
+      "currentBands": [
+        {
+          "bottomFraction": 0.5069157425087556,
+          "candidateIDs": [
+            6
+          ],
+          "editorialLabel": "",
+          "id": "p24-s2-viola",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 23,
+          "partID": "viola",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 1,
+          "topFraction": 0.3920950401173892,
+          "warnings": [
+            "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+            "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+          ]
+        },
+        {
+          "bottomFraction": 0.5146288161686091,
+          "candidateIDs": [
+            7
+          ],
+          "editorialLabel": "",
+          "id": "p24-s2-cello",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 23,
+          "partID": "cello",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 1,
+          "topFraction": 0.3920950401173892,
+          "warnings": [
+            "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+            "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+          ]
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "context": [
+        0,
+        0,
+        427,
+        112
+      ],
+      "detail": [
+        65,
+        26,
+        130,
+        100
+      ],
+      "staffIDs": [
+        0,
+        1
+      ],
+      "nativeConnector": [
+        244,
+        250
+      ],
+      "nativeSize": [
+        1068,
+        1538
+      ],
+      "images": {
+        "original-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p28-original-context.png",
+          "sha256": "5f69efe038c7c6970a1afc829953cf7256490b4a12c990b2b9db8096358ea666",
+          "pdfBounds": [
+            0.0,
+            0.0,
+            427.0,
+            112.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1708,
+            448
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            0
+          ]
+        },
+        "original-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p28-original-detail.png",
+          "sha256": "530d6323c17804335fc03916a8b18f7e918751a3b905d5fcc120483ea92821a7",
+          "pdfBounds": [
+            65.0,
+            26.0,
+            130.0,
+            100.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            520,
+            592
+          ],
+          "pixelOriginOnFullPage": [
+            520,
+            208
+          ]
+        },
+        "current-corrected-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p28-current-corrected-context.png",
+          "sha256": "c7958acb3a65341dcc5bcc7b47b0a1bdaedc6207cd94d261671a4ef6b7f0e19f",
+          "pdfBounds": [
+            0.0,
+            0.0,
+            427.0,
+            112.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1708,
+            448
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            0
+          ]
+        },
+        "current-corrected-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p28-current-corrected-detail.png",
+          "sha256": "7913bc05cb607f58832dc4272c7d936f5b8d5c50bde571c5a48ed82b89974a56",
+          "pdfBounds": [
+            65.0,
+            26.0,
+            130.0,
+            100.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            520,
+            592
+          ],
+          "pixelOriginOnFullPage": [
+            520,
+            208
+          ]
+        }
+      },
+      "fullPageRenderSHA256": {
+        "original": "4783740309f4104d00f260291c653f0a0ec267020a326d69fab94d8a661804ab",
+        "current-corrected": "a223be238ac7ed8acca032a0694caf227ecfd54a7223c0da7f2abbb86b15ac05",
+        "previous-corrected": "a223be238ac7ed8acca032a0694caf227ecfd54a7223c0da7f2abbb86b15ac05"
+      },
+      "embeddedImages": {
+        "original": [
+          {
+            "width": 2376,
+            "height": 3417,
+            "bits": 1
+          }
+        ],
+        "current-corrected": [
+          {
+            "width": 1780,
+            "height": 2563,
+            "bits": 8
+          }
+        ]
+      },
+      "appliedRectification": {
+        "bottomLeft": {
+          "x": 0.0009999999999999595,
+          "y": 0.983525543271109
+        },
+        "bottomRight": {
+          "x": 0.9781124995691003,
+          "y": 0.9935869562979912
+        },
+        "pageIndex": 27,
+        "topLeft": {
+          "x": 0.021887500430899803,
+          "y": 0.006413043702008903
+        },
+        "topRight": {
+          "x": 0.999,
+          "y": 0.01647445672889103
+        }
+      },
+      "currentBands": [
+        {
+          "bottomFraction": 0.15214670092084537,
+          "candidateIDs": [
+            0
+          ],
+          "editorialLabel": "",
+          "id": "p28-s1-violin1",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 27,
+          "partID": "violin1",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 0,
+          "topFraction": 0.02860541089156015,
+          "warnings": [
+            "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+            "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+          ]
+        },
+        {
+          "bottomFraction": 0.1749035279689598,
+          "candidateIDs": [
+            1
+          ],
+          "editorialLabel": "",
+          "id": "p28-s1-violin2",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 27,
+          "partID": "violin2",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 0,
+          "topFraction": 0.0351073614767357,
+          "warnings": [
+            "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+            "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+          ]
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "context": [
+        0,
+        0,
+        427,
+        123
+      ],
+      "detail": [
+        315,
+        22,
+        402,
+        116
+      ],
+      "staffIDs": [
+        0,
+        1
+      ],
+      "nativeConnector": [
+        1644,
+        1651
+      ],
+      "nativeSize": [
+        1800,
+        2593
+      ],
+      "images": {
+        "original-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p31-original-context.png",
+          "sha256": "979d84c3dec476a969a05d0f41eaebaa4c76aba9ad093987f1510402ad06d646",
+          "pdfBounds": [
+            0.0,
+            0.0,
+            427.0,
+            123.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1708,
+            492
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            0
+          ]
+        },
+        "original-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p31-original-detail.png",
+          "sha256": "adb186bf80254e61193e871783cd66328e35e200ee4a7137885da02fa01c20d2",
+          "pdfBounds": [
+            315.0,
+            22.0,
+            402.0,
+            116.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            696,
+            752
+          ],
+          "pixelOriginOnFullPage": [
+            2520,
+            176
+          ]
+        },
+        "current-corrected-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p31-current-corrected-context.png",
+          "sha256": "979d84c3dec476a969a05d0f41eaebaa4c76aba9ad093987f1510402ad06d646",
+          "pdfBounds": [
+            0.0,
+            0.0,
+            427.0,
+            123.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1708,
+            492
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            0
+          ]
+        },
+        "current-corrected-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p31-current-corrected-detail.png",
+          "sha256": "adb186bf80254e61193e871783cd66328e35e200ee4a7137885da02fa01c20d2",
+          "pdfBounds": [
+            315.0,
+            22.0,
+            402.0,
+            116.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            696,
+            752
+          ],
+          "pixelOriginOnFullPage": [
+            2520,
+            176
+          ]
+        }
+      },
+      "fullPageRenderSHA256": {
+        "original": "166d941965b8f32a7e4d90df526bb4335ea21bbff0364c31abfbfa3428519a92",
+        "current-corrected": "166d941965b8f32a7e4d90df526bb4335ea21bbff0364c31abfbfa3428519a92",
+        "previous-corrected": "166d941965b8f32a7e4d90df526bb4335ea21bbff0364c31abfbfa3428519a92"
+      },
+      "embeddedImages": {
+        "original": [
+          {
+            "width": 2376,
+            "height": 3417,
+            "bits": 1
+          }
+        ],
+        "current-corrected": [
+          {
+            "width": 2376,
+            "height": 3417,
+            "bits": 1
+          }
+        ]
+      },
+      "appliedRectification": null,
+      "currentBands": [
+        {
+          "bottomFraction": 0.18026707301396194,
+          "candidateIDs": [
+            1
+          ],
+          "editorialLabel": "",
+          "id": "p31-s1-violin2",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 30,
+          "partID": "violin2",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 0,
+          "topFraction": 0.06737463903755891,
+          "warnings": [
+            "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+            "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+          ]
+        }
+      ]
+    },
+    {
+      "page": 35,
+      "context": [
+        0,
+        0,
+        426,
+        124
+      ],
+      "detail": [
+        315,
+        24,
+        401,
+        117
+      ],
+      "staffIDs": [
+        0,
+        1
+      ],
+      "nativeConnector": [
+        1641,
+        1648
+      ],
+      "nativeSize": [
+        1800,
+        2594
+      ],
+      "images": {
+        "original-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p35-original-context.png",
+          "sha256": "6df2cd1179947170642b11c1104133b7fca58317a999ef5a371449f3a49a7137",
+          "pdfBounds": [
+            0.0,
+            0.0,
+            426.0,
+            124.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1704,
+            496
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            0
+          ]
+        },
+        "original-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p35-original-detail.png",
+          "sha256": "42b3cf046f374eab557de0b335cbe3c009e3b5305b3091e6a1b3c1f73528ca61",
+          "pdfBounds": [
+            315.0,
+            24.0,
+            401.0,
+            117.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            688,
+            744
+          ],
+          "pixelOriginOnFullPage": [
+            2520,
+            192
+          ]
+        },
+        "current-corrected-context": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p35-current-corrected-context.png",
+          "sha256": "6df2cd1179947170642b11c1104133b7fca58317a999ef5a371449f3a49a7137",
+          "pdfBounds": [
+            0.0,
+            0.0,
+            426.0,
+            124.0
+          ],
+          "pixelsPerPoint": 4,
+          "rasterSize": [
+            1704,
+            496
+          ],
+          "pixelOriginOnFullPage": [
+            0,
+            0
+          ]
+        },
+        "current-corrected-detail": {
+          "path": "Tests/quality_control/residual7-source-2026-10-03/source/p35-current-corrected-detail.png",
+          "sha256": "42b3cf046f374eab557de0b335cbe3c009e3b5305b3091e6a1b3c1f73528ca61",
+          "pdfBounds": [
+            315.0,
+            24.0,
+            401.0,
+            117.0
+          ],
+          "pixelsPerPoint": 8,
+          "rasterSize": [
+            688,
+            744
+          ],
+          "pixelOriginOnFullPage": [
+            2520,
+            192
+          ]
+        }
+      },
+      "fullPageRenderSHA256": {
+        "original": "5ef8a0b04e4db8a08ccaa830d1672279159eb6725723c8a6ec5b1f82deb9649a",
+        "current-corrected": "5ef8a0b04e4db8a08ccaa830d1672279159eb6725723c8a6ec5b1f82deb9649a",
+        "previous-corrected": "5ef8a0b04e4db8a08ccaa830d1672279159eb6725723c8a6ec5b1f82deb9649a"
+      },
+      "embeddedImages": {
+        "original": [
+          {
+            "width": 2368,
+            "height": 3416,
+            "bits": 1
+          }
+        ],
+        "current-corrected": [
+          {
+            "width": 2368,
+            "height": 3416,
+            "bits": 1
+          }
+        ]
+      },
+      "appliedRectification": null,
+      "currentBands": [
+        {
+          "bottomFraction": 0.17480705913671993,
+          "candidateIDs": [
+            0
+          ],
+          "editorialLabel": "",
+          "id": "p35-s1-violin1",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 34,
+          "partID": "violin1",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 0,
+          "topFraction": 0.03725962444026431,
+          "warnings": [
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+            "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+          ]
+        },
+        {
+          "bottomFraction": 0.18521569444897898,
+          "candidateIDs": [
+            1
+          ],
+          "editorialLabel": "",
+          "id": "p35-s1-violin2",
+          "kind": "music",
+          "leftFraction": 0,
+          "pageBreakBefore": false,
+          "pageIndex": 34,
+          "partID": "violin2",
+          "provenance": "native-profile-cadence",
+          "rightFraction": 0,
+          "sourceMarkings": [],
+          "systemIndex": 0,
+          "topFraction": 0.05036679483347942,
+          "warnings": [
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "summary": {
+    "cases": 297,
+    "baselineFullPreservation": 201,
+    "candidateFullPreservation": 201,
+    "newFailures": 0,
+    "changedCases": 4,
+    "changedCropCases": 4,
+    "worsenedSourceEnvelopes": [],
+    "wholeNeighborsBefore": 198,
+    "wholeNeighborsAfter": 191
+  },
+  "changedCases": [
+    {
+      "case": {
+        "kind": "horizontalBreaks",
+        "scale": 0.5,
+        "tilt": -1.5,
+        "bow": 10
+      },
+      "before": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            146,
+            720,
+            386
+          ],
+          [
+            0,
+            172,
+            720,
+            400
+          ],
+          [
+            0,
+            443.99999999999994,
+            720,
+            543.4269317649073
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 21,
+        "expectsSeparation": true,
+        "imageSize": [
+          360,
+          380
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 0.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              146,
+              720,
+              386
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              165,
+              164,
+              213
+            ]
+          },
+          {
+            "crop": [
+              0,
+              172,
+              720,
+              400
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              313,
+              234,
+              362
+            ]
+          },
+          {
+            "crop": [
+              0,
+              443.99999999999994,
+              720,
+              543.4269317649073
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              462,
+              304,
+              510
+            ]
+          }
+        ],
+        "tilt": -1.5,
+        "wholeNeighborCount": 2
+      },
+      "after": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            146,
+            720,
+            250.00000000000003
+          ],
+          [
+            0,
+            294,
+            720,
+            400
+          ],
+          [
+            0,
+            443.99999999999994,
+            720,
+            543.4269317649073
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 22,
+        "expectsSeparation": true,
+        "imageSize": [
+          360,
+          380
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 0.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              146,
+              720,
+              250.00000000000003
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              165,
+              164,
+              213
+            ]
+          },
+          {
+            "crop": [
+              0,
+              294,
+              720,
+              400
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              313,
+              234,
+              362
+            ]
+          },
+          {
+            "crop": [
+              0,
+              443.99999999999994,
+              720,
+              543.4269317649073
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              462,
+              304,
+              510
+            ]
+          }
+        ],
+        "tilt": -1.5,
+        "wholeNeighborCount": 0
+      }
+    },
+    {
+      "case": {
+        "kind": "horizontalBreaks",
+        "scale": 0.5,
+        "tilt": 0,
+        "bow": 10
+      },
+      "before": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            142,
+            720,
+            392.00000000000006
+          ],
+          [
+            0,
+            178.00000000000003,
+            720,
+            396.00000000000006
+          ],
+          [
+            0,
+            441.99999999999994,
+            720,
+            546
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 21,
+        "expectsSeparation": true,
+        "imageSize": [
+          360,
+          380
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 0.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              142,
+              720,
+              392.00000000000006
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              160,
+              164,
+              208
+            ]
+          },
+          {
+            "crop": [
+              0,
+              178.00000000000003,
+              720,
+              396.00000000000006
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              310,
+              234,
+              358
+            ]
+          },
+          {
+            "crop": [
+              0,
+              441.99999999999994,
+              720,
+              546
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              460,
+              304,
+              508
+            ]
+          }
+        ],
+        "tilt": 0,
+        "wholeNeighborCount": 2
+      },
+      "after": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            142,
+            720,
+            250.00000000000003
+          ],
+          [
+            0,
+            292,
+            720,
+            396.00000000000006
+          ],
+          [
+            0,
+            441.99999999999994,
+            720,
+            546
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 22,
+        "expectsSeparation": true,
+        "imageSize": [
+          360,
+          380
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 0.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              142,
+              720,
+              250.00000000000003
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              160,
+              164,
+              208
+            ]
+          },
+          {
+            "crop": [
+              0,
+              292,
+              720,
+              396.00000000000006
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              310,
+              234,
+              358
+            ]
+          },
+          {
+            "crop": [
+              0,
+              441.99999999999994,
+              720,
+              546
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              460,
+              304,
+              508
+            ]
+          }
+        ],
+        "tilt": 0,
+        "wholeNeighborCount": 0
+      }
+    },
+    {
+      "case": {
+        "kind": "horizontalBreaks",
+        "scale": 0.5,
+        "tilt": 1.5,
+        "bow": 10
+      },
+      "before": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            136,
+            720,
+            398.00000000000006
+          ],
+          [
+            0,
+            184,
+            720,
+            402
+          ],
+          [
+            0,
+            439.99999999999994,
+            720,
+            552
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 21,
+        "expectsSeparation": true,
+        "imageSize": [
+          360,
+          380
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 0.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              136,
+              720,
+              398.00000000000006
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              155,
+              164,
+              203
+            ]
+          },
+          {
+            "crop": [
+              0,
+              184,
+              720,
+              402
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              307,
+              234,
+              355
+            ]
+          },
+          {
+            "crop": [
+              0,
+              439.99999999999994,
+              720,
+              552
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              458,
+              304,
+              506
+            ]
+          }
+        ],
+        "tilt": 1.5,
+        "wholeNeighborCount": 1
+      },
+      "after": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            136,
+            720,
+            256.00000000000006
+          ],
+          [
+            0,
+            287.99999999999994,
+            720,
+            402
+          ],
+          [
+            0,
+            439.99999999999994,
+            720,
+            552
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 22,
+        "expectsSeparation": true,
+        "imageSize": [
+          360,
+          380
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 0.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              136,
+              720,
+              256.00000000000006
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              155,
+              164,
+              203
+            ]
+          },
+          {
+            "crop": [
+              0,
+              287.99999999999994,
+              720,
+              402
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              307,
+              234,
+              355
+            ]
+          },
+          {
+            "crop": [
+              0,
+              439.99999999999994,
+              720,
+              552
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              458,
+              304,
+              506
+            ]
+          }
+        ],
+        "tilt": 1.5,
+        "wholeNeighborCount": 0
+      }
+    },
+    {
+      "case": {
+        "kind": "horizontalBreaks",
+        "scale": 1.5,
+        "tilt": 1.5,
+        "bow": 10
+      },
+      "before": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            136.66666666666666,
+            720,
+            397.33333333333337
+          ],
+          [
+            0,
+            164.66666666666669,
+            720,
+            401.3333333333333
+          ],
+          [
+            0,
+            439.99999999999994,
+            720,
+            551.3333333333334
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 12,
+        "expectsSeparation": true,
+        "imageSize": [
+          1080,
+          1140
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 1.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              136.66666666666666,
+              720,
+              397.33333333333337
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              155,
+              164,
+              203
+            ]
+          },
+          {
+            "crop": [
+              0,
+              164.66666666666669,
+              720,
+              401.3333333333333
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              307,
+              234,
+              355
+            ]
+          },
+          {
+            "crop": [
+              0,
+              439.99999999999994,
+              720,
+              551.3333333333334
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              458,
+              304,
+              506
+            ]
+          }
+        ],
+        "tilt": 1.5,
+        "wholeNeighborCount": 2
+      },
+      "after": {
+        "allTargetsPreserved": true,
+        "bounds": [
+          [
+            0,
+            136.66666666666666,
+            720,
+            256.6666666666667
+          ],
+          [
+            0,
+            288.66666666666663,
+            720,
+            401.3333333333333
+          ],
+          [
+            0,
+            439.99999999999994,
+            720,
+            551.3333333333334
+          ]
+        ],
+        "bow": 10,
+        "componentCount": 13,
+        "expectsSeparation": true,
+        "imageSize": [
+          1080,
+          1140
+        ],
+        "kind": "horizontalBreaks",
+        "planCanApply": true,
+        "scale": 1.5,
+        "targets": [
+          {
+            "crop": [
+              0,
+              136.66666666666666,
+              720,
+              256.6666666666667
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourceEnvelope": [
+              148,
+              155,
+              164,
+              203
+            ]
+          },
+          {
+            "crop": [
+              0,
+              288.66666666666663,
+              720,
+              401.3333333333333
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourceEnvelope": [
+              218,
+              307,
+              234,
+              355
+            ]
+          },
+          {
+            "crop": [
+              0,
+              439.99999999999994,
+              720,
+              551.3333333333334
+            ],
+            "owner": 2,
+            "preserved": true,
+            "sourceEnvelope": [
+              288,
+              458,
+              304,
+              506
+            ]
+          }
+        ],
+        "tilt": 1.5,
+        "wholeNeighborCount": 0
+      }
+    }
+  ]
+}

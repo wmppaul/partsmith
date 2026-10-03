@@ -1,0 +1,478 @@
+{
+  "inputs": [
+    {
+      "path": ".build/residual9-boundary-2026-10-03/candidate-v2/actual.json",
+      "sha256": "cabcee807fcc1eb269119f33acd7a0a569ee6f5ee00828614a7b18066924c574"
+    },
+    {
+      "path": ".build/residual7-geometry-2026-10-03/candidate-supported-endpoint/actual.json",
+      "sha256": "1bee8fe9cb678be94ef18eba1b239252db2e1b8f1d452f1109cb963296676cb9"
+    },
+    {
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source-guards.json",
+      "sha256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c"
+    },
+    {
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source-oracle.json",
+      "sha256": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f"
+    }
+  ],
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "savedRectificationsEqual": true,
+  "staffGeometryEqual": true,
+  "bands": 604,
+  "changes": [
+    {
+      "id": "p35-s1-violin1",
+      "before": [
+        0,
+        22.877409406322286,
+        426,
+        107.33153430994604
+      ],
+      "after": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "fields": [
+        "bottomFraction",
+        "warnings"
+      ],
+      "beforeNeighbors": [
+        1
+      ],
+      "afterNeighbors": [],
+      "candidateContainsWholePreviousCrop": false
+    },
+    {
+      "id": "p35-s1-violin2",
+      "before": [
+        0,
+        30.925212027756363,
+        426,
+        113.7224363916731
+      ],
+      "after": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "fields": [
+        "bottomFraction",
+        "topFraction",
+        "warnings"
+      ],
+      "beforeNeighbors": [
+        0
+      ],
+      "afterNeighbors": [],
+      "candidateContainsWholePreviousCrop": false
+    }
+  ],
+  "semanticInkChangedPages": [
+    35
+  ],
+  "wholeNeighborsBefore": 7,
+  "wholeNeighborsAfter": 5,
+  "unchangedFullTargetGuards": [
+    {
+      "id": "p24-s2-viola",
+      "guard": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "contains": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "guard": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "guard": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "crop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "guard": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "crop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "contains": true
+    },
+    {
+      "id": "p29-s1-violin1",
+      "guard": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "crop": [
+        0,
+        18.90358657925183,
+        427,
+        75.76205167759352
+      ],
+      "contains": true
+    },
+    {
+      "id": "p29-s1-violin2",
+      "guard": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "crop": [
+        0,
+        59.22367913613575,
+        427,
+        110.6270728885461
+      ],
+      "contains": true
+    },
+    {
+      "id": "p31-s1-violin1",
+      "guard": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "crop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "contains": true
+    },
+    {
+      "id": "p31-s1-violin2",
+      "guard": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "crop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "contains": true
+    },
+    {
+      "id": "p35-s1-violin1",
+      "guard": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "crop": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "contains": false
+    },
+    {
+      "id": "p35-s1-violin2",
+      "guard": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "crop": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "contains": true
+    }
+  ],
+  "additionalLocalObligations": [
+    {
+      "page": 24,
+      "owner": "Viola",
+      "content": "final note, stem and slur",
+      "box": [
+        377,
+        253,
+        388.5,
+        268.5
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "contains": true
+    },
+    {
+      "page": 24,
+      "owner": "Viola",
+      "content": "final hairpin pair",
+      "box": [
+        348.5,
+        268,
+        388,
+        274
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "contains": true
+    },
+    {
+      "page": 24,
+      "owner": "Cello",
+      "content": "high final note and slur",
+      "box": [
+        378,
+        273.5,
+        388.5,
+        295
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "contains": true
+    },
+    {
+      "page": 24,
+      "owner": "Cello",
+      "content": "sharp and preceding high half note",
+      "box": [
+        360.5,
+        278,
+        373,
+        295
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "contains": true
+    },
+    {
+      "page": 24,
+      "owner": "Cello",
+      "content": "final hairpin pair",
+      "box": [
+        348,
+        302,
+        387,
+        307.5
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "contains": true
+    },
+    {
+      "page": 28,
+      "owner": "Violin I",
+      "content": "pre-barline flagged note and slur endpoint",
+      "box": [
+        87.5,
+        33,
+        95,
+        52
+      ],
+      "crop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "contains": true
+    },
+    {
+      "page": 28,
+      "owner": "Violin I",
+      "content": "post-barline note and upper slur start",
+      "box": [
+        102.5,
+        29,
+        116,
+        49
+      ],
+      "crop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "contains": true
+    },
+    {
+      "page": 28,
+      "owner": "Violin II",
+      "content": "pre-barline low flagged note",
+      "box": [
+        88.5,
+        75,
+        97,
+        90
+      ],
+      "crop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "contains": true
+    },
+    {
+      "page": 28,
+      "owner": "Violin II",
+      "content": "post-barline low note, stem and dot",
+      "box": [
+        103,
+        75,
+        110.5,
+        95
+      ],
+      "crop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "contains": true
+    },
+    {
+      "page": 31,
+      "owner": "Violin I",
+      "content": "final beamed descending notes, slur and detached last note",
+      "box": [
+        349,
+        33,
+        386.5,
+        65
+      ],
+      "crop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "contains": true
+    },
+    {
+      "page": 31,
+      "owner": "Violin II",
+      "content": "last flagged note pair, lower slur and crescendo",
+      "box": [
+        353,
+        73,
+        389.5,
+        102
+      ],
+      "crop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "contains": true
+    },
+    {
+      "page": 35,
+      "owner": "Violin I",
+      "content": "last beamed melody, dots and ledger notes",
+      "box": [
+        327,
+        26,
+        378,
+        66
+      ],
+      "crop": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "contains": true
+    },
+    {
+      "page": 35,
+      "owner": "Violin II",
+      "content": "rising beamed figure, low ledger note and full lower slur",
+      "box": [
+        337.5,
+        65,
+        385.5,
+        106
+      ],
+      "crop": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "contains": true
+    }
+  ]
+}

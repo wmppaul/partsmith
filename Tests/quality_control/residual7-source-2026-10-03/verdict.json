@@ -1,0 +1,77 @@
+{
+  "productionEdited": false,
+  "frozenTenGuardSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+  "pixelRuns": {
+    "musicalRegression": false,
+    "remainingWholeNeighbors": 7,
+    "recommendation": "diagnostic only; no source crop improvement"
+  },
+  "connectorTarget": {
+    "new297Failures": 2,
+    "worsened297TargetEnvelopes": 6,
+    "isolated755MusicalLoss": true,
+    "sourceRectangleGuardsPassed": 9,
+    "sourceRectangleGuardsTotal": 10,
+    "remainingWholeNeighbors": 5,
+    "recommendation": "reject: new actual musical omissions"
+  },
+  "connectorThreeLines": {
+    "new297Failures": 0,
+    "worsened297TargetEnvelopes": 0,
+    "wholeNeighbors297Before": 198,
+    "wholeNeighbors297After": 248,
+    "actual39WholeNeighborsBefore": 7,
+    "actual39WholeNeighborsAfter": 11,
+    "recommendation": "reject: previously fixed source crops widen without improvement"
+  },
+  "existingFailuresNotFixed": {
+    "independent297": 96,
+    "expanded336": 336
+  },
+  "sourceClearanceFinding": {
+    "band": "p35-s1-violin1",
+    "failedOriginalGuardUnchanged": [
+      0,
+      28,
+      426,
+      68
+    ],
+    "candidateBottom": 66.38242097147263,
+    "observedTargetInkLossInExcludedStrip": false,
+    "notAReplacementForTheFailedGuard": true
+  },
+  "endpointRefinement": {
+    "new297Failures": 0,
+    "worsened297TargetEnvelopes": 0,
+    "wholeNeighbors297Before": 198,
+    "wholeNeighbors297After": 191,
+    "actual39WholeNeighborsBefore": 7,
+    "actual39WholeNeighborsAfter": 7,
+    "actualChangedRows": [
+      "p29-s1-violin1",
+      "p29-s1-violin2",
+      "p35-s1-violin1",
+      "p35-s1-violin2"
+    ],
+    "recommendation": "hold: p35 improves but p29 widens"
+  },
+  "supportedEndpoint": {
+    "analyzerSHA256": "1299e0ab21701803cf04e71137a2fbb46ca834f32d148e8cf6cf1981d3adc962",
+    "new297Failures": 0,
+    "worsened297TargetEnvelopes": 0,
+    "wholeNeighbors297Before": 198,
+    "wholeNeighbors297After": 191,
+    "actual39WholeNeighborsBefore": 7,
+    "actual39WholeNeighborsAfter": 5,
+    "actualChangedRows": [
+      "p35-s1-violin1",
+      "p35-s1-violin2"
+    ],
+    "all602OtherBandRecordsExact": true,
+    "strictOriginalSourceGuardsPassed": 9,
+    "strictOriginalSourceGuardsTotal": 10,
+    "additionalLocalObligationsPassed": 13,
+    "sourceClearanceDoesNotReplaceOriginalGuard": true,
+    "recommendation": "candidate awaiting broader corpus and integration review; not a global preservation pass"
+  }
+}
