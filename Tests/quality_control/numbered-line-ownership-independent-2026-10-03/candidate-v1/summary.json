@@ -1,0 +1,51 @@
+{
+  "authorRejectionEvidence": {
+    "count": 336,
+    "independentlyRerunHere": false,
+    "newFailures": 18,
+    "newPass": 318,
+    "oldPass": 336,
+    "path": ".build/brahms-numbered-lines-2026-10-03/candidate-v1/independent-controls-comparison.json",
+    "sha256": "613a4579aa8d6e926f6a6c68c4aeda1d9cad70370b6a4639d44eb41929fc9916"
+  },
+  "baselineCompleteOwners": 124,
+  "baselineNativeSeconds": 0.26059603691101074,
+  "candidateCompleteOwners": 124,
+  "candidateInvariantFailures": [],
+  "candidateNativeSHA256": "48942112506f88d4804a673c4bee2610886bc944fab87853df2c2b596447c4a4",
+  "candidateNativeSeconds": 0.9214259386062622,
+  "changedCropOrNeighborObservations": 36,
+  "changedSourceScaleCases": 34,
+  "comparisonSHA256": "7e8e857900af74e25d24d3d20d9e37d3171295314be577a9a9bc3ceb349fafbf",
+  "futureV2": "Requires author-supplied frozen source hash and identical inputs; baseline is retained.",
+  "guardScope": {
+    "availableFullGuards": 4,
+    "availableFullGuardsPass": 4,
+    "availableLocalEnvelopes": 9,
+    "availableLocalEnvelopesPass": 9,
+    "availableLocalInkEnvelopesPass": 9,
+    "note": "The frozen helper raw aggregate lists count absent bands as false containment. Use each record availability flag; unavailable guards are untested, neither proven passes nor observed candidate regressions. Raw helper and output remain unchanged.",
+    "p35": "Not replayed. Baseline guard failure retained, not a new candidate result.",
+    "untestedFullGuardIDs": [
+      "p29-s1-violin1",
+      "p29-s1-violin2",
+      "p31-s1-violin1",
+      "p31-s1-violin2",
+      "p35-s1-violin1",
+      "p35-s1-violin2"
+    ],
+    "untestedLocalEnvelopes": 4
+  },
+  "inputManifestSHA256": "7a525cfdf73b1b5d7b47875f6b1723a5e2d22c025fbaa7de3aa22f0dfad909d5",
+  "nativeExecutableSHA256": "f813c45e0ded38e328348cce5b07cca19c6a131d2bbf779af35d17ddf06269d6",
+  "newLostOwnerObservations": 0,
+  "ownOwnerObservations": 192,
+  "ownSourceScaleCases": 48,
+  "productionEdited": false,
+  "protocolChanged": false,
+  "recoveredOwnerObservations": 0,
+  "resultsSHA256": "c7bf0d4b04dbb02d7c22d7f5c15c957b4ba3ffe222ec53305fd4b417280e4cd9",
+  "structuralCases": 12,
+  "structuralCasesFullyPreservedAndSeparated": 12,
+  "verdict": "Rejected by author-reported larger independent source-envelope grid; bounded checks here find no new loss and do not authorize promotion."
+}

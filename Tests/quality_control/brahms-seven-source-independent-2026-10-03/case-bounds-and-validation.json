@@ -1,0 +1,380 @@
+{
+  "coordinateSystem": "Saved corrected source PDF, top-down points; source pages427x615pt. Original pages24/31 unchanged;28/38 use existing rectifications.",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "correctedSourceSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+  "cases": [
+    {
+      "bandID": "p24-s2-viola",
+      "sourcePhysicalPage": 24,
+      "systemOneBased": 2,
+      "partID": "viola",
+      "sourceStaffCandidateIDs": [
+        6
+      ],
+      "existingTargetEnvelope": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "currentAutoRect": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "storedNativeRect": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "manualBenchmarkRect": [
+        0,
+        241.13844967219433,
+        427,
+        283.0
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 2.842170943040401e-14,
+        "manual": 0
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p24-s2-viola",
+        "neighborBandID": "p24-s2-cello",
+        "neighborCoreY": [
+          286.8740724605778,
+          300.02804101425477
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p24-viola-low-forte"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p24-s2-viola-comparison.png"
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "sourcePhysicalPage": 24,
+      "systemOneBased": 2,
+      "partID": "cello",
+      "sourceStaffCandidateIDs": [
+        7
+      ],
+      "existingTargetEnvelope": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "currentAutoRect": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "storedNativeRect": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "manualBenchmarkRect": [
+        0,
+        270.49999999999994,
+        427,
+        316.4967219436946
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 2.842170943040401e-14,
+        "manual": 5.684341886080802e-14
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p24-s2-cello",
+        "neighborBandID": "p24-s2-viola",
+        "neighborCoreY": [
+          255.3045640396042,
+          268.2443567477126
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p24-cello-low-forte"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p24-s2-cello-comparison.png"
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "sourcePhysicalPage": 28,
+      "systemOneBased": 1,
+      "partID": "violin1",
+      "sourceStaffCandidateIDs": [
+        0
+      ],
+      "existingTargetEnvelope": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "currentAutoRect": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "storedNativeRect": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "manualBenchmarkRect": [
+        0,
+        17.59232769830942,
+        427,
+        65.5
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 7.460698725481052e-14,
+        "manual": 0
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p28-s1-violin1",
+        "neighborBandID": "p28-s1-violin2",
+        "neighborCoreY": [
+          71.17685305591678,
+          83.98064678024096
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p28-violin1-hairpin-forte"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p28-s1-violin1-comparison.png"
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "sourcePhysicalPage": 28,
+      "systemOneBased": 1,
+      "partID": "violin2",
+      "sourceStaffCandidateIDs": [
+        1
+      ],
+      "existingTargetEnvelope": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "currentAutoRect": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "storedNativeRect": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "manualBenchmarkRect": [
+        0,
+        64.5,
+        427,
+        100.5
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 1.4210854715202004e-14,
+        "manual": 0
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p28-s1-violin2",
+        "neighborBandID": "p28-s1-violin1",
+        "neighborCoreY": [
+          41.58647594278284,
+          54.7793037478967
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p28-violin2-low-phrase"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p28-s1-violin2-comparison.png"
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "sourcePhysicalPage": 31,
+      "systemOneBased": 1,
+      "partID": "violin2",
+      "sourceStaffCandidateIDs": [
+        1
+      ],
+      "existingTargetEnvelope": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "currentAutoRect": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "storedNativeRect": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "manualBenchmarkRect": [
+        0,
+        67.5,
+        427,
+        107.5
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 4.263256414560601e-14,
+        "manual": 0
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p31-s1-violin2",
+        "neighborBandID": "p31-s1-violin1",
+        "neighborCoreY": [
+          44.827186517376155,
+          57.98978017740069
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p31-violin2-piano-and-low-slur"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p31-s1-violin2-comparison.png"
+    },
+    {
+      "bandID": "p38-s1-viola",
+      "sourcePhysicalPage": 38,
+      "systemOneBased": 1,
+      "partID": "viola",
+      "sourceStaffCandidateIDs": [
+        2
+      ],
+      "existingTargetEnvelope": [
+        0,
+        90,
+        427,
+        133
+      ],
+      "currentAutoRect": [
+        0,
+        87.96944083224967,
+        427,
+        159.54876462938878
+      ],
+      "storedNativeRect": [
+        0,
+        87.96944083224967,
+        427,
+        159.54876462938878
+      ],
+      "manualBenchmarkRect": [
+        0,
+        87.96944083224969,
+        427,
+        134.5
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 2.842170943040401e-14,
+        "manual": 0
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p38-s1-viola",
+        "neighborBandID": "p38-s1-cello",
+        "neighborCoreY": [
+          135.95578673602083,
+          148.98304629184034
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p38-viola-triplet-and-low-slurs",
+        "p38-viola-final-high-note-arcs",
+        "p38-viola-final-forte",
+        "p38-viola-lower-tenutos"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p38-s1-viola-comparison.png"
+    },
+    {
+      "bandID": "p38-s1-cello",
+      "sourcePhysicalPage": 38,
+      "systemOneBased": 1,
+      "partID": "cello",
+      "sourceStaffCandidateIDs": [
+        3
+      ],
+      "existingTargetEnvelope": [
+        0,
+        132.5,
+        427,
+        163
+      ],
+      "currentAutoRect": [
+        0,
+        91.56827048114434,
+        427,
+        165.14694408322495
+      ],
+      "storedNativeRect": [
+        0,
+        91.56827048114434,
+        427,
+        165.14694408322495
+      ],
+      "manualBenchmarkRect": [
+        0,
+        131.5,
+        427,
+        165.14694408322498
+      ],
+      "proposalMetadataDeltaPt": {
+        "auto": 5.684341886080802e-14,
+        "manual": 0
+      },
+      "storedNativeMatchesPublishedAutoExactly": true,
+      "existingEnvelopePreservedByBoth": true,
+      "wholeForeignCore": {
+        "bandID": "p38-s1-cello",
+        "neighborBandID": "p38-s1-viola",
+        "neighborCoreY": [
+          106.36540962288687,
+          119.34645517964782
+        ]
+      },
+      "newLocalObligationIDs": [
+        "p38-cello-opening-accidental-slurs",
+        "p38-cello-final-forte",
+        "p38-cello-lower-tenutos"
+      ],
+      "allNewLocalRegionsInsideExistingGuard": true,
+      "comparisonImage": "p38-s1-cello-comparison.png"
+    }
+  ],
+  "unchangedStrictPriorGuardResult": "9/10 current and manual; p35 ViolinI retains existing 68pt rectangular-guard failure and is outside these7 cases.",
+  "unchangedLocalPriorResult": "13/13 current and manual, original source oracle unchanged.",
+  "newLocalRegions": 12,
+  "note": "Current native data is the preserved four-page64-band native baseline, not a new detector run. All seven bound rectangles are exact to the current published Auto plan."
+}

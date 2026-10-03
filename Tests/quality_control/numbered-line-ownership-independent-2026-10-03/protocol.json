@@ -1,0 +1,52 @@
+{
+  "study": "Independent numbered-staff-line contact preservation controls",
+  "date": "2026-10-03",
+  "state": "Frozen before any new candidate inspection or analyzer execution",
+  "scope": "A bounded source-pixel ownership test, not whole-score certification or a replacement for the permanent suite.",
+  "prohibitedChanges": ["No production edits", "No retuned masks, guards, profile or candidate geometry after results", "No per-page expected crop adjustment", "No omission hidden by aggregate lost-pixel counts"],
+  "originalFixtures": {
+    "directory": "Tests/quality_control/four-core-independent-2026-10-03/sources",
+    "sourceCount": 12,
+    "ownerMasksPerSource": 4,
+    "scales": [1.0],
+    "rule": "Copy all original sources and all 48 original filled/hollow/tied/stem owner masks byte-exact. Record every owner, not only the four previously lossless upper-owner checks. Preserve known baseline failures separately."
+  },
+  "newFixtures": {
+    "canvas": [720, 500],
+    "staffLines": [[103,112,120,128,136],[178,186,194,202,210],[270,278,287,295,303],[344,352,361,369,377]],
+    "scales": [0.5,1.0,1.5],
+    "musicalFamily": {
+      "count": 8,
+      "heads": ["filled","hollow"],
+      "upperLineIndices": [0,1,3,4],
+      "lowerLineIndex": "4 - upperLineIndex",
+      "sharedMusic": "The upper two physical staff views both own the complete chord stem, both noteheads and any tie. The same x500-501 corridor continues structurally through two additional staff cores.",
+      "ties": "For line indices 1 and 3 add a two-pixel curved tie that contacts the numbered upper line at its endpoints.",
+      "boundaryNetwork": "Independent structural columns x350-351 and x600-601 span all four cores; they cannot authorize erasing the mixed x500-501 corridor."
+    },
+    "structuralFamily": {
+      "count": 4,
+      "variants": ["single","double","oneGapPerJunction","bowedLines"],
+      "ownership": "All notes, their stems and ties stay local to one owner. The source barline has no musical owner. Owned notation stays away from the barline corridor except via shared horizontal staff pixels.",
+      "purpose": "Require retained own notation and no entire neighboring staff core; an always-shared-component fallback is not a positive separation result."
+    }
+  },
+  "sourceReview": {
+    "originalPDF": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "pages": [24,28,35],
+    "frozenGuards": "Tests/quality_control/residual7-source-2026-10-03/source-guards.json",
+    "guardSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "localOracle": "Tests/quality_control/residual7-source-2026-10-03/source-oracle.json",
+    "requirements": "Keep all ten full guards and thirteen local source obligations unchanged. Explicitly retain the preexisting p35 Violin I bottom-68 guard failure. The p35 lower protected region begins at x337.5; use the final oracle, not v1. Review full source before any proposed crop images."
+  },
+  "evaluation": {
+    "sourceIntegrity": "Hash decoded source gray bytes, original PNG files and every original/new source-authored owner mask before execution; assert every owned pixel is black source ink.",
+    "cropMetric": "Compare original full-resolution owner pixels to each final planned crop, using complete pixel-cell containment. List exact lost source pixel indices, source envelope, crop and assignment identity per owner and scale.",
+    "regressionMetric": "Compare lost pixel SETS to the unchanged baseline. Any newly lost owner pixel is a regression even if another recovered pixel keeps the aggregate count unchanged. Require zero loss for previously lossless owners; report preexisting omissions without weakening their source oracle.",
+    "positiveMetric": "Separately report whether each structural fixture retains all owned pixels while excluding every entire neighboring five-line core. Do not label pure non-regression as successful separation.",
+    "representationMetric": "If a candidate emits typed spine/channel/branch payloads, audit disjoint source reconstruction and owner coverage separately from final crops. A staff-line-labelled pixel may also carry music; numeric line identity alone cannot delete its owner attribution. Final crop success is not proof of lossless internal graph roles.",
+    "realMetric": "For matched real pages retain exact source/rectifications and candidate-independent guards. Record guard failures independently of local visible-ink preservation; no new guard can replace the original ten.",
+    "blinding": "Send protocol and input hashes to root before inspecting any new candidate. Do not disclose candidate outcomes to its author while evaluation setup is being frozen."
+  }
+}

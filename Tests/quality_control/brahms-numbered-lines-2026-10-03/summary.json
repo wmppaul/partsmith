@@ -1,0 +1,44 @@
+{
+  "status": "Both candidates rejected; production Native unchanged. No broad corpus or export run.",
+  "baselineNativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "candidateV1NativeSHA256": "48942112506f88d4804a673c4bee2610886bc944fab87853df2c2b596447c4a4",
+  "candidateV2NativeSHA256": "b5f86b6597f35d6507c1ffc5cd97efb5d8c5bacef9226e59b2e5616f9babbf09",
+  "permanentCropControls": {
+    "v1": 796,
+    "v2": 796,
+    "knownLimit": "Existing detached three-row-gap annotation remains outside upper crop."
+  },
+  "frozen297": {
+    "baselineCompleteCases": 238,
+    "v1CompleteCases": 238,
+    "v2CompleteCases": 238,
+    "existingFailureWorsenedByBoth": "case176 middle owner loses9 additional exact source stem pixels;650\u2192659"
+  },
+  "frozen336": {
+    "baselineCompleteCases": 336,
+    "v1CompleteCases": 318,
+    "v1NewFailedCases": 18,
+    "v2CompleteCases": 336,
+    "v2NewOrWorsenedEnvelopeIntersections": 0
+  },
+  "fourCore36": {
+    "newOrWorsenedSourceLossV1": 0,
+    "newOrWorsenedSourceLossV2": 0,
+    "changedOwnerCrops": 24,
+    "changes": "One-point outward expansions on staff3 at1\u00d7/1.5\u00d7; existing omissions stay recorded."
+  },
+  "actualReplay": {
+    "pages": [
+      24,
+      28
+    ],
+    "changedCropRectangles": 12,
+    "assignmentIdentityOrStaffGeometryChanges": 0,
+    "v1v2PlansIdentical": true,
+    "v1v2ComponentMultisetsIdentical": true,
+    "sourceReview": "All12 changed source strips viewed; no newly lost target observed. Many neighboring staff lines remain.",
+    "candidateV2ReplaySHA256": "c81a854460359846b62a565b6ab7f847f3c7980408403c79551494555db010c5"
+  },
+  "decision": "RejectV1 for18 new full-envelope omissions and existing damaged-stem regression. RejectV2 despite336 recovery because exact source-owner mask confirms9 additional stem pixels omitted in case176.",
+  "nextRequirement": "Musical ownership across scan interruptions must survive an improved line representation. Preserve source-owned branches rather than relying on incidental line remnants to expand crops; no threshold tuning or candidate promotion is justified."
+}

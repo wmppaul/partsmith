@@ -1,0 +1,691 @@
+{
+  "files": {
+    "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+    "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/plan.json": "be1e379afe06a1d4f1500c91964dc37c2befc6ceb494695d9e0fb9e2c31db38c",
+    "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-reviewed-crops/plan.json": "222fc79313117b42471d05f9fbaa30700a3de9bf5b25fd74c170e07f469728db",
+    ".build/brahms-remaining-2026-10-03/ending-review/baseline-plan.json": "634eaebc50f7e32bbfb180852a809a502ce717836d114945586e21be1ff46b88",
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/manual-proposals-v1.json": "bc80eb816f0ac47ff39f84c4b2363e7e7317e6a0425d08302488657541ab477b",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/frozen-source-obligations.json": "eaa6dcbe8f9d1d13c3368441e64227276e908228df46dc12ced94886916fa47c",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/source-context-binding.json": "690d36491158d392c42673d26db6b771029df0443798e8728252a64298cd1443",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/proposal-geometry-checks.json": "cbda85ad36c4e2378c2585761c9208bb9e8501ee811714560899ca41240d6692",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p24-s2-viola-comparison.png": "11e2f206e92a9a8bbcbe10b1ac44a4b95e2cb7cc0ba0feb44793425519355517",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p24-s2-cello-comparison.png": "9efbe17bbaeba0df5ebc043f4036409261fc9a197705f23f37787a0cb1e0c044",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p28-s1-violin1-comparison.png": "9c1d877b800a5d873ac534e97055d99aba0a577cfd01d928c27c70b6c2abf6e6",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p28-s1-violin2-comparison.png": "8c799148a8f8a2df33146dab3633cf7c4bf4424fef485bf1d1ab8e5baf73a6fe",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p31-s1-violin2-comparison.png": "dc612a830ed352b5e1f51f8ad023077cf9bc89e2bf55b700e9f3568bcf068eba",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p38-s1-viola-comparison.png": "501913048056c8e561003e69412db050c8a9974d6550e4b88cd0c67787af1997",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/p38-s1-cello-comparison.png": "30979cce231f3fdc9f44bf740b46390e857834c2abd317b8a296a476221c3331",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p24-full-system.png": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p28-full-system.png": "e8955c5ed300375680f44c67e504deaa5305e72710270b9a3edd7fc42de0b72b",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p31-full-system.png": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p38-full-system.png": "ce846871b33711f315112bee72ba62bf274e7cb6f354ccdc154bc10d9652c753",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p24-full-system.png": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p28-full-system.png": "5400aa1ebbd5b769168c7f00c3cabf3dba39d8d44df8ae7913216cf008cb3448",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p31-full-system.png": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p38-full-system.png": "51af4768e37db23b2c35322ccb014b0609212c52486fb5775c8572f5a4d0164b"
+  },
+  "contexts": [
+    {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "page": 24,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        175.0,
+        427.0,
+        332.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p24-full-system.png",
+      "imageSHA256": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "page": 28,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        0.0,
+        427.0,
+        184.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p28-full-system.png",
+      "imageSHA256": "e8955c5ed300375680f44c67e504deaa5305e72710270b9a3edd7fc42de0b72b"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "page": 31,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        0.0,
+        427.0,
+        179.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p31-full-system.png",
+      "imageSHA256": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "page": 38,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        0.0,
+        427.0,
+        189.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/original-p38-full-system.png",
+      "imageSHA256": "ce846871b33711f315112bee72ba62bf274e7cb6f354ccdc154bc10d9652c753"
+    },
+    {
+      "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+      "sourceSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+      "page": 24,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        175.0,
+        427.0,
+        332.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p24-full-system.png",
+      "imageSHA256": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35"
+    },
+    {
+      "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+      "sourceSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+      "page": 28,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        0.0,
+        427.0,
+        184.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p28-full-system.png",
+      "imageSHA256": "5400aa1ebbd5b769168c7f00c3cabf3dba39d8d44df8ae7913216cf008cb3448"
+    },
+    {
+      "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+      "sourceSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+      "page": 31,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        0.0,
+        427.0,
+        179.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p31-full-system.png",
+      "imageSHA256": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437"
+    },
+    {
+      "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+      "sourceSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+      "page": 38,
+      "pageSize": [
+        427.0,
+        615.0
+      ],
+      "clip": [
+        0.0,
+        0.0,
+        427.0,
+        189.0
+      ],
+      "scale": 4,
+      "image": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p38-full-system.png",
+      "imageSHA256": "51af4768e37db23b2c35322ccb014b0609212c52486fb5775c8572f5a4d0164b"
+    }
+  ],
+  "originalRectifications": [
+    {
+      "bottomLeft": {
+        "x": 0.022452219281807972,
+        "y": 0.9934585845001322
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9830891962180598
+      },
+      "pageIndex": 1,
+      "topLeft": {
+        "x": 0.001000000000000035,
+        "y": 0.01691080378194021
+      },
+      "topRight": {
+        "x": 0.977547780718192,
+        "y": 0.006541415499867753
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.001000000000000126,
+        "y": 0.9893711972992971
+      },
+      "bottomRight": {
+        "x": 0.9860176774355548,
+        "y": 0.9956464801362577
+      },
+      "pageIndex": 6,
+      "topLeft": {
+        "x": 0.013982322564445161,
+        "y": 0.004353519863742328
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.010628802700702766
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.015843354839884468,
+        "y": 0.9951491787679413
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9880074663921742
+      },
+      "pageIndex": 16,
+      "topLeft": {
+        "x": 0.0010000000000000646,
+        "y": 0.011992533607825706
+      },
+      "topRight": {
+        "x": 0.9841566451601157,
+        "y": 0.004850821232058711
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0010000000000000009,
+        "y": 0.9907265824906225
+      },
+      "bottomRight": {
+        "x": 0.9878324989484448,
+        "y": 0.9961059164578222
+      },
+      "pageIndex": 18,
+      "topLeft": {
+        "x": 0.012167501051555252,
+        "y": 0.0038940835421777953
+      },
+      "topRight": {
+        "x": 0.9990000000000001,
+        "y": 0.00927341750937749
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.000999999999999995,
+        "y": 0.9911813734416057
+      },
+      "bottomRight": {
+        "x": 0.988446378088182,
+        "y": 0.9962650046465762
+      },
+      "pageIndex": 22,
+      "topLeft": {
+        "x": 0.011553621911818033,
+        "y": 0.003734995353423809
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.008818626558394271
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0009999999999999595,
+        "y": 0.983525543271109
+      },
+      "bottomRight": {
+        "x": 0.9781124995691003,
+        "y": 0.9935869562979912
+      },
+      "pageIndex": 27,
+      "topLeft": {
+        "x": 0.021887500430899803,
+        "y": 0.006413043702008903
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.01647445672889103
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0009999999999999076,
+        "y": 0.9844263100779589
+      },
+      "bottomRight": {
+        "x": 0.9793505846569762,
+        "y": 0.9939242745790171
+      },
+      "pageIndex": 33,
+      "topLeft": {
+        "x": 0.020649415343023954,
+        "y": 0.0060757254209828915
+      },
+      "topRight": {
+        "x": 0.9990000000000001,
+        "y": 0.015573689922041112
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.0010000000000000497,
+        "y": 0.9889130266602368
+      },
+      "bottomRight": {
+        "x": 0.985384552060725,
+        "y": 0.9954715254004882
+      },
+      "pageIndex": 37,
+      "topLeft": {
+        "x": 0.01461544793927505,
+        "y": 0.004528474599511889
+      },
+      "topRight": {
+        "x": 0.999,
+        "y": 0.011086973339763162
+      }
+    },
+    {
+      "bottomLeft": {
+        "x": 0.015843354839884468,
+        "y": 0.9951491787679413
+      },
+      "bottomRight": {
+        "x": 0.999,
+        "y": 0.9880074663921742
+      },
+      "pageIndex": 38,
+      "topLeft": {
+        "x": 0.0010000000000000646,
+        "y": 0.011992533607825706
+      },
+      "topRight": {
+        "x": 0.9841566451601157,
+        "y": 0.004850821232058711
+      }
+    }
+  ],
+  "priorSourceObligations": [
+    {
+      "page": 24,
+      "coordinateSpace": "original",
+      "owner": "Viola",
+      "content": "final note, stem and slur",
+      "pdfBounds": [
+        377,
+        253,
+        388.5,
+        268.5
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        3016,
+        2024
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-01-p24-viola.png",
+      "sha256": "49dade81721a322b9a48966252488ac89019a71bfb04cec844f7ca1c70793dac",
+      "observedInkBounds": [
+        377.0,
+        253.0,
+        388.5,
+        268.5
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 24,
+      "coordinateSpace": "original",
+      "owner": "Viola",
+      "content": "final hairpin pair",
+      "pdfBounds": [
+        348.5,
+        268,
+        388,
+        274
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2788,
+        2144
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-02-p24-viola.png",
+      "sha256": "4b44f2f4310d4236520b2947c264f823c45a2c35856ef66d1b51873a5368b707",
+      "observedInkBounds": [
+        349.375,
+        268.0,
+        387.25,
+        274.0
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 24,
+      "coordinateSpace": "original",
+      "owner": "Cello",
+      "content": "high final note and slur",
+      "pdfBounds": [
+        378,
+        273.5,
+        388.5,
+        295
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        3024,
+        2188
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-03-p24-cello.png",
+      "sha256": "194267c2b1991603b725bbfc368526b6abd86d6265548274c35187e9fe46c560",
+      "observedInkBounds": [
+        378.0,
+        273.875,
+        388.5,
+        292.5
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 24,
+      "coordinateSpace": "original",
+      "owner": "Cello",
+      "content": "sharp and preceding high half note",
+      "pdfBounds": [
+        360.5,
+        278,
+        373,
+        295
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2884,
+        2224
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-04-p24-cello.png",
+      "sha256": "644ef57381e99011f12d02d2238adedcfb48e7c83bfaafa7543029121b79da43",
+      "observedInkBounds": [
+        360.5,
+        278.0,
+        373.0,
+        295.0
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 24,
+      "coordinateSpace": "original",
+      "owner": "Cello",
+      "content": "final hairpin pair",
+      "pdfBounds": [
+        348,
+        302,
+        387,
+        307.5
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2784,
+        2416
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-05-p24-cello.png",
+      "sha256": "d21e0bb3fe7c68170e9ea05eb8622409b9f30d6a89932a84a48cedfbd136a286",
+      "observedInkBounds": [
+        350.5,
+        302.375,
+        386.375,
+        306.875
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 28,
+      "coordinateSpace": "corrected",
+      "owner": "Violin I",
+      "content": "pre-barline flagged note and slur endpoint",
+      "pdfBounds": [
+        87.5,
+        33,
+        95,
+        52
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        700,
+        264
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-06-p28-violin-i.png",
+      "sha256": "724d96aa007ea64b1d6245a2237afb72e38f06ec0d43d7e43be6f39ed86cc330",
+      "observedInkBounds": [
+        87.5,
+        33.5,
+        95.0,
+        51.5
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 28,
+      "coordinateSpace": "corrected",
+      "owner": "Violin I",
+      "content": "post-barline note and upper slur start",
+      "pdfBounds": [
+        102.5,
+        29,
+        116,
+        49
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        820,
+        232
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-07-p28-violin-i.png",
+      "sha256": "f2d6b42639826b050daa25b4db3568579d10dd443392806c571af40dfe28e0b5",
+      "observedInkBounds": [
+        102.5,
+        29.625,
+        116.0,
+        48.375
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 28,
+      "coordinateSpace": "corrected",
+      "owner": "Violin II",
+      "content": "pre-barline low flagged note",
+      "pdfBounds": [
+        88.5,
+        75,
+        97,
+        90
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        708,
+        600
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-08-p28-violin-ii.png",
+      "sha256": "0b94b0f41a1612fa981275d004f7d4dec1b0048d5a0b427c758b370ced68a10a",
+      "observedInkBounds": [
+        88.5,
+        75.75,
+        97.0,
+        88.75
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 28,
+      "coordinateSpace": "corrected",
+      "owner": "Violin II",
+      "content": "post-barline low note, stem and dot",
+      "pdfBounds": [
+        103,
+        75,
+        110.5,
+        95
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        824,
+        600
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-09-p28-violin-ii.png",
+      "sha256": "1d02b280357c680600c7b791e512ee96b5f02a664c1e28bc00bcbeffb542a546",
+      "observedInkBounds": [
+        103.0,
+        76.75,
+        110.5,
+        94.5
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 31,
+      "coordinateSpace": "original",
+      "owner": "Violin I",
+      "content": "final beamed descending notes, slur and detached last note",
+      "pdfBounds": [
+        349,
+        33,
+        386.5,
+        65
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2792,
+        264
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-10-p31-violin-i.png",
+      "sha256": "e7a07bdabfd2a54c5fa2db303074a91a218212b031e6496dadcd09652bc0f9ba",
+      "observedInkBounds": [
+        349.0,
+        33.0,
+        386.5,
+        61.75
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 31,
+      "coordinateSpace": "original",
+      "owner": "Violin II",
+      "content": "last flagged note pair, lower slur and crescendo",
+      "pdfBounds": [
+        353,
+        73,
+        389.5,
+        102
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2824,
+        584
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-11-p31-violin-ii.png",
+      "sha256": "33a889b1e3652fd23edc38219d4c22793fd33019f7916f31524e48b685c817e6",
+      "observedInkBounds": [
+        353.0,
+        74.125,
+        389.5,
+        100.625
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 35,
+      "coordinateSpace": "original",
+      "owner": "Violin I",
+      "content": "last beamed melody, dots and ledger notes",
+      "pdfBounds": [
+        327,
+        26,
+        378,
+        66
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2616,
+        208
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-12-p35-violin-i.png",
+      "sha256": "e956b47d1df734397db7289b4bc677fde69d88346eb271790c8364998a679a8a",
+      "observedInkBounds": [
+        327.0,
+        30.25,
+        378.0,
+        62.375
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    },
+    {
+      "page": 35,
+      "coordinateSpace": "original",
+      "owner": "Violin II",
+      "content": "rising beamed figure, low ledger note and full lower slur",
+      "pdfBounds": [
+        337.5,
+        65,
+        385.5,
+        106
+      ],
+      "pixelsPerPoint": 8,
+      "pixelOrigin": [
+        2700,
+        520
+      ],
+      "path": "Tests/quality_control/residual7-source-2026-10-03/source/protected-13-p35-violin-ii.png",
+      "sha256": "fc9104cfdb396328c2d7d52249f221152d43c12e7d8e5ae56efda1eac28fa158",
+      "observedInkBounds": [
+        337.5,
+        67.125,
+        385.5,
+        105.125
+      ],
+      "obligation": "Retain complete crop envelope for this instrument. This box can contain staff-line pixels; it is not a per-pixel musical-ownership label."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "Frozen before candidate outputs; private analysis-only experiment.",
+  "sourceCases": [
+    "Brahms93521 p24 staves6/7 original1800\u00d72593",
+    "Brahms93521 p28 staves0/1 saved-corrected1068\u00d71538",
+    "Twelve unchanged source-authored mixed musical/structural four-core cases",
+    "Two aligned-boundary-network negatives with unchanged musical masks"
+  ],
+  "hypothesis": "A numbered staff-line curve measured from original thin source ridges can remove the horizontal residues that incorrectly connect otherwise thin barline strokes to notation. Only initial staff-line analysis separation changes; exported source pixels, staff IDs, connector tests, musical ownership protection, planner and all crop/source guards stay unchanged.",
+  "sourceCurve": "Thin vertical runs near each original numbered staff line (less than half-space phase corridor) provide local line centers and thickness. A six-staff-space source window requires 80-percent thin-ridge support for at least three mutually agreeing numbered lines. Supported lines keep individual measured positions; missing line positions may use only the agreeing family offset. Offset paths remain within0.45space of supplied geometry, with smooth transitions and no unconstrained ledger alias. Unsupported columns retain the baseline analysis result.",
+  "erasure": "Only actual source run pixels matching the measured numbered line and observed staff thickness (+one raster-row quantization allowance) are considered. Preserve the existing crossing-stem veto at the measured curve and every pixel protected by the legacy crossing veto. Do not cut or erase a whole spine, and do not reinterpret any original source mask or target obligation.",
+  "decisionGate": "Actual p24/p28 crop improvement plus every existing permanent795 control and frozen musical source envelopes, including mixed four-core chord negatives, must pass. Any new target-envelope omission or accepted musical-spine erasure rejects candidate. Accurate source classification is not assumed just because pixels fit a thin ridge.",
+  "knownLimitation": "This experiment cannot resolve genuinely co-located staff/music ink without additional ownership evidence; unclear line fits retain baseline. No generic instrument or notehead classifier is introduced."
+}

@@ -1,0 +1,1008 @@
+{
+  "status": "Frozen baseline only; candidate not yet inspected or evaluated.",
+  "sourceScaleCases": 48,
+  "ownerObservations": 192,
+  "families": {
+    "new-musical": {
+      "sourceScaleCases": 24,
+      "completeOwnerObservations": 48,
+      "ownerObservations": 96,
+      "allFourOwnersCompleteCases": 0,
+      "lostPixelObservations": 8852
+    },
+    "new-structural": {
+      "sourceScaleCases": 12,
+      "completeOwnerObservations": 48,
+      "ownerObservations": 48,
+      "allFourOwnersCompleteCases": 12,
+      "lostPixelObservations": 0
+    },
+    "original-musical": {
+      "sourceScaleCases": 12,
+      "completeOwnerObservations": 28,
+      "ownerObservations": 48,
+      "allFourOwnersCompleteCases": 0,
+      "lostPixelObservations": 3682
+    }
+  },
+  "allPlansApply": true,
+  "structuralCasesFullyPreservedAndSeparated": 12,
+  "structuralCases": 12,
+  "elapsedSeconds": 0.26059603691101074,
+  "resultsSHA256": "1ad7b67dc204ef1a8750bbad4bc369f30c70616947978a6370905b06205cb990",
+  "executableSHA256": "1f30d680696eea1f4aa0c2bbea727757dc42ba221ff61a3491f91aa320c6fffc",
+  "sourceBindingsSHA256": "b28f7b5967f832aa36e86f594c87a87327b7103cd331af53c2338beca4e6e1c5",
+  "inputManifestSHA256": "7a525cfdf73b1b5d7b47875f6b1723a5e2d22c025fbaa7de3aa22f0dfad909d5",
+  "protocolSHA256": "1743e4101ce9f0ae66c8778c20fa24779e1cd75195d96ab92bb1db4f62d9f5fd",
+  "cases": [
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        216,
+        150,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        216,
+        160,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        94,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [
+          1
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        216,
+        176,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        228,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [
+          1
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        216,
+        310,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        186,
+        123,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        186,
+        133,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        67,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [
+          1
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        186,
+        149,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        201,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [
+          1
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "family": "original-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        186,
+        283,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line1",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        218,
+        176,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line1",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        216,
+        176,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line1",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        218,
+        176,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line2",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        202,
+        296,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line2",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        200,
+        296,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line2",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        202,
+        296,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line4",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        170,
+        264,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line4",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        168,
+        264,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line4",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        170,
+        264,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line5",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        154,
+        110,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line5",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        152,
+        110,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-filled-line5",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        154,
+        110,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line1",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        188,
+        149,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line1",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        186,
+        149,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line1",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        188,
+        149,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line2",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        172,
+        271,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line2",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        170,
+        271,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line2",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        172,
+        271,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line4",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        140,
+        239,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line4",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        138,
+        239,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line4",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        140,
+        239,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line5",
+      "family": "new-musical",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        124,
+        83,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line5",
+      "family": "new-musical",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        122,
+        83,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "contact-hollow-line5",
+      "family": "new-musical",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        124,
+        83,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-single",
+      "family": "new-structural",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-single",
+      "family": "new-structural",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-single",
+      "family": "new-structural",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-double",
+      "family": "new-structural",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-double",
+      "family": "new-structural",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-double",
+      "family": "new-structural",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-oneGapPerJunction",
+      "family": "new-structural",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-oneGapPerJunction",
+      "family": "new-structural",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-oneGapPerJunction",
+      "family": "new-structural",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-bowedLines",
+      "family": "new-structural",
+      "scale": 0.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-bowedLines",
+      "family": "new-structural",
+      "scale": 1,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "structural-bowedLines",
+      "family": "new-structural",
+      "scale": 1.5,
+      "canApply": true,
+      "analysisReturned": true,
+      "bandCount": 4,
+      "lostPixelsByOwner": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wholeNeighborCoreIDsByOwner": [
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  ],
+  "note": "Losses remain failures against unchanged source ownership. Total lost pixels count owner/scale observations, not unique physical source pixels. No acceptance threshold is derived from this baseline."
+}

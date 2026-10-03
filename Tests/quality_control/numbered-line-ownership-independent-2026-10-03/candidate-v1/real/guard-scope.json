@@ -1,0 +1,18 @@
+{
+  "availableFullGuards": 4,
+  "availableFullGuardsPass": 4,
+  "availableLocalEnvelopes": 9,
+  "availableLocalEnvelopesPass": 9,
+  "availableLocalInkEnvelopesPass": 9,
+  "untestedFullGuardIDs": [
+    "p29-s1-violin1",
+    "p29-s1-violin2",
+    "p31-s1-violin1",
+    "p31-s1-violin2",
+    "p35-s1-violin1",
+    "p35-s1-violin2"
+  ],
+  "untestedLocalEnvelopes": 4,
+  "p35": "Not replayed. Baseline guard failure retained, not a new candidate result.",
+  "note": "The frozen helper raw aggregate lists count absent bands as false containment. Use each record availability flag; unavailable guards are untested, neither proven passes nor observed candidate regressions. Raw helper and output remain unchanged."
+}

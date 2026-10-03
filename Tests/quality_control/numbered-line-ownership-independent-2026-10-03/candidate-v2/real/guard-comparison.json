@@ -1,0 +1,509 @@
+{
+  "fullGuards": [
+    {
+      "id": "p24-s2-viola",
+      "guard": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "baselineCrop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "candidateCrop": [
+        0,
+        241.13844967219435,
+        427,
+        297.52256074045505
+      ],
+      "baselineContains": true,
+      "candidateContains": true,
+      "available": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "guard": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "baselineCrop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "candidateCrop": [
+        0,
+        246.35634400308524,
+        427,
+        316.4967219436946
+      ],
+      "baselineContains": true,
+      "candidateContains": true,
+      "available": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "guard": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "baselineCrop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "candidateCrop": [
+        0,
+        17.592327698309493,
+        427,
+        87.97204161248376
+      ],
+      "baselineContains": true,
+      "candidateContains": true,
+      "available": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "guard": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "baselineCrop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "candidateCrop": [
+        0,
+        43.184005201560474,
+        427,
+        107.56566970091028
+      ],
+      "baselineContains": true,
+      "candidateContains": true,
+      "available": true
+    },
+    {
+      "id": "p29-s1-violin1",
+      "guard": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "baselineCrop": [
+        0,
+        18.90358657925183,
+        427,
+        75.76205167759352
+      ],
+      "candidateCrop": null,
+      "baselineContains": true,
+      "candidateContains": false,
+      "available": false
+    },
+    {
+      "id": "p29-s1-violin2",
+      "guard": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "baselineCrop": [
+        0,
+        59.22367913613575,
+        427,
+        110.6270728885461
+      ],
+      "candidateCrop": null,
+      "baselineContains": true,
+      "candidateContains": false,
+      "available": false
+    },
+    {
+      "id": "p31-s1-violin1",
+      "guard": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "baselineCrop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "candidateCrop": null,
+      "baselineContains": true,
+      "candidateContains": false,
+      "available": false
+    },
+    {
+      "id": "p31-s1-violin2",
+      "guard": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "baselineCrop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "candidateCrop": null,
+      "baselineContains": true,
+      "candidateContains": false,
+      "available": false
+    },
+    {
+      "id": "p35-s1-violin1",
+      "guard": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "baselineCrop": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "candidateCrop": null,
+      "baselineContains": false,
+      "candidateContains": false,
+      "available": false
+    },
+    {
+      "id": "p35-s1-violin2",
+      "guard": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "baselineCrop": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "candidateCrop": null,
+      "baselineContains": true,
+      "candidateContains": false,
+      "available": false
+    }
+  ],
+  "localEnvelopes": [
+    {
+      "id": "p24-s2-viola",
+      "frozenSourceBox": [
+        377,
+        253,
+        388.5,
+        268.5
+      ],
+      "frozenObservedInkBox": [
+        377.0,
+        253.0,
+        388.5,
+        268.5
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p24-s2-viola",
+      "frozenSourceBox": [
+        348.5,
+        268,
+        388,
+        274
+      ],
+      "frozenObservedInkBox": [
+        349.375,
+        268.0,
+        387.25,
+        274.0
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "frozenSourceBox": [
+        378,
+        273.5,
+        388.5,
+        295
+      ],
+      "frozenObservedInkBox": [
+        378.0,
+        273.875,
+        388.5,
+        292.5
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "frozenSourceBox": [
+        360.5,
+        278,
+        373,
+        295
+      ],
+      "frozenObservedInkBox": [
+        360.5,
+        278.0,
+        373.0,
+        295.0
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "frozenSourceBox": [
+        348,
+        302,
+        387,
+        307.5
+      ],
+      "frozenObservedInkBox": [
+        350.5,
+        302.375,
+        386.375,
+        306.875
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "frozenSourceBox": [
+        87.5,
+        33,
+        95,
+        52
+      ],
+      "frozenObservedInkBox": [
+        87.5,
+        33.5,
+        95.0,
+        51.5
+      ],
+      "coordinateSpace": "corrected",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "frozenSourceBox": [
+        102.5,
+        29,
+        116,
+        49
+      ],
+      "frozenObservedInkBox": [
+        102.5,
+        29.625,
+        116.0,
+        48.375
+      ],
+      "coordinateSpace": "corrected",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "frozenSourceBox": [
+        88.5,
+        75,
+        97,
+        90
+      ],
+      "frozenObservedInkBox": [
+        88.5,
+        75.75,
+        97.0,
+        88.75
+      ],
+      "coordinateSpace": "corrected",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "frozenSourceBox": [
+        103,
+        75,
+        110.5,
+        95
+      ],
+      "frozenObservedInkBox": [
+        103.0,
+        76.75,
+        110.5,
+        94.5
+      ],
+      "coordinateSpace": "corrected",
+      "baselineBoxContains": true,
+      "candidateBoxContains": true,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": true,
+      "available": true
+    },
+    {
+      "id": "p31-s1-violin1",
+      "frozenSourceBox": [
+        349,
+        33,
+        386.5,
+        65
+      ],
+      "frozenObservedInkBox": [
+        349.0,
+        33.0,
+        386.5,
+        61.75
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": false,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": false,
+      "available": false
+    },
+    {
+      "id": "p31-s1-violin2",
+      "frozenSourceBox": [
+        353,
+        73,
+        389.5,
+        102
+      ],
+      "frozenObservedInkBox": [
+        353.0,
+        74.125,
+        389.5,
+        100.625
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": false,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": false,
+      "available": false
+    },
+    {
+      "id": "p35-s1-violin1",
+      "frozenSourceBox": [
+        327,
+        26,
+        378,
+        66
+      ],
+      "frozenObservedInkBox": [
+        327.0,
+        30.25,
+        378.0,
+        62.375
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": false,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": false,
+      "available": false
+    },
+    {
+      "id": "p35-s1-violin2",
+      "frozenSourceBox": [
+        337.5,
+        65,
+        385.5,
+        106
+      ],
+      "frozenObservedInkBox": [
+        337.5,
+        67.125,
+        385.5,
+        105.125
+      ],
+      "coordinateSpace": "original",
+      "baselineBoxContains": true,
+      "candidateBoxContains": false,
+      "baselineInkBoxContains": true,
+      "candidateInkBoxContains": false,
+      "available": false
+    }
+  ],
+  "newFullGuardFailures": [
+    "p29-s1-violin1",
+    "p29-s1-violin2",
+    "p31-s1-violin1",
+    "p31-s1-violin2",
+    "p35-s1-violin2"
+  ],
+  "unchangedFullGuardFailures": [
+    "p35-s1-violin1"
+  ],
+  "missingBands": [
+    "p29-s1-violin1",
+    "p29-s1-violin2",
+    "p31-s1-violin1",
+    "p31-s1-violin2",
+    "p35-s1-violin1",
+    "p35-s1-violin2"
+  ],
+  "rectificationsEqual": true,
+  "note": "Local ink rectangles are independent supplementary evidence, not replacements for strict full-target guards. The p35 bottom-68 failure remains recorded if still present."
+}

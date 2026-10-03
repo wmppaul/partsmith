@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 3 source ownership across scan breaks
+
+The [numbered-line experiments](brahms-numbered-lines-2026-10-03/README.md) remain rejected. V1 loses 18 previously complete source envelopes. V2 repairs those but loses nine more pixels within an already incomplete musical stem; an unchanged pass count concealed that regression. The [independent comparison](numbered-line-ownership-independent-2026-10-03/candidate-v2/README.md) retains its own bounded passing results separately from that rejection. Production detection is unchanged.
+
+The [exact ownership diagnosis](brahms-case176-ownership-2026-10-03/README.md) shows those nine pixels survive both analysis masks. A scan break disconnects their musical ownership; incidental staff-line residue previously enlarged the crop enough to include them. A replacement needs original-source musical-span evidence before structural separation, rather than a broader margin or a union of old crop rectangles. [Fresh current-source gate measurements](p31-spine-provenance-2026-10-03/README.md) separately locate p24/p28's failed core-continuity checks and p31's damaged horizontal-line trace. The [seven-case source obligations](brahms-seven-source-independent-2026-10-03/README.md) remain unchanged. These reports explain the next algorithm work; they do not claim improved automatic outputs.
+
 ## October 3 joined inserted rests
 
 Confirmed silent systems can now opt into **Join with previous rest** in the Inspector. Consecutive numbered intervals combine for output while all original source entries remain editable. Directions, labels, music and page breaks retain their boundaries. The [independent review](generated-rest-join-independent-2026-10-03/README.md) passes 33 checks; the production regression suites pass 37 join checks, 160 generated-rest workflow checks, 5,389 layout assertions and 169 native export checks. A pre-existing overflow for a valid rest interval ending at the largest integer was also repaired.

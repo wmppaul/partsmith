@@ -1,0 +1,200 @@
+{
+  "status": "source-bound diagnosis only; no algorithm change, relaxed threshold or new crop",
+  "results": [
+    {
+      "page": 24,
+      "gates": [
+        {
+          "clear": [
+            1634,
+            1646
+          ],
+          "cores": false,
+          "end": 1201,
+          "event": "connector",
+          "left": 1636,
+          "localShift": -4.391299942886259,
+          "page": 24,
+          "right": 1644,
+          "space": 13.639383126880091,
+          "start": 1139
+        },
+        {
+          "bottom": 1261,
+          "event": "core-support-failure",
+          "page": 24,
+          "required": 50.160000000000004,
+          "shift": -5.391299942886259,
+          "staff": 7,
+          "supported": 49,
+          "top": 1204
+        },
+        {
+          "event": "junction-proof-failed",
+          "lowerShift": -5.391299942886259,
+          "page": 24,
+          "upperShift": -6.391299942886259
+        },
+        {
+          "components": 1877,
+          "event": "result",
+          "loggingOnly": true,
+          "matchesFrozen": true,
+          "page": 24
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "gates": [
+        {
+          "clear": [
+            242,
+            252
+          ],
+          "cores": false,
+          "end": 173,
+          "event": "connector",
+          "left": 244,
+          "localShift": 0,
+          "page": 28,
+          "right": 250,
+          "space": 8.004973474801048,
+          "start": 142
+        },
+        {
+          "bottom": 137,
+          "event": "core-support-failure",
+          "page": 28,
+          "required": 29.92,
+          "shift": -1,
+          "staff": 0,
+          "supported": 29,
+          "top": 103
+        },
+        {
+          "event": "junction-proof-failed",
+          "lowerShift": 0,
+          "page": 28,
+          "upperShift": -1
+        },
+        {
+          "components": 821,
+          "event": "result",
+          "loggingOnly": true,
+          "matchesFrozen": true,
+          "page": 28
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "gates": [
+        {
+          "clear": [
+            1642,
+            1653
+          ],
+          "cores": false,
+          "end": 309,
+          "event": "connector",
+          "left": 1644,
+          "localShift": 0,
+          "page": 31,
+          "right": 1651,
+          "space": 13.874229821318536,
+          "start": 253
+        },
+        {
+          "center": 1614,
+          "event": "trace-empty",
+          "page": 31,
+          "previousShifts": [
+            10,
+            11,
+            12
+          ],
+          "segment": 34,
+          "staff": 0
+        },
+        {
+          "event": "rejected-local-trace",
+          "left": 1644,
+          "page": 31,
+          "right": 1651
+        },
+        {
+          "components": 2351,
+          "event": "result",
+          "loggingOnly": true,
+          "matchesFrozen": true,
+          "page": 31
+        }
+      ],
+      "bestFinalTraceWindows": [
+        {
+          "center": 1614,
+          "count": 34,
+          "event": "trace-window",
+          "page": 31,
+          "predecessors": [
+            10,
+            11,
+            12
+          ],
+          "segment": 34,
+          "shift": 12,
+          "staff": 0,
+          "support": [
+            0.2619047619047619,
+            0.8571428571428571,
+            0.5952380952380952,
+            0.6666666666666666,
+            0.6190476190476191
+          ]
+        },
+        {
+          "center": 1614,
+          "count": 34,
+          "event": "trace-window",
+          "page": 31,
+          "predecessors": [
+            11,
+            12
+          ],
+          "segment": 34,
+          "shift": 13,
+          "staff": 0,
+          "support": [
+            0.2619047619047619,
+            0.8571428571428571,
+            0.5952380952380952,
+            0.6666666666666666,
+            0.6190476190476191
+          ]
+        },
+        {
+          "center": 1614,
+          "count": 34,
+          "event": "trace-window",
+          "page": 31,
+          "predecessors": [
+            10,
+            11,
+            12
+          ],
+          "segment": 34,
+          "shift": 11,
+          "staff": 0,
+          "support": [
+            0.21428571428571427,
+            0.8571428571428571,
+            0.5952380952380952,
+            0.6666666666666666,
+            0.5952380952380952
+          ]
+        }
+      ]
+    }
+  ]
+}

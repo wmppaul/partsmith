@@ -1,0 +1,8 @@
+{
+ "version":"v1",
+ "thinRun":"At each column/numbered line, full original vertical runs with thickness <0.45 staff space and center within the same0.45-space phase corridor; choose nearest nominal center only if unique nearest. No long vertical stems enter ridge samples.",
+ "window":"Centered six-space window (three spaces each side), at least full two-space width at page ends. A line needs80% thin samples; their median offset is supported only when80% of window columns lie within one pixel of that median. Median thickness comes from those inliers.",
+ "family":"At least three individually supported line offsets must lie within max(1px,.15space) of the family median. Individual supported offsets retained; unsupported lines use family median and family thickness. Adjacent qualified columns may change at most one pixel in residual offset; otherwise use baseline for that column.",
+ "erase":"For qualified measured curves use actual original vertical run only when center within one pixel of curve, thickness <=local measured thickness+one pixel and <.45space. Skip if legacy crossing veto succeeds, or measured crossing veto succeeds. At unqualified columns use exact legacy routine. Source original and downstream logic unchanged.",
+ "caution":"Thin source ink is not claimed exclusively structural at intersections. This is a candidate subjected to independent envelopes and musical controls; failed controls reject it."
+}
