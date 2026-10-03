@@ -1,0 +1,681 @@
+{
+  "date": "2026-10-03",
+  "files": [
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "f228b11d515294fea289014058575b8b945fecbd4ae8f4da27f50af68fda1df6"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreInputPageSelection.swift",
+      "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreInstrumentNameDetector.swift",
+      "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreInstrumentPickList.swift",
+      "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreRestDetector.swift",
+      "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "2dc585387f3cd0a0c96d6db848b0a7f22a58a2a54c171cf6bd67d3473673e4fd"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "3706f10310c9b6e74bcc664078af4c1c0bb3443f4e87bc717692c8d318b7f309"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "23d7b481fb96ffe1aea0b5555d59a6976b9d1f4d709ae5545a35dddd943e4e61"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "a85fc99d998c8054ebd29f97c3efa2dd93edf574d5b1b707edebe8e60e74a395"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedHeadingDetector.swift",
+      "sha256": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSharedNavigationDetector.swift",
+      "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/ScoreSourceHeaderDetector.swift",
+      "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/DocumentModel/BarNumberDetector.swift",
+      "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/DocumentModel/PageRectificationEstimator.swift",
+      "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/DocumentModel/ProjectModels.swift",
+      "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Export/PartPDFExporter.swift",
+      "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/Core/Layout/PartLayoutEngine.swift",
+      "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/compare-exports.log",
+      "sha256": "79652a421d99e724e702808cc4359c1bbd23490edfc8a37c1897cf5dafdbe8c2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/compare_exports.py",
+      "sha256": "bc1cfead0b297fcccb08a4b695acb9e3503a4d6a3123864d36d7219b60d5fb13"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/export.log",
+      "sha256": "284a9f5b31bf7e7569cddd4f6f4ca774aa25b14ad55ed399354a4258c64bd0e2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/export_all.py",
+      "sha256": "7180e5388ceed1ecfa3a6f29d60ec90541777cea10417f0f1f7b4e12bd8f92cf"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/exporter",
+      "sha256": "561551f61713bd9f4e45cefd14ba0ce4f90d3c53360e092f8f2fbac10aef7b2e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "cf1ecc14faeccf5cd5190127c971005c6dd27add4000aaf1adcea33992f46f37"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/Viola.pdf",
+      "sha256": "c8622014aab690a959cda4afbeaa266dfb3cd8ec559cea67d3e1aebb25f3bd3c"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/Violin I.pdf",
+      "sha256": "f75f1ce447622636abf0a5250764e6a0e0d93ec7bf951aae579c6670c8ba1e00"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/Violin II.pdf",
+      "sha256": "aa5211349c1da202006e164625e3866321ee3390daa077f0bb2fc74431d60116"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/Violoncello.pdf",
+      "sha256": "02752b4f155e81e649771e52640b5efa78b855169519436b232b22f4c6fab9a6"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/manifest.json",
+      "sha256": "d51d93f8cc935b69e93f2bc6b809654cdb69c2df87e970404761ae45d69e1ace"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings/plan.json",
+      "sha256": "d43362e1bd3f2ba4361176c7b4e8d76910fa932b9df605d5294f67c96e1a2baa"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/before-endings-inventory.json",
+      "sha256": "f6292c1bd0e6dadeacd5b34352dfa6ff7998cd8b8bd4d693b91c219aed409b2e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/result.json",
+      "sha256": "8bdee308fbcb3e17d98beb8ddc848c471ae0b1f0640806775a03cc3febb95b34"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "309dcc28ef3036d39ae162821d003e26dc3e3041bbf1e3a8d4b21c8720d8f5f5"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/Viola.pdf",
+      "sha256": "bec4d610a050247ab45fd763119d3f47822be3ad52df6842bbf15c3f5b538fd6"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/Violin I.pdf",
+      "sha256": "94f949b96bdbb2a45a34207c44b77176d2c461f4bbb34b540962d654d5b0d724"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/Violin II.pdf",
+      "sha256": "4e550216c55e5069869c711da1ce9b36f3c1ce32f0d286c89fba788e8e2a8ca7"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/Violoncello.pdf",
+      "sha256": "f3ad08c160934a854aa9f3236a44f1f0d5ce9c157a6aeb8edd9017b275f338ca"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/manifest.json",
+      "sha256": "7f9c71fe2548ecbf19a8a7dad22ad2a5fde933030595857ac3d7176d7a0aae31"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings/plan.json",
+      "sha256": "64518f56712b53843f051e7be0aebcf21335f46912f07fa87e5038c295a1f194"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/with-endings-inventory.json",
+      "sha256": "b5f6cb9bdccc089ffca897443feceb53160f9469ba8514cf8f4bac04957c896a"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Piano.pdf",
+      "sha256": "e6f018b42c48d22412968756cb3f23843d116f7a6bb8ce35cfe28c3d280cc6ac"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "3bf4a5cac6425e305c6784c615174947a142df7fa92a91a335cd521615e53f99"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Viola.pdf",
+      "sha256": "4bc24f3d317f00a37987d54433d9919575edc2f6a30b6d53069cc1aa56ceab16"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Violin I.pdf",
+      "sha256": "3466b18b18e3fabacb2cf5bd037c23f6b4416c864ac96200d1392a3c79a8cafa"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Violin II.pdf",
+      "sha256": "569769c4942bc05b19a95a4f14395daa627946d99a1f024a0bccc0006f72942a"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/Violoncello.pdf",
+      "sha256": "45bf514a45949cda0b40ea892dc7e07b6b831d6d9fc33427f71124b9edd25c9b"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/manifest.json",
+      "sha256": "39ede5b44650814b27bb3a84b4f25130e48149ad2f406aaf1dd0ed8617326b36"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings/plan.json",
+      "sha256": "65630d0a418862d915722fbdf5a650b722ef6188504b662798b3f9c5956c7cdd"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/before-endings-inventory.json",
+      "sha256": "ff716cb0b0f77ea60e35df68edc9a6ecd8c3fd722c274f6c85cc39bd6e2080a3"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/result.json",
+      "sha256": "cd92118aa5f8ffd21fb0b0290e99fd3fb7acdb11be7e8425ac62093602bccee4"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Piano.pdf",
+      "sha256": "654d2df49d5415fcdc6b1d83e837b7c31cdeb7f2f86e0d5007798d52243f854b"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "8464715d949977754ded09e03e3a7fed4fff66170ed70eb259cd1ce16c61c660"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Viola.pdf",
+      "sha256": "a2fbf356a14308e165cf9102f9ebd5276391f10c0683a71d7bd67a5afe5f07f2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Violin I.pdf",
+      "sha256": "807439c40733039c2492f64a92007f97e320fef131a32404cacea1a094db9879"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Violin II.pdf",
+      "sha256": "c64d0e6b4f82445561b997d2c92ba523336660952e98385516df3276709dc2ab"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/Violoncello.pdf",
+      "sha256": "7cba8e2abfd57ad5e385118954b2b5b6593bc312a3f28134bd7edd9165ffac43"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/manifest.json",
+      "sha256": "e88c997bcb42b6d232ba4422995152d68c0d9717f1d02448761b511303363f3b"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings/plan.json",
+      "sha256": "72ed451e5cd87605bb4a3f469acde1444dedcbe400f07606c5b966ab830dd363"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/with-endings-inventory.json",
+      "sha256": "ee7d8056255eea4a23821094ab1203bf55e94ea4b37f13b3d6cb7c2caaf44a72"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "2fa81345af2596fe1687ff66f445c54d9e0e49d8658270b738ebc65d61a4be99"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/Viola.pdf",
+      "sha256": "3eaa9c75685c0a0a9ad0a513f9421d0ff53651e8bb72cb5b463c1054fa7d1491"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/Violin I.pdf",
+      "sha256": "0affcdd959e3e1e2ebcc965af00faf24e680471d4b32648d559336f7ec37fcd6"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/Violin II.pdf",
+      "sha256": "a5c2f092c9d5d4a75d6528bfeb28e1ecdc8b9ada4e0429d2310f8ba8278105a0"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/Violoncello.pdf",
+      "sha256": "fc3f2ff376de2660d834f9dbf8365f6893bd2469705c00bc2ddaed115b8d4384"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/manifest.json",
+      "sha256": "ab1e85ea0a07835468f259acb5866920bf9b5317cbef95a14df1abe2e5dd57c2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings/plan.json",
+      "sha256": "15825b2b13aec8d6f637bc9f360c3a0651d255a3a5c96484db4837efebb78e05"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/before-endings-inventory.json",
+      "sha256": "ee0cede09b338f7693c7b20eaaec017ea6950136cf58bf3b8852d15c8e29f581"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/result.json",
+      "sha256": "ebb43ab6a890cd140f75fd8e36d357834ab70d5c2b207c8921af9b6c9d5a2df5"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "6401c1a8f6e0927214d8fc26cd667d0a76a3c361326d52727d075dcbe33690b2"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/Brahms String Quartet No3 Op67 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/Viola.pdf",
+      "sha256": "371f7fa5a8f119b446b0cfd1d5043817a2a168f7b4584dbe92e724fce6fefd12"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/Violin I.pdf",
+      "sha256": "480f56ecaa3b7fe1ef8a0387928fef0f4a46504169fbe6eb4fa097f6394ee38c"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/Violin II.pdf",
+      "sha256": "ba077de9757338880daceede98ee56b43214ae95920ccaec47f39a07c4d84d63"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/Violoncello.pdf",
+      "sha256": "63c1b99bd215529078947699328003e986e5a32f2705ebac5481cc37d3979a1e"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/manifest.json",
+      "sha256": "8e4d8ba908f16f6464e3d179304c35546691058877c0f921164f092a2e3c0dab"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings/plan.json",
+      "sha256": "f89f5a652548d6a2c072a2159559c38a8505349792af73f9c05330681f2489b5"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/with-endings-inventory.json",
+      "sha256": "9615e7d4b561586dce6122e560b782a49eed90bd8c54519f8fbf1a8606e4d377"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/run.log",
+      "sha256": "ffb6841ac4e5c50bf0de3864bbbf69f42632424bc0455783856206d2a70cc91f"
+    },
+    {
+      "path": ".build/ending-corpus-2026-10-03/run_endings",
+      "sha256": "3fcb85836460f03384b705d0f26af47c5c7561b8c287752b3890c6646350fba6"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/README.md",
+      "sha256": "4a5b2bb98d6d9c584a1092ac76c678f93ae08b12a0aa36ca368776ff4f70ad01"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/candidate-index.json",
+      "sha256": "3570779fdae747f91382b010abc62bcf4128ceba3bc61b55fe11d9b0dda0f55c"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/candidate-source-review.json",
+      "sha256": "203a191c10898c7d1cf41cb37190619dd1075ad13c40c3266e8788db9b4ee17c"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/copied-row-index.json",
+      "sha256": "7cae2f84ab061c2fc2277aa9c1c36f594a72bdce376c8d43d7083c62461d255e"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/exact-copy-images.json",
+      "sha256": "1f383bc16a7e1e2ae3ee34770b64230ed0f03bb064bce3a0f9014c03be77d4ff"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/execution-provenance.json",
+      "sha256": "e388454ad8f7293259bf612bb577090f2b121c5957c2a9463c69efa9781add16"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/export-comparison.json",
+      "sha256": "34932c76cb1a76f1302c8842c58d0d57706d8aed0d24e3e2efc185588992645e"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/export-jobs.json",
+      "sha256": "2de3f1044cd49bbba5ac77a954592d26cd1487a3b9a7e8633e4550c52db73084"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/export-status.json",
+      "sha256": "e0e0c773e85de87920c45cd980f267c68e065452a4d97f7dfe2d17c5b930df05"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/copied-rows-1.png",
+      "sha256": "77824b40f449d046d7ca230aad5716a6afcb2b6456d4757215ba5b3a01ac5899"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/copied-rows-2.png",
+      "sha256": "621fb1d2ac0bc61e676dd8a5562152c66c9a0e2761ec96869f9c82d1f615b173"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/copied-rows-3.png",
+      "sha256": "762a91455e28eae3835b376d861c38aa4b888c89445fde84c20efb423ff77534"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/copied-rows-4.png",
+      "sha256": "287cfe85d379b181a06ee5e0b8967b5f1d838e42852a49e86dacd40ae560071f"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/copied-rows-5.png",
+      "sha256": "63e275277299bbcfb7cd1e0239df655abc6ad6f4daaacf33fa63921984edc7ac"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-01-lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p4-s1-violin2.png",
+      "sha256": "481832d2ce67545fe8d7fc197e93dc89899a937c5ccca6a2071e99d223e8dc0d"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-02-lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p4-s1-viola.png",
+      "sha256": "f6c966f55425e7474dc6e8716a357d06d590cd112d853b661f7c0304c526c63c"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-03-lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p4-s1-cello.png",
+      "sha256": "e2fe49cc3c3fa51daa23f3e46ca4799fea132457d7c9b86da2ca2c8c74e37a7e"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-04-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s1-violin2.png",
+      "sha256": "910deeee9de0eac258a52d22c351032420788f6bb56d328cd2615746100a9f65"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-05-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s2-violin2.png",
+      "sha256": "fc43091545035ff4a039cdfdf2b02288cdfd6aca679585648fca3d0c7382c897"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-06-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p16-s3-violin2.png",
+      "sha256": "797a3d23fbdbacf23da1c055a57dc1f0a7cb2ef170d1ef264bdd642d9a8d01e7"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-07-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p18-s2-violin2.png",
+      "sha256": "a1c0dec65f29a1bb7b4d30403bb9f48466cfb65faf9295e6b6ce6f8e014a1077"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-08-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p20-s3-violin2.png",
+      "sha256": "27a3ea69977f2ba9b2f52a78ca3a1bbb477ed9da74ebd9d459c945e69dd4fa87"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-09-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s1-viola.png",
+      "sha256": "9d9dc5463d5770050aa5d8fef40ad7ed3b9998b9e1910127805c27771687202d"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-10-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s2-viola.png",
+      "sha256": "d3500976cb38d484f4729b4db57495e724b52bf68ad1b923293a70185b3365a0"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-11-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p16-s3-viola.png",
+      "sha256": "5260f7cd5b2c709e1db5c82747d2cfabd2a1aa388d34768616a52ea3572b8ce0"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-12-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p18-s2-viola.png",
+      "sha256": "8cbf05cebdeea115570bd45e32caadb2c66918d5e76646e64b99a66b32e548ef"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-13-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p20-s3-viola.png",
+      "sha256": "6770b24663a83116736b3886723ed3c1402e0fb61b37863a7966cdceb96940dd"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-14-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s1-cello.png",
+      "sha256": "0ad7b57bcef9d947612760a9fbf618012707fa8cbd32e57733933d40e87e8a61"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-15-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s2-cello.png",
+      "sha256": "589e6c8520c557f835c82b4915dd11394e5bdbf3e8338b2aa4ed83e41a2a5238"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-16-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p16-s3-cello.png",
+      "sha256": "6a77602e753af80e75e50dace4a00a3ca6608f5447ac5cdbb36d2238a85a2a53"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-17-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p18-s2-cello.png",
+      "sha256": "47414524a7741d6bb859803dec89b3a786272b27359ba1f6536efc11db7f00a5"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-18-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p20-s3-cello.png",
+      "sha256": "e5ce6bc6d82df1bcdb26d5b94826a0f5c500e9b3eb0dce9703022495bce5532d"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-19-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s1-piano.png",
+      "sha256": "0a7f96d417fb839950f8d719167260d9ac28503e0f2a0bf987ed8975da2f9de4"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-20-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p6-s2-piano.png",
+      "sha256": "f6c4b08221240bc4132a739e9ba068af716c2a7576d6da28644ec55fc9fac7a3"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-21-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p16-s3-piano.png",
+      "sha256": "e4a223cfea602386a83049e8064f481f918581148db3c7adbae25961cd825456"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-22-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p18-s2-piano.png",
+      "sha256": "906ed24d0e734431acd6631ea3ff555eb7ace9c34508f8ca716a9daa4d3c2045"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-23-medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p20-s3-piano.png",
+      "sha256": "515f6a3016e5b451745f7b2f399a92c9e15dd5284f4e994748347ff6f4be8752"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-24-medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p4-s1-violin2.png",
+      "sha256": "b06bde5a947e402c44b36e5421bd822bcc37144d8e85645603b16d835b9804f3"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-25-medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p4-s1-viola.png",
+      "sha256": "f44696aaabed8ecbdf3d18b7a7b6cdd5d7c1095b1795cf6e1e79fbe26b0c098e"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/row-26-medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p4-s1-cello.png",
+      "sha256": "cee2afd13f7689407138862b3d629ed28567da02dd2d57010f73ef930ad42f0d"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/schumann-piano-source16-system3.png",
+      "sha256": "8f4c9265ea8d4d3266e739288355e0041df7664bb2fbefb5871ca93b2382764b"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/schumann-piano-source18-system2.png",
+      "sha256": "c9fbfc22613574ecf089c51f0596075e145d0011803547b30cd9564c3f51bf1a"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/schumann-piano-source20-system3.png",
+      "sha256": "d0097a656e681a1d8f849225398a4ff82ae5f62b2ca78e679d3b9a6881ea8e4c"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/schumann-piano-source6-system1.png",
+      "sha256": "b98b47e1b2d092136d2dd0dedfc315957027f4f0669ff46807e50d336167258c"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/output-review/schumann-piano-source6-system2.png",
+      "sha256": "36298bec5856c21e888f160fece3bc434dfb60d63331a3d98d370092e3e0d146"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/progress.json",
+      "sha256": "e5bea9ad5415b2f5d0f470f5e741ecb9c43f90d6f97adfdb82c6d6f0aec6fa0f"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/recipient-row-review.json",
+      "sha256": "6be3a20cc463e0a7bd7a1b6a32567f05059d68a5f8dd0659568a6f94083ba226"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/review-summary.json",
+      "sha256": "05e7cd090e9398eeddc1600300af6e074493f6cd4efb228f3780ac5d8bb37a53"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/roster.json",
+      "sha256": "c114da0f780ba614f0decb59cb638ba454218e2de126147338e17050d3c22928"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/run_endings.swift",
+      "sha256": "27431f0b5ec950a4b5ac04f32600ed4e31ce1acfa61fa68d2a0970c4841222c2"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/selected-pairs.json",
+      "sha256": "a49543d74496bd7a75a3d623b2128af8c8ed03b9f2a6d21926f49532ec2f873b"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-exact-copy-page-4-row-1.png",
+      "sha256": "86b45613c44d811e18e2bcdfffd492cba2a0dbf813b383176bfe1eb42a1a7b7a"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-pair-1-first.png",
+      "sha256": "60111616ff77f44bef345a7f3904db5ae615163b094268605f7e72eca84c3b7d"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-pair-1-second.png",
+      "sha256": "5d4a056efc8f1d5fd663ef44f39d404a11fbd5ae3a190113e27fd1d446a72083"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-exact-copy-page-16-row-1.png",
+      "sha256": "693515481c7b093241fe7c257e6a4ac20704e890229f0991f145db53d5f922df"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-exact-copy-page-18-row-1.png",
+      "sha256": "d76dd4bc982b57753ebc1ffb36f788cb2ae72fe6473e4813aef6f16b6da958ba"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-exact-copy-page-20-row-1.png",
+      "sha256": "f9282951afc1c88a3ba89ffc36a09c26b7c5763d61bec0c828a28cf31c3e88f3"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-exact-copy-page-6-row-1.png",
+      "sha256": "e2aa6f0881db42d262725a37dc29f7238dedd6bfcb509181f31127e57a131707"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-exact-copy-page-6-row-2.png",
+      "sha256": "6d7472c5e7e4213f0b974948b5cbdfa84b3934326074c7e362e843a2df12eb1e"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-1-first.png",
+      "sha256": "61bdbd75f0b95207462a258669d0c4a07c2b219491e1905473e2cffd8d859783"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-1-second.png",
+      "sha256": "2b8965008f2059d3d0ae72e01c2b1d8359dc38e316f4cb0770f6963e57ffc676"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-2-first.png",
+      "sha256": "788816c599180b9ee4a8e70e1d323ddcf6eeafca90cc1070d9cda689490cdf59"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-2-second.png",
+      "sha256": "a243f269d73b182bc126ceeff0ec0023113c128297c37e1b3550a2474affd3a3"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-3-first.png",
+      "sha256": "22694b37952f68fd1e916f836c13d80f3fe52f46a7916d94a22023c9f55cf050"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-3-second.png",
+      "sha256": "30d3f465098b3643e7c55edd08ec4e6b1144fc8dcec7025fc461e74760f63726"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-4-first.png",
+      "sha256": "af7130bd81ece96dab5e81474a290255097b64d6c5c2eb9ef4f2272d5ec715df"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-pair-4-second.png",
+      "sha256": "ba4867126a2507d796f9cdd2385077f16465fe5f9e7c76c4a3f96fca7b7ff148"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-exact-copy-page-4-row-1.png",
+      "sha256": "a0feaa82ce0faaac04c1fdfe608644272215c5384d578298a717dcfa092d74ba"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-pair-1-first.png",
+      "sha256": "299218cf842e6936ed37ea1f3f45c03129d18017e8eee358d4d2841efc723706"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-pair-1-second.png",
+      "sha256": "47849d7d6bf87fedaecc650952a10edcfe02c715f51839e39241c09ccd4c7807"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-unpaired-page-21.png",
+      "sha256": "4e283bd5b4d6e051d84ec609fddde11e4b191b7d3973ee82366f58d516e8a201"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-unpaired-page-23.png",
+      "sha256": "fa497f7679d6bf368aab1a03b9e361e1a1b16a2d11ce1712fb181a52be57764f"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-unpaired-page-24.png",
+      "sha256": "a07335021d269dcabbb393c582d99851a709c60998bf598b5a2bbd727d73c69c"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-1.png",
+      "sha256": "0d0f7233e66d0df51c134190f63abdbc52476cdb612c58e96bc53c7e68a6f7dd"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-2.png",
+      "sha256": "9fb67e0c9bd1c7760e3bf4752ca4431c695ba3c1ac9c343a36574bda2255eea1"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-3.png",
+      "sha256": "bc6eb5f23ece2ac35f3a3aff53109adf2cdedb21206bcd22718c362373028fe8"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-4.png",
+      "sha256": "ac38c737a1c4b1dd77def2c137734af75b53ecec323ab4d72af1f7ef284e0a30"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-5.png",
+      "sha256": "83fd624b07edb11d1012ff48b4f61345b0b2c98ccea1c96e085e714f5246ebf1"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-6.png",
+      "sha256": "de2956778488085d7aa4d56000ffe73219ea488d9338f0ae2115517bfb76842d"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/source-review/numeric-candidates-7.png",
+      "sha256": "fb27b7c963ab206332efeab92a7a3bea527e60c8e08b7d1b12d6274a57602982"
+    },
+    {
+      "path": "Tests/quality_control/ending-corpus-2026-10-03/summary.json",
+      "sha256": "3a2065590846e6a1b76b9a7a1681a5c55c77f169d9c895d41c09df037033f79c"
+    }
+  ]
+}

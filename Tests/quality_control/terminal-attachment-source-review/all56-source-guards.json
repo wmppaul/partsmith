@@ -1,0 +1,571 @@
+{
+  "reviewMode": "source-first; frozen before candidate edge comparison in this continuation",
+  "createdUTC": "2026-10-03T17:33:19.732440+00:00",
+  "source": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "coordinateSystem": "top-down original PDF points; raw source, not rectified pages",
+  "scope": "All 56 raw changed crops. Shared headings/rehearsals/navigation handled by existing verified metadata; p28 s2 Da Capo owner expansion must remain separately. Guards carry small visual margins, so geometry failure is a review flag, not automatically missing black pixels.",
+  "guards": [
+    {
+      "bandID": "p5-s1-viola",
+      "rect": [
+        0,
+        96.5,
+        427,
+        126.5
+      ],
+      "description": "All notes/rests, high articulation dot, phrase slurs, low notes and final staccato dot."
+    },
+    {
+      "bandID": "p5-s3-violin2",
+      "rect": [
+        0,
+        344.5,
+        427,
+        377
+      ],
+      "description": "High phrase slurs, clef/key, all notes and low ledger notes, tenuto marks, forte/pianissimo and hairpins."
+    },
+    {
+      "bandID": "p6-s2-viola",
+      "rect": [
+        0,
+        241,
+        427,
+        259.5
+      ],
+      "description": "Whole-bar rests throughout, clef/key and sloping right staff end; no viola dynamics printed here."
+    },
+    {
+      "bandID": "p9-s2-viola",
+      "rect": [
+        0,
+        231.5,
+        427,
+        271
+      ],
+      "description": "High ledger notes and accents at right, triplets/slurs, all notes/rests, middle low beams."
+    },
+    {
+      "bandID": "p16-s1-viola",
+      "rect": [
+        0,
+        109,
+        427,
+        145
+      ],
+      "description": "Upper long phrase slurs, all chord tones/low notes, dynamics and lower hairpins. Shared Andante heading is separate direction metadata."
+    },
+    {
+      "bandID": "p21-s4-viola",
+      "rect": [
+        0,
+        524,
+        427,
+        561
+      ],
+      "description": "Upper long phrase slur, all low notes/slurs, dim/p/pp dynamics and final fermata."
+    },
+    {
+      "bandID": "p23-s3-violin2",
+      "rect": [
+        0,
+        347,
+        427,
+        387.2
+      ],
+      "description": "Upper slurs, all notes/accidentals/low ledger notes, dim. ed un poco rit. and final hairpin."
+    },
+    {
+      "bandID": "p25-s2-violin2",
+      "rect": [
+        0,
+        210.5,
+        427,
+        241
+      ],
+      "description": "All notes/rests, upper slurs, low note slur, hairpins and forte."
+    },
+    {
+      "bandID": "p30-s1-violin2",
+      "rect": [
+        0,
+        61,
+        427,
+        94
+      ],
+      "description": "Printed arco and pizz., all notes/chords, low notes, forte/dim. and final accent."
+    },
+    {
+      "bandID": "p5-s1-cello",
+      "rect": [
+        0,
+        130.0,
+        427,
+        158.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p5-s3-viola",
+      "rect": [
+        0,
+        373.0,
+        427,
+        411.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p5-s3-cello",
+      "rect": [
+        0,
+        409.0,
+        427,
+        444.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p9-s2-cello",
+      "rect": [
+        0,
+        271.0,
+        427,
+        301.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p16-s1-cello",
+      "rect": [
+        0,
+        147.0,
+        427,
+        174.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p21-s4-cello",
+      "rect": [
+        0,
+        560.0,
+        427,
+        596.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p23-s3-viola",
+      "rect": [
+        0,
+        381.5,
+        427,
+        417.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p25-s2-viola",
+      "rect": [
+        0,
+        238.5,
+        427,
+        275.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p30-s1-violin1",
+      "rect": [
+        0,
+        27.0,
+        427,
+        62.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p7-s1-violin1",
+      "rect": [
+        0,
+        24.0,
+        427,
+        63.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p7-s1-violin2",
+      "rect": [
+        0,
+        62.0,
+        427,
+        99.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p12-s4-violin1",
+      "rect": [
+        0,
+        455.0,
+        427,
+        489.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p12-s4-violin2",
+      "rect": [
+        0,
+        488.5,
+        427,
+        526.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p13-s1-violin1",
+      "rect": [
+        0,
+        40.0,
+        427,
+        69.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p13-s1-violin2",
+      "rect": [
+        0,
+        70.5,
+        427,
+        104.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p13-s4-violin1",
+      "rect": [
+        0,
+        457.0,
+        427,
+        496.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p13-s4-violin2",
+      "rect": [
+        0,
+        498.0,
+        427,
+        525.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p17-s1-viola",
+      "rect": [
+        0,
+        97.0,
+        426,
+        134.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p17-s1-cello",
+      "rect": [
+        0,
+        132.0,
+        426,
+        160.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p17-s3-cello",
+      "rect": [
+        0,
+        405.0,
+        426,
+        446.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p17-s4-viola",
+      "rect": [
+        0,
+        516.5,
+        426,
+        556.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p17-s4-cello",
+      "rect": [
+        0,
+        551.5,
+        426,
+        589.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p19-s1-violin1",
+      "rect": [
+        0,
+        28.5,
+        427,
+        66.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p19-s1-violin2",
+      "rect": [
+        0,
+        67.5,
+        427,
+        104.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p19-s1-viola",
+      "rect": [
+        0,
+        102.0,
+        427,
+        133.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p25-s1-violin1",
+      "rect": [
+        0,
+        30.5,
+        427,
+        71.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p25-s1-violin2",
+      "rect": [
+        0,
+        69.0,
+        427,
+        105.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p26-s1-violin1",
+      "rect": [
+        0,
+        27.0,
+        427,
+        62.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p26-s1-violin2",
+      "rect": [
+        0,
+        67.0,
+        427,
+        93.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p26-s1-cello",
+      "rect": [
+        0,
+        133.0,
+        427,
+        159.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p28-s2-viola",
+      "rect": [
+        0,
+        242.0,
+        427,
+        273.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p28-s2-cello",
+      "rect": [
+        0,
+        270.5,
+        427,
+        301.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p28-s3-violin2",
+      "rect": [
+        0,
+        350.0,
+        427,
+        390.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p28-s3-viola",
+      "rect": [
+        0,
+        388.0,
+        427,
+        420.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p29-s2-violin1",
+      "rect": [
+        0,
+        176.0,
+        427,
+        209.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p29-s2-violin2",
+      "rect": [
+        0,
+        209.5,
+        427,
+        249.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p31-s2-violin1",
+      "rect": [
+        0,
+        168.5,
+        427,
+        205.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p31-s2-violin2",
+      "rect": [
+        0,
+        211.0,
+        427,
+        247.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p35-s2-violin2",
+      "rect": [
+        0,
+        209.0,
+        426,
+        244.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p35-s2-viola",
+      "rect": [
+        0,
+        242.0,
+        426,
+        277.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p35-s4-viola",
+      "rect": [
+        0,
+        525.0,
+        426,
+        564.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p35-s4-cello",
+      "rect": [
+        0,
+        559.0,
+        426,
+        589.5
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p38-s4-viola",
+      "rect": [
+        0,
+        525.0,
+        427,
+        562.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p38-s4-cello",
+      "rect": [
+        0,
+        552.5,
+        427,
+        592.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p39-s4-violin1",
+      "rect": [
+        0,
+        440.0,
+        426,
+        480.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p39-s4-violin2",
+      "rect": [
+        0,
+        480.0,
+        426,
+        516.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    },
+    {
+      "bandID": "p39-s4-viola",
+      "rect": [
+        0,
+        510.5,
+        426,
+        551.0
+      ],
+      "description": "Source-only full-system review: local target notes, rests, signatures, beams, ledger lines, slurs, articulations and locally printed dynamics; conservative visual envelope with small margin."
+    }
+  ],
+  "parentNineGuardSHA256": "a12f3a1341487e4d059837753f9d0b13f6b7c13f584e6c64d0a97d60449aa144"
+}

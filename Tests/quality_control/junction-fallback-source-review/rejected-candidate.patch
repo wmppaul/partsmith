@@ -1,0 +1,56 @@
+--- production/NativeScorePageAnalyzer.swift
++++ rejected-junction-fallback/NativeScorePageAnalyzer.swift
+@@ -269,26 +269,8 @@
+                             }.first
+                             return result.map(Double.init)
+                         }
+-                        var upperCoreShift = localShift, lowerCoreShift = localShift
+-                        if !throughBothCores {
+-                            guard let upper = localCoreShift(index), let lower = localCoreShift(index + 1) else { continue }
+-                            upperCoreShift += upper
+-                            lowerCoreShift += lower
+-                            let localCoresSupported = [(index, upperCoreShift), (index + 1, lowerCoreShift)].allSatisfy { staffIndex, shift in
+-                                let top = max(0, Int((lines[staffIndex][0] + shift).rounded()))
+-                                let bottom = min(height, Int((lines[staffIndex][4] + shift).rounded()) + 1)
+-                                guard top < bottom else { return false }
+-                                let supported = (top..<bottom).filter { y in
+-                                    (clearLeft..<clearRight).contains { original[y * width + $0] }
+-                                }.count
+-                                return Double(supported) >= Double(bottom - top) * 0.88
+-                            }
+-                            guard localCoresSupported else { continue }
+-                            // A translated core can meet 88% support merely
+-                            // because staff lines fill the missing end of a long
+-                            // musical stem. Require a real vertical junction at
+-                            // every line, including both outer staff boundaries.
+-                            let allJunctionsIntact = [(index, upperCoreShift), (index + 1, lowerCoreShift)].allSatisfy { staffIndex, shift in
++                        func allJunctionsIntact(upper: Double, lower: Double) -> Bool {
++                            return [(index, upper), (index + 1, lower)].allSatisfy { staffIndex, shift in
+                                 let radius = max(2, Int((spaces[staffIndex] * 0.18).rounded()))
+                                 return lines[staffIndex].enumerated().allSatisfy { lineIndex, line in
+                                     let center = Int((line + shift).rounded())
+@@ -308,7 +290,23 @@
+                                     }
+                                 }
+                             }
+-                            guard allJunctionsIntact else { continue }
++                        }
++                        var upperCoreShift = localShift, lowerCoreShift = localShift
++                        if !throughBothCores || !allJunctionsIntact(upper: upperCoreShift, lower: lowerCoreShift) {
++                            guard let upper = localCoreShift(index), let lower = localCoreShift(index + 1) else { continue }
++                            upperCoreShift += upper
++                            lowerCoreShift += lower
++                            let localCoresSupported = [(index, upperCoreShift), (index + 1, lowerCoreShift)].allSatisfy { staffIndex, shift in
++                                let top = max(0, Int((lines[staffIndex][0] + shift).rounded()))
++                                let bottom = min(height, Int((lines[staffIndex][4] + shift).rounded()) + 1)
++                                guard top < bottom else { return false }
++                                let supported = (top..<bottom).filter { y in
++                                    (clearLeft..<clearRight).contains { original[y * width + $0] }
++                                }.count
++                                return Double(supported) >= Double(bottom - top) * 0.88
++                            }
++                            guard localCoresSupported,
++                                  allJunctionsIntact(upper: upperCoreShift, lower: lowerCoreShift) else { continue }
+                         }
+                         // Cutting only at the midpoint leaves long connector
+                         // tails that spuriously enlarge both crops. Remove the

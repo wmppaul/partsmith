@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-03",
+  "status": "Passed permanent default and optional frozen-corpus tests against merged production Core. No blocking finding in independent static UI/model/review inspection.",
+  "commands": {
+    "default": "bash tools/test_shared_ending_app.sh",
+    "corpus": "bash tools/test_shared_ending_app.sh --corpus",
+    "corpusExecutionUsedSameFreshBinary": ".build/shared-ending-app-tests/test_shared_ending_app --corpus"
+  },
+  "counts": {
+    "defaultIntegration": 54,
+    "workerLifecycle": 27,
+    "corpusIntegrationIncludingDefault": 65
+  },
+  "defaultUsesScratchOrCorpusInputs": false,
+  "freshVisionCorpusPassInTheseTests": false,
+  "frozenCorpus": {
+    "pages": 68,
+    "pairs": 5,
+    "brahmsBands": 604,
+    "brahmsCopies": 42,
+    "brahmsBandsExactlyEqualApprovedDelivery": true,
+    "mozartBands": 405,
+    "mozartCopies": 10,
+    "inputs": [
+      {
+        "path": "Tests/quality_control/native-ending-brackets-v1/brahms-native-final.json",
+        "sha256": "097e41a0a802c7a5f3cf6636fefd35321774b1bd0388b898110db1d5fd7c8425"
+      },
+      {
+        "path": "Tests/quality_control/native-ending-brackets-v1/kv498-native-final.json",
+        "sha256": "1284335ed9651335809d6003f413b5ba61620cc3672eb59368950ef6a86d0cf4"
+      },
+      {
+        "path": ".build/qc-brahms-traced-ending-combination/inventory.json",
+        "sha256": "38b323b30e19ec01b0dabd38088b63de3556a537ff90d52c961954b588d90a1d"
+      },
+      {
+        "path": ".build/qc-algorithm-audit/heading-dedup/kv498-native-inventory.json",
+        "sha256": "4faba733d7537b899c7c71d520e2e27b4266883cf1a716d5c4235c5cabfc554a"
+      },
+      {
+        "path": "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+        "sha256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+      },
+      {
+        "path": "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+        "sha256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f"
+      },
+      {
+        "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/plan.json",
+        "sha256": "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+        "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+        "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9"
+      }
+    ]
+  },
+  "sixBrahmsEnvelopeFailuresRemain": true,
+  "newAcceptanceGate": false,
+  "runNotes": [
+    "First compile aborted because root was finishing the model EOF cleanup during compilation; clean rerun against merged source passed."
+  ],
+  "inspectedUIModelReview": [
+    {
+      "path": "Partsmith/Features/Project/ScoreExtractionView.swift",
+      "sha256": "85bbde16481584a199a99b6890e77f98a5c70f73fc0199ff07786207847e6f6a"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "23d7b481fb96ffe1aea0b5555d59a6976b9d1f4d709ae5545a35dddd943e4e61"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "2dc585387f3cd0a0c96d6db848b0a7f22a58a2a54c171cf6bd67d3473673e4fd"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "tools/test_shared_ending_app.swift",
+      "sha256": "4fcb83fd465e03dc3eabbfb7201a69f82c43dd389fcfedf172e50ed39719cde5"
+    },
+    {
+      "path": "tools/test_shared_ending_app.sh",
+      "sha256": "fe83af69c39a89beab6788fa4f63e73a6d3b725a0e271f0e85341951557375f1"
+    },
+    {
+      "path": "Tests/quality_control/ending-app-integration/corpus-inputs.json",
+      "sha256": "f209851543eda86b859c827f34c9493529d32cc83826e2f19f952d20ad1a38e3"
+    },
+    {
+      "path": "Tests/quality_control/ending-app-integration/default.log",
+      "sha256": "6529425abafe61c40c82ef124b14db4f1e1038035d17e8fb04e9476444db1feb"
+    },
+    {
+      "path": "Tests/quality_control/ending-app-integration/corpus.log",
+      "sha256": "e9ba51e03169b8d4540a4f41326a6524171846c1548a50cfdb333a0d4444a123"
+    },
+    {
+      "path": "Tests/quality_control/ending-app-integration/README.md",
+      "sha256": "f249767ef8e715e9844e2e4fc9413daf4a95e585e46ad181b075210143750cec"
+    },
+    {
+      "path": "Tests/quality_control/ending-app-integration/ui-review.md",
+      "sha256": "e22c4a065e8cc44fb4f14507a052b7a5c227938a3aabf258ed21c3a007025792"
+    },
+    {
+      "path": ".build/shared-ending-app-tests/test_shared_ending_app",
+      "sha256": "83d93ab208648d43dbdb6e5de77eefd58b91bdc773e67efd249b689a69c69c3f"
+    },
+    {
+      "path": ".build/shared-ending-app-tests/expected-plans/brahms.json",
+      "sha256": "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc"
+    },
+    {
+      "path": ".build/shared-ending-app-tests/expected-plans/kv498.json",
+      "sha256": "bc7888dc7d21d02cb4c596d59834135d7bf0985b64e3b1d05eecb5822a6a3cc5"
+    }
+  ],
+  "productionCore": [
+    {
+      "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "f228b11d515294fea289014058575b8b945fecbd4ae8f4da27f50af68fda1df6"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInputPageSelection.swift",
+      "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift",
+      "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInstrumentPickList.swift",
+      "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreRestDetector.swift",
+      "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "2dc585387f3cd0a0c96d6db848b0a7f22a58a2a54c171cf6bd67d3473673e4fd"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "3706f10310c9b6e74bcc664078af4c1c0bb3443f4e87bc717692c8d318b7f309"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "23d7b481fb96ffe1aea0b5555d59a6976b9d1f4d709ae5545a35dddd943e4e61"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "a85fc99d998c8054ebd29f97c3efa2dd93edf574d5b1b707edebe8e60e74a395"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift",
+      "sha256": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift",
+      "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift",
+      "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": "Partsmith/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/BarNumberDetector.swift",
+      "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift",
+      "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/ProjectModels.swift",
+      "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPDFExporter.swift",
+      "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": "Partsmith/Core/Layout/PartLayoutEngine.swift",
+      "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    }
+  ]
+}

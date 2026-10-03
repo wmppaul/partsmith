@@ -65,6 +65,7 @@ struct ScoreExtractionView: View {
         var index: Int
         var marking: ScoreSourceMarking
         var label: String
+        var ending: ScoreSharedEnding?
         var id: String { "\(band.id)-direction-\(index)" }
         var bounds: [Double] { [marking.leftFraction, marking.topFraction, 1 - marking.rightFraction, marking.bottomFraction] }
         var boundsKey: String { bounds.map { String(format: "%.9f", $0) }.joined(separator: ":") }
@@ -75,8 +76,13 @@ struct ScoreExtractionView: View {
                 let bounds = [marking.leftFraction, marking.topFraction, 1 - marking.rightFraction, marking.bottomFraction]
                 let heading = currentAnalysis?.sharedHeadings?.first { sameBounds($0.bounds, bounds) }?.recognizedText
                 let navigation = currentAnalysis?.sharedNavigation?.first { sameBounds($0.bounds, bounds) }?.recognizedText
+                let ending = currentAnalysis?.sharedEndings?.first {
+                    $0.systemIndex == band.systemIndex && sameBounds($0.bounds, bounds)
+                }
                 return DirectionCopy(band: band, index: index, marking: marking,
-                    label: heading ?? navigation.map { $0.isEmpty ? "Printed repeat symbol" : $0 } ?? "Printed source marking")
+                    label: heading ?? ending?.label
+                        ?? navigation.map { $0.isEmpty ? "Printed repeat symbol" : $0 } ?? "Printed source marking",
+                    ending: ending)
             }
         }
     }
@@ -363,11 +369,11 @@ struct ScoreExtractionView: View {
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 Divider()
-                Toggle("Copy detected tempos and repeat directions (experimental)", isOn: $copyDirections)
+                Toggle("Copy detected tempos, repeats and paired endings (experimental)", isOn: $copyDirections)
                     .toggleStyle(.checkbox).disabled(profile.requiresSystemAssignment == true)
                 Text(profile.requiresSystemAssignment == true
                     ? "Automatic direction copying currently requires a consistent instrument layout. Shared markings remain editable after adding parts."
-                    : "Copies the original printed markings into the parts. Review endings, rehearsal letters and bar numbers separately; not every direction is recognized.")
+                    : "Copies printed tempos, repeat directions and paired first/second endings into the parts. Other endings, rehearsal letters and bar numbers still need source review.")
                     .font(.caption).foregroundStyle(.secondary)
                 Divider()
                 Toggle("Count and compress full-bar rests automatically", isOn: $compressRests)
@@ -481,6 +487,13 @@ struct ScoreExtractionView: View {
                         Button("View printed reference on page \(reference.match.templatePageIndex + 1)") {
                             focusDirection(page: reference.match.templatePageIndex, bounds: reference.match.templateBounds)
                         }.font(.caption)
+                    }
+                    if let ending = copy.ending {
+                        ForEach(Array(ending.members.enumerated()), id: \.offset) { _, member in
+                            Button("View \(member.role == .first ? "first" : "second") ending on page \(member.sourcePageIndex + 1)") {
+                                focusDirection(page: member.sourcePageIndex, bounds: member.bounds)
+                            }.font(.caption)
+                        }
                     }
                 }.padding(.vertical, 4)
             }

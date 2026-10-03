@@ -1,0 +1,514 @@
+{
+  "scope": "Fresh app direction workflow exports versus the separately reviewed full-score drafts; exact geometry and complete-page pixels. Existing musical defects remain.",
+  "renderDPI": 144,
+  "scores": [
+    {
+      "score": "brahms",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "parts": [
+        {
+          "id": "violin1",
+          "file": "Violin I.pdf",
+          "pages": 17,
+          "bands": 151,
+          "exactPlacements": true,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "sha256": "9a29ba0ce59aee8af06e47ca9bc6e51a0524369a8538ac2e1d40083f6e25b749"
+        },
+        {
+          "id": "violin2",
+          "file": "Violin II.pdf",
+          "pages": 16,
+          "bands": 151,
+          "exactPlacements": true,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "sha256": "e4517b28c27093f5dba9ec9df180d1bfe6eec7f800a2e0fb971a346d0ca0972c"
+        },
+        {
+          "id": "viola",
+          "file": "Viola.pdf",
+          "pages": 16,
+          "bands": 151,
+          "exactPlacements": true,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "sha256": "4d8cb710a16f45464c07f1488cc7c2fe79cc3ff91d1b2a38c5b70ee2d2ef5ffe"
+        },
+        {
+          "id": "cello",
+          "file": "Violoncello.pdf",
+          "pages": 15,
+          "bands": 151,
+          "exactPlacements": true,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "sha256": "b3e92bfea38a92785450d630cc6327bef69d10c38778bd9b7296aa2b783b7d15"
+        }
+      ],
+      "bands": 604,
+      "copiedRows": 42,
+      "pages": 64,
+      "savedProjectContainsAllPartsAndBands": true,
+      "embeddedSourceHashVerified": true
+    },
+    {
+      "score": "kv498",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "parts": [
+        {
+          "id": "clarinet",
+          "file": "Clarinet in B-flat.pdf",
+          "pages": 11,
+          "bands": 135,
+          "exactPlacements": true,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "sha256": "c0d7f4e29c372314772a49837ecd480a008ddba6cfd48798dd216ce0353db5d7"
+        },
+        {
+          "id": "viola",
+          "file": "Viola.pdf",
+          "pages": 10,
+          "bands": 135,
+          "exactPlacements": false,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true
+          ],
+          "sha256": "763da1f7815d32b5769f759f96034e4d582a3c518a0536c7587c85dd66ae7d31"
+        },
+        {
+          "id": "piano",
+          "file": "Piano.pdf",
+          "pages": 18,
+          "bands": 135,
+          "exactPlacements": false,
+          "pagesPixelIdentical": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+          ],
+          "sha256": "0adf82dacb0873669373b8fd9dc160e7c6e76def984620f4767fc41e495f8057"
+        }
+      ],
+      "bands": 405,
+      "copiedRows": 10,
+      "pages": 39,
+      "savedProjectContainsAllPartsAndBands": true,
+      "embeddedSourceHashVerified": true
+    }
+  ],
+  "changedPages": [
+    {
+      "score": "kv498",
+      "part": "viola",
+      "page": 9
+    },
+    {
+      "score": "kv498",
+      "part": "piano",
+      "page": 16
+    }
+  ],
+  "placementDifferences": [
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p25-s3-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            399.0395008399715,
+            564,
+            434.0640331308087
+          ],
+          [
+            48,
+            399.04163150969924,
+            564,
+            434.06616380053646
+          ]
+        ],
+        "sourceMarkings": [
+          [
+            {
+              "destinationRect": [
+                94.56911738984866,
+                383.4317239259038,
+                272.11590338298,
+                395.0395008399715
+              ],
+              "sourceRect": [
+                53.72415542602539,
+                347.8157043457031,
+                258.5498352050781,
+                361.2069396972656
+              ]
+            }
+          ],
+          [
+            {
+              "destinationRect": [
+                94.56942045943042,
+                383.4317239259038,
+                272.11557954056957,
+                395.04163150969924
+              ],
+              "sourceRect": [
+                53.724505060251424,
+                347.91895215653824,
+                258.5494616064152,
+                361.3126455411928
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p25-s4-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            440.98867606620394,
+            564,
+            489.57287700412957
+          ],
+          [
+            48,
+            440.9908067359317,
+            564,
+            489.57500767385733
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p25-s5-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            496.4975199395248,
+            564,
+            536.9680688546723
+          ],
+          [
+            48,
+            496.49965060925257,
+            564,
+            536.9701995244001
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p26-s1-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            543.8927117900676,
+            564,
+            575.477654633972
+          ],
+          [
+            48,
+            543.8948424597953,
+            564,
+            575.4797853036997
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p26-s2-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            582.4022975693672,
+            564,
+            607.4109791731078
+          ],
+          [
+            48,
+            582.404428239095,
+            564,
+            607.4131098428354
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p26-s3-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            614.335622108503,
+            564,
+            657.4738064221184
+          ],
+          [
+            48,
+            614.3377527782307,
+            564,
+            657.4759370918462
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "viola",
+      "band": "p26-s4-viola",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            664.3984493575136,
+            564,
+            710.6016473508826
+          ],
+          [
+            48,
+            664.4005800272414,
+            564,
+            710.6037780206102
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "piano",
+      "band": "p25-s3-piano",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            411.8344176566392,
+            564,
+            479.0497280987841
+          ],
+          [
+            48,
+            411.83654832636694,
+            564,
+            479.05185876851186
+          ]
+        ],
+        "sourceMarkings": [
+          [
+            {
+              "destinationRect": [
+                94.56911738984866,
+                396.2266407425715,
+                272.11590338298,
+                407.8344176566392
+              ],
+              "sourceRect": [
+                53.72415542602539,
+                347.8157043457031,
+                258.5498352050781,
+                361.2069396972656
+              ]
+            }
+          ],
+          [
+            {
+              "destinationRect": [
+                94.56942045943042,
+                396.2266407425715,
+                272.11557954056957,
+                407.83654832636694
+              ],
+              "sourceRect": [
+                53.724505060251424,
+                347.91895215653824,
+                258.5494616064152,
+                361.3126455411928
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "piano",
+      "band": "p25-s4-piano",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            486.4639467331511,
+            564,
+            565.6298769262924
+          ],
+          [
+            48,
+            486.46607740287885,
+            564,
+            565.6320075960201
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "piano",
+      "band": "p25-s5-piano",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            573.0440955606593,
+            564,
+            646.7640091294904
+          ],
+          [
+            48,
+            573.0462262303871,
+            564,
+            646.7661397992182
+          ]
+        ]
+      }
+    },
+    {
+      "score": "kv498",
+      "part": "piano",
+      "band": "p26-s1-piano",
+      "differences": {
+        "destinationRect": [
+          [
+            48,
+            654.1782277638574,
+            564,
+            730.1912009639769
+          ],
+          [
+            48,
+            654.1803584335852,
+            564,
+            730.1933316337047
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -36,6 +36,8 @@
 		20000000000000000000001D /* ScoreSharedDestinationDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001D /* ScoreSharedDestinationDetector.swift */; };
 		20000000000000000000001E /* ScoreSharedDirectionWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001E /* ScoreSharedDirectionWorkflow.swift */; };
 		20000000000000000000001F /* ScoreSharedDirectionReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001F /* ScoreSharedDirectionReview.swift */; };
+		200000000000000000000020 /* ScoreSharedEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000020 /* ScoreSharedEnding.swift */; };
+		200000000000000000000021 /* ScoreSharedEndingDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000021 /* ScoreSharedEndingDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		10000000000000000000001D /* ScoreSharedDestinationDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedDestinationDetector.swift; sourceTree = "<group>"; };
 		10000000000000000000001E /* ScoreSharedDirectionWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedDirectionWorkflow.swift; sourceTree = "<group>"; };
 		10000000000000000000001F /* ScoreSharedDirectionReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedDirectionReview.swift; sourceTree = "<group>"; };
+		100000000000000000000020 /* ScoreSharedEnding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedEnding.swift; sourceTree = "<group>"; };
+		100000000000000000000021 /* ScoreSharedEndingDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSharedEndingDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 				100000000000000000000017 /* ScoreInputPageSelection.swift */,
 				100000000000000000000018 /* ScoreInstrumentPickList.swift */,
 				10000000000000000000001A /* ScoreRestDetector.swift */,
+				100000000000000000000020 /* ScoreSharedEnding.swift */,
+				100000000000000000000021 /* ScoreSharedEndingDetector.swift */,
 				10000000000000000000001F /* ScoreSharedDirectionReview.swift */,
 				10000000000000000000001E /* ScoreSharedDirectionWorkflow.swift */,
 				10000000000000000000001D /* ScoreSharedDestinationDetector.swift */,
@@ -311,6 +317,8 @@
 				200000000000000000000015 /* ScoreInputPageSelection.swift in Sources */,
 				200000000000000000000016 /* ScoreInstrumentPickList.swift in Sources */,
 				200000000000000000000018 /* ScoreRestDetector.swift in Sources */,
+				200000000000000000000020 /* ScoreSharedEnding.swift in Sources */,
+				200000000000000000000021 /* ScoreSharedEndingDetector.swift in Sources */,
 				20000000000000000000001F /* ScoreSharedDirectionReview.swift in Sources */,
 				20000000000000000000001E /* ScoreSharedDirectionWorkflow.swift in Sources */,
 				20000000000000000000001D /* ScoreSharedDestinationDetector.swift in Sources */,

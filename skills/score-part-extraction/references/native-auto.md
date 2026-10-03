@@ -84,19 +84,23 @@ Automatic staff assignment does not automatically understand shared directions.
 Check both a return instruction and its destination symbol, plus any first/second
 endings. Copying the sentence alone does not make the repeat complete.
 
-The Mac magic-wand setup now has an optional **Copy detected tempos and repeat
-directions (experimental)** setting for consistent instrument layouts. It runs
-the native heading, navigation and linked-symbol passes in the background after
-staff detection. In Auto review, dashed purple boxes identify source copies;
+The Mac magic-wand setup has an optional **Copy detected tempos, repeats and
+paired endings (experimental)** setting for consistent instrument layouts. It
+runs native heading, navigation, linked-symbol and paired-ending recognition in
+the background after staff detection. In Auto review, dashed purple boxes identify source copies;
 select a listed direction to highlight its source, or **Remove Copy** for that
-recipient. A matched repeat symbol also links to its printed reference. Scan
+recipient. A matched repeat symbol links to its printed reference; a paired
+ending offers links to both original brackets, including across source pages. Scan
 notes are informational and do not block **Add Parts**. Recognition failures
 retain valid music crops and identify the failed pass; they are not evidence
 that a score has no directions. Assignment changes discard stale automatic
-copies while retaining manual source rectangles. Run Auto again to recognize
-directions for the revised setup. Endings, rehearsal letters and bar numbers
-still require separate source review; the paired-ending prototype is not yet
-connected to the app. This option is off by default.
+copies while retaining manual source rectangles. Changing the assignment of
+either ending invalidates both halves of that pair without removing unrelated
+directions. Run Auto again to recognize directions for the revised setup.
+Ending recognition currently requires a supported first/second pair; unpaired,
+third/list endings, rehearsal letters and bar numbers still need separate source
+review. Missing or unresolved pages prevent pairing across the gap. A staffless
+page is not assumed to be blank for this purpose. This option is off by default.
 
 Review all output pages against the source. Retained neighboring notes are
 permitted under `preserve-target` when target ink needs the same space. Unnecessary
@@ -163,9 +167,10 @@ Keep raw and corrected coordinates separate, and reuse recorded corrections
 without estimating a different correction for the comparison. A live worker
 or temporary observation timeout is not a reason to restart extraction.
 
-The repository also has experimental CLI-only `headings` and `navigation`
-passes. They add source-image markings to a copy of an inventory before export;
-they do not enable equivalent recognition in the app's Auto button. The
+The repository also has experimental `headings` and `navigation` CLI passes.
+They add source-image markings to a copy of an inventory before export. The
+app's optional direction-copying workflow invokes the same native recognizers
+and then pairs supported endings across the selected score pages. The
 navigation pass can match a limited class of destination symbols against an
 actual printed glyph in its recognized instruction. It does not infer every
 repeat, ending or rehearsal mark. Keep a source-derived inventory of expected

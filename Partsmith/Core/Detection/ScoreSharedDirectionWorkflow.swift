@@ -3,7 +3,7 @@ import Foundation
 import PDFKit
 
 enum ScoreDirectionPhase: String, CaseIterable {
-    case headings, navigation, references, destinations
+    case headings, navigation, references, destinations, endings
 
     var title: String {
         switch self {
@@ -11,6 +11,7 @@ enum ScoreDirectionPhase: String, CaseIterable {
         case .navigation: return "Finding repeat instructions"
         case .references: return "Reading printed repeat symbols"
         case .destinations: return "Finding linked repeat symbols"
+        case .endings: return "Finding paired endings"
         }
     }
 }
@@ -51,6 +52,11 @@ struct ScoreSharedDirectionServices {
     var destinations: (CGImage, ScorePageAnalysis, ScoreExtractionProfile,
         [ScoreSharedDestinationDetector.Template], () -> Bool) -> ([ScoreSharedNavigation], [ScoreSharedDestinationDetector.Match])
 
+    var endings: ((CGImage, ScorePageAnalysis, ScoreExtractionProfile, () -> Bool) throws -> ScoreSharedEndingDetector.PageResult)? = nil
+    var pairEndings: ([ScoreSharedEndingDetector.PageResult], () -> Bool) -> [ScoreSharedEndingDetector.Pair] = {
+        ScoreSharedEndingDetector.pairs(in: $0, isCancelled: $1)
+    }
+
     static var native: Self {
         Self(headings: { image, page, profile, cancelled in
             var failure: Error?
@@ -71,6 +77,12 @@ struct ScoreSharedDirectionServices {
             let symbols = ScoreSharedDestinationDetector.detect(in: image, page: page, profile: profile,
                 templates: templates, observedMatches: { matches = $0 }, isCancelled: cancelled)
             return (symbols, matches)
+        }, endings: { image, page, profile, cancelled in
+            var failure: Error?
+            let result = ScoreSharedEndingDetector.analyze(in: image, page: page, profile: profile,
+                observedFailure: { failure = $0 }, isCancelled: cancelled)
+            if let failure { throw failure }
+            return result
         })
     }
 }
@@ -111,6 +123,7 @@ enum ScoreSharedDirectionWorkflow {
             // with copies left by an earlier run.
             result.analyses[index].sharedHeadings = nil
             result.analyses[index].sharedNavigation = nil
+            result.analyses[index].sharedEndings = nil
             let page = result.analyses[index]
             if page.staves.isEmpty { continue }
             let plan = ScoreExtractionPlanner.plan(pages: [page], profile: profile, isCancelled: isCancelled)
@@ -194,6 +207,60 @@ enum ScoreSharedDirectionWorkflow {
                 }
                 guard !isCancelled() else { return cancelledResult }
                 progress(.init(phase: .destinations, completedPages: offset + 1, totalPages: eligible.count))
+            }
+        }
+        if let recognizeEndings = services.endings {
+            // Keep an entry for every selected physical page. Failed/unresolved
+            // pages are barriers; missing indices remain gaps in the pairer.
+            var endingPages = result.analyses.map { page in
+                ScoreSharedEndingDetector.PageResult(pageIndex: page.pageIndex, ownershipVerified: false,
+                    systemIndices: [], geometryProposalCount: 0, mergedProposalCount: 0, candidates: [])
+            }
+            let eligibleSet = Set(eligible)
+            progress(.init(phase: .endings, completedPages: 0, totalPages: result.analyses.count))
+            for index in result.analyses.indices {
+                guard !isCancelled() else { return cancelledResult }
+                autoreleasepool {
+                    let page = result.analyses[index]
+                    guard eligibleSet.contains(index) || page.staves.isEmpty else { return }
+                    guard let image = render(page, .endings) else {
+                        result.issues.append(.init(pageIndex: page.pageIndex,
+                            message: "Paired endings could not render this page. Ending pairing will not cross it; ordinary music crops are retained."))
+                        return
+                    }
+                    if page.staves.isEmpty {
+                        // No detected staffs is not proof of a blank page. Only
+                        // a completely white render supplies an affirmed blank.
+                        if page.pageWidth.isFinite, page.pageWidth > 0, page.pageHeight.isFinite, page.pageHeight > 0,
+                           let raster = ScoreSharedEndingDetector.Raster(image: image),
+                           raster.pixels.allSatisfy({ $0 == 255 }) {
+                            endingPages[index].ownershipVerified = true
+                        }
+                        return
+                    }
+                    do {
+                        let observed = try recognizeEndings(image, page, profile, isCancelled)
+                        guard observed.pageIndex == page.pageIndex, observed.ownershipVerified else {
+                            result.issues.append(.init(pageIndex: page.pageIndex,
+                                message: "Paired-ending staff ownership could not be verified. Ordinary music crops are retained."))
+                            return
+                        }
+                        endingPages[index] = observed
+                    } catch {
+                        result.issues.append(.init(pageIndex: page.pageIndex,
+                            message: "Finding paired endings failed: \(error.localizedDescription)"))
+                    }
+                }
+                guard !isCancelled() else { return cancelledResult }
+                progress(.init(phase: .endings, completedPages: index + 1, totalPages: result.analyses.count))
+            }
+            guard !isCancelled() else { return cancelledResult }
+            let pairs = services.pairEndings(endingPages, isCancelled)
+            guard !isCancelled() else { return cancelledResult }
+            let metadata = ScoreSharedEndingMetadata.make(pairs: pairs, pages: result.analyses, isCancelled: isCancelled)
+            guard !isCancelled() else { return cancelledResult }
+            for index in result.analyses.indices where endingPages[index].ownershipVerified {
+                result.analyses[index].sharedEndings = metadata[result.analyses[index].pageIndex] ?? []
             }
         }
         return isCancelled() ? cancelledResult : result

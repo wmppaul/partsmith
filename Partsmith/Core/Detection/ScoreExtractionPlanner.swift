@@ -57,6 +57,7 @@ struct ScorePageAnalysis: Codable, Equatable {
     /// so inventories made before heading recognition remain readable.
     var sharedHeadings: [ScoreSharedHeading]? = nil
     var sharedNavigation: [ScoreSharedNavigation]? = nil
+    var sharedEndings: [ScoreSharedEnding]? = nil
 }
 
 struct ScoreSharedHeading: Codable, Equatable {
@@ -430,7 +431,22 @@ enum ScoreExtractionPlanner {
     private static func copySharedNavigation(page: ScorePageAnalysis, to bands: inout [ScorePlannedBand],
                                              preservingOwnerCrops: Set<String> = [],
                                              preservingMarkings: Set<String> = []) {
-        for direction in page.sharedNavigation ?? [] {
+        // This adapter reuses source-pixel placement without mixing persisted
+        // ending provenance into navigation/destination recognition.
+        var endings: [ScoreSharedNavigation] = []
+        for ending in page.sharedEndings ?? [] where ending.isValid(on: page) {
+            guard let owner = bands.firstIndex(where: { $0.candidateIDs.contains(ending.anchorStaffID) }) else { continue }
+            // A supplied initial override may regroup an already recognized
+            // anchor before a review binding exists. Do not move its ending to
+            // another system merely because the physical staff ID still exists.
+            guard bands[owner].kind == "music", bands[owner].systemIndex == ending.systemIndex else {
+                bands[owner].warnings.append("Paired ending needs a new scan after this staff's system assignment changed.")
+                continue
+            }
+            endings.append(ScoreSharedNavigation(anchorStaffID: ending.anchorStaffID, bounds: ending.bounds,
+                recognizedText: "", isBelow: false))
+        }
+        for direction in (page.sharedNavigation ?? []) + endings {
             let r = direction.bounds
             guard r.count == 4, r.allSatisfy(\.isFinite),
                   r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1,

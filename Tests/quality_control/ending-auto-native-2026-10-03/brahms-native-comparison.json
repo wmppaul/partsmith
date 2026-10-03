@@ -1,0 +1,50 @@
+{
+  "actualPlanSHA256" : "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc",
+  "bands" : 604,
+  "changedBandIDs" : [
+
+  ],
+  "copies" : 42,
+  "destinationReferences" : [
+    {
+      "anchorStaffID" : 4,
+      "bounds" : [
+        0.51491134797378213,
+        0.27607459663642475,
+        0.54342198535955144,
+        0.30014756130398595
+      ],
+      "correlation" : 0.7520194660461883,
+      "pageIndex" : 25,
+      "templateBounds" : [
+        0.76197514683002865,
+        0.47322112828755741,
+        0.78635818650330469,
+        0.49438083873587335
+      ],
+      "templatePageIndex" : 27
+    }
+  ],
+  "endingSourceRows" : 5,
+  "exactBandPlanMatch" : true,
+  "expectedPlan" : ".build/ending-auto-integration/expected-plans/brahms.json",
+  "expectedPlanSHA256" : "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc",
+  "inputInventory" : ".build/qc-brahms-traced-ending-combination/inventory.json",
+  "inputInventorySHA256" : "38b323b30e19ec01b0dabd38088b63de3556a537ff90d52c961954b588d90a1d",
+  "issues" : [
+
+  ],
+  "limits" : "Recognition-only integration check; compare exported PDFs and review labels/highlights/removal in the packaged app before promotion. Frozen six Brahms ending-envelope failures remain; margins were not enlarged.",
+  "nativeVisionRun" : true,
+  "pages" : 39,
+  "pairedEndings" : 4,
+  "profile" : "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+  "profileSHA256" : "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+  "savedRectifications" : 9,
+  "seconds" : 72.075492024421692,
+  "source" : "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256" : "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "unresolved" : [
+
+  ]
+}

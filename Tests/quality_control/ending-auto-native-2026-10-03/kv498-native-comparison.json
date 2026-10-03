@@ -1,0 +1,33 @@
+{
+  "actualPlanSHA256" : "bc7888dc7d21d02cb4c596d59834135d7bf0985b64e3b1d05eecb5822a6a3cc5",
+  "bands" : 405,
+  "changedBandIDs" : [
+
+  ],
+  "copies" : 10,
+  "destinationReferences" : [
+
+  ],
+  "endingSourceRows" : 1,
+  "exactBandPlanMatch" : true,
+  "expectedPlan" : ".build/ending-auto-integration/expected-plans/kv498.json",
+  "expectedPlanSHA256" : "bc7888dc7d21d02cb4c596d59834135d7bf0985b64e3b1d05eecb5822a6a3cc5",
+  "inputInventory" : ".build/qc-algorithm-audit/heading-dedup/kv498-native-inventory.json",
+  "inputInventorySHA256" : "4faba733d7537b899c7c71d520e2e27b4266883cf1a716d5c4235c5cabfc554a",
+  "issues" : [
+
+  ],
+  "limits" : "Recognition-only integration check; compare exported PDFs and review labels/highlights/removal in the packaged app before promotion. Frozen six Brahms ending-envelope failures remain; margins were not enlarged.",
+  "nativeVisionRun" : true,
+  "pages" : 29,
+  "pairedEndings" : 1,
+  "profile" : "Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+  "profileSHA256" : "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f",
+  "savedRectifications" : 0,
+  "seconds" : 27.870757102966309,
+  "source" : "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+  "sourceSHA256" : "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+  "unresolved" : [
+
+  ]
+}

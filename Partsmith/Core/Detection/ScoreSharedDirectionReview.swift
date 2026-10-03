@@ -13,6 +13,7 @@ struct ScoreDirectionPageBinding {
     var assignments: [ScoreDirectionAssignment]
     var ignoredCandidateIDs: [Int]
     var automaticMarkings: [String: [ScoreSourceMarking]]
+    var automaticEndingMarkings: [String: [String: [ScoreSourceMarking]]] = [:]
 }
 
 extension ScoreDetectionReview {
@@ -64,7 +65,7 @@ extension ScoreDetectionReview {
     /// layout. Crop edits are intentionally absent from this identity.
     mutating func captureDirectionBindings() {
         for page in analyses where directionBindings[page.pageIndex] == nil
-            && (page.sharedHeadings != nil || page.sharedNavigation != nil) {
+            && (page.sharedHeadings != nil || page.sharedNavigation != nil || page.sharedEndings != nil) {
             guard let pagePlan = plan.pages.first(where: { $0.pageIndex == page.pageIndex }),
                   pagePlan.unresolvedReasons.isEmpty else { continue }
             let reviewedBands = overrides.first { $0.pageIndex == page.pageIndex }?.systems ?? []
@@ -81,11 +82,28 @@ extension ScoreDetectionReview {
             let automaticMarkings = Dictionary(uniqueKeysWithValues: automaticBands.map {
                 ("\($0.systemIndex):\($0.partID)", $0.sourceMarkings)
             })
+            var endingsByPair: [String: [String: [ScoreSourceMarking]]] = [:]
+            if !(page.sharedEndings ?? []).isEmpty {
+                var withoutEndings = page
+                withoutEndings.sharedEndings = nil
+                let otherPlan = ScoreExtractionPlanner.plan(pages: [withoutEndings], profile: profile,
+                    overrides: overrides.filter { $0.pageIndex == page.pageIndex })
+                for band in automaticBands {
+                    let other = otherPlan.bands.first { $0.id == band.id }?.sourceMarkings ?? []
+                    for ending in page.sharedEndings ?? [] where ending.isValid(on: page) {
+                        let expected = ending.sourceMarking
+                        let own = band.sourceMarkings.filter { $0 == expected && !other.contains($0) }
+                        if !own.isEmpty {
+                            endingsByPair[ending.pairID, default: [:]]["\(band.systemIndex):\(band.partID)"] = own
+                        }
+                    }
+                }
+            }
             directionBindings[page.pageIndex] = ScoreDirectionPageBinding(profile: profile, staves: page.staves,
                 assignments: orderedDirectionAssignments(pagePlan.assignments.map {
                     .init(systemIndex: $0.systemIndex, partID: $0.partID, candidateIDs: $0.candidateIDs, kind: $0.kind)
                 }), ignoredCandidateIDs: overrides.first { $0.pageIndex == page.pageIndex }?.ignoredCandidateIDs?.sorted() ?? [],
-                automaticMarkings: automaticMarkings)
+                automaticMarkings: automaticMarkings, automaticEndingMarkings: endingsByPair)
         }
     }
 
@@ -119,12 +137,55 @@ extension ScoreDetectionReview {
         let page = analyses[index]
         let binding = directionBindings[pageIndex]
         let knownByBand = binding?.automaticMarkings ?? [:]
-        let hadRecognition = page.sharedHeadings != nil || page.sharedNavigation != nil || directionBindings[pageIndex] != nil
+        let linkedPairs = Set((page.sharedEndings ?? []).map(\.pairID))
+        let hadRecognition = page.sharedHeadings != nil || page.sharedNavigation != nil || page.sharedEndings != nil || directionBindings[pageIndex] != nil
         analyses[index].sharedHeadings = nil
         analyses[index].sharedNavigation = nil
+        analyses[index].sharedEndings = nil
         directionBindings.removeValue(forKey: pageIndex)
         directionReferences.removeAll { $0.pageIndex == pageIndex }
-        for correction in overrides.indices where overrides[correction].pageIndex == pageIndex {
+        removeKnownAutomaticMarkings(on: page, binding: binding, knownByBand: knownByBand)
+        invalidateLinkedEndings(pairIDs: linkedPairs, except: pageIndex)
+        if hadRecognition {
+            let issue = ScoreDirectionIssue(pageIndex: pageIndex,
+                message: "Directions need a new scan after changing this page's staff assignments. Existing music crops and manual markings are kept.")
+            if !directionIssues.contains(issue) { directionIssues.append(issue) }
+        }
+    }
+    /// Only linked ending copies are invalidated on the other source pages.
+    /// Their independent headings/navigation/destinations retain their identity.
+    private mutating func invalidateLinkedEndings(pairIDs: Set<String>, except pageIndex: Int) {
+        guard !pairIDs.isEmpty else { return }
+        for index in analyses.indices where analyses[index].pageIndex != pageIndex {
+            let page = analyses[index]
+            let affected = Set((page.sharedEndings ?? []).map(\.pairID)).intersection(pairIDs)
+            guard !affected.isEmpty else { continue }
+            let binding = directionBindings[page.pageIndex]
+            var knownByBand: [String: [ScoreSourceMarking]] = [:]
+            for pair in affected {
+                for (band, values) in binding?.automaticEndingMarkings[pair] ?? [:] {
+                    knownByBand[band, default: []] += values
+                }
+            }
+            let retained = (page.sharedEndings ?? []).filter { !affected.contains($0.pairID) }
+            analyses[index].sharedEndings = retained.isEmpty ? nil : retained
+            removeKnownAutomaticMarkings(on: page, binding: binding, knownByBand: knownByBand)
+            if var updated = binding {
+                for (band, values) in knownByBand {
+                    updated.automaticMarkings[band]?.removeAll { values.contains($0) }
+                }
+                for pair in affected { updated.automaticEndingMarkings.removeValue(forKey: pair) }
+                directionBindings[page.pageIndex] = updated
+            }
+            let issue = ScoreDirectionIssue(pageIndex: page.pageIndex,
+                message: "Paired endings need a new scan because a linked source page's staff assignments changed. Other directions and manual markings are kept.")
+            if !directionIssues.contains(issue) { directionIssues.append(issue) }
+        }
+    }
+
+    private mutating func removeKnownAutomaticMarkings(on page: ScorePageAnalysis,
+        binding: ScoreDirectionPageBinding?, knownByBand: [String: [ScoreSourceMarking]]) {
+        for correction in overrides.indices where overrides[correction].pageIndex == page.pageIndex {
             for system in overrides[correction].systems.indices {
                 for band in overrides[correction].systems[system].bands.indices {
                     var value = overrides[correction].systems[system].bands[band]
@@ -160,10 +221,6 @@ extension ScoreDetectionReview {
                 }
             }
         }
-        if hadRecognition {
-            let issue = ScoreDirectionIssue(pageIndex: pageIndex,
-                message: "Directions need a new scan after changing this page's staff assignments. Existing music crops and manual markings are kept.")
-            if !directionIssues.contains(issue) { directionIssues.append(issue) }
-        }
     }
+
 }

@@ -87,7 +87,7 @@ enum ScoreSharedEndingDetector {
                 && zip(a,a.dropFirst()).allSatisfy{$0<$1}
             }),Set(page.staves.map(\.id)).count==page.staves.count else{return nil}
         if page.staves.isEmpty{return []}
-        var p=page;p.sharedHeadings=nil;p.sharedNavigation=nil
+        var p=page;p.sharedHeadings=nil;p.sharedNavigation=nil;p.sharedEndings=nil
         let plan=ScoreExtractionPlanner.plan(pages:[p],profile:profile,isCancelled:isCancelled)
         guard plan.canApply,!isCancelled() else{return nil}
         let bands=plan.bands.filter{$0.pageIndex==page.pageIndex && $0.kind=="music"}
@@ -241,5 +241,43 @@ enum ScoreSharedEndingDetector {
         let result=potential.filter {p in potential.filter{$0.0==p.0}.count==1 && potential.filter{$0.1==p.1}.count==1}
             .map{Pair(first:candidates[$0.0],second:candidates[$0.1])}
         return isCancelled() ? []:result
+    }
+}
+
+enum ScoreSharedEndingMetadata {
+    static func make(pairs: [ScoreSharedEndingDetector.Pair], pages: [ScorePageAnalysis],
+                     isCancelled: () -> Bool = { false }) -> [Int: [ScoreSharedEnding]] {
+        guard Set(pages.map(\.pageIndex)).count == pages.count else { return [:] }
+        let byPage = Dictionary(uniqueKeysWithValues: pages.map { ($0.pageIndex, $0) })
+        var result: [Int: [ScoreSharedEnding]] = [:]
+        for pair in pairs {
+            guard !isCancelled() else { return [:] }
+            var members: [ScoreEndingMember] = []
+            for (candidate, role) in [(pair.first, ScoreEndingMember.Role.first), (pair.second, .second)] {
+                guard let page = byPage[candidate.pageIndex],
+                      candidate.pageWidth == page.pageWidth, candidate.pageHeight == page.pageHeight,
+                      page.pageWidth.isFinite, page.pageWidth > 0, page.pageHeight.isFinite, page.pageHeight > 0,
+                      candidate.copyBounds.count == 4, candidate.copyBounds.allSatisfy(\.isFinite),
+                      page.staves.contains(where: { $0.id == candidate.anchorStaffID }) else { break }
+                let r = candidate.copyBounds
+                let normalized = [r[0] / page.pageWidth, r[1] / page.pageHeight,
+                                  r[2] / page.pageWidth, r[3] / page.pageHeight]
+                guard ScoreSharedEnding.validBounds(normalized) else { break }
+                members.append(.init(sourcePageIndex: candidate.pageIndex, sourceSystemIndex: candidate.systemIndex,
+                    anchorStaffID: candidate.anchorStaffID, bounds: normalized, role: role,
+                    evidence: candidate.evidence.map { .init(mode: $0.mode, text: $0.text,
+                        confidence: $0.confidence, bounds: $0.bounds) }))
+            }
+            guard members.count == 2 else { continue }
+            let grouped = Dictionary(grouping: members) { "\($0.sourcePageIndex):\($0.sourceSystemIndex):\($0.anchorStaffID)" }
+            for key in grouped.keys.sorted() {
+                let local = grouped[key]!, anchor = local[0]
+                let ending = ScoreSharedEnding(sourcePageIndex: anchor.sourcePageIndex,
+                    anchorStaffID: anchor.anchorStaffID, systemIndex: anchor.sourceSystemIndex,
+                    bounds: ScoreSharedEnding.union(local.map(\.bounds)), members: members)
+                result[anchor.sourcePageIndex, default: []].append(ending)
+            }
+        }
+        return isCancelled() ? [:] : result
     }
 }

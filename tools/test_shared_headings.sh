@@ -6,6 +6,7 @@ export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Develope
 xcrun swiftc -O -module-cache-path .build/ModuleCache \
   Partsmith/Core/Detection/StaffBandDetector.swift \
   Partsmith/Core/Detection/ScoreExtractionPlanner.swift \
+  Partsmith/Core/Detection/ScoreSharedEnding.swift \
   Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift \
   tools/test_shared_headings.swift -o .build/test_shared_headings
 .build/test_shared_headings

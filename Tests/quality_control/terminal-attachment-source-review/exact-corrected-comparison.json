@@ -1,0 +1,1532 @@
+{
+  "summary": {
+    "bandsCompared": 604,
+    "changedBands": 62,
+    "changedRectifiedBands": 27,
+    "smallerVerticalEdgeBands": [
+      "p16-s1-viola",
+      "p17-s1-viola",
+      "p21-s4-viola",
+      "p23-s3-violin2",
+      "p25-s2-violin2",
+      "p28-s2-violin1",
+      "p30-s1-violin2",
+      "p5-s1-viola",
+      "p5-s3-violin2",
+      "p6-s2-viola",
+      "p9-s2-viola"
+    ],
+    "wholeNeighborOccurrencesBefore": 9,
+    "wholeNeighborOccurrencesAfter": 75,
+    "staffOrRasterChanges": [],
+    "savedRectificationPages": [
+      2,
+      7,
+      17,
+      19,
+      23,
+      28,
+      34,
+      38,
+      39
+    ],
+    "sameRectifications": true,
+    "addedBandIDs": [],
+    "removedBandIDs": []
+  },
+  "baselinePlanSHA256": "7d4f04874a8dd7ec579f326444e406a76fc5e35cd3b9ee331408b5b870abbcb7",
+  "candidateAnalyzerSHA256": "1ebf3f912e665ae066342336c96660ccf2bb914093a69471a179aa4ac98072bb",
+  "correctedResultSHA256": "bb7db6f0a9c404357b292d2a42361aee24ee79447ac163e6660937345e83e17d",
+  "rows": [
+    {
+      "id": "p12-s4-violin1",
+      "sourcePage": 12,
+      "systemIndex": 3,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        448.5687789799072,
+        427,
+        499.03632148377125
+      ],
+      "after": [
+        0,
+        448.5687789799072,
+        427,
+        521.3377125193199
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        13
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p12-s4-violin2",
+      "sourcePage": 12,
+      "systemIndex": 3,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        478.9366306027821,
+        427,
+        532.725656877898
+      ],
+      "after": [
+        0,
+        456.16074188562595,
+        427,
+        532.725656877898
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        12
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p13-s1-violin1",
+      "sourcePage": 13,
+      "systemIndex": 0,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        27.689335394126743,
+        427,
+        74.59814528593509
+      ],
+      "after": [
+        0,
+        27.689335394126743,
+        427,
+        99.03477588871716
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p13-s1-violin2",
+      "sourcePage": 13,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        64.46290571870169,
+        427,
+        112.32071097372489
+      ],
+      "after": [
+        0,
+        38.128284389489956,
+        427,
+        112.32071097372489
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        0
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p13-s4-violin1",
+      "sourcePage": 13,
+      "systemIndex": 3,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        450.9412673879444,
+        427,
+        506.3910355486862
+      ],
+      "after": [
+        0,
+        450.9412673879444,
+        427,
+        523.4729520865534
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        13
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p13-s4-violin2",
+      "sourcePage": 13,
+      "systemIndex": 3,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        491.74806800618234,
+        427,
+        526.0826893353941
+      ],
+      "after": [
+        0,
+        470.6329211746522,
+        427,
+        526.0826893353941
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        12
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p16-s1-cello",
+      "sourcePage": 16,
+      "systemIndex": 0,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        131.36707882534776,
+        427,
+        174.47990726429677
+      ],
+      "after": [
+        0,
+        102.4227202472952,
+        427,
+        174.47990726429677
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        2
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p16-s1-viola",
+      "sourcePage": 16,
+      "systemIndex": 0,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        95.77975270479135,
+        427,
+        145.7727975270479
+      ],
+      "after": [
+        0,
+        100.99922720247295,
+        427,
+        169.26043276661517
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        3
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p17-s1-cello",
+      "sourcePage": 17,
+      "systemIndex": 0,
+      "partID": "cello",
+      "rectified": true,
+      "before": [
+        0,
+        120.79999999999998,
+        426,
+        160.0
+      ],
+      "after": [
+        0,
+        90.8,
+        426,
+        160.0
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        2
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p17-s1-viola",
+      "sourcePage": 17,
+      "systemIndex": 0,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        83.2,
+        426,
+        137.6
+      ],
+      "after": [
+        0,
+        86.8,
+        426,
+        158.4
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        3
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p17-s2-cello",
+      "sourcePage": 17,
+      "systemIndex": 1,
+      "partID": "cello",
+      "rectified": true,
+      "before": [
+        0,
+        263.2,
+        426,
+        312.40000000000003
+      ],
+      "after": [
+        0,
+        237.60000000000002,
+        426,
+        312.40000000000003
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        6
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p17-s2-viola",
+      "sourcePage": 17,
+      "systemIndex": 1,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        230.4,
+        426,
+        280.0
+      ],
+      "after": [
+        0,
+        230.4,
+        426,
+        293.2
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        7
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p17-s4-cello",
+      "sourcePage": 17,
+      "systemIndex": 3,
+      "partID": "cello",
+      "rectified": true,
+      "before": [
+        0,
+        547.6,
+        426,
+        594.8
+      ],
+      "after": [
+        0,
+        521.1999999999999,
+        426,
+        594.8
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p17-s4-viola",
+      "sourcePage": 17,
+      "systemIndex": 3,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        510.8,
+        426,
+        563.2
+      ],
+      "after": [
+        0,
+        510.8,
+        426,
+        576.4
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        15
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p19-s1-viola",
+      "sourcePage": 19,
+      "systemIndex": 0,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        92.76788036410922,
+        427,
+        137.55591677503253
+      ],
+      "after": [
+        0,
+        68.37581274382315,
+        427,
+        137.55591677503253
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p19-s1-violin2",
+      "sourcePage": 19,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        62.777633289987,
+        427,
+        110.36475942782836
+      ],
+      "after": [
+        0,
+        62.777633289987,
+        427,
+        132.35760728218466
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        2
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p21-s4-cello",
+      "sourcePage": 21,
+      "systemIndex": 3,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        548.2826841496336,
+        427,
+        597.7886617817201
+      ],
+      "after": [
+        0,
+        518.161203239491,
+        427,
+        597.7886617817201
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p21-s4-viola",
+      "sourcePage": 21,
+      "systemIndex": 3,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        510.5715387581952,
+        427,
+        562.212109525646
+      ],
+      "after": [
+        0,
+        514.3663709988431,
+        427,
+        591.3848823756267
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        15
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p23-s1-violin1",
+      "sourcePage": 23,
+      "systemIndex": 0,
+      "partID": "violin1",
+      "rectified": true,
+      "before": [
+        0,
+        21.191157347204157,
+        427,
+        72.37711313394018
+      ],
+      "after": [
+        0,
+        21.191157347204157,
+        427,
+        91.57087126137841
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p23-s1-violin2",
+      "sourcePage": 23,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        59.17880364109234,
+        427,
+        105.5663198959688
+      ],
+      "after": [
+        0,
+        38.38556566970091,
+        427,
+        105.5663198959688
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        0
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p23-s2-violin1",
+      "sourcePage": 23,
+      "systemIndex": 1,
+      "partID": "violin1",
+      "rectified": true,
+      "before": [
+        0,
+        165.9440832249675,
+        427,
+        213.13133940182053
+      ],
+      "after": [
+        0,
+        165.9440832249675,
+        427,
+        228.7262678803641
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        5
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p23-s2-violin2",
+      "sourcePage": 23,
+      "systemIndex": 1,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        195.5344603381014,
+        427,
+        245.92067620286085
+      ],
+      "after": [
+        0,
+        171.54226267880364,
+        427,
+        245.92067620286085
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        4
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p23-s3-viola",
+      "sourcePage": 23,
+      "systemIndex": 2,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        369.4778933680104,
+        427,
+        423.0630689206762
+      ],
+      "after": [
+        0,
+        341.0871261378413,
+        427,
+        423.0630689206762
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        9
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p23-s3-violin2",
+      "sourcePage": 23,
+      "systemIndex": 2,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        335.88881664499354,
+        427,
+        387.0747724317295
+      ],
+      "after": [
+        0,
+        339.4876462938882,
+        427,
+        409.06762028608586
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        10
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p25-s1-violin1",
+      "sourcePage": 25,
+      "systemIndex": 0,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        22.461241804859235,
+        427,
+        72.44157346702661
+      ],
+      "after": [
+        0,
+        22.461241804859235,
+        427,
+        96.87080601619746
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p25-s1-violin2",
+      "sourcePage": 25,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        56.14037794060934,
+        427,
+        112.05013497878906
+      ],
+      "after": [
+        0,
+        30.288083301195527,
+        427,
+        112.05013497878906
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        0
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p25-s2-viola",
+      "sourcePage": 25,
+      "systemIndex": 1,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        227.8565368299267,
+        427,
+        277.5996914770536
+      ],
+      "after": [
+        0,
+        205.08754338603933,
+        427,
+        277.5996914770536
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        5
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p25-s2-violin2",
+      "sourcePage": 25,
+      "systemIndex": 1,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        197.73505591978403,
+        427,
+        242.26031623602003
+      ],
+      "after": [
+        0,
+        198.44658696490552,
+        427,
+        269.0613189355958
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        6
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p26-s1-cello",
+      "sourcePage": 26,
+      "systemIndex": 0,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        127.53065946779792,
+        427,
+        161.14577709217122
+      ],
+      "after": [
+        0,
+        127.05630543771693,
+        427,
+        161.14577709217122
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p26-s1-violin1",
+      "sourcePage": 26,
+      "systemIndex": 0,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        19.615117624373312,
+        427,
+        72.6787504820671
+      ],
+      "after": [
+        0,
+        19.615117624373312,
+        427,
+        94.97338989587352
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p26-s1-violin2",
+      "sourcePage": 26,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        59.22367913613575,
+        427,
+        94.97338989587352
+      ],
+      "after": [
+        0,
+        24.59583494022368,
+        427,
+        94.97338989587352
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        0
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p28-s2-violin1",
+      "sourcePage": 28,
+      "systemIndex": 1,
+      "partID": "violin1",
+      "rectified": true,
+      "before": [
+        0,
+        151.54876462938878,
+        427,
+        206.7334200260078
+      ],
+      "after": [
+        0,
+        164.3446033810143,
+        427,
+        236.72366710013003
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        5
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p28-s2-violin2",
+      "sourcePage": 28,
+      "systemIndex": 1,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        201.93237971391414,
+        427,
+        241.52210663198957
+      ],
+      "after": [
+        0,
+        164.3446033810143,
+        427,
+        241.52210663198957
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        4
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p28-s3-viola",
+      "sourcePage": 28,
+      "systemIndex": 2,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        373.47659297789335,
+        427,
+        423.4629388816645
+      ],
+      "after": [
+        0,
+        349.4843953185956,
+        427,
+        423.4629388816645
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        9
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p28-s3-violin2",
+      "sourcePage": 28,
+      "systemIndex": 2,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        343.0864759427828,
+        427,
+        395.07217165149547
+      ],
+      "after": [
+        0,
+        343.0864759427828,
+        427,
+        417.86475942782835
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        10
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p29-s2-violin1",
+      "sourcePage": 29,
+      "systemIndex": 1,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        169.51099112996528,
+        427,
+        210.0042421905129
+      ],
+      "after": [
+        0,
+        169.51099112996528,
+        427,
+        238.46548399537215
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        5
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p29-s2-violin2",
+      "sourcePage": 29,
+      "systemIndex": 1,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        204.37601234091784,
+        427,
+        249.84998071731584
+      ],
+      "after": [
+        0,
+        175.6775935210181,
+        427,
+        249.84998071731584
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        4
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p30-s1-violin1",
+      "sourcePage": 30,
+      "systemIndex": 0,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        14.397223293482453,
+        427,
+        68.17238719629772
+      ],
+      "after": [
+        0,
+        14.397223293482453,
+        427,
+        93.78750482067103
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p30-s1-violin2",
+      "sourcePage": 30,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        48.78789047435403,
+        427,
+        101.61434631700733
+      ],
+      "after": [
+        0,
+        24.121480910142694,
+        427,
+        95.21056691091401
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        0
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p31-s2-violin1",
+      "sourcePage": 31,
+      "systemIndex": 1,
+      "partID": "violin1",
+      "rectified": false,
+      "before": [
+        0,
+        163.34438873891244,
+        427,
+        207.15811801002698
+      ],
+      "after": [
+        0,
+        163.34438873891244,
+        427,
+        238.22830698033167
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        5
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p31-s2-violin2",
+      "sourcePage": 31,
+      "systemIndex": 1,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        204.85036637099884,
+        427,
+        247.71538758195138
+      ],
+      "after": [
+        0,
+        171.64558426532972,
+        427,
+        247.71538758195138
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        4
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p35-s2-viola",
+      "sourcePage": 35,
+      "systemIndex": 1,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        234.01387818041636,
+        426,
+        286.5134926754048
+      ],
+      "after": [
+        0,
+        211.52737085582112,
+        426,
+        286.5134926754048
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        5
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p35-s2-violin2",
+      "sourcePage": 35,
+      "systemIndex": 1,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        203.00616808018503,
+        426,
+        253.13878180416344
+      ],
+      "after": [
+        0,
+        203.00616808018503,
+        426,
+        277.9922898997687
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        6
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p35-s4-cello",
+      "sourcePage": 35,
+      "systemIndex": 3,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        549.0616808018505,
+        426,
+        594.4602929838088
+      ],
+      "after": [
+        0,
+        519.4741711642251,
+        426,
+        594.4602929838088
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p35-s4-viola",
+      "sourcePage": 35,
+      "systemIndex": 3,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        519.4741711642251,
+        426,
+        565.8195836545875
+      ],
+      "after": [
+        0,
+        519.4741711642251,
+        426,
+        591.1464919043947
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        15
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p38-s4-cello",
+      "sourcePage": 38,
+      "systemIndex": 3,
+      "partID": "cello",
+      "rectified": true,
+      "before": [
+        0,
+        546.6202860858257,
+        427,
+        598.6059817945384
+      ],
+      "after": [
+        0,
+        521.4284785435631,
+        427,
+        598.6059817945384
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p38-s4-viola",
+      "sourcePage": 38,
+      "systemIndex": 3,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        517.8296488946684,
+        427,
+        567.016254876463
+      ],
+      "after": [
+        0,
+        517.8296488946684,
+        427,
+        585.0104031209363
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        15
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p39-s1-viola",
+      "sourcePage": 39,
+      "systemIndex": 0,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        85.6,
+        426,
+        138.0
+      ],
+      "after": [
+        0,
+        65.6,
+        426,
+        138.0
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        1
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p39-s1-violin2",
+      "sourcePage": 39,
+      "systemIndex": 0,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        55.599999999999994,
+        426,
+        104.8
+      ],
+      "after": [
+        0,
+        55.599999999999994,
+        426,
+        120.39999999999999
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        2
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p39-s4-viola",
+      "sourcePage": 39,
+      "systemIndex": 3,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        505.2,
+        426,
+        558.0
+      ],
+      "after": [
+        0,
+        440.79999999999995,
+        426,
+        558.0
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        12,
+        13
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p39-s4-violin1",
+      "sourcePage": 39,
+      "systemIndex": 3,
+      "partID": "violin1",
+      "rectified": true,
+      "before": [
+        0,
+        434.0,
+        426,
+        488.4
+      ],
+      "after": [
+        0,
+        434.0,
+        426,
+        539.1999999999999
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        13,
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p39-s4-violin2",
+      "sourcePage": 39,
+      "systemIndex": 3,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        474.4,
+        426,
+        519.6
+      ],
+      "after": [
+        0,
+        440.79999999999995,
+        426,
+        539.1999999999999
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        12,
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p5-s1-cello",
+      "sourcePage": 5,
+      "systemIndex": 0,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        117.84389489953632,
+        427,
+        159.29598145285934
+      ],
+      "after": [
+        0,
+        90.56027820710973,
+        427,
+        159.29598145285934
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        2
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p5-s1-viola",
+      "sourcePage": 5,
+      "systemIndex": 0,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        84.629057187017,
+        427,
+        128.45363214837712
+      ],
+      "after": [
+        0,
+        90.56027820710973,
+        427,
+        155.02550231839257
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        3
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p5-s3-cello",
+      "sourcePage": 5,
+      "systemIndex": 2,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        394.7132921174652,
+        427,
+        446.3670788253478
+      ],
+      "after": [
+        0,
+        339.4343122102009,
+        427,
+        446.3670788253478
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        9,
+        10
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p5-s3-viola",
+      "sourcePage": 5,
+      "systemIndex": 2,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        364.81993817619787,
+        427,
+        411.2542503863988
+      ],
+      "after": [
+        0,
+        339.4343122102009,
+        427,
+        434.2673879443586
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        9,
+        11
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p5-s3-violin2",
+      "sourcePage": 5,
+      "systemIndex": 2,
+      "partID": "violin2",
+      "rectified": false,
+      "before": [
+        0,
+        333.7403400309119,
+        427,
+        383.4961360123648
+      ],
+      "after": [
+        0,
+        334.2148377125193,
+        427,
+        434.2673879443586
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        10,
+        11
+      ],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p6-s2-viola",
+      "sourcePage": 6,
+      "systemIndex": 1,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        226.74111282843893,
+        427,
+        261.5502318392581
+      ],
+      "after": [
+        0,
+        226.74111282843893,
+        427,
+        261.0757341576507
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "smallerVerticalEdge": true
+    },
+    {
+      "id": "p7-s4-viola",
+      "sourcePage": 7,
+      "systemIndex": 3,
+      "partID": "viola",
+      "rectified": true,
+      "before": [
+        0,
+        509.6,
+        427,
+        554.0
+      ],
+      "after": [
+        0,
+        484.0,
+        427,
+        554.0
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        13
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p7-s4-violin2",
+      "sourcePage": 7,
+      "systemIndex": 3,
+      "partID": "violin2",
+      "rectified": true,
+      "before": [
+        0,
+        481.20000000000005,
+        427,
+        528.8000000000001
+      ],
+      "after": [
+        0,
+        481.20000000000005,
+        427,
+        546.4
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        14
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p9-s2-cello",
+      "sourcePage": 9,
+      "systemIndex": 1,
+      "partID": "cello",
+      "rectified": false,
+      "before": [
+        0,
+        263.2774343122102,
+        427,
+        303.0687789799073
+      ],
+      "after": [
+        0,
+        231.48608964451313,
+        427,
+        303.0687789799073
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        6
+      ],
+      "smallerVerticalEdge": false
+    },
+    {
+      "id": "p9-s2-viola",
+      "sourcePage": 9,
+      "systemIndex": 1,
+      "partID": "viola",
+      "rectified": false,
+      "before": [
+        0,
+        226.26661514683153,
+        427,
+        276.2596599690881
+      ],
+      "after": [
+        0,
+        229.35085007727974,
+        427,
+        299.7472952086553
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [
+        7
+      ],
+      "smallerVerticalEdge": true
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "builtAtUTC": "2026-10-03T17:43:38.353394+00:00",
+  "configuration": "Release; unsigned universal arm64 + x86_64; macOS14+",
+  "archive": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "archiveSHA256": "51c3c87c593d41bb3e93e3ff89ce41255dd722b1b385cd63a42e22f8dc0991d7",
+  "executableSHA256": "36409bc10d097a25cec9c46391d7441d00b92eeaca11325e447e0874a972743c",
+  "archiveIntegrity": "All entries pass CRC; archived executable equals successful Release build.",
+  "previousArchive": ".build/ending-auto-integration/Partsmith-preview-before-paired-endings.zip",
+  "buildLog": "Tests/quality_control/ending-auto-native-2026-10-03/release-build.log",
+  "productionSources": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "f228b11d515294fea289014058575b8b945fecbd4ae8f4da27f50af68fda1df6",
+    "Partsmith/Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+    "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+    "Partsmith/Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+    "Partsmith/Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+    "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+    "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": "2dc585387f3cd0a0c96d6db848b0a7f22a58a2a54c171cf6bd67d3473673e4fd",
+    "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": "3706f10310c9b6e74bcc664078af4c1c0bb3443f4e87bc717692c8d318b7f309",
+    "Partsmith/Core/Detection/ScoreSharedEnding.swift": "23d7b481fb96ffe1aea0b5555d59a6976b9d1f4d709ae5545a35dddd943e4e61",
+    "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "a85fc99d998c8054ebd29f97c3efa2dd93edf574d5b1b707edebe8e60e74a395",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f",
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+    "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    "Partsmith/Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+    "Partsmith/Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "85bbde16481584a199a99b6890e77f98a5c70f73fc0199ff07786207847e6f6a",
+    "Partsmith.xcodeproj/project.pbxproj": "4afdc14f05c6445a76436dd5b08051b31aff2c5960add3de649c95252bd22da6"
+  },
+  "pairedEndingDetectorInApp": true,
+  "directionOption": "Copy detected tempos, repeats and paired endings (experimental)",
+  "nativeRecognition": {
+    "sourcePages": 68,
+    "knownPairs": 5,
+    "bands": 1009,
+    "copies": 52,
+    "exactFrozenNativePlans": true,
+    "issues": 0
+  },
+  "fullExports": {
+    "parts": 7,
+    "pages": 103,
+    "unchangedMainCrops": 1009,
+    "pixelIdenticalToPriorDeliveryPages": 101,
+    "changedPagesSourceReviewed": [
+      "Mozart Viola9",
+      "Mozart Piano16"
+    ],
+    "reasonForChanges": "Native ending copy geometry differs by about0.10 source points from earlier Python prototype."
+  },
+  "actualWorker": {
+    "bandCount": 604,
+    "planCanApply": true,
+    "awakeElapsedSeconds": 63.959407417,
+    "heartbeatMaxAwakeIntervalSeconds": 0.063580333,
+    "completionOnMainThread": true,
+    "projectUnchanged": true,
+    "progressCleared": true,
+    "issues": []
+  },
+  "cancellation": {
+    "requestedAtPhase": "endings after first completed page",
+    "cancelCallSeconds": 1.2040138244628906e-05,
+    "progressClearedSynchronously": true,
+    "supersededCompletionCalls": 0,
+    "replacementElapsedSeconds": 0.32655298709869385,
+    "replacementPageIndices": [
+      1
+    ],
+    "replacementBandCount": 12,
+    "staleDirectionProgressAfterCancel": 0,
+    "sourceAndProjectUnchanged": true
+  },
+  "tests": {
+    "endingAppDefault": 54,
+    "endingAppWorker": 27,
+    "endingAppFrozenCorpus": 65,
+    "existingDirectionApp": 113,
+    "cropQuality": 755,
+    "planner": 83,
+    "headings": 59,
+    "navigation": 77,
+    "destinations": 24,
+    "endingsWithVision": 69,
+    "systemBoundaryCrops": 423,
+    "restDetection": 250
+  },
+  "broaderEndingScan": "Tests/quality_control/ending-corpus-2026-10-03/README.md",
+  "limits": [
+    "Live SwiftUI interaction remains unverified; no computer-use tool available.",
+    "Nine whole-neighbor Brahms occurrences, partial fragments and missing shared directions remain.",
+    "Six frozen Brahms ending safety-envelope failures remain documented; source inspection finds the intended ending ink intact.",
+    "48 near-edge musical-stem fixture failures remain unresolved.",
+    "Unsupported endings and changing-instrument layouts require source review; this is not complete-corpus musical certification.",
+    "Broader review found seven missed ending pairs across Brahms IMSLP09200, Brahms IMSLP242312 and Schumann06822, plus five redundant Schumann Piano copies; recipient-aware suppression remains under investigation."
+  ],
+  "runningUserApp": "Not replaced or relaunched; user documents untouched."
+}

@@ -1,0 +1,75 @@
+{
+  "createdUTC": "2026-10-03T17:47:49.110233+00:00",
+  "decision": "reject; production and delivered outputs unchanged",
+  "candidateScope": "Apply original all-five junction test to the global-core shortcut with existing local-fit fallback. No change to88% support or alias guard.",
+  "sourceHashes": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2",
+    ".build/qc-algorithm-audit/residual9-source-first/NativeScorePageAnalyzer.junction-fallback.swift": "bb05eb3cded5b8bc268ca3d96eda6a70463ceb167ce3cdf4cbbafe53ca745616",
+    ".build/qc-algorithm-audit/residual9-source-first/93521-junction-fallback.json": "4f7457cc65364b14742393b19bf36f72cbb37afe8eed9aca17c5d11d42d014d5",
+    ".build/qc-algorithm-audit/residual9-source-first/93521-corrected-junction-fallback.json": "47f24b8abef3835a2aba3ba1dff83a9736577acbd91a2ef537265311cf56ae23",
+    ".build/qc-algorithm-audit/residual9-source-first/93521-deskew-junction-fallback.json": "fdd92fe170cc8f178943bec4584c3e36090ac5b5a69285f2cf241d403749810c",
+    ".build/qc-algorithm-audit/residual9-source-first/corrected-junction-fallback": "1c065d5e8f8ae3d2cb2c007a07202c9fdb6551497cb6c4b7b43afefe4f327c38",
+    ".build/qc-algorithm-audit/residual9-source-first/adversarial-junction-fallback": "2f3c5497cf5b6fd075a70cbf00f691f12178d68ea1c0f95f780934fdd0d99a52",
+    ".build/qc-algorithm-audit/residual9-source-first/junction-review/expanded-junction": "e6e0993fd7c9748bd1b1744d627bd5e73ff2a52e8e486995c515da4c243dd061",
+    ".build/qc-algorithm-audit/residual9-source-first/junction-review/09200-raw.json": "7d583a0ef4c64493989dcae72e346afa47f13a09705916590ff5dca0a5b6cc65",
+    ".build/qc-algorithm-audit/residual9-source-first/junction-review/existing755": "5aadf0c97cb498a01642353dd366fb598519879833dc973cc92066db61b3beda",
+    ".build/qc-algorithm-audit/residual9-source-first/junction-review/existing503": "0e639d4441af3eec9a81ee057606e3728b5a7b379d2f254a8da3ca4850367006",
+    ".build/qc-algorithm-audit/residual9-source-first/junction-review/NativeScorePageAnalyzer.junction-diagnostic.swift": "ffdb304c71c9b78f9c3a4a3f0f8d86057052647e1faefe20d843b06753bdbabf",
+    ".build/qc-algorithm-audit/residual11/93521-deskew-alias.json": "7d4f04874a8dd7ec579f326444e406a76fc5e35cd3b9ee331408b5b870abbcb7",
+    ".build/qc-algorithm-audit/residual11/93521-alias-native-inventory.json": "e4b339ed474ffca3e7777cc574574ceddf926e41ce701f4ae1d129a6ead9b930",
+    "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+  },
+  "reportFiles": {
+    "755-build-binding.json": "901eecf6d1a1ddcb1f7edb6b1030bffdc6ba307072c0a3eb176f20e925b14574",
+    "README.md": "2697dc1105a84d1568833624229884b73eaaa18bf151dd68f8049ea639dcf42c",
+    "adversarial-junction-fallback.json": "3aac4e215375ef4b150f10197a34a250063abefbccac8942a6a8eab8787c4e39",
+    "adversarial-summary.json": "f03b6f09c17814ab2c7c5b6ac9a49faf86b897dd263ed994fe190dcaccd89ff9",
+    "diagnose-junctions.swift": "926883d11a413b38fef54d9ca0343a110056808a73fe2a60c129695a9351d5db",
+    "exact-corrected-comparison.json": "5b5b19e5a184a42bd42f4f5204674832ba8db885d9d87323375902ef534b0c4c",
+    "existing755.log": "85ba27cef2b928ae907436dba61062fd0fa66b9556447573e71eeef0c30819bf",
+    "expanded-attachments-controls.swift": "0b0f20697841eca0604eca732604c01b8e86a77ee070f454c0e1f756ef2650e5",
+    "expanded-junction.json": "444049fe7d49b259e074a91a977c45ba3749d8e52e02db0c15cf96c98366a8da",
+    "expanded-summary.json": "b4663db78cffa9f410365f1a9638668b1ae1efcabb970bed50c6cc02e6ebaeb3",
+    "new-adversarial-controls.swift": "aa1d97e8cf8a4b75a7cc22d6ee780145c6ff95da827e70138eab665127b5439a",
+    "p05-s1-source.png": "d973dfeeba06c0563bd721aa81761a65831307b710f070db474f304620ea9561",
+    "p28-s2-violin1-candidate.png": "b6a5372cfec4fc22b6d6d4be0b5db3debc539ebce5d3c8f74eaf857d42255ce0",
+    "p5-s1-viola-candidate.png": "c37d4666aedb866ce778a6344fc8cb320d5f221ab2d8464fcf786d45a7034cde",
+    "raw22-review.json": "507998ef97be289ae161c53f888a6d5acc084f4dabad10371f12ffe75cbe1182",
+    "real-junction-failures.log": "dfd1b69dbdd26c010488eebda924d9cd4f4300c70e1a20c9f77f8614f8fc962c",
+    "rejected-candidate.patch": "b27b8485a4c7bc1da75bcbc7d0cf50390c4ea3ce9d3becf27a952d28c7dfe426",
+    "source-guard-checks.json": "1a6eceb8aa673cb148ec4a389b2713f6434d23ddb13cc6a373c1b86c87af7e22"
+  },
+  "rawChangedCropCount": 22,
+  "correctedChangedCropCount": 20,
+  "rawWholeNeighbors": [
+    10,
+    28
+  ],
+  "exactCorrectedWholeNeighbors": [
+    9,
+    27
+  ],
+  "sourceGuardChecks": 85,
+  "new60Harness": {
+    "musicalPass": 41,
+    "musicalFailures": 7,
+    "structuralPass": 12
+  },
+  "expanded336Harness": {
+    "pass": 214,
+    "fail": 122,
+    "normalSpacingFailures": 48
+  },
+  "existingCropChecks": 755,
+  "full36ScoreCorpusRerun": false,
+  "full36ScoreRerunReason": "Already rejected by real-score whole-neighbor widening and explicit source musical omissions.",
+  "visualReview": {
+    "rawSourceReviewInherited": "All22 raw changed crops are a subset of56 source-first regions frozen by prior terminal-attachment review. No guard was changed.",
+    "correctedCandidateStrips": 20,
+    "correctedCandidateContactSheets": 4,
+    "allCorrectedContactSheetsViewed": true,
+    "smallerCorrectedEdgeGuardsAlreadyFrozen": true
+  },
+  "diagnosticLimit": "Outer junction log records predicted-row failures; it does not distinguish local displacement, faint pixels, and scan interruptions."
+}

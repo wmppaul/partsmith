@@ -1,0 +1,1551 @@
+{
+  "summary": {
+    "guardChecks": 85,
+    "failures": [],
+    "notRerunOtherScoreGuards": [],
+    "note": "All saved93521 and09200 source guards evaluated unchanged. Full36-score corpus not rerun because this candidate already fails93521 neighbor-quality gate."
+  },
+  "guardFileHashes": {
+    ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json": "61e283ef513b9f9340e52166cff2d8f5d4c9651bf6d1e99b65842ca152ed5769",
+    ".build/qc-algorithm-audit/residual9-source-first/source-review/corrected-smaller-source-guards.json": "b0391c815b25d092d53519de583f09a0c6fec3eee5c05d97ca98a71290957cfa",
+    "Tests/quality_control/near-edge-musical-stems/source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "Tests/quality_control/residual11-continuous-lines/p24-source-guards.json": "2f5c79af1eb5ea69ff7db27907207a3134685030a60feb6a3870f143f43bee3c",
+    "Tests/quality_control/brahms93521/p6-system1-source-guards.json": "68cfb8129745ee811fb0712ac21b700251484c2ae54350302cd5c1761efaa743",
+    "Tests/quality_control/brahms93521/connector8-independent-source-guards.json": "a7ffa13ec2aa42212d86d50bcf5f7179e8cea99527035b2d6341aed463d6ac78"
+  },
+  "rows": [
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p5-s1-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        96.5,
+        427,
+        126.5
+      ],
+      "candidateCrop": [
+        0,
+        90.56027820710973,
+        427,
+        155.02550231839257
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p5-s3-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        344.5,
+        427,
+        377
+      ],
+      "candidateCrop": [
+        0,
+        333.7403400309119,
+        427,
+        383.4961360123648
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p6-s2-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        241,
+        427,
+        259.5
+      ],
+      "candidateCrop": [
+        0,
+        226.74111282843893,
+        427,
+        261.0757341576507
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p9-s2-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        231.5,
+        427,
+        271
+      ],
+      "candidateCrop": [
+        0,
+        229.35085007727974,
+        427,
+        299.7472952086553
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p16-s1-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        109,
+        427,
+        145
+      ],
+      "candidateCrop": [
+        0,
+        95.77975270479135,
+        427,
+        145.7727975270479
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p21-s4-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        524,
+        427,
+        561
+      ],
+      "candidateCrop": [
+        0,
+        514.3663709988431,
+        427,
+        591.3848823756267
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p23-s3-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        347,
+        427,
+        387.2
+      ],
+      "candidateCrop": [
+        0,
+        334.3490165831084,
+        427,
+        388.12418048592366
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p25-s2-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        210.5,
+        427,
+        241
+      ],
+      "candidateCrop": [
+        0,
+        197.73505591978403,
+        427,
+        242.26031623602003
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p30-s1-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        61,
+        427,
+        94
+      ],
+      "candidateCrop": [
+        0,
+        48.78789047435403,
+        427,
+        101.61434631700733
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p5-s1-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        130.0,
+        427,
+        158.0
+      ],
+      "candidateCrop": [
+        0,
+        90.56027820710973,
+        427,
+        159.29598145285934
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p5-s3-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        373.0,
+        427,
+        411.0
+      ],
+      "candidateCrop": [
+        0,
+        364.81993817619787,
+        427,
+        411.2542503863988
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p5-s3-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        409.0,
+        427,
+        444.0
+      ],
+      "candidateCrop": [
+        0,
+        394.7132921174652,
+        427,
+        446.3670788253478
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p9-s2-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        271.0,
+        427,
+        301.0
+      ],
+      "candidateCrop": [
+        0,
+        231.48608964451313,
+        427,
+        303.0687789799073
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p16-s1-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        147.0,
+        427,
+        174.0
+      ],
+      "candidateCrop": [
+        0,
+        131.36707882534776,
+        427,
+        174.47990726429677
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p21-s4-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        560.0,
+        427,
+        596.0
+      ],
+      "candidateCrop": [
+        0,
+        518.161203239491,
+        427,
+        597.7886617817201
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p23-s3-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        381.5,
+        427,
+        417.0
+      ],
+      "candidateCrop": [
+        0,
+        369.45121480910143,
+        427,
+        418.95719244118783
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p25-s2-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        238.5,
+        427,
+        275.0
+      ],
+      "candidateCrop": [
+        0,
+        227.8565368299267,
+        427,
+        277.5996914770536
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p30-s1-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        27.0,
+        427,
+        62.0
+      ],
+      "candidateCrop": [
+        0,
+        14.397223293482453,
+        427,
+        68.17238719629772
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p7-s1-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        24.0,
+        427,
+        63.0
+      ],
+      "candidateCrop": [
+        0,
+        14.877897990726431,
+        427,
+        67.00618238021639
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p7-s1-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        62.0,
+        427,
+        99.0
+      ],
+      "candidateCrop": [
+        0,
+        51.651468315301386,
+        427,
+        101.17001545595053
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p12-s4-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        455.0,
+        427,
+        489.0
+      ],
+      "candidateCrop": [
+        0,
+        448.5687789799072,
+        427,
+        499.03632148377125
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p12-s4-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        488.5,
+        427,
+        526.0
+      ],
+      "candidateCrop": [
+        0,
+        478.9366306027821,
+        427,
+        532.725656877898
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p13-s1-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        40.0,
+        427,
+        69.0
+      ],
+      "candidateCrop": [
+        0,
+        27.689335394126743,
+        427,
+        74.59814528593509
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p13-s1-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        70.5,
+        427,
+        104.5
+      ],
+      "candidateCrop": [
+        0,
+        64.46290571870169,
+        427,
+        112.32071097372489
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p13-s4-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        457.0,
+        427,
+        496.0
+      ],
+      "candidateCrop": [
+        0,
+        450.9412673879444,
+        427,
+        506.3910355486862
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p13-s4-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        498.0,
+        427,
+        525.0
+      ],
+      "candidateCrop": [
+        0,
+        491.74806800618234,
+        427,
+        526.0826893353941
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p17-s1-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        97.0,
+        426,
+        134.0
+      ],
+      "candidateCrop": [
+        0,
+        87.0231303006939,
+        426,
+        135.2621434078643
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p17-s1-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        132.0,
+        426,
+        160.5
+      ],
+      "candidateCrop": [
+        0,
+        118.2675404780262,
+        426,
+        161.29915188897454
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p17-s3-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        405.0,
+        426,
+        446.0
+      ],
+      "candidateCrop": [
+        0,
+        403.254433307633,
+        426,
+        446.99614494988435
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p17-s4-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        516.5,
+        426,
+        556.0
+      ],
+      "candidateCrop": [
+        0,
+        508.585967617579,
+        426,
+        574.3407864302236
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p17-s4-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        551.5,
+        426,
+        589.0
+      ],
+      "candidateCrop": [
+        0,
+        519.4741711642251,
+        426,
+        594.6969930609098
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p19-s1-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        28.5,
+        427,
+        66.0
+      ],
+      "candidateCrop": [
+        0,
+        21.98688777477825,
+        427,
+        97.81951407635943
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p19-s1-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        67.5,
+        427,
+        104.5
+      ],
+      "candidateCrop": [
+        0,
+        26.73042807558812,
+        427,
+        108.96683378326264
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p19-s1-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        102.0,
+        427,
+        133.5
+      ],
+      "candidateCrop": [
+        0,
+        93.61434631700732,
+        427,
+        139.08831469340532
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p25-s1-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        30.5,
+        427,
+        71.0
+      ],
+      "candidateCrop": [
+        0,
+        22.461241804859235,
+        427,
+        96.87080601619746
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p25-s1-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        69.0,
+        427,
+        105.0
+      ],
+      "candidateCrop": [
+        0,
+        30.288083301195527,
+        427,
+        112.05013497878906
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p26-s1-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        27.0,
+        427,
+        62.0
+      ],
+      "candidateCrop": [
+        0,
+        19.615117624373312,
+        427,
+        72.6787504820671
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p26-s1-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        67.0,
+        427,
+        93.5
+      ],
+      "candidateCrop": [
+        0,
+        59.22367913613575,
+        427,
+        94.97338989587352
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p26-s1-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        133.0,
+        427,
+        159.0
+      ],
+      "candidateCrop": [
+        0,
+        127.05630543771693,
+        427,
+        161.14577709217122
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p28-s2-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        242.0,
+        427,
+        273.5
+      ],
+      "candidateCrop": [
+        0,
+        235.683378326263,
+        427,
+        275.93945237177013
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p28-s2-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        270.5,
+        427,
+        301.0
+      ],
+      "candidateCrop": [
+        0,
+        265.09332819128423,
+        427,
+        307.0096413420748
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p28-s3-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        350.0,
+        427,
+        390.0
+      ],
+      "candidateCrop": [
+        0,
+        340.9899730042422,
+        427,
+        395.95102198226
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p28-s3-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        388.0,
+        427,
+        420.5
+      ],
+      "candidateCrop": [
+        0,
+        376.8037022753567,
+        427,
+        427.25838796760513
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p29-s2-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        176.0,
+        427,
+        209.0
+      ],
+      "candidateCrop": [
+        0,
+        169.51099112996528,
+        427,
+        238.46548399537215
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p29-s2-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        209.5,
+        427,
+        249.5
+      ],
+      "candidateCrop": [
+        0,
+        175.6775935210181,
+        427,
+        249.84998071731584
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p31-s2-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        168.5,
+        427,
+        205.0
+      ],
+      "candidateCrop": [
+        0,
+        163.34438873891244,
+        427,
+        238.22830698033167
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p31-s2-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        211.0,
+        427,
+        247.0
+      ],
+      "candidateCrop": [
+        0,
+        171.64558426532972,
+        427,
+        247.71538758195138
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p35-s2-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        209.0,
+        426,
+        244.0
+      ],
+      "candidateCrop": [
+        0,
+        203.00616808018503,
+        426,
+        253.13878180416344
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p35-s2-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        242.0,
+        426,
+        277.5
+      ],
+      "candidateCrop": [
+        0,
+        234.01387818041636,
+        426,
+        286.5134926754048
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p35-s4-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        525.0,
+        426,
+        564.0
+      ],
+      "candidateCrop": [
+        0,
+        519.4741711642251,
+        426,
+        591.1464919043947
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p35-s4-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        559.0,
+        426,
+        589.5
+      ],
+      "candidateCrop": [
+        0,
+        519.4741711642251,
+        426,
+        594.4602929838088
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p38-s4-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        525.0,
+        427,
+        562.0
+      ],
+      "candidateCrop": [
+        0,
+        518.3983802545314,
+        427,
+        578.3401465483996
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p38-s4-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        552.5,
+        427,
+        592.0
+      ],
+      "candidateCrop": [
+        0,
+        522.4303895102198,
+        427,
+        598.737369841882
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p39-s4-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        440.0,
+        426,
+        480.0
+      ],
+      "candidateCrop": [
+        0,
+        434.7355435620663,
+        426,
+        491.2590593677718
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p39-s4-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        480.0,
+        426,
+        516.0
+      ],
+      "candidateCrop": [
+        0,
+        472.8442559753277,
+        426,
+        524.6337702390131
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/all56-source-guards.json",
+      "id": "p39-s4-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        0,
+        510.5,
+        426,
+        551.0
+      ],
+      "candidateCrop": [
+        0,
+        505.98226676946797,
+        426,
+        558.2451811873555
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/corrected-smaller-source-guards.json",
+      "id": "p17-s1-viola",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        97.5,
+        426,
+        133
+      ],
+      "candidateCrop": [
+        0,
+        83.2,
+        426,
+        137.6
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/corrected-smaller-source-guards.json",
+      "id": "p23-s3-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        347,
+        427,
+        386
+      ],
+      "candidateCrop": [
+        0,
+        335.88881664499354,
+        427,
+        387.0747724317295
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": ".build/qc-algorithm-audit/residual9-source-first/source-review/corrected-smaller-source-guards.json",
+      "id": "p28-s2-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        171,
+        427,
+        204.5
+      ],
+      "candidateCrop": [
+        0,
+        164.3446033810143,
+        427,
+        236.72366710013003
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p24-s2-viola",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "candidateCrop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p24-s2-cello",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "candidateCrop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p28-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "candidateCrop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p28-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "candidateCrop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p29-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "candidateCrop": [
+        0,
+        18.90358657925183,
+        427,
+        91.65291168530659
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p29-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "candidateCrop": [
+        0,
+        35.26880061704589,
+        427,
+        110.6270728885461
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p31-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "candidateCrop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p31-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "candidateCrop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p35-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "candidateCrop": [
+        0,
+        22.877409406322286,
+        426,
+        107.33153430994604
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/near-edge-musical-stems/source-guards.json",
+      "id": "p35-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "candidateCrop": [
+        0,
+        30.925212027756363,
+        426,
+        113.7224363916731
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/residual11-continuous-lines/p24-source-guards.json",
+      "id": "p24-s1-viola",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        100.18562447475456,
+        427,
+        137.18562447475455
+      ],
+      "candidateCrop": [
+        0,
+        94.8002313922098,
+        427,
+        145.72927111453913
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/residual11-continuous-lines/p24-source-guards.json",
+      "id": "p24-s1-cello",
+      "coordinateMode": "corrected",
+      "guard": [
+        0,
+        135.18562447475455,
+        427,
+        170.18562447475455
+      ],
+      "candidateCrop": [
+        0,
+        125.39606633243348,
+        427,
+        170.63285769379098
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/p6-system1-source-guards.json",
+      "id": "p6-s1-viola",
+      "coordinateMode": "corrected",
+      "guard": [
+        41,
+        94.5,
+        393.5,
+        132.5
+      ],
+      "candidateCrop": [
+        0,
+        88.42503863987635,
+        427,
+        139.60432766615148
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/p6-system1-source-guards.json",
+      "id": "p6-s1-cello",
+      "coordinateMode": "corrected",
+      "guard": [
+        41,
+        123.5,
+        393.5,
+        170.5
+      ],
+      "candidateCrop": [
+        0,
+        117.84389489953632,
+        427,
+        171.15842349304484
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p31-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "candidateCrop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p31-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "candidateCrop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p33-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        36,
+        25,
+        394,
+        69
+      ],
+      "candidateCrop": [
+        0,
+        19.852294639413802,
+        427,
+        73.86463555726957
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p33-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        36,
+        59.5,
+        394,
+        97.5
+      ],
+      "candidateCrop": [
+        0,
+        52.58272271500193,
+        427,
+        106.35788661781721
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p37-s1-violin1",
+      "coordinateMode": "corrected",
+      "guard": [
+        38,
+        26.5,
+        394,
+        64
+      ],
+      "candidateCrop": [
+        0,
+        19.090208172706244,
+        426,
+        71.82652274479568
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p37-s1-violin2",
+      "coordinateMode": "corrected",
+      "guard": [
+        38,
+        59,
+        394,
+        96.5
+      ],
+      "candidateCrop": [
+        0,
+        53.64841942945258,
+        426,
+        97.62683114880494
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p37-s3-viola",
+      "coordinateMode": "corrected",
+      "guard": [
+        38,
+        379.5,
+        393,
+        415
+      ],
+      "candidateCrop": [
+        0,
+        373.19352351580574,
+        426,
+        416.4618350038551
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p37-s3-cello",
+      "coordinateMode": "corrected",
+      "guard": [
+        38,
+        418,
+        393,
+        446
+      ],
+      "candidateCrop": [
+        0,
+        412.4857363145721,
+        426,
+        446.99614494988435
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p28-s4-violin1",
+      "coordinateMode": "raw",
+      "guard": [
+        35,
+        458,
+        386,
+        497
+      ],
+      "candidateCrop": [
+        0,
+        452.46317007327417,
+        427,
+        502.9178557655226
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "id": "p28-s4-violin2",
+      "coordinateMode": "raw",
+      "guard": [
+        35,
+        495,
+        386,
+        535.5
+      ],
+      "candidateCrop": [
+        0,
+        489.6999614346317,
+        427,
+        537.0713459313537
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "score": "09200",
+      "id": "p7-s1-viola",
+      "coordinateMode": "raw",
+      "guard": [
+        20,
+        106.5,
+        552,
+        144
+      ],
+      "candidateCrop": [
+        0,
+        98.06827473426002,
+        591,
+        147.10466067048245
+      ],
+      "containsGuard": true
+    },
+    {
+      "guardFile": "Tests/quality_control/brahms93521/connector8-independent-source-guards.json",
+      "score": "09200",
+      "id": "p7-s1-cello",
+      "coordinateMode": "raw",
+      "guard": [
+        36,
+        133.5,
+        552,
+        175
+      ],
+      "candidateCrop": [
+        0,
+        128.92763695829927,
+        591,
+        189.45421095666396
+      ],
+      "containsGuard": true
+    }
+  ],
+  "additionalInventorySHA256": "7d583a0ef4c64493989dcae72e346afa47f13a09705916590ff5dca0a5b6cc65"
+}

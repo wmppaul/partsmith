@@ -1,0 +1,178 @@
+{
+  "musicalCaseCount": 48,
+  "pass": 41,
+  "fail": 7,
+  "byRasterScale": {
+    "0.5": {
+      "sourceStaffSpacingPixels": 6.0,
+      "pass": 8,
+      "fail": 4
+    },
+    "0.6": {
+      "sourceStaffSpacingPixels": 7.199999999999999,
+      "pass": 9,
+      "fail": 3
+    },
+    "1": {
+      "sourceStaffSpacingPixels": 12,
+      "pass": 12,
+      "fail": 0
+    },
+    "1.5": {
+      "sourceStaffSpacingPixels": 18.0,
+      "pass": 12,
+      "fail": 0
+    }
+  },
+  "structuralCaseCount": 12,
+  "structuralAmbiguityFailures": 0,
+  "failures": [
+    {
+      "scale": 0.5,
+      "tilt": -1.5,
+      "inset": 2,
+      "sourceEnvelope": [
+        593,
+        196,
+        609,
+        391
+      ],
+      "candidateBounds": [
+        [
+          155.99999999999997,
+          270
+        ],
+        [
+          318,
+          413.4269317649073
+        ]
+      ]
+    },
+    {
+      "scale": 0.5,
+      "tilt": -1.5,
+      "inset": 3,
+      "sourceEnvelope": [
+        593,
+        197,
+        609,
+        390
+      ],
+      "candidateBounds": [
+        [
+          155.99999999999997,
+          270
+        ],
+        [
+          318,
+          413.4269317649073
+        ]
+      ]
+    },
+    {
+      "scale": 0.5,
+      "tilt": 0,
+      "inset": 2,
+      "sourceEnvelope": [
+        593,
+        202,
+        609,
+        397
+      ],
+      "candidateBounds": [
+        [
+          151.99999999999997,
+          292
+        ],
+        [
+          323.99999999999994,
+          404
+        ]
+      ]
+    },
+    {
+      "scale": 0.5,
+      "tilt": 1.5,
+      "inset": 2,
+      "sourceEnvelope": [
+        593,
+        208,
+        609,
+        403
+      ],
+      "candidateBounds": [
+        [
+          146,
+          286
+        ],
+        [
+          315.99999999999994,
+          413.4269317649073
+        ]
+      ]
+    },
+    {
+      "scale": 0.6,
+      "tilt": -1.5,
+      "inset": 2,
+      "sourceEnvelope": [
+        593,
+        196,
+        609,
+        391
+      ],
+      "candidateBounds": [
+        [
+          155.33333333333331,
+          269.3333333333333
+        ],
+        [
+          318.66666666666663,
+          413.4269317649073
+        ]
+      ]
+    },
+    {
+      "scale": 0.6,
+      "tilt": 0,
+      "inset": 2,
+      "sourceEnvelope": [
+        593,
+        202,
+        609,
+        397
+      ],
+      "candidateBounds": [
+        [
+          151.99999999999997,
+          292.6666666666667
+        ],
+        [
+          325.3333333333333,
+          404
+        ]
+      ]
+    },
+    {
+      "scale": 0.6,
+      "tilt": 1.5,
+      "inset": 2,
+      "sourceEnvelope": [
+        593,
+        208,
+        609,
+        403
+      ],
+      "candidateBounds": [
+        [
+          147,
+          286
+        ],
+        [
+          317,
+          413.4269317649073
+        ]
+      ]
+    }
+  ]
+}
