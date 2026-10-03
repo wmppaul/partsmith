@@ -1,0 +1,13 @@
+# Joined inserted rests release
+
+The universal macOS app includes an opt-in **Join with previous rest** setting for inserted rests. It combines consecutive known bar intervals only in output layout, retaining every original source entry. Intervening music, excluded entries, directions, labels and page breaks keep their boundaries; printed rest replacements remain distinct. The update also fixes an integer overflow for a valid rest interval ending at the largest representable integer.
+
+All 42 frozen build inputs, including 35 production Swift files, match the tested source. Both arm64 and x86_64 slices target macOS 14.0. ZIP integrity, executable permissions and every app file's bytes were checked before and after atomic replacement of the downloadable ZIP. The previous ZIP remains in a private backup. No running app or user document was relaunched or replaced. The build has ad hoc signatures and is not notarized.
+
+Regression results: 37 join checks, 160 generated-rest workflow checks, 5,389 layout assertions and 169 native crop/export checks pass. The [independent review](../generated-rest-join-independent-2026-10-03/README.md) adds 33 checks, full-project comparison and source/output inspection. Its exact production snapshot matches this release. The new Inspector control was code-reviewed and included in successful Debug and Release builds; live interaction with it is unverified.
+
+The [complete Erlkönig draft](../../../output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/README.md) retains all 96 original references. Voice has 45 output rows on four pages, including one twelve-bar opening rest, copied source tempo and editorial `[4/4]`. All eight Piano pages are pixel-identical to the earlier draft. Two Voice turns still split phrases, and previously documented neighboring fragments remain. The initialization and earlier manual crop corrections remain explicit; this is not an automatic instrument-identification result.
+
+Staff/crop detection is unchanged. Neither experimental Brahms numbered-line candidate is included. Their real crop improvements did not satisfy the independent source-preservation requirements. Seven whole-neighbor cases remain unresolved in production.
+
+The [build record](../macos-build-2026-10-03-generated-rest-joins.json) records sources, architectures, package bytes and previous-artifact backup. `report-bindings.json` binds tests and delivery evidence; `evidence-hashes.json` covers this release report. `verify_and_publish.py` verifies the frozen build before publishing. The original build log is retained in a ZIP; the readable copy strips trailing whitespace only.

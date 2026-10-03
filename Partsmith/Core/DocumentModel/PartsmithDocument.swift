@@ -1471,11 +1471,18 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     /// duration remains a distinct, undoable choice tied to the source system.
     @discardableResult
     func updateBandGeneratedRestCount(_ bandID: UUID, barCount: Int) -> Bool {
+        updateBandGeneratedRest(bandID, barCount: barCount,
+            joinWithPrevious: band(withID: bandID)?.generatedRest?.joinWithPrevious == true)
+    }
+
+    @discardableResult
+    func updateBandGeneratedRest(_ bandID: UUID, barCount: Int, joinWithPrevious: Bool) -> Bool {
         guard let band = band(withID: bandID), var generated = band.generatedRest else { return false }
         generated.barCount = barCount
+        generated.joinWithPrevious = joinWithPrevious ? true : nil
         guard generated.isValid else { return false }
         guard generated != band.generatedRest else { return true }
-        commit(actionName: "Change Silent Part Rest Count") { project, _ in
+        commit(actionName: "Change Inserted Rest") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].generatedRest = generated
         }

@@ -575,6 +575,9 @@ struct BandGeneratedRest: Codable, Equatable {
     var barCount: Int
     var startBarNumber: Int?
     var sourceSystemIndex: Int
+    /// Layout preference only. Each original rest and its source stay stored.
+    /// Missing in older documents means the rest remains a separate row.
+    var joinWithPrevious: Bool? = nil
 
     var isValid: Bool {
         (1...999).contains(barCount) && sourceSystemIndex >= 0
@@ -583,7 +586,7 @@ struct BandGeneratedRest: Codable, Equatable {
 
     var endBarNumber: Int? {
         guard isValid, let startBarNumber else { return nil }
-        return startBarNumber + barCount - 1
+        return startBarNumber + (barCount - 1)
     }
 }
 

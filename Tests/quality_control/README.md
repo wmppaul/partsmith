@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 3 joined inserted rests
+
+Confirmed silent systems can now opt into **Join with previous rest** in the Inspector. Consecutive numbered intervals combine for output while all original source entries remain editable. Directions, labels, music and page breaks retain their boundaries. The [independent review](generated-rest-join-independent-2026-10-03/README.md) passes 33 checks; the production regression suites pass 37 join checks, 160 generated-rest workflow checks, 5,389 layout assertions and 169 native export checks. A pre-existing overflow for a valid rest interval ending at the largest integer was also repaired.
+
+The complete updated Erlkönig draft combines its four opening Voice rests into twelve bars and adds editorial `[4/4]` from the source common-time symbol. All 96 original entries remain represented; all eight Piano pages are pixel-identical. Two Voice page turns still split phrases. These results do not change staff detection or the seven unresolved Brahms whole-neighbor cases. The [release record](macos-build-2026-10-03-generated-rest-joins.json) binds the packaged app and reviewed evidence.
+
 ## October 3 reviewed layout reuse
 
 The new **Reuse Assigned Layouts** panel proposes complete systems from reviewed examples and applies accepted choices atomically. The [independent source review](system-template-independent-2026-10-03/README.md) covers all 82 systems / 275 printed staves across three complete scores: eight manually assigned examples yield 56 correct new proposals and 18 abstentions. All 32 independent challenges pass after retaining and repairing the first version's missing-Voice failure. This is source-assisted reuse, not automatic instrument recognition or a musical-quality pass.

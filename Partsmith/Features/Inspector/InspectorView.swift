@@ -376,8 +376,8 @@ struct InspectorView: View {
             Divider()
 
             if currentBand.generatedRest != nil {
-                GeneratedRestEditor(band: currentBand) { count in
-                    document.updateBandGeneratedRestCount(band.id, barCount: count)
+                GeneratedRestEditor(band: currentBand) { count, join in
+                    document.updateBandGeneratedRest(band.id, barCount: count, joinWithPrevious: join)
                 }.id(currentBand.id)
             } else {
             BandRestEditor(band: currentBand, isDetecting: document.restAutoProgress != nil, findRest: {
@@ -744,8 +744,9 @@ struct InspectorView: View {
 
 private struct GeneratedRestEditor: View {
     let band: BandModel
-    let apply: (Int) -> Void
+    let apply: (Int, Bool) -> Void
     @State private var countText = ""
+    @State private var joinWithPrevious = false
 
     private var count: Int? {
         guard let value = Int(countText.trimmingCharacters(in: .whitespacesAndNewlines)),
@@ -760,15 +761,25 @@ private struct GeneratedRestEditor: View {
                 Text("Bars of rest")
                 TextField("Count", text: $countText).textFieldStyle(.roundedBorder)
                     .accessibilityLabel("Inserted bars of rest")
-                    .onSubmit { if let count { apply(count) } }
+                    .onSubmit { if let count { apply(count, joinWithPrevious) } }
             }
-            Button("Update Rest Count") { if let count { apply(count) } }
-                .disabled(count == nil || count == band.generatedRest?.barCount)
+            Toggle("Join with previous rest", isOn: $joinWithPrevious)
+            Text("Joins consecutive numbered rests. Cues, directions and page breaks keep them separate.")
+                .font(.caption).foregroundStyle(.secondary)
+            Button("Update Rest") { if let count { apply(count, joinWithPrevious) } }
+                .disabled(count == nil || (count == band.generatedRest?.barCount
+                    && joinWithPrevious == (band.generatedRest?.joinWithPrevious == true)))
             Text("Use 1–999 bars. No source crop exists for this silent instrument.")
                 .font(.caption).foregroundStyle(.secondary)
         }
-        .onAppear { countText = band.generatedRest.map { String($0.barCount) } ?? "" }
-        .onChange(of: band.generatedRest) { countText = band.generatedRest.map { String($0.barCount) } ?? "" }
+        .onAppear(perform: load)
+        .onChange(of: band.id) { load() }
+        .onChange(of: band.generatedRest) { load() }
+    }
+
+    private func load() {
+        countText = band.generatedRest.map { String($0.barCount) } ?? ""
+        joinWithPrevious = band.generatedRest?.joinWithPrevious == true
     }
 }
 

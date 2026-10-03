@@ -1,0 +1,100 @@
+{
+  "status": "complete assisted draft; neighboring fragments and performance page turns remain unresolved",
+  "source": {
+    "embeddedFile": "Erlkonig-rest-layout.partsmithproject/source.pdf",
+    "sha256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+    "sourcePages": 11,
+    "sourceSystems": 48,
+    "measures": [
+      1,
+      148
+    ]
+  },
+  "project": {
+    "file": "Erlkonig-rest-layout.partsmithproject",
+    "projectJSONSHA256": "c8441d92ccd3611b94af99be1d535f7f87052ed7aa1b8b237022bfe76f22d66b",
+    "originalBandCount": 96,
+    "everyOriginalReferenceOccursExactlyOnce": true
+  },
+  "parts": [
+    {
+      "name": "Voice",
+      "pdf": "Voice.pdf",
+      "pdfSHA256": "53f3751a2052395590dadcc83de34f6da1b40af3d423579b8acb9e2459963413",
+      "originalSourceBands": 48,
+      "outputRows": 45,
+      "outputPages": 4,
+      "measures": [
+        1,
+        148
+      ]
+    },
+    {
+      "name": "Piano",
+      "pdf": "Piano.pdf",
+      "pdfSHA256": "9be97a3d67710f14b08092c09566ff818e4e8b7e5652dced26b9815248876b13",
+      "originalSourceBands": 48,
+      "outputRows": 48,
+      "outputPages": 8,
+      "measures": [
+        1,
+        148
+      ]
+    }
+  ],
+  "placementsFile": "placements.json",
+  "coordinates": "Placement rectangles are top-down PDF points with one-based source/output pages. A generated-rest sourceRect is an ordering/inspection anchor, not a source crop. The project retains normalized crop geometry.",
+  "changesFromPriorReviewedDraft": [
+    "joinWithPrevious=true only on generated Voice rests starting at bars 4, 7 and 10",
+    "editorialLabel=[4/4] on the first generated Voice rest",
+    "project modifiedAt timestamp"
+  ],
+  "joinedIntroduction": {
+    "part": "Voice",
+    "bars": [
+      1,
+      12
+    ],
+    "originalRestRecords": 4,
+    "originalBarsPerRecord": 3,
+    "sourceBandIDs": [
+      "BC8F01F3-5E0E-4CF1-A5CD-467A7AD1FFA6",
+      "F2760A80-D505-4A16-A26A-EE6796A17BA1",
+      "43D7E219-A183-4D09-8B93-19AFA002CC17",
+      "48F89A59-C22D-4D89-BEE0-A0F16A55212D"
+    ],
+    "editorialMeter": "[4/4] from source common-time C",
+    "tempo": "Original Schnell / quarter-note = 152 source copy retained",
+    "printedVoiceReturnsAt": 13,
+    "firstSungPickupWithinBar": 15
+  },
+  "priorManualWork": {
+    "sourceIdentityMap": "source-reviewed-map.json",
+    "profile": "profile.json",
+    "manualCorrections": "manual-corrections.json",
+    "initializationDirectory": "initialization",
+    "note": "Saved initialization, original plan/manifest/review are historical evidence from the previous draft, before these rest-layout choices. They do not describe current output pagination; current project and placements.json are authoritative. Five crop-edge corrections and one opening-tempo-copy correction are retained without further change."
+  },
+  "review": {
+    "independentReport": "review/README.md",
+    "metadataComparison": "review/export-metadata-comparison.json",
+    "pixelComparison": "review/independent-page-pixel-comparison.json",
+    "voiceAll4PagesVisuallyReviewed": true,
+    "pianoAll8PagesPixelIdenticalAtDPI": 144,
+    "sourceAndAllOriginalMusicCropsUnchanged": true,
+    "musicalReadiness": "Draft, not a certified performance layout"
+  },
+  "remaining": [
+    "Voice turn 39 to 40 splits Ge-/sicht",
+    "Voice turn 75 to 76 splits du / nicht within a phrase",
+    "Voice turn 112 to 113 leads into rests; other turn choices still require performance review",
+    "Piano plays continuously across its page turns",
+    "Small neighboring fragments, cropped neighboring vocal text and duplicate printed/manual bar numbers remain"
+  ],
+  "reviewedInputBindings": {
+    "previousProjectSHA256": "11fdadf8dd59840ee52b5b24d1ed9262aa683b172efc10452f99f24e5dfe2428",
+    "independentReportManifestSHA256": "29c6c5ad6b68b74da7cb9d4e2876564e33515459f9650892a99549335c637f81",
+    "reviewedPlacementsSHA256": "032f6e91969673d1851a63fb294d4a5f0b4f85a58802c491617aa8655708c02c"
+  },
+  "hashes": "files.sha256.json covers every ZIP payload file except itself; delivery-hashes.json also covers the ZIP and is external to the ZIP to avoid a circular hash."
+}

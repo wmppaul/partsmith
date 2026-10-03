@@ -1,0 +1,11 @@
+# Erlkönig — complete draft with joined opening rests
+
+[Voice](Voice.pdf) has **4 pages and 45 rows**; [Piano](Piano.pdf) has **8 pages and 48 rows**. Both cover all 48 source systems and measures 1–148. [Download the complete ZIP](Erlkonig-complete-joined-rest-draft.zip), or open `Erlkonig-rest-layout.partsmithproject` in a Partsmith build supporting joined generated rests to edit the layout. The unchanged original score is embedded.
+
+The Voice introduction now has one **12-bar rest for bars 1–12**, with the original *Schnell* / quarter-note = 152 source copy and an editorial **[4/4]** indication from the source common-time symbol. The printed Voice system at bar 13, including its rests and pickup within bar 15, is retained. All **96 original band references** remain exactly once; the four three-bar source rest records remain separately editable in the project.
+
+Only three rest-joining choices, the editorial meter label and the modification date changed from the previous reviewed project. All music crops and direction copies retain the earlier manual source review, including five corrected crop edges and the opening tempo copy. Instrument identities and omitted-staff durations were manually initialized; this is an assisted draft, not a claim of fully automatic identification. All four Voice pages were reviewed, and all eight Piano pages are pixel-identical to the earlier output at 144 dpi.
+
+**Page turns remain draft.** Voice turns at 39→40 and 75→76 still split a word or phrase; 112→113 now leads into rests. Piano plays continuously across its turns. Small neighboring fragments, cropped neighboring vocal text and duplicate printed/manual bar numbers remain.
+
+`placements.json` and `manifest.json` describe this output. `profile.json`, `source-reviewed-map.json` and `manual-corrections.json` preserve the source initialization and prior corrections. The `initialization/` folder contains historical plan/review records from the earlier draft, not current pagination. Independent rest-layout review is in `review/README.md`; its full source snapshots, controls and rendered-page evidence remain in the repository's `Tests/quality_control/generated-rest-join-independent-2026-10-03/` report. Earlier output folders are unchanged. `files.sha256.json` verifies the ZIP payload; the external `delivery-hashes.json` also binds the ZIP.

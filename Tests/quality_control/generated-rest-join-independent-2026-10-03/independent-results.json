@@ -1,0 +1,149 @@
+{
+  "checks" : [
+    {
+      "label" : "Real source has four exactly numbered three-bar omitted Voice systems",
+      "pass" : true
+    },
+    {
+      "label" : "Legacy preferences remain unjoined on reopening",
+      "pass" : true
+    },
+    {
+      "label" : "Real combined introduction is exactly bars1–12",
+      "pass" : true
+    },
+    {
+      "label" : "Real combined introduction retains all four original references",
+      "pass" : true
+    },
+    {
+      "label" : "Original source interval records remain four separate unchanged counts",
+      "pass" : true
+    },
+    {
+      "label" : "Layout does not mutate any project metadata",
+      "pass" : true
+    },
+    {
+      "label" : "Editorial meter stays with opening rest",
+      "pass" : true
+    },
+    {
+      "label" : "Opening Schnell retains exact source rectangle and page",
+      "pass" : true
+    },
+    {
+      "label" : "Every printed Voice strip including written bars13–15 retains source order and pixels",
+      "pass" : true
+    },
+    {
+      "label" : "All Piano placements remain exact",
+      "pass" : true
+    },
+    {
+      "label" : "Opted real project reopens without losing any original band or duration",
+      "pass" : true
+    },
+    {
+      "label" : "Array storage order cannot change joined source provenance",
+      "pass" : true
+    },
+    {
+      "label" : "An internal direction creates exact6+6 segments",
+      "pass" : true
+    },
+    {
+      "label" : "Each segment retains its own source-page direction",
+      "pass" : true
+    },
+    {
+      "label" : "Each segment owns only its original interval records",
+      "pass" : true
+    },
+    {
+      "label" : "Direction after bar9 preserves its boundary on both sides",
+      "pass" : true
+    },
+    {
+      "label" : "Below direction stays on original bar7–9 interval",
+      "pass" : true
+    },
+    {
+      "label" : "A page-break boundary divides6+6 without creating extra duration",
+      "pass" : true
+    },
+    {
+      "label" : "Excluded intervening printed cue cannot be bridged despite adjacent numbers",
+      "pass" : true
+    },
+    {
+      "label" : "Printed-rest replacement and omitted-staff rest remain distinct orderfalse",
+      "pass" : true
+    },
+    {
+      "label" : "Printed-rest replacement and omitted-staff rest remain distinct ordertrue",
+      "pass" : true
+    },
+    {
+      "label" : "Three confirmed one-bar omissions combine to exactly3",
+      "pass" : true
+    },
+    {
+      "label" : "999 limit preserves the final one-bar interval",
+      "pass" : true
+    },
+    {
+      "label" : "Valid1-bar interval endingInt.max is nonoverflowing",
+      "pass" : true
+    },
+    {
+      "label" : "Valid2-bar interval endingInt.max is nonoverflowing",
+      "pass" : true
+    },
+    {
+      "label" : "Valid999-bar interval endingInt.max is nonoverflowing",
+      "pass" : true
+    },
+    {
+      "label" : "A legal join can end exactlyInt.max",
+      "pass" : true
+    },
+    {
+      "label" : "Explicitfalse remains nonjoining through full codec",
+      "pass" : true
+    },
+    {
+      "label" : "Invalid count0 leaves full document untouched",
+      "pass" : true
+    },
+    {
+      "label" : "Invalid count-1 leaves full document untouched",
+      "pass" : true
+    },
+    {
+      "label" : "Invalid count1000 leaves full document untouched",
+      "pass" : true
+    },
+    {
+      "label" : "Invalid count9223372036854775807 leaves full document untouched",
+      "pass" : true
+    },
+    {
+      "label" : "Unknown band cannot alter a document",
+      "pass" : true
+    }
+  ],
+  "firstPrintedSourceID" : "DD74FB7C-44D6-473E-9027-53D0F7B087FC",
+  "passed" : 33,
+  "realIntroSourceIDs" : [
+    "BC8F01F3-5E0E-4CF1-A5CD-467A7AD1FFA6",
+    "F2760A80-D505-4A16-A26A-EE6796A17BA1",
+    "43D7E219-A183-4D09-8B93-19AFA002CC17",
+    "48F89A59-C22D-4D89-BEE0-A0F16A55212D"
+  ],
+  "realJoinedDirectionSourceRect" : "{{121.59999999999999, 686.38999999999999}, {98.500000000000014, 19.000000000000011}}",
+  "realOriginalBands" : 96,
+  "realVoiceAfterRows" : 45,
+  "realVoiceBeforeRows" : 48,
+  "total" : 33
+}

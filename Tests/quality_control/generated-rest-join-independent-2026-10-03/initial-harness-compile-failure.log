@@ -1,0 +1,25 @@
+.build/generated-rest-join-independent-2026-10-03/independent.swift:13:3: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+11 |   var p=ProjectData.empty;p.pageCount=2
+12 |   p.parts=[PartModel(id:UUID(),name:"Voice",color:ColorData(red:0,green:0,blue:1),layoutSettings:.default,createdAt:Date(timeIntervalSince1970:0))]
+13 |   p.bands=(0..<n).map{i in BandModel(id:UUID(),pageIndex:i/2,partID:p.parts[0].id,topFraction:0.15+Double(i%2)*0.35,bottomFraction:0.3+Double(i%2)*0.35,leftFraction:0.03,rightFraction:0.03,excluded:false,createdAt:Date(timeIntervalSince1970:Double(i)),generatedRest:BandGeneratedRest(barCount:3,startBarNumber:1+3*i,sourceSystemIndex:i%2,joinWithPrevious:i>0 ? true:nil))};return p
+   |   `- error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+14 |  }
+15 |  static func main()throws {
+
+.build/generated-rest-join-independent-2026-10-03/independent.swift:32:184: error: operator can throw but expression is not marked with 'try'
+30 |   check("Every printed Voice strip including written bars13–15 retains source order and pixels",oldMusic.map(\.bandID)==newMusic.map(\.bandID) && zip(oldMusic,newMusic).allSatisfy{$0.sourceRect==$1.sourceRect && $0.sourcePageIndex==$1.sourcePageIndex && $0.sourceMarkings.map(\.sourceRect)==$1.sourceMarkings.map(\.sourceRect)})
+31 |   let afterPiano=try placements(candidate,piano);check("All Piano placements remain exact",zip(oldPiano,afterPiano).allSatisfy{$0.bandID==$1.bandID && $0.sourceRect==$1.sourceRect && $0.destinationRect==$1.destinationRect} && oldPiano.count==afterPiano.count)
+32 |   let restored=try decoder.decode(ProjectData.self,from:encoder.encode(candidate));check("Opted real project reopens without losing any original band or duration",restored==candidate && (try placements(restored,voice)).first?.sourceBandIDs==rests.map(\.id))
+   |                                                                                                                                                                                        |  `- note: call is to 'rethrows' function, but argument function can throw
+   |                                                                                                                                                                                        `- error: operator can throw but expression is not marked with 'try'
+33 |   var reordered=candidate;reordered.bands.reverse();check("Array storage order cannot change joined source provenance",try placements(reordered,voice).map(\.sourceBandIDs)==joined.map(\.sourceBandIDs))
+34 |   let cue=BandSourceMarking(topFraction:0.04,bottomFraction:0.07,leftFraction:0.15,rightFraction:0.55)
+
+.build/generated-rest-join-independent-2026-10-03/independent.swift:46:311: error: operator can throw but expression is not marked with 'try'
+44 |   for n in [1,2,999] {let edge=BandGeneratedRest(barCount:n,startBarNumber:Int.max-(n-1),sourceSystemIndex:0);check("Valid\(n)-bar interval endingInt.max is nonoverflowing",edge.isValid && edge.endBarNumber==Int.max)}
+45 |   var maxJoin=fixture(2);maxJoin.bands[0].generatedRest=BandGeneratedRest(barCount:998,startBarNumber:Int.max-998,sourceSystemIndex:0);maxJoin.bands[1].generatedRest=BandGeneratedRest(barCount:1,startBarNumber:Int.max,sourceSystemIndex:1,joinWithPrevious:true);let atMax=try placements(maxJoin);check("A legal join can end exactlyInt.max",atMax.count==1 && atMax[0].restBarCount==999 && atMax[0].generatedRest?.endBarNumber==Int.max)
+46 |   var explicitFalse=fixture();for i in explicitFalse.bands.indices{explicitFalse.bands[i].generatedRest?.joinWithPrevious=false};let falseRoundtrip=try decoder.decode(ProjectData.self,from:encoder.encode(explicitFalse));check("Explicitfalse remains nonjoining through full codec",falseRoundtrip==explicitFalse && (try placements(falseRoundtrip)).count==4)
+   |                                                                                                                                                                                                                                                                                                                       |  `- note: call is to 'rethrows' function, but argument function can throw
+   |                                                                                                                                                                                                                                                                                                                       `- error: operator can throw but expression is not marked with 'try'
+47 |   let doc=PartsmithDocument(project:fixture());let beforeBad=doc.project;let target=doc.project.bands[0].id
+48 |   for invalid in [0,-1,1000,Int.max]{check("Invalid count\(invalid) leaves full document untouched",!doc.updateBandGeneratedRest(target,barCount:invalid,joinWithPrevious:true) && doc.project==beforeBad)}

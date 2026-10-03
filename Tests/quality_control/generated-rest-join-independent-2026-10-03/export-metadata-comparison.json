@@ -1,0 +1,67 @@
+{
+  "projectChangesExactlyRequested": true,
+  "originalSourcePayloadExact": true,
+  "parts": [
+    {
+      "name": "Voice",
+      "storedOriginalBands": 48,
+      "outputRows": 45,
+      "everyOriginalReferenceOccursExactlyOnce": true,
+      "mergedRows": 1,
+      "pages": 4
+    },
+    {
+      "name": "Piano",
+      "storedOriginalBands": 48,
+      "outputRows": 48,
+      "everyOriginalReferenceOccursExactlyOnce": true,
+      "mergedRows": 0,
+      "pages": 8
+    }
+  ],
+  "expectedChangedFields": [
+    "joinWithPrevious true only on introductory omitted Voice rests starting4,7,10",
+    "editorialLabel [4/4] only on opening omitted Voice rest",
+    "project modifiedAt"
+  ],
+  "originalRestRecordsStillPresent": [
+    {
+      "id": "BC8F01F3-5E0E-4CF1-A5CD-467A7AD1FFA6",
+      "barCount": 3,
+      "sourceSystemIndex": 0,
+      "startBarNumber": 1
+    },
+    {
+      "id": "F2760A80-D505-4A16-A26A-EE6796A17BA1",
+      "barCount": 3,
+      "joinWithPrevious": true,
+      "sourceSystemIndex": 1,
+      "startBarNumber": 4
+    },
+    {
+      "id": "43D7E219-A183-4D09-8B93-19AFA002CC17",
+      "barCount": 3,
+      "joinWithPrevious": true,
+      "sourceSystemIndex": 2,
+      "startBarNumber": 7
+    },
+    {
+      "id": "48F89A59-C22D-4D89-BEE0-A0F16A55212D",
+      "barCount": 3,
+      "joinWithPrevious": true,
+      "sourceSystemIndex": 3,
+      "startBarNumber": 10
+    }
+  ],
+  "files": {
+    "/Users/will/Documents/git/partsmith/.build/generated-rest-join-independent-2026-10-03/baseline-project.json": "11fdadf8dd59840ee52b5b24d1ed9262aa683b172efc10452f99f24e5dfe2428",
+    "/Users/will/Documents/git/partsmith/.build/generated-rest-join-independent-2026-10-03/source.pdf": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+    ".build/erlkonig-rest-finish-2026-10-03/parts/Erlkonig-rest-layout.partsmithproject/project.json": "c8441d92ccd3611b94af99be1d535f7f87052ed7aa1b8b237022bfe76f22d66b",
+    ".build/erlkonig-rest-finish-2026-10-03/parts/Erlkonig-rest-layout.partsmithproject/source.pdf": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+    ".build/erlkonig-rest-finish-2026-10-03/parts/placements.json": "032f6e91969673d1851a63fb294d4a5f0b4f85a58802c491617aa8655708c02c",
+    "output/pdf/auto-qc-2026-10-03/erlkonig-reviewed-draft/Voice.pdf": "f75b58e09d9316babccfba4d2d903eedf0fbba9f0bd926aaeff44acadc1d6d68",
+    "output/pdf/auto-qc-2026-10-03/erlkonig-reviewed-draft/Piano.pdf": "be733b707c6f86ec55505098350b869b876d11742d29674588ead90d04eb275d",
+    ".build/erlkonig-rest-finish-2026-10-03/parts/Voice.pdf": "53f3751a2052395590dadcc83de34f6da1b40af3d423579b8acb9e2459963413",
+    ".build/erlkonig-rest-finish-2026-10-03/parts/Piano.pdf": "9be97a3d67710f14b08092c09566ff818e4e8b7e5652dced26b9815248876b13"
+  }
+}

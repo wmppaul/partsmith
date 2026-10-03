@@ -399,7 +399,22 @@ enum PartLayoutEngine {
         let maximumSourceWidth = prepared.map { $0.originalSourceWidth }.max() ?? contentRect.width
         var joined: [PreparedBand] = []
         for item in prepared {
-            if let current = item.restReplacement, current.joinWithPrevious,
+            if let current = item.band.generatedRest, current.joinWithPrevious == true,
+               let previous = joined.last, var previousRest = previous.band.generatedRest,
+               previous.lastSourceOrder + 1 == item.lastSourceOrder,
+               !item.band.pageBreakBefore, item.label.isEmpty,
+               item.markingRects.isEmpty, previous.belowMarkingIndices.isEmpty,
+               let previousEnd = previousRest.endBarNumber, previousEnd < Int.max,
+               current.startBarNumber == previousEnd + 1,
+               previousRest.barCount + current.barCount <= 999 {
+                // Keep the opening instruction in place. A direction at a
+                // later source system or after a rest must remain at its bar.
+                // Only the render copy changes; the document retains all rows.
+                previousRest.barCount += current.barCount
+                joined[joined.count - 1].band.generatedRest = previousRest
+                joined[joined.count - 1].sourceBandIDs.append(contentsOf: item.sourceBandIDs)
+                joined[joined.count - 1].lastSourceOrder = item.lastSourceOrder
+            } else if let current = item.restReplacement, current.joinWithPrevious,
                let previous = joined.last, let previousRest = previous.restReplacement,
                current.sourceContext == nil, previousRest.sourceContext == nil,
                previous.lastSourceOrder + 1 == item.lastSourceOrder,

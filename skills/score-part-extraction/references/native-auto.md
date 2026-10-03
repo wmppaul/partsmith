@@ -318,10 +318,16 @@ Generated rests use separate saved metadata (`generatedRest`), with count,
 optional first bar and source-system reference. Their source rectangle is only
 an ordering/inspection anchor; never treat it as a crop of that instrument.
 There is no Restore Original Crop action for an instrument that was not printed.
-The Inspector permits changing the inserted rest count; saving, Undo and native
-PDF export preserve its distinction from a detected rest replacement. Counts
-of one render as a whole-measure rest. No automatic joining across source
-systems is assumed.
+The Inspector permits changing the inserted rest count and opting into **Join
+with previous rest**, followed by **Update Rest**. Joining requires known,
+consecutive starting bar numbers and stops at intervening music, excluded rows,
+directions, editorial labels or page breaks. An opening heading can stay above
+the combined rest; a later heading must stay at its own measure. Generated rests
+never join printed-rest replacements. All original source entries remain stored
+and editable; only their output placement combines. Saving, Undo and native PDF
+export preserve these distinctions. Counts of one render as a whole-measure
+rest. Review the combined duration, meter and subsequent entry against the score;
+this layout option does not infer silence or missing instrument identities.
 
 Shared printed headings also follow confirmed silent instruments. Review their
 actual copies: a heading inside a generated rest's inspection rectangle is not
