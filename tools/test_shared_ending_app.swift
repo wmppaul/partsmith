@@ -331,6 +331,7 @@ import PDFKit
         check(totalPages==68 && totalPairs==5,"Entire frozen68-page ending evidence replayed without fresh Vision calls")
     }
     static func main() throws {
+        try LocalEndingControls.run()
         let arguments=Array(CommandLine.arguments.dropFirst())
         guard arguments.isEmpty || arguments == ["--corpus"] else {
             fputs("Use test_shared_ending_app [--corpus]\n",stderr);exit(2)
@@ -444,7 +445,7 @@ private enum EndingAppTestSupport {
         check(selectedReview?.plan.canApply == true && selected.project == original && selected.scoreDetectionProgress == nil,
               "Failure adds no acceptance barrier, implicit document mutation or stuck progress")
 
-        for phase: ScoreDirectionPhase in [.endings] {
+        for phase: ScoreDirectionPhase in [.endings, .localEndings] {
             let doc = document(source), gate = Gate()
             var oldCompletions = 0; var newDone = false; var newReview: ScoreDetectionReview?
             let blocked: ScoreSharedDirectionRunner = { _, pages, _, _, progress, cancelled in

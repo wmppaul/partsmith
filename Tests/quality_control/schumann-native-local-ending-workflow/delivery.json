@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-03",
+  "status": "draft-with-known-heading-and-crop-limitations",
+  "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+  "nativeInventory": ".build/ending-local-app-native-2026-10-03/schumann-inventory.json",
+  "nativeInventorySHA256": "dbe52784ce11af9a9e5973c597bb457fb866d03495d7787ddcd6d0fa056ac9c3",
+  "exporterSHA256": "ead2ac44b036bdad7dc09d0fb0aebb8cf433a521b178ce4a476aa3ee17c38781",
+  "report": "Tests/quality_control/schumann-native-local-ending-workflow",
+  "reportProvenanceSHA256": "b342fd433e9513a14c31a8347b347f3386fcc4f382c49c5ec10d942b797c0fc5",
+  "copiedFrom": ".build/ending-local-app-native-2026-10-03/schumann-parts",
+  "copiedTo": "output/pdf/auto-qc-2026-09-21/schumann-quintet-06822-native-auto",
+  "allReviewedPayloadsHashIdentical": true,
+  "parts": 5,
+  "pages": 74,
+  "systemsPerPart": 165,
+  "mainCrops": 825,
+  "sourceCopies": 35,
+  "payload": [
+    {
+      "file": "Piano.pdf",
+      "sha256": "87cc5b6e250c7ddc1dcc7064987ec49e9a0bed8170e6194666f8bc26b6778a8f"
+    },
+    {
+      "file": "Violin I.pdf",
+      "sha256": "4ac50d7da8e505608a1861ba4e1f69824f13726a2294baa292dc5c46d9c28b9a"
+    },
+    {
+      "file": "plan.json",
+      "sha256": "a833f72ef1a33b1cad2c336a42682d8e58ccec8afd2e419d0fdabd1309394228"
+    },
+    {
+      "file": "Viola.pdf",
+      "sha256": "eda14510ffef6c37ec1f5991a4578cdc5f17b4b7efa67e20a0804e60fa206eb9"
+    },
+    {
+      "file": "Violin II.pdf",
+      "sha256": "e6c0ddc6205435e4a2f39a531b66c306ef02e244b5101a93b1ca128e189e0930"
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "d640303e4855aab9bf00c313bc04e031d6a5d2f1e3e7c507c5a081715cd86621"
+    },
+    {
+      "file": "Violoncello.pdf",
+      "sha256": "6ef5849721c81890d51a49c7e7d0a7edabe3d60d1d884e20eea1aa898910eed5"
+    },
+    {
+      "file": "Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "33c05f761d37801ea7572b93f52ac8b1fe8a74dca1fb9227a8afa5f22807e40e"
+    },
+    {
+      "file": "Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    }
+  ],
+  "readmeSHA256": "707b8c6d5bcbe7f5442feb445459e11f40c4c9668862e40ecd0afc3b893f2c55",
+  "deliveryProvenanceSHA256": "17bd4786efad332f9908fb45b31ac1882fdd1673bb3063b074972de8215e0e23"
+}

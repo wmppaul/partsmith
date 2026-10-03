@@ -1,0 +1,420 @@
+{
+  "automaticRecipientCopies" : 1,
+  "failedExpectedRequirements" : 5,
+  "intentionalNegativeAudit" : true,
+  "tests" : [
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "retain the same complete B heading copy as automatic planning",
+      "name" : "unchanged initial override with absent marking list",
+      "passed" : false,
+      "unresolved" : [
+
+      ]
+    },
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "do not resurrect the B copy removed by the user",
+      "name" : "explicit empty marking list remains authoritative",
+      "passed" : true,
+      "unresolved" : [
+
+      ]
+    },
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 0,
+          "warnings" : [
+
+          ]
+        },
+        {
+          "copyCount" : 1,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 0,
+          "warnings" : [
+
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 1,
+          "warnings" : [
+
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 1,
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "preserve the already-materialized source marking",
+      "name" : "explicit captured copy survives no-op mapping",
+      "passed" : true,
+      "unresolved" : [
+
+      ]
+    },
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "explicitly invalidate stale heading ownership before review binding capture",
+      "name" : "initial override moves recognized source staff to another system",
+      "passed" : false,
+      "unresolved" : [
+
+      ]
+    },
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "explicitly invalidate stale recipient ownership before review binding capture",
+      "name" : "initial override moves recipient staff to another system",
+      "passed" : false,
+      "unresolved" : [
+
+      ]
+    },
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "cue",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "do not silently treat a recognized music source as the same eligible source",
+      "name" : "initial override changes source staff to cue",
+      "passed" : false,
+      "unresolved" : [
+
+      ]
+    },
+    {
+      "bands" : [
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            0
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "cue",
+          "part" : "b",
+          "staffIDs" : [
+            1
+          ],
+          "system" : 0,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "a",
+          "staffIDs" : [
+            2
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        },
+        {
+          "copyCount" : 0,
+          "kind" : "music",
+          "part" : "b",
+          "staffIDs" : [
+            3
+          ],
+          "system" : 1,
+          "warnings" : [
+            "Compact crop evidence is unavailable. Broad context retained; run Auto again and review the crop edges."
+          ]
+        }
+      ],
+      "canApply" : true,
+      "expected" : "explicitly reconsider recipient kind before applying cached decision",
+      "name" : "initial override changes recipient staff to cue",
+      "passed" : false,
+      "unresolved" : [
+
+      ]
+    }
+  ]
+}

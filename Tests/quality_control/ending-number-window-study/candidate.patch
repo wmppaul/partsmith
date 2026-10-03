@@ -1,0 +1,43 @@
+--- 3e203c2/Partsmith/Core/Detection/ScoreSharedEndingDetector.swift
++++ candidate/ScoreSharedEndingDetector.swift
+@@ -177,13 +177,39 @@
+                         evidence.append(TextEvidence(mode:mode,text:t.string,confidence:t.confidence,bounds:[box.minX,1-box.maxY,box.maxX,1-box.minY]))
+                     }
+                 }
+-                let c=Candidate(pageIndex:page.pageIndex,systemIndex:system.index,anchorStaffID:system.first.id,bounds:b,copyBounds:[],numberBounds:[Double(nb[0])/sx,Double(nb[1])/sy,Double(nb[2])/sx,Double(nb[3])/sy],staffSpace:sp,pageWidth:page.pageWidth,pageHeight:page.pageHeight,closedRight:false,rightHookBottom:nil,evidence:evidence,memberCount:1)
++                var c=Candidate(pageIndex:page.pageIndex,systemIndex:system.index,anchorStaffID:system.first.id,bounds:b,copyBounds:[],numberBounds:[Double(nb[0])/sx,Double(nb[1])/sy,Double(nb[2])/sx,Double(nb[3])/sy],staffSpace:sp,pageWidth:page.pageWidth,pageHeight:page.pageHeight,closedRight:false,rightHookBottom:nil,evidence:evidence,memberCount:1)
++                // Scratch candidate: retry only unrecognized geometry with a wider
++                // accurate OCR window; retain existing candidates and copy bounds.
++                if c.role == nil {
++                    let wide = [nb[0], nb[1], min(r.width, Int(x0 + space * 4.8)), nb[3]]
++                    if let number = r.numberImage(wide) {
++                        let request = VNRecognizeTextRequest()
++                        request.recognitionLevel = .accurate
++                        request.usesLanguageCorrection = false
++                        request.minimumTextHeight = 0.06
++                        request.recognitionLanguages = ["en-US"]
++                        do { try VNImageRequestHandler(cgImage: number, options: [:]).perform([request]) }
++                        catch { observedFailure?(error); return empty }
++                        if let observations = request.results, observations.count == 1,
++                           let t = observations[0].topCandidates(1).first,
++                           t.confidence >= 0.5,
++                           ["1", "2"].contains(t.string.trimmingCharacters(in: CharacterSet(charactersIn: " ."))) {
++                            let box = observations[0].boundingBox
++                            c.evidence.append(.init(mode: "accurate-wide", text: t.string, confidence: t.confidence,
++                                bounds: [box.minX, 1-box.maxY, box.maxX, 1-box.minY]))
++                            c.numberBounds = [Double(wide[0])/sx, Double(wide[1])/sy, Double(wide[2])/sx, Double(wide[3])/sy]
++                        }
++                    }
++                }
+                 if let i=groups.firstIndex(where:{g in
+                     abs(g.bounds[0]-b[0])<sp*0.4 && abs(g.bounds[1]-b[1])<sp*0.5 && min(g.bounds[2],b[2])-max(g.bounds[0],b[0])>0.8*min(g.bounds[2]-g.bounds[0],b[2]-b[0])
+                 }) {
+                     groups[i].bounds=[min(groups[i].bounds[0],b[0]),min(groups[i].bounds[1],b[1]),max(groups[i].bounds[2],b[2]),max(groups[i].bounds[3],b[3])]
+                     groups[i].evidence+=evidence;groups[i].memberCount+=1
+                 }else{groups.append(c)}
++            }
++            if page.pageIndex == 20, let data = try? JSONEncoder().encode(groups), let text = String(data: data, encoding: .utf8) {
++                print("DIAGNOSTIC system \(system.index): \(text)")
+             }
+             result.mergedProposalCount+=groups.count
+             for var g in groups where g.role != nil {

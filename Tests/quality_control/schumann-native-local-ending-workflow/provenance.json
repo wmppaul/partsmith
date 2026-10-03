@@ -1,0 +1,208 @@
+{
+  "date": "2026-10-03",
+  "status": "draft-native-workflow-reviewed-with-known-heading-and-crop-limitations",
+  "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+  "files": [
+    {
+      "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-inventory.json",
+      "sha256": "dbe52784ce11af9a9e5973c597bb457fb866d03495d7787ddcd6d0fa056ac9c3"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-plan.json",
+      "sha256": "a833f72ef1a33b1cad2c336a42682d8e58ccec8afd2e419d0fdabd1309394228"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-summary.json",
+      "sha256": "d15c0aec9916a70e74cd018b84492bee913751cee0549adbe4f9a013f6a00eb6"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/native_worker.swift",
+      "sha256": "9ab1ce58920c24e347e6af55807c5f36b85c4789de4b570af7ac94ad20323bfb"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/config.json",
+      "sha256": "cd1d0974df0339336b46837842d0ba282dac5cb1ae24746aca529013558ebcb9"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-exporter",
+      "sha256": "ead2ac44b036bdad7dc09d0fb0aebb8cf433a521b178ce4a476aa3ee17c38781"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-exporter-sources.json",
+      "sha256": "5eb80a965abe37fd6c7d33f14585d1fc2a50054305db9340efe9fb83692ead5e"
+    },
+    {
+      "path": "tools/export_score_plan.swift",
+      "sha256": "5cf95e66bcddd7824ea97c0592179e3b643a9a288065510dc88f97ccff104a18"
+    },
+    {
+      "path": "Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "sha256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/manifest.json",
+      "sha256": "d640303e4855aab9bf00c313bc04e031d6a5d2f1e3e7c507c5a081715cd86621"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "33c05f761d37801ea7572b93f52ac8b1fe8a74dca1fb9227a8afa5f22807e40e"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/manifest.json",
+      "sha256": "fbfa19606baa27df7671dbd8981b261d18406070fa7ca2c57fdef6376df9ded2"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Violin I.pdf",
+      "sha256": "4ac50d7da8e505608a1861ba4e1f69824f13726a2294baa292dc5c46d9c28b9a"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Violin II.pdf",
+      "sha256": "e6c0ddc6205435e4a2f39a531b66c306ef02e244b5101a93b1ca128e189e0930"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Viola.pdf",
+      "sha256": "eda14510ffef6c37ec1f5991a4578cdc5f17b4b7efa67e20a0804e60fa206eb9"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Violoncello.pdf",
+      "sha256": "6ef5849721c81890d51a49c7e7d0a7edabe3d60d1d884e20eea1aa898910eed5"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/schumann-parts/Piano.pdf",
+      "sha256": "87cc5b6e250c7ddc1dcc7064987ec49e9a0bed8170e6194666f8bc26b6778a8f"
+    }
+  ],
+  "frozenCoreMatchesProduction": true,
+  "core": [
+    {
+      "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "81f16962197455603ca5df0af1cad5cca3cf7f447f57dc551f93f87435be9ad6"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInputPageSelection.swift",
+      "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift",
+      "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInstrumentPickList.swift",
+      "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "46165399d338fe88bdf74dae128a3c8794a34b2d115685edd6aab3dfc9b2e281"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreRestDetector.swift",
+      "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "20b6af97dd857f7fbf64d04e95c8728099a9e06168f71e0bfd5c505d8743c7fb"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift",
+      "sha256": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift",
+      "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift",
+      "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": "Partsmith/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/BarNumberDetector.swift",
+      "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift",
+      "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/ProjectModels.swift",
+      "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPDFExporter.swift",
+      "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": "Partsmith/Core/Layout/PartLayoutEngine.swift",
+      "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    }
+  ],
+  "counts": {
+    "parts": 5,
+    "outputPages": 74,
+    "systemsPerPart": 165,
+    "mainCrops": 825,
+    "unchangedMainCrops": 825,
+    "endingCopiesUnchanged": 15,
+    "additionalHeadingCopies": 20,
+    "allSourceCopies": 35,
+    "changedPlacements": 501,
+    "changedPages": 40,
+    "pixelIdenticalPages": 34,
+    "overflow": 0,
+    "interBandEnvelopeCollisions": 0
+  },
+  "inspection": {
+    "sourceFirst": true,
+    "uniqueNewSourceBoxes": 5,
+    "newRecipientRows": 20,
+    "changedFullPages": 40,
+    "localPianoEndingRows": 5,
+    "wholeScoreRecallEstablished": false
+  },
+  "measuredRuntime": {
+    "elapsedSeconds": 133.97244000434875,
+    "awakeElapsedSeconds": 131.299861209,
+    "heartbeatMaxIntervalSeconds": 1.1568599939346313,
+    "heartbeatMaxAwakeIntervalSeconds": 0.218128625
+  },
+  "timingScope": "Single real native run under concurrent validation. Measurements, not latency guarantees."
+}

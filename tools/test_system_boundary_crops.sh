@@ -7,5 +7,7 @@ xcrun swiftc -O -module-cache-path .build/ModuleCache \
   Partsmith/Core/Detection/StaffBandDetector.swift \
   Partsmith/Core/Detection/ScoreExtractionPlanner.swift \
   Partsmith/Core/Detection/ScoreSharedEnding.swift \
+  Partsmith/Core/Detection/ScoreSharedEndingDetector.swift \
+  Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift \
   tools/test_system_boundary_crops.swift -o .build/test_system_boundary_crops
 .build/test_system_boundary_crops "$@"

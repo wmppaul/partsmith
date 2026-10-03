@@ -1,0 +1,34 @@
+# Independent local-ending counterpart audit — 3 October 2026
+
+Final result: **866 existing assertions + all 15 unchanged independent checks + 2 category checks pass. No remaining blocking finding in this bounded review.** The original result was 12/15 independent checks, with three failures preserved below. This is a separate review by the low-resolution-preservation agent. Production remained read-only to this reviewer. The initial Core snapshot and complete results are retained unchanged; integration fixes must pass the same 15 checks without weakening them.
+
+The fixture is the real scanned Schumann Piano Quintet Op.44 IMSLP06822, source page 6, with first/second Piano endings in separate source systems. Input hashes bind the complete native inventory, source PDF, profile and local-recognition evidence. Synthetic unrelated navigation evidence is introduced only for the review-state interaction test; it is not a claim that the printed page contains a D.C. at that test position. Nonmusic pages use the real `ScoreDetectionReview.initial` skip path, so the tested initial overrides remain valid/applicable.
+
+## Initial failures
+
+1. Remove only the second-system ending metadata on source page 6: the remaining first-system entry still suppresses one shared copy. `allCurrent` finds the same pair-member array somewhere on the page but does not require the exact member's own system/anchor. The symmetric first-system removal fails too. This is a stale partial-metadata provenance defect; both local printed brackets are still in the music crops in this particular test, so no missing musical ink is claimed for this fixture.
+2. Start with the complete local Piano pair and a separate copied navigation rectangle. Clip the second local bracket by editing its crop. The two required global ending copies return. Remove the unrelated navigation copy through `removeSourceMarking`; this materializes the surviving automatic ending in the band's list. Change the recipient from music to a labeled cue and replan. Recognition clears and a rescan notice appears, but that restored automatic ending remains in the list: the initial review binding knew only the earlier navigation copy. This is a real stale-copy removal defect reached through the review API, not handcrafted copied-band mutation. The explicit `automaticLocalEndingPairIDs` marker still identifies it as automatic.
+
+## Passing independent scope
+
+The other 12 checks verify the normal two-copy suppression; unchanged initial nil-list override; source and recipient music-to-cue initial overrides; source and recipient swaps across systems; a final crop clipping the partner; rejection of Piano evidence offered as Cello evidence; rejection of a neighbor/global staff as recipient anchor; physically moved recipient lines; atomic cancellation after work begins; and correct materialization before the invalidating edit. The preexisting 866 checks also exercise explicit Remove Copy through repeated crop changes, exact original main-band geometry, malformed staff arrays, missing/ambiguous OCR, whole-pair matching and cross-page behavior.
+
+The reviewer additionally inspected the five corrected Piano output rows and the source page-6 second ending. Numerals, bracket lines, and target music remain visible in the unchanged source strips. This bounded review does not claim another full musical audit of the complete score.
+
+## Integration review
+
+The newly wired local phase runs only after complete global pairing, examines only selected paired pages and actual recipient first staffs, keeps local evidence out of global pairing, and publishes whole counterparts only after all required observations. Failure to render/read local evidence leaves global copies. The workflow returns the pre-scan result on cancellation; the document worker also retains operation identity and source-current checks before applying completion. Further finalized-code controls are recorded separately when available.
+
+## Reproduce
+
+`audit.swift` calls the 866 prior controls, then the 15 independent assertions. Compile it with `original-controls.swift` and either `initial-Core/**/*.swift` or a frozen current `Partsmith/Core` snapshot. The executable writes `.build/ending-local-independent-review/results.json` and intentionally exits 1 when requirements fail. Initial raw output is preserved in `initial-results.json` and `initial-run.log`. `run.py initial` or `run.py production` provides the exact compile/run procedure, uses a fresh scratch output path, and validates required fixture hashes. Large native binaries and PDFs stay in scratch; their inputs are hash-bound here.
+
+## First fix replay
+
+A fresh production snapshot passed the unchanged 866 original assertions and all 15 independent checks, with zero failures. `first-fix-results.json`, `first-fix-run.log`, `first-fix-source-hashes.json` and `first-fix-Core/` preserve that result. This precedes the separate swapped-recipient-ID fix found by the integrating agent, so it is not final-source signoff. Additional coincident heading/navigation controls are kept separately in `categories.swift` and do not alter any of the original 15 requirements.
+
+## Final production replay
+
+The finalized production snapshot passes all **866 + 15 + 2** assertions. All three initial failures are fixed. The same-page completeness check now requires the exact source system and anchor for each member. Invalidation uses the explicit automatic pair marker even after ownership changes and preserves coincident heading/navigation ownership on linked pages. The two extra category checks construct valid adjacent single-system pages from the same real staff geometry, retain an unrelated category at the exact ending source rectangle, materialize its list, invalidate the paired source page, and require both the unrelated metadata and its actual copied source rectangle to survive. Both pass. These are controlled review-state fixtures, not claims that the original score printed the synthetic extra directions.
+
+`final-results.json`, `final-category-results.json`, `final-run.log`, `final-source-hashes.json` and `final-Core/` record the tested state. Every compiled Core file matched production at verification time. `final-verification.json` binds the retained binary and inspected images. The original 15-case source and fixture inputs remain unchanged; combining both harnesses only removes their individual @main attributes and changes the output-file destination. `run.py production --with-categories --out <new-scratch-directory>` reproduces the combined audit against a new frozen production snapshot. The integrating agent's broader worker/native/export checks are separate; this report does not claim an additional full-score musical audit or independent execution of every worker test.

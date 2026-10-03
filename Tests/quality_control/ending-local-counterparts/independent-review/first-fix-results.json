@@ -1,0 +1,81 @@
+{
+  "failures" : 0,
+  "originalControlsCompleted" : true,
+  "tests" : [
+    {
+      "detail" : "",
+      "name" : "fresh full pair suppresses exactly two copies",
+      "passed" : true
+    },
+    {
+      "detail" : "Observed suppressed copies: 0",
+      "name" : "missing same-page second-system metadata does not certify full-pair suppression",
+      "passed" : true
+    },
+    {
+      "detail" : "Observed suppressed copies: 0",
+      "name" : "missing same-page first-system metadata does not certify full-pair suppression",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "unchanged initial nil-list override keeps complete local pair suppression",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "initial source music-to-cue invalidates both suppressions",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "initial recipient music-to-cue invalidates both suppressions",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "initial global owner swap across systems invalidates both suppressions",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "initial recipient swap across systems invalidates both suppressions",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "initial final crop clips local partner and restores all needed copies",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "neighbor Piano ending cannot suppress Cello copy even with broad crop",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "neighbor global owner cannot stand in for recipient source anchor",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "physically moved recipient staff rejects its old local bounds",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "cancellation after partial suppression restores exact original plan",
+      "passed" : true
+    },
+    {
+      "detail" : "",
+      "name" : "unrelated Remove Copy leaves restored ending automatic before invalidation",
+      "passed" : true
+    },
+    {
+      "detail" : "Retained stale ending: false; issues: [\"Directions need a new scan after changing this page\\'s staff assignments. Existing music crops and manual markings are kept.\"]",
+      "name" : "restored automatic ending materialized by unrelated Remove Copy clears after assignment invalidation",
+      "passed" : true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+--- e6f592d/Partsmith/Core/Detection/ScoreExtractionPlanner.swift
++++ .build/schumann-directions/ScoreExtractionPlanner.swift
+@@ -67,6 +67,11 @@
+     /// Conservative bounds of original nonwhite pixels inside the padded copy,
+     /// with a one-pixel raster guard. Absent for legacy or unmeasured headings.
+     var inkBounds: [Double]? = nil
++    /// Actual staff above which this printed occurrence was recognized.
++    var sourceStaffID: Int? = nil
++    /// Nil retains legacy global behavior. Empty means the printed occurrence
++    /// is already supplied at the correct musical position for every part.
++    var recipientPartIDs: [String]? = nil
+ }
+ 
+ struct ScoreSharedNavigation: Codable, Equatable {
+@@ -479,6 +484,7 @@
+                                            to band: inout ScorePlannedBand) {
+         let candidates = (page.sharedHeadings ?? []).filter { $0.anchorStaffID == anchor }
+         for heading in candidates {
++            if let recipients=heading.recipientPartIDs, !recipients.contains(band.partID) { continue }
+             let r = heading.bounds
+             guard r.count == 4, r.allSatisfy(\.isFinite),
+                   r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1 else { continue }

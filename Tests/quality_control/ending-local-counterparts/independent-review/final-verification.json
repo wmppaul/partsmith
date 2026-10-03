@@ -1,0 +1,21 @@
+{
+  "verifiedAtUTC": "2026-10-03T18:17:56.094016+00:00",
+  "existingAssertions": 866,
+  "unchangedIndependentAssertions": 15,
+  "categoryAssertions": 2,
+  "failed": 0,
+  "sourceMatchesCurrentProduction": true,
+  "testPredicatesAndFixturesUnchanged": true,
+  "onlyHarnessAdaptations": [
+    "Remove @main attributes to call both audit entry points from one wrapper",
+    "Redirect result file to fresh scratch directory"
+  ],
+  "largeBinary": {
+    "path": ".build/ending-local-independent-production-final2/audit",
+    "sha256": "8a641f67416af6aad4ea1018920701fe655b2c267481cf27f52bf1ed5e1d46bd"
+  },
+  "reviewedImages": {
+    "Tests/quality_control/ending-local-counterparts/output-review/piano-corrected-rows.png": "fedafcb6e406f447e3ce09d7de66f2f6653f94fdad87baa8947b6ea5dbdd06ed",
+    "Tests/quality_control/ending-local-counterparts/source-review/p6-s2-piano-local.png": "2001b9e669e0e6c169e1768cb0a393f84b097fe68c331cdde699159bff96f9c5"
+  }
+}

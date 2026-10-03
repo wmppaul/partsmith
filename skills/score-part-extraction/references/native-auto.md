@@ -81,6 +81,13 @@ instruction below that same system; moving it above the following system can
 change its meaning. The batch reviewed plan can create these
 rectangles; the app can retain and remove them, and can edit editorial labels.
 Automatic staff assignment does not automatically understand shared directions.
+Before adding a copied marking, check whether the recipient already retains a
+complete equivalent marking above its own staff at the same musical position.
+Equal numerals or words elsewhere are not sufficient. In particular, a neighboring
+instrument's ending below the target staff cannot replace the target's ending.
+Check both members of a first/second-ending pair, including across systems or
+pages. After tightening a crop, check again that its required local marking is
+still present; restore a verified source copy when it is no longer retained.
 Check both a return instruction and its destination symbol, plus any first/second
 endings. Copying the sentence alone does not make the repeat complete.
 

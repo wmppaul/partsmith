@@ -1,0 +1,54 @@
+[
+  {
+    "category": "existing-heading-missing-text",
+    "sourcePage": 26,
+    "system": 1,
+    "bands": [
+      "p26-s1-violin2",
+      "p26-s1-viola",
+      "p26-s1-cello",
+      "p26-s1-piano"
+    ],
+    "observation": "SCHERZO copied intact, but copy contains clipped top fragments of adjacent Molto vivace text; full top-staff Molto vivace/metronome line is not copied. Piano already retains its own Molto vivace wording without metronome. Cello retains the neighboring Piano wording below its own staff. Violin II and Viola lack that complete tempo wording.",
+    "image": "row-review/003-p26-s1-violin2.png"
+  },
+  {
+    "category": "existing-heading-duplicate-local-text",
+    "sourcePage": 2,
+    "system": 1,
+    "bands": [
+      "p2-s1-piano"
+    ],
+    "observation": "Copied Allegro brillante with metronome repeats retained local Allegro brillante wording. The local wording lacks the metronome, so deleting the entire copy would also remove newly preserved information.",
+    "image": "row-review/016-p2-s1-piano.png"
+  },
+  {
+    "category": "existing-heading-duplicate-local-text",
+    "sourcePage": 19,
+    "system": 3,
+    "bands": [
+      "p19-s3-piano"
+    ],
+    "observation": "Copied Agitato duplicates retained local Agitato.",
+    "image": "row-review/017-p19-s3-piano.png"
+  },
+  {
+    "category": "existing-neighbor-notation",
+    "sourcePage": 18,
+    "system": 2,
+    "bands": [
+      "p18-s2-cello"
+    ],
+    "observation": "Retained source crop contains neighboring Piano ending beneath Cello plus the required global ending copy above. It is not a recipient-owned complete local counterpart; suppression would weaken ownership guarantees."
+  },
+  {
+    "category": "observed-ending-miss",
+    "sourcePage": 29,
+    "system": 3,
+    "observation": "Previously observed missed second-ending numeral remains outside recognized paired metadata. Wider-numeral experiment is not included in production. Whole-score recall is not established."
+  },
+  {
+    "category": "existing-neighbor-notation",
+    "observation": "Dense scanned source produces retained neighboring staff/notation fragments throughout several string parts. Main crops are byte-for-byte equal as numeric source rectangles to the prior ending-only candidate; this report does not certify all original crop boundaries or all shared direction recall."
+  }
+]

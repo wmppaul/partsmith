@@ -1,0 +1,67 @@
+[
+  {
+    "actualRole" : "nil",
+    "expectedRole" : "second",
+    "id" : "later-only-wide-success",
+    "matchesExpected" : false,
+    "memberCount" : 2,
+    "modesRetained" : [
+
+    ],
+    "textsRetained" : [
+
+    ]
+  },
+  {
+    "actualRole" : "first",
+    "expectedRole" : "nil",
+    "id" : "later-wide-conflicts-with-earlier-narrow",
+    "matchesExpected" : false,
+    "memberCount" : 2,
+    "modesRetained" : [
+      "accurate"
+    ],
+    "textsRetained" : [
+      "1"
+    ]
+  },
+  {
+    "actualRole" : "second",
+    "expectedRole" : "second",
+    "id" : "earlier-wide-retained",
+    "matchesExpected" : true,
+    "memberCount" : 2,
+    "modesRetained" : [
+      "accurate-wide"
+    ],
+    "textsRetained" : [
+      "2"
+    ]
+  },
+  {
+    "actualRole" : "first",
+    "expectedRole" : "first",
+    "id" : "later-narrow-positive",
+    "matchesExpected" : true,
+    "memberCount" : 2,
+    "modesRetained" : [
+      "accurate"
+    ],
+    "textsRetained" : [
+      "1"
+    ]
+  },
+  {
+    "actualRole" : "first",
+    "expectedRole" : "first",
+    "id" : "later-wide-same-label",
+    "matchesExpected" : true,
+    "memberCount" : 2,
+    "modesRetained" : [
+      "accurate"
+    ],
+    "textsRetained" : [
+      "1"
+    ]
+  }
+]

@@ -1,0 +1,350 @@
+{
+  "method": "Original source 216-dpi render; manually selected bracket/hook/numeral/adjacent punctuation components, threshold160; exclude staccato dots underneath bare numerals on p23. Add 0.1pt guard. Initial ROIs touching ink enlarged before candidate comparisons. Not a fully blinded study: initial candidate metadata visible before this task; guard bounds derive from original source pixels, not candidate bounds.",
+  "guards": [
+    {
+      "sourceCase": 0,
+      "source": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "page": 21,
+      "system": 3,
+      "role": "first",
+      "componentIDs": [
+        1,
+        3,
+        6
+      ],
+      "inkBounds": [
+        392.6666666666667,
+        336.3333333333333,
+        481.0,
+        346.0
+      ],
+      "guardBounds": [
+        392.56666666666666,
+        336.2333333333333,
+        481.1,
+        346.1
+      ]
+    },
+    {
+      "sourceCase": 0,
+      "source": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "page": 21,
+      "system": 3,
+      "role": "second",
+      "componentIDs": [
+        2,
+        4,
+        5
+      ],
+      "inkBounds": [
+        482.3333333333333,
+        336.3333333333333,
+        550.0,
+        345.6666666666667
+      ],
+      "guardBounds": [
+        482.2333333333333,
+        336.2333333333333,
+        550.1,
+        345.7666666666667
+      ]
+    },
+    {
+      "sourceCase": 1,
+      "source": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "page": 23,
+      "system": 4,
+      "role": "first",
+      "componentIDs": [
+        1,
+        3
+      ],
+      "inkBounds": [
+        136.0,
+        496.6666666666667,
+        210.33333333333331,
+        506.6666666666667
+      ],
+      "guardBounds": [
+        135.9,
+        496.56666666666666,
+        210.4333333333333,
+        506.7666666666667
+      ]
+    },
+    {
+      "sourceCase": 1,
+      "source": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "page": 23,
+      "system": 4,
+      "role": "second",
+      "componentIDs": [
+        2,
+        4
+      ],
+      "inkBounds": [
+        212.0,
+        497.0,
+        282.66666666666663,
+        506.3333333333333
+      ],
+      "guardBounds": [
+        211.9,
+        496.9,
+        282.76666666666665,
+        506.43333333333334
+      ]
+    },
+    {
+      "sourceCase": 2,
+      "source": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "page": 24,
+      "system": 2,
+      "role": "first",
+      "componentIDs": [
+        1,
+        3,
+        5
+      ],
+      "inkBounds": [
+        484.6666666666667,
+        196.33333333333334,
+        523.3333333333334,
+        207.0
+      ],
+      "guardBounds": [
+        484.56666666666666,
+        196.23333333333335,
+        523.4333333333334,
+        207.1
+      ]
+    },
+    {
+      "sourceCase": 2,
+      "source": "sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "page": 24,
+      "system": 2,
+      "role": "second",
+      "componentIDs": [
+        2,
+        4,
+        6
+      ],
+      "inkBounds": [
+        524.6666666666666,
+        197.0,
+        558.6666666666666,
+        207.0
+      ],
+      "guardBounds": [
+        524.5666666666666,
+        196.9,
+        558.7666666666667,
+        207.1
+      ]
+    },
+    {
+      "sourceCase": 3,
+      "source": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "page": 29,
+      "system": 3,
+      "role": "first",
+      "componentIDs": [
+        2,
+        4,
+        5
+      ],
+      "inkBounds": [
+        119.66666666666667,
+        473.0,
+        189.33333333333331,
+        480.3333333333333
+      ],
+      "guardBounds": [
+        119.56666666666668,
+        472.9,
+        189.4333333333333,
+        480.43333333333334
+      ]
+    },
+    {
+      "sourceCase": 3,
+      "source": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "page": 29,
+      "system": 3,
+      "role": "second",
+      "componentIDs": [
+        3,
+        6
+      ],
+      "inkBounds": [
+        189.66666666666669,
+        473.0,
+        254.33333333333334,
+        480.3333333333333
+      ],
+      "guardBounds": [
+        189.5666666666667,
+        472.9,
+        254.43333333333334,
+        480.43333333333334
+      ]
+    },
+    {
+      "sourceCase": 4,
+      "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "page": 21,
+      "system": 3,
+      "role": "first",
+      "componentIDs": [
+        1,
+        3,
+        5
+      ],
+      "inkBounds": [
+        383.6666666666667,
+        325.0,
+        469.0,
+        334.3333333333333
+      ],
+      "guardBounds": [
+        383.56666666666666,
+        324.9,
+        469.1,
+        334.43333333333334
+      ]
+    },
+    {
+      "sourceCase": 4,
+      "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "page": 21,
+      "system": 3,
+      "role": "second",
+      "componentIDs": [
+        2,
+        4,
+        6
+      ],
+      "inkBounds": [
+        470.6666666666667,
+        325.3333333333333,
+        536.0,
+        334.6666666666667
+      ],
+      "guardBounds": [
+        470.56666666666666,
+        325.2333333333333,
+        536.1,
+        334.7666666666667
+      ]
+    },
+    {
+      "sourceCase": 5,
+      "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "page": 23,
+      "system": 4,
+      "role": "first",
+      "componentIDs": [
+        1,
+        3
+      ],
+      "inkBounds": [
+        150.66666666666666,
+        478.6666666666667,
+        223.33333333333331,
+        489.0
+      ],
+      "guardBounds": [
+        150.56666666666666,
+        478.56666666666666,
+        223.4333333333333,
+        489.1
+      ]
+    },
+    {
+      "sourceCase": 5,
+      "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "page": 23,
+      "system": 4,
+      "role": "second",
+      "componentIDs": [
+        2,
+        4
+      ],
+      "inkBounds": [
+        224.66666666666669,
+        479.6666666666667,
+        293.66666666666663,
+        489.0
+      ],
+      "guardBounds": [
+        224.5666666666667,
+        479.56666666666666,
+        293.76666666666665,
+        489.1
+      ]
+    },
+    {
+      "sourceCase": 6,
+      "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "page": 24,
+      "system": 2,
+      "role": "first",
+      "componentIDs": [
+        1,
+        3,
+        6
+      ],
+      "inkBounds": [
+        461.6666666666667,
+        190.0,
+        499.0,
+        200.0
+      ],
+      "guardBounds": [
+        461.56666666666666,
+        189.9,
+        499.1,
+        200.1
+      ]
+    },
+    {
+      "sourceCase": 6,
+      "source": "sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "page": 24,
+      "system": 2,
+      "role": "second",
+      "componentIDs": [
+        2,
+        4,
+        7
+      ],
+      "inkBounds": [
+        500.3333333333333,
+        190.33333333333334,
+        533.0,
+        200.0
+      ],
+      "guardBounds": [
+        500.2333333333333,
+        190.23333333333335,
+        533.1,
+        200.1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+--- a/Partsmith/Core/Detection/ScoreExtractionPlanner.swift
++++ b/Partsmith/Core/Detection/ScoreExtractionPlanner.swift
+@@ -102,6 +102,9 @@
+     /// removal. Nil permits automatic navigation copies for legacy overrides.
+     var sourceMarkings: [[Double]]?
+     var sourceMarkingsBelow: [Bool]? = nil
++    /// UI crop-edit materialization preserves these automatic local-ending choices.
++    /// Nil means an explicitly supplied marking list is fully authoritative.
++    var automaticLocalEndingPairIDs: [String]? = nil
+ }
+ 
+ struct ScoreSystemOverride: Codable, Equatable {
+@@ -289,7 +292,14 @@
+                             [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+                              (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+                         }, sourceMarkingsBelow: band.sourceMarkings.contains { $0.isBelow == true }
+-                            ? band.sourceMarkings.map { $0.isBelow == true } : nil)
++                            ? band.sourceMarkings.map { $0.isBelow == true } : nil,
++                        automaticLocalEndingPairIDs: {
++                            let ids = (page.sharedEndings ?? []).filter { ending in
++                            ending.systemIndex == band.systemIndex
++                                && (ending.localCounterparts ?? []).contains { $0.partID == band.partID }
++                        }.map(\.pairID)
++                            return ids.isEmpty ? nil : ids
++                        }())
+                 }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
+                     ScorePartOmission(partID: $0.partID, reason: $0.reason)
+                 }, startBarNumber: generated?.startBarNumber, barCount: generated?.barCount)
+@@ -357,10 +367,10 @@
+         if isCancelled() {
+             return ScoreExtractionPlan(parts: profile.parts, pages: [], warnings: ["Score planning was canceled."])
+         }
+-        return ScoreExtractionPlan(parts: profile.parts, pages: planned, warnings: [
++        return ScoreLocalEndingPreservation.apply(to: ScoreExtractionPlan(parts: profile.parts, pages: planned, warnings: [
+             "Part names and staff grouping come from the reviewed instrumentation profile, not automatic instrument recognition.",
+             "Inspect all target notation and source context before export. Compact crops follow detected ink; detached directions and touching notation still need review."
+-        ])
++        ]), pages: pages, overrides: overrides, isCancelled: isCancelled)
+     }
+ 
+     private static func automaticPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile) -> ScorePagePlan {
+@@ -430,10 +440,10 @@
+     /// place and copy the complete printed instruction for the other parts.
+     private static func copySharedNavigation(page: ScorePageAnalysis, to bands: inout [ScorePlannedBand],
+                                              preservingOwnerCrops: Set<String> = [],
+-                                             preservingMarkings: Set<String> = []) {
++                                             preservingMarkings: Set<String> = [], automaticEndingPairs: [String: Set<String>] = [:]) {
+         // This adapter reuses source-pixel placement without mixing persisted
+         // ending provenance into navigation/destination recognition.
+-        var endings: [ScoreSharedNavigation] = []
++        var endings: [(ScoreSharedNavigation, ScoreSharedEnding?)] = []
+         for ending in page.sharedEndings ?? [] where ending.isValid(on: page) {
+             guard let owner = bands.firstIndex(where: { $0.candidateIDs.contains(ending.anchorStaffID) }) else { continue }
+             // A supplied initial override may regroup an already recognized
+@@ -443,10 +453,10 @@
+                 bands[owner].warnings.append("Paired ending needs a new scan after this staff's system assignment changed.")
+                 continue
+             }
+-            endings.append(ScoreSharedNavigation(anchorStaffID: ending.anchorStaffID, bounds: ending.bounds,
+-                recognizedText: "", isBelow: false))
+-        }
+-        for direction in (page.sharedNavigation ?? []) + endings {
++            endings.append((ScoreSharedNavigation(anchorStaffID: ending.anchorStaffID, bounds: ending.bounds,
++                recognizedText: "", isBelow: false), ending))
++        }
++        for (direction, ending) in (page.sharedNavigation ?? []).map({ ($0, Optional<ScoreSharedEnding>.none) }) + endings {
+             let r = direction.bounds
+             guard r.count == 4, r.allSatisfy(\.isFinite),
+                   r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1,
+@@ -456,7 +466,8 @@
+                 // A reviewed recipient list is authoritative. Do not restore
+                 // removed copies, add new ones, or widen its crop for them.
+                 // The source owner's crop has a separate explicit-edge rule.
+-                if i != owner, preservingMarkings.contains(bands[i].id) { continue }
++                if i != owner, preservingMarkings.contains(bands[i].id),
++                   ending.map({ automaticEndingPairs[bands[i].id]?.contains($0.pairID) == true }) != true { continue }
+                 if i == owner {
+                     // An explicitly edited owner crop remains the user's
+                     // choice. A reset to automatic cropping restores padding.
+@@ -526,6 +537,7 @@
+         var output = ScorePagePlan(pageIndex: page.pageIndex, assignments: [], omissions: [], unresolvedReasons: [], warnings: ["Reviewed page override: \(override.reason)"])
+         var explicitOwnerCrops = Set<String>()
+         var explicitMarkingLists = Set<String>()
++        var automaticEndingPairs: [String: Set<String>] = [:]
+         let partIDs = Set(profile.parts.map(\.id))
+         if let reason = override.nonMusicReason, !reason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, override.systems.isEmpty {
+             output.omissions = profile.parts.map { ScoreSystemOmission(systemIndex: -1, partID: $0.id, reason: reason) }
+@@ -653,12 +665,13 @@
+                 }
+                 if assigned.rect != nil { explicitOwnerCrops.insert(output.assignments.last!.id) }
+                 if assigned.sourceMarkings != nil { explicitMarkingLists.insert(output.assignments.last!.id) }
++                automaticEndingPairs[output.assignments.last!.id] = Set(assigned.automaticLocalEndingPairIDs ?? [])
+             }
+         }
+         if !output.unresolvedReasons.isEmpty { output.assignments = []; output.omissions = [] }
+         else { copySharedNavigation(page: page, to: &output.assignments,
+                                     preservingOwnerCrops: explicitOwnerCrops,
+-                                    preservingMarkings: explicitMarkingLists) }
++                                    preservingMarkings: explicitMarkingLists, automaticEndingPairs: automaticEndingPairs) }
+         return output
+     }
+ 
+--- /dev/null
++++ b/Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift
+@@ -0,0 +1,168 @@
++import CoreGraphics
++import Foundation
++
++/// Recipient evidence is kept separate from the global paired-ending stream.
++/// It cannot create a global pair or change a source crop.
++struct ScoreEndingLocalCounterpart: Codable, Equatable {
++    var partID: String
++    var globalMembers: [ScoreEndingMember]
++    var members: [ScoreEndingMember]
++}
++
++enum ScoreLocalEndingPreservation {
++    typealias D = ScoreSharedEndingDetector
++
++    static func firstStaff(of band: ScorePlannedBand, on page: ScorePageAnalysis) -> ScoreObservedStaff? {
++        guard band.kind == "music", !band.candidateIDs.isEmpty,
++              Set(band.candidateIDs).count == band.candidateIDs.count else { return nil }
++        let owned = page.staves.filter { band.candidateIDs.contains($0.id) }
++        guard owned.count == band.candidateIDs.count, owned.allSatisfy({ staff in
++            let lines = staff.staffLineFractions
++            return lines.count == 5 && lines.allSatisfy { $0.isFinite && $0 >= 0 && $0 <= 1 }
++                && zip(lines, lines.dropFirst()).allSatisfy { $0 < $1 }
++        }) else { return nil }
++        return owned.min { $0.staffLineFractions[0] < $1.staffLineFractions[0] }
++    }
++
++    /// Uses precisely the existing geometry/OCR implementation, anchored above
++    /// this recipient's own first physical staff, fenced by the preceding staff.
++    /// Result is never passed into the global pairer.
++    static func analyze(in image: CGImage, page: ScorePageAnalysis, profile: ScoreExtractionProfile,
++                        plan: ScoreExtractionPlan, partID: String, systems: Set<Int>,
++                        observedFailure: ((Error)->Void)? = nil,
++                        isCancelled: ()->Bool = { false }) -> D.PageResult {
++        let empty = D.PageResult(pageIndex: page.pageIndex, ownershipVerified: false,
++            systemIndices: [], geometryProposalCount: 0, mergedProposalCount: 0, candidates: [])
++        guard !isCancelled(), plan.canApply,
++              D.systems(page: page, profile: profile, isCancelled: isCancelled) != nil else { return empty }
++        let all = plan.bands.filter { $0.pageIndex == page.pageIndex && $0.kind == "music" }
++        let ids = all.flatMap(\.candidateIDs)
++        guard ids.count == Set(ids).count, Set(ids) == Set(page.staves.map(\.id)) else { return empty }
++        let ordered = page.staves.sorted { $0.staffLineFractions[0] < $1.staffLineFractions[0] }
++        var anchors: [D.System] = []
++        for system in systems.sorted() {
++            let recipients = all.filter { $0.systemIndex == system && $0.partID == partID }
++            guard recipients.count == 1, let first = firstStaff(of: recipients[0], on: page),
++                  let index = ordered.firstIndex(where: { $0.id == first.id }) else { return empty }
++            anchors.append(D.System(index: system, first: first, previous: index > 0 ? ordered[index-1] : nil))
++        }
++        return D.analyze(in: image, page: page, verifiedSystems: anchors,
++            observedFailure: observedFailure, isCancelled: isCancelled)
++    }
++
++    static func samePosition(_ local: D.Candidate, _ global: D.Candidate) -> Bool {
++        guard local.role == global.role, local.pageIndex == global.pageIndex,
++              local.systemIndex == global.systemIndex,
++              local.bounds.count == 4, global.bounds.count == 4,
++              local.bounds.allSatisfy(\.isFinite), global.bounds.allSatisfy(\.isFinite),
++              local.staffSpace > 0, global.staffSpace > 0 else { return false }
++        // Both horizontal bracket endpoints must align, not just numeral text.
++        // One staff-space is substantially smaller than a printed measure.
++        let allowance = 1.25 * max(local.staffSpace, global.staffSpace)
++        return abs(local.bounds[0] - global.bounds[0]) <= allowance
++            && abs(local.bounds[2] - global.bounds[2]) <= allowance
++    }
++
++    static func member(_ candidate: D.Candidate) -> ScoreEndingMember? {
++        guard let role = candidate.role.flatMap(ScoreEndingMember.Role.init(rawValue:)),
++              candidate.pageWidth > 0, candidate.pageHeight > 0, candidate.copyBounds.count == 4 else { return nil }
++        let b = candidate.copyBounds
++        let bounds = [b[0]/candidate.pageWidth,b[1]/candidate.pageHeight,b[2]/candidate.pageWidth,b[3]/candidate.pageHeight]
++        guard ScoreSharedEnding.validBounds(bounds) else { return nil }
++        return ScoreEndingMember(sourcePageIndex: candidate.pageIndex, sourceSystemIndex: candidate.systemIndex,
++            anchorStaffID: candidate.anchorStaffID, bounds: bounds, role: role,
++            evidence: candidate.evidence.map { ScoreEndingTextEvidence(mode:$0.mode,text:$0.text,confidence:$0.confidence,bounds:$0.bounds) })
++    }
++
++    /// Requires exactly one supported local counterpart for BOTH global members.
++    /// A first bracket alone, unrelated same-page pair, or another part is not enough.
++    static func counterpart(global: D.Pair, partID: String, localPages: [D.PageResult],
++                            pages: [ScorePageAnalysis], plan: ScoreExtractionPlan) -> ScoreEndingLocalCounterpart? {
++        guard plan.canApply, Set(localPages.map(\.pageIndex)).count == localPages.count,
++              let firstGlobal = member(global.first), let secondGlobal = member(global.second) else { return nil }
++        var matches: [D.Candidate] = []
++        for globalMember in [global.first, global.second] {
++            guard let page = localPages.first(where: { $0.pageIndex == globalMember.pageIndex }), page.ownershipVerified,
++                  page.systemIndices.contains(globalMember.systemIndex) else { return nil }
++            let matched = page.candidates.filter { samePosition($0, globalMember) }
++            guard matched.count == 1 else { return nil }
++            matches.append(matched[0])
++        }
++        let gap = global.first.pageIndex == global.second.pageIndex && global.first.systemIndex == global.second.systemIndex ? 0 : 1
++        guard D.pairable(matches[0], matches[1], systemGap: gap),
++              let first = member(matches[0]), let second = member(matches[1]) else { return nil }
++        let result = ScoreEndingLocalCounterpart(partID: partID, globalMembers: [firstGlobal, secondGlobal], members: [first, second])
++        return retained(result, pages: pages, plan: plan) ? result : nil
++    }
++
++    static func retained(_ counterpart: ScoreEndingLocalCounterpart, pages: [ScorePageAnalysis],
++                         plan: ScoreExtractionPlan) -> Bool {
++        guard plan.canApply, !counterpart.partID.isEmpty, counterpart.members.count == 2,
++              counterpart.globalMembers.count == 2,
++              counterpart.members.map(\.role) == [.first,.second],
++              counterpart.globalMembers.map(\.role) == [.first,.second] else { return false }
++        for (local, global) in zip(counterpart.members, counterpart.globalMembers) {
++            guard ScoreSharedEnding.validBounds(local.bounds), ScoreSharedEnding.validBounds(global.bounds),
++                  local.sourcePageIndex == global.sourcePageIndex,
++                  local.sourceSystemIndex == global.sourceSystemIndex,
++                  let page = pages.first(where: { $0.pageIndex == local.sourcePageIndex }) else { return false }
++            let bands = plan.bands.filter { $0.pageIndex == local.sourcePageIndex && $0.systemIndex == local.sourceSystemIndex
++                && $0.partID == counterpart.partID && $0.kind == "music" }
++            guard bands.count == 1, let first = firstStaff(of: bands[0], on: page), first.id == local.anchorStaffID,
++                  let globalStaff = page.staves.first(where: { $0.id == global.anchorStaffID }),
++                  first.staffLineFractions.count == 5, globalStaff.staffLineFractions.count == 5 else { return false }
++            let band = bands[0], b = local.bounds
++            let space = max(first.staffLineFractions[4] - first.staffLineFractions[0],
++                globalStaff.staffLineFractions[4] - globalStaff.staffLineFractions[0]) / 4
++            guard space.isFinite, space > 0, page.pageWidth > 0, page.pageHeight > 0,
++                  b[1] < first.staffLineFractions[0], b[3] <= first.staffLineFractions[0] + space,
++                  abs(b[0] - global.bounds[0]) <= 1.25*space*page.pageHeight/page.pageWidth,
++                  abs(b[2] - global.bounds[2]) <= 1.25*space*page.pageHeight/page.pageWidth,
++                  b[0] >= band.leftFraction - 1e-9, b[2] <= 1-band.rightFraction + 1e-9,
++                  b[1] >= band.topFraction - 1e-9, b[3] <= band.bottomFraction + 1e-9 else { return false }
++        }
++        return true
++    }
++
++    /// Planner-time validation catches initial manual regrouping/recropping on
++    /// either side as well as normal live review invalidation. Cancellation is atomic.
++    static func apply(to original: ScoreExtractionPlan, pages: [ScorePageAnalysis],
++                      overrides: [ScorePageOverride], isCancelled: ()->Bool = { false }) -> ScoreExtractionPlan {
++        guard !isCancelled(), original.canApply else { return original }
++        var result = original
++        for page in pages {
++            for ending in page.sharedEndings ?? [] where ending.isValid(on: page) {
++                if isCancelled() { return original }
++                for counterpart in ending.localCounterparts ?? [] {
++                    guard counterpart.globalMembers == ending.members,
++                          retained(counterpart, pages: pages, plan: original) else { continue }
++                    // Both global halves must still be present and owned by the
++                    // recorded system. Never rely on stale one-sided metadata.
++                    let allCurrent = ending.members.allSatisfy { member in
++                        guard let source = pages.first(where: { $0.pageIndex == member.sourcePageIndex }),
++                              (source.sharedEndings ?? []).contains(where: { $0.members == ending.members && $0.isValid(on: source) }) else { return false }
++                        let owners = original.bands.filter { $0.pageIndex == member.sourcePageIndex && $0.candidateIDs.contains(member.anchorStaffID) }
++                        return owners.count == 1 && owners[0].kind == "music" && owners[0].systemIndex == member.sourceSystemIndex
++                    }
++                    guard allCurrent else { continue }
++                    // Explicit user lists (including empty removal lists) win.
++                    let manuallyListed = counterpart.members.contains { member in
++                        overrides.first(where: { $0.pageIndex == member.sourcePageIndex })?.systems
++                            .first(where: { $0.systemIndex == member.sourceSystemIndex })?.bands
++                            .contains(where: { $0.partID == counterpart.partID && $0.sourceMarkings != nil
++                                && !($0.automaticLocalEndingPairIDs ?? []).contains(ending.pairID) }) == true
++                    }
++                    guard !manuallyListed else { continue }
++                    // If another category owns the same source box, retain it.
++                    guard !(page.sharedHeadings ?? []).contains(where: { $0.bounds == ending.bounds }),
++                          !(page.sharedNavigation ?? []).contains(where: { $0.bounds == ending.bounds }) else { continue }
++                    guard let pi = result.pages.firstIndex(where: { $0.pageIndex == page.pageIndex }),
++                          let bi = result.pages[pi].assignments.firstIndex(where: { $0.partID == counterpart.partID && $0.systemIndex == ending.systemIndex }),
++                          !result.pages[pi].assignments[bi].candidateIDs.contains(ending.anchorStaffID) else { continue }
++                    result.pages[pi].assignments[bi].sourceMarkings.removeAll { $0 == ending.sourceMarking }
++                }
++            }
++        }
++        return isCancelled() ? original : result
++    }
++}
+--- a/Partsmith/Core/Detection/ScoreSharedDirectionReview.swift
++++ b/Partsmith/Core/Detection/ScoreSharedDirectionReview.swift
+@@ -40,6 +40,9 @@
+         }
+         var markings = band.sourceMarkings
+         markings.remove(at: index)
++        let removed = band.sourceMarkings[index]
++        let removedPairs = Set((page.sharedEndings ?? []).filter { $0.sourceMarking == removed }.map(\.pairID))
++        correction.systems[system].bands[part].automaticLocalEndingPairIDs?.removeAll { removedPairs.contains($0) }
+         correction.systems[system].bands[part].sourceMarkings = markings.map {
+             [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+              (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+--- a/Partsmith/Core/Detection/ScoreSharedEnding.swift
++++ b/Partsmith/Core/Detection/ScoreSharedEnding.swift
+@@ -30,6 +30,7 @@
+     /// Both source members are retained on each page-local copy, including a
+     /// cross-page pair. Changes to either source invalidate both halves.
+     var members: [ScoreEndingMember]
++    var localCounterparts: [ScoreEndingLocalCounterpart]? = nil
+ 
+     var pairPageIndices: [Int] { Array(Set(members.map(\.sourcePageIndex))).sorted() }
+     var pairID: String {
+--- a/Partsmith/Core/Detection/ScoreSharedEndingDetector.swift
++++ b/Partsmith/Core/Detection/ScoreSharedEndingDetector.swift
+@@ -148,7 +148,15 @@
+     static func analyze(in image:CGImage,page:ScorePageAnalysis,profile:ScoreExtractionProfile,
+         observedFailure:((Error)->Void)?=nil,isCancelled:()->Bool={false}) -> PageResult {
+         let empty=PageResult(pageIndex:page.pageIndex,ownershipVerified:false,systemIndices:[],geometryProposalCount:0,mergedProposalCount:0,candidates:[])
+-        guard !isCancelled(),let systems=systems(page:page,profile:profile,isCancelled:isCancelled),let r=Raster(image:image) else{return empty}
++        guard !isCancelled(),let systems=systems(page:page,profile:profile,isCancelled:isCancelled) else{return empty}
++        return analyze(in:image,page:page,verifiedSystems:systems,observedFailure:observedFailure,isCancelled:isCancelled)
++    }
++    // Internal geometry primitive: callers must verify physical staff ownership.
++    // Local recipient candidates stay in a separate stream, never global pairing.
++    static func analyze(in image:CGImage,page:ScorePageAnalysis,verifiedSystems systems:[System],
++        observedFailure:((Error)->Void)?=nil,isCancelled:()->Bool={false}) -> PageResult {
++        let empty=PageResult(pageIndex:page.pageIndex,ownershipVerified:false,systemIndices:[],geometryProposalCount:0,mergedProposalCount:0,candidates:[])
++        guard !isCancelled(),let r=Raster(image:image) else{return empty}
+         var result=PageResult(pageIndex:page.pageIndex,ownershipVerified:true,systemIndices:systems.map(\.index),geometryProposalCount:0,mergedProposalCount:0,candidates:[])
+         let sx=Double(r.width)/page.pageWidth,sy=Double(r.height)/page.pageHeight
+         for system in systems {

@@ -1,0 +1,199 @@
+{
+  "status": "production integration complete; final real-score workflow/build verification owned by root",
+  "command": "bash tools/test_shared_ending_app.sh --corpus",
+  "exitCode": 0,
+  "selfContainedLocalControls": 62,
+  "existingEndingIntegrationAndFrozenCorpusChecks": 65,
+  "workerAndCancellationChecks": 35,
+  "frozenReplayPages": 68,
+  "frozenMainCrops": 1009,
+  "productionGlobalOCRChanged": false,
+  "productionHeadingAlgorithmChanged": false,
+  "scriptDependenciesUpdated": 8,
+  "newProgressPhase": "localEndings",
+  "localScanScope": "Accepted global-pair source pages/systems, per recipient; no global extra full-score per-part scan",
+  "compilerBinary": {
+    "path": ".build/shared-ending-app-tests/test_shared_ending_app",
+    "sha256": "86deaac8fdd49b34d26e6cee4129f4106c85ad90ce01e29c394875b79275d81d"
+  },
+  "log": {
+    "path": "Tests/quality_control/ending-local-app-integration/permanent-controls.log",
+    "sha256": "b47bbc35064b2c8c6b0627288352764e02ca288206869a3ea68ebfe27561b44c"
+  },
+  "changedFiles": [
+    {
+      "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "81f16962197455603ca5df0af1cad5cca3cf7f447f57dc551f93f87435be9ad6"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "46165399d338fe88bdf74dae128a3c8794a34b2d115685edd6aab3dfc9b2e281"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "20b6af97dd857f7fbf64d04e95c8728099a9e06168f71e0bfd5c505d8743c7fb"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": "Partsmith.xcodeproj/project.pbxproj",
+      "sha256": "dc04838c31ad0f31b734dcff48a39fdc7dbbfa791a427ccad2552e8df983983c"
+    },
+    {
+      "path": "tools/test_crop_quality.sh",
+      "sha256": "afa798ca29757a3be4141249182ff39417b8b75b1576edf0e27bfe0899e947f2"
+    },
+    {
+      "path": "tools/test_local_ending_counterparts.swift",
+      "sha256": "f0a3efb7e992464240d536ef57fd0d289250298fdb30253ae6c8f5b096782faf"
+    },
+    {
+      "path": "tools/test_rest_detection.sh",
+      "sha256": "2f14c30462e33d189c44f0f310d9089a9c616599e195fc4cc98be7e30c5a6db8"
+    },
+    {
+      "path": "tools/test_score_planner.sh",
+      "sha256": "1aab7f647094ba094f34c4600ac23aa6f12275a31f7b2a0884c6a3d9b9f2ffee"
+    },
+    {
+      "path": "tools/test_shared_destinations.sh",
+      "sha256": "965f59f7f8160cb960ba1ef164056e770f4f433d2a062777b0d97f02d965d04a"
+    },
+    {
+      "path": "tools/test_shared_ending_app.sh",
+      "sha256": "9306eef2275e4d9fc0d8f2d96b8cc4b7aa14b6a612a2cd68ab5163fa6b0f4977"
+    },
+    {
+      "path": "tools/test_shared_ending_app.swift",
+      "sha256": "e64cbe271d7bf3c3590a0001b4bbf972163f37d1813904e5870d1b98e7279e20"
+    },
+    {
+      "path": "tools/test_shared_endings.sh",
+      "sha256": "0cd0dd0f66ec4c1528e64b800d2849fe0b6ecde12ac182523e9723095d61e03f"
+    },
+    {
+      "path": "tools/test_shared_headings.sh",
+      "sha256": "c37e91ff45ef971a2ca148cb8c936a95462c69d632d0e13069aa5ec89bbc298c"
+    },
+    {
+      "path": "tools/test_shared_navigation.sh",
+      "sha256": "d9f749dc77b55655cbbb5f68e658ef56105dfb299407fddae7b3d8571197c07f"
+    },
+    {
+      "path": "tools/test_system_boundary_crops.sh",
+      "sha256": "e4456414504c9ff7189217c2696160cd374dfa5ddef8501f878b1adf289999ae"
+    }
+  ],
+  "finalCoreFiles": [
+    {
+      "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "81f16962197455603ca5df0af1cad5cca3cf7f447f57dc551f93f87435be9ad6"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInputPageSelection.swift",
+      "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift",
+      "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreInstrumentPickList.swift",
+      "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "46165399d338fe88bdf74dae128a3c8794a34b2d115685edd6aab3dfc9b2e281"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreRestDetector.swift",
+      "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "20b6af97dd857f7fbf64d04e95c8728099a9e06168f71e0bfd5c505d8743c7fb"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift",
+      "sha256": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift",
+      "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift",
+      "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": "Partsmith/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/BarNumberDetector.swift",
+      "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift",
+      "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132"
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/ProjectModels.swift",
+      "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPDFExporter.swift",
+      "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": "Partsmith/Core/Layout/PartLayoutEngine.swift",
+      "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    }
+  ],
+  "knownLimits": [
+    "Native full workflow on final integration is separate pending root verification.",
+    "Existing seven observed global ending misses remain; wider-number experiment not included.",
+    "Cello p18s2 neighboring Piano bracket remains; not an own-staff counterpart.",
+    "Variable/unresolved profiles remain outside supported automatic recognition.",
+    "Whole-score ending recall is not established."
+  ],
+  "frozenSourceCopies": 52
+}

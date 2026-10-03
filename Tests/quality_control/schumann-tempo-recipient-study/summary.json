@@ -1,0 +1,137 @@
+{
+  "status": "scratch candidate; no production edit or promotion",
+  "frozenObligationsSHA256": "6bd18a4e50443f7ad91e7400f205d7b670d55c571bce3360b2c7595b37cc894c",
+  "obligationsFrozen": 30,
+  "tempoObligations": 15,
+  "songIndexObligations": 15,
+  "productionTempoSourceEnvelopePass": 3,
+  "candidateV3UnmodifiedRegionEnvelopePass": 14,
+  "candidateV3ManualCompleteTempoGlyphPass": 15,
+  "songIndicesRecovered": 0,
+  "notesOnStrictSourceRegion": "opening-tempo-3 remains a strict 36-pixel region failure. Independent visual inspection identifies these as the neighboring vocal forte under Mit Leidenschaft, not missing tempo letters. Original region and zero-tolerance result are preserved; no oracle was shrunk or thresholded to pass. The original vocal forte remains in its unchanged main music crop.",
+  "originalMusicCrops": 154,
+  "exportedDirectionFragments": 18,
+  "comparedPixels": 22560544,
+  "differentPixels": 0,
+  "sourceEnvelopeMethod": "Every nonwhite pixel (<255) in frozen manual source regions at 288dpi; output renderer comparison is exact at144dpi, including all pixel cells touched by original crop and copied-fragment boundaries.",
+  "controls": {
+    "existingHeadings": 59,
+    "independentInk": 14,
+    "recipientPositions": 14
+  },
+  "duplicateVoiceCopies": [
+    {
+      "page": 12,
+      "system": 1,
+      "text": "Lebhafter"
+    },
+    {
+      "page": 12,
+      "system": 5,
+      "text": "Adagio"
+    },
+    {
+      "page": 14,
+      "system": 4,
+      "text": "Langsamer"
+    }
+  ],
+  "incidentalCopyContent": "Padded copies retain nearby musical ink. Most consequential examples: partial Lust! lyric over Langsamer, p dynamics below Etwas langsamer and Langsam..., rests next to postlude Adagio. These are not classified as tempo by OCR but remain copied context. No clean-isolation pass is claimed.",
+  "holdouts": [
+    {
+      "score": "ave",
+      "pages": 4,
+      "mainCrops": 64,
+      "baselineCopies": 7,
+      "candidateCopies": 7,
+      "assignmentOrCopyChanges": [],
+      "ocrFailureCount": 0,
+      "metadataChanges": [
+        {
+          "page": 1,
+          "baselineHeadings": [
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.21512066166342336,
+                0.15713580283490433,
+                0.2630770131912278,
+                0.17561248434664592
+              ],
+              "inkBounds": [
+                0.21636363636363637,
+                0.16227608008429925,
+                0.26181818181818184,
+                0.1735159817351598
+              ],
+              "recognizedText": "Adagio"
+            }
+          ],
+          "candidateHeadings": [
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.21512066166342336,
+                0.15713580283490433,
+                0.2630770131912278,
+                0.17561248434664592
+              ],
+              "inkBounds": [
+                0.21636363636363637,
+                0.16227608008429925,
+                0.26181818181818184,
+                0.1735159817351598
+              ],
+              "recognizedText": "Adagio"
+            },
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.21262820123882903,
+                0.3419900143768649,
+                0.2648154089995753,
+                0.3610055602801395
+              ],
+              "inkBounds": [
+                0.2159090909090909,
+                0.34632946961714084,
+                0.2648154089995753,
+                0.3610055602801395
+              ],
+              "recipientPartIDs": [],
+              "recognizedText": "Adagio",
+              "sourceStaffID": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "score": "kv498",
+      "pages": 29,
+      "mainCrops": 405,
+      "baselineCopies": 8,
+      "candidateCopies": 8,
+      "assignmentOrCopyChanges": [],
+      "ocrFailureCount": 0,
+      "metadataChanges": []
+    },
+    {
+      "score": "brahms",
+      "pages": 39,
+      "mainCrops": 604,
+      "baselineCopies": 21,
+      "candidateCopies": 21,
+      "assignmentOrCopyChanges": [],
+      "ocrFailureCount": 0,
+      "metadataChanges": []
+    }
+  ],
+  "initialOverrideAudit": {
+    "candidateFailedExpectedRequirements": 7,
+    "currentProductionFailedExpectedRequirements": 5,
+    "explicitListControlsPassEach": 2,
+    "report": "OVERRIDE-AUDIT.md",
+    "productionEdit": false
+  }
+}

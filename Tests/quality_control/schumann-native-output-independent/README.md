@@ -1,0 +1,29 @@
+# Independent review of fresh Schumann native outputs
+
+**The recipient-local ending fix works in this bounded fresh-worker review. The complete automatic output remains a draft because heading handling has separate omissions and duplication.** No new music-crop loss, wrong recipient/system, overlapping placement, or off-page placement was introduced in the compared exports. This is not certification that every pre-existing score crop preserves every note.
+
+The actual native worker analyzed Schumann Piano Quintet Op.44, IMSLP06822, through staff analysis and every direction phase. All five parts were exported from its fresh inventory through the frozen final-Core exporter. Compared with the prior local-ending-only export, the new PDFs retain all **825 main source crops**, their page/system/staff assignments, and all **15 ending source-copy rectangles exactly**. They add **20 heading copies**. Both versions contain **74 pages**: Violin I/II, Viola and Cello12 each; Piano26. Worker, exporter, Core source lists, inventory, plan, summary, manifests, original PDF and all five final PDF hashes are bound in `provenance.json`.
+
+Independent original-source renders cover the five affected local-Piano ending rows and all five new heading locations. Local ending envelopes were frozen before the fresh exports became available; all **eight complete local numeral/bracket/hook envelopes** remain inside the unchanged Piano crops. All five actual final Piano output rows were then rendered independently and checked: no redundant copied ending remains above these local endings. Physical source p6s1/p6s2 map to Piano output3, p16s3/p18s2 to output8, and p20s3 to output9. See `local-output-contact.png`, `frozen-local-ending-guards.json`, and the eight checks in `comparison.json`.
+
+All20 new recipient rows and all40 changed output pages were visually reviewed using the final-PDF row and page sheets produced by the export agent. Their exact image hashes are retained; the five local-Piano output rows were rendered separately by this reviewer. Independent manifest calculations find zero horizontal offset error for the new copies, scale error below `1.2e-15`, a minimum4pt gap above target music, no inter-row overlaps, and no off-page rectangles. All five original Violin I owner crops also contain the independently frozen complete heading envelopes; no owner crop expanded or shrank.
+
+## Remaining heading failures
+
+| Original source | Final output | Independent finding |
+|---|---|---|
+| p26s1, SCHERZO / Molto vivace + metronome138 | ViolinII, Viola, Cello output6; Piano output12 | Four copies preserve SCHERZO but cut through the next line and omit the complete tempo/metronome. |
+| p19s3, Agitato | Piano output9 | A new top-staff copy duplicates the complete Agitato already printed above the Piano. |
+| p2s1, Allegro brillante + metronome108 | Piano output1 | Wording repeats the local Piano label, but the copy adds the otherwise absent metronome. It cannot simply be suppressed as fully redundant. |
+
+The source p26 complete heading ink spans approximately **[66,40.667,146,58]pt**. The new copy ends at **x122.839,y52.319**, so it contains only the top portions of parts of “Molto vivace” and omits the right-hand metronome. All four recipients fail the independent complete-heading guard; their standalone SCHERZO guard passes. The Piano retains its own locally printed Molto vivace, and the wide Cello crop also incidentally contains that neighboring Piano label, but **neither supplies metronome138**. This is a heading-selection problem already present outside the local-ending change, not a regression in ending suppression. Representative final rows are `003-p26-s1-violin2.png` and `018-p26-s1-piano.png`.
+
+All other16 added copies preserve their full independent source heading envelopes, including metronome symbols and numbers where printed. Coda at p38s2 and Allegro ma non troppo at p39s3 belong at the copied bar/system and are absent from those recipients' own staves. The source p19 Agitato is a genuine common direction; only the Piano copy is redundant. `017-p19-s3-piano.png` shows both labels. Source contexts, numbered text components, exact guards and all20 copy checks are retained here. Guards derive from the original source pixels, not candidate copy bounds; this was not blinded, as detector metadata and prior review evidence were available.
+
+Broad existing crops still contain neighboring staff lines, clipped fragments of neighboring notes, publisher text, and occasional neighboring-instrument directions. For example Cello p18s2 still has a global ending copy above its staff while its unchanged lower crop retains a Piano ending. That remains a neighboring-Piano case, not a valid Cello-local counterpart. The previously documented missed ending pairs and wider OCR experiment are not resolved by this work; the held wider number-reader was not used in these exports.
+
+## Evidence and scope
+
+`comparison.json` is this reviewer's direct before/after manifest and PDF-hash comparison. `frozen-local-ending-guards.json` and `frozen-direction-guards.json` contain the independent original-source checks; `heading-copy-checks.json` records16 passes and4 incomplete-heading failures. `owner-and-page-bound-checks.json` records5 owner-envelope passes and zero page-bound failures. The export agent's complete row/page evidence remains under `../schumann-native-local-ending-workflow/`; every reviewed contact sheet is hash-bound here.
+
+The concrete next heading fix should preserve the full adjacent SCHERZO/tempo/metronome block and suppress a copied heading only when the target's own crop retains an equivalent complete local marking. Repeated words alone are insufficient when the global copy contains an additional metronome mark. Keep these failures explicit while delivering the separate verified local-ending improvement.

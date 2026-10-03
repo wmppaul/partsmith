@@ -1,0 +1,358 @@
+{
+  "status": "scratch candidate; not app-integrated",
+  "nativeRecognition": "Actual local native recognition on six original source pages. Initial recognition runner retained; final regression/exporter validate refined review provenance.",
+  "files": [
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "81f16962197455603ca5df0af1cad5cca3cf7f447f57dc551f93f87435be9ad6"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreInputPageSelection.swift",
+      "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreInstrumentNameDetector.swift",
+      "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreInstrumentPickList.swift",
+      "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "79d8f2fe3b3aaa6d56f9c30c3b3b7f0874b5d93ac044439a8feb6d6c3807a4c9"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreRestDetector.swift",
+      "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "2bd4fd327cf7464c32c01f42d5a1e22ee3cc004a7a3e1848ef16e37e1110191d"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "3706f10310c9b6e74bcc664078af4c1c0bb3443f4e87bc717692c8d318b7f309"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedHeadingDetector.swift",
+      "sha256": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSharedNavigationDetector.swift",
+      "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/ScoreSourceHeaderDetector.swift",
+      "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/DocumentModel/BarNumberDetector.swift",
+      "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/DocumentModel/PageRectificationEstimator.swift",
+      "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/DocumentModel/ProjectModels.swift",
+      "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Export/PartPDFExporter.swift",
+      "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": ".build/ending-local-counterparts/Core/Layout/PartLayoutEngine.swift",
+      "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    },
+    {
+      "path": ".build/ending-local-counterparts/exporter",
+      "sha256": "e06e2e137ba2832f94798acda0ff553819da317c77a799d746942467ce316c71"
+    },
+    {
+      "path": ".build/ending-local-counterparts/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/counterparts.json",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": ".build/ending-local-counterparts/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/inventory.json",
+      "sha256": "ad99eb9ea4dff3a1e19cf9bb914f59617b291dc3f6db72ebed1132b406331a7b"
+    },
+    {
+      "path": ".build/ending-local-counterparts/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/local-recognition.json",
+      "sha256": "0e763665f47f76c3d6343881676a110b03a7613c4be88e7ed00e4e8f941f205c"
+    },
+    {
+      "path": ".build/ending-local-counterparts/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/plan.json",
+      "sha256": "64518f56712b53843f051e7be0aebcf21335f46912f07fa87e5038c295a1f194"
+    },
+    {
+      "path": ".build/ending-local-counterparts/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/summary.json",
+      "sha256": "faebfbbb3f6a0728b6480d35a66d39022c1fff8d23d41d1c3ef476323680c1ef"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/counterparts.json",
+      "sha256": "c94371c2a1b95babe35b6309aaa41a56e54e5f45e9964cc1ca8bc6003e9d179f"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/inventory.json",
+      "sha256": "f005e003c640b7041bc215aa92c0ba56e52d2978b862f82e8c30a773bbaf2556"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/local-recognition.json",
+      "sha256": "c6147a0575ab149e7edb03c54ee4ecd344a744efc570884bc0e7cbc9e7926df3"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Piano.pdf",
+      "sha256": "103e471e093f817c5ca148251197f16e21a344194e898847d86a8fd5b809bf85"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/project.json",
+      "sha256": "132372657bbbcb4f9a9a18d657dcafdf8e23315bb1fa8e84cda5100cef5425c4"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Schumann Piano Quintet Op44 \u2014 Auto QC.partsmithproject/source.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Viola.pdf",
+      "sha256": "f9259f2aaf70965d825791ad4570c8b33157b87a560cf5a85991f3cc6334fae7"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Violin I.pdf",
+      "sha256": "fad9b90eca60a9008b49e1e692e656ffff2516564c2050f1073d654ddaad9a6a"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Violin II.pdf",
+      "sha256": "4f094b8353f4d3e52fe52a1f9f972af51e08871148258f35e46f8ad0c49ad74c"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/Violoncello.pdf",
+      "sha256": "74984097e85270f5ba4b2b75173e93c7c200eb325b851f385f2e7adc6eec0805"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/manifest.json",
+      "sha256": "fbfa19606baa27df7671dbd8981b261d18406070fa7ca2c57fdef6376df9ded2"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/parts/plan.json",
+      "sha256": "dfa9a9f61d124b589ba2ad703c902f1f9aa1db2fdc8deff7c56dd92a9c92d1a4"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/plan.json",
+      "sha256": "dfa9a9f61d124b589ba2ad703c902f1f9aa1db2fdc8deff7c56dd92a9c92d1a4"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/summary.json",
+      "sha256": "08efab3857ec2a935c4780d86cc5415324c7ef454309bfea3b0ece478f66754d"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/counterparts.json",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/inventory.json",
+      "sha256": "57e645d57588d371758f1e642c8165253d6e4eeefb6b1e95f2684cb5d2b64433"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/local-recognition.json",
+      "sha256": "4c2089e5b7872183619e857323fcc6169eae2a5e9bba3e5a5f71dd8f81ae565a"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/plan.json",
+      "sha256": "f89f5a652548d6a2c072a2159559c38a8505349792af73f9c05330681f2489b5"
+    },
+    {
+      "path": ".build/ending-local-counterparts/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/summary.json",
+      "sha256": "d0723e56936c6f6291ae2027eb5fcd844c3a7f1978620c98058d230b0beadb6a"
+    },
+    {
+      "path": ".build/ending-local-counterparts/regression",
+      "sha256": "2bac31148d156965d8dbe983186c6a8b001f89b8aa8256a0bb8def57ab4a305f"
+    },
+    {
+      "path": ".build/ending-local-counterparts/run",
+      "sha256": "137eeb4d03a77730df2cfd173d1000ce5363bcbf8b303a8f547a70bd139cc07f"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/INTEGRATION.md",
+      "sha256": "5126177757bba9ecb6e55f84ed19a7929578fe32be31b0477a98bb168954672b"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/README.md",
+      "sha256": "05af263eb9d25c2d5bfb376319f03d84ca6f069fa5a8cda2839a0881561f101d"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/build.sh",
+      "sha256": "b3f0cee4ed092c4a3a0e86ee35a04cd7ab56db7b93ca6129b4af4d45b84f42c9"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/candidate.patch",
+      "sha256": "59b34bb2faadf0be63d211964d469f7c65f35f255bbf7cb363e419006531e31d"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/check-and-build-export.sh",
+      "sha256": "7b6545dc4976fd26e549c13fbd4bdd67f06df7fa5e4b68ff5bb6c2fdeb21c755"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/check-refined.log",
+      "sha256": "03e60f028ad564440a0cea6fb09aa023bc9e00fa93ba920980b4278afba09885"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/compare.log",
+      "sha256": "1c0a47fb4dae52c62463f386cb2703887b657a46e46305a6c272de8353121d6f"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/compare.py",
+      "sha256": "e0c6c1be0e78fe94210cdf8f12c09d9d65983b485ce8be2f03d00811ae50b3d4"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/controls.swift",
+      "sha256": "22778f035899edc9376ff1479dae1315af32dee184dc7af98494ec68010dea91"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/export-comparison.json",
+      "sha256": "f8ff7175beb560a7e8594c77763f434e718f6549c39c21c9ac75ef89c46f6cc6"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/export.log",
+      "sha256": "0fad7057b3932c47e2fe518da534578c16e38eec6a65e1ac54d5e181fa4bc971"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/counterparts.json",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/local-recognition.json",
+      "sha256": "0e763665f47f76c3d6343881676a110b03a7613c4be88e7ed00e4e8f941f205c"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/summary.json",
+      "sha256": "faebfbbb3f6a0728b6480d35a66d39022c1fff8d23d41d1c3ef476323680c1ef"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/counterparts.json",
+      "sha256": "c94371c2a1b95babe35b6309aaa41a56e54e5f45e9964cc1ca8bc6003e9d179f"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/local-recognition.json",
+      "sha256": "c6147a0575ab149e7edb03c54ee4ecd344a744efc570884bc0e7cbc9e7926df3"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/summary.json",
+      "sha256": "08efab3857ec2a935c4780d86cc5415324c7ef454309bfea3b0ece478f66754d"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/counterparts.json",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/local-recognition.json",
+      "sha256": "4c2089e5b7872183619e857323fcc6169eae2a5e9bba3e5a5f71dd8f81ae565a"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-evidence/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/summary.json",
+      "sha256": "d0723e56936c6f6291ae2027eb5fcd844c3a7f1978620c98058d230b0beadb6a"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/native-summary.json",
+      "sha256": "dc09e7c53a3956c5e5bf2215cf31ff3d7b09b628881380e6c909c0cc6559007a"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/output-review/p16-s3-piano.png",
+      "sha256": "bbca051d204bae2c82c3760ff419f0a1c517bd2e430da5704e8d4e9254a5f3fa"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/output-review/p18-s2-piano.png",
+      "sha256": "003fe9b93c227042534e4e9cde683464d724ccdce5edf03eaa821d22230a9166"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/output-review/p20-s3-piano.png",
+      "sha256": "168bec328fb4487a3036c2fc918b4e6d991074caaa8c919997bbffe9ecb5ac34"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/output-review/p6-s1-piano.png",
+      "sha256": "468c2917644de0cc56ef78a4f66a01586d13e31d15e53a15c5178a738785798b"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/output-review/p6-s2-piano.png",
+      "sha256": "6b61f48c0a50531a91e493e3fe9a43207ebfa5d32eef79c2b40e9495da4289e2"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/output-review/piano-corrected-rows.png",
+      "sha256": "fedafcb6e406f447e3ce09d7de66f2f6653f94fdad87baa8947b6ea5dbdd06ed"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/patch-files.json",
+      "sha256": "8d8f1c8795d73140289f5ebcdc72b3e36220004c2e9b0c45dfb45c5d9011d8d2"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/regression.swift",
+      "sha256": "fd14e172e4454cd5872218a27d07709bf949b140c1ec4268022f76d9e90aabcd"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/run.log",
+      "sha256": "785f3f3e65de7a3c28b887b6405366c9c925685ba396fa9ca80d78677bbf4e17"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/run.swift",
+      "sha256": "7e4a0c2c5f6dfa875be1acaa7a1e1c1ae918087a6374a2be5dca8b68d023a72e"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source-review/p16-s3-piano-local.png",
+      "sha256": "e75581faaf2d3ed12176f3dff0344d50ae454fdc7823e867823523b83f5e6942"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source-review/p18-s2-piano-local.png",
+      "sha256": "8a45ad4669d1326226f828c44bc9efd742152770a419dd204fa5a7c1ab2bde65"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source-review/p20-s3-piano-local.png",
+      "sha256": "6c9909a56b926ddc8939200f6d5b0492411744d92440d526e9a25557049b9c1d"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source-review/p6-s1-piano-local.png",
+      "sha256": "05e8cee94f91efc8de2c2f13fb764bb2d0dc87a2498d7f27ccb8f8df88b51e1b"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source-review/p6-s2-piano-local.png",
+      "sha256": "2001b9e669e0e6c169e1768cb0a393f84b097fe68c331cdde699159bff96f9c5"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source-rows.json",
+      "sha256": "32220e9f75f0882e9ae7a4adc8464b2be75033e24a99f239f8d50f96c32006f3"
+    },
+    {
+      "path": "Tests/quality_control/ending-local-counterparts/source_review.py",
+      "sha256": "f41eb29ff0544a13208a9a9951e85ed1cbef558c1e5d040a18f34beea9b6a0a8"
+    }
+  ]
+}
