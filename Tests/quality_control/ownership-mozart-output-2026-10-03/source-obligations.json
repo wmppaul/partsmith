@@ -1,0 +1,27 @@
+{
+  "reviewer": "ending_delivery",
+  "frozenAtUTC": "2026-10-03T20:33:31.219961+00:00",
+  "beforeFreshCandidateInspection": true,
+  "sourcePage": 25,
+  "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+  "obligations": [
+    "Violin first system: complete opening sharped low half note and stem; rests; middle p and low sharped entry; ascending and descending beams, all slurs and naturals; final right-edge beamed sharped figure and lower tie.",
+    "Viola first system: opening sharped low half note, all rests and sharp/natural accidentals; p below first paired whole-note chord; entire paired ties/slurs above and below subsequent sustained chords; final right-edge low sharped chord and slurs.",
+    "Compare original right edge as the source already ends inside ongoing notation; do not claim to restore missing original ink.",
+    "Removing structural connecting ink must not remove target-owned noteheads, ledger lines, accidental tails or stems."
+  ],
+  "imagesAndSource": [
+    {
+      "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903-p025/original-context-01.png",
+      "sha256": "8596e1994633111ae2cdb4f653a7ba3042aae86d3f6d04828fc50a73927b5f09"
+    },
+    {
+      "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903-p025/original-full-page.png",
+      "sha256": "3f96e7174b9dc315da6becc2fb9872765c4f58311e61f3f03d22a5ad18b2cba6"
+    },
+    {
+      "path": "sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sha256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8"
+    }
+  ]
+}

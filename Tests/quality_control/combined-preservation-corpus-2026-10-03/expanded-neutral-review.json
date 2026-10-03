@@ -1,0 +1,1762 @@
+{
+  "scope": "Independent visual review of the 20 expanded neutral staff-diagnostic rows only, across 11 source pages and 4 PDFs. All 40 before/after strips and 11 original context images were viewed. No production edits, new native worker, musical instrument-assignment certification or whole-score recall claim.",
+  "reviewer": "low_resolution_preservation",
+  "date": "2026-10-03",
+  "summary": {
+    "rowsReviewed": 20,
+    "sourcePages": 11,
+    "sourcePDFs": 4,
+    "imagesVisuallyReviewed": 51,
+    "strictSourceRectangleSupersets": 20,
+    "newSourceOmissionsFromChangedEdges": 0,
+    "rowsAddingAdjacentFiveLineStaffCore": 18,
+    "rowsWithMinorAdditionalNeighborInk": 2,
+    "diagnosticPNGOverlapPixelExact": 6,
+    "diagnosticPNGOverlapNotPixelExact": 14,
+    "verdict": "Preservation holds for the changed edges; substantial additional neighboring notation in 18 rows is an explicit cleanliness cost. These are not 18 proven target-note recoveries and the diagnostic strips are not publication-ready isolated parts."
+  },
+  "limitations": [
+    "The original target/instrument assignments are not resolved by these neutral profiles; no claim is made that one detected staff equals a complete instrumental part.",
+    "No full-part output pagination or page-turn review is included. Taller contaminated rows can consume more output space.",
+    "Existing clipped neighboring glyphs, shared directions outside these local crops, faint scan ink and source-relative recall outside the changed edges remain unresolved.",
+    "Six diagnostic PNG overlaps are pixel-exact; fourteen differ after mapping their pixel origins. Independent clipped rasterization is the likely cause, but not separately isolated here. Pixelwise PNG equality is not used as the preservation oracle; the bound unchanged source and exact strict-superset PDF rectangles supply that evidence."
+  ],
+  "indexBindings": {
+    "neutral-review-index.json": "782edd914a61ebe082812806310c3dda73400f4d134d6cfec3a7a749b2900e91",
+    "source-review-render-index.json": "701b128440298a98618ebb137f9772021351d70317916a83207986e8447c92fe"
+  },
+  "sourceBindings": {
+    "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+    "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+    "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+    "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f"
+  },
+  "rows": [
+    {
+      "key": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "staffIDs": [
+        17
+      ],
+      "bandID": "p9-s1-staff-17",
+      "beforePDFBounds": [
+        0.0,
+        666.3547297297298,
+        711.4030151367188,
+        745.1081081081081
+      ],
+      "afterPDFBounds": [
+        0.0,
+        666.3547297297298,
+        711.4030151367188,
+        746.293918918919
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p009/p9-s1-staff-17-before.png",
+          "sha256": "4848ca5a93197944d38ffc2760a7d570f8ee5cfb99bc2fdfcb6d4ec3b1d8a10a",
+          "pixelOrigin": [
+            0,
+            1999
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p009/p9-s1-staff-17-after.png",
+          "sha256": "a36f20077253226619917aee07064e0c851a5834d1869d3391c1f8f5bf57cf22",
+          "pixelOrigin": [
+            0,
+            1999
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The source context shows two adjacent violin-labelled lines. The previous crop already includes both staff cores; the 1.19 pt lower extension adds a small amount of lower-line note/tie and direction ink, not a newly complete staff.",
+      "contamination": "minor-additional-neighbor-ink",
+      "limits": "Some low notation on the adjacent line remains cut by the bottom edge; this is not a claim of complete extraction of both lines.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePage": 9,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            668.5608108108108,
+            711.4030151367188,
+            764.293918918919
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            2674
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p009/original-context-01.png",
+          "sha256": "5a81a7699588c878e011316c975510215a4d8aecd053b9e67b5253b41005d2d4"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p009/original-full-page.png",
+        "sha256": "abeedfa1cef522f379708e5af0d08136b5fa9b7be18c1db8f9c6682685e65ff0",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 1.1858108108108354,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p10",
+      "staffIDs": [
+        0
+      ],
+      "bandID": "p10-s1-staff-0",
+      "beforePDFBounds": [
+        0.0,
+        37.10305541434209,
+        711.9099731445312,
+        113.51432669645156
+      ],
+      "afterPDFBounds": [
+        0.0,
+        37.10305541434209,
+        711.9099731445312,
+        115.88697194568944
+      ],
+      "beforeWarnings": [
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p010/p10-s1-staff-0-before.png",
+          "sha256": "cc37259fe7d30b978cdfb65a0f60c5509abd0e9b058d37cfbf1a98327ef177f8",
+          "pixelOrigin": [
+            0,
+            111
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p010/p10-s1-staff-0-after.png",
+          "sha256": "fca08eac8e4e68a0a3b66d9382629e163ffd1877c46be8bda3ccceeaad7b7476",
+          "pixelOrigin": [
+            0,
+            111
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The rehearsal E, high ledger notes and slurs on the upper line are unchanged. The crop already contains the lower oboe-labelled core; the 2.37 pt addition includes more of its descending stems, ties and low dynamics.",
+      "contamination": "minor-additional-neighbor-ink",
+      "limits": "An adjacent staff was already present before the change; the result is not a clean single-staff strip.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePage": 10,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            34.17539985759838,
+            711.9099731445312,
+            133.8869719634185
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            136
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p010/original-context-01.png",
+          "sha256": "2ae794118236adb854b570d0442df2f099011aa406e852add49b6d57b9c31821"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p010/original-full-page.png",
+        "sha256": "c047be7354750288e64372c51267ed30486badbf6e0318eb353d22c2f9f73003",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 2.372645249237877,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p24",
+      "staffIDs": [
+        12
+      ],
+      "bandID": "p24-s1-staff-12",
+      "beforePDFBounds": [
+        0.0,
+        433.91950654471526,
+        712.1939697265625,
+        500.86555559741385
+      ],
+      "afterPDFBounds": [
+        0.0,
+        433.91950654471526,
+        712.1939697265625,
+        520.2504978841372
+      ],
+      "beforeWarnings": [
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/p24-s1-staff-12-before.png",
+          "sha256": "c2bd202f292f0a1d72ea18b66b3c4fcffd815330793ab293f528dd2b029360a9",
+          "pixelOrigin": [
+            0,
+            1301
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/p24-s1-staff-12-after.png",
+          "sha256": "5544b41e3d28b56904bbb1d344246a35e11d0293d65f4935c75f5f65bb3eacd6",
+          "pixelOrigin": [
+            0,
+            1301
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The lower extension changes a thin slice of the following oboe-labelled line into an entire five-line staff core with rests, chords and ties. The upper line's high notes, articulations and ties remain intact.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The top edge still contains a clipped fragment above the principal line, as before.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePage": 24,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            430.9966164666253,
+            712.1939697265625,
+            538.2504978695431
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            1723
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/original-context-01.png",
+          "sha256": "989f1f6d9fd94e90480112fcb6b25bf4cb399a0e493bc46cfb9769960e432625"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/original-full-page.png",
+        "sha256": "52d9e6ab79edeb1152500f884aee778e36bf6f4d21317e56024330e0c925455d",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 19.384942286723344,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p24",
+      "staffIDs": [
+        13
+      ],
+      "bandID": "p24-s1-staff-13",
+      "beforePDFBounds": [
+        0.0,
+        483.7665009962897,
+        712.1939697265625,
+        530.5363856281128
+      ],
+      "afterPDFBounds": [
+        0.0,
+        444.9966164228429,
+        712.1939697265625,
+        530.5363856281128
+      ],
+      "beforeWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/p24-s1-staff-13-before.png",
+          "sha256": "0c61037ab11e51cd2d8edaaae277a45a99d606bd4f2d4c99a93dfef013c8b366",
+          "pixelOrigin": [
+            0,
+            1451
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/p24-s1-staff-13-after.png",
+          "sha256": "5fe53319715f2f1021cb76b53793bf5b184ca93ab706828e2a307c01a90c4051",
+          "pixelOrigin": [
+            0,
+            1334
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding flute-labelled staff core, its high ledger notes and phrase material. The intended central line and the previous lower-edge fragments remain unchanged.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The new outer edge can cut the copied neighbor's highest material; this is additional foreign notation, not newly lost target notation.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePage": 24,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            430.9966164666253,
+            712.1939697265625,
+            538.2504978695431
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            1723
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/original-context-01.png",
+          "sha256": "989f1f6d9fd94e90480112fcb6b25bf4cb399a0e493bc46cfb9769960e432625"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p024/original-full-page.png",
+        "sha256": "52d9e6ab79edeb1152500f884aee778e36bf6f4d21317e56024330e0c925455d",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 38.7698845734468,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p28",
+      "staffIDs": [
+        13
+      ],
+      "bandID": "p28-s1-staff-13",
+      "beforePDFBounds": [
+        0.0,
+        509.3830763951373,
+        712.448974609375,
+        561.7171046762039
+      ],
+      "afterPDFBounds": [
+        0.0,
+        509.3830763951373,
+        712.448974609375,
+        579.925723355766
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/p28-s1-staff-13-before.png",
+          "sha256": "a096adfc1bfdb5a8fe2033622d060602d68abd1fc256f4687bc72ed980a9bb12",
+          "pixelOrigin": [
+            0,
+            1528
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/p28-s1-staff-13-after.png",
+          "sha256": "c656ec9c7a4dd38958b0a6f058ad8ba19bc342aa3d3e7577e7b780f67cdd8bf1",
+          "pixelOrigin": [
+            0,
+            1528
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The extension below the upper line now includes the full following staff core, its rests and final beamed figures. The upper line's slur, hairpins and p markings stay in the same source location.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The copied lower neighbor's espr. direction is still outside this upper crop; this audit does not certify that neighbor as a complete part.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePage": 28,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            504.0915463421795,
+            712.448974609375,
+            597.9257233078415
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            2016
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/original-context-01.png",
+          "sha256": "8fe564629cff2254bfd8e18d6b655ad325f4a8fef9334ca0ad3bd91664607a3e"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/original-full-page.png",
+        "sha256": "df366c9887e2a051beed0c63921be4e725467d64c6feb6aa58f65b37ef4b1e3f",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 18.20861867956205,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p28",
+      "staffIDs": [
+        14
+      ],
+      "bandID": "p28-s1-staff-14",
+      "beforePDFBounds": [
+        0.0,
+        547.3836719003106,
+        712.448974609375,
+        587.4466745494982
+      ],
+      "afterPDFBounds": [
+        0.0,
+        518.0915461984063,
+        712.448974609375,
+        587.4466745494982
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/p28-s1-staff-14-before.png",
+          "sha256": "5f5371f231d3b9fea0fae2fae06fd1822ef6c051990fa0b94b46de3b2bc07392",
+          "pixelOrigin": [
+            0,
+            1642
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/p28-s1-staff-14-after.png",
+          "sha256": "d26451b3e00bd80663541789c0b9bcccf5ce5d2f7d127871459f0b8beb408878",
+          "pixelOrigin": [
+            0,
+            1554
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The extension above the central line adds the preceding staff core and much of its melody, high notes and hairpins. The central line's final beamed figure and espr. marking remain visible.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The highest copied neighbor notes/slur approach or meet the new top edge.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "sourcePage": 28,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            504.0915463421795,
+            712.448974609375,
+            597.9257233078415
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            2016
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/original-context-01.png",
+          "sha256": "8fe564629cff2254bfd8e18d6b655ad325f4a8fef9334ca0ad3bd91664607a3e"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p028/original-full-page.png",
+        "sha256": "df366c9887e2a051beed0c63921be4e725467d64c6feb6aa58f65b37ef4b1e3f",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 29.292125701904297,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p41",
+      "staffIDs": [
+        17
+      ],
+      "bandID": "p41-s1-staff-17",
+      "beforePDFBounds": [
+        0.0,
+        735.1398459667613,
+        648.0,
+        798.2124037292258
+      ],
+      "afterPDFBounds": [
+        0.0,
+        735.1398459667613,
+        648.0,
+        817.2898256992298
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/p41-s1-staff-17-before.png",
+          "sha256": "7c692d5b545048f5adf05832ea84a74b6eb10bebd1dc4234b6b113242bbdc2f9",
+          "pixelOrigin": [
+            0,
+            2205
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/p41-s1-staff-17-after.png",
+          "sha256": "c912e6521722ac3371dbd9454794749ce4f94715027dec79c3c6a33533ac05c5",
+          "pixelOrigin": [
+            0,
+            2205
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The lower extension adds the full lower bass-clef staff core and its running notes/rests beneath the upper line. Existing upper notes, beams, cresc., sf, p and fp survive.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The source's Sehr lebhaft. below the lower staff remains outside this row. Shared-direction propagation is not certified by this crop expansion.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "sourcePage": 41,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            736.6177543575193,
+            648.0,
+            835.2898256992298
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            2946
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/original-context-01.png",
+          "sha256": "44b4ed9f4597f55acead5b2eac993cfa8bb31695e0ecea2a14a629329defaac8"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/original-full-page.png",
+        "sha256": "aedbb64071c839a0986f346cc332ffcbecc49e8434629800550a575a6ad25b40",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 19.077421970004025,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p41",
+      "staffIDs": [
+        18
+      ],
+      "bandID": "p41-s1-staff-18",
+      "beforePDFBounds": [
+        0.0,
+        776.5342521280908,
+        648.0,
+        832.0478313741386
+      ],
+      "afterPDFBounds": [
+        0.0,
+        750.6177543575193,
+        648.0,
+        832.0478313741386
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/p41-s1-staff-18-before.png",
+          "sha256": "b9695132dfcab388b1c8297b4697525d7502d9a705a6bf68e0f2d3451f0dcb9e",
+          "pixelOrigin": [
+            0,
+            2329
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/p41-s1-staff-18-after.png",
+          "sha256": "50443a6076841b3da7c2ffd7d30dff6a4a84e36b004327a544886424fbaafb8a",
+          "pixelOrigin": [
+            0,
+            2251
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding bass-clef staff core and its beamed passage. The lower line's notes, dynamics and the printed Sehr lebhaft. below it are preserved.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "Some high notes/marks of the newly copied upper neighbor are cut by the top edge; lower-line content is unchanged.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "sourcePage": 41,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            736.6177543575193,
+            648.0,
+            835.2898256992298
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            2946
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/original-context-01.png",
+          "sha256": "44b4ed9f4597f55acead5b2eac993cfa8bb31695e0ecea2a14a629329defaac8"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p041/original-full-page.png",
+        "sha256": "aedbb64071c839a0986f346cc332ffcbecc49e8434629800550a575a6ad25b40",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 25.916497770571482,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p47",
+      "staffIDs": [
+        17
+      ],
+      "bandID": "p47-s1-staff-17",
+      "beforePDFBounds": [
+        0.0,
+        743.7786785569517,
+        648.0,
+        807.211187677341
+      ],
+      "afterPDFBounds": [
+        0.0,
+        743.7786785569517,
+        648.0,
+        824.8488042156465
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/p47-s1-staff-17-before.png",
+          "sha256": "304e1685575351a9bbdeb1a16c8174d3cecabf81f16fa61f577a66e2a92e7eba",
+          "pixelOrigin": [
+            0,
+            2231
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/p47-s1-staff-17-after.png",
+          "sha256": "de4bcb69c0ff0cfe685a57b8f09da80c3f11303db5e509a01d93cbcd206b82da",
+          "pixelOrigin": [
+            0,
+            2231
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The added lower area contains the full adjacent bass-clef core and the lower part's pizzicato figures. The upper line retains its own pizz., arco, ties and hairpins.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The bottom edge cuts some low notation belonging to the newly copied neighbor.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "sourcePage": 47,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            751.0158086745034,
+            648.0,
+            842.8488042156466
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            3004
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/original-context-01.png",
+          "sha256": "096fc8df6a822fa76fd40d840921be1e77ae0972fdbce696fc3312d9b03308f8"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/original-full-page.png",
+        "sha256": "c6e115877d41b465f8d48a2d887d56221b262799ce8f45058c25ae79571e090c",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 17.637616538305565,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p47",
+      "staffIDs": [
+        18
+      ],
+      "bandID": "p47-s1-staff-18",
+      "beforePDFBounds": [
+        0.0,
+        789.8524523713012,
+        648.0,
+        846.0859343331982
+      ],
+      "afterPDFBounds": [
+        0.0,
+        765.0158086745034,
+        648.0,
+        846.0859343331982
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/p47-s1-staff-18-before.png",
+          "sha256": "01fa8ac704b5a1917bda12a0335d2382a3f868772f9e9c362d0d1b9ed6b46ca7",
+          "pixelOrigin": [
+            0,
+            2369
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/p47-s1-staff-18-after.png",
+          "sha256": "deedf092650aae4ccf08f7eebcfcea9d079ae0e368a97da2c15dec034ef1a9ca",
+          "pixelOrigin": [
+            0,
+            2295
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The added upper area contains the preceding bass-clef core, ties, hairpins and arco passage. The lower line's pizz. instruction, notes and low hairpin remain present; the publisher footer was already included.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The upper border cuts high material of the copied neighbor; this does not remove the previous lower-line crop.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "sourcePage": 47,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            751.0158086745034,
+            648.0,
+            842.8488042156466
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            3004
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/original-context-01.png",
+          "sha256": "096fc8df6a822fa76fd40d840921be1e77ae0972fdbce696fc3312d9b03308f8"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p047/original-full-page.png",
+        "sha256": "c6e115877d41b465f8d48a2d887d56221b262799ce8f45058c25ae79571e090c",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 24.83664369679775,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p3",
+      "staffIDs": [
+        17
+      ],
+      "bandID": "p3-s1-staff-17",
+      "beforePDFBounds": [
+        0.0,
+        1127.1776633539523,
+        1000.0,
+        1201.0461010108675
+      ],
+      "afterPDFBounds": [
+        0.0,
+        1127.1776633539523,
+        1000.0,
+        1224.3755127755733
+      ],
+      "beforeWarnings": [
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/p3-s1-staff-17-before.png",
+          "sha256": "44fe07929351fed8ba34988be3a9a0d36c9aef990c33cfd8624a0b7cceec802a",
+          "pixelOrigin": [
+            0,
+            3381
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/p3-s1-staff-17-after.png",
+          "sha256": "21f2f0466f98112c77cd685e952968171864f6c6dfb53af12084f59db9e73e49",
+          "pixelOrigin": [
+            0,
+            3381
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The extension beneath the Violoncell.-labelled line adds the full Contrabass.-labelled staff core, rests, repeated notes and most associated stems. The upper line is unchanged.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "Lebhaft. printed below the lower staff remains outside this upper row; no shared-direction completeness claim is made.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePage": 3,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            1137.027731092437,
+            1000.0,
+            1241.4613445378152
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            4548
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/original-context-01.png",
+          "sha256": "70eb4fe3efd7afc7f0a12d67397090ead8c10fa72a0c165aa389b352350b5afe"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/original-full-page.png",
+        "sha256": "371e3130d25856ffaee2aae9b79aa785edb5ff0dcb03a955f7a6235fe6b8e986",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 23.32941176470581,
+      "priorDiagnosticPNGOverlapPixelExact": true,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p3",
+      "staffIDs": [
+        18
+      ],
+      "bandID": "p3-s1-staff-18",
+      "beforePDFBounds": [
+        0.0,
+        1176.036409786115,
+        1000.0,
+        1244.3794600432836
+      ],
+      "afterPDFBounds": [
+        0.0,
+        1148.2633005424175,
+        1000.0,
+        1244.3794600432836
+      ],
+      "beforeWarnings": [
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "afterWarnings": [
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/p3-s1-staff-18-before.png",
+          "sha256": "5a2cc755e303e416766a9b1b8ac6eac88e59b5faf802bd78755d8df67849fd82",
+          "pixelOrigin": [
+            0,
+            3528
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/p3-s1-staff-18-after.png",
+          "sha256": "d540a966dd282f5e295b09603256e45c7c5d975b82226954b6eb6ae46b790405",
+          "pixelOrigin": [
+            0,
+            3444
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding Violoncell.-labelled core and much of its note material. The Contrabass.-labelled line, its accents and the Lebhaft. below it remain present.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The new top edge cuts some high notes of the copied upper neighbor.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePage": 3,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            1137.027731092437,
+            1000.0,
+            1241.4613445378152
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            4548
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/original-context-01.png",
+          "sha256": "70eb4fe3efd7afc7f0a12d67397090ead8c10fa72a0c165aa389b352350b5afe"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p003/original-full-page.png",
+        "sha256": "371e3130d25856ffaee2aae9b79aa785edb5ff0dcb03a955f7a6235fe6b8e986",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 27.77310924369749,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": true,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p44",
+      "staffIDs": [
+        17
+      ],
+      "bandID": "p44-s1-staff-17",
+      "beforePDFBounds": [
+        0.0,
+        1099.7537133272767,
+        1000.0,
+        1197.2286065389478
+      ],
+      "afterPDFBounds": [
+        0.0,
+        1099.7537133272767,
+        1000.0,
+        1221.6689735114248
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/p44-s1-staff-17-before.png",
+          "sha256": "845edd74b6bd914e898d7a057a2c6f70f2fb13dd02b0e3fad8d2e0ea2f9b7d61",
+          "pixelOrigin": [
+            0,
+            3299
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/p44-s1-staff-17-after.png",
+          "sha256": "355429c9c7dd2d1f86e59a7579a0a95956dbe9aa8ac88b01d28ec616e23c601e",
+          "pixelOrigin": [
+            0,
+            3299
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The lower extension turns the previously partial neighboring bass-clef passage into a full staff core with running figures, rests and repeated notes. The upper line's sf, p, cresc. and notes remain intact.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "Some low dynamics/notation of the new neighbor are cut at the bottom edge; fragments from the preceding line were already present above.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePage": 44,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            1110.9224353628024,
+            1000.0,
+            1238.6855713094246
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            4443
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/original-context-01.png",
+          "sha256": "cb467b52abdf247da9871a3980ac8b408296f2c7c411c72c691374028eefabeb"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/original-full-page.png",
+        "sha256": "1cd974596186bae33df4e95c8ab15f3569db2b634b7091a3d7666621c55860e2",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 24.440366972477023,
+      "priorDiagnosticPNGOverlapPixelExact": true,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p44",
+      "staffIDs": [
+        18
+      ],
+      "bandID": "p44-s1-staff-18",
+      "beforePDFBounds": [
+        0.0,
+        1163.0688873716208,
+        1000.0,
+        1259.9984442706218
+      ],
+      "afterPDFBounds": [
+        0.0,
+        1121.9646338270004,
+        1000.0,
+        1259.9984442706218
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/p44-s1-staff-18-before.png",
+          "sha256": "b9838fb806b54de489aedf981296b6bd95e94e02479439e94e7ed156ecd0b7dc",
+          "pixelOrigin": [
+            0,
+            3489
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/p44-s1-staff-18-after.png",
+          "sha256": "3fbf7e34a661452da04d61d02e770db4d41f61d77388f4e1e12db89974026342",
+          "pixelOrigin": [
+            0,
+            3365
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding bass-clef core and its entire horizontal run of notes/rests. The lower line's high run, accents, dynamics and existing footer are unchanged.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The new top border clips some detached high material belonging to the copied neighbor.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePage": 44,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            1110.9224353628024,
+            1000.0,
+            1238.6855713094246
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            4443
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/original-context-01.png",
+          "sha256": "cb467b52abdf247da9871a3980ac8b408296f2c7c411c72c691374028eefabeb"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p044/original-full-page.png",
+        "sha256": "1cd974596186bae33df4e95c8ab15f3569db2b634b7091a3d7666621c55860e2",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 41.104253544620406,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": true,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p63",
+      "staffIDs": [
+        0
+      ],
+      "bandID": "p63-s1-staff-0",
+      "beforePDFBounds": [
+        0.0,
+        56.807004564056626,
+        1000.0,
+        170.66209091562257
+      ],
+      "afterPDFBounds": [
+        0.0,
+        56.807004564056626,
+        1000.0,
+        208.9889816719251
+      ],
+      "beforeWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/p63-s1-staff-0-before.png",
+          "sha256": "3c6c419373e05a4288be751185f055696331b66c9389cb8b6b18f16ac97c2d75",
+          "pixelOrigin": [
+            0,
+            170
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/p63-s1-staff-0-after.png",
+          "sha256": "e3ae92b8c64526d9f762a6b29fde845017e4291b768e8facb22fa91158f51859",
+          "pixelOrigin": [
+            0,
+            170
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The lower extension adds the complete adjacent treble staff core beneath a previously visible band of its high ledger notes and beams. The upper line's melody, sf markings and slur remain unchanged.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "This was already a contaminated crop because the neighbor's high notes intrude into the gap; the candidate materially increases that contamination.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePage": 63,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            57.76470588235294,
+            1000.0,
+            226.0764705882353
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            231
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/original-context-01.png",
+          "sha256": "ea34a055a125260b19931137af44108654648384082c8dd030c1ba6b27a72ad2"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/original-full-page.png",
+        "sha256": "6756a9616ea5f3b784b66775be72b9d826d33dca075e6ec3ec97bb44742da89d",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 38.32689075630253,
+      "priorDiagnosticPNGOverlapPixelExact": true,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p63",
+      "staffIDs": [
+        1
+      ],
+      "bandID": "p63-s1-staff-1",
+      "beforePDFBounds": [
+        0.0,
+        104.37706459888172,
+        1000.0,
+        209.05554429336996
+      ],
+      "afterPDFBounds": [
+        0.0,
+        68.82748476694894,
+        1000.0,
+        209.05554429336996
+      ],
+      "beforeWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/p63-s1-staff-1-before.png",
+          "sha256": "da287d61487cd2d5dd0e24af100f1bf6f40ab09dd4433d8b027dc96b9d568d35",
+          "pixelOrigin": [
+            0,
+            313
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/p63-s1-staff-1-after.png",
+          "sha256": "b28cef5874c339673f238eb08b53835962181c3743de482e18ffef69971d834a",
+          "pixelOrigin": [
+            0,
+            206
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding treble staff core and its melody. The lower line's dense ledger-note chords, ties/slurs, sf markings and final rising figure remain visible.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The highest notes of the copied upper line are cut at the top border; no target content is removed.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "sourcePage": 63,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            57.76470588235294,
+            1000.0,
+            226.0764705882353
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            231
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/original-context-01.png",
+          "sha256": "ea34a055a125260b19931137af44108654648384082c8dd030c1ba6b27a72ad2"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p063/original-full-page.png",
+        "sha256": "6756a9616ea5f3b784b66775be72b9d826d33dca075e6ec3ec97bb44742da89d",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 35.549579831932775,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": true,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p30",
+      "staffIDs": [
+        10
+      ],
+      "bandID": "p30-s1-staff-10",
+      "beforePDFBounds": [
+        0.0,
+        359.56313310450685,
+        658.7999877929688,
+        406.717542951145
+      ],
+      "afterPDFBounds": [
+        0.0,
+        359.56313310450685,
+        658.7999877929688,
+        425.01399606624744
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/p30-s1-staff-10-before.png",
+          "sha256": "5362ab0bcb3cc0b352873c3071be4a9b38bfd10de7fd91e7df95d39e9675b835",
+          "pixelOrigin": [
+            0,
+            1078
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/p30-s1-staff-10-after.png",
+          "sha256": "bee8623055905f2ab3f1c53805f0461a74999c0d6619b0320ba0d6d22bf17b9b",
+          "pixelOrigin": [
+            0,
+            1078
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The lower extension adds an entire neighboring bass-clef staff core, its repeated/beamed figures and arco marking. The upper line's notes, low ledger note and ff remain visible.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The bottom of the copied lower neighbor's ff is cut; scan dropout at the right is present in the original context.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "sourcePage": 30,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            355.80914698420344,
+            658.7999877929688,
+            443.01399602116766
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            1423
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/original-context-01.png",
+          "sha256": "e6fdf09f3e49042dda724dee9c6aae341181fee598f6a6791d4fa8481d4b1a17"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/original-full-page.png",
+        "sha256": "c922757707f8ea482554c0a58febcd835c1a4a1f873900ddf75036f45f8e18e3",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 18.29645311510245,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p30",
+      "staffIDs": [
+        11
+      ],
+      "bandID": "p30-s1-staff-11",
+      "beforePDFBounds": [
+        0.0,
+        391.7648905870871,
+        658.7999877929688,
+        433.7962935614966
+      ],
+      "afterPDFBounds": [
+        0.0,
+        369.80914684896425,
+        658.7999877929688,
+        433.7962935614966
+      ],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/p30-s1-staff-11-before.png",
+          "sha256": "c5642ab49d3bef10ec7ae443bcdca49d4cb31c5226cae0a88de6a9224e443acf",
+          "pixelOrigin": [
+            0,
+            1175
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/p30-s1-staff-11-after.png",
+          "sha256": "a4d8d9ea25c6fa5db3443eaeac69c59a6085698f2829e6f3734610f181722548",
+          "pixelOrigin": [
+            0,
+            1109
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding bass-clef core with its running figures and low ledger note. The lower line, arco, ff and all previously visible source content remain present.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The new top edge cuts some high beams/marks belonging to the copied neighbor; original scan dropout is not new loss.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "sourcePage": 30,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            355.80914698420344,
+            658.7999877929688,
+            443.01399602116766
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            1423
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/original-context-01.png",
+          "sha256": "e6fdf09f3e49042dda724dee9c6aae341181fee598f6a6791d4fa8481d4b1a17"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p030/original-full-page.png",
+        "sha256": "c922757707f8ea482554c0a58febcd835c1a4a1f873900ddf75036f45f8e18e3",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 21.955743738122862,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p32",
+      "staffIDs": [
+        0
+      ],
+      "bandID": "p32-s1-staff-0",
+      "beforePDFBounds": [
+        0.0,
+        28.031402658851245,
+        658.7999877929688,
+        71.89245094477094
+      ],
+      "afterPDFBounds": [
+        0.0,
+        28.031402658851245,
+        658.7999877929688,
+        98.9712015551225
+      ],
+      "beforeWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ],
+      "afterWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/p32-s1-staff-0-before.png",
+          "sha256": "7579dfacebe815189658013a4fa4db82b8f1e4f70ba6d59deb32baf79edb5687",
+          "pixelOrigin": [
+            0,
+            84
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/p32-s1-staff-0-after.png",
+          "sha256": "ada828fa9de515ea0302ea61bef7e9f9ad8e504f686c89b83086b2ef0441dd31",
+          "pixelOrigin": [
+            0,
+            84
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The extension adds the following treble staff core, its initial note/rests and long resting measures. The original top-line notes, pp and rests remain unchanged.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The added neighbor's pp is partly at the bottom border. Faint/interrupted lines and rests are source-scan degradation, not newly erased notation.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "sourcePage": 32,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            33.05971403379698,
+            658.7999877929688,
+            116.97120151004276
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            132
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/original-context-01.png",
+          "sha256": "0105540dac405d6a2c1d1d81c185f6f7272cfd9bf400487d252582b306d8bc45"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/original-full-page.png",
+        "sha256": "ac6f6526814c3626eed9254fe244a9efcbe17f168e2c6e9d7426ebdfb735ab37",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 0.0,
+      "addedBottomPoints": 27.078750610351562,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    },
+    {
+      "key": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p32",
+      "staffIDs": [
+        1
+      ],
+      "bandID": "p32-s1-staff-1",
+      "beforePDFBounds": [
+        0.0,
+        67.1858123251704,
+        658.7999877929688,
+        111.0468606110901
+      ],
+      "afterPDFBounds": [
+        0.0,
+        47.059713898557746,
+        658.7999877929688,
+        111.0468606110901
+      ],
+      "beforeWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "images": {
+        "before": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/p32-s1-staff-1-before.png",
+          "sha256": "45bc75b5ea9b287595a8506d4787f00057b2787423ecd5cf4cbcae488e0c5e3f",
+          "pixelOrigin": [
+            0,
+            201
+          ],
+          "pixelsPerPoint": 3
+        },
+        "after": {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/neutral-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/p32-s1-staff-1-after.png",
+          "sha256": "ab1c6dd734e6c557179ef88d3ab61924ce1db92c447621d2236f0cf1f0e6fc44",
+          "pixelOrigin": [
+            0,
+            141
+          ],
+          "pixelsPerPoint": 3
+        }
+      },
+      "candidateContainsPreviousCrop": true,
+      "visualFinding": "The upper extension adds the preceding treble staff core and its resting measures. The central line's initial tied note, pp and rests remain intact; fragments of the next lower staff were already in the crop.",
+      "contamination": "new-adjacent-staff-core",
+      "limits": "The new upper edge cuts the copied neighbor's high opening notes. The intended central source crop is a strict superset of its previous bounds.",
+      "reviewStatus": "source context and both diagnostic strips visually reviewed",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "sourcePage": 32,
+      "originalContextsViewed": [
+        {
+          "pdfBounds": [
+            0,
+            33.05971403379698,
+            658.7999877929688,
+            116.97120151004276
+          ],
+          "pixelsPerPoint": 4,
+          "pixelOrigin": [
+            0,
+            132
+          ],
+          "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/original-context-01.png",
+          "sha256": "0105540dac405d6a2c1d1d81c185f6f7272cfd9bf400487d252582b306d8bc45"
+        }
+      ],
+      "sourceFullPageImageHashVerifiedButNotViewed": {
+        "path": "/Users/will/Documents/git/partsmith/Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p032/original-full-page.png",
+        "sha256": "ac6f6526814c3626eed9254fe244a9efcbe17f168e2c6e9d7426ebdfb735ab37",
+        "pixelsPerPoint": 2
+      },
+      "identityScope": "Detected staff IDs only; printed labels describe visible source context, not verified part assignment.",
+      "sourceRectangleSupersetVerified": true,
+      "addedTopPoints": 20.126098426612657,
+      "addedBottomPoints": 0.0,
+      "priorDiagnosticPNGOverlapPixelExact": false,
+      "preservationVerdict": "No new source omission from the crop-edge change: identical source PDF and strict superset rectangle. Visual comparison found added neighboring notation, not erased glyphs.",
+      "newTargetNotesProvenRecovered": false
+    }
+  ]
+}

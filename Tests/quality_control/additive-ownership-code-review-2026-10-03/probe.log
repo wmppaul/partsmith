@@ -1,0 +1,39 @@
+{
+  "lateCancellation" : {
+    "callbackChecks" : 3830,
+    "deadlineElapsedBeforeReturn" : true,
+    "returnedNil" : false,
+    "scheduledAfterCalibrationFinalCheck" : 3830,
+    "seconds" : 0.45870101451873779
+  },
+  "measurements" : [
+    {
+      "cancellationChecks" : 1915,
+      "components" : 26460,
+      "orderedComponentsSHA256" : "d88f798fdb46fa0f85857861fc533d38627fdc37090c0c052710c4dcfc7c5887",
+      "retainMusicalEvidence" : false,
+      "seconds" : 0.020210027694702148,
+      "secondsAfterLastCancellationCheck" : 0.0051900148391723633
+    },
+    {
+      "cancellationChecks" : 3830,
+      "components" : 26460,
+      "orderedComponentsSHA256" : "d88f798fdb46fa0f85857861fc533d38627fdc37090c0c052710c4dcfc7c5887",
+      "retainMusicalEvidence" : true,
+      "seconds" : 0.44888293743133545,
+      "secondsAfterLastCancellationCheck" : 0.43477189540863037
+    }
+  ],
+  "noisyImageDimensions" : [
+    1400,
+    1900
+  ],
+  "nonMonotonicPlanner" : {
+    "afterCanApply" : true,
+    "afterCropBottom" : 0.28000000000000003,
+    "allOriginalComponentsRetained" : true,
+    "beforeCanApply" : true,
+    "beforeCropBottom" : 0.32900000000000001,
+    "fixtureType" : "constructed component-evidence API control, not a native-source reproduction"
+  }
+}

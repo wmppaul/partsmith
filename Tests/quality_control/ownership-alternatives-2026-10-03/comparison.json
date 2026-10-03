@@ -1,0 +1,256 @@
+{
+  "summary": {
+    "pages": 39,
+    "bands": 604,
+    "geometryChanges": 0,
+    "changedCrops": 4,
+    "wholeNeighborsBefore": 7,
+    "wholeNeighborsAfter": 7,
+    "frozenGuardsPassed": 9,
+    "frozenGuardsTotal": 10
+  },
+  "changes": [
+    {
+      "bandID": "p35-s1-violin1",
+      "before": [
+        0,
+        22.877409406322286,
+        426,
+        107.33153430994604
+      ],
+      "after": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "beforeNeighbors": [
+        1
+      ],
+      "afterNeighbors": []
+    },
+    {
+      "bandID": "p35-s1-violin2",
+      "before": [
+        0,
+        30.925212027756363,
+        426,
+        113.7224363916731
+      ],
+      "after": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "beforeNeighbors": [
+        0
+      ],
+      "afterNeighbors": []
+    },
+    {
+      "bandID": "p38-s1-viola",
+      "before": [
+        0,
+        87.96944083224967,
+        427,
+        134.35695708712615
+      ],
+      "after": [
+        0,
+        87.96944083224967,
+        427,
+        159.54876462938878
+      ],
+      "beforeNeighbors": [],
+      "afterNeighbors": [
+        3
+      ]
+    },
+    {
+      "bandID": "p38-s1-cello",
+      "before": [
+        0,
+        119.95903771131339,
+        427,
+        165.14694408322495
+      ],
+      "after": [
+        0,
+        91.56827048114434,
+        427,
+        165.14694408322495
+      ],
+      "beforeNeighbors": [],
+      "afterNeighbors": [
+        2
+      ]
+    }
+  ],
+  "guards": [
+    {
+      "id": "p24-s2-viola",
+      "sourceEnvelope": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "contains": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "sourceEnvelope": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "crop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "sourceEnvelope": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "crop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "contains": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "sourceEnvelope": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "crop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "contains": true
+    },
+    {
+      "id": "p29-s1-violin1",
+      "sourceEnvelope": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "crop": [
+        0,
+        18.90358657925183,
+        427,
+        75.76205167759352
+      ],
+      "contains": true
+    },
+    {
+      "id": "p29-s1-violin2",
+      "sourceEnvelope": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "crop": [
+        0,
+        59.22367913613575,
+        427,
+        110.6270728885461
+      ],
+      "contains": true
+    },
+    {
+      "id": "p31-s1-violin1",
+      "sourceEnvelope": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "crop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "contains": true
+    },
+    {
+      "id": "p31-s1-violin2",
+      "sourceEnvelope": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "crop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "contains": true
+    },
+    {
+      "id": "p35-s1-violin1",
+      "sourceEnvelope": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "crop": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "contains": false
+    },
+    {
+      "id": "p35-s1-violin2",
+      "sourceEnvelope": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "crop": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "contains": true
+    }
+  ],
+  "inputs": {
+    ".build/residual9-boundary-2026-10-03/candidate-v2/actual.json": "cabcee807fcc1eb269119f33acd7a0a569ee6f5ee00828614a7b18066924c574",
+    ".build/ownership-alternatives-2026-10-03/actual.json": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d"
+  }
+}

@@ -1,6 +1,7 @@
 import Foundation
 import CoreGraphics
 import PDFKit
+import CryptoKit
 
 /// Regressions for analysis-only structural separation. The fixture pixels
 /// remain the independent source; expected notation extents are not derived
@@ -123,7 +124,97 @@ import PDFKit
             skewDegrees: skewDegrees)!, candidates.map(ScoreObservedStaff.init))
     }
 
+    static func ownershipAlternativeRasterTests() throws {
+        // Frozen independent raster from additive-ownership-code-review's
+        // raster-relay-v2. A scan gap crosses the upper staff's last line;
+        // musical evidence below it must not reassign nearby detached ink.
+        let width = 720, height = 760, space = 12
+        var pixels = [UInt8](repeating: 255, count: width * height)
+        func rect(_ left: Int, _ top: Int, _ right: Int, _ bottom: Int) {
+            for y in top..<bottom { for x in left..<right { pixels[y * width + x] = 0 } }
+        }
+        func head(_ cx: Int, _ cy: Int) {
+            for y in (cy - 4)..<(cy + 4) { for x in (cx - 8)..<(cx + 8) {
+                let a = (Double(x - cx) + 0.5) / 8, b = (Double(y - cy) + 0.5) / 4
+                if a * a + b * b <= 1 { pixels[y * width + x] = 0 }
+            } }
+        }
+        for top in [180, 330] {
+            for line in 0..<5 { rect(40, top + space * line, 603, top + space * line + 1) }
+            rect(160, top - 20, 163, top + 27)
+            head(156, top + 24)
+        }
+        rect(600, 180, 603, 379)
+        head(601, 184)
+        head(601, 375)
+        for y in 227...229 { for x in 600..<603 { pixels[y * width + x] = 255 } }
+        // These source rectangles are annotation surrogates, not recognized
+        // musical glyphs or expectations inferred from analyzer components.
+        let annotations = [[610, 249, 620, 258], [610, 272, 620, 281], [610, 295, 620, 304]]
+        for box in annotations { rect(box[0], box[1], box[2], box[3]) }
+        let sourceHash = SHA256.hash(data: Data(pixels)).map { String(format: "%02x", $0) }.joined()
+        check(sourceHash == "1788d75e70532a70258a2e72120860080ceae28ef962ce1b7389e243df1754be",
+            "Independent three-row-gap raster changed")
+        let image = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8,
+            bytesPerRow: width, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: 0),
+            provider: CGDataProvider(data: Data(pixels) as CFData)!, decode: nil,
+            shouldInterpolate: false, intent: .defaultIntent)!
+        var candidates: [StaffBandCandidate] = []
+        for (index, top) in [180, 330].enumerated() {
+            let lines: [Double] = (0..<5).map { Double(top + $0 * space) / Double(height) }
+            candidates.append(StaffBandCandidate(id: index, staffLineFractions: lines,
+                topFraction: Double(top - space) / Double(height),
+                bottomFraction: Double(top + 5 * space) / Double(height), confidence: 1, warnings: []))
+        }
+        let local = NativeScorePageAnalyzer.notationComponents(image: image, candidates: candidates,
+            skewDegrees: 0, retainMusicalEvidence: false)!
+        let retained = NativeScorePageAnalyzer.notationComponents(image: image, candidates: candidates,
+            skewDegrees: 0)!
+        let profile = ScoreExtractionProfile(parts: [ScorePartDefinition(id: "one", name: "One", staffCount: 1)],
+            cropMode: "compact")
+        func plan(_ components: [ScoreInkComponent]) -> ScoreExtractionPlan {
+            let page = ScorePageAnalysis(pageIndex: 0, pageWidth: Double(width), pageHeight: Double(height),
+                imageWidth: width, imageHeight: height, staves: candidates.map(ScoreObservedStaff.init),
+                warnings: [], inkComponents: components)
+            return ScoreExtractionPlanner.plan(pages: [page], profile: profile)
+        }
+        let localPlan = plan(local), retainedPlan = plan(retained)
+        check(localPlan.canApply && retainedPlan.canApply && localPlan.bands.count == 2
+            && retainedPlan.bands.count == 2, "Three-row-gap fixture must yield two complete systems")
+        func contains(_ band: ScorePlannedBand, _ box: [Int]) -> Bool {
+            band.leftFraction * Double(width) <= Double(box[0])
+                && band.topFraction * Double(height) <= Double(box[1])
+                && (1 - band.rightFraction) * Double(width) >= Double(box[2])
+                && band.bottomFraction * Double(height) >= Double(box[3])
+        }
+        for box in annotations.prefix(2) {
+            check(contains(localPlan.bands[0], box), "Local analysis must retain source annotation \(box)")
+            check(contains(retainedPlan.bands[0], box),
+                "Additional musical ownership evidence clipped source annotation \(box)")
+        }
+        check(local.allSatisfy { retained.contains($0) }, "Musical evidence replaced an ordinary local component")
+        check(retained.contains { $0.isOwnershipAlternative == true && $0.staffIDs == [1] },
+            "Native raster did not exercise the lower-owned preservation alternative")
+        for original in localPlan.bands {
+            let updated = retainedPlan.bands.first { $0.id == original.id }!
+            check(updated.topFraction <= original.topFraction && updated.bottomFraction >= original.bottomFraction,
+                "Added ownership alternatives shrank the existing crop for \(original.id)")
+        }
+        // The third surrogate, y=295..<304, lies beyond the current detached
+        // chain recovery. It was missed before this fix too. Keep its pixels
+        // in the frozen source and disclose it; do not turn this test into a
+        // claim of complete annotation recall or require the omission forever.
+        if !contains(retainedPlan.bands[0], annotations[2]) {
+            print("KNOWN LIMIT: three-row-gap source annotation [610,295,620,304] remains outside the upper crop")
+        }
+    }
+
     static func main() throws {
+        if CommandLine.arguments.contains("--ownership-regression") {
+            try ownershipAlternativeRasterTests()
+            print("PASS: \(checks) ownership raster checks")
+            return
+        }
         if CommandLine.arguments.count == 5 && CommandLine.arguments[1] == "--inventory" {
             let source = CommandLine.arguments[2], profilePath = CommandLine.arguments[3]
             let pdf = PDFDocument(url: URL(fileURLWithPath: source))!
@@ -257,6 +348,7 @@ import PDFKit
                 }
             }
         }
+        try ownershipAlternativeRasterTests()
         print("PASS: \(checks) crop quality checks")
     }
 }

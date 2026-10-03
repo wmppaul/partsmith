@@ -1,0 +1,58 @@
+{
+  "frozenAtUTC": "2026-10-03T20:25:07.811806+00:00",
+  "reviewer": "root",
+  "beforeCandidateBoundsInspection": true,
+  "records": [
+    {
+      "key": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922:p5",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "page": 5,
+      "obligation": "Affected upper piano staff in system2: retain both piano staves together, including high beamed ledger notes, accidentals, final dotted chord, slurs and ritard. The voice has its own final gut! lyric. Do not reinterpret the piano connection as a separate instrument.",
+      "images": [
+        {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p005/original-context-01.png",
+          "sha256": "aa282ed86fdf0751de6b89e36038e9c2407d765900273ce54372620181528589"
+        },
+        {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p005/original-full-page.png",
+          "sha256": "0a4d97c319f87c0617c56251e77a3ed197f7235b1a28e0f5c1620865155c01db"
+        }
+      ]
+    },
+    {
+      "key": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922:p6",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "page": 6,
+      "obligation": "Affected final grand-staff system: retain both piano staves, upper/lower final fermatas, both ties into closing chord, lower ledger note, pedal mark and release star, upper ritard. Voice lyrics visible above are a separate part.",
+      "images": [
+        {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p006/original-context-01.png",
+          "sha256": "8e392c467a9f97492d98806c7db842f9793cf618498ec07814cbd2e8e6cfd75b"
+        },
+        {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p006/original-full-page.png",
+          "sha256": "c7bad99b39ff0c55fa45e17102757edf4aaec4a3b368d6e5fc18f5884c384060"
+        }
+      ]
+    },
+    {
+      "key": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903:p25",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "page": 25,
+      "obligation": "First system: upper string staff is treble Violin; next is alto Viola. Violin requires its opening low sharped half note and stem, all rests, p below middle entrance, low sharped entrance, beamed notes, high slurs, far-right beamed figure and low sharped note/tie. Viola requires low sharped opening half note, long paired ties/slurs around sustained chords including final right edge, p at first sounding chord, accidentals and final low sharped note. A vertical stroke at the far left can be structural, not evidence the two instruments share notes. Full original source is already cut at its right page edge; any source-edge loss must remain explicit.",
+      "images": [
+        {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903-p025/original-context-01.png",
+          "sha256": "8596e1994633111ae2cdb4f653a7ba3042aae86d3f6d04828fc50a73927b5f09"
+        },
+        {
+          "path": "Tests/quality_control/combined-preservation-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903-p025/original-full-page.png",
+          "sha256": "3f96e7174b9dc315da6becc2fb9872765c4f58311e61f3f03d22a5ad18b2cba6"
+        }
+      ]
+    }
+  ]
+}

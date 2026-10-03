@@ -10,6 +10,11 @@ enum ScorePlannerTests {
         if !condition() { throw NSError(domain: "ScorePlannerTests", code: 1, userInfo: [NSLocalizedDescriptionKey: message]) }
     }
     static func main() throws {
+        if CommandLine.arguments.contains("--ownership-regression") {
+            try ownershipAlternativeTests()
+            print("PASS \(assertions) ownership alternative planner checks")
+            return
+        }
         let profile = ScoreExtractionProfile(parts: [ScorePartDefinition(id: "voice", name: "Voice", staffCount: 1), ScorePartDefinition(id: "piano", name: "Piano", staffCount: 2)])
         let staves = [0.15, 0.22, 0.30, 0.53, 0.60, 0.68].enumerated().map { i, y in
             ScoreObservedStaff(StaffBandCandidate(id: i, staffLineFractions: (0..<5).map { y + Double($0) * 0.005 }, topFraction: y - 0.01, bottomFraction: y + 0.03, confidence: 0.9, warnings: []))
@@ -60,11 +65,105 @@ enum ScorePlannerTests {
         try check(omitted.canApply && omitted.pages[1].omissions.count == 2, "Explicit nonmusic page is not accounted for")
         try check(!ScoreExtractionPlanner.plan(pages: [blank], profile: profile, overrides: [nonmusic]).canApply, "All-nonmusic score permits empty extraction")
         try compactCropTests()
+        try ownershipAlternativeTests()
         try varyingInstrumentationTests()
         if CommandLine.arguments.contains("--corpus") { try corpusTests() }
         if CommandLine.arguments.contains("--mozart") { try mozartVariableLayoutTests() }
         print("PASS \(assertions) native planner checks: cadence, grouping, crop padding, skew bounds, invalid counts, ignored candidates, nonmusic pages, shared markings and cancellation.")
     }
+    static func ownershipAlternativeTests() throws {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys]
+        let decoder = JSONDecoder()
+        let legacyJSON = Data(#"{"bounds":[0.1,0.2,0.3,0.4],"staffIDs":[0]}"#.utf8)
+        let legacy = try decoder.decode(ScoreInkComponent.self, from: legacyJSON)
+        let legacyEncoded = try encoder.encode(legacy)
+        try check(legacy.isOwnershipAlternative == nil && legacyEncoded == legacyJSON,
+            "A legacy component must remain ordinary and encode without a new required field")
+        let nullJSON = Data(#"{"bounds":[0.1,0.2,0.3,0.4],"staffIDs":[0],"isOwnershipAlternative":null}"#.utf8)
+        let nullFlag = try decoder.decode(ScoreInkComponent.self, from: nullJSON)
+        try check(nullFlag == legacy, "A null ownership role must retain legacy ordinary semantics")
+        for flag in [false, true] {
+            var component = legacy
+            component.isOwnershipAlternative = flag
+            let roundTrip = try decoder.decode(ScoreInkComponent.self, from: encoder.encode(component))
+            try check(roundTrip == component && roundTrip.isOwnershipAlternative == flag,
+                "Explicit ownership role \(flag) did not round-trip")
+        }
+
+        // Independent detached-annotation chain: adding a lower-owned musical
+        // hypothesis must not turn it into evidence against the upper system.
+        // These boxes are source obligations, not copied analyzer output.
+        var staves: [ScoreObservedStaff] = []
+        for (index, top) in [200, 600].enumerated() {
+            let lines: [Double] = (0..<5).map { Double(top + $0 * 10) / 1000 }
+            staves.append(ScoreObservedStaff(StaffBandCandidate(id: index, staffLineFractions: lines,
+                topFraction: Double(top - 10) / 1000, bottomFraction: Double(top + 50) / 1000,
+                confidence: 1, warnings: [])))
+        }
+        let components: [ScoreInkComponent] = [
+            .init(bounds: [0.1, 0.20, 0.15, 0.25], staffIDs: [0]),
+            .init(bounds: [0.1, 0.26, 0.15, 0.275], staffIDs: []),
+            .init(bounds: [0.1, 0.287, 0.15, 0.3], staffIDs: []),
+            .init(bounds: [0.1, 0.311, 0.15, 0.324], staffIDs: []),
+            .init(bounds: [0.1, 0.60, 0.15, 0.64], staffIDs: [1])
+        ]
+        let page = ScorePageAnalysis(pageIndex: 0, pageWidth: 1000, pageHeight: 1000,
+            imageWidth: 1000, imageHeight: 1000, staves: staves, warnings: [], inkComponents: components)
+        let profile = ScoreExtractionProfile(parts: [ScorePartDefinition(id: "one", name: "One", staffCount: 1)],
+            cropMode: "compact")
+        let baseline = ScoreExtractionPlanner.plan(pages: [page], profile: profile)
+        try check(baseline.canApply && baseline.bands.count == 2 && baseline.bands[0].bottomFraction >= 0.324,
+            "Baseline must retain the complete detached source chain")
+        let legacyPage = try decoder.decode(ScorePageAnalysis.self, from: encoder.encode(page))
+        try check(legacyPage == page && legacyPage.inkComponents!.allSatisfy { $0.isOwnershipAlternative == nil }
+            && ScoreExtractionPlanner.plan(pages: [legacyPage], profile: profile) == baseline,
+            "A saved legacy analysis changed its ordinary ownership or crop on reload")
+
+        var ordinaryBands: [ScorePlannedBand] = []
+        for choice in ["absent", "false", "lower", "ownerless", "shared"] {
+            var supplement = ScoreInkComponent(bounds: [0.1, 0.27, 0.15, 0.64], staffIDs: [1])
+            if choice == "false" { supplement.isOwnershipAlternative = false }
+            if ["lower", "ownerless", "shared"].contains(choice) { supplement.isOwnershipAlternative = true }
+            if choice == "ownerless" { supplement.staffIDs = [] }
+            if choice == "shared" { supplement.staffIDs = [0, 1] }
+            var supplemented = page
+            supplemented.inkComponents!.append(supplement)
+            let plan = ScoreExtractionPlanner.plan(pages: [supplemented], profile: profile)
+            try check(plan.canApply && plan.bands.count == 2, "Ownership case \(choice) lost a system")
+            let upper = plan.bands[0], lower = plan.bands[1]
+            if choice == "absent" { ordinaryBands = plan.bands }
+            if choice == "false" {
+                try check(plan.bands == ordinaryBands, "Explicit false changed ordinary component semantics")
+            }
+            if choice == "lower" {
+                try check(upper == baseline.bands[0], "Lower ownership alternative suppressed an upper source mark")
+                try check(lower.topFraction <= 0.27 && lower.bottomFraction >= 0.64,
+                    "Lower ownership alternative did not preserve its own full source envelope")
+            }
+            if choice == "ownerless" {
+                try check(plan.bands == baseline.bands, "An ownerless alternative altered a crop or lyric/mark assignment")
+            }
+            if choice == "shared" {
+                try check(upper.bottomFraction >= 0.64 && lower.topFraction <= 0.27,
+                    "Shared alternative failed to preserve its envelope in both owners")
+                let ambiguity = "Notation connected to this staff also touches a neighboring staff"
+                try check(upper.warnings.contains { $0.contains(ambiguity) }
+                    && lower.warnings.contains { $0.contains(ambiguity) },
+                    "Shared ownership ambiguity was hidden instead of disclosed")
+            }
+            if supplement.isOwnershipAlternative == true {
+                for (original, updated) in zip(baseline.bands, plan.bands) {
+                    try check(updated.topFraction <= original.topFraction && updated.bottomFraction >= original.bottomFraction,
+                        "Ownership alternative \(choice) shrank \(original.id)")
+                }
+            }
+            let reloaded = try decoder.decode(ScorePageAnalysis.self, from: encoder.encode(supplemented))
+            try check(reloaded == supplemented && ScoreExtractionPlanner.plan(pages: [reloaded], profile: profile) == plan,
+                "Full analysis and effective crops changed after reloading ownership case \(choice)")
+        }
+    }
+
     static func varyingInstrumentationTests() throws {
         let names = ["flute", "clarinet", "bassoon", "horn", "piano", "violin1", "violin2", "viola", "cello-bass"]
         let profile = ScoreExtractionProfile(parts: names.map {

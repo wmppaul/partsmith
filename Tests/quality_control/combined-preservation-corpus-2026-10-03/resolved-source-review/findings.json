@@ -1,0 +1,65 @@
+{
+  "reviewer": "root",
+  "sourcePages": 5,
+  "changedCrops": 4,
+  "noNewTargetLossObserved": true,
+  "notFullMusicalCertification": true,
+  "records": [
+    {
+      "key": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922:p5",
+      "page": 5,
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "componentOnly": true,
+      "changedCropIDs": [],
+      "noNewTargetNotationLossObserved": true,
+      "review": "Crop bounds and warnings are byte-equivalent; new tagged evidence is inside the two-staff Piano part. Source musical context checked; this is not full-score certification.",
+      "caveat": null
+    },
+    {
+      "key": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922:p6",
+      "page": 6,
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "componentOnly": true,
+      "changedCropIDs": [],
+      "noNewTargetNotationLossObserved": true,
+      "review": "Crop bounds and warnings are byte-equivalent; new tagged evidence is inside the two-staff Piano part. Source musical context checked; this is not full-score certification.",
+      "caveat": null
+    },
+    {
+      "key": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903:p25",
+      "page": 25,
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "componentOnly": false,
+      "changedCropIDs": [
+        "p25-s1-viola",
+        "p25-s1-violin"
+      ],
+      "noNewTargetNotationLossObserved": true,
+      "review": "Source-first obligations compared with all changed crops rendered at4pixels/point. Complete intended notes, beams, slurs, accidentals and local dynamics visible in inspected system. Whole neighboring staff removed; fragments remain.",
+      "caveat": "Original PDF itself has notation reaching/cut at right page edge; extraction cannot restore missing original ink."
+    },
+    {
+      "key": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822:p56",
+      "page": 56,
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "componentOnly": true,
+      "changedCropIDs": [],
+      "noNewTargetNotationLossObserved": true,
+      "review": "Crop bounds and warnings are byte-equivalent; new tagged evidence is inside the two-staff Piano part. Source musical context checked; this is not full-score certification.",
+      "caveat": null
+    },
+    {
+      "key": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521:p35",
+      "page": 35,
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "componentOnly": false,
+      "changedCropIDs": [
+        "p35-s1-violin1",
+        "p35-s1-violin2"
+      ],
+      "noNewTargetNotationLossObserved": true,
+      "review": "Source-first obligations compared with all changed crops rendered at4pixels/point. Complete intended notes, beams, slurs, accidentals and local dynamics visible in inspected system. Whole neighboring staff removed; fragments remain.",
+      "caveat": "ViolinI bottom66.3824pt still fails prior conservative68pt envelope; source inspection confirms excluded interval contains structural strokes and ViolinII beam tips, not missing ViolinI notation. Original failed guard remains unchanged."
+    }
+  ]
+}

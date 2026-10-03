@@ -1,0 +1,44 @@
+{
+  "reviewer": "ending_delivery",
+  "completedAtUTC": "2026-10-03T20:37:37.601322+00:00",
+  "sourceFirst": true,
+  "sourcePage": 25,
+  "changedOutputPages": [
+    {
+      "part": "Violin",
+      "page": 7
+    },
+    {
+      "part": "Viola",
+      "page": 7
+    }
+  ],
+  "noNewTargetLossObservedInChangedRows": true,
+  "noNewLayoutCollisionObserved": true,
+  "finalShorterTitleFitsAllFourPDFs": true,
+  "sourceObligations": [
+    "Violin opening low sharped note and stem, rests, p, entrance accidental, beam groups, high slurs and final right-edge figure retained.",
+    "Viola opening low sharped note and stem, p, accidentals, sustained chords and both long ties/slurs retained."
+  ],
+  "copyRowsViewed": [
+    "p1-s1-viola",
+    "p12-s1-viola",
+    "p1-s1-cello",
+    "p12-s1-cello",
+    "p1-s1-piano",
+    "p12-s1-piano"
+  ],
+  "limitations": [
+    "Neighbor fragments remain throughout the draft.",
+    "Original scan ends inside ongoing notation at its right edge, including source p25.",
+    "Piano source p1 Allegro and p12 Andante already exist locally and are duplicated by the automatic copy; Cello crops include those neighboring Piano headings too. Both conditions are identical in the baseline.",
+    "No full-score musical recall or performance page-turn certification. No claim that initialized instrument names were automatically recognized."
+  ],
+  "independentReview": {
+    "reviewer": "root",
+    "sourceFirst": true,
+    "images": "Both complete changed pages and both exported p25 rows, with prior original-source inspection.",
+    "verdict": "No new target note/slur/dynamic clipping or layout collision observed. Neighbor fragments and original clipped right edge remain.",
+    "headerOnlyFollowup": "Final shorter typed title changes no source crop, source copy, output placement or page count. All 476 placements and 6 copied rectangles equal the reviewed earlier-title export."
+  }
+}

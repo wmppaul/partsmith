@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "checkedAtUTC": "2026-10-03T20:37:09.481993+00:00",
+  "reviewer": "low_resolution_preservation",
+  "scope": "Independent read-only packaging/hash audit. No test reruns, source edits, app launch, app replacement or original-output edits.",
+  "buildRecord": {
+    "path": "Tests/quality_control/macos-build-2026-10-03-ownership.json",
+    "sha256": "9429b3ffac93b8c85dc65d16f21ba8a23f739249ac3027c03034124af0965c86"
+  },
+  "productionSourceAudit": {
+    "count": 34,
+    "frozenWorkspace": ".build/ownership-alternatives-release-2026-10-03/workspace",
+    "mapsEqual": true,
+    "allFilesMatch": true,
+    "verifiedFileHashes": {
+      "Partsmith.xcodeproj/project.pbxproj": "dc04838c31ad0f31b734dcff48a39fdc7dbbfa791a427ccad2552e8df983983c",
+      "Partsmith/App/PartsmithApp.swift": "fb4a743a4c3b7dac7534b0660a39bc9f1eb52acacbf400b327c5c0edc89eda8e",
+      "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+      "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+      "Partsmith/Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+      "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+      "Partsmith/Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+      "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "Partsmith/Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+      "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+      "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99",
+      "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+      "Partsmith/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+      "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+      "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+      "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "Partsmith/Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+      "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+      "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+      "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+      "Partsmith/Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+      "Partsmith/Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+      "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+      "Partsmith/Features/Inspector/InspectorView.swift": "90542a52182907f953b5e59d140f9d42a264917c60fcf880d8d5740fd1112ed7",
+      "Partsmith/Features/PartPreview/PartPreviewView.swift": "70d81c8bfa5455c8ad46533329c4fe936b635cdf2ecd18c8db0df1e039b534d3",
+      "Partsmith/Features/PartsSidebar/PartsSidebarView.swift": "eb2b20e9925b8b48c04b5e9e6b8a18657fbf068c5d3cb1f913ae22326caf6531",
+      "Partsmith/Features/Project/DocumentRootView.swift": "c9f1154d040b91d5eb702fdeb1d8db02670a6ca47defab06c30e4ce41469efd5",
+      "Partsmith/Features/Project/ScoreExtractionView.swift": "db156b46c2dc5ad3a9eac843c84ef77dc737206bb2ed9f81cede16e1ce52862f",
+      "Partsmith/Features/Project/ScoreExtractionWindow.swift": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+      "Partsmith/Features/Project/StaffDetectionView.swift": "18a44101854171bd5d0200ed83a50e36784df41c18fa0cd4054dc32a3022c7cb",
+      "Partsmith/Features/SourceCanvas/SourceCanvasView.swift": "31fc36a3b724ead99bc4daed9f68ee167cd2a3fd66f22e0fe048bd25934e6e81",
+      "Partsmith/Resources/Info.plist": "3ba36f2b477af9c4883c91f44758580b1f5dbfb8c79a43f0aca3e70d3b205e55"
+    },
+    "sourceHashManifestBindings": {
+      "Tests/quality_control/ownership-release-2026-10-03/build-sources.json": "e58014b6627c3640872710e3b980997c24b776ccae686a755d8a505a4206398a",
+      ".build/ownership-alternatives-release-2026-10-03/build-sources.json": "e58014b6627c3640872710e3b980997c24b776ccae686a755d8a505a4206398a"
+    }
+  },
+  "archiveAudit": {
+    "path": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+    "sha256": "0ba904a3cf91748d0e700bd8ecbbed795e6511f56a4c09fb1ca17b6d16778c8e",
+    "frozenArchive": ".build/ownership-alternatives-release-2026-10-03/Partsmith-extraction-preview-macos.zip",
+    "frozenArchiveSHA256": "0ba904a3cf91748d0e700bd8ecbbed795e6511f56a4c09fb1ca17b6d16778c8e",
+    "recordHashMatches": true,
+    "CRCCheckedEveryEntry": true,
+    "badCRCEntry": null,
+    "fileEntries": 3,
+    "executableEntry": "Partsmith.app/Contents/MacOS/Partsmith",
+    "executableSHA256": "7d909b3ed52b5df602592f23d9739bb50fa1aaebba09e5a797ebab48279a3988",
+    "builtExecutableSHA256": "7d909b3ed52b5df602592f23d9739bb50fa1aaebba09e5a797ebab48279a3988",
+    "archivedExecutableByteExactToBuild": true,
+    "architecturesFromLipo": [
+      "x86_64",
+      "arm64"
+    ],
+    "architecturesMatchRecordedUniversalBuild": true,
+    "previousArchiveBackupSHA256": "93563a97b8559f72a37d840617500186b35273d711b1dcfa8543b2809aebb440",
+    "previousArchiveBackupMatches": true
+  },
+  "deliveryAudit": {
+    "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation",
+    "manifestSHA256": "984f575c745162b01ccbe6142fb4130b1eb81fe3378a2d1f2ee705507fbfcb45",
+    "frozenManifest": "Tests/quality_control/ownership-alternatives-output-2026-10-03/scratch-output-hashes.json",
+    "frozenManifestSHA256": "984f575c745162b01ccbe6142fb4130b1eb81fe3378a2d1f2ee705507fbfcb45",
+    "manifestsByteExact": true,
+    "hashMapsEqual": true,
+    "fileCount": 12,
+    "allPublishedAndScratchFilesMatch": true,
+    "verifiedFileHashes": {
+      "Brahms String Quartet No. 3 Op. 67 \u2014 Auto draft.partsmithproject/project.json": "700a5d9fa96160ad87068c67b915b35e9e0f677de391c822586bed13791607b5",
+      "Brahms String Quartet No. 3 Op. 67 \u2014 Auto draft.partsmithproject/source.pdf": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "REVIEW.md": "11c01b5f00e707934d15b95b4f67fa76995e53834600ab7b4b3149586eaa3548",
+      "Viola.pdf": "17f7dfa6f030fcaf2ff7f0c7499eba6a03e109d244ac90ddb6497b9cffcc65a0",
+      "Violin I.pdf": "ec911d959f338f813c42cb6a59abc32dda9ef5b8077156b3c6cd5f2c7aa66fdb",
+      "Violin II.pdf": "7c99d647b35e3bfb51d9b2e177363e03dd608b0501eae725814baec75e6ca67c",
+      "Violoncello.pdf": "daf629cc007c25038d8942d6e6134cfe0bd45ba37a8ecae5290dfcb0f18b84f7",
+      "layout-page-breaks.json": "49cca9f84d20895a42134d60bedd3066ad268c4791dfde989ac9b8bc5c9e02d1",
+      "manifest.json": "e203208eaab155dfd970df0dc0152ede652ed73353e8f1a2fe7d9ddbc0a3f7af",
+      "plan.json": "be1e379afe06a1d4f1500c91964dc37c2befc6ceb494695d9e0fb9e2c31db38c",
+      "provenance.json": "40259a709d52412cd79cc86ff30287cb5bfc4c3f76888e8aa63d919ae9b95eaf",
+      "rectified-review-source.pdf": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8"
+    }
+  },
+  "discrepancies": []
+}

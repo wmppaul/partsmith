@@ -1,0 +1,75 @@
+{
+  "pages" : [
+    {
+      "assignments" : [
+        {
+          "bottomFraction" : 0.3473684210526316,
+          "candidateIDs" : [
+            0
+          ],
+          "editorialLabel" : "",
+          "id" : "p1-s1-one",
+          "kind" : "music",
+          "leftFraction" : 0,
+          "pageBreakBefore" : false,
+          "pageIndex" : 0,
+          "partID" : "one",
+          "provenance" : "native-profile-cadence",
+          "rightFraction" : 0,
+          "sourceMarkings" : [
+
+          ],
+          "systemIndex" : 0,
+          "topFraction" : 0.1868421052631579,
+          "warnings" : [
+            "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+          ]
+        },
+        {
+          "bottomFraction" : 0.5052631578947369,
+          "candidateIDs" : [
+            1
+          ],
+          "editorialLabel" : "",
+          "id" : "p1-s2-one",
+          "kind" : "music",
+          "leftFraction" : 0,
+          "pageBreakBefore" : false,
+          "pageIndex" : 0,
+          "partID" : "one",
+          "provenance" : "native-profile-cadence",
+          "rightFraction" : 0,
+          "sourceMarkings" : [
+
+          ],
+          "systemIndex" : 1,
+          "topFraction" : 0.2789473684210526,
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "omissions" : [
+
+      ],
+      "pageIndex" : 0,
+      "unresolvedReasons" : [
+
+      ],
+      "warnings" : [
+
+      ]
+    }
+  ],
+  "parts" : [
+    {
+      "id" : "one",
+      "name" : "One",
+      "staffCount" : 1
+    }
+  ],
+  "warnings" : [
+    "Part names and staff grouping come from the reviewed instrumentation profile, not automatic instrument recognition.",
+    "Inspect all target notation and source context before export. Compact crops follow detected ink; detached directions and touching notation still need review."
+  ]
+}

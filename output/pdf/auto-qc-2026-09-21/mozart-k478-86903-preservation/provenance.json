@@ -1,0 +1,47 @@
+{
+  "status": "draft; source-bound changed-region review complete",
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+  "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+  "baselineCommit": "82b606e",
+  "candidateAnalyzerSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "candidatePlannerSHA256": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+  "nativeWorkerInventorySHA256": "bb32ab400cbdf32caa29604fab4bb42a5a3b5b358a386503fcfba185d87a7935",
+  "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533",
+  "rectifications": [],
+  "manualAssignmentOverrides": [],
+  "manualPageBreaks": [],
+  "autoDocumentRun": true,
+  "instrumentInitialization": "Predefined four-part profile: Violin, Viola, Violoncello, two-staff Piano.",
+  "musicalStrips": 476,
+  "directionCopies": 6,
+  "pdfPages": 43,
+  "savedReopenedBeforeExport": true,
+  "originalEmbeddedSourceHashVerified": true,
+  "report": "Tests/quality_control/ownership-mozart-output-2026-10-03/README.md",
+  "parts": [
+    {
+      "file": "Violin.pdf",
+      "pages": 8,
+      "strips": 119,
+      "sha256": "92c56eb91cabe54867b3d28ce5a1de443ff3f373b65a84f867bd409b9f9e4e42"
+    },
+    {
+      "file": "Viola.pdf",
+      "pages": 8,
+      "strips": 119,
+      "sha256": "c4930a7d06f502190f4da06884a4aad7ebf8ef7b5cf8ea0a4a6243e5ccc76444"
+    },
+    {
+      "file": "Violoncello.pdf",
+      "pages": 9,
+      "strips": 119,
+      "sha256": "36899ede9735d25fa13d4b6c15958c2bc01bbfee682e166f538044416152b81d"
+    },
+    {
+      "file": "Piano.pdf",
+      "pages": 18,
+      "strips": 119,
+      "sha256": "256f35f9736a4a8db0e477a6dd6c618947a3236ce906370bfbe66c47e58e9640"
+    }
+  ]
+}

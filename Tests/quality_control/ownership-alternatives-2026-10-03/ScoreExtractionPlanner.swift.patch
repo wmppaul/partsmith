@@ -1,0 +1,85 @@
+--- baseline/ScoreExtractionPlanner.swift
++++ tagged-alternative/ScoreExtractionPlanner.swift
+@@ -155,6 +155,11 @@
+     /// [left, top, right, bottom] as page fractions (right is an edge, not trim).
+     var bounds: [Double]
+     var staffIDs: [Int]
++    /// A possible musical connection measured without separating a suspected
++    /// structural stroke. This can enlarge its owners' crops, but cannot alter
++    /// ordinary components' ownership or suppress detached notes and marks.
++    /// Missing in older inventories means ordinary component evidence.
++    var isOwnershipAlternative: Bool? = nil
+ }
+ 
+ struct ScorePartOmission: Codable, Equatable {
+@@ -857,7 +862,7 @@
+             let space = (staff.staffLineFractions[4] - staff.staffLineFractions[0]) / 4
+             let lastLine = staff.staffLineFractions[4]
+             var rows: [[(index: Int, center: Double)]] = []
+-            for (index, component) in components.enumerated() where component.staffIDs.isEmpty {
++            for (index, component) in components.enumerated() where component.staffIDs.isEmpty && component.isOwnershipAlternative != true {
+                 let box = component.bounds, center = (box[1] + box[3]) / 2
+                 let height = box[3] - box[1], width = (box[2] - box[0]) * page.pageWidth / page.pageHeight
+                 guard center > lastLine, center < lastLine + 6 * space,
+@@ -873,7 +878,7 @@
+                 let right = row.map { components[$0.index].bounds[2] }.max()!
+                 guard right - left >= 0.22 else { continue }
+                 let center = row.map(\.center).reduce(0, +) / Double(row.count)
+-                for (index, component) in components.enumerated() where component.staffIDs.isEmpty {
++                for (index, component) in components.enumerated() where component.staffIDs.isEmpty && component.isOwnershipAlternative != true {
+                     let box = component.bounds
+                     let height = box[3] - box[1]
+                     let width = (box[2] - box[0]) * page.pageWidth / page.pageHeight
+@@ -927,7 +932,7 @@
+         // page and rebuilding ownership sets for every candidate mark.
+         let highTargetInk = components.filter { component in
+             let owners = Set(component.staffIDs)
+-            return !owners.isEmpty && owners.isSubset(of: ids)
++            return component.isOwnershipAlternative != true && !owners.isEmpty && owners.isSubset(of: ids)
+                 && component.bounds[1] < firstLine - space
+         }
+         // Profile cadence or reviewed assignments establish this boundary;
+@@ -938,11 +943,11 @@
+         // and stacked directions may need detached relays. Require competing
+         // ownership evidence from the following system's connected notation.
+         let followingSystemInk = endsBeforeFollowingSystem ? components.filter {
+-            $0.staffIDs.count == 1 && $0.staffIDs.first == followingSystemStaffID
++            $0.isOwnershipAlternative != true && $0.staffIDs.count == 1 && $0.staffIDs.first == followingSystemStaffID
+         } : []
+         var selected = Set<Int>(), ambiguous = Set<Int>(), targetOwned = Set<Int>()
+         var foreignEdgeNeedsReview = false
+-        for (index, component) in components.enumerated() {
++        for (index, component) in components.enumerated() where component.isOwnershipAlternative != true {
+             let owners = Set(component.staffIDs), box = component.bounds
+             if !owners.isDisjoint(with: ids) {
+                 if owners.isSubset(of: ids) { selected.insert(index); targetOwned.insert(index) }
+@@ -972,7 +977,7 @@
+         // ambiguous multi-staff components: that would join the entire score.
+         for _ in 0..<4 {
+             var additional = Set<Int>()
+-            for (index, component) in components.enumerated() where !selected.contains(index) && !ambiguous.contains(index) {
++            for (index, component) in components.enumerated() where component.isOwnershipAlternative != true && !selected.contains(index) && !ambiguous.contains(index) {
+                 if let lyricOwner = lyricOwners[index], !ids.contains(lyricOwner) { continue }
+                 let box = component.bounds
+                 if part.hasLyrics == true && box[1] >= lastLine { continue }
+@@ -1051,8 +1056,19 @@
+             top = min(top, components[index].bounds[1] - topClearance)
+             bottom = max(bottom, components[index].bounds[3] + bottomClearance)
+         }
++        // Evaluate uncertain musical connections only after ordinary ownership
++        // and detached-mark discovery finish. Their additional bounds must not
++        // act as competing neighboring ink or replace a local component.
++        var ambiguousAlternative = false
++        for component in components where component.isOwnershipAlternative == true {
++            let owners = Set(component.staffIDs)
++            guard !owners.isDisjoint(with: ids) else { continue }
++            top = min(top, component.bounds[1] - topClearance)
++            bottom = max(bottom, component.bounds[3] + bottomClearance)
++            if !owners.isSubset(of: ids) { ambiguousAlternative = true }
++        }
+         var warnings: [String] = []
+-        if !ambiguous.isEmpty {
++        if !ambiguous.isEmpty || ambiguousAlternative {
+             warnings.append("Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.")
+         }
+         if foreignEdgeNeedsReview {

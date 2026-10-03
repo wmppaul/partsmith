@@ -178,6 +178,23 @@ within those reviewed regions. It does not identify an instrument, discover
 unrecorded notes, or replace a visual review. Keep output/source hashes and
 independent review findings with each delivered set.
 
+When changing crop analysis, test musical ownership separately from staff-line
+continuity. Include curved and interrupted lines, ledger patterns, long stems
+ending near an outer staff line, and detached marks near the following staff.
+Keeping every previous component is insufficient: a new competing component can
+change attribution and make an old mark disappear. An uncertain interpretation
+should only expand the final crop, leaving ordinary ownership and detached-mark
+discovery intact. Preserve failing source guards and inspect their exact excluded
+ink rather than relaxing them to match the candidate.
+
+Compare every source page, including unresolved instrument layouts. Ignore only
+component ordering; ownership, bounds and alternative-evidence tags are semantic
+changes. Review original source context before proposed rectangles. Diagnostic
+single-staff crops can check preservation on an unresolved page, but do not
+establish instrument identities or permission to invent missing rests. Finish
+with the actual document Auto worker, complete exports, and a saved-project
+reopen; raw inventory results alone do not validate directions or pagination.
+
 For detector changes or a requested whole-corpus evaluation, freeze the native
 analyzer and exporter before starting the resumable corpus runner. Supply
 `--exporter` to generate all parts of every completely resolved plan, rather than

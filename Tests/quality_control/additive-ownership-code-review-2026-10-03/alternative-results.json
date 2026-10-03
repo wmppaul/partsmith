@@ -1,0 +1,88 @@
+{
+  "apiControls" : [
+    {
+      "canApply" : true,
+      "choice" : "untagged",
+      "codecAndReplanExact" : true,
+      "lowerBottom" : 0.64500000000000002,
+      "lowerTop" : 0.245,
+      "upperBottom" : 0.28000000000000003,
+      "upperTop" : 0.18500000000000003
+    },
+    {
+      "canApply" : true,
+      "choice" : "false",
+      "codecAndReplanExact" : true,
+      "lowerBottom" : 0.64500000000000002,
+      "lowerTop" : 0.245,
+      "upperBottom" : 0.28000000000000003,
+      "upperTop" : 0.18500000000000003
+    },
+    {
+      "canApply" : true,
+      "choice" : "alternative",
+      "codecAndReplanExact" : true,
+      "lowerBottom" : 0.64500000000000002,
+      "lowerTop" : 0.255,
+      "upperBottom" : 0.32900000000000001,
+      "upperTop" : 0.18500000000000003
+    },
+    {
+      "canApply" : true,
+      "choice" : "ownerlessAlternative",
+      "codecAndReplanExact" : true,
+      "lowerBottom" : 0.64500000000000002,
+      "lowerTop" : 0.58499999999999996,
+      "upperBottom" : 0.32900000000000001,
+      "upperTop" : 0.18500000000000003
+    },
+    {
+      "canApply" : true,
+      "choice" : "sharedAlternative",
+      "codecAndReplanExact" : true,
+      "lowerBottom" : 0.64500000000000002,
+      "lowerTop" : 0.255,
+      "upperBottom" : 0.64500000000000002,
+      "upperTop" : 0.18500000000000003
+    }
+  ],
+  "baselineUpperBottom" : 0.32900000000000001,
+  "cancelControls" : [
+    {
+      "actualChecks" : 1,
+      "requestedAtCallback" : 1,
+      "returnedNil" : true
+    },
+    {
+      "actualChecks" : 2,
+      "requestedAtCallback" : 2,
+      "returnedNil" : true
+    },
+    {
+      "actualChecks" : 100,
+      "requestedAtCallback" : 100,
+      "returnedNil" : true
+    },
+    {
+      "actualChecks" : 767,
+      "requestedAtCallback" : 767,
+      "returnedNil" : true
+    },
+    {
+      "actualChecks" : 1533,
+      "requestedAtCallback" : 1533,
+      "returnedNil" : true
+    },
+    {
+      "actualChecks" : 1534,
+      "requestedAtCallback" : 1534,
+      "returnedNil" : true
+    }
+  ],
+  "legacyFieldAbsentIsOrdinary" : true,
+  "legacyJSONReencodingExact" : true,
+  "nativeAlternativeCount" : 1,
+  "nativeCancellationCheckCount" : 1534,
+  "trueAndFalseOptionalFlagsRoundtrip" : true,
+  "verdict" : "PASS"
+}

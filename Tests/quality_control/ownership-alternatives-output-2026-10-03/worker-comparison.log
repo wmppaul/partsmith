@@ -1,0 +1,103 @@
+{
+  "verdict": "PASS",
+  "pages": 39,
+  "musicStrips": 604,
+  "directionCopies": 42,
+  "exactPreservedCopySourceMetadata": true,
+  "sourceAndRectificationsUnchanged": true,
+  "staffAndAllDirectionRecognitionMetadataUnchanged": true,
+  "changedCrops": [
+    {
+      "id": "p35-s1-violin1",
+      "before": [
+        0.03725962444026431,
+        0.17480705913671993
+      ],
+      "after": [
+        0.03725962444026431,
+        0.1081146921359489
+      ]
+    },
+    {
+      "id": "p35-s1-violin2",
+      "before": [
+        0.05036679483347942,
+        0.18521569444897898
+      ],
+      "after": [
+        0.0931578511172111,
+        0.18560119946054413
+      ]
+    },
+    {
+      "id": "p38-s1-viola",
+      "before": [
+        0.14303974119064988,
+        0.21846659688963602
+      ],
+      "after": [
+        0.14303974119064988,
+        0.25942888557624194
+      ]
+    },
+    {
+      "id": "p38-s1-cello",
+      "before": [
+        0.19505534587205428,
+        0.2685316163954877
+      ],
+      "after": [
+        0.14889149671730786,
+        0.2685316163954877
+      ]
+    }
+  ],
+  "changedWarnings": [
+    {
+      "id": "p35-s1-violin1",
+      "before": [
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "after": [
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    {
+      "id": "p35-s1-violin2",
+      "before": [
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ],
+      "after": [
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ]
+    },
+    {
+      "id": "p38-s1-viola",
+      "before": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ],
+      "after": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ]
+    },
+    {
+      "id": "p38-s1-cello",
+      "before": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ],
+      "after": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+      ]
+    }
+  ]
+}

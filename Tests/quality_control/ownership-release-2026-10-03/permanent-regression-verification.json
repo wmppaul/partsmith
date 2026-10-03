@@ -1,0 +1,48 @@
+{
+  "scope": "Only tools/test_crop_quality.swift and tools/test_score_planner.swift changed; production and shared report index untouched.",
+  "core": ".build/ownership-alternatives-2026-10-03/Core",
+  "nativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "plannerSHA256": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+  "testFiles": {
+    "tools/test_crop_quality.swift": "bfe64bd8f6404a1a57b5059945424cc4ea5f3d1caf5d6e99c8835d400d57777f",
+    "tools/test_score_planner.swift": "9789572ad9ef4ce9c97e452e15c82b8edc819320a979993e30d36d2a7a825086"
+  },
+  "sourcePixelsSHA256": "1788d75e70532a70258a2e72120860080ceae28ef962ce1b7389e243df1754be",
+  "results": [
+    {
+      "name": "crop-default",
+      "assertions": 765,
+      "unchangedExistingAssertions": 755,
+      "newRasterAssertions": 10,
+      "exitCode": 0,
+      "log": "crop-run.log"
+    },
+    {
+      "name": "planner-default-before-warning-specificity",
+      "assertions": 111,
+      "unchangedExistingAssertions": 83,
+      "newPlannerAssertions": 28,
+      "exitCode": 0,
+      "log": "planner-run.log",
+      "sourceSHA256": "98dbd872eac96015ba6400e78b70f8e1fb14d5e69115d4ce0b00e858a0445159"
+    },
+    {
+      "name": "planner-final-focused",
+      "assertions": 28,
+      "exitCode": 0,
+      "log": "planner-final-run.log",
+      "detail": "Only change after full suite: assert exact ambiguity-warning text in both owners; all final ownership assertions rerun."
+    },
+    {
+      "name": "untyped-union-negative-control",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "log": "negative-run.log",
+      "failure": "Additional musical ownership evidence clipped source annotation [610, 272, 620, 281]",
+      "mutation": "Cleared only isOwnershipAlternative on identical native output. Same source pixels and source guards."
+    }
+  ],
+  "knownLimit": "The source surrogate [610,295,620,304] remains outside the upper crop. Pixels retained; test prints this limitation and does not assert that it must remain missing.",
+  "buildHistory": "Initial crop harness hit Swift type-inference timeout; explicit local array types fixed test construction. Original failed compile log retained; no production compile failure.",
+  "fullExistingGuardLoopsUnchanged": true
+}
