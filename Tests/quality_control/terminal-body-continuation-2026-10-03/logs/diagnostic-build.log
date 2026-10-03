@@ -1,0 +1,7 @@
+.build/terminal-body-continuation-2026-10-03/diagnose.swift:41:64: warning: left side of nil coalescing operator '??' has non-optional type 'Double', so the right side is never used
+39 |                 NativeScorePageAnalyzer.witnessDiagnostics = []
+40 |                 let components = NativeScorePageAnalyzer.notationComponents(image: image, candidates: candidates,
+41 |                     skewDegrees: item.page.analysisSkewDegrees ?? 0)!
+   |                                                                `- warning: left side of nil coalescing operator '??' has non-optional type 'Double', so the right side is never used
+42 |                 let actual = try components.map { String(data: try encoder.encode($0), encoding: .utf8)! }.sorted()
+43 |                 let expected = try (item.page.inkComponents ?? []).map { String(data: try encoder.encode($0), encoding: .utf8)! }.sorted()

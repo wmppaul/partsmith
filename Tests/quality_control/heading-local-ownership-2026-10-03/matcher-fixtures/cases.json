@@ -1,0 +1,225 @@
+{
+  "beforeMatcherInspection": true,
+  "cases": [
+    {
+      "id": "identical-complete-blocks",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/identical-complete-blocks.png",
+      "sha256": "14e2b7980ecb0fe1529ffd9858a779659c5502e627d579b6bb562fa117bf26c0",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": true,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 0
+    },
+    {
+      "id": "unrecognized-metronome-row",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/unrecognized-metronome-row.png",
+      "sha256": "6d54e79809eaca808206ae375ba55dd9c88119f88ff5b680753563bf773dc1e2",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 837
+    },
+    {
+      "id": "unrecognized-different-metronome-number",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/unrecognized-different-metronome-number.png",
+      "sha256": "cf988c24ec154707edcf2c31fbf4379b319b4559e7e912c34c8590b8aeae20b2",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 303
+    },
+    {
+      "id": "unrecognized-missing-metronome-dot",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/unrecognized-missing-metronome-dot.png",
+      "sha256": "b19dd77a6e24594296dec30e2e97a50e1e8ff9121b839b40e3339b553a13f5d4",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 12
+    },
+    {
+      "id": "unrecognized-stacked-title",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/unrecognized-stacked-title.png",
+      "sha256": "de2d67d140dbcf48583c7c94b0baba5ff4fcd4a4104b16078a8914d50a4e3b39",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 1747
+    },
+    {
+      "id": "local-capital-clipped",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/local-capital-clipped.png",
+      "sha256": "5cf3cb9e91b9217b45d96c8d28bcc6e70fc2a81c4e16fb6033b2b20fe8c2050e",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 48
+    },
+    {
+      "id": "local-period-clipped",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/local-period-clipped.png",
+      "sha256": "979ebe7963c53f26499edfb97462720de200ceabd28c012660e9a6bbd64ea82e",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 6
+    },
+    {
+      "id": "global-staff-line-fragment",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/global-staff-line-fragment.png",
+      "sha256": "ee98b7a6a008b99573155cafd5eed0f357f5dddd5906696c00b979614386f05a",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 132
+    },
+    {
+      "id": "global-tiny-notation-tip",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/global-tiny-notation-tip.png",
+      "sha256": "ac7ab7c6205e68ba5856a9016af84297cc0d5b1e82a23e9fe6c192b7c66dca5d",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 30
+    },
+    {
+      "id": "global-faint-original-fragment",
+      "image": "Tests/quality_control/heading-local-ownership-2026-10-03/matcher-fixtures/global-faint-original-fragment.png",
+      "sha256": "9af5d4d40d0849dc121eb98a6582e851c858c5dea9e00ea20c8f2b7fbf35133d",
+      "globalBounds": [
+        100,
+        90,
+        480,
+        190
+      ],
+      "localBounds": [
+        100,
+        520,
+        480,
+        620
+      ],
+      "recognizedGlobalText": "Allegro.",
+      "recognizedLocalText": "Allegro.",
+      "expectEquivalent": false,
+      "reason": "Complete original blocks including all added marks must be compared; matching OCR words do not discharge extra source ink.",
+      "unalignedPixelDifferenceCount": 21
+    }
+  ]
+}

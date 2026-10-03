@@ -1,0 +1,82 @@
+{
+  "scope": "Independent actual ScoreDetectionReview crop API tests against production Core snapshots differing only in PartsmithDocument.swift. Unpromoted heading algorithms excluded.",
+  "baseline": {
+    "checks": 29,
+    "passed": 20,
+    "failedOrBlocked": 9,
+    "unchangedExistingLocalEndingChecksPassed": 62,
+    "binarySHA256": "e24584fac8917042216731e414b34e8fc727ebca46233dbf451fdbc89f27ba12",
+    "resultsSHA256": "dff26b0f01ae1655177de316365fc2f7cc675d4631dba9ebe9e5857ea47350c4"
+  },
+  "candidate": {
+    "checks": 30,
+    "passed": 30,
+    "failedOrBlocked": 0,
+    "unchangedExistingLocalEndingChecksPassed": 62,
+    "binarySHA256": "c639667741658e568ec564f82f329dae32dab3e67349514d6eb743d9bafe96b9",
+    "resultsSHA256": "529a4b86960e95939b53ab7fdc5c5edbf4d6da8c6aa599b4d3b67f19ea1dde91"
+  },
+  "countDifference": "Baseline cannot run restored-copy removal because clipping never restores the copy; one blocker record is replaced by two exercised removal checks on the candidate.",
+  "baselineFailureRecords": [
+    {
+      "detail": "copied ending count=0",
+      "name": "actual setCropEdges restores global ending when local source is clipped",
+      "passed": false
+    },
+    {
+      "detail": "",
+      "name": "actual API materializes automatic local-ending identity",
+      "passed": false
+    },
+    {
+      "detail": "",
+      "name": "second actual crop clip restores ending again",
+      "passed": false
+    },
+    {
+      "detail": "",
+      "name": "actual clip after reset retains automatic provenance",
+      "passed": false
+    },
+    {
+      "detail": "",
+      "name": "a no-op UI edge edit does not turn suppression into explicit removal",
+      "passed": false
+    },
+    {
+      "detail": "",
+      "name": "reset used as the first UI action retains automatic identity",
+      "passed": false
+    },
+    {
+      "detail": "baseline bug prevented the global copy from returning",
+      "name": "restored-copy removal can be exercised",
+      "passed": false
+    },
+    {
+      "detail": "",
+      "name": "actual crop restores ending alongside unrelated direction categories",
+      "passed": false
+    },
+    {
+      "detail": "incompletePage",
+      "name": "no-override materialization preserves a pre-reviewed omission plan",
+      "passed": false
+    }
+  ],
+  "independentHarnessSHA256": "9336287b57b1eeea3751b1e839fea2521941bf102d914e00b53b1d8a479167f8",
+  "existingFixtureUnchanged": true,
+  "productionDocumentSHA256": "0365fdccc9e87654d1a98591ad95a33e228973dbffe876cd582405e39e0efcb8",
+  "productionDocumentMatchesCandidate": true,
+  "newRegressionSourceSHA256": "1f7bb22212766e097ca4ea52cb0f1c168d5119855b871408fbcfafbc494b7fb9",
+  "newStandaloneRunnerSHA256": "627b18d451c40dab1b79492ae91494988d8919735d7420641e65bb1db5697bfb",
+  "standaloneRuntimeVerification": {
+    "binary": "/Users/will/Documents/git/partsmith/.build/test_local_ending_counterparts",
+    "binarySHA256": "cbbf34c8a04d83ec6ef76433026a883d3f3ebf2c29c863e9a1ff1507a929a36c",
+    "exitCode": 0,
+    "output": "70 self-contained local-ending controls passed",
+    "compiledBy": "root",
+    "alsoExecutedIndependentlyBy": "crop_continuation"
+  },
+  "verdict": "The exact minimal document-only helper routing fixes the reproduced public API bug and passes all30 direct checks. Deliberate manual choices, unrelated direction categories, atomic error behavior and rest/omission semantics remain intact."
+}

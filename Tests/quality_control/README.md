@@ -1,5 +1,13 @@
 # Complete input corpus quality control
 
+## October 3 actual crop-edit regression and broader source controls
+
+The [public crop-edit API regression](crop-edit-ending-provenance-2026-10-03/README.md) exposes a missing automatic-ending identity when an Auto review first materializes a crop override. Routing that edit through the existing assignment helper restores required copies after local ending ink is cropped out, while preserving explicit removals and reviewed omissions. This is the only production change in the [new build](crop-review-release-2026-10-03/README.md); detection and the current full-score exports are unchanged.
+
+The [216 additional independent source controls](terminal-body-independent-2026-10-03/README.md) include hollow and tied heads. Production fails 58 of the original 180 complete source-envelope cases and 24 of the separate 36-case tied-head supplement. These are authored conservative physical-staff obligations, not counts of missing notes in published parts. The [two-sided connection experiment](terminal-body-continuation-2026-10-03/README.md) is rejected because it introduces 21 failures in the unchanged earlier 297-case suite; cleaner neighboring-staff crops do not justify those losses.
+
+The [local-heading deduplication study](heading-local-ownership-2026-10-03/README.md) remains outside production. Its strict complete-block matcher passes ten safety controls but fixes none of the three reviewed real duplicates. A later metadata-mutation control also exposes stale matching evidence. Exact words alone cannot substitute for the full printed instruction, including metronome marks and movement titles. No old source guard has been weakened and no rejected algorithm is included in the app.
+
 `corpus.json` inventories every PDF under `sample_scores/` and the lossless regression excerpts under `Tests/extraction/sources/`. It currently contains **36 PDFs and 1,477 physical PDF pages**: 34 separately downloaded source files (1,474 pages) and two excerpts (three pages). No input files have identical SHA-256 hashes. Different scan/edition IDs of the same work remain separate evaluation inputs; the lightly/medium skewed collections are not artificial distortions of a single source.
 
 Generated outputs, exported parts, `.build` artifacts and copies embedded in saved projects are excluded. They are results or duplicates to verify against the corpus, not additional independent source scores.

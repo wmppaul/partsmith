@@ -1,0 +1,30 @@
+{
+  "sourceAuthor": "crop_continuation",
+  "historicalBaseline": "d2a43e1",
+  "candidateImplementationNotYetReceived": true,
+  "baselineCoreHashes": {
+    "Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    "Detection/ScoreExtractionPlanner.swift": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+    "Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    "Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    "Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01"
+  },
+  "baselineBinarySHA256": "c8d3db9fa83f3723f1f28be695ec9190d1b9513a256ce1ec5d3e7202426d310e",
+  "fixtureSHA256": "005bdfb1c0e0e26077e756c25a0075c4d0228218660866cf9ca9609be38efeae",
+  "buildScriptSHA256": "62b9d2aa3be9d6500d7fa1f2a27a64b6f2689f34f81bd06e8815e3975cd4b8df",
+  "sourceDefinedCases": 180,
+  "caseGeometryCounts": 20,
+  "transforms": [
+    "straight",
+    "rotated",
+    "bowed"
+  ],
+  "rasterScales": [
+    0.5,
+    1,
+    1.5
+  ],
+  "noExistingOracleChanged": true,
+  "source": "Authored synthetic music and structural geometry; owner masks independent of native analysis."
+}

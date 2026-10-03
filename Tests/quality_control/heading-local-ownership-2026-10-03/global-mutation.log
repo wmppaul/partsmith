@@ -1,0 +1,55 @@
+CHECK: PASS: complete own first-staff local proof suppresses automatic duplicate
+CHECK: PASS: complete source owner remains retained
+CHECK: PASS: legacy no counterpart keeps required shared copy
+CHECK: PASS: all original music crop rectangles unchanged
+CHECK: PASS: another instrument cannot certify local heading
+CHECK: PASS: piano interior staff is not first-staff heading owner
+CHECK: PASS: different system staff cannot certify local heading
+CHECK: PASS: same words at different musical position
+CHECK: PASS: lower neighboring instruction cannot substitute
+CHECK: PASS: cut capital top keeps copy
+CHECK: PASS: partial right-hand letter keeps copy
+CHECK: PASS: unmeasured empty local ink keeps copy
+CHECK: PASS: nonfinite local ink keeps copy
+CHECK: PASS: local ink outside certified source box
+CHECK: PASS: inverted local source box
+CHECK: PASS: different tempo word is not equivalent
+CHECK: PASS: partial phrase cannot suppress full phrase
+CHECK: PASS: punctuation deletion is not allowed
+CHECK: PASS: additional metronome value changes full text
+CHECK: PASS: global extra metronome text requires copy
+CHECK: PASS: global stacked title requires complete equivalent
+CHECK: PASS: case and surrounding whitespace only normalization
+CHECK: PASS: legacy heading without recognition binding cannot suppress separate local copy
+CHECK: PASS: ambiguous duplicate local proofs fail conservatively
+CHECK: PASS: stale source binding produces visible warning
+CHECK: PASS: stale binding never moves automatic source into other system
+CHECK: PASS: coalesced block discards unmeasured local proof
+CHECK: PASS: initial no-op nil-list override reapplies local proof
+CHECK: PASS: initial no-op nil-list override retains required copy
+CHECK: PASS: explicit retained copy remains authoritative
+CHECK: PASS: explicit empty list remains authoritative
+CHECK: PASS: actual UI crop edit restores heading after clipping local top
+CHECK: PASS: second crop edit does not duplicate restored copy
+CHECK: PASS: reset complete crop suppresses restored automatic duplicate
+CHECK: PASS: explicit Remove Copy wins immediately
+CHECK: PASS: explicit removal remains after future crop edits
+CHECK: PASS: assignment editor materialized empty list also restores copy
+CHECK: PASS: reassignment clears restored automatic copy
+CHECK: PASS: reassignment warns without an acceptance gate
+CHECK: PASS: coincident navigation remains when heading suppressed
+CHECK: PASS: local restore/reset preserves coincident other-category copy
+CHECK: PASS: removing unrelated navigation does not disable automatic heading restoration
+CHECK: PASS: materialized restored heading cannot become stale manual copy
+CHECK: PASS: local metadata codec roundtrip
+CHECK: PASS: legacy optional field absent
+CHECK: PASS: legacy codec roundtrip
+CHECK: PASS: cancellation cannot return partially suppressed plan at checkpoint 1
+CHECK: PASS: cancellation cannot return partially suppressed plan at checkpoint 2
+CHECK: PASS: cancellation cannot return partially suppressed plan at checkpoint 3
+CHECK: PASS: cancellation cannot return partially suppressed plan at checkpoint 5
+CHECK: PASS: cancellation cannot return partially suppressed plan at checkpoint 10
+CHECK: PASS: repeated identical planning is deterministic
+CHECK: FAIL: expanded global block invalidates old local proof for smaller block
+52/53 independent heading-local controls pass
+FAIL: expanded global block invalidates old local proof for smaller block

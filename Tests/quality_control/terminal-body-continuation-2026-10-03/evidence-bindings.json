@@ -1,0 +1,157 @@
+{
+  "baselineCommit": "d2a43e1689bc35525f4ca88529f9cc652c4db772",
+  "frozenCoreSources": {
+    "baseline": {
+      "Core/Detection/NativeScorePageAnalyzer.swift": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+      "Core/Detection/ScoreExtractionPlanner.swift": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+      "Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+      "Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+      "Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+      "Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+      "Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+      "Core/Detection/ScoreSharedDirectionReview.swift": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99",
+      "Core/Detection/ScoreSharedDirectionWorkflow.swift": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+      "Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "Core/Detection/ScoreSharedHeadingDetector.swift": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+      "Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+      "Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+      "Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+      "Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+      "Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+      "Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+      "Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+      "Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+      "Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    },
+    "rejected-v1": {
+      "Core/Detection/NativeScorePageAnalyzer.swift": "bee4d523d415d9182eac6da4df7f608b7f637718ef48b8fce146f6301a969f95",
+      "Core/Detection/ScoreExtractionPlanner.swift": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+      "Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+      "Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+      "Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+      "Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+      "Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+      "Core/Detection/ScoreSharedDirectionReview.swift": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99",
+      "Core/Detection/ScoreSharedDirectionWorkflow.swift": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+      "Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "Core/Detection/ScoreSharedHeadingDetector.swift": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+      "Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+      "Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+      "Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+      "Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+      "Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+      "Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+      "Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+      "Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+      "Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    }
+  },
+  "onlyChangedCoreFile": "Core/Detection/NativeScorePageAnalyzer.swift",
+  "compressedEvidence": [
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/results297.json",
+      "sourceSHA256": "0d143a69b782f37fb37c2465ef61507a5fb256005e68b392b6282afbc0468ee1",
+      "archive": "results/results297.json.gz",
+      "archiveSHA256": "847d3a8956a577c2a982816a71c55c9f2753c030c59ab258d4cac6560b8d7950"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/results336.json",
+      "sourceSHA256": "bd3d51e6aad2f0e69f8b99903af252795b68643d3113976bb5c89ee003bde5a6",
+      "archive": "results/results336.json.gz",
+      "archiveSHA256": "3b653bde590cb52789c41149d83e75eee5df858c89763186327b41f00fb42194"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/results180.json",
+      "sourceSHA256": "c8b1f4a3ca9a32b8e23b680c18fb437f72743eaae5b4e25f408b8e420ca93ba6",
+      "archive": "results/results180.json.gz",
+      "archiveSHA256": "24e1e39aee7c1cd51721e03b74044877a4d56bbe40b34a2334db945180b460ca"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostic-cases.json",
+      "sourceSHA256": "5bd3a8240d19b71fb22247c68efd50bd9651da48da43c62bbb17c939b5b9964f",
+      "archive": "results/diagnostic-cases.json.gz",
+      "archiveSHA256": "14e2c016734d3e2becaa9574248d31d03bd7a3113ca035f0ace5beaa7b8f2d16"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/witnesses.json",
+      "sourceSHA256": "89d3934fe2722f732235ed27c83c6d14d090209482682c2115fb62a7d91b5bf6",
+      "archive": "results/diagnostic-witnesses.json.gz",
+      "archiveSHA256": "0d5abbcf105ef6387405290a78410c52794f2317cbf362c0a69f565be5fd8957"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/rejected-v1/replay-output/witnesses.json",
+      "sourceSHA256": "6fbe61af9862145a9872b8ae91e42aee9fce443c3a6df44355e0218f5c48af39",
+      "archive": "results/replay-components.json.gz",
+      "archiveSHA256": "1d137895cb7fecfe1bea67f7a4ae4ebc390f497d2fadb7586041e8a0fd81b434"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/rejected-v1/replayed-plans.json",
+      "sourceSHA256": "078ed52fd364396a2dd20411ffb428376882f2a4bd96b120dd2c6f667352aff2",
+      "archive": "results/replayed-plans.json.gz",
+      "archiveSHA256": "0246fcf52390aff626fa8d5882769fb9ef9fd8bed44aa3d4bc60d9519421e335"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/ownership-alternatives-2026-10-03/results297.json",
+      "sourceSHA256": "29a2977cc32412aa81c5f5021bdb5c1bdd83f7df248b842bed69d113c636b9ff",
+      "archive": "results/baseline297.json.gz",
+      "archiveSHA256": "3708a4437ede826ea35274a890325c4db6544ca2317f105c8baa14bc4aafb0b9"
+    },
+    {
+      "source": "/Users/will/Documents/git/partsmith/.build/ownership-alternatives-2026-10-03/results336.json",
+      "sourceSHA256": "bd3d51e6aad2f0e69f8b99903af252795b68643d3113976bb5c89ee003bde5a6",
+      "archive": "results/baseline336.json.gz",
+      "archiveSHA256": "59f0d78628b9eb2e61d87f7d6841de2d710e82d65e66cbe4e815efe180712fae"
+    }
+  ],
+  "externalEvidence": {
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/crop765": "54be0744e4c5eefe448fc68cce778c44f4e4dfff4b8e0f66846e66c45ec28073",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/controls297": "e73273e75da599a42b2cc49f2764c210276c31ffb8e24c4e53428e680af0b8a5",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/expanded336": "14c72d4d68ee5b5dafe7d7e1b874eb915232eca12580e50c3061ca8594d078c6",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/independent180": "f11b858477e8d4892d8ac8f587d88b97e67fafda8092725e0f7dd2f463ddcb31",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnose": "071634125dec927469844d7f2e28d3eeb5ae62547a688921c1bfcb9ebcf49e19",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/rejected-v1/replay": "aa83e5908671beb98f8db639d23cff71a1448def8d790b5e66ace31da41840b6",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/rejected-v1/replay-plans": "93f146d74ff05a756de2476e9324794997cf25c207643f0e78faeb492d7c57cb",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4",
+    "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p10.png": "0ac42b40c07265e15c500d61e82afcbc509981fe2b12d9e9b3e64a166c6cbf4f",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p24.png": "8bf5ae845f91712ba2451518b0a2bae8a94c814efcabc1b6f3ea9d6b60803b8c",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p28.png": "c93651c94b9dc39094265a974e35ac7728303e26c1192862d36263c506ddb92c",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p41.png": "c3b3303587e65c04e6d5f850b3fa22ec14a5a0c9224926980b30d543e49482a8",
+    "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p47.png": "46e9c85fd4c2ade85ace904382ca87522de6ce5280d993b426c05aed11e4ff61",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p3.png": "d780acc35f34fb58df7f9263050096c4bbda134e671c10c5d4c2447f24bdaa86",
+    "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p44.png": "d31391bc56209bcc72a074c1e55033883191896bb87a9c6906a699e594ca6360",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p63.png": "e72226e9f960a575e47797c67eec563cb0dce61bfa2336977291371ca4616db6",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p30.png": "6813d274e4eeefde91f566c93506e5a06d3f98f9a0d49c81d9ae711821a3497b",
+    "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p32.png": "fa56c0f0597956e4170b3a28cfadc752f99201ec42473974373593c8d1101156",
+    "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/corrected-brahms93521-p38.png": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+    "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/candidate-v1-review.json": "9dfb8ae8a74b0352dfd82b521ec9f1eb1b65130073399f1c3f2a0c863bbc291f",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/candidate-v1-comparison.json": "4d1ffa51a8639dcc75dc574bc90ed488560e130b912d80938f369ac5cf49b53c",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/candidate-v1-tied-comparison.json": "e71df099dac9ad05a98d16d05b026751793acec56dbe4bfea5db65a5b0463dc1",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/controls.swift": "005bdfb1c0e0e26077e756c25a0075c4d0228218660866cf9ca9609be38efeae",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/tied-controls.swift": "8d5be00cfce70ddb216dc5dbf3a25f675e59023e235d15d24b6f43f654968040",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/frozen-protocol.json": "8f5ea0829c3ffae778795f75f9851d09b35b5426b4694bb951eb5c6b6015bf4a",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/tied-frozen-protocol.json": "8f5c30bef4bbe76a5660b8315835fa1dc4590fab536b4e5f9e37725a43acad5d",
+    "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/hashes.json": "55eb884bd5ea310e4656fd2555d40f8b49d3982a0516aa7a8ad3666d20c3fcdf"
+  },
+  "baselineAndGuardHashesVerified": 34,
+  "diagnosticPageCount": 12,
+  "diagnosticBaselineComponentMultisetsEqualFrozen": true,
+  "diagnosticRasterHashesEqualCandidateReplay": true,
+  "productionUnmodifiedByThisStudy": true,
+  "rectifiedP38ArchivedRaster": {
+    "path": "source-review-images/p38-original-rectified-raster.png",
+    "sha256": "3bbfce33f34ad8d688980f4e9b227a467352b7632df34baa3def944fbeea96bc",
+    "diagnosticReencodedPixelsEqual": true,
+    "byteEncodingEqualityClaim": false
+  }
+}

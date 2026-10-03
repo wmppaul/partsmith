@@ -226,22 +226,9 @@ struct ScoreDetectionReview {
         }
         // Existing overrides carry omission reasons, movement headings, cues and
         // shared markings. Preserve them verbatim when changing a single edge.
-        var correction = overrides.first(where: { $0.pageIndex == band.pageIndex })
-            ?? ScorePageOverride(pageIndex: band.pageIndex, reason: "Crop edges reviewed in Auto Extract.",
-                systems: Set(pagePlan.assignments.map(\.systemIndex)).sorted().map { system in
-                    ScoreSystemOverride(systemIndex: system, label: nil, movementLabel: nil,
-                        bands: pagePlan.assignments.filter { $0.systemIndex == system }.map { item in
-                            ScoreBandOverride(partID: item.partID, candidateIDs: item.candidateIDs,
-                                rect: [item.leftFraction * page.pageWidth, item.topFraction * page.pageHeight,
-                                       (1 - item.rightFraction) * page.pageWidth, item.bottomFraction * page.pageHeight],
-                                label: item.editorialLabel, kind: item.kind,
-                                pageBreakBefore: item.pageBreakBefore, sourceMarkings: item.sourceMarkings.map {
-                                    [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
-                                     (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
-                                }, sourceMarkingsBelow: item.sourceMarkings.contains { $0.isBelow == true }
-                                    ? item.sourceMarkings.map { $0.isBelow == true } : nil)
-                        }, omittedParts: nil)
-                })
+        let existing = overrides.first(where: { $0.pageIndex == band.pageIndex })
+        var correction = ScoreSystemAssignment.pageOverride(page: page, pagePlan: pagePlan, existingOverride: existing)
+        if existing == nil { correction.reason = "Crop edges reviewed in Auto Extract." }
         guard let systemIndex = correction.systems.firstIndex(where: { $0.systemIndex == band.systemIndex }),
               let bandIndex = correction.systems[systemIndex].bands.firstIndex(where: { $0.partID == band.partID }) else {
             throw CropEditError.unavailableBand

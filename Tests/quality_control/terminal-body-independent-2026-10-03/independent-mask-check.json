@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "set": "original",
+      "cases": 180,
+      "ownerMasksChecked": 360,
+      "sourceBlackPixelsAndEnvelopesAndCropLossExact": true
+    },
+    {
+      "set": "tied-",
+      "cases": 36,
+      "ownerMasksChecked": 72,
+      "sourceBlackPixelsAndEnvelopesAndCropLossExact": true
+    }
+  ],
+  "method": "Independent NumPy/Pillow reread of saved source PNGs and owner-mask PNGs. Every owned pixel is actual black source ink; actual extents/counts and crop-edge losses match frozen Swift records."
+}

@@ -1,0 +1,19 @@
+--- a/Partsmith/Core/Detection/NativeScorePageAnalyzer.swift
++++ b/Partsmith/Core/Detection/NativeScorePageAnalyzer.swift
+@@ -511,9 +511,14 @@
+                                             var visited = Set<Int>()
+                                             var completeBodies = true
+                                             var sawBody = false
+-                                            let seedLo = min(xs.min()!, nominalCenter)
+-                                            let seedHi = max(xs.max()!, nominalCenter)
+                                             for yy in row..<(row + headThickness) {
++                                                // The source body can cross the physical spine.
++                                                // Inspect both directly attached sides: a short
++                                                // tip alone does not bound the curve on the other
++                                                // side. Never bridge a white source pixel.
++                                                var seedLo = nominalCenter, seedHi = nominalCenter
++                                                while seedLo > 0 && original[yy * width + seedLo - 1] { seedLo -= 1 }
++                                                while seedHi + 1 < width && original[yy * width + seedHi + 1] { seedHi += 1 }
+                                                 for xx in seedLo...seedHi where xx < stroke.left || xx >= stroke.right {
+                                                     let seed = yy * width + xx
+                                                     guard ink[seed], !visited.contains(seed) else { continue }

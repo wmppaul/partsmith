@@ -57,6 +57,41 @@ enum LocalEndingControls {
             endings:{_,p,_,_ in observed(p.pageIndex,[pair.first,pair.second].filter{$0.pageIndex==p.pageIndex})},
             localEndings:{_,p,_,_,_,_,_ in local[p.pageIndex] ?? observed(p.pageIndex,[])})
     }
+    /// Exercise the same public crop methods used by Auto Extract. Constructing
+    /// an override through pageOverride alone does not test this UI entry point.
+    static func cropEditingAPIs(pages:[ScorePageAnalysis], counterpart:ScoreEndingLocalCounterpart,
+                                recipient:ScorePlannedBand) throws {
+        let initial=ScoreDetectionReview.initial(profile:profile,analyses:pages,sourcePDFData:Data(),rectifications:[])
+        let top=recipient.topFraction*800, bottom=recipient.bottomFraction*800
+        let clippedTop=(counterpart.members[0].bounds[1]+0.001)*800
+        let pairID=pages[0].sharedEndings![0].pairID
+        var review=initial
+        try review.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try check(count(review.plan)==1,"public setCropEdges restores the global ending when its local copy is clipped")
+        let band=review.overrides[0].systems[0].bands.first{$0.partID==recipient.partID}!
+        try check(band.automaticLocalEndingPairIDs==[pairID],"public crop edit retains automatic local-ending provenance")
+        try review.setCropEdges(for:recipient.id,top:top,bottom:bottom)
+        try check(count(review.plan)==0,"reversing a public crop edit suppresses the complete local ending again")
+        try review.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try review.resetCropEdges(for:recipient.id)
+        try check(count(review.plan)==0,"public resetCropEdges restores local-ending retention")
+        try review.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try check(count(review.plan)==1,"public clipping after reset can restore the automatic ending again")
+        try review.removeSourceMarking(from:recipient.id,at:0)
+        try review.setCropEdges(for:recipient.id,top:top,bottom:bottom)
+        try review.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try review.resetCropEdges(for:recipient.id)
+        try review.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try check(count(review.plan)==0,"intentional Remove Copy survives subsequent public crop edits and resets")
+        var noOp=initial
+        try noOp.setCropEdges(for:recipient.id,top:top,bottom:bottom)
+        try noOp.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try check(count(noOp.plan)==1,"a no-op public crop edit does not convert automatic suppression into manual removal")
+        var resetFirst=initial
+        try resetFirst.resetCropEdges(for:recipient.id)
+        try resetFirst.setCropEdges(for:recipient.id,top:clippedTop,bottom:bottom)
+        try check(count(resetFirst.plan)==1,"reset as the first public crop action retains automatic provenance")
+    }
     static func run() throws {
         let pair=D.Pair(first:candidate(first:true),second:candidate(first:false))
         let local=observed(0,[candidate(first:true,local:true),candidate(first:false,local:true)])
@@ -88,6 +123,7 @@ enum LocalEndingControls {
         try check(L.counterpart(global:pair,partID:"cello",localPages:[unverified],pages:pages,plan:base)==nil,"unknown ownership cannot suppress copy")
         try check(L.counterpart(global:pair,partID:"cello",localPages:[],pages:pages,plan:base)==nil,"missing page cannot suppress copy")
         let recipient=base.bands.first{$0.partID=="cello" && $0.systemIndex==0}!
+        try cropEditingAPIs(pages:withLocal,counterpart:cp,recipient:recipient)
         for bad in 0..<3 {
             var malformed=pages[0]
             if bad==0 {malformed.staves[1].staffLineFractions=[]}
@@ -236,3 +272,9 @@ enum LocalEndingControls {
         try check(blocked.analyses[1].sharedEndings==nil,"unresolved page remains a global pairing barrier and has no local scan")
     }
 }
+
+#if LOCAL_ENDING_STANDALONE
+@main enum LocalEndingControlRunner {
+    static func main() throws { try LocalEndingControls.run() }
+}
+#endif

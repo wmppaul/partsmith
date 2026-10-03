@@ -1,0 +1,43 @@
+{
+  "decision": "Reject v1; no production promotion; no v2 threshold trial justified by the source profiles.",
+  "candidateAnalyzerSHA256": "bee4d523d415d9182eac6da4df7f608b7f637718ef48b8fce146f6301a969f95",
+  "baselineAnalyzerSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "plannerSHA256": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+  "cropQualityChecks": {
+    "passed": 765,
+    "total": 765,
+    "knownLimit": "Detached third annotation [610,295,620,304] still outside upper crop; this preexisting failure is explicitly printed, not silently counted as success."
+  },
+  "controls297": {
+    "baselinePass": 238,
+    "candidatePass": 217,
+    "newFailingCases": 21,
+    "worsenedOwnerEnvelopes": 103,
+    "fixedSourceEnvelopeIdentitiesUnchanged": true
+  },
+  "expanded336": {
+    "passed": 336,
+    "total": 336,
+    "entireDecodedResultsExactlyEqualBaseline": true
+  },
+  "independent180": "58 failures before and after; every crop unchanged; see bound independent comparison.",
+  "tiedSupplement36": "24 failures before and after; every crop unchanged; see bound independent comparison.",
+  "nativeTargetedReplay": {
+    "pages": 12,
+    "changedPages": 7,
+    "removedOwnershipAlternatives": 7,
+    "newComponents": 0,
+    "changedBands": 13,
+    "ordinaryComponentsExactlyRetained": true,
+    "fiveUnchangedPages": [
+      "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p10",
+      "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p3",
+      "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p44",
+      "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p63",
+      "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p30"
+    ]
+  },
+  "full39NativeWorkerRun": false,
+  "full36CorpusRun": false,
+  "reasonLargerRunsOmitted": "Strict unchanged fixed-source controls already reject the candidate; targeted replay diagnoses real source effects without treating crop cleanup as a safety pass."
+}

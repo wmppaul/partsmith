@@ -1,0 +1,175 @@
+{
+  "status": "Archived experiment; no heading code promoted; no output PDFs changed.",
+  "baselineRoot": ".build/heading-local-root-2026-10-03",
+  "candidateRoot": ".build/heading-local-ownership-2026-10-03",
+  "coreFiles": [
+    {
+      "path": "Core/Detection/NativeScorePageAnalyzer.swift",
+      "baselineSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+      "candidateSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01"
+    },
+    {
+      "path": "Core/Detection/ScoreExtractionPlanner.swift",
+      "baselineSHA256": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+      "candidateSHA256": "563e0d239c74dee516b3091769a351e22a141c697ebf89bb1a1ceac92d4f6889"
+    },
+    {
+      "path": "Core/Detection/ScoreInputPageSelection.swift",
+      "baselineSHA256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+      "candidateSHA256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": "Core/Detection/ScoreInstrumentNameDetector.swift",
+      "baselineSHA256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+      "candidateSHA256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": "Core/Detection/ScoreInstrumentPickList.swift",
+      "baselineSHA256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+      "candidateSHA256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": "Core/Detection/ScoreLocalEndingPreservation.swift",
+      "baselineSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "candidateSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    {
+      "path": "Core/Detection/ScoreRestDetector.swift",
+      "baselineSHA256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+      "candidateSHA256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedDestinationDetector.swift",
+      "baselineSHA256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+      "candidateSHA256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedDirectionReview.swift",
+      "baselineSHA256": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99",
+      "candidateSHA256": "11d3f5e70ddda27fa871ade4225e561943e10f309e4d607b780bb6958ee76eba"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "baselineSHA256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+      "candidateSHA256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedEnding.swift",
+      "baselineSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "candidateSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedEndingDetector.swift",
+      "baselineSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "candidateSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedHeadingDetector.swift",
+      "baselineSHA256": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+      "candidateSHA256": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9"
+    },
+    {
+      "path": "Core/Detection/ScoreSharedNavigationDetector.swift",
+      "baselineSHA256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+      "candidateSHA256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": "Core/Detection/ScoreSourceHeaderDetector.swift",
+      "baselineSHA256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+      "candidateSHA256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": "Core/Detection/StaffBandDetector.swift",
+      "baselineSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "candidateSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": "Core/DocumentModel/BarNumberDetector.swift",
+      "baselineSHA256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+      "candidateSHA256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": "Core/DocumentModel/PageRectificationEstimator.swift",
+      "baselineSHA256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+      "candidateSHA256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": "Core/DocumentModel/PartsmithDocument.swift",
+      "baselineSHA256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+      "candidateSHA256": "0365fdccc9e87654d1a98591ad95a33e228973dbffe876cd582405e39e0efcb8"
+    },
+    {
+      "path": "Core/DocumentModel/ProjectModels.swift",
+      "baselineSHA256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+      "candidateSHA256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": "Core/Export/PartPDFExporter.swift",
+      "baselineSHA256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+      "candidateSHA256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": "Core/Export/PartPreviewRenderer.swift",
+      "baselineSHA256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+      "candidateSHA256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": "Core/Layout/PartLayoutEngine.swift",
+      "baselineSHA256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+      "candidateSHA256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    }
+  ],
+  "changedCoreFiles": [
+    "Core/Detection/ScoreExtractionPlanner.swift",
+    "Core/Detection/ScoreSharedDirectionReview.swift",
+    "Core/DocumentModel/PartsmithDocument.swift"
+  ],
+  "originalPDFs": [
+    {
+      "path": "sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "bytes": 2168600,
+      "sha256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8"
+    },
+    {
+      "path": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "bytes": 8801313,
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+    },
+    {
+      "path": "sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "bytes": 2422810,
+      "sha256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975"
+    }
+  ],
+  "excludedBinaries": [
+    {
+      "path": ".build/heading-local-root-2026-10-03/probe",
+      "bytes": 2667384,
+      "sha256": "b2434fa651a42f6afa7ab2c5e2bb1870f40bc934b2f879daa2d3f23b086303fc"
+    },
+    {
+      "path": ".build/heading-local-root-2026-10-03/evaluate",
+      "bytes": 94328,
+      "sha256": "82b732c711805f4856ce9481c988037abacc5e34b2eebc89ebea915d0883d487"
+    },
+    {
+      "path": ".build/heading-local-ownership-2026-10-03/controls",
+      "bytes": 4211976,
+      "sha256": "8b475fdbfc521fa6122287942327577d9ab653a3e55be03f76cc2f41117cc880"
+    },
+    {
+      "path": ".build/heading-local-ownership-2026-10-03/matcher-controls",
+      "bytes": 98624,
+      "sha256": "24d37f8b3c8e6c01761c5890f13fe00f9787771596ea654a39444d12db9081ed"
+    },
+    {
+      "path": ".build/heading-local-ownership-2026-10-03/global-mutation-controls",
+      "bytes": 4159240,
+      "sha256": "61761e3af73041f631201257a64188c7122c491a6609c9c1584169758a453572"
+    }
+  ],
+  "knownMissingProbeArtifact": {
+    "path": ".build/heading-local-root-2026-10-03/p1-piano-whole-block.png",
+    "reason": "Intentionally not produced: full padded local box exceeds original OCR region. No fabricated or partial whole-block match; p1-piano-region.png is preserved."
+  }
+}

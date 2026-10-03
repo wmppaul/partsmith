@@ -1,0 +1,147 @@
+[
+  {
+    "detail" : "",
+    "name" : "initial local ending suppresses global without an override",
+    "passed" : true
+  },
+  {
+    "detail" : "copied ending count=0",
+    "name" : "actual setCropEdges restores global ending when local source is clipped",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "actual API materializes automatic local-ending identity",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "crop edit retains recognition and category bindings",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "actual reversed crop suppresses the ending again",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "second actual crop clip restores ending again",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "actual resetCropEdges restores local retention",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "actual clip after reset retains automatic provenance",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "a no-op UI edge edit does not turn suppression into explicit removal",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "reset used as the first UI action retains automatic identity",
+    "passed" : false
+  },
+  {
+    "detail" : "baseline bug prevented the global copy from returning",
+    "name" : "restored-copy removal can be exercised",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "ordinary explicit Remove Copy remains authoritative",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "initial explicit empty list remains authoritative",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "existing override reason and labels remain exact (false)",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "initial explicit nonempty list remains authoritative",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "existing override reason and labels remain exact (true)",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "actual crop edit preserves unrelated heading and navigation copies\/metadata",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "actual crop restores ending alongside unrelated direction categories",
+    "passed" : false
+  },
+  {
+    "detail" : "",
+    "name" : "later music-to-cue ownership change invalidates automatic ending evidence",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "invalid edge request throws",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "rejected edge request is atomic and leaves review untouched",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "unavailable reset throws",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "unavailable reset leaves review untouched",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "crop and reset preserve existing generated rests and omission reasons",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "existing rest measure span and review reason remain exact",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "generated rest cannot be edited as source crop",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "generated rest cannot reset source crop",
+    "passed" : true
+  },
+  {
+    "detail" : "",
+    "name" : "both rejected generated-rest edits are atomic",
+    "passed" : true
+  },
+  {
+    "detail" : "incompletePage",
+    "name" : "no-override materialization preserves a pre-reviewed omission plan",
+    "passed" : false
+  }
+]

@@ -1,0 +1,2915 @@
+{
+  "baselineCommit": "d2a43e1",
+  "cases": 180,
+  "targetEnvelopeFailures": 58,
+  "bySourceClass": {
+    "musical-long-stem": {
+      "cases": 90,
+      "preserved": 32,
+      "failures": 58
+    },
+    "structural-barline-with-owned-curve": {
+      "cases": 72,
+      "preserved": 72,
+      "failures": 0
+    },
+    "mixed-local-note-and-barline": {
+      "cases": 18,
+      "preserved": 18,
+      "failures": 0
+    }
+  },
+  "byKind": [
+    {
+      "kind": "filledOuter",
+      "cases": 9,
+      "sourceEnvelopeFailures": 3,
+      "sharedConnectionObservedCases": 6,
+      "newAlternativeObservedCases": 6,
+      "failures": [
+        "filledOuter-rotated-r0.5",
+        "filledOuter-bowed-r1.0",
+        "filledOuter-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "hollowOuter",
+      "cases": 9,
+      "sourceEnvelopeFailures": 9,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": [
+        "hollowOuter-straight-r0.5",
+        "hollowOuter-straight-r1.0",
+        "hollowOuter-straight-r1.5",
+        "hollowOuter-rotated-r0.5",
+        "hollowOuter-rotated-r1.0",
+        "hollowOuter-rotated-r1.5",
+        "hollowOuter-bowed-r0.5",
+        "hollowOuter-bowed-r1.0",
+        "hollowOuter-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "mixedOuter",
+      "cases": 9,
+      "sourceEnvelopeFailures": 3,
+      "sharedConnectionObservedCases": 6,
+      "newAlternativeObservedCases": 6,
+      "failures": [
+        "mixedOuter-rotated-r0.5",
+        "mixedOuter-bowed-r1.0",
+        "mixedOuter-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "filledFirstSpace",
+      "cases": 9,
+      "sourceEnvelopeFailures": 2,
+      "sharedConnectionObservedCases": 7,
+      "newAlternativeObservedCases": 7,
+      "failures": [
+        "filledFirstSpace-bowed-r1.0",
+        "filledFirstSpace-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "hollowFirstSpace",
+      "cases": 9,
+      "sourceEnvelopeFailures": 9,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": [
+        "hollowFirstSpace-straight-r0.5",
+        "hollowFirstSpace-straight-r1.0",
+        "hollowFirstSpace-straight-r1.5",
+        "hollowFirstSpace-rotated-r0.5",
+        "hollowFirstSpace-rotated-r1.0",
+        "hollowFirstSpace-rotated-r1.5",
+        "hollowFirstSpace-bowed-r0.5",
+        "hollowFirstSpace-bowed-r1.0",
+        "hollowFirstSpace-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "hollowSecondLine",
+      "cases": 9,
+      "sourceEnvelopeFailures": 2,
+      "sharedConnectionObservedCases": 8,
+      "newAlternativeObservedCases": 0,
+      "failures": [
+        "hollowSecondLine-rotated-r0.5",
+        "hollowSecondLine-bowed-r0.5"
+      ]
+    },
+    {
+      "kind": "filledStemInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 9,
+      "sharedConnectionObservedCases": 6,
+      "newAlternativeObservedCases": 6,
+      "failures": [
+        "filledStemInterrupted-straight-r0.5",
+        "filledStemInterrupted-straight-r1.0",
+        "filledStemInterrupted-straight-r1.5",
+        "filledStemInterrupted-rotated-r0.5",
+        "filledStemInterrupted-rotated-r1.0",
+        "filledStemInterrupted-rotated-r1.5",
+        "filledStemInterrupted-bowed-r0.5",
+        "filledStemInterrupted-bowed-r1.0",
+        "filledStemInterrupted-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "hollowStemInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 9,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": [
+        "hollowStemInterrupted-straight-r0.5",
+        "hollowStemInterrupted-straight-r1.0",
+        "hollowStemInterrupted-straight-r1.5",
+        "hollowStemInterrupted-rotated-r0.5",
+        "hollowStemInterrupted-rotated-r1.0",
+        "hollowStemInterrupted-rotated-r1.5",
+        "hollowStemInterrupted-bowed-r0.5",
+        "hollowStemInterrupted-bowed-r1.0",
+        "hollowStemInterrupted-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "filledStaffInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 3,
+      "sharedConnectionObservedCases": 6,
+      "newAlternativeObservedCases": 6,
+      "failures": [
+        "filledStaffInterrupted-rotated-r0.5",
+        "filledStaffInterrupted-bowed-r1.0",
+        "filledStaffInterrupted-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "hollowStaffInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 9,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": [
+        "hollowStaffInterrupted-straight-r0.5",
+        "hollowStaffInterrupted-straight-r1.0",
+        "hollowStaffInterrupted-straight-r1.5",
+        "hollowStaffInterrupted-rotated-r0.5",
+        "hollowStaffInterrupted-rotated-r1.0",
+        "hollowStaffInterrupted-rotated-r1.5",
+        "hollowStaffInterrupted-bowed-r0.5",
+        "hollowStaffInterrupted-bowed-r1.0",
+        "hollowStaffInterrupted-bowed-r1.5"
+      ]
+    },
+    {
+      "kind": "bareBarline",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "attachedTie",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "attachedSlur",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "tieAcrossBarline",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "slurAcrossBarline",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "tieStaffInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "slurStaffInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "tieBarlineInterrupted",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    },
+    {
+      "kind": "filledAtJunction",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 6,
+      "newAlternativeObservedCases": 6,
+      "failures": []
+    },
+    {
+      "kind": "hollowAtJunction",
+      "cases": 9,
+      "sourceEnvelopeFailures": 0,
+      "sharedConnectionObservedCases": 0,
+      "newAlternativeObservedCases": 0,
+      "failures": []
+    }
+  ],
+  "failureRecords": [
+    {
+      "name": "filledOuter-rotated-r0.5",
+      "kind": "filledOuter",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 645
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 521
+        }
+      ]
+    },
+    {
+      "name": "filledOuter-bowed-r1.0",
+      "kind": "filledOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 560
+        }
+      ]
+    },
+    {
+      "name": "filledOuter-bowed-r1.5",
+      "kind": "filledOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 560
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-straight-r0.5",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            294.99999999999994,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 471
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-straight-r1.0",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            126,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            296,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-straight-r1.5",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125.66666666666666,
+            720,
+            241.66666666666669
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            295.66666666666663,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-rotated-r0.5",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 565
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-rotated-r1.0",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.99999999999997
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-rotated-r1.5",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            246.33333333333334
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-bowed-r0.5",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-bowed-r1.0",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "hollowOuter-bowed-r1.5",
+      "kind": "hollowOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "mixedOuter-rotated-r0.5",
+      "kind": "mixedOuter",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1284,
+          "sourcePixelsOutsideCrop": 645
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1284,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "mixedOuter-bowed-r1.0",
+      "kind": "mixedOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1284,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1284,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "mixedOuter-bowed-r1.5",
+      "kind": "mixedOuter",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1284,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1284,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "filledFirstSpace-bowed-r1.0",
+      "kind": "filledFirstSpace",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1319,
+          "sourcePixelsOutsideCrop": 603
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1319,
+          "sourcePixelsOutsideCrop": 539
+        }
+      ]
+    },
+    {
+      "name": "filledFirstSpace-bowed-r1.5",
+      "kind": "filledFirstSpace",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1319,
+          "sourcePixelsOutsideCrop": 603
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1319,
+          "sourcePixelsOutsideCrop": 539
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-straight-r0.5",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 541
+        },
+        {
+          "crop": [
+            0,
+            294.99999999999994,
+            720,
+            403.00000000000006
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 450
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-straight-r1.0",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            126,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 541
+        },
+        {
+          "crop": [
+            0,
+            296,
+            720,
+            403.00000000000006
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 453
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-straight-r1.5",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125.66666666666666,
+            720,
+            241.66666666666669
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 541
+        },
+        {
+          "crop": [
+            0,
+            295.66666666666663,
+            720,
+            403.00000000000006
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 453
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-rotated-r0.5",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            400
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            176,
+            519,
+            400
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 423
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-rotated-r1.0",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.99999999999997
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            400
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 541
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            176,
+            519,
+            400
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 423
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-rotated-r1.5",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            246.33333333333334
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            400
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 541
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            176,
+            519,
+            400
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 423
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-bowed-r0.5",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 523
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 462
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-bowed-r1.0",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 523
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 462
+        }
+      ]
+    },
+    {
+      "name": "hollowFirstSpace-bowed-r1.5",
+      "kind": "hollowFirstSpace",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            395
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 523
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            171,
+            519,
+            395
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1162,
+          "sourcePixelsOutsideCrop": 462
+        }
+      ]
+    },
+    {
+      "name": "hollowSecondLine-rotated-r0.5",
+      "kind": "hollowSecondLine",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            393
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1120,
+          "sourcePixelsOutsideCrop": 523
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            183,
+            519,
+            393
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1120,
+          "sourcePixelsOutsideCrop": 402
+        }
+      ]
+    },
+    {
+      "name": "hollowSecondLine-bowed-r0.5",
+      "kind": "hollowSecondLine",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129,
+            720,
+            387
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            388
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1120,
+          "sourcePixelsOutsideCrop": 10
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-straight-r0.5",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            183,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-straight-r1.0",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            183,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-straight-r1.5",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            183,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-rotated-r0.5",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 645
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 512
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-rotated-r1.0",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            187.99999999999997,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-rotated-r1.5",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            187.66666666666666,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-bowed-r0.5",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            183,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-bowed-r1.0",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 551
+        }
+      ]
+    },
+    {
+      "name": "filledStemInterrupted-bowed-r1.5",
+      "kind": "filledStemInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 551
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-straight-r0.5",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            294.99999999999994,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 462
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-straight-r1.0",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            126,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            296,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 465
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-straight-r1.5",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125.66666666666666,
+            720,
+            241.66666666666669
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            295.66666666666663,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 465
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-rotated-r0.5",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 565
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 435
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-rotated-r1.0",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.99999999999997
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 435
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-rotated-r1.5",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            246.33333333333334
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 435
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-bowed-r0.5",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-bowed-r1.0",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "hollowStemInterrupted-bowed-r1.5",
+      "kind": "hollowStemInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1195,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "filledStaffInterrupted-rotated-r0.5",
+      "kind": "filledStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 645
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 521
+        }
+      ]
+    },
+    {
+      "name": "filledStaffInterrupted-bowed-r1.0",
+      "kind": "filledStaffInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 560
+        }
+      ]
+    },
+    {
+      "name": "filledStaffInterrupted-bowed-r1.5",
+      "kind": "filledStaffInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 624
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 560
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-straight-r0.5",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            294.99999999999994,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 471
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-straight-r1.0",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            126,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            296,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-straight-r1.5",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "straight",
+        "tilt": 0
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            125.66666666666666,
+            720,
+            241.66666666666669
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            295.66666666666663,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 474
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-rotated-r0.5",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 565
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-rotated-r1.0",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            245.99999999999997
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-rotated-r1.5",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 0,
+        "name": "rotated",
+        "tilt": 2
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            119,
+            720,
+            246.33333333333334
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 444
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-bowed-r0.5",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 0.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-bowed-r1.0",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1,
+      "targets": [
+        {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    },
+    {
+      "name": "hollowStaffInterrupted-bowed-r1.5",
+      "kind": "hollowStaffInterrupted",
+      "transform": {
+        "bow": 7,
+        "name": "bowed",
+        "tilt": -1
+      },
+      "rasterScale": 1.5,
+      "targets": [
+        {
+          "crop": [
+            0,
+            129.66666666666666,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 544
+        },
+        {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 483
+        }
+      ]
+    }
+  ],
+  "sourcePNGAndOwnerMaskHashesSHA256": "2f25b015614947b9dd2fef4ea521d9f7c71e6410a88fcc779108e90c03884ec8",
+  "fixtureSHA256": "005bdfb1c0e0e26077e756c25a0075c4d0228218660866cf9ca9609be38efeae",
+  "baselineResultsSHA256": "7521108415d7cddc8773a2a0ed1aaa690d193eae4a000da55eb03e9a73f4bf46"
+}

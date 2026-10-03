@@ -1,0 +1,42 @@
+{
+  "candidateAnalyzerSHA256": "bee4d523d415d9182eac6da4df7f608b7f637718ef48b8fce146f6301a969f95",
+  "candidateComparedToHistoricalCommit": "d2a43e1",
+  "compiledBinaries": {
+    "baseline/controls": "c8d3db9fa83f3723f1f28be695ec9190d1b9513a256ce1ec5d3e7202426d310e",
+    "baseline/tied-controls": "f95b9b0dd5c5010046e5d6ec9ac5db38f2a8f985711d8eefa00823072ce509d5",
+    "candidate-v1-controls": "498f42cc0dbaaf1d3fbcd5c4f3dbd8721086c684f989da6dd8b6f9a4ca3124fa",
+    "candidate-v1-tied-controls": "84a7a4d55bc1bf41441f3d5c41106c5591c91e88416e0b8cdf030cfd3a809c13"
+  },
+  "sourceFixtureHashes": {
+    "controls.swift": "005bdfb1c0e0e26077e756c25a0075c4d0228218660866cf9ca9609be38efeae",
+    "tied-controls.swift": "8d5be00cfce70ddb216dc5dbf3a25f675e59023e235d15d24b6f43f654968040"
+  },
+  "independent180": {
+    "baselineFailures": 58,
+    "candidateFailures": 58,
+    "changedCropCases": 0,
+    "newFailures": 0,
+    "worsenedOwners": 0,
+    "repairedCases": 0
+  },
+  "independent36Supplement": {
+    "baselineFailures": 24,
+    "candidateFailures": 24,
+    "changedCropCases": 0,
+    "newFailures": 0,
+    "worsenedOwners": 0,
+    "repairedCases": 0
+  },
+  "existing297FromAlgorithmAuthor": {
+    "sourcePath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/comparison297.json",
+    "sha256": "f27228e704f8ef016f69272a1fab136b1e078f600d3a6903dfd2bda748caa4e3",
+    "baselinePass": 238,
+    "candidatePass": 217,
+    "newFailures": 21,
+    "worsenedOwnerEnvelopes": 103,
+    "independentlyRead": true,
+    "nativeRunNotRepeatedByThisReviewer": true
+  },
+  "verdict": "Reject candidate v1. It leaves all new independent source obligations unchanged, including existing failures, and the unchanged earlier297 exposes new musical losses. Passing the new216 nonregression subset cannot override those failures.",
+  "codeFinding": "The new seed range walks the full original horizontal ink run on every accepted body row, including source staff/ledger pixels on the opposite side. The following compactness flood still uses staff-erased analysis ink; line fragments can therefore be introduced as apparent parts of a notehead body and cause its preservation hypothesis to be rejected. The code does not distinguish a continuing musical curve from a staff-line intersection."
+}

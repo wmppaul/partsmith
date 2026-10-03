@@ -1,0 +1,214 @@
+[
+  {
+    "name" : "complete own first-staff local proof suppresses automatic duplicate",
+    "passed" : true
+  },
+  {
+    "name" : "complete source owner remains retained",
+    "passed" : true
+  },
+  {
+    "name" : "legacy no counterpart keeps required shared copy",
+    "passed" : true
+  },
+  {
+    "name" : "all original music crop rectangles unchanged",
+    "passed" : true
+  },
+  {
+    "name" : "another instrument cannot certify local heading",
+    "passed" : true
+  },
+  {
+    "name" : "piano interior staff is not first-staff heading owner",
+    "passed" : true
+  },
+  {
+    "name" : "different system staff cannot certify local heading",
+    "passed" : true
+  },
+  {
+    "name" : "same words at different musical position",
+    "passed" : true
+  },
+  {
+    "name" : "lower neighboring instruction cannot substitute",
+    "passed" : true
+  },
+  {
+    "name" : "cut capital top keeps copy",
+    "passed" : true
+  },
+  {
+    "name" : "partial right-hand letter keeps copy",
+    "passed" : true
+  },
+  {
+    "name" : "unmeasured empty local ink keeps copy",
+    "passed" : true
+  },
+  {
+    "name" : "nonfinite local ink keeps copy",
+    "passed" : true
+  },
+  {
+    "name" : "local ink outside certified source box",
+    "passed" : true
+  },
+  {
+    "name" : "inverted local source box",
+    "passed" : true
+  },
+  {
+    "name" : "different tempo word is not equivalent",
+    "passed" : true
+  },
+  {
+    "name" : "partial phrase cannot suppress full phrase",
+    "passed" : true
+  },
+  {
+    "name" : "punctuation deletion is not allowed",
+    "passed" : true
+  },
+  {
+    "name" : "additional metronome value changes full text",
+    "passed" : true
+  },
+  {
+    "name" : "global extra metronome text requires copy",
+    "passed" : true
+  },
+  {
+    "name" : "global stacked title requires complete equivalent",
+    "passed" : true
+  },
+  {
+    "name" : "case and surrounding whitespace only normalization",
+    "passed" : true
+  },
+  {
+    "name" : "legacy heading without recognition binding cannot suppress separate local copy",
+    "passed" : true
+  },
+  {
+    "name" : "ambiguous duplicate local proofs fail conservatively",
+    "passed" : true
+  },
+  {
+    "name" : "stale source binding produces visible warning",
+    "passed" : true
+  },
+  {
+    "name" : "stale binding never moves automatic source into other system",
+    "passed" : true
+  },
+  {
+    "name" : "coalesced block discards unmeasured local proof",
+    "passed" : true
+  },
+  {
+    "name" : "initial no-op nil-list override reapplies local proof",
+    "passed" : true
+  },
+  {
+    "name" : "initial no-op nil-list override retains required copy",
+    "passed" : true
+  },
+  {
+    "name" : "explicit retained copy remains authoritative",
+    "passed" : true
+  },
+  {
+    "name" : "explicit empty list remains authoritative",
+    "passed" : true
+  },
+  {
+    "name" : "actual UI crop edit restores heading after clipping local top",
+    "passed" : true
+  },
+  {
+    "name" : "second crop edit does not duplicate restored copy",
+    "passed" : true
+  },
+  {
+    "name" : "reset complete crop suppresses restored automatic duplicate",
+    "passed" : true
+  },
+  {
+    "name" : "explicit Remove Copy wins immediately",
+    "passed" : true
+  },
+  {
+    "name" : "explicit removal remains after future crop edits",
+    "passed" : true
+  },
+  {
+    "name" : "assignment editor materialized empty list also restores copy",
+    "passed" : true
+  },
+  {
+    "name" : "reassignment clears restored automatic copy",
+    "passed" : true
+  },
+  {
+    "name" : "reassignment warns without an acceptance gate",
+    "passed" : true
+  },
+  {
+    "name" : "coincident navigation remains when heading suppressed",
+    "passed" : true
+  },
+  {
+    "name" : "local restore\/reset preserves coincident other-category copy",
+    "passed" : true
+  },
+  {
+    "name" : "removing unrelated navigation does not disable automatic heading restoration",
+    "passed" : true
+  },
+  {
+    "name" : "materialized restored heading cannot become stale manual copy",
+    "passed" : true
+  },
+  {
+    "name" : "local metadata codec roundtrip",
+    "passed" : true
+  },
+  {
+    "name" : "legacy optional field absent",
+    "passed" : true
+  },
+  {
+    "name" : "legacy codec roundtrip",
+    "passed" : true
+  },
+  {
+    "name" : "cancellation cannot return partially suppressed plan at checkpoint 1",
+    "passed" : true
+  },
+  {
+    "name" : "cancellation cannot return partially suppressed plan at checkpoint 2",
+    "passed" : true
+  },
+  {
+    "name" : "cancellation cannot return partially suppressed plan at checkpoint 3",
+    "passed" : true
+  },
+  {
+    "name" : "cancellation cannot return partially suppressed plan at checkpoint 5",
+    "passed" : true
+  },
+  {
+    "name" : "cancellation cannot return partially suppressed plan at checkpoint 10",
+    "passed" : true
+  },
+  {
+    "name" : "repeated identical planning is deterministic",
+    "passed" : true
+  },
+  {
+    "name" : "expanded global block invalidates old local proof for smaller block",
+    "passed" : false
+  }
+]

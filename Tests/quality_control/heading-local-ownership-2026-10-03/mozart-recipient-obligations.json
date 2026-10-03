@@ -1,0 +1,231 @@
+{
+  "frozenAtUTC": "2026-10-03T20:44:51.426651+00:00",
+  "candidateNotInspected": true,
+  "sourceFirst": true,
+  "coordinateSystem": "top-down original PDF points; source pages and systems one-based",
+  "guardRule": "Every nonwhite pixel inside manually source-selected whole-word ROI, plus one 4x-render pixel; nearby scanned ink remains included. ROIs are source-review envelopes, not proposed copy bounds. Any conservative guard failure remains explicit.",
+  "records": [
+    {
+      "sourcePage": 1,
+      "system": 1,
+      "word": "Allegro.",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "anchors": {
+        "globalStaffID": 0,
+        "pianoStaffID": 3
+      },
+      "words": {
+        "global": {
+          "reviewedROI": [
+            110,
+            146,
+            180,
+            161
+          ],
+          "nonwhiteGuard": [
+            114.5,
+            149.75,
+            155.75,
+            161.25
+          ],
+          "image": "Tests/quality_control/heading-local-ownership-2026-10-03/original-mozart-p01-global-word.png",
+          "sha256": "c8ce27bfdc6e1102bdfcb24728635097748a6ecb8589e5e3477761100cac6aa2"
+        },
+        "piano-local": {
+          "reviewedROI": [
+            110,
+            238,
+            186,
+            259
+          ],
+          "nonwhiteGuard": [
+            109.75,
+            237.75,
+            186.25,
+            259.25
+          ],
+          "image": "Tests/quality_control/heading-local-ownership-2026-10-03/original-mozart-p01-piano-local-word.png",
+          "sha256": "b94c61cb325774f82b5d7909b74bafbcbdc828ad459a5c30be9634b306c5219a"
+        }
+      },
+      "recipients": [
+        {
+          "bandID": "p1-s1-violin",
+          "partID": "violin",
+          "staffIDs": [
+            0
+          ],
+          "sourceCrop": [
+            0.0,
+            144.11917973462002,
+            543.6,
+            185.04270205066345
+          ],
+          "containsComparedWordGuard": true,
+          "expectedAutoCopy": false,
+          "rationale": "Own original global heading retained above first staff."
+        },
+        {
+          "bandID": "p1-s1-viola",
+          "partID": "viola",
+          "staffIDs": [
+            1
+          ],
+          "sourceCrop": [
+            0.0,
+            180.9693606755127,
+            543.6,
+            214.34161640530763
+          ],
+          "containsComparedWordGuard": false,
+          "expectedAutoCopy": true,
+          "rationale": "No own local heading; keep global copy."
+        },
+        {
+          "bandID": "p1-s1-cello",
+          "partID": "cello",
+          "staffIDs": [
+            2
+          ],
+          "sourceCrop": [
+            0.0,
+            209.66417370325698,
+            543.6,
+            256.0246079613993
+          ],
+          "containsComparedWordGuard": false,
+          "expectedAutoCopy": true,
+          "rationale": "No own local heading; incidental Piano heading below Cello cannot substitute."
+        },
+        {
+          "bandID": "p1-s1-piano",
+          "partID": "piano",
+          "staffIDs": [
+            3,
+            4
+          ],
+          "sourceCrop": [
+            0.0,
+            232.16121773226965,
+            543.6,
+            330.17995597102873
+          ],
+          "containsComparedWordGuard": true,
+          "expectedAutoCopy": false,
+          "rationale": "Complete equivalent local heading above own first staff at same opening position; suppress only the automatic duplicate."
+        }
+      ]
+    },
+    {
+      "sourcePage": 12,
+      "system": 1,
+      "word": "Andante.",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "anchors": {
+        "globalStaffID": 0,
+        "pianoStaffID": 3
+      },
+      "words": {
+        "global": {
+          "reviewedROI": [
+            65,
+            38,
+            112,
+            51
+          ],
+          "nonwhiteGuard": [
+            70.75,
+            41.25,
+            103.5,
+            49.5
+          ],
+          "image": "Tests/quality_control/heading-local-ownership-2026-10-03/original-mozart-p12-global-word.png",
+          "sha256": "551de812edfe424f55f53f88f571b0fc9fd83a760345362e6f88593383e5b4d3"
+        },
+        "piano-local": {
+          "reviewedROI": [
+            65,
+            114,
+            126,
+            128
+          ],
+          "nonwhiteGuard": [
+            69.5,
+            116.75,
+            126.25,
+            128.25
+          ],
+          "image": "Tests/quality_control/heading-local-ownership-2026-10-03/original-mozart-p12-piano-local-word.png",
+          "sha256": "4c207d062d1d079521c8ac2e33ebc44cc838e2ad074286de3e0a33c5fba8fa5f"
+        }
+      },
+      "recipients": [
+        {
+          "bandID": "p12-s1-violin",
+          "partID": "violin",
+          "staffIDs": [
+            0
+          ],
+          "sourceCrop": [
+            0.0,
+            35.68299155609168,
+            543.6,
+            71.47165259348613
+          ],
+          "containsComparedWordGuard": true,
+          "expectedAutoCopy": false,
+          "rationale": "Own original global heading retained above first staff."
+        },
+        {
+          "bandID": "p12-s1-viola",
+          "partID": "viola",
+          "staffIDs": [
+            1
+          ],
+          "sourceCrop": [
+            0.0,
+            67.0962605548854,
+            543.6,
+            90.80289505428227
+          ],
+          "containsComparedWordGuard": false,
+          "expectedAutoCopy": true,
+          "rationale": "No own local heading; keep global copy."
+        },
+        {
+          "bandID": "p12-s1-cello",
+          "partID": "cello",
+          "staffIDs": [
+            2
+          ],
+          "sourceCrop": [
+            0.0,
+            89.7500603136309,
+            543.6,
+            138.52689987937273
+          ],
+          "containsComparedWordGuard": true,
+          "expectedAutoCopy": true,
+          "rationale": "No own local heading; incidental Piano heading below Cello cannot substitute."
+        },
+        {
+          "bandID": "p12-s1-piano",
+          "partID": "piano",
+          "staffIDs": [
+            3,
+            4
+          ],
+          "sourceCrop": [
+            0.0,
+            115.30613417926469,
+            543.6,
+            204.1113046905467
+          ],
+          "containsComparedWordGuard": true,
+          "expectedAutoCopy": false,
+          "rationale": "Complete equivalent local heading above own first staff at same opening position; suppress only the automatic duplicate."
+        }
+      ]
+    }
+  ]
+}

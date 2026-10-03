@@ -1,0 +1,39 @@
+--- baseline/Core/Detection/NativeScorePageAnalyzer.swift
++++ diagnostic/Core/Detection/NativeScorePageAnalyzer.swift
+@@ -5,6 +5,8 @@
+ /// Native offline PDF rendering shared by the app and batch inventory. Fractions
+ /// describe the supplied image; unrectified PDF pages map directly to PDF points.
+ enum NativeScorePageAnalyzer {
++    static var witnessDiagnostics: [[String: Any]] = []
++
+     static func render(_ page: PDFPage, maximumWidth: Int = 1800, maximumHeight: Int = 2600) -> CGImage? {
+         let bounds = page.bounds(for: .mediaBox)
+         guard bounds.width > 0, bounds.height > 0 else { return nil }
+@@ -542,7 +544,26 @@
+                                                 }
+                                                 if !completeBodies { break }
+                                             }
+-                                            if sawBody && completeBodies { return true }
++                                            if sawBody && completeBodies {
++                                                let reach = max(12, Int((staffSpace * 6).rounded()))
++                                                let x0 = max(0, nominalCenter - reach), x1 = min(width, nominalCenter + reach + 1)
++                                                let y0 = max(0, row - reach), y1 = min(height, row + reach + 1)
++                                                func patch(_ pixels: [Bool]) -> [String] {
++                                                    (y0..<y1).map { y in String((x0..<x1).map { pixels[y * width + $0] ? Character("#") : Character(".") }) }
++                                                }
++                                                witnessDiagnostics.append([
++                                                    "imageSize": [width, height], "staffIndex": staffIndex,
++                                                    "staffID": ordered[staffIndex].id, "upper": upper,
++                                                    "pairStaffIDs": [ordered[index].id, ordered[index + 1].id],
++                                                    "stroke": [stroke.left, stroke.right], "boundary": boundary,
++                                                    "body": [xs.min()!, row, xs.max()! + 1, row + headThickness],
++                                                    "space": staffSpace, "shift": shift,
++                                                    "seedRange": [seedLo, seedHi], "branchPixelCount": visited.count,
++                                                    "patchBounds": [x0, y0, x1, y1],
++                                                    "originalPatch": patch(original), "analysisPatch": patch(ink)
++                                                ])
++                                                return true
++                                            }
+                                         }
+                                     }
+                                 }

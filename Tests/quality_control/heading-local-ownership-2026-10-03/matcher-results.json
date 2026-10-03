@@ -1,0 +1,62 @@
+[
+  {
+    "actual" : true,
+    "expected" : true,
+    "id" : "identical-complete-blocks",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "unrecognized-metronome-row",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "unrecognized-different-metronome-number",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "unrecognized-missing-metronome-dot",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "unrecognized-stacked-title",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "local-capital-clipped",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "local-period-clipped",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "global-staff-line-fragment",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "global-tiny-notation-tip",
+    "pass" : true
+  },
+  {
+    "actual" : false,
+    "expected" : false,
+    "id" : "global-faint-original-fragment",
+    "pass" : true
+  }
+]

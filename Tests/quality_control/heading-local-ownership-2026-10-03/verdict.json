@@ -1,0 +1,29 @@
+{
+  "status": "archived_do_not_promote_heading_feature",
+  "lifecycleControls": {
+    "passed": 52,
+    "total": 52
+  },
+  "withIndependentGlobalMutationControl": {
+    "passed": 52,
+    "total": 53,
+    "knownFailedRequirement": "expanded global block invalidates old local proof for smaller block"
+  },
+  "wholeBlockMatcherFixtures": {
+    "passed": 10,
+    "total": 10
+  },
+  "realUsefulDuplicateSuppression": {
+    "passed": 0,
+    "total": 3
+  },
+  "productionHeadingFilesChanged": 0,
+  "improvedOutputPDFs": 0,
+  "archiveEntriesVerified": 104,
+  "archiveSHA256": "2fdae4275f48f39a64313dc2d5a66af82315f1e682276ff1468a5c11c3529713",
+  "parentReviewedScratchDiff": true,
+  "independentSourceBlockReview": true,
+  "replayShellSyntaxValidated": true,
+  "replayPackageFullRerun": false,
+  "note": "Recorded native results and controls were run before packaging. Packaged files were hash-verified; no unnecessary OCR or full control rerun during packaging."
+}

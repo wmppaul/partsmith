@@ -1,0 +1,264 @@
+--- a/Core/Detection/ScoreExtractionPlanner.swift
++++ b/Core/Detection/ScoreExtractionPlanner.swift
+@@ -60,6 +60,16 @@
+     var sharedEndings: [ScoreSharedEnding]? = nil
+ }
+ 
++/// Produced only after a complete source-block match. Recipient evidence never
++/// changes the original shared source rectangle or the musical staff crop.
++struct ScoreHeadingLocalCounterpart: Codable, Equatable {
++    var partID: String
++    var anchorStaffID: Int
++    var bounds: [Double]
++    var inkBounds: [Double]
++    var recognizedText: String
++}
++
+ struct ScoreSharedHeading: Codable, Equatable {
+     var anchorStaffID: Int
+     /// Top-down normalized edges, in the same display space as the staff inventory.
+@@ -74,6 +84,8 @@
+     /// Original boxes retained when fragments join. Their union has empty
+     /// corners, which must not become new overlap evidence on later replans.
+     var fragmentBounds: [[Double]]? = nil
++    /// Optional legacy-compatible proof of a complete equivalent local block.
++    var localCounterparts: [ScoreHeadingLocalCounterpart]? = nil
+ 
+     /// Overlapping OCR fragments can describe one printed block (for example a
+     /// movement name above its tempo). Keep every source edge instead of letting
+@@ -119,6 +131,7 @@
+             // union. The detector remeasures it; legacy planning keeps the full
+             // padded source block when no such measurement is available.
+             combined.inkBounds = nil
++            combined.localCounterparts = nil
+             result.append(combined)
+         }
+         return result
+@@ -183,6 +196,9 @@
+     /// UI crop-edit materialization preserves these automatic local-ending choices.
+     /// Nil means an explicitly supplied marking list is fully authoritative.
+     var automaticLocalEndingPairIDs: [String]? = nil
++    /// Normalized exact global source boxes whose automatic local-heading
++    /// decisions survive UI materialization. Nil leaves explicit lists manual.
++    var automaticLocalHeadingBounds: [[Double]]? = nil
+ }
+ 
+ struct ScoreSystemOverride: Codable, Equatable {
+@@ -377,6 +393,12 @@
+                                 && (ending.localCounterparts ?? []).contains { $0.partID == band.partID }
+                         }.map(\.pairID)
+                             return ids.isEmpty ? nil : ids
++                        }(), automaticLocalHeadingBounds: {
++                            let boxes = ScoreSharedHeading.coalesced(page.sharedHeadings ?? []).filter { heading in
++                                heading.recognitionBinding?.systemIndex == band.systemIndex
++                                    && (heading.localCounterparts ?? []).contains { $0.partID == band.partID }
++                            }.map(\.bounds)
++                            return boxes.isEmpty ? nil : boxes
+                         }())
+                 }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
+                     ScorePartOmission(partID: $0.partID, reason: $0.reason)
+@@ -470,9 +492,9 @@
+         for page in pages.sorted(by: { $0.pageIndex < $1.pageIndex }) {
+             if isCancelled() { break }
+             if let correction = overrides.first(where: { $0.pageIndex == page.pageIndex }) {
+-                planned.append(reviewedPage(page, profile: profile, override: correction))
++                planned.append(reviewedPage(page, profile: profile, override: correction, isCancelled: isCancelled))
+             } else {
+-                planned.append(automaticPage(page, profile: profile))
++                planned.append(automaticPage(page, profile: profile, isCancelled: isCancelled))
+             }
+         }
+         if isCancelled() {
+@@ -484,7 +506,7 @@
+         ]), pages: pages, overrides: overrides, isCancelled: isCancelled)
+     }
+ 
+-    private static func automaticPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile) -> ScorePagePlan {
++    private static func automaticPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, isCancelled: () -> Bool = { false }) -> ScorePagePlan {
+         var output = ScorePagePlan(pageIndex: page.pageIndex, assignments: [], omissions: [], unresolvedReasons: [], warnings: page.warnings)
+         if profile.requiresSystemAssignment == true {
+             output.unresolvedReasons = ["The instrument layout changes between systems. Select each printed system, choose its present instruments, and count rests for silent omissions."]
+@@ -539,7 +561,7 @@
+                 offset += part.staffCount
+             }
+         }
+-        copySharedHeadings(page: page, to: &output.assignments)
++        copySharedHeadings(page: page, to: &output.assignments, isCancelled: isCancelled)
+         copySharedNavigation(page: page, to: &output.assignments)
+         return output
+     }
+@@ -614,11 +636,21 @@
+     /// here instead of moving a heading with whichever band now has its ID.
+     private static func copySharedHeadings(page: ScorePageAnalysis, to bands: inout [ScorePlannedBand],
+                                           preservingMarkings: Set<String> = [],
+-                                          legacyReference: ScorePagePlan? = nil) {
++                                          automaticHeadingBounds: [String: [[Double]]] = [:],
++                                          legacyReference: ScorePagePlan? = nil,
++                                          isCancelled: () -> Bool = { false }) {
+         let current = bands
+         let recognized = legacyReference?.assignments ?? current
+         for heading in ScoreSharedHeading.coalesced(page.sharedHeadings ?? []) {
++            guard !isCancelled() else { return }
+             guard ScoreSharedEnding.validBounds(heading.bounds) else { continue }
++            // Refresh only copies carrying explicit automatic provenance. A
++            // newly invalid initial mapping cannot preserve a stale automatic
++            // copy merely because the UI materialized it into an explicit list.
++            for i in bands.indices where automaticHeadingBounds[bands[i].id]?.contains(heading.bounds) == true {
++                guard !otherDirectionOwns(heading.bounds, page: page, band: bands[i]) else { continue }
++                bands[i].sourceMarkings.removeAll { headingMarking($0, equals: heading.bounds) }
++            }
+             let expected = heading.recognitionBinding ?? headingRecognitionBinding(page: page,
+                 bands: recognized, anchorStaffID: heading.anchorStaffID)
+             let actual = headingRecognitionBinding(page: page, bands: current, anchorStaffID: heading.anchorStaffID)
+@@ -631,11 +663,55 @@
+                 }
+                 continue
+             }
+-            for i in bands.indices where bands[i].systemIndex == expected.systemIndex
+-                && !preservingMarkings.contains(bands[i].id) {
++            for i in bands.indices where bands[i].systemIndex == expected.systemIndex {
++                guard !isCancelled() else { return }
++                guard !preservingMarkings.contains(bands[i].id)
++                    || automaticHeadingBounds[bands[i].id]?.contains(heading.bounds) == true else { continue }
++                if localHeadingRetained(heading, page: page, band: bands[i], binding: expected) { continue }
+                 copySharedHeading(heading, to: &bands[i])
+             }
+         }
++    }
++
++    private static func headingMarking(_ marking: ScoreSourceMarking, equals bounds: [Double]) -> Bool {
++        marking.isBelow != true && bounds.count == 4
++            && zip([marking.leftFraction, marking.topFraction, 1-marking.rightFraction, marking.bottomFraction], bounds)
++                .allSatisfy { abs($0-$1) < 1e-9 }
++    }
++
++    private static func otherDirectionOwns(_ bounds: [Double], page: ScorePageAnalysis, band: ScorePlannedBand) -> Bool {
++        (page.sharedNavigation ?? []).contains { $0.bounds == bounds && !$0.isBelow }
++            || (page.sharedEndings ?? []).contains { $0.isValid(on: page) && $0.bounds == bounds && $0.systemIndex == band.systemIndex }
++    }
++
++    /// Recognition proves equivalence; planning independently proves that the
++    /// current recipient still owns and retains the complete original local ink.
++    private static func localHeadingRetained(_ heading: ScoreSharedHeading, page: ScorePageAnalysis,
++                                             band: ScorePlannedBand, binding: ScoreHeadingRecognitionBinding) -> Bool {
++        guard heading.recognitionBinding == binding, band.kind == "music",
++              band.systemIndex == binding.systemIndex, band.pageIndex == binding.pageIndex,
++              let first = ScoreLocalEndingPreservation.firstStaff(of: band, on: page) else { return false }
++        let matches = (heading.localCounterparts ?? []).filter { $0.partID == band.partID }
++        guard matches.count == 1 else { return false }
++        let local = matches[0], b = local.bounds, ink = local.inkBounds
++        func text(_ string: String) -> String {
++            string.lowercased().split(whereSeparator: { $0.isWhitespace }).joined(separator: " ")
++        }
++        guard local.anchorStaffID == first.id,
++              !text(heading.recognizedText).isEmpty, text(local.recognizedText) == text(heading.recognizedText),
++              ScoreSharedEnding.validBounds(b), ScoreSharedEnding.validBounds(ink),
++              ink[0] >= b[0], ink[1] >= b[1], ink[2] <= b[2], ink[3] <= b[3] else { return false }
++        let ordered = page.staves.sorted { ($0.staffLineFractions.first ?? -1) < ($1.staffLineFractions.first ?? -1) }
++        guard ordered.allSatisfy(validStaff), let index = ordered.firstIndex(where: { $0.id == first.id }) else { return false }
++        let top = first.staffLineFractions[0], space = (first.staffLineFractions[4]-top)/4
++        let previousBottom = index > 0 ? ordered[index-1].staffLineFractions[4] : 0
++        let allowance = 1.25*space*page.pageHeight/page.pageWidth
++        guard space.isFinite, space > 0, b[1] < top, (b[1]+b[3])/2 < top,
++              b[3] <= top+space, (b[1]+b[3])/2 > (previousBottom+top)/2,
++              abs(b[0]-heading.bounds[0]) <= allowance,
++              ink[0] >= band.leftFraction, ink[2] <= 1-band.rightFraction,
++              ink[1] >= band.topFraction, ink[3] <= band.bottomFraction else { return false }
++        return true
+     }
+ 
+     /// Retain printed pixels at their horizontal score position. Never replace
+@@ -667,11 +743,12 @@
+                 leftFraction: r[0], rightFraction: 1 - r[2]))
+     }
+ 
+-    private static func reviewedPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, override: ScorePageOverride) -> ScorePagePlan {
++    private static func reviewedPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, override: ScorePageOverride, isCancelled: () -> Bool = { false }) -> ScorePagePlan {
+         var output = ScorePagePlan(pageIndex: page.pageIndex, assignments: [], omissions: [], unresolvedReasons: [], warnings: ["Reviewed page override: \(override.reason)"])
+         var explicitOwnerCrops = Set<String>()
+         var explicitMarkingLists = Set<String>()
+         var automaticEndingPairs: [String: Set<String>] = [:]
++        var automaticHeadingBounds: [String: [[Double]]] = [:]
+         let partIDs = Set(profile.parts.map(\.id))
+         if let reason = override.nonMusicReason, !reason.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, override.systems.isEmpty {
+             output.omissions = profile.parts.map { ScoreSystemOmission(systemIndex: -1, partID: $0.id, reason: reason) }
+@@ -800,6 +877,7 @@
+                 if assigned.rect != nil { explicitOwnerCrops.insert(output.assignments.last!.id) }
+                 if assigned.sourceMarkings != nil { explicitMarkingLists.insert(output.assignments.last!.id) }
+                 automaticEndingPairs[output.assignments.last!.id] = Set(assigned.automaticLocalEndingPairIDs ?? [])
++                automaticHeadingBounds[output.assignments.last!.id] = assigned.automaticLocalHeadingBounds ?? []
+             }
+         }
+         if !output.unresolvedReasons.isEmpty { output.assignments = []; output.omissions = [] }
+@@ -812,7 +890,8 @@
+                     legacyReference = automaticPage(clean, profile: profile)
+                 }
+                 copySharedHeadings(page: page, to: &output.assignments,
+-                    preservingMarkings: explicitMarkingLists, legacyReference: legacyReference)
++                    preservingMarkings: explicitMarkingLists, automaticHeadingBounds: automaticHeadingBounds,
++                    legacyReference: legacyReference, isCancelled: isCancelled)
+             }
+             copySharedNavigation(page: page, to: &output.assignments,
+                                     preservingOwnerCrops: explicitOwnerCrops,
+--- a/Core/Detection/ScoreSharedDirectionReview.swift
++++ b/Core/Detection/ScoreSharedDirectionReview.swift
+@@ -43,6 +43,12 @@
+         let removed = band.sourceMarkings[index]
+         let removedPairs = Set((page.sharedEndings ?? []).filter { $0.sourceMarking == removed }.map(\.pairID))
+         correction.systems[system].bands[part].automaticLocalEndingPairIDs?.removeAll { removedPairs.contains($0) }
++        let removedHeadingBounds = (page.sharedHeadings ?? []) + ScoreSharedHeading.coalesced(page.sharedHeadings ?? [])
++        correction.systems[system].bands[part].automaticLocalHeadingBounds?.removeAll { box in
++            removed.isBelow != true && removedHeadingBounds.contains { $0.bounds == box }
++                && box.count == 4 && zip(box, [removed.leftFraction, removed.topFraction, 1-removed.rightFraction, removed.bottomFraction])
++                    .allSatisfy { abs($0-$1) < 1e-9 }
++        }
+         correction.systems[system].bands[part].sourceMarkings = markings.map {
+             [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+              (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+@@ -221,6 +227,18 @@
+                     known += (page.sharedEndings ?? []).filter {
+                         automaticPairs.contains($0.pairID)
+                     }.map(\.sourceMarking)
++                    if !preservingOtherCategories {
++                        // Restored automatic heading copies may postdate the
++                        // initial binding. Follow the materialized provenance,
++                        // never the recipient's newly edited part/staff identity.
++                        let registered = (page.sharedHeadings ?? []) + ScoreSharedHeading.coalesced(page.sharedHeadings ?? [])
++                        for bounds in value.automaticLocalHeadingBounds ?? []
++                            where ScoreSharedEnding.validBounds(bounds) && registered.contains(where: { $0.bounds == bounds }) {
++                            known.append(ScoreSourceMarking(topFraction: bounds[1], bottomFraction: bounds[3],
++                                leftFraction: bounds[0], rightFraction: 1-bounds[2]))
++                        }
++                        value.automaticLocalHeadingBounds = nil
++                    }
+                     if preservingOtherCategories {
+                         known.removeAll { marking in
+                             let bounds = [marking.leftFraction, marking.topFraction,
+--- a/Core/DocumentModel/PartsmithDocument.swift
++++ b/Core/DocumentModel/PartsmithDocument.swift
+@@ -226,22 +226,9 @@
+         }
+         // Existing overrides carry omission reasons, movement headings, cues and
+         // shared markings. Preserve them verbatim when changing a single edge.
+-        var correction = overrides.first(where: { $0.pageIndex == band.pageIndex })
+-            ?? ScorePageOverride(pageIndex: band.pageIndex, reason: "Crop edges reviewed in Auto Extract.",
+-                systems: Set(pagePlan.assignments.map(\.systemIndex)).sorted().map { system in
+-                    ScoreSystemOverride(systemIndex: system, label: nil, movementLabel: nil,
+-                        bands: pagePlan.assignments.filter { $0.systemIndex == system }.map { item in
+-                            ScoreBandOverride(partID: item.partID, candidateIDs: item.candidateIDs,
+-                                rect: [item.leftFraction * page.pageWidth, item.topFraction * page.pageHeight,
+-                                       (1 - item.rightFraction) * page.pageWidth, item.bottomFraction * page.pageHeight],
+-                                label: item.editorialLabel, kind: item.kind,
+-                                pageBreakBefore: item.pageBreakBefore, sourceMarkings: item.sourceMarkings.map {
+-                                    [$0.leftFraction * page.pageWidth, $0.topFraction * page.pageHeight,
+-                                     (1 - $0.rightFraction) * page.pageWidth, $0.bottomFraction * page.pageHeight]
+-                                }, sourceMarkingsBelow: item.sourceMarkings.contains { $0.isBelow == true }
+-                                    ? item.sourceMarkings.map { $0.isBelow == true } : nil)
+-                        }, omittedParts: nil)
+-                })
++        let existing = overrides.first(where: { $0.pageIndex == band.pageIndex })
++        var correction = ScoreSystemAssignment.pageOverride(page: page, pagePlan: pagePlan, existingOverride: existing)
++        if existing == nil { correction.reason = "Crop edges reviewed in Auto Extract." }
+         guard let systemIndex = correction.systems.firstIndex(where: { $0.systemIndex == band.systemIndex }),
+               let bandIndex = correction.systems[systemIndex].bands.firstIndex(where: { $0.partID == band.partID }) else {
+             throw CropEditError.unavailableBand
