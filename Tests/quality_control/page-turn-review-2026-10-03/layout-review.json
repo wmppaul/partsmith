@@ -1,0 +1,7853 @@
+{
+  "verdict": "structural checks pass; visual review recorded separately",
+  "musicStrips": 604,
+  "copiedDirections": 42,
+  "mainSourceCropChanges": 0,
+  "sourceCopyChanges": 0,
+  "intentionalMusicScaleChanges": 0,
+  "layoutFittingRoundoff": [
+    {
+      "id": "p4-s1-violin1",
+      "widthDelta": -6.127691904111998e-06,
+      "heightDelta": -8.195681857614545e-07
+    },
+    {
+      "id": "p31-s2-violin1",
+      "widthDelta": 6.404476152965799e-06,
+      "heightDelta": 6.571522135345731e-07
+    },
+    {
+      "id": "p6-s3-violin2",
+      "widthDelta": -7.007558679106296e-06,
+      "heightDelta": -6.958503036003094e-07
+    },
+    {
+      "id": "p18-s4-violin2",
+      "widthDelta": 7.619428515681648e-06,
+      "heightDelta": 8.963140771811595e-07
+    },
+    {
+      "id": "p16-s3-viola",
+      "widthDelta": 5.427546057035215e-06,
+      "heightDelta": 7.50050048736739e-07
+    },
+    {
+      "id": "p31-s4-viola",
+      "widthDelta": -7.121381258912152e-06,
+      "heightDelta": -8.019127335501253e-07
+    }
+  ],
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "rectificationCount": 9,
+  "explicitBreaks": [
+    "p29-s1-violin1",
+    "p31-s1-violin1",
+    "p33-s1-violin1",
+    "p34-s3-violin1",
+    "p32-s1-violin2",
+    "p32-s1-viola"
+  ],
+  "parts": [
+    {
+      "id": "violin1",
+      "file": "Violin I.pdf",
+      "pagesBefore": 17,
+      "pagesAfter": 18,
+      "bands": 151,
+      "sha256": "7a800f4e7a1abc374bf0df227055e751b6382ee0912ec0e80aa7547cf866074d",
+      "pages": [
+        {
+          "page": 1,
+          "first": "p2-s1-violin1",
+          "last": "p4-s1-violin1",
+          "bands": 8
+        },
+        {
+          "page": 2,
+          "first": "p4-s2-violin1",
+          "last": "p6-s3-violin1",
+          "bands": 10
+        },
+        {
+          "page": 3,
+          "first": "p6-s4-violin1",
+          "last": "p8-s3-violin1",
+          "bands": 8
+        },
+        {
+          "page": 4,
+          "first": "p8-s4-violin1",
+          "last": "p10-s4-violin1",
+          "bands": 9
+        },
+        {
+          "page": 5,
+          "first": "p11-s1-violin1",
+          "last": "p13-s1-violin1",
+          "bands": 9
+        },
+        {
+          "page": 6,
+          "first": "p13-s2-violin1",
+          "last": "p15-s2-violin1",
+          "bands": 9
+        },
+        {
+          "page": 7,
+          "first": "p15-s3-violin1",
+          "last": "p17-s3-violin1",
+          "bands": 9
+        },
+        {
+          "page": 8,
+          "first": "p17-s4-violin1",
+          "last": "p19-s4-violin1",
+          "bands": 9
+        },
+        {
+          "page": 9,
+          "first": "p20-s1-violin1",
+          "last": "p22-s1-violin1",
+          "bands": 9
+        },
+        {
+          "page": 10,
+          "first": "p22-s2-violin1",
+          "last": "p24-s2-violin1",
+          "bands": 9
+        },
+        {
+          "page": 11,
+          "first": "p24-s3-violin1",
+          "last": "p26-s4-violin1",
+          "bands": 10
+        },
+        {
+          "page": 12,
+          "first": "p27-s1-violin1",
+          "last": "p28-s4-violin1",
+          "bands": 8
+        },
+        {
+          "page": 13,
+          "first": "p29-s1-violin1",
+          "last": "p30-s4-violin1",
+          "bands": 8
+        },
+        {
+          "page": 14,
+          "first": "p31-s1-violin1",
+          "last": "p32-s4-violin1",
+          "bands": 8
+        },
+        {
+          "page": 15,
+          "first": "p33-s1-violin1",
+          "last": "p34-s2-violin1",
+          "bands": 6
+        },
+        {
+          "page": 16,
+          "first": "p34-s3-violin1",
+          "last": "p36-s1-violin1",
+          "bands": 7
+        },
+        {
+          "page": 17,
+          "first": "p36-s2-violin1",
+          "last": "p38-s1-violin1",
+          "bands": 8
+        },
+        {
+          "page": 18,
+          "first": "p38-s2-violin1",
+          "last": "p39-s4-violin1",
+          "bands": 7
+        }
+      ]
+    },
+    {
+      "id": "violin2",
+      "file": "Violin II.pdf",
+      "pagesBefore": 16,
+      "pagesAfter": 17,
+      "bands": 151,
+      "sha256": "f852c908781221fd1b3555146fe003b5622017f0ff190795ddae0c8a27a63fef",
+      "pages": [
+        {
+          "page": 1,
+          "first": "p2-s1-violin2",
+          "last": "p4-s1-violin2",
+          "bands": 8
+        },
+        {
+          "page": 2,
+          "first": "p4-s2-violin2",
+          "last": "p6-s3-violin2",
+          "bands": 10
+        },
+        {
+          "page": 3,
+          "first": "p6-s4-violin2",
+          "last": "p8-s4-violin2",
+          "bands": 9
+        },
+        {
+          "page": 4,
+          "first": "p9-s1-violin2",
+          "last": "p11-s2-violin2",
+          "bands": 10
+        },
+        {
+          "page": 5,
+          "first": "p11-s3-violin2",
+          "last": "p13-s4-violin2",
+          "bands": 10
+        },
+        {
+          "page": 6,
+          "first": "p14-s1-violin2",
+          "last": "p16-s1-violin2",
+          "bands": 9
+        },
+        {
+          "page": 7,
+          "first": "p16-s2-violin2",
+          "last": "p18-s2-violin2",
+          "bands": 9
+        },
+        {
+          "page": 8,
+          "first": "p18-s3-violin2",
+          "last": "p20-s3-violin2",
+          "bands": 9
+        },
+        {
+          "page": 9,
+          "first": "p20-s4-violin2",
+          "last": "p22-s4-violin2",
+          "bands": 9
+        },
+        {
+          "page": 10,
+          "first": "p23-s1-violin2",
+          "last": "p25-s1-violin2",
+          "bands": 9
+        },
+        {
+          "page": 11,
+          "first": "p25-s2-violin2",
+          "last": "p27-s2-violin2",
+          "bands": 9
+        },
+        {
+          "page": 12,
+          "first": "p27-s3-violin2",
+          "last": "p29-s2-violin2",
+          "bands": 8
+        },
+        {
+          "page": 13,
+          "first": "p29-s3-violin2",
+          "last": "p31-s4-violin2",
+          "bands": 10
+        },
+        {
+          "page": 14,
+          "first": "p32-s1-violin2",
+          "last": "p33-s4-violin2",
+          "bands": 8
+        },
+        {
+          "page": 15,
+          "first": "p34-s1-violin2",
+          "last": "p35-s3-violin2",
+          "bands": 7
+        },
+        {
+          "page": 16,
+          "first": "p35-s4-violin2",
+          "last": "p37-s3-violin2",
+          "bands": 8
+        },
+        {
+          "page": 17,
+          "first": "p37-s4-violin2",
+          "last": "p39-s4-violin2",
+          "bands": 9
+        }
+      ]
+    },
+    {
+      "id": "viola",
+      "file": "Viola.pdf",
+      "pagesBefore": 16,
+      "pagesAfter": 17,
+      "bands": 151,
+      "sha256": "8f036e6c481c6586f21308c51b1c2ce6f993634e2f3be96be93be6ebf4e52e91",
+      "pages": [
+        {
+          "page": 1,
+          "first": "p2-s1-viola",
+          "last": "p4-s1-viola",
+          "bands": 8
+        },
+        {
+          "page": 2,
+          "first": "p4-s2-viola",
+          "last": "p6-s3-viola",
+          "bands": 10
+        },
+        {
+          "page": 3,
+          "first": "p6-s4-viola",
+          "last": "p9-s1-viola",
+          "bands": 10
+        },
+        {
+          "page": 4,
+          "first": "p9-s2-viola",
+          "last": "p11-s2-viola",
+          "bands": 9
+        },
+        {
+          "page": 5,
+          "first": "p11-s3-viola",
+          "last": "p13-s4-viola",
+          "bands": 10
+        },
+        {
+          "page": 6,
+          "first": "p14-s1-viola",
+          "last": "p16-s1-viola",
+          "bands": 9
+        },
+        {
+          "page": 7,
+          "first": "p16-s2-viola",
+          "last": "p18-s2-viola",
+          "bands": 9
+        },
+        {
+          "page": 8,
+          "first": "p18-s3-viola",
+          "last": "p20-s3-viola",
+          "bands": 9
+        },
+        {
+          "page": 9,
+          "first": "p20-s4-viola",
+          "last": "p22-s4-viola",
+          "bands": 9
+        },
+        {
+          "page": 10,
+          "first": "p23-s1-viola",
+          "last": "p25-s1-viola",
+          "bands": 9
+        },
+        {
+          "page": 11,
+          "first": "p25-s2-viola",
+          "last": "p27-s2-viola",
+          "bands": 9
+        },
+        {
+          "page": 12,
+          "first": "p27-s3-viola",
+          "last": "p29-s2-viola",
+          "bands": 8
+        },
+        {
+          "page": 13,
+          "first": "p29-s3-viola",
+          "last": "p31-s4-viola",
+          "bands": 10
+        },
+        {
+          "page": 14,
+          "first": "p32-s1-viola",
+          "last": "p33-s4-viola",
+          "bands": 8
+        },
+        {
+          "page": 15,
+          "first": "p34-s1-viola",
+          "last": "p35-s4-viola",
+          "bands": 8
+        },
+        {
+          "page": 16,
+          "first": "p36-s1-viola",
+          "last": "p37-s4-viola",
+          "bands": 8
+        },
+        {
+          "page": 17,
+          "first": "p38-s1-viola",
+          "last": "p39-s4-viola",
+          "bands": 8
+        }
+      ]
+    },
+    {
+      "id": "cello",
+      "file": "Violoncello.pdf",
+      "pagesBefore": 15,
+      "pagesAfter": 15,
+      "bands": 151,
+      "sha256": "5c4cb1ee123a7aa37ee56c593c65c20f89d28c3366acab395712d604693b2f7c",
+      "pages": [
+        {
+          "page": 1,
+          "first": "p2-s1-cello",
+          "last": "p4-s2-cello",
+          "bands": 9
+        },
+        {
+          "page": 2,
+          "first": "p4-s3-cello",
+          "last": "p6-s4-cello",
+          "bands": 10
+        },
+        {
+          "page": 3,
+          "first": "p7-s1-cello",
+          "last": "p9-s2-cello",
+          "bands": 10
+        },
+        {
+          "page": 4,
+          "first": "p9-s3-cello",
+          "last": "p12-s1-cello",
+          "bands": 11
+        },
+        {
+          "page": 5,
+          "first": "p12-s2-cello",
+          "last": "p14-s4-cello",
+          "bands": 11
+        },
+        {
+          "page": 6,
+          "first": "p15-s1-cello",
+          "last": "p17-s2-cello",
+          "bands": 10
+        },
+        {
+          "page": 7,
+          "first": "p17-s3-cello",
+          "last": "p19-s4-cello",
+          "bands": 10
+        },
+        {
+          "page": 8,
+          "first": "p20-s1-cello",
+          "last": "p22-s2-cello",
+          "bands": 10
+        },
+        {
+          "page": 9,
+          "first": "p22-s3-cello",
+          "last": "p24-s4-cello",
+          "bands": 10
+        },
+        {
+          "page": 10,
+          "first": "p25-s1-cello",
+          "last": "p27-s2-cello",
+          "bands": 10
+        },
+        {
+          "page": 11,
+          "first": "p27-s3-cello",
+          "last": "p29-s4-cello",
+          "bands": 10
+        },
+        {
+          "page": 12,
+          "first": "p30-s1-cello",
+          "last": "p32-s2-cello",
+          "bands": 10
+        },
+        {
+          "page": 13,
+          "first": "p32-s3-cello",
+          "last": "p34-s4-cello",
+          "bands": 10
+        },
+        {
+          "page": 14,
+          "first": "p35-s1-cello",
+          "last": "p37-s2-cello",
+          "bands": 10
+        },
+        {
+          "page": 15,
+          "first": "p37-s3-cello",
+          "last": "p39-s4-cello",
+          "bands": 10
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "p2-s1-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        125.19999999999993,
+        427,
+        176.79999999999995
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s2-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        278.4,
+        427,
+        331.20000000000005
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s3-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        431.2,
+        427,
+        480
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s1-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        17.013137557959908,
+        427,
+        70.09041731066463
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s2-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        138.72179289026275,
+        427,
+        215.0494590417311
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s3-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        289.3748068006182,
+        427,
+        355.97527047913445
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s4-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        447.145285935085,
+        427,
+        504.7302936630603
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s1-violin1",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        11.081916537867073,
+        427,
+        68.19242658423491
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s2-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        139.19629057187018,
+        427,
+        201.52627511591965
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s3-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        295.0687789799073,
+        427,
+        345.0618238021638
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s4-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        436.46908809891806,
+        427,
+        480.7681607418856
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s1-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        15.826893353941273,
+        427,
+        60.1259659969088
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s2-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        163.6329211746522,
+        427,
+        204.1360123647604
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s3-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        298.6275115919629,
+        427,
+        347.67156105100463
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s4-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        442.1630602782071,
+        427,
+        494.0540958268934
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s1-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        20.80911901081913,
+        427,
+        67.71792890262748
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s2-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        166.95440494590417,
+        427,
+        214.10046367851623
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s3-violin1",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        297.9157650695518,
+        427,
+        342.6893353941267
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s4-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        442.40030911901084,
+        427,
+        492.63060278207115
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s1-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        13.200000000000045,
+        427,
+        65.60000000000002
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s2-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        140.8,
+        427,
+        206.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s3-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        300,
+        427,
+        353.20000000000005
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s4-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        446.79999999999995,
+        427,
+        487.59999999999997
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s1-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        15.115146831530183,
+        427,
+        73.88639876352397
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s2-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        143.70401854714066,
+        427,
+        217.18469860896448
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s3-violin1",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        287.71406491499226,
+        427,
+        359.5340030911901
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s4-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        430.7751159196291,
+        427,
+        501.64605873261206
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s1-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        12.268160741885708,
+        427,
+        75.30989180834626
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s2-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        162.92117465224112,
+        427,
+        215.0494590417311
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s3-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        305.5077279752705,
+        427,
+        360.48299845440494
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s4-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        431.4868624420402,
+        427,
+        500.69706336939726
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s1-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        22.23261205564154,
+        427,
+        73.17465224111288
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s2-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        159.83693972179287,
+        427,
+        213.15146831530137
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s3-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        302.1862442040185,
+        427,
+        346.0108191653787
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s4-violin1",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        449.99227202472946,
+        427,
+        495.952086553323
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s1-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        20.3346213292117,
+        427,
+        79.34312210200926
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s2-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        161.26043276661517,
+        427,
+        221.45517774343125
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s3-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        308.5919629057187,
+        427,
+        353.8400309119011
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s4-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        447.38253477588864,
+        427,
+        495.2403400309119
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s1-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        28.40108191653792,
+        427,
+        74.83539412673883
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s2-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        149.160741885626,
+        427,
+        215.0494590417311
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s3-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        303.1352395672333,
+        427,
+        358.1105100463679
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s4-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        448.5687789799072,
+        427,
+        499.03632148377125
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s1-violin1",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        27.689335394126715,
+        427,
+        74.59814528593506
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s2-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        166.71715610510046,
+        427,
+        219.7944358578053
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s3-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        313.57418856259665,
+        427,
+        362.6182380216383
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s4-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        450.9412673879444,
+        427,
+        506.3910355486862
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s1-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        23.656105100463606,
+        427,
+        67.71792890262748
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s2-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        172.1738794435858,
+        427,
+        219.31993817619787
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s3-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        301.2372488408037,
+        427,
+        357.63601236476046
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s4-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        449.28052550231837,
+        427,
+        502.59505409582687
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s1-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        17.906707787201185,
+        426,
+        82.00462606013878
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s2-violin1",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        154.71935235158054,
+        426,
+        223.07787201233612
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s3-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        306.6808018504241,
+        426,
+        366.04471858134156
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s4-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        456.0385505011565,
+        426,
+        508.5381649961449
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s1-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        34.33230293663064,
+        427,
+        84.08809891808346
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s2-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        173.1228748068006,
+        427,
+        218.84544049459043
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s3-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        314.52318392581145,
+        427,
+        366.41421947449766
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s4-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        456.3979907264297,
+        427,
+        509.47527047913445
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s1-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        16.399999999999977,
+        426,
+        64.79999999999995
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s2-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        162,
+        426,
+        212.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s3-violin1",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        287.20000000000005,
+        426,
+        355.2
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s4-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        448.79999999999995,
+        426,
+        489.59999999999997
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s1-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        20.09737248840804,
+        427,
+        77.91962905718697
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s2-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        149.16074188562595,
+        427,
+        213.3887171561051
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s3-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        287.4768160741886,
+        427,
+        350.28129829984545
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s4-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        452.839258114374,
+        427,
+        499.27357032457496
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s1-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        20.791287386215913,
+        427,
+        67.97854356306891
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s2-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        165.14434330299088,
+        427,
+        220.32899869960988
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s3-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        312.6963589076723,
+        427,
+        366.6814044213264
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s4-violin1",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        457.8491547464239,
+        427,
+        498.6384915474643
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s1-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        19.38562596599695,
+        427,
+        64.15919629057191
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s2-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        146.78825347758885,
+        427,
+        213.86321483771252
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s3-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        309.3037094281298,
+        427,
+        347.90880989180835
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s4-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        450.22952086553323,
+        427,
+        498.79907264296753
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s1-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        16.76899344388744,
+        427,
+        70.06980331662169
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s2-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        144.37022753567294,
+        427,
+        211.90165831083686
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s3-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        303.9903586579251,
+        427,
+        357.52834554569995
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s4-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        440.3671423062091,
+        427,
+        492.9564211338219
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s1-violin1",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        19.37794060933288,
+        427,
+        76.71075973775555
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s2-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        146.97917470111844,
+        427,
+        213.08754338603933
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s3-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        297.11222522175086,
+        427,
+        349.7015040493637
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s4-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        425.18781334361745,
+        427,
+        490.34747396837645
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s1-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        21.191157347204125,
+        427,
+        72.37711313394016
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s2-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        165.94408322496747,
+        427,
+        213.13133940182053
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s3-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        309.4973992197659,
+        427,
+        357.0845253576073
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s4-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        431.45773732119636,
+        427,
+        500.23797139141743
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s1-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        18.666409564211335,
+        427,
+        74.81334361743154
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s2-violin1",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        172.1199382954107,
+        427,
+        222.81180100269955
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s3-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        322.0158118010027,
+        427,
+        361.56035480138837
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s4-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        461.47589664481296,
+        427,
+        506.94986502121094
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s1-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        22.46124180485924,
+        427,
+        72.44157346702661
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s2-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        164.0559197840339,
+        427,
+        216.4080215966062
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s3-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        290.23409178557654,
+        427,
+        357.05399151561903
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s4-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        451.7516390281527,
+        427,
+        502.4435017354416
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s1-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        19.615117624373397,
+        427,
+        72.67875048206713
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s2-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        165.47898187427688,
+        427,
+        210.0042421905129
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s3-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        296.87504820671035,
+        427,
+        346.61820285383726
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s4-violin1",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        444.87350559197836,
+        427,
+        493.19359814886235
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s1-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        15.583108368684975,
+        427,
+        82.87736212880839
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s2-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        173.30582337061315,
+        427,
+        213.79907443116082
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s3-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        291.89433089086003,
+        427,
+        361.7975318164289
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s4-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        434.43771693019676,
+        427,
+        508.84728114153495
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s1-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        17.59232769830942,
+        427,
+        93.57022106631985
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s2-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        151.5487646293888,
+        427,
+        206.73342002600782
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s3-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        307.49804941482444,
+        427,
+        357.4843953185956
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s4-violin1",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        449.85175552665794,
+        427,
+        497.03901170351105
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s1-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        18.90358657925185,
+        427,
+        75.76205167759349
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s2-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        169.51099112996525,
+        427,
+        210.0042421905129
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s3-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        307.5480138835326,
+        427,
+        357.05399151561903
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s4-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        455.54647126880064,
+        427,
+        497.4627844195913
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s1-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        14.397223293482398,
+        427,
+        68.17238719629768
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s2-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        144.60740455071345,
+        427,
+        211.19012726571538
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s3-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        304.70188970304656,
+        427,
+        355.39375241033554
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s4-violin1",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        445.82221365214036,
+        427,
+        495.80254531430774
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s1-violin1",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        21.038179714616263,
+        427,
+        85.0119552641728
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s2-violin1",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        163.34438873891247,
+        427,
+        207.158118010027
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s3-violin1",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        296.6378711916699,
+        427,
+        358.71423062090247
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s4-violin1",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        436.33513305052054,
+        427,
+        495.09101426918625
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s1-violin1",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        18.192055534130418,
+        427,
+        74.10181257231011
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s2-violin1",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        147.4535287311994,
+        427,
+        216.17084458156575
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s3-violin1",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        305.41342074816816,
+        427,
+        350.4130350944852
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s4-violin1",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        429.9313536444273,
+        427,
+        496.27689934438877
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s1-violin1",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        19.8522946394138,
+        427,
+        73.8646355572696
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s2-violin1",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        148.4022367913613,
+        427,
+        216.4080215966062
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s3-violin1",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        302.09294253760123,
+        427,
+        357.76552256074046
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s4-violin1",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        428.5082915541843,
+        427,
+        502.9178557655226
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s1-violin1",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        17.199999999999932,
+        427,
+        74.79999999999995
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s2-violin1",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        160.8,
+        427,
+        221.20000000000005
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s3-violin1",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        302.8,
+        427,
+        360.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s4-violin1",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        432.79999999999995,
+        427,
+        494.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s1-violin1",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        22.877409406322272,
+        426,
+        107.33153430994605
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s2-violin1",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        162.29375481881266,
+        426,
+        221.42097147262916
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s3-violin1",
+      "beforePage": 16,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        308.574402467232,
+        426,
+        362.25751734772547
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s4-violin1",
+      "beforePage": 16,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        448.2274479568235,
+        426,
+        503.3307632999229
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s1-violin1",
+      "beforePage": 16,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        19.140763594292252,
+        427,
+        78.37099884303893
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s2-violin1",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        147.4535287311994,
+        427,
+        217.11955264172775
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s3-violin1",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        305.4134207481681,
+        427,
+        351.59892016968763
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s4-violin1",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        451.27728499807176,
+        427,
+        493.90512919398384
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s1-violin1",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        19.090208172706298,
+        426,
+        71.82652274479574
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s2-violin1",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        144.30454895913647,
+        426,
+        212.42636854279107
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s3-violin1",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        307.1542020046261,
+        426,
+        349.71241326137243
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s4-violin1",
+      "beforePage": 17,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        447.0439475713184,
+        426,
+        491.96915959907477
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s1-violin1",
+      "beforePage": 17,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        17.592327698309532,
+        427,
+        74.77633289987
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s2-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        143.1514954486346,
+        427,
+        213.93107932379712
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s3-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        309.4973992197659,
+        427,
+        363.88231469440836
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s4-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        447.8524057217165,
+        427,
+        503.8368010403121
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s1-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        17.200000000000045,
+        426,
+        69.60000000000002
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s2-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        146,
+        426,
+        211.60000000000002
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s3-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        298.79999999999995,
+        426,
+        348.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s4-violin1",
+      "beforePage": 17,
+      "afterPage": 18,
+      "sourceRect": [
+        0,
+        434,
+        426,
+        488.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s1-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        160.40000000000003,
+        427,
+        217.20000000000005
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s2-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        316,
+        427,
+        362.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s3-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        464,
+        427,
+        515.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s1-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        54.97295208655339,
+        427,
+        102.59350850077283
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s2-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        196.1360123647604,
+        427,
+        248.7387944358578
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s3-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        336.8245749613601,
+        427,
+        384.4451313755796
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s4-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        485.1051004636785,
+        427,
+        532.4884080370942
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s1-violin2",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        45.48299845440499,
+        427,
+        98.32302936630606
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s2-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        196.61051004636784,
+        427,
+        243.7565687789799
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s3-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        329.70710973724886,
+        427,
+        381.36089644513135
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s4-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        466.5996908809892,
+        427,
+        521.5749613601237
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s1-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        55.921947449768254,
+        427,
+        94.52704791344672
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s2-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        189.0185471406491,
+        427,
+        239.96058732612056
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s3-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        333.7403400309119,
+        427,
+        383.4961360123648
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s4-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        473.9544049459042,
+        427,
+        520.6259659969088
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s1-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        57.58268933539421,
+        427,
+        109.47372488408041
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s2-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        196.6105100463679,
+        427,
+        240.6723338485317
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s3-violin2",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        336.8245749613601,
+        427,
+        379.225656877898
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s4-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        470.1584234930448,
+        427,
+        526.7944358578052
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s1-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        51.60000000000002,
+        427,
+        101.20000000000005
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s2-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        190.79999999999995,
+        427,
+        240.39999999999998
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s3-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        335.20000000000005,
+        427,
+        388.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s4-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        481.2,
+        427,
+        528.8000000000001
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s1-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        56.63369397217923,
+        427,
+        111.84621329211745
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s2-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        200.40649149922717,
+        427,
+        254.90726429675425
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s3-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        340.85780525502315,
+        427,
+        394.1723338485317
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s4-violin2",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        482.7326120556414,
+        427,
+        536.2843894899536
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s1-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        56.870942812983,
+        427,
+        106.38948995363216
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s2-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        198.03400309119013,
+        427,
+        249.68778979907268
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s3-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        338.95981452859354,
+        427,
+        393.46058732612056
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s4-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        482.4953632148377,
+        427,
+        528.9296754250387
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s1-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        56.39644513137557,
+        427,
+        102.83075734157649
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s2-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        190.9165378670789,
+        427,
+        245.89180834621334
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s3-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        336.112828438949,
+        427,
+        378.9884080370943
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s4-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        482.258114374034,
+        427,
+        520.1514683153014
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s1-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        58.057187017001525,
+        427,
+        108.99922720247298
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s2-violin2",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        202.06723338485313,
+        427,
+        254.67001545595053
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s3-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        343.2302936630603,
+        427,
+        393.46058732612056
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s4-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        483.4443585780525,
+        427,
+        531.7766615146832
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s1-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        62.564914992272065,
+        427,
+        108.28748068006183
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s2-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        195.1870170015456,
+        427,
+        248.02704791344672
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s3-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        336.11282843894895,
+        427,
+        389.42735703245745
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s4-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        478.9366306027821,
+        427,
+        532.725656877898
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s1-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        64.46290571870168,
+        427,
+        112.32071097372489
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s2-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        201.82998454404947,
+        427,
+        255.6190108191654
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s3-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        348.92426584234926,
+        427,
+        398.91731066460585
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s4-violin2",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        491.7480680061824,
+        427,
+        526.0826893353941
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s1-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        65.17465224111288,
+        427,
+        110.42272024729522
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s2-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        201.35548686244204,
+        427,
+        249.4505409582689
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s3-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        339.6715610510046,
+        427,
+        391.5625965996909
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s4-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        484.3933539412674,
+        427,
+        531.3021638330757
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s1-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        63.35312259059367,
+        426,
+        112.53893600616806
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s2-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        206.31996915959905,
+        426,
+        256.2158828064765
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s3-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        349.0501156515035,
+        426,
+        398.4726291441789
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s4-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        488.9398612181959,
+        426,
+        539.7825751734772
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s1-violin2",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        65.64914992272031,
+        427,
+        117.54018547140652
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s2-violin2",
+      "beforePage": 6,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        203.016228748068,
+        427,
+        252.06027820710972
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s3-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        343.46754250386397,
+        427,
+        400.8153013910356
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s4-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        487.4775888717156,
+        427,
+        542.4528593508501
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s1-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        56.39999999999998,
+        426,
+        105.19999999999999
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s2-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        198.40000000000003,
+        426,
+        251.2
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s3-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        332,
+        426,
+        390.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s4-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        482,
+        426,
+        530.8000000000001
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s1-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        57.58268933539409,
+        427,
+        113.03245749613598
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s2-violin2",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        196.6105100463679,
+        427,
+        248.02704791344672
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s3-violin2",
+      "beforePage": 7,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        343.7047913446677,
+        427,
+        382.30989180834626
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s4-violin2",
+      "beforePage": 7,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        482.9698608964452,
+        427,
+        533.2001545595053
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s1-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        62.777633289986966,
+        427,
+        110.36475942782835
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s2-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        204.7314694408322,
+        427,
+        253.51820546163844
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s3-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        347.4850455136541,
+        427,
+        398.6710013003902
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s4-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        489.83875162548765,
+        427,
+        539.4252275682705
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s1-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        60.19242658423491,
+        427,
+        108.52472952086555
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s2-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        193.28902627511587,
+        427,
+        249.92503863987633
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s3-violin2",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        334.6893353941267,
+        427,
+        388.71561051004636
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s4-violin2",
+      "beforePage": 8,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        485.8168469860897,
+        427,
+        534.386398763524
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s1-violin2",
+      "beforePage": 8,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        49.973775549556535,
+        427,
+        109.67836482838413
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s2-violin2",
+      "beforePage": 8,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        193.4658696490552,
+        427,
+        240.83725414577714
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s3-violin2",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        336.95796374855377,
+        427,
+        383.3806401851138
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s4-violin2",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        484.7192441187813,
+        427,
+        533.5136907057463
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s1-violin2",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        55.903200925568854,
+        427,
+        111.57578094870803
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s2-violin2",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        192.04280755881217,
+        427,
+        249.84998071731582
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s3-violin2",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        333.6374855379869,
+        427,
+        384.32934824527575
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s4-violin2",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        473.33474739683766,
+        427,
+        526.161203239491
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s1-violin2",
+      "beforePage": 9,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        59.17880364109237,
+        427,
+        105.56631989596883
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s2-violin2",
+      "beforePage": 9,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        195.53446033810138,
+        427,
+        245.92067620286082
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s3-violin2",
+      "beforePage": 9,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        335.88881664499354,
+        427,
+        387.0747724317295
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s4-violin2",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        478.24252275682704,
+        427,
+        535.4265279583875
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s1-violin2",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        57.32626301581183,
+        427,
+        112.28731199382958
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s2-violin2",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        203.19012726571543,
+        427,
+        254.11916698804475
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s3-violin2",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        357.59236405707674,
+        427,
+        394.76513690705747
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s4-violin2",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        492.3089086000771,
+        427,
+        539.4431160817586
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s1-violin2",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        56.14037794060937,
+        427,
+        112.05013497878906
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s2-violin2",
+      "beforePage": 10,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        197.73505591978403,
+        427,
+        242.26031623602
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s3-violin2",
+      "beforePage": 10,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        339.8040879290397,
+        427,
+        390.7331276513691
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s4-violin2",
+      "beforePage": 10,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        488.0397223293482,
+        427,
+        537.0713459313537
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s1-violin2",
+      "beforePage": 10,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        59.22367913613573,
+        427,
+        94.97338989587354
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s2-violin2",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        194.88893173929807,
+        427,
+        247.00385653682991
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s3-violin2",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        341.93868106440414,
+        427,
+        387.88700347088314
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s4-violin2",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        470.25144620131124,
+        427,
+        527.3470883146935
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s1-violin2",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        58.512148091014296,
+        427,
+        112.76166602391055
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s2-violin2",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        198.68376397994598,
+        427,
+        256.25376012340917
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s3-violin2",
+      "beforePage": 11,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        341.93868106440414,
+        427,
+        396.89973004242194
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s4-violin2",
+      "beforePage": 11,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        482.11029695333593,
+        427,
+        542.526417277285
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "beforePage": 11,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        21.59102730819245,
+        427,
+        107.56566970091029
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s2-violin2",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        201.93237971391414,
+        427,
+        241.52210663198957
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s3-violin2",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        343.08647594278284,
+        427,
+        395.07217165149547
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s4-violin2",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        491.8381014304291,
+        427,
+        537.0260078023407
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s1-violin2",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        59.22367913613573,
+        427,
+        110.62707288854608
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s2-violin2",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        204.37601234091784,
+        427,
+        249.84998071731582
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s3-violin2",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        342.65021210952557,
+        427,
+        392.156189741612
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s4-violin2",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        488.27689934438877,
+        427,
+        530.4303895102198
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s1-violin2",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        48.78789047435396,
+        427,
+        101.61434631700729
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s2-violin2",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        192.27998457385274,
+        427,
+        238.2283069803317
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s3-violin2",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        336.4836097184728,
+        427,
+        380.53451600462785
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s4-violin2",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        484.00771307365983,
+        427,
+        535.1739298110298
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s1-violin2",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        41.435403008098774,
+        427,
+        110.8642499035866
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s2-violin2",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        204.85036637099887,
+        427,
+        247.7153875819514
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s3-violin2",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        340.5156189741612,
+        427,
+        386.9382954107212
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s4-violin2",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        481.1615888931739,
+        427,
+        528.7701504049363
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s1-violin2",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        53.057076745082895,
+        427,
+        102.08870034708832
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s2-violin2",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        198.9209409949865,
+        427,
+        245.81797146162745
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s3-violin2",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        333.163131507906,
+        427,
+        382.19475510991134
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s4-violin2",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        478.5526417277285,
+        427,
+        527.584265329734
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s1-violin2",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        52.582722715001864,
+        427,
+        106.3578866178172
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s2-violin2",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        201.52988816043194,
+        427,
+        249.37562668723484
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s3-violin2",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        335.2977246432703,
+        427,
+        392.63054377169306
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s4-violin2",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        486.6166602391053,
+        427,
+        536.3598148862321
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s1-violin2",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        58.39999999999998,
+        427,
+        106.39999999999998
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s2-violin2",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        203.59999999999997,
+        427,
+        250
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s3-violin2",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        339.2,
+        427,
+        391.99999999999994
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s4-violin2",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        477.6,
+        427,
+        535.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s1-violin2",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        30.9252120277564,
+        426,
+        113.72243639167311
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s2-violin2",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        203.00616808018503,
+        426,
+        253.13878180416344
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s3-violin2",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        343.84271395528145,
+        426,
+        396.5790285273709
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s4-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        479.7085582112567,
+        426,
+        528.8943716268311
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s1-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        60.64674122637871,
+        427,
+        110.8642499035866
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s2-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        203.4273042807559,
+        427,
+        249.61280370227536
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s3-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        345.7335133050521,
+        427,
+        390.4959506363286
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s4-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        479.0269957578095,
+        427,
+        528.7701504049363
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s1-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        53.64841942945259,
+        426,
+        97.62683114880497
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s2-violin2",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        193.77486507324596,
+        426,
+        244.61757902852736
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s3-violin2",
+      "beforePage": 16,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        344.0794140323824,
+        426,
+        390.6615265998458
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s4-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        486.5728604471858,
+        426,
+        531.7347725520432
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s1-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        55.97984395318599,
+        427,
+        105.56631989596883
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s2-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        195.1345903771131,
+        427,
+        250.31924577373212
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s3-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        347.4850455136541,
+        427,
+        397.8712613784135
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s4-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        489.4388816644994,
+        427,
+        535.0266579973992
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s1-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        55.60000000000002,
+        426,
+        104.80000000000001
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s2-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        195.19999999999993,
+        426,
+        242.79999999999995
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s3-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        336,
+        426,
+        378.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s4-violin2",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        474.4,
+        426,
+        519.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s1-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        195.60000000000002,
+        427,
+        249.2
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s2-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        344.4,
+        427,
+        396.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s3-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        498,
+        427,
+        545.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s1-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        85.10355486862443,
+        427,
+        132.72411128284386
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s2-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        226.74111282843893,
+        427,
+        276.4969088098918
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s3-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        367.4296754250387,
+        427,
+        423.35394126738794
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s4-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        510.25347758887176,
+        427,
+        562.856259659969
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s1-viola",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        78.93508500772793,
+        427,
+        131.53786707882534
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s2-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        228.40185471406494,
+        427,
+        264.3972179289026
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s3-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        361.2612055641422,
+        427,
+        410.7797527047913
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s4-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        504.5595054095827,
+        427,
+        546.7233384853168
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s1-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        84.629057187017,
+        427,
+        128.4536321483771
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s2-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        224.36862442040183,
+        427,
+        268.193199381762
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s3-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        364.81993817619787,
+        427,
+        411.2542503863988
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s4-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        505.7457496136013,
+        427,
+        547.4350850077279
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s1-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        88.42503863987633,
+        427,
+        139.60432766615145
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s2-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        226.74111282843893,
+        427,
+        261.5502318392581
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s3-viola",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        362.92194744976814,
+        427,
+        409.1190108191654
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s4-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        508.82998454404947,
+        427,
+        559.0602782071097
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s1-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        84.80000000000007,
+        427,
+        129.60000000000002
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s2-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        219.20000000000005,
+        427,
+        265.59999999999997
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s3-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        366.00000000000006,
+        427,
+        412.40000000000003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s4-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        509.6,
+        427,
+        554
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s1-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        90.08578052550229,
+        427,
+        137.9435857805255
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s2-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        227.6901081916538,
+        427,
+        280.53013910355486
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s3-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        373.83539412673883,
+        427,
+        421.9304482225657
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s4-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        516.1846986089645,
+        427,
+        564.9914992272024
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s1-viola",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        88.89953632148377,
+        427,
+        134.14760432766616
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s2-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        226.26661514683155,
+        427,
+        276.2596599690881
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s3-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        370.5139103554868,
+        427,
+        423.59119010819165
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s4-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        515.710200927357,
+        427,
+        563.8052550231839
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s1-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        82.0193199381763,
+        427,
+        133.43585780525507
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s2-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        224.13137557959817,
+        427,
+        273.17542503863984
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s3-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        369.09041731066463,
+        427,
+        414.338485316847
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s4-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        502.661514683153,
+        427,
+        556.4505409582689
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s1-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        92.45826893353944,
+        427,
+        137.9435857805255
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s2-viola",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        232.43508500772793,
+        427,
+        284.32612055641425
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s3-viola",
+      "beforePage": 4,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        373.12364760432763,
+        427,
+        422.8794435857805
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s4-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        510.2534775888717,
+        427,
+        563.5680061823803
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s1-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        86.05255023183929,
+        427,
+        138.89258114374036
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s2-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        230.53709428129832,
+        427,
+        278.6321483771252
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s3-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        365.0571870170015,
+        427,
+        421.4559505409582
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s4-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        509.54173106646056,
+        427,
+        560.7210200927357
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s1-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        94.59350850077283,
+        427,
+        136.04559505409583
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s2-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        233.6213292117465,
+        427,
+        281.241885625966
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s3-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        381.90185471406494,
+        427,
+        423.59119010819165
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s4-viola",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        525.6746522411128,
+        427,
+        572.3462132921175
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s1-viola",
+      "beforePage": 5,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        89.13678516228742,
+        427,
+        135.8083462132921
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s2-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        229.82534775888718,
+        427,
+        270.5656877897991
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s3-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        369.564914992272,
+        427,
+        420.98145285935084
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s4-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        522.5904173106645,
+        427,
+        566.4149922720247
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s1-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        91.28373168851192,
+        426,
+        142.12644564379337
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s2-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        236.8542791056284,
+        426,
+        286.0400925212028
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s3-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        384.08172706245176,
+        426,
+        432.3207401696222
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s4-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        520.4209714726292,
+        426,
+        567.4764841942945
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s1-viola",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        95.77975270479135,
+        427,
+        145.77279752704794
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s2-viola",
+      "beforePage": 6,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        234.0958268933539,
+        427,
+        286.2241112828439
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s3-viola",
+      "beforePage": 6,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        373.83539412673883,
+        427,
+        432.84389489953634
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s4-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        517.6081916537867,
+        427,
+        572.8207109737249
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s1-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        83.20000000000005,
+        426,
+        137.60000000000002
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s2-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        230.39999999999998,
+        426,
+        280
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s3-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        365.6,
+        426,
+        420.79999999999995
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s4-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        510.8,
+        426,
+        563.2
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s1-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        95.06800618238026,
+        427,
+        141.50231839258117
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s2-viola",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        223.41962905718697,
+        427,
+        277.92040185471404
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s3-viola",
+      "beforePage": 7,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        365.76893353941267,
+        427,
+        420.2697063369397
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s4-viola",
+      "beforePage": 7,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        516.8964451313756,
+        427,
+        563.3307573415765
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s1-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        92.76788036410926,
+        427,
+        137.55591677503253
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s2-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        234.7217165149545,
+        427,
+        286.3075422626788
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s3-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        379.4746423927178,
+        427,
+        434.65929778933685
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s4-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        519.0292587776332,
+        427,
+        573.0143042912874
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s1-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        86.76429675425038,
+        427,
+        141.02782071097374
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s2-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        226.50386398763527,
+        427,
+        282.4281298299845
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s3-viola",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        368.6159196290572,
+        427,
+        421.693199381762
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s4-viola",
+      "beforePage": 8,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        516.4219474497681,
+        427,
+        569.9737248840804
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s1-viola",
+      "beforePage": 8,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        89.10798303123795,
+        427,
+        135.53065946779793
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s2-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        236.157732356344,
+        427,
+        281.39452371770153
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s3-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        369.45121480910143,
+        427,
+        418.72001542614737
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s4-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        510.5715387581952,
+        427,
+        562.212109525646
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s1-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        88.87080601619743,
+        427,
+        140.98573081372928
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s2-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        222.40146548399537,
+        427,
+        279.4971075973775
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s3-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        361.15001928268407,
+        427,
+        417.29695333590433
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s4-viola",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        505.3536444273043,
+        427,
+        557.9429232549171
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s1-viola",
+      "beforePage": 9,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        89.56892067620288,
+        427,
+        137.9557867360208
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s2-viola",
+      "beforePage": 9,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        231.5227568270481,
+        427,
+        280.30949284785436
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s3-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        369.47789336801037,
+        427,
+        423.0630689206762
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s4-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        512.2314694408323,
+        427,
+        565.4167750325098
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s1-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        94.80023139220975,
+        427,
+        145.72927111453913
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s2-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        241.13844967219433,
+        427,
+        311.75318164288467
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s3-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        377.98958735055913,
+        427,
+        424.17508677207866
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s4-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        521.7188584650983,
+        427,
+        562.686463555727
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s1-viola",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        92.42846124180483,
+        427,
+        136.9537215580409
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s2-viola",
+      "beforePage": 10,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        227.8565368299267,
+        427,
+        277.5996914770536
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s3-viola",
+      "beforePage": 10,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        368.7396837639799,
+        427,
+        422.04049363671425
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s4-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        516.5009641342075,
+        427,
+        565.5325877362129
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s1-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        89.81951407635938,
+        427,
+        126.28075588121868
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s2-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        227.61935981488625,
+        427,
+        272.1446201311222
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s3-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        367.79097570381805,
+        427,
+        403.06633243347477
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s4-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        511.28306980331666,
+        427,
+        559.6031623602006
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s1-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        89.8195140763595,
+        427,
+        141.93443887389128
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s2-viola",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        239.00385653682991,
+        427,
+        277.8368684920941
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s3-viola",
+      "beforePage": 11,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        375.3806401851138,
+        427,
+        425.12379483224066
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s4-viola",
+      "beforePage": 11,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        517.9240262244505,
+        427,
+        566.9556498264559
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s1-viola",
+      "beforePage": 11,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        79.1723016905072,
+        427,
+        139.15539661898572
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s2-viola",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        229.52340702210665,
+        427,
+        276.3107932379714
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s3-viola",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        373.47659297789335,
+        427,
+        423.4629388816645
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s4-viola",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        514.2308192457738,
+        427,
+        567.4161248374513
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s1-viola",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        88.87080601619743,
+        427,
+        140.2741997686078
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s2-viola",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        233.78596220593903,
+        427,
+        280.208638642499
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s3-viola",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        373.7204010798303,
+        427,
+        424.6494408021597
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s4-viola",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        521.0073274199768,
+        427,
+        570.5133050520633
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s1-viola",
+      "beforePage": 12,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        82.4670266101042,
+        427,
+        130.78711916698808
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s2-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        225.24758966448132,
+        427,
+        269.0613189355958
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s3-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        369.21403779406097,
+        427,
+        419.6687234863094
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s4-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        508.6741226378712,
+        427,
+        563.8723486309294
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s1-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        91.24257616660236,
+        427,
+        141.22290782876973
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s2-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        232.3629001156961,
+        427,
+        281.86887774778245
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s3-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        375.3806401851138,
+        427,
+        419.19436945622834
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s4-viola",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        514.840725028924,
+        427,
+        562.9236405707675
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s1-viola",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        85.31315079059004,
+        427,
+        141.69726185885077
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s2-viola",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        229.04242190512923,
+        427,
+        276.17662938681065
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s3-viola",
+      "beforePage": 13,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        365.6563825684535,
+        427,
+        416.34824527574244
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s4-viola",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        510.5715387581952,
+        427,
+        559.6031623602006
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s1-viola",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        86.97338989587354,
+        427,
+        140.98573081372928
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s2-viola",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        226.90782876976476,
+        427,
+        283.52911685306594
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s3-viola",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        368.9768607790204,
+        427,
+        422.75202468183574
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s4-viola",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        514.6035480138836,
+        427,
+        567.9043578866178
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s1-viola",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        85.60000000000002,
+        427,
+        129.60000000000002
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s2-viola",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        231.60000000000002,
+        427,
+        282.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s3-viola",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        373.2,
+        427,
+        422.40000000000003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s4-viola",
+      "beforePage": 14,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        515.1999999999998,
+        427,
+        566.4
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s1-viola",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        95.54433307633008,
+        426,
+        145.67694680030843
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s2-viola",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        234.01387818041633,
+        426,
+        286.5134926754048
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s3-viola",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        379.1110254433308,
+        426,
+        418.82883577486507
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s4-viola",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        519.4741711642251,
+        426,
+        565.8195836545875
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s1-viola",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        91.95410721172391,
+        427,
+        138.37678364828383
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s2-viola",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        234.73467026610103,
+        427,
+        282.580408792904
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s3-viola",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        375.8549942151948,
+        427,
+        413.739298110297
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s4-viola",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        513.6548399537216,
+        427,
+        557.2313922097957
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s1-viola",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        86.07632999228986,
+        426,
+        136.68234387047028
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s2-viola",
+      "beforePage": 15,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        227.85967617579024,
+        426,
+        273.25828835774865
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s3-viola",
+      "beforePage": 16,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        373.19352351580574,
+        426,
+        416.4618350038551
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s4-viola",
+      "beforePage": 16,
+      "afterPage": 16,
+      "sourceRect": [
+        0,
+        510.242868157286,
+        426,
+        560.8488820354664
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s1-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        87.96944083224969,
+        427,
+        134.35695708712615
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s2-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        226.32444733420027,
+        427,
+        285.90767230169047
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s3-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        380.6742522756827,
+        427,
+        427.4616384915475
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s4-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        517.8296488946684,
+        427,
+        567.016254876463
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s1-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        85.60000000000002,
+        426,
+        138
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s2-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        222.79999999999995,
+        426,
+        277.2
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s3-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        365.6,
+        426,
+        416.40000000000003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s4-viola",
+      "beforePage": 16,
+      "afterPage": 17,
+      "sourceRect": [
+        0,
+        505.2,
+        426,
+        558
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s1-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        228.79999999999995,
+        427,
+        279.2
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s2-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        375.6,
+        427,
+        423.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p2-s3-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        533.1999999999999,
+        427,
+        577.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s1-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        113.3361669242658,
+        427,
+        163.09196290571867
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s2-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        260.4304482225657,
+        427,
+        317.0664605873261
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s3-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        401.5935085007728,
+        427,
+        449.68856259659975
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p3-s4-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        543.9428129829985,
+        427,
+        593.4613601236476
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s1-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        112.86166924265842,
+        427,
+        163.5664605873261
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s2-cello",
+      "beforePage": 1,
+      "afterPage": 1,
+      "sourceRect": [
+        0,
+        259.71870170015455,
+        427,
+        299.2727975270479
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s3-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        392.34080370942814,
+        427,
+        439.4868624420402
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p4-s4-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        529.4706336939721,
+        427,
+        591.5633693972179
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s1-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        117.84389489953634,
+        427,
+        159.29598145285934
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s2-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        253.0757341576507,
+        427,
+        303.54327666151465
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s3-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        394.71329211746524,
+        427,
+        446.3670788253478
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p5-s4-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        545.8408037094281,
+        427,
+        584.9204018547141
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s1-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        117.84389489953634,
+        427,
+        171.15842349304484
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s2-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        259.0069551777434,
+        427,
+        288.8338485316847
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s3-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        398.5092735703246,
+        427,
+        440.6731066460587
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p6-s4-cello",
+      "beforePage": 2,
+      "afterPage": 2,
+      "sourceRect": [
+        0,
+        539.6723338485317,
+        427,
+        592.0378670788253
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s1-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        113.59999999999997,
+        427,
+        178
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s2-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        252.79999999999995,
+        427,
+        297.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s3-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        407.2,
+        427,
+        448.40000000000003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p7-s4-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        539.1999999999999,
+        427,
+        591.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s1-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        119.50463678516229,
+        427,
+        170.4466769706337
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s2-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        263.2774343122102,
+        427,
+        311.84698608964453
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s3-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        404.2032457496136,
+        427,
+        454.9080370942813
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p8-s4-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        555.0935085007728,
+        427,
+        594.4103554868624
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s1-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        117.36939721792896,
+        427,
+        161.6684698608965
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s2-cello",
+      "beforePage": 3,
+      "afterPage": 3,
+      "sourceRect": [
+        0,
+        263.2774343122102,
+        427,
+        303.0687789799073
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s3-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        402.7797527047913,
+        427,
+        448.97681607418855
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p9-s4-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        549.6367851622874,
+        427,
+        591.3261205564143
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s1-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        112.38717156105105,
+        427,
+        161.6684698608965
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s2-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        253.3129829984544,
+        427,
+        303.54327666151465
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s3-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        397.08578052550234,
+        427,
+        440.19860896445135
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p10-s4-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        540.146831530139,
+        427,
+        587.5301391035549
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s1-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        120.92812982998453,
+        427,
+        168.78593508500774
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s2-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        262.56568778979914,
+        427,
+        310.660741885626
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s3-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        404.20324574961353,
+        427,
+        449.21406491499226
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p11-s4-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        543.468315301391,
+        427,
+        584.4459041731067
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s1-cello",
+      "beforePage": 4,
+      "afterPage": 4,
+      "sourceRect": [
+        0,
+        121.16537867078819,
+        427,
+        166.887944358578
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s2-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        254.97372488408035,
+        427,
+        298.08655332302936
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s3-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        399.69551777434316,
+        427,
+        447.5533230293663
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p12-s4-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        544.8918083462133,
+        427,
+        592.7496136012364
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s1-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        131.60432766615145,
+        427,
+        166.41344667697064
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s2-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        266.3616692426584,
+        427,
+        309.47449768160743
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s3-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        409.6599690880989,
+        427,
+        453.0100463678516
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p13-s4-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        556.0425038639876,
+        427,
+        603.4258114374034
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s1-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        119.50463678516223,
+        427,
+        169.49768160741883
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s2-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        270.15765069551776,
+        427,
+        299.98454404945903
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s3-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        400.8817619783617,
+        427,
+        448.26506955177746
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p14-s4-cello",
+      "beforePage": 5,
+      "afterPage": 5,
+      "sourceRect": [
+        0,
+        545.8408037094281,
+        427,
+        594.4103554868624
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s1-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        124.8951426368543,
+        426,
+        171.24055512721668
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s2-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        266.9151888974557,
+        426,
+        307.10639938319196
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s3-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        413.90593677717806,
+        426,
+        459.06784888203543
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p15-s4-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        548.3515805705474,
+        426,
+        598.4841942945259
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s1-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        131.3670788253478,
+        427,
+        174.4799072642968
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s2-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        272.29289026275114,
+        427,
+        312.79598145285934
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s3-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        411.3207109737249,
+        427,
+        458.46676970633695
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p16-s4-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        550.5857805255023,
+        427,
+        604.6120556414219
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s1-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        120.79999999999995,
+        426,
+        160
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s2-cello",
+      "beforePage": 6,
+      "afterPage": 6,
+      "sourceRect": [
+        0,
+        263.2,
+        426,
+        312.40000000000003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s3-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        400.4,
+        426,
+        446.40000000000003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p17-s4-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        547.6,
+        426,
+        594.8
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s1-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        118.79289026275114,
+        427,
+        172.34466769706336
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s2-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        260.90494590417313,
+        427,
+        304.96676970633695
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s3-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        398.5092735703246,
+        427,
+        447.5533230293663
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p18-s4-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        546.5525502318393,
+        427,
+        596.5455950540958
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s1-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        123.9577373211963,
+        427,
+        161.14824447334195
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s2-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        266.71131339401813,
+        427,
+        313.09882964889465
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s3-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        415.4629388816645,
+        427,
+        461.0507152145644
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p19-s4-cello",
+      "beforePage": 7,
+      "afterPage": 7,
+      "sourceRect": [
+        0,
+        554.2178153446034,
+        427,
+        598.6059817945384
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s1-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        120.4536321483771,
+        427,
+        172.8191653786708
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s2-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        266.3616692426584,
+        427,
+        307.33925811437405
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s3-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        403.49149922720244,
+        427,
+        452.0610510046368
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p20-s4-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        547.5015455950542,
+        427,
+        599.8670788253478
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s1-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        118.75510991129966,
+        427,
+        164.22907828769763
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s2-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        261.2984959506363,
+        427,
+        306.2981102969533
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s3-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        400.75858079444663,
+        427,
+        454.2965676822214
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p21-s4-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        548.2826841496336,
+        427,
+        597.7886617817201
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s1-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        125.158889317393,
+        427,
+        171.34438873891247
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s2-cello",
+      "beforePage": 8,
+      "afterPage": 8,
+      "sourceRect": [
+        0,
+        260.58696490551483,
+        427,
+        308.4327034323178
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s3-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        396.2522175086772,
+        427,
+        447.65561126108753
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p22-s4-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        539.0327805630544,
+        427,
+        593.7566525260316
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s1-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        120.75877763328998,
+        427,
+        167.14629388816644
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s2-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        258.7139141742523,
+        427,
+        306.70091027308194
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s3-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        401.86736020806234,
+        427,
+        453.0533159947984
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p23-s4-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        547.020156046814,
+        427,
+        598.6059817945384
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s1-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        125.39606633243346,
+        427,
+        170.63285769379098
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        241.13844967219433,
+        427,
+        316.4967219436946
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s3-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        413.0917855765523,
+        427,
+        453.8222136521404
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p24-s4-cello",
+      "beforePage": 9,
+      "afterPage": 9,
+      "sourceRect": [
+        0,
+        556.1095256459699,
+        427,
+        595.6540686463555
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s1-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        122.31276513690705,
+        427,
+        172.29309679907442
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s2-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        260.58696490551483,
+        427,
+        309.38141149247974
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s3-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        400.5214037794061,
+        427,
+        450.264558426533
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p25-s4-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        548.9942151947552,
+        427,
+        598.9745468569225
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s1-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        127.53065946779793,
+        427,
+        161.14577709217122
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s2-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        258.2151947551099,
+        427,
+        301.0802159660625
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s3-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        402.89317392981104,
+        427,
+        444.33513305052065
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p26-s4-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        541.6417277284999,
+        427,
+        594.2310065561127
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s1-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        122.78711916698802,
+        427,
+        173.47898187427688
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s2-cello",
+      "beforePage": 10,
+      "afterPage": 10,
+      "sourceRect": [
+        0,
+        263.67026610104125,
+        427,
+        314.5993058233706
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s3-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        406.45082915541843,
+        427,
+        455.7196297724644
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p27-s4-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        555.3979946008484,
+        427,
+        598.263015811801
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s1-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        118.75942782834852,
+        427,
+        168.34590377113136
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s2-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        259.11378413524056,
+        427,
+        306.94288150920204
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s3-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        409.4648894668401,
+        427,
+        453.853055916775
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p28-s4-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        547.020156046814,
+        427,
+        597.0065019505852
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s1-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        121.36405707674504,
+        427,
+        167.31237948322405
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s2-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        264.6189741612032,
+        427,
+        308.6698804473583
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s3-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        407.8738912456614,
+        427,
+        454.77092171230237
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p29-s4-cello",
+      "beforePage": 11,
+      "afterPage": 11,
+      "sourceRect": [
+        0,
+        551.36598534516,
+        427,
+        596.6027767065176
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s1-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        109.97956035480138,
+        427,
+        168.97261858850754
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s2-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        256.5549556498264,
+        427,
+        299.89433089086003
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s3-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        397.91245661396067,
+        427,
+        447.41843424604707
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p30-s4-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        545.1993829541073,
+        427,
+        594.4681835711532
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s1-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        119.22946394138069,
+        427,
+        170.15850366371
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s2-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        264.6189741612032,
+        427,
+        310.56729656768226
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s3-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        401.47011183956806,
+        427,
+        452.8735055919784
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p31-s4-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        546.8596220593909,
+        427,
+        598.0258387967605
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s1-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        118.04357886617817,
+        427,
+        166.3636714230621
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s2-cello",
+      "beforePage": 12,
+      "afterPage": 12,
+      "sourceRect": [
+        0,
+        259.16390281527185,
+        427,
+        307.0096413420748
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s3-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        397.91245661396067,
+        427,
+        442.43771693019676
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p32-s4-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        542.3532587736213,
+        427,
+        584.2695719244119
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s1-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        116.38333976089473,
+        427,
+        167.07520246818353
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s2-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        256.7921326648669,
+        427,
+        307.9583494022368
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s3-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        404.07905900501356,
+        427,
+        451.687620516776
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p33-s4-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        550.1801002699576,
+        427,
+        597.314307751639
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s1-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        116.39999999999998,
+        427,
+        164.39999999999998
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s2-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        263.59999999999997,
+        427,
+        304
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s3-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        402.4,
+        427,
+        449.59999999999997
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p34-s4-cello",
+      "beforePage": 13,
+      "afterPage": 13,
+      "sourceRect": [
+        0,
+        543.6,
+        427,
+        595.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s1-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        127.2621434078643,
+        426,
+        174.0809560524287
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s2-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        267.8619892058597,
+        426,
+        311.130300693909
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s3-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        408.69853508095605,
+        426,
+        462.1449498843485
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p35-s4-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        549.0616808018505,
+        426,
+        594.4602929838088
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s1-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        120.65252603162355,
+        427,
+        172.29309679907442
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s2-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        267.46509834168916,
+        427,
+        306.53528731199384
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s3-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        407.16236020053987,
+        427,
+        447.18125723100655
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p36-s4-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        542.1160817585808,
+        427,
+        597.7886617817201
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s1-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        110.69313801079409,
+        426,
+        168.40015420200461
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s2-cello",
+      "beforePage": 14,
+      "afterPage": 14,
+      "sourceRect": [
+        0,
+        259.3407864302236,
+        426,
+        303.79259830377794
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s3-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        412.485736314572,
+        426,
+        446.99614494988435
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p37-s4-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        545.7478797224364,
+        426,
+        597.3006939090208
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s1-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        119.95903771131339,
+        427,
+        165.14694408322498
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s2-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        261.51300390117035,
+        427,
+        313.498699609883
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s3-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        407.06566970091023,
+        427,
+        455.45253576072827
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p38-s4-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        546.6202860858257,
+        427,
+        598.6059817945384
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s1-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        118.80000000000001,
+        426,
+        161.20000000000005
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s2-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        249.59999999999997,
+        426,
+        299.6
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s3-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        392,
+        426,
+        440
+      ],
+      "retainedScale": true
+    },
+    {
+      "id": "p39-s4-cello",
+      "beforePage": 15,
+      "afterPage": 15,
+      "sourceRect": [
+        0,
+        535.6,
+        426,
+        590.8
+      ],
+      "retainedScale": true
+    }
+  ],
+  "issues": [],
+  "variants": [
+    {
+      "id": "candidate-v1",
+      "explicitBreaks": [
+        "p16-s1-violin1",
+        "p16-s1-violin2",
+        "p16-s1-viola",
+        "p16-s1-cello",
+        "p22-s1-violin1",
+        "p22-s1-violin2",
+        "p22-s1-viola",
+        "p22-s1-cello",
+        "p29-s1-violin1",
+        "p29-s1-violin2",
+        "p29-s1-viola",
+        "p29-s1-cello",
+        "p31-s1-violin1",
+        "p33-s1-violin1"
+      ],
+      "pages": {
+        "violin1": 20,
+        "violin2": 18,
+        "viola": 17,
+        "cello": 17
+      },
+      "total": 72
+    },
+    {
+      "id": "candidate-v2",
+      "explicitBreaks": [
+        "p29-s1-violin1",
+        "p29-s1-violin2",
+        "p29-s1-viola",
+        "p29-s1-cello",
+        "p31-s1-violin1",
+        "p33-s1-violin1",
+        "p32-s1-violin2",
+        "p32-s1-viola"
+      ],
+      "pages": {
+        "violin1": 18,
+        "violin2": 18,
+        "viola": 17,
+        "cello": 16
+      },
+      "total": 69
+    },
+    {
+      "id": "candidate-v3-minimal",
+      "explicitBreaks": [
+        "p31-s1-violin1",
+        "p32-s1-violin2",
+        "p32-s1-viola",
+        "p32-s1-cello"
+      ],
+      "pages": {
+        "violin1": 18,
+        "violin2": 17,
+        "viola": 17,
+        "cello": 16
+      },
+      "total": 68
+    },
+    {
+      "id": "candidate-v4-reviewed",
+      "explicitBreaks": [
+        "p29-s1-violin1",
+        "p31-s1-violin1",
+        "p33-s1-violin1",
+        "p34-s3-violin1",
+        "p32-s1-violin2",
+        "p32-s1-viola",
+        "p32-s1-cello"
+      ],
+      "pages": {
+        "violin1": 18,
+        "violin2": 17,
+        "viola": 17,
+        "cello": 16
+      },
+      "total": 68
+    },
+    {
+      "id": "final-alternative",
+      "explicitBreaks": [
+        "p29-s1-violin1",
+        "p31-s1-violin1",
+        "p33-s1-violin1",
+        "p34-s3-violin1",
+        "p32-s1-violin2",
+        "p32-s1-viola"
+      ],
+      "pages": {
+        "violin1": 18,
+        "violin2": 17,
+        "viola": 17,
+        "cello": 15
+      },
+      "total": 67
+    }
+  ],
+  "inputSHA256": {
+    "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-continuation/manifest.json": "3d449fdebd5b8d88278376e77bb191d543ad7077cbc54cb372820d2b753f6262",
+    ".build/page-turn-review-2026-10-03/final-alternative/manifest.json": "5daeb045007189f5f90cbbd7de7da568f6d74b2e380a291d82e6c32cb7164746",
+    ".build/page-turn-review-2026-10-03/final-alternative/Brahms String Quartet No. 3 Op. 67 \u2014 Auto draft.partsmithproject/project.json": "3ae0c0e44ba8f6b23f99a30d7b8d116261ef9f1ff8920b4f0da0c9e808a24774",
+    ".build/page-turn-review-2026-10-03/export_breaks.swift": "1c1345dbef2a75d4ad39879fdabfddb6b42b6d265aa6402f8a50cc6bc8315a7b",
+    ".build/brahms-continuation-release-2026-10-03/candidate/brahms-inventory.json": "0697f5ac574a298f618efbd1a6937ec1b2693a57231a7ee9d29969a8d66dba78"
+  }
+}

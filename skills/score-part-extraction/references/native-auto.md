@@ -61,6 +61,16 @@ all parts. Balanced pagination minimizes pages by choosing the widest viable gap
 down to four points; it preserves notation scale and crop geometry. Reserve
 explicit breaks for musical sections, not source-page boundaries.
 
+For a difficult turn, use the Inspector's **Start on New Page** on a reviewed
+system and compare both pages plus the rest of that part's changed pagination.
+Keep rapid passages and first/second endings together where practical. Verify
+rests in that instrument's source staff; a repeat barline or a fermata printed
+only above another part does not establish a rest. Compare the added page count
+with the compact version, and keep a separate editable alternative when the
+tradeoff is useful. Reopen and reexport the saved project to verify the breaks,
+source crops, copied directions and notation scale persist. This is a manual
+musical review; the layout engine does not infer safe page turns.
+
 In Preview, **Scale** above 1.00 uses verified blank horizontal source margins
 to enlarge notation without changing saved crop bands. Scale at or below 1.00
 keeps its previous geometry. The widest retained strip limits **Use Consistent
