@@ -1,0 +1,52 @@
+{
+  "guardsUnchanged": true,
+  "tests": [
+    {
+      "id": "p1-piano-small-staff-and-ledger-notes",
+      "frozenSourceRect": [
+        354,
+        715.5,
+        454,
+        733.5
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "id": "p1-piano-earliest-edition-label",
+      "frozenSourceRect": [
+        278,
+        716,
+        352,
+        738
+      ],
+      "baselineContains": false,
+      "candidateContains": false
+    },
+    {
+      "id": "p1-piano-dotted-association",
+      "frozenSourceRect": [
+        354,
+        684,
+        454,
+        733.5
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "id": "p1-piano-autograph-label",
+      "frozenSourceRect": [
+        308,
+        662,
+        356,
+        684
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    }
+  ],
+  "actualLabelInkBottom": 735.0,
+  "candidateBottom": 737.0411371657042,
+  "note": "Candidate contains all observed original label pixels but still fails conservative label rectangle bottom738; the rectangle was not relaxed."
+}

@@ -1,0 +1,157 @@
+{
+  "verifiedUTC": "2026-10-03T21:53:05.822566+00:00",
+  "sourceFreezeUTC": "2026-10-03T21:45:47.077870+00:00",
+  "historicalProductionCommitAtSourceFreeze": "8571acd5d0367a0c011212b7ce577e9b49e25408",
+  "prototypeSourceReadOnlyAfterSourceCasesHashSentToParent": true,
+  "sourceInputsUnchangedAfterCandidateSeen": true,
+  "checks": [
+    {
+      "check": "frozen source manifest unchanged",
+      "files": 84,
+      "passed": true
+    },
+    {
+      "check": "all original PDFs, native rasters, 36 source crops and frozen overlays match hashes; crops equal original source pixels",
+      "passed": true
+    },
+    {
+      "check": "logging-only result array and every witness value equal original candidate",
+      "passed": true,
+      "cases": 36
+    },
+    {
+      "check": "durable candidate Core files byte-identical to frozen supplied snapshot",
+      "passed": true,
+      "files": 6
+    }
+  ],
+  "sourcePDFs": [
+    {
+      "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sha256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "physicalPage": 3,
+      "nativeRaster": "source/trio-p003.png",
+      "nativeRasterSHA256": "19611d02fdf135f071a04b8a832210502332cd931dcbac1d9d798e66650cbe53"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "physicalPage": 3,
+      "nativeRaster": "source/schumann-p003.png",
+      "nativeRasterSHA256": "f7d7e2bfb94ac3fbc5891b0a75d90cbc1aaab47956309fb19cd21d1560410845"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sha256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "physicalPage": 4,
+      "nativeRaster": "source/mozart-p004.png",
+      "nativeRasterSHA256": "028254ec7d4c249416c5fe403ab8bab94d5b9a42439bbe176fc0eed6515676b8"
+    }
+  ],
+  "compiledCandidateCoreSHA256": {
+    "Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    "Detection/ScoreExtractionPlanner.swift": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+    "Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    "Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    "Detection/NativeScorePageAnalyzer.swift": "2a76c26e292b1ba4baeb74d7388cb2172a5be41025d58de04efbef986da607db"
+  },
+  "binariesAndDiagnosticSHA256": {
+    ".build/source-body-real-holdouts-v2-2026-10-03/helper-v2": "4f859ff7636ef10802795550d286b1556f58bd1d7fa821add0a476975dce6878",
+    ".build/source-body-real-holdouts-v2-2026-10-03/helper-diagnostic": "c826a58373e9d039905acd5a20443c48e6f8d20e52af819371becf389eb480b3",
+    ".build/source-body-real-holdouts-v2-2026-10-03/diagnostic-Core/Detection/NativeScorePageAnalyzer.swift": "6e826955d161d2bfaf09996c3036a068919985720f19d93531b3a25f04eeb352",
+    ".build/source-body-real-holdouts-v2-2026-10-03/diagnostic-probe.swift": "57a4222b6181d3a992f6bb170e93247d07a5fdc5be5f95bdae97f1e5fbc71b62",
+    ".build/source-body-real-holdouts-v2-2026-10-03/build-diagnostic.sh": "c3ccef7178133bf58f061f46d809b30e9eb3bd53c1df7f31b9c8c1eb7318b21f"
+  },
+  "reportBindings": {
+    "source-cases.json": "f15934008b238a8e76a284216f3b99084b92de0aa57eae4dca6e965f30ce4d7e",
+    "local-line-measurements.json": "c6b46b3da5ead57cfe0c1a0d3df7afb83a3d05a8d56f14d59650d19434013b65",
+    "source-freeze-manifest.json": "0e093d40c010f4b33250471e1fd44c3d3c4d62cbef92b483af1941c6279771e9",
+    "helper-inputs.json": "f1507ef6f6c22e230038f610aac0bcb33013c0f486875092a8eb4e00012ea35d",
+    "helper-probe.swift": "e4704bf54e6bc4b7db76978925104e04c14ca93f804152f3b471d47f3894c149",
+    "build-helper.sh": "281ce1105349893a97fa39876fffddd1e8ad48ec76b1f890280e10b1878bf254",
+    "results-v2.json": "4b81c79305c7371f3d9095f2fd2e40847c01836c4ea353688865582e19e9aa4a",
+    "results-diagnostic.json": "4b81c79305c7371f3d9095f2fd2e40847c01836c4ea353688865582e19e9aa4a",
+    "rejection-diagnostics.json": "1950a699b750f02fe59663659a9f8a4489a9612fd2caf326c4958c0acbd1b178",
+    "evaluation.json": "c585f128f3e0032db295e0d3bc219b680e29e8b750404978503072f9f36f5e06",
+    "page-independence.json": "620e6ca6545fe5deab4c18eb0f4a82a297e15e06530a182c5a85bcbc13e88163"
+  },
+  "visualReview": {
+    "all36OriginalCases": true,
+    "all4AcceptedEllipsesMatchSelectedBody": true,
+    "representativeMissedHollowTiedChordBeamedCases": true,
+    "contacts": [
+      "review/contact-1.png",
+      "review/contact-2.png",
+      "review/contact-3.png",
+      "review/contact-4.png",
+      "review/contact-5.png",
+      "review/contact-6.png",
+      "review/v2-result-contact.png"
+    ]
+  },
+  "unchangedExpectations": {
+    "genuineBodies": 24,
+    "filled": 12,
+    "hollow": 12,
+    "falseAssociations": 12,
+    "terminalBodies": 23,
+    "noSourceBoundShrunk": true
+  },
+  "scope": {
+    "productionEdits": false,
+    "newCorpusWorker": false,
+    "newNativeFullDocumentWorker": false,
+    "exportsRun": false,
+    "nativeCrossCoreErasureTested": false,
+    "statisticallyRepresentativeClaim": false
+  },
+  "summary": {
+    "sourceCasesSHA256": "f15934008b238a8e76a284216f3b99084b92de0aa57eae4dca6e965f30ce4d7e",
+    "lineMeasurementsSHA256": "c6b46b3da5ead57cfe0c1a0d3df7afb83a3d05a8d56f14d59650d19434013b65",
+    "resultSHA256": "4b81c79305c7371f3d9095f2fd2e40847c01836c4ea353688865582e19e9aa4a",
+    "cases": 36,
+    "positiveSelectedAccepts": 4,
+    "positiveCases": 24,
+    "filledAccepts": 4,
+    "filledCases": 12,
+    "hollowAccepts": 0,
+    "hollowCases": 12,
+    "terminalPositiveCases": 23,
+    "terminalPositiveAccepts": 4,
+    "falseBodySpineAccepts": 0,
+    "negativeCases": 12,
+    "earlyStaffSpacingPositiveRejects": [
+      "T-H02",
+      "T-F03",
+      "S-H01",
+      "S-H04",
+      "S-F01",
+      "S-F03",
+      "S-F04"
+    ],
+    "wrongBodyAccepts": [],
+    "instrumentationMatchesOriginalResults": true,
+    "perPage": {
+      "trio-p003": {
+        "positives": 8,
+        "selectedAccepts": 0,
+        "negatives": 4,
+        "falseAccepts": 0
+      },
+      "schumann-p003": {
+        "positives": 8,
+        "selectedAccepts": 0,
+        "negatives": 4,
+        "falseAccepts": 0
+      },
+      "mozart-p004": {
+        "positives": 8,
+        "selectedAccepts": 4,
+        "negatives": 4,
+        "falseAccepts": 0
+      }
+    },
+    "scope": "Helper shape/attachment evidence only; no native connector, crop, export or full-part preservation assertions."
+  }
+}

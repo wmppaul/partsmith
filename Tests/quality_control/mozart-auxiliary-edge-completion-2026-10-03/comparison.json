@@ -1,0 +1,353 @@
+{
+  "mozart": {
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "inventory": ".build/ownership-mozart-output-2026-10-03/candidate/mozart-inventory.json",
+    "inventorySHA256": "bb32ab400cbdf32caa29604fab4bb42a5a3b5b358a386503fcfba185d87a7935",
+    "pages": 30,
+    "bands": 476,
+    "changedBands": 7,
+    "changedPages": [
+      1,
+      4,
+      5,
+      14,
+      17
+    ],
+    "cropShrinkage": [],
+    "otherBandFieldsChanged": [],
+    "additionalWholeForeignCores": [],
+    "unresolvedBaseline": [],
+    "unresolvedCandidate": [],
+    "changes": [
+      {
+        "id": "p1-s2-cello",
+        "sourcePage": 1,
+        "baseline": [
+          0.0,
+          396.3314837153197,
+          543.6,
+          429.0996381182147
+        ],
+        "candidate": [
+          0.0,
+          396.3314837153197,
+          543.6,
+          432.12014475271417
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p1-s3-cello",
+        "sourcePage": 1,
+        "baseline": [
+          0.0,
+          573.0311218335344,
+          543.6,
+          624.2243667068758
+        ],
+        "candidate": [
+          0.0,
+          573.0311218335344,
+          543.6,
+          626.6407720144753
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p1-s3-piano",
+        "sourcePage": 1,
+        "baseline": [
+          0.0,
+          616.6748997212229,
+          543.6,
+          733.7185798677548
+        ],
+        "candidate": [
+          0.0,
+          616.6748997212229,
+          543.6,
+          737.0411371657042
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p4-s3-cello",
+        "sourcePage": 4,
+        "baseline": [
+          0.0,
+          432.87961399276236,
+          543.6,
+          463.53341375150785
+        ],
+        "candidate": [
+          0.0,
+          432.87961399276236,
+          543.6,
+          468.36622436670694
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p5-s4-violin",
+        "sourcePage": 5,
+        "baseline": [
+          0.0,
+          570.3126658624849,
+          543.6,
+          613.350542822678
+        ],
+        "candidate": [
+          0.0,
+          563.9696019300362,
+          543.6,
+          613.350542822678
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p14-s1-violin",
+        "sourcePage": 14,
+        "baseline": [
+          0.0,
+          28.131724969843187,
+          543.6,
+          74.79420989143547
+        ],
+        "candidate": [
+          0.0,
+          21.788661037394455,
+          543.6,
+          74.79420989143547
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p17-s1-violin",
+        "sourcePage": 17,
+        "baseline": [
+          0.0,
+          29.641978287092886,
+          543.6,
+          81.1372738238842
+        ],
+        "candidate": [
+          0.0,
+          20.278407720144756,
+          543.6,
+          81.1372738238842
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      }
+    ]
+  },
+  "brahms": {
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "inventory": ".build/ownership-alternatives-output-2026-10-03/brahms-inventory.json",
+    "inventorySHA256": "df974f6b184f2fbd539047386b75db1a7c698fa5f949a37ded74c84440b1e3a2",
+    "pages": 39,
+    "bands": 604,
+    "changedBands": 9,
+    "changedPages": [
+      2,
+      10,
+      11,
+      14,
+      16,
+      33,
+      35,
+      38
+    ],
+    "cropShrinkage": [],
+    "otherBandFieldsChanged": [],
+    "additionalWholeForeignCores": [],
+    "unresolvedBaseline": [
+      [
+        1,
+        [
+          "Found 0 staves; the reviewed profile expects 4 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+        ]
+      ]
+    ],
+    "unresolvedCandidate": [
+      [
+        1,
+        [
+          "Found 0 staves; the reviewed profile expects 4 per system. Review missing staves or changing instrumentation; no assignments were guessed."
+        ]
+      ]
+    ],
+    "changes": [
+      {
+        "id": "p2-s1-violin1",
+        "sourcePage": 2,
+        "baseline": [
+          0,
+          125.2,
+          427,
+          176.79999999999998
+        ],
+        "candidate": [
+          0,
+          117.6,
+          427,
+          176.79999999999998
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p2-s3-cello",
+        "sourcePage": 2,
+        "baseline": [
+          0,
+          533.1999999999999,
+          427,
+          577.6
+        ],
+        "candidate": [
+          0,
+          533.1999999999999,
+          427,
+          584.8
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p10-s4-cello",
+        "sourcePage": 10,
+        "baseline": [
+          0,
+          540.146831530139,
+          427,
+          587.5301391035549
+        ],
+        "candidate": [
+          0,
+          540.146831530139,
+          427,
+          593.6986089644513
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p11-s1-cello",
+        "sourcePage": 11,
+        "baseline": [
+          0,
+          120.92812982998454,
+          427,
+          168.7859350850077
+        ],
+        "candidate": [
+          0,
+          120.92812982998454,
+          427,
+          173.0564142194745
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p14-s4-cello",
+        "sourcePage": 14,
+        "baseline": [
+          0,
+          545.8408037094281,
+          427,
+          594.4103554868624
+        ],
+        "candidate": [
+          0,
+          545.8408037094281,
+          427,
+          601.29057187017
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p16-s1-violin1",
+        "sourcePage": 16,
+        "baseline": [
+          0,
+          34.332302936630605,
+          427,
+          84.08809891808346
+        ],
+        "candidate": [
+          0,
+          26.028593508500773,
+          427,
+          84.08809891808346
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p33-s3-cello",
+        "sourcePage": 33,
+        "baseline": [
+          0,
+          404.0790590050135,
+          427,
+          451.687620516776
+        ],
+        "candidate": [
+          0,
+          404.0790590050135,
+          427,
+          455.48245275742386
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p35-s4-cello",
+        "sourcePage": 35,
+        "baseline": [
+          0,
+          549.0616808018505,
+          426,
+          594.4602929838088
+        ],
+        "candidate": [
+          0,
+          549.0616808018505,
+          426,
+          599.4309946029298
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      },
+      {
+        "id": "p38-s3-cello",
+        "sourcePage": 38,
+        "baseline": [
+          0,
+          407.06566970091023,
+          427,
+          455.45253576072827
+        ],
+        "candidate": [
+          0,
+          407.06566970091023,
+          427,
+          459.0513654096229
+        ],
+        "baselineForeignCores": [],
+        "candidateForeignCores": []
+      }
+    ]
+  }
+}

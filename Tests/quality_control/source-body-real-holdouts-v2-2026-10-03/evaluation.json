@@ -1,0 +1,1083 @@
+{
+  "summary": {
+    "sourceCasesSHA256": "f15934008b238a8e76a284216f3b99084b92de0aa57eae4dca6e965f30ce4d7e",
+    "lineMeasurementsSHA256": "c6b46b3da5ead57cfe0c1a0d3df7afb83a3d05a8d56f14d59650d19434013b65",
+    "resultSHA256": "4b81c79305c7371f3d9095f2fd2e40847c01836c4ea353688865582e19e9aa4a",
+    "cases": 36,
+    "positiveSelectedAccepts": 4,
+    "positiveCases": 24,
+    "filledAccepts": 4,
+    "filledCases": 12,
+    "hollowAccepts": 0,
+    "hollowCases": 12,
+    "terminalPositiveCases": 23,
+    "terminalPositiveAccepts": 4,
+    "falseBodySpineAccepts": 0,
+    "negativeCases": 12,
+    "earlyStaffSpacingPositiveRejects": [
+      "T-H02",
+      "T-F03",
+      "S-H01",
+      "S-H04",
+      "S-F01",
+      "S-F03",
+      "S-F04"
+    ],
+    "wrongBodyAccepts": [],
+    "instrumentationMatchesOriginalResults": true,
+    "perPage": {
+      "trio-p003": {
+        "positives": 8,
+        "selectedAccepts": 0,
+        "negatives": 4,
+        "falseAccepts": 0
+      },
+      "schumann-p003": {
+        "positives": 8,
+        "selectedAccepts": 0,
+        "negatives": 4,
+        "falseAccepts": 0
+      },
+      "mozart-p004": {
+        "positives": 8,
+        "selectedAccepts": 4,
+        "negatives": 4,
+        "falseAccepts": 0
+      }
+    },
+    "scope": "Helper shape/attachment evidence only; no native connector, crop, export or full-part preservation assertions."
+  },
+  "cases": [
+    {
+      "id": "T-H01",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Half-note on its own downward stem, crossed by an inner staff line; long tie above.",
+      "diagnosticGuards": {
+        "143": 221,
+        "152": 312,
+        "186": 1,
+        "197": 11,
+        "227": 12,
+        "241": 6,
+        "261": 60,
+        "262": 144,
+        "308": 1,
+        "cavityProposals": 2,
+        "proposals": 19
+      },
+      "helperRemeasuredLines": [
+        298.75471698113205,
+        308.5,
+        318,
+        327.25471698113205,
+        337.25471698113205
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-H02",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Half-note on downward stem in the last bar, under a long printed tie.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        287.2546296296296,
+        304.2546296296296,
+        314,
+        323.7546296296296,
+        333.7546296296296
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "T-H03",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Upper hollow head on a shared downward chord stem spanning one complete staff core. Related to T-H04, not an independent chord.",
+      "diagnosticGuards": {
+        "143": 462,
+        "152": 440,
+        "186": 2,
+        "197": 24,
+        "227": 26,
+        "241": 11,
+        "cavityProposals": 2,
+        "proposals": 37
+      },
+      "helperRemeasuredLines": [
+        986.0064935064935,
+        999.7532467532468,
+        1013.7532467532468,
+        1027.5,
+        1041.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-H04",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Lower hollow head attached to the same continuing chord stem as T-H03; genuine body, but not its terminal head.",
+      "diagnosticGuards": {
+        "143": 639,
+        "152": 334,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "helperRemeasuredLines": [
+        986.0064935064935,
+        999.7532467532468,
+        1013.7532467532468,
+        1027.5,
+        1041.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-F01",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled lower-line note with upward stem at the end of a printed tie.",
+      "diagnosticGuards": {
+        "143": 207,
+        "152": 288,
+        "197": 19,
+        "227": 19,
+        "cavityProposals": 0,
+        "proposals": 19
+      },
+      "helperRemeasuredLines": [
+        297.5,
+        307.25471698113205,
+        316.75471698113205,
+        326.50943396226415,
+        337.0188679245283
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-F02",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled note on the lower staff edge, upward stem; tie meets its left underside.",
+      "diagnosticGuards": {
+        "143": 202,
+        "152": 294,
+        "197": 4,
+        "224": 3,
+        "227": 4,
+        "cavityProposals": 0,
+        "proposals": 7
+      },
+      "helperRemeasuredLines": [
+        296.2453703703704,
+        306,
+        316,
+        325.7453703703704,
+        335
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-F03",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled head near upper staff line on its own down-stem, below the beginning of a slur.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        295.2547169811321,
+        300.4245283018868,
+        310.4245283018868,
+        324.2547169811321,
+        329.6698113207547
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "T-F04",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled head on the next staff line down, down-stem, slur arriving above.",
+      "diagnosticGuards": {
+        "143": 239,
+        "152": 266,
+        "197": 2,
+        "224": 7,
+        "227": 2,
+        "cavityProposals": 0,
+        "proposals": 9
+      },
+      "helperRemeasuredLines": [
+        856.7548076923076,
+        866.2548076923076,
+        876,
+        885.2548076923076,
+        895
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "S-H01",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow half-note at the bottom line with upward stem.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        204.5,
+        214.2549019607843,
+        218.9313725490196,
+        232.5,
+        242.00980392156862
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "S-H02",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow head at the top staff line on a downward stem, under a long slur.",
+      "diagnosticGuards": {
+        "143": 225,
+        "152": 268,
+        "197": 10,
+        "227": 10,
+        "cavityProposals": 1,
+        "proposals": 10
+      },
+      "helperRemeasuredLines": [
+        204.5,
+        213.5,
+        222.5,
+        231.745,
+        241.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "S-H03",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Dotted hollow head slightly below top line on downward stem; dot is a separate source mark.",
+      "diagnosticGuards": {
+        "143": 229,
+        "152": 288,
+        "197": 6,
+        "224": 5,
+        "227": 6,
+        "241": 2,
+        "262": 128,
+        "280": 2,
+        "cavityProposals": 1,
+        "proposals": 15
+      },
+      "helperRemeasuredLines": [
+        936.5,
+        946,
+        955,
+        964.5,
+        974
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "S-H04",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow head on the next line above bottom, upward stem, in the following bar.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        201.00980392156862,
+        206.1764705882353,
+        214.9313725490196,
+        228.5,
+        238.00980392156862
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "S-F01",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled bottom-line note on an upward stem to a beam, with a separate natural to its left.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        1021.7451923076924,
+        1030.764423076923,
+        1032.7451923076924,
+        1049.5,
+        1059.5
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "S-F02",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled note at bottom staff edge, upward stem, just after a barline.",
+      "diagnosticGuards": {
+        "143": 192,
+        "152": 204,
+        "197": 4,
+        "224": 6,
+        "227": 4,
+        "cavityProposals": 2,
+        "proposals": 10
+      },
+      "helperRemeasuredLines": [
+        203.2549019607843,
+        212.5,
+        221.5,
+        231.2549019607843,
+        240.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "S-F03",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled lower-line note on upward stem with a separate flat to its left.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        203.00980392156862,
+        208.17647058823528,
+        216.9313725490196,
+        230.7549019607843,
+        240.00980392156862
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "S-F04",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Next filled bottom-line note on its own upward stem to the same beam; distinct head/stem, correlated phrase.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        1021.7548076923077,
+        1029.764423076923,
+        1032.7548076923078,
+        1049.5,
+        1059.2548076923078
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "M-H01",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow lower-staff half-note on upward stem; faint and interrupted staff lines.",
+      "diagnosticGuards": {
+        "143": 277,
+        "152": 338,
+        "197": 6,
+        "227": 6,
+        "241": 6,
+        "261": 32,
+        "262": 123,
+        "280": 2,
+        "cavityProposals": 1,
+        "proposals": 14
+      },
+      "helperRemeasuredLines": [
+        871,
+        880,
+        889,
+        899,
+        908.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-H02",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow half-note at the bottom staff line on upward stem, under a long source slur.",
+      "diagnosticGuards": {
+        "143": 285,
+        "152": 316,
+        "197": 3,
+        "227": 3,
+        "241": 4,
+        "cavityProposals": 0,
+        "proposals": 7
+      },
+      "helperRemeasuredLines": [
+        870,
+        880,
+        889,
+        899,
+        908.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-H03",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow half-note at lower inner staff line, upward stem, after a structural barline.",
+      "diagnosticGuards": {
+        "68": 1,
+        "143": 263,
+        "152": 338,
+        "197": 13,
+        "227": 13,
+        "241": 5,
+        "cavityProposals": 2,
+        "proposals": 18
+      },
+      "helperRemeasuredLines": [
+        871,
+        880.5,
+        889.7452830188679,
+        899,
+        908.7452830188679
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-H04",
+      "genuineOwnStemHead": true,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Hollow lower-staff half-note on upward stem at the start of the next slur.",
+      "diagnosticGuards": {
+        "143": 265,
+        "152": 394,
+        "197": 9,
+        "227": 9,
+        "241": 6,
+        "cavityProposals": 0,
+        "proposals": 15
+      },
+      "helperRemeasuredLines": [
+        870.5,
+        880,
+        889,
+        899,
+        908.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-F01",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": true,
+      "selectedBodyAccepted": true,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled upper-space quarter note on downward stem in a faint scan.",
+      "witness": {
+        "angleDegrees": 140.71111234710168,
+        "attachmentRows": 5,
+        "center": [
+          515.1021150311548,
+          361.2541244214439
+        ],
+        "hollow": false,
+        "outlineSupport": [
+          0.8571428571428571,
+          0.9,
+          0.5625,
+          0.9090909090909091
+        ],
+        "radii": [
+          7.798051575787701,
+          5.059700077235794
+        ],
+        "surroundingWhite": 0.9866666666666667
+      },
+      "witnessCenterInsideSelectedBody": true,
+      "witnessEnvelope": [
+        508.26900129878396,
+        354.9518446775171,
+        521.9352287635256,
+        367.55640416537074
+      ],
+      "witnessWholeEnvelopeInsideSelectedBody": true,
+      "diagnosticGuards": {
+        "143": 256,
+        "152": 294,
+        "197": 1,
+        "227": 1,
+        "261": 42,
+        "262": 225,
+        "280": 1,
+        "317": 6,
+        "cavityProposals": 0,
+        "proposals": 10
+      },
+      "helperRemeasuredLines": [
+        351,
+        361,
+        370,
+        379.7451923076923,
+        389
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-F02",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": true,
+      "selectedBodyAccepted": true,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled upper-line beamed head on downward stem; scan drops portions of staff ink.",
+      "witness": {
+        "angleDegrees": 125.34435387560485,
+        "attachmentRows": 5,
+        "center": [
+          1093.6356180472437,
+          359.0177767167556
+        ],
+        "hollow": false,
+        "outlineSupport": [
+          0.9,
+          0.8333333333333334,
+          0.8181818181818182,
+          0.7272727272727273
+        ],
+        "radii": [
+          6.920865525215257,
+          5.064092294652591
+        ],
+        "surroundingWhite": 0.8970588235294118
+      },
+      "witnessCenterInsideSelectedBody": true,
+      "witnessEnvelope": [
+        1087.8830438806112,
+        352.6576430039893,
+        1099.3881922138762,
+        365.3779104295219
+      ],
+      "witnessWholeEnvelopeInsideSelectedBody": true,
+      "diagnosticGuards": {
+        "143": 225,
+        "152": 316,
+        "261": 42,
+        "262": 70,
+        "317": 7,
+        "cavityProposals": 0,
+        "proposals": 12
+      },
+      "helperRemeasuredLines": [
+        349.7548076923077,
+        359,
+        368.5,
+        378,
+        387.50961538461536
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-F03",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": true,
+      "selectedBodyAccepted": true,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled head on next upper line, down-stem to a shared beam, with slur above.",
+      "witness": {
+        "angleDegrees": 142.68153394337332,
+        "attachmentRows": 5,
+        "center": [
+          1140.912029673101,
+          359.00029629280425
+        ],
+        "hollow": false,
+        "outlineSupport": [
+          1,
+          0.9285714285714286,
+          0.6666666666666666,
+          0.8
+        ],
+        "radii": [
+          6.869713514250851,
+          5.3733531850089005
+        ],
+        "surroundingWhite": 0.971830985915493
+      },
+      "witnessCenterInsideSelectedBody": true,
+      "witnessEnvelope": [
+        1134.5512317335488,
+        353.0332084108543,
+        1147.2728276126531,
+        364.9673841747542
+      ],
+      "witnessWholeEnvelopeInsideSelectedBody": true,
+      "diagnosticGuards": {
+        "143": 254,
+        "152": 282,
+        "261": 118,
+        "262": 204,
+        "280": 2,
+        "317": 4,
+        "cavityProposals": 1,
+        "proposals": 13
+      },
+      "helperRemeasuredLines": [
+        349.5,
+        359,
+        368.5,
+        377.5098039215686,
+        387.4901960784314
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-F04",
+      "genuineOwnStemHead": true,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": true,
+      "helperAccepted": true,
+      "selectedBodyAccepted": true,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Filled lower-space beamed note on an upward stem; staff lines are faint and interrupted.",
+      "witness": {
+        "angleDegrees": 141.33087308078223,
+        "attachmentRows": 7,
+        "center": [
+          979.9109797971319,
+          378.5002964623601
+        ],
+        "hollow": false,
+        "outlineSupport": [
+          0.8,
+          0.625,
+          0.8,
+          0.5714285714285714
+        ],
+        "radii": [
+          6.800419380654566,
+          5.737040789580132
+        ],
+        "surroundingWhite": 1
+      },
+      "witnessCenterInsideSelectedBody": true,
+      "witnessEnvelope": [
+        973.5046680292596,
+        372.3262774870969,
+        986.3172915650041,
+        384.6743154376233
+      ],
+      "witnessWholeEnvelopeInsideSelectedBody": true,
+      "diagnosticGuards": {
+        "143": 223,
+        "152": 268,
+        "261": 40,
+        "262": 114,
+        "317": 4,
+        "cavityProposals": 0,
+        "proposals": 9
+      },
+      "helperRemeasuredLines": [
+        348.76442307692304,
+        358.9807692307692,
+        368.7355769230769,
+        378.2355769230769,
+        387.72596153846155
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-N01",
+      "genuineOwnStemHead": false,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Same genuine source body as T-H01, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "diagnosticGuards": {
+        "143": 285,
+        "152": 250,
+        "197": 1,
+        "227": 1,
+        "cavityProposals": 1,
+        "proposals": 1
+      },
+      "helperRemeasuredLines": [
+        298.7548076923077,
+        308.5,
+        318,
+        327.7548076923077,
+        337.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-N02",
+      "genuineOwnStemHead": false,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Same genuine source body as T-F03, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "diagnosticGuards": {
+        "143": 301,
+        "152": 244,
+        "224": 1,
+        "cavityProposals": 1,
+        "proposals": 1
+      },
+      "helperRemeasuredLines": [
+        295.75471698113205,
+        305.5,
+        315,
+        324.75471698113205,
+        334.75471698113205
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "S-N01",
+      "genuineOwnStemHead": false,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Same genuine source body as S-H01, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        205.00980392156862,
+        214.5,
+        219.42156862745097,
+        232.5,
+        242.2549019607843
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "S-N02",
+      "genuineOwnStemHead": false,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Same genuine source body as S-H04, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        201.2549019607843,
+        210.50980392156862,
+        220.00980392156862,
+        224.9313725490196,
+        238.50980392156862
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "M-N01",
+      "genuineOwnStemHead": false,
+      "headKind": "hollow",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Same genuine source body as M-H03, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "diagnosticGuards": {
+        "68": 1,
+        "143": 319,
+        "152": 254,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "helperRemeasuredLines": [
+        871,
+        880,
+        889.2451923076923,
+        899,
+        908.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-N02",
+      "genuineOwnStemHead": false,
+      "headKind": "filled",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Same genuine source body as M-F01, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "diagnosticGuards": {
+        "143": 289,
+        "152": 240,
+        "197": 2,
+        "224": 1,
+        "227": 2,
+        "241": 1,
+        "262": 115,
+        "317": 14,
+        "320": 1,
+        "cavityProposals": 1,
+        "proposals": 5
+      },
+      "helperRemeasuredLines": [
+        351,
+        361,
+        370,
+        379.5,
+        389
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-N03",
+      "genuineOwnStemHead": false,
+      "headKind": "none",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Piano chord tie crossing the continuing structural barline; not a separate head at the crossing.",
+      "diagnosticGuards": {
+        "143": 515,
+        "152": 306,
+        "186": 1,
+        "197": 25,
+        "227": 26,
+        "cavityProposals": 0,
+        "proposals": 26
+      },
+      "helperRemeasuredLines": [
+        986.5,
+        1000.5,
+        1014.5,
+        1027.512987012987,
+        1042.2532467532467
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "T-N04",
+      "genuineOwnStemHead": false,
+      "headKind": "none",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Right barline with short outer staff-line termination, not a notehead.",
+      "diagnosticGuards": {
+        "68": 5,
+        "143": 278,
+        "152": 308,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "helperRemeasuredLines": [
+        296,
+        306,
+        315,
+        325,
+        335
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "S-N03",
+      "genuineOwnStemHead": false,
+      "headKind": "none",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "A detached tie passes below the terminated Violin II barline. The barline ends at the bottom staff line; proximity to the curve is not direct musical attachment.",
+      "diagnosticGuards": {
+        "93": 1
+      },
+      "helperRemeasuredLines": [
+        293.0098039215686,
+        302.5,
+        307.421568627451,
+        320.7549019607843,
+        330.5
+      ],
+      "earlyStaffSpacingRejected": true
+    },
+    {
+      "id": "S-N04",
+      "genuineOwnStemHead": false,
+      "headKind": "none",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Outer staff-line/barline junction before the next hollow head, no head on tested barline.",
+      "diagnosticGuards": {
+        "143": 245,
+        "152": 248,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "helperRemeasuredLines": [
+        201.5,
+        210.5,
+        219.7450980392157,
+        228.7549019607843,
+        238.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-N03",
+      "genuineOwnStemHead": false,
+      "headKind": "none",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Broken bottom staff-line fragment at the structural barline; nearby half-note has a different stem.",
+      "diagnosticGuards": {
+        "68": 1,
+        "143": 319,
+        "152": 254,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "helperRemeasuredLines": [
+        871,
+        880,
+        889.2451923076923,
+        899,
+        908.5
+      ],
+      "earlyStaffSpacingRejected": false
+    },
+    {
+      "id": "M-N04",
+      "genuineOwnStemHead": false,
+      "headKind": "none",
+      "terminalBodyOnTestedSpine": false,
+      "helperAccepted": false,
+      "selectedBodyAccepted": false,
+      "fullNativeErasurePathTested": false,
+      "sourceFinding": "Faint interrupted upper staff line meeting the barline, with a genuine head on its own stem to the right.",
+      "diagnosticGuards": {
+        "143": 289,
+        "152": 240,
+        "197": 2,
+        "224": 1,
+        "227": 2,
+        "241": 1,
+        "262": 115,
+        "317": 14,
+        "320": 1,
+        "cavityProposals": 1,
+        "proposals": 5
+      },
+      "helperRemeasuredLines": [
+        351,
+        361,
+        370,
+        379.5,
+        389
+      ],
+      "earlyStaffSpacingRejected": false
+    }
+  ]
+}

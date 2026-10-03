@@ -1,0 +1,453 @@
+{
+  "sourceMasksAndObligationsUnchanged": true,
+  "cases": 180,
+  "caseSet": "original source controls",
+  "baselineResultsSHA256": "7521108415d7cddc8773a2a0ed1aaa690d193eae4a000da55eb03e9a73f4bf46",
+  "candidateResultsSHA256": "723d41951e4ffc34471e20180a91862b7c304492810f4c7b359796ede14ca534",
+  "fixtureSHA256": "005bdfb1c0e0e26077e756c25a0075c4d0228218660866cf9ca9609be38efeae",
+  "baselineEnvelopeFailures": 58,
+  "candidateEnvelopeFailures": 55,
+  "newFailingCases": [],
+  "repairedCases": [
+    "filledOuter-rotated-r0.5",
+    "mixedOuter-rotated-r0.5",
+    "hollowFirstSpace-rotated-r1.5"
+  ],
+  "worsenedOwnerEnvelopes": [],
+  "changedCases": [
+    {
+      "name": "filledOuter-rotated-r0.5",
+      "sourceClass": "musical-long-stem",
+      "changedTargets": [
+        {
+          "owner": 0,
+          "before": {
+            "crop": [
+              0,
+              119,
+              720,
+              245.5714770170292
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              407
+            ],
+            "owner": 0,
+            "preserved": false,
+            "sourcePixelCount": 1361,
+            "sourcePixelsOutsideCrop": 645
+          },
+          "after": {
+            "crop": [
+              0,
+              119,
+              720,
+              415.00000000000006
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              407
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourcePixelCount": 1361,
+            "sourcePixelsOutsideCrop": 0
+          }
+        },
+        {
+          "owner": 1,
+          "before": {
+            "crop": [
+              0,
+              291,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              169,
+              519,
+              407
+            ],
+            "owner": 1,
+            "preserved": false,
+            "sourcePixelCount": 1361,
+            "sourcePixelsOutsideCrop": 521
+          },
+          "after": {
+            "crop": [
+              0,
+              147,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              169,
+              519,
+              407
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourcePixelCount": 1361,
+            "sourcePixelsOutsideCrop": 0
+          }
+        }
+      ],
+      "beforeWholeNeighbors": 0,
+      "afterWholeNeighbors": 2
+    },
+    {
+      "name": "mixedOuter-rotated-r0.5",
+      "sourceClass": "musical-long-stem",
+      "changedTargets": [
+        {
+          "owner": 0,
+          "before": {
+            "crop": [
+              0,
+              119,
+              720,
+              245.5714770170292
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              407
+            ],
+            "owner": 0,
+            "preserved": false,
+            "sourcePixelCount": 1284,
+            "sourcePixelsOutsideCrop": 645
+          },
+          "after": {
+            "crop": [
+              0,
+              119,
+              720,
+              415.00000000000006
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              407
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourcePixelCount": 1284,
+            "sourcePixelsOutsideCrop": 0
+          }
+        },
+        {
+          "owner": 1,
+          "before": {
+            "crop": [
+              0,
+              291,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              169,
+              519,
+              407
+            ],
+            "owner": 1,
+            "preserved": false,
+            "sourcePixelCount": 1284,
+            "sourcePixelsOutsideCrop": 444
+          },
+          "after": {
+            "crop": [
+              0,
+              147,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              169,
+              519,
+              407
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourcePixelCount": 1284,
+            "sourcePixelsOutsideCrop": 0
+          }
+        }
+      ],
+      "beforeWholeNeighbors": 0,
+      "afterWholeNeighbors": 2
+    },
+    {
+      "name": "hollowFirstSpace-rotated-r1.5",
+      "sourceClass": "musical-long-stem",
+      "changedTargets": [
+        {
+          "owner": 0,
+          "before": {
+            "crop": [
+              0,
+              119,
+              720,
+              246.33333333333334
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              400
+            ],
+            "owner": 0,
+            "preserved": false,
+            "sourcePixelCount": 1162,
+            "sourcePixelsOutsideCrop": 541
+          },
+          "after": {
+            "crop": [
+              0,
+              119,
+              720,
+              406.33333333333337
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              400
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourcePixelCount": 1162,
+            "sourcePixelsOutsideCrop": 0
+          }
+        },
+        {
+          "owner": 1,
+          "before": {
+            "crop": [
+              0,
+              291,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              176,
+              519,
+              400
+            ],
+            "owner": 1,
+            "preserved": false,
+            "sourcePixelCount": 1162,
+            "sourcePixelsOutsideCrop": 423
+          },
+          "after": {
+            "crop": [
+              0,
+              156.33333333333331,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              176,
+              519,
+              400
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourcePixelCount": 1162,
+            "sourcePixelsOutsideCrop": 0
+          }
+        }
+      ],
+      "beforeWholeNeighbors": 0,
+      "afterWholeNeighbors": 2
+    },
+    {
+      "name": "filledStemInterrupted-rotated-r0.5",
+      "sourceClass": "musical-long-stem",
+      "changedTargets": [
+        {
+          "owner": 0,
+          "before": {
+            "crop": [
+              0,
+              119,
+              720,
+              245.5714770170292
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              407
+            ],
+            "owner": 0,
+            "preserved": false,
+            "sourcePixelCount": 1352,
+            "sourcePixelsOutsideCrop": 645
+          },
+          "after": {
+            "crop": [
+              0,
+              119,
+              720,
+              415.00000000000006
+            ],
+            "envelope": [
+              133,
+              140,
+              519,
+              407
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourcePixelCount": 1352,
+            "sourcePixelsOutsideCrop": 0
+          }
+        },
+        {
+          "owner": 1,
+          "before": {
+            "crop": [
+              0,
+              291,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              169,
+              519,
+              407
+            ],
+            "owner": 1,
+            "preserved": false,
+            "sourcePixelCount": 1352,
+            "sourcePixelsOutsideCrop": 512
+          },
+          "after": {
+            "crop": [
+              0,
+              187,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              169,
+              519,
+              407
+            ],
+            "owner": 1,
+            "preserved": false,
+            "sourcePixelCount": 1352,
+            "sourcePixelsOutsideCrop": 209
+          }
+        }
+      ],
+      "beforeWholeNeighbors": 0,
+      "afterWholeNeighbors": 1
+    },
+    {
+      "name": "filledAtJunction-rotated-r0.5",
+      "sourceClass": "mixed-local-note-and-barline",
+      "changedTargets": [
+        {
+          "owner": 0,
+          "before": {
+            "crop": [
+              0,
+              119,
+              720,
+              245.5714770170292
+            ],
+            "envelope": [
+              133,
+              140,
+              153,
+              196
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourcePixelCount": 333,
+            "sourcePixelsOutsideCrop": 0
+          },
+          "after": {
+            "crop": [
+              0,
+              119,
+              720,
+              415.00000000000006
+            ],
+            "envelope": [
+              133,
+              140,
+              153,
+              196
+            ],
+            "owner": 0,
+            "preserved": true,
+            "sourcePixelCount": 333,
+            "sourcePixelsOutsideCrop": 0
+          }
+        },
+        {
+          "owner": 1,
+          "before": {
+            "crop": [
+              0,
+              291,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              312,
+              503,
+              407
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourcePixelCount": 615,
+            "sourcePixelsOutsideCrop": 0
+          },
+          "after": {
+            "crop": [
+              0,
+              157,
+              720,
+              415.5714770170292
+            ],
+            "envelope": [
+              193,
+              312,
+              503,
+              407
+            ],
+            "owner": 1,
+            "preserved": true,
+            "sourcePixelCount": 615,
+            "sourcePixelsOutsideCrop": 0
+          }
+        }
+      ],
+      "beforeWholeNeighbors": 0,
+      "afterWholeNeighbors": 2
+    }
+  ],
+  "baselineStructuralNeighborCases": 0,
+  "candidateStructuralNeighborCases": 0,
+  "nonRegressionPass": true,
+  "noFullPreservationClaim": true
+}

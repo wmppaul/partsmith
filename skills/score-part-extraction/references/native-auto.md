@@ -282,6 +282,12 @@ system's bar count, then **Assign System**. Piano uses two staves but counts eac
 measure once. Instrument choices persist for the next system; counts do not.
 Use **Load** to revisit an assignment.
 
+Entered starting bar numbers are retained on printed music as well as inserted
+rests, including after crop review, Add Parts, saving and PDF export. Exported
+music numbers use the page margin; narrow margins or very short crops reserve a
+separate row so a number cannot cover notation. Leaving the starting bar blank
+does not infer a number.
+
 An unassigned staff is not evidence of silence. Only explicitly unchecked,
 confirmed silent instruments receive generated rests. Their counts are required
 before adding the reviewed parts, because dropping an absent system would

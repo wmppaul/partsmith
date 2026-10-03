@@ -1,0 +1,32 @@
+{
+  "singleRunsNotStatisticalBenchmark": true,
+  "timedBaselineBinarySourcesMatchFrozenBaseline": {
+    "Detection/StaffBandDetector.swift": true,
+    "Detection/ScoreExtractionPlanner.swift": true,
+    "Detection/ScoreSharedEnding.swift": true,
+    "Detection/ScoreSharedEndingDetector.swift": true,
+    "Detection/ScoreLocalEndingPreservation.swift": true,
+    "Detection/NativeScorePageAnalyzer.swift": true
+  },
+  "seconds": {
+    "fixed180": {
+      "baselineWall": 1.14,
+      "candidateWall": 1.45,
+      "baselineUser": 1.09,
+      "candidateUser": 1.17
+    },
+    "tied36": {
+      "baselineWall": 0.26,
+      "candidateWall": 0.66,
+      "baselineUser": 0.24,
+      "candidateUser": 0.25
+    },
+    "native12": {
+      "baselineWall": 4.17,
+      "candidateWall": 4.2,
+      "baselineUser": 3.82,
+      "candidateUser": 3.87
+    }
+  },
+  "performanceScope": "Small source-controlled runs with launch, raster rendering, PNG emission and concurrent compiler activity. No full-corpus performance claim."
+}

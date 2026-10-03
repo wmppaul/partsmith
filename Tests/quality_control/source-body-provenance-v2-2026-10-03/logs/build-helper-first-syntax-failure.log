@@ -1,0 +1,79 @@
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:179:18: error: consecutive statements on a line must be separated by ';'
+177 |             let determinant=a*c-b*b
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+    |                  `- error: consecutive statements on a line must be separated by ';'
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:179:18: error: expected expression after unary operator
+177 |             let determinant=a*c-b*b
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+    |                  `- error: expected expression after unary operator
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:179:45: error: consecutive statements on a line must be separated by ';'
+177 |             let determinant=a*c-b*b
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+    |                                             `- error: consecutive statements on a line must be separated by ';'
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:179:45: error: expected expression
+177 |             let determinant=a*c-b*b
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+    |                                             `- error: expected expression
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:179:17: error: type annotation missing in pattern
+177 |             let determinant=a*c-b*b
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+    |                 `- error: type annotation missing in pattern
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:179:18: error: cannot find operator '=-' in scope
+177 |             let determinant=a*c-b*b
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+    |                  `- error: cannot find operator '=-' in scope
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:180:33: error: cannot find 'y' in scope
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+    |                                 `- error: cannot find 'y' in scope
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+182 |             let low=(a+c-disc)/2,high=(a+c+disc)/2
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:180:37: error: cannot find 'y' in scope
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+    |                                     `- error: cannot find 'y' in scope
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+182 |             let low=(a+c-disc)/2,high=(a+c+disc)/2
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:180:39: error: cannot find 'y' in scope
+178 |             guard determinant > 1e-8,a > 0,c > 0 else { return nil }
+179 |             let x=-(c*d-b*e)/(2*determinant),y=-(-b*d+a*e)/(2*determinant)
+180 |             let k=1+a*x*x+2*b*x*y+c*y*y
+    |                                       `- error: cannot find 'y' in scope
+181 |             let disc=sqrt((a-c)*(a-c)+4*b*b)
+182 |             let low=(a+c-disc)/2,high=(a+c+disc)/2
+
+.build/source-body-provenance-v2-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:185:50: error: cannot find 'y' in scope
+183 |             guard low > 0,high > 0,k > 0 else { return nil }
+184 |             let rx=sqrt(k/low)*staffSpace,ry=sqrt(k/high)*staffSpace
+185 |             let cx=seed.x+x*staffSpace,cy=seed.y+y*staffSpace
+    |                                                  `- error: cannot find 'y' in scope
+186 |             let angle=0.5*atan2(2*b,a-c)+Double.pi/2
+187 |             guard [cx,cy,rx,ry,angle].allSatisfy({$0.isFinite}),

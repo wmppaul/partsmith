@@ -1,0 +1,293 @@
+diff --git a/Partsmith/Core/Detection/ScoreExtractionPlanner.swift b/Partsmith/Core/Detection/ScoreExtractionPlanner.swift
+index 15827c7..dd809f7 100644
+--- a/Partsmith/Core/Detection/ScoreExtractionPlanner.swift
++++ b/Partsmith/Core/Detection/ScoreExtractionPlanner.swift
+@@ -233,6 +233,10 @@ struct ScorePlannedBand: Codable, Equatable, Identifiable {
+     var warnings: [String]
+     /// An explicitly confirmed silent part, with no printed staff to crop.
+     var generatedRest: ScoreGeneratedRest? = nil
++    /// Reviewed source-system measures apply to printed music as well as silence.
++    /// Nil preserves the unnumbered behavior of automatic or legacy plans.
++    var startBarNumber: Int? = nil
++    var barCount: Int? = nil
+ }
+ 
+ struct ScoreGeneratedRest: Codable, Equatable {
+@@ -380,7 +384,8 @@ enum ScoreSystemAssignment {
+                         }())
+                 }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
+                     ScorePartOmission(partID: $0.partID, reason: $0.reason)
+-                }, startBarNumber: generated?.startBarNumber, barCount: generated?.barCount)
++                }, startBarNumber: assignments.compactMap(\.startBarNumber).first ?? generated?.startBarNumber,
++                barCount: assignments.compactMap(\.barCount).first ?? generated?.barCount)
+         }
+         return correction
+     }
+@@ -746,6 +751,8 @@ enum ScoreExtractionPlanner {
+                     breakBefore: !(system.movementLabel ?? "").isEmpty,
+                     provenance: "reviewed-silent-omission", warnings: [])
+                 rest.generatedRest = ScoreGeneratedRest(barCount: system.barCount!, startBarNumber: system.startBarNumber)
++                rest.startBarNumber = system.startBarNumber
++                rest.barCount = system.barCount
+                 output.assignments.append(rest)
+             }
+             for assigned in system.bands {
+@@ -792,6 +799,8 @@ enum ScoreExtractionPlanner {
+                 output.assignments.append(band(partID: assigned.partID, page: page, system: system.systemIndex,
+                     staves: staves, rect: rect, label: label, kind: kind, breakBefore: assigned.pageBreakBefore ?? false,
+                     provenance: "reviewed-override", warnings: (ids.isEmpty ? ["Crop supplied by source review; not supported by detected staff IDs."] : []) + crop.warnings))
++                output.assignments[output.assignments.count - 1].startBarNumber = system.startBarNumber
++                output.assignments[output.assignments.count - 1].barCount = system.barCount
+                 output.assignments[output.assignments.count - 1].sourceMarkings = markingRects.enumerated().map { index, r in
+                     ScoreSourceMarking(topFraction: r[1] / page.pageHeight, bottomFraction: r[3] / page.pageHeight,
+                         leftFraction: r[0] / page.pageWidth, rightFraction: 1 - r[2] / page.pageWidth,
+diff --git a/Partsmith/Core/DocumentModel/PartsmithDocument.swift b/Partsmith/Core/DocumentModel/PartsmithDocument.swift
+index 45690d7..20f4ba2 100644
+--- a/Partsmith/Core/DocumentModel/PartsmithDocument.swift
++++ b/Partsmith/Core/DocumentModel/PartsmithDocument.swift
+@@ -903,11 +903,13 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
+             if let generated {
+                 guard generated.isValid, planned.kind == "generated-rest", planned.candidateIDs.isEmpty else { return nil }
+             } else if planned.kind == "generated-rest" { return nil }
++            let startBarNumber = planned.startBarNumber ?? generated?.startBarNumber
++            guard startBarNumber == nil || startBarNumber! > 0 else { return nil }
+             let band = BandModel(id: UUID(), pageIndex: planned.pageIndex, partID: partID,
+                 topFraction: planned.topFraction, bottomFraction: planned.bottomFraction,
+                 leftFraction: planned.leftFraction, rightFraction: planned.rightFraction,
+-                excluded: false, createdAt: now, barNumberMode: generated?.startBarNumber == nil ? .hidden : .manual,
+-                barNumberValue: generated?.startBarNumber,
++                excluded: false, createdAt: now, barNumberMode: startBarNumber == nil ? .hidden : .manual,
++                barNumberValue: startBarNumber,
+                 editorialLabel: planned.editorialLabel, pageBreakBefore: planned.pageBreakBefore,
+                 sourceMarkings: planned.sourceMarkings.map { BandSourceMarking(topFraction: $0.topFraction,
+                     bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction,
+diff --git a/Partsmith/Core/Export/PartPDFExporter.swift b/Partsmith/Core/Export/PartPDFExporter.swift
+index 9af9c66..eaedbe7 100644
+--- a/Partsmith/Core/Export/PartPDFExporter.swift
++++ b/Partsmith/Core/Export/PartPDFExporter.swift
+@@ -371,6 +371,17 @@ enum PartPDFExporter {
+             return
+         }
+ 
++        if let rect = placement.barNumberRect {
++            NSGraphicsContext.saveGraphicsState()
++            NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
++            ("\(barNumber)" as NSString).draw(in: rect, withAttributes: [
++                .font: NSFont.systemFont(ofSize: 10, weight: .semibold),
++                .foregroundColor: NSColor.black
++            ])
++            NSGraphicsContext.restoreGraphicsState()
++            return
++        }
++
+         if let geometry = placement.restSourcePlacement {
+             let scale = placement.destinationRect.width / placement.sourceRect.width
+             let sourceTop = placement.destinationRect.minY + placement.sourceRect.height * scale
+diff --git a/Partsmith/Core/Layout/PartLayoutEngine.swift b/Partsmith/Core/Layout/PartLayoutEngine.swift
+index 01f1f5c..8bbee1d 100644
+--- a/Partsmith/Core/Layout/PartLayoutEngine.swift
++++ b/Partsmith/Core/Layout/PartLayoutEngine.swift
+@@ -47,6 +47,8 @@ struct BandPlacement {
+     var restReplacement: BandRestReplacement? = nil
+     var restSourcePlacement: RestSourcePlacement? = nil
+     var generatedRest: BandGeneratedRest? = nil
++    /// Ordinary music numbers sit outside the source crop, never over its ink.
++    var barNumberRect: CGRect? = nil
+ 
+     var restBarCount: Int? { generatedRest?.barCount ?? restReplacement?.barCount }
+ }
+@@ -150,6 +152,7 @@ enum PartLayoutEngine {
+         var sourceRect: CGRect
+         var label: String
+         var labelHeight: Double
++        var barNumberHeight: Double
+         var scale: Double
+         var originalSourceWidth: Double
+         var markingRects: [CGRect] = []
+@@ -185,7 +188,11 @@ enum PartLayoutEngine {
+         var aboveMarkingGap: Double { aboveMarkingHeight > 0 ? 4 : 0 }
+         var belowMarkingGap: Double { belowMarkingHeight > 0 ? 4 : 0 }
+         var markingGap: Double { aboveMarkingGap + belowMarkingGap }
+-        var height: Double { labelHeight + (renderedSourceHeight + markingSourceHeight) * scale + markingGap }
++        var height: Double { labelHeight + barNumberHeight + (renderedSourceHeight + markingSourceHeight) * scale + markingGap }
++        var barNumberWidth: Double { Double(String(band.displayedBarNumber ?? 0).count) * 7 + 2 }
++        var hasOutsideBarNumber: Bool {
++            band.displayedBarNumber != nil && band.generatedRest == nil && restReplacement == nil
++        }
+     }
+ 
+     /// Minimize pages first, then uneven fill and solitary systems. A requested
+@@ -330,8 +337,13 @@ enum PartLayoutEngine {
+             }
+             let label = band.editorialLabel.trimmingCharacters(in: .whitespacesAndNewlines)
+             let labelHeight = label.isEmpty ? 0 : BandEditorialLabelStyle.height(for: label, width: contentRect.width)
++            let hasMusicNumber = band.displayedBarNumber != nil && band.generatedRest == nil && band.restReplacement == nil
++            let numberWidth = Double(String(band.displayedBarNumber ?? 0).count) * 7 + 2
++            // Prefer the page margin. With narrow margins, reserve a separate
++            // row so numbers cannot cover clefs, notes or copied directions.
++            let numberHeight = hasMusicNumber && contentRect.minX < numberWidth + 4 ? 16.0 : 0
+             let capacity = pageMusicTop - contentRect.minY - (prepared.isEmpty ? headerBlockHeight : 0)
+-            guard labelHeight.isFinite, labelHeight < capacity else {
++            guard labelHeight.isFinite, labelHeight + numberHeight < capacity else {
+                 throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
+             }
+             let markingRects = band.sourceMarkings.map {
+@@ -351,7 +363,7 @@ enum PartLayoutEngine {
+             }
+             let markingGaps = (belowMarkingIndices.isEmpty ? 0 : 4)
+                 + (belowMarkingIndices.count < markingRects.count ? 4 : 0)
+-            guard labelHeight + Double(markingGaps) < capacity else {
++            guard labelHeight + numberHeight + Double(markingGaps) < capacity else {
+                 throw PartLayoutError.editorialLabelDoesNotFit(band.pageIndex)
+             }
+             var renderedSourceRect = sourceRect
+@@ -378,7 +390,7 @@ enum PartLayoutEngine {
+                     width: min(sourceRect.maxX, right) - max(sourceRect.minX, left), height: sourceRect.height)
+             }
+             prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: renderedSourceRect,
+-                                         label: label, labelHeight: labelHeight, scale: 1,
++                                         label: label, labelHeight: labelHeight, barNumberHeight: numberHeight, scale: 1,
+                                          originalSourceWidth: sourceRect.width, markingRects: markingRects,
+                                          belowMarkingIndices: belowMarkingIndices,
+                                          sourceBandIDs: [band.id], lastSourceOrder: sourceOrder,
+@@ -424,6 +436,16 @@ enum PartLayoutEngine {
+                 (item.hasFlexibleRestWidth ? partScale : width / item.sourceRect.width)
+             let appliedScale = min(partScale, safeScale)
+             prepared[index].scale = contentRect.width / width * appliedScale
++            if item.hasOutsideBarNumber,
++               item.renderedSourceHeight * prepared[index].scale < 12 {
++                // Very short user crops still need room for a readable number;
++                // otherwise successive margin labels could overlap each other.
++                prepared[index].barNumberHeight = 16
++                let capacity = pageMusicTop - contentRect.minY - (index == 0 ? headerBlockHeight : 0)
++                guard item.labelHeight + 16 + item.markingGap < capacity else {
++                    throw PartLayoutError.editorialLabelDoesNotFit(item.band.pageIndex)
++                }
++            }
+             appliedScales.append(appliedScale)
+             safeScales.append(safeScale)
+         }
+@@ -464,7 +486,7 @@ enum PartLayoutEngine {
+                 let labelRect = item.label.isEmpty ? nil : CGRect(
+                     x: contentRect.minX, y: cursorTop - item.labelHeight,
+                     width: contentRect.width, height: item.labelHeight)
+-                let markingsTop = cursorTop - item.labelHeight
++                let markingsTop = cursorTop - item.labelHeight - item.barNumberHeight
+                 // Only an individually oversized crop is fitted to one page. Page balancing
+                 // itself never reduces music scale or removes any source notation.
+                 let renderScale = min(item.scale, (markingsTop - contentRect.minY - item.markingGap) /
+@@ -496,7 +518,11 @@ enum PartLayoutEngine {
+                             isBelow: item.belowMarkingIndices.contains(index))
+                     }, sourceBandIDs: item.sourceBandIDs, restReplacement: item.restReplacement,
+                     restSourcePlacement: restSourcePlacement(for: item, destination: destinationRect, scale: renderScale),
+-                    generatedRest: band.generatedRest))
++                    generatedRest: band.generatedRest,
++                    barNumberRect: item.hasOutsideBarNumber ? CGRect(
++                        x: item.barNumberHeight > 0 ? contentRect.minX : contentRect.minX - item.barNumberWidth - 4,
++                        y: item.barNumberHeight > 0 ? cursorTop - item.labelHeight - 12 : max(contentRect.minY, destinationRect.maxY - 12),
++                        width: item.barNumberWidth, height: 12) : nil))
+                 cursorTop = destinationRect.minY - item.belowMarkingGap - item.belowMarkingHeight * renderScale - actualGap
+             }
+             pages.append(PartRenderPage(index: pageIndex,
+diff --git a/tools/test_generated_rests.swift b/tools/test_generated_rests.swift
+index d918947..895b95d 100644
+--- a/tools/test_generated_rests.swift
++++ b/tools/test_generated_rests.swift
+@@ -69,6 +69,18 @@ import PDFKit
+         var review = ScoreDetectionReview(profile: profile, analyses: [page], plan: plan,
+             overrides: [correction!], selectedPageIndices: [0], sourcePDFData: sourceData, rectifications: [])
+         check(plan.canApply && plan.bands.count == 6, "Every part has an item in each of three systems")
++        check(plan.bands.allSatisfy { $0.startBarNumber == [21, 22, 29][$0.systemIndex]
++            && $0.barCount == [1, 7, 4][$0.systemIndex] },
++              "Entered system measures survive planning on music and inserted rests")
++        let materialized = ScoreSystemAssignment.pageOverride(page: page, pagePlan: plan.pages.first, existingOverride: nil)
++        check(materialized.systems.map(\.startBarNumber) == [21, 22, 29]
++              && materialized.systems.map(\.barCount) == [1, 7, 4],
++              "Crop review materialization keeps measure spans even when every instrument is printed")
++        var unnumbered = correction!
++        for i in unnumbered.systems.indices { unnumbered.systems[i].startBarNumber = nil }
++        let unnumberedPlan = ScoreExtractionPlanner.plan(pages: [page], profile: profile, overrides: [unnumbered])
++        check(unnumberedPlan.canApply && unnumberedPlan.bands.allSatisfy { $0.startBarNumber == nil },
++              "Optional blank starting measures never invent bar numbers")
+         let generatedPlan = plan.bands.filter { $0.generatedRest != nil }
+         check(generatedPlan.count == 2 && generatedPlan.map { $0.generatedRest!.barCount } == [1, 7],
+               "A silent piano grand staff counts one measure once, alongside a separate seven-bar flute rest")
+@@ -83,6 +95,57 @@ import PDFKit
+         let undo = UndoManager(); undo.groupsByEvent = false; document.undoManager = undo
+         edit(undo) { check(document.addScoreParts(from: review) == 6, "Apply accepts all real crops and generated silences atomically") }
+         let applied = document.project
++        for (planned, stored) in zip(plan.bands, applied.bands) {
++            check(stored.barNumberMode == .manual && stored.barNumberValue == planned.startBarNumber,
++                  "Adding parts preserves the entered start number on every music and silence item")
++        }
++        let withoutNumbers = PartsmithDocument(sourcePDFData: sourceData)
++        var unnumberedReview = review
++        unnumberedReview.overrides = [unnumbered]; unnumberedReview.replan()
++        check(withoutNumbers.addScoreParts(from: unnumberedReview) == 6
++              && withoutNumbers.project.bands.allSatisfy { $0.barNumberMode == .hidden && $0.barNumberValue == nil },
++              "A blank starting measure preserves existing hidden-number output")
++        for margin in [48.0, 12.0, 0.0] {
++            var numbered = applied
++            numbered.projectSettings.margins.leading = margin
++            numbered.projectSettings.margins.trailing = margin
++            for part in numbered.parts {
++                let layout = try PartLayoutEngine.makePlan(project: numbered,
++                    pageBoundsProvider: { _ in CGRect(x: 0, y: 0, width: 600, height: 800) }, partID: part.id)
++                for outputPage in layout.pages {
++                    for placement in outputPage.placements where placement.generatedRest == nil {
++                        guard let number = placement.barNumberRect else { fatalError("Missing safe measure label position") }
++                        check(CGRect(origin: .zero, size: layout.pageSize).contains(number), "Measure labels stay on the paper at every margin")
++                        check(outputPage.placements.allSatisfy { !$0.destinationRect.intersects(number)
++                            && $0.sourceMarkings.allSatisfy { !$0.destinationRect.intersects(number) } },
++                              "Measure labels cannot paint over any retained music or copied direction")
++                        if let title = layout.titleBlockRect, outputPage.index == 0 {
++                            check(!title.intersects(number), "Narrow-margin number rows remain below the title")
++                        }
++                    }
++                }
++            }
++        }
++        var shortCrops = applied
++        let music = applied.bands.first { $0.generatedRest == nil }!
++        shortCrops.bands = (1...20).map { index in
++            var band = music
++            band.id = UUID(); band.barNumberValue = index
++            band.bottomFraction = band.topFraction + 0.001
++            return band
++        }
++        shortCrops.parts = applied.parts.filter { $0.id == music.partID }
++        shortCrops.parts[0].layoutSettings.interSystemGap = 4
++        let shortLayout = try PartLayoutEngine.makePlan(project: shortCrops,
++            pageBoundsProvider: { _ in CGRect(x: 0, y: 0, width: 600, height: 800) }, partID: music.partID)
++        for page in shortLayout.pages {
++            let numbers = page.placements.compactMap(\.barNumberRect)
++            check(numbers.count == page.placements.count, "Short crops retain their numbers")
++            for (i, rect) in numbers.enumerated() {
++                check(!numbers.dropFirst(i + 1).contains { $0.intersects(rect) },
++                      "Short crop numbers do not overlap subsequent numbers")
++            }
++        }
+         let generated = applied.bands.filter { $0.generatedRest != nil }
+         check(generated.count == 2 && generated.allSatisfy { $0.restReplacement == nil && $0.exclusions.isEmpty },
+               "Generated silence persists separately from reversible source replacements")
+@@ -221,6 +284,10 @@ import PDFKit
+         review.overrides = [correction!]; review.replan()
+         check(review.plan.canApply && document.addScoreParts(from: review) == 27,
+               "Real Mozart variable systems produce every part across all three systems")
++        check(document.project.bands.allSatisfy { $0.barNumberMode == .manual }
++              && document.project.parts.allSatisfy { part in
++                  document.project.bands.filter { $0.partID == part.id }.map(\.barNumberValue) == [144, 150, 153]
++              }, "All nine real Mozart parts keep reviewed starting measures, including all-piano music")
+         let rests = document.project.bands.filter { $0.generatedRest != nil }
+         check(rests.count == 12 && rests.filter { $0.generatedRest?.barCount == 6 }.count == 4
+               && rests.filter { $0.generatedRest?.barCount == 3 }.count == 8,
+@@ -240,6 +307,9 @@ import PDFKit
+             check(layout.pages.flatMap(\.placements).compactMap(\.generatedRest).map(\.sourceSystemIndex)
+                   == (part.name == "Piano" ? [] : names.prefix(4).contains(part.name) ? [0, 1] : [1]),
+                   "\(part.name) generated silence remains at its reviewed source system")
++            let pdf = PDFDocument(url: out.appendingPathComponent(part.name.replacingOccurrences(of: "/", with: "-") + ".pdf"))
++            check(["144", "150", "153"].allSatisfy { (pdf?.string ?? "").contains($0) },
++                  "\(part.name) PDF contains every reviewed system start")
+         }
+         struct Envelope: Encodable { var project: ProjectData }
+         let package = out.appendingPathComponent("Mozart K488 source page17 excerpt.partsmithproject")

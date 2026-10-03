@@ -1,5 +1,13 @@
 # Complete input corpus quality control
 
+## October 3 complete changing-layout Mozart and reviewed bar numbers
+
+The [complete K.488 workflow](k488-complete-workflow-2026-10-03/README.md) initializes all 78 systems across the 36-page source, producing all nine printed parts with 99 inserted rest passages. [Independent source review](k488-independent-review-2026-10-03/README.md) agrees with every identity and bar count; each part covers measures 1–314. The complete PDFs remain drafts with neighboring fragments, an unfinished cue inside four inserted rests and an overlong opening rest layout.
+
+The app now preserves entered starting bar numbers on printed music, places them outside source notation, and reserves space at narrow margins or for short crops. The [independent export comparison](k488-number-review-2026-10-03/README.md) checks all 702 placements and 53 pages before the separate shared-direction draft; the source-notation pixels remain unchanged. Generated-rest, document, layout and scale checks pass. The [build record](macos-build-2026-10-03-reviewed-measures.json) binds the current universal preview.
+
+Two crop experiments remain outside production. The [source-body V2 study](source-body-provenance-v2-2026-10-03/README.md) changes no real crop in its 12-page replay; [36 fresh source cases](source-body-real-holdouts-v2-2026-10-03/README.md) recognize only four filled heads and no hollow heads. The [Mozart auxiliary audit](mozart-auxiliary-review-2026-10-03/README.md) confirms the small Piano alternative is retained but its caption is clipped; [completing intersected edge ink](mozart-auxiliary-edge-completion-2026-10-03/README.md) is rejected because it also adds neighboring music, footers and scratches.
+
 ## October 3 complete Brahms manual crop alternative
 
 The [separately reviewed crop set](brahms-reviewed-cleanup-2026-10-03/README.md) tightens seven Brahms93521 strips after independent original/corrected source review. The complete four-part export retains 151 systems per part, all 42 copied directions and six explicit breaks on 67 pages. Exactly seven source rectangles change; 42 output pages remain pixel-identical, and all 25 changed pages were visually reviewed. Seven complete neighboring-staff inclusions are removed, but conspicuous neighboring fragments remain elsewhere. This is explicitly a manual alternative, not new Auto output or a whole-score musical certification. The original ten guards remain unchanged, including the existing page-35 failure.

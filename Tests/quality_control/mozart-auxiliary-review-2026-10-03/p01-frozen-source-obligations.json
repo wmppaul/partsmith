@@ -1,0 +1,60 @@
+{
+  "status": "Frozen from original full-page and enlarged source context before inspecting output crop bounds.",
+  "source": "sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+  "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+  "page": 1,
+  "system": 3,
+  "owner": "piano",
+  "classification": "Short reduced-size editorial alternative for Piano lower staff, printed below the main grand staff and aligned by dotted barline extensions. Not a separate instrument.",
+  "sourceLabels": [
+    "(Autograph:) (MS:)",
+    "(\u00c4lteste Ausgabe:) (earliest edition)"
+  ],
+  "obligations": [
+    {
+      "id": "p1-piano-small-staff-and-ledger-notes",
+      "rect": [
+        354,
+        715.5,
+        454,
+        733.5
+      ],
+      "description": "Complete reduced-size staff with alternative lower-staff notes, ledger strokes, rests and barline positions."
+    },
+    {
+      "id": "p1-piano-earliest-edition-label",
+      "rect": [
+        278,
+        716,
+        352,
+        738
+      ],
+      "description": "Both printed original-language and English lines identifying the alternative."
+    },
+    {
+      "id": "p1-piano-dotted-association",
+      "rect": [
+        354,
+        684,
+        454,
+        733.5
+      ],
+      "description": "Parent lower-staff passage and dotted vertical connections to the aligned alternative."
+    },
+    {
+      "id": "p1-piano-autograph-label",
+      "rect": [
+        308,
+        662,
+        356,
+        684
+      ],
+      "description": "Both printed lines distinguishing the primary manuscript reading."
+    }
+  ],
+  "sourceContext": {
+    "path": "Tests/quality_control/mozart-auxiliary-review-2026-10-03/original-p01-piano-edition-context.png",
+    "sha256": "a4a151e10d061df66c73b16a1abce9dcb6d93e91308a4ee191e09f0ff041b63d"
+  },
+  "limitations": "Conservative source-only rectangles, not per-pixel ownership masks or inferred pitches/bar counts. Alternative reading should remain accessible with Piano but is not a new simultaneously played instrument."
+}

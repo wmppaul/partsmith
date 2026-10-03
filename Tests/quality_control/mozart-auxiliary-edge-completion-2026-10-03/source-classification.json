@@ -1,0 +1,374 @@
+{
+  "verdict": "REJECT: one motivating annotation repaired, but detached ownership and output cleanliness regress. No production edits or publication.",
+  "method": "All16 complete source contexts were inspected before all16 candidate pairs; corrected Brahms source is the previously delivered source with the same nine saved rectifications.",
+  "rows": [
+    {
+      "score": "mozart",
+      "id": "p1-s2-cello",
+      "sourcePage": 1,
+      "baseline": [
+        0.0,
+        396.3314837153197,
+        543.6,
+        429.0996381182147
+      ],
+      "candidate": [
+        0.0,
+        396.3314837153197,
+        543.6,
+        432.12014475271417
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Completes more of following Piano upper-staff slur/ornament fragments below Cello; target Cello unchanged.",
+      "sourceContext": "mozart-p1-s2-cello-context.png",
+      "comparison": "mozart-p1-s2-cello-pair.png"
+    },
+    {
+      "score": "mozart",
+      "id": "p1-s3-cello",
+      "sourcePage": 1,
+      "baseline": [
+        0.0,
+        573.0311218335344,
+        543.6,
+        624.2243667068758
+      ],
+      "candidate": [
+        0.0,
+        573.0311218335344,
+        543.6,
+        626.6407720144753
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Adds following Piano upper-staff articulation/slur fragments below Cello; target unchanged.",
+      "sourceContext": "mozart-p1-s3-cello-context.png",
+      "comparison": "mozart-p1-s3-cello-pair.png"
+    },
+    {
+      "score": "mozart",
+      "id": "p1-s3-piano",
+      "sourcePage": 1,
+      "baseline": [
+        0.0,
+        616.6748997212229,
+        543.6,
+        733.7185798677548
+      ],
+      "candidate": [
+        0.0,
+        616.6748997212229,
+        543.6,
+        737.0411371657042
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "positive",
+      "sourceReview": "Completes English alternative-reading label; tiny staff and notes remain intact; footer page1 remains outside crop.",
+      "sourceContext": "mozart-p1-s3-piano-context.png",
+      "comparison": "mozart-p1-s3-piano-pair.png"
+    },
+    {
+      "score": "mozart",
+      "id": "p4-s3-cello",
+      "sourcePage": 4,
+      "baseline": [
+        0.0,
+        432.87961399276236,
+        543.6,
+        463.53341375150785
+      ],
+      "candidate": [
+        0.0,
+        432.87961399276236,
+        543.6,
+        468.36622436670694
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Adds substantial following Piano high-note/slur fragments below Cello.",
+      "sourceContext": "mozart-p4-s3-cello-context.png",
+      "comparison": "mozart-p4-s3-cello-pair.png"
+    },
+    {
+      "score": "mozart",
+      "id": "p5-s4-violin",
+      "sourcePage": 5,
+      "baseline": [
+        0.0,
+        570.3126658624849,
+        543.6,
+        613.350542822678
+      ],
+      "candidate": [
+        0.0,
+        563.9696019300362,
+        543.6,
+        613.350542822678
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Adds preceding Piano legato text and low-note fragments above the Violin; closer geometry does not establish ownership.",
+      "sourceContext": "mozart-p5-s4-violin-context.png",
+      "comparison": "mozart-p5-s4-violin-pair.png"
+    },
+    {
+      "score": "mozart",
+      "id": "p14-s1-violin",
+      "sourcePage": 14,
+      "baseline": [
+        0.0,
+        28.131724969843187,
+        543.6,
+        74.79420989143547
+      ],
+      "candidate": [
+        0.0,
+        21.788661037394455,
+        543.6,
+        74.79420989143547
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Extends a scan scratch above the target slur; no newly retained target notation observed.",
+      "sourceContext": "mozart-p14-s1-violin-context.png",
+      "comparison": "mozart-p14-s1-violin-pair.png"
+    },
+    {
+      "score": "mozart",
+      "id": "p17-s1-violin",
+      "sourcePage": 17,
+      "baseline": [
+        0.0,
+        29.641978287092886,
+        543.6,
+        81.1372738238842
+      ],
+      "candidate": [
+        0.0,
+        20.278407720144756,
+        543.6,
+        81.1372738238842
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Completes more of an unrelated diagonal scan scratch above Violin.",
+      "sourceContext": "mozart-p17-s1-violin-context.png",
+      "comparison": "mozart-p17-s1-violin-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p2-s1-violin1",
+      "sourcePage": 2,
+      "baseline": [
+        0,
+        125.2,
+        427,
+        176.79999999999998
+      ],
+      "candidate": [
+        0,
+        117.6,
+        427,
+        176.79999999999998
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "context-positive",
+      "sourceReview": "Completes original composer/work text above Vivace; the existing crop cut this text.",
+      "sourceContext": "brahms-p2-s1-violin1-context.png",
+      "comparison": "brahms-p2-s1-violin1-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p2-s3-cello",
+      "sourcePage": 2,
+      "baseline": [
+        0,
+        533.1999999999999,
+        427,
+        577.6
+      ],
+      "candidate": [
+        0,
+        533.1999999999999,
+        427,
+        584.8
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Completes more publisher imprint/footer text and plate number below final Cello system.",
+      "sourceContext": "brahms-p2-s3-cello-context.png",
+      "comparison": "brahms-p2-s3-cello-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p10-s4-cello",
+      "sourcePage": 10,
+      "baseline": [
+        0,
+        540.146831530139,
+        427,
+        587.5301391035549
+      ],
+      "candidate": [
+        0,
+        540.146831530139,
+        427,
+        593.6986089644513
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Completes publisher plate number7892 below final Cello system.",
+      "sourceContext": "brahms-p10-s4-cello-context.png",
+      "comparison": "brahms-p10-s4-cello-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p11-s1-cello",
+      "sourcePage": 11,
+      "baseline": [
+        0,
+        120.92812982998454,
+        427,
+        168.7859350850077
+      ],
+      "candidate": [
+        0,
+        120.92812982998454,
+        427,
+        173.0564142194745
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Adds following Violin I accents/slur/upper-note fragments below Cello.",
+      "sourceContext": "brahms-p11-s1-cello-context.png",
+      "comparison": "brahms-p11-s1-cello-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p14-s4-cello",
+      "sourcePage": 14,
+      "baseline": [
+        0,
+        545.8408037094281,
+        427,
+        594.4103554868624
+      ],
+      "candidate": [
+        0,
+        545.8408037094281,
+        427,
+        601.29057187017
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Completes publisher plate number7892 below final Cello system.",
+      "sourceContext": "brahms-p14-s4-cello-context.png",
+      "comparison": "brahms-p14-s4-cello-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p16-s1-violin1",
+      "sourcePage": 16,
+      "baseline": [
+        0,
+        34.332302936630605,
+        427,
+        84.08809891808346
+      ],
+      "candidate": [
+        0,
+        26.028593508500773,
+        427,
+        84.08809891808346
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Completes original printed page number16 above Andante, with extra whitespace.",
+      "sourceContext": "brahms-p16-s1-violin1-context.png",
+      "comparison": "brahms-p16-s1-violin1-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p33-s3-cello",
+      "sourcePage": 33,
+      "baseline": [
+        0,
+        404.0790590050135,
+        427,
+        451.687620516776
+      ],
+      "candidate": [
+        0,
+        404.0790590050135,
+        427,
+        455.48245275742386
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Adds following Violin I slur fragments below retained Cello second-volta text.",
+      "sourceContext": "brahms-p33-s3-cello-context.png",
+      "comparison": "brahms-p33-s3-cello-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p35-s4-cello",
+      "sourcePage": 35,
+      "baseline": [
+        0,
+        549.0616808018505,
+        426,
+        594.4602929838088
+      ],
+      "candidate": [
+        0,
+        549.0616808018505,
+        426,
+        599.4309946029298
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "nonmusical-expansion",
+      "sourceReview": "Completes more publisher plate number7892 below final Cello system.",
+      "sourceContext": "brahms-p35-s4-cello-context.png",
+      "comparison": "brahms-p35-s4-cello-pair.png"
+    },
+    {
+      "score": "brahms",
+      "id": "p38-s3-cello",
+      "sourcePage": 38,
+      "baseline": [
+        0,
+        407.06566970091023,
+        427,
+        455.45253576072827
+      ],
+      "candidate": [
+        0,
+        407.06566970091023,
+        427,
+        459.0513654096229
+      ],
+      "baselineForeignCores": [],
+      "candidateForeignCores": [],
+      "verdict": "regression",
+      "sourceReview": "Adds following Violin I articulation and slur fragments below Cello.",
+      "sourceContext": "brahms-p38-s3-cello-context.png",
+      "comparison": "brahms-p38-s3-cello-pair.png"
+    }
+  ]
+}

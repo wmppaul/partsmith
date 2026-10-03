@@ -903,11 +903,13 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             if let generated {
                 guard generated.isValid, planned.kind == "generated-rest", planned.candidateIDs.isEmpty else { return nil }
             } else if planned.kind == "generated-rest" { return nil }
+            let startBarNumber = planned.startBarNumber ?? generated?.startBarNumber
+            guard startBarNumber == nil || startBarNumber! > 0 else { return nil }
             let band = BandModel(id: UUID(), pageIndex: planned.pageIndex, partID: partID,
                 topFraction: planned.topFraction, bottomFraction: planned.bottomFraction,
                 leftFraction: planned.leftFraction, rightFraction: planned.rightFraction,
-                excluded: false, createdAt: now, barNumberMode: generated?.startBarNumber == nil ? .hidden : .manual,
-                barNumberValue: generated?.startBarNumber,
+                excluded: false, createdAt: now, barNumberMode: startBarNumber == nil ? .hidden : .manual,
+                barNumberValue: startBarNumber,
                 editorialLabel: planned.editorialLabel, pageBreakBefore: planned.pageBreakBefore,
                 sourceMarkings: planned.sourceMarkings.map { BandSourceMarking(topFraction: $0.topFraction,
                     bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction,

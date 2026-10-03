@@ -233,6 +233,10 @@ struct ScorePlannedBand: Codable, Equatable, Identifiable {
     var warnings: [String]
     /// An explicitly confirmed silent part, with no printed staff to crop.
     var generatedRest: ScoreGeneratedRest? = nil
+    /// Reviewed source-system measures apply to printed music as well as silence.
+    /// Nil preserves the unnumbered behavior of automatic or legacy plans.
+    var startBarNumber: Int? = nil
+    var barCount: Int? = nil
 }
 
 struct ScoreGeneratedRest: Codable, Equatable {
@@ -380,7 +384,8 @@ enum ScoreSystemAssignment {
                         }())
                 }, omittedParts: pagePlan.omissions.filter { $0.systemIndex == index }.map {
                     ScorePartOmission(partID: $0.partID, reason: $0.reason)
-                }, startBarNumber: generated?.startBarNumber, barCount: generated?.barCount)
+                }, startBarNumber: assignments.compactMap(\.startBarNumber).first ?? generated?.startBarNumber,
+                barCount: assignments.compactMap(\.barCount).first ?? generated?.barCount)
         }
         return correction
     }
@@ -746,6 +751,8 @@ enum ScoreExtractionPlanner {
                     breakBefore: !(system.movementLabel ?? "").isEmpty,
                     provenance: "reviewed-silent-omission", warnings: [])
                 rest.generatedRest = ScoreGeneratedRest(barCount: system.barCount!, startBarNumber: system.startBarNumber)
+                rest.startBarNumber = system.startBarNumber
+                rest.barCount = system.barCount
                 output.assignments.append(rest)
             }
             for assigned in system.bands {
@@ -792,6 +799,8 @@ enum ScoreExtractionPlanner {
                 output.assignments.append(band(partID: assigned.partID, page: page, system: system.systemIndex,
                     staves: staves, rect: rect, label: label, kind: kind, breakBefore: assigned.pageBreakBefore ?? false,
                     provenance: "reviewed-override", warnings: (ids.isEmpty ? ["Crop supplied by source review; not supported by detected staff IDs."] : []) + crop.warnings))
+                output.assignments[output.assignments.count - 1].startBarNumber = system.startBarNumber
+                output.assignments[output.assignments.count - 1].barCount = system.barCount
                 output.assignments[output.assignments.count - 1].sourceMarkings = markingRects.enumerated().map { index, r in
                     ScoreSourceMarking(topFraction: r[1] / page.pageHeight, bottomFraction: r[3] / page.pageHeight,
                         leftFraction: r[0] / page.pageWidth, rightFraction: 1 - r[2] / page.pageWidth,

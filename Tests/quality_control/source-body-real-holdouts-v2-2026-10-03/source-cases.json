@@ -1,0 +1,7128 @@
+{
+  "pages": [
+    {
+      "id": "trio-p003",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "physicalPage": 3,
+      "nativeRaster": "source/trio-p003.png",
+      "nativeRasterSHA256": "19611d02fdf135f071a04b8a832210502332cd931dcbac1d9d798e66650cbe53",
+      "rasterSize": [
+        1800,
+        2544
+      ],
+      "rectified": false,
+      "renderer": "Standalone PDFKit native renderer, exact production render dimensions (maximum1800x2600), untouched grayscale/color source content. No detection or candidate used."
+    },
+    {
+      "id": "schumann-p003",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "physicalPage": 3,
+      "nativeRaster": "source/schumann-p003.png",
+      "nativeRasterSHA256": "f7d7e2bfb94ac3fbc5891b0a75d90cbc1aaab47956309fb19cd21d1560410845",
+      "rasterSize": [
+        1800,
+        2593
+      ],
+      "rectified": false,
+      "renderer": "Standalone PDFKit native renderer, exact production render dimensions (maximum1800x2600), untouched grayscale/color source content. No detection or candidate used."
+    },
+    {
+      "id": "mozart-p004",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "physicalPage": 4,
+      "nativeRaster": "source/mozart-p004.png",
+      "nativeRasterSHA256": "028254ec7d4c249416c5fe403ab8bab94d5b9a42439bbe176fc0eed6515676b8",
+      "rasterSize": [
+        1800,
+        2487
+      ],
+      "rectified": false,
+      "renderer": "Standalone PDFKit native renderer, exact production render dimensions (maximum1800x2600), untouched grayscale/color source content. No detection or candidate used."
+    }
+  ],
+  "cases": [
+    {
+      "id": "T-H01",
+      "pageID": "trio-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        660,
+        296,
+        683,
+        315
+      ],
+      "spineROI": [
+        657,
+        306,
+        672,
+        347
+      ],
+      "staffLineSeeds": [
+        298,
+        308,
+        317,
+        327,
+        337
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Half-note on its own downward stem, crossed by an inner staff line; long tie above.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        629,
+        270,
+        711,
+        355
+      ],
+      "localStaffLines": [
+        298.18871935967985,
+        307.894250513347,
+        317.45584251399674,
+        327.0138799225307,
+        336.6907642372381
+      ],
+      "localStaffSpace": 9.625511219389566,
+      "staffMeasurementID": "T-H01",
+      "measuredSpineColumns": [
+        662,
+        665
+      ],
+      "spineMeasurementRows": [
+        [
+          315,
+          662,
+          666
+        ],
+        [
+          320,
+          663,
+          665
+        ],
+        [
+          321,
+          662,
+          665
+        ],
+        [
+          322,
+          662,
+          665
+        ],
+        [
+          323,
+          662,
+          665
+        ],
+        [
+          324,
+          662,
+          666
+        ],
+        [
+          325,
+          662,
+          666
+        ],
+        [
+          330,
+          662,
+          665
+        ],
+        [
+          331,
+          662,
+          665
+        ],
+        [
+          332,
+          662,
+          665
+        ],
+        [
+          333,
+          662,
+          665
+        ],
+        [
+          334,
+          662,
+          665
+        ],
+        [
+          339,
+          662,
+          665
+        ],
+        [
+          340,
+          663,
+          664
+        ]
+      ],
+      "bodyCenter": [
+        671.5,
+        305.5
+      ],
+      "bodyCenterInwardStaffSpaces": 0.7595732292735117,
+      "mustPreserveNoteEnvelope": [
+        657,
+        296,
+        683,
+        347
+      ],
+      "normalizedPreservationEnvelope": [
+        0.365,
+        0.11635220125786164,
+        0.3794444444444444,
+        0.1363993710691824
+      ],
+      "sourceCrop": {
+        "path": "review/T-H01-source.png",
+        "sha256": "28683565658b31b44cfe47d4b3cad200915e30b7e91d59bd7269a81f18fb5ef1",
+        "origin": [
+          629,
+          270
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-H01-review.png",
+        "sha256": "6e1cb56215e8da715b8dd7c74251addafc8362b340e7eace23f171fc830a3e4a",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.005481570448101083,
+      "staffSampleXReference": 689.0,
+      "staffLinesAtTestedSpine": [
+        298.0489393132533,
+        307.75447046692045,
+        317.3160624675702,
+        326.87409987610414,
+        336.55098419081156
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-H02",
+      "pageID": "trio-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        1479,
+        292,
+        1508,
+        315
+      ],
+      "spineROI": [
+        1476,
+        303,
+        1492,
+        335
+      ],
+      "staffLineSeeds": [
+        294,
+        304,
+        313,
+        323,
+        333
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Half-note on downward stem in the last bar, under a long printed tie.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1448,
+        266,
+        1536,
+        343
+      ],
+      "localStaffLines": [
+        293.9951178451178,
+        303.5795692776825,
+        313.41559159601917,
+        323.10577075098814,
+        332.906185730106
+      ],
+      "localStaffSpace": 9.72776697124705,
+      "staffMeasurementID": "T-H02",
+      "measuredSpineColumns": [
+        1488,
+        1491
+      ],
+      "spineMeasurementRows": [
+        [
+          316,
+          1488,
+          1491
+        ],
+        [
+          317,
+          1488,
+          1491
+        ],
+        [
+          318,
+          1488,
+          1491
+        ],
+        [
+          319,
+          1488,
+          1491
+        ],
+        [
+          320,
+          1488,
+          1491
+        ],
+        [
+          321,
+          1488,
+          1491
+        ],
+        [
+          326,
+          1488,
+          1491
+        ],
+        [
+          327,
+          1488,
+          1491
+        ],
+        [
+          328,
+          1488,
+          1491
+        ],
+        [
+          329,
+          1488,
+          1491
+        ],
+        [
+          330,
+          1488,
+          1491
+        ]
+      ],
+      "bodyCenter": [
+        1493.5,
+        303.5
+      ],
+      "bodyCenterInwardStaffSpaces": 0.9770877718366752,
+      "mustPreserveNoteEnvelope": [
+        1476,
+        292,
+        1508,
+        335
+      ],
+      "normalizedPreservationEnvelope": [
+        0.82,
+        0.11477987421383648,
+        0.8377777777777777,
+        0.13168238993710693
+      ],
+      "sourceCrop": {
+        "path": "review/T-H02-source.png",
+        "sha256": "07b519d7d09cf123e7ffdb9c10140a50edf8bdcc574a012c33eadbd9c4be4cdd",
+        "origin": [
+          1448,
+          266
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-H02-review.png",
+        "sha256": "ac08d189ad8a6cb7fd808360bdeae903f4e866293fdf4888e3d7577e540ff1bb",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.00473364671628991,
+      "staffSampleXReference": 1516.5,
+      "staffLinesAtTestedSpine": [
+        294.12292630645766,
+        303.7073777390223,
+        313.543400057359,
+        323.233579212328,
+        333.03399419144586
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-H03",
+      "pageID": "trio-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        893,
+        970,
+        929,
+        996
+      ],
+      "spineROI": [
+        894,
+        984,
+        910,
+        1070
+      ],
+      "staffLineSeeds": [
+        985,
+        999,
+        1013,
+        1027,
+        1041
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Piano upper staff, second system",
+      "sourceFinding": "Upper hollow head on a shared downward chord stem spanning one complete staff core. Related to T-H04, not an independent chord.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        865,
+        944,
+        957,
+        1078
+      ],
+      "localStaffLines": [
+        985.1609366540335,
+        999.1918694612463,
+        1013.1259662181506,
+        1026.8944410692588,
+        1040.9223498618583
+      ],
+      "localStaffSpace": 13.94035330195618,
+      "staffMeasurementID": "T-H03",
+      "measuredSpineColumns": [
+        899,
+        902
+      ],
+      "spineMeasurementRows": [
+        [
+          996,
+          899,
+          902
+        ],
+        [
+          997,
+          899,
+          902
+        ],
+        [
+          1002,
+          899,
+          902
+        ],
+        [
+          1003,
+          899,
+          902
+        ],
+        [
+          1004,
+          899,
+          902
+        ],
+        [
+          1005,
+          899,
+          902
+        ],
+        [
+          1006,
+          899,
+          902
+        ],
+        [
+          1007,
+          899,
+          902
+        ],
+        [
+          1008,
+          899,
+          902
+        ],
+        [
+          1009,
+          899,
+          902
+        ],
+        [
+          1010,
+          899,
+          902
+        ],
+        [
+          1011,
+          898,
+          902
+        ],
+        [
+          1016,
+          899,
+          902
+        ],
+        [
+          1017,
+          899,
+          902
+        ],
+        [
+          1018,
+          899,
+          902
+        ],
+        [
+          1019,
+          899,
+          902
+        ],
+        [
+          1020,
+          899,
+          902
+        ],
+        [
+          1021,
+          899,
+          902
+        ],
+        [
+          1022,
+          899,
+          902
+        ],
+        [
+          1023,
+          899,
+          902
+        ],
+        [
+          1024,
+          899,
+          902
+        ],
+        [
+          1029,
+          898,
+          910
+        ],
+        [
+          1030,
+          899,
+          910
+        ],
+        [
+          1031,
+          899,
+          910
+        ],
+        [
+          1032,
+          899,
+          910
+        ],
+        [
+          1033,
+          899,
+          908
+        ],
+        [
+          1034,
+          899,
+          906
+        ],
+        [
+          1035,
+          899,
+          905
+        ],
+        [
+          1036,
+          899,
+          903
+        ],
+        [
+          1037,
+          899,
+          903
+        ],
+        [
+          1038,
+          899,
+          910
+        ],
+        [
+          1043,
+          898,
+          910
+        ],
+        [
+          1044,
+          898,
+          902
+        ],
+        [
+          1045,
+          899,
+          902
+        ],
+        [
+          1046,
+          899,
+          902
+        ],
+        [
+          1047,
+          899,
+          902
+        ],
+        [
+          1048,
+          899,
+          902
+        ],
+        [
+          1049,
+          899,
+          902
+        ],
+        [
+          1050,
+          899,
+          902
+        ],
+        [
+          1051,
+          899,
+          902
+        ],
+        [
+          1052,
+          899,
+          902
+        ],
+        [
+          1053,
+          899,
+          902
+        ],
+        [
+          1054,
+          899,
+          902
+        ],
+        [
+          1055,
+          899,
+          902
+        ],
+        [
+          1056,
+          899,
+          902
+        ],
+        [
+          1057,
+          899,
+          902
+        ],
+        [
+          1058,
+          899,
+          902
+        ],
+        [
+          1059,
+          899,
+          902
+        ],
+        [
+          1060,
+          899,
+          902
+        ],
+        [
+          1061,
+          899,
+          902
+        ],
+        [
+          1062,
+          899,
+          902
+        ],
+        [
+          1063,
+          899,
+          902
+        ],
+        [
+          1064,
+          899,
+          902
+        ],
+        [
+          1065,
+          899,
+          902
+        ],
+        [
+          1066,
+          899,
+          902
+        ],
+        [
+          1067,
+          899,
+          902
+        ],
+        [
+          1068,
+          899,
+          902
+        ],
+        [
+          1069,
+          894,
+          902
+        ]
+      ],
+      "bodyCenter": [
+        911.0,
+        983.0
+      ],
+      "bodyCenterInwardStaffSpaces": -0.15501304789243148,
+      "mustPreserveNoteEnvelope": [
+        893,
+        970,
+        929,
+        1070
+      ],
+      "normalizedPreservationEnvelope": [
+        0.4961111111111111,
+        0.3812893081761006,
+        0.5161111111111111,
+        0.42059748427672955
+      ],
+      "sourceCrop": {
+        "path": "review/T-H03-source.png",
+        "sha256": "7c140df23b638b4429c831385a01145e90b39a8c5079c53b5635df1096478a9e",
+        "origin": [
+          865,
+          944
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-H03-review.png",
+        "sha256": "869af9095971d4bc9651c78c6e2ac732e7a853acbdc4310ad2acfb41a3416057",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0026045015055972598,
+      "staffSampleXReference": 935.5,
+      "staffLinesAtTestedSpine": [
+        985.0697791013376,
+        999.1007119085504,
+        1013.0348086654546,
+        1026.803283516563,
+        1040.8311923091624
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-H04",
+      "pageID": "trio-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        893,
+        1019,
+        930,
+        1045
+      ],
+      "spineROI": [
+        894,
+        984,
+        910,
+        1070
+      ],
+      "staffLineSeeds": [
+        985,
+        999,
+        1013,
+        1027,
+        1041
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Piano upper staff, second system",
+      "sourceFinding": "Lower hollow head attached to the same continuing chord stem as T-H03; genuine body, but not its terminal head.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        865,
+        976,
+        958,
+        1078
+      ],
+      "localStaffLines": [
+        985.1609366540335,
+        999.1918694612463,
+        1013.1259662181506,
+        1026.8944410692588,
+        1040.9223498618583
+      ],
+      "localStaffSpace": 13.94035330195618,
+      "staffMeasurementID": "T-H04",
+      "measuredSpineColumns": [
+        899,
+        902
+      ],
+      "spineMeasurementRows": [
+        [
+          988,
+          899,
+          903
+        ],
+        [
+          989,
+          899,
+          910
+        ],
+        [
+          990,
+          899,
+          910
+        ],
+        [
+          991,
+          899,
+          910
+        ],
+        [
+          992,
+          899,
+          910
+        ],
+        [
+          993,
+          899,
+          910
+        ],
+        [
+          994,
+          899,
+          910
+        ],
+        [
+          995,
+          899,
+          902
+        ],
+        [
+          996,
+          899,
+          902
+        ],
+        [
+          997,
+          899,
+          902
+        ],
+        [
+          1002,
+          899,
+          902
+        ],
+        [
+          1003,
+          899,
+          902
+        ],
+        [
+          1004,
+          899,
+          902
+        ],
+        [
+          1005,
+          899,
+          902
+        ],
+        [
+          1006,
+          899,
+          902
+        ],
+        [
+          1007,
+          899,
+          902
+        ],
+        [
+          1008,
+          899,
+          902
+        ],
+        [
+          1009,
+          899,
+          902
+        ],
+        [
+          1010,
+          899,
+          902
+        ],
+        [
+          1011,
+          898,
+          902
+        ],
+        [
+          1016,
+          899,
+          902
+        ],
+        [
+          1017,
+          899,
+          902
+        ],
+        [
+          1018,
+          899,
+          902
+        ],
+        [
+          1045,
+          899,
+          902
+        ],
+        [
+          1046,
+          899,
+          902
+        ],
+        [
+          1047,
+          899,
+          902
+        ],
+        [
+          1048,
+          899,
+          902
+        ],
+        [
+          1049,
+          899,
+          902
+        ],
+        [
+          1050,
+          899,
+          902
+        ],
+        [
+          1051,
+          899,
+          902
+        ],
+        [
+          1052,
+          899,
+          902
+        ],
+        [
+          1053,
+          899,
+          902
+        ],
+        [
+          1054,
+          899,
+          902
+        ],
+        [
+          1055,
+          899,
+          902
+        ],
+        [
+          1056,
+          899,
+          902
+        ],
+        [
+          1057,
+          899,
+          902
+        ],
+        [
+          1058,
+          899,
+          902
+        ],
+        [
+          1059,
+          899,
+          902
+        ],
+        [
+          1060,
+          899,
+          902
+        ],
+        [
+          1061,
+          899,
+          902
+        ],
+        [
+          1062,
+          899,
+          902
+        ],
+        [
+          1063,
+          899,
+          902
+        ],
+        [
+          1064,
+          899,
+          902
+        ],
+        [
+          1065,
+          899,
+          902
+        ],
+        [
+          1066,
+          899,
+          902
+        ],
+        [
+          1067,
+          899,
+          902
+        ],
+        [
+          1068,
+          899,
+          902
+        ],
+        [
+          1069,
+          894,
+          902
+        ]
+      ],
+      "bodyCenter": [
+        911.5,
+        1032.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.6400375706838246,
+      "mustPreserveNoteEnvelope": [
+        893,
+        984,
+        930,
+        1070
+      ],
+      "normalizedPreservationEnvelope": [
+        0.4961111111111111,
+        0.3867924528301887,
+        0.5166666666666667,
+        0.42059748427672955
+      ],
+      "sourceCrop": {
+        "path": "review/T-H04-source.png",
+        "sha256": "d08e52cd3783644efa1709de20865c6d61c7cb4573f662e25b386ded3a0db63a",
+        "origin": [
+          865,
+          976
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-H04-review.png",
+        "sha256": "40c89a5f7c3c4ba9aa229fe111e6b6b450fe286bad2226c93625378df52102d2",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0026045015055972598,
+      "staffSampleXReference": 935.5,
+      "staffLinesAtTestedSpine": [
+        985.0697791013376,
+        999.1007119085504,
+        1013.0348086654546,
+        1026.803283516563,
+        1040.8311923091624
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-F01",
+      "pageID": "trio-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1079,
+        314,
+        1103,
+        335
+      ],
+      "spineROI": [
+        1089,
+        291,
+        1104,
+        329
+      ],
+      "staffLineSeeds": [
+        297,
+        306,
+        316,
+        326,
+        335
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled lower-line note with upward stem at the end of a printed tie.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1051,
+        283,
+        1132,
+        361
+      ],
+      "localStaffLines": [
+        296.78017993823016,
+        306.4806047648137,
+        316.09144369303147,
+        325.8093540567518,
+        335.47218690400507
+      ],
+      "localStaffSpace": 9.673001741443727,
+      "staffMeasurementID": "T-F01",
+      "measuredSpineColumns": [
+        1096,
+        1098
+      ],
+      "spineMeasurementRows": [
+        [
+          294,
+          1096,
+          1098
+        ],
+        [
+          299,
+          1096,
+          1098
+        ],
+        [
+          300,
+          1096,
+          1098
+        ],
+        [
+          301,
+          1095,
+          1098
+        ],
+        [
+          302,
+          1096,
+          1098
+        ],
+        [
+          303,
+          1096,
+          1098
+        ],
+        [
+          304,
+          1096,
+          1098
+        ],
+        [
+          309,
+          1096,
+          1099
+        ],
+        [
+          310,
+          1096,
+          1099
+        ],
+        [
+          311,
+          1096,
+          1099
+        ],
+        [
+          312,
+          1096,
+          1099
+        ],
+        [
+          313,
+          1096,
+          1099
+        ]
+      ],
+      "bodyCenter": [
+        1091.0,
+        324.5
+      ],
+      "bodyCenterInwardStaffSpaces": 1.1343104443985592,
+      "mustPreserveNoteEnvelope": [
+        1079,
+        291,
+        1104,
+        335
+      ],
+      "normalizedPreservationEnvelope": [
+        0.5994444444444444,
+        0.11438679245283019,
+        0.6133333333333333,
+        0.13168238993710693
+      ],
+      "sourceCrop": {
+        "path": "review/T-F01-source.png",
+        "sha256": "c79c9bf7ca26becbece46e926aac6aee3f39c3e8cccb1179b037116ca992f5af",
+        "origin": [
+          1051,
+          283
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-F01-review.png",
+        "sha256": "7bfe32eec42b6b26bc7d96ae7aaba18ed3a5945e4ebaa6fd9c3a03574655208b",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.0034845453866848533,
+      "staffSampleXReference": 1113.0,
+      "staffLinesAtTestedSpine": [
+        296.8359326644171,
+        306.5363574910006,
+        316.1471964192184,
+        325.8651067829387,
+        335.527939630192
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-F02",
+      "pageID": "trio-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1235,
+        322,
+        1257,
+        342
+      ],
+      "spineROI": [
+        1243,
+        291,
+        1258,
+        335
+      ],
+      "staffLineSeeds": [
+        296,
+        306,
+        315,
+        325,
+        335
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled note on the lower staff edge, upward stem; tie meets its left underside.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1207,
+        283,
+        1286,
+        368
+      ],
+      "localStaffLines": [
+        295.84688922610013,
+        305.55069124423966,
+        315.44996630727763,
+        325.1940038071066,
+        334.80969656992085
+      ],
+      "localStaffSpace": 9.740701835955178,
+      "staffMeasurementID": "T-F02",
+      "measuredSpineColumns": [
+        1249,
+        1252
+      ],
+      "spineMeasurementRows": [
+        [
+          298,
+          1249,
+          1252
+        ],
+        [
+          299,
+          1249,
+          1252
+        ],
+        [
+          300,
+          1249,
+          1251
+        ],
+        [
+          301,
+          1249,
+          1251
+        ],
+        [
+          302,
+          1249,
+          1252
+        ],
+        [
+          303,
+          1249,
+          1252
+        ],
+        [
+          308,
+          1249,
+          1252
+        ],
+        [
+          309,
+          1249,
+          1252
+        ],
+        [
+          310,
+          1249,
+          1252
+        ],
+        [
+          311,
+          1249,
+          1252
+        ],
+        [
+          312,
+          1249,
+          1252
+        ],
+        [
+          313,
+          1249,
+          1252
+        ],
+        [
+          318,
+          1249,
+          1252
+        ],
+        [
+          319,
+          1249,
+          1252
+        ],
+        [
+          320,
+          1249,
+          1252
+        ],
+        [
+          321,
+          1249,
+          1252
+        ]
+      ],
+      "bodyCenter": [
+        1246.0,
+        332.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.2884490889095493,
+      "mustPreserveNoteEnvelope": [
+        1235,
+        291,
+        1258,
+        342
+      ],
+      "normalizedPreservationEnvelope": [
+        0.6861111111111111,
+        0.11438679245283019,
+        0.6988888888888889,
+        0.13443396226415094
+      ],
+      "sourceCrop": {
+        "path": "review/T-F02-source.png",
+        "sha256": "256ebf41c66dacafbf29c95b87fc864058c92cde368798dfa379d17fe87527fe",
+        "origin": [
+          1207,
+          283
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-F02-review.png",
+        "sha256": "a57577b38e8f4303bca79a92477e894ca7a558ad87aaeb31ed4c8e4c86860b5d",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 1266.0,
+      "staffLinesAtTestedSpine": [
+        295.84688922610013,
+        305.55069124423966,
+        315.44996630727763,
+        325.1940038071066,
+        334.80969656992085
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-F03",
+      "pageID": "trio-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1421,
+        294,
+        1446,
+        314
+      ],
+      "spineROI": [
+        1420,
+        303,
+        1434,
+        337
+      ],
+      "staffLineSeeds": [
+        295,
+        304,
+        314,
+        324,
+        333
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled head near upper staff line on its own down-stem, below the beginning of a slur.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1392,
+        268,
+        1474,
+        345
+      ],
+      "localStaffLines": [
+        294.52936111589463,
+        304.2140657916059,
+        313.9424385138671,
+        323.6921568627451,
+        333.34264597191424
+      ],
+      "localStaffSpace": 9.703321214004902,
+      "staffMeasurementID": "T-F03",
+      "measuredSpineColumns": [
+        1426,
+        1428
+      ],
+      "spineMeasurementRows": [
+        [
+          316,
+          1425,
+          1429
+        ],
+        [
+          317,
+          1426,
+          1428
+        ],
+        [
+          318,
+          1426,
+          1428
+        ],
+        [
+          319,
+          1426,
+          1428
+        ],
+        [
+          320,
+          1426,
+          1428
+        ],
+        [
+          321,
+          1426,
+          1428
+        ],
+        [
+          326,
+          1425,
+          1429
+        ],
+        [
+          327,
+          1426,
+          1428
+        ],
+        [
+          328,
+          1426,
+          1428
+        ],
+        [
+          329,
+          1425,
+          1428
+        ],
+        [
+          330,
+          1426,
+          1428
+        ],
+        [
+          331,
+          1426,
+          1428
+        ],
+        [
+          336,
+          1426,
+          1428
+        ]
+      ],
+      "bodyCenter": [
+        1433.5,
+        304.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.9760203414101453,
+      "mustPreserveNoteEnvelope": [
+        1420,
+        294,
+        1446,
+        337
+      ],
+      "normalizedPreservationEnvelope": [
+        0.7888888888888889,
+        0.11556603773584906,
+        0.8033333333333333,
+        0.1324685534591195
+      ],
+      "sourceCrop": {
+        "path": "review/T-F03-source.png",
+        "sha256": "caa677ce566ebc2562ac71b9767215f83194ef26f4013a3d3f9d9798eb7e104d",
+        "origin": [
+          1392,
+          268
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-F03-review.png",
+        "sha256": "7e549f2608cbc063fc57c0bd16a8af9f92b735b5746e69892502acb5c7668713",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.004917003485139468,
+      "staffSampleXReference": 1454.5,
+      "staffLinesAtTestedSpine": [
+        294.3941435200533,
+        304.0788481957646,
+        313.8072209180258,
+        323.5569392669038,
+        333.2074283760729
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-F04",
+      "pageID": "trio-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        563,
+        850,
+        587,
+        874
+      ],
+      "spineROI": [
+        561,
+        859,
+        577,
+        896
+      ],
+      "staffLineSeeds": [
+        856,
+        866,
+        875,
+        885,
+        894
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, second system",
+      "sourceFinding": "Filled head on the next staff line down, down-stem, slur arriving above.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        533,
+        824,
+        615,
+        904
+      ],
+      "localStaffLines": [
+        856.1957928802589,
+        865.5460670636164,
+        875.1981776765376,
+        884.8168850072781,
+        894.3733708530806
+      ],
+      "localStaffSpace": 9.54439449320543,
+      "staffMeasurementID": "T-F04",
+      "measuredSpineColumns": [
+        572,
+        575
+      ],
+      "spineMeasurementRows": [
+        [
+          878,
+          572,
+          575
+        ],
+        [
+          879,
+          572,
+          575
+        ],
+        [
+          880,
+          572,
+          575
+        ],
+        [
+          881,
+          572,
+          575
+        ],
+        [
+          882,
+          572,
+          575
+        ],
+        [
+          887,
+          572,
+          575
+        ],
+        [
+          888,
+          572,
+          575
+        ],
+        [
+          889,
+          572,
+          575
+        ],
+        [
+          890,
+          572,
+          575
+        ],
+        [
+          891,
+          572,
+          575
+        ],
+        [
+          892,
+          572,
+          575
+        ]
+      ],
+      "bodyCenter": [
+        575.0,
+        862.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.6081273279172502,
+      "mustPreserveNoteEnvelope": [
+        561,
+        850,
+        587,
+        896
+      ],
+      "normalizedPreservationEnvelope": [
+        0.31166666666666665,
+        0.3341194968553459,
+        0.32611111111111113,
+        0.3522012578616352
+      ],
+      "sourceCrop": {
+        "path": "review/T-F04-source.png",
+        "sha256": "31919ff402663c459262347856ab64fb2f0a854c09511811d4b425e24d219c1d",
+        "origin": [
+          533,
+          824
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-F04-review.png",
+        "sha256": "200c00338fcf6c8821a0276d16e9137e5f651c8c7dcb7f97864c0cbcf6002083",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.00194505539724388,
+      "staffSampleXReference": 595.5,
+      "staffLinesAtTestedSpine": [
+        856.2385840989982,
+        865.5888582823558,
+        875.240968895277,
+        884.8596762260174,
+        894.4161620718199
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-H01",
+      "pageID": "schumann-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        679,
+        229,
+        710,
+        248
+      ],
+      "spineROI": [
+        693,
+        205,
+        707,
+        242
+      ],
+      "staffLineSeeds": [
+        205,
+        214,
+        223,
+        232,
+        242
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Hollow half-note at the bottom line with upward stem.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        651,
+        197,
+        738,
+        274
+      ],
+      "localStaffLines": [
+        204.5080405002978,
+        213.79741205014153,
+        222.85863244435532,
+        231.99681641315883,
+        241.50109529025193
+      ],
+      "localStaffSpace": 9.248263697488532,
+      "staffMeasurementID": "S-H01",
+      "measuredSpineColumns": [
+        703,
+        706
+      ],
+      "spineMeasurementRows": [
+        [
+          207,
+          698,
+          702
+        ],
+        [
+          208,
+          698,
+          700
+        ],
+        [
+          209,
+          704,
+          705
+        ],
+        [
+          210,
+          703,
+          706
+        ],
+        [
+          211,
+          703,
+          706
+        ],
+        [
+          216,
+          703,
+          706
+        ],
+        [
+          217,
+          703,
+          706
+        ],
+        [
+          218,
+          703,
+          706
+        ],
+        [
+          219,
+          703,
+          706
+        ],
+        [
+          220,
+          704,
+          706
+        ],
+        [
+          225,
+          704,
+          706
+        ],
+        [
+          226,
+          704,
+          706
+        ],
+        [
+          227,
+          703,
+          706
+        ],
+        [
+          228,
+          703,
+          706
+        ]
+      ],
+      "bodyCenter": [
+        694.5,
+        238.5
+      ],
+      "bodyCenterInwardStaffSpaces": 0.32450364613488536,
+      "mustPreserveNoteEnvelope": [
+        679,
+        205,
+        710,
+        248
+      ],
+      "normalizedPreservationEnvelope": [
+        0.37722222222222224,
+        0.07905900501349789,
+        0.39444444444444443,
+        0.0956421133821828
+      ],
+      "sourceCrop": {
+        "path": "review/S-H01-source.png",
+        "sha256": "8d8125dc72d49b9e19edb854eb0512f4e7469916cad6578dd08c2875990288e1",
+        "origin": [
+          651,
+          197
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-H01-review.png",
+        "sha256": "fc588f5f97ffcb98e18ab35af6c6213d895bdf27d009d950024ad4b7f77d01ee",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.0010619717605990786,
+      "staffSampleXReference": 682.0,
+      "staffLinesAtTestedSpine": [
+        204.4841461356843,
+        213.77351768552805,
+        222.83473807974184,
+        231.97292204854534,
+        241.47720092563844
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-H02",
+      "pageID": "schumann-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        770,
+        193,
+        798,
+        215
+      ],
+      "spineROI": [
+        768,
+        203,
+        783,
+        243
+      ],
+      "staffLineSeeds": [
+        204,
+        213,
+        222,
+        232,
+        241
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Hollow head at the top staff line on a downward stem, under a long slur.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        740,
+        167,
+        826,
+        251
+      ],
+      "localStaffLines": [
+        204.08282101844333,
+        213.18162710187931,
+        222.11884591774094,
+        231.7311069717935,
+        241.01026671130455
+      ],
+      "localStaffSpace": 9.231861423215307,
+      "staffMeasurementID": "S-H02",
+      "measuredSpineColumns": [
+        781,
+        783
+      ],
+      "spineMeasurementRows": [
+        [
+          216,
+          780,
+          783
+        ],
+        [
+          217,
+          780,
+          783
+        ],
+        [
+          218,
+          780,
+          783
+        ],
+        [
+          219,
+          781,
+          783
+        ],
+        [
+          220,
+          780,
+          783
+        ],
+        [
+          225,
+          780,
+          783
+        ],
+        [
+          226,
+          781,
+          783
+        ],
+        [
+          227,
+          781,
+          783
+        ],
+        [
+          228,
+          781,
+          783
+        ],
+        [
+          229,
+          780,
+          783
+        ],
+        [
+          234,
+          781,
+          783
+        ],
+        [
+          235,
+          780,
+          783
+        ],
+        [
+          236,
+          781,
+          783
+        ],
+        [
+          237,
+          781,
+          783
+        ],
+        [
+          238,
+          781,
+          783
+        ],
+        [
+          239,
+          781,
+          783
+        ]
+      ],
+      "bodyCenter": [
+        784.0,
+        204.0
+      ],
+      "bodyCenterInwardStaffSpaces": -0.008971215516196602,
+      "mustPreserveNoteEnvelope": [
+        768,
+        193,
+        798,
+        243
+      ],
+      "normalizedPreservationEnvelope": [
+        0.4266666666666667,
+        0.07443116081758581,
+        0.44333333333333336,
+        0.09371384496721943
+      ],
+      "sourceCrop": {
+        "path": "review/S-H02-source.png",
+        "sha256": "43d360378b3812ecd041f7d8352f536ba76a93cf0ac6485bf056d4e3136e144d",
+        "origin": [
+          740,
+          167
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-H02-review.png",
+        "sha256": "a811e277db58ce8bf6a01109c7c43b45f5ab297154982be7f0d9fbb88fecdbac",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.003792614757546925,
+      "staffSampleXReference": 806.5,
+      "staffLinesAtTestedSpine": [
+        204.17574008000324,
+        213.27454616343923,
+        222.21176497930085,
+        231.82402603335342,
+        241.10318577286446
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-H03",
+      "pageID": "schumann-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        193,
+        926,
+        220,
+        946
+      ],
+      "spineROI": [
+        189,
+        938,
+        204,
+        973
+      ],
+      "staffLineSeeds": [
+        936,
+        945,
+        954,
+        964,
+        974
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Violin I, second system",
+      "sourceFinding": "Dotted hollow head slightly below top line on downward stem; dot is a separate source mark.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        161,
+        900,
+        248,
+        981
+      ],
+      "localStaffLines": [
+        936.2536115569824,
+        945.4777960526316,
+        954.4629820936639,
+        963.7912387676508,
+        973.5306239267316
+      ],
+      "localStaffSpace": 9.319253092437293,
+      "staffMeasurementID": "S-H03",
+      "measuredSpineColumns": [
+        199,
+        201
+      ],
+      "spineMeasurementRows": [
+        [
+          948,
+          198,
+          201
+        ],
+        [
+          949,
+          198,
+          201
+        ],
+        [
+          950,
+          198,
+          201
+        ],
+        [
+          951,
+          199,
+          201
+        ],
+        [
+          952,
+          199,
+          201
+        ],
+        [
+          957,
+          198,
+          201
+        ],
+        [
+          958,
+          199,
+          201
+        ],
+        [
+          959,
+          199,
+          201
+        ],
+        [
+          960,
+          199,
+          201
+        ],
+        [
+          961,
+          199,
+          201
+        ],
+        [
+          966,
+          199,
+          201
+        ],
+        [
+          967,
+          199,
+          201
+        ],
+        [
+          968,
+          199,
+          201
+        ],
+        [
+          969,
+          199,
+          201
+        ],
+        [
+          970,
+          199,
+          201
+        ],
+        [
+          971,
+          199,
+          201
+        ]
+      ],
+      "bodyCenter": [
+        206.5,
+        936.0
+      ],
+      "bodyCenterInwardStaffSpaces": -0.027213721364450032,
+      "mustPreserveNoteEnvelope": [
+        189,
+        926,
+        220,
+        973
+      ],
+      "normalizedPreservationEnvelope": [
+        0.105,
+        0.3571153104512148,
+        0.12222222222222222,
+        0.37524103355187044
+      ],
+      "sourceCrop": {
+        "path": "review/S-H03-source.png",
+        "sha256": "2bdcc2697a6bb5a5365f5deb0036e8df6177c4ea42cfcaad11cfc20bbb9758c6",
+        "origin": [
+          161,
+          900
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-H03-review.png",
+        "sha256": "32f99827db667af83f56a50596137ac00d3cbb69b2a614ef833cf8813aca50b5",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.002253582009002757,
+      "staffSampleXReference": 241.5,
+      "staffLinesAtTestedSpine": [
+        936.1600879036088,
+        945.384272399258,
+        954.3694584402903,
+        963.6977151142772,
+        973.4371002733579
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-H04",
+      "pageID": "schumann-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        1298,
+        215,
+        1326,
+        239
+      ],
+      "spineROI": [
+        1310,
+        187,
+        1326,
+        232
+      ],
+      "staffLineSeeds": [
+        200,
+        210,
+        218,
+        228,
+        237
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Hollow head on the next line above bottom, upward stem, in the following bar.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1270,
+        179,
+        1354,
+        265
+      ],
+      "localStaffLines": [
+        200.15127255347113,
+        209.51893408134643,
+        218.44911957411958,
+        227.98806255222632,
+        237.1822821728035
+      ],
+      "localStaffSpace": 9.257752404833091,
+      "staffMeasurementID": "S-H04",
+      "measuredSpineColumns": [
+        1317,
+        1319
+      ],
+      "spineMeasurementRows": [
+        [
+          189,
+          1317,
+          1318
+        ],
+        [
+          190,
+          1317,
+          1319
+        ],
+        [
+          191,
+          1317,
+          1319
+        ],
+        [
+          192,
+          1317,
+          1319
+        ],
+        [
+          193,
+          1317,
+          1319
+        ],
+        [
+          194,
+          1317,
+          1319
+        ],
+        [
+          195,
+          1317,
+          1319
+        ],
+        [
+          196,
+          1317,
+          1319
+        ],
+        [
+          197,
+          1316,
+          1319
+        ],
+        [
+          198,
+          1316,
+          1319
+        ],
+        [
+          203,
+          1317,
+          1319
+        ],
+        [
+          204,
+          1317,
+          1319
+        ],
+        [
+          205,
+          1317,
+          1319
+        ],
+        [
+          206,
+          1316,
+          1319
+        ],
+        [
+          207,
+          1316,
+          1319
+        ],
+        [
+          212,
+          1316,
+          1319
+        ],
+        [
+          213,
+          1316,
+          1319
+        ],
+        [
+          214,
+          1316,
+          1319
+        ]
+      ],
+      "bodyCenter": [
+        1312.0,
+        227.0
+      ],
+      "bodyCenterInwardStaffSpaces": 1.0998654670746808,
+      "mustPreserveNoteEnvelope": [
+        1298,
+        187,
+        1326,
+        239
+      ],
+      "normalizedPreservationEnvelope": [
+        0.7211111111111111,
+        0.07211723871962977,
+        0.7366666666666667,
+        0.09217123023524874
+      ],
+      "sourceCrop": {
+        "path": "review/S-H04-source.png",
+        "sha256": "ca73735b8810ebf69668355bf46c11fc778145996f93b74532018422490e9aa8",
+        "origin": [
+          1270,
+          179
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-H04-review.png",
+        "sha256": "754c4beae54ed477d7718a132ed3017186fa99ddbe926e51f01edbb0a7343852",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.007363062042200868,
+      "staffSampleXReference": 1334.5,
+      "staffLinesAtTestedSpine": [
+        200.27276307716744,
+        209.64042460504274,
+        218.5706100978159,
+        228.10955307592263,
+        237.3037726964998
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-F01",
+      "pageID": "schumann-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1476,
+        1049,
+        1497,
+        1069
+      ],
+      "spineROI": [
+        1483,
+        1023,
+        1498,
+        1063
+      ],
+      "staffLineSeeds": [
+        1021,
+        1031,
+        1040,
+        1050,
+        1059
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin II, second system",
+      "sourceFinding": "Filled bottom-line note on an upward stem to a beam, with a separate natural to its left.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1448,
+        1015,
+        1526,
+        1095
+      ],
+      "localStaffLines": [
+        1021.4381175247009,
+        1030.8436046511629,
+        1039.86160188457,
+        1049.20734045467,
+        1058.9828992370428
+      ],
+      "localStaffSpace": 9.386195428085472,
+      "staffMeasurementID": "S-F01",
+      "measuredSpineColumns": [
+        1489,
+        1492
+      ],
+      "spineMeasurementRows": [
+        [
+          1027,
+          1489,
+          1498
+        ],
+        [
+          1028,
+          1489,
+          1498
+        ],
+        [
+          1033,
+          1489,
+          1498
+        ],
+        [
+          1034,
+          1489,
+          1494
+        ],
+        [
+          1035,
+          1489,
+          1492
+        ],
+        [
+          1036,
+          1489,
+          1492
+        ],
+        [
+          1037,
+          1489,
+          1492
+        ],
+        [
+          1042,
+          1489,
+          1492
+        ],
+        [
+          1043,
+          1489,
+          1492
+        ],
+        [
+          1044,
+          1489,
+          1492
+        ],
+        [
+          1045,
+          1489,
+          1492
+        ],
+        [
+          1046,
+          1490,
+          1492
+        ],
+        [
+          1047,
+          1490,
+          1492
+        ]
+      ],
+      "bodyCenter": [
+        1486.5,
+        1059.0
+      ],
+      "bodyCenterInwardStaffSpaces": -0.0018219057005782518,
+      "mustPreserveNoteEnvelope": [
+        1476,
+        1023,
+        1498,
+        1069
+      ],
+      "normalizedPreservationEnvelope": [
+        0.82,
+        0.3945237177015041,
+        0.8322222222222222,
+        0.412263787119167
+      ],
+      "sourceCrop": {
+        "path": "review/S-F01-source.png",
+        "sha256": "d641589e0a08477c761640dbcfdc8f0c71ec2af710bb3fe805b8c17c3c8620b2",
+        "origin": [
+          1448,
+          1015
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-F01-review.png",
+        "sha256": "103d32c442597c1bdb2bbddc39cd4ebb321c7f0d16cbf8918230d2b5e40f0d33",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.00033940800145891055,
+      "staffSampleXReference": 1465.0,
+      "staffLinesAtTestedSpine": [
+        1021.4294626206637,
+        1030.8349497471256,
+        1039.8529469805328,
+        1049.1986855506327,
+        1058.9742443330056
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-F02",
+      "pageID": "schumann-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1092,
+        227,
+        1115,
+        247
+      ],
+      "spineROI": [
+        1100,
+        200,
+        1116,
+        240
+      ],
+      "staffLineSeeds": [
+        203,
+        212,
+        221,
+        231,
+        240
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Filled note at bottom staff edge, upward stem, just after a barline.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1064,
+        192,
+        1144,
+        273
+      ],
+      "localStaffLines": [
+        202.90709561034276,
+        212.02496099843995,
+        221.14610169491525,
+        230.55193992490612,
+        239.8928682653379
+      ],
+      "localStaffSpace": 9.246443163748786,
+      "staffMeasurementID": "S-F02",
+      "measuredSpineColumns": [
+        1106,
+        1109
+      ],
+      "spineMeasurementRows": [
+        [
+          205,
+          1106,
+          1109
+        ],
+        [
+          206,
+          1106,
+          1109
+        ],
+        [
+          207,
+          1106,
+          1109
+        ],
+        [
+          208,
+          1106,
+          1109
+        ],
+        [
+          209,
+          1106,
+          1109
+        ],
+        [
+          210,
+          1106,
+          1110
+        ],
+        [
+          215,
+          1106,
+          1109
+        ],
+        [
+          216,
+          1106,
+          1109
+        ],
+        [
+          217,
+          1106,
+          1109
+        ],
+        [
+          218,
+          1106,
+          1109
+        ],
+        [
+          219,
+          1105,
+          1109
+        ],
+        [
+          224,
+          1107,
+          1109
+        ],
+        [
+          225,
+          1107,
+          1109
+        ],
+        [
+          226,
+          1106,
+          1109
+        ]
+      ],
+      "bodyCenter": [
+        1103.5,
+        237.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.31286281807036537,
+      "mustPreserveNoteEnvelope": [
+        1092,
+        200,
+        1116,
+        247
+      ],
+      "normalizedPreservationEnvelope": [
+        0.6066666666666667,
+        0.07713073659853452,
+        0.62,
+        0.09525645969919012
+      ],
+      "sourceCrop": {
+        "path": "review/S-F02-source.png",
+        "sha256": "5a03a585ee63cfa9f924d9c1133ebe7e2de2e86ef231b94bad7f030a7f2ff8fd",
+        "origin": [
+          1064,
+          192
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-F02-review.png",
+        "sha256": "1018e2ee203ace13c945b44d6998a02eec283c9259a53585ecb0cb29c3e082a5",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 1091.5,
+      "staffLinesAtTestedSpine": [
+        202.90709561034276,
+        212.02496099843995,
+        221.14610169491525,
+        230.55193992490612,
+        239.8928682653379
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-F03",
+      "pageID": "schumann-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1135,
+        218,
+        1161,
+        243
+      ],
+      "spineROI": [
+        1145,
+        193,
+        1161,
+        235
+      ],
+      "staffLineSeeds": [
+        202,
+        211,
+        220,
+        230,
+        239
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Filled lower-line note on upward stem with a separate flat to its left.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1107,
+        185,
+        1189,
+        269
+      ],
+      "localStaffLines": [
+        202.32313975495566,
+        211.4293632220717,
+        220.44751645721126,
+        229.8332505587286,
+        239.26081840763499
+      ],
+      "localStaffSpace": 9.234419663169831,
+      "staffMeasurementID": "S-F03",
+      "measuredSpineColumns": [
+        1150,
+        1153
+      ],
+      "spineMeasurementRows": [
+        [
+          198,
+          1150,
+          1152
+        ],
+        [
+          199,
+          1150,
+          1152
+        ],
+        [
+          200,
+          1150,
+          1153
+        ],
+        [
+          205,
+          1150,
+          1153
+        ],
+        [
+          206,
+          1150,
+          1153
+        ],
+        [
+          207,
+          1150,
+          1153
+        ],
+        [
+          208,
+          1150,
+          1153
+        ],
+        [
+          209,
+          1150,
+          1153
+        ],
+        [
+          214,
+          1150,
+          1153
+        ],
+        [
+          215,
+          1150,
+          1153
+        ],
+        [
+          216,
+          1150,
+          1153
+        ],
+        [
+          217,
+          1150,
+          1153
+        ]
+      ],
+      "bodyCenter": [
+        1148.0,
+        230.5
+      ],
+      "bodyCenterInwardStaffSpaces": 0.9487134792645675,
+      "mustPreserveNoteEnvelope": [
+        1135,
+        193,
+        1161,
+        243
+      ],
+      "normalizedPreservationEnvelope": [
+        0.6305555555555555,
+        0.07443116081758581,
+        0.645,
+        0.09371384496721943
+      ],
+      "sourceCrop": {
+        "path": "review/S-F03-source.png",
+        "sha256": "bd837da3df7e397a46b4eec5d4a4e09472dd751de8dc64bd842b51bf07b31616",
+        "origin": [
+          1107,
+          185
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-F03-review.png",
+        "sha256": "f62d49dad7f63174cc426c47c0174fc3e58ed6a07447af2da9c722e28a5a5e2d",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.0060019556995999914,
+      "staffSampleXReference": 1167.5,
+      "staffLinesAtTestedSpine": [
+        202.41917104614927,
+        211.5253945132653,
+        220.54354774840488,
+        229.9292818499222,
+        239.3568496988286
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-F04",
+      "pageID": "schumann-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1514,
+        1049,
+        1536,
+        1069
+      ],
+      "spineROI": [
+        1522,
+        1025,
+        1537,
+        1064
+      ],
+      "staffLineSeeds": [
+        1021,
+        1031,
+        1040,
+        1050,
+        1059
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin II, second system",
+      "sourceFinding": "Next filled bottom-line note on its own upward stem to the same beam; distinct head/stem, correlated phrase.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1486,
+        1017,
+        1565,
+        1095
+      ],
+      "localStaffLines": [
+        1021.4381175247009,
+        1030.8436046511629,
+        1039.86160188457,
+        1049.20734045467,
+        1058.9828992370428
+      ],
+      "localStaffSpace": 9.386195428085472,
+      "staffMeasurementID": "S-F04",
+      "measuredSpineColumns": [
+        1528,
+        1531
+      ],
+      "spineMeasurementRows": [
+        [
+          1025,
+          1524,
+          1537
+        ],
+        [
+          1026,
+          1522,
+          1537
+        ],
+        [
+          1027,
+          1522,
+          1537
+        ],
+        [
+          1028,
+          1522,
+          1537
+        ],
+        [
+          1033,
+          1522,
+          1537
+        ],
+        [
+          1034,
+          1528,
+          1531
+        ],
+        [
+          1035,
+          1528,
+          1531
+        ],
+        [
+          1036,
+          1528,
+          1531
+        ],
+        [
+          1037,
+          1528,
+          1531
+        ],
+        [
+          1042,
+          1529,
+          1531
+        ],
+        [
+          1043,
+          1529,
+          1530
+        ],
+        [
+          1044,
+          1529,
+          1530
+        ],
+        [
+          1045,
+          1529,
+          1530
+        ],
+        [
+          1047,
+          1529,
+          1530
+        ]
+      ],
+      "bodyCenter": [
+        1525.0,
+        1059.0
+      ],
+      "bodyCenterInwardStaffSpaces": -0.0018219057005782518,
+      "mustPreserveNoteEnvelope": [
+        1514,
+        1025,
+        1537,
+        1069
+      ],
+      "normalizedPreservationEnvelope": [
+        0.8411111111111111,
+        0.39529502506748937,
+        0.8538888888888889,
+        0.412263787119167
+      ],
+      "sourceCrop": {
+        "path": "review/S-F04-source.png",
+        "sha256": "6df442f51a8b640f2473fb47444d02120d54c6e457e0d00da795162d53146a98",
+        "origin": [
+          1486,
+          1017
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-F04-review.png",
+        "sha256": "8df726207efef86188359f93bd6797b02af9bad3d6f74933ebf19ce4db0e5a7b",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.00033940800145891055,
+      "staffSampleXReference": 1465.0,
+      "staffLinesAtTestedSpine": [
+        1021.4162257086068,
+        1030.8217128350689,
+        1039.839710068476,
+        1049.185448638576,
+        1058.9610074209488
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-H01",
+      "pageID": "mozart-p004",
+      "headKind": "hollow",
+      "bodyROI": [
+        162,
+        882,
+        188,
+        909
+      ],
+      "spineROI": [
+        176,
+        859,
+        190,
+        902
+      ],
+      "staffLineSeeds": [
+        870,
+        880,
+        889,
+        899,
+        908
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, second system",
+      "sourceFinding": "Hollow lower-staff half-note on upward stem; faint and interrupted staff lines.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        134,
+        851,
+        218,
+        935
+      ],
+      "localStaffLines": [
+        870.2051515427323,
+        879.5123152709359,
+        888.5825471698113,
+        898.8736666666666,
+        908.0
+      ],
+      "localStaffSpace": 9.448712114316919,
+      "staffMeasurementID": "M-H01",
+      "measuredSpineColumns": [
+        182,
+        183
+      ],
+      "spineMeasurementRows": [
+        [
+          864,
+          182,
+          183
+        ],
+        [
+          865,
+          182,
+          183
+        ],
+        [
+          866,
+          182,
+          183
+        ],
+        [
+          867,
+          182,
+          183
+        ],
+        [
+          868,
+          181,
+          184
+        ],
+        [
+          873,
+          182,
+          183
+        ],
+        [
+          874,
+          182,
+          183
+        ],
+        [
+          875,
+          182,
+          183
+        ],
+        [
+          876,
+          182,
+          183
+        ],
+        [
+          877,
+          181,
+          184
+        ]
+      ],
+      "bodyCenter": [
+        175.0,
+        895.5
+      ],
+      "bodyCenterInwardStaffSpaces": 1.3229316174274899,
+      "mustPreserveNoteEnvelope": [
+        162,
+        859,
+        190,
+        909
+      ],
+      "normalizedPreservationEnvelope": [
+        0.09,
+        0.3453960595094491,
+        0.10555555555555556,
+        0.36550060313630883
+      ],
+      "sourceCrop": {
+        "path": "review/M-H01-source.png",
+        "sha256": "4345884e440adfa344abd033f293863f2d8e177ae208e5cf4a7bd8a4c004ec5b",
+        "origin": [
+          134,
+          851
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-H01-review.png",
+        "sha256": "577ce2248e236ec20c00c3314b37facb03eeb4faeac3f404e435bbfefbd8cedf",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 203.0,
+      "staffLinesAtTestedSpine": [
+        870.2051515427323,
+        879.5123152709359,
+        888.5825471698113,
+        898.8736666666666,
+        908.0
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-H02",
+      "pageID": "mozart-p004",
+      "headKind": "hollow",
+      "bodyROI": [
+        357,
+        889,
+        384,
+        913
+      ],
+      "spineROI": [
+        370,
+        862,
+        385,
+        906
+      ],
+      "staffLineSeeds": [
+        870,
+        880,
+        889,
+        899,
+        908
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, second system",
+      "sourceFinding": "Hollow half-note at the bottom staff line on upward stem, under a long source slur.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        329,
+        854,
+        413,
+        939
+      ],
+      "localStaffLines": [
+        869.5469483568075,
+        879.5123152709359,
+        888.5825471698113,
+        898.6727219880831,
+        908.0
+      ],
+      "localStaffSpace": 9.613262910798113,
+      "staffMeasurementID": "M-H02",
+      "measuredSpineColumns": [
+        375,
+        377
+      ],
+      "spineMeasurementRows": [
+        [
+          867,
+          375,
+          377
+        ],
+        [
+          872,
+          375,
+          377
+        ],
+        [
+          873,
+          375,
+          377
+        ],
+        [
+          874,
+          375,
+          377
+        ],
+        [
+          875,
+          376,
+          377
+        ],
+        [
+          876,
+          376,
+          377
+        ],
+        [
+          877,
+          376,
+          377
+        ],
+        [
+          882,
+          376,
+          377
+        ],
+        [
+          883,
+          375,
+          377
+        ],
+        [
+          884,
+          375,
+          377
+        ],
+        [
+          885,
+          375,
+          377
+        ],
+        [
+          886,
+          375,
+          377
+        ]
+      ],
+      "bodyCenter": [
+        370.5,
+        901.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.7281606739515298,
+      "mustPreserveNoteEnvelope": [
+        357,
+        862,
+        385,
+        913
+      ],
+      "normalizedPreservationEnvelope": [
+        0.19833333333333333,
+        0.3466023321270607,
+        0.21388888888888888,
+        0.3671089666264576
+      ],
+      "sourceCrop": {
+        "path": "review/M-H02-source.png",
+        "sha256": "def3d7cd504e1585d4396ba525dd13eea807db93baa7a72420e3cb38f3966262",
+        "origin": [
+          329,
+          854
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-H02-review.png",
+        "sha256": "6a8ac4970e1c4fc96dc9cbb9437fac30da26a5045850544c15cd79c9efae2283",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 400.0,
+      "staffLinesAtTestedSpine": [
+        869.5469483568075,
+        879.5123152709359,
+        888.5825471698113,
+        898.6727219880831,
+        908.0
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-H03",
+      "pageID": "mozart-p004",
+      "headKind": "hollow",
+      "bodyROI": [
+        566,
+        882,
+        596,
+        908
+      ],
+      "spineROI": [
+        581,
+        858,
+        596,
+        902
+      ],
+      "staffLineSeeds": [
+        870,
+        880,
+        889,
+        899,
+        908
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, second system",
+      "sourceFinding": "Hollow half-note at lower inner staff line, upward stem, after a structural barline.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        538,
+        850,
+        624,
+        934
+      ],
+      "localStaffLines": [
+        870.4329411764705,
+        880.2574699262708,
+        889.4466635115949,
+        898.9793281653747,
+        908.4928296935045
+      ],
+      "localStaffSpace": 9.514972129258496,
+      "staffMeasurementID": "M-H03",
+      "measuredSpineColumns": [
+        586,
+        588
+      ],
+      "spineMeasurementRows": [
+        [
+          865,
+          586,
+          587
+        ],
+        [
+          866,
+          585,
+          587
+        ],
+        [
+          867,
+          586,
+          588
+        ],
+        [
+          868,
+          586,
+          587
+        ],
+        [
+          873,
+          586,
+          587
+        ],
+        [
+          874,
+          586,
+          588
+        ],
+        [
+          875,
+          586,
+          588
+        ],
+        [
+          876,
+          586,
+          588
+        ],
+        [
+          877,
+          586,
+          588
+        ],
+        [
+          878,
+          586,
+          587
+        ]
+      ],
+      "bodyCenter": [
+        581.0,
+        895.0
+      ],
+      "bodyCenterInwardStaffSpaces": 1.4180629759297065,
+      "mustPreserveNoteEnvelope": [
+        566,
+        858,
+        596,
+        908
+      ],
+      "normalizedPreservationEnvelope": [
+        0.31444444444444447,
+        0.34499396863691195,
+        0.33111111111111113,
+        0.3650985122637716
+      ],
+      "sourceCrop": {
+        "path": "review/M-H03-source.png",
+        "sha256": "f8200f8f1449aaf5176a9a16c8e3e54a32b480261e695644084a9e830e791d27",
+        "origin": [
+          538,
+          850
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-H03-review.png",
+        "sha256": "b7876d021b830402c6519828d4f1ecd39ff8854f9c096e1358f392f1e1c4c3b9",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 612.0,
+      "staffLinesAtTestedSpine": [
+        870.4329411764705,
+        880.2574699262708,
+        889.4466635115949,
+        898.9793281653747,
+        908.4928296935045
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-H04",
+      "pageID": "mozart-p004",
+      "headKind": "hollow",
+      "bodyROI": [
+        969,
+        882,
+        996,
+        909
+      ],
+      "spineROI": [
+        982,
+        858,
+        997,
+        903
+      ],
+      "staffLineSeeds": [
+        870,
+        880,
+        889,
+        899,
+        908
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, second system",
+      "sourceFinding": "Hollow lower-staff half-note on upward stem at the start of the next slur.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        941,
+        850,
+        1025,
+        935
+      ],
+      "localStaffLines": [
+        869.8650238803904,
+        879.5123152709359,
+        888.5825471698113,
+        898.7830777967064,
+        908.0
+      ],
+      "localStaffSpace": 9.533744029902408,
+      "staffMeasurementID": "M-H04",
+      "measuredSpineColumns": [
+        988,
+        990
+      ],
+      "spineMeasurementRows": [
+        [
+          866,
+          988,
+          990
+        ],
+        [
+          867,
+          988,
+          990
+        ],
+        [
+          872,
+          988,
+          990
+        ],
+        [
+          873,
+          988,
+          990
+        ],
+        [
+          874,
+          988,
+          990
+        ],
+        [
+          875,
+          988,
+          990
+        ],
+        [
+          876,
+          988,
+          990
+        ],
+        [
+          877,
+          988,
+          990
+        ]
+      ],
+      "bodyCenter": [
+        982.5,
+        895.5
+      ],
+      "bodyCenterInwardStaffSpaces": 1.3111323275298756,
+      "mustPreserveNoteEnvelope": [
+        969,
+        858,
+        997,
+        909
+      ],
+      "normalizedPreservationEnvelope": [
+        0.5383333333333333,
+        0.34499396863691195,
+        0.5538888888888889,
+        0.36550060313630883
+      ],
+      "sourceCrop": {
+        "path": "review/M-H04-source.png",
+        "sha256": "fae1f58af07a0fc502317a662756d45acf027b34ff257f19921e4af340185364",
+        "origin": [
+          941,
+          850
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-H04-review.png",
+        "sha256": "b9a48104be569a34da32ed831c102652efb9fdd5a88e3c983982d7cd721657ad",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 1013.0,
+      "staffLinesAtTestedSpine": [
+        869.8650238803904,
+        879.5123152709359,
+        888.5825471698113,
+        898.7830777967064,
+        908.0
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-F01",
+      "pageID": "mozart-p004",
+      "headKind": "filled",
+      "bodyROI": [
+        504,
+        349,
+        528,
+        371
+      ],
+      "spineROI": [
+        502,
+        357,
+        517,
+        398
+      ],
+      "staffLineSeeds": [
+        351,
+        360,
+        369,
+        379,
+        389
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled upper-space quarter note on downward stem in a faint scan.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        474,
+        323,
+        556,
+        406
+      ],
+      "localStaffLines": [
+        350.6219512195122,
+        360.39858490566036,
+        369.47153465346537,
+        379.4305882352941,
+        388.5098039215686
+      ],
+      "localStaffSpace": 9.471963175514105,
+      "staffMeasurementID": "M-F01",
+      "measuredSpineColumns": [
+        510,
+        511
+      ],
+      "spineMeasurementRows": [
+        [
+          372,
+          509,
+          511
+        ],
+        [
+          373,
+          509,
+          511
+        ],
+        [
+          374,
+          509,
+          511
+        ],
+        [
+          375,
+          509,
+          511
+        ],
+        [
+          376,
+          509,
+          511
+        ],
+        [
+          377,
+          509,
+          511
+        ],
+        [
+          382,
+          510,
+          511
+        ],
+        [
+          383,
+          510,
+          511
+        ],
+        [
+          384,
+          510,
+          511
+        ],
+        [
+          385,
+          510,
+          511
+        ],
+        [
+          386,
+          509,
+          511
+        ],
+        [
+          391,
+          509,
+          511
+        ],
+        [
+          392,
+          510,
+          511
+        ],
+        [
+          393,
+          510,
+          511
+        ],
+        [
+          396,
+          515,
+          517
+        ],
+        [
+          397,
+          515,
+          517
+        ]
+      ],
+      "bodyCenter": [
+        516.0,
+        360.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.9900850126540736,
+      "mustPreserveNoteEnvelope": [
+        502,
+        349,
+        528,
+        398
+      ],
+      "normalizedPreservationEnvelope": [
+        0.2788888888888889,
+        0.14032971451548049,
+        0.29333333333333333,
+        0.160032167269803
+      ],
+      "sourceCrop": {
+        "path": "review/M-F01-source.png",
+        "sha256": "cc9e925b0b036f760dd7997149f08d26e94508c574be6aabbd66770f00d4d59f",
+        "origin": [
+          474,
+          323
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-F01-review.png",
+        "sha256": "f3f201b0b241ae9cf181e34780c3ea4849fe9474fd6a61fd043b84c4349040b0",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 541.0,
+      "staffLinesAtTestedSpine": [
+        350.6219512195122,
+        360.39858490566036,
+        369.47153465346537,
+        379.4305882352941,
+        388.5098039215686
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-F02",
+      "pageID": "mozart-p004",
+      "headKind": "filled",
+      "bodyROI": [
+        1083,
+        348,
+        1104,
+        369
+      ],
+      "spineROI": [
+        1081,
+        357,
+        1096,
+        392
+      ],
+      "staffLineSeeds": [
+        349,
+        359,
+        368,
+        377,
+        386
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled upper-line beamed head on downward stem; scan drops portions of staff ink.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1053,
+        322,
+        1132,
+        400
+      ],
+      "localStaffLines": [
+        349.0,
+        358.58462091268416,
+        368.0,
+        377.2638748738648,
+        386.5
+      ],
+      "localStaffSpace": 9.375,
+      "staffMeasurementID": "M-F02",
+      "measuredSpineColumns": [
+        1087,
+        1089
+      ],
+      "spineMeasurementRows": [
+        [
+          371,
+          1088,
+          1089
+        ],
+        [
+          372,
+          1087,
+          1089
+        ],
+        [
+          373,
+          1087,
+          1089
+        ],
+        [
+          374,
+          1087,
+          1089
+        ],
+        [
+          375,
+          1087,
+          1089
+        ],
+        [
+          380,
+          1087,
+          1089
+        ],
+        [
+          381,
+          1087,
+          1089
+        ],
+        [
+          382,
+          1087,
+          1089
+        ],
+        [
+          383,
+          1087,
+          1090
+        ],
+        [
+          384,
+          1087,
+          1096
+        ],
+        [
+          389,
+          1087,
+          1096
+        ],
+        [
+          390,
+          1088,
+          1091
+        ],
+        [
+          391,
+          1087,
+          1090
+        ]
+      ],
+      "bodyCenter": [
+        1093.5,
+        358.5
+      ],
+      "bodyCenterInwardStaffSpaces": 1.0133333333333334,
+      "mustPreserveNoteEnvelope": [
+        1081,
+        348,
+        1104,
+        392
+      ],
+      "normalizedPreservationEnvelope": [
+        0.6005555555555555,
+        0.1399276236429433,
+        0.6133333333333333,
+        0.15761962203457983
+      ],
+      "sourceCrop": {
+        "path": "review/M-F02-source.png",
+        "sha256": "d9269f07fd36affeced37b53b81a1044f4f80664982eb28045cd81609c9c7ec1",
+        "origin": [
+          1053,
+          322
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-F02-review.png",
+        "sha256": "6bd130efeedbf05c7b28c232c0bb8dd58205278d7e40c061abb77bf1d8e80b92",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 1106.5,
+      "staffLinesAtTestedSpine": [
+        349.0,
+        358.58462091268416,
+        368.0,
+        377.2638748738648,
+        386.5
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-F03",
+      "pageID": "mozart-p004",
+      "headKind": "filled",
+      "bodyROI": [
+        1129,
+        348,
+        1152,
+        369
+      ],
+      "spineROI": [
+        1129,
+        356,
+        1144,
+        393
+      ],
+      "staffLineSeeds": [
+        349,
+        359,
+        368,
+        377,
+        386
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled head on next upper line, down-stem to a shared beam, with slur above.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        1101,
+        322,
+        1180,
+        401
+      ],
+      "localStaffLines": [
+        349.0,
+        358.6085918854415,
+        368.0,
+        377.051354630004,
+        386.3101265822785
+      ],
+      "localStaffSpace": 9.327531645569621,
+      "staffMeasurementID": "M-F03",
+      "measuredSpineColumns": [
+        1135,
+        1137
+      ],
+      "spineMeasurementRows": [
+        [
+          371,
+          1135,
+          1137
+        ],
+        [
+          372,
+          1135,
+          1137
+        ],
+        [
+          373,
+          1135,
+          1137
+        ],
+        [
+          374,
+          1135,
+          1137
+        ],
+        [
+          375,
+          1135,
+          1137
+        ],
+        [
+          380,
+          1135,
+          1137
+        ],
+        [
+          381,
+          1135,
+          1137
+        ],
+        [
+          382,
+          1135,
+          1136
+        ],
+        [
+          383,
+          1133,
+          1142
+        ],
+        [
+          384,
+          1129,
+          1144
+        ],
+        [
+          389,
+          1129,
+          1144
+        ],
+        [
+          390,
+          1134,
+          1138
+        ],
+        [
+          391,
+          1134,
+          1137
+        ],
+        [
+          392,
+          1129,
+          1144
+        ]
+      ],
+      "bodyCenter": [
+        1140.5,
+        358.5
+      ],
+      "bodyCenterInwardStaffSpaces": 1.0184902459711618,
+      "mustPreserveNoteEnvelope": [
+        1129,
+        348,
+        1152,
+        393
+      ],
+      "normalizedPreservationEnvelope": [
+        0.6272222222222222,
+        0.1399276236429433,
+        0.64,
+        0.158021712907117
+      ],
+      "sourceCrop": {
+        "path": "review/M-F03-source.png",
+        "sha256": "fa38fe9913beea697334649bcf22417e852d9d958cb8bd154e2ed25d99933c31",
+        "origin": [
+          1101,
+          322
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-F03-review.png",
+        "sha256": "a63a26bb5ac37252f4259da4644d5b01444fd58278deee7b8df3e8f42047f345",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 1154.0,
+      "staffLinesAtTestedSpine": [
+        349.0,
+        358.6085918854415,
+        368.0,
+        377.051354630004,
+        386.3101265822785
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-F04",
+      "pageID": "mozart-p004",
+      "headKind": "filled",
+      "bodyROI": [
+        966,
+        364,
+        992,
+        387
+      ],
+      "spineROI": [
+        978,
+        336,
+        994,
+        378
+      ],
+      "staffLineSeeds": [
+        350,
+        359,
+        368,
+        378,
+        387
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Filled lower-space beamed note on an upward stem; staff lines are faint and interrupted.",
+      "genuineOwnStemHead": true,
+      "expectedMusicalAttachment": true,
+      "terminalBodyOnTestedSpine": true,
+      "contextROI": [
+        938,
+        328,
+        1022,
+        413
+      ],
+      "localStaffLines": [
+        349.69797421731124,
+        358.9641080312722,
+        368.3840579710145,
+        377.673719376392,
+        387.1981548335339
+      ],
+      "localStaffSpace": 9.37504515405567,
+      "staffMeasurementID": "M-F04",
+      "measuredSpineColumns": [
+        984,
+        986
+      ],
+      "spineMeasurementRows": [
+        [
+          337,
+          991,
+          994
+        ],
+        [
+          338,
+          984,
+          994
+        ],
+        [
+          339,
+          984,
+          994
+        ],
+        [
+          340,
+          984,
+          994
+        ],
+        [
+          341,
+          984,
+          994
+        ],
+        [
+          342,
+          984,
+          994
+        ],
+        [
+          343,
+          984,
+          994
+        ],
+        [
+          344,
+          984,
+          987
+        ],
+        [
+          345,
+          984,
+          986
+        ],
+        [
+          346,
+          984,
+          994
+        ],
+        [
+          347,
+          984,
+          994
+        ],
+        [
+          352,
+          984,
+          990
+        ],
+        [
+          353,
+          984,
+          986
+        ],
+        [
+          354,
+          984,
+          986
+        ],
+        [
+          355,
+          984,
+          986
+        ],
+        [
+          356,
+          984,
+          986
+        ],
+        [
+          361,
+          984,
+          986
+        ],
+        [
+          362,
+          984,
+          986
+        ],
+        [
+          363,
+          984,
+          986
+        ]
+      ],
+      "bodyCenter": [
+        979.0,
+        375.5
+      ],
+      "bodyCenterInwardStaffSpaces": 1.2477971723126333,
+      "mustPreserveNoteEnvelope": [
+        966,
+        336,
+        994,
+        387
+      ],
+      "normalizedPreservationEnvelope": [
+        0.5366666666666666,
+        0.13510253317249699,
+        0.5522222222222222,
+        0.15560916767189384
+      ],
+      "sourceCrop": {
+        "path": "review/M-F04-source.png",
+        "sha256": "fc095e4e36240a97c6e1fecc54b10a6024de5b6aab1b5e71771d37ee248274b2",
+        "origin": [
+          938,
+          328
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-F04-review.png",
+        "sha256": "d1fefa7c7fd2fe46fc973cfe75e8bf9eb4321faf77b76e66bbc1e6ad4f2b217b",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.022292660610418125,
+      "staffSampleXReference": 968.5,
+      "initialWholeCorridorMeasurementColumns": [
+        984,
+        990
+      ],
+      "sourceSpineMeasurementCorrection": {
+        "reason": "Initial median width included a connected beam. Original source rows353-357 and361-363 show the actual unbranched stem at x984..985. Corrected from source before any prototype inspection.",
+        "rows": [
+          [
+            353,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            354,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            355,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            356,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            357,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            361,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            362,
+            [
+              984,
+              985
+            ]
+          ],
+          [
+            363,
+            [
+              984,
+              985
+            ]
+          ]
+        ]
+      },
+      "staffLinesAtTestedSpine": [
+        349.3301453172393,
+        358.5962791312003,
+        368.0162290709426,
+        377.3058904763201,
+        386.830325933462
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-N01",
+      "pageID": "trio-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        660,
+        296,
+        683,
+        315
+      ],
+      "spineROI": [
+        628,
+        292,
+        641,
+        340
+      ],
+      "staffLineSeeds": [
+        298,
+        308,
+        318,
+        327,
+        337
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Same genuine source body as T-H01, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "pairedPositive": "T-H01",
+      "contextROI": [
+        600,
+        270,
+        711,
+        348
+      ],
+      "localStaffLines": [
+        298.4772157498894,
+        308.0875318066158,
+        317.5010771219302,
+        327.1886446886447,
+        336.8192397207137
+      ],
+      "localStaffSpace": 9.585505992706075,
+      "staffMeasurementID": "T-N01",
+      "measuredSpineColumns": [
+        633,
+        638
+      ],
+      "spineMeasurementRows": [
+        [
+          315,
+          633,
+          637
+        ],
+        [
+          320,
+          633,
+          638
+        ],
+        [
+          321,
+          633,
+          637
+        ],
+        [
+          322,
+          633,
+          637
+        ],
+        [
+          323,
+          633,
+          637
+        ],
+        [
+          324,
+          633,
+          637
+        ],
+        [
+          325,
+          633,
+          637
+        ],
+        [
+          330,
+          633,
+          638
+        ],
+        [
+          331,
+          633,
+          638
+        ],
+        [
+          332,
+          633,
+          638
+        ],
+        [
+          333,
+          633,
+          638
+        ],
+        [
+          334,
+          633,
+          638
+        ]
+      ],
+      "bodyCenter": [
+        671.5,
+        305.5
+      ],
+      "bodyCenterInwardStaffSpaces": 0.7326461696914546,
+      "sourceCrop": {
+        "path": "review/T-N01-source.png",
+        "sha256": "80d8891c2a9cd91de143f8cee2a450ca416e15412e6e2766eac64c46d28d766f",
+        "origin": [
+          600,
+          270
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-N01-review.png",
+        "sha256": "a2011e4cd4cfffb657dfb25a8ac3d628692f3ccd21d90507560b864d6f6df4b6",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 645.5,
+      "staffLinesAtTestedSpine": [
+        298.4772157498894,
+        308.0875318066158,
+        317.5010771219302,
+        327.1886446886447,
+        336.8192397207137
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-N02",
+      "pageID": "trio-p003",
+      "headKind": "filled",
+      "bodyROI": [
+        1421,
+        294,
+        1446,
+        314
+      ],
+      "spineROI": [
+        1393,
+        290,
+        1407,
+        338
+      ],
+      "staffLineSeeds": [
+        295,
+        305,
+        314,
+        324,
+        334
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Same genuine source body as T-F03, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "pairedPositive": "T-F03",
+      "contextROI": [
+        1365,
+        268,
+        1474,
+        346
+      ],
+      "localStaffLines": [
+        295.01458885941645,
+        304.8371775158039,
+        314.4425615763547,
+        324.1326530612245,
+        333.93859649122805
+      ],
+      "localStaffSpace": 9.731001907952901,
+      "staffMeasurementID": "T-N02",
+      "measuredSpineColumns": [
+        1398,
+        1402
+      ],
+      "spineMeasurementRows": [
+        [
+          317,
+          1398,
+          1402
+        ],
+        [
+          318,
+          1398,
+          1402
+        ],
+        [
+          319,
+          1398,
+          1402
+        ],
+        [
+          320,
+          1398,
+          1402
+        ],
+        [
+          321,
+          1398,
+          1402
+        ],
+        [
+          322,
+          1398,
+          1402
+        ],
+        [
+          327,
+          1398,
+          1402
+        ],
+        [
+          328,
+          1398,
+          1402
+        ],
+        [
+          329,
+          1398,
+          1402
+        ],
+        [
+          330,
+          1398,
+          1402
+        ],
+        [
+          331,
+          1398,
+          1402
+        ]
+      ],
+      "bodyCenter": [
+        1433.5,
+        304.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.9233798560084551,
+      "sourceCrop": {
+        "path": "review/T-N02-source.png",
+        "sha256": "ce7ea9a3edca02d161cfac59208179f3472189e7754cf227ec35cf72c7b5dbe1",
+        "origin": [
+          1365,
+          268
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-N02-review.png",
+        "sha256": "b806d91531da57def84ad4a9b73d992a26b35e0f576f0cc05d671ed71bc3b74f",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 1412.0,
+      "staffLinesAtTestedSpine": [
+        295.01458885941645,
+        304.8371775158039,
+        314.4425615763547,
+        324.1326530612245,
+        333.93859649122805
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-N01",
+      "pageID": "schumann-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        679,
+        229,
+        710,
+        248
+      ],
+      "spineROI": [
+        663,
+        197,
+        679,
+        244
+      ],
+      "staffLineSeeds": [
+        205,
+        214,
+        223,
+        232,
+        242
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Same genuine source body as S-H01, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "pairedPositive": "S-H01",
+      "contextROI": [
+        635,
+        189,
+        738,
+        274
+      ],
+      "localStaffLines": [
+        204.5080405002978,
+        213.79741205014153,
+        222.85863244435532,
+        231.99681641315883,
+        241.50109529025193
+      ],
+      "localStaffSpace": 9.248263697488532,
+      "staffMeasurementID": "S-N01",
+      "measuredSpineColumns": [
+        667,
+        670
+      ],
+      "spineMeasurementRows": [
+        [
+          207,
+          667,
+          670
+        ],
+        [
+          208,
+          667,
+          670
+        ],
+        [
+          209,
+          667,
+          670
+        ],
+        [
+          210,
+          667,
+          671
+        ],
+        [
+          211,
+          667,
+          670
+        ],
+        [
+          216,
+          667,
+          670
+        ],
+        [
+          217,
+          667,
+          670
+        ],
+        [
+          218,
+          667,
+          670
+        ],
+        [
+          219,
+          667,
+          670
+        ],
+        [
+          220,
+          667,
+          671
+        ],
+        [
+          225,
+          667,
+          671
+        ],
+        [
+          226,
+          667,
+          671
+        ],
+        [
+          227,
+          667,
+          671
+        ],
+        [
+          228,
+          667,
+          671
+        ]
+      ],
+      "bodyCenter": [
+        694.5,
+        238.5
+      ],
+      "bodyCenterInwardStaffSpaces": 0.32450364613488536,
+      "sourceCrop": {
+        "path": "review/S-N01-source.png",
+        "sha256": "c2b6a5573f7c6ad431be84f6ac35383782fcccdd1824460e68807c06b10baba9",
+        "origin": [
+          635,
+          189
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-N01-review.png",
+        "sha256": "5ec72aadf4af7908489088e2e4392c08d735231da5a1e89ad60fbb3432198d8b",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.0010619717605990786,
+      "staffSampleXReference": 682.0,
+      "staffLinesAtTestedSpine": [
+        204.52237711906588,
+        213.81174866890962,
+        222.8729690631234,
+        232.0111530319269,
+        241.51543190902
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-N02",
+      "pageID": "schumann-p003",
+      "headKind": "hollow",
+      "bodyROI": [
+        1298,
+        215,
+        1326,
+        239
+      ],
+      "spineROI": [
+        1277,
+        196,
+        1292,
+        242
+      ],
+      "staffLineSeeds": [
+        201,
+        210,
+        219,
+        228,
+        238
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Violin I, first system",
+      "sourceFinding": "Same genuine source body as S-H04, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "pairedPositive": "S-H04",
+      "contextROI": [
+        1249,
+        188,
+        1354,
+        265
+      ],
+      "localStaffLines": [
+        200.9629054520359,
+        210.0326530612245,
+        218.96635071090049,
+        228.2906254513939,
+        237.98355364279126
+      ],
+      "localStaffSpace": 9.255162047688842,
+      "staffMeasurementID": "S-N02",
+      "measuredSpineColumns": [
+        1282,
+        1286
+      ],
+      "spineMeasurementRows": [
+        [
+          203,
+          1282,
+          1287
+        ],
+        [
+          204,
+          1282,
+          1286
+        ],
+        [
+          205,
+          1282,
+          1286
+        ],
+        [
+          206,
+          1282,
+          1286
+        ],
+        [
+          207,
+          1283,
+          1286
+        ],
+        [
+          208,
+          1283,
+          1286
+        ],
+        [
+          213,
+          1283,
+          1286
+        ],
+        [
+          214,
+          1283,
+          1286
+        ]
+      ],
+      "bodyCenter": [
+        1312.0,
+        227.0
+      ],
+      "bodyCenterInwardStaffSpaces": 1.186748928457069,
+      "sourceCrop": {
+        "path": "review/S-N02-source.png",
+        "sha256": "af0fe286354d1a149caea75d97506b2ac5a5cbf83f901cf2f727037db434730a",
+        "origin": [
+          1249,
+          188
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-N02-review.png",
+        "sha256": "346931f10c4f0d03f2d0655be2ff48ab82691061cc965f86d601a866dd663a2f",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.005196799171618712,
+      "staffSampleXReference": 1294.5,
+      "staffLinesAtTestedSpine": [
+        201.0174718433379,
+        210.08721945252648,
+        219.02091710220247,
+        228.3451918426959,
+        238.03812003409325
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-N01",
+      "pageID": "mozart-p004",
+      "headKind": "hollow",
+      "bodyROI": [
+        566,
+        882,
+        596,
+        908
+      ],
+      "spineROI": [
+        549,
+        862,
+        564,
+        909
+      ],
+      "staffLineSeeds": [
+        870,
+        880,
+        889,
+        899,
+        908
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Cello, second system",
+      "sourceFinding": "Same genuine source body as M-H03, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "pairedPositive": "M-H03",
+      "contextROI": [
+        521,
+        854,
+        624,
+        934
+      ],
+      "localStaffLines": [
+        870.4329411764705,
+        879.5138121546961,
+        889.0,
+        898.9793281653747,
+        908.0
+      ],
+      "localStaffSpace": 9.391764705882366,
+      "staffMeasurementID": "M-N01",
+      "measuredSpineColumns": [
+        556,
+        558
+      ],
+      "spineMeasurementRows": [
+        [
+          873,
+          556,
+          558
+        ],
+        [
+          874,
+          556,
+          558
+        ],
+        [
+          875,
+          556,
+          558
+        ],
+        [
+          876,
+          556,
+          558
+        ],
+        [
+          877,
+          555,
+          558
+        ]
+      ],
+      "bodyCenter": [
+        581.0,
+        895.0
+      ],
+      "bodyCenterInwardStaffSpaces": 1.384191406739319,
+      "sourceCrop": {
+        "path": "review/M-N01-source.png",
+        "sha256": "3ca9b9648c529d21f70949bbfcc03c63b673c360973e1cb923e940f465aba2f0",
+        "origin": [
+          521,
+          854
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-N01-review.png",
+        "sha256": "6a976af4cf5545ab6fe03e2bbdea4b358d6dfa2c344045f6d42449e8168c4ec7",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 564.5,
+      "staffLinesAtTestedSpine": [
+        870.4329411764705,
+        879.5138121546961,
+        889.0,
+        898.9793281653747,
+        908.0
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-N02",
+      "pageID": "mozart-p004",
+      "headKind": "filled",
+      "bodyROI": [
+        504,
+        349,
+        528,
+        371
+      ],
+      "spineROI": [
+        486,
+        347,
+        501,
+        393
+      ],
+      "staffLineSeeds": [
+        351,
+        360,
+        369,
+        379,
+        389
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Cello, first system",
+      "sourceFinding": "Same genuine source body as M-F01, paired with a different structural barline. Horizontal staff ink cannot transfer its musical ownership.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "pairedPositive": "M-F01",
+      "contextROI": [
+        458,
+        323,
+        556,
+        401
+      ],
+      "localStaffLines": [
+        350.6219512195122,
+        360.39858490566036,
+        369.3904411764706,
+        379.0,
+        388.51018099547514
+      ],
+      "localStaffSpace": 9.472057443990735,
+      "staffMeasurementID": "M-N02",
+      "measuredSpineColumns": [
+        492,
+        495
+      ],
+      "spineMeasurementRows": [
+        [
+          372,
+          492,
+          494
+        ],
+        [
+          373,
+          492,
+          494
+        ],
+        [
+          374,
+          492,
+          494
+        ],
+        [
+          375,
+          492,
+          495
+        ],
+        [
+          376,
+          492,
+          495
+        ],
+        [
+          382,
+          492,
+          495
+        ],
+        [
+          383,
+          492,
+          495
+        ],
+        [
+          384,
+          492,
+          495
+        ],
+        [
+          385,
+          492,
+          495
+        ],
+        [
+          386,
+          492,
+          495
+        ]
+      ],
+      "bodyCenter": [
+        516.0,
+        360.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.9900751590603397,
+      "sourceCrop": {
+        "path": "review/M-N02-source.png",
+        "sha256": "9f8019f670691548cde3946809523f16df4a80e645349234bbf43379c7d066ee",
+        "origin": [
+          458,
+          323
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-N02-review.png",
+        "sha256": "8e51d96df9518c63490d499aa15f2b434a70dfe39b252aba498fd50b89a42ef3",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 502.0,
+      "staffLinesAtTestedSpine": [
+        350.6219512195122,
+        360.39858490566036,
+        369.3904411764706,
+        379.0,
+        388.51018099547514
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-N03",
+      "pageID": "trio-p003",
+      "headKind": "none",
+      "bodyROI": [
+        778,
+        1033,
+        804,
+        1054
+      ],
+      "spineROI": [
+        782,
+        978,
+        796,
+        1183
+      ],
+      "staffLineSeeds": [
+        986,
+        1000,
+        1014,
+        1028,
+        1042
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Structural spine; any nearby note or curve keeps its original staff ownership",
+      "sourceFinding": "Piano chord tie crossing the continuing structural barline; not a separate head at the crossing.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        750,
+        970,
+        832,
+        1191
+      ],
+      "localStaffLines": [
+        986.0771105978959,
+        1000.1228571428571,
+        1014.0384562180108,
+        1027.6404479402747,
+        1041.690904318152
+      ],
+      "localStaffSpace": 13.903448430064032,
+      "staffMeasurementID": "T-N03",
+      "measuredSpineColumns": [
+        787,
+        790
+      ],
+      "spineMeasurementRows": [
+        [
+          989,
+          786,
+          790
+        ],
+        [
+          990,
+          786,
+          790
+        ],
+        [
+          991,
+          786,
+          789
+        ],
+        [
+          992,
+          786,
+          789
+        ],
+        [
+          993,
+          786,
+          790
+        ],
+        [
+          994,
+          786,
+          790
+        ],
+        [
+          995,
+          786,
+          790
+        ],
+        [
+          996,
+          786,
+          790
+        ],
+        [
+          997,
+          786,
+          790
+        ],
+        [
+          998,
+          786,
+          790
+        ],
+        [
+          1003,
+          786,
+          790
+        ],
+        [
+          1004,
+          786,
+          790
+        ],
+        [
+          1005,
+          786,
+          790
+        ],
+        [
+          1006,
+          786,
+          790
+        ],
+        [
+          1007,
+          786,
+          790
+        ],
+        [
+          1008,
+          786,
+          790
+        ],
+        [
+          1009,
+          786,
+          790
+        ],
+        [
+          1010,
+          786,
+          790
+        ],
+        [
+          1011,
+          786,
+          790
+        ],
+        [
+          1012,
+          786,
+          790
+        ],
+        [
+          1017,
+          786,
+          790
+        ],
+        [
+          1018,
+          786,
+          790
+        ],
+        [
+          1019,
+          786,
+          790
+        ],
+        [
+          1020,
+          786,
+          790
+        ],
+        [
+          1021,
+          786,
+          790
+        ],
+        [
+          1022,
+          786,
+          790
+        ],
+        [
+          1023,
+          786,
+          790
+        ],
+        [
+          1024,
+          786,
+          790
+        ],
+        [
+          1025,
+          786,
+          790
+        ],
+        [
+          1030,
+          786,
+          790
+        ],
+        [
+          1031,
+          786,
+          790
+        ],
+        [
+          1032,
+          786,
+          790
+        ],
+        [
+          1054,
+          786,
+          790
+        ],
+        [
+          1055,
+          786,
+          790
+        ],
+        [
+          1056,
+          786,
+          790
+        ],
+        [
+          1057,
+          787,
+          790
+        ],
+        [
+          1058,
+          787,
+          790
+        ],
+        [
+          1059,
+          787,
+          790
+        ],
+        [
+          1060,
+          787,
+          790
+        ],
+        [
+          1061,
+          787,
+          790
+        ],
+        [
+          1062,
+          786,
+          790
+        ],
+        [
+          1063,
+          786,
+          790
+        ],
+        [
+          1064,
+          786,
+          790
+        ],
+        [
+          1065,
+          786,
+          790
+        ],
+        [
+          1066,
+          786,
+          790
+        ],
+        [
+          1067,
+          786,
+          790
+        ],
+        [
+          1068,
+          782,
+          796
+        ],
+        [
+          1069,
+          782,
+          796
+        ],
+        [
+          1070,
+          782,
+          796
+        ],
+        [
+          1071,
+          782,
+          796
+        ],
+        [
+          1072,
+          786,
+          790
+        ],
+        [
+          1073,
+          787,
+          790
+        ],
+        [
+          1074,
+          787,
+          790
+        ],
+        [
+          1075,
+          787,
+          790
+        ],
+        [
+          1076,
+          787,
+          790
+        ],
+        [
+          1077,
+          787,
+          790
+        ],
+        [
+          1078,
+          786,
+          791
+        ],
+        [
+          1079,
+          782,
+          796
+        ],
+        [
+          1080,
+          782,
+          796
+        ],
+        [
+          1081,
+          782,
+          796
+        ],
+        [
+          1082,
+          782,
+          792
+        ],
+        [
+          1083,
+          786,
+          790
+        ],
+        [
+          1084,
+          787,
+          790
+        ],
+        [
+          1085,
+          787,
+          790
+        ],
+        [
+          1086,
+          787,
+          790
+        ],
+        [
+          1087,
+          787,
+          790
+        ],
+        [
+          1088,
+          787,
+          790
+        ],
+        [
+          1089,
+          787,
+          790
+        ],
+        [
+          1090,
+          787,
+          790
+        ],
+        [
+          1091,
+          787,
+          790
+        ],
+        [
+          1092,
+          787,
+          790
+        ],
+        [
+          1093,
+          787,
+          790
+        ],
+        [
+          1094,
+          787,
+          790
+        ],
+        [
+          1095,
+          787,
+          790
+        ],
+        [
+          1096,
+          787,
+          790
+        ],
+        [
+          1097,
+          787,
+          790
+        ],
+        [
+          1098,
+          787,
+          790
+        ],
+        [
+          1099,
+          787,
+          790
+        ],
+        [
+          1100,
+          787,
+          790
+        ],
+        [
+          1101,
+          787,
+          790
+        ],
+        [
+          1102,
+          787,
+          790
+        ],
+        [
+          1103,
+          787,
+          790
+        ],
+        [
+          1104,
+          787,
+          790
+        ],
+        [
+          1105,
+          787,
+          790
+        ],
+        [
+          1106,
+          787,
+          790
+        ],
+        [
+          1107,
+          787,
+          790
+        ],
+        [
+          1108,
+          787,
+          790
+        ],
+        [
+          1109,
+          787,
+          790
+        ],
+        [
+          1110,
+          787,
+          790
+        ],
+        [
+          1111,
+          787,
+          790
+        ],
+        [
+          1112,
+          787,
+          790
+        ],
+        [
+          1113,
+          787,
+          790
+        ],
+        [
+          1114,
+          787,
+          790
+        ],
+        [
+          1115,
+          782,
+          791
+        ],
+        [
+          1116,
+          782,
+          796
+        ],
+        [
+          1117,
+          782,
+          796
+        ],
+        [
+          1118,
+          782,
+          796
+        ],
+        [
+          1119,
+          787,
+          796
+        ],
+        [
+          1120,
+          787,
+          796
+        ],
+        [
+          1121,
+          787,
+          790
+        ],
+        [
+          1122,
+          787,
+          791
+        ],
+        [
+          1123,
+          782,
+          796
+        ],
+        [
+          1124,
+          782,
+          796
+        ],
+        [
+          1125,
+          782,
+          796
+        ],
+        [
+          1126,
+          786,
+          791
+        ],
+        [
+          1127,
+          787,
+          791
+        ],
+        [
+          1128,
+          787,
+          790
+        ],
+        [
+          1129,
+          787,
+          790
+        ],
+        [
+          1130,
+          787,
+          790
+        ],
+        [
+          1131,
+          787,
+          790
+        ],
+        [
+          1132,
+          787,
+          791
+        ],
+        [
+          1133,
+          787,
+          791
+        ],
+        [
+          1134,
+          787,
+          791
+        ],
+        [
+          1135,
+          787,
+          791
+        ],
+        [
+          1136,
+          787,
+          791
+        ],
+        [
+          1137,
+          782,
+          796
+        ],
+        [
+          1138,
+          782,
+          796
+        ],
+        [
+          1139,
+          782,
+          796
+        ],
+        [
+          1140,
+          783,
+          793
+        ],
+        [
+          1141,
+          787,
+          791
+        ],
+        [
+          1142,
+          787,
+          791
+        ],
+        [
+          1143,
+          787,
+          791
+        ],
+        [
+          1144,
+          787,
+          791
+        ],
+        [
+          1145,
+          787,
+          791
+        ],
+        [
+          1146,
+          787,
+          791
+        ],
+        [
+          1147,
+          787,
+          791
+        ],
+        [
+          1148,
+          787,
+          791
+        ],
+        [
+          1149,
+          787,
+          791
+        ],
+        [
+          1150,
+          787,
+          791
+        ],
+        [
+          1151,
+          782,
+          796
+        ],
+        [
+          1152,
+          782,
+          796
+        ],
+        [
+          1153,
+          782,
+          796
+        ],
+        [
+          1154,
+          782,
+          792
+        ],
+        [
+          1155,
+          787,
+          791
+        ],
+        [
+          1156,
+          787,
+          791
+        ],
+        [
+          1157,
+          787,
+          791
+        ],
+        [
+          1158,
+          787,
+          791
+        ],
+        [
+          1159,
+          787,
+          791
+        ],
+        [
+          1160,
+          787,
+          791
+        ],
+        [
+          1161,
+          787,
+          791
+        ],
+        [
+          1162,
+          787,
+          791
+        ],
+        [
+          1163,
+          787,
+          791
+        ],
+        [
+          1164,
+          787,
+          791
+        ],
+        [
+          1165,
+          783,
+          796
+        ],
+        [
+          1166,
+          782,
+          796
+        ],
+        [
+          1167,
+          782,
+          796
+        ],
+        [
+          1168,
+          786,
+          792
+        ],
+        [
+          1169,
+          787,
+          791
+        ],
+        [
+          1170,
+          787,
+          791
+        ],
+        [
+          1171,
+          787,
+          791
+        ],
+        [
+          1172,
+          787,
+          791
+        ],
+        [
+          1173,
+          787,
+          791
+        ],
+        [
+          1174,
+          787,
+          791
+        ],
+        [
+          1175,
+          787,
+          791
+        ],
+        [
+          1176,
+          787,
+          791
+        ],
+        [
+          1177,
+          787,
+          791
+        ],
+        [
+          1178,
+          787,
+          791
+        ],
+        [
+          1179,
+          782,
+          796
+        ],
+        [
+          1180,
+          782,
+          796
+        ],
+        [
+          1181,
+          782,
+          796
+        ],
+        [
+          1182,
+          782,
+          796
+        ]
+      ],
+      "bodyCenter": [
+        791.0,
+        1043.5
+      ],
+      "bodyCenterInwardStaffSpaces": -0.13011848757867397,
+      "sourceCrop": {
+        "path": "review/T-N03-source.png",
+        "sha256": "6886e2963c0521f745804376da7c19493988727658ceb2ea37cbed6a352de326",
+        "origin": [
+          750,
+          970
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-N03-review.png",
+        "sha256": "a1d3af012e566afe2c485a9cc5576bb2f2d5423f5a0bd81def49cf391c84f2c3",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.0013786595907476823,
+      "staffSampleXReference": 770.5,
+      "staffLinesAtTestedSpine": [
+        986.0522947252624,
+        1000.0980412702237,
+        1014.0136403453773,
+        1027.6156320676412,
+        1041.6660884455184
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "T-N04",
+      "pageID": "trio-p003",
+      "headKind": "none",
+      "bodyROI": [
+        1669,
+        327,
+        1689,
+        348
+      ],
+      "spineROI": [
+        1673,
+        289,
+        1685,
+        345
+      ],
+      "staffLineSeeds": [
+        295,
+        305,
+        314,
+        324,
+        334
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Structural spine; any nearby note or curve keeps its original staff ownership",
+      "sourceFinding": "Right barline with short outer staff-line termination, not a notehead.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        1641,
+        281,
+        1717,
+        374
+      ],
+      "localStaffLines": [
+        295.15501691093573,
+        304.85176956038725,
+        314.4858117537603,
+        324.25676385605465,
+        334.17241379310343
+      ],
+      "localStaffSpace": 9.754349220541926,
+      "staffMeasurementID": "T-N04",
+      "measuredSpineColumns": [
+        1677,
+        1681
+      ],
+      "spineMeasurementRows": [
+        [
+          298,
+          1676,
+          1681
+        ],
+        [
+          299,
+          1676,
+          1681
+        ],
+        [
+          300,
+          1676,
+          1681
+        ],
+        [
+          301,
+          1677,
+          1681
+        ],
+        [
+          302,
+          1676,
+          1681
+        ],
+        [
+          307,
+          1677,
+          1681
+        ],
+        [
+          308,
+          1677,
+          1681
+        ],
+        [
+          309,
+          1677,
+          1681
+        ],
+        [
+          310,
+          1677,
+          1681
+        ],
+        [
+          311,
+          1677,
+          1681
+        ],
+        [
+          312,
+          1677,
+          1681
+        ],
+        [
+          317,
+          1677,
+          1681
+        ],
+        [
+          318,
+          1677,
+          1681
+        ],
+        [
+          319,
+          1677,
+          1681
+        ],
+        [
+          320,
+          1677,
+          1681
+        ],
+        [
+          321,
+          1677,
+          1681
+        ],
+        [
+          322,
+          1677,
+          1681
+        ]
+      ],
+      "bodyCenter": [
+        1679.0,
+        337.5
+      ],
+      "bodyCenterInwardStaffSpaces": -0.34113871993519806,
+      "sourceCrop": {
+        "path": "review/T-N04-source.png",
+        "sha256": "e2900550b00935cb723879186ea88dc62cfdeb812c9e0e677b205bacb0f82e2b",
+        "origin": [
+          1641,
+          281
+        ]
+      },
+      "reviewImage": {
+        "path": "review/T-N04-review.png",
+        "sha256": "4d5d5857040f8cc812d98d206dddacbf87808e6cc81f96c37aef22d88ffd97d8",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.01822825518873582,
+      "staffSampleXReference": 1665.0,
+      "staffLinesAtTestedSpine": [
+        295.41021248357805,
+        305.1069651330296,
+        314.7410073264026,
+        324.51195942869697,
+        334.42760936574575
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-N03",
+      "pageID": "schumann-p003",
+      "headKind": "none",
+      "bodyROI": [
+        548,
+        333,
+        580,
+        359
+      ],
+      "spineROI": [
+        557,
+        290,
+        572,
+        370
+      ],
+      "staffLineSeeds": [
+        291,
+        300,
+        310,
+        320,
+        330
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Structural spine; any nearby note or curve keeps its original staff ownership",
+      "sourceFinding": "A detached tie passes below the terminated Violin II barline. The barline ends at the bottom staff line; proximity to the curve is not direct musical attachment.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        520,
+        282,
+        608,
+        385
+      ],
+      "localStaffLines": [
+        292.8703021370671,
+        302.0135539795114,
+        310.9576929433152,
+        320.26975308641977,
+        330.0313907862229
+      ],
+      "localStaffSpace": 9.290272162288957,
+      "staffMeasurementID": "S-N03",
+      "measuredSpineColumns": [
+        563,
+        567
+      ],
+      "spineMeasurementRows": [
+        [
+          295,
+          563,
+          567
+        ],
+        [
+          296,
+          564,
+          567
+        ],
+        [
+          297,
+          564,
+          567
+        ],
+        [
+          298,
+          563,
+          567
+        ],
+        [
+          299,
+          564,
+          567
+        ],
+        [
+          300,
+          563,
+          568
+        ],
+        [
+          305,
+          564,
+          567
+        ],
+        [
+          306,
+          564,
+          567
+        ],
+        [
+          307,
+          564,
+          567
+        ],
+        [
+          308,
+          564,
+          567
+        ],
+        [
+          313,
+          564,
+          567
+        ],
+        [
+          314,
+          564,
+          567
+        ],
+        [
+          315,
+          564,
+          567
+        ],
+        [
+          316,
+          563,
+          567
+        ],
+        [
+          317,
+          563,
+          567
+        ],
+        [
+          318,
+          563,
+          567
+        ],
+        [
+          323,
+          563,
+          567
+        ],
+        [
+          324,
+          563,
+          567
+        ],
+        [
+          325,
+          563,
+          567
+        ],
+        [
+          326,
+          563,
+          567
+        ],
+        [
+          327,
+          563,
+          567
+        ],
+        [
+          328,
+          563,
+          567
+        ]
+      ],
+      "bodyCenter": [
+        564.0,
+        346.0
+      ],
+      "bodyCenterInwardStaffSpaces": -1.718852681043814,
+      "sourceCrop": {
+        "path": "review/S-N03-source.png",
+        "sha256": "fbffb35b607410cef8a64bce15646dede0daaeb8c52ca2529ed706a26448d9e6",
+        "origin": [
+          520,
+          282
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-N03-review.png",
+        "sha256": "88657c0c571c1dbb041912edac937036ffe20155c9909531bf72f91357093a8c",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.00028480936137239866,
+      "staffSampleXReference": 544.5,
+      "staffLinesAtTestedSpine": [
+        292.8761407289752,
+        302.01939257141953,
+        310.9635315352233,
+        320.2755916783279,
+        330.03722937813103
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "S-N04",
+      "pageID": "schumann-p003",
+      "headKind": "none",
+      "bodyROI": [
+        1272,
+        229,
+        1297,
+        250
+      ],
+      "spineROI": [
+        1277,
+        196,
+        1292,
+        243
+      ],
+      "staffLineSeeds": [
+        201,
+        210,
+        219,
+        229,
+        238
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Structural spine; any nearby note or curve keeps its original staff ownership",
+      "sourceFinding": "Outer staff-line/barline junction before the next hollow head, no head on tested barline.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        1244,
+        188,
+        1325,
+        276
+      ],
+      "localStaffLines": [
+        201.13051422605065,
+        210.38582874311467,
+        219.46836033096375,
+        228.64780278670955,
+        238.341103432119
+      ],
+      "localStaffSpace": 9.30264730151709,
+      "staffMeasurementID": "S-N04",
+      "measuredSpineColumns": [
+        1283,
+        1286
+      ],
+      "spineMeasurementRows": [
+        [
+          199,
+          1287,
+          1289
+        ],
+        [
+          204,
+          1282,
+          1286
+        ],
+        [
+          205,
+          1282,
+          1286
+        ],
+        [
+          206,
+          1282,
+          1286
+        ],
+        [
+          207,
+          1283,
+          1286
+        ],
+        [
+          208,
+          1283,
+          1286
+        ],
+        [
+          213,
+          1283,
+          1286
+        ],
+        [
+          214,
+          1283,
+          1286
+        ],
+        [
+          215,
+          1283,
+          1286
+        ],
+        [
+          216,
+          1283,
+          1286
+        ],
+        [
+          217,
+          1282,
+          1287
+        ],
+        [
+          222,
+          1283,
+          1286
+        ],
+        [
+          223,
+          1283,
+          1286
+        ],
+        [
+          224,
+          1283,
+          1286
+        ],
+        [
+          225,
+          1282,
+          1287
+        ],
+        [
+          226,
+          1282,
+          1286
+        ]
+      ],
+      "bodyCenter": [
+        1284.5,
+        239.5
+      ],
+      "bodyCenterInwardStaffSpaces": -0.12457707255997896,
+      "sourceCrop": {
+        "path": "review/S-N04-source.png",
+        "sha256": "8c6fd2cd7d2a36cd65c9a757d47d94067e001994afe19a6e58bcb1b08e989872",
+        "origin": [
+          1244,
+          188
+        ]
+      },
+      "reviewImage": {
+        "path": "review/S-N04-review.png",
+        "sha256": "d642b2fb044c3ed6b67c05f60ae529449024968dcd7a6b83af206e1b652bd1f4",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.019540302469822052,
+      "staffSampleXReference": 1270.0,
+      "staffLinesAtTestedSpine": [
+        200.84717984023823,
+        210.10249435730225,
+        219.18502594515132,
+        228.36446840089712,
+        238.0577690463066
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-N03",
+      "pageID": "mozart-p004",
+      "headKind": "none",
+      "bodyROI": [
+        547,
+        897,
+        569,
+        915
+      ],
+      "spineROI": [
+        549,
+        862,
+        564,
+        911
+      ],
+      "staffLineSeeds": [
+        870,
+        880,
+        889,
+        899,
+        908
+      ],
+      "nearStaffSide": "lower",
+      "sourceOwner": "Structural spine; any nearby note or curve keeps its original staff ownership",
+      "sourceFinding": "Broken bottom staff-line fragment at the structural barline; nearby half-note has a different stem.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        519,
+        854,
+        597,
+        941
+      ],
+      "localStaffLines": [
+        870.3987430167598,
+        879.5123152709359,
+        888.6753281542995,
+        898.9383789312196,
+        908.0
+      ],
+      "localStaffSpace": 9.400314245810051,
+      "staffMeasurementID": "M-N03",
+      "measuredSpineColumns": [
+        556,
+        558
+      ],
+      "spineMeasurementRows": [
+        [
+          873,
+          556,
+          558
+        ],
+        [
+          874,
+          556,
+          558
+        ],
+        [
+          875,
+          556,
+          558
+        ],
+        [
+          876,
+          556,
+          558
+        ],
+        [
+          877,
+          555,
+          558
+        ],
+        [
+          882,
+          556,
+          558
+        ],
+        [
+          883,
+          556,
+          558
+        ],
+        [
+          884,
+          556,
+          558
+        ],
+        [
+          885,
+          556,
+          558
+        ],
+        [
+          886,
+          555,
+          558
+        ],
+        [
+          891,
+          556,
+          558
+        ],
+        [
+          892,
+          556,
+          558
+        ],
+        [
+          893,
+          556,
+          558
+        ],
+        [
+          894,
+          556,
+          558
+        ],
+        [
+          895,
+          556,
+          558
+        ],
+        [
+          896,
+          556,
+          558
+        ]
+      ],
+      "bodyCenter": [
+        558.0,
+        906.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.21275884483238938,
+      "sourceCrop": {
+        "path": "review/M-N03-source.png",
+        "sha256": "0b1120910e1df7d544dcb6c93a686dd035862002980bb7c0da281285e3757290",
+        "origin": [
+          519,
+          854
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-N03-review.png",
+        "sha256": "8caa3369aeb6a1cccebf81b86f6b42b2b777b7a790edccd5879a1b0efa442804",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": 0.0,
+      "staffSampleXReference": 541.5,
+      "staffLinesAtTestedSpine": [
+        870.3987430167598,
+        879.5123152709359,
+        888.6753281542995,
+        898.9383789312196,
+        908.0
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    },
+    {
+      "id": "M-N04",
+      "pageID": "mozart-p004",
+      "headKind": "none",
+      "bodyROI": [
+        483,
+        341,
+        506,
+        361
+      ],
+      "spineROI": [
+        486,
+        346,
+        501,
+        393
+      ],
+      "staffLineSeeds": [
+        351,
+        360,
+        369,
+        379,
+        389
+      ],
+      "nearStaffSide": "upper",
+      "sourceOwner": "Structural spine; any nearby note or curve keeps its original staff ownership",
+      "sourceFinding": "Faint interrupted upper staff line meeting the barline, with a genuine head on its own stem to the right.",
+      "genuineOwnStemHead": false,
+      "expectedMusicalAttachment": false,
+      "terminalBodyOnTestedSpine": false,
+      "contextROI": [
+        455,
+        315,
+        534,
+        401
+      ],
+      "localStaffLines": [
+        350.6219512195122,
+        360.4942611190818,
+        369.4226400313357,
+        379.22070431086826,
+        388.5098039215686
+      ],
+      "localStaffSpace": 9.471963175514105,
+      "staffMeasurementID": "M-N04",
+      "measuredSpineColumns": [
+        492,
+        495
+      ],
+      "spineMeasurementRows": [
+        [
+          363,
+          492,
+          494
+        ],
+        [
+          364,
+          492,
+          495
+        ],
+        [
+          365,
+          492,
+          495
+        ],
+        [
+          366,
+          492,
+          494
+        ],
+        [
+          367,
+          492,
+          494
+        ],
+        [
+          372,
+          492,
+          494
+        ],
+        [
+          373,
+          492,
+          494
+        ],
+        [
+          374,
+          492,
+          494
+        ],
+        [
+          375,
+          492,
+          495
+        ],
+        [
+          376,
+          492,
+          495
+        ],
+        [
+          377,
+          492,
+          495
+        ],
+        [
+          382,
+          492,
+          495
+        ],
+        [
+          383,
+          492,
+          495
+        ],
+        [
+          384,
+          492,
+          495
+        ],
+        [
+          385,
+          492,
+          495
+        ],
+        [
+          386,
+          492,
+          495
+        ]
+      ],
+      "bodyCenter": [
+        494.5,
+        351.0
+      ],
+      "bodyCenterInwardStaffSpaces": 0.03991239972987785,
+      "sourceCrop": {
+        "path": "review/M-N04-source.png",
+        "sha256": "e71f91790efe2f47aabaf05ee8c01eb23f7dd0dd5ef2f54389130de61a79d746",
+        "origin": [
+          455,
+          315
+        ]
+      },
+      "reviewImage": {
+        "path": "review/M-N04-review.png",
+        "sha256": "1df9c2fd995b0f2944d6582d69110cb6a540f4f9aa01ab5e9372cad4615fb0f3",
+        "scale": 3,
+        "contentOrigin": [
+          50,
+          40
+        ],
+        "legend": "Blue: fixed source body ROI; orange: tested source spine corridor; gray: locally measured staff rows. Original source pixels remain in separate source image."
+      },
+      "prototypeSeenAtSourceFreeze": false,
+      "observedCommonStaffSlope": -0.004244122780370723,
+      "staffSampleXReference": 481.0,
+      "staffLinesAtTestedSpine": [
+        350.5688996847576,
+        360.44120958432717,
+        369.36958849658106,
+        379.16765277611364,
+        388.456752386814
+      ],
+      "localGeometryCaveat": "Staff centers measured in adjacent inspected source fragments. At-spine coordinates are explicit short linear interpolation/extrapolation using the median of five observed fragment slopes; all raw per-column centers are retained. Covered pixels do not reveal exact underlying line center.",
+      "ownerIdentityBasis": "Physical source staff and direct graphical attachment, not an automatic assignment result. Instrument labels describe the source layout only.",
+      "reviewedSourceBeforePrototype": true
+    }
+  ],
+  "formatVersion": 2,
+  "freezeUTC": "2026-10-03T21:45:47.077870+00:00",
+  "productionCommit": "8571acd5d0367a0c011212b7ce577e9b49e25408",
+  "prototypeSourceSeenAtFreeze": false,
+  "prototypeDesignSeenAtFreeze": false,
+  "nativeAnalyzerAtStartSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "coordinateConvention": "Integer top-left original native raster pixels, end-exclusive [left,top,right,bottom). All pages are unrectified original sources. Body/spine rectangles are source-review ROIs rather than pixelwise semantic masks.",
+  "counts": {
+    "genuineHeads": 24,
+    "hollow": 12,
+    "filled": 12,
+    "falseAssociationsAndStructuralSites": 12,
+    "pages": 3,
+    "PDFs": 3
+  },
+  "coverage": [
+    "All three pages lie outside the previous12 real-source replay pages.",
+    "Untouched original gray pixels, faint/broken lines, thick lines, curvature/skew, tied/slurred heads, beamed notes, separate accidentals, six wrong-head/spine associations, barline/staff-line and tie junctions.",
+    "Positive body ROI centers are between -0.16 and1.42 locally measured staff spaces inward from an outer line."
+  ],
+  "limitations": [
+    "The36 cases were selected by source inspection, not randomly sampled and not statistically independent.",
+    "T-H03/T-H04 are two heads of one chord on one shared stem. S-F01/S-F04 share a phrase/beam. Six wrong-spine negatives deliberately reuse positive head ROIs.",
+    "T-H04 is a genuine interior body on a continuing stem, not its terminal head; helper eligibility must distinguish this.",
+    "No confirmed real musical single spine crossing two complete staff cores found; do not infer a two-core native preservation pass from ordinary head recognition.",
+    "Exact outline pixels of a head cannot be separated semantically from crossing staff pixels by these rectangular source obligations."
+  ],
+  "realLongSpineSource": {
+    "cases": [
+      "T-H03",
+      "T-H04"
+    ],
+    "finding": "A genuine two-hollow-head chord shares a downward stem across one complete upper Piano staff core; source y\u2248985..1070. The next staff begins\u22481120, so this is not a two-core musical spine."
+  },
+  "evaluationContract": {
+    "positives": "Count an accepted source body only if the reported witness actually belongs to the selected genuine head and tested own stem; report acceptance elsewhere on the stem separately. Record source-envelope preservation separately from helper recognition.",
+    "negatives": "Do not transfer ownership to the tested barline through a staff line or from a detached neighboring head/curve. Source-negative classification does not authorize deleting those musical marks.",
+    "scope": "Ordinary own-stem recognition validates source shape/attachment evidence. It is not proof that the full native long-connector path tests that stem or preserves every note."
+  }
+}

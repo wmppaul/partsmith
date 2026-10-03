@@ -1,0 +1,15 @@
+{
+  "status": "Frozen before candidate execution or result comparison.",
+  "scope": "Automatic compact cropBounds only; no model, analyzer, assignment, source-copy, explicit rectangle or output changes.",
+  "rule": [
+    "After ordinary ownership and ownership-alternative expansion, save initial top and bottom crop edges.",
+    "Consider ordinary unowned components only (staffIDs empty; isOwnershipAlternative not true).",
+    "Require component height <=2 target staff spaces and width <=8 target staff spaces; both positive. Require horizontal overlap with the retained source width.",
+    "Require the component to straddle either initial crop edge. Do not inspect newly expanded edges and do not recursively chain.",
+    "Require its center to be strictly nearer the target staff core than any non-target staff core, and its bounds not to intersect a non-target staff core.",
+    "Expand the corresponding edge to its complete component extent plus the existing respective top/bottom clearance. Never shrink any existing edge.",
+    "Keep the page clamp and existing warnings. No page-specific rule, vocabulary or threshold retuning after results."
+  ],
+  "expectedRisk": "Proximity is imperfect ownership evidence; this is a bounded candidate requiring source review, not a general correctness guarantee. Single-pass completion may preserve only part of a wider annotation block; conservative source rectangles stay unchanged.",
+  "validation": "Positive/negative model fixtures, existing planner/system-boundary/crop tests, matched complete K478 and Brahms source-bound inventories, exact source guards, all changed page crops and neighboring-core counts."
+}

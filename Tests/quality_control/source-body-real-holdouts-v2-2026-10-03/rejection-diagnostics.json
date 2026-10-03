@@ -1,0 +1,654 @@
+{
+  "instrumentationResultsExact": true,
+  "countsAreFailedProposalGuardsNotCaseTotals": true,
+  "sourceGuardLines": {
+    "68": "                support.append(count > 0 ? Double(ink)/Double(count) : 0)\n            }\n            guard let peak = support.indices.max(by: { support[$0] < support[$1] }), support[peak] >= 0.7 else { failed(#line); return nil }",
+    "93": "        for i in 1..<measuredLines.count {\n            let gap=measuredLines[i]-measuredLines[i-1]\n            guard gap >= staffSpace*0.65 && gap <= staffSpace*1.35 else { failed(#line); return nil }",
+    "143": "        for y in seedY0...seedY1 { for x in seedX0...seedX1 where !originalInk(x,y) {\n            let seed=y*width+x\n            guard visited.insert(seed).inserted else { failed(#line); continue }",
+    "152": "                if px == boxX0 || px == boxX1 || py == boxY0 || py == boxY1 { escaped=true }\n                for (nx,ny) in [(px-1,py),(px+1,py),(px,py-1),(px,py+1)] {\n                    guard nx >= boxX0,nx <= boxX1,ny >= boxY0,ny <= boxY1,!originalInk(nx,ny) else { failed(#line); continue }",
+    "186": "            let a=matrix[0][5],b=matrix[1][5]/2,c=matrix[2][5],d=matrix[3][5],e=matrix[4][5]\n            let determinant=a*c-b*b\n            guard determinant > 1e-8,a > 0,c > 0 else { failed(#line); return nil }",
+    "197": "            guard [cx,cy,rx,ry,angle].allSatisfy({$0.isFinite}),\n                  2*rx >= staffSpace*0.75,2*rx <= staffSpace*2,\n                  2*ry >= staffSpace*0.35,2*ry <= staffSpace*1.25 else { failed(#line); return nil }",
+    "224": "                }\n            }\n            guard points.count >= 20,quadrants.allSatisfy({$0 > 0}) else { failed(#line); continue }",
+    "227": "            var missing=0,longest=0\n            for i in 0..<64 { missing=valid[i%32] ? 0 : missing+1;longest=max(longest,missing) }\n            guard longest < 11,let ellipse=fit(points,proposal) else { failed(#line); continue }",
+    "241": "                return abs(1-1/max(norm,1e-12))*hypot(p.0-cx,p.1-cy)\n            }.sorted()\n            guard errors[Int(ceil(Double(errors.count)*0.9))-1] <= 1.25 else { failed(#line); continue }",
+    "261": "            var innerCount = 0, innerInk = 0, whiteSeeds: [Int] = []\n            for y in y0...y1 { for x in x0...x1 {\n                guard x < strokeLeft || x >= strokeRight else { failed(#line); continue }",
+    "262": "            for y in y0...y1 { for x in x0...x1 {\n                guard x < strokeLeft || x >= strokeRight else { failed(#line); continue }\n                guard !staffPixel(x, y) else { failed(#line); continue }",
+    "280": "            } }\n            guard outline.indices.allSatisfy({ outline[$0] >= 2 && Double(outlineInk[$0]) >= Double(outline[$0]) * 0.55 }),\n                  innerCount >= 4 else { failed(#line); continue }",
+    "308": "                }\n            }\n            guard filled || hollow else { failed(#line); continue }",
+    "317": "            var attachedRows = 0\n            for y in max(0, Int(floor(cy - hy)))...min(height - 1, Int(ceil(cy + hy))) {\n                guard q(bodyColumn, y) <= 1.05, !staffPixel(bodyColumn, y), !staffPixel(spineColumn, y) else { failed(#line); continue }",
+    "320": "                if (min(bodyColumn, spineColumn)...max(bodyColumn, spineColumn)).allSatisfy({ original[y * width + $0] }) { attachedRows += 1 }\n            }\n            guard attachedRows >= 2 else { failed(#line); continue }"
+  },
+  "cases": [
+    {
+      "guardCounts": {
+        "143": 221,
+        "152": 312,
+        "186": 1,
+        "197": 11,
+        "227": 12,
+        "241": 6,
+        "261": 60,
+        "262": 144,
+        "308": 1,
+        "cavityProposals": 2,
+        "proposals": 19
+      },
+      "measuredLines": [
+        298.75471698113205,
+        308.5,
+        318,
+        327.25471698113205,
+        337.25471698113205
+      ],
+      "id": "T-H01"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        287.2546296296296,
+        304.2546296296296,
+        314,
+        323.7546296296296,
+        333.7546296296296
+      ],
+      "id": "T-H02"
+    },
+    {
+      "guardCounts": {
+        "143": 462,
+        "152": 440,
+        "186": 2,
+        "197": 24,
+        "227": 26,
+        "241": 11,
+        "cavityProposals": 2,
+        "proposals": 37
+      },
+      "measuredLines": [
+        986.0064935064935,
+        999.7532467532468,
+        1013.7532467532468,
+        1027.5,
+        1041.5
+      ],
+      "id": "T-H03"
+    },
+    {
+      "guardCounts": {
+        "143": 639,
+        "152": 334,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "measuredLines": [
+        986.0064935064935,
+        999.7532467532468,
+        1013.7532467532468,
+        1027.5,
+        1041.5
+      ],
+      "id": "T-H04"
+    },
+    {
+      "guardCounts": {
+        "143": 207,
+        "152": 288,
+        "197": 19,
+        "227": 19,
+        "cavityProposals": 0,
+        "proposals": 19
+      },
+      "measuredLines": [
+        297.5,
+        307.25471698113205,
+        316.75471698113205,
+        326.50943396226415,
+        337.0188679245283
+      ],
+      "id": "T-F01"
+    },
+    {
+      "guardCounts": {
+        "143": 202,
+        "152": 294,
+        "197": 4,
+        "224": 3,
+        "227": 4,
+        "cavityProposals": 0,
+        "proposals": 7
+      },
+      "measuredLines": [
+        296.2453703703704,
+        306,
+        316,
+        325.7453703703704,
+        335
+      ],
+      "id": "T-F02"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        295.2547169811321,
+        300.4245283018868,
+        310.4245283018868,
+        324.2547169811321,
+        329.6698113207547
+      ],
+      "id": "T-F03"
+    },
+    {
+      "guardCounts": {
+        "143": 239,
+        "152": 266,
+        "197": 2,
+        "224": 7,
+        "227": 2,
+        "cavityProposals": 0,
+        "proposals": 9
+      },
+      "measuredLines": [
+        856.7548076923076,
+        866.2548076923076,
+        876,
+        885.2548076923076,
+        895
+      ],
+      "id": "T-F04"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        204.5,
+        214.2549019607843,
+        218.9313725490196,
+        232.5,
+        242.00980392156862
+      ],
+      "id": "S-H01"
+    },
+    {
+      "guardCounts": {
+        "143": 225,
+        "152": 268,
+        "197": 10,
+        "227": 10,
+        "cavityProposals": 1,
+        "proposals": 10
+      },
+      "measuredLines": [
+        204.5,
+        213.5,
+        222.5,
+        231.745,
+        241.5
+      ],
+      "id": "S-H02"
+    },
+    {
+      "guardCounts": {
+        "143": 229,
+        "152": 288,
+        "197": 6,
+        "224": 5,
+        "227": 6,
+        "241": 2,
+        "262": 128,
+        "280": 2,
+        "cavityProposals": 1,
+        "proposals": 15
+      },
+      "measuredLines": [
+        936.5,
+        946,
+        955,
+        964.5,
+        974
+      ],
+      "id": "S-H03"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        201.00980392156862,
+        206.1764705882353,
+        214.9313725490196,
+        228.5,
+        238.00980392156862
+      ],
+      "id": "S-H04"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        1021.7451923076924,
+        1030.764423076923,
+        1032.7451923076924,
+        1049.5,
+        1059.5
+      ],
+      "id": "S-F01"
+    },
+    {
+      "guardCounts": {
+        "143": 192,
+        "152": 204,
+        "197": 4,
+        "224": 6,
+        "227": 4,
+        "cavityProposals": 2,
+        "proposals": 10
+      },
+      "measuredLines": [
+        203.2549019607843,
+        212.5,
+        221.5,
+        231.2549019607843,
+        240.5
+      ],
+      "id": "S-F02"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        203.00980392156862,
+        208.17647058823528,
+        216.9313725490196,
+        230.7549019607843,
+        240.00980392156862
+      ],
+      "id": "S-F03"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        1021.7548076923077,
+        1029.764423076923,
+        1032.7548076923078,
+        1049.5,
+        1059.2548076923078
+      ],
+      "id": "S-F04"
+    },
+    {
+      "guardCounts": {
+        "143": 277,
+        "152": 338,
+        "197": 6,
+        "227": 6,
+        "241": 6,
+        "261": 32,
+        "262": 123,
+        "280": 2,
+        "cavityProposals": 1,
+        "proposals": 14
+      },
+      "measuredLines": [
+        871,
+        880,
+        889,
+        899,
+        908.5
+      ],
+      "id": "M-H01"
+    },
+    {
+      "guardCounts": {
+        "143": 285,
+        "152": 316,
+        "197": 3,
+        "227": 3,
+        "241": 4,
+        "cavityProposals": 0,
+        "proposals": 7
+      },
+      "measuredLines": [
+        870,
+        880,
+        889,
+        899,
+        908.5
+      ],
+      "id": "M-H02"
+    },
+    {
+      "guardCounts": {
+        "68": 1,
+        "143": 263,
+        "152": 338,
+        "197": 13,
+        "227": 13,
+        "241": 5,
+        "cavityProposals": 2,
+        "proposals": 18
+      },
+      "measuredLines": [
+        871,
+        880.5,
+        889.7452830188679,
+        899,
+        908.7452830188679
+      ],
+      "id": "M-H03"
+    },
+    {
+      "guardCounts": {
+        "143": 265,
+        "152": 394,
+        "197": 9,
+        "227": 9,
+        "241": 6,
+        "cavityProposals": 0,
+        "proposals": 15
+      },
+      "measuredLines": [
+        870.5,
+        880,
+        889,
+        899,
+        908.5
+      ],
+      "id": "M-H04"
+    },
+    {
+      "guardCounts": {
+        "143": 256,
+        "152": 294,
+        "197": 1,
+        "227": 1,
+        "261": 42,
+        "262": 225,
+        "280": 1,
+        "317": 6,
+        "cavityProposals": 0,
+        "proposals": 10
+      },
+      "measuredLines": [
+        351,
+        361,
+        370,
+        379.7451923076923,
+        389
+      ],
+      "id": "M-F01"
+    },
+    {
+      "guardCounts": {
+        "143": 225,
+        "152": 316,
+        "261": 42,
+        "262": 70,
+        "317": 7,
+        "cavityProposals": 0,
+        "proposals": 12
+      },
+      "measuredLines": [
+        349.7548076923077,
+        359,
+        368.5,
+        378,
+        387.50961538461536
+      ],
+      "id": "M-F02"
+    },
+    {
+      "guardCounts": {
+        "143": 254,
+        "152": 282,
+        "261": 118,
+        "262": 204,
+        "280": 2,
+        "317": 4,
+        "cavityProposals": 1,
+        "proposals": 13
+      },
+      "measuredLines": [
+        349.5,
+        359,
+        368.5,
+        377.5098039215686,
+        387.4901960784314
+      ],
+      "id": "M-F03"
+    },
+    {
+      "guardCounts": {
+        "143": 223,
+        "152": 268,
+        "261": 40,
+        "262": 114,
+        "317": 4,
+        "cavityProposals": 0,
+        "proposals": 9
+      },
+      "measuredLines": [
+        348.76442307692304,
+        358.9807692307692,
+        368.7355769230769,
+        378.2355769230769,
+        387.72596153846155
+      ],
+      "id": "M-F04"
+    },
+    {
+      "guardCounts": {
+        "143": 285,
+        "152": 250,
+        "197": 1,
+        "227": 1,
+        "cavityProposals": 1,
+        "proposals": 1
+      },
+      "measuredLines": [
+        298.7548076923077,
+        308.5,
+        318,
+        327.7548076923077,
+        337.5
+      ],
+      "id": "T-N01"
+    },
+    {
+      "guardCounts": {
+        "143": 301,
+        "152": 244,
+        "224": 1,
+        "cavityProposals": 1,
+        "proposals": 1
+      },
+      "measuredLines": [
+        295.75471698113205,
+        305.5,
+        315,
+        324.75471698113205,
+        334.75471698113205
+      ],
+      "id": "T-N02"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        205.00980392156862,
+        214.5,
+        219.42156862745097,
+        232.5,
+        242.2549019607843
+      ],
+      "id": "S-N01"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        201.2549019607843,
+        210.50980392156862,
+        220.00980392156862,
+        224.9313725490196,
+        238.50980392156862
+      ],
+      "id": "S-N02"
+    },
+    {
+      "guardCounts": {
+        "68": 1,
+        "143": 319,
+        "152": 254,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "measuredLines": [
+        871,
+        880,
+        889.2451923076923,
+        899,
+        908.5
+      ],
+      "id": "M-N01"
+    },
+    {
+      "guardCounts": {
+        "143": 289,
+        "152": 240,
+        "197": 2,
+        "224": 1,
+        "227": 2,
+        "241": 1,
+        "262": 115,
+        "317": 14,
+        "320": 1,
+        "cavityProposals": 1,
+        "proposals": 5
+      },
+      "measuredLines": [
+        351,
+        361,
+        370,
+        379.5,
+        389
+      ],
+      "id": "M-N02"
+    },
+    {
+      "guardCounts": {
+        "143": 515,
+        "152": 306,
+        "186": 1,
+        "197": 25,
+        "227": 26,
+        "cavityProposals": 0,
+        "proposals": 26
+      },
+      "measuredLines": [
+        986.5,
+        1000.5,
+        1014.5,
+        1027.512987012987,
+        1042.2532467532467
+      ],
+      "id": "T-N03"
+    },
+    {
+      "guardCounts": {
+        "68": 5,
+        "143": 278,
+        "152": 308,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "measuredLines": [
+        296,
+        306,
+        315,
+        325,
+        335
+      ],
+      "id": "T-N04"
+    },
+    {
+      "guardCounts": {
+        "93": 1
+      },
+      "measuredLines": [
+        293.0098039215686,
+        302.5,
+        307.421568627451,
+        320.7549019607843,
+        330.5
+      ],
+      "id": "S-N03"
+    },
+    {
+      "guardCounts": {
+        "143": 245,
+        "152": 248,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "measuredLines": [
+        201.5,
+        210.5,
+        219.7450980392157,
+        228.7549019607843,
+        238.5
+      ],
+      "id": "S-N04"
+    },
+    {
+      "guardCounts": {
+        "68": 1,
+        "143": 319,
+        "152": 254,
+        "cavityProposals": 0,
+        "proposals": 0
+      },
+      "measuredLines": [
+        871,
+        880,
+        889.2451923076923,
+        899,
+        908.5
+      ],
+      "id": "M-N03"
+    },
+    {
+      "guardCounts": {
+        "143": 289,
+        "152": 240,
+        "197": 2,
+        "224": 1,
+        "227": 2,
+        "241": 1,
+        "262": 115,
+        "317": 14,
+        "320": 1,
+        "cavityProposals": 1,
+        "proposals": 5
+      },
+      "measuredLines": [
+        351,
+        361,
+        370,
+        379.5,
+        389
+      ],
+      "id": "M-N04"
+    }
+  ]
+}
