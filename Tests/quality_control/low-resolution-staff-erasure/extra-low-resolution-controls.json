@@ -1,0 +1,20 @@
+{
+  "checksPerVersion": 419,
+  "baselineFailures": 154,
+  "candidateFailures": 10,
+  "newFailures": [
+    "FAIL: Comparable-width musical bridge remains complete at 0.0 degrees, raster scale 0.3",
+    "FAIL: Comparable-width musical bridge remains complete at 0.0 degrees, raster scale 0.4",
+    "FAIL: Ledger-line harmonic remains musical at tilt 0.0, scale 0.3",
+    "FAIL: Ledger-line harmonic remains musical at tilt 0.0, scale 0.4"
+  ],
+  "inheritedFailures": [
+    "FAIL: Parallel bracket strokes falsely join two staves at 0.0 degrees, raster scale 0.25",
+    "FAIL: The compact plan excludes the other staff's core at 0.0 degrees, raster scale 0.25",
+    "FAIL: Parallel bracket strokes falsely join two staves at -1.5 degrees, raster scale 0.25",
+    "FAIL: The compact plan excludes the other staff's core at -1.5 degrees, raster scale 0.25",
+    "FAIL: Parallel bracket strokes falsely join two staves at 1.5 degrees, raster scale 0.25",
+    "FAIL: The compact plan excludes the other staff's core at 1.5 degrees, raster scale 0.25"
+  ],
+  "note": "The scratch reporter continues through failures; this is not a 419-pass claim. Four new width predicates fail because preserved staff fragments join the musical component. The separate source-envelope checks pass for all four figures in both parts."
+}

@@ -1,0 +1,17 @@
+{
+  "baselineGitRevision": "a1aa083e441e2831a5f87d94ab828290bccfec83",
+  "testedAnalyzerSHA256": "580c58f23f0a701514d8f40c43e577e0b09b2d4355b63f0b6544a65617f0060f",
+  "productionAnalyzerSHA256": "ee91b7fb9772df58eb3f378ad73c9c790ca4ce6ad66333f70d8614f5918e3fd5",
+  "productionDifferenceFromTested": "Comment only: SCRATCH: Wider shifts -> Ambiguous local fits. No executable code differs.",
+  "baselineAnalyzerSHA256": "b214e6a5b04fbf843c9b6faecd844ed761f1ad54c2743c3371a561210f380a07",
+  "testFixtureSHA256": "7bee3466c6e1546d38d79c4ec1f9a0b0805f29c2cb8db9dfb98dd5518e12a4d0",
+  "nativeInventorySHA256": "e4b339ed474ffca3e7777cc574574ceddf926e41ce701f4ae1d129a6ead9b930",
+  "nativeInventoryPath": ".build/qc-algorithm-audit/residual11/93521-alias-native-inventory.json",
+  "corpusComparisonSHA256": "f7a3efaabf41f04f7aadf64200146f015862a33386d8a2b2ca7919ea173fb24e",
+  "independentSummarySHA256": "bb86a79b7717b33dcc2a0d091719169b395d995be1312222e832bf245ff7ea43",
+  "p24FrozenGuardSHA256": "2f5c79af1eb5ea69ff7db27907207a3134685030a60feb6a3870f143f43bee3c",
+  "productionChanges": [
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+    "tools/test_crop_quality.swift"
+  ]
+}

@@ -12,7 +12,7 @@ import PDFKit
         guard value() else { fputs("FAIL: \(description)\n", stderr); exit(1) }
     }
 
-    static func fixture(skewDegrees: Double = 0, notationBridge: Bool = false, wideBracket: Bool = false, narrowNotationBridge: Bool = false, rasterScale: Double = 1, localBow: Double = 0, nearFullNotationBridge: Bool = false, localBarline: Bool = false) -> ([ScoreInkComponent], [ScoreObservedStaff]) {
+    static func fixture(skewDegrees: Double = 0, notationBridge: Bool = false, wideBracket: Bool = false, narrowNotationBridge: Bool = false, rasterScale: Double = 1, localBow: Double = 0, nearFullNotationBridge: Bool = false, localBarline: Bool = false, harmonicBridge: Bool = false, continuousBow: Double = 0, continuousNotationBridge: Bool = false) -> ([ScoreInkComponent], [ScoreObservedStaff]) {
         let width = 720, height = 600, space = 12
         var pixels = [UInt8](repeating: 255, count: width * height)
         func black(_ left: Int, _ top: Int, _ right: Int, _ bottom: Int) {
@@ -72,15 +72,31 @@ import PDFKit
             black(443, 209, 459, 217)
             black(443, 382, 459, 390)
         }
-        if localBarline { black(450, 200, 453, 399) }
+        if localBarline { black(continuousBow == 0 ? 450 : 680, 200, continuousBow == 0 ? 453 : 683, 399) }
+        if continuousNotationBridge {
+            black(600, 210, 603, 389)
+            black(593, 209, 609, 217)
+            black(593, 382, 609, 390)
+        }
+        if harmonicBridge {
+            // Outer staff lines are interrupted near a long cross-staff stem.
+            // Aligned ledger lines create a shifted five-line pattern, but
+            // source noteheads make this musical ink, not a barline.
+            for x in 380..<530 { pixels[200 * width + x] = 255; pixels[398 * width + x] = 255 }
+            black(380, 260, 530, 261)
+            black(380, 338, 530, 339)
+            black(450, 212, 453, 387)
+            black(443, 212, 459, 220)
+            black(443, 379, 459, 387)
+        }
         let slope = tan(skewDegrees * .pi / 180)
-        if skewDegrees != 0 || localBow != 0 {
+        if skewDegrees != 0 || localBow != 0 || continuousBow != 0 {
             let original = pixels
             pixels = [UInt8](repeating: 255, count: width * height)
             for x in 0..<width {
                 // A local bend shifts the right-hand notation independently
                 // of the page-wide skew and the detected central staff lines.
-                let bow = localBow * min(1, max(0, (Double(x) - 300) / 100))
+                let bow = localBow * min(1, max(0, (Double(x) - 300) / 100)) + continuousBow * min(1, max(0, (Double(x) - 360) / 240))
                 let shift = Int((slope * (Double(x) - Double(width) / 2) + bow).rounded())
                 for y in 0..<height where y + shift >= 0 && y + shift < height {
                     pixels[(y + shift) * width + x] = original[y * width + x]
@@ -166,11 +182,13 @@ import PDFKit
         }
         for rasterScale in [1.0, 0.6, 0.5] {
             for degrees in [0.0, -1.5, 1.5] {
-                for bow in [7.0, -7.0] {
+                for bow in [7.0, -7.0, 12.0, -12.0, 17.0, -17.0] {
                     let (music, _) = fixture(skewDegrees: degrees, rasterScale: rasterScale,
                         localBow: bow, nearFullNotationBridge: true)
+                    let upperGuard = abs(bow) == 7 ? 230.0 : 230.0 + bow
+                    let lowerGuard = abs(bow) == 7 ? 370.0 : 370.0 + bow
                     check(music.contains { $0.staffIDs == [0, 1] && $0.bounds[2] >= 459.0 / 720
-                        && $0.bounds[1] < 230.0 / 600 && $0.bounds[3] > 370.0 / 600 },
+                        && $0.bounds[1] < upperGuard / 600 && $0.bounds[3] > lowerGuard / 600 },
                         "Near-full musical stem remains ambiguous at bow \(bow), tilt \(degrees), scale \(rasterScale)")
                 }
             }
@@ -179,6 +197,65 @@ import PDFKit
             let (structure, _) = fixture(localBow: bow, localBarline: true)
             check(!structure.contains { $0.staffIDs == [0, 1] && $0.bounds[2] > 440.0 / 720 },
                 "Intact locally bowed barline separated at bow \(bow)")
+        }
+        for bow in [13.0, -13.0] {
+            let (structure, _) = fixture(localBarline: true, continuousBow: bow)
+            check(!structure.contains { $0.staffIDs == [0, 1] && $0.bounds[2] > 590.0 / 720 },
+                "Continuously curved five-line path separates true barline at bow \(bow)")
+        }
+        for rasterScale in [1.0, 0.6, 0.5] {
+            for degrees in [0.0, -1.5, 1.5] {
+                let (harmonic, _) = fixture(skewDegrees: degrees, rasterScale: rasterScale, harmonicBridge: true)
+                let harmonicRetained = harmonic.contains { $0.staffIDs == [0, 1] && $0.bounds[0] > 0.5 && $0.bounds[2] >= 459.0 / 720 }
+                check(harmonicRetained,
+                    "Ledger-line harmonic remains musical at tilt \(degrees), scale \(rasterScale)")
+                for bow in [17.0, -17.0] {
+                    let (music, _) = fixture(skewDegrees: degrees, rasterScale: rasterScale,
+                        continuousBow: bow, continuousNotationBridge: true)
+                    check(music.contains { $0.staffIDs == [0, 1] && $0.bounds[2] >= 609.0 / 720
+                        && $0.bounds[1] < (240.0 + bow) / 600 && $0.bounds[3] > (370.0 + bow) / 600 },
+                        "Continuous curve does not make a musical stem structural at bow \(bow), tilt \(degrees), scale \(rasterScale)")
+                }
+            }
+        }
+        // Curved ledger-line patterns can resemble a different five-line
+        // staff. Protect the complete source musical envelope in BOTH parts;
+        // component width and detached analysis endpoints are not clipping.
+        let bends = [-12.0, -10, -8, -6, -5.5, -5, -4.75, -4.5, -4.25, -4,
+                     -3.75, -3.5, -3.25, -3, -2.5, -2, 0, 2, 3, 3.5, 4,
+                     4.5, 5, 5.5, 6, 8, 10, 12]
+        let harmonicProfile = ScoreExtractionProfile(parts: [
+            ScorePartDefinition(id: "upper", name: "Upper", staffCount: 1),
+            ScorePartDefinition(id: "lower", name: "Lower", staffCount: 1)
+        ], cropMode: "compact")
+        for rasterScale in [0.25, 0.3, 0.4, 0.5, 0.6, 1.0, 1.5] {
+            for degrees in [-1.5, 0.0, 1.5] {
+                for bow in bends {
+                    let (components, staves) = fixture(skewDegrees: degrees,
+                        rasterScale: rasterScale, localBow: bow, harmonicBridge: true)
+                    let slope = tan(degrees * .pi / 180)
+                    var sourceTop = Int.max, sourceBottom = Int.min
+                    // These are the source stem and two noteheads, before the
+                    // known fixture warp. Never derive a guard from analyzer output.
+                    for x in 443..<459 {
+                        let shift = Int((slope * (Double(x) - 360) + bow).rounded())
+                        for y in 212..<387 where (450..<453).contains(x) || y < 220 || y >= 379 {
+                            sourceTop = min(sourceTop, y + shift)
+                            sourceBottom = max(sourceBottom, y + shift + 1)
+                        }
+                    }
+                    let page = ScorePageAnalysis(pageIndex: 0, pageWidth: 720, pageHeight: 600,
+                        imageWidth: 720, imageHeight: 600, staves: staves, warnings: [],
+                        analysisSkewDegrees: degrees, inkComponents: components)
+                    let plan = ScoreExtractionPlanner.plan(pages: [page], profile: harmonicProfile)
+                    check(plan.bands.count == 2 && plan.bands.allSatisfy {
+                        $0.topFraction * 600 <= Double(sourceTop)
+                            && $0.bottomFraction * 600 >= Double(sourceBottom)
+                            && $0.leftFraction * 720 <= 443
+                            && (1 - $0.rightFraction) * 720 >= 459
+                    }, "Both crops retain the complete curved musical figure at bow \(bow), tilt \(degrees), scale \(rasterScale)")
+                }
+            }
         }
         print("PASS: \(checks) crop quality checks")
     }

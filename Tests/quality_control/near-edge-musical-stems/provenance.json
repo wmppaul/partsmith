@@ -1,0 +1,15 @@
+{
+  "status": "open preservation defect; no follow-on candidate promoted",
+  "productionAnalyzerSHA256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2",
+  "currentTestSHA256": "1e9e3bfe5cb655338398aff4c3266a577adcc4c3ba8874179214c110af349296",
+  "instrumentationDiff": "Print only before each interior connector removal; removing that statement exactly reproduces current production analyzer",
+  "fixturesSHA256": "aa1d97e8cf8a4b75a7cc22d6ee780145c6ff95da827e70138eab665127b5439a",
+  "resultSHA256": "2100303f7e1b1961e476759baebc22b6edb6988b462a02e198d6a2e8a248116e",
+  "cases": 60,
+  "musicalCases": 48,
+  "sourceEnvelopeFailures": 48,
+  "interiorGapStructuralCases": 12,
+  "musicalCutsUseThroughBothCores": 48,
+  "frozenRemainingSourceGuardSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+  "knownSourceIssueNote": "These are new synthetic musical controls, not a claim that 48 real corpus bands omit notes."
+}

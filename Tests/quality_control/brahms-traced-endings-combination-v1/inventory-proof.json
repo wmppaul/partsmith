@@ -1,0 +1,100 @@
+{
+  "cropInventory": {
+    "path": ".build/qc-algorithm-audit/residual11/93521-alias-native-inventory.json",
+    "sha256": "e4b339ed474ffca3e7777cc574574ceddf926e41ce701f4ae1d129a6ead9b930"
+  },
+  "directionInventory": {
+    "path": ".build/qc-ending-native-v1/brahms-native-endings-inventory.json",
+    "sha256": "c7711cd6ef7e3a1886eeccf8fbf2f0911b95a6ee0f2b6f07f55fb2f2bd660d6d"
+  },
+  "combinedInventory": {
+    "path": ".build/qc-brahms-traced-ending-combination/inventory.json",
+    "sha256": "38b323b30e19ec01b0dabd38088b63de3556a537ff90d52c961954b588d90a1d"
+  },
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "pages": 39,
+  "savedRectifications": 9,
+  "stavesAndSourceDimensionsIdentical": true,
+  "directionMetadataExactlyPreserved": true,
+  "metadataChangesFromCropInventory": [
+    {
+      "pageIndex": 1,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 5,
+      "field": "sharedNavigation",
+      "oldCount": 0,
+      "newCount": 2
+    },
+    {
+      "pageIndex": 15,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 21,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 25,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 25,
+      "field": "sharedNavigation",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 27,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 27,
+      "field": "sharedNavigation",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 28,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 31,
+      "field": "sharedNavigation",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 33,
+      "field": "sharedHeadings",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 35,
+      "field": "sharedNavigation",
+      "oldCount": 0,
+      "newCount": 1
+    },
+    {
+      "pageIndex": 36,
+      "field": "sharedNavigation",
+      "oldCount": 0,
+      "newCount": 1
+    }
+  ],
+  "note": "Narrow reviewed ending copies retained. Rejected blanket-margin experiment is not used."
+}

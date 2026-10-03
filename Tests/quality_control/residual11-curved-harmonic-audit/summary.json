@@ -1,0 +1,138 @@
+{
+  "baseline": {
+    "cases": 588,
+    "musicConnectorCuts": [
+      {
+        "case": [
+          0.5,
+          -1.5,
+          0
+        ],
+        "cuts": [
+          {
+            "localTilt": -1.2045523921825985,
+            "lowerFitInSpaces": -0.8333333333333334,
+            "lowerShift": -6.204552392182599,
+            "path": "fallback",
+            "staffSpace": 6,
+            "upperFitInSpaces": 0.8333333333333334,
+            "upperShift": 3.7954476078174015
+          }
+        ]
+      },
+      {
+        "case": [
+          0.5,
+          0,
+          0
+        ],
+        "cuts": [
+          {
+            "localTilt": 0,
+            "lowerFitInSpaces": -0.8333333333333334,
+            "lowerShift": -5,
+            "path": "fallback",
+            "staffSpace": 6,
+            "upperFitInSpaces": 0.8333333333333334,
+            "upperShift": 5
+          }
+        ]
+      }
+    ],
+    "sourceEnvelopeFailureCountsByScale": {
+      "0.25": 61,
+      "0.3": 31,
+      "0.4": 11,
+      "0.5": 2
+    },
+    "strictWidthFailureCountsByScale": {
+      "0.25": 84,
+      "0.3": 3,
+      "0.4": 31,
+      "0.5": 50,
+      "0.6": 69,
+      "1": 74,
+      "1.5": 73
+    },
+    "sharedEndpointOwnerFailureCountsByScale": {
+      "0.25": 84,
+      "0.3": 63,
+      "0.4": 21,
+      "0.5": 10
+    },
+    "interiorStemGapCountsByScale": {
+      "0.25": 43,
+      "0.3": 11,
+      "0.5": 2
+    }
+  },
+  "ratio-guard": {
+    "cases": 588,
+    "musicConnectorCuts": [],
+    "sourceEnvelopeFailureCountsByScale": {
+      "0.25": 61,
+      "0.3": 31,
+      "0.4": 11
+    },
+    "strictWidthFailureCountsByScale": {
+      "0.25": 84,
+      "0.3": 3,
+      "0.4": 31,
+      "0.5": 48,
+      "0.6": 69,
+      "1": 74,
+      "1.5": 73
+    },
+    "sharedEndpointOwnerFailureCountsByScale": {
+      "0.25": 84,
+      "0.3": 63,
+      "0.4": 21,
+      "0.5": 8
+    },
+    "interiorStemGapCountsByScale": {
+      "0.25": 43,
+      "0.3": 11
+    }
+  },
+  "alias-uncertainty": {
+    "cases": 588,
+    "musicConnectorCuts": [],
+    "sourceEnvelopeFailureCountsByScale": {
+      "0.25": 61,
+      "0.3": 31,
+      "0.4": 11
+    },
+    "strictWidthFailureCountsByScale": {
+      "0.25": 84,
+      "0.3": 3,
+      "0.4": 31,
+      "0.5": 48,
+      "0.6": 69,
+      "1": 74,
+      "1.5": 73
+    },
+    "sharedEndpointOwnerFailureCountsByScale": {
+      "0.25": 84,
+      "0.3": 63,
+      "0.4": 21,
+      "0.5": 8
+    },
+    "interiorStemGapCountsByScale": {
+      "0.25": 43,
+      "0.3": 11
+    }
+  },
+  "aliasChangedCropCasesVsBaseline": [
+    [
+      0.5,
+      -1.5,
+      0
+    ],
+    [
+      0.5,
+      0,
+      0
+    ]
+  ],
+  "aliasChangedCropCasesVsRatioGuard": []
+}

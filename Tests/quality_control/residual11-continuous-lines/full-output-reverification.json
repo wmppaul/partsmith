@@ -1,0 +1,113 @@
+{
+  "scope": "Existing full PDFs from original tracing candidate; guarded candidate has same 604 cue-free vertical crop bounds, but no new guarded PDFs were exported",
+  "renderDPI": 108,
+  "baselineManifestSHA256": "7c1d153260e10ef652090e47fbce140d8bbdfaaefd0e76fb9ffe0edfb1383fd3",
+  "candidateManifestSHA256": "6964947009cc04746fe534b2a9d4c4fb3a1e653b331a7dfe4bfa649b9dd20e5a",
+  "parts": [
+    {
+      "id": "violin1",
+      "pages": 17,
+      "baselineSHA256": "567729482e94d2f796f6fcaaf5d33ee2b2fb362b95ca526b7195e0822b861911",
+      "candidateSHA256": "a1dae51d6ca38ebd7fb6099480f901d277e13e021065ae614ded6df5ea139cf1",
+      "identicalPages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "changedPages": [
+        1
+      ]
+    },
+    {
+      "id": "violin2",
+      "pages": 16,
+      "baselineSHA256": "633169336fae8f4be91c98e36d9b51acdbb39a915288e21a7b6a56e607787bea",
+      "candidateSHA256": "c494cb2a3f949c0ed07211ce2599b95a973d998ac69b4088d94f70cacea553ac",
+      "identicalPages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "changedPages": [
+        1
+      ]
+    },
+    {
+      "id": "viola",
+      "pages": 16,
+      "baselineSHA256": "2cec1658d8f9fb5635f28f9475c4f65899c100f7b1fc59a0c1abf4c6aee825b6",
+      "candidateSHA256": "befef3e4b45370e663aa0c39cff2fe9f4df30882c5139724b15da82212144abf",
+      "identicalPages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "changedPages": [
+        1,
+        10
+      ]
+    },
+    {
+      "id": "cello",
+      "pages": 15,
+      "baselineSHA256": "0a3e43856b230f13d788ae9b97ef2be9433a4b5eea72f303b0d9422f45daadb3",
+      "candidateSHA256": "12d1c721a08058ed7bb8dda34d68eb975f252f3b86d12b33e4c3cd2866bf662f",
+      "identicalPages": [],
+      "changedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "totalPages": 64,
+  "identicalPages": 45
+}

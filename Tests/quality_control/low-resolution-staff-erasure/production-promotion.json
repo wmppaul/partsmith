@@ -1,0 +1,41 @@
+{
+  "status": "promoted after independent review by parent agent",
+  "validation": "PASS: 755 crop quality checks",
+  "sourceEnvelopeScales": [
+    0.25,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    1,
+    1.5
+  ],
+  "earlierChecksUnchanged": true,
+  "analyzerMatchesFullCorpusCandidateExceptComments": true,
+  "files": [
+    {
+      "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": "Partsmith/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "3b9d62e7c728d780de3c96797125e3318d3c9f18879c2d8ae2cf3813d4dc0756"
+    },
+    {
+      "path": "tools/test_crop_quality.swift",
+      "sha256": "1e9e3bfe5cb655338398aff4c3266a577adcc4c3ba8874179214c110af349296"
+    },
+    {
+      "path": "tools/test_crop_quality.sh",
+      "sha256": "07d51b9199e08bc1abdd22dfd145f8a8a8fb6c97f8ecbd8ec6922060168391f2"
+    },
+    {
+      "path": ".build/test_crop_quality",
+      "sha256": "39c38860a2ff84e88d5ed5cf3eee31552a865a9cfcb2607b155cc56a16af8901"
+    }
+  ]
+}

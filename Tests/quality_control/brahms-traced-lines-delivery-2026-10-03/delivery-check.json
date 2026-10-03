@@ -1,0 +1,426 @@
+{
+  "date": "2026-10-03",
+  "status": "Complete draft delivery approved by root; existing musical limitations retained",
+  "destination": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines",
+  "verifiedReviewBindings": 37,
+  "source": {
+    "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "bytes": 2747941
+  },
+  "combinedInventory": {
+    "path": ".build/qc-brahms-traced-ending-combination/inventory.json",
+    "sha256": "38b323b30e19ec01b0dabd38088b63de3556a537ff90d52c961954b588d90a1d",
+    "bytes": 15795799
+  },
+  "priorReview": {
+    "path": "Tests/quality_control/brahms-traced-endings-combination-v1/review.json",
+    "sha256": "0f947f5c409ba4af3f1043ffdc270f329d693ce15eea76600c5c7b760a91208f",
+    "bytes": 14656
+  },
+  "parts": [
+    {
+      "id": "violin1",
+      "file": "Violin I.pdf",
+      "name": "Violin I",
+      "pages": 17,
+      "systems": 151,
+      "sha256": "c4642185c9bac5d56abdd3b9d32152d67162b30744e6b2c11f905e50d6369f79"
+    },
+    {
+      "id": "violin2",
+      "file": "Violin II.pdf",
+      "name": "Violin II",
+      "pages": 16,
+      "systems": 151,
+      "sha256": "5a272260fb39faf098f8afaf24434bfa7965082d2d795350850f292b7e0f2aea"
+    },
+    {
+      "id": "viola",
+      "file": "Viola.pdf",
+      "name": "Viola",
+      "pages": 16,
+      "systems": 151,
+      "sha256": "f95e10e5f53dc373ace7e80d07e05c13aee37d7672874dc7812f1f47ab1144a1"
+    },
+    {
+      "id": "cello",
+      "file": "Violoncello.pdf",
+      "name": "Violoncello",
+      "pages": 15,
+      "systems": 151,
+      "sha256": "8dd8740e8c8dd6a064f07b9b0ec8c6de16b0552de7ac8f6c2afbfea1fecfa4b7"
+    }
+  ],
+  "outputPages": 64,
+  "systemsPerPart": 151,
+  "musicBands": 604,
+  "mainCropsUnchangedFromPredecessor": 602,
+  "changedCrops": [
+    {
+      "bandID": "p24-s1-viola",
+      "before": [
+        0,
+        94.80023139220975,
+        427,
+        164.4662553027381
+      ],
+      "after": [
+        0,
+        94.80023139220975,
+        427,
+        145.72927111453913
+      ]
+    },
+    {
+      "bandID": "p24-s1-cello",
+      "before": [
+        0,
+        96.46047049749325,
+        427,
+        170.63285769379098
+      ],
+      "after": [
+        0,
+        125.39606633243346,
+        427,
+        170.63285769379098
+      ]
+    }
+  ],
+  "allPhysicalStaffIdentitiesAndScoreOrderUnchanged": true,
+  "sourceCopiesUnchanged": 42,
+  "wholeNeighborStaffOccurrences": [
+    {
+      "bandID": "p28-s1-violin1",
+      "neighborStaffID": 1
+    },
+    {
+      "bandID": "p29-s1-violin1",
+      "neighborStaffID": 1
+    },
+    {
+      "bandID": "p35-s1-violin1",
+      "neighborStaffID": 1
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "neighborStaffID": 0
+    },
+    {
+      "bandID": "p29-s1-violin2",
+      "neighborStaffID": 0
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "neighborStaffID": 0
+    },
+    {
+      "bandID": "p35-s1-violin2",
+      "neighborStaffID": 0
+    },
+    {
+      "bandID": "p24-s2-viola",
+      "neighborStaffID": 7
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "neighborStaffID": 6
+    }
+  ],
+  "frozenEndingEnvelopeFailures": [
+    {
+      "guardID": "93521-p06-s3-06",
+      "pageNumber": 6,
+      "systemNumber": 3,
+      "sourceRect": [
+        362.94874565250535,
+        302.81765666158674,
+        390.528337680828,
+        316.3555982063253
+      ],
+      "guardRect": [
+        363,
+        303,
+        389,
+        317
+      ],
+      "missLTRBPoints": [
+        0,
+        0,
+        0,
+        0.6444017936747173
+      ],
+      "fullGuardContained": false,
+      "completeVisibleGlyphs": true
+    },
+    {
+      "guardID": "93521-p06-s4-07",
+      "pageNumber": 6,
+      "systemNumber": 4,
+      "sourceRect": [
+        66.89461364228076,
+        446.7536878833176,
+        115.64788635771924,
+        457.47351338846516
+      ],
+      "guardRect": [
+        67,
+        447,
+        116,
+        459
+      ],
+      "missLTRBPoints": [
+        0,
+        0,
+        0.3521136422807558,
+        1.5264866115348354
+      ],
+      "fullGuardContained": false,
+      "completeVisibleGlyphs": true
+    },
+    {
+      "guardID": "93521-p32-s4-41",
+      "pageNumber": 32,
+      "systemNumber": 4,
+      "sourceRect": [
+        238.97722558805174,
+        442.29421674281303,
+        315.41110774528164,
+        456.1167244307234
+      ],
+      "guardRect": [
+        239,
+        442,
+        314,
+        454
+      ],
+      "missLTRBPoints": [
+        0,
+        0.29421674281303467,
+        0,
+        0
+      ],
+      "fullGuardContained": false,
+      "completeVisibleGlyphs": true
+    },
+    {
+      "guardID": "93521-p32-s4-42",
+      "pageNumber": 32,
+      "systemNumber": 4,
+      "sourceRect": [
+        312.456808921385,
+        442.82791648247166,
+        371.9886077452817,
+        456.1167244307234
+      ],
+      "guardRect": [
+        313,
+        442,
+        371,
+        455
+      ],
+      "missLTRBPoints": [
+        0,
+        0.8279164824716645,
+        0,
+        0
+      ],
+      "fullGuardContained": false,
+      "completeVisibleGlyphs": true
+    },
+    {
+      "guardID": "93521-p37-s2-48",
+      "pageNumber": 37,
+      "systemNumber": 2,
+      "sourceRect": [
+        225.4382468873751,
+        167.75831154282162,
+        261.08925311262493,
+        178.92939276537376
+      ],
+      "guardRect": [
+        226,
+        168,
+        259,
+        181
+      ],
+      "missLTRBPoints": [
+        0,
+        0,
+        0,
+        2.0706072346262374
+      ],
+      "fullGuardContained": false,
+      "completeVisibleGlyphs": true
+    },
+    {
+      "guardID": "93521-p37-s2-49",
+      "pageNumber": 37,
+      "systemNumber": 2,
+      "sourceRect": [
+        258.4532468873751,
+        168.29083539364555,
+        287.18175311262496,
+        178.87481974371798
+      ],
+      "guardRect": [
+        259,
+        168,
+        285,
+        181
+      ],
+      "missLTRBPoints": [
+        0,
+        0.2908353936455512,
+        0,
+        2.1251802562820217
+      ],
+      "fullGuardContained": false,
+      "completeVisibleGlyphs": true
+    }
+  ],
+  "blanketEndingMarginUsed": false,
+  "savedRectificationPages": [
+    2,
+    7,
+    17,
+    19,
+    23,
+    28,
+    34,
+    38,
+    39
+  ],
+  "embeddedOriginalVerified": true,
+  "predecessorPreserved": {
+    "folder": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings",
+    "pdfSHA256": {
+      "Violin I.pdf": "c66142c69f27524c28701382c0a421c42838141c2684082351bad14f405124c1",
+      "Violin II.pdf": "c55cebf65d5e9fcb182b2c3e6f4b7a8cc7e1a99898e41460b0343214fa14899a",
+      "Viola.pdf": "d488222e7e000c9d07f6419d726949dcfeca33bd00ecb1717aa4a8ab4d180d23",
+      "Violoncello.pdf": "0d910ea712cfd517fcdf2a1ab662aa792c6ad962045d351ed3f0088386d060cd"
+    }
+  },
+  "files": [
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/Violin I.pdf",
+      "sha256": "c4642185c9bac5d56abdd3b9d32152d67162b30744e6b2c11f905e50d6369f79",
+      "bytes": 18514071
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/Violin II.pdf",
+      "sha256": "5a272260fb39faf098f8afaf24434bfa7965082d2d795350850f292b7e0f2aea",
+      "bytes": 18513749
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/Viola.pdf",
+      "sha256": "f95e10e5f53dc373ace7e80d07e05c13aee37d7672874dc7812f1f47ab1144a1",
+      "bytes": 18513628
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/Violoncello.pdf",
+      "sha256": "8dd8740e8c8dd6a064f07b9b0ec8c6de16b0552de7ac8f6c2afbfea1fecfa4b7",
+      "bytes": 18513458
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/manifest.json",
+      "sha256": "39dd69957c7f250dab12f71a8d4af5c8e36cf9ed61e517af55fe81c70a4d85ac",
+      "bytes": 541304
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/plan.json",
+      "sha256": "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc",
+      "bytes": 549556
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/rectified-review-source.pdf",
+      "sha256": "3012da56d772c79a5d319282667b9bbfa25d1da747d876b37150930fb55ede38",
+      "bytes": 18737371
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/Brahms String Quartet No. 3 Op. 67 \u2014 Auto draft.partsmithproject/project.json",
+      "sha256": "9080a557dabf21a2bf770fbe4d4be2ed16b0eed4690dcbdc865b28ee3b44e9ae",
+      "bytes": 269374
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/Brahms String Quartet No. 3 Op. 67 \u2014 Auto draft.partsmithproject/source.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "bytes": 2747941
+    }
+  ],
+  "limitations": [
+    "Nine whole-neighbor staff occurrences and many partial neighboring fragments remain.",
+    "Six frozen ending safety-envelope failures remain; prior visual review distinguishes complete intended ink from guard margins.",
+    "Ending recognition still uses the reviewed prototype metadata and has not been enabled in Mac Auto.",
+    "Unchanged note content is supported by identical602 crops and48 pixel-identical pages, not a fresh complete score-wide per-note audit."
+  ],
+  "earlierVisualReview": {
+    "sourceFirst": "Original source p24 system1 full-width context viewed before candidate rows. This source page is unrectified in both projects.",
+    "viola": "All viola notes, accidentals, ledger notes, ties/slurs, dynamics, hairpins, and poco a poco in tempo text in the changed source system are retained. Bottom edge excludes most of the cello staff while preserving the viola low notes and slur. Cello text and partial lines remain as context.",
+    "cello": "All cello clef/signature, rests, notes, slurs, bottom hairpin and poco a poco in tempo text are retained. Top edge removes most of the viola staff; viola low-note/slur fragments remain because they share the vertical range of the cello heading.",
+    "pagination": "Viola output page10 and all15 cello pages viewed in contact sheets. No new collision, output overflow, missing title or empty output page observed. Cello global page balancing moves p20s1 from page7 to8 and p22s3 from8 to9. Systems remain in score order; not a performance page-turn certification.",
+    "directions": "All42 prior heading/navigation/ending source rectangles and above/below side values are exactly preserved. The p28s2 cello Da Capo owner crop still ends306.94288150920204pt. The rejected safety-margin variant was not used."
+  },
+  "pageAssignmentChanges": [
+    [
+      "p20-s1-cello",
+      7,
+      8
+    ],
+    [
+      "p22-s3-cello",
+      8,
+      9
+    ]
+  ],
+  "earlierPixelComparison": {
+    "identicalPagesAt108DPI": 48,
+    "changedPagesReviewed": 16,
+    "overlapFailures": 0,
+    "outsidePageFailures": 0
+  },
+  "freshVisualReview": {
+    "sourceFirst": true,
+    "sourcePageAndSystem": "24/1",
+    "outputRows": [
+      "p24-s1-viola",
+      "p24-s1-cello"
+    ],
+    "finding": "Both delivered rows preserve the intended source notation; partial neighboring ink remains where vertical ranges overlap.",
+    "images": [
+      {
+        "path": "Tests/quality_control/brahms-traced-lines-delivery-2026-10-03/delivered-p24-s1-cello.png",
+        "sha256": "180394bf7c7fab8e0479bf64fafb02cfe9c9f93e60ae68c40b266ae033d0c093",
+        "bytes": 43038
+      },
+      {
+        "path": "Tests/quality_control/brahms-traced-lines-delivery-2026-10-03/delivered-p24-s1-viola.png",
+        "sha256": "e4d6592c5a37f011b11bb1d31638d7b642a37c8166092d30fae5ebd75bab2542",
+        "bytes": 63071
+      },
+      {
+        "path": "Tests/quality_control/brahms-traced-lines-delivery-2026-10-03/source-p24-s1.png",
+        "sha256": "d67644593914d8efa59ed168a1e2ee36cc9aa2dea3f548d5fb766a4cc5891183",
+        "bytes": 205859
+      }
+    ]
+  },
+  "documentationBindings": [
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines/README.md",
+      "sha256": "035d4726067922bef77d33ff6eebe143d706d5676a835991e1e97d3b0d207de3",
+      "bytes": 2424
+    },
+    {
+      "path": "Tests/quality_control/brahms-traced-lines-delivery-2026-10-03/README.md",
+      "sha256": "127b2517edfa1bf3083d9b7af7153868773d2084d474cb9830cffcb665e1793a",
+      "bytes": 2254
+    },
+    {
+      "path": "Tests/quality_control/brahms-traced-lines-delivery-2026-10-03/deliver.py",
+      "sha256": "05070e5495847eabf68c391d0f0f6fbad99edd865085982d971184b3cb8e9c49",
+      "bytes": 7822
+    }
+  ]
+}

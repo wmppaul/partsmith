@@ -1,0 +1,15 @@
+# Open: musical stems ending near outer staff lines
+
+The current analyzer passes the existing 755 crop checks, but **48 additional source-defined musical cases fail preservation**. This is an open defect and is not covered by the successful continuous-staff-tracing or tiny-staff-line-removal changes. No follow-on candidate from this investigation has been promoted.
+
+Each case contains two five-line staves, with outer lines at source rows 200/248 and 350/398. A genuine cross-staff stem starts 2–5 pixels inside the first outer line and ends 2–5 pixels inside the last outer line. Both ends carry source noteheads. The grid covers raster scales 0.5, 0.6, 1, and 1.5, and tilts −1.5°, 0°, and +1.5°. Its independent source-pixel envelope must fit in **both** planned crops. All 48 cases fail that condition in the current baseline; this measures actual omitted musical extent, not component width.
+
+Instrumentation confirms that all 48 stem removals take the `throughBothCores` shortcut. The stem covers at least 88% of each staff core, so the shortcut bypasses the vertical junction checks used by the locally shifted fallback. At low resolution, a one-pixel endpoint gap may also disappear within the fallback's ±1-pixel junction tolerance. Simply tightening that tolerance regresses genuine bracket controls.
+
+The supplied fixture also measures twelve true structural strokes containing an interior eight-pixel scan gap. Those still separate in this synthetic geometry. They do **not** reproduce the exact remaining Brahms p24 system 2 failure, where measured lower-core support is 49/57 rows: eight missing interior rows, with both outer endpoints present. Do not lower the 88% support threshold to repair that case; near-edge musical stems already demonstrate why occupancy alone is insufficient.
+
+`adversarial-baseline.json` contains all 60 measurements. `baseline-cuts.log` records the actual musical removals. `provenance.json` binds them to the current production source; removing the logging statement from the instrumented copy reproduces that source exactly. These are synthetic controls, not evidence that 48 real corpus bands omit notes.
+
+Scratch investigations repaired these synthetic examples by checking junctions on both paths and retaining connectors with attached off-line musical ink. The first version passed the 755 checks plus an expanded 336-case grid, but greatly widened genuine score crops, including all 604 raw Brahms bands. It was rejected. A safe improvement must distinguish compact noteheads from curved or interrupted staff-line remnants and pass source-preservation controls **and** real-corpus crop review.
+
+The separate `remaining-inventory.json` records the nine whole-neighbor occurrences in the reviewed corrected Brahms output. `source-guards.json` freezes ten target envelopes from full-width source views before further algorithm experiments. These guards must not be weakened to accommodate a candidate. Remaining whole-neighbor ink and this newly identified musical-stem failure are distinct limitations.

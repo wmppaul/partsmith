@@ -1,0 +1,57 @@
+{
+  "builtAtUTC": "2026-10-03T17:22:03.788105+00:00",
+  "configuration": "Release; unsigned universal arm64 + x86_64; macOS 14+",
+  "archive": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "archiveSHA256": "3b9a17778801188a0e50628b0fa7cef21ae84fe07dfa851b8c454ff9d8988f68",
+  "executableSHA256": "a42a8bb2bd03b14df1bba259e7cd8b9f1d21569639366f1467e09c18b783e699",
+  "architectures": "x86_64 arm64",
+  "archiveIntegrity": "All entries pass CRC; archived executable equals successful Release build.",
+  "buildLog": ".build/auto-qc/continuous-staff-low-resolution-release-2026-10-03.log",
+  "buildLogSHA256": "fa855d12803842eb4123a452f36bc4b215bb895232ce0729550fb1d11c410577",
+  "productionSources": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2",
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "3b9d62e7c728d780de3c96797125e3318d3c9f18879c2d8ae2cf3813d4dc0756",
+    "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": "6dfd6256d2a4b8be4c70c09c067e382bee31afc31c108384b6b6e90c4a22c25e",
+    "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": "2c12382cd6500b998846196d73673a11f8cbf10a70c8f5193b55bc3c63517a57",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "b5e9e1c50798d42961036862279d44bbe393993a46f52e6290b139e2ceebd985",
+    "Partsmith.xcodeproj/project.pbxproj": "a9d5918c0c57882bc5c63b3bbcc8e10e8882083b0b1afb3eecc0cd05b2be65d4",
+    "tools/test_crop_quality.swift": "1e9e3bfe5cb655338398aff4c3266a577adcc4c3ba8874179214c110af349296"
+  },
+  "cropValidation": {
+    "productionChecks": 755,
+    "corpusPDFs": 36,
+    "corpusPages": 1477,
+    "tracingChangedRealCrops": 2,
+    "lowResolutionChangedRealCrops": 0,
+    "wholeBrahmsNeighborStavesBefore": 11,
+    "wholeBrahmsNeighborStavesAfter": 9,
+    "lowResolutionRepairedSyntheticEnvelopeCases": 103
+  },
+  "nativeWorker": {
+    "report": "Tests/quality_control/continuous-staff-worker-review/review.json",
+    "sourcePages": 39,
+    "mainCrops": 604,
+    "copiedDirections": 27,
+    "onlyExpectedTwoEdgesChange": true,
+    "awakeSeconds": 71.391246208,
+    "maxMainLoopHeartbeatSeconds": 0.076780875,
+    "scope": "Traced-line code before one-row erasure follow-up; full corpus comparison proves that follow-up leaves every real music crop unchanged."
+  },
+  "completeBrahmsDelivery": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-traced-lines",
+  "parts": 4,
+  "deliveryPages": 64,
+  "deliveryBands": 604,
+  "deliveryDirectionRows": 42,
+  "pairedEndingDetectorInApp": false,
+  "limits": [
+    "Live interaction with the new direction-copying SwiftUI controls remains unverified; computer-use tools unavailable.",
+    "Nine whole-neighbor occurrences, other neighboring fragments and missing shared directions remain.",
+    "48 additional near-edge musical-stem fixture failures remain unresolved; the widening candidate is not included.",
+    "Some low-resolution structural contamination remains; 755 passing checks are not complete musical certification.",
+    "Delivered ending copies come from the separately reviewed prototype, not this app Auto flow."
+  ],
+  "runningUserApp": "Not replaced or relaunched; unsaved documents untouched."
+}

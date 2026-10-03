@@ -1,0 +1,490 @@
+{
+  "date": "2026-09-27",
+  "status": "Scratch safety-margin experiment; not promoted",
+  "recommendation": "Retain the current narrower copies and explicit guard failures. Uniform expansion preserves intended ink but adds detached neighboring music without recovering missing ending ink; do not optimize geometric guard pass rate at the expense of source-copy readability.",
+  "candidateRule": "One local staff space on all four sides around detected bracket/number geometry, using max(geometry bottom, measured right hook bottom). No source IDs or guard coordinates enter margin choice.",
+  "recognitionScope": {
+    "completePagesReplayed": 68,
+    "allNumericCandidates": 13,
+    "unchangedKnownPairs": 5,
+    "nativeControlsPassed": 32,
+    "fullOCRRepeated": false
+  },
+  "frozenGuards": {
+    "brahmsCount": 8,
+    "baselineFailures": 6,
+    "guardMissAttributions": {
+      "brahms-p06-s3-first": "Below the ending is the separate one-bar-rest count 1. Its bottom portion is in the guard overhang; the ending numeral 1. and both hooks are complete in the old copy.",
+      "brahms-p06-s4-second": "Bottom/right overhang includes the top of a first-violin beamed group, below the complete ending digit 2. and line.",
+      "brahms-p32-s4-first": "Small upper guard-only strip is white space; no dark source pixel is lost there.",
+      "brahms-p32-s4-second": "Small upper guard-only strip is white space; no dark source pixel is lost there.",
+      "brahms-p37-s2-first": "Lower guard-only strip is white space below the completed first-ending hook/number.",
+      "brahms-p37-s2-second": "Top overhang is blank; lower overhang includes the neighboring first-violin slur, not the second-ending hook/number."
+    },
+    "originalGuardFilesModified": false,
+    "candidateIndividualBracketFailures": 1,
+    "candidateActualMergedSourceRowFailures": 0,
+    "individualFailureExplanation": "Brahms p37s2 first-alone candidate ends0.215246pt above its frozen lower guard. The required same-system pair union ends181.317278pt and contains both guards. This is preserved as an individual failure, not hidden by a tolerance change.",
+    "kv498ExistingDeliveryBottomOverhangPoints": 0.293060302734375,
+    "kv498FrozenNativeCandidateBottomOverhangPoints": 0.1873544588072,
+    "kv498MarginCandidateGuardContained": true
+  },
+  "exportScope": {
+    "parts": 7,
+    "pages": 103,
+    "mainCropsUnchanged": 1009,
+    "sourceCopyRows": 52,
+    "unrelatedCopyRowsUnchanged": 35,
+    "changedEndingRowsReviewed": 17,
+    "changedPagesReviewed": 13,
+    "pixelIdenticalPagesAt108DPI": 90,
+    "pageAssignmentChanges": 0,
+    "intersystemOverlapFailures": 0,
+    "outsidePageFailures": 0,
+    "repositionedRows": 71
+  },
+  "visualReview": {
+    "sourceFirst": true,
+    "sourceViews": "All ten bracket source contexts at576dpi, with original pixels, current/candidate/guard outlines, and red pixels only where frozen guard extends beyond current copy. The six Brahms failures are three entirely blank cases and three unrelated musical fragments.",
+    "outputViews": "All17 changed recipient rows inspected at216dpi in five score/part sheets; all13 changed whole pages inspected in three contact sheets. Intended numerals, hooks and full bracket lines remain complete and correctly aligned.",
+    "regressions": "Larger margins add a visibly detached beam below Brahms p6 second ending, more of the separate rest-count1, detached slur material at p37, additional notehead/staff-line fragments at p36, and tiny clarinet stem/slur fragments in Mozart. Main music is not clipped, but copied-row clutter increases.",
+    "unchangedScope": "90 unchanged pages are pixel-identical at108dpi. This is not a new full per-note audit of inherited crops or all musical page turns."
+  },
+  "bindings": [
+    {
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "bytes": 2747941
+    },
+    {
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "bytes": 686236
+    },
+    {
+      "path": "Tests/quality_control/native-ending-brackets-v1/brahms-native-final.json",
+      "sha256": "097e41a0a802c7a5f3cf6636fefd35321774b1bd0388b898110db1d5fd7c8425",
+      "bytes": 36259
+    },
+    {
+      "path": "Tests/quality_control/native-ending-brackets-v1/kv498-native-final.json",
+      "sha256": "1284335ed9651335809d6003f413b5ba61620cc3672eb59368950ef6a86d0cf4",
+      "bytes": 13259
+    },
+    {
+      "path": "Tests/quality_control/native-ending-brackets-v1/native-guard-comparison.json",
+      "sha256": "26be572243b7ffc183c8dcf0c2660cf6b78f1137df9a94c2856591fccbc128ff",
+      "bytes": 3473
+    },
+    {
+      "path": "Tests/quality_control/kv498-checkpoint975ee3d-review/source-direction-guards.json",
+      "sha256": "364aceecb60b29135df6502a8288f439555c5e91c02cbd7ddd7e2119eb20b39a",
+      "bytes": 4544
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "5adb7f35ed5668a80331340db69b4ded4153daf102f079db1041d3489d99db12",
+      "bytes": 15884
+    },
+    {
+      "path": ".build/qc-ending-native-v1/export_score_plan",
+      "sha256": "a7f4a98fd20c2192eef29ff4875671d024bf5486439030083204de13b2f1a65d",
+      "bytes": 2456176
+    },
+    {
+      "path": ".build/qc-ending-native-v1/export_score_plan.swift",
+      "sha256": "5cf95e66bcddd7824ea97c0592179e3b643a9a288065510dc88f97ccff104a18",
+      "bytes": 12373
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/Violin I.pdf",
+      "sha256": "c66142c69f27524c28701382c0a421c42838141c2684082351bad14f405124c1",
+      "bytes": 18514071
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/Viola.pdf",
+      "sha256": "d488222e7e000c9d07f6419d726949dcfeca33bd00ecb1717aa4a8ab4d180d23",
+      "bytes": 18513641
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/Violin II.pdf",
+      "sha256": "c55cebf65d5e9fcb182b2c3e6f4b7a8cc7e1a99898e41460b0343214fa14899a",
+      "bytes": 18513749
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/Violoncello.pdf",
+      "sha256": "0d910ea712cfd517fcdf2a1ab662aa792c6ad962045d351ed3f0088386d060cd",
+      "bytes": 18513453
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/rectified-review-source.pdf",
+      "sha256": "289f935b7b65ddb3b82cfe911540b9f890bb251b1a51b77916c14faea49baaf5",
+      "bytes": 18737371
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/manifest.json",
+      "sha256": "ec29c661b3790ac81f71b10de15db5db61de68d56c662a909b44b9f18e50e6cf",
+      "bytes": 541308
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-endings/plan.json",
+      "sha256": "ecf77031be51c696a4f0ea2889864a5f67d969fe6907d5842f795e4ad11b06c0",
+      "bytes": 549639
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/mozart-kv498-directions/Piano.pdf",
+      "sha256": "8c236f7d22ccd328f1d5f7dcb89924bef618391adc9eccf67782f2dfd8bc1af5",
+      "bytes": 4521361
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/mozart-kv498-directions/Clarinet in B-flat.pdf",
+      "sha256": "c322082b2961151adffb9f3b544373d753ed483bb02ab6221d4f960f7133bc0a",
+      "bytes": 4364993
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/mozart-kv498-directions/Viola.pdf",
+      "sha256": "652e8849abaa96082c84bf4cece292126912baf386ae233293329fbe420a206e",
+      "bytes": 4519010
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/mozart-kv498-directions/manifest.json",
+      "sha256": "373bce1a1599c7427c2faeda7b2c72c26be5d50b42719580bc7829d76730e045",
+      "bytes": 381699
+    },
+    {
+      "path": "output/pdf/auto-qc-2026-09-21/mozart-kv498-directions/plan.json",
+      "sha256": "b573740591e539ce74fcf5ee54c693d57de014523be8c171f1499cabe2186425",
+      "bytes": 351541
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/Violin I.pdf",
+      "sha256": "500473daa7f449239bc425a2139a2a2abd46a74fbdbd61b4761da93320192524",
+      "bytes": 18514071
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/Viola.pdf",
+      "sha256": "d7bda99919c52f904341190b942d923a4fb21f6d6761e43b32dfc379c7f01481",
+      "bytes": 18513630
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/Violin II.pdf",
+      "sha256": "325490dd49c1fc8193eda12234ed8f16405cb6856c6784012431019c01e36a07",
+      "bytes": 18513751
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/Violoncello.pdf",
+      "sha256": "86d6f7a6eeeb8dabb9942915770105d3932dd2b24c169c99e85c6c446af19e90",
+      "bytes": 18513455
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/rectified-review-source.pdf",
+      "sha256": "a9b8581b1e27a74d6e1cf7e3805acad2ed9df85e472b8bc5b7896681d1f68f8f",
+      "bytes": 18737371
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/manifest.json",
+      "sha256": "545d116efdfa12aeba40c321e45b93bc4f0eec1479719cf44fae81bc00251b0c",
+      "bytes": 541300
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/brahms-parts/plan.json",
+      "sha256": "fc4e291922290e4d9428afc8d7159e84b1ca7bf90ff4c63368927a1ea7894c37",
+      "bytes": 549645
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/kv498-parts-matched-title/Piano.pdf",
+      "sha256": "c1d423ff0b2bcf24bd030cb38cd8930420f13b53ed3771c5227b65874c83c64b",
+      "bytes": 4521241
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/kv498-parts-matched-title/Clarinet in B-flat.pdf",
+      "sha256": "31622a8d41ef54e12c9ae8f5b6a7433116a20851de6fed109024b3dc59f88edf",
+      "bytes": 4364993
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/kv498-parts-matched-title/Viola.pdf",
+      "sha256": "194d7960d1932c374d8085306aae7c9ee9bc7fe33159cbc5bf5bb4e840ae8b8d",
+      "bytes": 4519262
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/kv498-parts-matched-title/manifest.json",
+      "sha256": "58ebbd7d14ea46c47a97360a33e02865396d474617adf7ea567f5a41ad85a557",
+      "bytes": 381711
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/kv498-parts-matched-title/plan.json",
+      "sha256": "60f1e49ac6bee1d7267a06fad1d2be74623f80d4e020e7a7f25a05034260f20d",
+      "bytes": 351543
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/Core/ScoreExtractionPlanner.swift",
+      "sha256": "3b9d62e7c728d780de3c96797125e3318d3c9f18879c2d8ae2cf3813d4dc0756",
+      "bytes": 55522
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/Core/ScoreSharedEndingDetector.swift",
+      "sha256": "378e5ed0ed17ccab3978656fd11e9ee22e84384219dd4978414744f535419fdb",
+      "bytes": 16342
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/Core/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "bytes": 29163
+    },
+    {
+      "path": ".build/qc-ending-envelope-safety/test_margin",
+      "sha256": "7a0f33a4188f743d8733a959b05623d4ad0f4fea8f9e7a6a2dfe5626b3803f29",
+      "bytes": 765272
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/README.md",
+      "sha256": "1104f03603ebe01d9165a359339095138a7fa391b6803f40680c0e342de91807",
+      "bytes": 4760
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/brahms-native-margin.json",
+      "sha256": "2334e75c17a42b32d95d5df953559aac00f21c30c7ed4ac41094c1767c97c1b1",
+      "bytes": 35969
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/changed-pages/contact-1.png",
+      "sha256": "602b114a9e6f46dc22b65f32e24ec893ea7f15570d43c6551f72b39ea81f1ee9",
+      "bytes": 901182
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/changed-pages/contact-2.png",
+      "sha256": "0ecb11724b103f7b8b40896b90c92542af2adc68cdfd4d3964e1029de2319370",
+      "bytes": 794453
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/changed-pages/contact-3.png",
+      "sha256": "67da6d1bbd67a303d2166229c7809cdc14100169d1387bfc8dbd4d61674f0753",
+      "bytes": 112048
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/compare_exports.py",
+      "sha256": "9f5e15adc960e0157842a36513dad029c906b44cdd94d4c0e0d6ed12839af833",
+      "bytes": 4613
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/export-comparison.json",
+      "sha256": "c46d107d4f97b94a80801a10a7c22c12e6c5da24f0064f574555d406c0bd30a6",
+      "bytes": 20246
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/geometry-comparison.json",
+      "sha256": "626dd59002b27a89020574ea8bbd8a5a0193d95dde26b67fe47f1122088c2ccd",
+      "bytes": 10653
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/kv498-native-margin.json",
+      "sha256": "8a9d1f39ac883369cc94f307ceca0d039745d6ec63f4a01e7c571e83433ccacb",
+      "bytes": 12995
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/output-contexts/brahms-cello-all.png",
+      "sha256": "f1c53bb635cc24842d2b14b3c180359486e472a00bf8c9015ea3ae021f8f1ad1",
+      "bytes": 364193
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/output-contexts/brahms-viola-all.png",
+      "sha256": "0d2fe78c17383bce0bd53d11c230fb300fa39139cb33099c8e03e4a5099eaaf0",
+      "bytes": 381867
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/output-contexts/brahms-violin2-all.png",
+      "sha256": "e6523f92eb165394d2793818ec36d93a978dd9d73235d6a9cf4af2a96b280529",
+      "bytes": 403664
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/output-contexts/kv498-piano-all.png",
+      "sha256": "6138c840a58650c98a354c011c47646ba1a20d9e75294c550126a768e654f750",
+      "bytes": 33442
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/output-contexts/kv498-viola-all.png",
+      "sha256": "94f765d8a4ae6b2ee09582c74af50b8459a7ba1e0050846e38229028fae2649f",
+      "bytes": 25629
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/prepare.py",
+      "sha256": "1f157d7cc350e4ba648a88df66fb7c957c02359f2773fb750ee58a5c1d42352a",
+      "bytes": 6563
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/prototype/ScoreSharedEndingDetector.swift",
+      "sha256": "378e5ed0ed17ccab3978656fd11e9ee22e84384219dd4978414744f535419fdb",
+      "bytes": 16342
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p06-s3-first-bounds.png",
+      "sha256": "939b93a498ead5a5cc811bb89e57a049d44684c27d4a3c1d8cc1196351a756ac",
+      "bytes": 7218
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p06-s3-first-guard-only-ink.png",
+      "sha256": "24e9e19252e684263f01627705655bc5589f37fdd5a2477f6f5e04788e33b9aa",
+      "bytes": 7073
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p06-s3-first-source.png",
+      "sha256": "e63f53645f1934c0364721ba72cb3a50e9cacd9637ab0bfc26e0b6363e54bc14",
+      "bytes": 7058
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p06-s4-second-bounds.png",
+      "sha256": "34926ce5e443d646f5cfda9e6cf5c5ba35ff367e442c54ce4dede8feb430ecfe",
+      "bytes": 10800
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p06-s4-second-guard-only-ink.png",
+      "sha256": "687a901758f89c8fb88c065444bfd3d53a566199ebd6f26ab60525667407cfe8",
+      "bytes": 10565
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p06-s4-second-source.png",
+      "sha256": "16a1e3715afa26d5138a7be5187db22aaed7ea030bd5109c8afe0d80892147a7",
+      "bytes": 10631
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p32-s4-first-bounds.png",
+      "sha256": "a036eea64252c380281e5da84ab1b3b38fa6f058110058bba8a2661ce916ef2d",
+      "bytes": 13206
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p32-s4-first-guard-only-ink.png",
+      "sha256": "b59878a4e138d15031dc6e10359a4080cc480c70bd689620b41b3316ca8ba9ce",
+      "bytes": 13288
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p32-s4-first-source.png",
+      "sha256": "b59878a4e138d15031dc6e10359a4080cc480c70bd689620b41b3316ca8ba9ce",
+      "bytes": 13288
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p32-s4-second-bounds.png",
+      "sha256": "168863cfb3d210312e8e158c02d29bb4ea9205ba3a22b5c7eba7bf0d5d8357ed",
+      "bytes": 9439
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p32-s4-second-guard-only-ink.png",
+      "sha256": "76da278c30d7d15d2f2dfc969e75c427ce80931bcfc79664ee8776f8b4955be4",
+      "bytes": 9637
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p32-s4-second-source.png",
+      "sha256": "76da278c30d7d15d2f2dfc969e75c427ce80931bcfc79664ee8776f8b4955be4",
+      "bytes": 9637
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p36-s1-first-bounds.png",
+      "sha256": "f5918c1603874993c20ecbcc36a8c8682f87305f83b1ef1e962442c3d961599f",
+      "bytes": 18461
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p36-s1-first-guard-only-ink.png",
+      "sha256": "dbe3d5f9dc99cf9f429eb1ea23994612e9197f19cdeef9a35823fa8f5fd926eb",
+      "bytes": 18478
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p36-s1-first-source.png",
+      "sha256": "dbe3d5f9dc99cf9f429eb1ea23994612e9197f19cdeef9a35823fa8f5fd926eb",
+      "bytes": 18478
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p36-s1-second-bounds.png",
+      "sha256": "16d233e03b51ff2d48bf2b2fe2c0ea87a2c714ce80f966757a231b079c1ba427",
+      "bytes": 14348
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p36-s1-second-guard-only-ink.png",
+      "sha256": "ebef252cdd7bd290e9250261b0c211aedbe0e71e5d57f455ac5989225cfbb996",
+      "bytes": 14359
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p36-s1-second-source.png",
+      "sha256": "ebef252cdd7bd290e9250261b0c211aedbe0e71e5d57f455ac5989225cfbb996",
+      "bytes": 14359
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p37-s2-first-bounds.png",
+      "sha256": "a9c1ba9b27be1785a4374acca26cea1efb6ab9de25df24f7857c0bfbe615bfe8",
+      "bytes": 7814
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p37-s2-first-guard-only-ink.png",
+      "sha256": "34db43c1e4ab41eea8f3b3ec4426731d2dd592845c886a85482e5efc0a6e3b53",
+      "bytes": 7631
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p37-s2-first-source.png",
+      "sha256": "34db43c1e4ab41eea8f3b3ec4426731d2dd592845c886a85482e5efc0a6e3b53",
+      "bytes": 7631
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p37-s2-second-bounds.png",
+      "sha256": "0f0aeba583b63ecf79d5369bf2743606f3c705f58622162caf8d934d2eb207c4",
+      "bytes": 9082
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p37-s2-second-guard-only-ink.png",
+      "sha256": "83594902769cfdb432e422c26b468287a10aec24088bac02692e77b2c631b105",
+      "bytes": 9064
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/brahms-p37-s2-second-source.png",
+      "sha256": "dcd219996bcb257f5a5edfdf4cc84000939159912c699c9409ad3699bff8971d",
+      "bytes": 9133
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/kv498-p25-s3-first-bounds.png",
+      "sha256": "a20fe35500bf579842a44a0c51139a64aa6c544d185fa915c1eee359f45a2664",
+      "bytes": 7331
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/kv498-p25-s3-first-guard-only-ink.png",
+      "sha256": "e8b7a8dcd05dc4f1fe32386fbb33a36b492e7fff3d83ed5b89ca350c1d6215e5",
+      "bytes": 7320
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/kv498-p25-s3-first-source.png",
+      "sha256": "e8b7a8dcd05dc4f1fe32386fbb33a36b492e7fff3d83ed5b89ca350c1d6215e5",
+      "bytes": 7320
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/kv498-p25-s3-second-bounds.png",
+      "sha256": "55a7326b2c1d205ee2322249389054f446ec675e2bd931552b22323d2d8760ef",
+      "bytes": 3944
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/kv498-p25-s3-second-guard-only-ink.png",
+      "sha256": "47b49f5438f0bab971e95c78053fed207a7e3df4740a0aa902f6ecbbcc5f2ce9",
+      "bytes": 3765
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/source-contexts/kv498-p25-s3-second-source.png",
+      "sha256": "47b49f5438f0bab971e95c78053fed207a7e3df4740a0aa902f6ecbbcc5f2ce9",
+      "bytes": 3765
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/test_margin.log",
+      "sha256": "5f1ec2d5667595725019b032c16da58700e456174765cb40ebc2f4171230b449",
+      "bytes": 1746
+    },
+    {
+      "path": "Tests/quality_control/ending-envelope-safety-v1/test_margin.swift",
+      "sha256": "6033cafef47d4c880f4fbd02538bccf7a8d65b7a59ef8ddf3e2aa86e40d08c30",
+      "bytes": 3665
+    }
+  ],
+  "scratchOnly": true,
+  "deliveredFilesReplaced": false,
+  "productionCodeModified": false,
+  "nativeExportGeometryAgreement": {
+    "bracketsCompared": 10,
+    "maximumCoordinateDifferencePoints": 0,
+    "matches": true
+  }
+}

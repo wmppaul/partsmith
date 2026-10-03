@@ -1,0 +1,823 @@
+{
+  "status": "scratch; not promoted",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "savedRectificationsOneBased": [
+    2,
+    7,
+    17,
+    19,
+    23,
+    28,
+    34,
+    38,
+    39
+  ],
+  "rawResultSHA256": "a6c412c0f137d88e3584381c73c794011c20c08e97d8bceaaade726b60b982b0",
+  "correctedResultSHA256": "525aa5f1838856f739eb98285b8e39a17150c0fc6dde3e996025c246f92167f9",
+  "bandsComparedToOriginalTracingCandidate": 604,
+  "changedBandGeometry": [],
+  "exportSourceRectanglesCompared": 604,
+  "exportSourceRectangleDifferences": [
+    {
+      "id": "p28-s2-cello",
+      "before": [
+        0,
+        259.11378413524056,
+        427,
+        306.94288150920204
+      ],
+      "after": [
+        0,
+        259.11378413524056,
+        427,
+        305.501300390117
+      ]
+    }
+  ],
+  "profileNote": "Old standalone diagnostic plan had a 10pt right margin; the full-export profile and final guarded plan have zero side trim. Vertical crops and assignment identities compare against the prior diagnostic, and all four source-rectangle edges compare against the actual exported manifest. One pre-existing Da Capo expansion (p28-s2-cello) is present in the cue-bearing export but absent from both cue-free diagnostic plans; the candidate does not change the diagnostic geometry of this band.",
+  "checkedRegions": 60,
+  "newOrWorseGuardFailures": [],
+  "guardResults": [
+    {
+      "bandID": "p2-s1-violin1",
+      "guard": "candidate3",
+      "rect": [
+        36.8,
+        129.2,
+        395.7,
+        178.1
+      ],
+      "beforeLossPoints": 1.3000000000000114,
+      "afterLossPoints": 1.3000000000000114,
+      "guardedLossPoints": 1.3000000000000114
+    },
+    {
+      "bandID": "p2-s1-violin1",
+      "guard": "candidate3",
+      "rect": [
+        134.2,
+        130.2,
+        175.9,
+        140.8
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s1-violin1",
+      "guard": "candidate3",
+      "rect": [
+        243.6,
+        166.3,
+        293.3,
+        176.6
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s1-violin2",
+      "guard": "candidate3",
+      "rect": [
+        36.3,
+        168.2,
+        395.1,
+        211.1
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s1-violin2",
+      "guard": "candidate3",
+      "rect": [
+        166.6,
+        170.1,
+        196.2,
+        183.1
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s1-viola",
+      "guard": "candidate3",
+      "rect": [
+        35.7,
+        204.1,
+        394.6,
+        249.1
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s1-cello",
+      "guard": "candidate3",
+      "rect": [
+        35.2,
+        242.1,
+        394.0,
+        279.1
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s1-cello",
+      "guard": "candidate3",
+      "rect": [
+        242.1,
+        262.3,
+        292.8,
+        277.5
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s2-violin1",
+      "guard": "candidate3",
+      "rect": [
+        34.5,
+        279.1,
+        393.4,
+        329.1
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s2-violin2",
+      "guard": "candidate3",
+      "rect": [
+        34.0,
+        317.1,
+        392.8,
+        362.0
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s2-viola",
+      "guard": "candidate3",
+      "rect": [
+        33.5,
+        343.1,
+        392.4,
+        394.0
+      ],
+      "beforeLossPoints": 1.2999999999999545,
+      "afterLossPoints": 1.2999999999999545,
+      "guardedLossPoints": 1.2999999999999545
+    },
+    {
+      "bandID": "p2-s2-cello",
+      "guard": "candidate3",
+      "rect": [
+        33.0,
+        387.1,
+        391.8,
+        426.0
+      ],
+      "beforeLossPoints": 2.3999999999999773,
+      "afterLossPoints": 2.3999999999999773,
+      "guardedLossPoints": 2.3999999999999773
+    },
+    {
+      "bandID": "p2-s3-violin1",
+      "guard": "candidate3",
+      "rect": [
+        32.2,
+        431.1,
+        391.1,
+        476.0
+      ],
+      "beforeLossPoints": 0.0999999999999659,
+      "afterLossPoints": 0.0999999999999659,
+      "guardedLossPoints": 0.0999999999999659
+    },
+    {
+      "bandID": "p2-s3-violin2",
+      "guard": "candidate3",
+      "rect": [
+        31.7,
+        466.0,
+        390.6,
+        511.0
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s3-viola",
+      "guard": "candidate3",
+      "rect": [
+        31.2,
+        500.0,
+        390.1,
+        543.0
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p2-s3-cello",
+      "guard": "candidate3",
+      "rect": [
+        30.7,
+        535.0,
+        389.5,
+        577.0
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p5-s1-violin1",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        32,
+        393,
+        59
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p5-s1-violin2",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        63,
+        393,
+        94
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p5-s1-violin2",
+      "guard": "candidate3",
+      "rect": [
+        208,
+        86,
+        286,
+        94
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p5-s1-viola",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        95,
+        393,
+        127
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p5-s1-cello",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        130,
+        393,
+        159
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p5-s1-cello",
+      "guard": "candidate3",
+      "rect": [
+        185,
+        147,
+        247,
+        155
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p35-s3-violin1",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        313,
+        393,
+        354
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p35-s3-violin1",
+      "guard": "candidate3",
+      "rect": [
+        195,
+        313,
+        220,
+        329
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p35-s3-violin2",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        350,
+        393,
+        384
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p35-s3-viola",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        384,
+        393,
+        417
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p35-s3-cello",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        415,
+        393,
+        451
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p35-s3-cello",
+      "guard": "candidate3",
+      "rect": [
+        268,
+        439,
+        282,
+        451
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s2-violin1",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        165,
+        393,
+        205
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s2-violin1",
+      "guard": "candidate3",
+      "rect": [
+        225,
+        167,
+        285,
+        181
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s2-violin2",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        205,
+        393,
+        240
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s2-viola",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        237,
+        393,
+        271
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s2-cello",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        270,
+        393,
+        304
+      ],
+      "beforeLossPoints": 0.20740169622206395,
+      "afterLossPoints": 0.20740169622206395,
+      "guardedLossPoints": 0.20740169622206395
+    },
+    {
+      "bandID": "p32-s1-violin1",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        22,
+        393,
+        69
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s1-violin1",
+      "guard": "candidate3",
+      "rect": [
+        85,
+        22,
+        324,
+        34
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s1-violin2",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        67,
+        393,
+        98
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s1-viola",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        96,
+        393,
+        125
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s1-cello",
+      "guard": "candidate3",
+      "rect": [
+        35,
+        122,
+        393,
+        166
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s1-cello",
+      "guard": "candidate3",
+      "rect": [
+        85,
+        122,
+        365,
+        132
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p17-s2-cello",
+      "guard": "lower-envelope",
+      "rect": [
+        38,
+        278,
+        393,
+        306
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p17-s2-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        164,
+        292,
+        230,
+        306
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p17-s2-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        64,
+        291,
+        115,
+        303
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p18-s1-cello",
+      "guard": "lower-envelope",
+      "rect": [
+        38,
+        140,
+        393,
+        171
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p18-s1-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        104,
+        157,
+        125,
+        171
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p22-s3-cello",
+      "guard": "lower-envelope",
+      "rect": [
+        38,
+        415,
+        393,
+        448
+      ],
+      "beforeLossPoints": 0.3443887389124711,
+      "afterLossPoints": 0.3443887389124711,
+      "guardedLossPoints": 0.3443887389124711
+    },
+    {
+      "bandID": "p22-s3-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        227,
+        432,
+        329,
+        443
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p22-s3-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        332,
+        436,
+        372,
+        448
+      ],
+      "beforeLossPoints": 0.3443887389124711,
+      "afterLossPoints": 0.3443887389124711,
+      "guardedLossPoints": 0.3443887389124711
+    },
+    {
+      "bandID": "p32-s3-cello",
+      "guard": "lower-envelope",
+      "rect": [
+        38,
+        415,
+        393,
+        441
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s3-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        132,
+        430,
+        175,
+        437
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p32-s3-cello",
+      "guard": "lower-landmark",
+      "rect": [
+        198,
+        433,
+        255,
+        441
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p31-s1-violin1",
+      "guard": "connector8",
+      "rect": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "guard": "connector8",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p33-s1-violin1",
+      "guard": "connector8",
+      "rect": [
+        36,
+        25,
+        394,
+        69
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p33-s1-violin2",
+      "guard": "connector8",
+      "rect": [
+        36,
+        59.5,
+        394,
+        97.5
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s1-violin1",
+      "guard": "connector8",
+      "rect": [
+        38,
+        26.5,
+        394,
+        64
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s1-violin2",
+      "guard": "connector8",
+      "rect": [
+        38,
+        59,
+        394,
+        96.5
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s3-viola",
+      "guard": "connector8",
+      "rect": [
+        38,
+        379.5,
+        393,
+        415
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p37-s3-cello",
+      "guard": "connector8",
+      "rect": [
+        38,
+        418,
+        393,
+        446
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p24-s1-viola",
+      "guard": "p24-independent",
+      "rect": [
+        0,
+        100.18562447475456,
+        427,
+        137.18562447475455
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    },
+    {
+      "bandID": "p24-s1-cello",
+      "guard": "p24-independent",
+      "rect": [
+        0,
+        135.18562447475455,
+        427,
+        170.18562447475455
+      ],
+      "beforeLossPoints": 0,
+      "afterLossPoints": 0,
+      "guardedLossPoints": 0
+    }
+  ],
+  "guardedAnalyzerSHA256": "b48991a3cf591fa607dda6e5ad4261dae24280af59220aec46f0953a2e707117"
+}

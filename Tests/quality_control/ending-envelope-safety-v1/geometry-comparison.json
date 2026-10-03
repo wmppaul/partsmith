@@ -1,0 +1,444 @@
+{
+  "marginRule": "One local staff space on all four sides around detected bracket/number geometry, using max(geometry bottom, measured right hook bottom). No source IDs or guard coordinates enter margin choice.",
+  "completeInputPages": 68,
+  "frozenNumericCandidates": 13,
+  "selectedPairs": 5,
+  "recognitionReused": true,
+  "recognitionAndPairSelectionUnchanged": true,
+  "sourceBindings": [
+    {
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    {
+      "path": "sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sha256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9"
+    }
+  ],
+  "records": [
+    {
+      "score": "brahms",
+      "page": 6,
+      "system": 3,
+      "role": "first",
+      "staffSpace": 3.2865688254750003,
+      "oldCopyBounds": [
+        362.94874565250535,
+        302.81765666158674,
+        390.528337680828,
+        316.3555982063253
+      ],
+      "candidateCopyBounds": [
+        360.8124759159466,
+        300.681386925028,
+        392.6646074173867,
+        317.6702257365153
+      ],
+      "fixedGuard": [
+        363,
+        303,
+        389,
+        317
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 248,
+      "guardOutsideOldDarkPixelsAt576DPI": 60,
+      "contextPrefix": "brahms-p06-s3-first"
+    },
+    {
+      "score": "brahms",
+      "page": 6,
+      "system": 4,
+      "role": "second",
+      "staffSpace": 3.2877975680053924,
+      "oldCopyBounds": [
+        66.89461364228076,
+        446.7536878833176,
+        115.64788635771924,
+        457.47351338846516
+      ],
+      "candidateCopyBounds": [
+        64.75754522307726,
+        444.6166194641141,
+        117.78495477692275,
+        459.9393615644692
+      ],
+      "fixedGuard": [
+        67,
+        447,
+        116,
+        459
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 2206,
+      "guardOutsideOldDarkPixelsAt576DPI": 1283,
+      "contextPrefix": "brahms-p06-s4-second"
+    },
+    {
+      "score": "brahms",
+      "page": 32,
+      "system": 4,
+      "role": "first",
+      "staffSpace": 3.2304099686678844,
+      "oldCopyBounds": [
+        238.97722558805174,
+        442.29421674281303,
+        315.41110774528164,
+        456.1167244307234
+      ],
+      "candidateCopyBounds": [
+        236.8774591084176,
+        440.19445026317896,
+        317.5108742249157,
+        457.40888841819054
+      ],
+      "fixedGuard": [
+        239,
+        442,
+        314,
+        454
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 695,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "brahms-p32-s4-first"
+    },
+    {
+      "score": "brahms",
+      "page": 32,
+      "system": 4,
+      "role": "second",
+      "staffSpace": 3.2304099686678844,
+      "oldCopyBounds": [
+        312.456808921385,
+        442.82791648247166,
+        371.9886077452817,
+        456.1167244307234
+      ],
+      "candidateCopyBounds": [
+        310.35704244175093,
+        440.7281500028376,
+        374.08837422491575,
+        457.68279117069886
+      ],
+      "fixedGuard": [
+        313,
+        442,
+        371,
+        455
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 672,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "brahms-p32-s4-second"
+    },
+    {
+      "score": "brahms",
+      "page": 36,
+      "system": 1,
+      "role": "first",
+      "staffSpace": 3.2896890269144925,
+      "oldCopyBounds": [
+        246.4111925254375,
+        26.68148807407341,
+        315.44964080789583,
+        40.93389441123114
+      ],
+      "candidateCopyBounds": [
+        244.2728946579431,
+        24.54319020657899,
+        317.58793867539026,
+        43.250092191945114
+      ],
+      "fixedGuard": [
+        247,
+        28,
+        314,
+        40
+      ],
+      "oldContainsGuard": true,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 1533,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "brahms-p36-s1-first"
+    },
+    {
+      "score": "brahms",
+      "page": 36,
+      "system": 1,
+      "role": "second",
+      "staffSpace": 3.2896890269144925,
+      "oldCopyBounds": [
+        312.95202585877087,
+        27.39308772695163,
+        376.6529741412291,
+        42.71289354342668
+      ],
+      "candidateCopyBounds": [
+        310.81372799127644,
+        25.25478985945721,
+        378.7912720087235,
+        44.02876915419248
+      ],
+      "fixedGuard": [
+        314,
+        28,
+        376,
+        41
+      ],
+      "oldContainsGuard": true,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 510,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "brahms-p36-s1-second"
+    },
+    {
+      "score": "brahms",
+      "page": 37,
+      "system": 2,
+      "role": "first",
+      "staffSpace": 3.2566105692530543,
+      "oldCopyBounds": [
+        225.4382468873751,
+        167.75831154282162,
+        261.08925311262493,
+        178.92939276537376
+      ],
+      "candidateCopyBounds": [
+        223.32145001736063,
+        165.64151467280715,
+        263.2060499826394,
+        180.7847538198338
+      ],
+      "fixedGuard": [
+        226,
+        168,
+        259,
+        181
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": false,
+      "addedDarkPixelsAt576DPI": 112,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "brahms-p37-s2-first"
+    },
+    {
+      "score": "brahms",
+      "page": 37,
+      "system": 2,
+      "role": "second",
+      "staffSpace": 3.2566105692530543,
+      "oldCopyBounds": [
+        258.4532468873751,
+        168.29083539364555,
+        287.18175311262496,
+        178.87481974371798
+      ],
+      "candidateCopyBounds": [
+        256.3364500173606,
+        166.17403852363108,
+        289.29854998263943,
+        181.31727767065775
+      ],
+      "fixedGuard": [
+        259,
+        168,
+        285,
+        181
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": true,
+      "addedDarkPixelsAt576DPI": 841,
+      "guardOutsideOldDarkPixelsAt576DPI": 259,
+      "contextPrefix": "brahms-p37-s2-second"
+    },
+    {
+      "score": "kv498",
+      "page": 25,
+      "system": 3,
+      "role": "first",
+      "staffSpace": 3.9679281903400696,
+      "oldCopyBounds": [
+        53.724505060251424,
+        347.91895215653824,
+        148.67069493974859,
+        361.3126455411928
+      ],
+      "candidateCopyBounds": [
+        51.14535173653038,
+        345.3397988328172,
+        151.24984826346963,
+        363.8917988649138
+      ],
+      "fixedGuard": null,
+      "oldContainsGuard": null,
+      "candidateContainsGuard": null,
+      "addedDarkPixelsAt576DPI": 269,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "kv498-p25-s3-first"
+    },
+    {
+      "score": "kv498",
+      "page": 25,
+      "system": 3,
+      "role": "second",
+      "staffSpace": 3.9679281903400696,
+      "oldCopyBounds": [
+        144.5047050602514,
+        347.91895215653824,
+        258.5494616064152,
+        360.9158527221588
+      ],
+      "candidateCopyBounds": [
+        141.92555173653037,
+        345.3397988328172,
+        261.1286149301362,
+        363.8917988649138
+      ],
+      "fixedGuard": null,
+      "oldContainsGuard": null,
+      "candidateContainsGuard": null,
+      "addedDarkPixelsAt576DPI": 126,
+      "guardOutsideOldDarkPixelsAt576DPI": 0,
+      "contextPrefix": "kv498-p25-s3-second"
+    },
+    {
+      "score": "kv498",
+      "role": "pair guard",
+      "fixedGuard": [
+        55.5,
+        349.5,
+        256.5,
+        361.5
+      ],
+      "oldCopyBounds": [
+        53.724505060251424,
+        347.91895215653824,
+        258.5494616064152,
+        361.3126455411928
+      ],
+      "candidateCopyBounds": [
+        51.14535173653038,
+        345.3397988328172,
+        261.1286149301362,
+        363.8917988649138
+      ],
+      "oldContainsGuard": false,
+      "candidateContainsGuard": true
+    }
+  ],
+  "changedMetadata": [
+    {
+      "score": "brahms",
+      "page": 6,
+      "system": 3,
+      "anchor": 8,
+      "oldUnionBounds": [
+        362.94874565250535,
+        302.81765666158674,
+        390.528337680828,
+        316.3555982063253
+      ],
+      "candidateUnionBounds": [
+        360.8124759159466,
+        300.681386925028,
+        392.6646074173867,
+        317.6702257365153
+      ]
+    },
+    {
+      "score": "brahms",
+      "page": 6,
+      "system": 4,
+      "anchor": 12,
+      "oldUnionBounds": [
+        66.89461364228076,
+        446.7536878833176,
+        115.64788635771924,
+        457.47351338846516
+      ],
+      "candidateUnionBounds": [
+        64.75754522307726,
+        444.6166194641141,
+        117.78495477692275,
+        459.9393615644692
+      ]
+    },
+    {
+      "score": "brahms",
+      "page": 32,
+      "system": 4,
+      "anchor": 12,
+      "oldUnionBounds": [
+        238.97722558805174,
+        442.29421674281303,
+        371.9886077452817,
+        456.1167244307234
+      ],
+      "candidateUnionBounds": [
+        236.8774591084176,
+        440.19445026317896,
+        374.08837422491575,
+        457.68279117069886
+      ]
+    },
+    {
+      "score": "brahms",
+      "page": 36,
+      "system": 1,
+      "anchor": 0,
+      "oldUnionBounds": [
+        246.4111925254375,
+        26.68148807407341,
+        376.6529741412291,
+        42.71289354342668
+      ],
+      "candidateUnionBounds": [
+        244.2728946579431,
+        24.54319020657899,
+        378.7912720087235,
+        44.02876915419248
+      ]
+    },
+    {
+      "score": "brahms",
+      "page": 37,
+      "system": 2,
+      "anchor": 4,
+      "oldUnionBounds": [
+        225.4382468873751,
+        167.75831154282162,
+        287.18175311262496,
+        178.92939276537376
+      ],
+      "candidateUnionBounds": [
+        223.32145001736063,
+        165.64151467280715,
+        289.29854998263943,
+        181.31727767065775
+      ]
+    },
+    {
+      "score": "kv498",
+      "page": 25,
+      "system": 3,
+      "anchor": 8,
+      "oldUnionBounds": [
+        53.724505060251424,
+        347.91895215653824,
+        258.5494616064152,
+        361.3126455411928
+      ],
+      "candidateUnionBounds": [
+        51.14535173653038,
+        345.3397988328172,
+        261.1286149301362,
+        363.8917988649138
+      ]
+    }
+  ]
+}

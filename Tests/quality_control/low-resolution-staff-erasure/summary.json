@@ -1,0 +1,54 @@
+{
+  "baseline": {
+    "cases": 588,
+    "failedSourceEnvelopeCases": 103,
+    "failedCountsByScale": {
+      "0.25": 61,
+      "0.3": 31,
+      "0.4": 11
+    },
+    "connectorCuts": 0,
+    "allTargetPixelLossInStaffErasure": true,
+    "sourceRasterEnvelopeAlsoFails": 103,
+    "maxOriginalSourceShortfallPoints": 8.000000000000052,
+    "lowResolutionMissingSharedEndpointOwnerCases": 168
+  },
+  "single-row": {
+    "cases": 588,
+    "failedSourceEnvelopeCases": 0,
+    "failedCountsByScale": {},
+    "connectorCuts": 0,
+    "allTargetPixelLossInStaffErasure": true,
+    "sourceRasterEnvelopeAlsoFails": 0,
+    "maxOriginalSourceShortfallPoints": 0,
+    "lowResolutionMissingSharedEndpointOwnerCases": 0
+  },
+  "no-erase": {
+    "cases": 588,
+    "failedSourceEnvelopeCases": 0,
+    "failedCountsByScale": {},
+    "connectorCuts": 0,
+    "allTargetPixelLossInStaffErasure": true,
+    "sourceRasterEnvelopeAlsoFails": 0,
+    "maxOriginalSourceShortfallPoints": 0,
+    "lowResolutionMissingSharedEndpointOwnerCases": 0
+  },
+  "comparison": {
+    "changedCropCases": 230,
+    "changedPrincipalCases": 0,
+    "currentProductionCropChecks": 503
+  },
+  "corpus": {
+    "inputPDFs": 36,
+    "inputPages": 1477,
+    "staffOrRasterChangedPages": 0,
+    "inkChangedPages": 1,
+    "changedCrops": 0,
+    "addedBands": 0,
+    "removedBands": 0,
+    "lowSpacingPages": 1,
+    "detectedStaffProposals": 23801,
+    "belowThresholdProposals": 6,
+    "changedPage": "Beethoven complete scanned score, decorative cover page 1, no part assignments"
+  }
+}
