@@ -1,0 +1,218 @@
+{
+  "sourcePages": 39,
+  "bands": 604,
+  "copies": 42,
+  "exactExpectedPlanDelta": [
+    {
+      "id": "p29-s1-violin1",
+      "edge": "bottomFraction",
+      "removedWarning": "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+    },
+    {
+      "id": "p29-s1-violin2",
+      "edge": "topFraction",
+      "removedWarning": "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+    }
+  ],
+  "componentChanges": [
+    {
+      "page": 3,
+      "orderOnly": true,
+      "beforeCount": 2645,
+      "afterCount": 2645
+    },
+    {
+      "page": 7,
+      "orderOnly": true,
+      "beforeCount": 1012,
+      "afterCount": 1012
+    },
+    {
+      "page": 9,
+      "orderOnly": true,
+      "beforeCount": 1665,
+      "afterCount": 1665
+    },
+    {
+      "page": 12,
+      "orderOnly": true,
+      "beforeCount": 1896,
+      "afterCount": 1896
+    },
+    {
+      "page": 14,
+      "orderOnly": true,
+      "beforeCount": 2278,
+      "afterCount": 2278
+    },
+    {
+      "page": 22,
+      "orderOnly": true,
+      "beforeCount": 1869,
+      "afterCount": 1869
+    },
+    {
+      "page": 23,
+      "orderOnly": true,
+      "beforeCount": 1111,
+      "afterCount": 1111
+    },
+    {
+      "page": 25,
+      "orderOnly": true,
+      "beforeCount": 2481,
+      "afterCount": 2481
+    },
+    {
+      "page": 27,
+      "orderOnly": true,
+      "beforeCount": 2172,
+      "afterCount": 2172
+    },
+    {
+      "page": 29,
+      "orderOnly": false,
+      "beforeCount": 2027,
+      "afterCount": 2029
+    },
+    {
+      "page": 30,
+      "orderOnly": true,
+      "beforeCount": 1244,
+      "afterCount": 1244
+    },
+    {
+      "page": 31,
+      "orderOnly": true,
+      "beforeCount": 2351,
+      "afterCount": 2351
+    },
+    {
+      "page": 32,
+      "orderOnly": true,
+      "beforeCount": 1878,
+      "afterCount": 1878
+    }
+  ],
+  "normalizedInventoryDifferences": [
+    {
+      "path": "/pages/28/inkComponents",
+      "beforeCount": 2027,
+      "afterCount": 2029
+    }
+  ],
+  "planDifferences": [
+    {
+      "path": "/pages/27/assignments/0/bottomFraction",
+      "before": 0.14902912469155544,
+      "after": 0.12319032793104637
+    },
+    {
+      "path": "/pages/27/assignments/0/warnings",
+      "beforeCount": 4,
+      "afterCount": 3
+    },
+    {
+      "path": "/pages/27/assignments/1/topFraction",
+      "before": 0.057347643279749415,
+      "after": 0.09629866526200935
+    },
+    {
+      "path": "/pages/27/assignments/1/warnings",
+      "beforeCount": 5,
+      "afterCount": 4
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "autoSkipped": [
+        0
+      ],
+      "awakeElapsedSeconds": 77.197119209,
+      "bandCount": 604,
+      "completionOnMainThread": true,
+      "continuousElapsedSeconds": 77.197119208,
+      "elapsedSeconds": 77.19678401947021,
+      "heartbeatCount": 1543,
+      "heartbeatMaxAwakeIntervalSeconds": 0.058067334,
+      "heartbeatMaxIntervalSeconds": 0.0580669641494751,
+      "id": "brahms",
+      "issues": [],
+      "planCanApply": true,
+      "progressCleared": true,
+      "projectUnchanged": true,
+      "references": [
+        {
+          "anchorStaffID": 4,
+          "bounds": [
+            0.5149113479737821,
+            0.27607459663642475,
+            0.5434219853595514,
+            0.30014756130398595
+          ],
+          "correlation": 0.7520194660461883,
+          "pageIndex": 25,
+          "templateBounds": [
+            0.7619751468300286,
+            0.4732211282875574,
+            0.7863581865033047,
+            0.49438083873587335
+          ],
+          "templatePageIndex": 27
+        }
+      ],
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    "candidate": {
+      "autoSkipped": [
+        0
+      ],
+      "awakeElapsedSeconds": 77.19104325,
+      "bandCount": 604,
+      "completionOnMainThread": true,
+      "continuousElapsedSeconds": 77.191043292,
+      "elapsedSeconds": 77.1907080411911,
+      "heartbeatCount": 1543,
+      "heartbeatMaxAwakeIntervalSeconds": 0.055179459,
+      "heartbeatMaxIntervalSeconds": 0.055177927017211914,
+      "id": "brahms",
+      "issues": [],
+      "planCanApply": true,
+      "progressCleared": true,
+      "projectUnchanged": true,
+      "references": [
+        {
+          "anchorStaffID": 4,
+          "bounds": [
+            0.5149113479737821,
+            0.27607459663642475,
+            0.5434219853595514,
+            0.30014756130398595
+          ],
+          "correlation": 0.7520194660461883,
+          "pageIndex": 25,
+          "templateBounds": [
+            0.7619751468300286,
+            0.4732211282875574,
+            0.7863581865033047,
+            0.49438083873587335
+          ],
+          "templatePageIndex": 27
+        }
+      ],
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    }
+  },
+  "sha256": {
+    "baseline/source-hashes.json": "8dd6ae2ae68e58747a4da6d11e428ac1e9c50a0e95128585ba96cb02f052a204",
+    "baseline/config.json": "c14ada26ac47e0e67d01a4e8c8b60733c6b3b29f49608c9293809d6ca01fcd5b",
+    "baseline/brahms-summary.json": "52d40a276020cf0e69dbaaff441a564265a734854be37f55d18a127d90873f7d",
+    "baseline/brahms-plan.json": "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc",
+    "baseline/brahms-inventory.json": "54dde6ba0056501589b5dec45b8c68bfb769d586e1c01f9a2783ef617e15330e",
+    "candidate/source-hashes.json": "6cc4ff2170a187679348bcc25475a0500e0360303a08130d532867d2b84f5578",
+    "candidate/config.json": "c14ada26ac47e0e67d01a4e8c8b60733c6b3b29f49608c9293809d6ca01fcd5b",
+    "candidate/brahms-summary.json": "c4798103fb3c44dd52e00b687e95928bdc232a9d993f4bc07a00a3e3a4ae0122",
+    "candidate/brahms-plan.json": "68dfce41634d33227d1d2efe6c260dc463bcdfcea2691f5ad7c4a4913fa10cb8",
+    "candidate/brahms-inventory.json": "0697f5ac574a298f618efbd1a6937ec1b2693a57231a7ee9d29969a8d66dba78"
+  }
+}

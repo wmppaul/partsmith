@@ -1,0 +1,300 @@
+{
+  "verdict": "Bounded continuity change passes independent synthetic non-regression, p29 notation review, full36coverage/semantic audit, and source-first review of all8additional unresolved-page changes. Existing ownership failures and incomplete assignment coverage remain explicit; promotion is parent-owned.",
+  "candidateAnalyzerSHA256": "e89e43a50394d08271e413e8c9a2da811da61bb7c03889e9edcd0213dea5b9aa",
+  "originalTenGuardsSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+  "all297NewFailures": 0,
+  "all297WorsenedSourceEnvelopeIntersections": 0,
+  "expanded336ExactBaselineMatch": true,
+  "p29VisualReview": {
+    "physicalPage": 29,
+    "sourceFirst": true,
+    "parts": [
+      "Violin I",
+      "Violin II"
+    ],
+    "retainsAllObservedTargetNotation": true,
+    "targetInkBeyondFrozenEnvelopeFound": false,
+    "remainingForeignInk": true,
+    "exportedPDFPaginationReviewed": false
+  },
+  "files": [
+    {
+      "path": ".build/residual9-boundary-independent/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/baseline.log",
+      "sha256": "b693328dbe88a573cb803cdefd1168966d89656a956d913b019501b70b2215a3"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/297.log",
+      "sha256": "6020152d429c6652cb2adb90ebbaeb06f23317974da8a892321fc66300cbf040"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/336.log",
+      "sha256": "babe318fe83b8ec5b2ed7404d85dd7bb7bdb078ab818012dae34326664e79fb0"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "e89e43a50394d08271e413e8c9a2da811da61bb7c03889e9edcd0213dea5b9aa"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": ".build/residual9-boundary-independent/candidate-v1/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/expanded336.swift",
+      "sha256": "0b0f20697841eca0604eca732604c01b8e86a77ee070f454c0e1f756ef2650e5"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/controls.swift",
+      "sha256": "82d4df925ff89ce3dd611878979e72185d3e88b14846055b2a323cbea1e76267"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-review/p29-corrected-full-first-system.png",
+      "sha256": "3bc4a660c6a108e5d2cd249fa72b3bb444b290f06dfb2e0f42643a3d5d7024ec"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-review/p29-original-full-first-system.png",
+      "sha256": "3bc4a660c6a108e5d2cd249fa72b3bb444b290f06dfb2e0f42643a3d5d7024ec"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-review/p29-s1-violin1-after.png",
+      "sha256": "cf1708c2d64beeaa4054a2a8e53bad257338318966a6850e305dc8376ef333f0"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-review/p29-s1-violin1-before.png",
+      "sha256": "7d0fe8d511f7bd19d7e07996e46c58ccf93ca1663dd3b70bfc06343302191c16"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-review/p29-s1-violin2-after.png",
+      "sha256": "687ce40de90adf26e67aec98d7fbb47aa0f5863c533f3da1acdaf91249ec6aa2"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-review/p29-s1-violin2-before.png",
+      "sha256": "1e64ca24c92aeb39081a0e7ddf2b19fa4d8a7d1b2293ce508f05441d074ab05c"
+    }
+  ],
+  "archiveSHA256": "3cbd4123b456bbeb4f3dab45031f6d38e1142241b389e63d6a455e275cd31d43",
+  "reportFiles": [
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/297-comparison.json",
+      "sha256": "616ac1344a22573985e1194061eb9b7cf4cfdb82d6a740e0c02508cc73b214a1"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/336-comparison.json",
+      "sha256": "defc9f5f73e07c23adab26ca8014bce2ec5d89224beba1839f0666b189180a5f"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/README.md",
+      "sha256": "137233b4840b5aaa6b1d1bbf5f49e1b027d62734a19714358ee70fe52dbbac39"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/audit-corpus.py",
+      "sha256": "c12a736311a9e413f92f2e70f0dc67652685f43de9a2a43c5d599ff8192abfe3"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/baseline-results.json",
+      "sha256": "25d840331e277971b3af7c6003d4eb119e9c06886f1a98d3b6f1721d0c34c670"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/baseline-summary.json",
+      "sha256": "ab4e050f2d789e9f828f26f0d9a2f384edbf5fef66b16be6420f431c71d675b2"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/candidate-expanded336.json",
+      "sha256": "8ab3c5d2bfcb632d4974b9f156cfe2dbf67ce5eb19488e7f74a48b26742e41b3"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/candidate-results.json",
+      "sha256": "c8dfa1a062234ca163e9517c33832b31e5be0638d16dfa853d4c7215f230bdac"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/compare.py",
+      "sha256": "1e30d3057abfb2abb8a40eb26bb462b0e9f4b68cb620ca7f99d033d65f54e98b"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/controls.swift",
+      "sha256": "82d4df925ff89ce3dd611878979e72185d3e88b14846055b2a323cbea1e76267"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/corpus-v1-independent.json",
+      "sha256": "afe42042984327e25ec9845a48ad6f50d524d4029a11029d589601b9ed59c617"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/corrected-source-comparison.json",
+      "sha256": "f0e9ca625b094ba88b11ebe47299d674f044940841bbc821b9dfb8e740e237ae"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/frozen-inputs.json",
+      "sha256": "d60098083733668e1619ad5e61f205d38715a4aa73943d87bcbea149d57600bf"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/hypothetical-staff-crops.swift",
+      "sha256": "1be82591b43993f15bb19ae8a6b589ab473dbc720e68e2e00845a19be3110f1b"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/inherited-endpoint-probes.json",
+      "sha256": "1987c7bea795f0ec8a4fac183f704e714b5037b28b3aa0d4b96cecdb91ec0a23"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/release-identity.json",
+      "sha256": "402c30426615d930541002b7633a18d30ef878ed4f84d71a2be046e11afc4836"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/reproduction-sources.zip",
+      "sha256": "3cbd4123b456bbeb4f3dab45031f6d38e1142241b389e63d6a455e275cd31d43"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/run-controls.sh",
+      "sha256": "7d0f0003ea4d6fa4399de5ee7baf8fd53fc67c8282b7c60ef32c4e73d3fbff42"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-fixture-contact.png",
+      "sha256": "a5b2a5a6d9d6bda06b6975a4f98134ecb00869b0f06cc4a9f60030bd018a7bf4"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/source-guards.json",
+      "sha256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/v1-repeatability.json",
+      "sha256": "b3619b686922498485b6e7fd342bdf96e0b4f6d1ea646e8977682543a2fcc24c"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-independent/verify-release.py",
+      "sha256": "79b825ed6c7c50dfd074c6cb24576234286361570ee85fc57bd1cbd8a26129f7"
+    }
+  ],
+  "v2": {
+    "analyzerSHA256": "e6541355b65590e66b9f893a12a12f1d66e73f82ebc328436dbb3d52bcd0a353",
+    "controls297And336ExactlyMatchV1": true,
+    "bothSecondProcessRepeatsExactlyMatch": true,
+    "nativeSourceEquivalence": "Independent check passed: exact complete plan/source/corrections, exact page geometry and component signatures; p29 page exact.",
+    "files": [
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/297-comparison.json",
+        "sha256": "616ac1344a22573985e1194061eb9b7cf4cfdb82d6a740e0c02508cc73b214a1"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/297-results.json",
+        "sha256": "c8dfa1a062234ca163e9517c33832b31e5be0638d16dfa853d4c7215f230bdac"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/336-results.json",
+        "sha256": "8ab3c5d2bfcb632d4974b9f156cfe2dbf67ce5eb19488e7f74a48b26742e41b3"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/comparison.json",
+        "sha256": "4b52a09791f30d913beb560631f1a9e548be2b7fe12b80bfb18f09f79f22dc96"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/corpus-v1-equivalence.json",
+        "sha256": "fe9d26e39381ac11a456799228a1c3b1b027381ea04bc53de65942c766d1e1d4"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/native39-equivalence.json",
+        "sha256": "9fcf72e140f00a55f8233008d889c2aee68e4802bbc7c7db5f3c8aa04cd33756"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-compare_corpus.py",
+        "sha256": "bec625baddbd90cdab5c7b35de7e804813ed31f95462f1ee7dabcf3202c9fc3c"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-compare_corpus_v2.py",
+        "sha256": "be5c5ad13cf8aa6aca214a1f8670de8e3610508f371b11efa36bf35120cacf3a"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-corpus-inputs.json",
+        "sha256": "4f45a66a3ec223d5b0e3c8a2304d83a09a79d29ff0c3facb4db2dd9776a2becb"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-corpus-status.json",
+        "sha256": "c2f475ad3c29ec2626fe0e7c8c0db17a1e27f29bb19ef3fed09e5d26190495df"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-corpus-v2-status.json",
+        "sha256": "15fac2703a812a7b412977899f08eba7b5a36f285fb706d4fde3c374d7275ad8"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-run_corpus.py",
+        "sha256": "d00f83551122cc581bee5c419196991fec7aba1e68a811dfa3e530ff72d9a38c"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/parent-run_corpus_v2.py",
+        "sha256": "6f858ca41259295f17b518f4d80fde6293e2deb9c0ad190c0dbe2a3546f32547"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/repeat297.json",
+        "sha256": "c8dfa1a062234ca163e9517c33832b31e5be0638d16dfa853d4c7215f230bdac"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/repeat336.json",
+        "sha256": "8ab3c5d2bfcb632d4974b9f156cfe2dbf67ce5eb19488e7f74a48b26742e41b3"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/reproduction-sources.zip",
+        "sha256": "5f03d1a1ba04628de641cae071e379803d67ad0279856b6763b5990bdb61337f"
+      },
+      {
+        "path": "Tests/quality_control/residual9-boundary-independent/candidate-v2/sources.json",
+        "sha256": "52321b0100cd53913133e674f1ff82a154c04ca05dff7a937452dae4bddf0824"
+      }
+    ]
+  },
+  "corpusAudit": {
+    "inputs": 36,
+    "pages": 1477,
+    "bands": 6936,
+    "semanticChangedPagesFromBaseline": 9,
+    "semanticChangesV1ToV2": 0,
+    "unresolvedSourceRegionsReviewed": 8,
+    "diagnosticChangedCropsReviewed": 15,
+    "observedNewTargetNotationOmissions": 0,
+    "actualAssignmentCoverageChanged": false
+  },
+  "corpusReviewProvenanceSHA256": "e576b998d6a83d55a4b1219b61231bb1762606d94e5bbad69cd51e211a66e36f",
+  "releaseIdentity": {
+    "path": "Tests/quality_control/residual9-boundary-independent/release-identity.json",
+    "sha256": "402c30426615d930541002b7633a18d30ef878ed4f84d71a2be046e11afc4836",
+    "finalBuildMetadataRefreshPending": false,
+    "finalBuildRecordSHA256": "7946380d153bcd7e5738bf1698bec314cfeda304a5718f92e90a8597d5fb2d29",
+    "stableIdentityUnchangedAcrossFinalMetadataAppend": true
+  }
+}

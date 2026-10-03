@@ -1,0 +1,1350 @@
+[
+  {
+    "page": 24,
+    "connector": [
+      1636,
+      1644
+    ],
+    "survivingPathBounds": [
+      1638,
+      1139,
+      1643,
+      1201
+    ],
+    "measurements": [
+      {
+        "connector": [
+          1636,
+          1644
+        ],
+        "directOccupancy": [
+          3,
+          2,
+          0,
+          0,
+          62,
+          62,
+          62,
+          62,
+          10,
+          0,
+          0,
+          0
+        ],
+        "end": 1201,
+        "event": "gap",
+        "page": 24,
+        "rasterSize": [
+          1800,
+          2593
+        ],
+        "space": 13.639383126880091,
+        "staffPair": [
+          6,
+          7
+        ],
+        "start": 1139,
+        "strokes": 1,
+        "supportOccupancy": [
+          62,
+          62,
+          62,
+          62,
+          62,
+          62,
+          62,
+          62
+        ]
+      },
+      {
+        "connector": [
+          1636,
+          1644
+        ],
+        "event": "width",
+        "maximumWidth": 24.550889628384166,
+        "mergedPair": false,
+        "page": 24,
+        "physicalStrokes": [
+          [
+            1638,
+            1642
+          ]
+        ],
+        "physicalWidth": 4,
+        "staffPair": [
+          6,
+          7
+        ]
+      },
+      {
+        "clearColumns": [
+          1634,
+          1646
+        ],
+        "connector": [
+          1636,
+          1644
+        ],
+        "cores": [
+          {
+            "bottom": 1128,
+            "fraction": 1,
+            "missingRows": [],
+            "rows": 56,
+            "shift": -4.391299942886259,
+            "staff": 6,
+            "supported": 56,
+            "top": 1072
+          },
+          {
+            "bottom": 1262,
+            "fraction": 0.8421052631578947,
+            "missingRows": [
+              1246,
+              1247,
+              1248,
+              1249,
+              1250,
+              1251,
+              1252,
+              1253,
+              1261
+            ],
+            "rows": 57,
+            "shift": -4.391299942886259,
+            "staff": 7,
+            "supported": 48,
+            "top": 1205
+          }
+        ],
+        "event": "global-cores",
+        "localShift": -4.391299942886259,
+        "page": 24,
+        "slope": -0.005934189112008458,
+        "staffPair": [
+          6,
+          7
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 6,
+        "acceptedBest": -2,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "shift": -4,
+          "sum": 5,
+          "weakest": 1
+        },
+        "flanks": [
+          [
+            1586,
+            1627
+          ],
+          [
+            1653,
+            1694
+          ]
+        ]
+      },
+      {
+        "connector": [
+          1636,
+          1644
+        ],
+        "event": "local-return",
+        "page": 24,
+        "shift": -2,
+        "staff": 6,
+        "staffPair": [
+          6,
+          7
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 7,
+        "acceptedBest": -1,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "shift": -4,
+          "sum": 5,
+          "weakest": 1
+        },
+        "flanks": [
+          [
+            1585,
+            1627
+          ],
+          [
+            1653,
+            1695
+          ]
+        ]
+      },
+      {
+        "connector": [
+          1636,
+          1644
+        ],
+        "event": "local-return",
+        "page": 24,
+        "shift": -1,
+        "staff": 7,
+        "staffPair": [
+          6,
+          7
+        ]
+      },
+      {
+        "connector": [
+          1636,
+          1644
+        ],
+        "cores": [
+          {
+            "bottom": 1126,
+            "fraction": 1,
+            "missingRows": [],
+            "rows": 56,
+            "shift": -6.391299942886259,
+            "staff": 6,
+            "supported": 56,
+            "top": 1070
+          },
+          {
+            "bottom": 1261,
+            "fraction": 0.8596491228070176,
+            "missingRows": [
+              1246,
+              1247,
+              1248,
+              1249,
+              1250,
+              1251,
+              1252,
+              1253
+            ],
+            "rows": 57,
+            "shift": -5.391299942886259,
+            "staff": 7,
+            "supported": 49,
+            "top": 1204
+          }
+        ],
+        "event": "translated-cores",
+        "page": 24,
+        "staffPair": [
+          6,
+          7
+        ],
+        "supported": false
+      },
+      {
+        "connector": [
+          1636,
+          1644
+        ],
+        "event": "reject",
+        "page": 24,
+        "reason": "translated core <88%",
+        "staffPair": [
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "page": 28,
+    "connector": [
+      244,
+      250
+    ],
+    "survivingPathBounds": [
+      246,
+      142,
+      249,
+      173
+    ],
+    "measurements": [
+      {
+        "connector": [
+          244,
+          250
+        ],
+        "directOccupancy": [
+          0,
+          0,
+          0,
+          0,
+          28,
+          31,
+          4,
+          0,
+          0,
+          0
+        ],
+        "end": 173,
+        "event": "gap",
+        "page": 28,
+        "rasterSize": [
+          1068,
+          1538
+        ],
+        "space": 8.004973474801048,
+        "staffPair": [
+          0,
+          1
+        ],
+        "start": 142,
+        "strokes": 1,
+        "supportOccupancy": [
+          28,
+          31,
+          31,
+          31,
+          31,
+          31
+        ]
+      },
+      {
+        "connector": [
+          244,
+          250
+        ],
+        "event": "width",
+        "maximumWidth": 14.408952254641887,
+        "mergedPair": false,
+        "page": 28,
+        "physicalStrokes": [
+          [
+            246,
+            248
+          ]
+        ],
+        "physicalWidth": 2,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "clearColumns": [
+          242,
+          252
+        ],
+        "connector": [
+          244,
+          250
+        ],
+        "cores": [
+          {
+            "bottom": 138,
+            "fraction": 0.8529411764705882,
+            "missingRows": [
+              113,
+              114,
+              115,
+              116,
+              122
+            ],
+            "rows": 34,
+            "shift": 0,
+            "staff": 0,
+            "supported": 29,
+            "top": 104
+          },
+          {
+            "bottom": 211,
+            "fraction": 1,
+            "missingRows": [],
+            "rows": 33,
+            "shift": 0,
+            "staff": 1,
+            "supported": 33,
+            "top": 178
+          }
+        ],
+        "event": "global-cores",
+        "localShift": 0,
+        "page": 28,
+        "slope": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 0,
+        "acceptedBest": -1,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            0.96,
+            1,
+            1,
+            1
+          ],
+          "shift": -3,
+          "sum": 4.96,
+          "weakest": 0.96
+        },
+        "flanks": [
+          [
+            213,
+            238
+          ],
+          [
+            256,
+            281
+          ]
+        ]
+      },
+      {
+        "connector": [
+          244,
+          250
+        ],
+        "event": "local-return",
+        "page": 28,
+        "shift": -1,
+        "staff": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 1,
+        "acceptedBest": 0,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "shift": -2,
+          "sum": 5,
+          "weakest": 1
+        },
+        "flanks": [
+          [
+            214,
+            238
+          ],
+          [
+            256,
+            280
+          ]
+        ]
+      },
+      {
+        "connector": [
+          244,
+          250
+        ],
+        "event": "local-return",
+        "page": 28,
+        "shift": 0,
+        "staff": 1,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "connector": [
+          244,
+          250
+        ],
+        "cores": [
+          {
+            "bottom": 137,
+            "fraction": 0.8529411764705882,
+            "missingRows": [
+              113,
+              114,
+              115,
+              116,
+              122
+            ],
+            "rows": 34,
+            "shift": -1,
+            "staff": 0,
+            "supported": 29,
+            "top": 103
+          },
+          {
+            "bottom": 211,
+            "fraction": 1,
+            "missingRows": [],
+            "rows": 33,
+            "shift": 0,
+            "staff": 1,
+            "supported": 33,
+            "top": 178
+          }
+        ],
+        "event": "translated-cores",
+        "page": 28,
+        "staffPair": [
+          0,
+          1
+        ],
+        "supported": false
+      },
+      {
+        "connector": [
+          244,
+          250
+        ],
+        "event": "reject",
+        "page": 28,
+        "reason": "translated core <88%",
+        "staffPair": [
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "page": 29,
+    "connector": [
+      1614,
+      1635
+    ],
+    "survivingPathBounds": [
+      1389,
+      253,
+      1635,
+      304
+    ],
+    "measurements": [
+      {
+        "connector": [
+          1614,
+          1635
+        ],
+        "directOccupancy": [
+          3,
+          2,
+          14,
+          38,
+          51,
+          41,
+          4,
+          3,
+          2,
+          2,
+          23,
+          44,
+          50,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          19,
+          2,
+          0,
+          0
+        ],
+        "end": 304,
+        "event": "gap",
+        "page": 29,
+        "rasterSize": [
+          1800,
+          2593
+        ],
+        "space": 13.879905861686538,
+        "staffPair": [
+          0,
+          1
+        ],
+        "start": 253,
+        "strokes": 2,
+        "supportOccupancy": [
+          51,
+          51,
+          51,
+          51,
+          51,
+          41,
+          23,
+          44,
+          50,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51
+        ]
+      },
+      {
+        "connector": [
+          1614,
+          1635
+        ],
+        "event": "width",
+        "maximumWidth": 31.22978818879471,
+        "mergedPair": true,
+        "page": 29,
+        "physicalStrokes": [
+          [
+            1615,
+            1618
+          ],
+          [
+            1623,
+            1633
+          ]
+        ],
+        "physicalWidth": 17,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "clearColumns": [
+          1612,
+          1637
+        ],
+        "connector": [
+          1614,
+          1635
+        ],
+        "cores": [
+          {
+            "bottom": 248,
+            "fraction": 0.8596491228070176,
+            "missingRows": [
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              197,
+              198
+            ],
+            "rows": 57,
+            "shift": 2.2760913655711854,
+            "staff": 0,
+            "supported": 49,
+            "top": 191
+          },
+          {
+            "bottom": 371,
+            "fraction": 1,
+            "missingRows": [],
+            "rows": 56,
+            "shift": 2.2760913655711854,
+            "staff": 1,
+            "supported": 56,
+            "top": 315
+          }
+        ],
+        "event": "global-cores",
+        "localShift": 2.2760913655711854,
+        "page": 29,
+        "slope": 0.0031416029890561563,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 0,
+        "acceptedBest": 8,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "shift": 8,
+          "sum": 5,
+          "weakest": 1
+        },
+        "flanks": [
+          [
+            1563,
+            1605
+          ],
+          [
+            1644,
+            1686
+          ]
+        ]
+      },
+      {
+        "connector": [
+          1614,
+          1635
+        ],
+        "event": "local-return",
+        "page": 29,
+        "shift": 8,
+        "staff": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 1,
+        "acceptedBest": null,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            0.9761904761904762,
+            1,
+            0.9523809523809523,
+            0.6904761904761905
+          ],
+          "shift": 10,
+          "sum": 4.6190476190476195,
+          "weakest": 0.6904761904761905
+        },
+        "flanks": [
+          [
+            1563,
+            1605
+          ],
+          [
+            1644,
+            1686
+          ]
+        ]
+      },
+      {
+        "event": "tracker-failure-detail",
+        "staff": 1,
+        "center": 1584,
+        "segment": 33,
+        "count": 33,
+        "bestStillFailing": {
+          "fractions": [
+            1,
+            1,
+            1,
+            0.9523809523809523,
+            0.6904761904761905
+          ],
+          "shift": 11,
+          "sum": 4.642857142857143,
+          "weakest": 0.6904761904761905
+        },
+        "reachableBefore": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "flankLength": 42
+      },
+      {
+        "center": 1584,
+        "connector": [
+          1614,
+          1635
+        ],
+        "event": "tracker-failed",
+        "page": 29,
+        "segment": 33,
+        "staff": 1,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "connector": [
+          1614,
+          1635
+        ],
+        "event": "reject",
+        "lower": null,
+        "page": 29,
+        "reason": "local-shift/tracker unavailable",
+        "staffPair": [
+          0,
+          1
+        ],
+        "upper": 8
+      }
+    ]
+  },
+  {
+    "page": 31,
+    "connector": [
+      1644,
+      1651
+    ],
+    "survivingPathBounds": [
+      1644,
+      253,
+      1649,
+      309
+    ],
+    "measurements": [
+      {
+        "connector": [
+          1644,
+          1651
+        ],
+        "directOccupancy": [
+          0,
+          0,
+          1,
+          10,
+          50,
+          56,
+          53,
+          0,
+          0,
+          0,
+          0
+        ],
+        "end": 309,
+        "event": "gap",
+        "page": 31,
+        "rasterSize": [
+          1800,
+          2593
+        ],
+        "space": 13.874229821318536,
+        "staffPair": [
+          0,
+          1
+        ],
+        "start": 253,
+        "strokes": 1,
+        "supportOccupancy": [
+          50,
+          56,
+          56,
+          56,
+          56,
+          56,
+          53
+        ]
+      },
+      {
+        "connector": [
+          1644,
+          1651
+        ],
+        "event": "width",
+        "maximumWidth": 24.973613678373365,
+        "mergedPair": false,
+        "page": 31,
+        "physicalStrokes": [
+          [
+            1646,
+            1649
+          ]
+        ],
+        "physicalWidth": 3,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "clearColumns": [
+          1642,
+          1653
+        ],
+        "connector": [
+          1644,
+          1651
+        ],
+        "cores": [
+          {
+            "bottom": 245,
+            "fraction": 0.8035714285714286,
+            "missingRows": [
+              189,
+              190,
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              197,
+              198,
+              199
+            ],
+            "rows": 56,
+            "shift": 0,
+            "staff": 0,
+            "supported": 45,
+            "top": 189
+          },
+          {
+            "bottom": 374,
+            "fraction": 0.9824561403508771,
+            "missingRows": [
+              350
+            ],
+            "rows": 57,
+            "shift": 0,
+            "staff": 1,
+            "supported": 56,
+            "top": 317
+          }
+        ],
+        "event": "global-cores",
+        "localShift": 0,
+        "page": 31,
+        "slope": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 0,
+        "acceptedBest": null,
+        "bestMinSupport": {
+          "fractions": [
+            0.5238095238095238,
+            0.2619047619047619,
+            0.8571428571428571,
+            0.5952380952380952,
+            0.6666666666666666
+          ],
+          "shift": -1,
+          "sum": 2.9047619047619047,
+          "weakest": 0.2619047619047619
+        },
+        "flanks": [
+          [
+            1593,
+            1635
+          ],
+          [
+            1660,
+            1702
+          ]
+        ]
+      },
+      {
+        "event": "tracker-failure-detail",
+        "staff": 0,
+        "center": 1509,
+        "segment": 29,
+        "count": 34,
+        "bestStillFailing": {
+          "fractions": [
+            0.7142857142857143,
+            0.9047619047619048,
+            0.9761904761904762,
+            1,
+            1
+          ],
+          "shift": 10,
+          "sum": 4.595238095238095,
+          "weakest": 0.7142857142857143
+        },
+        "reachableBefore": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "flankLength": 42
+      },
+      {
+        "center": 1509,
+        "connector": [
+          1644,
+          1651
+        ],
+        "event": "tracker-failed",
+        "page": 31,
+        "segment": 29,
+        "staff": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 1,
+        "acceptedBest": null,
+        "bestMinSupport": {
+          "fractions": [
+            0.38095238095238093,
+            0.7380952380952381,
+            1,
+            1,
+            1
+          ],
+          "shift": 8,
+          "sum": 4.119047619047619,
+          "weakest": 0.38095238095238093
+        },
+        "flanks": [
+          [
+            1593,
+            1635
+          ],
+          [
+            1660,
+            1702
+          ]
+        ]
+      },
+      {
+        "event": "tracker-failure-detail",
+        "staff": 1,
+        "center": 942,
+        "segment": 2,
+        "count": 34,
+        "bestStillFailing": {
+          "fractions": [
+            0.4523809523809524,
+            1,
+            1,
+            0.9285714285714286,
+            1
+          ],
+          "shift": 2,
+          "sum": 4.380952380952381,
+          "weakest": 0.4523809523809524
+        },
+        "reachableBefore": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "flankLength": 42
+      },
+      {
+        "center": 942,
+        "connector": [
+          1644,
+          1651
+        ],
+        "event": "tracker-failed",
+        "page": 31,
+        "segment": 2,
+        "staff": 1,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "connector": [
+          1644,
+          1651
+        ],
+        "event": "reject",
+        "lower": null,
+        "page": 31,
+        "reason": "local-shift/tracker unavailable",
+        "staffPair": [
+          0,
+          1
+        ],
+        "upper": null
+      }
+    ]
+  },
+  {
+    "page": 35,
+    "connector": [
+      1641,
+      1648
+    ],
+    "survivingPathBounds": [
+      1611,
+      258,
+      1647,
+      321
+    ],
+    "measurements": [
+      {
+        "connector": [
+          1641,
+          1648
+        ],
+        "directOccupancy": [
+          4,
+          4,
+          3,
+          10,
+          58,
+          63,
+          63,
+          46,
+          0,
+          0,
+          0
+        ],
+        "end": 321,
+        "event": "gap",
+        "page": 35,
+        "rasterSize": [
+          1800,
+          2594
+        ],
+        "space": 13.867575856722326,
+        "staffPair": [
+          0,
+          1
+        ],
+        "start": 258,
+        "strokes": 1,
+        "supportOccupancy": [
+          58,
+          63,
+          63,
+          63,
+          63,
+          63,
+          63
+        ]
+      },
+      {
+        "connector": [
+          1641,
+          1648
+        ],
+        "event": "width",
+        "maximumWidth": 24.961636542100187,
+        "mergedPair": false,
+        "page": 35,
+        "physicalStrokes": [
+          [
+            1643,
+            1647
+          ]
+        ],
+        "physicalWidth": 3,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "clearColumns": [
+          1639,
+          1650
+        ],
+        "connector": [
+          1641,
+          1648
+        ],
+        "cores": [
+          {
+            "bottom": 250,
+            "fraction": 0.7857142857142857,
+            "missingRows": [
+              194,
+              195,
+              196,
+              197,
+              198,
+              199,
+              200,
+              201,
+              202,
+              203,
+              204,
+              205
+            ],
+            "rows": 56,
+            "shift": 0,
+            "staff": 0,
+            "supported": 44,
+            "top": 194
+          },
+          {
+            "bottom": 386,
+            "fraction": 1,
+            "missingRows": [],
+            "rows": 57,
+            "shift": 0,
+            "staff": 1,
+            "supported": 57,
+            "top": 329
+          }
+        ],
+        "event": "global-cores",
+        "localShift": 0,
+        "page": 35,
+        "slope": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 0,
+        "acceptedBest": null,
+        "bestMinSupport": {
+          "fractions": [
+            0.7619047619047619,
+            0.23809523809523808,
+            0.9523809523809523,
+            1,
+            0.6190476190476191
+          ],
+          "shift": 10,
+          "sum": 3.5714285714285716,
+          "weakest": 0.23809523809523808
+        },
+        "flanks": [
+          [
+            1590,
+            1632
+          ],
+          [
+            1657,
+            1699
+          ]
+        ]
+      },
+      {
+        "event": "tracker-failure-detail",
+        "staff": 0,
+        "center": 1067,
+        "segment": 8,
+        "count": 34,
+        "bestStillFailing": {
+          "fractions": [
+            1,
+            0.7857142857142857,
+            1,
+            1,
+            1
+          ],
+          "shift": 3,
+          "sum": 4.785714285714286,
+          "weakest": 0.7857142857142857
+        },
+        "reachableBefore": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "flankLength": 42
+      },
+      {
+        "center": 1067,
+        "connector": [
+          1641,
+          1648
+        ],
+        "event": "tracker-failed",
+        "page": 35,
+        "segment": 8,
+        "staff": 0,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "event": "local-shift-summary",
+        "staff": 1,
+        "acceptedBest": 9,
+        "bestMinSupport": {
+          "fractions": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "shift": 9,
+          "sum": 5,
+          "weakest": 1
+        },
+        "flanks": [
+          [
+            1590,
+            1632
+          ],
+          [
+            1657,
+            1699
+          ]
+        ]
+      },
+      {
+        "connector": [
+          1641,
+          1648
+        ],
+        "event": "local-return",
+        "page": 35,
+        "shift": 9,
+        "staff": 1,
+        "staffPair": [
+          0,
+          1
+        ]
+      },
+      {
+        "connector": [
+          1641,
+          1648
+        ],
+        "event": "reject",
+        "lower": 9,
+        "page": 35,
+        "reason": "local-shift/tracker unavailable",
+        "staffPair": [
+          0,
+          1
+        ],
+        "upper": null
+      }
+    ]
+  }
+]

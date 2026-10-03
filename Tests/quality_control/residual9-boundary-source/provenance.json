@@ -1,0 +1,338 @@
+{
+  "baselineCommit": "e9ef3d1",
+  "sourceFiles": [
+    {
+      "path": "Partsmith/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    {
+      "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/baseline-actual.json",
+      "sha256": "964da89520b2be22b0f5a8556f299fbbe70f088c354c9e50ff05f6b91a056901"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/actual.swift",
+      "sha256": "8e7be25de0c677f68ad5030258dae674e09f2499a77bf6d3eec8257ef00752b9"
+    },
+    {
+      "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/source-guards.json",
+      "sha256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-24.png",
+      "sha256": "6edd7f5db6b9e6d63ab0283d3dc0d1163274e9b1c3a419a19b88c860e35c5105"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-28.png",
+      "sha256": "66cbf25e414b3b3f7303fe5d764e2d168b9dd2ea7dafeafc54e0685edcfa8c80"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-29.png",
+      "sha256": "6c7eb5f304474b41c53918cbf302c69bec1ad1e49729b06f0c50f97d5be8d562"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-31.png",
+      "sha256": "c71a17943596d53212cf360972d40ce1b93fcdcc2aeb0a4da1c0735fd82c2d6c"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-35.png",
+      "sha256": "ca5798f3be67adba68a7125b6db2237602904e3cd4b2e897900cb3913e40bf48"
+    }
+  ],
+  "archive": "Tests/quality_control/residual9-boundary-source/native-probe-evidence.zip",
+  "archiveSHA256": "76e3bf00191405249e9eae5fc55baf2b4e3343acd0cc82a01071da62c93d7992",
+  "archiveEntries": [
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/NativeScorePageAnalyzer.swift",
+      "sha256": "b5bb127904714e3ffd6b43656660ce1963d09bdf2ec51255e61fb13039bb8e27",
+      "bytes": 31127
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/ScoreExtractionPlanner.swift",
+      "sha256": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f",
+      "bytes": 66158
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/ScoreLocalEndingPreservation.swift",
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "bytes": 12513
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "bytes": 3285
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "bytes": 19141
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "bytes": 29163
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/UnmodifiedNativeScorePageAnalyzer.swift",
+      "sha256": "8a19ef7731d9d35acc47734ffd365ceef9a0a4c2e78f4d625b354bbce9869561",
+      "bytes": 27220
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/build-v2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/build.log",
+      "sha256": "a1fc886d2935637d238767687cd89e2802577a0a7f9843392ab303c854ed5739",
+      "bytes": 127
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/build.sh",
+      "sha256": "e32922916d9622d315c1edd8b056f6d3368aa321f9747c87b7c3820c0eabedc6",
+      "bytes": 509
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-24-native-mask.pgm",
+      "sha256": "ef95768395677f312291e86e246d07185ac096814b579e67f385d34240af8e28",
+      "bytes": 4667417
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-24-separated-mask.pgm",
+      "sha256": "db409d5e38def3bf0b220a4cc83a35b451a01acdb604abe25be7f0d86aeb15ec",
+      "bytes": 4667417
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-28-native-mask.pgm",
+      "sha256": "0ebf63a418132293725c0ceb25687c911e8378146174e9f94a2fdd67b9607e2d",
+      "bytes": 1642601
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-28-separated-mask.pgm",
+      "sha256": "b6ee44101df138fc25c82ba07e906e1e566f9aac914267a1ae265249d8d5f60e",
+      "bytes": 1642601
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-29-native-mask.pgm",
+      "sha256": "2457a99c54198028c3084efbbb5e75d7b35ee7fc763dd38f71f5e6a306b08230",
+      "bytes": 4667417
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-29-separated-mask.pgm",
+      "sha256": "9ee572276c67f962917fedff9b61a42daa29c66472923b50303b315aeeb633fd",
+      "bytes": 4667417
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-31-native-mask.pgm",
+      "sha256": "8f01a17f3e3d90f7400dcf45062139943665f52f6e5f884ab8803ffae29a7c8c",
+      "bytes": 4667417
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-31-separated-mask.pgm",
+      "sha256": "5966590ce97d4abfc5c0fb7b6365cbe6981b12218fcff8971573bd571913b836",
+      "bytes": 4667417
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-35-native-mask.pgm",
+      "sha256": "4303e8c844711089b3d1f3cc75b5e8f54bb85eaede9caa971bbbdb2b8c8d56f0",
+      "bytes": 4669217
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/page-35-separated-mask.pgm",
+      "sha256": "f1ad45cc89cdfa9e0026fb27f2c124ea1b29b64caf894115cfc0a1d40fd42502",
+      "bytes": 4669217
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/paths.py",
+      "sha256": "eac65d1b8585779ff75a585bb50f030f705a6ec79ceb6374da85eca1182ff175",
+      "bytes": 4481
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/prepare.py",
+      "sha256": "a629473a75714c62276314a946d73499aff7e2f23105613b80c3f181c142307d",
+      "bytes": 8514
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/trace.jsonl",
+      "sha256": "f0daa1044d79b64829fb2e091aa67afe6268fdfc1ca27fd9278e6cc7b0fb222e",
+      "bytes": 152746
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/agent-probe/trace.swift",
+      "sha256": "963b8fb6b567effdb305cc1dccedfecf7274742f44dd6191d8021b345b2811e6",
+      "bytes": 2359
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/trace_lines.py",
+      "sha256": "6e7319c537492fb6eccd3c338b83d7271d1d95885a4ece9c13bd89106d0e7eab",
+      "bytes": 3613
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/traced-lines.json",
+      "sha256": "612d8c30c06b79d0977ba2b9692ec64c17f1b00689a1c939c65c312750be72ce",
+      "bytes": 3292313
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/baseline-actual.json",
+      "sha256": "964da89520b2be22b0f5a8556f299fbbe70f088c354c9e50ff05f6b91a056901",
+      "bytes": 16768462
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-24.png",
+      "sha256": "6edd7f5db6b9e6d63ab0283d3dc0d1163274e9b1c3a419a19b88c860e35c5105",
+      "bytes": 938040
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-28.png",
+      "sha256": "66cbf25e414b3b3f7303fe5d764e2d168b9dd2ea7dafeafc54e0685edcfa8c80",
+      "bytes": 762672
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-29.png",
+      "sha256": "6c7eb5f304474b41c53918cbf302c69bec1ad1e49729b06f0c50f97d5be8d562",
+      "bytes": 924293
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-31.png",
+      "sha256": "c71a17943596d53212cf360972d40ce1b93fcdcc2aeb0a4da1c0735fd82c2d6c",
+      "bytes": 909219
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/rasters/page-35.png",
+      "sha256": "ca5798f3be67adba68a7125b6db2237602904e3cd4b2e897900cb3913e40bf48",
+      "bytes": 936429
+    }
+  ],
+  "reportFiles": [
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/README.md",
+      "sha256": "be4a042bc6803f1c0db689b94077dc4dbbc0bdd6ef24faa22b146f38c57b9ad5"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/build-v2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/build.log",
+      "sha256": "a1fc886d2935637d238767687cd89e2802577a0a7f9843392ab303c854ed5739"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/build.sh",
+      "sha256": "e32922916d9622d315c1edd8b056f6d3368aa321f9747c87b7c3820c0eabedc6"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/causal-gate-summary.json",
+      "sha256": "d8ae81920bf492f08733c9fc0bab2b60a83d6d6d74b21a8a1a4cd110cd5601ad"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/frozen-inputs.json",
+      "sha256": "9605aca2b5cb57b38847e16d0972b0d07725d74c03a7eb995b275dc57ec5bd79"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/interior-path-review.json",
+      "sha256": "25c44ede10f436e425cec651df784b15cab12a89942de5b72855343d4e3b7dea"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/native-comparison.json",
+      "sha256": "742d5cd890ec3dffaf3ba827c712710fb98464209b0f9049f6d69019273ed14e"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/native-probe-evidence.zip",
+      "sha256": "76e3bf00191405249e9eae5fc55baf2b4e3343acd0cc82a01071da62c93d7992"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p24-surviving-link-1-analysis.png",
+      "sha256": "fb175cee3e8d15b90bc85123a64f6f9aa9976f97a2ff6a09d299f8194ddfdfd7"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p24-surviving-link-1-source.png",
+      "sha256": "c90a49f6690480bd5d5c864fb2e25598cf0a044d85489a3018d1c22beceaa4dc"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p28-surviving-link-1-analysis.png",
+      "sha256": "8db44a3662849518d214f279a38b9f12e80937df96fe3914434059189a824c89"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p28-surviving-link-1-source.png",
+      "sha256": "faa3555ace2238a374c1167d8a5f1bb283e68f80d0c32eaeb8e993add439ef9f"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p29-surviving-link-1-analysis.png",
+      "sha256": "1c0b6a473b5aed49fb69cb44c62f6e61f3f6ab0bc6ed28b30d51393b324c67e4"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p29-surviving-link-1-source.png",
+      "sha256": "eaa81e2e14fd42857068e1d3f2da087ed581b8ae46cf16a4fab7f777c88e7590"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p31-surviving-link-1-analysis.png",
+      "sha256": "5beb5e3f5cbddfeaaabe9d53bfa247626c64574a617f8944ac9f1c46ecc7e676"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p31-surviving-link-1-source.png",
+      "sha256": "f373cba592fdeab1c28faf1d4ce839ce079d8a465f612470ef2efe9ff2e456f9"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p35-surviving-link-1-analysis.png",
+      "sha256": "d05dd6f68fa0fbec8e0fba8ef61548fcf6bea6c76424179e58f67548763f6b7e"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/p35-surviving-link-1-source.png",
+      "sha256": "4624cc426e8bce52e4a4dcb9f47ff81c41dd8e279bcb37f8ca46c934d4ae5664"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/paths.py",
+      "sha256": "eac65d1b8585779ff75a585bb50f030f705a6ec79ceb6374da85eca1182ff175"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/prepare.py",
+      "sha256": "a629473a75714c62276314a946d73499aff7e2f23105613b80c3f181c142307d"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/rectification-binding.json",
+      "sha256": "ba2ef075cd85bf961b3f5ab6f400d5cdb0a6b5eceb7202e08fb93b017fcf2bd9"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/source-guards.json",
+      "sha256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/surviving-paths.json",
+      "sha256": "45bd5b361043c4d4df72767fabf180c3ea067cf46b190c6df4d1fe322ff36a2d"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/trace.jsonl",
+      "sha256": "f0daa1044d79b64829fb2e091aa67afe6268fdfc1ca27fd9278e6cc7b0fb222e"
+    },
+    {
+      "path": "Tests/quality_control/residual9-boundary-source/trace.swift",
+      "sha256": "963b8fb6b567effdb305cc1dccedfecf7274742f44dd6191d8021b345b2811e6"
+    }
+  ],
+  "nativeRunExitCode": 0,
+  "productionChanged": false,
+  "guardsUnchanged": true
+}

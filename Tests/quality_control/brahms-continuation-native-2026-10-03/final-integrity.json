@@ -1,0 +1,40 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "manifest": "Tests/quality_control/brahms-continuation-output/report-hashes.json",
+      "sha256": "122ae1b3fb97020094ea0443bc8d4cb3a5377b694bf8898ad3ef0b5d9dd4a5c8",
+      "verifiedFiles": 56
+    },
+    {
+      "manifest": "Tests/quality_control/heading-glyph-continuation/report-hashes.json",
+      "sha256": "3008fcb53b627746c4195dc005403c008c8b958d7546453d13c9728379db4191",
+      "verifiedFiles": 53
+    },
+    {
+      "manifest": "Tests/quality_control/brahms-glyph-output/report-hashes.json",
+      "sha256": "00418a03163cb52181d2509f7650de4d1ac1d9b2a851ba69566a08a5a25906cf",
+      "verifiedFiles": 274
+    },
+    {
+      "manifest": "output/pdf/auto-qc-2026-09-21/brahms-quartet-242312-glyph-continuation/delivery-hashes.json",
+      "sha256": "9d826fb73f14e889250c58b7c70fecd0c2b20b7c123fde1d028b499c6b7edf27",
+      "verifiedFiles": 10
+    },
+    {
+      "manifest": "output/pdf/auto-qc-2026-09-21/brahms-quartet-09200-glyph-continuation/delivery-hashes.json",
+      "sha256": "b22bf5f18c90b5138a3a346fb57a34c5abc2f57cf4a9e6f90e91cf637c19695a",
+      "verifiedFiles": 10
+    },
+    {
+      "manifest": "Tests/quality_control/brahms-continuation-output/delivery-hashes.json",
+      "sha256": "67c0b049da59c56d337c764c6c4941b07655ae631863239acd13d311b874e03c",
+      "verifiedFiles": 10
+    },
+    {
+      "buildRecord": "Tests/quality_control/macos-build-2026-10-03-continuation.json",
+      "sha256": "7946380d153bcd7e5738bf1698bec314cfeda304a5718f92e90a8597d5fb2d29",
+      "verifiedProductionSources": 34
+    }
+  ]
+}

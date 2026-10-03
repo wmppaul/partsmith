@@ -234,18 +234,30 @@ enum NativeScorePageAnalyzer {
                             let count = max(1, Int(ceil(Double(abs(target - anchor)) / Double(step))))
                             let allowedStep = max(1, Int((staffSpace * 0.15).rounded()))
                             let anchorRadius = max(1, Int((staffSpace * 0.5).rounded()))
-                            var reachable = Set(-anchorRadius...anchorRadius)
-                            var finalScores: [Int: Double] = [:]
+                            // Keep all five ordered physical line identities in one
+                            // state. Brief missing raster evidence carries a line's
+                            // identity from its last observation; a missing line is
+                            // never substituted with a newly found adjacent ridge.
+                            struct TraceState {
+                                var score: Double
+                                var missingDistance: [Int]
+                            }
+                            var reachable = Dictionary(uniqueKeysWithValues:
+                                (-anchorRadius...anchorRadius).map {
+                                    ($0, TraceState(score: 0, missingDistance: Array(repeating: 0, count: 5)))
+                                })
+                            let maximumMissingDistance = Int((staffSpace * 4).rounded())
                             for segment in 0...count {
                                 let center = anchor + Int((Double(target - anchor) * Double(segment) / Double(count)).rounded())
                                 let begin = center - flankLength / 2
                                 guard begin >= 0, begin + flankLength <= width else { return nil }
-                                var next: Set<Int> = []
-                                var scores: [Int: Double] = [:]
+                                var next: [Int: TraceState] = [:]
                                 for shift in -extendedRadius...extendedRadius {
-                                    guard reachable.contains(where: { abs($0 - shift) <= (segment == 0 ? 0 : allowedStep) }) else { continue }
-                                    var score = 0.0
-                                    var weakest = 1.0
+                                    let predecessors = reachable.filter {
+                                        abs($0.key - shift) <= (segment == 0 ? 0 : allowedStep)
+                                    }
+                                    guard !predecessors.isEmpty else { continue }
+                                    var support: [Double] = []
                                     for line in lines[staffIndex] {
                                         var supported = 0
                                         for column in begin..<(begin + flankLength) {
@@ -254,16 +266,42 @@ enum NativeScorePageAnalyzer {
                                                 y + delta >= 0 && y + delta < height && original[(y + delta) * width + column]
                                             }) { supported += 1 }
                                         }
-                                        let fraction = Double(supported) / Double(flankLength)
-                                        weakest = min(weakest, fraction); score += fraction
+                                        support.append(Double(supported) / Double(flankLength))
                                     }
-                                    if weakest >= 0.80 { next.insert(shift); scores[shift] = score }
+                                    // At least three separately indexed lines must
+                                    // remain directly visible throughout the path.
+                                    // The anchor still establishes all five lines.
+                                    guard support.filter({ $0 >= 0.80 }).count >= (segment == 0 ? 5 : 3) else { continue }
+                                    for (previousShift, state) in predecessors.sorted(by: { $0.key < $1.key }) {
+                                        let distance = support.enumerated().map { i, value in
+                                            value >= 0.80 ? 0 : state.missingDistance[i] + step
+                                        }
+                                        guard distance.allSatisfy({ $0 <= maximumMissingDistance }) else { continue }
+                                        let score = state.score + support.reduce(0, +) - 0.05 * Double(abs(shift - previousShift))
+                                        let best = next[shift]
+                                        let lessMissing: Bool
+                                        if let best {
+                                            let worst = distance.max() ?? 0
+                                            let bestWorst = best.missingDistance.max() ?? 0
+                                            let total = distance.reduce(0, +)
+                                            let bestTotal = best.missingDistance.reduce(0, +)
+                                            lessMissing = worst != bestWorst ? worst < bestWorst
+                                                : total != bestTotal ? total < bestTotal
+                                                : distance.lexicographicallyPrecedes(best.missingDistance)
+                                        } else { lessMissing = true }
+                                        // Stable ties are important: equally scored
+                                        // histories can have different remaining
+                                        // evidence budgets on a later segment.
+                                        if best == nil || score > best!.score || (score == best!.score && lessMissing) {
+                                            next[shift] = TraceState(score: score, missingDistance: distance)
+                                        }
+                                    }
                                 }
                                 guard !next.isEmpty else { return nil }
-                                reachable = next; finalScores = scores
+                                reachable = next
                             }
-                            let result = reachable.sorted {
-                                if finalScores[$0] != finalScores[$1] { return finalScores[$0]! > finalScores[$1]! }
+                            let result = reachable.keys.sorted {
+                                if reachable[$0]!.score != reachable[$1]!.score { return reachable[$0]!.score > reachable[$1]!.score }
                                 if abs($0) != abs($1) { return abs($0) < abs($1) }
                                 return $0 < $1
                             }.first

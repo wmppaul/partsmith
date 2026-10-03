@@ -1,0 +1,62 @@
+{
+  "regionCount": 63,
+  "changed": [
+    18,
+    32
+  ],
+  "lostOriginalPixelPositions": 0,
+  "newDarkPixels": 58,
+  "fixedGuardResults": [
+    {
+      "number": 18,
+      "sourceRasterSHA256": "625a6c4af779c92786c3ffa884707c694216804ab8c70124fc0744edd29469fc",
+      "changed": true,
+      "boundsBefore": [
+        0.22107102588634803,
+        0.07309138179210288,
+        0.5013127001892334,
+        0.09645895633627163
+      ],
+      "boundsAfter": [
+        0.2200447928331467,
+        0.07309138179210288,
+        0.5013127001892334,
+        0.09645895633627163
+      ],
+      "newDarkPixels": 1,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0,
+      "initialADarkPixels": 57,
+      "initialADarkOutsideBefore": 1,
+      "initialADarkOutsideAfter": 0,
+      "newDarkPixelsOutsideFixedGuard": 0,
+      "growthPoints": 0.6108139132654256
+    },
+    {
+      "number": 32,
+      "sourceRasterSHA256": "dd855dd695743bcd6fecc95174cdb65bbfbf7b82f5fcb05483a364838062ff83",
+      "changed": true,
+      "boundsBefore": [
+        0.21949627644531708,
+        0.0654661783099551,
+        0.48883704799912775,
+        0.09601755626687891
+      ],
+      "boundsAfter": [
+        0.2137619853355894,
+        0.0654661783099551,
+        0.48883704799912775,
+        0.09601755626687891
+      ],
+      "newDarkPixels": 57,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0,
+      "initialADarkPixels": 199,
+      "initialADarkOutsideBefore": 57,
+      "initialADarkOutsideAfter": 0,
+      "newDarkPixelsOutsideFixedGuard": 0,
+      "growthPoints": 3.388966045849055
+    }
+  ],
+  "coordinateConvention": "Source pixel centers compared with fractional normalized source edges; <128 dark threshold, fixed216dpi A ROIs."
+}

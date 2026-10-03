@@ -1,0 +1,104 @@
+{
+  "baselineCandidate": "v1",
+  "candidate": "v2",
+  "planExactlyEqual": true,
+  "sourceExactlyEqual": true,
+  "sourceSHA256ExactlyEqual": true,
+  "rectificationsExactlyEqual": true,
+  "pageArrayDifferences": [
+    {
+      "pageIndex": 1,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 3,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 5,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 7,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 8,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 10,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 11,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 13,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 21,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 24,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 29,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    },
+    {
+      "pageIndex": 30,
+      "differentKeys": [
+        "inkComponents"
+      ],
+      "componentsSemanticallyEqual": true
+    }
+  ],
+  "files": [
+    {
+      "path": ".build/residual9-boundary-2026-10-03/candidate/actual.json",
+      "sha256": "e5f2631daf5f0012f6fff61233d9b2572a0a598eacf464e8eafae95982a90850"
+    },
+    {
+      "path": ".build/residual9-boundary-2026-10-03/candidate-v2/actual.json",
+      "sha256": "cabcee807fcc1eb269119f33acd7a0a569ee6f5ee00828614a7b18066924c574"
+    }
+  ]
+}

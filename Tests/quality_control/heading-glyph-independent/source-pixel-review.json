@@ -1,0 +1,1336 @@
+{
+  "summary": {
+    "regionCount": 63,
+    "changed": [
+      18,
+      32
+    ],
+    "lostOriginalPixelPositions": 0,
+    "newDarkPixels": 58,
+    "fixedGuardResults": [
+      {
+        "number": 18,
+        "sourceRasterSHA256": "625a6c4af779c92786c3ffa884707c694216804ab8c70124fc0744edd29469fc",
+        "changed": true,
+        "boundsBefore": [
+          0.22107102588634803,
+          0.07309138179210288,
+          0.5013127001892334,
+          0.09645895633627163
+        ],
+        "boundsAfter": [
+          0.2200447928331467,
+          0.07309138179210288,
+          0.5013127001892334,
+          0.09645895633627163
+        ],
+        "newDarkPixels": 1,
+        "lostDarkPixels": 0,
+        "lostAnyPixelPositions": 0,
+        "initialADarkPixels": 57,
+        "initialADarkOutsideBefore": 1,
+        "initialADarkOutsideAfter": 0,
+        "newDarkPixelsOutsideFixedGuard": 0,
+        "growthPoints": 0.6108139132654256
+      },
+      {
+        "number": 32,
+        "sourceRasterSHA256": "dd855dd695743bcd6fecc95174cdb65bbfbf7b82f5fcb05483a364838062ff83",
+        "changed": true,
+        "boundsBefore": [
+          0.21949627644531708,
+          0.0654661783099551,
+          0.48883704799912775,
+          0.09601755626687891
+        ],
+        "boundsAfter": [
+          0.2137619853355894,
+          0.0654661783099551,
+          0.48883704799912775,
+          0.09601755626687891
+        ],
+        "newDarkPixels": 57,
+        "lostDarkPixels": 0,
+        "lostAnyPixelPositions": 0,
+        "initialADarkPixels": 199,
+        "initialADarkOutsideBefore": 57,
+        "initialADarkOutsideAfter": 0,
+        "newDarkPixelsOutsideFixedGuard": 0,
+        "growthPoints": 3.388966045849055
+      }
+    ],
+    "coordinateConvention": "Source pixel centers compared with fractional normalized source edges; <128 dark threshold, fixed216dpi A ROIs."
+  },
+  "regions": [
+    {
+      "number": 1,
+      "sourceRasterSHA256": "3853859733fcd8b61f6075deced787c2c3469843195b32cfeec95682247e5644",
+      "changed": false,
+      "boundsBefore": [
+        0.18643188215581424,
+        0.16347439807199945,
+        0.3719014572886301,
+        0.18768851037682183
+      ],
+      "boundsAfter": [
+        0.18643188215581424,
+        0.16347439807199945,
+        0.3719014572886301,
+        0.18768851037682183
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 2,
+      "sourceRasterSHA256": "0a3316997d0739c4b15b7257c6e2c9cee9bec2a445aa0592d52003fc523102b6",
+      "changed": false,
+      "boundsBefore": [
+        0.1180098847861967,
+        0.6304243930593225,
+        0.18286220791759566,
+        0.6484666111300461
+      ],
+      "boundsAfter": [
+        0.1180098847861967,
+        0.6304243930593225,
+        0.18286220791759566,
+        0.6484666111300461
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 3,
+      "sourceRasterSHA256": "4e3546c01b1a2281c55dcbc7006e8d46be68bba473c2e353fcbfd044ae81542d",
+      "changed": false,
+      "boundsBefore": [
+        0.1282812864962117,
+        0.05113637285723365,
+        0.23945127346041578,
+        0.07079755299455603
+      ],
+      "boundsAfter": [
+        0.1282812864962117,
+        0.05113637285723365,
+        0.23945127346041578,
+        0.07079755299455603
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 4,
+      "sourceRasterSHA256": "4e3546c01b1a2281c55dcbc7006e8d46be68bba473c2e353fcbfd044ae81542d",
+      "changed": false,
+      "boundsBefore": [
+        0.1384917426134493,
+        0.06218179659656142,
+        0.287380353345853,
+        0.08060961565128615
+      ],
+      "boundsAfter": [
+        0.1384917426134493,
+        0.06218179659656142,
+        0.287380353345853,
+        0.08060961565128615
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 5,
+      "sourceRasterSHA256": "b65cbd318798ac3484b2144b8f96f2b1eda82df3be07ffde2377a03899d2d53f",
+      "changed": false,
+      "boundsBefore": [
+        0.5605378257699838,
+        0.35052503079614294,
+        0.624117811596623,
+        0.3711635967544704
+      ],
+      "boundsAfter": [
+        0.5605378257699838,
+        0.35052503079614294,
+        0.624117811596623,
+        0.3711635967544704
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 6,
+      "sourceRasterSHA256": "2e0d3ddfde01b61581527f473a2f2f0a0f4395ea812ed0e2c74abe0654c525ab",
+      "changed": false,
+      "boundsBefore": [
+        0.13411869487663916,
+        0.6245219025073765,
+        0.36152084259429107,
+        0.6448445144357945
+      ],
+      "boundsAfter": [
+        0.13411869487663916,
+        0.6245219025073765,
+        0.36152084259429107,
+        0.6448445144357945
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 7,
+      "sourceRasterSHA256": "53801e84ca9892a1c41554a217e8600560bb8872cab0b8ede191d875718d3a75",
+      "changed": false,
+      "boundsBefore": [
+        0.24732672066443337,
+        0.3055401090005041,
+        0.42999886218440386,
+        0.33086733879061314
+      ],
+      "boundsAfter": [
+        0.24732672066443337,
+        0.3055401090005041,
+        0.42999886218440386,
+        0.33086733879061314
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 8,
+      "sourceRasterSHA256": "3ed9291d4359073d46fb47620a056997df478f356194c6bc8170e586f8e221f1",
+      "changed": false,
+      "boundsBefore": [
+        0.20142392474570664,
+        0.19229818014733358,
+        0.2722872439217512,
+        0.21279395914730714
+      ],
+      "boundsAfter": [
+        0.20142392474570664,
+        0.19229818014733358,
+        0.2722872439217512,
+        0.21279395914730714
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 9,
+      "sourceRasterSHA256": "20674b43e2ec7e198bf1068d8980386646e18fa6280ec4a4f21ab9a3966f10b7",
+      "changed": false,
+      "boundsBefore": [
+        0.09450165227859203,
+        0.27414766265082396,
+        0.26015667700321543,
+        0.295697654650999
+      ],
+      "boundsAfter": [
+        0.09450165227859203,
+        0.27414766265082396,
+        0.26015667700321543,
+        0.295697654650999
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 10,
+      "sourceRasterSHA256": "bcc0b109bfaa51e01234bfbaaefa5c15d9b7d81409e8e45b27ab1681f2113272",
+      "changed": false,
+      "boundsBefore": [
+        0.16293305353102008,
+        0.060852438025604194,
+        0.22950880821092312,
+        0.08101698022988506
+      ],
+      "boundsAfter": [
+        0.16293305353102008,
+        0.060852438025604194,
+        0.22950880821092312,
+        0.08101698022988506
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 11,
+      "sourceRasterSHA256": "2fe906267a948bca76de0c9fdf5302234f7a7cf932cab84b920c3664eafc5ae5",
+      "changed": false,
+      "boundsBefore": [
+        0.18194662733787498,
+        0.061059229424310135,
+        0.3398556957483654,
+        0.0814368005277456
+      ],
+      "boundsAfter": [
+        0.18194662733787498,
+        0.061059229424310135,
+        0.3398556957483654,
+        0.0814368005277456
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 12,
+      "sourceRasterSHA256": "bcbc0bc49fc9f91f6c4e2a9311392ed4a980931371287176696b48719af30afc",
+      "changed": false,
+      "boundsBefore": [
+        0.17316468461991982,
+        0.06407912194516684,
+        0.2439864785631363,
+        0.08395694166552939
+      ],
+      "boundsAfter": [
+        0.17316468461991982,
+        0.06407912194516684,
+        0.2439864785631363,
+        0.08395694166552939
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 13,
+      "sourceRasterSHA256": "26d437d5ed04516b389438f28e7ac64fa67b87c234ce005865ddea69d224200b",
+      "changed": false,
+      "boundsBefore": [
+        0.1133543208055804,
+        0.2010326907670727,
+        0.25292475123899316,
+        0.22030415401357312
+      ],
+      "boundsAfter": [
+        0.1133543208055804,
+        0.2010326907670727,
+        0.25292475123899316,
+        0.22030415401357312
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 14,
+      "sourceRasterSHA256": "53014fe5843f5456fba825c81b821166ae65e9dd263a9c4afa124e70c1b01f6f",
+      "changed": false,
+      "boundsBefore": [
+        0.5433566881520665,
+        0.23025688495205415,
+        0.6208874966621363,
+        0.25238799251925403
+      ],
+      "boundsAfter": [
+        0.5433566881520665,
+        0.23025688495205415,
+        0.6208874966621363,
+        0.25238799251925403
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 15,
+      "sourceRasterSHA256": "25adb02139038fb33c10efd9111464e5107f9dbd2ac3b94ef2062a0416a0f2af",
+      "changed": false,
+      "boundsBefore": [
+        0.1438918496524966,
+        0.12419880997110216,
+        0.21802675321814297,
+        0.14449046372289445
+      ],
+      "boundsAfter": [
+        0.1438918496524966,
+        0.12419880997110216,
+        0.21802675321814297,
+        0.14449046372289445
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 16,
+      "sourceRasterSHA256": "14e5e08d15b91487514c9266b513871892f83d8797f56fcc1543881d2c4a7db0",
+      "changed": false,
+      "boundsBefore": [
+        0.2150929556572244,
+        0.18197056145730828,
+        0.2907209966158357,
+        0.20179783340959234
+      ],
+      "boundsAfter": [
+        0.2150929556572244,
+        0.18197056145730828,
+        0.2907209966158357,
+        0.20179783340959234
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 17,
+      "sourceRasterSHA256": "6800e347c996bb4051b98a3a30d1c347bb27c754a87f8e34d23d165d831be86f",
+      "changed": false,
+      "boundsBefore": [
+        0.21380456191174452,
+        0.057408386381570295,
+        0.297823343902209,
+        0.07646440138973044
+      ],
+      "boundsAfter": [
+        0.21380456191174452,
+        0.057408386381570295,
+        0.297823343902209,
+        0.07646440138973044
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 18,
+      "sourceRasterSHA256": "625a6c4af779c92786c3ffa884707c694216804ab8c70124fc0744edd29469fc",
+      "changed": true,
+      "boundsBefore": [
+        0.22107102588634803,
+        0.07309138179210288,
+        0.5013127001892334,
+        0.09645895633627163
+      ],
+      "boundsAfter": [
+        0.2200447928331467,
+        0.07309138179210288,
+        0.5013127001892334,
+        0.09645895633627163
+      ],
+      "newDarkPixels": 1,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0,
+      "initialADarkPixels": 57,
+      "initialADarkOutsideBefore": 1,
+      "initialADarkOutsideAfter": 0,
+      "newDarkPixelsOutsideFixedGuard": 0,
+      "growthPoints": 0.6108139132654256
+    },
+    {
+      "number": 19,
+      "sourceRasterSHA256": "0923dc8b56629b4bdb810b28e607911039590d347cb30a1e690b5fe104308aab",
+      "changed": false,
+      "boundsBefore": [
+        0.05828184077040303,
+        0.23928094984829174,
+        0.13067164847378301,
+        0.26167762448336396
+      ],
+      "boundsAfter": [
+        0.05828184077040303,
+        0.23928094984829174,
+        0.13067164847378301,
+        0.26167762448336396
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 20,
+      "sourceRasterSHA256": "4288155beaaa3542fc55a63901f2bbe810c9b1d00523cb1a6780be6129b4bc56",
+      "changed": false,
+      "boundsBefore": [
+        0.11495429981177947,
+        0.5840105179947301,
+        0.17574337557581743,
+        0.6030779219423346
+      ],
+      "boundsAfter": [
+        0.11495429981177947,
+        0.5840105179947301,
+        0.17574337557581743,
+        0.6030779219423346
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 21,
+      "sourceRasterSHA256": "410f1b4fb92d7e7d1959695dab827634d68463156dc5aa318b16ebc142a4fe81",
+      "changed": false,
+      "boundsBefore": [
+        0.15285516636863708,
+        0.055701894617131556,
+        0.5013114982494186,
+        0.08138579221213346
+      ],
+      "boundsAfter": [
+        0.15285516636863708,
+        0.055701894617131556,
+        0.5013114982494186,
+        0.08138579221213346
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 22,
+      "sourceRasterSHA256": "42ecf9a54934b6bb69c0e3327ab41f6a85eaa68a3d5b0fd1f59d84a7ad64420e",
+      "changed": false,
+      "boundsBefore": [
+        0.11642167886907734,
+        0.5771154538580848,
+        0.3021829759565039,
+        0.5999700152634575
+      ],
+      "boundsAfter": [
+        0.11642167886907734,
+        0.5771154538580848,
+        0.3021829759565039,
+        0.5999700152634575
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 23,
+      "sourceRasterSHA256": "5d2ca587ac521da7c7201552c3aed6d6cc23297df2a58cac90f019bd1882bc40",
+      "changed": false,
+      "boundsBefore": [
+        0.20810963764701504,
+        0.1957316981166532,
+        0.288983386729629,
+        0.21442626499712572
+      ],
+      "boundsAfter": [
+        0.20810963764701504,
+        0.1957316981166532,
+        0.288983386729629,
+        0.21442626499712572
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 24,
+      "sourceRasterSHA256": "d19cf8d75622d20552937b212dd2f98e9e311a6c3e8819f00a98effe5fb50f69",
+      "changed": false,
+      "boundsBefore": [
+        0.12810049879147958,
+        0.05181606212637651,
+        0.19312042988036082,
+        0.07003381840182467
+      ],
+      "boundsAfter": [
+        0.12810049879147958,
+        0.05181606212637651,
+        0.19312042988036082,
+        0.07003381840182467
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 25,
+      "sourceRasterSHA256": "daf0658d8d9e2e570876e0bbfb09ac37cadd156ea9d87def7d7cb5b0ea50b213",
+      "changed": false,
+      "boundsBefore": [
+        0.20146269496670544,
+        0.1913049314929286,
+        0.273743655717558,
+        0.21256035677225465
+      ],
+      "boundsAfter": [
+        0.20146269496670544,
+        0.1913049314929286,
+        0.273743655717558,
+        0.21256035677225465
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 26,
+      "sourceRasterSHA256": "99deaff29086b1d00b750b9ffdffcb505f533faa5055b5625816c26b02b4142c",
+      "changed": false,
+      "boundsBefore": [
+        0.09450199724674917,
+        0.27417171181455907,
+        0.26015561461535824,
+        0.2956973181808695
+      ],
+      "boundsAfter": [
+        0.09450199724674917,
+        0.27417171181455907,
+        0.26015561461535824,
+        0.2956973181808695
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 27,
+      "sourceRasterSHA256": "c4f382a006d0588d8e28ab52cdfe1ee6b20e5fe01ddd00b40d2d22e95521b51b",
+      "changed": false,
+      "boundsBefore": [
+        0.16438655836323499,
+        0.06086194922873073,
+        0.22950879172173594,
+        0.08100777280316196
+      ],
+      "boundsAfter": [
+        0.16438655836323499,
+        0.06086194922873073,
+        0.22950879172173594,
+        0.08100777280316196
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 28,
+      "sourceRasterSHA256": "bc37e8d2bcc0c404ebf9d0a45d71d672d2ab8426ed9732f55a770fc872f1d66d",
+      "changed": false,
+      "boundsBefore": [
+        0.18193406432427747,
+        0.06112611186000584,
+        0.34277523837921087,
+        0.0816845512662145
+      ],
+      "boundsAfter": [
+        0.18193406432427747,
+        0.06112611186000584,
+        0.34277523837921087,
+        0.0816845512662145
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 29,
+      "sourceRasterSHA256": "ad66d47a917d3e7aed95c07088e03026ec5ef78bdb8bc5f4ac5cb10f4a928376",
+      "changed": false,
+      "boundsBefore": [
+        0.17312927036329828,
+        0.06378042959724804,
+        0.2440218934018829,
+        0.08372741477559874
+      ],
+      "boundsAfter": [
+        0.17312927036329828,
+        0.06378042959724804,
+        0.2440218934018829,
+        0.08372741477559874
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 30,
+      "sourceRasterSHA256": "f31a734cf544e72e24a622e73dd970d904233d9b4e6bcef6afcd2fc176adc4d5",
+      "changed": false,
+      "boundsBefore": [
+        0.20788191531158917,
+        0.19549420888715904,
+        0.2833971556679984,
+        0.21459219211331224
+      ],
+      "boundsAfter": [
+        0.20788191531158917,
+        0.19549420888715904,
+        0.2833971556679984,
+        0.21459219211331224
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 31,
+      "sourceRasterSHA256": "ebeea311172a993b31b142955c252977bddd5010e29383b4382df39ab32b32a8",
+      "changed": false,
+      "boundsBefore": [
+        0.16873790092818625,
+        0.05612818519255425,
+        0.2905644263558669,
+        0.07693909639506474
+      ],
+      "boundsAfter": [
+        0.16873790092818625,
+        0.05612818519255425,
+        0.2905644263558669,
+        0.07693909639506474
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 32,
+      "sourceRasterSHA256": "dd855dd695743bcd6fecc95174cdb65bbfbf7b82f5fcb05483a364838062ff83",
+      "changed": true,
+      "boundsBefore": [
+        0.21949627644531708,
+        0.0654661783099551,
+        0.48883704799912775,
+        0.09601755626687891
+      ],
+      "boundsAfter": [
+        0.2137619853355894,
+        0.0654661783099551,
+        0.48883704799912775,
+        0.09601755626687891
+      ],
+      "newDarkPixels": 57,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0,
+      "initialADarkPixels": 199,
+      "initialADarkOutsideBefore": 57,
+      "initialADarkOutsideAfter": 0,
+      "newDarkPixelsOutsideFixedGuard": 0,
+      "growthPoints": 3.388966045849055
+    },
+    {
+      "number": 33,
+      "sourceRasterSHA256": "dae2cc2cb58a13e68ec7e91cd78ba5273f7ac87e578c2a75f96020d04d568537",
+      "changed": false,
+      "boundsBefore": [
+        0.07424758484347622,
+        0.2218750377809635,
+        0.1466826476316068,
+        0.24350246343806656
+      ],
+      "boundsAfter": [
+        0.07424758484347622,
+        0.2218750377809635,
+        0.1466826476316068,
+        0.24350246343806656
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 34,
+      "sourceRasterSHA256": "624f98661756c72844f29965cf3b7290ab25a6056a03687251d0efcd70619bad",
+      "changed": false,
+      "boundsBefore": [
+        0.12630089356253688,
+        0.5961100357232976,
+        0.18474561713906576,
+        0.6168440281119887
+      ],
+      "boundsAfter": [
+        0.12630089356253688,
+        0.5961100357232976,
+        0.18474561713906576,
+        0.6168440281119887
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 35,
+      "sourceRasterSHA256": "9f80efeecb0bde66ce6028f681d59cfa0bcb693d4d213190add49f3f1c9c9c94",
+      "changed": false,
+      "boundsBefore": [
+        0.23994504643087167,
+        0.05059177986434917,
+        0.5289503013707271,
+        0.07341465096533326
+      ],
+      "boundsAfter": [
+        0.23994504643087167,
+        0.05059177986434917,
+        0.5289503013707271,
+        0.07341465096533326
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 36,
+      "sourceRasterSHA256": "244294d05b055882cbdda2de318959f04a2b45adbc3b92bd3f865c733d7ac9a4",
+      "changed": false,
+      "boundsBefore": [
+        0.13382971414111797,
+        0.593156761026104,
+        0.31093772989957963,
+        0.6162837025229486
+      ],
+      "boundsAfter": [
+        0.13382971414111797,
+        0.593156761026104,
+        0.31093772989957963,
+        0.6162837025229486
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 37,
+      "sourceRasterSHA256": "98bda63167e2003c03c063b8fcf9967ae8db3562851c30f527032b9a6edeae21",
+      "changed": false,
+      "boundsBefore": [
+        0.1378616574299731,
+        0.20833227757409337,
+        0.2778360189407877,
+        0.23332582576637578
+      ],
+      "boundsAfter": [
+        0.1378616574299731,
+        0.20833227757409337,
+        0.2778360189407877,
+        0.23332582576637578
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 38,
+      "sourceRasterSHA256": "8a1ccca91e408ae66f2790c30a57172e8dc45e7100f1c4e5c7a00bdb8d5dc6ce",
+      "changed": false,
+      "boundsBefore": [
+        0.5230352328096253,
+        0.24433780348253142,
+        0.5976043023863036,
+        0.2680743571681313
+      ],
+      "boundsAfter": [
+        0.5230352328096253,
+        0.24433780348253142,
+        0.5976043023863036,
+        0.2680743571681313
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 39,
+      "sourceRasterSHA256": "7d284e5beaf44c9ad3b8435b2dc93440f648db78d0032bc811a89a369e8e9d06",
+      "changed": false,
+      "boundsBefore": [
+        0.16846166991864883,
+        0.112576966347371,
+        0.24287554040111858,
+        0.13458120611630345
+      ],
+      "boundsAfter": [
+        0.16846166991864883,
+        0.112576966347371,
+        0.24287554040111858,
+        0.13458120611630345
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 40,
+      "sourceRasterSHA256": "76ebd414057fb9217dd066850416269b5c3ac0ac24c5d4545ba9c164b09fc0a0",
+      "changed": false,
+      "boundsBefore": [
+        0.04365014956237914,
+        0.11911844457419787,
+        0.10858598743988909,
+        0.141841652321819
+      ],
+      "boundsAfter": [
+        0.04365014956237914,
+        0.11911844457419787,
+        0.10858598743988909,
+        0.141841652321819
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 41,
+      "sourceRasterSHA256": "d657f4d3d070d86077c8f5101974b754028a55b0418e0f28f023ff72544c8178",
+      "changed": false,
+      "boundsBefore": [
+        0.1599232288184925,
+        0.0753252969610669,
+        0.32118142551290285,
+        0.09398871739127126
+      ],
+      "boundsAfter": [
+        0.1599232288184925,
+        0.0753252969610669,
+        0.32118142551290285,
+        0.09398871739127126
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 42,
+      "sourceRasterSHA256": "16568265fcb5ca9d124c56dd08783b58acf591ba5af54631839e7c57c058b9d1",
+      "changed": false,
+      "boundsBefore": [
+        0.18463253683768113,
+        0.30033335261090655,
+        0.338623279635187,
+        0.3199610678154082
+      ],
+      "boundsAfter": [
+        0.18463253683768113,
+        0.30033335261090655,
+        0.338623279635187,
+        0.3199610678154082
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 43,
+      "sourceRasterSHA256": "3c370bbd61fed2221e910787ff45fdabe29d91d41084cda243277ec010223cdf",
+      "changed": false,
+      "boundsBefore": [
+        0.030548037455856297,
+        0.7472203460994871,
+        0.13369614779963324,
+        0.780868232052905
+      ],
+      "boundsAfter": [
+        0.030548037455856297,
+        0.7472203460994871,
+        0.13369614779963324,
+        0.780868232052905
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 44,
+      "sourceRasterSHA256": "8ec055074c3f6d64f9ae66ac73262ac653529d8183398c35ec75530c06d20f59",
+      "changed": false,
+      "boundsBefore": [
+        0.14974881213402214,
+        0.035764379983400166,
+        0.2993790923960166,
+        0.0531658251112396
+      ],
+      "boundsAfter": [
+        0.14974881213402214,
+        0.035764379983400166,
+        0.2993790923960166,
+        0.0531658251112396
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 45,
+      "sourceRasterSHA256": "eeaf01c755a72b479cb2edc2c29d3f40351ee63bcf12e26f42761a4510bbba96",
+      "changed": false,
+      "boundsBefore": [
+        0.10614415868626428,
+        0.2533316544450337,
+        0.27466979756373566,
+        0.2707807455195684
+      ],
+      "boundsAfter": [
+        0.10614415868626428,
+        0.2533316544450337,
+        0.27466979756373566,
+        0.2707807455195684
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 46,
+      "sourceRasterSHA256": "3778ddf7c18f9e87da99da76e664bb9babc9d1bbc2deafdac5f2f5c5c390ba73",
+      "changed": false,
+      "boundsBefore": [
+        0.10481374029228262,
+        0.13760963516220612,
+        0.15681416708615917,
+        0.15437156101192623
+      ],
+      "boundsAfter": [
+        0.10481374029228262,
+        0.13760963516220612,
+        0.15681416708615917,
+        0.15437156101192623
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 47,
+      "sourceRasterSHA256": "58387661288fcce3c2a94e60978e80031f47be0a681fa80e932bf1887fb84f73",
+      "changed": false,
+      "boundsBefore": [
+        0.10348757363223936,
+        0.030529738983863255,
+        0.1566868453357839,
+        0.04672950279295385
+      ],
+      "boundsAfter": [
+        0.10348757363223936,
+        0.030529738983863255,
+        0.1566868453357839,
+        0.04672950279295385
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 48,
+      "sourceRasterSHA256": "f73c2528718be21967d683b60ba26f806bbab0daf050a2304d8f5c139d40fd7f",
+      "changed": false,
+      "boundsBefore": [
+        0.10492890188132055,
+        0.11136751535003528,
+        0.15669900608343088,
+        0.12872671329499952
+      ],
+      "boundsAfter": [
+        0.10492890188132055,
+        0.11136751535003528,
+        0.15669900608343088,
+        0.12872671329499952
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 49,
+      "sourceRasterSHA256": "2ab1a223c8e5f6b0af1385dbd49c644cd085dcff893bcb99dbbb20452d818667",
+      "changed": false,
+      "boundsBefore": [
+        0.10196977872852049,
+        0.11289740104573821,
+        0.15675115045700164,
+        0.12946907150059103
+      ],
+      "boundsAfter": [
+        0.10196977872852049,
+        0.11289740104573821,
+        0.15675115045700164,
+        0.12946907150059103
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 50,
+      "sourceRasterSHA256": "16d1322d07f7200d5f1eb37b817869e7c84eb3ca8b2f7d9f8b1c1ef39e675f5e",
+      "changed": false,
+      "boundsBefore": [
+        0.21512066166342336,
+        0.15713580283490433,
+        0.2630770131912278,
+        0.17561248434664592
+      ],
+      "boundsAfter": [
+        0.21512066166342336,
+        0.15713580283490433,
+        0.2630770131912278,
+        0.17561248434664592
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 51,
+      "sourceRasterSHA256": "0dc68c117d8a3ca70db474540895ef5498cb5a0831bc193d11c96855d9a02acd",
+      "changed": false,
+      "boundsBefore": [
+        0.21053019194920508,
+        0.117213153598313,
+        0.2967372503888348,
+        0.1439565137605466
+      ],
+      "boundsAfter": [
+        0.21053019194920508,
+        0.117213153598313,
+        0.2967372503888348,
+        0.1439565137605466
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 52,
+      "sourceRasterSHA256": "4024257bf8503df691e2c754c32d97ceaf5f97b3699ad41d0544413dd7ac2505",
+      "changed": false,
+      "boundsBefore": [
+        0.20032634237556415,
+        0.12030935577231411,
+        0.2982201704333021,
+        0.1431421659041142
+      ],
+      "boundsAfter": [
+        0.20032634237556415,
+        0.12030935577231411,
+        0.2982201704333021,
+        0.1431421659041142
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 53,
+      "sourceRasterSHA256": "dc1ac39ac890c48783a3dac164816e5a0110e95abe765c0a53f826bae5b8bfbc",
+      "changed": false,
+      "boundsBefore": [
+        0.17148653441400852,
+        0.09565981243947475,
+        0.24711811820240542,
+        0.11144994784098083
+      ],
+      "boundsAfter": [
+        0.17148653441400852,
+        0.09565981243947475,
+        0.24711811820240542,
+        0.11144994784098083
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 54,
+      "sourceRasterSHA256": "8a17a8f875d95d8ced09b196c6e7fd24cd20c11834e07b32d954dc1cc6917fbc",
+      "changed": false,
+      "boundsBefore": [
+        0.16423367217025903,
+        0.5222188253974285,
+        0.24855702686026632,
+        0.5399707133329746
+      ],
+      "boundsAfter": [
+        0.16423367217025903,
+        0.5222188253974285,
+        0.24855702686026632,
+        0.5399707133329746
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 55,
+      "sourceRasterSHA256": "0e7c4382e3580d6835880f026ce6464a56502d2057030b66399fde08bce8e337",
+      "changed": false,
+      "boundsBefore": [
+        0.2718418787191433,
+        0.524329584477876,
+        0.3182744000599264,
+        0.5427427926546505
+      ],
+      "boundsAfter": [
+        0.2718418787191433,
+        0.524329584477876,
+        0.3182744000599264,
+        0.5427427926546505
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 56,
+      "sourceRasterSHA256": "c7c78190976c5fd8f0f026a35fea00a99df80783c401f1d6dc8509c21161d4ac",
+      "changed": false,
+      "boundsBefore": [
+        0.1715208239200157,
+        0.03401564321455995,
+        0.31830475987358886,
+        0.05480334278389136
+      ],
+      "boundsAfter": [
+        0.1715208239200157,
+        0.03401564321455995,
+        0.31830475987358886,
+        0.05480334278389136
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 57,
+      "sourceRasterSHA256": "f98059923a96882860891d1c997f47863407a8fac0023d8015b1c130e7976a25",
+      "changed": false,
+      "boundsBefore": [
+        0.3150542915696949,
+        0.20590859350446952,
+        0.4141123782914162,
+        0.23290763067637674
+      ],
+      "boundsAfter": [
+        0.3150542915696949,
+        0.20590859350446952,
+        0.4141123782914162,
+        0.23290763067637674
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 58,
+      "sourceRasterSHA256": "5605042103298c7363aedc206d88b7be97b5e72696c41bc0e6c5a20aedf25b1f",
+      "changed": false,
+      "boundsBefore": [
+        0.18421012385519506,
+        0.06300183577449735,
+        0.2834307960970865,
+        0.08589596068823854
+      ],
+      "boundsAfter": [
+        0.18421012385519506,
+        0.06300183577449735,
+        0.2834307960970865,
+        0.08589596068823854
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 59,
+      "sourceRasterSHA256": "cb895ff3a26153b2fc7872840ce825f509f8d40c4f07cd1a8d40071cb1594346",
+      "changed": false,
+      "boundsBefore": [
+        0.18040321474514265,
+        0.039707599249192566,
+        0.5120654099759173,
+        0.0656430169112332
+      ],
+      "boundsAfter": [
+        0.18040321474514265,
+        0.039707599249192566,
+        0.5120654099759173,
+        0.0656430169112332
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 60,
+      "sourceRasterSHA256": "de59b5cd2b3c713b43fbf87dec855d2a3e8b87b38100ffee378de925c0c7b7c9",
+      "changed": false,
+      "boundsBefore": [
+        0.12631615635973387,
+        0.48769004415817785,
+        0.2138001239143525,
+        0.5194878502112936
+      ],
+      "boundsAfter": [
+        0.12631615635973387,
+        0.48769004415817785,
+        0.2138001239143525,
+        0.5194878502112936
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 61,
+      "sourceRasterSHA256": "4362f1776ba9751aa8e2878d9f590ac4b8433f89a298d0c63fef67711211f919",
+      "changed": false,
+      "boundsBefore": [
+        0.1583211763007895,
+        0.5044602893195802,
+        0.2428416155596757,
+        0.5322739881225246
+      ],
+      "boundsAfter": [
+        0.1583211763007895,
+        0.5044602893195802,
+        0.2428416155596757,
+        0.5322739881225246
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 62,
+      "sourceRasterSHA256": "c8744f367a732e122bd96eeee768c2069c9fee301ac943dcfe40be66af509eea",
+      "changed": false,
+      "boundsBefore": [
+        0.17832208481762357,
+        0.03357792710470405,
+        0.5484211977554811,
+        0.06304165296439863
+      ],
+      "boundsAfter": [
+        0.17832208481762357,
+        0.03357792710470405,
+        0.5484211977554811,
+        0.06304165296439863
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    },
+    {
+      "number": 63,
+      "sourceRasterSHA256": "6f1abdf809d282cf7ee6722c8888771090bbb363d5a0c1c4d0f649df50801a52",
+      "changed": false,
+      "boundsBefore": [
+        0.16556050186180335,
+        0.4979524942633059,
+        0.3885757141085237,
+        0.5236271360659264
+      ],
+      "boundsAfter": [
+        0.16556050186180335,
+        0.4979524942633059,
+        0.3885757141085237,
+        0.5236271360659264
+      ],
+      "newDarkPixels": 0,
+      "lostDarkPixels": 0,
+      "lostAnyPixelPositions": 0
+    }
+  ]
+}

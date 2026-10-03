@@ -12,6 +12,14 @@ Generated outputs, exported parts, `.build` artifacts and copies embedded in sav
 
 The script requires PyMuPDF. The runner itself uses only Python's standard library.
 
+## October 3 crop and glyph continuation checkpoint
+
+The [current combined validation](brahms-continuation-native-2026-10-03/README.md) compares fresh raw analysis of all 36 PDFs / 1,477 pages. Staff geometry and assignment coverage are unchanged; two Brahms93521 page-29 crops improve. The [independent review](residual9-boundary-independent/README.md) distinguishes component ordering from geometry changes and additionally examines all eight changed regions on unresolved Schumann/Beethoven pages, including 15 diagnostic staff crops. It finds no newly omitted target notation. Existing musical-stem failures remain explicitly recorded; unresolved plans are not quality passes.
+
+The [heading-glyph study](heading-glyph-continuation/README.md) restores clipped initial A strokes in Brahms242312 and09200. Native recognition on the retained 449-page inventories changes only two heading boxes and six copies; fresh full workers on both complete sources preserve all 960 music assignments. [Independent glyph controls](heading-glyph-independent/README.md) retain the single-pass and faint-ink limitations. The [eight-part output review](brahms-glyph-output/README.md) checks all 84 pages; 78 are pixel-identical to the actual baseline exports.
+
+A fresh combined app-worker run over all 39 Brahms93521 pages retains 604 bands and 42 copies with only the two reviewed crop changes. The [complete four-part review](brahms-continuation-output/README.md) checks the resulting layout, and the [current build record](macos-build-2026-10-03-continuation.json) binds the universal Mac preview. Seven complete-neighbor occurrences, incomplete directions and changing instrumentation remain unfinished work.
+
 ## October 3 complete-heading checkpoint
 
 The [native heading comparison](heading-block-native-2026-10-03/README.md) re-runs heading recognition on all 449 pages of the 16 resolved scores using hash-bound staff inventories and initialized instrument profiles. Every one of 6,324 main music crops and staff assignments is unchanged. Exactly four Schumann source copies now contain the complete overlapping SCHERZO / Molto vivace / metronome block. This is not fresh staff detection on all 449 pages and does not establish heading recall on unrecognized regions.

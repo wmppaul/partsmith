@@ -1,0 +1,82 @@
+{
+  "checks" : [
+    {
+      "name" : "connected original A restores its complete left stroke and keeps the other edges",
+      "passed" : true
+    },
+    {
+      "name" : "right-edge glyph recovery uses the same source continuation rule",
+      "passed" : false
+    },
+    {
+      "name" : "repeated continuation is idempotent",
+      "passed" : true
+    },
+    {
+      "name" : "empty paper cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "detached neighboring letter cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "horizontal staff line cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "shallow slur cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "note stem connected below the copy cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "clef fragment crossing top limit cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "horizontal reach would end within another component cannot justify margin growth",
+      "passed" : true
+    },
+    {
+      "name" : "metronome note, dot, equals sign and numeral pixels cannot be lost by continuation",
+      "passed" : true
+    },
+    {
+      "name" : "cancellation before work returns the original complete box",
+      "passed" : true
+    },
+    {
+      "name" : "cancellation during scan discards partial expansion",
+      "passed" : true
+    },
+    {
+      "name" : "invalid staff geometry 0 cannot change source bounds",
+      "passed" : true
+    },
+    {
+      "name" : "invalid staff geometry 1 cannot change source bounds",
+      "passed" : true
+    },
+    {
+      "name" : "invalid staff geometry 2 cannot change source bounds",
+      "passed" : true
+    },
+    {
+      "name" : "invalid staff geometry 3 cannot change source bounds",
+      "passed" : true
+    },
+    {
+      "name" : "invalid staff geometry 4 cannot change source bounds",
+      "passed" : true
+    },
+    {
+      "name" : "invalid staff geometry 5 cannot change source bounds",
+      "passed" : true
+    }
+  ],
+  "count" : 19,
+  "failures" : 1
+}

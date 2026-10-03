@@ -181,6 +181,15 @@ Keep raw and corrected coordinates separate, and reuse recorded corrections
 without estimating a different correction for the comparison. A live worker
 or temporary observation timeout is not a reason to restart extraction.
 
+When comparing detector revisions, distinguish ink-component array reordering
+from changes in component geometry. An unresolved page that emits no bands can
+hide a changed crop until the user assigns its staves. Review changed components
+on those pages against the original source too. Temporary one-part-per-observed-
+staff plans can expose crop changes without claiming instrument identities;
+they are diagnostic fixtures, not deliverable parts. Follow the surviving ink
+connections before changing a crop rule: an interior barline can still join two
+staves after the right system edge has been separated successfully.
+
 The repository also has experimental `headings` and `navigation` CLI passes.
 They add source-image markings to a copy of an inventory before export. The
 app's optional direction-copying workflow invokes the same native recognizers

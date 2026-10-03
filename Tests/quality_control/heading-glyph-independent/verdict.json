@@ -1,0 +1,21 @@
+{
+  "verdict": "bounded-single-pass-code-and-source-review-passes",
+  "independentControls": 272,
+  "failures": 0,
+  "sourceRegions": 63,
+  "changedRegions": [
+    18,
+    32
+  ],
+  "allOriginalBoundsRetained": true,
+  "allCandidateBoxesViewed": true,
+  "allOriginalStaffContextsViewedBeforeCandidateCrops": true,
+  "frozenAGuardsUnchanged": true,
+  "newDarkPixelsOutsideAGuards": 0,
+  "knownLimitations": [
+    "contained musical impostors can expand",
+    "repeated helper is not generally idempotent",
+    "faint fringe and detached or out-of-window ink may remain omitted"
+  ],
+  "nativeFullWorkflowReview": "separate root/agent evidence; not claimed by this report"
+}

@@ -1,0 +1,13 @@
+Building glyph
+Passed glyph
+Building shared-headings
+Passed shared-headings
+Building initial-overrides
+Passed initial-overrides
+Building independent
+Traceback (most recent call last):
+  File "/Users/will/Documents/git/partsmith/Tests/quality_control/heading-glyph-continuation/run_combined_checks.py", line 30, in <module>
+    subprocess.run(['xcrun','swiftc','-O','-module-cache-path',str(root/'.build/ModuleCache'),*map(str,sources+tests),'-o',str(out/name)],stdout=log,stderr=subprocess.STDOUT,check=True,env=env)
+  File "/Users/will/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['xcrun', 'swiftc', '-O', '-module-cache-path', '/Users/will/Documents/git/partsmith/.build/ModuleCache', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/candidate/Core/Detection/StaffBandDetector.swift', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/candidate/Core/Detection/ScoreExtractionPlanner.swift', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/candidate/Core/Detection/ScoreSharedEnding.swift', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/candidate/Core/Detection/ScoreSharedEndingDetector.swift', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/candidate/Core/Detection/ScoreLocalEndingPreservation.swift', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/candidate/Core/Detection/ScoreSharedHeadingDetector.swift', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/combined-checks/independent.swift', '-o', '/Users/will/Documents/git/partsmith/.build/brahms-continuation-release-2026-10-03/combined-checks/independent']' returned non-zero exit status 1.

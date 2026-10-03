@@ -1,0 +1,1924 @@
+{
+  "summary": {
+    "left": "baseline",
+    "right": "candidate",
+    "terminalInputs": 36,
+    "pages": 1477,
+    "bands": 6936,
+    "scoresWithBands": 17,
+    "scoresWithNoBands": 19,
+    "variableProfileScores": 19,
+    "variableProfilePages": 976,
+    "pagesWithAssignments": 490,
+    "pagesWithUnresolvedReasons": 987,
+    "detectedStaves": 23801,
+    "unassignedStaves": 15712,
+    "rawInkDifferentPages": 352,
+    "semanticInkDifferentPages": 9,
+    "nonInkPageDifferences": 0,
+    "changedCoveragePages": 0,
+    "planFieldDifferences": 4
+  },
+  "rows": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "pages": 2,
+      "requiresSystemAssignment": false,
+      "bands": 36,
+      "pagesWithAssignments": 2,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 36,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        1
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/excerpt-beethoven-op67-pages-7-8.json",
+          "sha256": "949ce3c99d5a4037b2c6a2c2276e8d2ab94df2e9a0d52ebc9a847f9ff83f0df4"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/excerpt-beethoven-op67-pages-7-8.json",
+          "sha256": "71e042e6545d172c5e0d572327a0ceeba52de36106f63b88c1eaf2a6819e722e"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/excerpt-beethoven-op67-pages-7-8.json",
+      "profileSHA256": "d1998d086414c831b3e22031fff15b9cad1e4916f5886250858666405fce2e82"
+    },
+    {
+      "id": "excerpt-mozart-k488-page-17",
+      "pages": 1,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 1,
+      "detectedStaves": 18,
+      "unassignedStaves": 18,
+      "rawInkDifferentPages": [
+        1
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/excerpt-mozart-k488-page-17.json",
+          "sha256": "2f46c4308ecea1a7bfd92b8a0692e0a1ac53248df5b7692d45f8a2202bef9a36"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/excerpt-mozart-k488-page-17.json",
+          "sha256": "833e9e6f82c3085e0ca749d0f2a9b51fb0e3c7e503076b7c4dd6e08fca839fd5"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/Tests/extraction/sources/mozart-k488-page-17.pdf",
+      "sourceSHA256": "9e7a091795bbc85fc8da0794afd791c8540ec3268a1e516204a08aa82244f121",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/excerpt-mozart-k488-page-17.json",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "pages": 52,
+      "requiresSystemAssignment": false,
+      "bands": 612,
+      "pagesWithAssignments": 51,
+      "pagesWithUnresolvedReasons": 1,
+      "detectedStaves": 781,
+      "unassignedStaves": 16,
+      "rawInkDifferentPages": [
+        2,
+        8,
+        12,
+        15,
+        17,
+        18,
+        23,
+        26,
+        27,
+        29,
+        33,
+        34,
+        36,
+        37,
+        41,
+        43,
+        45,
+        50,
+        51
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+          "sha256": "8bbf7ecb11d86b1df9bb9b0f43e5d4548cd699ae5b3d261577a91b364dda1468"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+          "sha256": "3733d8070cfbd1768689835ebb611adc74896c574f542cba7e42b04fa81628f6"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/01_mozart_piano_quartet_k478_imslp_478563.pdf",
+      "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "pages": 35,
+      "requiresSystemAssignment": false,
+      "bands": 393,
+      "pagesWithAssignments": 33,
+      "pagesWithUnresolvedReasons": 2,
+      "detectedStaves": 524,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        11,
+        13,
+        15,
+        16,
+        18,
+        20,
+        31
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+          "sha256": "0392d1ffdd7221f55708a1f144561e66ef09e38256b6e4a5cef48827ec9e57ee"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+          "sha256": "f91ee184467e3cd77e8c79038a923bf27e323750febae20af7fc554a27e968a0"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+      "profileSHA256": "a304d05dd5337eb342c7dc5de489a797ce9be9e6ef9385b5f218c198b04632d4"
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803",
+      "pages": 86,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 86,
+      "detectedStaves": 1926,
+      "unassignedStaves": 1926,
+      "rawInkDifferentPages": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        11,
+        17,
+        18,
+        23,
+        25,
+        29,
+        37,
+        40,
+        42,
+        47,
+        49,
+        51,
+        52,
+        57,
+        59,
+        61,
+        63,
+        64,
+        72,
+        73,
+        81,
+        84
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803.json",
+          "sha256": "8942173758763662896392621beb0fdf41bec0a23b823215068796032acde51d"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803.json",
+          "sha256": "9272ee8b30966d26730606b3087006194013d462dc8537690b4ec2b8bd757bf0"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourceSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803.json",
+      "profileSHA256": "f1ef4af7e76f2c94d86046b2ce2329c3bb936636f60a50805fdb682592a915a7"
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222",
+      "pages": 77,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 77,
+      "detectedStaves": 1465,
+      "unassignedStaves": 1465,
+      "rawInkDifferentPages": [
+        3,
+        7,
+        17,
+        28,
+        31,
+        37,
+        40,
+        42,
+        44,
+        47,
+        50,
+        57,
+        58,
+        69,
+        74
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222.json",
+          "sha256": "beffb38c7e9854795e088927d336c3eb4bec2bab1b5083658c0e11ecdc510afa"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222.json",
+          "sha256": "9f40f156234d51de6fe232c7b107681bf6255a11186b019bf129120b9937cdd3"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourceSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222.json",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "pages": 16,
+      "requiresSystemAssignment": false,
+      "bands": 154,
+      "pagesWithAssignments": 16,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 231,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        1,
+        5,
+        14,
+        15
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922.json",
+          "sha256": "01bd05972085ce20ce0322f7d974203e1302157dd8fc51898c2013e4a5b80e9b"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922.json",
+          "sha256": "0256934316dd57c0507ed2b4a82321bada6cec7b370217f837a95db29d4099b8"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922.json",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8"
+    },
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "pages": 277,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 277,
+      "detectedStaves": 3252,
+      "unassignedStaves": 3252,
+      "rawInkDifferentPages": [
+        3,
+        14,
+        22,
+        25,
+        37,
+        39,
+        46,
+        47,
+        57,
+        65,
+        67,
+        72,
+        75,
+        78,
+        79,
+        81,
+        83,
+        97,
+        114,
+        120,
+        135,
+        137,
+        143,
+        148,
+        149,
+        153,
+        155,
+        165,
+        174,
+        183,
+        190,
+        192,
+        193,
+        194,
+        196,
+        200,
+        201,
+        202,
+        206,
+        207,
+        212,
+        226,
+        230,
+        233,
+        234,
+        256,
+        257,
+        268,
+        272,
+        274,
+        275
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132.json",
+          "sha256": "51c0862cd70ea3a10f8f58221eec4a344f59d668bd818346d304725ff5719332"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132.json",
+          "sha256": "315b2ff91e3903d7bf370667e4f6140febd67070d81fe03efc4c49b91fea14d8"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/06_puccini_la_boheme_sc67_imslp_885132.pdf",
+      "sourceSHA256": "1be78420e0c033982feacb556d5362b7525568d7ba66cd37bdecf2f5f8c46a04",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132.json",
+      "profileSHA256": "65053ac9613472e147df337c0e9dd6dbde87e69b68ff6d2357fdc04aa63cc066"
+    },
+    {
+      "id": "lightly-skewed-07-brahms-2-motets-op74-imslp-101579",
+      "pages": 18,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 18,
+      "detectedStaves": 292,
+      "unassignedStaves": 292,
+      "rawInkDifferentPages": [
+        3,
+        4,
+        13
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-07-brahms-2-motets-op74-imslp-101579.json",
+          "sha256": "e44e94eaebfe85799dbbf7e38a6d9e2dfca73d28c53473d06af363ab7938bb4c"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-07-brahms-2-motets-op74-imslp-101579.json",
+          "sha256": "fc3e32200c68b6373d856d083a0d6e157603277728fa78a84d878d878f6dc222"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/07_brahms_2_motets_op74_imslp_101579.pdf",
+      "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-07-brahms-2-motets-op74-imslp-101579.json",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e"
+    },
+    {
+      "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+      "pages": 10,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 10,
+      "detectedStaves": 186,
+      "unassignedStaves": 186,
+      "rawInkDifferentPages": [
+        2,
+        8,
+        9
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+          "sha256": "ae0df355ced8e16412fabde00face71213df4f4442d7aefc6085598e727c702d"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+          "sha256": "caf86c3ec035c4c46e44faea0c78ef84138857a73cabdb4abeff72c4fcd10f8d"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+      "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+      "profileSHA256": "9d669e5786b2c44264242b1c28b63897f92c5932943b49ac39d5c4a3a14d5675"
+    },
+    {
+      "id": "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040",
+      "pages": 27,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 27,
+      "detectedStaves": 568,
+      "unassignedStaves": 568,
+      "rawInkDifferentPages": [
+        4,
+        9,
+        14,
+        19,
+        25
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040.json",
+          "sha256": "18b52b6c5db2c821abbb658f256fec9085ac6e1deb577973e9a238cbe7eb503b"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040.json",
+          "sha256": "06749bf33fbb55eb35cfe410863ae0729cc87a0e0a1065e2466bd000089203d4"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/09_brahms_gesang_der_parzen_op89_imslp_109040.pdf",
+      "sourceSHA256": "9ba9d999930da2d109304c745fcf5e5568b8a33fd4349a77d95317da9a1c0ea4",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040.json",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "pages": 26,
+      "requiresSystemAssignment": false,
+      "bands": 480,
+      "pagesWithAssignments": 25,
+      "pagesWithUnresolvedReasons": 1,
+      "detectedStaves": 480,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        14
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+          "sha256": "df938bc137bc3e5e418ed7e01c25e6b5739c9a7f0bca327ac24344efa4737ca1"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+          "sha256": "b1255cf66f8dedc73cac2831adf5ab8cefe631b1a041373cd87df2622241e812"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "pages": 30,
+      "requiresSystemAssignment": false,
+      "bands": 476,
+      "pagesWithAssignments": 30,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 595,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        2,
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        14,
+        18,
+        23
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+          "sha256": "379e3feb8ba05b9c5bcabed2795514f947f2b3f8be11d335c797eb6741c57248"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+          "sha256": "00adc46e677196f609fe061ba85511bdc613f95cf389ba29b7ef278a03255404"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533"
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "pages": 35,
+      "requiresSystemAssignment": false,
+      "bands": 393,
+      "pagesWithAssignments": 33,
+      "pagesWithUnresolvedReasons": 2,
+      "detectedStaves": 524,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        3,
+        7,
+        8,
+        11,
+        28
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012.json",
+          "sha256": "b97ef15763e7a484e80c9e66d2bb185e106bec5336f29eedbd99666625845977"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012.json",
+          "sha256": "b875c860ba482e235fb45e4d0304317d978f1f1581a3f59f080f9ccf257021ad"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/trio_medium/profile.json",
+      "profileSHA256": "d91fe375f2a3f4582d889b588ffdcbe637a42d45caf0cfccbf3cb9263dc5b9ee"
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "pages": 56,
+      "requiresSystemAssignment": false,
+      "bands": 825,
+      "pagesWithAssignments": 55,
+      "pagesWithUnresolvedReasons": 1,
+      "detectedStaves": 990,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        2,
+        4,
+        5,
+        8,
+        9,
+        13,
+        15,
+        16,
+        17,
+        19,
+        23,
+        28,
+        30,
+        32,
+        33,
+        34,
+        35,
+        36,
+        38,
+        41,
+        42,
+        43
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+          "sha256": "4704899552f8981bfce2a9d3cf3fa6fd9503f5f1cc0c47d2967ea4e562f5c676"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+          "sha256": "337a8688b025d4d9a2af4bec5ff39ca0d55b53f9f4438db15a4655f016630a62"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "profileSHA256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33"
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506",
+      "pages": 80,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 80,
+      "detectedStaves": 1465,
+      "unassignedStaves": 1465,
+      "rawInkDifferentPages": [
+        6,
+        8,
+        15,
+        21,
+        23,
+        24,
+        32,
+        33,
+        36,
+        43,
+        44,
+        48,
+        49,
+        52,
+        57,
+        59,
+        63,
+        66,
+        76,
+        78
+      ],
+      "semanticInkChanges": [
+        {
+          "page": 23,
+          "beforeCount": 1078,
+          "afterCount": 1079,
+          "removed": [
+            {
+              "bounds": [
+                0.075,
+                0.04159663865546218,
+                0.9433333333333334,
+                0.14747899159663866
+              ],
+              "staffIDs": [
+                0,
+                1
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.075,
+                0.04159663865546218,
+                0.9433333333333334,
+                0.0953781512605042
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.26666666666666666,
+                0.09411764705882353,
+                0.9433333333333334,
+                0.14747899159663866
+              ],
+              "staffIDs": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "page": 32,
+          "beforeCount": 1357,
+          "afterCount": 1358,
+          "removed": [
+            {
+              "bounds": [
+                0.19055555555555556,
+                0.8407005838198499,
+                0.9438888888888889,
+                0.908256880733945
+              ],
+              "staffIDs": [
+                17,
+                18
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.19055555555555556,
+                0.8407005838198499,
+                0.9422222222222222,
+                0.8698915763135947
+              ],
+              "staffIDs": [
+                17
+              ]
+            },
+            {
+              "bounds": [
+                0.865,
+                0.8869891576313594,
+                0.9438888888888889,
+                0.908256880733945
+              ],
+              "staffIDs": [
+                18
+              ]
+            }
+          ]
+        }
+      ],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506.json",
+          "sha256": "b5fc7ebc0d50f81522879e9ff5e24634f1020faf8a11621ece24ffe24015947e"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506.json",
+          "sha256": "10a2009b9e3b6c733aeb3bd2128b1cb5726aa1ac8c130a8400097b7a88723dc0"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourceSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506.json",
+      "profileSHA256": "afb4ac23dc822f718aeeb79c8908b72e993f2f44e90e43de79683367673e4fe2"
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "pages": 25,
+      "requiresSystemAssignment": false,
+      "bands": 480,
+      "pagesWithAssignments": 25,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 480,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        6,
+        16
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+          "sha256": "509e19b4c5fd24ce1d57638a30772720e7cb2dd8561bf92f33abbb501c6cd4f2"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+          "sha256": "4bda8432f7ff7b1af79ca6345fcb51809c99da846c5907c2ca878c625e824aad"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "pages": 39,
+      "requiresSystemAssignment": false,
+      "bands": 604,
+      "pagesWithAssignments": 38,
+      "pagesWithUnresolvedReasons": 1,
+      "detectedStaves": 604,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        2,
+        3,
+        11,
+        12,
+        17,
+        19,
+        22,
+        27,
+        29,
+        30,
+        31,
+        39
+      ],
+      "semanticInkChanges": [
+        {
+          "page": 29,
+          "beforeCount": 2027,
+          "afterCount": 2029,
+          "removed": [
+            {
+              "bounds": [
+                0.39444444444444443,
+                0.06710374084072503,
+                0.9088888888888889,
+                0.14577709217123022
+              ],
+              "staffIDs": [
+                0,
+                1
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.39444444444444443,
+                0.06710374084072503,
+                0.9088888888888889,
+                0.10913999228692634
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.8944444444444445,
+                0.12186656382568453,
+                0.9,
+                0.14577709217123022
+              ],
+              "staffIDs": [
+                1
+              ]
+            },
+            {
+              "bounds": [
+                0.9,
+                0.12186656382568453,
+                0.9072222222222223,
+                0.14577709217123022
+              ],
+              "staffIDs": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [
+        {
+          "path": "/plan/pages/28/assignments/0/bottomFraction",
+          "before": 0.14902912469155544,
+          "after": 0.12319032793104637
+        },
+        {
+          "path": "/plan/pages/28/assignments/0/warnings",
+          "before": [
+            "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally."
+          ],
+          "after": [
+            "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+          ]
+        },
+        {
+          "path": "/plan/pages/28/assignments/1/topFraction",
+          "before": 0.057347643279749415,
+          "after": 0.09629866526200935
+        },
+        {
+          "path": "/plan/pages/28/assignments/1/warnings",
+          "before": [
+            "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+            "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+            "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+          ],
+          "after": [
+            "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+            "Some staff lines are faint or interrupted; verify this proposal.",
+            "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+            "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+          "sha256": "daf88e1852b08601f6cdd941d701992b5c109afdadcfa99dc4893e5163ce0e70"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+          "sha256": "65e426b0483f85612898b51ce4ec22d9800100dd4b649b436bb0c5adadf47fca"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+    },
+    {
+      "id": "medium-skewed-07-brahms-2-motets-op74-imslp-101580",
+      "pages": 18,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 18,
+      "detectedStaves": 292,
+      "unassignedStaves": 292,
+      "rawInkDifferentPages": [
+        2,
+        3,
+        5,
+        12,
+        17
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-07-brahms-2-motets-op74-imslp-101580.json",
+          "sha256": "1fc175107a23b08911e699baad319173411fd3493282e6975bc098527e96d22a"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-07-brahms-2-motets-op74-imslp-101580.json",
+          "sha256": "dfadb0dfbd18203280c25c120a21a500113ec8a31780847f17a2c10a4a7fc4af"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/07_brahms_2_motets_op74_imslp_101580.pdf",
+      "sourceSHA256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-07-brahms-2-motets-op74-imslp-101580.json",
+      "profileSHA256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e"
+    },
+    {
+      "id": "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041",
+      "pages": 27,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 27,
+      "detectedStaves": 568,
+      "unassignedStaves": 568,
+      "rawInkDifferentPages": [
+        4,
+        8,
+        17,
+        18,
+        20,
+        22,
+        24,
+        27
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+          "sha256": "60b4c42e2798ccbebfa8c52ec8c06e3e7bc00be9f0c3e896cc3cfd9d573598f5"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+          "sha256": "87152d0a14f4d90eacd0f76c69503837f3ba019c2ccce6ff5c078bb1183ce61b"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+      "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+      "profileSHA256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d"
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "pages": 18,
+      "requiresSystemAssignment": false,
+      "bands": 154,
+      "pagesWithAssignments": 16,
+      "pagesWithUnresolvedReasons": 2,
+      "detectedStaves": 231,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        11,
+        14
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+          "sha256": "d7dbb61235232c3a0719381359b60cc9cd58a5b666ac26654ad55bba5c31665e"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+          "sha256": "1c74638cacb22ace3c4566ff1e2451f9e69de8705942e74b53bb5801ec07ad4b"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/09_schumann_frauenliebe_und_leben_op42_imslp_51733.pdf",
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733.json",
+      "profileSHA256": "e0e887e81648374fc510a36b9750d20194a3e4710edbc2d884fca5ff88c187c8"
+    },
+    {
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "pages": 70,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 70,
+      "detectedStaves": 1023,
+      "unassignedStaves": 1023,
+      "rawInkDifferentPages": [
+        6,
+        12,
+        14,
+        23,
+        32,
+        37,
+        39,
+        42,
+        46,
+        48,
+        50,
+        51,
+        54,
+        57,
+        60,
+        64
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+          "sha256": "1468ff8d909265f98cd2fbc55764e0f264f86fcfa8475a7fae9f842e38f2c2ab"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+          "sha256": "cafc1006e13ecf6708da77b91e91b2fe6c4f19fbae7645c08ccb7634ff75f438"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/10_schubert_winterreise_d911_imslp_00414.pdf",
+      "sourceSHA256": "030e03434d994e1974719f13f62861c21091d22af35ee832a0e1ffde17a4efc3",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-10-schubert-winterreise-d911-imslp-00414.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1"
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "pages": 55,
+      "requiresSystemAssignment": false,
+      "bands": 660,
+      "pagesWithAssignments": 55,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 825,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        36,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        54,
+        55
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-piano-quartet-kv478-score.json",
+          "sha256": "3cdd6e2f3cf5409f90d8f4431bdbdd889df62e29031d8ca8848bf9ab46bf312b"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-piano-quartet-kv478-score.json",
+          "sha256": "ad1caa3de8fe94983d6652db5735110f5908cdc1b2cc7ebf9278447146106281"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_piano_quartet_kv478_score.pdf",
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mozart-piano-quartet-kv478-score.json",
+      "profileSHA256": "5d93694865c47331398c9926dae08956fa45473c6d885148d603c322fe30f533"
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "pages": 31,
+      "requiresSystemAssignment": false,
+      "bands": 520,
+      "pagesWithAssignments": 31,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 520,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-string-quartet-kv387-score.json",
+          "sha256": "8c4dfd30999b2260f0b79daed664de44e561997466336b899b75a3e1d3e7cfff"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-string-quartet-kv387-score.json",
+          "sha256": "8c4dfd30999b2260f0b79daed664de44e561997466336b899b75a3e1d3e7cfff"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_string_quartet_kv387_score.pdf",
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mozart-string-quartet-kv387-score.json",
+      "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score",
+      "pages": 29,
+      "requiresSystemAssignment": false,
+      "bands": 405,
+      "pagesWithAssignments": 29,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 540,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [
+        28
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-trio-eb-major-kv498-score.json",
+          "sha256": "455bab38d648dafe2f9a1051c8812e1da0331d2aa59b45655af8a8339300f9cd"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-trio-eb-major-kv498-score.json",
+          "sha256": "219d81d2b7e031aa161f6c2c246654538a88d8033266534a0710924dd7af0521"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mozart-trio-eb-major-kv498-score.json",
+      "profileSHA256": "8911207223a3016b0bb95f20494c4ff4248318fbe2d11f598a9b452918577e4f"
+    },
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score",
+      "pages": 50,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 50,
+      "detectedStaves": 700,
+      "unassignedStaves": 700,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-beethoven-egmont-overture-op84-score.json",
+          "sha256": "381c928db1b32afc5d9306066defff347d680e594b6f00bc9b5223f013006bc0"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-beethoven-egmont-overture-op84-score.json",
+          "sha256": "381c928db1b32afc5d9306066defff347d680e594b6f00bc9b5223f013006bc0"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/02_orchestra/beethoven_egmont_overture_op84_score.pdf",
+      "sourceSHA256": "9be852e58c42cf5477bda7b197427033d3e779b996c5f6e6c3149dfb7352ae9c",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-beethoven-egmont-overture-op84-score.json",
+      "profileSHA256": "07091c381ca6849b1eca060704eca5db8558f6e0796bed089a6bbdae600d67c0"
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "pages": 43,
+      "requiresSystemAssignment": false,
+      "bands": 644,
+      "pagesWithAssignments": 43,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 644,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-magic-flute-overture-kv620-score.json",
+          "sha256": "ee21381d0eefc0dc0e129231e2a1244bcefafea623f405a096ea056054fdbbdb"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-magic-flute-overture-kv620-score.json",
+          "sha256": "ee21381d0eefc0dc0e129231e2a1244bcefafea623f405a096ea056054fdbbdb"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mozart-magic-flute-overture-kv620-score.json",
+      "profileSHA256": "5e24430e52731c391582d8202bbaa49076b35abd301d2a687439ff9f6e358bd9"
+    },
+    {
+      "id": "normal-mozart-symphony-no18-kv130-score",
+      "pages": 37,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 37,
+      "detectedStaves": 567,
+      "unassignedStaves": 567,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-symphony-no18-kv130-score.json",
+          "sha256": "e2d621a5fb66fea6e0fe5f24893162e230437564b35d4a4bac40fc61bcea7778"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-symphony-no18-kv130-score.json",
+          "sha256": "e2d621a5fb66fea6e0fe5f24893162e230437564b35d4a4bac40fc61bcea7778"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/02_orchestra/mozart_symphony_no18_kv130_score.pdf",
+      "sourceSHA256": "250d3c5c97b013174ca4fea63a9e856c268e1cdbc76a6445efb86b02df82119e",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mozart-symphony-no18-kv130-score.json",
+      "profileSHA256": "5ae22ebcd4ec9563788365159711ffdcb1c66b2c6d871fdb9037a82428cd21d6"
+    },
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "pages": 4,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 4,
+      "detectedStaves": 58,
+      "unassignedStaves": 58,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-notte-e-giorno-don-giovanni-score.json",
+          "sha256": "74136babeecc649bb7a054afbf0905659a58de2f63442e7b9ae0421f6eff2d03"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-notte-e-giorno-don-giovanni-score.json",
+          "sha256": "74136babeecc649bb7a054afbf0905659a58de2f63442e7b9ae0421f6eff2d03"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/notte-variable-initialization.json",
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac"
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "pages": 11,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 11,
+      "detectedStaves": 140,
+      "unassignedStaves": 140,
+      "rawInkDifferentPages": [
+        1,
+        4
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-schubert-erlkonig-d328-score.json",
+          "sha256": "caba469d1fdfb4c0b89dba89b44c5fe6123ac245805bbeb7ffb1c6cd6a6f40a6"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-schubert-erlkonig-d328-score.json",
+          "sha256": "8dc2d1a136f2db8af33fe3e4d034c92472cd5a9126e1eb7b407c83de8ef8977d"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-schubert-erlkonig-d328-score.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1"
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "pages": 6,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 6,
+      "detectedStaves": 77,
+      "unassignedStaves": 77,
+      "rawInkDifferentPages": [
+        6
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+          "sha256": "684789e3cc879000d0bf6204abb04187de898c3c6fcebd3e1ca3e85115fec290"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+          "sha256": "f79da4cad2ba445856210fa2066f2ef3206d0dc098226115a2c96d6a71a04271"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+      "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+      "profileSHA256": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a"
+    },
+    {
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+      "pages": 4,
+      "requiresSystemAssignment": false,
+      "bands": 64,
+      "pagesWithAssignments": 4,
+      "pagesWithUnresolvedReasons": 0,
+      "detectedStaves": 64,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json",
+          "sha256": "005bfc23059a6be8df92df3a490c5c979ac4d32bba5ec5662d24f217c21100b6"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json",
+          "sha256": "005bfc23059a6be8df92df3a490c5c979ac4d32bba5ec5662d24f217c21100b6"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+      "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score.json",
+      "profileSHA256": "e48364de833ac87180e5b8c20f54b91d4bc86972d576c9c6a34797d54291d310"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "pages": 106,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 106,
+      "detectedStaves": 1997,
+      "unassignedStaves": 1997,
+      "rawInkDifferentPages": [
+        7,
+        8,
+        9,
+        10,
+        15,
+        16,
+        17,
+        20,
+        27,
+        28,
+        30,
+        31,
+        32,
+        34,
+        35,
+        37,
+        40,
+        43,
+        45,
+        47,
+        51,
+        52,
+        53,
+        54,
+        55,
+        57,
+        58,
+        62,
+        63,
+        65,
+        66,
+        71,
+        81,
+        96,
+        97
+      ],
+      "semanticInkChanges": [
+        {
+          "page": 40,
+          "beforeCount": 2841,
+          "afterCount": 2842,
+          "removed": [
+            {
+              "bounds": [
+                0.37333333333333335,
+                0.056587837837837836,
+                0.9466666666666667,
+                0.09839527027027027
+              ],
+              "staffIDs": [
+                0,
+                1
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.92,
+                0.056587837837837836,
+                0.9461111111111111,
+                0.07179054054054054
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.37333333333333335,
+                0.07939189189189189,
+                0.9466666666666667,
+                0.09839527027027027
+              ],
+              "staffIDs": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "page": 47,
+          "beforeCount": 1208,
+          "afterCount": 1209,
+          "removed": [
+            {
+              "bounds": [
+                0.7,
+                0.06841216216216216,
+                0.9366666666666666,
+                0.12288851351351351
+              ],
+              "staffIDs": [
+                0,
+                1
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.7,
+                0.06841216216216216,
+                0.9366666666666666,
+                0.08994932432432433
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.7594444444444445,
+                0.10008445945945946,
+                0.9366666666666666,
+                0.12288851351351351
+              ],
+              "staffIDs": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "page": 52,
+          "beforeCount": 1831,
+          "afterCount": 1831,
+          "removed": [
+            {
+              "bounds": [
+                0.8572222222222222,
+                0.0789695945945946,
+                0.8588888888888889,
+                0.08657094594594594
+              ],
+              "staffIDs": []
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.8577777777777778,
+                0.08614864864864864,
+                0.8588888888888889,
+                0.08657094594594594
+              ],
+              "staffIDs": []
+            }
+          ]
+        },
+        {
+          "page": 55,
+          "beforeCount": 2011,
+          "afterCount": 2012,
+          "removed": [
+            {
+              "bounds": [
+                0.2561111111111111,
+                0.05532094594594594,
+                0.9372222222222222,
+                0.10388513513513513
+              ],
+              "staffIDs": [
+                0,
+                1
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.2561111111111111,
+                0.05532094594594594,
+                0.9372222222222222,
+                0.07939189189189189
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.92,
+                0.08614864864864864,
+                0.9372222222222222,
+                0.10388513513513513
+              ],
+              "staffIDs": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "page": 66,
+          "beforeCount": 1486,
+          "afterCount": 1488,
+          "removed": [
+            {
+              "bounds": [
+                0.10333333333333333,
+                0.05912162162162162,
+                0.95,
+                0.20819256756756757
+              ],
+              "staffIDs": [
+                0,
+                1,
+                2
+              ]
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.26166666666666666,
+                0.05912162162162162,
+                0.95,
+                0.09501689189189189
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.10333333333333333,
+                0.09797297297297297,
+                0.9494444444444444,
+                0.20819256756756757
+              ],
+              "staffIDs": [
+                1,
+                2
+              ]
+            },
+            {
+              "bounds": [
+                0.9477777777777778,
+                0.11613175675675676,
+                0.9494444444444444,
+                0.11697635135135136
+              ],
+              "staffIDs": []
+            }
+          ]
+        },
+        {
+          "page": 71,
+          "beforeCount": 1376,
+          "afterCount": 1378,
+          "removed": [
+            {
+              "bounds": [
+                0.69,
+                0.057432432432432436,
+                0.94,
+                0.09375
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.9,
+                0.09163851351351351,
+                0.9383333333333334,
+                0.10092905405405406
+              ],
+              "staffIDs": []
+            }
+          ],
+          "added": [
+            {
+              "bounds": [
+                0.69,
+                0.057432432432432436,
+                0.94,
+                0.08361486486486487
+              ],
+              "staffIDs": [
+                0
+              ]
+            },
+            {
+              "bounds": [
+                0.9,
+                0.09163851351351351,
+                0.9361111111111111,
+                0.09670608108108109
+              ],
+              "staffIDs": []
+            },
+            {
+              "bounds": [
+                0.9372222222222222,
+                0.09543918918918919,
+                0.9383333333333334,
+                0.09670608108108109
+              ],
+              "staffIDs": []
+            },
+            {
+              "bounds": [
+                0.9366666666666666,
+                0.10641891891891891,
+                0.9383333333333334,
+                0.10768581081081081
+              ],
+              "staffIDs": []
+            }
+          ]
+        }
+      ],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624.json",
+          "sha256": "fbd7295fcedd097ba43ff46e40e79ac80b4566ae9bc62fc933243e4a55cad146"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624.json",
+          "sha256": "507c3cec482170aabbc983c72f6268a173a79aaabd89a0015af222fb05eb70a5"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourceSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624.json",
+      "profileSHA256": "9acfd39a14077691c38143b1ebc3e9d6f41585d9f9505c32518bfd357da5761d"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437",
+      "pages": 35,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 35,
+      "detectedStaves": 440,
+      "unassignedStaves": 440,
+      "rawInkDifferentPages": [
+        7
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437.json",
+          "sha256": "880721da05ecf2c04988cea9107e8a4334e82d9cd6a361ad726683cd2febb726"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437.json",
+          "sha256": "d8c15c3fefc6ee0a6d4b0fcfd40f7364bd79a78ec9df85fd668fcde6512a5dc6"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_mvt2_mutopia1437.pdf",
+      "sourceSHA256": "1fc0bc2c8942c65d25f4939ae272b20b37e112b63f9bb2f5b63ddf8826c88cb3",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437.json",
+      "profileSHA256": "a1299f6cc3dc14ffb4dea12bedbcf255ea88da203e5a6d88c9feb089f8e5ab9e"
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229",
+      "pages": 36,
+      "requiresSystemAssignment": true,
+      "bands": 0,
+      "pagesWithAssignments": 0,
+      "pagesWithUnresolvedReasons": 36,
+      "detectedStaves": 662,
+      "unassignedStaves": 662,
+      "rawInkDifferentPages": [
+        1,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        34,
+        35
+      ],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+          "sha256": "882484139fde833dbbe993f8cb83a46534113124cfb50f1170c790d4c1e72d5a"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+          "sha256": "38f295fd466ee68e1a497303f3786fac62269baebc4d311aba3ac15d7834ee20"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf",
+      "sourceSHA256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec"
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+      "pages": 5,
+      "requiresSystemAssignment": false,
+      "bands": 36,
+      "pagesWithAssignments": 4,
+      "pagesWithUnresolvedReasons": 1,
+      "detectedStaves": 36,
+      "unassignedStaves": 0,
+      "rawInkDifferentPages": [],
+      "semanticInkChanges": [],
+      "nonInkPageDifferences": [],
+      "changedCoveragePages": [],
+      "planDifferences": [],
+      "files": [
+        {
+          "path": ".build/residual9-boundary-2026-10-03/baseline/corpus/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229.json",
+          "sha256": "a2fa2f206fc6e835815f4e19c4136f8c55706ccb6807318476cc434442e72d65"
+        },
+        {
+          "path": ".build/residual9-boundary-2026-10-03/candidate/corpus/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229.json",
+          "sha256": "a2fa2f206fc6e835815f4e19c4136f8c55706ccb6807318476cc434442e72d65"
+        }
+      ],
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/02_multibar_rest_parts/mozart_piano_concerto_no23_kv488_flute_mutopia2229.pdf",
+      "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229.json",
+      "profileSHA256": "c7fcc6cf0d738d7926e3d4825e05ad14fcf5cc72c87f276d2c76054e2fbdb435"
+    }
+  ],
+  "sources": [
+    {
+      "variant": "baseline",
+      "sourceManifestSHA256": "ad9788a32b310952398a6ab6dba406e5b62080eaf092342017f47dba52f6977f",
+      "binarySHA256": "f3209e9c31cc2757747529e025dd7f90de2b744b738f31851eecd6e6c09c3a7d"
+    },
+    {
+      "variant": "candidate",
+      "sourceManifestSHA256": "9864b79f78706eaa3cdce880944686150a57917e901c9786335c11ff9d9b0c84",
+      "binarySHA256": "efbac3a61d7bd34cca802ff2b4d56a4cf28e91d90093084aab49f480cce1e242"
+    }
+  ],
+  "rosterSHA256": "4f45a66a3ec223d5b0e3c8a2304d83a09a79d29ff0c3facb4db2dd9776a2becb",
+  "auditScriptSHA256": "c12a736311a9e413f92f2e70f0dc67652685f43de9a2a43c5d599ff8192abfe3"
+}

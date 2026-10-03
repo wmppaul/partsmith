@@ -1,0 +1,511 @@
+{
+  "candidateSourceHashes": {
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreExtractionPlanner.swift": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedDirectionReview.swift": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedDirectionWorkflow.swift": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedHeadingDetector.swift": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+    ".build/heading-glyph-continuation-2026-10-03/candidate/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+  },
+  "sourceRecords": {
+    "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/inventory.json",
+      "inventorySHA256": "e00227264280ea0d080841a0f33be8a213e950980a0017d11c553bedeb478f09",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "reviewSourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "rectificationCount": 0,
+      "pageCount": 56
+    },
+    "excerpt-beethoven-op67-pages-7-8": {
+      "source": "/Users/will/Documents/git/partsmith/Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/excerpt-beethoven-op67-pages-7-8/inventory.json",
+      "inventorySHA256": "180b76fbff369763e73997657130cc86260eec43eb6b57ee22ad9d9d207068d3",
+      "reviewSource": "/Users/will/Documents/git/partsmith/Tests/extraction/sources/beethoven-op67-pages-7-8.pdf",
+      "reviewSourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "rectificationCount": 0,
+      "pageCount": 2
+    },
+    "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/inventory.json",
+      "inventorySHA256": "0656c6ab1031a4c7961979d11c0a3f3f835c0b44b68fb5313b19ce76b8230c8d",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "reviewSourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "rectificationCount": 0,
+      "pageCount": 35
+    },
+    "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/inventory.json",
+      "inventorySHA256": "0a24585b3039ee649b992b86f37afa1ba214dab23fc07d3ae3d33335c88fff3c",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/05_schumann_frauenliebe_und_leben_op42_imslp_270922.pdf",
+      "reviewSourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "rectificationCount": 0,
+      "pageCount": 16
+    },
+    "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/inventory.json",
+      "inventorySHA256": "211464e70c4bb7375d545ce6bd89bf6278e7795f9c340c72c696ef949ac58c6c",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "reviewSourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "rectificationCount": 0,
+      "pageCount": 26
+    },
+    "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/inventory.json",
+      "inventorySHA256": "a64b6c6972f5aebd2ea49480caccee5380cfa4094b130ca65208bc5b02cb2111",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+      "reviewSourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "rectificationCount": 0,
+      "pageCount": 30
+    },
+    "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/inventory.json",
+      "inventorySHA256": "2fc2ad5eb304456e6b0aef0d2504e44ded16716fb560576327f588a9f52e5e01",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/02_brahms_clarinet_trio_op114_imslp_114012.pdf",
+      "reviewSourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "rectificationCount": 0,
+      "pageCount": 35
+    },
+    "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/inventory.json",
+      "inventorySHA256": "ab7d0330c03ca712d61e08b38f9704d8af605caf96f88db20a3510ab7866587c",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+      "reviewSourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "rectificationCount": 0,
+      "pageCount": 25
+    },
+    "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/09_schumann_frauenliebe_und_leben_op42_imslp_51733.pdf",
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/inventory.json",
+      "inventorySHA256": "f334f0b2c1a97f1dcc0aed511d00b7706b3bd6818c95b6cd9881a9b7f5239e78",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/09_schumann_frauenliebe_und_leben_op42_imslp_51733.pdf",
+      "reviewSourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "rectificationCount": 0,
+      "pageCount": 18
+    },
+    "normal-mozart-piano-quartet-kv478-score": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_piano_quartet_kv478_score.pdf",
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/normal-mozart-piano-quartet-kv478-score/inventory.json",
+      "inventorySHA256": "bad3be2806250866c1e0c082120090e8a1a544982391db5c859dfe75aee171d2",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_piano_quartet_kv478_score.pdf",
+      "reviewSourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "rectificationCount": 0,
+      "pageCount": 55
+    },
+    "normal-mozart-string-quartet-kv387-score": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_string_quartet_kv387_score.pdf",
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/normal-mozart-string-quartet-kv387-score/inventory.json",
+      "inventorySHA256": "f05f14980806dd6473cc1b8d262ef9face1ad50f2ff02fab23fb3f5208cbc38f",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_string_quartet_kv387_score.pdf",
+      "reviewSourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "rectificationCount": 0,
+      "pageCount": 31
+    },
+    "normal-mozart-magic-flute-overture-kv620-score": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/normal-mozart-magic-flute-overture-kv620-score/inventory.json",
+      "inventorySHA256": "0191b88f909eba2763a48e3a2d62d4907364b634cce2e63cf5697420891ebdd4",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf",
+      "reviewSourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "rectificationCount": 0,
+      "pageCount": 43
+    },
+    "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+      "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/inventory.json",
+      "inventorySHA256": "047f73406bb8369a189947c3203143abf2d0317170118f7bf394b7e18d22b923",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/04_choir/mozart_ave_verum_corpus_kv618_cpdl18715_complete_score.pdf",
+      "reviewSourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "rectificationCount": 0,
+      "pageCount": 4
+    },
+    "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/02_multibar_rest_parts/mozart_piano_concerto_no23_kv488_flute_mutopia2229.pdf",
+      "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/inventory.json",
+      "inventorySHA256": "095a26508bc6154ccb0705903118a5eda16f5186bcef8af8e1de13e58e24de5e",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/02_multibar_rest_parts/mozart_piano_concerto_no23_kv488_flute_mutopia2229.pdf",
+      "reviewSourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "rectificationCount": 0,
+      "pageCount": 5
+    },
+    "kv498": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/kv498/inventory.json",
+      "inventorySHA256": "784dcefdf5981dae4af4160c3c1fb35fa44248cb784d1c18c24a9d0ab29926ba",
+      "reviewSource": "/Users/will/Documents/git/partsmith/sample_scores/normal/01_chamber/mozart_trio_eb_major_kv498_score.pdf",
+      "reviewSourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "rectificationCount": 0,
+      "pageCount": 29
+    },
+    "brahms": {
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "inventory": "/Users/will/Documents/git/partsmith/.build/heading-blocks-2026-10-03/baseline/brahms/inventory.json",
+      "inventorySHA256": "9070373f53ae2888bb39c0b119191d043466a523ff1cea600504003bcef4dc40",
+      "reviewSource": "/Users/will/Documents/git/partsmith/output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-auto-endings/rectified-review-source.pdf",
+      "reviewSourceSHA256": "3662202ac3e464b3587bcb2e40f4ebce9d5c08858b3e9753c243963522c4052f",
+      "rectificationCount": 9,
+      "pageCount": 39
+    }
+  },
+  "rasterHashes": [
+    {
+      "number": 1,
+      "path": ".build/accepted-heading-source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p2.png",
+      "sha256": "3853859733fcd8b61f6075deced787c2c3469843195b32cfeec95682247e5644"
+    },
+    {
+      "number": 2,
+      "path": ".build/accepted-heading-source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p19.png",
+      "sha256": "0a3316997d0739c4b15b7257c6e2c9cee9bec2a445aa0592d52003fc523102b6"
+    },
+    {
+      "number": 3,
+      "path": ".build/accepted-heading-source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p26.png",
+      "sha256": "4e3546c01b1a2281c55dcbc7006e8d46be68bba473c2e353fcbfd044ae81542d"
+    },
+    {
+      "number": 4,
+      "path": ".build/accepted-heading-source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p26.png",
+      "sha256": "4e3546c01b1a2281c55dcbc7006e8d46be68bba473c2e353fcbfd044ae81542d"
+    },
+    {
+      "number": 5,
+      "path": ".build/accepted-heading-source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p38.png",
+      "sha256": "b65cbd318798ac3484b2144b8f96f2b1eda82df3be07ffde2377a03899d2d53f"
+    },
+    {
+      "number": 6,
+      "path": ".build/accepted-heading-source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822-p39.png",
+      "sha256": "2e0d3ddfde01b61581527f473a2f2f0a0f4395ea812ed0e2c74abe0654c525ab"
+    },
+    {
+      "number": 7,
+      "path": ".build/accepted-heading-source-review/excerpt-beethoven-op67-pages-7-8-p1.png",
+      "sha256": "53801e84ca9892a1c41554a217e8600560bb8872cab0b8ede191d875718d3a75"
+    },
+    {
+      "number": 8,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011-p1.png",
+      "sha256": "3ed9291d4359073d46fb47620a056997df478f356194c6bc8170e586f8e221f1"
+    },
+    {
+      "number": 9,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011-p11.png",
+      "sha256": "20674b43e2ec7e198bf1068d8980386646e18fa6280ec4a4f21ab9a3966f10b7"
+    },
+    {
+      "number": 10,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011-p12.png",
+      "sha256": "bcc0b109bfaa51e01234bfbaaefa5c15d9b7d81409e8e45b27ab1681f2113272"
+    },
+    {
+      "number": 11,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011-p18.png",
+      "sha256": "2fe906267a948bca76de0c9fdf5302234f7a7cf932cab84b920c3664eafc5ae5"
+    },
+    {
+      "number": 12,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011-p26.png",
+      "sha256": "bcbc0bc49fc9f91f6c4e2a9311392ed4a980931371287176696b48719af30afc"
+    },
+    {
+      "number": 13,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p1.png",
+      "sha256": "26d437d5ed04516b389438f28e7ac64fa67b87c234ce005865ddea69d224200b"
+    },
+    {
+      "number": 14,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p6.png",
+      "sha256": "53014fe5843f5456fba825c81b821166ae65e9dd263a9c4afa124e70c1b01f6f"
+    },
+    {
+      "number": 15,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922-p15.png",
+      "sha256": "25adb02139038fb33c10efd9111464e5107f9dbd2ac3b94ef2062a0416a0f2af"
+    },
+    {
+      "number": 16,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p1.png",
+      "sha256": "14e5e08d15b91487514c9266b513871892f83d8797f56fcc1543881d2c4a7db0"
+    },
+    {
+      "number": 17,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p10.png",
+      "sha256": "6800e347c996bb4051b98a3a30d1c347bb27c754a87f8e34d23d165d831be86f"
+    },
+    {
+      "number": 18,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p14.png",
+      "sha256": "625a6c4af779c92786c3ffa884707c694216804ab8c70124fc0744edd29469fc"
+    },
+    {
+      "number": 19,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p17.png",
+      "sha256": "0923dc8b56629b4bdb810b28e607911039590d347cb30a1e690b5fe104308aab"
+    },
+    {
+      "number": 20,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p18.png",
+      "sha256": "4288155beaaa3542fc55a63901f2bbe810c9b1d00523cb1a6780be6129b4bc56"
+    },
+    {
+      "number": 21,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p19.png",
+      "sha256": "410f1b4fb92d7e7d1959695dab827634d68463156dc5aa318b16ebc142a4fe81"
+    },
+    {
+      "number": 22,
+      "path": ".build/accepted-heading-source-review/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-p22.png",
+      "sha256": "42ecf9a54934b6bb69c0e3327ab41f6a85eaa68a3d5b0fd1f59d84a7ad64420e"
+    },
+    {
+      "number": 23,
+      "path": ".build/accepted-heading-source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903-p1.png",
+      "sha256": "5d2ca587ac521da7c7201552c3aed6d6cc23297df2a58cac90f019bd1882bc40"
+    },
+    {
+      "number": 24,
+      "path": ".build/accepted-heading-source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903-p12.png",
+      "sha256": "d19cf8d75622d20552937b212dd2f98e9e311a6c3e8819f00a98effe5fb50f69"
+    },
+    {
+      "number": 25,
+      "path": ".build/accepted-heading-source-review/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012-p1.png",
+      "sha256": "daf0658d8d9e2e570876e0bbfb09ac37cadd156ea9d87def7d7cb5b0ea50b213"
+    },
+    {
+      "number": 26,
+      "path": ".build/accepted-heading-source-review/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012-p11.png",
+      "sha256": "99deaff29086b1d00b750b9ffdffcb505f533faa5055b5625816c26b02b4142c"
+    },
+    {
+      "number": 27,
+      "path": ".build/accepted-heading-source-review/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012-p12.png",
+      "sha256": "c4f382a006d0588d8e28ab52cdfe1ee6b20e5fe01ddd00b40d2d22e95521b51b"
+    },
+    {
+      "number": 28,
+      "path": ".build/accepted-heading-source-review/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012-p18.png",
+      "sha256": "bc37e8d2bcc0c404ebf9d0a45d71d672d2ab8426ed9732f55a770fc872f1d66d"
+    },
+    {
+      "number": 29,
+      "path": ".build/accepted-heading-source-review/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012-p26.png",
+      "sha256": "ad66d47a917d3e7aed95c07088e03026ec5ef78bdb8bc5f4ac5cb10f4a928376"
+    },
+    {
+      "number": 30,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p1.png",
+      "sha256": "f31a734cf544e72e24a622e73dd970d904233d9b4e6bcef6afcd2fc176adc4d5"
+    },
+    {
+      "number": 31,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p10.png",
+      "sha256": "ebeea311172a993b31b142955c252977bddd5010e29383b4382df39ab32b32a8"
+    },
+    {
+      "number": 32,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p14.png",
+      "sha256": "dd855dd695743bcd6fecc95174cdb65bbfbf7b82f5fcb05483a364838062ff83"
+    },
+    {
+      "number": 33,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p17.png",
+      "sha256": "dae2cc2cb58a13e68ec7e91cd78ba5273f7ac87e578c2a75f96020d04d568537"
+    },
+    {
+      "number": 34,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p18.png",
+      "sha256": "624f98661756c72844f29965cf3b7290ab25a6056a03687251d0efcd70619bad"
+    },
+    {
+      "number": 35,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p19.png",
+      "sha256": "9f80efeecb0bde66ce6028f681d59cfa0bcb693d4d213190add49f3f1c9c9c94"
+    },
+    {
+      "number": 36,
+      "path": ".build/accepted-heading-source-review/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-p22.png",
+      "sha256": "244294d05b055882cbdda2de318959f04a2b45adbc3b92bd3f865c733d7ac9a4"
+    },
+    {
+      "number": 37,
+      "path": ".build/accepted-heading-source-review/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733-p2.png",
+      "sha256": "98bda63167e2003c03c063b8fcf9967ae8db3562851c30f527032b9a6edeae21"
+    },
+    {
+      "number": 38,
+      "path": ".build/accepted-heading-source-review/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733-p7.png",
+      "sha256": "8a1ccca91e408ae66f2790c30a57172e8dc45e7100f1c4e5c7a00bdb8d5dc6ce"
+    },
+    {
+      "number": 39,
+      "path": ".build/accepted-heading-source-review/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733-p16.png",
+      "sha256": "7d284e5beaf44c9ad3b8435b2dc93440f648db78d0032bc811a89a369e8e9d06"
+    },
+    {
+      "number": 40,
+      "path": ".build/accepted-heading-source-review/normal-mozart-piano-quartet-kv478-score-p1.png",
+      "sha256": "76ebd414057fb9217dd066850416269b5c3ac0ac24c5d4545ba9c164b09fc0a0"
+    },
+    {
+      "number": 41,
+      "path": ".build/accepted-heading-source-review/normal-mozart-string-quartet-kv387-score-p1.png",
+      "sha256": "d657f4d3d070d86077c8f5101974b754028a55b0418e0f28f023ff72544c8178"
+    },
+    {
+      "number": 42,
+      "path": ".build/accepted-heading-source-review/normal-mozart-string-quartet-kv387-score-p12.png",
+      "sha256": "16568265fcb5ca9d124c56dd08783b58acf591ba5af54631839e7c57c058b9d1"
+    },
+    {
+      "number": 43,
+      "path": ".build/accepted-heading-source-review/normal-mozart-string-quartet-kv387-score-p14.png",
+      "sha256": "3c370bbd61fed2221e910787ff45fdabe29d91d41084cda243277ec010223cdf"
+    },
+    {
+      "number": 44,
+      "path": ".build/accepted-heading-source-review/normal-mozart-string-quartet-kv387-score-p16.png",
+      "sha256": "8ec055074c3f6d64f9ae66ac73262ac653529d8183398c35ec75530c06d20f59"
+    },
+    {
+      "number": 45,
+      "path": ".build/accepted-heading-source-review/normal-mozart-string-quartet-kv387-score-p24.png",
+      "sha256": "eeaf01c755a72b479cb2edc2c29d3f40351ee63bcf12e26f42761a4510bbba96"
+    },
+    {
+      "number": 46,
+      "path": ".build/accepted-heading-source-review/normal-mozart-magic-flute-overture-kv620-score-p1.png",
+      "sha256": "3778ddf7c18f9e87da99da76e664bb9babc9d1bbc2deafdac5f2f5c5c390ba73"
+    },
+    {
+      "number": 47,
+      "path": ".build/accepted-heading-source-review/normal-mozart-magic-flute-overture-kv620-score-p3.png",
+      "sha256": "58387661288fcce3c2a94e60978e80031f47be0a681fa80e932bf1887fb84f73"
+    },
+    {
+      "number": 48,
+      "path": ".build/accepted-heading-source-review/normal-mozart-magic-flute-overture-kv620-score-p18.png",
+      "sha256": "f73c2528718be21967d683b60ba26f806bbab0daf050a2304d8f5c139d40fd7f"
+    },
+    {
+      "number": 49,
+      "path": ".build/accepted-heading-source-review/normal-mozart-magic-flute-overture-kv620-score-p19.png",
+      "sha256": "2ab1a223c8e5f6b0af1385dbd49c644cd085dcff893bcb99dbbb20452d818667"
+    },
+    {
+      "number": 50,
+      "path": ".build/accepted-heading-source-review/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score-p1.png",
+      "sha256": "16d1322d07f7200d5f1eb37b817869e7c84eb3ca8b2f7d9f8b1c1ef39e675f5e"
+    },
+    {
+      "number": 51,
+      "path": ".build/accepted-heading-source-review/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229-p1.png",
+      "sha256": "0dc68c117d8a3ca70db474540895ef5498cb5a0831bc193d11c96855d9a02acd"
+    },
+    {
+      "number": 52,
+      "path": ".build/accepted-heading-source-review/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229-p4.png",
+      "sha256": "4024257bf8503df691e2c754c32d97ceaf5f97b3699ad41d0544413dd7ac2505"
+    },
+    {
+      "number": 53,
+      "path": ".build/accepted-heading-source-review/kv498-p1.png",
+      "sha256": "dc1ac39ac890c48783a3dac164816e5a0110e95abe765c0a53f826bae5b8bfbc"
+    },
+    {
+      "number": 54,
+      "path": ".build/accepted-heading-source-review/kv498-p12.png",
+      "sha256": "8a17a8f875d95d8ced09b196c6e7fd24cd20c11834e07b32d954dc1cc6917fbc"
+    },
+    {
+      "number": 55,
+      "path": ".build/accepted-heading-source-review/kv498-p13.png",
+      "sha256": "0e7c4382e3580d6835880f026ce6464a56502d2057030b66399fde08bce8e337"
+    },
+    {
+      "number": 56,
+      "path": ".build/accepted-heading-source-review/kv498-p17.png",
+      "sha256": "c7c78190976c5fd8f0f026a35fea00a99df80783c401f1d6dc8509c21161d4ac"
+    },
+    {
+      "number": 57,
+      "path": ".build/accepted-heading-source-review/brahms-p2.png",
+      "sha256": "f98059923a96882860891d1c997f47863407a8fac0023d8015b1c130e7976a25"
+    },
+    {
+      "number": 58,
+      "path": ".build/accepted-heading-source-review/brahms-p16.png",
+      "sha256": "5605042103298c7363aedc206d88b7be97b5e72696c41bc0e6c5a20aedf25b1f"
+    },
+    {
+      "number": 59,
+      "path": ".build/accepted-heading-source-review/brahms-p22.png",
+      "sha256": "cb895ff3a26153b2fc7872840ce825f509f8d40c4f07cd1a8d40071cb1594346"
+    },
+    {
+      "number": 60,
+      "path": ".build/accepted-heading-source-review/brahms-p26.png",
+      "sha256": "de59b5cd2b3c713b43fbf87dec855d2a3e8b87b38100ffee378de925c0c7b7c9"
+    },
+    {
+      "number": 61,
+      "path": ".build/accepted-heading-source-review/brahms-p28.png",
+      "sha256": "4362f1776ba9751aa8e2878d9f590ac4b8433f89a298d0c63fef67711211f919"
+    },
+    {
+      "number": 62,
+      "path": ".build/accepted-heading-source-review/brahms-p29.png",
+      "sha256": "c8744f367a732e122bd96eeee768c2069c9fee301ac943dcfe40be66af509eea"
+    },
+    {
+      "number": 63,
+      "path": ".build/accepted-heading-source-review/brahms-p34.png",
+      "sha256": "6f1abdf809d282cf7ee6722c8888771090bbb363d5a0c1c4d0f649df50801a52"
+    }
+  ],
+  "immutableGuards": {
+    "frozen-initial-A-guards.json": "eb5452c642880846e9c529ddc6046a44114cd81ac20915285f4a1f33d131efef",
+    "frozen-source-obligations.json": "7c6974b4e51e15d9a418fee14cfb23646aaf84a2967f6ee4996432c013778c30"
+  },
+  "sourceFirstInitialAReviewedBeforeCandidate": true
+}

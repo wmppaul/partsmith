@@ -1,0 +1,95 @@
+--- a/Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift
++++ b/Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift
+@@ -100,6 +100,10 @@
+         // original ink in the newly enclosed corners and inter-line space.
+         let bound = result.map { heading in
+             var item = heading
++            if let anchor = page.staves.first(where: { $0.id == heading.anchorStaffID }) {
++                item.bounds = continuedGlyphBounds(in: image, bounds: heading.bounds,
++                    anchor: anchor, isCancelled: isCancelled)
++            }
+             item.recognitionBinding = ScoreExtractionPlanner.headingRecognitionBinding(
+                 page: page, plan: plan, anchorStaffID: heading.anchorStaffID)
+             return item
+@@ -115,6 +119,81 @@
+         return measured
+     }
+ 
++    /// Follow a clipped glyph across a horizontal OCR edge. Only a complete,
++    /// text-sized connected component can justify expansion. Components cut by
++    /// the vertical search limits (staff/clef/stem fragments) and shallow slurs
++    /// cannot pull the source box sideways. Existing source edges never shrink.
++    static func continuedGlyphBounds(in image: CGImage, bounds: [Double],
++                                     anchor: ScoreObservedStaff,
++                                     isCancelled: () -> Bool = { false }) -> [Double] {
++        guard ScoreSharedEnding.validBounds(bounds), anchor.staffLineFractions.count == 5,
++              anchor.staffLineFractions.allSatisfy({ $0.isFinite && $0 >= 0 && $0 <= 1 }),
++              image.width > 0, image.height > 0,
++              !isCancelled() else { return bounds }
++        let width = image.width, height = image.height
++        let lines = anchor.staffLineFractions
++        let space = (lines[4] - lines[0]) * Double(height) / 4
++        guard space.isFinite, space >= 2, zip(lines, lines.dropFirst()).allSatisfy({ $0 < $1 }) else { return bounds }
++        let left = bounds[0] * Double(width), right = bounds[2] * Double(width)
++        let reach = max(2, Int(ceil(1.5 * space)))
++        let x0 = max(0, Int(floor(left)) - reach), x1 = min(width, Int(ceil(right)) + reach)
++        let y0 = max(0, Int(floor(bounds[1] * Double(height))))
++        let bottom = min(bounds[3] * Double(height), lines[0] * Double(height) - 0.3 * space)
++        let y1 = min(height, Int(ceil(bottom)))
++        guard x1 > x0, y1 > y0 else { return bounds }
++        guard let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8,
++            bytesPerRow: width, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue) else { return bounds }
++        context.setFillColor(gray: 1, alpha: 1)
++        context.fill(CGRect(x: 0, y: 0, width: width, height: height))
++        context.interpolationQuality = .none
++        context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
++        guard let pixels = context.data?.assumingMemoryBound(to: UInt8.self) else { return bounds }
++        let rw = x1 - x0, rh = y1 - y0
++        var visited = [Bool](repeating: false, count: rw * rh)
++        var expandedLeft = left, expandedRight = right
++        for sy in 0..<rh {
++            if isCancelled() { return bounds }
++            for sx in 0..<rw {
++                let start = sy * rw + sx
++                guard !visited[start], pixels[(sy + y0) * width + sx + x0] < 224 else { continue }
++                var queue = [start], cursor = 0
++                visited[start] = true
++                var minX = sx, maxX = sx, minY = sy, maxY = sy
++                while cursor < queue.count {
++                    if cursor % 4096 == 0, isCancelled() { return bounds }
++                    let index = queue[cursor]; cursor += 1
++                    let x = index % rw, y = index / rw
++                    minX = min(minX, x); maxX = max(maxX, x)
++                    minY = min(minY, y); maxY = max(maxY, y)
++                    for dy in -1...1 { for dx in -1...1 {
++                        let nx = x + dx, ny = y + dy
++                        guard nx >= 0, nx < rw, ny >= 0, ny < rh else { continue }
++                        let next = ny * rw + nx
++                        if !visited[next], pixels[(ny + y0) * width + nx + x0] < 224 {
++                            visited[next] = true; queue.append(next)
++                        }
++                    } }
++                }
++                let cw = Double(maxX - minX + 1), ch = Double(maxY - minY + 1)
++                // A clipped component has unknown extent. Do not infer a
++                // complete letter by stopping at the search window itself.
++                guard minX > 0, maxX < rw - 1, minY > 0, maxY < rh - 1,
++                      ch >= 0.8 * space, ch <= 5.5 * space,
++                      cw >= 0.4 * space, cw <= 8 * ch else { continue }
++                let a = Double(x0 + minX), b = Double(x0 + maxX + 1)
++                if a < left, b >= left + 0.4 * space, left - a <= Double(reach) {
++                    expandedLeft = min(expandedLeft, max(0, a - 1))
++                }
++                if b > right, a <= right - 0.4 * space, b - right <= Double(reach) {
++                    expandedRight = max(expandedRight, min(Double(width), b + 1))
++                }
++            }
++        }
++        guard !isCancelled() else { return bounds }
++        return [expandedLeft < left ? expandedLeft / Double(width) : bounds[0], bounds[1],
++                expandedRight > right ? expandedRight / Double(width) : bounds[2], bounds[3]]
++    }
++
+     /// Measure all original raster ink inside the padded source copy.
+     /// Never use OCR word bounds to decide that a glyph is already retained:
+     /// OCR can miss cap serifs, dots and parentheses. Failed/empty measurements

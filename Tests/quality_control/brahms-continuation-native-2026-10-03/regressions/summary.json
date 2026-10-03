@@ -1,0 +1,39 @@
+{
+  "scope": "Frozen combined Core; passed suites before wrapper linker collision preserved, remaining suites run separately",
+  "tests": [
+    {
+      "name": "glyph",
+      "exitCode": 0,
+      "binarySHA256": "8adef1ad8bd57430b04ef05e2ae78dac12f1cf68367ee0f4cdd5b5b38aabd692",
+      "log": "glyph.log"
+    },
+    {
+      "name": "shared-headings",
+      "exitCode": 0,
+      "binarySHA256": "ab8c821c4cf3d0ceb3229879aeea0ff8db92e3c2e3bc2ca7e30c43d6b2f74916",
+      "log": "shared-headings.log"
+    },
+    {
+      "name": "initial-overrides",
+      "exitCode": 0,
+      "binarySHA256": "4ac52b238a7d079ca2fd30b9114f2ad3f772b64f8978d7965c08c5b420d05f0c",
+      "log": "initial-overrides.log"
+    },
+    {
+      "name": "independent",
+      "exitCode": 0,
+      "binarySHA256": "42cb94074ed9745a6d496c7cfde2f74ca58368c2ef0f938627d21b0f00e7d5e2",
+      "log": "independent.log"
+    },
+    {
+      "name": "heading-categories",
+      "exitCode": 0,
+      "binarySHA256": "ac81bc7b7a1fdac70ede588f925df7a757e252b2fae82add0374271e2a375888",
+      "log": "heading-categories.log"
+    }
+  ],
+  "productionChangesNeededForWrapperRepair": false,
+  "initialWrapperExitCode": 1,
+  "failure": "Linker output path collided with an existing results directory; no production-source test failed.",
+  "remainingWrapperExitCode": 0
+}

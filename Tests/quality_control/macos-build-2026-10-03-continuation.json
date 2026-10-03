@@ -1,0 +1,256 @@
+{
+  "packagedAtUTC": "2026-10-03T19:32:25.086910+00:00",
+  "baselineCommit": "e9ef3d1",
+  "configuration": "Release; unsigned universal arm64 + x86_64; macOS 14+",
+  "archive": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "archiveSHA256": "93563a97b8559f72a37d840617500186b35273d711b1dcfa8543b2809aebb440",
+  "executableSHA256": "5c28a3e2aa9e9d282d925c7213fdfe1294cbbb56a433b0de5fd94ae42cc9efd5",
+  "architectures": [
+    "x86_64",
+    "arm64"
+  ],
+  "archiveIntegrity": "CRC and compiled executable identity pass",
+  "previousArchive": ".build/brahms-continuation-release-2026-10-03/Partsmith-preview-before-continuation.zip",
+  "previousArchiveSHA256": "2d805169f9e1cf0306b70b2ece7547b037c98f2e62d8e96611b4b48dfd5d3791",
+  "buildLog": "Tests/quality_control/brahms-continuation-native-2026-10-03/release-build.log",
+  "productionSources": {
+    "Partsmith/App/PartsmithApp.swift": "fb4a743a4c3b7dac7534b0660a39bc9f1eb52acacbf400b327c5c0edc89eda8e",
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": "e6541355b65590e66b9f893a12a12f1d66e73f82ebc328436dbb3d52bcd0a353",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f",
+    "Partsmith/Core/Detection/ScoreInputPageSelection.swift": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+    "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+    "Partsmith/Core/Detection/ScoreInstrumentPickList.swift": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+    "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    "Partsmith/Core/Detection/ScoreRestDetector.swift": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+    "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+    "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99",
+    "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+    "Partsmith/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+    "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/DocumentModel/BarNumberDetector.swift": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+    "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5",
+    "Partsmith/Core/Export/PartPDFExporter.swift": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb",
+    "Partsmith/Core/Export/PartPreviewRenderer.swift": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca",
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2",
+    "Partsmith/Features/Inspector/InspectorView.swift": "90542a52182907f953b5e59d140f9d42a264917c60fcf880d8d5740fd1112ed7",
+    "Partsmith/Features/PartPreview/PartPreviewView.swift": "70d81c8bfa5455c8ad46533329c4fe936b635cdf2ecd18c8db0df1e039b534d3",
+    "Partsmith/Features/PartsSidebar/PartsSidebarView.swift": "eb2b20e9925b8b48c04b5e9e6b8a18657fbf068c5d3cb1f913ae22326caf6531",
+    "Partsmith/Features/Project/DocumentRootView.swift": "c9f1154d040b91d5eb702fdeb1d8db02670a6ca47defab06c30e4ce41469efd5",
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "db156b46c2dc5ad3a9eac843c84ef77dc737206bb2ed9f81cede16e1ce52862f",
+    "Partsmith/Features/Project/ScoreExtractionWindow.swift": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+    "Partsmith/Features/Project/StaffDetectionView.swift": "18a44101854171bd5d0200ed83a50e36784df41c18fa0cd4054dc32a3022c7cb",
+    "Partsmith/Features/SourceCanvas/SourceCanvasView.swift": "31fc36a3b724ead99bc4daed9f68ee167cd2a3fd66f22e0fe048bd25934e6e81",
+    "Partsmith/Resources/Info.plist": "3ba36f2b477af9c4883c91f44758580b1f5dbfb8c79a43f0aca3e70d3b205e55",
+    "Partsmith.xcodeproj/project.pbxproj": "dc04838c31ad0f31b734dcff48a39fdc7dbbfa791a427ccad2552e8df983983c"
+  },
+  "changedProductionSources": [
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift"
+  ],
+  "rawCorpus": {
+    "scores": 36,
+    "physicalPages": 1477,
+    "provisionalBands": 6936,
+    "changedStaffGeometry": 0,
+    "changedCrops": 2,
+    "changedWarnings": "Only ambiguous-connection warning on the same two crops",
+    "scope": "Fresh raw analyzer and initialized-profile planner; 19 variable-layout sources plus one ossia plan remain unresolved. No name OCR, shared directions or rectification in this raw corpus pass."
+  },
+  "combinedFullWorker": {
+    "baseline": {
+      "autoSkipped": [
+        0
+      ],
+      "awakeElapsedSeconds": 77.197119209,
+      "bandCount": 604,
+      "completionOnMainThread": true,
+      "continuousElapsedSeconds": 77.197119208,
+      "elapsedSeconds": 77.19678401947021,
+      "heartbeatCount": 1543,
+      "heartbeatMaxAwakeIntervalSeconds": 0.058067334,
+      "heartbeatMaxIntervalSeconds": 0.0580669641494751,
+      "id": "brahms",
+      "issues": [],
+      "planCanApply": true,
+      "progressCleared": true,
+      "projectUnchanged": true,
+      "references": [
+        {
+          "anchorStaffID": 4,
+          "bounds": [
+            0.5149113479737821,
+            0.27607459663642475,
+            0.5434219853595514,
+            0.30014756130398595
+          ],
+          "correlation": 0.7520194660461883,
+          "pageIndex": 25,
+          "templateBounds": [
+            0.7619751468300286,
+            0.4732211282875574,
+            0.7863581865033047,
+            0.49438083873587335
+          ],
+          "templatePageIndex": 27
+        }
+      ],
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    },
+    "candidate": {
+      "autoSkipped": [
+        0
+      ],
+      "awakeElapsedSeconds": 77.19104325,
+      "bandCount": 604,
+      "completionOnMainThread": true,
+      "continuousElapsedSeconds": 77.191043292,
+      "elapsedSeconds": 77.1907080411911,
+      "heartbeatCount": 1543,
+      "heartbeatMaxAwakeIntervalSeconds": 0.055179459,
+      "heartbeatMaxIntervalSeconds": 0.055177927017211914,
+      "id": "brahms",
+      "issues": [],
+      "planCanApply": true,
+      "progressCleared": true,
+      "projectUnchanged": true,
+      "references": [
+        {
+          "anchorStaffID": 4,
+          "bounds": [
+            0.5149113479737821,
+            0.27607459663642475,
+            0.5434219853595514,
+            0.30014756130398595
+          ],
+          "correlation": 0.7520194660461883,
+          "pageIndex": 25,
+          "templateBounds": [
+            0.7619751468300286,
+            0.4732211282875574,
+            0.7863581865033047,
+            0.49438083873587335
+          ],
+          "templatePageIndex": 27
+        }
+      ],
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+    }
+  },
+  "glyphNativeEvidence": {
+    "headingReplayScores": 16,
+    "headingReplayPages": 449,
+    "retainedMainCrops": 6324,
+    "changedHeadingBoxes": 2,
+    "changedRecipientCopies": 6,
+    "freshFullWorkerSourcePages": 51,
+    "freshFullWorkerMainCrops": 960,
+    "scope": "449-page heading recognition uses retained hash-bound staff inventories; affected editions additionally use fresh full app workers."
+  },
+  "tests": {
+    "existingCropChecks": 755,
+    "glyphControls": 20,
+    "sharedHeadingChecks": 59,
+    "headingOverrideChecks": 57,
+    "independentGlyphControls": 272,
+    "headingCategoryChecks": 4,
+    "independentCrop297": {
+      "passed": 201,
+      "existingFailures": 96,
+      "newFailures": 0,
+      "worsenedEnvelopes": 0
+    },
+    "independentFrozenCrop336": {
+      "passed": 0,
+      "existingFailures": 336,
+      "newFailures": 0,
+      "worsenedEnvelopes": 0
+    }
+  },
+  "outputReview": "Complete native exports: 12 part PDFs across three Brahms editions, 148 output pages. All pages rendered; changed pages and source regions independently reviewed. Existing musical limitations remain explicit.",
+  "limits": [
+    "Seven whole-neighbor cases and other foreign fragments remain in Brahms93521.",
+    "Existing near-edge and shared-stem preservation failures remain; the passing legacy suite is not complete musical assurance.",
+    "Variable instrumentation, omitted-rest inference, complete shared-direction recall and musical page turns remain unresolved.",
+    "Glyph continuation is a single-pass geometric heuristic; contained musical impostors, faint ink and out-of-window strokes remain limitations.",
+    "The eight unresolved-source pages with component changes receive separate original-source/neutral-staff crop review, not claimed instrument extraction.",
+    "No live SwiftUI test or public notarization is claimed."
+  ],
+  "runningUserApp": "Not replaced or relaunched; user documents unchanged.",
+  "glyphFullExports": {
+    "comparison": "actual fresh baseline e9ef3d1 and candidate document-worker inventories, same byte-identical layout/export implementation and identical typed metadata",
+    "parts": 8,
+    "pages": 84,
+    "mainCrops": 960,
+    "mainCropsChanged": 0,
+    "placementsChanged": 0,
+    "changedCopyRows": 6,
+    "changedPages": 6,
+    "pixelIdenticalPages": 78
+  },
+  "glyphDeliveries": [
+    {
+      "sourceEdition": "242312",
+      "directory": "output/pdf/auto-qc-2026-09-21/brahms-quartet-242312-glyph-continuation",
+      "deliveryHashManifest": "9d826fb73f14e889250c58b7c70fecd0c2b20b7c123fde1d028b499c6b7edf27"
+    },
+    {
+      "sourceEdition": "09200",
+      "directory": "output/pdf/auto-qc-2026-09-21/brahms-quartet-09200-glyph-continuation",
+      "deliveryHashManifest": "b22bf5f18c90b5138a3a346fb57a34c5abc2f57cf4a9e6f90e91cf637c19695a"
+    }
+  ],
+  "unresolvedSourceReview": {
+    "additionalSourcePages": 8,
+    "changedDiagnosticStaffCrops": 15,
+    "newTargetLossObserved": false,
+    "instrumentIdentitiesInferred": false,
+    "report": "Tests/quality_control/residual9-boundary-independent/corpus-source-review/review-findings.json"
+  },
+  "brahms93521FullExport": {
+    "sourcePages": 39,
+    "bands": 604,
+    "copies": 42,
+    "parts": [
+      {
+        "part": "Violin I",
+        "pages": 17,
+        "bands": 151,
+        "sha256": "b41d5d74d312e112b7d40574434a82bb33feb66ad6d01a2f417d20a42f4f1ce4"
+      },
+      {
+        "part": "Violin II",
+        "pages": 16,
+        "bands": 151,
+        "sha256": "b4dc8cfa17ee0d634ac34f337afe2d364984683d11acd3f0bec3284b6d825eed"
+      },
+      {
+        "part": "Viola",
+        "pages": 16,
+        "bands": 151,
+        "sha256": "1c1e5b14a528b9d5144435764a7d7933f62c0741eae88b3d07e0ead6546371b1"
+      },
+      {
+        "part": "Violoncello",
+        "pages": 15,
+        "bands": 151,
+        "sha256": "e5e51e8e009f29edfd461e466b54491a0c2adabfa987525bebc5f10c528c430b"
+      }
+    ],
+    "pages": 64,
+    "pixelIdenticalPages": 46,
+    "changedPages": 18,
+    "changedCrops": 2,
+    "pageMove": "p31-s2-violin1 moves from output page14 to13 after existing page-fill balancing",
+    "layoutIssues": 0,
+    "originalSourceEmbedded": true,
+    "delivery": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-continuation",
+    "review": "Tests/quality_control/brahms-continuation-output/README.md",
+    "limits": "Seven whole neighbors remain; page turns still occur during playing and are not optimized for rests."
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "bands": 604,
+  "copies": 42,
+  "pdfs": [
+    {
+      "part": "violin1",
+      "pages": 17,
+      "sha256": "b41d5d74d312e112b7d40574434a82bb33feb66ad6d01a2f417d20a42f4f1ce4"
+    },
+    {
+      "part": "violin2",
+      "pages": 16,
+      "sha256": "b4dc8cfa17ee0d634ac34f337afe2d364984683d11acd3f0bec3284b6d825eed"
+    },
+    {
+      "part": "viola",
+      "pages": 16,
+      "sha256": "1c1e5b14a528b9d5144435764a7d7933f62c0741eae88b3d07e0ead6546371b1"
+    },
+    {
+      "part": "cello",
+      "pages": 15,
+      "sha256": "e5e51e8e009f29edfd461e466b54491a0c2adabfa987525bebc5f10c528c430b"
+    }
+  ],
+  "changedSourceCrops": [
+    {
+      "id": "p29-s1-violin1",
+      "before": [
+        0,
+        18.903586579251737,
+        427,
+        91.65291168530655
+      ],
+      "after": [
+        0,
+        18.90358657925185,
+        427,
+        75.76205167759349
+      ]
+    },
+    {
+      "id": "p29-s1-violin2",
+      "before": [
+        0,
+        35.26880061704583,
+        427,
+        110.62707288854608
+      ],
+      "after": [
+        0,
+        59.22367913613573,
+        427,
+        110.62707288854608
+      ]
+    }
+  ],
+  "pageMoves": [
+    {
+      "id": "p31-s2-violin1",
+      "beforePage": 14,
+      "afterPage": 13
+    }
+  ],
+  "guardContainment": [
+    {
+      "id": "p29-s1-violin1",
+      "guard": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "sourceRect": [
+        0,
+        18.90358657925185,
+        427,
+        75.76205167759349
+      ],
+      "contains": true
+    },
+    {
+      "id": "p29-s1-violin2",
+      "guard": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "sourceRect": [
+        0,
+        59.22367913613573,
+        427,
+        110.62707288854608
+      ],
+      "contains": true
+    }
+  ],
+  "layoutIssues": [],
+  "inputSHA256": {
+    ".build/brahms-continuation-release-2026-10-03/output-review/baseline-parts/manifest.json": "0cabeb9ce4c75884c2a0d5c903cf8381c41150a23442ba42fb6bf4e885c20b97",
+    ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/manifest.json": "3d449fdebd5b8d88278376e77bb191d543ad7077cbc54cb372820d2b753f6262",
+    ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/Violin I.pdf": "b41d5d74d312e112b7d40574434a82bb33feb66ad6d01a2f417d20a42f4f1ce4",
+    ".build/brahms-continuation-release-2026-10-03/output-review/baseline-parts/Violin I.pdf": "aad998d7284c8c2602e2c98d1372c40f2ff09957f633f6fff484aa2092cbf80f",
+    ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/Violin II.pdf": "b4dc8cfa17ee0d634ac34f337afe2d364984683d11acd3f0bec3284b6d825eed",
+    ".build/brahms-continuation-release-2026-10-03/output-review/baseline-parts/Violin II.pdf": "cf60e88ea8d1a3590761bd8e5eab279b591365f97935be30815232423c6cb69b",
+    ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/Viola.pdf": "1c1e5b14a528b9d5144435764a7d7933f62c0741eae88b3d07e0ead6546371b1",
+    ".build/brahms-continuation-release-2026-10-03/output-review/baseline-parts/Viola.pdf": "bb890b3d4ae60c0c03b4850e85ebb32c7f7148fda04dd55958834fddaf7bd096",
+    ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/Violoncello.pdf": "e5e51e8e009f29edfd461e466b54491a0c2adabfa987525bebc5f10c528c430b",
+    ".build/brahms-continuation-release-2026-10-03/output-review/baseline-parts/Violoncello.pdf": "48635870f1012a25c424a7f754be59fcca4b8c22462acb0d269937eab5819f9d",
+    ".build/brahms-continuation-release-2026-10-03/output-review/candidate-parts/rectified-review-source.pdf": "2509460f334bf1f762e376e1f68b1df87a8ec5e0c7db68f8e72fd4cee287a933"
+  }
+}
