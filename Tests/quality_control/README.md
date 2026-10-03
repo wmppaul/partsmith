@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 3 full-score musical-span rejection
+
+The [complete 39-page Brahms replay](brahms-source-spans-full-2026-10-03/README.md) rejects the private V1 source-span recognizer. Eight false spans follow ordinary barlines and slur/staff intersections; thirteen crops expand, adding fourteen complete neighboring-core incidences across ten crops. Existing notation components and crop areas are preserved, but the resulting extra staves are still a quality regression. No detector or app change is promoted.
+
+The [independent original-source suite](musical-span-independent-2026-10-03/candidate-v1/README.md) recovers nine complete owner envelopes without new losses, including the full broken stem, while retaining twenty-six incomplete owner envelopes. Its [separate prospective addendum](musical-span-attached-addendum-2026-10-03/README.md) finds a false span through attached `pp` and incomplete outer-owner coverage for three heads sharing a shaft. These bounded synthetic results and real-score failures are reported separately. A complete source-body distinction is required before combining this approach with numbered-line separation.
+
 ## October 3 source ownership across scan breaks
 
 The [numbered-line experiments](brahms-numbered-lines-2026-10-03/README.md) remain rejected. V1 loses 18 previously complete source envelopes. V2 repairs those but loses nine more pixels within an already incomplete musical stem; an unchanged pass count concealed that regression. The [independent comparison](numbered-line-ownership-independent-2026-10-03/candidate-v2/README.md) retains its own bounded passing results separately from that rejection. Production detection is unchanged.

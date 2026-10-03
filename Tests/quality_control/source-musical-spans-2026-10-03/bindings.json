@@ -1,0 +1,49 @@
+{
+  "baselineNativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "candidateNativeSHA256": "00749e09b47ed1740feeab4d53aa77e7ce17658edb3d5a0f81fe60a51bf81fe1",
+  "compiledDependencies": {
+    "NativeScorePageAnalyzer.swift": {
+      "baseline": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+      "candidate": "00749e09b47ed1740feeab4d53aa77e7ce17658edb3d5a0f81fe60a51bf81fe1"
+    },
+    "ScoreExtractionPlanner.swift": {
+      "baseline": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+      "candidate": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7"
+    },
+    "ScoreLocalEndingPreservation.swift": {
+      "baseline": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "candidate": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    "ScoreSharedEnding.swift": {
+      "baseline": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "candidate": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    "ScoreSharedEndingDetector.swift": {
+      "baseline": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "candidate": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    "StaffBandDetector.swift": {
+      "baseline": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "candidate": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    }
+  },
+  "externalEvidence": {
+    ".build/brahms-source-span-full-replay-2026-10-03/candidate-comparison.json": "212d23a80cc2a62c6ef7d4c698f0184fadfb28a6de1a881882e7956dd63a001c",
+    ".build/brahms-source-span-full-replay-2026-10-03/candidate-v1.json": "0222ceb44c91d5cf7cc008edc06c804f71593e8b6c21f9efa9f8008bd32b5d2d",
+    "Tests/quality_control/brahms-case176-ownership-2026-10-03/manifest.json": "911f8ed34ef69575fd237631af06677329e62953e82ec818e406618d34556a8f",
+    "Tests/quality_control/musical-span-attached-addendum-2026-10-03/manifest.json": "0535e41aad611b49a1f7d61adb6ba0e29c3639e85d054fd54dd70a9c9f74ba2c",
+    "Tests/quality_control/musical-span-independent-2026-10-03/candidate-v1/manifest.json": "d8c77426aee539ce7742425ec5603831eb79c130fad1e9e0600b336aa150a84b",
+    "Tests/quality_control/musical-span-independent-2026-10-03/manifest.json": "165edd4367c8b58a94f5ef4a015d68d7b1c8a8b5c638f106ad7668c61c1b29c5"
+  },
+  "loggingNativeSHA256": "c2f88da8bace2e9ad3e6c086878ec345cb33b29f3d6a578fb961d3f1bdc68350",
+  "preCancellationNativeSHA256": "40516ab6aebecb314cd6fcb4f0e23f876241c8dfb0de388ab0bbd73bf77e9803",
+  "productionNativeSHA256AtFreeze": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "sourceRasters": {
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-23.png": "e1f3251aeed0459be6df16b1669ec083ada168451b1c0ff7a2df793f42c2aa27",
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-28.png": "66cbf25e414b3b3f7303fe5d764e2d168b9dd2ea7dafeafc54e0685edcfa8c80",
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-29.png": "6c7eb5f304474b41c53918cbf302c69bec1ad1e49729b06f0c50f97d5be8d562",
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-38.png": "3bbfce33f34ad8d688980f4e9b227a467352b7632df34baa3def944fbeea96bc",
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-39.png": "ad9fe26e77249b961988e77b642b02c555bec693ca5b5be1d4aae38582fbeb11"
+  },
+  "status": "Rejected scratch candidate; production unmodified"
+}

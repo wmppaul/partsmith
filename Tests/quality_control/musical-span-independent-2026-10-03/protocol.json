@@ -1,0 +1,33 @@
+{
+  "study": "Independent original-source musical-span challenges",
+  "date": "2026-10-03",
+  "state": "Frozen before viewing any new musical-span candidate",
+  "scope": "Expansion-only musical preservation from original source; musical ownership and needless neighbor inclusion are evaluated separately.",
+  "existingOracles": {
+    "fourCore": "All twelve unchanged original four-core source rasters and all forty-eight original filled/hollow/tied/stem masks, at scale1. Existing failures stay recorded; the mixed first-two-staff chord must not become ownership of the lower two structural-only staves.",
+    "case176": "Copy the exact original 720x760 edgeMusicBroken scale1 tilt0 bow10 source PGM and middle-owner PGM from the rejected V2 source audit. Reconstruct all three original owner masks from the unmodified source constructor; require byte-identical source and middle mask and identical source envelopes to the original297 result.",
+    "case176Success": "The target preservation claim requires FULL recovery of the original middle-owner source envelope [218,190,609,539] and every middle-owner pixel. Recovering only the nine additional V2 omissions, or merely restoring baseline650 lost pixels, is not success. Also record every original source pixel for the other two owners; no new loss is allowed anywhere.",
+    "case176KnownRegression": "Source stem pixels x600..<603,y212..<215 are an unchanged subset of the full oracle; they are not a substitute for it."
+  },
+  "freshSources": {
+    "count": 8,
+    "size": [720,640],
+    "staves": {"tops":[140,320,500],"space":12,"lineCount":5},
+    "scales": [0.5,1.0],
+    "music": "Two filled/hollow head-to-head musical stems at x500, shared by all three physical staff views, with two fixed missing runs (y205..<211 and349..<352). Source gaps remove the same pixels from source and ownership. Both endpoints and every remaining stem pixel are required.",
+    "stafflineOnlyNegatives": "Four filled/hollow near-barline head fixtures, each with either an intact or interrupted bare x500 barline. Local heads/stems end at x493; at least six columns separate them from the barline except for horizontal staff pixels. Those horizontal staff contacts do not authorize a shared musical interval.",
+    "detachedNegatives": "Two bare-barline sources with a detached p-shaped dynamic or sharp-shaped accidental near the spine. The symbol belongs to the upper staff only and stays at least three white columns away from the barline. No cross-staff ownership may be invented from proximity.",
+    "structuralBoundary": "Every fresh source also has a separate structural boundary at x620 and the conventional left boundary. Neither repeated barline alignment nor its vicinity to notation establishes a musical span."
+  },
+  "measures": {
+    "inputs": "Hash original files, decoded source pixels, owner masks and source-defined envelopes before analyzer execution. Owned pixels must be actual source ink. Preserve all original files byte-exact.",
+    "loss": "Record exact lost source pixel sets, not only counts or aggregate passes. Compare all owners to the frozen baseline; any newly lost pixel is a regression, including in an already failing case.",
+    "recovery": "For musical positives report complete source-owned envelope and pixel recovery. Case176 middle-owner full recovery is a mandatory separate target metric, not just non-regression.",
+    "neighbors": "Record all complete neighboring cores independently of source retention. For the six fresh negative controls require no spurious whole-neighbor inclusion and no new cross-staff ownership span. For intentionally shared music, declare the allowed owner groups from source construction, never from crop outputs.",
+    "newEvidence": "If the candidate exposes original-source musical-span evidence, log its claimed owners and endpoints. A staffline-only contact or detached glyph cannot serve as a head-to-head witness. Final crops alone may hide an erroneous interval already covered by baseline padding.",
+    "realGuards": "All existing ten Brahms full guards and thirteen local source obligations remain unchanged; the prior p35 bottom68 guard failure remains explicit. No new real-page run is required for setup.",
+    "blinding": "No candidate inspection or execution before protocol/input hashes are sent to root. Wait for author-supplied frozen candidate hash. Do not tune cases or expected outcomes afterward."
+  },
+  "plannedTotal": {"sourceImages":21,"sourceScaleObservations":29,"ownerObservations":99},
+  "prohibited": ["Production edits","New acceptance thresholds from candidate results","Removing existing failing owners","Substituting nine-pixel repair for full case176 recovery","Calling a broad shared crop clean separation"]
+}

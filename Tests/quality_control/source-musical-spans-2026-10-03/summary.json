@@ -1,0 +1,74 @@
+{
+  "case176": {
+    "completeOwners": 3,
+    "fullSourceRecovery": true,
+    "sourceMissingRows": [
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234
+    ],
+    "sourceShaft": [
+      600,
+      603,
+      190,
+      539
+    ],
+    "sourceSpanBounds": [
+      592,
+      187,
+      611,
+      541
+    ],
+    "totalOwners": 3
+  },
+  "limitations": [
+    "Parametric source support confuses filled structural crosses and slur/barline intersections with bodies.",
+    "Hollow open corners and attached p-shaped glyphs are ambiguous.",
+    "Original four-core musical recall remains incomplete.",
+    "Only adjacent accepted bodies are paired; full three-plus-head ownership remains incomplete.",
+    "Fixed vertical columns can abstain on strongly curved shafts."
+  ],
+  "notRun": [
+    "Full1477-page corpus",
+    "Full permanent796 controls on this candidate",
+    "Full297/336 replay on this candidate",
+    "Combined numbered-line plus source-span candidate"
+  ],
+  "originalFourCore": {
+    "allCropsNoncontracting": true,
+    "baselineIncomplete": 68,
+    "candidateIncomplete": 60,
+    "cases": 36,
+    "newlyWorsened": 0,
+    "oldComponentsRetained": true,
+    "ordinaryExact": true,
+    "owners": 144,
+    "repairScope": "Only hollowOuter and hollowTiedOuter at scale0.5, intact and fiveMissingRows, owners0/1. Other omissions persist.",
+    "repaired": 8
+  },
+  "real39RootReplay": {
+    "addedWholeNeighborOccurrences": 14,
+    "bands": 604,
+    "changedCrops": 13,
+    "croppingNoncontracting": true,
+    "falseIntervalsOnSourceReview": 8,
+    "newSpans": 8,
+    "ordinaryAndOldAlternativesExact": true,
+    "pages": 39,
+    "releaseSeconds": 5.14,
+    "timingOwnedBy": "root"
+  },
+  "smallFixtureTiming": {
+    "case176DebugSeconds": 0.44,
+    "case176ReleaseSeconds": 0.01,
+    "compilationExcluded": true,
+    "debugReleaseResultsExact": true,
+    "scope": "One single synthetic fixture including its file output; not UI or big-score responsiveness."
+  },
+  "status": "rejected"
+}

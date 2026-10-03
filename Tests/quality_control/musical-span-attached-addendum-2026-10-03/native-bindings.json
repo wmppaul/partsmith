@@ -1,0 +1,16 @@
+{
+  "nativeSHA256": "00749e09b47ed1740feeab4d53aa77e7ce17658edb3d5a0f81fe60a51bf81fe1",
+  "inputManifestSHA256": "106c6ce623585187f95a49a8327ffaa28323e2a988e77b86f73968d5b3101c21",
+  "protocolSHA256": "c9db2b2fe07950ab4b56b48dd5b555737f3801edd30696cf315d2ebca38032cc",
+  "baselineResultsSHA256": "ebe40cf18740c78fbfcc8c95b1c4cdb30d3344aca265483e7a4c3970f88091b8",
+  "candidateResultsSHA256": "e5b9d79734890c2abe367d40fc5e0590664eb3249c1579a92490f3fbcffef4aa",
+  "comparisonSHA256": "ae4cab32cac72d2f192a2039c6946830a9b9049d86b91ed88e6270dedc3e3423",
+  "baselineExecutableSHA256": "759fa68f5a1a6c27f603fbcb637fc94ea20dd36f674ce89be823ccdf942163d2",
+  "candidateExecutableSHA256": "9487ab11c5c03f8a8a89d8ed03a66967b28f7fc7742fe73c510cf60db63bd6a5",
+  "loggingExecutableSHA256": "6246d59e9254f70ac680d212304a2f5f1b3fb936af90dd71f5ce80944c82d1dc",
+  "wholeCoreDifferences": [
+    "Detection/NativeScorePageAnalyzer.swift",
+    "DocumentModel/ProjectModels.swift"
+  ],
+  "compiledSourceScope": "The unchanged evaluator compiles six Detection files. ProjectModels.swift is archived but not compiled by this harness; its unrelated source difference is endBarNumber arithmetic parenthesization. Within the six compiled files only Native differs."
+}

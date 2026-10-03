@@ -204,6 +204,12 @@ change attribution and make an old mark disappear. An uncertain interpretation
 should only expand the final crop, leaving ordinary ownership and detached-mark
 discovery intact. Preserve failing source guards and inspect their exact excluded
 ink rather than relaxing them to match the candidate.
+Compare exact newly excluded source-owned pixels even in fixtures that already
+fail: an unchanged pass count can hide a worse omission. A broken musical stem
+can survive the analysis mask yet lose ownership across its scan gap. Check the
+whole source-owned musical span; recovering only a regression's few pixels does
+not repair an already incomplete part. Staff-line residue that happens to enlarge
+a crop is not reliable musical-preservation evidence.
 
 Compare every source page, including unresolved instrument layouts. Ignore only
 component ordering; ownership, bounds and alternative-evidence tags are semantic
