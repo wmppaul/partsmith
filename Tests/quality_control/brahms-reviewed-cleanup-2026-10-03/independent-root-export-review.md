@@ -1,0 +1,9 @@
+# Parent review of complete manual export
+
+The parent independently compared the final manual manifest directly with the previously published Auto-preservation manifest and rendered all 67 PDF pages at 108 dpi using PyMuPDF. Exactly seven source rectangles change, matching the frozen proposals. Those seven rows alone change provenance to `manual-source-reviewed-crop`. Every other source identity/semantic field remains exact, including the source rectangles of all copied markings. All four parts still contain 151 systems, on 18/17/17/15 pages.
+
+Forty-two rendered pages are pixel-identical. The parent inspected full side-by-side page comparisons for Violin I 12; Violin II 12–13; Viola 10–13 and 17; and Violoncello 9 and 15. The other 15 changed pages were inspected as page overviews: four first pages with the corrected normal title, and Viola 2–9/14–16 with spacing changes. The seven locally tightened crops preserve the target notation previously checked against the complete original and corrected source contexts. The source copies remain beside their associated systems; no new page-boundary clipping or overlap was observed.
+
+Viola's extra space moves three complete systems to preceding pages. The new beginning of page 12 has a printed rest; the turn from page 12 to 13 still crosses playing material. Existing explicit breaks remain. This is a crop improvement, not certification of all performance page turns. Neighboring fragments remain throughout the inherited extraction, sometimes conspicuously; removal of seven complete neighboring cores must not be described as clean isolation of the entire score.
+
+The report is supported by `check_manual_exports.py` and `export-review/results.json` in the parent's scratch directory, with per-page pixel hashes and comparison images. Source-review scope, existing source defects, incomplete shared-direction coverage and the unchanged page-35 guard failure remain explicit.

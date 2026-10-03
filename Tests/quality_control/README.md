@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 3 complete Brahms manual crop alternative
+
+The [separately reviewed crop set](brahms-reviewed-cleanup-2026-10-03/README.md) tightens seven Brahms93521 strips after independent original/corrected source review. The complete four-part export retains 151 systems per part, all 42 copied directions and six explicit breaks on 67 pages. Exactly seven source rectangles change; 42 output pages remain pixel-identical, and all 25 changed pages were visually reviewed. Seven complete neighboring-staff inclusions are removed, but conspicuous neighboring fragments remain elsewhere. This is explicitly a manual alternative, not new Auto output or a whole-score musical certification. The original ten guards remain unchanged, including the existing page-35 failure.
+
+The [notehead-shape experiment](notehead-provenance-2026-10-03/README.md) repairs 49 unchanged synthetic source cases without new preservation losses, but is rejected on real scans. [Independent frozen real-source tests](notehead-provenance-independent-2026-10-03/README.md) expose a tie/staff-line pocket falsely accepted as a hollow head; four applicable true heads remain unrecognized even with locally measured staff lines. A targeted 12-page native replay also wrongly adds a whole neighboring core to four unresolved Schumann diagnostic rows. No experimental detector change or new app build is promoted from this study. The existing Auto PDFs and app remain unchanged.
+
 ## October 3 actual crop-edit regression and broader source controls
 
 The [public crop-edit API regression](crop-edit-ending-provenance-2026-10-03/README.md) exposes a missing automatic-ending identity when an Auto review first materializes a crop override. Routing that edit through the existing assignment helper restores required copies after local ending ink is cropped out, while preserving explicit removals and reviewed omissions. This is the only production change in the [new build](crop-review-release-2026-10-03/README.md); detection and the current full-score exports are unchanged.

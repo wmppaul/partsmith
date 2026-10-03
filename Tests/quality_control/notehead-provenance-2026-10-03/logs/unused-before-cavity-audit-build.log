@@ -1,0 +1,7 @@
+.build/notehead-provenance-2026-10-03/Core/Detection/NativeScorePageAnalyzer.swift:36:13: warning: initialization of immutable value 'side' was never used; consider replacing with assignment to '_' or removing it [#no-usage]
+ 34 |         let boundary = staffLinesAtSpine[upper ? 0 : 4]
+ 35 |         let inward = upper ? 1.0 : -1.0
+ 36 |         let side = upper ? 1.0 : -1.0
+    |             `- warning: initialization of immutable value 'side' was never used; consider replacing with assignment to '_' or removing it [#no-usage]
+ 37 |         let overlap = min(Double(strokeRight - strokeLeft), staffSpace * 0.25)
+ 38 |         let translation = max(1, Int((staffSpace * 0.15).rounded()))

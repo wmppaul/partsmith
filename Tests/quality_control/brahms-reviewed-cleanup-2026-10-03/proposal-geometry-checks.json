@@ -1,0 +1,702 @@
+{
+  "current": {
+    "guardContained": 9,
+    "guardTotal": 10,
+    "guardResults": [
+      {
+        "bandID": "p24-s2-viola",
+        "guardRect": [
+          0,
+          243,
+          427,
+          281.5
+        ],
+        "cropRect": [
+          0,
+          241.13844967219433,
+          427,
+          311.75318164288467
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "guardRect": [
+          0,
+          272.5,
+          427,
+          315.5
+        ],
+        "cropRect": [
+          0,
+          241.13844967219433,
+          427,
+          316.4967219436946
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin1",
+        "guardRect": [
+          0,
+          24,
+          427,
+          64
+        ],
+        "cropRect": [
+          0,
+          17.59232769830942,
+          427,
+          93.57022106631985
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "guardRect": [
+          0,
+          66,
+          427,
+          98.5
+        ],
+        "cropRect": [
+          0,
+          21.59102730819245,
+          427,
+          107.56566970091029
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p29-s1-violin1",
+        "guardRect": [
+          0,
+          23.5,
+          427,
+          74
+        ],
+        "cropRect": [
+          0,
+          18.90358657925185,
+          427,
+          75.76205167759349
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p29-s1-violin2",
+        "guardRect": [
+          0,
+          70.5,
+          427,
+          105.5
+        ],
+        "cropRect": [
+          0,
+          59.22367913613573,
+          427,
+          110.62707288854608
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin1",
+        "guardRect": [
+          35,
+          26.5,
+          394,
+          71
+        ],
+        "cropRect": [
+          0,
+          21.038179714616263,
+          427,
+          85.0119552641728
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin2",
+        "guardRect": [
+          35,
+          69,
+          394,
+          105.5
+        ],
+        "cropRect": [
+          0,
+          41.435403008098774,
+          427,
+          110.8642499035866
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p35-s1-violin1",
+        "guardRect": [
+          0,
+          28,
+          426,
+          68
+        ],
+        "cropRect": [
+          0,
+          22.877409406322272,
+          426,
+          66.38242097147258
+        ],
+        "contained": false
+      },
+      {
+        "bandID": "p35-s1-violin2",
+        "guardRect": [
+          0,
+          62,
+          426,
+          106.5
+        ],
+        "cropRect": [
+          0,
+          57.198920585967585,
+          426,
+          113.95913646877409
+        ],
+        "contained": true
+      }
+    ],
+    "localContained": 13,
+    "localTotal": 13,
+    "localResults": [
+      {
+        "bandID": "p24-s2-viola",
+        "content": "final note, stem and slur",
+        "obligation": [
+          377,
+          253,
+          388.5,
+          268.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-viola",
+        "content": "final hairpin pair",
+        "obligation": [
+          348.5,
+          268,
+          388,
+          274
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "content": "high final note and slur",
+        "obligation": [
+          378,
+          273.5,
+          388.5,
+          295
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "content": "sharp and preceding high half note",
+        "obligation": [
+          360.5,
+          278,
+          373,
+          295
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "content": "final hairpin pair",
+        "obligation": [
+          348,
+          302,
+          387,
+          307.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin1",
+        "content": "pre-barline flagged note and slur endpoint",
+        "obligation": [
+          87.5,
+          33,
+          95,
+          52
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin1",
+        "content": "post-barline note and upper slur start",
+        "obligation": [
+          102.5,
+          29,
+          116,
+          49
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "content": "pre-barline low flagged note",
+        "obligation": [
+          88.5,
+          75,
+          97,
+          90
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "content": "post-barline low note, stem and dot",
+        "obligation": [
+          103,
+          75,
+          110.5,
+          95
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin1",
+        "content": "final beamed descending notes, slur and detached last note",
+        "obligation": [
+          349,
+          33,
+          386.5,
+          65
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin2",
+        "content": "last flagged note pair, lower slur and crescendo",
+        "obligation": [
+          353,
+          73,
+          389.5,
+          102
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p35-s1-violin1",
+        "content": "last beamed melody, dots and ledger notes",
+        "obligation": [
+          327,
+          26,
+          378,
+          66
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p35-s1-violin2",
+        "content": "rising beamed figure, low ledger note and full lower slur",
+        "obligation": [
+          337.5,
+          65,
+          385.5,
+          106
+        ],
+        "contained": true
+      }
+    ],
+    "wholeNeighborCoreCount": 7,
+    "wholeNeighborCases": [
+      {
+        "bandID": "p28-s1-violin1",
+        "neighborBandID": "p28-s1-violin2",
+        "neighborCoreY": [
+          71.17685305591678,
+          83.98064678024096
+        ]
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "neighborBandID": "p28-s1-violin1",
+        "neighborCoreY": [
+          41.58647594278284,
+          54.7793037478967
+        ]
+      },
+      {
+        "bandID": "p31-s1-violin2",
+        "neighborBandID": "p31-s1-violin1",
+        "neighborCoreY": [
+          44.827186517376155,
+          57.98978017740069
+        ]
+      },
+      {
+        "bandID": "p24-s2-viola",
+        "neighborBandID": "p24-s2-cello",
+        "neighborCoreY": [
+          286.8740724605778,
+          300.02804101425477
+        ]
+      },
+      {
+        "bandID": "p38-s1-viola",
+        "neighborBandID": "p38-s1-cello",
+        "neighborCoreY": [
+          135.95578673602083,
+          148.98304629184034
+        ]
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "neighborBandID": "p24-s2-viola",
+        "neighborCoreY": [
+          255.3045640396042,
+          268.2443567477126
+        ]
+      },
+      {
+        "bandID": "p38-s1-cello",
+        "neighborBandID": "p38-s1-viola",
+        "neighborCoreY": [
+          106.36540962288687,
+          119.34645517964782
+        ]
+      }
+    ]
+  },
+  "manual": {
+    "guardContained": 9,
+    "guardTotal": 10,
+    "guardResults": [
+      {
+        "bandID": "p24-s2-viola",
+        "guardRect": [
+          0,
+          243,
+          427,
+          281.5
+        ],
+        "cropRect": [
+          0,
+          241.13844967219433,
+          427,
+          283.0
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "guardRect": [
+          0,
+          272.5,
+          427,
+          315.5
+        ],
+        "cropRect": [
+          0,
+          270.5,
+          427,
+          316.4967219436946
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin1",
+        "guardRect": [
+          0,
+          24,
+          427,
+          64
+        ],
+        "cropRect": [
+          0,
+          17.59232769830942,
+          427,
+          65.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "guardRect": [
+          0,
+          66,
+          427,
+          98.5
+        ],
+        "cropRect": [
+          0,
+          64.5,
+          427,
+          100.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p29-s1-violin1",
+        "guardRect": [
+          0,
+          23.5,
+          427,
+          74
+        ],
+        "cropRect": [
+          0,
+          18.90358657925185,
+          427,
+          75.76205167759349
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p29-s1-violin2",
+        "guardRect": [
+          0,
+          70.5,
+          427,
+          105.5
+        ],
+        "cropRect": [
+          0,
+          59.22367913613573,
+          427,
+          110.62707288854608
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin1",
+        "guardRect": [
+          35,
+          26.5,
+          394,
+          71
+        ],
+        "cropRect": [
+          0,
+          21.038179714616263,
+          427,
+          85.0119552641728
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin2",
+        "guardRect": [
+          35,
+          69,
+          394,
+          105.5
+        ],
+        "cropRect": [
+          0,
+          67.5,
+          427,
+          107.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p35-s1-violin1",
+        "guardRect": [
+          0,
+          28,
+          426,
+          68
+        ],
+        "cropRect": [
+          0,
+          22.877409406322272,
+          426,
+          66.38242097147258
+        ],
+        "contained": false
+      },
+      {
+        "bandID": "p35-s1-violin2",
+        "guardRect": [
+          0,
+          62,
+          426,
+          106.5
+        ],
+        "cropRect": [
+          0,
+          57.198920585967585,
+          426,
+          113.95913646877409
+        ],
+        "contained": true
+      }
+    ],
+    "localContained": 13,
+    "localTotal": 13,
+    "localResults": [
+      {
+        "bandID": "p24-s2-viola",
+        "content": "final note, stem and slur",
+        "obligation": [
+          377,
+          253,
+          388.5,
+          268.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-viola",
+        "content": "final hairpin pair",
+        "obligation": [
+          348.5,
+          268,
+          388,
+          274
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "content": "high final note and slur",
+        "obligation": [
+          378,
+          273.5,
+          388.5,
+          295
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "content": "sharp and preceding high half note",
+        "obligation": [
+          360.5,
+          278,
+          373,
+          295
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p24-s2-cello",
+        "content": "final hairpin pair",
+        "obligation": [
+          348,
+          302,
+          387,
+          307.5
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin1",
+        "content": "pre-barline flagged note and slur endpoint",
+        "obligation": [
+          87.5,
+          33,
+          95,
+          52
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin1",
+        "content": "post-barline note and upper slur start",
+        "obligation": [
+          102.5,
+          29,
+          116,
+          49
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "content": "pre-barline low flagged note",
+        "obligation": [
+          88.5,
+          75,
+          97,
+          90
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p28-s1-violin2",
+        "content": "post-barline low note, stem and dot",
+        "obligation": [
+          103,
+          75,
+          110.5,
+          95
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin1",
+        "content": "final beamed descending notes, slur and detached last note",
+        "obligation": [
+          349,
+          33,
+          386.5,
+          65
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p31-s1-violin2",
+        "content": "last flagged note pair, lower slur and crescendo",
+        "obligation": [
+          353,
+          73,
+          389.5,
+          102
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p35-s1-violin1",
+        "content": "last beamed melody, dots and ledger notes",
+        "obligation": [
+          327,
+          26,
+          378,
+          66
+        ],
+        "contained": true
+      },
+      {
+        "bandID": "p35-s1-violin2",
+        "content": "rising beamed figure, low ledger note and full lower slur",
+        "obligation": [
+          337.5,
+          65,
+          385.5,
+          106
+        ],
+        "contained": true
+      }
+    ],
+    "wholeNeighborCoreCount": 0,
+    "wholeNeighborCases": []
+  },
+  "scope": {
+    "sourceBands": 604,
+    "changedMusicCropCount": 7,
+    "unchangedMusicCropCount": 597,
+    "sourceCopies": 42,
+    "projectEdited": false,
+    "PDFsExported": false,
+    "layoutVerified": false,
+    "unchangedFailedGuard": "p35-s1-violin1",
+    "targetRegionEnvelopeContained": 7,
+    "targetRegionEnvelopeTotal": 7,
+    "independentPixelOwnershipMasks": false
+  }
+}

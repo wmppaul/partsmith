@@ -1,0 +1,150 @@
+{
+  "holdoutsSHA256": "f9ae21baf633a86a217d260c54db97751a88f4984f76f5f17fa2836e69186a2c",
+  "scope": "Only four in-search own-stem positives; source-measured local staff rows replace original global fit. All other inputs remain exact. This was prepared after v1 primary results to audit input fidelity, not a blind new holdout.",
+  "cases": [
+    {
+      "id": "P01-hollow-up-stem-bottom-line",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 879,
+      "strokeRight": 881,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        338.22958340979994,
+        346.247351148617,
+        354.5387619047619,
+        362.8133655056651,
+        370.9028610756071
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        878,
+        344,
+        882,
+        378
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 12
+      },
+      "geometryProvenance": "Separate source-measured local-line diagnostic. Fixed source body/spine, physical stroke, staffSpace and slope unchanged from first helper adapter.",
+      "sourceBodyROI": [
+        867,
+        369,
+        883,
+        381
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P02-hollow-down-stem-staff-intersection",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 188,
+      "strokeRight": 190,
+      "staffSpace": 8.016210374639769,
+      "staffLinesAtSpine": [
+        712.9827639273623,
+        721.083423451259,
+        729.6387287739524,
+        737.5161575136854,
+        745.6566757493188
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        187,
+        720,
+        191,
+        751
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 8
+      },
+      "geometryProvenance": "Separate source-measured local-line diagnostic. Fixed source body/spine, physical stroke, staffSpace and slope unchanged from first helper adapter.",
+      "sourceBodyROI": [
+        186,
+        716,
+        200,
+        729
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P03-filled-tied-bottom-line",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 246,
+      "strokeRight": 248,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        338.216,
+        346.63679356821945,
+        354.7889102975808,
+        363.1833420639078,
+        371.026140793396
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        244,
+        342,
+        248,
+        373
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 12
+      },
+      "geometryProvenance": "Separate source-measured local-line diagnostic. Fixed source body/spine, physical stroke, staffSpace and slope unchanged from first helper adapter.",
+      "sourceBodyROI": [
+        236,
+        366,
+        249,
+        378
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P05-filled-near-barline-own-stem",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 432,
+      "strokeRight": 436,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        337.67899040170636,
+        345.6204330175913,
+        354.2469455757127,
+        362.32226720647776,
+        370.33566810344826
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        432,
+        332,
+        436,
+        363
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 14
+      },
+      "geometryProvenance": "Separate source-measured local-line diagnostic. Fixed source body/spine, physical stroke, staffSpace and slope unchanged from first helper adapter.",
+      "sourceBodyROI": [
+        423,
+        357,
+        436,
+        369
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "holdoutsSHA256": "f9ae21baf633a86a217d260c54db97751a88f4984f76f5f17fa2836e69186a2c",
+  "sourcePDFAndAll12NativeRastersVerified": true,
+  "all22RawSourceCropsExactSubimages": true,
+  "all44SourceCropAndRulerHashesVerified": true,
+  "cavitySamplesVerified": true,
+  "sourceObligationsAndExpectedLabelsUnchanged": true,
+  "candidateSources": {
+    ".build/notehead-provenance-2026-10-03/candidate-v1/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    ".build/notehead-provenance-2026-10-03/candidate-v1/Core/Detection/ScoreExtractionPlanner.swift": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2",
+    ".build/notehead-provenance-2026-10-03/candidate-v1/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    ".build/notehead-provenance-2026-10-03/candidate-v1/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    ".build/notehead-provenance-2026-10-03/candidate-v1/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    ".build/notehead-provenance-2026-10-03/candidate-v1/Core/Detection/NativeScorePageAnalyzer.swift": "8c2fa3f665dd1c41f95ac44b9f30fc0a6cdc094f5cac016cd866711badd41af3"
+  },
+  "probeSourceSHA256": "e4704bf54e6bc4b7db76978925104e04c14ca93f804152f3b471d47f3894c149",
+  "buildScriptSHA256": "d955b296f2354e4c2b05298b6e6fc8f938b34ac0c47f1e1e449da33609173613",
+  "helperBinary": {
+    "path": ".build/notehead-provenance-independent-2026-10-03/helper-v1",
+    "sha256": "1303a1a92305514ddd953b49a7b3dcdc7d73f683ddf74602f83ee75fc44bed61"
+  },
+  "primaryInputsSHA256": "5113da76aae67542cb892b9a40e590f5289b39ff97a3c7e705aa0757f5d3b9c3",
+  "primaryResultsSHA256": "cda33babf0381e0456b595e60b15cf530359cd83cbcfe3f5ba5dd2683ad51a96",
+  "positiveAccepted": 0,
+  "positiveTotal": 7,
+  "inSearchPositiveAccepted": 0,
+  "inSearchPositiveTotal": 4,
+  "nearbyWrongSpineAccepted": 0,
+  "nearbyWrongSpineTotal": 2,
+  "structuralFalseAccepted": [
+    "F05-structural-intersection"
+  ],
+  "structuralTotal": 13,
+  "localSourceLinesFrozenBeforeRerun": true,
+  "localSourceLinesPreparedAfterPrimaryResults": true,
+  "localDiagnosticOnlyStaffLineCoordinatesChanged": true,
+  "localMeasurementsSHA256": "f39cd9e22cf3d6fee9d0b9bbd76fe1ca9b12f11aad65fcf8860a82b539c207f7",
+  "localInputsSHA256": "6c0eecaba2048190b9a30c2722528cbaddc36712369117ac4863b2bc76f3d530",
+  "localResultsSHA256": "4954a1d70c6c03ea1ca416435e5b432d158be057bd3fc0ea6464a6a1dbf36f3f",
+  "localPositiveAccepted": 0,
+  "localPositiveTotal": 4,
+  "fullNativeErasurePathExercisedByThisProbe": false,
+  "codeVerdict": "Do not promote this v1 as reliable source notehead ownership evidence. No new full-native output loss is claimed."
+}

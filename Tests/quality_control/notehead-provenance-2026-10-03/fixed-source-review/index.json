@@ -1,0 +1,507 @@
+[
+  {
+    "name": "filledOuter-rotated-r0.5",
+    "finding": "Repaired filled body",
+    "usesTiedSupplement": false,
+    "sourceImage": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/filledOuter-rotated.png",
+    "sourceImageSHA256": "2204cb27a1360262cad89d4611dcf73d37b7dab1239cb99e4ce029b15ed5e237",
+    "analysisImageSize": [
+      360,
+      300
+    ],
+    "sourceSize": [
+      720,
+      600
+    ],
+    "rows": [
+      {
+        "owner": 0,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/filledOuter-rotated-owner0.png",
+        "sourceMaskSHA256": "44dfbb594983a7dc6c0728e1e9b5bb60ae5a725c512adf5143272d2795d250fa",
+        "before": {
+          "crop": [
+            0,
+            119,
+            720,
+            245.5714770170292
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 645
+        },
+        "after": {
+          "crop": [
+            0,
+            119,
+            720,
+            415.00000000000006
+          ],
+          "envelope": [
+            133,
+            140,
+            519,
+            407
+          ],
+          "owner": 0,
+          "preserved": true,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 0
+        }
+      },
+      {
+        "owner": 1,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/filledOuter-rotated-owner1.png",
+        "sourceMaskSHA256": "5d55e85665374d5703338c1e13590a3f94b0268f1914226a34eae18c291c4ab6",
+        "before": {
+          "crop": [
+            0,
+            291,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 521
+        },
+        "after": {
+          "crop": [
+            0,
+            147,
+            720,
+            415.5714770170292
+          ],
+          "envelope": [
+            193,
+            169,
+            519,
+            407
+          ],
+          "owner": 1,
+          "preserved": true,
+          "sourcePixelCount": 1361,
+          "sourcePixelsOutsideCrop": 0
+        }
+      }
+    ],
+    "reviewImage": "/Users/will/Documents/git/partsmith/.build/notehead-provenance-2026-10-03/fixed-source-review/filledOuter-rotated-r0.5.png",
+    "reviewImageSHA256": "57d87828a1c181627b44511828aa3523c723447dc779407e93f4b886f98953f6"
+  },
+  {
+    "name": "hollowOuter-straight-r1.0",
+    "finding": "Repaired hollow body",
+    "usesTiedSupplement": false,
+    "sourceImage": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/hollowOuter-straight.png",
+    "sourceImageSHA256": "f3fdb5e434bf7c2301594015bfac8a6581b73c350740074fa9fc688fe35cf022",
+    "analysisImageSize": [
+      720,
+      600
+    ],
+    "sourceSize": [
+      720,
+      600
+    ],
+    "rows": [
+      {
+        "owner": 0,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/hollowOuter-straight-owner0.png",
+        "sourceMaskSHA256": "cb7742fdcd5ebc2f51fd88b67dd714eb6f7c1c70b7a52ea4e0b3cffc3d778ed5",
+        "before": {
+          "crop": [
+            0,
+            126,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        "after": {
+          "crop": [
+            0,
+            126,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": true,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 0
+        }
+      },
+      {
+        "owner": 1,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/hollowOuter-straight-owner1.png",
+        "sourceMaskSHA256": "1dbbdb886e5f1cd09c1bcd2732937331abaa0c9358cad68663ecd3ee1cb18cac",
+        "before": {
+          "crop": [
+            0,
+            296,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 474
+        },
+        "after": {
+          "crop": [
+            0,
+            142.99999999999997,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": true,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 0
+        }
+      }
+    ],
+    "reviewImage": "/Users/will/Documents/git/partsmith/.build/notehead-provenance-2026-10-03/fixed-source-review/hollowOuter-straight-r1.0.png",
+    "reviewImageSHA256": "5bd8c0efd9ae093c5c7e45e3d0a39ecbaee556a02792edfb96e1f3a2358108fd"
+  },
+  {
+    "name": "filledIncomingTie-bowed-r1.0",
+    "finding": "Repaired head with incoming tie",
+    "usesTiedSupplement": true,
+    "sourceImage": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/tied-sources/filledIncomingTie-bowed.png",
+    "sourceImageSHA256": "7d5d7a409bf9f1c2b667fa2496efe939db24cce8c7ce7f7dc5091c57a215fc28",
+    "analysisImageSize": [
+      720,
+      600
+    ],
+    "sourceSize": [
+      720,
+      600
+    ],
+    "rows": [
+      {
+        "owner": 0,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/tied-sources/filledIncomingTie-bowed-owner0.png",
+        "sourceMaskSHA256": "761171b4a43839054d1963e0e9924232494e4b812f83d5328ff7c5b5c7c671df",
+        "before": {
+          "crop": [
+            0,
+            130,
+            720,
+            247
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1561,
+          "sourcePixelsOutsideCrop": 624
+        },
+        "after": {
+          "crop": [
+            0,
+            130,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            133,
+            151,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": true,
+          "sourcePixelCount": 1561,
+          "sourcePixelsOutsideCrop": 0
+        }
+      },
+      {
+        "owner": 1,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/tied-sources/filledIncomingTie-bowed-owner1.png",
+        "sourceMaskSHA256": "2f3af4ab9848aa929a12dcf31e2aa4b4d758b7020d8f00486682fcee8b194bf0",
+        "before": {
+          "crop": [
+            0,
+            299,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            155,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1561,
+          "sourcePixelsOutsideCrop": 760
+        },
+        "after": {
+          "crop": [
+            0,
+            142.99999999999997,
+            720,
+            409.2838233741584
+          ],
+          "envelope": [
+            193,
+            155,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": true,
+          "sourcePixelCount": 1561,
+          "sourcePixelsOutsideCrop": 0
+        }
+      }
+    ],
+    "reviewImage": "/Users/will/Documents/git/partsmith/.build/notehead-provenance-2026-10-03/fixed-source-review/filledIncomingTie-bowed-r1.0.png",
+    "reviewImageSHA256": "e8e9793ab9169a6c92447f3602e2416d10bd05700f8735b220010a52d9352e66"
+  },
+  {
+    "name": "filledStemInterrupted-straight-r1.0",
+    "finding": "Unresolved interrupted stem",
+    "usesTiedSupplement": false,
+    "sourceImage": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/filledStemInterrupted-straight.png",
+    "sourceImageSHA256": "a94d7e7c2c09bfdd001b738edbaec68b973776804daa4c7c53665d87d15159fe",
+    "analysisImageSize": [
+      720,
+      600
+    ],
+    "sourceSize": [
+      720,
+      600
+    ],
+    "rows": [
+      {
+        "owner": 0,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/filledStemInterrupted-straight-owner0.png",
+        "sourceMaskSHA256": "12f08a0b5a97922006ce2c31c1b16212f9abd58eb89af642481763db076f7dfb",
+        "before": {
+          "crop": [
+            0,
+            126,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": true,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 0
+        },
+        "after": {
+          "crop": [
+            0,
+            126,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": true,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 0
+        }
+      },
+      {
+        "owner": 1,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/filledStemInterrupted-straight-owner1.png",
+        "sourceMaskSHA256": "61045d9e93b1be02b54cc9f5a8d15739194c37ce78ae10970cb5f075dd6d61e9",
+        "before": {
+          "crop": [
+            0,
+            183,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        },
+        "after": {
+          "crop": [
+            0,
+            183,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1352,
+          "sourcePixelsOutsideCrop": 212
+        }
+      }
+    ],
+    "reviewImage": "/Users/will/Documents/git/partsmith/.build/notehead-provenance-2026-10-03/fixed-source-review/filledStemInterrupted-straight-r1.0.png",
+    "reviewImageSHA256": "6827c62bf812a3c8aabb8ec1daae67b72ad015a4fbcadbd19bd773f1f43a44d0"
+  },
+  {
+    "name": "hollowOuter-straight-r0.5",
+    "finding": "Unresolved half-resolution hollow head",
+    "usesTiedSupplement": false,
+    "sourceImage": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/hollowOuter-straight.png",
+    "sourceImageSHA256": "f3fdb5e434bf7c2301594015bfac8a6581b73c350740074fa9fc688fe35cf022",
+    "analysisImageSize": [
+      360,
+      300
+    ],
+    "sourceSize": [
+      720,
+      600
+    ],
+    "rows": [
+      {
+        "owner": 0,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/hollowOuter-straight-owner0.png",
+        "sourceMaskSHA256": "cb7742fdcd5ebc2f51fd88b67dd714eb6f7c1c70b7a52ea4e0b3cffc3d778ed5",
+        "before": {
+          "crop": [
+            0,
+            125,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        },
+        "after": {
+          "crop": [
+            0,
+            125,
+            720,
+            241
+          ],
+          "envelope": [
+            133,
+            147,
+            519,
+            402
+          ],
+          "owner": 0,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 562
+        }
+      },
+      {
+        "owner": 1,
+        "sourceMask": "/Users/will/Documents/git/partsmith/Tests/quality_control/terminal-body-independent-2026-10-03/sources/hollowOuter-straight-owner1.png",
+        "sourceMaskSHA256": "1dbbdb886e5f1cd09c1bcd2732937331abaa0c9358cad68663ecd3ee1cb18cac",
+        "before": {
+          "crop": [
+            0,
+            294.99999999999994,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 471
+        },
+        "after": {
+          "crop": [
+            0,
+            294.99999999999994,
+            720,
+            409.00000000000006
+          ],
+          "envelope": [
+            193,
+            164,
+            519,
+            402
+          ],
+          "owner": 1,
+          "preserved": false,
+          "sourcePixelCount": 1204,
+          "sourcePixelsOutsideCrop": 471
+        }
+      }
+    ],
+    "reviewImage": "/Users/will/Documents/git/partsmith/.build/notehead-provenance-2026-10-03/fixed-source-review/hollowOuter-straight-r0.5.png",
+    "reviewImageSHA256": "6d6d2d43a213d1e88f1321ccea1a9871bb84bd196b0d97bb5338c25866841e47"
+  }
+]

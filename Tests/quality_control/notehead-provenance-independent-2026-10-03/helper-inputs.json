@@ -1,0 +1,798 @@
+{
+  "holdoutsSHA256": "f9ae21baf633a86a217d260c54db97751a88f4984f76f5f17fa2836e69186a2c",
+  "parametersPreparedBeforeHelperExecution": true,
+  "cases": [
+    {
+      "id": "P01-hollow-up-stem-bottom-line",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 879,
+      "strokeRight": 881,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        340.00000000000006,
+        347.99999999999994,
+        355.99999999999994,
+        364.42700729927003,
+        372.57874015748035
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        878,
+        344,
+        882,
+        378
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 12
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        867,
+        369,
+        883,
+        381
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P02-hollow-down-stem-staff-intersection",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 188,
+      "strokeRight": 190,
+      "staffSpace": 8.016210374639769,
+      "staffLinesAtSpine": [
+        714.0,
+        722.0,
+        730.0066312997347,
+        738.0261780104713,
+        746.0648414985591
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        187,
+        720,
+        191,
+        751
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 8
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        186,
+        716,
+        200,
+        729
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P03-filled-tied-bottom-line",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 246,
+      "strokeRight": 248,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        340.00000000000006,
+        347.99999999999994,
+        355.99999999999994,
+        364.42700729927003,
+        372.57874015748035
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        244,
+        342,
+        248,
+        373
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 12
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        236,
+        366,
+        249,
+        378
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P04-filled-ledger-long-down-stem",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 308,
+      "strokeRight": 311,
+      "staffSpace": 8.129215851602027,
+      "staffLinesAtSpine": [
+        117.4831365935919,
+        125.49999999999999,
+        134.0130890052356,
+        142.0,
+        150.0
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        307,
+        94,
+        312,
+        131
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 23
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        307,
+        85,
+        323,
+        98
+      ],
+      "bodyCenterInHelperVerticalSearchRange": false
+    },
+    {
+      "id": "P05-filled-near-barline-own-stem",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 432,
+      "strokeRight": 436,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        340.00000000000006,
+        347.99999999999994,
+        355.99999999999994,
+        364.42700729927003,
+        372.57874015748035
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        432,
+        332,
+        436,
+        363
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 14
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        423,
+        357,
+        436,
+        369
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "P06-filled-head-with-touching-tie",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png",
+      "imageSHA256": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4",
+      "strokeLeft": 398,
+      "strokeRight": 400,
+      "staffSpace": 8.261441725625673,
+      "staffLinesAtSpine": [
+        1743.8878260299643,
+        1751.956239281976,
+        1760.3948707640257,
+        1768.3617980039535,
+        1776.933592932467
+      ],
+      "skewSlope": -0.0027925340621132782,
+      "upper": true,
+      "sourceCorridor": [
+        398,
+        1759,
+        403,
+        1788
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 13
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        398,
+        1753,
+        410,
+        1767
+      ],
+      "bodyCenterInHelperVerticalSearchRange": false
+    },
+    {
+      "id": "P07-filled-ledger-up-stem",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png",
+      "imageSHA256": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4",
+      "strokeLeft": 407,
+      "strokeRight": 409,
+      "staffSpace": 8.25228728270804,
+      "staffLinesAtSpine": [
+        1832.3689664288208,
+        1840.8383672986395,
+        1848.866016346102,
+        1857.323669098673,
+        1865.378115559653
+      ],
+      "skewSlope": -0.0027925340621132782,
+      "upper": false,
+      "sourceCorridor": [
+        404,
+        1844,
+        409,
+        1880
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 12
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        396,
+        1871,
+        409,
+        1884
+      ],
+      "bodyCenterInHelperVerticalSearchRange": false
+    },
+    {
+      "id": "N01-nearby-filled-head-not-barline-attached",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 409,
+      "strokeRight": 411,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        340.00000000000006,
+        347.99999999999994,
+        355.99999999999994,
+        364.42700729927003,
+        372.57874015748035
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        409,
+        316,
+        412,
+        372
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 32
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        423,
+        357,
+        436,
+        369
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "N02-nearby-hollow-head-not-barline-attached",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 852,
+      "strokeRight": 855,
+      "staffSpace": 8.144685039370074,
+      "staffLinesAtSpine": [
+        340.00000000000006,
+        347.99999999999994,
+        355.99999999999994,
+        364.42700729927003,
+        372.57874015748035
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        851,
+        328,
+        855,
+        372
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 25
+      },
+      "geometryProvenance": "Frozen native staff geometry at independently source-selected tested spine; no body labels inferred from native component ownership.",
+      "sourceBodyROI": [
+        867,
+        369,
+        883,
+        381
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F01-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png",
+      "imageSHA256": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4",
+      "strokeLeft": 495,
+      "strokeRight": 499,
+      "staffSpace": 8.25228728270804,
+      "staffLinesAtSpine": [
+        1743.6183464929704,
+        1751.686759744982,
+        1760.1253912270317,
+        1768.0923184669596,
+        1776.6641133954731
+      ],
+      "skewSlope": -0.0027925340621132782,
+      "upper": true,
+      "sourceCorridor": [
+        495,
+        1711,
+        499,
+        1778
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 15
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        499,
+        1748,
+        502,
+        1750
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F02-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png",
+      "imageSHA256": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4",
+      "strokeLeft": 714,
+      "strokeRight": 718,
+      "staffSpace": 8.25228728270804,
+      "staffLinesAtSpine": [
+        1743.0067815333675,
+        1751.0751947853792,
+        1759.5138262674288,
+        1767.4807535073567,
+        1776.0525484358702
+      ],
+      "skewSlope": -0.0027925340621132782,
+      "upper": true,
+      "sourceCorridor": [
+        714,
+        1710,
+        718,
+        1777
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 15
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        718,
+        1747,
+        721,
+        1749
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F03-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p10",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p10.png",
+      "imageSHA256": "0ac42b40c07265e15c500d61e82afcbc509981fe2b12d9e9b3e64a166c6cbf4f",
+      "strokeLeft": 995,
+      "strokeRight": 998,
+      "staffSpace": 8.237690263748199,
+      "staffLinesAtSpine": [
+        171.94890193520328,
+        179.98632946001368,
+        188.0231767614339,
+        196.91137828458108,
+        204.89966299019608
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        995,
+        139,
+        998,
+        206
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 18
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        998,
+        174,
+        1001,
+        176
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F04-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p24",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p24.png",
+      "imageSHA256": "8bf5ae845f91712ba2451518b0a2bae8a94c814efcabc1b6f3ea9d6b60803b8c",
+      "strokeLeft": 656,
+      "strokeRight": 659,
+      "staffSpace": 8.495711772075765,
+      "staffLinesAtSpine": [
+        1193.0016489405555,
+        1201.511919644155,
+        1210.0006105503094,
+        1218.0076106631561,
+        1227.0000000000002
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        656,
+        1159,
+        659,
+        1228
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 21
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        659,
+        1194,
+        662,
+        1197
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F05-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p28",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p28.png",
+      "imageSHA256": "c93651c94b9dc39094265a974e35ac7728303e26c1192862d36263c506ddb92c",
+      "strokeLeft": 858,
+      "strokeRight": 861,
+      "staffSpace": 8.249999999999943,
+      "staffLinesAtSpine": [
+        1343.1256641195623,
+        1351.1516832002217,
+        1359.121437576874,
+        1367.5551286915404,
+        1376.125664119562
+      ],
+      "skewSlope": -0.0031416029890561563,
+      "upper": true,
+      "sourceCorridor": [
+        858,
+        1310,
+        861,
+        1377
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 17
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        855,
+        1347,
+        858,
+        1349
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F06-structural-intersection",
+      "pageID": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p41",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p41.png",
+      "imageSHA256": "c3b3303587e65c04e6d5f850b3fa22ec14a5a0c9224926980b30d543e49482a8",
+      "strokeLeft": 711,
+      "strokeRight": 714,
+      "staffSpace": 11,
+      "staffLinesAtSpine": [
+        2113.5836948482897,
+        2124.5836948482897,
+        2136.0214921406427,
+        2146.5836948482897,
+        2157.5836948482897
+      ],
+      "skewSlope": 0.004886960809121381,
+      "upper": true,
+      "sourceCorridor": [
+        711,
+        2070,
+        714,
+        2159
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 25
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        707,
+        2117,
+        711,
+        2120
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F07-structural-intersection",
+      "pageID": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p47",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p47.png",
+      "imageSHA256": "46e9c85fd4c2ade85ace904382ca87522de6ce5280d993b426c05aed11e4ff61",
+      "strokeLeft": 1571,
+      "strokeRight": 1574,
+      "staffSpace": 11,
+      "staffLinesAtSpine": [
+        2140.7254977245457,
+        2151.7254977245457,
+        2162.7254977245457,
+        2173.7254977245457,
+        2184.7254977245457
+      ],
+      "skewSlope": 0.006283267991889772,
+      "upper": true,
+      "sourceCorridor": [
+        1571,
+        2097,
+        1574,
+        2186
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 25
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        1574,
+        2147,
+        1578,
+        2150
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F08-structural-intersection",
+      "pageID": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p3",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p3.png",
+      "imageSHA256": "d780acc35f34fb58df7f9263050096c4bbda134e671c10c5d4c2447f24bdaa86",
+      "strokeLeft": 1650,
+      "strokeRight": 1653,
+      "staffSpace": 10.492769146542287,
+      "staffLinesAtSpine": [
+        2158.00335611423,
+        2168.4131625101595,
+        2179.0011906179307,
+        2188.9776636140277,
+        2200.079694407818
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        1650,
+        2158,
+        1653,
+        2243
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 24
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        1646,
+        2197,
+        1650,
+        2200
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F09-structural-intersection",
+      "pageID": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p44",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p44.png",
+      "imageSHA256": "d31391bc56209bcc72a074c1e55033883191896bb87a9c6906a699e594ca6360",
+      "strokeLeft": 236,
+      "strokeRight": 240,
+      "staffSpace": 10.742039760355567,
+      "staffLinesAtSpine": [
+        2040.0089646640213,
+        2050.455323758317,
+        2061.4730518865636,
+        2071.4561670067365,
+        2082.977123705444
+      ],
+      "skewSlope": 0.0031416029890561563,
+      "upper": true,
+      "sourceCorridor": [
+        235,
+        1997,
+        240,
+        2084
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 26
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        231,
+        2045,
+        235,
+        2048
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F10-structural-intersection",
+      "pageID": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p63",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p63.png",
+      "imageSHA256": "e72226e9f960a575e47797c67eec563cb0dce61bfa2336977291371ca4616db6",
+      "strokeLeft": 1540,
+      "strokeRight": 1545,
+      "staffSpace": 10.486802389079791,
+      "staffLinesAtSpine": [
+        155.07459593866557,
+        165.96782650142993,
+        176.4513603891169,
+        186.46153277112,
+        197.02180549498473
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        1540,
+        113,
+        1545,
+        198
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 29
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        1545,
+        162,
+        1549,
+        165
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F11-structural-intersection",
+      "pageID": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p30",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p30.png",
+      "imageSHA256": "6813d274e4eeefde91f566c93506e5a06d3f98f9a0d49c81d9ae711821a3497b",
+      "strokeLeft": 1693,
+      "strokeRight": 1695,
+      "staffSpace": 8.25,
+      "staffLinesAtSpine": [
+        1122.5117205182203,
+        1130.5239254984385,
+        1139.5376666686843,
+        1148.4923692157372,
+        1156.5253861369092
+      ],
+      "skewSlope": 0.0031416029890561563,
+      "upper": false,
+      "sourceCorridor": [
+        1693,
+        1124,
+        1696,
+        1191
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 17
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        1690,
+        1154,
+        1693,
+        1156
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F12-structural-intersection",
+      "pageID": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p32",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p32.png",
+      "imageSHA256": "fa56c0f0597956e4170b3a28cfadc752f99201ec42473974373593c8d1101156",
+      "strokeLeft": 1087,
+      "strokeRight": 1089,
+      "staffSpace": 8.278398996159552,
+      "staffLinesAtSpine": [
+        143.47933457325894,
+        151.5573888091822,
+        160.45060712080675,
+        169.07521773555027,
+        177.02308136180034
+      ],
+      "skewSlope": 0.0,
+      "upper": true,
+      "sourceCorridor": [
+        1087,
+        110,
+        1089,
+        177
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 18
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        1089,
+        144,
+        1092,
+        146
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    },
+    {
+      "id": "F13-structural-intersection",
+      "pageID": "corrected-brahms93521:p38",
+      "imagePath": "/Users/will/Documents/git/partsmith/Tests/quality_control/notehead-provenance-independent-2026-10-03/source/corrected-brahms93521-p38.png",
+      "imageSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "strokeLeft": 409,
+      "strokeRight": 411,
+      "staffSpace": 8.11579189686924,
+      "staffLinesAtSpine": [
+        340.00000000000006,
+        347.99999999999994,
+        355.99999999999994,
+        364.42700729927003,
+        372.57874015748035
+      ],
+      "skewSlope": 0.0,
+      "upper": false,
+      "sourceCorridor": [
+        409,
+        341,
+        411,
+        406
+      ],
+      "physicalSpineMeasurement": {
+        "method": "Median black row-run endpoints inside frozen corridor, excluding frozen head vertical interval and staff lines +/-2 rows; threshold190 matches native original pixels. Measurements fixed before helper execution.",
+        "sampleRows": 20
+      },
+      "geometryProvenance": "Exact frozen diagnostic staff-line coordinates plus recorded actual core shift; old witness only specifies test location, not expected classification.",
+      "sourceBodyROI": [
+        411,
+        374,
+        414,
+        376
+      ],
+      "bodyCenterInHelperVerticalSearchRange": true
+    }
+  ]
+}

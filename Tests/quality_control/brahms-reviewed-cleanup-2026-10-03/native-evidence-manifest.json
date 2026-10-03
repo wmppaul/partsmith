@@ -1,0 +1,412 @@
+[
+  {
+    "path": "Core-hashes.json",
+    "bytes": 2704,
+    "sha256": "a772ca93a454ffbf8e240c5937ad1f3b733a8f5cf875de6feb0e85a1c03f668b"
+  },
+  {
+    "path": "Core/Detection/NativeScorePageAnalyzer.swift",
+    "bytes": 49240,
+    "sha256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01"
+  },
+  {
+    "path": "Core/Detection/ScoreExtractionPlanner.swift",
+    "bytes": 67486,
+    "sha256": "0cfd6f6fdb1b926a16c4984f63a6d0a4fdf0261878875508916c646a739784b2"
+  },
+  {
+    "path": "Core/Detection/ScoreInputPageSelection.swift",
+    "bytes": 1771,
+    "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+  },
+  {
+    "path": "Core/Detection/ScoreInstrumentNameDetector.swift",
+    "bytes": 14190,
+    "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+  },
+  {
+    "path": "Core/Detection/ScoreInstrumentPickList.swift",
+    "bytes": 4398,
+    "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+  },
+  {
+    "path": "Core/Detection/ScoreLocalEndingPreservation.swift",
+    "bytes": 12513,
+    "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+  },
+  {
+    "path": "Core/Detection/ScoreRestDetector.swift",
+    "bytes": 33332,
+    "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedDestinationDetector.swift",
+    "bytes": 19161,
+    "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedDirectionReview.swift",
+    "bytes": 15804,
+    "sha256": "d94b419d7031143bf29ece8184bb7d035283fc7b31559511c90974c130418f99"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedDirectionWorkflow.swift",
+    "bytes": 21556,
+    "sha256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedEnding.swift",
+    "bytes": 3285,
+    "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedEndingDetector.swift",
+    "bytes": 19141,
+    "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedHeadingDetector.swift",
+    "bytes": 18663,
+    "sha256": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9"
+  },
+  {
+    "path": "Core/Detection/ScoreSharedNavigationDetector.swift",
+    "bytes": 11707,
+    "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+  },
+  {
+    "path": "Core/Detection/ScoreSourceHeaderDetector.swift",
+    "bytes": 8337,
+    "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+  },
+  {
+    "path": "Core/Detection/StaffBandDetector.swift",
+    "bytes": 29163,
+    "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+  },
+  {
+    "path": "Core/DocumentModel/BarNumberDetector.swift",
+    "bytes": 13742,
+    "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+  },
+  {
+    "path": "Core/DocumentModel/PageRectificationEstimator.swift",
+    "bytes": 7587,
+    "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+  },
+  {
+    "path": "Core/DocumentModel/PartsmithDocument.swift",
+    "bytes": 129119,
+    "sha256": "0365fdccc9e87654d1a98591ad95a33e228973dbffe876cd582405e39e0efcb8"
+  },
+  {
+    "path": "Core/DocumentModel/ProjectModels.swift",
+    "bytes": 32622,
+    "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+  },
+  {
+    "path": "Core/Export/PartPDFExporter.swift",
+    "bytes": 22670,
+    "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+  },
+  {
+    "path": "Core/Export/PartPreviewRenderer.swift",
+    "bytes": 4568,
+    "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+  },
+  {
+    "path": "Core/Layout/PartLayoutEngine.swift",
+    "bytes": 34747,
+    "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+  },
+  {
+    "path": "baseline-parts/Brahms baseline reexport.partsmithproject/project.json",
+    "bytes": 269575,
+    "sha256": "700a5d9fa96160ad87068c67b915b35e9e0f677de391c822586bed13791607b5"
+  },
+  {
+    "path": "baseline-parts/layout-page-breaks.json",
+    "bytes": 120,
+    "sha256": "49cca9f84d20895a42134d60bedd3066ad268c4791dfde989ac9b8bc5c9e02d1"
+  },
+  {
+    "path": "baseline-parts/manifest.json",
+    "bytes": 546183,
+    "sha256": "3f6073c7d54a9ec1480c343219cb9f50070d660f3fbf015de14fa71cb318f7e5"
+  },
+  {
+    "path": "build-title-final.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "changed-pages-01.png",
+    "bytes": 783155,
+    "sha256": "4d8a97acc51a954703beef9a12e8593ec71864f248470797b1d06d9eea4dc51c"
+  },
+  {
+    "path": "changed-pages-02.png",
+    "bytes": 896298,
+    "sha256": "e1d8df4614f17b0ba21728534a5f104e45c58c15bd3b064dec00a77441607a4e"
+  },
+  {
+    "path": "changed-pages-03.png",
+    "bytes": 837865,
+    "sha256": "a8db3bbdb0b947687019d29721ff589c792101578370a2bab00e9f0648b6f848"
+  },
+  {
+    "path": "changed-pages-04.png",
+    "bytes": 741315,
+    "sha256": "ba2f3d8b4b2e5ed2bf2da6428f7ce2088b9a712390c794eef770886cda1bbad4"
+  },
+  {
+    "path": "changed-pages-05.png",
+    "bytes": 149032,
+    "sha256": "79c064faf8d5d565ffe06afb3f14578b488b59bf7b76b8ccf705ceabcac3a2d8"
+  },
+  {
+    "path": "date-harness-check-failure.log",
+    "bytes": 457,
+    "sha256": "3ab21999efa233c39c01eb7c90d573cf29d5d6568a63ae2b44a624540644df83"
+  },
+  {
+    "path": "export-title-final.log",
+    "bytes": 382,
+    "sha256": "3ee71a8865c2461f7eb99e7978824b1d13979a54bd440f095e07a6d129ffc7a3"
+  },
+  {
+    "path": "export_manual.swift",
+    "bytes": 10270,
+    "sha256": "d381bd1e69e26ed6b3756a6c8a80ec34e0da68805d1bc716e9be3c2551cfe156"
+  },
+  {
+    "path": "manual-parts/Brahms String Quartet No. 3 Op. 67 \u2014 Manually reviewed.partsmithproject/project.json",
+    "bytes": 269572,
+    "sha256": "eab6e4e0b8b98f91ae2b8ad7333031fc419fd62f5ba55080067df0eb159bc557"
+  },
+  {
+    "path": "manual-parts/REVIEW.md",
+    "bytes": 1640,
+    "sha256": "7800093d8087fc07e1b244b51624098716151947ea2b59bb4b1ad42fdf9df0cf"
+  },
+  {
+    "path": "manual-parts/layout-page-breaks.json",
+    "bytes": 120,
+    "sha256": "49cca9f84d20895a42134d60bedd3066ad268c4791dfde989ac9b8bc5c9e02d1"
+  },
+  {
+    "path": "manual-parts/manifest.json",
+    "bytes": 527511,
+    "sha256": "5c0f202c10a715a3fc56b87301b55baced03199f7f2045e04d34b0eb365076ae"
+  },
+  {
+    "path": "manual-parts/manual-crop-review.json",
+    "bytes": 10714,
+    "sha256": "bc80eb816f0ac47ff39f84c4b2363e7e7317e6a0425d08302488657541ab477b"
+  },
+  {
+    "path": "manual-parts/plan.json",
+    "bytes": 532563,
+    "sha256": "222fc79313117b42471d05f9fbaa30700a3de9bf5b25fd74c170e07f469728db"
+  },
+  {
+    "path": "manual-parts/provenance.json",
+    "bytes": 1842,
+    "sha256": "adac6888e0cae89f872a28e6818e5a25557614aea5b5b319eae85764ac664843"
+  },
+  {
+    "path": "output-comparison.json",
+    "bytes": 44490,
+    "sha256": "2e07ee8a2c87005cb28947dc042c805a07b3531cfd412368868a1459baa23406"
+  },
+  {
+    "path": "output-details/p24-s2-cello.png",
+    "bytes": 48771,
+    "sha256": "476c5c5d0aeb919979d8f87d3988a01ec0e162fac11711958ecd575d4264396a"
+  },
+  {
+    "path": "output-details/p24-s2-viola.png",
+    "bytes": 49990,
+    "sha256": "3da6e92a7823d14fd9c41843fcdf5bc38a6b213e108e6efb08f7423f5d591594"
+  },
+  {
+    "path": "output-details/p28-s1-violin1.png",
+    "bytes": 99098,
+    "sha256": "42f33ef946801a9212d1796c26668132ad5924702942fa4320a4d72bcaeaff3a"
+  },
+  {
+    "path": "output-details/p28-s1-violin2.png",
+    "bytes": 91300,
+    "sha256": "fcc1d65222e3ba85d2787a0b264a784ef0b971248759a7036c920ec70abbd42d"
+  },
+  {
+    "path": "output-details/p31-s1-violin2.png",
+    "bytes": 41221,
+    "sha256": "d2e145fdbe7fb87da6b37f5e2788323681cfa80636115b78226ab628537f2251"
+  },
+  {
+    "path": "output-details/p38-s1-cello.png",
+    "bytes": 83032,
+    "sha256": "1af74afc1820438f36a96255ffb3b69a50cc5d77260c30b45d2de7184f500736"
+  },
+  {
+    "path": "output-details/p38-s1-viola.png",
+    "bytes": 125154,
+    "sha256": "667b42057af049908e4115a66f623665da78d64349d57e478955473c4dd167a7"
+  },
+  {
+    "path": "output-details/viola-turn-10-11.png",
+    "bytes": 313665,
+    "sha256": "083d9560fbd3fc467391e065d283391690bfb21d56479e557509ebac72228d37"
+  },
+  {
+    "path": "output-details/viola-turn-11-12.png",
+    "bytes": 323323,
+    "sha256": "2f37b6801d668c75bd0d640b9e7ce45af1d377272738892ba92a1cadf5160731"
+  },
+  {
+    "path": "output-details/viola-turn-12-13.png",
+    "bytes": 340999,
+    "sha256": "926b028e97b8139e5f2cf7dc8cbb322e2c98fc2596fbfb00a66753d899c70fea"
+  },
+  {
+    "path": "rendered/manual/cello/page-01.png",
+    "bytes": 259437,
+    "sha256": "87b3c3756cb10761c941282df0b2db87012a7c36d2c80e141f87687c2ad4e677"
+  },
+  {
+    "path": "rendered/manual/cello/page-09.png",
+    "bytes": 319329,
+    "sha256": "d4c4e6c291b2a07aba676608c8719882f3e744273097923b6345156f95407086"
+  },
+  {
+    "path": "rendered/manual/cello/page-15.png",
+    "bytes": 342110,
+    "sha256": "bd9d4decf05a3e4c91b3c4687a6cb571a9f547f0111b02fd34ae9864f09d82d6"
+  },
+  {
+    "path": "rendered/manual/viola/page-01.png",
+    "bytes": 307752,
+    "sha256": "3c3aee2559bad0334b709e1b4f62d376f86a8c03566dbc7851f7aa40c316b485"
+  },
+  {
+    "path": "rendered/manual/viola/page-02.png",
+    "bytes": 279900,
+    "sha256": "9439a8b0cedd22c24939333b7469a401cfb170f9f2f4d279c74c92b36d26c86f"
+  },
+  {
+    "path": "rendered/manual/viola/page-03.png",
+    "bytes": 377830,
+    "sha256": "2f8bf0c6b7d098fc523038fb764e24db07965163e50006fee74887802cc3d50d"
+  },
+  {
+    "path": "rendered/manual/viola/page-04.png",
+    "bytes": 309837,
+    "sha256": "d924ced14a0fab8ccde3ba8917a06fcd22bd51e2ac92016f7d31c042d13a0c86"
+  },
+  {
+    "path": "rendered/manual/viola/page-05.png",
+    "bytes": 332467,
+    "sha256": "1bb8fec30155423682043a8a8e4da6033c95fca432306193b443f70c51c4f91f"
+  },
+  {
+    "path": "rendered/manual/viola/page-06.png",
+    "bytes": 291469,
+    "sha256": "4928d20829806f366c956bd14048437664c8440eca9e097b4213f315ea3c7c8f"
+  },
+  {
+    "path": "rendered/manual/viola/page-07.png",
+    "bytes": 379634,
+    "sha256": "d0529634718f76fef4ab832531dc40c7429717311257e00c58a2f78eeb66e0a3"
+  },
+  {
+    "path": "rendered/manual/viola/page-08.png",
+    "bytes": 344646,
+    "sha256": "9797c72decd8bd263bbb9326a7f0acdc18e655753581b69b9579072beb8cbe94"
+  },
+  {
+    "path": "rendered/manual/viola/page-09.png",
+    "bytes": 316103,
+    "sha256": "6ce254b446ee7d7919d8d4c39b6b02c1ad85b5ca356c7921abd1bdbe55747dd4"
+  },
+  {
+    "path": "rendered/manual/viola/page-10.png",
+    "bytes": 363024,
+    "sha256": "140add435876f36270177b4e751bd2b4d8682028b515f800081dfd648fca1682"
+  },
+  {
+    "path": "rendered/manual/viola/page-11.png",
+    "bytes": 276746,
+    "sha256": "4129ae260fbc2586e10697ffba85f51f493a0c8bf2a3ca72facd0fe5b5bb4fe1"
+  },
+  {
+    "path": "rendered/manual/viola/page-12.png",
+    "bytes": 347762,
+    "sha256": "98d1ef8efb7d4839dd406a75364a669053f17b697ffef03bfdd0c26ef61e2f8d"
+  },
+  {
+    "path": "rendered/manual/viola/page-13.png",
+    "bytes": 276206,
+    "sha256": "4668f30c844b4a357304dd5af2799179ca5389645c4b60643e6b9f2dd415bcb8"
+  },
+  {
+    "path": "rendered/manual/viola/page-14.png",
+    "bytes": 282666,
+    "sha256": "403fd459b99c2b22a527f3243c30c94bdfee4c14c8706af1d924f1f8dcd3f5d7"
+  },
+  {
+    "path": "rendered/manual/viola/page-15.png",
+    "bytes": 288885,
+    "sha256": "5292e2d6d2ddd730de4abd9437d22c4c518b0e76c27128ebc8c199dc47d918bd"
+  },
+  {
+    "path": "rendered/manual/viola/page-16.png",
+    "bytes": 245612,
+    "sha256": "d7ce1c4a8bdcfde7b374141490bf146c72082ff7e676f2768f1feda573be5292"
+  },
+  {
+    "path": "rendered/manual/viola/page-17.png",
+    "bytes": 364155,
+    "sha256": "ceb55b41933f0cc09b3c0515abc12dd800dc600709b77451f1647013423c645c"
+  },
+  {
+    "path": "rendered/manual/violin1/page-01.png",
+    "bytes": 299799,
+    "sha256": "68f449e07a51285966416c8c180f29d85c506db5b5c2a474a216fe6bee7d0f5b"
+  },
+  {
+    "path": "rendered/manual/violin1/page-12.png",
+    "bytes": 289892,
+    "sha256": "fafb35b87e1a2a30f5a6a1c184493da2b56ec1397032ea7016771309f0078086"
+  },
+  {
+    "path": "rendered/manual/violin2/page-01.png",
+    "bytes": 308361,
+    "sha256": "852d8c27a69f618d38025a44b18513b75ab1612841ba46ad2f2fbeb6cd04d6af"
+  },
+  {
+    "path": "rendered/manual/violin2/page-12.png",
+    "bytes": 316240,
+    "sha256": "1ed7128a115909bd212d0a77ea3b0c1f7fbbb0c17e87f7a10dcf66c6cda155a0"
+  },
+  {
+    "path": "rendered/manual/violin2/page-13.png",
+    "bytes": 290983,
+    "sha256": "4764937c9848175902d45ee0be76c4b8427e64dfc2ad492827c23ba1db2eb65d"
+  },
+  {
+    "path": "restricted-export-failure.log",
+    "bytes": 120,
+    "sha256": "725e801c0dfa1c9be0fa4b864f7f2911c97fc82b44a9e5c19f6e86b5e5383f33"
+  },
+  {
+    "path": "review_outputs.py",
+    "bytes": 7083,
+    "sha256": "cde301d2d1b0189442841c1cd619c250f5b29803f30e46df94f2a9cc6b02543a"
+  },
+  {
+    "path": "strict-subpixel-comparison.log",
+    "bytes": 607,
+    "sha256": "6bcefcd16c80d8bc309d1b9c7e39a1db284d4a66512cb40ae72adbbdaf018e77"
+  }
+]

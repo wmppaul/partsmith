@@ -1,0 +1,39 @@
+{
+  "decision": "Reject v1; real evidence fails despite synthetic preservation gains.",
+  "fixedSourcePanels": {
+    "count": 5,
+    "sourceMasksUnchanged": true,
+    "rootIndependentlyViewedAll": true,
+    "scope": "Three repairs and two explicit unresolved cases; not original-score recognition evidence."
+  },
+  "nativeCropReview": {
+    "allFourChangedNeutralCropPanelsViewed": true,
+    "sourceContextPages": 2,
+    "exactEndpointCloseups": 4,
+    "rootIndependentlyViewedThreeNewSchumannFitsAndFourCrops": true,
+    "rowsAreInitializedInstrumentBands": false,
+    "rowsAreUnresolvedNeutralStaffDiagnostics": true,
+    "ordinaryAndPriorAlternativeComponentsUnchanged": true,
+    "strictSourceContainment": true,
+    "newWholeNeighborCores": 4,
+    "sourceMusicalRepairEstablished": false
+  },
+  "fitFindings": [
+    {
+      "id": "Schumann51506 p3; x1289 and x1465",
+      "finding": "Two proposed filled bodies lie on source horizontal staff-line ink by barlines. Actual notes have their own nearby stems; these source fits do not prove their musical ownership belongs to the tested barline."
+    },
+    {
+      "id": "Schumann51506 p63; x1237",
+      "finding": "The proposed filled body lies on the bottom staff line at a barline. Predicted \u00b11-row exclusion did not eliminate actual source line-edge evidence."
+    },
+    {
+      "id": "Beethoven52624 p32; x399",
+      "finding": "The oval covers a genuine filled head connected to the visible vertical stroke. Two single-owner alternatives are added but no crop changes. This incidental source-positive observation does not change the independent0/7 result or prove a two-staff musical spine."
+    },
+    {
+      "id": "Independent F05; Brahms317803 p28",
+      "finding": "False hollow fit in a tie/staff/barline pocket; source-defined obligation unchanged. This failure is retained even though that page native plan already contained the old alternative and stays exact."
+    }
+  ]
+}

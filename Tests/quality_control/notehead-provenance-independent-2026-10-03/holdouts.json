@@ -1,0 +1,1458 @@
+{
+  "formatVersion": 1,
+  "frozenAtUTC": "2026-10-03T21:13:11.425318+00:00",
+  "productionCommit": "77f409a2d40639012918c9843895c557ba4f8a71",
+  "baselineAnalyzerSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "prototypeSeen": false,
+  "coordinateConvention": "All body/spine/envelope/context rectangles are top-left source-raster integer pixels [left,top,right,bottom), not detector-normalized boxes. Bodies were chosen from source views; larger rectangles intentionally retain crossing staff ink. They do not label every pixel as notehead.",
+  "scope": "Seven genuine notehead/stem positives, two deliberately wrong head-to-nearby-barline associations, thirteen known structural false witnesses. Real source controls complement frozen synthetic 180/36; do not replace them.",
+  "coverageGap": "No confirmed real musical single spine traversing two complete staff cores was found in the reviewed contexts. Positive ordinary/ledger stems cannot certify recovery of ambiguous long cross-staff stems.",
+  "pages": [
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourcePDFSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "physicalPageNumber": 9,
+      "raster": "source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png",
+      "rasterSHA256": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4",
+      "rasterSize": [
+        1800,
+        2368
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p9.png",
+      "priorRasterSHA256": "b43c504b17b27a8cbcf45709eb16713a77eb8480ca5687c09409c5501bc060c4"
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p10",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourcePDFSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "physicalPageNumber": 10,
+      "raster": "source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p10.png",
+      "rasterSHA256": "0ac42b40c07265e15c500d61e82afcbc509981fe2b12d9e9b3e64a166c6cbf4f",
+      "rasterSize": [
+        1800,
+        2368
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p10.png",
+      "priorRasterSHA256": "0ac42b40c07265e15c500d61e82afcbc509981fe2b12d9e9b3e64a166c6cbf4f"
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p24",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourcePDFSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "physicalPageNumber": 24,
+      "raster": "source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p24.png",
+      "rasterSHA256": "8bf5ae845f91712ba2451518b0a2bae8a94c814efcabc1b6f3ea9d6b60803b8c",
+      "rasterSize": [
+        1800,
+        2368
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p24.png",
+      "priorRasterSHA256": "8bf5ae845f91712ba2451518b0a2bae8a94c814efcabc1b6f3ea9d6b60803b8c"
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p28",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/03_brahms_symphony_no1_op68_imslp_317803.pdf",
+      "sourcePDFSHA256": "be40c09fbd9f55f0d0c923ee34e1583223fba2cd0065370c6bc879c9071f026b",
+      "physicalPageNumber": 28,
+      "raster": "source/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p28.png",
+      "rasterSHA256": "c93651c94b9dc39094265a974e35ac7728303e26c1192862d36263c506ddb92c",
+      "rasterSize": [
+        1800,
+        2368
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803-p28.png",
+      "priorRasterSHA256": "c93651c94b9dc39094265a974e35ac7728303e26c1192862d36263c506ddb92c"
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p41",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourcePDFSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "physicalPageNumber": 41,
+      "raster": "source/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p41.png",
+      "rasterSHA256": "c3b3303587e65c04e6d5f850b3fa22ec14a5a0c9224926980b30d543e49482a8",
+      "rasterSize": [
+        1800,
+        2467
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p41.png",
+      "priorRasterSHA256": "c3b3303587e65c04e6d5f850b3fa22ec14a5a0c9224926980b30d543e49482a8"
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p47",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/04_schumann_concertpiece_4_horns_op86_imslp_291222.pdf",
+      "sourcePDFSHA256": "ed207e7b625f004afd3ebc2f5a0751ddc66807710c9551cf3391fdcf7b8b8486",
+      "physicalPageNumber": 47,
+      "raster": "source/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p47.png",
+      "rasterSHA256": "46e9c85fd4c2ade85ace904382ca87522de6ce5280d993b426c05aed11e4ff61",
+      "rasterSize": [
+        1800,
+        2467
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222-p47.png",
+      "priorRasterSHA256": "46e9c85fd4c2ade85ace904382ca87522de6ce5280d993b426c05aed11e4ff61"
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p3",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourcePDFSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "physicalPageNumber": 3,
+      "raster": "source/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p3.png",
+      "rasterSHA256": "d780acc35f34fb58df7f9263050096c4bbda134e671c10c5d4c2447f24bdaa86",
+      "rasterSize": [
+        1800,
+        2380
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p3.png",
+      "priorRasterSHA256": "d780acc35f34fb58df7f9263050096c4bbda134e671c10c5d4c2447f24bdaa86"
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p44",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourcePDFSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "physicalPageNumber": 44,
+      "raster": "source/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p44.png",
+      "rasterSHA256": "d31391bc56209bcc72a074c1e55033883191896bb87a9c6906a699e594ca6360",
+      "rasterSize": [
+        1800,
+        2398
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p44.png",
+      "priorRasterSHA256": "d31391bc56209bcc72a074c1e55033883191896bb87a9c6906a699e594ca6360"
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p63",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/04_schumann_concertpiece_4_horns_op86_imslp_51506.pdf",
+      "sourcePDFSHA256": "57e9332bb42586526a986967a411796285492d0d0419e92429b9617324edc989",
+      "physicalPageNumber": 63,
+      "raster": "source/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p63.png",
+      "rasterSHA256": "e72226e9f960a575e47797c67eec563cb0dce61bfa2336977291371ca4616db6",
+      "rasterSize": [
+        1800,
+        2380
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506-p63.png",
+      "priorRasterSHA256": "e72226e9f960a575e47797c67eec563cb0dce61bfa2336977291371ca4616db6"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p30",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourcePDFSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "physicalPageNumber": 30,
+      "raster": "source/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p30.png",
+      "rasterSHA256": "6813d274e4eeefde91f566c93506e5a06d3f98f9a0d49c81d9ae711821a3497b",
+      "rasterSize": [
+        1800,
+        2368
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p30.png",
+      "priorRasterSHA256": "6813d274e4eeefde91f566c93506e5a06d3f98f9a0d49c81d9ae711821a3497b"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p32",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/rest_detection/01_full_scores/beethoven_symphony_no5_op67_complete_imslp52624.pdf",
+      "sourcePDFSHA256": "9319765d21a573cdc8523288de6ca6d6b7cfd456a12f533de0d30a694a71474f",
+      "physicalPageNumber": 32,
+      "raster": "source/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p32.png",
+      "rasterSHA256": "fa56c0f0597956e4170b3a28cfadc752f99201ec42473974373593c8d1101156",
+      "rasterSize": [
+        1800,
+        2368
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/rest-detection-beethoven-symphony-no5-op67-complete-imslp52624-p32.png",
+      "priorRasterSHA256": "fa56c0f0597956e4170b3a28cfadc752f99201ec42473974373593c8d1101156"
+    },
+    {
+      "id": "corrected-brahms93521:p38",
+      "sourcePDF": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+      "sourcePDFSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "physicalPageNumber": 38,
+      "raster": "source/corrected-brahms93521-p38.png",
+      "rasterSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4",
+      "rasterSize": [
+        1068,
+        1538
+      ],
+      "rasterToSource": "Exact frozen native source raster; top-left integer coordinates, end-exclusive boxes. Corrected Brahms uses the delivered corrected-source raster; do not map its coordinates onto the raw PDF. Other pages use original native PDF rendering.",
+      "priorRasterPath": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/corrected-brahms93521-p38.png",
+      "priorRasterSHA256": "0476b2952a47a472b68f46c37e5c3491d93015a3deb2072470b72b829007cfc4"
+    }
+  ],
+  "cases": [
+    {
+      "id": "P01-hollow-up-stem-bottom-line",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "musical-hollow-head",
+      "bodyROI": [
+        867,
+        369,
+        883,
+        381
+      ],
+      "testedSpineROI": [
+        878,
+        344,
+        882,
+        378
+      ],
+      "mustPreserveNoteEnvelope": [
+        867,
+        344,
+        883,
+        381
+      ],
+      "sourceOwner": "Cello, first system",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": null,
+      "sourceFinding": "A genuine hollow half-note head below the bottom staff line. Its right rim meets the short upward stem. The scan cavity is light gray, not uniformly white.",
+      "contextROI": [
+        841,
+        328,
+        913,
+        401
+      ],
+      "sourceCrop": {
+        "path": "review/P01-hollow-up-stem-bottom-line-source.png",
+        "sha256": "bdd284be9d90db2b3325580c85b95591868ea1e9ef8da6e755d1ecb167c1e8e6",
+        "pixelOrigin": [
+          841,
+          328
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P01-hollow-up-stem-bottom-line-ruler.png",
+        "sha256": "de4d7592f93935d76706d1280cd7dc558d40ba96693c2f9139814e61e0882a2b",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.8117977528089888,
+        0.22366710013003901,
+        0.8267790262172284,
+        0.24772431729518857
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true,
+      "cavitySamples": [
+        {
+          "sourceXY": [
+            875,
+            374
+          ],
+          "gray0Black255White": 225
+        },
+        {
+          "sourceXY": [
+            874,
+            375
+          ],
+          "gray0Black255White": 219
+        }
+      ]
+    },
+    {
+      "id": "P02-hollow-down-stem-staff-intersection",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "musical-hollow-head",
+      "bodyROI": [
+        186,
+        716,
+        200,
+        729
+      ],
+      "testedSpineROI": [
+        187,
+        720,
+        191,
+        751
+      ],
+      "mustPreserveNoteEnvelope": [
+        186,
+        716,
+        200,
+        751
+      ],
+      "sourceOwner": "Cello, second system",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": null,
+      "sourceFinding": "A hollow half-note head crosses the second staff line. The left side continues into the downward stem; the crossing staff line divides the visible light cavity.",
+      "contextROI": [
+        168,
+        695,
+        224,
+        762
+      ],
+      "sourceCrop": {
+        "path": "review/P02-hollow-down-stem-staff-intersection-source.png",
+        "sha256": "fdf5453545b3a8f716292371dbf086dc0efc8d19523d2e8da89b4a163725a0e8",
+        "pixelOrigin": [
+          168,
+          695
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P02-hollow-down-stem-staff-intersection-ruler.png",
+        "sha256": "feeb176b55290191bdb94a3a80d6b69fa0f6542ccf225cf73cc2ab665226411e",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.17415730337078653,
+        0.46553966189856955,
+        0.18726591760299627,
+        0.488296488946684
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true,
+      "cavitySamples": [
+        {
+          "sourceXY": [
+            191,
+            724
+          ],
+          "gray0Black255White": 243
+        },
+        {
+          "sourceXY": [
+            192,
+            724
+          ],
+          "gray0Black255White": 206
+        }
+      ]
+    },
+    {
+      "id": "P03-filled-tied-bottom-line",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "musical-filled-head",
+      "bodyROI": [
+        236,
+        366,
+        249,
+        378
+      ],
+      "testedSpineROI": [
+        244,
+        342,
+        248,
+        373
+      ],
+      "mustPreserveNoteEnvelope": [
+        236,
+        342,
+        249,
+        378
+      ],
+      "sourceOwner": "Cello, first system",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": [
+        244,
+        377,
+        316,
+        392
+      ],
+      "sourceFinding": "Filled head at the bottom staff line with an upward stem. A printed tie leaves below/right. Musical tied-note identity does not depend on whether anti-alias pixels join the tie to the head.",
+      "contextROI": [
+        222,
+        330,
+        323,
+        404
+      ],
+      "sourceCrop": {
+        "path": "review/P03-filled-tied-bottom-line-source.png",
+        "sha256": "bc118b50dfd4f7d13a890a20477b59becfd741d993280bc656405d508a8a79ab",
+        "pixelOrigin": [
+          222,
+          330
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P03-filled-tied-bottom-line-ruler.png",
+        "sha256": "423a87930dd4cb967f0e3138551bb54c824ad1d6b8ee4395118624bd387d8e0b",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.2209737827715356,
+        0.2223667100130039,
+        0.23314606741573032,
+        0.24577373211963588
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "P04-filled-ledger-long-down-stem",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "musical-filled-head",
+      "bodyROI": [
+        307,
+        85,
+        323,
+        98
+      ],
+      "testedSpineROI": [
+        307,
+        94,
+        312,
+        131
+      ],
+      "mustPreserveNoteEnvelope": [
+        307,
+        85,
+        323,
+        131
+      ],
+      "sourceOwner": "Violin I, first system",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": null,
+      "sourceFinding": "Filled ledger-line head with a downward stem crossing several ledger/staff lines. This is a long single-staff note stem, not a spine traversing two complete staff cores.",
+      "contextROI": [
+        290,
+        72,
+        339,
+        149
+      ],
+      "sourceCrop": {
+        "path": "review/P04-filled-ledger-long-down-stem-source.png",
+        "sha256": "e21bb72c4d99b543b590089dc74c1fd33479dc94bf5ccd182eef2d003811141f",
+        "pixelOrigin": [
+          290,
+          72
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P04-filled-ledger-long-down-stem-ruler.png",
+        "sha256": "b210e887e462d4e5cc37963e90c2921c31f099fc9397e84877230318cd298dc1",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.28745318352059923,
+        0.055266579973992196,
+        0.30243445692883897,
+        0.08517555266579974
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "P05-filled-near-barline-own-stem",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "musical-filled-head",
+      "bodyROI": [
+        423,
+        357,
+        436,
+        369
+      ],
+      "testedSpineROI": [
+        432,
+        332,
+        436,
+        363
+      ],
+      "mustPreserveNoteEnvelope": [
+        423,
+        332,
+        436,
+        369
+      ],
+      "sourceOwner": "Cello, first system",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": null,
+      "sourceFinding": "Filled beamed note near the structural barline at x409\u2013411. The actual note stem is x432\u2013435, not the barline. The staff line connects their ink horizontally but does not transfer musical ownership.",
+      "contextROI": [
+        390,
+        313,
+        465,
+        396
+      ],
+      "sourceCrop": {
+        "path": "review/P05-filled-near-barline-own-stem-source.png",
+        "sha256": "c83f2ecd04a406431b281c39837062b21b9c5b1485af9ae48a793461311deef4",
+        "pixelOrigin": [
+          390,
+          313
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P05-filled-near-barline-own-stem-ruler.png",
+        "sha256": "e0ce6af6cf947f874c57297a39459c2a22a99fde5834cb7136611267bd9e6467",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.3960674157303371,
+        0.21586475942782835,
+        0.40823970037453183,
+        0.2399219765929779
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "P06-filled-head-with-touching-tie",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "expectedEvidence": "musical-filled-head",
+      "bodyROI": [
+        398,
+        1753,
+        410,
+        1767
+      ],
+      "testedSpineROI": [
+        398,
+        1759,
+        403,
+        1788
+      ],
+      "mustPreserveNoteEnvelope": [
+        398,
+        1753,
+        410,
+        1788
+      ],
+      "sourceOwner": "Middle of three source staves shown in this context; no instrument identity inferred",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": [
+        350,
+        1742,
+        405,
+        1758
+      ],
+      "sourceFinding": "A filled head and downward stem. The incoming curved tie reaches the head above the staff-line crossing; rejecting every connected long curve would reject a real note.",
+      "contextROI": [
+        346,
+        1728,
+        443,
+        1800
+      ],
+      "sourceCrop": {
+        "path": "review/P06-filled-head-with-touching-tie-source.png",
+        "sha256": "be0b232542129596d2d98854c856191328785badd7a611f0772557b2ac65eb17",
+        "pixelOrigin": [
+          346,
+          1728
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P06-filled-head-with-touching-tie-ruler.png",
+        "sha256": "8ec6bd6507f56f49e0dd6c563368151bc62989284b6061f405ac4e8f222b9ac1",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.22111111111111112,
+        0.7402871621621622,
+        0.22777777777777777,
+        0.7550675675675675
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "P07-filled-ledger-up-stem",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "expectedEvidence": "musical-filled-head",
+      "bodyROI": [
+        396,
+        1871,
+        409,
+        1884
+      ],
+      "testedSpineROI": [
+        404,
+        1844,
+        409,
+        1880
+      ],
+      "mustPreserveNoteEnvelope": [
+        396,
+        1844,
+        409,
+        1884
+      ],
+      "sourceOwner": "Bottom of three source staves shown in this context; no instrument identity inferred",
+      "directMusicalAttachmentToTestedSpine": true,
+      "associatedCurveROI": null,
+      "sourceFinding": "Filled ledger-note head with an upward stem. The adjacent structural barline at x386 is a different stroke.",
+      "contextROI": [
+        372,
+        1820,
+        432,
+        1905
+      ],
+      "sourceCrop": {
+        "path": "review/P07-filled-ledger-up-stem-source.png",
+        "sha256": "a0e8974ef8042556d1f4a8694e515d4d4f8ff98551aac548cfc9a20b6e6479ce",
+        "pixelOrigin": [
+          372,
+          1820
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/P07-filled-ledger-up-stem-ruler.png",
+        "sha256": "20d8bdd0d44450c8290a8c92e3dae164d747a130fc88fbcd91ddd2d237cde263",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "normalizedNoteEnvelope": [
+        0.22,
+        0.7787162162162162,
+        0.22722222222222221,
+        0.7956081081081081
+      ],
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "N01-nearby-filled-head-not-barline-attached",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "nearby-head-without-musical-attachment",
+      "bodyROI": [
+        423,
+        357,
+        436,
+        369
+      ],
+      "testedSpineROI": [
+        409,
+        316,
+        412,
+        372
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Head belongs to Cello on its own x432\u2013435 stem; tested x409\u2013411 stroke is a structural barline",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "Same real head as P05, deliberately paired with the nearby barline. Staff-line connectivity alone cannot establish that this head terminates the barline.",
+      "contextROI": [
+        390,
+        313,
+        465,
+        396
+      ],
+      "sourceCrop": {
+        "path": "review/N01-nearby-filled-head-not-barline-attached-source.png",
+        "sha256": "c83f2ecd04a406431b281c39837062b21b9c5b1485af9ae48a793461311deef4",
+        "pixelOrigin": [
+          390,
+          313
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/N01-nearby-filled-head-not-barline-attached-ruler.png",
+        "sha256": "d457bf61a43f3e891d1a9454d3ae03ffe60e7b944dfdbc43e5ff9767672b9bc3",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "N02-nearby-hollow-head-not-barline-attached",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "nearby-head-without-musical-attachment",
+      "bodyROI": [
+        867,
+        369,
+        883,
+        381
+      ],
+      "testedSpineROI": [
+        851,
+        328,
+        855,
+        372
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Hollow Cello head belongs to x878\u2013881 stem; tested x851\u2013854 stroke is structural",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "Same hollow head as P01, paired with a different structural barline. The shared bottom staff line is not a musical attachment.",
+      "contextROI": [
+        841,
+        328,
+        913,
+        401
+      ],
+      "sourceCrop": {
+        "path": "review/N02-nearby-hollow-head-not-barline-attached-source.png",
+        "sha256": "bdd284be9d90db2b3325580c85b95591868ea1e9ef8da6e755d1ecb167c1e8e6",
+        "pixelOrigin": [
+          841,
+          328
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/N02-nearby-hollow-head-not-barline-attached-ruler.png",
+        "sha256": "df3842efee140790af4bed2cc65d417db3f497ee50187dee36b068ba24e7281f",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F01-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        499,
+        1748,
+        502,
+        1750
+      ],
+      "testedSpineROI": [
+        495,
+        1711,
+        499,
+        1778
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        447,
+        1694,
+        548,
+        1795
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F01-structural-intersection-source.png",
+        "sha256": "5ef92cb471f141e9bd76657f8719e80d9e76627c8cc57f2901b4cb9996b9d20f",
+        "pixelOrigin": [
+          447,
+          1694
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F01-structural-intersection-ruler.png",
+        "sha256": "5a94977e74a89946c719459517007f3f6b2a57c74999561173a2a2304ccdbddc",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F02-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p9",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        718,
+        1747,
+        721,
+        1749
+      ],
+      "testedSpineROI": [
+        714,
+        1710,
+        718,
+        1777
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        666,
+        1693,
+        767,
+        1794
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 1,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F02-structural-intersection-source.png",
+        "sha256": "b03db406efe93ca7e6912e2dbfc5a3d9ff7aa0543860a7c878a0d771c58d25b8",
+        "pixelOrigin": [
+          666,
+          1693
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F02-structural-intersection-ruler.png",
+        "sha256": "72ac988f714a84d95d21768eadecec5af47006b9da6e0ab95019042302e9ec66",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F03-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p10",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        998,
+        174,
+        1001,
+        176
+      ],
+      "testedSpineROI": [
+        995,
+        139,
+        998,
+        206
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        947,
+        123,
+        1046,
+        222
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F03-structural-intersection-source.png",
+        "sha256": "76450df2b5a7c5a45fef2f9b045bb05394d84260c8ca36afe56b7ab9b126656f",
+        "pixelOrigin": [
+          947,
+          123
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F03-structural-intersection-ruler.png",
+        "sha256": "ef8a1bc5569609f06f0284e77b345cf8c58a203cb93aedf12794126199ab7edc",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F04-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p24",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        659,
+        1194,
+        662,
+        1197
+      ],
+      "testedSpineROI": [
+        656,
+        1159,
+        659,
+        1228
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        606,
+        1142,
+        709,
+        1245
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F04-structural-intersection-source.png",
+        "sha256": "2f7a718db94a567eedd962bd288c94659834096664e590fdc7cf2307c1e15c47",
+        "pixelOrigin": [
+          606,
+          1142
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F04-structural-intersection-ruler.png",
+        "sha256": "759d7313ba66658919eb0824d6c293a936778afe80448c110dbe9427096aa27c",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F05-structural-intersection",
+      "pageID": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803:p28",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        855,
+        1347,
+        858,
+        1349
+      ],
+      "testedSpineROI": [
+        858,
+        1310,
+        861,
+        1377
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        810,
+        1294,
+        909,
+        1393
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F05-structural-intersection-source.png",
+        "sha256": "5089b6ec981ce589ffa5c7c364e192f1e439672abb5d4e3368bd358483faccd7",
+        "pixelOrigin": [
+          810,
+          1294
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F05-structural-intersection-ruler.png",
+        "sha256": "93a58d5713e0280e06551e0e00c90afd898312f9a7db59a6092884ca8fcdf0d6",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F06-structural-intersection",
+      "pageID": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p41",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        707,
+        2117,
+        711,
+        2120
+      ],
+      "testedSpineROI": [
+        711,
+        2070,
+        714,
+        2159
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        646,
+        2048,
+        779,
+        2181
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F06-structural-intersection-source.png",
+        "sha256": "b8f52ceb0de0184aca3d53a55f6710aed7471972968feb5cda157b9866bd8960",
+        "pixelOrigin": [
+          646,
+          2048
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F06-structural-intersection-ruler.png",
+        "sha256": "5f2fad71bff08356f107ebe58059d9fae6efa43569f8e5a5a250d2b424ffce96",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F07-structural-intersection",
+      "pageID": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222:p47",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        1574,
+        2147,
+        1578,
+        2150
+      ],
+      "testedSpineROI": [
+        1571,
+        2097,
+        1574,
+        2186
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        1506,
+        2075,
+        1639,
+        2208
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F07-structural-intersection-source.png",
+        "sha256": "10559db9f738a5c478c510c4be63a7c961fa8de52131dadd16ec99020d148ae4",
+        "pixelOrigin": [
+          1506,
+          2075
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F07-structural-intersection-ruler.png",
+        "sha256": "7c89f734fd0529dfd8ad91324801b271b17fd835336e1cce8064eaaf67c74dda",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F08-structural-intersection",
+      "pageID": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p3",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        1646,
+        2197,
+        1650,
+        2200
+      ],
+      "testedSpineROI": [
+        1650,
+        2158,
+        1653,
+        2243
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "Broken outer staff-line fragment at a structural barline, not a notehead.",
+      "contextROI": [
+        1588,
+        2137,
+        1715,
+        2264
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F08-structural-intersection-source.png",
+        "sha256": "51c0d5c4fe2645eb7d09abc9e9392807363b6af014160d842447bcfb53707bb5",
+        "pixelOrigin": [
+          1588,
+          2137
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F08-structural-intersection-ruler.png",
+        "sha256": "5fcf2e9a89519cfc7472fcf573a5b8c44891ce2aacaa94a65c1da30f7fcafc3a",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F09-structural-intersection",
+      "pageID": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p44",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        231,
+        2045,
+        235,
+        2048
+      ],
+      "testedSpineROI": [
+        235,
+        1997,
+        240,
+        2084
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        173,
+        1976,
+        302,
+        2105
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F09-structural-intersection-source.png",
+        "sha256": "342e8a168f9fbea1028392e16b4c4ed0f26385318dca8b5171cb55a07b0d3b57",
+        "pixelOrigin": [
+          173,
+          1976
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F09-structural-intersection-ruler.png",
+        "sha256": "4d1aa3cd996e2e96fab09afadd77548b522f940b2f652c331316ce9fa905556c",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F10-structural-intersection",
+      "pageID": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506:p63",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        1545,
+        162,
+        1549,
+        165
+      ],
+      "testedSpineROI": [
+        1540,
+        113,
+        1545,
+        198
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        1479,
+        92,
+        1606,
+        219
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F10-structural-intersection-source.png",
+        "sha256": "7b8df844b629c63388e02c588f5a57963b0f31bdd72423c792f260b5a9975998",
+        "pixelOrigin": [
+          1479,
+          92
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F10-structural-intersection-ruler.png",
+        "sha256": "a1e993fcb9c204c735bba5c0083e7b038fc470f9172bfac77a79d51acf14459d",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F11-structural-intersection",
+      "pageID": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p30",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        1690,
+        1154,
+        1693,
+        1156
+      ],
+      "testedSpineROI": [
+        1693,
+        1124,
+        1696,
+        1191
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "Broken outer staff-line fragment at a structural barline, not a notehead.",
+      "contextROI": [
+        1644,
+        1107,
+        1745,
+        1208
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F11-structural-intersection-source.png",
+        "sha256": "700c943f9c6d51d1005286e4c392e9c5ae4b6e6d6fb5625631b569fe5bda1125",
+        "pixelOrigin": [
+          1644,
+          1107
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F11-structural-intersection-ruler.png",
+        "sha256": "f7ba60f8e50811ba229d052e81ec707cc50fdbb649b05098be423f2cd9f5164b",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F12-structural-intersection",
+      "pageID": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624:p32",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        1089,
+        144,
+        1092,
+        146
+      ],
+      "testedSpineROI": [
+        1087,
+        110,
+        1089,
+        177
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "Broken outer staff-line fragment at a structural barline, not a notehead.",
+      "contextROI": [
+        1038,
+        93,
+        1139,
+        194
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F12-structural-intersection-source.png",
+        "sha256": "bec8558853ca97af96ccfb54c3a77a684e206cac1c19ad58f52c79ef14eaa264",
+        "pixelOrigin": [
+          1038,
+          93
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F12-structural-intersection-ruler.png",
+        "sha256": "edbd0607f09d26bc638a0984ad81a5081c652f94040d97b45beceeda6ec2cb1a",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    },
+    {
+      "id": "F13-structural-intersection",
+      "pageID": "corrected-brahms93521:p38",
+      "expectedEvidence": "structural-barline-curve-or-staff-intersection",
+      "bodyROI": [
+        411,
+        374,
+        414,
+        376
+      ],
+      "testedSpineROI": [
+        409,
+        341,
+        411,
+        406
+      ],
+      "mustPreserveNoteEnvelope": null,
+      "sourceOwner": "Structural tested spine; neighboring curve remains owned by its source staff",
+      "directMusicalAttachmentToTestedSpine": false,
+      "associatedCurveROI": null,
+      "sourceFinding": "A slur/tie crossing or meeting a barline supplies the small accepted patch. Original source pixels show the curve continuing beyond this patch; this is not a separate notehead at the barline.",
+      "contextROI": [
+        361,
+        324,
+        460,
+        423
+      ],
+      "priorFalseWitness": {
+        "report": "Tests/quality_control/terminal-body-continuation-2026-10-03/source-review.json",
+        "witnessIndex": 0,
+        "priorLocationOnly": true,
+        "classificationBasis": "Reinspection of untouched source context; not the detector acceptance result"
+      },
+      "sourceCrop": {
+        "path": "review/F13-structural-intersection-source.png",
+        "sha256": "5140a2cfded4ec2333a8962c907e1075398fb76364860c3fd042550e5aadf136",
+        "pixelOrigin": [
+          361,
+          324
+        ],
+        "pixelsUnmodified": true
+      },
+      "rulerImage": {
+        "path": "review/F13-structural-intersection-ruler.png",
+        "sha256": "1b7a564006b87e0e4793ce70411d586497a6ee5b1156db1c1492f630161555d1",
+        "magnification": 4,
+        "contentOrigin": [
+          60,
+          40
+        ]
+      },
+      "classificationReviewedBeforePrototype": true,
+      "spineROIIsCorridorNotSemanticPixelMask": true
+    }
+  ],
+  "priorDiagnosticProvenance": {
+    "witnessFile": "/Users/will/Documents/git/partsmith/.build/terminal-body-continuation-2026-10-03/diagnostics/witnesses.json",
+    "sha256": "89d3934fe2722f732235ed27c83c6d14d090209482682c2115fb62a7d91b5bf6"
+  },
+  "sourceVisualReview": "Each selected source crop and surrounding source context is reviewed independently before candidate code/results.",
+  "evaluationContract": {
+    "positive": "For the supplied body and its genuine tested musical stem, evidence must not classify the body as purely structural. Independently retain the fixed source note envelope in any applicable output crop. Ordinary source notes do not necessarily enter the long-spine preservation path; report not-exercised rather than automatic success.",
+    "negative": "No notehead ownership may be transferred to the tested structural spine from this source patch. Structural-negative classification does not authorize deleting the nearby genuine note, tie, slur, or staff-owned marking.",
+    "attachment": "Direct musical attachment excludes paths that only go sideways along staff/ledger lines to another stem. Near-head cases reuse exactly the same source body with a different tested spine.",
+    "counting": "Report evidence accept/reject/not-exercised separately from final crop-envelope containment. No all-score recall claim."
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "status": "Source and complete native output reviewed; parent independently agreed. Separate manual draft ready.",
+  "sourceReview": "All4 original full-system contexts before corrected contexts; all7 source comparisons; root independent agreement copied unchanged.",
+  "finalVisualReview": {
+    "changedPagesViewedInContactSheets": 25,
+    "contactSheets": [
+      ".build/brahms-reviewed-cleanup-2026-10-03/changed-pages-01.png",
+      ".build/brahms-reviewed-cleanup-2026-10-03/changed-pages-02.png",
+      ".build/brahms-reviewed-cleanup-2026-10-03/changed-pages-03.png",
+      ".build/brahms-reviewed-cleanup-2026-10-03/changed-pages-04.png",
+      ".build/brahms-reviewed-cleanup-2026-10-03/changed-pages-05.png"
+    ],
+    "changedPDFRowsViewedAtThreePixelsPerPoint": [
+      "p24-s2-cello",
+      "p24-s2-viola",
+      "p28-s1-violin1",
+      "p28-s1-violin2",
+      "p31-s1-violin2",
+      "p38-s1-cello",
+      "p38-s1-viola"
+    ],
+    "sourceTurnComparisonsViewed": [
+      "Viola10\u219211",
+      "Viola11\u219212",
+      "Viola12\u219213"
+    ]
+  },
+  "pageTurns": {
+    "unchangedPageCount": 67,
+    "unchangedExplicitBreaks": 6,
+    "unchangedOtherPartAllocations": [
+      "Violin I",
+      "Violin II",
+      "Violoncello"
+    ],
+    "violaRowsMovingEarlier": [
+      {
+        "id": "p25-s2-viola",
+        "oldPage": 11,
+        "newPage": 10
+      },
+      {
+        "id": "p27-s3-viola",
+        "oldPage": 12,
+        "newPage": 11
+      },
+      {
+        "id": "p29-s3-viola",
+        "oldPage": 13,
+        "newPage": 12
+      }
+    ],
+    "observations": [
+      "The new Viola11\u219212 source begins with a printed rest; no counted rest duration is inferred.",
+      "Viola12\u219213 remains within active music. These crops do not make every performance page turn safe.",
+      "The source p32 first-system rest opening and all six saved explicit break choices remain at their intended boundaries."
+    ]
+  },
+  "nativeOutputChecks": {
+    "all67BaselinePagesPixelExactToPublishedAuto": true,
+    "manualPages": 67,
+    "pixelIdenticalToPublishedAuto": 42,
+    "changed": 25,
+    "all604BandsRetainedInOrder": true,
+    "all42CopiedDirectionsExactSourceGeometry": true,
+    "all9RectificationsExact": true,
+    "projectJSONRoundtripExact": true,
+    "originalEmbeddedPDFExact": true,
+    "interRowCollisionCount": 0,
+    "outOfPagePlacementCount": 0,
+    "nativeSubpixelSizeDifferences": [
+      {
+        "id": "p9-s1-viola",
+        "before": [
+          516,
+          54.67916414798617
+        ],
+        "after": [
+          515.9999934000593,
+          54.679163448607824
+        ],
+        "difference": [
+          -6.599940661544679e-06,
+          -6.993783472353243e-07
+        ]
+      },
+      {
+        "id": "p31-s4-viola",
+        "before": [
+          515.9999928786187,
+          58.10488074279738
+        ],
+        "after": [
+          516,
+          58.104881544710224
+        ],
+        "difference": [
+          7.121381258912152e-06,
+          8.01912847236963e-07
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "597 other crops unchanged; this is not an independent note-by-note review of all604 systems.",
+    "Smaller neighboring fragments, duplicated directions and damaged original print remain.",
+    "The immutable p35 Violin I full-envelope guard remains failed;9/10 unchanged."
+  ],
+  "parentFinalReview": {
+    "path": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/independent-root-export-review.md",
+    "sha256": "04cb89ea751fd8c127104a74240a03746c0756e9ea15340ae1417a95e83b35fe"
+  }
+}

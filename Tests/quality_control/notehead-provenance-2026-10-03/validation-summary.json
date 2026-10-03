@@ -1,0 +1,89 @@
+{
+  "decision": "Reject v1; no production change, no full39/corpus run, no tuning to real holdouts.",
+  "candidateAnalyzerSHA256": "8c2fa3f665dd1c41f95ac44b9f30fc0a6cdc094f5cac016cd866711badd41af3",
+  "fixedControls": {
+    "cropQuality": {
+      "pass": 765,
+      "total": 765,
+      "explicitKnownLimit": "Third source annotation [610,295,620,304] remains outside upper crop."
+    },
+    "controls297": {
+      "baselinePass": 238,
+      "candidatePass": 238,
+      "fullJSONExactlyEqual": true,
+      "changedCases": []
+    },
+    "expanded336": {
+      "passed": 336,
+      "total": 336,
+      "fullJSONExactlyEqual": true
+    },
+    "independent180": {
+      "baselineFailures": 58,
+      "candidateFailures": 24,
+      "repairedCases": 34,
+      "newFailingCases": 0,
+      "worsenedOwners": 0,
+      "pureStructuralCases": 72,
+      "structuralWholeNeighbors": 0
+    },
+    "tied36": {
+      "baselineFailures": 24,
+      "candidateFailures": 9,
+      "repairedCases": 15,
+      "newFailingCases": 0,
+      "worsenedOwners": 0
+    }
+  },
+  "independentRealHelper": {
+    "ownStemPositives": 7,
+    "recognizedOwnStemPositives": 0,
+    "withinDeclaredVerticalSearch": 4,
+    "recognizedWithinSearch": 0,
+    "locallyRemeasuredStaffGeometryRetryPositives": 4,
+    "recognizedLocalRetry": 0,
+    "nearWrongSpineNegatives": 2,
+    "wrongSpineFalseAcceptances": 0,
+    "structuralNegatives": 13,
+    "structuralFalseAcceptances": 1,
+    "falseAcceptanceID": "F05-structural-intersection",
+    "scope": "Direct helper test only. No full-two-staff musical source spine was found among these real positives."
+  },
+  "nativeTargetedReplay": {
+    "pages": 12,
+    "componentChangedPages": 3,
+    "componentsAdded": 4,
+    "allAddedComponentsAreOwnershipAlternatives": true,
+    "componentsRemoved": 0,
+    "cropChangedPages": 2,
+    "cropChangedBands": 4,
+    "allChangedCropsStrictSupersets": true,
+    "newWholeNeighborOccurrencesInNeutralDiagnosticRows": 4,
+    "initializedInstrumentBandsChanged": 0,
+    "unresolvedPagesRemainUnresolved": true,
+    "loggingOnlyComponentEquivalencePages": 3
+  },
+  "runtime": {
+    "candidate180Seconds": {
+      "wall": 1.55,
+      "user": 1.22,
+      "sys": 0.06
+    },
+    "baseline180Seconds": {
+      "wall": 1.24,
+      "user": 1.15,
+      "sys": 0.07
+    },
+    "candidate36Seconds": {
+      "wall": 0.48,
+      "user": 0.27,
+      "sys": 0.01
+    },
+    "candidate12ReplaySeconds": {
+      "wall": 4.46,
+      "user": 4.0,
+      "sys": 0.13
+    },
+    "qualification": "Single timings with other build activity. Candidate180/36 used time -l, whose post-run kern.clockrate query was denied by sandbox; complete candidate output and timing prefix are retained, wrapper exit1 is not treated as a classifier failure. Later time -p runs complete without that query. No production performance certification."
+  }
+}

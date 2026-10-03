@@ -1,0 +1,261 @@
+{
+  "reason": "Parent requested standard Tests/quality_control path before final report freeze. Source bounds, saved crops, rectifications, original images and immutable prior oracles unchanged; only report paths and their dependent hashes updated.",
+  "from": "Tests/QC/brahms-reviewed-cleanup-2026-10-03",
+  "to": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03",
+  "originalPreRenderObligationSHA256": "384706d35c687684bfc6882cb0055799c633d376b6fdb50ba36939dbcde4b74b",
+  "migratedObligationSHA256": "eaa6dcbe8f9d1d13c3368441e64227276e908228df46dc12ced94886916fa47c",
+  "files": [
+    {
+      "path": "README.md",
+      "beforeSHA256": "69ca0a7240ea1ff7ce51e9764897db58052bea20dd9b860632f53b19d5bc2eaa",
+      "afterSHA256": "0e7e789b08beb1aae772d51e7f60fc975f389d5c27e367a012cf53db3e5349bd",
+      "changed": true
+    },
+    {
+      "path": "frozen-source-obligations-sha256.json",
+      "beforeSHA256": "8ccd675ba8d59b4a43b355d0fa08d6409e130252d14d1ac55d7b02dde724ea56",
+      "afterSHA256": "987f858a9c3dc51f031f9442196aad27e8511d60171b4bd683138708d6588664",
+      "changed": true
+    },
+    {
+      "path": "frozen-source-obligations.json",
+      "beforeSHA256": "384706d35c687684bfc6882cb0055799c633d376b6fdb50ba36939dbcde4b74b",
+      "afterSHA256": "eaa6dcbe8f9d1d13c3368441e64227276e908228df46dc12ced94886916fa47c",
+      "changed": true
+    },
+    {
+      "path": "immutable-ten-source-guards.json",
+      "beforeSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+      "afterSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+      "changed": false
+    },
+    {
+      "path": "immutable-thirteen-local-obligations.json",
+      "beforeSHA256": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+      "afterSHA256": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+      "changed": false
+    },
+    {
+      "path": "manual-proposals-v1.json",
+      "beforeSHA256": "f2d58cce9289d04586aca21855d9d68f704cc736e4286508b84c27fba33b03d7",
+      "afterSHA256": "bc80eb816f0ac47ff39f84c4b2363e7e7317e6a0425d08302488657541ab477b",
+      "changed": true
+    },
+    {
+      "path": "original-p24-full-system.png",
+      "beforeSHA256": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35",
+      "afterSHA256": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35",
+      "changed": false
+    },
+    {
+      "path": "original-p28-full-system.png",
+      "beforeSHA256": "e8955c5ed300375680f44c67e504deaa5305e72710270b9a3edd7fc42de0b72b",
+      "afterSHA256": "e8955c5ed300375680f44c67e504deaa5305e72710270b9a3edd7fc42de0b72b",
+      "changed": false
+    },
+    {
+      "path": "original-p31-full-system.png",
+      "beforeSHA256": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437",
+      "afterSHA256": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437",
+      "changed": false
+    },
+    {
+      "path": "original-p38-full-system.png",
+      "beforeSHA256": "ce846871b33711f315112bee72ba62bf274e7cb6f354ccdc154bc10d9652c753",
+      "afterSHA256": "ce846871b33711f315112bee72ba62bf274e7cb6f354ccdc154bc10d9652c753",
+      "changed": false
+    },
+    {
+      "path": "p24-s2-cello-comparison.png",
+      "beforeSHA256": "9efbe17bbaeba0df5ebc043f4036409261fc9a197705f23f37787a0cb1e0c044",
+      "afterSHA256": "9efbe17bbaeba0df5ebc043f4036409261fc9a197705f23f37787a0cb1e0c044",
+      "changed": false
+    },
+    {
+      "path": "p24-s2-cello-current-auto.png",
+      "beforeSHA256": "9f72888e1465cdffab1a7b4cafcce1426bf692a45a832195adb932e2c85c9765",
+      "afterSHA256": "9f72888e1465cdffab1a7b4cafcce1426bf692a45a832195adb932e2c85c9765",
+      "changed": false
+    },
+    {
+      "path": "p24-s2-cello-manual-proposal.png",
+      "beforeSHA256": "cd4200c24fd8b3771fb2eb442f02d3e085944e90846864845bc552e5971082c5",
+      "afterSHA256": "cd4200c24fd8b3771fb2eb442f02d3e085944e90846864845bc552e5971082c5",
+      "changed": false
+    },
+    {
+      "path": "p24-s2-viola-comparison.png",
+      "beforeSHA256": "11e2f206e92a9a8bbcbe10b1ac44a4b95e2cb7cc0ba0feb44793425519355517",
+      "afterSHA256": "11e2f206e92a9a8bbcbe10b1ac44a4b95e2cb7cc0ba0feb44793425519355517",
+      "changed": false
+    },
+    {
+      "path": "p24-s2-viola-current-auto.png",
+      "beforeSHA256": "4a5613217432eec2c47137ca0e4e0683918f969a809f1e8ee6dbe329beb63340",
+      "afterSHA256": "4a5613217432eec2c47137ca0e4e0683918f969a809f1e8ee6dbe329beb63340",
+      "changed": false
+    },
+    {
+      "path": "p24-s2-viola-manual-proposal.png",
+      "beforeSHA256": "d2cc112f7fede8dfffc570e667cdf5f7dae6b9494ed6e94e9088bbbbf501e723",
+      "afterSHA256": "d2cc112f7fede8dfffc570e667cdf5f7dae6b9494ed6e94e9088bbbbf501e723",
+      "changed": false
+    },
+    {
+      "path": "p28-s1-violin1-comparison.png",
+      "beforeSHA256": "9c1d877b800a5d873ac534e97055d99aba0a577cfd01d928c27c70b6c2abf6e6",
+      "afterSHA256": "9c1d877b800a5d873ac534e97055d99aba0a577cfd01d928c27c70b6c2abf6e6",
+      "changed": false
+    },
+    {
+      "path": "p28-s1-violin1-current-auto.png",
+      "beforeSHA256": "f3ae845dd3feb39b5c0c5994083245477bd7d0510d124eb93240c6064b7d05ec",
+      "afterSHA256": "f3ae845dd3feb39b5c0c5994083245477bd7d0510d124eb93240c6064b7d05ec",
+      "changed": false
+    },
+    {
+      "path": "p28-s1-violin1-manual-proposal.png",
+      "beforeSHA256": "28d7d609ab33def8d19e0864fe8d303a7f9d910a320bb6aff58de3853f86671e",
+      "afterSHA256": "28d7d609ab33def8d19e0864fe8d303a7f9d910a320bb6aff58de3853f86671e",
+      "changed": false
+    },
+    {
+      "path": "p28-s1-violin2-comparison.png",
+      "beforeSHA256": "8c799148a8f8a2df33146dab3633cf7c4bf4424fef485bf1d1ab8e5baf73a6fe",
+      "afterSHA256": "8c799148a8f8a2df33146dab3633cf7c4bf4424fef485bf1d1ab8e5baf73a6fe",
+      "changed": false
+    },
+    {
+      "path": "p28-s1-violin2-current-auto.png",
+      "beforeSHA256": "c81f5dae89f879f7abb583c090b7733c592538564f58706f85b7a826e63e1aab",
+      "afterSHA256": "c81f5dae89f879f7abb583c090b7733c592538564f58706f85b7a826e63e1aab",
+      "changed": false
+    },
+    {
+      "path": "p28-s1-violin2-manual-proposal.png",
+      "beforeSHA256": "30d5370707ab9ed5d57c8bbedec5c348b8fd9c831c5c3107b6e63d49b8bfd091",
+      "afterSHA256": "30d5370707ab9ed5d57c8bbedec5c348b8fd9c831c5c3107b6e63d49b8bfd091",
+      "changed": false
+    },
+    {
+      "path": "p31-s1-violin2-comparison.png",
+      "beforeSHA256": "dc612a830ed352b5e1f51f8ad023077cf9bc89e2bf55b700e9f3568bcf068eba",
+      "afterSHA256": "dc612a830ed352b5e1f51f8ad023077cf9bc89e2bf55b700e9f3568bcf068eba",
+      "changed": false
+    },
+    {
+      "path": "p31-s1-violin2-current-auto.png",
+      "beforeSHA256": "abb692dd60d41e8dd8154bf2e209e016803da0ee9f0d0e79515670fb82fd8a7e",
+      "afterSHA256": "abb692dd60d41e8dd8154bf2e209e016803da0ee9f0d0e79515670fb82fd8a7e",
+      "changed": false
+    },
+    {
+      "path": "p31-s1-violin2-manual-proposal.png",
+      "beforeSHA256": "389ebd076e8828ac54b167dfc2886a6989e1ba46d8481bdff69c4aaaee18dd25",
+      "afterSHA256": "389ebd076e8828ac54b167dfc2886a6989e1ba46d8481bdff69c4aaaee18dd25",
+      "changed": false
+    },
+    {
+      "path": "p38-s1-cello-comparison.png",
+      "beforeSHA256": "30979cce231f3fdc9f44bf740b46390e857834c2abd317b8a296a476221c3331",
+      "afterSHA256": "30979cce231f3fdc9f44bf740b46390e857834c2abd317b8a296a476221c3331",
+      "changed": false
+    },
+    {
+      "path": "p38-s1-cello-current-auto.png",
+      "beforeSHA256": "4c12c9110c0c2e787cddcdbf351e37ea36f9d7efa418a2db0423a989531f1d94",
+      "afterSHA256": "4c12c9110c0c2e787cddcdbf351e37ea36f9d7efa418a2db0423a989531f1d94",
+      "changed": false
+    },
+    {
+      "path": "p38-s1-cello-manual-proposal.png",
+      "beforeSHA256": "f15bc5d5773631c65d3258f379087bb3bdf07dfb39e0c62385c6362af3a41447",
+      "afterSHA256": "f15bc5d5773631c65d3258f379087bb3bdf07dfb39e0c62385c6362af3a41447",
+      "changed": false
+    },
+    {
+      "path": "p38-s1-viola-comparison.png",
+      "beforeSHA256": "501913048056c8e561003e69412db050c8a9974d6550e4b88cd0c67787af1997",
+      "afterSHA256": "501913048056c8e561003e69412db050c8a9974d6550e4b88cd0c67787af1997",
+      "changed": false
+    },
+    {
+      "path": "p38-s1-viola-current-auto.png",
+      "beforeSHA256": "680b1df2d439ef6a014d93d33b5787a5b0561486e9df579fd612399843102791",
+      "afterSHA256": "680b1df2d439ef6a014d93d33b5787a5b0561486e9df579fd612399843102791",
+      "changed": false
+    },
+    {
+      "path": "p38-s1-viola-manual-proposal.png",
+      "beforeSHA256": "4c7e6a743edd167939866b8d4240d755ac3f0fe933f4c90e4b00039f18911332",
+      "afterSHA256": "4c7e6a743edd167939866b8d4240d755ac3f0fe933f4c90e4b00039f18911332",
+      "changed": false
+    },
+    {
+      "path": "proposal-geometry-checks.json",
+      "beforeSHA256": "cbda85ad36c4e2378c2585761c9208bb9e8501ee811714560899ca41240d6692",
+      "afterSHA256": "cbda85ad36c4e2378c2585761c9208bb9e8501ee811714560899ca41240d6692",
+      "changed": false
+    },
+    {
+      "path": "rectified-p24-full-system.png",
+      "beforeSHA256": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35",
+      "afterSHA256": "b093f545bd01a5d2fedf3744c5c2ed13fbda9c3220f1278d4f1ad37d7d4a9d35",
+      "changed": false
+    },
+    {
+      "path": "rectified-p24-target-ruler.png",
+      "beforeSHA256": "84e8db8411685b5bead560fc56a506816003820531b71ab82df3967419159d75",
+      "afterSHA256": "84e8db8411685b5bead560fc56a506816003820531b71ab82df3967419159d75",
+      "changed": false
+    },
+    {
+      "path": "rectified-p28-full-system.png",
+      "beforeSHA256": "5400aa1ebbd5b769168c7f00c3cabf3dba39d8d44df8ae7913216cf008cb3448",
+      "afterSHA256": "5400aa1ebbd5b769168c7f00c3cabf3dba39d8d44df8ae7913216cf008cb3448",
+      "changed": false
+    },
+    {
+      "path": "rectified-p28-target-ruler.png",
+      "beforeSHA256": "7162e8086502534cd8bfa7fa1eea3626e112ab13e893bbddcb82ebeb4cdad1c1",
+      "afterSHA256": "7162e8086502534cd8bfa7fa1eea3626e112ab13e893bbddcb82ebeb4cdad1c1",
+      "changed": false
+    },
+    {
+      "path": "rectified-p31-full-system.png",
+      "beforeSHA256": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437",
+      "afterSHA256": "5107fc208c5e8a61bc7e15cb384917dca8fe95a83bacf017b30de975cbb4f437",
+      "changed": false
+    },
+    {
+      "path": "rectified-p31-target-ruler.png",
+      "beforeSHA256": "13668e55aec7e7646ebfa6a09e7be6240ac97bd61b527d063bcb1e1c92ed31a5",
+      "afterSHA256": "13668e55aec7e7646ebfa6a09e7be6240ac97bd61b527d063bcb1e1c92ed31a5",
+      "changed": false
+    },
+    {
+      "path": "rectified-p38-full-system.png",
+      "beforeSHA256": "51af4768e37db23b2c35322ccb014b0609212c52486fb5775c8572f5a4d0164b",
+      "afterSHA256": "51af4768e37db23b2c35322ccb014b0609212c52486fb5775c8572f5a4d0164b",
+      "changed": false
+    },
+    {
+      "path": "rectified-p38-target-ruler.png",
+      "beforeSHA256": "3a546fd2b06efa7566a46d8c7ef82c7f4459cfa4eb52f59e7c5bf8f3016b8d97",
+      "afterSHA256": "3a546fd2b06efa7566a46d8c7ef82c7f4459cfa4eb52f59e7c5bf8f3016b8d97",
+      "changed": false
+    },
+    {
+      "path": "source-context-binding.json",
+      "beforeSHA256": "4874b0b6b71db446ce3243b1fb7b2b84d8640717499d3a9e2859d9b2eaa35121",
+      "afterSHA256": "690d36491158d392c42673d26db6b771029df0443798e8728252a64298cd1443",
+      "changed": true
+    },
+    {
+      "path": "verify_proposals.py",
+      "beforeSHA256": "927459b6c339cb10bf8b8a24c622f826a3e7c9c48f1078b9b42debdcb15effdf",
+      "afterSHA256": "927459b6c339cb10bf8b8a24c622f826a3e7c9c48f1078b9b42debdcb15effdf",
+      "changed": false
+    }
+  ]
+}
