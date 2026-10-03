@@ -74,7 +74,8 @@ struct ScoreExtractionView: View {
         (currentPlan?.assignments ?? []).flatMap { band in
             band.sourceMarkings.enumerated().map { index, marking in
                 let bounds = [marking.leftFraction, marking.topFraction, 1 - marking.rightFraction, marking.bottomFraction]
-                let heading = currentAnalysis?.sharedHeadings?.first { sameBounds($0.bounds, bounds) }?.recognizedText
+                let headings = currentAnalysis?.sharedHeadings ?? []
+                let heading = (ScoreSharedHeading.coalesced(headings) + headings).first { sameBounds($0.bounds, bounds) }?.recognizedText
                 let navigation = currentAnalysis?.sharedNavigation?.first { sameBounds($0.bounds, bounds) }?.recognizedText
                 let ending = currentAnalysis?.sharedEndings?.first {
                     $0.systemIndex == band.systemIndex && sameBounds($0.bounds, bounds)

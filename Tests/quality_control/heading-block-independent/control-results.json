@@ -1,0 +1,327 @@
+[
+  {
+    "details" : "",
+    "id" : "p26-one-block",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "p26-independent-full-source-envelope",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "p26-both-source-fragments-retained",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "p26-order-independent-geometry",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "p26-both-text-labels-retained",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "union-must-not-bridge-originally-disjoint-event",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "union-bridge-order-reversed",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "true-transitive-overlap-retains-all-fragments",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-x-gap",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-y-gap",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-x-touch",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-y-touch",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-corner-touch",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-anchor-differs",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-empty-bounds",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-zero-width",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-outside-page",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "separate-nonfinite",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "strict-positive-subpixel-overlap",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "duplicate-boxes-group",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "stale-individual-ink-cleared-on-union",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "unchanged-single-line-preserves-ink-evidence",
+    "pass" : true
+  },
+  {
+    "details" : "Optional([0.14, 0.14, 0.52, 0.52])",
+    "id" : "union-remeasurement-includes-new-corner-faint-pixel",
+    "pass" : true
+  },
+  {
+    "details" : "[0.1282812864962117, 0.05113637285723365, 0.287380353345853, 0.08060961565128615]",
+    "id" : "real-p26-union-measurement-includes-complete-frozen-envelope",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "real-p26-union-stops-before-first-staff-line",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "same-baseline-detached-metronome-preserved",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "metronome-alone-not-global-heading",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-pizz.",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-con sordino",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-marcato",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-ten.",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-dolce",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-poco cresc.",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-f",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-p",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "non-heading-Mein Herz ist schwer",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "lower-recipient-heading-not-shared-upward",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "preceding-system-heading-not-shared-downward",
+    "pass" : true
+  },
+  {
+    "details" : "[controls.ScoreSharedHeading(anchorStaffID: 0, bounds: [0.1485, 0.155, 0.3015, 0.1735], recognizedText: \"SCHERZO\", inkBounds: nil, recognitionBinding: nil), controls.ScoreSharedHeading(anchorStaffID: 0, bounds: [0.1485, 0.17099999999999999, 0.40149999999999997, 0.18949999999999997], recognizedText: \"Molto vivace. d.=138.\", inkBounds: nil, recognitionBinding: nil)]",
+    "id" : "accepted-heading-lines-exclude-technique",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "identical-binding-may-group",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "nil-versus-bound-stays-separate",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "different-recognized-system-stays-separate",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "different-source-staff-lines-stays-separate",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "planner-full-block-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "planner-all-music-crops-unchanged-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "planner-other-system-no-copy-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "auto=[[controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.194, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.194, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [], []]; noop=[[controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.19400000000000003, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.19400000000000003, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [], []]",
+    "id" : "materialized-no-op-retains-all-copies-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "implicit-no-op-retains-all-copies-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "complete-original-owner-block-is-not-duplicated-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "owner-missing-right-edge-metronome-keeps-full-copy-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "owner-with-tempo-but-missing-title-keeps-full-copy-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "explicit-empty-source-copy-list-remains-empty-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "changed-owner-cannot-move-heading-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "changed-owner-surfaces-review-warning-legacy",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "planner-full-block-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "planner-all-music-crops-unchanged-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "planner-other-system-no-copy-bound",
+    "pass" : true
+  },
+  {
+    "details" : "auto=[[controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.194, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.194, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [], []]; noop=[[controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.19400000000000003, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [controls.ScoreSourceMarking(topFraction: 0.155, bottomFraction: 0.19400000000000003, leftFraction: 0.15, rightFraction: 0.62, isBelow: nil)], [], []]",
+    "id" : "materialized-no-op-retains-all-copies-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "implicit-no-op-retains-all-copies-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "complete-original-owner-block-is-not-duplicated-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "owner-missing-right-edge-metronome-keeps-full-copy-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "owner-with-tempo-but-missing-title-keeps-full-copy-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "explicit-empty-source-copy-list-remains-empty-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "changed-owner-cannot-move-heading-bound",
+    "pass" : true
+  },
+  {
+    "details" : "",
+    "id" : "changed-owner-surfaces-review-warning-bound",
+    "pass" : true
+  }
+]

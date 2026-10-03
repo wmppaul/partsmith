@@ -68,6 +68,79 @@ struct ScoreSharedHeading: Codable, Equatable {
     /// Conservative bounds of original nonwhite pixels inside the padded copy,
     /// with a one-pixel raster guard. Absent for legacy or unmeasured headings.
     var inkBounds: [Double]? = nil
+    /// Optional for legacy inventories. New recognition records the physical
+    /// system before reviewed overrides can move its source or recipients.
+    var recognitionBinding: ScoreHeadingRecognitionBinding? = nil
+    /// Original boxes retained when fragments join. Their union has empty
+    /// corners, which must not become new overlap evidence on later replans.
+    var fragmentBounds: [[Double]]? = nil
+
+    /// Overlapping OCR fragments can describe one printed block (for example a
+    /// movement name above its tempo). Keep every source edge instead of letting
+    /// the one-row output overlap guard discard a fragment. Only original boxes
+    /// that overlap in both axes join; bounding-box expansion cannot bridge an
+    /// unrelated instruction elsewhere on the page.
+    static func coalesced(_ headings: [ScoreSharedHeading]) -> [ScoreSharedHeading] {
+        func sourceBounds(_ heading: ScoreSharedHeading) -> [[Double]]? {
+            guard ScoreSharedEnding.validBounds(heading.bounds) else { return nil }
+            guard let fragments = heading.fragmentBounds else { return [heading.bounds] }
+            guard !fragments.isEmpty, fragments.allSatisfy(ScoreSharedEnding.validBounds),
+                  ScoreSharedEnding.union(fragments) == heading.bounds else { return nil }
+            return fragments
+        }
+        let originals = headings.map(sourceBounds)
+        func overlaps(_ a: Int, _ b: Int) -> Bool {
+            guard headings[a].anchorStaffID == headings[b].anchorStaffID,
+                  headings[a].recognitionBinding == headings[b].recognitionBinding,
+                  let left = originals[a], let right = originals[b] else { return false }
+            return left.contains { l in right.contains { r in
+                min(l[2], r[2]) > max(l[0], r[0]) && min(l[3], r[3]) > max(l[1], r[1])
+            } }
+        }
+        var visited = Set<Int>(), result: [ScoreSharedHeading] = []
+        for start in headings.indices where !visited.contains(start) {
+            var group = [start], cursor = 0
+            visited.insert(start)
+            while cursor < group.count {
+                let member = group[cursor]
+                for index in headings.indices where !visited.contains(index)
+                    && overlaps(member, index) {
+                    visited.insert(index); group.append(index)
+                }
+                cursor += 1
+            }
+            guard group.count > 1 else { result.append(headings[start]); continue }
+            let members = group.sorted().map { headings[$0] }
+            var combined = headings[start]
+            combined.bounds = ScoreSharedEnding.union(members.map(\.bounds))
+            combined.fragmentBounds = group.sorted().flatMap { originals[$0] ?? [] }
+            combined.recognizedText = members.map(\.recognizedText).joined(separator: "\n")
+            // Old per-fragment measurements do not cover all pixels in the new
+            // union. The detector remeasures it; legacy planning keeps the full
+            // padded source block when no such measurement is available.
+            combined.inkBounds = nil
+            result.append(combined)
+        }
+        return result
+    }
+}
+
+struct ScoreHeadingRecognitionBinding: Codable, Equatable {
+    struct Assignment: Codable, Equatable {
+        var partID: String
+        var candidateIDs: [Int]
+        var kind: String
+    }
+    struct Staff: Codable, Equatable {
+        var id: Int
+        var staffLineFractions: [Double]
+    }
+    var pageIndex: Int
+    var pageWidth: Double
+    var pageHeight: Double
+    var systemIndex: Int
+    var assignments: [Assignment]
+    var staves: [Staff]
 }
 
 struct ScoreSharedNavigation: Codable, Equatable {
@@ -334,6 +407,39 @@ struct ScoreExtractionPlan: Codable, Equatable {
 /// Crops deliberately retain neighboring ink. Neither detection nor this planner
 /// identifies every target mark; the completed part still needs visual review.
 enum ScoreExtractionPlanner {
+    /// Called by recognition while the validated automatic plan still names the
+    /// physical source system. Crop edges and copied markings are deliberately
+    /// absent: edits to them do not change instrument ownership.
+    static func headingRecognitionBinding(page: ScorePageAnalysis, plan: ScoreExtractionPlan,
+                                          anchorStaffID: Int) -> ScoreHeadingRecognitionBinding? {
+        guard plan.canApply else { return nil }
+        return headingRecognitionBinding(page: page, bands: plan.bands, anchorStaffID: anchorStaffID)
+    }
+
+    private static func headingRecognitionBinding(page: ScorePageAnalysis, bands: [ScorePlannedBand],
+                                                   anchorStaffID: Int) -> ScoreHeadingRecognitionBinding? {
+        guard page.pageIndex >= 0, page.pageWidth.isFinite, page.pageHeight.isFinite,
+              page.pageWidth > 0, page.pageHeight > 0 else { return nil }
+        let pageBands = bands.filter { $0.pageIndex == page.pageIndex }
+        let owners = pageBands.filter { $0.candidateIDs.contains(anchorStaffID) }
+        guard owners.count == 1, owners[0].kind == "music" else { return nil }
+        let system = owners[0].systemIndex
+        let assignments = pageBands.filter { $0.systemIndex == system }.sorted { $0.partID < $1.partID }
+        let ids = assignments.flatMap(\.candidateIDs)
+        guard system >= 0, assignments.allSatisfy({ $0.kind == "music" && !$0.candidateIDs.isEmpty }),
+              Set(assignments.map(\.partID)).count == assignments.count,
+              Set(ids).count == ids.count else { return nil }
+        let staves = page.staves.filter { ids.contains($0.id) }.sorted {
+            ($0.staffLineFractions.first ?? -1) < ($1.staffLineFractions.first ?? -1)
+        }
+        guard staves.count == ids.count, Set(staves.map(\.id)).count == staves.count,
+              staves.allSatisfy({ validStaff($0) }), staves.first?.id == anchorStaffID else { return nil }
+        return ScoreHeadingRecognitionBinding(pageIndex: page.pageIndex, pageWidth: page.pageWidth,
+            pageHeight: page.pageHeight, systemIndex: system,
+            assignments: assignments.map { .init(partID: $0.partID, candidateIDs: $0.candidateIDs, kind: $0.kind) },
+            staves: staves.map { .init(id: $0.id, staffLineFractions: $0.staffLineFractions) })
+    }
+
     static func plan(
         pages: [ScorePageAnalysis], profile: ScoreExtractionProfile,
         overrides: [ScorePageOverride] = [], isCancelled: () -> Bool = { false }
@@ -417,7 +523,6 @@ enum ScoreExtractionPlanner {
         let lyrics = lyricComponents(page: page, staffIDs: lyricIDs)
         for system in 0..<(ordered.count / stride) {
             var offset = system * stride
-            let headingAnchor = ordered[offset].id
             for part in profile.parts {
                 let staves = Array(ordered[offset..<(offset + part.staffCount)])
                 let end = offset + part.staffCount
@@ -426,11 +531,10 @@ enum ScoreExtractionPlanner {
                     lyricOwners: lyrics, followingSystemStaffID: followingSystemStaffID)
                 output.assignments.append(band(partID: part.id, page: page, system: system, staves: staves, rect: crop.rect,
                     label: "", kind: "music", breakBefore: false, provenance: "native-profile-cadence", warnings: staves.flatMap(\.warnings) + crop.warnings))
-                copySharedHeadings(page: page, anchor: headingAnchor,
-                    to: &output.assignments[output.assignments.count - 1])
                 offset += part.staffCount
             }
         }
+        copySharedHeadings(page: page, to: &output.assignments)
         copySharedNavigation(page: page, to: &output.assignments)
         return output
     }
@@ -500,17 +604,43 @@ enum ScoreExtractionPlanner {
         }
     }
 
+    /// One application path for automatic and reviewed pages. An initial
+    /// override predates the live review binding, so it must prove ownership
+    /// here instead of moving a heading with whichever band now has its ID.
+    private static func copySharedHeadings(page: ScorePageAnalysis, to bands: inout [ScorePlannedBand],
+                                          preservingMarkings: Set<String> = [],
+                                          legacyReference: ScorePagePlan? = nil) {
+        let current = bands
+        let recognized = legacyReference?.assignments ?? current
+        for heading in ScoreSharedHeading.coalesced(page.sharedHeadings ?? []) {
+            guard ScoreSharedEnding.validBounds(heading.bounds) else { continue }
+            let expected = heading.recognitionBinding ?? headingRecognitionBinding(page: page,
+                bands: recognized, anchorStaffID: heading.anchorStaffID)
+            let actual = headingRecognitionBinding(page: page, bands: current, anchorStaffID: heading.anchorStaffID)
+            guard let expected, actual == expected else {
+                let systems = Set(([expected?.systemIndex].compactMap { $0 })
+                    + current.filter { $0.candidateIDs.contains(heading.anchorStaffID) }.map(\.systemIndex))
+                for i in bands.indices where systems.isEmpty || systems.contains(bands[i].systemIndex) {
+                    let warning = "Shared heading source ownership could not be verified. Run Auto again or review its source copy."
+                    if !bands[i].warnings.contains(warning) { bands[i].warnings.append(warning) }
+                }
+                continue
+            }
+            for i in bands.indices where bands[i].systemIndex == expected.systemIndex
+                && !preservingMarkings.contains(bands[i].id) {
+                copySharedHeading(heading, to: &bands[i])
+            }
+        }
+    }
+
     /// Retain printed pixels at their horizontal score position. Never replace
     /// a heading with OCR text, trim it to fit, or copy it twice when contained.
-    private static func copySharedHeadings(page: ScorePageAnalysis, anchor: Int,
-                                           to band: inout ScorePlannedBand) {
-        let candidates = (page.sharedHeadings ?? []).filter { $0.anchorStaffID == anchor }
-        for heading in candidates {
+    private static func copySharedHeading(_ heading: ScoreSharedHeading, to band: inout ScorePlannedBand) {
             let r = heading.bounds
             guard r.count == 4, r.allSatisfy(\.isFinite),
-                  r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1 else { continue }
+                  r[0] >= 0, r[1] >= 0, r[0] < r[2], r[1] < r[3], r[2] <= 1, r[3] <= 1 else { return }
             if r[0] >= band.leftFraction, r[2] <= 1 - band.rightFraction,
-               r[1] >= band.topFraction, r[3] <= band.bottomFraction { continue }
+               r[1] >= band.topFraction, r[3] <= band.bottomFraction { return }
             // Keep the padded copy unless its measured original source ink
             // already lies in this same crop. Missing or invalid evidence keeps
             // the legacy behavior; unrelated ink cannot certify a heading.
@@ -519,18 +649,17 @@ enum ScoreExtractionPlanner {
                ink[0] < ink[2], ink[1] < ink[3],
                ink[0] >= r[0], ink[1] >= r[1], ink[2] <= r[2], ink[3] <= r[3],
                ink[0] >= band.leftFraction, ink[2] <= 1 - band.rightFraction,
-               ink[1] >= band.topFraction, ink[3] <= band.bottomFraction { continue }
+               ink[1] >= band.topFraction, ink[3] <= band.bottomFraction { return }
             // Two stacked fragments in the same horizontal position cannot be
             // placed in one copied-mark row. Keep the earlier complete heading.
             guard band.sourceMarkings.allSatisfy({ min(1 - $0.rightFraction, r[2]) <= max($0.leftFraction, r[0]) }) else {
                 band.warnings.append("More than one shared heading occupies the same horizontal position; check the source directions.")
-                continue
+                return
             }
             band.leftFraction = min(band.leftFraction, r[0])
             band.rightFraction = min(band.rightFraction, 1 - r[2])
             band.sourceMarkings.append(ScoreSourceMarking(topFraction: r[1], bottomFraction: r[3],
                 leftFraction: r[0], rightFraction: 1 - r[2]))
-        }
     }
 
     private static func reviewedPage(_ page: ScorePageAnalysis, profile: ScoreExtractionProfile, override: ScorePageOverride) -> ScorePagePlan {
@@ -669,9 +798,21 @@ enum ScoreExtractionPlanner {
             }
         }
         if !output.unresolvedReasons.isEmpty { output.assignments = []; output.omissions = [] }
-        else { copySharedNavigation(page: page, to: &output.assignments,
+        else {
+            if !(page.sharedHeadings ?? []).isEmpty {
+                var legacyReference: ScorePagePlan?
+                if page.sharedHeadings?.contains(where: { $0.recognitionBinding == nil }) == true {
+                    var clean = page
+                    clean.sharedHeadings = nil; clean.sharedNavigation = nil; clean.sharedEndings = nil
+                    legacyReference = automaticPage(clean, profile: profile)
+                }
+                copySharedHeadings(page: page, to: &output.assignments,
+                    preservingMarkings: explicitMarkingLists, legacyReference: legacyReference)
+            }
+            copySharedNavigation(page: page, to: &output.assignments,
                                     preservingOwnerCrops: explicitOwnerCrops,
-                                    preservingMarkings: explicitMarkingLists, automaticEndingPairs: automaticEndingPairs) }
+                                    preservingMarkings: explicitMarkingLists, automaticEndingPairs: automaticEndingPairs)
+        }
         return output
     }
 

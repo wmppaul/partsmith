@@ -81,13 +81,20 @@ instruction below that same system; moving it above the following system can
 change its meaning. The batch reviewed plan can create these
 rectangles; the app can retain and remove them, and can edit editorial labels.
 Automatic staff assignment does not automatically understand shared directions.
+Treat a stacked movement name, tempo and metronome indication as one musical
+instruction. Keep every line, including the beat symbol, augmentation dots and
+number; overlapping horizontal positions do not justify dropping a line.
 Before adding a copied marking, check whether the recipient already retains a
 complete equivalent marking above its own staff at the same musical position.
+Matching tempo words alone do not replace an additional metronome indication.
 Equal numerals or words elsewhere are not sufficient. In particular, a neighboring
 instrument's ending below the target staff cannot replace the target's ending.
 Check both members of a first/second-ending pair, including across systems or
 pages. After tightening a crop, check again that its required local marking is
 still present; restore a verified source copy when it is no longer retained.
+After changing staff assignments, recheck the source system and recipients of
+shared markings. Verify that saving and reopening the corrected setup retains
+required copies and respects explicitly removed copies.
 Check both a return instruction and its destination symbol, plus any first/second
 endings. Copying the sentence alone does not make the repeat complete.
 

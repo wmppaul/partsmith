@@ -12,6 +12,14 @@ Generated outputs, exported parts, `.build` artifacts and copies embedded in sav
 
 The script requires PyMuPDF. The runner itself uses only Python's standard library.
 
+## October 3 complete-heading checkpoint
+
+The [native heading comparison](heading-block-native-2026-10-03/README.md) re-runs heading recognition on all 449 pages of the 16 resolved scores using hash-bound staff inventories and initialized instrument profiles. Every one of 6,324 main music crops and staff assignments is unchanged. Exactly four Schumann source copies now contain the complete overlapping SCHERZO / Molto vivace / metronome block. This is not fresh staff detection on all 449 pages and does not establish heading recall on unrecognized regions.
+
+A separate full native document-worker run performs fresh staff detection and all shared-direction phases on all 56 Schumann pages. The [complete five-part export review](schumann-heading-block-output/README.md) verifies 825 music crops, 74 pages, and four changed pages; the other 70 pages are pixel-identical to the preceding draft. Full required heading ink is preserved; four stricter scan-speck-envelope failures remain recorded. The [independent review](heading-block-independent/README.md) passes 75 controls, both no-op override modes on all 825 real bands, and the full corpus comparison. An initial repeated-grouping defect and its subsequent repair are retained in that report. [Assignment/category tests](heading-initial-override-repair/README.md) also verify explicit removals and stale ownership.
+
+The [accepted-heading source review](accepted-heading-source-review/README.md) examines all 63 baseline accepted fragments against original source context. It finds existing clipped Agitato lettering in other Brahms editions; a positive-box audit does not certify missing-heading recall. The [Brahms endpoint-ownership experiment](residual9-endpoint-ownership/README.md) was rejected: both candidates widened real crops and left the original nine whole-neighbor cases unresolved. Neither that crop experiment nor the held alternate OCR/ending experiments is included in the [current build](macos-build-2026-10-03-heading-blocks.json).
+
 ## Run every page
 
 Build the native analyzer into an immutable location first. The script below compiles the same production detector and planner used by the existing `tools/score_extraction_batch.sh` command:

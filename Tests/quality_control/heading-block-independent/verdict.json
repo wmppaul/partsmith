@@ -1,0 +1,30 @@
+{
+  "recommendation": "Accept bounded shared-heading grouping and no-op override fix; no broad auto-detection readiness claim.",
+  "controlsPassed": 75,
+  "controlsTotal": 75,
+  "nativeScores": 16,
+  "nativePages": 449,
+  "musicBandsCompared": 6324,
+  "changedMusicCrops": 0,
+  "originalHeadingFragments": 63,
+  "finalHeadingBlocks": 62,
+  "sourceFragmentsLost": 0,
+  "unsupportedBlocks": 0,
+  "recognitionErrors": 0,
+  "intendedChangedCopies": 4,
+  "fullWorkerNoopBands": 825,
+  "fullWorkerNoopCopies": 35,
+  "finalPDFParts": 5,
+  "finalPDFPages": 74,
+  "changedPDFPagesVisuallyReviewed": 4,
+  "changedRecipientRowsVisuallyReviewed": 4,
+  "newPlacementClippingOrOverlapObserved": false,
+  "strictAllInkGuardPass": false,
+  "strictAllInkGuardFailureInterpretation": "One isolated original scan pixel below Molto lies outside the final source block; its strict guard failure is retained. All unchanged target heading/text guards pass.",
+  "limitations": [
+    "Existing neighboring-staff ink remains.",
+    "Local Piano Molto and neighboring Piano Molto in the Cello crop remain alongside a necessary global title/metronome copy.",
+    "Other source-heading clipping/recall limitations are unchanged; see separate source audit."
+  ],
+  "finalPlannerSHA256": "c854782fb4ebd27350f6230b9c7816c5e10b20f0cbf876f61309a8b0c7d7881f"
+}

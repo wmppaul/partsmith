@@ -94,8 +94,18 @@ enum ScoreSharedHeadingDetector {
             }
         }
         guard !isCancelled() else { return [] }
+        // Keep the recognized system identity before any reviewed assignments
+        // can move its source or recipients. Overlapping lines of one heading
+        // must travel as one source block; measuring after joining also covers
+        // original ink in the newly enclosed corners and inter-line space.
+        let bound = result.map { heading in
+            var item = heading
+            item.recognitionBinding = ScoreExtractionPlanner.headingRecognitionBinding(
+                page: page, plan: plan, anchorStaffID: heading.anchorStaffID)
+            return item
+        }
         var measured: [ScoreSharedHeading] = []
-        for heading in result {
+        for heading in ScoreSharedHeading.coalesced(bound) {
             guard !isCancelled() else { return [] }
             var item = heading
             item.inkBounds = measuredInkBounds(in: image, bounds: heading.bounds)

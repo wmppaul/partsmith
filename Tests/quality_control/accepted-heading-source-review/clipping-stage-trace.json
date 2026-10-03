@@ -1,0 +1,136 @@
+[
+  {
+    "number": 18,
+    "case": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+    "page": 14,
+    "visionObservations": [
+      {
+        "bounds": [
+          0.22238372705146256,
+          0.07746705234248465,
+          0.49999999902411885,
+          0.0951462551711571
+        ],
+        "confidence": 1,
+        "text": "Agitato (Allegretto non troppo)"
+      }
+    ],
+    "baselineHeading": {
+      "anchorStaffID": 0,
+      "bounds": [
+        0.22107102588634803,
+        0.07309138179210288,
+        0.5013127001892334,
+        0.09645895633627163
+      ],
+      "inkBounds": [
+        0.22107102588634803,
+        0.07682417229186757,
+        0.49818181818181817,
+        0.09645895633627163
+      ],
+      "recognizedText": "Agitato (Allegretto non troppo)"
+    },
+    "recipientCopies": [
+      {
+        "partID": "violin2",
+        "systemIndex": 0,
+        "exactCopyBounds": [
+          0.22107102588634803,
+          0.07309138179210288,
+          0.5013127001892334,
+          0.09645895633627163
+        ]
+      },
+      {
+        "partID": "viola",
+        "systemIndex": 0,
+        "exactCopyBounds": [
+          0.22107102588634803,
+          0.07309138179210288,
+          0.5013127001892334,
+          0.09645895633627163
+        ]
+      },
+      {
+        "partID": "cello",
+        "systemIndex": 0,
+        "exactCopyBounds": [
+          0.22107102588634803,
+          0.07309138179210288,
+          0.5013127001892334,
+          0.09645895633627163
+        ]
+      }
+    ],
+    "candidateSameBoundsInkTextAnchor": true,
+    "stage": "Vision rectangle plus fixed horizontal padding in ScoreSharedHeadingDetector.select; measuredInkBounds measures only inside this rectangle and does not recover outside ink; planner copies the same rectangle unchanged."
+  },
+  {
+    "number": 32,
+    "case": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+    "page": 14,
+    "visionObservations": [
+      {
+        "bounds": [
+          0.22083333813664002,
+          0.06992305061436492,
+          0.4874999863078048,
+          0.09468049457555595
+        ],
+        "confidence": 1,
+        "text": "Agitato (Allegretto non troppo)"
+      }
+    ],
+    "baselineHeading": {
+      "anchorStaffID": 0,
+      "bounds": [
+        0.21949627644531708,
+        0.0654661783099551,
+        0.48883704799912775,
+        0.09601755626687891
+      ],
+      "inkBounds": [
+        0.21949627644531708,
+        0.07226497156239545,
+        0.48883704799912775,
+        0.09601755626687891
+      ],
+      "recognizedText": "Agitato (Allegretto non troppo)"
+    },
+    "recipientCopies": [
+      {
+        "partID": "violin2",
+        "systemIndex": 0,
+        "exactCopyBounds": [
+          0.21949627644531708,
+          0.0654661783099551,
+          0.48883704799912775,
+          0.09601755626687891
+        ]
+      },
+      {
+        "partID": "viola",
+        "systemIndex": 0,
+        "exactCopyBounds": [
+          0.21949627644531708,
+          0.0654661783099551,
+          0.48883704799912775,
+          0.09601755626687891
+        ]
+      },
+      {
+        "partID": "cello",
+        "systemIndex": 0,
+        "exactCopyBounds": [
+          0.21949627644531708,
+          0.0654661783099551,
+          0.48883704799912775,
+          0.09601755626687891
+        ]
+      }
+    ],
+    "candidateSameBoundsInkTextAnchor": true,
+    "stage": "Vision rectangle plus fixed horizontal padding in ScoreSharedHeadingDetector.select; measuredInkBounds measures only inside this rectangle and does not recover outside ink; planner copies the same rectangle unchanged."
+  }
+]

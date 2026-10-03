@@ -1,0 +1,1109 @@
+{
+  "candidateVariant": "candidate-final",
+  "pending": [],
+  "completeCases": 16,
+  "cases": [
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "before": {
+        "bandCount": 825,
+        "copiedRows": 35,
+        "elapsedSeconds": 54.86188006401062,
+        "emptyStaffPages": [
+          0
+        ],
+        "errors": [],
+        "headingCount": 6,
+        "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+        "inputInventorySHA256": "dbe52784ce11af9a9e5973c597bb457fb866d03495d7787ddcd6d0fa056ac9c3",
+        "pages": 56,
+        "planCanApply": true,
+        "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+      },
+      "after": {
+        "bandCount": 825,
+        "copiedRows": 35,
+        "elapsedSeconds": 39.12014400959015,
+        "emptyStaffPages": [
+          0
+        ],
+        "errors": [],
+        "headingCount": 5,
+        "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+        "inputInventorySHA256": "dbe52784ce11af9a9e5973c597bb457fb866d03495d7787ddcd6d0fa056ac9c3",
+        "pages": 56,
+        "planCanApply": true,
+        "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+      },
+      "changedBlocks": [
+        {
+          "page": 26,
+          "before": [
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.1282812864962117,
+                0.05113637285723365,
+                0.23945127346041578,
+                0.07079755299455603
+              ],
+              "inkBounds": [
+                0.1282812864962117,
+                0.053960239823288104,
+                0.23545454545454544,
+                0.07079755299455603
+              ],
+              "recognizedText": "SCHERZO."
+            },
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.1384917426134493,
+                0.06218179659656142,
+                0.287380353345853,
+                0.08060961565128615
+              ],
+              "inkBounds": [
+                0.1384917426134493,
+                0.06218179659656142,
+                0.285,
+                0.07888923950773115
+              ],
+              "recognizedText": "Molto vivace. d.= 138."
+            }
+          ],
+          "after": {
+            "anchorStaffID": 0,
+            "bounds": [
+              0.1282812864962117,
+              0.05113637285723365,
+              0.287380353345853,
+              0.08060961565128615
+            ],
+            "fragmentBounds": [
+              [
+                0.1282812864962117,
+                0.05113637285723365,
+                0.23945127346041578,
+                0.07079755299455603
+              ],
+              [
+                0.1384917426134493,
+                0.06218179659656142,
+                0.287380353345853,
+                0.08060961565128615
+              ]
+            ],
+            "inkBounds": [
+              0.1282812864962117,
+              0.053960239823288104,
+              0.285,
+              0.07888923950773115
+            ],
+            "recognitionBinding": {
+              "assignments": [
+                {
+                  "candidateIDs": [
+                    3
+                  ],
+                  "kind": "music",
+                  "partID": "cello"
+                },
+                {
+                  "candidateIDs": [
+                    4,
+                    5
+                  ],
+                  "kind": "music",
+                  "partID": "piano"
+                },
+                {
+                  "candidateIDs": [
+                    2
+                  ],
+                  "kind": "music",
+                  "partID": "viola"
+                },
+                {
+                  "candidateIDs": [
+                    0
+                  ],
+                  "kind": "music",
+                  "partID": "violin1"
+                },
+                {
+                  "candidateIDs": [
+                    1
+                  ],
+                  "kind": "music",
+                  "partID": "violin2"
+                }
+              ],
+              "pageHeight": 739,
+              "pageIndex": 25,
+              "pageWidth": 513,
+              "staves": [
+                {
+                  "id": 0,
+                  "staffLineFractions": [
+                    0.08656595113576973,
+                    0.08968748923617495,
+                    0.09351714804360577,
+                    0.09699317007898381,
+                    0.10047451235723923
+                  ]
+                },
+                {
+                  "id": 1,
+                  "staffLineFractions": [
+                    0.12418143909636174,
+                    0.12782000435851154,
+                    0.13131381025267835,
+                    0.13478596220593908,
+                    0.13825684535287314
+                  ]
+                },
+                {
+                  "id": 2,
+                  "staffLineFractions": [
+                    0.16330990307359883,
+                    0.16679521789433088,
+                    0.1702712268586166,
+                    0.17392660259639256,
+                    0.17723205888869242
+                  ]
+                },
+                {
+                  "id": 3,
+                  "staffLineFractions": [
+                    0.20227918836088374,
+                    0.20590882727613793,
+                    0.209438602445744,
+                    0.21307239104712497,
+                    0.2165458035125052
+                  ]
+                },
+                {
+                  "id": 4,
+                  "staffLineFractions": [
+                    0.2500964134207481,
+                    0.2551148722732241,
+                    0.26013070976886515,
+                    0.2651575920633336,
+                    0.27015624905946145
+                  ]
+                },
+                {
+                  "id": 5,
+                  "staffLineFractions": [
+                    0.30253111628904966,
+                    0.30717789117656435,
+                    0.31221890706687955,
+                    0.31721518216923716,
+                    0.3225993058233706
+                  ]
+                }
+              ],
+              "systemIndex": 0
+            },
+            "recognizedText": "SCHERZO.\nMolto vivace. d.= 138."
+          }
+        }
+      ],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [
+        {
+          "id": "p26-s1-violin2",
+          "page": 26,
+          "partID": "violin2",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        },
+        {
+          "id": "p26-s1-viola",
+          "page": 26,
+          "partID": "viola",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        },
+        {
+          "id": "p26-s1-cello",
+          "page": 26,
+          "partID": "cello",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        },
+        {
+          "id": "p26-s1-piano",
+          "page": 26,
+          "partID": "piano",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        }
+      ],
+      "sourceGuards": [
+        {
+          "page": 2,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            97.56666666666668,
+            123.9,
+            189.1,
+            137.43333333333334
+          ]
+        },
+        {
+          "page": 19,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            61.56666666666666,
+            469.2333333333333,
+            92.1,
+            478.1
+          ]
+        },
+        {
+          "page": 26,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            65.9,
+            40.56666666666666,
+            146.1,
+            58.1
+          ]
+        },
+        {
+          "page": 26,
+          "role": "SCHERZO",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            65.9,
+            40.56666666666666,
+            120.43333333333334,
+            49.43333333333334
+          ]
+        },
+        {
+          "page": 26,
+          "role": "Molto-vivace-metronome",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            71.23333333333333,
+            48.233333333333334,
+            146.1,
+            58.1
+          ]
+        },
+        {
+          "page": 38,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": false,
+          "guard": [
+            289.2333333333333,
+            263.2333333333333,
+            317.43333333333334,
+            271.43333333333334
+          ]
+        },
+        {
+          "page": 39,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            69.56666666666668,
+            464.2333333333333,
+            184.1,
+            475.7666666666667
+          ]
+        }
+      ],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/inventory.json": "e00227264280ea0d080841a0f33be8a213e950980a0017d11c553bedeb478f09",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/plan.json": "a833f72ef1a33b1cad2c336a42682d8e58ccec8afd2e419d0fdabd1309394228",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/summary.json": "edf660c608f16ef30b38ab25aac5125101440949cf7650978d0c59f15de2fca8",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/inventory.json": "36e3b1ea34aeb29d73f544dab3c24d04332529d6fbc08ba3e2f82256d1585f77",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/plan.json": "85009e144660159831003e0bb55dd1effb581c0b20ec3f3bdf96d30282bfae3d",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/summary.json": "7542c7c83822fe96035a2fc84a0db6959ddbc572e280b47be085d02a3c320993"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff",
+      "before": {
+        "bandCount": 36,
+        "copiedRows": 12,
+        "elapsedSeconds": 2.640850067138672,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 1,
+        "id": "excerpt-beethoven-op67-pages-7-8",
+        "inputInventorySHA256": "c147ac86db049c0a5efdc7923b445c6de4a81902d55427bc94d3a46751901b01",
+        "pages": 2,
+        "planCanApply": true,
+        "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff"
+      },
+      "after": {
+        "bandCount": 36,
+        "copiedRows": 12,
+        "elapsedSeconds": 2.000198006629944,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 1,
+        "id": "excerpt-beethoven-op67-pages-7-8",
+        "inputInventorySHA256": "c147ac86db049c0a5efdc7923b445c6de4a81902d55427bc94d3a46751901b01",
+        "pages": 2,
+        "planCanApply": true,
+        "sourceSHA256": "2d62a6c8a92b31dcc3dc2afb237a9e8c0764d511c06d6d3f1b459ee0c3780aff"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/excerpt-beethoven-op67-pages-7-8/inventory.json": "180b76fbff369763e73997657130cc86260eec43eb6b57ee22ad9d9d207068d3",
+        ".build/heading-blocks-2026-10-03/baseline/excerpt-beethoven-op67-pages-7-8/plan.json": "67bd9fa6fc9223bdfa09c5cc4cb791ed82488ad9cdcab5808a418f86ef4b70eb",
+        ".build/heading-blocks-2026-10-03/baseline/excerpt-beethoven-op67-pages-7-8/summary.json": "18bdd424adf2995eda6ab32c14a61753748cb4518544d84a64391d11607d0f52",
+        ".build/heading-blocks-2026-10-03/candidate-final/excerpt-beethoven-op67-pages-7-8/inventory.json": "a2d963528f8fbe2d8f6989df99545c6fcf36617a92325a5cf3e81a7b74a169cc",
+        ".build/heading-blocks-2026-10-03/candidate-final/excerpt-beethoven-op67-pages-7-8/plan.json": "67bd9fa6fc9223bdfa09c5cc4cb791ed82488ad9cdcab5808a418f86ef4b70eb",
+        ".build/heading-blocks-2026-10-03/candidate-final/excerpt-beethoven-op67-pages-7-8/summary.json": "d9d36617529f85cc4c2bf5b521d1c626357dce4ab970afebfd2ac87ffbc1b283"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "before": {
+        "bandCount": 393,
+        "copiedRows": 10,
+        "elapsedSeconds": 35.30709493160248,
+        "emptyStaffPages": [
+          33,
+          34
+        ],
+        "errors": [],
+        "headingCount": 5,
+        "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+        "inputInventorySHA256": "7ae53da0615e08f21f6aa77fb901d234da61094ed7d7633abf0d565932de6c90",
+        "pages": 35,
+        "planCanApply": true,
+        "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d"
+      },
+      "after": {
+        "bandCount": 393,
+        "copiedRows": 10,
+        "elapsedSeconds": 34.66978204250336,
+        "emptyStaffPages": [
+          33,
+          34
+        ],
+        "errors": [],
+        "headingCount": 5,
+        "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+        "inputInventorySHA256": "7ae53da0615e08f21f6aa77fb901d234da61094ed7d7633abf0d565932de6c90",
+        "pages": 35,
+        "planCanApply": true,
+        "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/inventory.json": "0656c6ab1031a4c7961979d11c0a3f3f835c0b44b68fb5313b19ce76b8230c8d",
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/plan.json": "fb47a2b1b7af2bb22eee731bcf030987b04c5ff73c7255cbea91fd114a8a8ea1",
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/summary.json": "d094d391ab98524da041053230b2c3ea7a8b15de30ede278b887329de47415c6",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/inventory.json": "c0c18d7d24d85c9e7b9469ff3f6f05b19ffd8dad8f171ab06d202dc4dc171acc",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/plan.json": "fb47a2b1b7af2bb22eee731bcf030987b04c5ff73c7255cbea91fd114a8a8ea1",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/summary.json": "df5f5be5b0b83728d07a7634be04101da3917c33f64261a4f4278f447417dc50"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975",
+      "before": {
+        "bandCount": 154,
+        "copiedRows": 3,
+        "elapsedSeconds": 10.872254014015198,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 3,
+        "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+        "inputInventorySHA256": "556b0709c63b35c2ae7de428511830dbbcc0d42e01ac9a33d61282283e06cd59",
+        "pages": 16,
+        "planCanApply": true,
+        "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975"
+      },
+      "after": {
+        "bandCount": 154,
+        "copiedRows": 3,
+        "elapsedSeconds": 13.90759003162384,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 3,
+        "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+        "inputInventorySHA256": "556b0709c63b35c2ae7de428511830dbbcc0d42e01ac9a33d61282283e06cd59",
+        "pages": 16,
+        "planCanApply": true,
+        "sourceSHA256": "d13fc3f4299dda634845b218222add8884ab9fd5257a9abb7cb2f9bcad4b9975"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/inventory.json": "0a24585b3039ee649b992b86f37afa1ba214dab23fc07d3ae3d33335c88fff3c",
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/plan.json": "5cc6bbf76376d03181d4920f0f21fe91c2b174817e498326028f646f1db1fb26",
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/summary.json": "a41e1be7013ec9e7d8b226466e6f57e839d4a235c0231d9b9a684a2ad83d0d58",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/inventory.json": "49224a306b3d4a8c32f24fa40083f5ac2d4eddf5b0565911487b80cd4d8b4529",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/plan.json": "5cc6bbf76376d03181d4920f0f21fe91c2b174817e498326028f646f1db1fb26",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922/summary.json": "d2792661e823bb285e212cf88fe3b40034af0c1b53016a250ad03c506ee183a6"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "before": {
+        "bandCount": 480,
+        "copiedRows": 20,
+        "elapsedSeconds": 33.1435489654541,
+        "emptyStaffPages": [
+          25
+        ],
+        "errors": [],
+        "headingCount": 7,
+        "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+        "inputInventorySHA256": "af73f718a56ffe3858665cb808b0d3d37fc58fa1d3940eef450ad90b2d565f47",
+        "pages": 26,
+        "planCanApply": true,
+        "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e"
+      },
+      "after": {
+        "bandCount": 480,
+        "copiedRows": 20,
+        "elapsedSeconds": 36.4524210691452,
+        "emptyStaffPages": [
+          25
+        ],
+        "errors": [],
+        "headingCount": 7,
+        "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+        "inputInventorySHA256": "af73f718a56ffe3858665cb808b0d3d37fc58fa1d3940eef450ad90b2d565f47",
+        "pages": 26,
+        "planCanApply": true,
+        "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/inventory.json": "211464e70c4bb7375d545ce6bd89bf6278e7795f9c340c72c696ef949ac58c6c",
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/plan.json": "10780ea297db7294eb31a1aede776d6dc8201d1aa4af8af98a1a2135aeab5a07",
+        ".build/heading-blocks-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/summary.json": "f8ed4a576bf322198295957d33dcba91f020614bf1a24446939353217f5a0883",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/inventory.json": "0a1a3c1abbe2500d942e9a5f4aa377a43126b2ecd2c46833e76778b6574b178e",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/plan.json": "10780ea297db7294eb31a1aede776d6dc8201d1aa4af8af98a1a2135aeab5a07",
+        ".build/heading-blocks-2026-10-03/candidate-final/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/summary.json": "ef1188854041421986bef3abc25cca3905797c645d3b2ab91a4a8b437c8e4191"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+      "before": {
+        "bandCount": 476,
+        "copiedRows": 6,
+        "elapsedSeconds": 42.24330008029938,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 2,
+        "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+        "inputInventorySHA256": "7d7cb0f20fdbcc7c76710ed1cc236c3692e78341fec9097b687b5a5fff25c8a4",
+        "pages": 30,
+        "planCanApply": true,
+        "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8"
+      },
+      "after": {
+        "bandCount": 476,
+        "copiedRows": 6,
+        "elapsedSeconds": 21.10775601863861,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 2,
+        "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+        "inputInventorySHA256": "7d7cb0f20fdbcc7c76710ed1cc236c3692e78341fec9097b687b5a5fff25c8a4",
+        "pages": 30,
+        "planCanApply": true,
+        "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/inventory.json": "a64b6c6972f5aebd2ea49480caccee5380cfa4094b130ca65208bc5b02cb2111",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/plan.json": "2bc208b5f5468c12b08852d2698f1d57f4ca75d91ce4ac09f96bc427346205bf",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/summary.json": "006d4e6689182674b82637d5779fe8a567cafe6ecfc851986ebefdda96eb72f0",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/inventory.json": "a1cca575fad8947f7f96a94c5e8e3d5c2f9b9bc263f64107336992d7dc0e789f",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/plan.json": "2bc208b5f5468c12b08852d2698f1d57f4ca75d91ce4ac09f96bc427346205bf",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/summary.json": "3f774a8d15d88d49c2472857815dc282f74b57320ad624d37f2f443392f867a9"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+      "before": {
+        "bandCount": 393,
+        "copiedRows": 10,
+        "elapsedSeconds": 55.02012503147125,
+        "emptyStaffPages": [
+          33,
+          34
+        ],
+        "errors": [],
+        "headingCount": 5,
+        "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+        "inputInventorySHA256": "a765ebbb15b21db75e221becb890f344f3bbb3ed88be4a2860ad97eec2a48a2d",
+        "pages": 35,
+        "planCanApply": true,
+        "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b"
+      },
+      "after": {
+        "bandCount": 393,
+        "copiedRows": 10,
+        "elapsedSeconds": 39.170912981033325,
+        "emptyStaffPages": [
+          33,
+          34
+        ],
+        "errors": [],
+        "headingCount": 5,
+        "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+        "inputInventorySHA256": "a765ebbb15b21db75e221becb890f344f3bbb3ed88be4a2860ad97eec2a48a2d",
+        "pages": 35,
+        "planCanApply": true,
+        "sourceSHA256": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/inventory.json": "2fc2ad5eb304456e6b0aef0d2504e44ded16716fb560576327f588a9f52e5e01",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/plan.json": "248644b3398bd1a1ab702d0e8eb2d88ac38a8123638925980735faec01a6337d",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/summary.json": "c4b80f9371b997b0fe5e5409521ae47612e564e702f1f655526f10e208abae23",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/inventory.json": "ede59602a610818e01bbee2d987a05ab75404e5efeefa62c2f4a93b808e00162",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/plan.json": "248644b3398bd1a1ab702d0e8eb2d88ac38a8123638925980735faec01a6337d",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/summary.json": "c72a80e95269f5bbdb210d51eb5d8e4766c4722ba0bcb400d82f8df098d86017"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+      "before": {
+        "bandCount": 480,
+        "copiedRows": 20,
+        "elapsedSeconds": 26.240061044692993,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 7,
+        "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+        "inputInventorySHA256": "b2da270c16562b171de93627a842d8ab45fc64cd8366e2f3f17ad1e96b46a7dd",
+        "pages": 25,
+        "planCanApply": true,
+        "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+      },
+      "after": {
+        "bandCount": 480,
+        "copiedRows": 20,
+        "elapsedSeconds": 24.91041898727417,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 7,
+        "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+        "inputInventorySHA256": "b2da270c16562b171de93627a842d8ab45fc64cd8366e2f3f17ad1e96b46a7dd",
+        "pages": 25,
+        "planCanApply": true,
+        "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/inventory.json": "ab7d0330c03ca712d61e08b38f9704d8af605caf96f88db20a3510ab7866587c",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/plan.json": "fddec15304f4f3da253ef3c6c4cb539b75fdc316922f06e2ef1309eab95ff999",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/summary.json": "bcc681213d65d931462a364654675f2372c8eff710055f12798c236bf2159984",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/inventory.json": "212d9195fcf7528781418a85ce1e77a4b454a00271bb1439fd31549edb4c28f4",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/plan.json": "fddec15304f4f3da253ef3c6c4cb539b75fdc316922f06e2ef1309eab95ff999",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/summary.json": "38a39fc2d4051b24c80ac637629bc862cf3df929d24bac18bc3359042785b49e"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801",
+      "before": {
+        "bandCount": 154,
+        "copiedRows": 3,
+        "elapsedSeconds": 12.928035020828247,
+        "emptyStaffPages": [
+          0,
+          17
+        ],
+        "errors": [],
+        "headingCount": 3,
+        "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+        "inputInventorySHA256": "93acf4b1059169b1957b109f18f9a6178eff7c881ea4a05d82364ed439f4350d",
+        "pages": 18,
+        "planCanApply": true,
+        "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801"
+      },
+      "after": {
+        "bandCount": 154,
+        "copiedRows": 3,
+        "elapsedSeconds": 11.577695965766907,
+        "emptyStaffPages": [
+          0,
+          17
+        ],
+        "errors": [],
+        "headingCount": 3,
+        "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+        "inputInventorySHA256": "93acf4b1059169b1957b109f18f9a6178eff7c881ea4a05d82364ed439f4350d",
+        "pages": 18,
+        "planCanApply": true,
+        "sourceSHA256": "111250c3cf1a830f8aca75256e79e64807c24a8271454159bf71eda0c2942801"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/inventory.json": "f334f0b2c1a97f1dcc0aed511d00b7706b3bd6818c95b6cd9881a9b7f5239e78",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/plan.json": "25bda2c1a6637806ea8d20f7cc4193373eb01211663f6f7d536ed03ebcb6bc5c",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/summary.json": "2772aa383bf0bd61f30d929927c328c83acae41e1a0c4edee5e3e0eaa21e629c",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/inventory.json": "d71c96a3b345ec02a86b61bbae429741acb93be1c170f77d0a079c7e130c935c",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/plan.json": "25bda2c1a6637806ea8d20f7cc4193373eb01211663f6f7d536ed03ebcb6bc5c",
+        ".build/heading-blocks-2026-10-03/candidate-final/medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733/summary.json": "8317df14a6aee92f19e0bb2fb7d35ad8cec7a865543c4a9a684423670562be14"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d",
+      "before": {
+        "bandCount": 660,
+        "copiedRows": 4,
+        "elapsedSeconds": 26.770298957824707,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 1,
+        "id": "normal-mozart-piano-quartet-kv478-score",
+        "inputInventorySHA256": "b600275540b5e5786e722786ca07c4de23503080fed5cae3f6955d3abe0fc79b",
+        "pages": 55,
+        "planCanApply": true,
+        "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d"
+      },
+      "after": {
+        "bandCount": 660,
+        "copiedRows": 4,
+        "elapsedSeconds": 18.500759959220886,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 1,
+        "id": "normal-mozart-piano-quartet-kv478-score",
+        "inputInventorySHA256": "b600275540b5e5786e722786ca07c4de23503080fed5cae3f6955d3abe0fc79b",
+        "pages": 55,
+        "planCanApply": true,
+        "sourceSHA256": "2a6d9619aa9c6a24e36b6955b739ff8569f93d5cc99ca31bcbe1e9bd3f53c43d"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-piano-quartet-kv478-score/inventory.json": "bad3be2806250866c1e0c082120090e8a1a544982391db5c859dfe75aee171d2",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-piano-quartet-kv478-score/plan.json": "83eff0e014d894e890ed6c704332149bd792f1e6320e892352ae2c419895fbdb",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-piano-quartet-kv478-score/summary.json": "c3e1328b89017cb837898e8aaed7635832c7ee8a88a6f3f289cbbd54d820234d",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-piano-quartet-kv478-score/inventory.json": "131dd0cb63b632800c26574b4833b4b1e0892a99f724d162b09942b7a986408e",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-piano-quartet-kv478-score/plan.json": "83eff0e014d894e890ed6c704332149bd792f1e6320e892352ae2c419895fbdb",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-piano-quartet-kv478-score/summary.json": "028894c5040db64dd3be0ac711c2223a6130a924fc960b1a088255be38b35565"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6",
+      "before": {
+        "bandCount": 520,
+        "copiedRows": 15,
+        "elapsedSeconds": 19.93878400325775,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 5,
+        "id": "normal-mozart-string-quartet-kv387-score",
+        "inputInventorySHA256": "aa36245ac05b68ac25e1768bc809564319c4efe74241b4fec8359440d67047f1",
+        "pages": 31,
+        "planCanApply": true,
+        "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6"
+      },
+      "after": {
+        "bandCount": 520,
+        "copiedRows": 15,
+        "elapsedSeconds": 14.093921899795532,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 5,
+        "id": "normal-mozart-string-quartet-kv387-score",
+        "inputInventorySHA256": "aa36245ac05b68ac25e1768bc809564319c4efe74241b4fec8359440d67047f1",
+        "pages": 31,
+        "planCanApply": true,
+        "sourceSHA256": "f047066cdf6f0e59486ec67b92a39b1f9acfd34d422131598608ccfbb514aab6"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-string-quartet-kv387-score/inventory.json": "f05f14980806dd6473cc1b8d262ef9face1ad50f2ff02fab23fb3f5208cbc38f",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-string-quartet-kv387-score/plan.json": "d5b0d640e7dfec5ea6276ac629e9fd92b3deecac957d4a4e7ebfcef0cf731c98",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-string-quartet-kv387-score/summary.json": "2087f51e9c8cc19db48a1937ae7eb2d06e8ac46c2ad25c3f14748f3fed732b3b",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-string-quartet-kv387-score/inventory.json": "503df065d0cf6c326fb8250bc0c8f2f7c17dbfe98679b0b39d34a49411400d04",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-string-quartet-kv387-score/plan.json": "d5b0d640e7dfec5ea6276ac629e9fd92b3deecac957d4a4e7ebfcef0cf731c98",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-string-quartet-kv387-score/summary.json": "ce9da79fdb8071bde7cf9a3c94ad170ffa0ca9e4206b50483d6dfa48d9bc31f2"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score",
+      "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d",
+      "before": {
+        "bandCount": 644,
+        "copiedRows": 52,
+        "elapsedSeconds": 12.270892024040222,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 4,
+        "id": "normal-mozart-magic-flute-overture-kv620-score",
+        "inputInventorySHA256": "b41527f438cf570f21fce72b610d8dc31936c4861cca85caac07580464845b76",
+        "pages": 43,
+        "planCanApply": true,
+        "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d"
+      },
+      "after": {
+        "bandCount": 644,
+        "copiedRows": 52,
+        "elapsedSeconds": 12.789790987968445,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 4,
+        "id": "normal-mozart-magic-flute-overture-kv620-score",
+        "inputInventorySHA256": "b41527f438cf570f21fce72b610d8dc31936c4861cca85caac07580464845b76",
+        "pages": 43,
+        "planCanApply": true,
+        "sourceSHA256": "c455db9ffabb18a8d3f5e111090825d31294941fa15ad7bbd530421850ebb86d"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-magic-flute-overture-kv620-score/inventory.json": "0191b88f909eba2763a48e3a2d62d4907364b634cce2e63cf5697420891ebdd4",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-magic-flute-overture-kv620-score/plan.json": "7fbc102bd46d98cc86807c4d0d7fb9fdf4ae914dad2bc9785792abb14023ac9e",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-magic-flute-overture-kv620-score/summary.json": "9922f73a64cf4cb68f71fe44d4faa1bbfbeadda2f7a054a935478ce5251e9b72",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-magic-flute-overture-kv620-score/inventory.json": "8e9e15fe9ce01b30d898e8a7a9e7a99d4ee571c83c42a6de9eb764094cb37803",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-magic-flute-overture-kv620-score/plan.json": "7fbc102bd46d98cc86807c4d0d7fb9fdf4ae914dad2bc9785792abb14023ac9e",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-magic-flute-overture-kv620-score/summary.json": "75d570cb520e7719200e5a4425f508f8d6d79fa63726a73575ea1f6409f0a249"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+      "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95",
+      "before": {
+        "bandCount": 64,
+        "copiedRows": 7,
+        "elapsedSeconds": 1.8147799968719482,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 1,
+        "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+        "inputInventorySHA256": "e5d02cdbf1e3df60039cd4ee1ac44337a80bf6917dec7a3ca56a72d34c6369ed",
+        "pages": 4,
+        "planCanApply": true,
+        "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95"
+      },
+      "after": {
+        "bandCount": 64,
+        "copiedRows": 7,
+        "elapsedSeconds": 1.362818956375122,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 1,
+        "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+        "inputInventorySHA256": "e5d02cdbf1e3df60039cd4ee1ac44337a80bf6917dec7a3ca56a72d34c6369ed",
+        "pages": 4,
+        "planCanApply": true,
+        "sourceSHA256": "2e7f854bed0c1d6baa82aefd3666b0451f8e030c282833b9f167bee456012a95"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/inventory.json": "047f73406bb8369a189947c3203143abf2d0317170118f7bf394b7e18d22b923",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/plan.json": "45c484bd270f8e4caa9ac15ebbf509c3c1366a86f5da7295b31a90208974b11e",
+        ".build/heading-blocks-2026-10-03/baseline/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/summary.json": "a851170608b0be096b9b91d7ed22c9803d67011af62a004a182d7df5154cf88b",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/inventory.json": "1044f501c7bf27e7bd0f76619098d199e616cdbfb557ad4f851477d22c1a0d34",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/plan.json": "45c484bd270f8e4caa9ac15ebbf509c3c1366a86f5da7295b31a90208974b11e",
+        ".build/heading-blocks-2026-10-03/candidate-final/normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score/summary.json": "9b10eb4450e91bf70096a4c1b21323345527d8f738850d965597acc6bf3bb43a"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+      "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837",
+      "before": {
+        "bandCount": 36,
+        "copiedRows": 2,
+        "elapsedSeconds": 3.2716809511184692,
+        "emptyStaffPages": [
+          4
+        ],
+        "errors": [],
+        "headingCount": 2,
+        "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+        "inputInventorySHA256": "473ac0137b332a28865a660a77a3d1daef1e61158a52c79d9b2ba8cfce012a50",
+        "pages": 5,
+        "planCanApply": true,
+        "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837"
+      },
+      "after": {
+        "bandCount": 36,
+        "copiedRows": 2,
+        "elapsedSeconds": 1.7015429735183716,
+        "emptyStaffPages": [
+          4
+        ],
+        "errors": [],
+        "headingCount": 2,
+        "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+        "inputInventorySHA256": "473ac0137b332a28865a660a77a3d1daef1e61158a52c79d9b2ba8cfce012a50",
+        "pages": 5,
+        "planCanApply": true,
+        "sourceSHA256": "d04ea13e573db5791674d51dd62a956fe939efd04de92118f35e7f7bbfddc837"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/inventory.json": "095a26508bc6154ccb0705903118a5eda16f5186bcef8af8e1de13e58e24de5e",
+        ".build/heading-blocks-2026-10-03/baseline/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/plan.json": "ea07dc72996851a6e4b3db20f0d41060a91aec99b77e34993a635650698be578",
+        ".build/heading-blocks-2026-10-03/baseline/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/summary.json": "6cc73708fe9d1362d1b1c9fd3fc52dac93b88c8e41e3aada608b77f506608186",
+        ".build/heading-blocks-2026-10-03/candidate-final/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/inventory.json": "202de4a97ea19042be24a228ffdc504a7f7539b1eb66c9e25385374a950f6804",
+        ".build/heading-blocks-2026-10-03/candidate-final/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/plan.json": "ea07dc72996851a6e4b3db20f0d41060a91aec99b77e34993a635650698be578",
+        ".build/heading-blocks-2026-10-03/candidate-final/rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229/summary.json": "044f47bbafaecbdef2a5614bf709bcc5768d49492bbd9db7722079ca5cd21720"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "kv498",
+      "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9",
+      "before": {
+        "bandCount": 405,
+        "copiedRows": 10,
+        "elapsedSeconds": 13.643948078155518,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 4,
+        "id": "kv498",
+        "inputInventorySHA256": "784dcefdf5981dae4af4160c3c1fb35fa44248cb784d1c18c24a9d0ab29926ba",
+        "pages": 29,
+        "planCanApply": true,
+        "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9"
+      },
+      "after": {
+        "bandCount": 405,
+        "copiedRows": 10,
+        "elapsedSeconds": 10.527060985565186,
+        "emptyStaffPages": [],
+        "errors": [],
+        "headingCount": 4,
+        "id": "kv498",
+        "inputInventorySHA256": "784dcefdf5981dae4af4160c3c1fb35fa44248cb784d1c18c24a9d0ab29926ba",
+        "pages": 29,
+        "planCanApply": true,
+        "sourceSHA256": "f4b64106fa23d408943ec49e86d4bc0177f634c73ce7e146f7ee2f8f5ecbe9c9"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/kv498/inventory.json": "784dcefdf5981dae4af4160c3c1fb35fa44248cb784d1c18c24a9d0ab29926ba",
+        ".build/heading-blocks-2026-10-03/baseline/kv498/plan.json": "bc7888dc7d21d02cb4c596d59834135d7bf0985b64e3b1d05eecb5822a6a3cc5",
+        ".build/heading-blocks-2026-10-03/baseline/kv498/summary.json": "10f203d1b942d1ca0eb1084829c2cb93901e75619d246481f5d13397d25a699d",
+        ".build/heading-blocks-2026-10-03/candidate-final/kv498/inventory.json": "ae47151ed8f87ca68f31336fc2320ac22e75a76ed544daf9a7b97237a0627ff8",
+        ".build/heading-blocks-2026-10-03/candidate-final/kv498/plan.json": "bc7888dc7d21d02cb4c596d59834135d7bf0985b64e3b1d05eecb5822a6a3cc5",
+        ".build/heading-blocks-2026-10-03/candidate-final/kv498/summary.json": "04414de458ad3ed29a2efeea896f6438d069c2e0f98aebcced9c5a915e166aad"
+      },
+      "bandIDsUnchanged": true
+    },
+    {
+      "id": "brahms",
+      "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "before": {
+        "bandCount": 604,
+        "copiedRows": 42,
+        "elapsedSeconds": 19.46918499469757,
+        "emptyStaffPages": [
+          0
+        ],
+        "errors": [],
+        "headingCount": 7,
+        "id": "brahms",
+        "inputInventorySHA256": "ed6a009be222333311b0af5ef3e1a72e212a6a3b64a93aeb15cca119681e25d9",
+        "pages": 39,
+        "planCanApply": true,
+        "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+      },
+      "after": {
+        "bandCount": 604,
+        "copiedRows": 42,
+        "elapsedSeconds": 26.172616004943848,
+        "emptyStaffPages": [
+          0
+        ],
+        "errors": [],
+        "headingCount": 7,
+        "id": "brahms",
+        "inputInventorySHA256": "ed6a009be222333311b0af5ef3e1a72e212a6a3b64a93aeb15cca119681e25d9",
+        "pages": 39,
+        "planCanApply": true,
+        "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+      },
+      "changedBlocks": [],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [],
+      "sourceGuards": [],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/brahms/inventory.json": "9070373f53ae2888bb39c0b119191d043466a523ff1cea600504003bcef4dc40",
+        ".build/heading-blocks-2026-10-03/baseline/brahms/plan.json": "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc",
+        ".build/heading-blocks-2026-10-03/baseline/brahms/summary.json": "ec084ce02635202e89c4b73b656dfa92324945e2078560f7f0832b82603f54c6",
+        ".build/heading-blocks-2026-10-03/candidate-final/brahms/inventory.json": "b667d88b0efb482f520e5d99b59e44f1b32a72b733d7541c8258aee591346908",
+        ".build/heading-blocks-2026-10-03/candidate-final/brahms/plan.json": "859abefd161d5d8ee7bb3978b7eeedcaa83700439629a2788270072fb7fff8fc",
+        ".build/heading-blocks-2026-10-03/candidate-final/brahms/summary.json": "00d9445f8ad5a900f30b568351cab29b4fd8aab5d7e70487b183a603cc04487e"
+      },
+      "bandIDsUnchanged": true
+    }
+  ]
+}

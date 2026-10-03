@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-03",
+  "decision": "Reject both endpoint-head variants; stopped after repeated actual-score structural regressions. No production edits or exports.",
+  "originalSource": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "originalSourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "savedRectificationPages": [
+    2,
+    7,
+    17,
+    19,
+    23,
+    28,
+    34,
+    38,
+    39
+  ],
+  "sourceBindings": [
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "fc9a15ae4c69b920df829f3e7eb2488d7c209310f995fa60d6df3f58053bdcc2"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "81f16962197455603ca5df0af1cad5cca3cf7f447f57dc551f93f87435be9ad6"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreInputPageSelection.swift",
+      "sha256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreInstrumentNameDetector.swift",
+      "sha256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreInstrumentPickList.swift",
+      "sha256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreLocalEndingPreservation.swift",
+      "sha256": "46165399d338fe88bdf74dae128a3c8794a34b2d115685edd6aab3dfc9b2e281"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreRestDetector.swift",
+      "sha256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedDestinationDetector.swift",
+      "sha256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedDirectionReview.swift",
+      "sha256": "20b6af97dd857f7fbf64d04e95c8728099a9e06168f71e0bfd5c505d8743c7fb"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+      "sha256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedEnding.swift",
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedEndingDetector.swift",
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedHeadingDetector.swift",
+      "sha256": "03efaec2d26aec7f30eddd0547fd6e65da82a015741e8590131a537be9b5463f"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSharedNavigationDetector.swift",
+      "sha256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/ScoreSourceHeaderDetector.swift",
+      "sha256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Detection/StaffBandDetector.swift",
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/DocumentModel/BarNumberDetector.swift",
+      "sha256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/DocumentModel/PageRectificationEstimator.swift",
+      "sha256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "97d184b780ce3a2bf75fa1e571cb0408283d425e0c1de55fb791640084938132"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/DocumentModel/ProjectModels.swift",
+      "sha256": "a439e029f15a66a71a12794bfeead13541e7ac5aab351c69e53f90a638dc35d5"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Export/PartPDFExporter.swift",
+      "sha256": "78d5bd145bcd7f9646c55a904a4beb00bd7160ac81061469a7fd3d847c62c5bb"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "fb37d3a41a133656fc5863ea16808bfdb4ebd45894429a61e193ffd5a03fa2ca"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/Core/Layout/PartLayoutEngine.swift",
+      "sha256": "d969483498cc26887cab02abd630ae24c863e662dd2252ec2c46204f4344f2b2"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/existing755.swift",
+      "sha256": "1e9e3bfe5cb655338398aff4c3266a577adcc4c3ba8874179214c110af349296"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/expanded336.swift",
+      "sha256": "0b0f20697841eca0604eca732604c01b8e86a77ee070f454c0e1f756ef2650e5"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/adversarial60.swift",
+      "sha256": "aa1d97e8cf8a4b75a7cc22d6ee780145c6ff95da827e70138eab665127b5439a"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/NativeScorePageAnalyzer.endpoint-head.swift",
+      "sha256": "127d72a21178a31ad872b0691c2bc25c817a0e62d972f6158d72e5da12bade9b"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/NativeScorePageAnalyzer.endpoint-head-v2.swift",
+      "sha256": "7e10141ec4a691cdf9337f64ba61d711f240c94f06806613991ed4cf604e5e6d"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/NativeScorePageAnalyzer.endpoint-trace.swift",
+      "sha256": "9bc49ecfe96bad85eb7f48a3befc3df3d752624b20b60b86a8b7d66349705087"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/baseline-actual",
+      "sha256": "a192de241a23dc5a9a6083f2bd66eb6837b505cde204893d98d1a305c8bfe8f0"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-head-actual",
+      "sha256": "7e1b18f95aa1071523a31a9cef7292c6ebdf2201af2f7ccf09cb5376adad77f1"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-head-v2-actual",
+      "sha256": "0799b04310dbda77379d7488841cc7a0dd8937c0deb7b2edb5e81ea8b926bcc3"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-trace",
+      "sha256": "35c4035c0df24fc0de412232b101cc45a17104334739b030e9bc3e631b3fc362"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/baseline-actual.json",
+      "sha256": "964da89520b2be22b0f5a8556f299fbbe70f088c354c9e50ff05f6b91a056901"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-head-actual.json",
+      "sha256": "faf5b43aa18a71b41c0984021145021fe935e602e77cf18ce4895c5accf25cff"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-head-v2-actual.json",
+      "sha256": "20f13ce244a35ac36f40b4763ec9aa82239c9ff762fc59a2a69abfe2c11d7628"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/baseline-actual-native.log",
+      "sha256": "8e85d7c4387bf2f5aff4c6226c5d4ad69e801dba8c5bf96358fb6cbfe36b3cea"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-head-actual-native.log",
+      "sha256": "8e85d7c4387bf2f5aff4c6226c5d4ad69e801dba8c5bf96358fb6cbfe36b3cea"
+    },
+    {
+      "path": ".build/residual9-endpoint-ownership-2026-10-03/endpoint-head-v2-actual-native.log",
+      "sha256": "8e85d7c4387bf2f5aff4c6226c5d4ad69e801dba8c5bf96358fb6cbfe36b3cea"
+    },
+    {
+      "path": ".build/ending-local-app-native-2026-10-03/brahms-inventory.json",
+      "sha256": "ed6a009be222333311b0af5ef3e1a72e212a6a3b64a93aeb15cca119681e25d9"
+    },
+    {
+      "path": "Tests/quality_control/profiles/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+      "sha256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c"
+    }
+  ],
+  "frozenGuardSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+  "frozenGuardUnchanged": true,
+  "baselineAnalyzerStillMatchesProduction": true,
+  "variant1": {
+    "variant": "endpoint-head",
+    "bands": 604,
+    "geometryChanges": [],
+    "neighborBefore": 9,
+    "neighborAfter": 487,
+    "changedBands": 480,
+    "allFrozenGuardsPass": true
+  },
+  "variant2": {
+    "variant": "endpoint-head-v2",
+    "bands": 604,
+    "geometryChanges": [],
+    "neighborBefore": 9,
+    "neighborAfter": 27,
+    "changedBands": 18,
+    "allFrozenGuardsPass": true
+  },
+  "originalNineUnchangedByVariant2": true,
+  "tests": {
+    "existing755BaselineSourceSHA256": "1e9e3bfe5cb655338398aff4c3266a577adcc4c3ba8874179214c110af349296",
+    "v1ExistingChecks": 755,
+    "v2ExistingChecks": 755,
+    "expandedGrid": 336,
+    "baselineExpandedFailures": 336,
+    "v1ExpandedFailures": 0,
+    "v2ExpandedFailures": 0,
+    "v1AdditionalNearEdgePreserved": 48,
+    "v1BrokenBarlineSeparated": 12,
+    "v2Separate60HarnessRerun": false
+  },
+  "limits": [
+    "No full36-score corpus run: rejected by the score-quality gate.",
+    "No claim that all target notation survives every changed crop: only ten pre-frozen local guards were checked in this task.",
+    "Source probe is a local peak diagnostic, not a certified line tracker or source-identity oracle.",
+    "V1 full480 changed crops were not visually inspected; rejection uses whole-neighbor counts and explicit source examples.",
+    "No candidate part PDF export: both candidates rejected.",
+    "Initial sandbox PDF/render attempts trapped at corrected page2 and are excluded; authoritative outside-sandbox native runs exited0 for all39pages."
+  ]
+}

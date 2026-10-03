@@ -228,7 +228,8 @@ extension ScoreDetectionReview {
                             let sameBounds: ([Double]) -> Bool = { other in
                                 other.count == 4 && zip(other, bounds).allSatisfy { abs($0 - $1) < 1e-9 }
                             }
-                            return (marking.isBelow != true && (page.sharedHeadings ?? []).contains { sameBounds($0.bounds) })
+                            let headings = page.sharedHeadings ?? []
+                            return (marking.isBelow != true && (headings + ScoreSharedHeading.coalesced(headings)).contains { sameBounds($0.bounds) })
                                 || (page.sharedNavigation ?? []).contains {
                                     sameBounds($0.bounds) && $0.isBelow == (marking.isBelow == true)
                                 }

@@ -1,0 +1,406 @@
+{
+  "candidateVariant": "candidate",
+  "pending": [
+    "excerpt-beethoven-op67-pages-7-8",
+    "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+    "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+    "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+    "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+    "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+    "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+    "normal-mozart-piano-quartet-kv478-score",
+    "normal-mozart-string-quartet-kv387-score",
+    "normal-mozart-magic-flute-overture-kv620-score",
+    "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score",
+    "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229",
+    "kv498",
+    "brahms"
+  ],
+  "completeCases": 1,
+  "cases": [
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "before": {
+        "bandCount": 825,
+        "copiedRows": 35,
+        "elapsedSeconds": 54.86188006401062,
+        "emptyStaffPages": [
+          0
+        ],
+        "errors": [],
+        "headingCount": 6,
+        "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+        "inputInventorySHA256": "dbe52784ce11af9a9e5973c597bb457fb866d03495d7787ddcd6d0fa056ac9c3",
+        "pages": 56,
+        "planCanApply": true,
+        "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+      },
+      "after": {
+        "bandCount": 825,
+        "copiedRows": 35,
+        "elapsedSeconds": 55.85646390914917,
+        "emptyStaffPages": [
+          0
+        ],
+        "errors": [],
+        "headingCount": 5,
+        "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+        "inputInventorySHA256": "dbe52784ce11af9a9e5973c597bb457fb866d03495d7787ddcd6d0fa056ac9c3",
+        "pages": 56,
+        "planCanApply": true,
+        "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e"
+      },
+      "changedBlocks": [
+        {
+          "page": 26,
+          "before": [
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.1282812864962117,
+                0.05113637285723365,
+                0.23945127346041578,
+                0.07079755299455603
+              ],
+              "inkBounds": [
+                0.1282812864962117,
+                0.053960239823288104,
+                0.23545454545454544,
+                0.07079755299455603
+              ],
+              "recognizedText": "SCHERZO."
+            },
+            {
+              "anchorStaffID": 0,
+              "bounds": [
+                0.1384917426134493,
+                0.06218179659656142,
+                0.287380353345853,
+                0.08060961565128615
+              ],
+              "inkBounds": [
+                0.1384917426134493,
+                0.06218179659656142,
+                0.285,
+                0.07888923950773115
+              ],
+              "recognizedText": "Molto vivace. d.= 138."
+            }
+          ],
+          "after": {
+            "anchorStaffID": 0,
+            "bounds": [
+              0.1282812864962117,
+              0.05113637285723365,
+              0.287380353345853,
+              0.08060961565128615
+            ],
+            "inkBounds": [
+              0.1282812864962117,
+              0.053960239823288104,
+              0.285,
+              0.07888923950773115
+            ],
+            "recognitionBinding": {
+              "assignments": [
+                {
+                  "candidateIDs": [
+                    3
+                  ],
+                  "kind": "music",
+                  "partID": "cello"
+                },
+                {
+                  "candidateIDs": [
+                    4,
+                    5
+                  ],
+                  "kind": "music",
+                  "partID": "piano"
+                },
+                {
+                  "candidateIDs": [
+                    2
+                  ],
+                  "kind": "music",
+                  "partID": "viola"
+                },
+                {
+                  "candidateIDs": [
+                    0
+                  ],
+                  "kind": "music",
+                  "partID": "violin1"
+                },
+                {
+                  "candidateIDs": [
+                    1
+                  ],
+                  "kind": "music",
+                  "partID": "violin2"
+                }
+              ],
+              "pageHeight": 739,
+              "pageIndex": 25,
+              "pageWidth": 513,
+              "staves": [
+                {
+                  "id": 0,
+                  "staffLineFractions": [
+                    0.08656595113576973,
+                    0.08968748923617495,
+                    0.09351714804360577,
+                    0.09699317007898381,
+                    0.10047451235723923
+                  ]
+                },
+                {
+                  "id": 1,
+                  "staffLineFractions": [
+                    0.12418143909636174,
+                    0.12782000435851154,
+                    0.13131381025267835,
+                    0.13478596220593908,
+                    0.13825684535287314
+                  ]
+                },
+                {
+                  "id": 2,
+                  "staffLineFractions": [
+                    0.16330990307359883,
+                    0.16679521789433088,
+                    0.1702712268586166,
+                    0.17392660259639256,
+                    0.17723205888869242
+                  ]
+                },
+                {
+                  "id": 3,
+                  "staffLineFractions": [
+                    0.20227918836088374,
+                    0.20590882727613793,
+                    0.209438602445744,
+                    0.21307239104712497,
+                    0.2165458035125052
+                  ]
+                },
+                {
+                  "id": 4,
+                  "staffLineFractions": [
+                    0.2500964134207481,
+                    0.2551148722732241,
+                    0.26013070976886515,
+                    0.2651575920633336,
+                    0.27015624905946145
+                  ]
+                },
+                {
+                  "id": 5,
+                  "staffLineFractions": [
+                    0.30253111628904966,
+                    0.30717789117656435,
+                    0.31221890706687955,
+                    0.31721518216923716,
+                    0.3225993058233706
+                  ]
+                }
+              ],
+              "systemIndex": 0
+            },
+            "recognizedText": "SCHERZO.\nMolto vivace. d.= 138."
+          }
+        }
+      ],
+      "missingOriginalFragments": [],
+      "newUnsupportedBlocks": [],
+      "changedMainCrops": [],
+      "changedCopies": [
+        {
+          "id": "p26-s1-violin2",
+          "page": 26,
+          "partID": "violin2",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        },
+        {
+          "id": "p26-s1-viola",
+          "page": 26,
+          "partID": "viola",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        },
+        {
+          "id": "p26-s1-cello",
+          "page": 26,
+          "partID": "cello",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        },
+        {
+          "id": "p26-s1-piano",
+          "page": 26,
+          "partID": "piano",
+          "systemIndex": 0,
+          "before": [
+            {
+              "bottomFraction": 0.07079755299455603,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.7605487265395843,
+              "topFraction": 0.05113637285723365
+            }
+          ],
+          "after": [
+            {
+              "bottomFraction": 0.08060961565128615,
+              "leftFraction": 0.1282812864962117,
+              "rightFraction": 0.712619646654147,
+              "topFraction": 0.05113637285723365
+            }
+          ]
+        }
+      ],
+      "sourceGuards": [
+        {
+          "page": 2,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            97.56666666666668,
+            123.9,
+            189.1,
+            137.43333333333334
+          ]
+        },
+        {
+          "page": 19,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            61.56666666666666,
+            469.2333333333333,
+            92.1,
+            478.1
+          ]
+        },
+        {
+          "page": 26,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            65.9,
+            40.56666666666666,
+            146.1,
+            58.1
+          ]
+        },
+        {
+          "page": 26,
+          "role": "SCHERZO",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            65.9,
+            40.56666666666666,
+            120.43333333333334,
+            49.43333333333334
+          ]
+        },
+        {
+          "page": 26,
+          "role": "Molto-vivace-metronome",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            71.23333333333333,
+            48.233333333333334,
+            146.1,
+            58.1
+          ]
+        },
+        {
+          "page": 38,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": false,
+          "guard": [
+            289.2333333333333,
+            263.2333333333333,
+            317.43333333333334,
+            271.43333333333334
+          ]
+        },
+        {
+          "page": 39,
+          "role": "complete-heading",
+          "boundsContain": true,
+          "inkContains": true,
+          "guard": [
+            69.56666666666668,
+            464.2333333333333,
+            184.1,
+            475.7666666666667
+          ]
+        }
+      ],
+      "artifactSHA256": {
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/inventory.json": "e00227264280ea0d080841a0f33be8a213e950980a0017d11c553bedeb478f09",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/plan.json": "a833f72ef1a33b1cad2c336a42682d8e58ccec8afd2e419d0fdabd1309394228",
+        ".build/heading-blocks-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/summary.json": "edf660c608f16ef30b38ab25aac5125101440949cf7650978d0c59f15de2fca8",
+        ".build/heading-blocks-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/inventory.json": "a2d558af70a9dd9d55274ec153caa4f9dcc9c5e1acb0b6c4479693300a4cc650",
+        ".build/heading-blocks-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/plan.json": "85009e144660159831003e0bb55dd1effb581c0b20ec3f3bdf96d30282bfae3d",
+        ".build/heading-blocks-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/summary.json": "0181faca722dbb99afb920558e57423943c9ffb6a0d2199e67a3b1ee34b383c4"
+      },
+      "bandIDsUnchanged": true
+    }
+  ]
+}

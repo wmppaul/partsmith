@@ -1,0 +1,69 @@
+62 self-contained local-ending controls passed
+PASS: Missing second source page rejects the entire pair rather than publishing the first half
+PASS: Missing first source page rejects the entire pair rather than publishing the second half
+PASS: All selected ending pages finish before the single score-level pairing pass
+PASS: Cross-page paired ending is published atomically to both pages
+PASS: Both halves share stable pair identity
+PASS: Each half retains both source-page dependencies
+PASS: Literal uncertain numeral evidence is preserved without retranscription
+PASS: Ending scan preserves heading metadata
+PASS: Ending scan preserves instructions and destination symbols
+PASS: Ending scan does not replace destination reference provenance
+PASS: Ending evidence and linked-source identity survive inventory round-trip
+PASS: Legacy inventories and memberwise initializers omit optional ending metadata
+PASS: Legacy inventory decoding remains valid
+PASS: Endings run even when no navigation sentence or symbol template exists
+PASS: Sparse selected pages cannot make unrelated endings adjacent
+PASS: Affirmed white source page preserves musical adjacency
+PASS: Unknown staffless page is a barrier, not automatically a verified blank
+PASS: Unresolved selected page remains in the complete pairing roster
+PASS: Unresolved intermediate system blocks a false cross-page pair
+PASS: Ending render failure remains a visible barrier
+PASS: OCR failure is distinct from successful zero-ending recognition
+PASS: Optional ending failure adds no acceptance gate
+PASS: Cancellation during recognition discards all newly produced metadata
+PASS: Cancellation after pairing discards all newly produced metadata
+PASS: Paired-ending review retains the complete ordinary crop plan
+PASS: Recipient receives the source-pixel ending on page0
+PASS: Source owner keeps original ending in its crop without duplicate row
+PASS: Recipient receives the source-pixel ending on page1
+PASS: Source owner keeps original ending in its crop without duplicate row
+PASS: Explicit ending-copy removal survives reset and replan
+PASS: Removing one recipient copy does not erase the pair's other source page
+PASS: Saved review cannot silently restore a removed ending copy
+PASS: Ending removal preserves Add Parts availability
+PASS: Paired ending apply is one undoable edit
+PASS: Redo preserves exact source pixels and removed-copy choice
+PASS: Reassigning either endpoint invalidates both halves
+PASS: Linked invalidation preserves the other page's independent direction categories
+PASS: Materialized partner override loses its stale automatic ending only
+PASS: Distinct manual source rectangle on partner page survives linked invalidation
+PASS: Other automatic partner copies are preserved
+PASS: Linked invalidation adds optional information, not an acceptance gate
+PASS: Reassigning either endpoint invalidates both halves
+PASS: Linked invalidation preserves the other page's independent direction categories
+PASS: Materialized partner override loses its stale automatic ending only
+PASS: Distinct manual source rectangle on partner page survives linked invalidation
+PASS: Other automatic partner copies are preserved
+PASS: Linked invalidation adds optional information, not an acceptance gate
+PASS: An initially authoritative manual ending rectangle remains manual even if identical to recognized pixels
+PASS: Initial override genuinely reassigns the ending anchor to a different valid system
+PASS: Initial regrouping cannot copy stale recognized ending pixels into the newly assigned system
+PASS: Stale initial ending ownership is reported without blocking ordinary crop acceptance
+PASS: A different ending pair sharing the partner page is not invalidated transitively
+PASS: Linked ending invalidation preserves partner destination-reference provenance
+PASS: Crop-only editing preserves linked ending ownership
+Frozen corpus input hashes verified
+PASS: brahms distinct ending metadata produces a complete plan
+PASS: brahms all source systems remain assigned
+PASS: brahms full source-copy count retained
+PASS: Same-system first/second bounds combine into the reviewed source rows
+PASS: All604 approved Brahms crops,42copies,staff identities/order match exactly after distinct-category migration
+PASS: Da Capo instruction and destination glyph remain navigation; endings are separate
+PASS: kv498 distinct ending metadata produces a complete plan
+PASS: kv498 all source systems remain assigned
+PASS: kv498 full source-copy count retained
+PASS: Same-system first/second bounds combine into the reviewed source rows
+PASS: Entire frozen68-page ending evidence replayed without fresh Vision calls
+35 worker and ending-phase cancellation checks passed
+65 ending Auto integration checks passed

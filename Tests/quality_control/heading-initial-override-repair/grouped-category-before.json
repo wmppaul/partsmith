@@ -1,0 +1,22 @@
+{
+  "checks" : [
+    {
+      "name" : "independent overlapping fragments exactly cover the coincident source block",
+      "passed" : true
+    },
+    {
+      "name" : "a local ending cannot suppress a coincident grouped heading",
+      "passed" : false
+    },
+    {
+      "name" : "linked ending cleanup retains a coincident coalesced heading",
+      "passed" : false
+    },
+    {
+      "name" : "linked ending cleanup retains a coincident legacy raw fragment",
+      "passed" : true
+    }
+  ],
+  "count" : 4,
+  "failures" : 2
+}

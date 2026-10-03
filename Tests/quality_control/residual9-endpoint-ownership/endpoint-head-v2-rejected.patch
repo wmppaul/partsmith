@@ -1,0 +1,72 @@
+--- production/NativeScorePageAnalyzer.swift
++++ rejected/endpoint-head-v2.swift
+@@ -310,6 +310,69 @@
+                             }
+                             guard allJunctionsIntact else { continue }
+                         }
++                        // Scratch: a compact head at an actual stroke endpoint
++                        // is music. A tie joining a continuing barline is not an
++                        // endpoint and must not veto structural separation.
++                        let ownsTerminalHead = physicalStrokes.contains { stroke in
++                            let staffSpace = space
++                            let nominalCenter = (stroke.left + stroke.right) / 2
++                            let columnRadius = max(1, Int((staffSpace * 0.35).rounded()))
++                            let stemColumns = max(0, nominalCenter - columnRadius)..<min(width, nominalCenter + columnRadius + 1)
++                            func occupied(_ y: Int) -> Bool {
++                                y >= 0 && y < height && stemColumns.contains { original[y * width + $0] }
++                            }
++                            return [(index, upperCoreShift, true), (index + 1, lowerCoreShift, false)].contains { staffIndex, shift, upper in
++                                guard Double(clearLeft - lineStarts[staffIndex]) > staffSpace else { return false }
++                                let boundary = Int((lines[staffIndex][upper ? 0 : 4] + shift).rounded())
++                                // A connector that continues beyond this staff's
++                                // outer line has no terminal here. Use a run, not
++                                // one nearby ink pixel, as continuation evidence.
++                                let direction = upper ? -1 : 1
++                                let continuationStart = max(2, Int((staffSpace * 0.35).rounded()))
++                                let continuationEnd = max(continuationStart + 1, Int((staffSpace * 1.35).rounded()))
++                                var continuous = 0
++                                for offset in continuationStart...continuationEnd {
++                                    continuous = occupied(boundary + direction * offset) ? continuous + 1 : 0
++                                    if continuous >= max(2, Int((staffSpace * 0.5).rounded())) { return false }
++                                }
++                                let inward = upper ? 1 : -1
++                                let depth = max(3, Int((staffSpace * 0.95).rounded()))
++                                let branchLength = max(2, Int((staffSpace * 0.4).rounded()))
++                                let headThickness = max(2, Int((staffSpace * 0.3).rounded()))
++                                let sideReach = max(branchLength + 1, Int((staffSpace * 1.2).rounded()))
++                                for distance in -1...depth {
++                                    let row = boundary + inward * distance
++                                    guard row >= 0, row + headThickness < height else { continue }
++                                    for side in [-1, 1] {
++                                        let near = side < 0 ? stroke.left - 1 : stroke.right
++                                        for offset in 0...max(0, sideReach - branchLength) {
++                                            let xs = (0..<branchLength).map { near + side * (offset + $0) }
++                                            guard xs.allSatisfy({ $0 >= 0 && $0 < width }) else { continue }
++                                            // A compact solid patch must connect
++                                            // horizontally to the stroke on each
++                                            // row. Staff-line remnants and thin
++                                            // ties cannot supply its full height.
++                                            let attached = (0..<headThickness).allSatisfy { dy in
++                                                let y = row + dy
++                                                let lo = min(xs.min()!, nominalCenter), hi = max(xs.max()!, nominalCenter)
++                                                guard (lo...hi).allSatisfy({ original[y * width + $0] }) else { return false }
++                                                var actualLeft = lo, actualRight = hi + 1
++                                                while actualLeft > 0 && original[y * width + actualLeft - 1] { actualLeft -= 1 }
++                                                while actualRight < width && original[y * width + actualRight] { actualRight += 1 }
++                                                let actualWidth = Double(actualRight - actualLeft)
++                                                // A head is bounded in both directions:
++                                                // a full horizontal staff line cannot
++                                                // certify a compact attachment.
++                                                return actualWidth >= staffSpace * 0.9 && actualWidth <= staffSpace * 2.1
++                                            }
++                                            if attached { return true }
++                                        }
++                                    }
++                                }
++                                return false
++                            }
++                        }
++                        guard !ownsTerminalHead else { continue }
+                         // Cutting only at the midpoint leaves long connector
+                         // tails that spuriously enlarge both crops. Remove the
+                         // inter-staff structure while retaining horizontal ink

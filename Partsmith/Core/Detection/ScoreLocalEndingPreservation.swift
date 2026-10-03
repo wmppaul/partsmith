@@ -159,7 +159,11 @@ enum ScoreLocalEndingPreservation {
                     }
                     guard !manuallyListed else { continue }
                     // If another category owns the same source box, retain it.
-                    guard !(page.sharedHeadings ?? []).contains(where: { $0.bounds == ending.bounds }),
+                    // Older inventories store title/tempo fragments separately;
+                    // the planner copies their union. Preserve both that block
+                    // and previously materialized individual heading copies.
+                    let headings = page.sharedHeadings ?? []
+                    guard !(headings + ScoreSharedHeading.coalesced(headings)).contains(where: { $0.bounds == ending.bounds }),
                           !(page.sharedNavigation ?? []).contains(where: { $0.bounds == ending.bounds }) else { continue }
                     guard let pi = result.pages.firstIndex(where: { $0.pageIndex == page.pageIndex }),
                           let bi = result.pages[pi].assignments.firstIndex(where: { $0.partID == counterpart.partID && $0.systemIndex == ending.systemIndex }),

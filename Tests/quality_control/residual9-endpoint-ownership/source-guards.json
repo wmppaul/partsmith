@@ -1,0 +1,109 @@
+{
+  "sourceReview": "Frozen from full-width source-only ruler crops before trying any new crop candidate. Includes pre-existing p31 guards unchanged.",
+  "source": ".build/qc-brahms-traced-ending-combination/parts/rectified-review-source.pdf",
+  "sourceSHA256": "3012da56d772c79a5d319282667b9bbfa25d1da747d876b37150930fb55ede38",
+  "originalSourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "productionAnalyzerSHA256": "ee91b7fb9772df58eb3f378ad73c9c790ca4ce6ad66333f70d8614f5918e3fd5",
+  "guards": [
+    {
+      "bandID": "p24-s2-viola",
+      "rect": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "description": "All viola notes, staccato, slurs, cresc., f and final hairpin."
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "rect": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "description": "Low opening ledger note/slur, all cello notes, cresc., f, closing slur/hairpin."
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "description": "All high ledger notes, phrase slurs, crescendo and forte; clef lower dot retained."
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "description": "High articulation dots, low ledger note, slurs, hairpin and forte."
+    },
+    {
+      "bandID": "p29-s1-violin1",
+      "rect": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "description": "Complete Poco Allegretto heading, all notes, slurs, dynamics and hairpins."
+    },
+    {
+      "bandID": "p29-s1-violin2",
+      "rect": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "description": "Complete clef and notes, low accidental/ledger note, slurs, p/pp and hairpins."
+    },
+    {
+      "bandID": "p31-s1-violin1",
+      "rect": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged."
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged."
+    },
+    {
+      "bandID": "p35-s1-violin1",
+      "rect": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "description": "All ledger notes and accents, last beam and full clef."
+    },
+    {
+      "bandID": "p35-s1-violin2",
+      "rect": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "description": "High beams, low ledger notes, accidentals and all three large slurs."
+    }
+  ]
+}

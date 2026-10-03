@@ -1,0 +1,234 @@
+{
+  "checks" : [
+    {
+      "name" : "legacy: automatic fixture supplies the complete source heading",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: unchanged initial nil-list override retains the same heading",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: same part in another system never receives the earlier heading",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: explicit empty list remains authoritative",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: explicit nonempty list is neither extended nor replaced",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: captured source copies survive no-op materialization",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: moved source yields a notice and no stale automatic copy",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: source changed to cue cannot acquire a stale heading",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: moved recipient yields a notice and no stale automatic copy",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: recipient changed to cue cannot acquire a stale heading",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: changed part ownership is rejected even within the same system",
+      "passed" : true
+    },
+    {
+      "name" : "legacy: explicit crop edges with a nil marking list re-evaluate source containment",
+      "passed" : true
+    },
+    {
+      "name" : "bound: automatic fixture supplies the complete source heading",
+      "passed" : true
+    },
+    {
+      "name" : "bound: unchanged initial nil-list override retains the same heading",
+      "passed" : true
+    },
+    {
+      "name" : "bound: same part in another system never receives the earlier heading",
+      "passed" : true
+    },
+    {
+      "name" : "bound: explicit empty list remains authoritative",
+      "passed" : true
+    },
+    {
+      "name" : "bound: explicit nonempty list is neither extended nor replaced",
+      "passed" : true
+    },
+    {
+      "name" : "bound: captured source copies survive no-op materialization",
+      "passed" : true
+    },
+    {
+      "name" : "bound: moved source yields a notice and no stale automatic copy",
+      "passed" : true
+    },
+    {
+      "name" : "bound: source changed to cue cannot acquire a stale heading",
+      "passed" : true
+    },
+    {
+      "name" : "bound: moved recipient yields a notice and no stale automatic copy",
+      "passed" : true
+    },
+    {
+      "name" : "bound: recipient changed to cue cannot acquire a stale heading",
+      "passed" : true
+    },
+    {
+      "name" : "bound: changed part ownership is rejected even within the same system",
+      "passed" : true
+    },
+    {
+      "name" : "bound: explicit crop edges with a nil marking list re-evaluate source containment",
+      "passed" : true
+    },
+    {
+      "name" : "a lower instrument staff cannot masquerade as a global heading anchor",
+      "passed" : true
+    },
+    {
+      "name" : "binding contains the actual source-system ownership and physical staff lines",
+      "passed" : true
+    },
+    {
+      "name" : "binding survives serialization",
+      "passed" : true
+    },
+    {
+      "name" : "old heading inventories decode without a recognition binding",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 0 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 1 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 2 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 3 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 4 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 5 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "malformed\/stale recognition binding 6 is nonblocking and cannot copy",
+      "passed" : true
+    },
+    {
+      "name" : "changed physical staff coordinates invalidate an old binding",
+      "passed" : true
+    },
+    {
+      "name" : "overlapping title\/tempo retains every padded source edge and discards incomplete ink evidence",
+      "passed" : true
+    },
+    {
+      "name" : "both detected labels remain visible in review",
+      "passed" : true
+    },
+    {
+      "name" : "legacy planner exports the complete overlapping title-plus-tempo block",
+      "passed" : true
+    },
+    {
+      "name" : "reviewed nil-list page exports the same complete coalesced block",
+      "passed" : true
+    },
+    {
+      "name" : "single-heading geometry and measured source ink remain exact",
+      "passed" : true
+    },
+    {
+      "name" : "same x at a remote vertical position is not coalesced",
+      "passed" : true
+    },
+    {
+      "name" : "edge contact without overlap is not coalesced",
+      "passed" : true
+    },
+    {
+      "name" : "distinct source anchors never coalesce",
+      "passed" : true
+    },
+    {
+      "name" : "bound and unbound source evidence never coalesce",
+      "passed" : true
+    },
+    {
+      "name" : "coalesced recognition retains its identical physical ownership binding",
+      "passed" : true
+    },
+    {
+      "name" : "union bounding-box empty corners cannot bridge a separate event",
+      "passed" : true
+    },
+    {
+      "name" : "repeated coalescing cannot bridge an empty union corner",
+      "passed" : true
+    },
+    {
+      "name" : "original fragment overlap survives serialization before planning",
+      "passed" : true
+    },
+    {
+      "name" : "repeated coalescing retains a fresh measurement of the original union",
+      "passed" : true
+    },
+    {
+      "name" : "merged source rectangles preserve their original constituents while singletons stay unchanged",
+      "passed" : true
+    },
+    {
+      "name" : "a newly overlapping original fragment still joins a persisted group",
+      "passed" : true
+    },
+    {
+      "name" : "malformed original-fragment provenance cannot trigger a merge: 0",
+      "passed" : true
+    },
+    {
+      "name" : "malformed original-fragment provenance cannot trigger a merge: 1",
+      "passed" : true
+    },
+    {
+      "name" : "malformed original-fragment provenance cannot trigger a merge: 2",
+      "passed" : true
+    },
+    {
+      "name" : "malformed original-fragment provenance cannot trigger a merge: 3",
+      "passed" : true
+    },
+    {
+      "name" : "malformed rectangles never merge",
+      "passed" : true
+    }
+  ],
+  "count" : 57,
+  "failures" : 0
+}
