@@ -1,0 +1,11 @@
+# Source-boundary layout matcher release
+
+The native layout matcher now locates clef patches beside source-proven connected staff boundaries. It keeps original staff IDs, line geometry and crop extents. Thick or doubled rules receive one complete boundary proof; ambiguous or incompatible source proofs still abstain. This changes layout suggestions, not music crops or rest counts.
+
+The complete Parzen109041 test uses two reviewed examples. Correct additional proposals increase from six to twenty of twenty-four systems; all six prior matches remain. Four systems still need manual assignment. An independent reviewer inspected all fourteen gained source systems and sixty-one clef contexts. All thirty-two historical cases retain the private candidate's semantics; one old assessor expected a global default instead of the now-reviewed per-system Piano count, as documented in the earlier divisi review.
+
+The clean integration removes private diagnostic hooks and adds cancellation during boundary scanning. Independent tests cancel at all 142 observed helper checkpoints and during the public page loop, with zero partial results. All 46 existing batch-assignment checks pass. Exact-source replay agrees with private v3 excluding execution time. See the [source review](../parzen-template-anchor-independent-2026-10-03/README.md) and [cancellation review](../parzen-template-cancellation-independent-2026-10-03/README.md).
+
+The universal macOS14 app retains Preview crop handles, per-system staff counts and all existing workflows. Only the matcher source changed from the preceding release. Root independently verified all45 frozen inputs, all56 build-evidence archive members, extracted bundle bytes/modes, both architectures and strict ad-hoc signatures. The ZIP passed CRC checks. The package is ad-hoc signed and not notarized. No running app or user document was changed. This bounded release does not establish one-click instrument identity or whole-score musical quality; experimental crop changes remain private.
+
+`publication.json` binds the old/new package hashes and local backup. `release-evidence.tar.gz` preserves the exact build inputs and logs; `integration-replay-evidence.tar.gz` preserves the clean matcher, driver, protocol, replay results and batch-test log. `root-verification.json` records the independent package/evidence checks.

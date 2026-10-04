@@ -1,0 +1,41 @@
+{
+  "privateBoundaryChecks": [
+    {
+      "cancellationCheckpointsExercised": 71,
+      "everyCancellationReturnedNil": true,
+      "fixture": "thick source boundary",
+      "longestCancelledRunSeconds": 0.00022411346435546875,
+      "provenStaffPatches": 2,
+      "sourceGeometryUnchanged": true
+    },
+    {
+      "cancellationCheckpointsExercised": 71,
+      "everyCancellationReturnedNil": true,
+      "fixture": "double source boundary",
+      "longestCancelledRunSeconds": 0.00022602081298828125,
+      "provenStaffPatches": 2,
+      "sourceGeometryUnchanged": true
+    }
+  ],
+  "productionMutations": false,
+  "publicSuggest": {
+    "baselineSuggestions": 1,
+    "cancellationAfterCompletedPage": 2,
+    "cancelled": true,
+    "elapsedSeconds": 0.07104611396789551,
+    "imageRequests": 2,
+    "returnedSuggestions": 0,
+    "sourcePages": [
+      2,
+      4,
+      6
+    ]
+  },
+  "status": "pass",
+  "cleanCandidateSHA256": "5e398baddf25d02d69daf269d533c745e39d1f1ad878627a65aa1966dad15cdb",
+  "reviewedPrivateV3SHA256": "c7db7cdd2634df1a90878f898a08bb696e6e26a7489c722696863b95d800d0e9",
+  "sourceInputSHA256": "07795a386954b078712d0c36190416e9ce408f391c42dab62e6f7e02fdafabfe",
+  "testExecutableSHA256": "a92abe460f875b130086b43e48272a4623eaebb2e15c45b83f1dc1a201165cb2",
+  "deltaReview": "Only probe removal, formatting, optional nil return for cancellation, and map-to-loop equivalent construction. Boundary arithmetic, thresholds, tie-breaking, provenance and original source geometry unchanged.",
+  "limits": "Direct-helper tests use synthetic source-connected thick/double rules; public cancellation uses original Parzen pages2/4/6. This checks abandonment and unchanged successful geometry, not app UI timing or all possible scans."
+}

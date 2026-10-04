@@ -1,0 +1,55 @@
+{
+  "scope": "Root independent package, source-input and frozen reviewer evidence verification; no new musical quality claim",
+  "archives": [
+    {
+      "archive": "Tests/quality_control/parzen-template-anchor-independent-2026-10-03/review-evidence.tar.gz",
+      "sha256": "4d05480cd94b419a6f169b9b1de5b3d265c1e992fb8a84f207f8cbbe04665ae5",
+      "members": 93,
+      "allMemberHashesVerified": true
+    },
+    {
+      "archive": "Tests/quality_control/parzen-template-cancellation-independent-2026-10-03/test-evidence.tar.gz",
+      "sha256": "bbae6d00b32ad9bafcba22ea7e13370b57e1511e303ca9c342e4095b003ea646",
+      "members": 6,
+      "allMemberHashesVerified": true
+    },
+    {
+      "archive": ".build/matcher-boundary-release-2026-10-03/release-evidence.tar.gz",
+      "sha256": "93664b75fd3465e30bc22ea3ab87b7e470999ed3539c21be634b1c560d9a5a21",
+      "members": 56,
+      "allMemberHashesVerified": true
+    }
+  ],
+  "sourceInputsVerified": 45,
+  "batchTestChecks": 46,
+  "batchTestLogSHA256": "2263b307f4bea009126849996f236ccb31ccd1b96b44a973fe153d9b205849c6",
+  "privatePackageSHA256": "7801cdf250293b3e469bf4a604f2686d1e8d92f138efaf021beea27a6f90e72c",
+  "binarySHA256": "5c928e52d08761c88f9327fcb72e83e43e984b324caaf20db600c0b3883d8f14",
+  "archiveFileBytesAndModesExact": true,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--all-architectures",
+        "--deep",
+        "--strict",
+        ".build/matcher-boundary-release-2026-10-03/package-extracted/Partsmith.app"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/lipo",
+        "-archs",
+        ".build/matcher-boundary-release-2026-10-03/package-extracted/Partsmith.app/Contents/MacOS/Partsmith"
+      ],
+      "stdout": "x86_64 arm64\n",
+      "stderr": "",
+      "exitCode": 0
+    }
+  ],
+  "publicationYetPerformed": false
+}

@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 3 source-boundary layout matching
+
+The [released matcher update](matcher-boundary-release-2026-10-03/README.md) measures clef patches beside source-proven connected staff boundaries. With two reviewed Parzen examples it suggests 20 of 24 remaining systems correctly, retaining all six baseline suggestions. [Independent source review](parzen-template-anchor-independent-2026-10-03/README.md) checks all 14 gains; the 32 historical challenges retain their results. The clean integration passes exact-source replays, 46 batch-assignment checks and [142 interrupted boundary scans plus public-loop cancellation](parzen-template-cancellation-independent-2026-10-03/README.md). Only the matcher changed in the rebuilt universal app; crop geometry, rest counts and manual review obligations remain. Root verified the frozen sources, archives and distributed package.
+
 ## October 3 complete Motets and Parzen outputs
 
 The [complete Brahms Op.74 draft](brahms-motets-complete-workflow-2026-10-03/README.md) now contains all five parts on 27 pages, with 225 source bands covering 45 systems and 292 physical staves. Native per-system counts preserve the divided Soprano and Bass sections. Independent review of every source crop found four shared-lyric omissions and two missing Piano footnotes; eight reviewed crop edits repair those omissions and reduce two premature neighboring headings. All 27 output pages were checked, including all 13 changed pages after the repairs; the other 14 pages are pixel-identical. Root checked all 72 copied source rectangles and the combined title/tempo recipient contexts. The full original is embedded in the editable project. This is assisted output: neighboring fragments and active page turns remain, and no new crop detector is promoted.

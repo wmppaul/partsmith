@@ -1,0 +1,2244 @@
+{
+  "status": "bounded readiness for proposal-only integration after debug-probe removal and cancellation checks",
+  "reviewer": "app_audit",
+  "productionEdits": false,
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "scope": "Independent code inspection, fresh original-source contexts, exact identity/source partition comparisons, and one frozen-v3 executable replay. Not an app release or output-part review.",
+  "bindings": {
+    "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+    ".build/parzen-template-probe-2026-10-03/input.json": "07795a386954b078712d0c36190416e9ce408f391c42dab62e6f7e02fdafabfe",
+    ".build/parzen-template-probe-2026-10-03/expected-before-result.json": "951092b11cf678a5b7091507f66506daf3ddb88e842ddcc19f7a78f406ba80e3",
+    ".build/parzen-template-probe-2026-10-03/profile.json": "e934c9bac942a18547eb31238ac131aa27082ba5e3e180b18b89323991abb342",
+    ".build/parzen-template-probe-2026-10-03/production-ScoreSystemTemplateMatcher.swift": "6abb036e0b6c1e3678d78cb6702ad2f558ddb4b8b8fd5436e350186f139a0351",
+    ".build/parzen-template-probe-2026-10-03/candidate-v3/Core/Detection/ScoreSystemTemplateMatcher.swift": "c7db7cdd2634df1a90878f898a08bb696e6e26a7489c722696863b95d800d0e9",
+    ".build/parzen-template-probe-2026-10-03/candidate-v3/run": "73b6637067dcdd385ba3c8ade0cdda03b9bfe9d112898e5fbc2bbd94610554c1",
+    ".build/parzen-template-probe-2026-10-03/candidate-v3/results.json": "4c160328436539733e44c98a2dbd8de1f4563510be8c3d5af853a7e22f09dc24",
+    ".build/parzen-template-probe-2026-10-03/candidate-v3/challenge-results.json": "4f657ef0a8ed24e88e5bb05899d4fc2899410fa163eb3392836d0fd479215228",
+    ".build/divisi-assignment-release-v2-2026-10-03/challenges/results.json": "45ce892715081a54631f80bb106b74a1c6dca48dfebfed49d057c87448567b11",
+    "Tests/quality_control/system-template-independent-2026-10-03/challenge-inputs.json": "6600e6b304757b0580fd773bbd87b71f3791376e53a45d0ca5fe9cae27c524b4",
+    "Tests/quality_control/system-template-independent-2026-10-03/source-truth.json": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+    "Tests/quality_control/parzen-template-anchor-v3-2026-10-03/manifest.json": "b3fb53fc227331a8f38de267495dc739235d375e53f697e6767165888e8b325b"
+  },
+  "observed": {
+    "baselineSuggestions": 6,
+    "candidateSuggestions": 20,
+    "unseededSystems": 24,
+    "retainedBaselinePhysicalPages": [
+      5,
+      8,
+      10,
+      16,
+      19,
+      21
+    ],
+    "gainedPhysicalPages": [
+      6,
+      9,
+      11,
+      12,
+      14,
+      17,
+      18,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "remainingPhysicalPages": [
+      3,
+      7,
+      13,
+      15
+    ],
+    "sourceIdentityMismatches": [],
+    "freshReplaySeconds": 8.059826016426086,
+    "authorReplaySeconds": 8.399362087249756,
+    "baselineReplaySeconds": 7.921561002731323,
+    "exactReplayExceptTiming": true,
+    "unchangedCompleteGroups": 26,
+    "unchangedConnectionDecisions": 542,
+    "historicalComparableCases": 32,
+    "historicalComparableChanges": [],
+    "historicalOriginalAssessor": {
+      "pass": 31,
+      "fail": 1,
+      "existingConflict": "notte-changed-profile-count",
+      "explanation": "Frozen expectation says noSuggestions when profile Piano staffCount is3, but explicitly reviewed example assigns2staff Piano. Current released contract learns reviewed per-system counts; v3 produces exactly the same suggestions as production. No fixture or expectation was edited."
+    }
+  },
+  "visualReview": {
+    "freshSourcePageContexts": 14,
+    "freshClefContexts": 61,
+    "sourcePageContactSheets": 5,
+    "clefContactSheets": 8,
+    "selection": "Every production comparison below0.48 on a gained page plus its actual template staff, and p2/staff9,p8/staff9,p16/staff7 boundary regressions.",
+    "reviewMethod": "All13 freshly rendered contact sheets individually viewed; sampled patch polygons reconstructed from native event coordinates over original PDF images. Also viewed original-source p2/staff9 production-v3 comparison.",
+    "findings": [
+      "Every gained source page visibly contains one complete22-staff system:11orchestral wind/brass/timpani staves,6vocal staves with divided alto and bass sections,5string staves. No subgroup treated as whole system.",
+      "All61 selected new patch locations cover the intended printed G/F clef at the source left boundary. No patch starts on interior notes or an isolated exterior bracket in these reviewed cases.",
+      "Some patches retain instrument-label letters/key signatures and brace tails. This is layout/clef resemblance with reviewed seed identities, not semantic instrument recognition.",
+      "p2/staff9 now samples the printed F clef rather than the later interior-note/barline region. p8/staff9 keeps bracket and true system boundary distinct; p16/staff7 accepts the thick genuine boundary."
+    ],
+    "patches": [
+      {
+        "physicalPage": 2,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          100.49584377494489,
+          436.4980330740529,
+          124.26342044033221,
+          468.3172703117333
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            106.94128829437196,
+            439.72023431331166
+          ],
+          [
+            117.81797592090514,
+            439.72023431331166
+          ],
+          [
+            117.81797592090514,
+            465.09506907247453
+          ],
+          [
+            106.94128829437196,
+            465.09506907247453
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": -7,
+        "sourceBand": [
+          308,
+          320
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 1,
+        "sourceClipPDFPoints": [
+          20.588559606351584,
+          83.77154580911368,
+          46.802323386766126,
+          118.93683238590076
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            27.69737690273519,
+            87.39655560310482
+          ],
+          [
+            39.69350609038252,
+            87.32537981280899
+          ],
+          [
+            39.69350609038252,
+            115.31182259190962
+          ],
+          [
+            27.69737690273519,
+            115.38299838220544
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          69,
+          80
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 2,
+        "sourceClipPDFPoints": [
+          20.658053265363638,
+          110.84743703128339,
+          46.56120144867884,
+          145.59603844302825
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            27.68263582355081,
+            114.42949287974103
+          ],
+          [
+            39.53661889049167,
+            114.35916047503406
+          ],
+          [
+            39.53661889049167,
+            142.01398259457062
+          ],
+          [
+            27.68263582355081,
+            142.08431499927758
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          69,
+          80
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 3,
+        "sourceClipPDFPoints": [
+          20.99271086198766,
+          139.9564198744862,
+          46.87802082807828,
+          174.68109164278212
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.01245593753766,
+            143.53600893821624
+          ],
+          [
+            39.85827575252828,
+            143.4657249679584
+          ],
+          [
+            39.85827575252828,
+            171.10150257905204
+          ],
+          [
+            28.01245593753766,
+            171.1717865493099
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          70,
+          81
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          21.713172514711975,
+          172.94346635494514,
+          47.334196871421604,
+          207.31360379273232
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.661246916531535,
+            176.48650828525163
+          ],
+          [
+            40.38612246960204,
+            176.4169419050838
+          ],
+          [
+            40.38612246960204,
+            203.77056186242584
+          ],
+          [
+            28.661246916531535,
+            203.84012824259366
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          71,
+          83
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 5,
+        "sourceClipPDFPoints": [
+          21.971537927365027,
+          211.4903303634072,
+          47.91572701035665,
+          246.29398739442826
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.00725022105767,
+            215.07806161447115
+          ],
+          [
+            40.88001471666401,
+            215.00761777523334
+          ],
+          [
+            40.88001471666401,
+            242.70625614336427
+          ],
+          [
+            29.00725022105767,
+            242.7766999826021
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          73,
+          84
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          22.321421745164777,
+          325.4483042219329,
+          48.179716016282725,
+          360.13673492756635
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.333840530552695,
+            329.02415737960655
+          ],
+          [
+            41.16729723089481,
+            328.95394676254807
+          ],
+          [
+            41.16729723089481,
+            356.56088176989266
+          ],
+          [
+            29.333840530552695,
+            356.6310923869512
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          74,
+          85
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          22.369916961148956,
+          354.59625251310587,
+          48.01145231233763,
+          388.99390507633893
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.32355366655605,
+            358.14213083716686
+          ],
+          [
+            41.05781560693053,
+            358.07250876540695
+          ],
+          [
+            41.05781560693053,
+            385.44802675227794
+          ],
+          [
+            29.32355366655605,
+            385.51764882403785
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          74,
+          85
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 13,
+        "sourceClipPDFPoints": [
+          23.307631964230666,
+          442.7849538048445,
+          49.19180489258125,
+          477.5081002577255
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            30.327068690563028,
+            446.3643856315987
+          ],
+          [
+            42.17236816624889,
+            446.29410474863346
+          ],
+          [
+            42.17236816624889,
+            473.92866843097136
+          ],
+          [
+            30.327068690563028,
+            473.9989493139366
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          77,
+          88
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 14,
+        "sourceClipPDFPoints": [
+          23.622240309564024,
+          469.49485125792114,
+          49.57818909842858,
+          504.3142837201449
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            30.661141676035765,
+            473.0842087176182
+          ],
+          [
+            42.53928773195684,
+            473.01373294834667
+          ],
+          [
+            42.53928773195684,
+            500.72492626044783
+          ],
+          [
+            30.661141676035765,
+            500.79540202971936
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          78,
+          89
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 15,
+        "sourceClipPDFPoints": [
+          23.974264168718424,
+          512.894098072707,
+          49.8347528093514,
+          547.5854724850702
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            30.987278037364657,
+            516.4702546820731
+          ],
+          [
+            42.82173894070517,
+            516.4000381068475
+          ],
+          [
+            42.82173894070517,
+            544.0093158757041
+          ],
+          [
+            30.987278037364657,
+            544.0795324509297
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          79,
+          90
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 16,
+        "sourceClipPDFPoints": [
+          24.419905298212054,
+          550.4100477604724,
+          49.766492961066895,
+          584.412033372851
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            31.293556189833705,
+            553.9151387993545
+          ],
+          [
+            42.892842069445244,
+            553.8463175715706
+          ],
+          [
+            42.892842069445244,
+            580.9069423339689
+          ],
+          [
+            31.293556189833705,
+            580.9757635617528
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          80,
+          91
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 18,
+        "sourceClipPDFPoints": [
+          24.690769856531602,
+          625.537708364715,
+          50.3046548521591,
+          659.8982684796679
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            31.636908160430586,
+            629.0797630177245
+          ],
+          [
+            43.35851654826012,
+            629.0102160223987
+          ],
+          [
+            43.35851654826012,
+            656.3562138266582
+          ],
+          [
+            31.636908160430586,
+            656.4257608219841
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          81,
+          92
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 20,
+        "sourceClipPDFPoints": [
+          24.963389200073895,
+          701.1393454939148,
+          50.83672817028152,
+          735.8479583893085
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            31.979887903859012,
+            704.7172791304546
+          ],
+          [
+            43.8202294664964,
+            704.6470276639265
+          ],
+          [
+            43.8202294664964,
+            732.2700247527687
+          ],
+          [
+            31.979887903859012,
+            732.3402762192968
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          82,
+          93
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 4,
+        "staffID": 21,
+        "sourceClipPDFPoints": [
+          25.016429243163227,
+          733.474050716876,
+          50.652695293501864,
+          767.8646346090096
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            31.968636985627942,
+            737.0192003677352
+          ],
+          [
+            43.70048755103715,
+            736.9495926032168
+          ],
+          [
+            43.70048755103715,
+            764.3194849581504
+          ],
+          [
+            31.968636985627942,
+            764.3890927226688
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          83,
+          93
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 6,
+        "staffID": 1,
+        "sourceClipPDFPoints": [
+          24.623784350438356,
+          77.29825347192728,
+          50.53707425966445,
+          112.03148776586258
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            31.651117207177638,
+            80.8527397258549
+          ],
+          [
+            43.50974140292517,
+            80.81135184263238
+          ],
+          [
+            43.50974140292517,
+            108.47700151193494
+          ],
+          [
+            31.651117207177638,
+            108.51838939515748
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          84,
+          92
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 6,
+        "staffID": 2,
+        "sourceClipPDFPoints": [
+          26.01541891331652,
+          107.17527508884457,
+          51.62044334708803,
+          141.49532151581266
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.95915435298337,
+            110.68747704004946
+          ],
+          [
+            44.67670790742118,
+            110.64658150864888
+          ],
+          [
+            44.67670790742118,
+            137.9831195646078
+          ],
+          [
+            32.95915435298337,
+            138.02401509600836
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          84,
+          96
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 6,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          25.94394011760574,
+          171.66445249233504,
+          51.868453107963305,
+          206.41272979732005
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.974316521770504,
+            175.22047819909744
+          ],
+          [
+            44.83807670379854,
+            175.17907239072633
+          ],
+          [
+            44.83807670379854,
+            202.85670409055766
+          ],
+          [
+            32.974316521770504,
+            202.89810989892877
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          85,
+          96
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 6,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          26.93870205155909,
+          348.8891945949452,
+          52.850870125031065,
+          383.6209252209085
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            33.965730681653184,
+            352.4435269683822
+          ],
+          [
+            45.82384149493697,
+            352.40214087692
+          ],
+          [
+            45.82384149493697,
+            380.0665928474715
+          ],
+          [
+            33.965730681653184,
+            380.1079789389337
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          87,
+          99
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 8,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          23.768520895422448,
+          311.19333926183026,
+          49.07063979295011,
+          345.09525850933437
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            30.630112460853677,
+            314.65186854427026
+          ],
+          [
+            42.20904822751888,
+            314.62358038465436
+          ],
+          [
+            42.20904822751888,
+            341.6367292268944
+          ],
+          [
+            30.630112460853677,
+            341.66501738651027
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          78,
+          89
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 9,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          23.297257186503394,
+          342.78104567983337,
+          49.227802227422835,
+          377.54569130402666
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            30.32926940099002,
+            346.34618197105516
+          ],
+          [
+            42.19579001293621,
+            346.2964833511541
+          ],
+          [
+            42.19579001293621,
+            373.98055501280487
+          ],
+          [
+            30.32926940099002,
+            374.0302536327059
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": -3,
+        "sourceBand": [
+          77,
+          88
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 11,
+        "staffID": 3,
+        "sourceClipPDFPoints": [
+          24.689832769202116,
+          140.86057011499585,
+          50.30790626122658,
+          175.1899237040958
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            31.637106936530785,
+            144.36637866306847
+          ],
+          [
+            43.360632093897905,
+            144.3336456125764
+          ],
+          [
+            43.360632093897905,
+            171.68411515602318
+          ],
+          [
+            31.637106936530785,
+            171.71684820651527
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          84,
+          92
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 11,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          25.61603470308661,
+          170.35203457474802,
+          51.528205702775686,
+          205.07549185526855
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.643064126731105,
+            173.89809008193166
+          ],
+          [
+            44.50117627913119,
+            173.86498125343385
+          ],
+          [
+            44.50117627913119,
+            201.5294363480849
+          ],
+          [
+            32.643064126731105,
+            201.56254517658272
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          84,
+          95
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 11,
+        "staffID": 14,
+        "sourceClipPDFPoints": [
+          25.285667185253537,
+          502.4544772695212,
+          51.19650104999554,
+          537.1761427299657
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.31233399603103,
+            506.0003497910823
+          ],
+          [
+            44.16983423921805,
+            505.9672426710855
+          ],
+          [
+            44.16983423921805,
+            533.6302702084046
+          ],
+          [
+            32.31233399603103,
+            533.6633773284013
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          86,
+          94
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 11,
+        "staffID": 15,
+        "sourceClipPDFPoints": [
+          25.35386718665229,
+          542.4177794314465,
+          50.95986771180895,
+          576.7309547100033
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.29786732906766,
+            545.9219358056952
+          ],
+          [
+            44.015867569393585,
+            545.8892181812278
+          ],
+          [
+            44.015867569393585,
+            573.2267983357547
+          ],
+          [
+            32.29786732906766,
+            573.2595159602221
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          86,
+          94
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 11,
+        "staffID": 16,
+        "sourceClipPDFPoints": [
+          25.68453386010064,
+          574.1551850636484,
+          51.2905343852573,
+          608.4683603422052
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.628534002516005,
+            577.6593414378971
+          ],
+          [
+            44.34653424284194,
+            577.6266238134297
+          ],
+          [
+            44.34653424284194,
+            604.9642039679566
+          ],
+          [
+            32.628534002516005,
+            604.996921592424
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          86,
+          95
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 12,
+        "staffID": 3,
+        "sourceClipPDFPoints": [
+          25.949630841235034,
+          156.59730450165767,
+          51.84870802143136,
+          191.2701233857883
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.97310939857641,
+            160.10847603422786
+          ],
+          [
+            44.82522946408998,
+            160.10847603422786
+          ],
+          [
+            44.82522946408998,
+            187.75895185321812
+          ],
+          [
+            32.97310939857641,
+            187.75895185321812
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          85,
+          96
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 12,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          25.484475655525646,
+          314.6499051351955,
+          50.5066959031423,
+          348.1488172658502
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.270162502336944,
+            318.04220003450234
+          ],
+          [
+            43.721009056331006,
+            318.04220003450234
+          ],
+          [
+            43.721009056331006,
+            344.7565223665434
+          ],
+          [
+            32.270162502336944,
+            344.7565223665434
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          86,
+          94
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 14,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          25.353294017189945,
+          310.4433769598197,
+          50.96185643615557,
+          344.72726439171237
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.29798891046876,
+            313.91516302887214
+          ],
+          [
+            44.01716154287676,
+            313.91516302887214
+          ],
+          [
+            44.01716154287676,
+            341.25547832265994
+          ],
+          [
+            32.29798891046876,
+            341.25547832265994
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          86,
+          94
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 14,
+        "staffID": 16,
+        "sourceClipPDFPoints": [
+          26.997865383729167,
+          571.5965545809086,
+          52.645591290683406,
+          605.932872781529
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            33.95318088392015,
+            575.0736500948955
+          ],
+          [
+            45.69027579049242,
+            575.0736500948955
+          ],
+          [
+            45.69027579049242,
+            602.4557772675421
+          ],
+          [
+            33.95318088392015,
+            602.4557772675421
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          88,
+          99
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 14,
+        "staffID": 18,
+        "sourceClipPDFPoints": [
+          26.01433784374241,
+          654.9404070816494,
+          51.62419433091333,
+          689.2260269688027
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.959383670771814,
+            658.4123685892092
+          ],
+          [
+            44.67914850388393,
+            658.4123685892092
+          ],
+          [
+            44.67914850388393,
+            685.7540654612428
+          ],
+          [
+            32.959383670771814,
+            685.7540654612428
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          88,
+          96
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 16,
+        "staffID": 7,
+        "sourceClipPDFPoints": [
+          21.776955734121273,
+          266.38178414254435,
+          47.11288842831962,
+          300.3371031550884
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.647717142717436,
+            269.85302858956004
+          ],
+          [
+            40.24212701972346,
+            269.81660944570245
+          ],
+          [
+            40.24212701972346,
+            296.8658587080727
+          ],
+          [
+            28.647717142717436,
+            296.9022778519303
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          72,
+          83
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 17,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          22.310239091941646,
+          354.295811874033,
+          48.218516434284204,
+          388.980947627741
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.336212608509122,
+            357.8082306845351
+          ],
+          [
+            41.19254291771673,
+            357.8082306845351
+          ],
+          [
+            41.19254291771673,
+            385.4685288172389
+          ],
+          [
+            29.336212608509122,
+            385.4685288172389
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          75,
+          85
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 18,
+        "staffID": 1,
+        "sourceClipPDFPoints": [
+          18.007132516832097,
+          76.9100152292703,
+          43.93525451043059,
+          111.71282521937364
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            25.03848763374016,
+            80.51623128549554
+          ],
+          [
+            36.90389939352252,
+            80.42512440491853
+          ],
+          [
+            36.90389939352252,
+            108.10660916314842
+          ],
+          [
+            25.03848763374016,
+            108.1977160437254
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          60,
+          72
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 18,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          18.345747820782783,
+          176.78703685572935,
+          44.238341844711734,
+          211.54215834845334
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            25.367468234051653,
+            180.38831149989633
+          ],
+          [
+            37.21662143144287,
+            180.29732945838367
+          ],
+          [
+            37.21662143144287,
+            207.94088370428636
+          ],
+          [
+            25.367468234051653,
+            208.03186574579902
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          62,
+          73
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 18,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          18.404014633453176,
+          303.4968510456652,
+          44.03617366135538,
+          337.90239574745425
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            25.35510860712157,
+            307.0619030561795
+          ],
+          [
+            37.085079687686985,
+            306.9718361376398
+          ],
+          [
+            37.085079687686985,
+            334.3373437369399
+          ],
+          [
+            25.35510860712157,
+            334.42741065547966
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          64,
+          73
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 18,
+        "staffID": 15,
+        "sourceClipPDFPoints": [
+          20.607860450194817,
+          536.393614395229,
+          46.73535530737067,
+          571.4640386726294
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            27.6932827843442,
+            540.0275602508584
+          ],
+          [
+            39.64993297322128,
+            539.9357528089496
+          ],
+          [
+            39.64993297322128,
+            567.8300928169999
+          ],
+          [
+            27.6932827843442,
+            567.9219002589087
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          71,
+          80
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 18,
+        "staffID": 21,
+        "sourceClipPDFPoints": [
+          22.96857041602857,
+          744.3882178345592,
+          48.89026589062696,
+          779.1824016341614
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.998182748123046,
+            747.9935400575941
+          ],
+          [
+            41.860653558532476,
+            747.9024557586795
+          ],
+          [
+            41.860653558532476,
+            775.5770794111264
+          ],
+          [
+            29.998182748123046,
+            775.6681637100411
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          77,
+          87
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 20,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          27.604887524655723,
+          313.3121226234396,
+          53.49536806435528,
+          347.9734326126053
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.626034789658995,
+            316.82212869829186
+          ],
+          [
+            46.47422079935201,
+            316.82212869829186
+          ],
+          [
+            46.47422079935201,
+            344.46342653775304
+          ],
+          [
+            34.626034789658995,
+            344.46342653775304
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          90,
+          101
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 20,
+        "staffID": 15,
+        "sourceClipPDFPoints": [
+          28.329249970636994,
+          547.1630027596862,
+          53.938009537155516,
+          581.4471541261331
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            35.273998327658965,
+            550.6348155562883
+          ],
+          [
+            46.993261180133544,
+            550.6348155562883
+          ],
+          [
+            46.993261180133544,
+            577.9753413295309
+          ],
+          [
+            35.273998327658965,
+            577.9753413295309
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          92,
+          103
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 22,
+        "staffID": 1,
+        "sourceClipPDFPoints": [
+          20.665387856067102,
+          82.59740507523277,
+          46.53575264154105,
+          117.24831243842902
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            27.681080001280378,
+            86.12121170460064
+          ],
+          [
+            39.52006049632778,
+            86.10468403115709
+          ],
+          [
+            39.52006049632778,
+            113.72450580906116
+          ],
+          [
+            27.681080001280378,
+            113.7410334825047
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          69,
+          80
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 22,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          20.97532524153819,
+          180.89468006012592,
+          46.93834366266811,
+          215.66968820708004
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.01614379642088,
+            184.43110705639882
+          ],
+          [
+            39.89752510778542,
+            184.41452018978015
+          ],
+          [
+            39.89752510778542,
+            212.13326121080712
+          ],
+          [
+            28.01614379642088,
+            212.14984807742582
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          69,
+          81
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 22,
+        "staffID": 5,
+        "sourceClipPDFPoints": [
+          19.72018844984861,
+          217.55226135157105,
+          45.381368672181125,
+          251.92298577265063
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            26.679152577938787,
+            221.04757491729362
+          ],
+          [
+            38.42240454409095,
+            221.031180884569
+          ],
+          [
+            38.42240454409095,
+            248.42767220692807
+          ],
+          [
+            26.679152577938787,
+            248.44406623965267
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          69,
+          77
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 22,
+        "staffID": 13,
+        "sourceClipPDFPoints": [
+          21.317667103873358,
+          472.5163343988438,
+          47.22850096861522,
+          507.2214462670177
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.34433391465081,
+            476.0456533281345
+          ],
+          [
+            40.201834157837766,
+            476.0290998004081
+          ],
+          [
+            40.201834157837766,
+            503.692127337727
+          ],
+          [
+            28.34433391465081,
+            503.7086808654534
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          70,
+          82
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 22,
+        "staffID": 15,
+        "sourceClipPDFPoints": [
+          21.593384785812475,
+          554.9051831471824,
+          47.74982399139106,
+          589.9392601452959
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.68665643478294,
+            558.4679560202201
+          ],
+          [
+            40.656552342420596,
+            558.4512455838106
+          ],
+          [
+            40.656552342420596,
+            586.3764872722581
+          ],
+          [
+            28.68665643478294,
+            586.3931977086676
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          72,
+          83
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 22,
+        "staffID": 20,
+        "sourceClipPDFPoints": [
+          22.244130318448647,
+          722.3391943985638,
+          48.44789384534324,
+          757.4366578501559
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.3502356816743,
+            725.9084133251677
+          ],
+          [
+            41.341788482117586,
+            725.8916726549005
+          ],
+          [
+            41.341788482117586,
+            753.8674389235521
+          ],
+          [
+            29.3502356816743,
+            753.8841795938192
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          73,
+          85
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 23,
+        "staffID": 1,
+        "sourceClipPDFPoints": [
+          27.672170738102075,
+          75.66045116328434,
+          53.261915702549,
+          109.94775614601744
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.61176259286734,
+            79.15829585558635
+          ],
+          [
+            46.32232384778373,
+            79.12968612558643
+          ],
+          [
+            46.32232384778373,
+            106.4499114537154
+          ],
+          [
+            34.61176259286734,
+            106.47852118371534
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          93,
+          101
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 23,
+        "staffID": 2,
+        "sourceClipPDFPoints": [
+          27.66853390079074,
+          102.93865891907299,
+          53.27453442594744,
+          137.2477444771301
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.61253404320612,
+            106.43872557282198
+          ],
+          [
+            46.33053428353206,
+            106.41009766885419
+          ],
+          [
+            46.33053428353206,
+            133.74767782338114
+          ],
+          [
+            34.61253404320612,
+            133.77630572734893
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          92,
+          101
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 23,
+        "staffID": 3,
+        "sourceClipPDFPoints": [
+          27.338492909950038,
+          130.21320549645012,
+          52.94169682345132,
+          164.5185439176413
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.28173464920462,
+            133.71288988326958
+          ],
+          [
+            45.998455084196735,
+            133.6842651059568
+          ],
+          [
+            45.998455084196735,
+            161.0188595308218
+          ],
+          [
+            34.28173464920462,
+            161.0474843081346
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          92,
+          100
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 23,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          27.271213886594516,
+          157.20755346121166,
+          53.175134646912156,
+          191.91581775190892
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.29600595718913,
+            160.7483426276209
+          ],
+          [
+            46.15034257631754,
+            160.71938164423003
+          ],
+          [
+            46.15034257631754,
+            188.37502858549968
+          ],
+          [
+            34.29600595718913,
+            188.40398956889055
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          92,
+          100
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 23,
+        "staffID": 5,
+        "sourceClipPDFPoints": [
+          27.339678047160476,
+          185.76576794583463,
+          52.93758475646357,
+          220.0640087247417
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.28148325646301,
+            189.26472826144453
+          ],
+          [
+            45.995779547161035,
+            189.23610940648783
+          ],
+          [
+            45.995779547161035,
+            216.5650484091318
+          ],
+          [
+            34.28148325646301,
+            216.5936672640885
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          92,
+          100
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 23,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          27.269667225943675,
+          304.81978457017806,
+          53.180501090685524,
+          339.5373116229739
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.29633403672113,
+            308.3615186840907
+          ],
+          [
+            46.153834279908075,
+            308.33254997174237
+          ],
+          [
+            46.153834279908075,
+            335.99557750906126
+          ],
+          [
+            34.29633403672113,
+            336.0245462214096
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          91,
+          100
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 24,
+        "staffID": 9,
+        "sourceClipPDFPoints": [
+          25.879682477145852,
+          332.8459749770055,
+          52.09140764834685,
+          368.0001536622499
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.987946930352905,
+            336.4623297244321
+          ],
+          [
+            44.9831431951398,
+            336.39953260380184
+          ],
+          [
+            44.9831431951398,
+            364.3837989148233
+          ],
+          [
+            32.987946930352905,
+            364.4465960354535
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          85,
+          96
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 24,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          25.958725230847136,
+          360.9574373720502,
+          51.817153245353,
+          395.6377872156472
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            32.971180285628385,
+            364.52504874827474
+          ],
+          [
+            44.80469819057175,
+            364.4630980444302
+          ],
+          [
+            44.80469819057175,
+            392.0701758394227
+          ],
+          [
+            32.971180285628385,
+            392.13212654326725
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          85,
+          96
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 24,
+        "staffID": 15,
+        "sourceClipPDFPoints": [
+          27.28146249748394,
+          564.2779686771524,
+          53.13957507276552,
+          598.9578954655411
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            34.293832009424705,
+            567.8455365331536
+          ],
+          [
+            46.12720556082475,
+            567.7835865850271
+          ],
+          [
+            46.12720556082475,
+            595.39032760954
+          ],
+          [
+            34.293832009424705,
+            595.4522775576664
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          89,
+          100
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 25,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          37.85023652357876,
+          164.60786367362968,
+          63.764486366352116,
+          199.32168985645
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            44.87782970128001,
+            168.14178682893174
+          ],
+          [
+            56.73689318865087,
+            168.1210921837726
+          ],
+          [
+            56.73689318865087,
+            195.787766701148
+          ],
+          [
+            44.87782970128001,
+            195.8084613463071
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          121,
+          132
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 25,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          37.79758253566064,
+          328.52617128494677,
+          63.94717974867408,
+          363.5552606049471
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            44.888998729020216,
+            332.09218873301353
+          ],
+          [
+            56.8557635553145,
+            332.0713061437562
+          ],
+          [
+            56.8557635553145,
+            359.9892431568804
+          ],
+          [
+            44.888998729020216,
+            360.01012574613765
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          121,
+          132
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 26,
+        "staffID": 2,
+        "sourceClipPDFPoints": [
+          22.57213379626804,
+          120.83647145877062,
+          48.787801000595096,
+          155.9833755721252
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.68146727540758,
+            124.44080859866692
+          ],
+          [
+            41.67846752145556,
+            124.39056351211804
+          ],
+          [
+            41.67846752145556,
+            152.37903843222892
+          ],
+          [
+            29.68146727540758,
+            152.4292835187778
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          75,
+          86
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 26,
+        "staffID": 3,
+        "sourceClipPDFPoints": [
+          21.648617382691906,
+          167.91353296707348,
+          47.55818361737001,
+          202.65005265857064
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            28.674940429384275,
+            171.47578492619357
+          ],
+          [
+            40.531860570677644,
+            171.42612651438358
+          ],
+          [
+            40.531860570677644,
+            199.08780069945055
+          ],
+          [
+            28.674940429384275,
+            199.13745911126054
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          75,
+          83
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 26,
+        "staffID": 4,
+        "sourceClipPDFPoints": [
+          22.627691210332355,
+          198.13566333693333,
+          48.59503360937194,
+          232.94964256028302
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            29.66968236939394,
+            201.70585881980148
+          ],
+          [
+            41.55304245031036,
+            201.656089673889
+          ],
+          [
+            41.55304245031036,
+            229.3794470774149
+          ],
+          [
+            29.66968236939394,
+            229.42921622332736
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          75,
+          86
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      },
+      {
+        "physicalPage": 27,
+        "staffID": 10,
+        "sourceClipPDFPoints": [
+          43.73616512436171,
+          350.52938876548035,
+          69.94573464561647,
+          385.6513732423133
+        ],
+        "patchPolygonPDFPoints": [
+          [
+            50.843844994532496,
+            354.11614297233064
+          ],
+          [
+            62.838054775445684,
+            354.0826541480136
+          ],
+          [
+            62.838054775445684,
+            382.064619035463
+          ],
+          [
+            50.843844994532496,
+            382.09810785978004
+          ]
+        ],
+        "boundaryProven": true,
+        "phasePixels": 0,
+        "sourceBand": [
+          138,
+          150
+        ],
+        "verdict": "Intended source clef inside sampled patch; no wrong-origin finding"
+      }
+    ]
+  },
+  "codeReview": {
+    "algorithmicBlockers": [],
+    "integrationPrerequisites": [
+      "Remove private MatcherProbe instrumentation and its mutable global event storage.",
+      "Propagate isCancelled through boundaryAnchoredPatches at group/pair/column/phase/staff boundaries and discard partial page/results. The private helper otherwise delays cancellation until it finishes the page.",
+      "Replay exact source24 and historical32 after cleanup; verify controlled mid-analysis cancellation before production integration."
+    ],
+    "preservedContracts": [
+      "All grouping/connection/outside-boundary checks remain before anchoring.",
+      "Only patch and boundaryPatchProven fields change on the returned StaffFeature; original lines/start/end continue to define source bounds. Localphase only affects temporary patch sampling.",
+      "Exactly one distinct source-supported band required. Only overlapping bands merge; disjoint boundaries are not averaged.",
+      "Matching requires equal per-staff origin provenance; a proven patch is never compared with an unproven original patch. Both-original behavior is preserved.",
+      "Unchanged clef confidence thresholds0.48/0.72; no new barCount/startBarNumber inference.",
+      "Existing explicit reviewed assignment and user acceptance remain required."
+    ],
+    "limits": [
+      "Cancellation runtime below one whole score was not measured in this review; root is testing the clean integration separately.",
+      "Only this source and stored32historical outcomes inspected; additional scan/font families can still abstain or give misleading clef resemblance.",
+      "The source-supported confidence name is not a guarantee of instrument identity; retain the proposal acceptance gate."
+    ]
+  }
+}

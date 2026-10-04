@@ -136,7 +136,11 @@ enum ScoreSystemTemplateMatcher {
                 if occupied { continue }
                 var matches: [(Template, Double)] = []
                 for template in templates where template.group.staves.count == group.staves.count {
-                    let scores = zip(template.group.staves, group.staves).map { similarity($0.patch, $1.patch) }
+                    let pairs = Array(zip(template.group.staves, group.staves))
+                    guard pairs.allSatisfy({ $0.boundaryPatchProven == $1.boundaryPatchProven }) else {
+                        continue
+                    }
+                    let scores = pairs.map { similarity($0.patch, $1.patch) }
                     guard let minimum = scores.min(), minimum >= 0.48 else { continue }
                     matches.append((template, minimum))
                 }
@@ -182,6 +186,7 @@ enum ScoreSystemTemplateMatcher {
         var start: Int
         var end: Int
         var patch: [Bool]
+        var boundaryPatchProven = false
         var space: Double { (lines[4] - lines[0]) / 4 }
     }
     private struct Group {
@@ -283,7 +288,8 @@ enum ScoreSystemTemplateMatcher {
         var groups: [[StaffFeature]] = [[staves[0]]]
         for i in 1..<staves.count {
             if isCancelled() { return nil }
-            switch connection(staves[i - 1], staves[i], raster: raster, slope: slope) {
+            let observedConnection = connection(staves[i - 1], staves[i], raster: raster, slope: slope)
+            switch observedConnection {
             case .connected: groups[groups.count - 1].append(staves[i])
             case .separate: groups.append([staves[i]])
             case .uncertain: return nil
@@ -296,15 +302,162 @@ enum ScoreSystemTemplateMatcher {
                 return nil
             }
         }
-        return PageFeatures(pageIndex: page.pageIndex, groups: groups.enumerated().map { index, members in
+        var measuredGroups: [Group] = []
+        for (index, originalMembers) in groups.enumerated() {
+            guard !isCancelled(),
+                  let members = boundaryAnchoredPatches(originalMembers, raster: raster,
+                      slope: slope, isCancelled: isCancelled) else { return nil }
             let space = members.map(\.space).min()!
-            return Group(systemIndex: index, staves: members,
+            measuredGroups.append(Group(systemIndex: index, staves: members,
                 bounds: [max(0, Double(members.map(\.start).min()!) - 2 * space) / Double(raster.width),
                     max(0, members.first!.lines[0] - 3 * space) / Double(raster.height),
                     min(Double(raster.width), Double(members.map(\.end).max()!) + space) / Double(raster.width),
-                    min(Double(raster.height), members.last!.lines[4] + 3 * space) / Double(raster.height)])
-        })
+                    min(Double(raster.height), members.last!.lines[4] + 3 * space) / Double(raster.height)]))
+        }
+        return PageFeatures(pageIndex: page.pageIndex, groups: measuredGroups)
     }
+
+    // Retain the entire observed vertical boundary band. Its left
+    // side establishes horizontal line endpoints/exterior, its right side locates
+    // the clef patch. Separate non-overlapping structures are never averaged.
+    private static func boundaryAnchoredPatches(
+        _ members: [StaffFeature], raster: Raster,
+        slope: Double, isCancelled: () -> Bool
+    ) -> [StaffFeature]? {
+        guard !isCancelled() else { return nil }
+        guard members.count > 1 else { return members }
+        let outerStart = members.map(\.start).min()!
+        var anchors = [[ClosedRange<Int>]](repeating: [], count: members.count)
+        for i in 1..<members.count {
+            guard !isCancelled() else { return nil }
+            let upper = members[i - 1]
+            let lower = members[i]
+            let space = min(members[i - 1].space, members[i].space)
+            let shift = slope * (Double((upper.start + lower.start) / 2) - Double(raster.width) / 2)
+            let gapTop = Int((upper.lines[4] + shift + space * 0.25).rounded())
+            let gapBottom = Int((lower.lines[0] + shift - space * 0.25).rounded())
+            guard gapBottom > gapTop, gapTop >= 0, gapBottom < raster.height else { continue }
+            let reach = max(2, Int((space * 0.65).rounded()))
+            let left = max(0, outerStart - reach)
+            let right = min(raster.width - 1, max(upper.start, lower.start) + reach)
+            let top = max(0, Int((upper.lines[0] + shift).rounded()))
+            let bottom = min(raster.height - 1, Int((lower.lines[4] + shift).rounded()))
+            var clusters = [[Int]]()
+            var cluster = [Int]()
+            for x in left...right {
+                if x.isMultiple(of: 16), isCancelled() { return nil }
+                var occupied = 0
+                var gapOccupied = 0
+                var missingRun = 0
+                var longestMissing = 0
+                for y in top...bottom {
+                    let has = (-1...1).contains { raster.hasInk(x + $0, y) }
+                    if has {
+                        occupied += 1
+                        missingRun = 0
+                    } else {
+                        missingRun += 1
+                        longestMissing = max(longestMissing, missingRun)
+                    }
+                    if y >= gapTop && y <= gapBottom && has { gapOccupied += 1 }
+                }
+                let qualifies =
+                    Double(occupied) / Double(bottom - top + 1) >= 0.94
+                    && Double(gapOccupied) / Double(gapBottom - gapTop + 1) >= 0.96
+                    && Double(longestMissing) <= max(1, space * 0.4)
+                if qualifies {
+                    cluster.append(x)
+                } else if !cluster.isEmpty {
+                    clusters.append(cluster)
+                    cluster = []
+                }
+            }
+            if !cluster.isEmpty { clusters.append(cluster) }
+            let bands = clusters.compactMap { q -> ClosedRange<Int>? in
+                guard let a = q.first, let b = q.last else { return nil }
+                return a...b
+            }
+            anchors[i - 1] += bands
+            anchors[i] += bands
+        }
+        var resultMembers: [StaffFeature] = []
+        for (i, original) in members.enumerated() {
+            guard !isCancelled() else { return nil }
+            let space = original.space
+            let tolerance = max(1, Int((space * 0.15).rounded()))
+            let reach = max(2, Int((space * 0.65).rounded()))
+            let runLength = max(8, Int((4 * space).rounded()))
+            var merged = [ClosedRange<Int>]()
+            for band in anchors[i].sorted(by: {
+                ($0.lowerBound, $0.upperBound) < ($1.lowerBound, $1.upperBound)
+            }) {
+                if let last = merged.last, band.lowerBound <= last.upperBound {
+                    merged[merged.count - 1] = last.lowerBound...max(last.upperBound, band.upperBound)
+                } else {
+                    merged.append(band)
+                }
+            }
+            var choices = [(band: ClosedRange<Int>, phase: Int, support: Double, start: Int)]()
+            for band in merged {
+                let anchor = band.upperBound
+                let firstX = max(0, outerStart - runLength - reach)
+                let lastX = min(raster.width - 1, anchor + runLength + reach)
+                guard band.lowerBound - runLength >= 0, anchor + runLength < raster.width else { continue }
+                var best: (phase: Int, support: Double, start: Int)?
+                for phase in -Int(ceil(space * 2))...Int(ceil(space * 2)) {
+                    guard !isCancelled() else { return nil }
+                    func lineHits(_ line: Double, _ x: Int) -> Bool {
+                        let y = Int(
+                            (line + Double(phase) + slope * (Double(x) - Double(raster.width) / 2)).rounded())
+                        return (-tolerance...tolerance).contains { raster.hasInk(x, y + $0) }
+                    }
+                    var run = 0
+                    var begin: Int?
+                    for x in firstX...lastX {
+                        let supported = original.lines.filter { lineHits($0, x) }.count >= 4
+                        run = supported ? run + 1 : 0
+                        if run >= runLength {
+                            begin = x - run + 1
+                            break
+                        }
+                    }
+                    guard let begin, (band.lowerBound - reach...band.upperBound + reach).contains(begin)
+                    else { continue }
+                    let rightRange = (anchor + 1)...(anchor + runLength)
+                    let rightSupport = original.lines.map { line in
+                        Double(rightRange.filter { lineHits(line, $0) }.count) / Double(rightRange.count)
+                    }
+                    guard let minimum = rightSupport.min(), minimum >= 0.94 else { continue }
+                    let leftRange = (band.lowerBound - runLength)...(band.lowerBound - reach - 1)
+                    let exterior = original.lines.map { line in
+                        Double(leftRange.filter { lineHits(line, $0) }.count) / Double(leftRange.count)
+                    }
+                    guard exterior.allSatisfy({ $0 <= 0.25 }) else { continue }
+                    if best == nil || minimum > best!.support
+                        || (minimum == best!.support && abs(phase) < abs(best!.phase))
+                    {
+                        best = (phase, minimum, begin)
+                    }
+                }
+                if let best { choices.append((band, best.phase, best.support, best.start)) }
+            }
+            // Require one source boundary identity. Multiple independently
+            // supported, disjoint paths are ambiguous and must abstain.
+            guard choices.count == 1, let choice = choices.first else {
+                resultMembers.append(original)
+                continue
+            }
+            var source = original
+            source.start = choice.band.upperBound
+            source.lines = original.lines.map { $0 + Double(choice.phase) }
+            var result = original
+            result.patch = clefPatch(staff: source, raster: raster, slope: slope)
+            result.boundaryPatchProven = true
+            resultMembers.append(result)
+        }
+        return resultMembers
+    }
+
 
     private enum Connection { case connected, separate, uncertain }
 
