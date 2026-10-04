@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 3 complete Motets output and next orchestral source map
+
+The [complete Brahms Op.74 draft](brahms-motets-complete-workflow-2026-10-03/README.md) now contains all five parts on 27 pages, with 225 source bands covering 45 systems and 292 physical staves. Native per-system counts preserve the divided Soprano and Bass sections. Independent review of every source crop found four shared-lyric omissions and two missing Piano footnotes; eight reviewed crop edits repair those omissions and reduce two premature neighboring headings. All 27 output pages were checked, including all 13 changed pages after the repairs; the other 14 pages are pixel-identical. Root checked all 72 copied source rectangles and the combined title/tempo recipient contexts. The full original is embedded in the editable project. This is assisted output: neighboring fragments and active page turns remain, and no new crop detector is promoted.
+
+The [source equivalence comparison](motets-source-equivalence-2026-10-03/README.md) finds corresponding printed layouts in IMSLP101579 and 101580 but different decoded pixels on every page. The second scan still needs its own crop and output review. For [Gesang der Parzen IMSLP109041](parzen109041-independent-map-2026-10-03/README.md), two independently frozen maps agree on all 26 systems, 20 part roles, 568 printed staves and 176 numbered bars plus an eighth-note pickup. All parts are printed throughout; no omitted-staff rests are needed. Full native output and crop review are underway, not yet certified.
+
 ## October 3 Preview crop editing and complete choir outputs
 
 The [published Preview crop controls](preview-crop-release-2026-10-03/README.md) edit the same saved bands as Source view and PDF export. Selecting a system exposes top/bottom handles, with one Undo operation per drag, Escape cancellation and a retained view position after reflow. The [current app package](divisi-assignment-release-2026-10-03/README.md) also supports per-system staff counts for divided sections, improves matching of printed system connections in scans and retains shared directions for new setups while respecting existing preferences; private crop experiments are not included.

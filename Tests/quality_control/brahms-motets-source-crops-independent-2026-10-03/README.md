@@ -1,0 +1,13 @@
+# Brahms Op.74 — independent source crop and repair review
+
+The repaired native draft passes this bounded preservation review. All 180 vocal source crops were inspected against all 18 original pages. Four real omissions were found in the Choral’s shared lyric lines above Alto/Bass and repaired from frozen source envelopes. The other reviewer inspected all 45 Piano source crops and all 27 initial output pages. This reviewer independently checked all eight final crop changes and all 13 changed final PDF pages.
+
+The final project retains all 225 musical rows, 292 physical staff references, 45 systems per part and the unchanged printed/partial-bar labels. It contains no generated rests. The source PDF hash is `5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446`. Five native PDFs total 27 pages; 14 final page rasters are exactly unchanged from the initial reviewed output. `final-identity-proof.json` binds the PDFs, source, project and manifests; `final-repair-review.json` lists every changed image viewed here.
+
+The eight crop repairs restore four shared lyric lines and two Piano rehearsal footnotes, remove the next-system boxed B from a preceding Piano row, and reduce a following Choral heading while keeping the complete Piano pedal marking. That pedal extends below the top of the following title, so small title tips remain. Two redundant Soprano copies were removed. The second Motet title uses original fragments at a blank seam to preserve title/tempo placement without neighboring vocal notation. All five actual title recipient pages were checked. No additional intended note/word/mark loss or new row collision was observed.
+
+This is an assisted draft. Neighboring lyrics, staff fragments, page-number artifacts and some local dynamic clutter remain; active phrase-splitting page turns remain. The shared Choral words are preserved exactly as printed, without invented syllabic underlay. Partial-bar uncertainties remain explicit. This is not an automatic-detection or performance-ready pagination claim.
+
+The single large workflow archive, including source pages, 225 contexts and actual output pages, is [the main workflow evidence](../brahms-motets-complete-workflow-2026-10-03/native-workflow-evidence.tar.gz). This report’s compact archive contains only its independently frozen source guards/details, review records and read-only verification script. The main report hash-binds this report; this report links its path to avoid a circular hash dependency.
+
+Editable draft: [complete delivery](../../../output/pdf/auto-qc-2026-10-03/brahms-two-motets-op74-101580-native-draft/).

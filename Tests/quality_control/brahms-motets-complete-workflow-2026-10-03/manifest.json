@@ -1,0 +1,91 @@
+{
+  "sourceSHA256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+  "finalManifestSHA256": "5cf37d2534bcefa973dfa0b8a2b99cd6f384ea996cf2645dfb2559294097b552",
+  "independentReviewManifest": {
+    "path": "Tests/quality_control/brahms-motets-source-crops-independent-2026-10-03/manifest.json",
+    "sha256": "833dce6f5b3af94f5c714b3b0e7f825e0c02c521a94bf9bc768dbd3c455f1467"
+  },
+  "deliveryHashManifest": {
+    "path": "output/pdf/auto-qc-2026-10-03/brahms-two-motets-op74-101580-native-draft/delivery-hashes.json",
+    "sha256": "440a52431d37d1d82613d871ac1c520888a04f71204b94fa3f9c4f193445c577"
+  },
+  "archive": {
+    "path": "native-workflow-evidence.tar.gz",
+    "sha256": "a6356371c4ffc917e6ebd83fd4b95d3eb8d2e9736548d28fdb4ed8f42055bd0b",
+    "bytes": 50698531,
+    "members": 516,
+    "everyMemberValidated": true
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "85a86fac114b84b4e3b9d1e002796d8261cd67a651262dd8802b656cdfc70138",
+      "bytes": 2501
+    },
+    {
+      "path": "REPLAY.md",
+      "sha256": "08200af580d55621c6512b8a8289b169c81ff89b01419665dedb2412e029454b",
+      "bytes": 2688
+    },
+    {
+      "path": "archive-members.json",
+      "sha256": "5485b73fc3814b2e63dde76c4ef979d2004f4dcdd762fcf09e7ca027753af2ed",
+      "bytes": 112808
+    },
+    {
+      "path": "archive-render-reuse.json",
+      "sha256": "e9646a41b750bc5e85b96f85e13abe65979f204deb105cfb173e1d14f9288215",
+      "bytes": 4757
+    },
+    {
+      "path": "final-output-review.json",
+      "sha256": "4b55537f9d7699dafa44707ccce479b7e63e34cf240ab92c2794753efd0f934c",
+      "bytes": 10916
+    },
+    {
+      "path": "final-validation.json",
+      "sha256": "900932d2f513ded15f248468de527f2392cca41818569c8b9af819c7bf2b72c4",
+      "bytes": 3396
+    },
+    {
+      "path": "initial-output-review.json",
+      "sha256": "074b382e8f6cd8788b552426879c8a1ff02f8610b67875a6ff2bf3dd2d24dfc4",
+      "bytes": 13987
+    },
+    {
+      "path": "initial-piano-source-review.json",
+      "sha256": "0cc7a4123822a475844032c664865c90d021b369a5fa9d9278477dc60dccf665",
+      "bytes": 33407
+    },
+    {
+      "path": "input-bindings.json",
+      "sha256": "b0ea762cd4d7f7f8f92ac7dc93a14e21463cec217c8d0668225a33d43c991759",
+      "bytes": 917
+    },
+    {
+      "path": "manual-corrections-before-final.json",
+      "sha256": "2ebe73ec2d79ca982f6e9403f651f23428b3fdb8cb1f768657f970608e35128c",
+      "bytes": 5325
+    },
+    {
+      "path": "production-source-hashes.json",
+      "sha256": "374d795d464314b4a5101db360e6e8d4922250e3305ce48be73ec00f6c09cb57",
+      "bytes": 3196
+    },
+    {
+      "path": "root-final-copy-review.json",
+      "sha256": "0640e69ec785a6dd4b05a176829064181b163569e7d245f0c20368b618efb4c8",
+      "bytes": 34662
+    },
+    {
+      "path": "sheet-reconstruction-validation.json",
+      "sha256": "7f9983de5f429e8acbbfd96f92164013ac6ad6226e5a700bddf0ef7f5ca272df",
+      "bytes": 22552
+    },
+    {
+      "path": "source-map.json",
+      "sha256": "0afbe5fe5e7147f1607c09e18d9dfa800ce1c65cfead408952154e1376d88b38",
+      "bytes": 27528
+    }
+  ]
+}

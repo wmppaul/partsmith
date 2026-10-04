@@ -1,0 +1,75 @@
+{
+  "source": "sample_scores/medium_skewed/07_brahms_2_motets_op74_imslp_101580.pdf",
+  "sourceSHA256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446",
+  "coordinateSystem": "top-down PDF points",
+  "frozenBeforeProposedCropEdges": true,
+  "method": "Direct original full-system and enlarged low-edge inspection; measured original8x gray pixels independently of output bounds. Envelopes include white clearance and are not tight black-pixel rectangles.",
+  "records": [
+    {
+      "id": "p4-s2-rehearsal-piano",
+      "sourcePage": 4,
+      "sourceBounds": [
+        0,
+        442,
+        595.2,
+        516.5
+      ],
+      "minimumConservativeBottom": 516.5,
+      "interpretation": "Own bass stems/low notes end at 515.75pt in an 8px/pt threshold160 original rendering; next-system boxed B starts at 520.375pt. No own pedal/dynamic below the reviewed envelope."
+    },
+    {
+      "id": "p11-s1-rehearsal-piano",
+      "sourcePage": 11,
+      "sourceBounds": [
+        0,
+        262,
+        595.2,
+        337
+      ],
+      "minimumConservativeBottom": 337.0,
+      "interpretation": "Complete own Ped. reaches 336.25pt in an 8px/pt threshold160 original rendering. Following Choral starts around335pt at left, so a horizontal bottom alone cannot remove every foreign title pixel while retaining the pedal. Use local source exclusion if desired; do not cut the pedal."
+    },
+    {
+      "id": "p11-s1-bass-section",
+      "sourcePage": 11,
+      "sourceBounds": [
+        0,
+        194,
+        595.2,
+        271
+      ],
+      "minimumConservativeBottom": 271.0,
+      "interpretation": "Own BassII lyrics, punctuation and final inverted fermata are complete within this conservative source envelope; original crop bottom277.7314 already retains them. Piano slur/notes overlap below, so no own-lyric omission found."
+    }
+  ],
+  "images": [
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p4-piano-low-original.png",
+      "sha256": "adc3603a2aabb1dc5e92c184305bff3b229e7311c6a24823060c3890c276baab"
+    },
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p11-piano-pedal-original.png",
+      "sha256": "ca9363980d1387d087302a24fae245216c3ae0e376031923b85548ba26c06472"
+    },
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p4-s2-rehearsal-piano-original.png",
+      "sha256": "14befa10f1246de675d8397444bb37efb0d37ed8638a916535dd38e1706054bd"
+    },
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p11-s1-bass-section-original.png",
+      "sha256": "0eff9983dfa2f9e5ae00a9977dfb7c91c9ffcfe88c97a8cdf9e2c63f647c583a"
+    },
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p11-s1-rehearsal-piano-original.png",
+      "sha256": "75ed0d7861962fa21b0ea887334cbdcd971dfe2364aa1e57f8e30523e635611b"
+    },
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p11-bass-low-text-original.png",
+      "sha256": "cefa9e0b4b7ba7afa125f4472abdb46c1755ac3a90de1390c03226da709f5aa0"
+    },
+    {
+      "path": ".build/brahms-motets-source-crops-independent-2026-10-03/p11-piano-low-original.png",
+      "sha256": "efaab327db37e3612393f7681d2597d0b43d146f51ca70749f75d4169cd22954"
+    }
+  ]
+}

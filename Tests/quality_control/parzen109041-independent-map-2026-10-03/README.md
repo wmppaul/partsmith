@@ -1,0 +1,11 @@
+# Independent Parzen source map
+
+All 27 original pages of Brahms’s *Gesang der Parzen*, Op. 89, IMSLP109041 were visually reviewed before the parent’s map was read. The independently frozen maps agree on all 26 music systems, 520 part/system assignments and 568 physical staff instances. Page 1 contains text only. Every music system prints all 20 profile roles; Alto I/II and Bass I/II share one staff each on physical pages 2–3, then occupy two staves each on pages 4–27.
+
+There are 176 numbered bars plus an opening eighth-note pickup: 177 physical bar compartments. Page 2 has the pickup and four complete bars, so its five compartments must not become five whole bars of rest. The original partial notes described only its four numbered bars as compartments; those notes remain unchanged and the complete map records the correction. The parent leaves the mixed opening system’s whole-bar count unset, which is consistent with this distinction.
+
+All eight rehearsal marks agree at A18, B35, C48, D60, E80, F90, G130 and H144. Both reviewers identify the opening Maestoso, the quarter-note equivalence and change to 3/4 at bar 116, the shared choral instruction “Sehr weich und gebunden” at that entrance, and the return to common time at bar 162. The choir instruction is not automatically assigned to all orchestral parts. Piccolo/flute player labels, muted-string instructions, lyrics and other local expressions remain source-crop preservation obligations.
+
+`source-map-before-comparison.json` was frozen before reading the parent map. `comparison.json` compares every ordered role/count assignment, printed start and compartment count and explains the zero-based versus human system-index convention. The exact parent map is retained beside it. The protocol binds the original PDF, profile and all 27 viewed page renders by SHA-256. The two detail images show the pickup and equal quarter-note symbols; they are enlarged source crops for inspection, not modified score output.
+
+This is a source structure, timing and shared-instruction review. It does not certify crop boundaries, all individual notes, final layouts or exported parts. Physical staff ordinals are source positions, not native analyzer IDs. No detection, extraction, project generation, production edit or output publication was performed.

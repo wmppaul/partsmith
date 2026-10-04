@@ -1,0 +1,25 @@
+{
+  "scope": "Render-only exact source comparison; no staff detection, extraction, mapping mutation or production edit.",
+  "renderer": "Exact unmodified NativeScorePageAnalyzer.render function extracted from production; PDFKit/CoreGraphics, maximumWidth 1800, maximumHeight 2600. Both PDFs geometry permits exactly 1800-wide outputs.",
+  "nativeSourceSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "rendererSHA256": "853c20a704df96f23a9c79caf816a0ad1b889673fbc31b1cf06a4d409d404588",
+  "inputs": [
+    {
+      "path": "sample_scores/lightly_skewed/07_brahms_2_motets_op74_imslp_101579.pdf",
+      "sha256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3"
+    },
+    {
+      "path": "sample_scores/medium_skewed/07_brahms_2_motets_op74_imslp_101580.pdf",
+      "sha256": "5f61914c5ddcaab3c24ad8fcf15dab6d91902cbd5c642608ffd302f414580446"
+    },
+    {
+      "path": ".build/brahms-motets-independent-map-2026-10-03/source-map-before-comparison.json",
+      "sha256": "0afbe5fe5e7147f1607c09e18d9dfa800ce1c65cfead408952154e1376d88b38"
+    },
+    {
+      "path": ".build/brahms-motets-independent-map-2026-10-03/independent-map-comparison.json",
+      "sha256": "6100096ed0c38dc15e53c53a941c693b3f19024118ab2bf8a328ff9dc9037110"
+    }
+  ],
+  "acceptance": "Only equal physical page counts, per-page PDF geometry and exact per-page decoded RGBA pixels permit source-map transfer. Any difference blocks automatic transfer; differing pages will be quantified and viewed."
+}

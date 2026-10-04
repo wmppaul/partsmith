@@ -40,6 +40,15 @@ Per-instrument overrides are available. Start with zero left/right
 trimming, especially on scans with alternating margins. Check every final
 barline and printed measure number before removing horizontal margins.
 
+Inspect shared vocal underlay above the target staff as well as ordinary lyrics
+below it. In the Choral of Brahms Op.74, IMSLP101580, page 11, the lyric rows
+between Soprano/Alto and Tenor/Bass serve both voices. Four lower-voice crops
+need local top expansion even with **Lyrics** enabled. Confirm the shared text
+from the original words and rhythm; do not classify it as neighboring text
+solely because it is closer to another staff. Referenced performance footnotes
+also belong with the affected part: the rehearsal Piano has a starred note at
+the bottom of each motet's opening page. Keep the full note and its reference.
+
 Run **Auto** and review every source page. The detector uses skew-aware evidence
 from several horizontal regions, including the left edge, and allows different
 staff sizes on the same page. Detection does not rotate or clean the exported
