@@ -19,13 +19,15 @@ import ImageIO
         let select: ([Line]) -> [ScoreSharedHeading] = {
             ScoreSharedHeadingDetector.select(from: $0, anchor: anchor, previousStaffBottom: 0.12, imageSize: size)
         }
-        for name in ["Vivace.", "Andantr.", "Agitato. (Allegretto non troppo.)", "Poco Allegretto con Variazioni.", "Trio.", "Irio.", "Coda.", "Menuetto.", "MENUETTO"] {
+        for name in ["Vivace.", "Andantr.", "Agitato. (Allegretto non troppo.)", "Poco Allegretto con Variazioni.", "Trio.", "Irio.", "Coda.", "Menuetto.", "MENUETTO",
+                     "2da volta rit.", "1ma volta rallentando", "2ª volta ritard.", "II. volta poco rit.", "Seconda volta molto rall.", "3a volta accelerando"] {
             let line = Line(text: name, bounds: CGRect(x: 0.15, y: 0.175, width: 0.3, height: 0.017), confidence: 1)
             let result = select([line])
             check(result.count == 1, "Printed heading survives a normal scan/OCR variant: \(name)")
             check(CGRect(x: result[0].bounds[0], y: result[0].bounds[1], width: result[0].bounds[2] - result[0].bounds[0], height: result[0].bounds[3] - result[0].bounds[1]).contains(line.bounds), "Entire source heading is padded")
         }
-        for name in ["Violine", "Violoncello", "poco cresc.", "con sordino", "pizz.", "dolce", "in tempo", "Doppio", "Johannes Brahms", "Da Capo sin al segno e poi la Coda", "Menu", "Menuetxo.", "Menuetto Viola"] {
+        for name in ["Violine", "Violoncello", "poco cresc.", "con sordino", "pizz.", "dolce", "in tempo", "Doppio", "Johannes Brahms", "Da Capo sin al segno e poi la Coda", "Menu", "Menuetxo.", "Menuetto Viola",
+                     "rit.", "poco rit.", "2da volta", "2da volta pizz.", "2da volta p", "2da volta con sordino", "2da volta rit. Violine", "volta rit.", "0a volta rit."] {
             check(select([Line(text: name, bounds: CGRect(x: 0.15, y: 0.175, width: 0.3, height: 0.017), confidence: 1)]).isEmpty,
                   "Staff expressions, credits and end-of-system navigation are not movement headings: \(name)")
         }
@@ -33,6 +35,17 @@ import ImageIO
                       Line(text: "Movimento.", bounds: CGRect(x: 0.23, y: 0.176, width: 0.12, height: 0.018), confidence: 1)]
         let joined = select(halves)
         check(joined.count == 1 && joined[0].bounds[2] > 0.35, "Split OCR words retain the complete two-word heading")
+        let repeatWords = [Line(text: "2da", bounds: CGRect(x: 0.40, y: 0.172, width: 0.035, height: 0.020), confidence: 1),
+                           Line(text: "volta rit.", bounds: CGRect(x: 0.44, y: 0.177, width: 0.10, height: 0.015), confidence: 1)]
+        let repeatHeading = select(repeatWords)
+        check(repeatHeading.count == 1 && repeatHeading[0].bounds[1] < 0.172
+              && repeatHeading[0].bounds[2] > 0.54,
+              "Separated repeat ordinal and tempo retain the complete original source instruction")
+        var localRepeat = repeatWords
+        localRepeat[0].bounds.origin.y += 0.05; localRepeat[1].bounds.origin.y += 0.05
+        check(select(localRepeat).isEmpty, "Numbered tempo inside an instrument staff is not copied across the ensemble")
+        localRepeat = repeatWords; localRepeat[0].confidence = 0.4
+        check(select(localRepeat).isEmpty, "Uncertain ordinal cannot make an otherwise unrecognized tempo into a shared heading")
         // Real failure: Vision omitted the upper contours of Agitato's A,
         // dotted i and parentheses. The independently reviewed source oracle
         // starts at25pt, before this OCR word box. Do not fit that guard to OCR.
@@ -84,6 +97,24 @@ import ImageIO
             imageWidth: 1800, imageHeight: 2400,
             staves: [staff(0, 0.20), staff(1, 0.28), staff(2, 0.50), staff(3, 0.58)], warnings: [])
         let baseline = ScoreExtractionPlanner.plan(pages: [page], profile: profile)
+        page.sharedHeadings = repeatHeading
+        let repeatPlan = ScoreExtractionPlanner.plan(pages: [page], profile: profile)
+        check(repeatPlan.canApply && repeatPlan.bands.map(\.candidateIDs) == baseline.bands.map(\.candidateIDs),
+              "Copying a conditional tempo preserves every assigned staff")
+        check(repeatPlan.bands.filter { $0.systemIndex == 0 }.allSatisfy {
+            let r = repeatHeading[0].bounds
+            let contained = $0.topFraction <= r[1] && $0.bottomFraction >= r[3]
+                && $0.leftFraction <= r[0] && 1 - $0.rightFraction >= r[2]
+            let copied = $0.sourceMarkings.contains {
+                $0.topFraction <= r[1] && $0.bottomFraction >= r[3]
+                    && $0.leftFraction <= r[0] && 1 - $0.rightFraction >= r[2] - 1e-12
+            }
+            return contained || copied
+        }, "Every part at the entrance retains or receives the entire numbered tempo source block")
+        check(repeatPlan.bands.first { $0.systemIndex == 0 && $0.partID == "v2" }!.sourceMarkings.count == 1,
+              "A lower part outside the original heading receives one complete copy")
+        check(repeatPlan.bands.filter { $0.systemIndex == 1 }.allSatisfy { $0.sourceMarkings.isEmpty },
+              "The conditional tempo does not leak to later systems")
         page.sharedHeadings = joined
         let plan = ScoreExtractionPlanner.plan(pages: [page], profile: profile)
         check(plan.canApply && plan.bands.count == 4, "Copying does not change assignment or coverage")

@@ -1,0 +1,126 @@
+{
+  "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+  "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+  "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+  "inventoryFiles": [
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "sha256": "c658cf6dbea80231c6e17406c9bc662beae70fdb9a263d93c1ea1a9fd1cc609c"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/monotone-line-corpus-2026-10-03/candidate/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "sha256": "45d7cb2ac81290bca672233c2ff51f496c0bb4d8570bcd34129a8e7893159af9"
+    }
+  ],
+  "page": 18,
+  "bandID": "p18-s4-violin2",
+  "before": {
+    "bottomFraction": 0.6889430254288075,
+    "candidateIDs": [
+      13
+    ],
+    "editorialLabel": "",
+    "id": "p18-s4-violin2",
+    "kind": "music",
+    "leftFraction": 0,
+    "pageBreakBefore": false,
+    "pageIndex": 17,
+    "partID": "violin2",
+    "provenance": "native-profile-cadence",
+    "rightFraction": 0,
+    "sourceMarkings": [],
+    "systemIndex": 3,
+    "topFraction": 0.5879234767379294,
+    "warnings": [
+      "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+      "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+      "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+      "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+      "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+    ]
+  },
+  "after": {
+    "bottomFraction": 0.6889430254288075,
+    "candidateIDs": [
+      13
+    ],
+    "editorialLabel": "",
+    "id": "p18-s4-violin2",
+    "kind": "music",
+    "leftFraction": 0,
+    "pageBreakBefore": false,
+    "pageIndex": 17,
+    "partID": "violin2",
+    "provenance": "native-profile-cadence",
+    "rightFraction": 0,
+    "sourceMarkings": [],
+    "systemIndex": 3,
+    "topFraction": 0.6260224555281887,
+    "warnings": [
+      "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+      "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+      "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+      "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+    ]
+  },
+  "fieldDifferences": [
+    {
+      "path": "/topFraction",
+      "before": 0.5879234767379294,
+      "after": 0.6260224555281887
+    },
+    {
+      "path": "/warnings",
+      "before": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Notation connected to this staff also touches a neighboring staff. The complete ambiguous ink is retained; review this crop locally.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "after": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    }
+  ],
+  "beforePDFBounds": [
+    0.0,
+    494.913982717989,
+    595.2,
+    579.9522388059701
+  ],
+  "afterPDFBounds": [
+    0.0,
+    526.9857030636292,
+    595.2,
+    579.9522388059701
+  ],
+  "geometryChanged": true,
+  "warningChanges": true,
+  "assignmentChanged": false,
+  "candidateContainsPreviousCrop": false,
+  "previousContainsCandidateCrop": true,
+  "beforeWholeNeighbors": [
+    12
+  ],
+  "afterWholeNeighbors": [],
+  "edgeChangesPT": [
+    0.0,
+    32.071720345640244,
+    0.0,
+    0.0
+  ],
+  "largestContractionPT": 32.071720345640244,
+  "newWholeNeighbors": [],
+  "removedWholeNeighbors": [
+    12
+  ],
+  "context": ".build/monotone-pending-source-review-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/p18-s4-violin2.png",
+  "contextSHA256": "d8d23be558d5a61e831fd8816311f4d1cd2b6c0999aec58c063d959be9220589",
+  "sourceRaster": ".build/monotone-pending-source-review-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/source-page-18.png",
+  "sourceRasterSHA256": "c7eee54769d7a4b65b35554f22a89386f50e0fd2e0acee5318c345844a126d8f"
+}

@@ -1,0 +1,104 @@
+{
+  "scope": "Two-page actual native direction workflow and selected-page native export validation. No new staff detection, crop algorithm edits or whole-corpus run.",
+  "baselineReview": "../monotone-shared-direction-baseline-2026-10-03/review.json",
+  "baselineReviewSHA256": "dd8948948626895be2c79d20e4e87343a1cb561d74ae865b1ec6dbb5e19035fe",
+  "singleCoreChange": {
+    "path": "Core/Detection/ScoreSharedHeadingDetector.swift",
+    "beforeSHA256": "9e6ca0f8b208068d0de6219a6d8997cd2038c9b0b43fd888eb41732b6d6a2db9",
+    "afterSHA256": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307",
+    "other24CoreFilesExact": true
+  },
+  "workflowResults": {
+    "pages": 2,
+    "runtimeIssues": 0,
+    "mainCropChanges": 0,
+    "originalAnalysesExact": true,
+    "sourceGlyphRecipients": 8,
+    "completeSourceGlyphRecipients": 8,
+    "242312Coda": "Unchanged exact metadata/copy behavior; existing source pixels retained.",
+    "09200NumberedVolta": "Exact text 2da volta rit. now accepted; source ordinal/letters/punctuation retained for all four system1 recipients. Existing Doppio Movimento remains."
+  },
+  "sourceGuards": {
+    "coda": "../monotone-242312-coda-loss-2026-10-03/review.json",
+    "numberedVolta": "../monotone-09200-source-review-2026-10-03/review.json",
+    "unchanged": true
+  },
+  "export": {
+    "method": "Copied production export_score_plan helper with only @main removed, selectedPageIndices set to the supplied analyses, and project pageCount taken from full source PDF. Uses native ScoreDetectionReview.initial, PartsmithDocument.addScoreParts, PartLayoutEngine and PartPDFExporter. No custom PDF drawing.",
+    "sourcePage": 22,
+    "fullImmutableSourceEmbeddedInScratchProject": true,
+    "scratchProject": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/Brahms Op.67 \u2014 page 22 review.partsmithproject",
+    "parts": [
+      {
+        "part": "Violin I",
+        "file": "Violin I.pdf",
+        "outputPages": 1,
+        "bandCount": 5,
+        "completeViaMainCrop": true,
+        "completeViaCopies": 0,
+        "frozenGlyphPDFBounds": [
+          295.8255555555556,
+          47.41137675185491,
+          367.2777777777778,
+          60.76669414674361
+        ]
+      },
+      {
+        "part": "Violin II",
+        "file": "Violin II.pdf",
+        "outputPages": 1,
+        "bandCount": 5,
+        "completeViaMainCrop": false,
+        "completeViaCopies": 1,
+        "frozenGlyphPDFBounds": [
+          295.8255555555556,
+          47.41137675185491,
+          367.2777777777778,
+          60.76669414674361
+        ]
+      },
+      {
+        "part": "Viola",
+        "file": "Viola.pdf",
+        "outputPages": 1,
+        "bandCount": 5,
+        "completeViaMainCrop": false,
+        "completeViaCopies": 1,
+        "frozenGlyphPDFBounds": [
+          295.8255555555556,
+          47.41137675185491,
+          367.2777777777778,
+          60.76669414674361
+        ]
+      },
+      {
+        "part": "Violoncello",
+        "file": "Violoncello.pdf",
+        "outputPages": 1,
+        "bandCount": 5,
+        "completeViaMainCrop": false,
+        "completeViaCopies": 1,
+        "frozenGlyphPDFBounds": [
+          295.8255555555556,
+          47.41137675185491,
+          367.2777777777778,
+          60.76669414674361
+        ]
+      }
+    ],
+    "allSelectedAssignmentsPresent": true,
+    "sourceCropGeometryChangedByHeadingFix": false,
+    "pngRendering": "Both initial PyMuPDF renders and independent root Poppler renders are retained with bindings. Root visual verdict is separately attributed.",
+    "independentVisualReview": "root-export-review.json",
+    "visualVerdict": "Root inspected all four actual PDF pages rendered by Poppler: complete ordinal/words and Doppio Movimento, once at correct systems/positions, with no source-copy clipping. Significant neighboring-staff fragments remain; bounded direction-copy pass only."
+  },
+  "validationBoundaries": [
+    "Does not certify the remaining222 raw242312 changes or187 raw09200 changes.",
+    "Does not turn on the experimental shared-direction option; default-off raw omissions remain a workflow limitation.",
+    "Two selected pages do not certify complete score-wide repeat/destination recognition.",
+    "Old crop and source-guard receipts remain unchanged."
+  ],
+  "replayInputNote": "Portable inputs contain the exact one original analysis used per source. Original build inputs contained the whole inventory but the harness selected the same physical page before any workflow. Source PDFs are referenced by immutable repository path and SHA256.",
+  "nativeLogSHA256": "abd02e222b4f8171ae00ec815d47efadf2960c0c491fe11c2de7cc107fb323d2",
+  "exportLogSHA256": "ef57261ba8b47c3930831b413582dc8111f2fd3741d87c30db69401bb124e751"
+}

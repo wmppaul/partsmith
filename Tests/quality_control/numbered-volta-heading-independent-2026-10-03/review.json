@@ -1,0 +1,29 @@
+{
+  "verdict": "No actionable defect found in the bounded numbered-volta-tempo change.",
+  "checks": 30,
+  "passed": 30,
+  "production_sources_still_equal_test_snapshot": true,
+  "source_hashes": {
+    "Partsmith/Core/Detection/StaffBandDetector.swift": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+    "Partsmith/Core/Detection/ScoreSharedEnding.swift": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+    "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+    "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307"
+  },
+  "permanent_test_path": "tools/test_shared_headings.swift",
+  "permanent_test_sha256": "0ba031411f94987b95862d19b83b6492ba9fb906fe667be011ad43e43e24689e",
+  "harness_binary_sha256": "f0755e8024d96dec3bb0307f0002e38f55635e7281526c3e63a606e723ae3272",
+  "scope": [
+    "Read-only detector and permanent-test diff review",
+    "Independent pure selector/grammar tests",
+    "One pre-cancelled detector call; Vision callback not reached"
+  ],
+  "limitations": [
+    "No live OCR, native staff detection, real-score extraction, export, or pagination run by this review.",
+    "A pure selector pass does not establish actual printed ordinal recognition or end-to-end source-copy completeness.",
+    "No approval of the separate experimental crop candidate is implied.",
+    "Unrecognized languages, punctuation and other conditional phrases remain conservative misses."
+  ],
+  "findings": []
+}

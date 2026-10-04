@@ -1,0 +1,599 @@
+{
+  "auditedAtUTC": "2026-10-04T01:30:49.802014+00:00",
+  "scope": "Private package identity and build integrity only. No publication, app launch, user-app modification or musical-output approval.",
+  "result": "pass",
+  "package": {
+    "path": ".build/numbered-volta-release-2026-10-03/Partsmith-extraction-preview-macos.zip",
+    "sha256": "e57f392652eed0d051b3e47f95bf2633ee834683818405c9acadd913ed716f08",
+    "bytes": 3788676
+  },
+  "executable": {
+    "path": ".build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith",
+    "sha256": "22067f179a4d7a334cf3f8be8af801689200c3b694c765571d65217f058f3c4d",
+    "bytes": 14563488
+  },
+  "sourceHashManifest": {
+    "path": ".build/numbered-volta-release-2026-10-03/source-hashes.json",
+    "sha256": "428fe4e4a61ddf987764bbbdcbc471b37a996807c70df7bba1514691b5d84b33",
+    "bytes": 5708
+  },
+  "buildLog": {
+    "path": ".build/numbered-volta-release-2026-10-03/build.log",
+    "sha256": "80036052a750c108e507f4e841d6758a86fec556011a03ca328d55f8af227e51",
+    "bytes": 163444
+  },
+  "sourceChecks": {
+    "boundFiles": 45,
+    "swiftFiles": 35,
+    "allFrozenCurrentAndSnapshotHashesEqual": true,
+    "currentSwiftFilesExactlyManifest": true,
+    "inputs": [
+      {
+        "path": "Partsmith.xcodeproj/project.pbxproj",
+        "expectedSHA256": "9993484fa88207c16843951a56fd1a964b48954ddd7582244ce967a9b66d64dc",
+        "snapshotSHA256": "9993484fa88207c16843951a56fd1a964b48954ddd7582244ce967a9b66d64dc",
+        "currentSHA256": "9993484fa88207c16843951a56fd1a964b48954ddd7582244ce967a9b66d64dc",
+        "matches": true
+      },
+      {
+        "path": "Partsmith.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+        "expectedSHA256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+        "snapshotSHA256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+        "currentSHA256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+        "matches": true
+      },
+      {
+        "path": "Partsmith.xcodeproj/project.xcworkspace/xcuserdata/will.xcuserdatad/UserInterfaceState.xcuserstate",
+        "expectedSHA256": "9b14ec6574585840ababadb653e42229affcf3bf686dfd426a529f6bf41eccd6",
+        "snapshotSHA256": "9b14ec6574585840ababadb653e42229affcf3bf686dfd426a529f6bf41eccd6",
+        "currentSHA256": "9b14ec6574585840ababadb653e42229affcf3bf686dfd426a529f6bf41eccd6",
+        "matches": true
+      },
+      {
+        "path": "Partsmith.xcodeproj/xcshareddata/xcschemes/Partsmith.xcscheme",
+        "expectedSHA256": "82859df4ba4df2f10d79f3f62c7b4d82f3053d8ec5f67d892dc337debc39ee8a",
+        "snapshotSHA256": "82859df4ba4df2f10d79f3f62c7b4d82f3053d8ec5f67d892dc337debc39ee8a",
+        "currentSHA256": "82859df4ba4df2f10d79f3f62c7b4d82f3053d8ec5f67d892dc337debc39ee8a",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/.DS_Store",
+        "expectedSHA256": "c041e3e769a5b9d35213bafd329ec9bb8a1bb02147c2057e78c66a05858e7238",
+        "snapshotSHA256": "c041e3e769a5b9d35213bafd329ec9bb8a1bb02147c2057e78c66a05858e7238",
+        "currentSHA256": "c041e3e769a5b9d35213bafd329ec9bb8a1bb02147c2057e78c66a05858e7238",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/App/PartsmithApp.swift",
+        "expectedSHA256": "fb4a743a4c3b7dac7534b0660a39bc9f1eb52acacbf400b327c5c0edc89eda8e",
+        "snapshotSHA256": "fb4a743a4c3b7dac7534b0660a39bc9f1eb52acacbf400b327c5c0edc89eda8e",
+        "currentSHA256": "fb4a743a4c3b7dac7534b0660a39bc9f1eb52acacbf400b327c5c0edc89eda8e",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+        "expectedSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+        "snapshotSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+        "currentSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+        "expectedSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+        "snapshotSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+        "currentSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreInputPageSelection.swift",
+        "expectedSHA256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+        "snapshotSHA256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+        "currentSHA256": "2c7db80e4e304bad1ca5da4c0c5413d419537b968d05a88b8617ae8a075ff796",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift",
+        "expectedSHA256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+        "snapshotSHA256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+        "currentSHA256": "7598fef92e6f2f032967fe583c7c8cdaf86ee1b6fc1a4028d2ec194ed537af54",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreInstrumentPickList.swift",
+        "expectedSHA256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+        "snapshotSHA256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+        "currentSHA256": "f5c514fadb9cbbb7f07685b671813c571689b9bd98d82e2f0ac7f2787ef845bc",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+        "expectedSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+        "snapshotSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+        "currentSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreRestDetector.swift",
+        "expectedSHA256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+        "snapshotSHA256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+        "currentSHA256": "2963570b01b28893b1b87fb154197cfa2be5f06b3b0a5b598b38bb1e60c20a2f",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+        "expectedSHA256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+        "snapshotSHA256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+        "currentSHA256": "59289ccf34688efa9ab032e54ae9faf7f09f191a51b7092df21840b8ee6d3a24",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+        "expectedSHA256": "ab7f30f7e35dc9680dbe429567e664da2828c4d6bde68b72d5a604b01a5909f8",
+        "snapshotSHA256": "ab7f30f7e35dc9680dbe429567e664da2828c4d6bde68b72d5a604b01a5909f8",
+        "currentSHA256": "ab7f30f7e35dc9680dbe429567e664da2828c4d6bde68b72d5a604b01a5909f8",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+        "expectedSHA256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+        "snapshotSHA256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+        "currentSHA256": "570f78611062a099c2e95826a72b0fb0900de5a80ba4eb726710e57b83cb9110",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+        "expectedSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+        "snapshotSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+        "currentSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+        "expectedSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+        "snapshotSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+        "currentSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift",
+        "expectedSHA256": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307",
+        "snapshotSHA256": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307",
+        "currentSHA256": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift",
+        "expectedSHA256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+        "snapshotSHA256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+        "currentSHA256": "d74211a56d12de96071b19669a9236d99467368964aa4f09eff9109c2d319b9a",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift",
+        "expectedSHA256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+        "snapshotSHA256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+        "currentSHA256": "f7270525d7d0b7acbbc922f9420dbd4ddf33f96a86a4c8e935ff4c64fc010972",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift",
+        "expectedSHA256": "6ac5b995b42e0440cd43c86872cd1f7471203ef174b61db65a946f3e97759c2b",
+        "snapshotSHA256": "6ac5b995b42e0440cd43c86872cd1f7471203ef174b61db65a946f3e97759c2b",
+        "currentSHA256": "6ac5b995b42e0440cd43c86872cd1f7471203ef174b61db65a946f3e97759c2b",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift",
+        "expectedSHA256": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7",
+        "snapshotSHA256": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7",
+        "currentSHA256": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Detection/StaffBandDetector.swift",
+        "expectedSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+        "snapshotSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+        "currentSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/DocumentModel/BarNumberDetector.swift",
+        "expectedSHA256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+        "snapshotSHA256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+        "currentSHA256": "b09354f081a0f06642ee9841368c2d891dd7a748a128a85c9e3b94b1927b8036",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift",
+        "expectedSHA256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+        "snapshotSHA256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+        "currentSHA256": "e83a8cb652025e6fcad15529d3f33ab991caab43be1d90299a61b8e8e0d1b755",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+        "expectedSHA256": "b92670df58a4b62e513a870520d686d3a9f8928288434b391157625172ac7c05",
+        "snapshotSHA256": "b92670df58a4b62e513a870520d686d3a9f8928288434b391157625172ac7c05",
+        "currentSHA256": "b92670df58a4b62e513a870520d686d3a9f8928288434b391157625172ac7c05",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/DocumentModel/ProjectModels.swift",
+        "expectedSHA256": "edc701bc17427cec2f868b6d52a30ecff563fdd15de689060062ffcf6a39d399",
+        "snapshotSHA256": "edc701bc17427cec2f868b6d52a30ecff563fdd15de689060062ffcf6a39d399",
+        "currentSHA256": "edc701bc17427cec2f868b6d52a30ecff563fdd15de689060062ffcf6a39d399",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Export/PartPDFExporter.swift",
+        "expectedSHA256": "b7bb2a5f061a284b240f970bfa15508662fb4047cbe2412d5d20ed8e1dde45aa",
+        "snapshotSHA256": "b7bb2a5f061a284b240f970bfa15508662fb4047cbe2412d5d20ed8e1dde45aa",
+        "currentSHA256": "b7bb2a5f061a284b240f970bfa15508662fb4047cbe2412d5d20ed8e1dde45aa",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Export/PartPreviewRenderer.swift",
+        "expectedSHA256": "825d5479ea8368702f17000ea9b4745a55811a263a1092f0ac0289a5ce1cda25",
+        "snapshotSHA256": "825d5479ea8368702f17000ea9b4745a55811a263a1092f0ac0289a5ce1cda25",
+        "currentSHA256": "825d5479ea8368702f17000ea9b4745a55811a263a1092f0ac0289a5ce1cda25",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Core/Layout/PartLayoutEngine.swift",
+        "expectedSHA256": "b105e2e9d50f73692a4527e8cb950b19ae51adba2a8aa6d529a08de9bb93ea3d",
+        "snapshotSHA256": "b105e2e9d50f73692a4527e8cb950b19ae51adba2a8aa6d529a08de9bb93ea3d",
+        "currentSHA256": "b105e2e9d50f73692a4527e8cb950b19ae51adba2a8aa6d529a08de9bb93ea3d",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/Inspector/InspectorView.swift",
+        "expectedSHA256": "be6a85430757fd9b5f9dba5a3c84192a53d56fd7bb0a73edc2c1f7aca53e1eb1",
+        "snapshotSHA256": "be6a85430757fd9b5f9dba5a3c84192a53d56fd7bb0a73edc2c1f7aca53e1eb1",
+        "currentSHA256": "be6a85430757fd9b5f9dba5a3c84192a53d56fd7bb0a73edc2c1f7aca53e1eb1",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/PartPreview/PartPreviewView.swift",
+        "expectedSHA256": "7f752a69fb50f6b7a1d39aab0026da523775a876f387af4f57c0912ea406bc61",
+        "snapshotSHA256": "7f752a69fb50f6b7a1d39aab0026da523775a876f387af4f57c0912ea406bc61",
+        "currentSHA256": "7f752a69fb50f6b7a1d39aab0026da523775a876f387af4f57c0912ea406bc61",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/PartsSidebar/PartsSidebarView.swift",
+        "expectedSHA256": "eb2b20e9925b8b48c04b5e9e6b8a18657fbf068c5d3cb1f913ae22326caf6531",
+        "snapshotSHA256": "eb2b20e9925b8b48c04b5e9e6b8a18657fbf068c5d3cb1f913ae22326caf6531",
+        "currentSHA256": "eb2b20e9925b8b48c04b5e9e6b8a18657fbf068c5d3cb1f913ae22326caf6531",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/Project/DocumentRootView.swift",
+        "expectedSHA256": "c9f1154d040b91d5eb702fdeb1d8db02670a6ca47defab06c30e4ce41469efd5",
+        "snapshotSHA256": "c9f1154d040b91d5eb702fdeb1d8db02670a6ca47defab06c30e4ce41469efd5",
+        "currentSHA256": "c9f1154d040b91d5eb702fdeb1d8db02670a6ca47defab06c30e4ce41469efd5",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/Project/ScoreExtractionView.swift",
+        "expectedSHA256": "117c4bf4ee8ce6e55ba9765f74dd7b45ab4b38f37cd01df428018c1669fdbf83",
+        "snapshotSHA256": "117c4bf4ee8ce6e55ba9765f74dd7b45ab4b38f37cd01df428018c1669fdbf83",
+        "currentSHA256": "117c4bf4ee8ce6e55ba9765f74dd7b45ab4b38f37cd01df428018c1669fdbf83",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/Project/ScoreExtractionWindow.swift",
+        "expectedSHA256": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+        "snapshotSHA256": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+        "currentSHA256": "a83402c24b37504faf7f57c7efde8ad00556dba31d9b5abda6e22eb0fb745f2f",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/Project/ScoreSystemTemplatePanel.swift",
+        "expectedSHA256": "7c176094a80685d80fa4b1ecbdf38ea284ef6993ab639c27121f93fc212f7099",
+        "snapshotSHA256": "7c176094a80685d80fa4b1ecbdf38ea284ef6993ab639c27121f93fc212f7099",
+        "currentSHA256": "7c176094a80685d80fa4b1ecbdf38ea284ef6993ab639c27121f93fc212f7099",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/Project/StaffDetectionView.swift",
+        "expectedSHA256": "18a44101854171bd5d0200ed83a50e36784df41c18fa0cd4054dc32a3022c7cb",
+        "snapshotSHA256": "18a44101854171bd5d0200ed83a50e36784df41c18fa0cd4054dc32a3022c7cb",
+        "currentSHA256": "18a44101854171bd5d0200ed83a50e36784df41c18fa0cd4054dc32a3022c7cb",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Features/SourceCanvas/SourceCanvasView.swift",
+        "expectedSHA256": "31fc36a3b724ead99bc4daed9f68ee167cd2a3fd66f22e0fe048bd25934e6e81",
+        "snapshotSHA256": "31fc36a3b724ead99bc4daed9f68ee167cd2a3fd66f22e0fe048bd25934e6e81",
+        "currentSHA256": "31fc36a3b724ead99bc4daed9f68ee167cd2a3fd66f22e0fe048bd25934e6e81",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Resources/.DS_Store",
+        "expectedSHA256": "61a9604b254d2677705540210e4e1f4ae5d08bb009a0eef3b70b2caf699be9fd",
+        "snapshotSHA256": "61a9604b254d2677705540210e4e1f4ae5d08bb009a0eef3b70b2caf699be9fd",
+        "currentSHA256": "61a9604b254d2677705540210e4e1f4ae5d08bb009a0eef3b70b2caf699be9fd",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Resources/Fixtures/SampleProject.partsmithproject/project.json",
+        "expectedSHA256": "0bfbadb527ffc7944262795ad3cd5a4eadb38f9b3283a655d06e3087ebb88565",
+        "snapshotSHA256": "0bfbadb527ffc7944262795ad3cd5a4eadb38f9b3283a655d06e3087ebb88565",
+        "currentSHA256": "0bfbadb527ffc7944262795ad3cd5a4eadb38f9b3283a655d06e3087ebb88565",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Resources/Fixtures/SampleProject.partsmithproject/source.pdf",
+        "expectedSHA256": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+        "snapshotSHA256": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+        "currentSHA256": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Resources/Fixtures/SampleScoreFixture.pdf",
+        "expectedSHA256": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+        "snapshotSHA256": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+        "currentSHA256": "2e24570331a7e05d3d75f28c7fe4b85280dd5f6ad277522e068f81f82174d860",
+        "matches": true
+      },
+      {
+        "path": "Partsmith/Resources/Info.plist",
+        "expectedSHA256": "3ba36f2b477af9c4883c91f44758580b1f5dbfb8c79a43f0aca3e70d3b205e55",
+        "snapshotSHA256": "3ba36f2b477af9c4883c91f44758580b1f5dbfb8c79a43f0aca3e70d3b205e55",
+        "currentSHA256": "3ba36f2b477af9c4883c91f44758580b1f5dbfb8c79a43f0aca3e70d3b205e55",
+        "matches": true
+      }
+    ],
+    "compileSourceLists": [
+      {
+        "path": ".build/numbered-volta-release-2026-10-03/DerivedData/Build/Intermediates.noindex/Partsmith.build/Release/Partsmith.build/Objects-normal/x86_64/Partsmith.SwiftFileList",
+        "sha256": "09506338f2367ef9a42bcbf08cfad68967b3aad0cecdc86337ae7a259e18b344",
+        "bytes": 4576,
+        "architecture": "x86_64",
+        "sourceCount": 35,
+        "exactFrozenSwiftSet": true
+      },
+      {
+        "path": ".build/numbered-volta-release-2026-10-03/DerivedData/Build/Intermediates.noindex/Partsmith.build/Release/Partsmith.build/Objects-normal/arm64/Partsmith.SwiftFileList",
+        "sha256": "09506338f2367ef9a42bcbf08cfad68967b3aad0cecdc86337ae7a259e18b344",
+        "bytes": 4576,
+        "architecture": "arm64",
+        "sourceCount": 35,
+        "exactFrozenSwiftSet": true
+      }
+    ]
+  },
+  "productionDetector": {
+    "path": "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+    "sha256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+    "frozenEqualsCurrent": true,
+    "monotoneCandidatePromoted": false
+  },
+  "build": {
+    "succeededMarker": true,
+    "failedMarker": false,
+    "configuration": "Release",
+    "targets": [
+      "x86_64-apple-macos14.0",
+      "arm64-apple-macos14.0"
+    ],
+    "universalLinkObserved": true,
+    "minimumMacOS": "14.0",
+    "plistMinimumMacOS": "14.0",
+    "notes": "Build log includes sandbox/CoreSimulator service diagnostics but ends with BUILD SUCCEEDED; this receipt does not classify those as compile failures."
+  },
+  "signature": {
+    "kind": "ad hoc",
+    "allArchitecturesStrictVerificationPassesBuiltAndExtracted": true,
+    "developerIDOrNotarizationClaim": false
+  },
+  "archive": {
+    "crcPass": true,
+    "memberCount": 20,
+    "bundlePayloadFiles": 4,
+    "bundlePayloadMatchesBuiltExactly": true,
+    "executableExtractedMatchesBuiltExactly": true,
+    "metadataRoot": "__MACOSX",
+    "unsafeOrDuplicateMembers": false,
+    "members": [
+      {
+        "path": "Partsmith.app/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40755"
+      },
+      {
+        "path": "Partsmith.app/Contents/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40755"
+      },
+      {
+        "path": "Partsmith.app/Contents/_CodeSignature/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40755"
+      },
+      {
+        "path": "Partsmith.app/Contents/_CodeSignature/CodeResources",
+        "directory": false,
+        "bytes": 2200,
+        "unixMode": "0o100644",
+        "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b",
+        "matchesBuiltBundle": true
+      },
+      {
+        "path": "__MACOSX/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40775"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40775"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40775"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/_CodeSignature/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40775"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/_CodeSignature/._CodeResources",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/.__CodeSignature",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      },
+      {
+        "path": "Partsmith.app/Contents/MacOS/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40755"
+      },
+      {
+        "path": "Partsmith.app/Contents/MacOS/Partsmith",
+        "directory": false,
+        "bytes": 14563488,
+        "unixMode": "0o100755",
+        "sha256": "22067f179a4d7a334cf3f8be8af801689200c3b694c765571d65217f058f3c4d",
+        "matchesBuiltBundle": true
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/MacOS/",
+        "directory": true,
+        "bytes": 0,
+        "unixMode": "0o40775"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/MacOS/._Partsmith",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/._MacOS",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      },
+      {
+        "path": "Partsmith.app/Contents/Info.plist",
+        "directory": false,
+        "bytes": 2265,
+        "unixMode": "0o100644",
+        "sha256": "659805dc9af7311476d5476da1add0114fe98ea9c0854ae1877744fb22af5587",
+        "matchesBuiltBundle": true
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/._Info.plist",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      },
+      {
+        "path": "Partsmith.app/Contents/PkgInfo",
+        "directory": false,
+        "bytes": 8,
+        "unixMode": "0o100644",
+        "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+        "matchesBuiltBundle": true
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/Contents/._PkgInfo",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      },
+      {
+        "path": "__MACOSX/Partsmith.app/._Contents",
+        "directory": false,
+        "bytes": 163,
+        "unixMode": "0o100644",
+        "sha256": "62d8c515345c9fdf0ee9d767bd33d69e18b717532fb8a3ff6d0180fc7e408c21"
+      }
+    ]
+  },
+  "commands": {
+    "architectures": {
+      "argv": [
+        "/usr/bin/lipo",
+        "-archs",
+        "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith"
+      ],
+      "exitCode": 0,
+      "stdout": "x86_64 arm64\n",
+      "stderr": ""
+    },
+    "minimumOS": {
+      "argv": [
+        "/usr/bin/xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith"
+      ],
+      "exitCode": 0,
+      "stdout": "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith (architecture x86_64):\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 14.0\n      sdk 26.1\n   ntools 1\n     tool LD\n  version 1230.1\n/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith (architecture arm64):\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 14.0\n      sdk 26.1\n   ntools 1\n     tool LD\n  version 1230.1\n",
+      "stderr": ""
+    },
+    "builtStrictSignature": {
+      "argv": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--all-architectures",
+        "--verbose=4",
+        "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app: valid on disk\n/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/DerivedData/Build/Products/Release/Partsmith.app: satisfies its Designated Requirement\n"
+    },
+    "extractedStrictSignature": {
+      "argv": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--all-architectures",
+        "--verbose=4",
+        "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/independent-extracted/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/independent-extracted/Partsmith.app: valid on disk\n/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/independent-extracted/Partsmith.app: satisfies its Designated Requirement\n"
+    },
+    "signatureDetails": {
+      "argv": [
+        "/usr/bin/codesign",
+        "-dv",
+        "--verbose=4",
+        "/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/independent-extracted/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "Executable=/Users/will/Documents/git/partsmith/.build/numbered-volta-release-2026-10-03/independent-extracted/Partsmith.app/Contents/MacOS/Partsmith\nIdentifier=com.example.Partsmith\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20400 size=14030 flags=0x2(adhoc) hashes=432+3 location=embedded\nVersionPlatform=1\nVersionMin=917504\nVersionSDK=1704192\nHash type=sha256 size=32\nCandidateCDHash sha256=ad528ab5d4fe0df5f8a0aff1478e0def87966373\nCandidateCDHashFull sha256=ad528ab5d4fe0df5f8a0aff1478e0def8796637367113dff277d88e11fbfca9d\nHash choices=sha256\nCMSDigest=ad528ab5d4fe0df5f8a0aff1478e0def8796637367113dff277d88e11fbfca9d\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=2605056\nExecutable Segment flags=0x1\nPage size=16384\nCDHash=ad528ab5d4fe0df5f8a0aff1478e0def87966373\nSignature=adhoc\nInfo.plist entries=23\nTeamIdentifier=not set\nSealed Resources version=2 rules=13 files=0\nInternal requirements count=0 size=12\n"
+    }
+  },
+  "publicationStatus": "Private package remains staged pending parent source/output gates; this audit performs no publication."
+}

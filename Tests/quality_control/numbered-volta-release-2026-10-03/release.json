@@ -1,0 +1,33 @@
+{
+  "publishedAtUTC": "2026-10-04T01:31:39.567333+00:00",
+  "change": "Recognize explicit numbered-volta tempo instructions above verified systems and preserve their original source pixels for every recipient. Includes the previously shipped Preview crop controls.",
+  "artifact": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "artifactSHA256": "e57f392652eed0d051b3e47f95bf2633ee834683818405c9acadd913ed716f08",
+  "artifactBytes": 3788676,
+  "executableSHA256": "22067f179a4d7a334cf3f8be8af801689200c3b694c765571d65217f058f3c4d",
+  "previousArtifactSHA256": "817373ec3f6652144e3092bbdc93800f49b6bc4a6b6ff5b10b542d3226555fa9",
+  "previousArtifactBackup": ".build/numbered-volta-release-2026-10-03/previous-public-817373ec3f6652144e3092bbdc93800f49b6bc4a6b6ff5b10b542d3226555fa9.zip",
+  "nativeCropDetectorUnchanged": true,
+  "privateMonotoneCandidateIncluded": false,
+  "sharedDirectionOptionStillExperimentalAndOffByDefault": true,
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "minimumMacOS": "14.0",
+  "signing": "Strictly verified ad hoc signature; not notarized.",
+  "validation": {
+    "headingChecks": 87,
+    "directionAppChecks": 113,
+    "independentControls": 30,
+    "nativeSourceWorkflowPages": 2,
+    "scope": "Conditional-direction fix only; no claim of complete extraction quality for all scores.",
+    "candidateCropPDFsVisuallyReviewed": 4,
+    "productionCropPDFsVisuallyReviewed": 4
+  },
+  "runningAppOrUserDocumentModified": false,
+  "publication": "Verified same-directory atomic ZIP replacement only.",
+  "knownOutputLimitations": [
+    "The broad production Violin II crop retains a clipped original occurrence beneath its new complete source copy. Neighboring staff fragments remain. Source preservation is verified; clean or deduplicated full-score output is not."
+  ]
+}

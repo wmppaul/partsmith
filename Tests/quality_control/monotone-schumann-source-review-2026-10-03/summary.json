@@ -1,0 +1,111 @@
+{
+  "reviewVersion": 2,
+  "scope": "Original-source crop-edge comparison only; no exported-PDF or whole-score musical-completeness approval.",
+  "candidateAnalyzerSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "changedCrops": 205,
+  "reviewedCrops": 32,
+  "reviewedSourcePages": 25,
+  "unreviewedCrops": 173,
+  "selection": "First 32 descending largestContractionPT entries from frozen shared priority.json",
+  "minimumReviewedContractionPT": 5.984959506363225,
+  "maximumReviewedContractionPT": 22.229849595063627,
+  "newTargetOmissionsObserved": 0,
+  "nonmusicalArtifactNotes": {
+    "pageNumberBisected": [
+      "p38-s1-violin1",
+      "p52-s1-violin1"
+    ],
+    "publisherFooterBisected": [
+      "p33-s3-piano",
+      "p34-s3-piano",
+      "p47-s3-piano"
+    ],
+    "otherNeighborFragments": "See each per-band sourceInterpretation; several crops retain foreign notation, including pre-existing whole Violin II in p2-s1-viola."
+  },
+  "sources": [
+    {
+      "path": "sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+      "sha256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+      "bytes": 8801313
+    },
+    {
+      "path": "Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "sha256": "40adf3b660d4eee163fb3b3e0aacec79d5904fe5d959d7a7d2133328bd844a33",
+      "bytes": 457
+    },
+    {
+      "path": ".build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470",
+      "bytes": 30425359
+    },
+    {
+      "path": ".build/monotone-line-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+      "sha256": "161b2498c3a0a893749fe9df3766b494a8da674f6c1a848224e9cfe2f2286c85",
+      "bytes": 21222839
+    },
+    {
+      "path": ".build/monotone-pending-source-review-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/index.json",
+      "sha256": "59b1fec4558f86aae4706d2252f8d361cc6fd46d891215eefbf1108ccd0f17ff",
+      "bytes": 829716
+    },
+    {
+      "path": ".build/monotone-pending-source-review-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/priority.json",
+      "sha256": "be267158963fea394614c144ae15cff4029b13bdc1ad1912d56c082e8c804ea6",
+      "bytes": 48875
+    },
+    {
+      "path": ".build/monotone-pending-source-review-2026-10-03/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/bindings.json",
+      "sha256": "88e6f9b532f75b9003be0aa61189f3b9ed09e7028b3850090f014d5fee6620b4",
+      "bytes": 1164
+    },
+    {
+      "path": ".build/numbered-line-monotone-compatibility-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+      "bytes": 61547
+    }
+  ],
+  "originalSourceWholePagesViewed": [
+    2,
+    6,
+    17,
+    35,
+    53
+  ],
+  "sourceContextsViewed": [
+    "p53-s1-cello",
+    "p17-s3-cello",
+    "p2-s3-cello",
+    "p2-s3-piano",
+    "p35-s3-piano",
+    "p6-s3-violin1",
+    "p2-s1-viola",
+    "p38-s1-violin1",
+    "p52-s1-violin1",
+    "p39-s3-piano",
+    "p6-s1-violin1",
+    "p11-s1-piano",
+    "p54-s3-viola",
+    "p24-s3-piano",
+    "p46-s3-viola",
+    "p48-s3-piano",
+    "p31-s3-violin2",
+    "p46-s3-violin2",
+    "p33-s3-piano",
+    "p47-s3-piano",
+    "p34-s3-piano",
+    "p56-s3-viola",
+    "p13-s3-piano",
+    "p25-s2-violin1",
+    "p25-s2-violin2",
+    "p29-s1-violin2",
+    "p4-s3-viola",
+    "p49-s1-violin2",
+    "p52-s1-violin2",
+    "p51-s3-violin2",
+    "p42-s1-cello",
+    "p11-s3-viola"
+  ],
+  "sourceGuardsChanged": false,
+  "productionEdited": false,
+  "newRenderingPerformed": false
+}

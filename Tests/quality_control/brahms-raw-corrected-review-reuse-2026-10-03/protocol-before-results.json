@@ -1,0 +1,8 @@
+{
+  "scope": "Reuse a reviewed corrected39 source area for raw93521 only after independently rendering each uncorrected physical page with the exact corpus Native renderer, then verifying complete decoded RGBA pixel equality with the frozen saved raster. No analysis or staff detection call.",
+  "candidate": "95a958 monotone, unchanged; production baseline9f8. Raw and corrected plans/hash-bound review chain stay read-only.",
+  "gates": "Full source SHA; decoded full-page source pixels and dimensions; page geometry and staff identities; intended part/system/candidateIDs; exact baseline and candidate crop rectangles; a real reviewed area receipt. A prior unchanged rectangle is not automatically a visual review.",
+  "boundaries": "Nine corrected pages excluded from reuse by default. Any mismatch keeps band pending. No tolerances, resampling, threshold masks, guessed transforms, or pixel-only geometry substitutions. Existing guards and review failures retained.",
+  "pagesToRender": 30,
+  "rawPendingBandsBefore": 253
+}

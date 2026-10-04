@@ -1,0 +1,20 @@
+--- baseline/ScoreSharedHeadingDetector.swift
++++ candidate/ScoreSharedHeadingDetector.swift
+@@ -281,8 +281,15 @@
+         "Grave", "Maestoso", "Agitato", "Scherzo", "Trio", "Coda", "Doppio", "Movimento", "Variazioni", "Menuetto"]
+ 
+     static func isHeading(_ text: String) -> Bool {
+-        let words = text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "en_US_POSIX"))
+-            .split(whereSeparator: { !$0.isLetter }).map(String.init)
++        let normalized = text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "en_US_POSIX"))
++            .split(whereSeparator: \.isWhitespace).joined(separator: " ")
++        // A numbered repeat instruction such as "2da volta rit." changes the
++        // ensemble's tempo on that pass. Keep the ordinal with the source text;
++        // a bare rit., a dynamic, or a playing technique is not sufficient.
++        // The caller still requires confident text above a verified system.
++        let repeatTempo = #"^(?:[1-9][0-9]?(?:ma|da|za|ta|a|o|st|nd|rd|th|[ªº°])?\.?|i{1,3}\.?|iv\.?|prima|seconda|terza|quarta)\s+volta\s+(?:(?:poco|molto)\s+)?(?:rit|ritard|ritardando|rall|rallent|rallentando|accel|accelerando)\.?$"#
++        if normalized.range(of: repeatTempo, options: .regularExpression) != nil { return true }
++        let words = normalized.split(whereSeparator: { !$0.isLetter }).map(String.init)
+         guard !words.isEmpty else { return false }
+         let tempo = vocabulary.prefix(16).map { $0.lowercased() }
+         // Modifiers alone (poco, molto, dolce, etc.) cannot trigger copying.

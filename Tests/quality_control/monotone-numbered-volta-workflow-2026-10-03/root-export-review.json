@@ -1,0 +1,70 @@
+{
+  "reviewer": "/root, independent actual-PDF visual review",
+  "method": "Root rendered all four native exported PDFs with Poppler, then inspected each complete page. The reviewer reported the following observations in the collaboration thread; this receipt binds those observations to the exact files.",
+  "source": {
+    "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+    "sha256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+  },
+  "candidateHeaderSHA256": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307",
+  "physicalSourcePage": 22,
+  "pdfs": [
+    {
+      "file": "Violin I.pdf",
+      "sha256": "9b2f77f5c540bde9f3fd583cb126be6c19a0b3b08642c855b1e7a569a3bd8644",
+      "pages": 1,
+      "systems": 5
+    },
+    {
+      "file": "Violin II.pdf",
+      "sha256": "6ba97997e1cfdf995b55fde2137ded507e2e8a03f62b36cc4a853e5a890e9365",
+      "pages": 1,
+      "systems": 5
+    },
+    {
+      "file": "Viola.pdf",
+      "sha256": "4d6b9a3d35c1f75d20d8a87d38a259891d4ce9e15daeb2c35fc9e5943c8f986d",
+      "pages": 1,
+      "systems": 5
+    },
+    {
+      "file": "Violoncello.pdf",
+      "sha256": "e0c317828f2aee966c998f84c86588bcc4e7e3078d339af42ea2ee1f4b281362",
+      "pages": 1,
+      "systems": 5
+    }
+  ],
+  "renderBindings": [
+    {
+      "pdf": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/Viola.pdf",
+      "pdfSHA256": "4d6b9a3d35c1f75d20d8a87d38a259891d4ce9e15daeb2c35fc9e5943c8f986d",
+      "png": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/root-poppler/Viola.png",
+      "pngSHA256": "93e0551d8d60abc4310424a3d912a42d90dd64475e6616be7736995c3ee3dc0c"
+    },
+    {
+      "pdf": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/Violin I.pdf",
+      "pdfSHA256": "9b2f77f5c540bde9f3fd583cb126be6c19a0b3b08642c855b1e7a569a3bd8644",
+      "png": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/root-poppler/Violin I.png",
+      "pngSHA256": "0c58dde17644d60516ad4529ba5c89380987c977fb74de0fe7f8c87276daf33d"
+    },
+    {
+      "pdf": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/Violin II.pdf",
+      "pdfSHA256": "6ba97997e1cfdf995b55fde2137ded507e2e8a03f62b36cc4a853e5a890e9365",
+      "png": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/root-poppler/Violin II.png",
+      "pngSHA256": "9be6479316f44df615bcf8ba3a1b3308d24fa2b6255068a39e53ce1777922d35"
+    },
+    {
+      "pdf": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/Violoncello.pdf",
+      "pdfSHA256": "e0c317828f2aee966c998f84c86588bcc4e7e3078d339af42ea2ee1f4b281362",
+      "png": ".build/monotone-shared-direction-candidate-2026-10-03/09200-page22-parts/root-poppler/Violoncello.png",
+      "pngSHA256": "dcc72516d9f988cfa3590c45ded7e8d728ad0490ab1395350441dfac89d148e2"
+    }
+  ],
+  "observations": [
+    "Complete 2da volta rit., including its ordinal, appears once at the first system in each of all four parts.",
+    "Complete Doppio Movimento appears at the fourth system in each part.",
+    "Shared directions retain their horizontal musical position, without cue clipping or duplicate copies.",
+    "Significant neighboring-staff fragments remain in these crops."
+  ],
+  "verdict": "Pass for the bounded shared-direction source-copy/export obligations. Not a polished-part or full-score extraction pass.",
+  "excludedFromArchive": "Full original source PDF and editable project remain in the scratch output folder and are source-hash-bound; they are not duplicated in this receipt."
+}

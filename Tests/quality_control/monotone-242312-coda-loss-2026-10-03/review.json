@@ -1,0 +1,110 @@
+{
+  "scope": "Source-first bounded visual review of largest-contraction raw Brahms242312 crops from the remaining226 queue. Review stopped after finding a new shared navigation heading omission, as instructed. No detector, production code or fixture changes.",
+  "source": {
+    "path": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+    "sha256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+    "physicalPage": 18,
+    "printedPage": "19 (255)",
+    "pageWidth": 595.2,
+    "pageHeight": 841.8,
+    "rectified": false,
+    "rasterSize": [
+      1800,
+      2546
+    ],
+    "rasterSHA256": "c7eee54769d7a4b65b35554f22a89386f50e0fd2e0acee5318c345844a126d8f"
+  },
+  "inventoryFiles": [
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "sha256": "c658cf6dbea80231c6e17406c9bc662beae70fdb9a263d93c1ea1a9fd1cc609c"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/monotone-line-corpus-2026-10-03/candidate/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "sha256": "45d7cb2ac81290bca672233c2ff51f496c0bb4d8570bcd34129a8e7893159af9"
+    }
+  ],
+  "candidateNativeSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "finding": {
+    "bandID": "p18-s4-violin2",
+    "type": "new shared navigation heading omission in the tested raw plan",
+    "text": "Coda",
+    "oldCropPDFBounds": [
+      0.0,
+      494.913982717989,
+      595.2,
+      579.9522388059701
+    ],
+    "candidateCropPDFBounds": [
+      0.0,
+      526.9857030636292,
+      595.2,
+      579.9522388059701
+    ],
+    "wordMeasurementROI": [
+      210,
+      1490,
+      325,
+      1540
+    ],
+    "wordNonwhitePixelCellBounds": [
+      223,
+      1500,
+      309,
+      1530
+    ],
+    "wordNonwhitePixelCount": 1142,
+    "wordPDFBoundsTopDown": [
+      73.73866666666667,
+      495.9544383346426,
+      102.17600000000002,
+      505.8735271013354
+    ],
+    "pixelRule": "Every source raster grayscale sample <255 in the isolated visually verified Coda ROI; bounds use unit-pixel cells, including antialiasing. Source raster is unchanged; annotation images are separate.",
+    "oldContainsAllWordPixels": true,
+    "candidateContainsAnyWordPixel": false,
+    "otherSamePartPageCropContainsWordPixels": false,
+    "sourceMarkingsBefore": [],
+    "sourceMarkingsAfter": [],
+    "musicalInterpretation": "Coda labels the current system entrance following the previous system\u2019s Da Capo instruction. It applies to the second violin as well as the first; removing it is not harmless neighboring notation removal."
+  },
+  "reviewedBands": [
+    {
+      "bandID": "p18-s4-violin2",
+      "verdict": "New shared navigation heading omission",
+      "observation": "Own second-violin notes, low ties and pp remain. Top contraction removes complete Coda at this system entrance. There is no source copy or another second-violin crop covering the word."
+    },
+    {
+      "bandID": "p18-s4-violin1",
+      "verdict": "No new intended-music omission observed",
+      "observation": "Bottom contraction removes the complete second-violin staff while retaining first-violin notes, long upper/lower slurs, pp and Coda."
+    },
+    {
+      "bandID": "p14-s3-cello",
+      "verdict": "No new current-system cello omission observed",
+      "observation": "Bottom contraction retains cello notes, low hairpins, accidentals and p. It removes following-system rehearsal A and upper violin material; this review does not certify the following system has its required shared copy."
+    },
+    {
+      "bandID": "p15-s5-violin1",
+      "verdict": "No new intended-music omission observed",
+      "observation": "Upper contraction removes preceding-system cello material; own high ties/accidental, low hairpins, dim., p and noteheads remain. The smaller bottom contraction removes neighboring second-violin material."
+    }
+  ],
+  "coverage": {
+    "pendingQueueTotal": 226,
+    "reviewed": 4,
+    "unreviewed": 222,
+    "contractionsInQueue": 192,
+    "expansionOnlyInQueue": 34,
+    "status": "Paused on newly observed source omission; no overall pass."
+  },
+  "limitations": [
+    "This raw comparison has no shared source-marking copies. An integrated app flow that creates and retains a verified Coda copy could resolve this omission, but that is not present in the tested inventory and was not inferred.",
+    "No new own-staff notehead or slur omission was observed in the four reviewed crops; the blocker is the actual shared navigation word.",
+    "Previously reviewed30 raw bands are excluded from this queue and are not recertified here."
+  ],
+  "indexBinding": {
+    "path": ".build/monotone-pending-source-review-2026-10-03/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/index.json",
+    "sha256": "590e3739d65498bd3da11fd8723d59bd439c04a662778a95ec7bd6e936c874df"
+  }
+}

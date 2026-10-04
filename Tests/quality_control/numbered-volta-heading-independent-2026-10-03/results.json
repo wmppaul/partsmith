@@ -1,0 +1,127 @@
+{
+  "checks" : 30,
+  "passed" : 30,
+  "rows" : [
+    {
+      "name" : "Accepted complete conditional tempo:   2DA VOLTA\trit.  ",
+      "pass" : true
+    },
+    {
+      "name" : "Original OCR\/source string preserved:   2DA VOLTA\trit.  ",
+      "pass" : true
+    },
+    {
+      "name" : "Accepted complete conditional tempo: IV. volta molto rallentando.",
+      "pass" : true
+    },
+    {
+      "name" : "Original OCR\/source string preserved: IV. volta molto rallentando.",
+      "pass" : true
+    },
+    {
+      "name" : "Accepted complete conditional tempo: Prima volta accel.",
+      "pass" : true
+    },
+    {
+      "name" : "Original OCR\/source string preserved: Prima volta accel.",
+      "pass" : true
+    },
+    {
+      "name" : "Accepted complete conditional tempo: 12th volta poco ritard.",
+      "pass" : true
+    },
+    {
+      "name" : "Original OCR\/source string preserved: 12th volta poco ritard.",
+      "pass" : true
+    },
+    {
+      "name" : "Accepted complete conditional tempo: 3º volta rit.",
+      "pass" : true
+    },
+    {
+      "name" : "Original OCR\/source string preserved: 3º volta rit.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta rit. pizz.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta rit. Violin II",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta rit. 3",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: -2da volta rit.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 02da volta rit.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: IIV volta rit.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta ritornello",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta cresc.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta subito p",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta rit. e poi",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: see 2da volta rit.",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: 2da volta poco",
+      "pass" : true
+    },
+    {
+      "name" : "Reject unsupported or incomplete phrase: volta molto rall.",
+      "pass" : true
+    },
+    {
+      "name" : "OCR input order does not lose adjacent ordinal",
+      "pass" : true
+    },
+    {
+      "name" : "Distant ordinal does not manufacture a phrase",
+      "pass" : true
+    },
+    {
+      "name" : "Different text rows do not combine",
+      "pass" : true
+    },
+    {
+      "name" : "NaN ordinal confidence rejected",
+      "pass" : true
+    },
+    {
+      "name" : "Staff-local conditional text rejected",
+      "pass" : true
+    },
+    {
+      "name" : "Previous-system text rejected",
+      "pass" : true
+    },
+    {
+      "name" : "Pre-cancelled detection never reaches OCR callback",
+      "pass" : true
+    }
+  ],
+  "scope" : "Independent selector\/grammar checks and pre-cancellation; no Vision recognition or source extraction run"
+}

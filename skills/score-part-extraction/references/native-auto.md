@@ -160,6 +160,21 @@ Ending recognition currently requires a supported first/second pair; unpaired,
 third/list endings, rehearsal letters and bar numbers still need separate source
 review. Missing or unresolved pages prevent pairing across the gap. A staffless
 page is not assumed to be blank for this purpose. This option is off by default.
+Raw `inventory` plus `plan` batch results do not run this recognition pass.
+Review both modes separately: a tighter crop can remove a shared instruction
+that an enabled direction pass would restore. Brahms 242312 page 18, system 4,
+Violin II loses its printed Coda in the crop-only cleanup candidate; the native
+direction workflow restores a complete source copy. That opt-in result does not
+establish safety for the default mode or for failed recognition.
+Check conditional tempo instructions such as **2da volta rit.** as well as
+movement headings. Preserve the repeat ordinal with the tempo: removing it
+changes when the instruction applies. Brahms 09200 page 22 is a source case;
+ordinary `rit.`, dynamics and instrument techniques alone do not establish
+shared ownership.
+With the production crop on that page, Violin II retains a clipped original
+instruction below its complete added copy. Keep the complete copy; a fragment
+inside the music crop cannot justify suppressing it. Inspect any manual crop
+cleanup in Preview against the intended notes and retain the shared direction.
 
 Review all output pages against the source. Retained neighboring notes are
 permitted under `preserve-target` when target ink needs the same space. Unnecessary
