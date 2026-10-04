@@ -1,0 +1,275 @@
+{
+  "status": "pass",
+  "scope": "Private release build/package verification; not published and no running-app actions",
+  "builtAtUTC": "2026-10-04T20:36:14.040901+00:00",
+  "snapshot": ".build/instrument-pick-flow-release-2026-10-04",
+  "sourceInputs": 45,
+  "compiledSwiftSourcesPerArchitecture": 35,
+  "sourceSnapshotAndCurrentTreeEqual": true,
+  "sourceRosterSHA256": "1e3bfedc23e05520df306e3ef23afb8681681f294a25f12b00c3b08a08b42209",
+  "onlySourceDeltaFromReleasedSnapshot": [
+    "Partsmith/Features/Project/DocumentRootView.swift",
+    "Partsmith/Features/Project/ScoreExtractionView.swift",
+    "Partsmith/Features/Project/ScoreExtractionWindow.swift",
+    "Partsmith/Features/SourceCanvas/SourceCanvasView.swift"
+  ],
+  "priorReleasedSnapshot": ".build/matcher-boundary-release-2026-10-03",
+  "priorPublicZIPSHA256": "7801cdf250293b3e469bf4a604f2686d1e8d92f138efaf021beea27a6f90e72c",
+  "detectionAndDocumentCoreUnchanged": true,
+  "architectureSet": [
+    "x86_64",
+    "arm64"
+  ],
+  "minimumMacOSPerArchitecture": [
+    "14.0",
+    "14.0"
+  ],
+  "plistMinimumMacOS": "14.0",
+  "bundleIdentifier": "com.example.Partsmith",
+  "builtAndExtractedAdHocSignaturesValid": true,
+  "zipCRCIntegrity": "pass",
+  "everyBundleFileExactAfterExtraction": true,
+  "bundleFiles": [
+    {
+      "path": "Contents/Info.plist",
+      "bytes": 2265,
+      "sha256": "659805dc9af7311476d5476da1add0114fe98ea9c0854ae1877744fb22af5587",
+      "mode": 420
+    },
+    {
+      "path": "Contents/MacOS/Partsmith",
+      "bytes": 14892448,
+      "sha256": "e8dea43a3bcc90726194de90cc739384adebed820ca6be6b96638b43784cde2a",
+      "mode": 493
+    },
+    {
+      "path": "Contents/PkgInfo",
+      "bytes": 8,
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "mode": 420
+    },
+    {
+      "path": "Contents/_CodeSignature/CodeResources",
+      "bytes": 2200,
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b",
+      "mode": 420
+    }
+  ],
+  "bundleDeltaFromPriorReleasedApp": [
+    "Contents/MacOS/Partsmith"
+  ],
+  "compileLists": [
+    {
+      "path": "DerivedData/Build/Intermediates.noindex/Partsmith.build/Release/Partsmith.build/Objects-normal/arm64/Partsmith.SwiftFileList",
+      "sha256": "504063cf26500f656135e208e04664c527f04ee27bec4c2b39c94305adb6fc96",
+      "compiledSources": [
+        "Partsmith/App/PartsmithApp.swift",
+        "Partsmith/Core/DocumentModel/ProjectModels.swift",
+        "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+        "Partsmith/Core/Layout/PartLayoutEngine.swift",
+        "Partsmith/Core/Export/PartPDFExporter.swift",
+        "Partsmith/Core/Export/PartPreviewRenderer.swift",
+        "Partsmith/Features/Project/DocumentRootView.swift",
+        "Partsmith/Features/PartsSidebar/PartsSidebarView.swift",
+        "Partsmith/Features/SourceCanvas/SourceCanvasView.swift",
+        "Partsmith/Features/PartPreview/PartPreviewView.swift",
+        "Partsmith/Features/Inspector/InspectorView.swift",
+        "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift",
+        "Partsmith/Core/DocumentModel/BarNumberDetector.swift",
+        "Partsmith/Core/Detection/StaffBandDetector.swift",
+        "Partsmith/Features/Project/StaffDetectionView.swift",
+        "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+        "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift",
+        "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift",
+        "Partsmith/Core/Detection/ScoreInputPageSelection.swift",
+        "Partsmith/Core/Detection/ScoreInstrumentPickList.swift",
+        "Partsmith/Core/Detection/ScoreRestDetector.swift",
+        "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+        "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+        "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+        "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+        "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+        "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+        "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift",
+        "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift",
+        "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+        "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift",
+        "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift",
+        "Partsmith/Features/Project/ScoreExtractionView.swift",
+        "Partsmith/Features/Project/ScoreSystemTemplatePanel.swift",
+        "Partsmith/Features/Project/ScoreExtractionWindow.swift"
+      ]
+    },
+    {
+      "path": "DerivedData/Build/Intermediates.noindex/Partsmith.build/Release/Partsmith.build/Objects-normal/x86_64/Partsmith.SwiftFileList",
+      "sha256": "504063cf26500f656135e208e04664c527f04ee27bec4c2b39c94305adb6fc96",
+      "compiledSources": [
+        "Partsmith/App/PartsmithApp.swift",
+        "Partsmith/Core/DocumentModel/ProjectModels.swift",
+        "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+        "Partsmith/Core/Layout/PartLayoutEngine.swift",
+        "Partsmith/Core/Export/PartPDFExporter.swift",
+        "Partsmith/Core/Export/PartPreviewRenderer.swift",
+        "Partsmith/Features/Project/DocumentRootView.swift",
+        "Partsmith/Features/PartsSidebar/PartsSidebarView.swift",
+        "Partsmith/Features/SourceCanvas/SourceCanvasView.swift",
+        "Partsmith/Features/PartPreview/PartPreviewView.swift",
+        "Partsmith/Features/Inspector/InspectorView.swift",
+        "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift",
+        "Partsmith/Core/DocumentModel/BarNumberDetector.swift",
+        "Partsmith/Core/Detection/StaffBandDetector.swift",
+        "Partsmith/Features/Project/StaffDetectionView.swift",
+        "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+        "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift",
+        "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift",
+        "Partsmith/Core/Detection/ScoreInputPageSelection.swift",
+        "Partsmith/Core/Detection/ScoreInstrumentPickList.swift",
+        "Partsmith/Core/Detection/ScoreRestDetector.swift",
+        "Partsmith/Core/Detection/ScoreSharedEnding.swift",
+        "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift",
+        "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift",
+        "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift",
+        "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift",
+        "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift",
+        "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift",
+        "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift",
+        "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+        "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift",
+        "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift",
+        "Partsmith/Features/Project/ScoreExtractionView.swift",
+        "Partsmith/Features/Project/ScoreSystemTemplatePanel.swift",
+        "Partsmith/Features/Project/ScoreExtractionWindow.swift"
+      ]
+    }
+  ],
+  "privateArchive": ".build/instrument-pick-flow-release-2026-10-04/Partsmith-extraction-preview-macos.zip",
+  "privateArchiveSHA256": "877bbf7447cfa5bd406412690f8854c2cfc10c38d1dd230b589bc8c3e061c43b",
+  "privateArchiveBytes": 3869622,
+  "binarySHA256": "e8dea43a3bcc90726194de90cc739384adebed820ca6be6b96638b43784cde2a",
+  "releaseBuildLogSHA256": "fe8b34681013d989f8a0555517b19c0e52ca49932414f37c210ecd0430974cb3",
+  "commands": [
+    {
+      "args": [
+        "/usr/bin/codesign",
+        "--force",
+        "--deep",
+        "--sign",
+        "-",
+        ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app: replacing existing signature\n"
+    },
+    {
+      "args": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--all-architectures",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app: valid on disk\n.build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app: satisfies its Designated Requirement\n"
+    },
+    {
+      "args": [
+        "/usr/bin/codesign",
+        "-d",
+        "--verbose=4",
+        ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "Executable=/Users/will/Documents/git/partsmith/.build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith\nIdentifier=com.example.Partsmith\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20400 size=14350 flags=0x2(adhoc) hashes=442+3 location=embedded\nVersionPlatform=1\nVersionMin=917504\nVersionSDK=1704192\nHash type=sha256 size=32\nCandidateCDHash sha256=e77fc75d172f185aa4e43e116fdc3c76ec7fe571\nCandidateCDHashFull sha256=e77fc75d172f185aa4e43e116fdc3c76ec7fe571efd9c6f4025c1e8c64ed97ca\nHash choices=sha256\nCMSDigest=e77fc75d172f185aa4e43e116fdc3c76ec7fe571efd9c6f4025c1e8c64ed97ca\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=2654208\nExecutable Segment flags=0x1\nPage size=16384\nCDHash=e77fc75d172f185aa4e43e116fdc3c76ec7fe571\nSignature=adhoc\nInfo.plist entries=23\nTeamIdentifier=not set\nSealed Resources version=2 rules=13 files=0\nInternal requirements count=0 size=12\n"
+    },
+    {
+      "args": [
+        "/usr/bin/lipo",
+        "-archs",
+        ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith"
+      ],
+      "exitCode": 0,
+      "stdout": "x86_64 arm64\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/usr/bin/otool",
+        "-arch",
+        "all",
+        "-l",
+        ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app/Contents/MacOS/Partsmith"
+      ],
+      "exitCode": 0,
+      "stderr": "",
+      "stdoutArtifact": "load-commands.txt"
+    },
+    {
+      "args": [
+        "/usr/bin/ditto",
+        "-c",
+        "-k",
+        "--sequesterRsrc",
+        "--keepParent",
+        ".build/instrument-pick-flow-release-2026-10-04/DerivedData/Build/Products/Release/Partsmith.app",
+        ".build/instrument-pick-flow-release-2026-10-04/Partsmith-extraction-preview-macos.zip"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/usr/bin/ditto",
+        "-x",
+        "-k",
+        ".build/instrument-pick-flow-release-2026-10-04/Partsmith-extraction-preview-macos.zip",
+        ".build/instrument-pick-flow-release-2026-10-04/package-extracted"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--all-architectures",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        ".build/instrument-pick-flow-release-2026-10-04/package-extracted/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ".build/instrument-pick-flow-release-2026-10-04/package-extracted/Partsmith.app: valid on disk\n.build/instrument-pick-flow-release-2026-10-04/package-extracted/Partsmith.app: satisfies its Designated Requirement\n"
+    },
+    {
+      "args": [
+        "/usr/bin/codesign",
+        "-d",
+        "--verbose=4",
+        ".build/instrument-pick-flow-release-2026-10-04/package-extracted/Partsmith.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "Executable=/Users/will/Documents/git/partsmith/.build/instrument-pick-flow-release-2026-10-04/package-extracted/Partsmith.app/Contents/MacOS/Partsmith\nIdentifier=com.example.Partsmith\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20400 size=14350 flags=0x2(adhoc) hashes=442+3 location=embedded\nVersionPlatform=1\nVersionMin=917504\nVersionSDK=1704192\nHash type=sha256 size=32\nCandidateCDHash sha256=e77fc75d172f185aa4e43e116fdc3c76ec7fe571\nCandidateCDHashFull sha256=e77fc75d172f185aa4e43e116fdc3c76ec7fe571efd9c6f4025c1e8c64ed97ca\nHash choices=sha256\nCMSDigest=e77fc75d172f185aa4e43e116fdc3c76ec7fe571efd9c6f4025c1e8c64ed97ca\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=2654208\nExecutable Segment flags=0x1\nPage size=16384\nCDHash=e77fc75d172f185aa4e43e116fdc3c76ec7fe571\nSignature=adhoc\nInfo.plist entries=23\nTeamIdentifier=not set\nSealed Resources version=2 rules=13 files=0\nInternal requirements count=0 size=12\n"
+    },
+    {
+      "args": [
+        "/usr/bin/lipo",
+        "-archs",
+        ".build/instrument-pick-flow-release-2026-10-04/package-extracted/Partsmith.app/Contents/MacOS/Partsmith"
+      ],
+      "exitCode": 0,
+      "stdout": "x86_64 arm64\n",
+      "stderr": ""
+    }
+  ],
+  "publishedZIPModified": false,
+  "runningAppActions": "none"
+}

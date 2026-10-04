@@ -6,6 +6,7 @@ struct ScoreExtractionView: View {
     @ObservedObject var document: PartsmithDocument
     var onClose: () -> Void
     var onShowScore: () -> Void
+    var onFinishPickingNames: () -> Void
     @State private var profile = ScoreExtractionProfile(parts: [], cropMode: "compact")
     @State private var review: ScoreDetectionReview?
     @State private var selectedPage = 0
@@ -175,6 +176,10 @@ struct ScoreExtractionView: View {
                         .buttonStyle(.borderedProminent)
                         .disabled(!review.plan.canApply || review.plan.bands.isEmpty)
                 } else {
+                    if profile.parts.isEmpty {
+                        Text("Choose the instruments above to enable Auto.")
+                            .font(.callout).foregroundStyle(.secondary)
+                    }
                     Button("Auto", action: runAuto).buttonStyle(.borderedProminent)
                         .disabled(!profileValid || !inputPagesValid || isRunning)
                 }
@@ -195,7 +200,11 @@ struct ScoreExtractionView: View {
             resetInputPages()
         }
         .onDisappear(perform: cancelWork)
-        .onChange(of: document.instrumentNamePick?.id) { receiveInstrumentNamePick() }
+        // Consume each result even while the score covers this window. Use the
+        // publisher's value: @Published emits before the stored property changes.
+        .onReceive(document.$instrumentNamePick) { pick in
+            if let pick { receiveInstrumentNamePick(pick) }
+        }
         .onChange(of: document.sourcePDFData) { invalidateSourceReview(); resetInputPages() }
         .onChange(of: document.project.pageRectifications) { invalidateSourceReview(); refreshThumbnails() }
         .onChange(of: selectedPage) {
@@ -320,30 +329,51 @@ struct ScoreExtractionView: View {
                     if let deskewStatus { Text(deskewStatus).font(.callout).foregroundStyle(.secondary) }
                 }.padding(12).frame(maxWidth: .infinity, alignment: .leading)
                     .background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
-                Text("2. Instruments, from top to bottom in each system").font(.headline)
-                Text("Type names, choose a starting profile, or click the printed names on the score. Use two staves for a piano grand staff. You can edit every name and staff count.")
-                    .foregroundStyle(.secondary)
+                Text("2. Choose the instruments").font(.headline)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(profile.parts.isEmpty
+                        ? "First, tell Partsmith which instruments to extract."
+                        : "Keep the instruments in the same top-to-bottom order as the score.")
+                        .font(.callout.weight(.medium))
+                    Text("Select each printed instrument name in one system, from top to bottom. Then choose Done — Back to Auto Extract on the score.")
+                        .foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    HStack {
+                        if document.isPickingInstrumentNames {
+                            Button("Continue Selecting on Score", systemImage: "cursorarrow.click", action: onShowScore)
+                                .buttonStyle(.borderedProminent)
+                            Button("Done Selecting", action: onFinishPickingNames)
+                                .disabled(document.isRecognizingInstrumentName)
+                        } else {
+                            Button(profile.parts.isEmpty ? "Select Instrument Names on Score" : "Add Names from Score",
+                                   systemImage: "cursorarrow.click") {
+                                startPickingNames(replacingList: false)
+                            }.buttonStyle(.borderedProminent)
+                                .accessibilityIdentifier("selectInstrumentNames")
+                            if !profile.parts.isEmpty {
+                                Menu("More") {
+                                    Button("Replace List from Score") { startPickingNames(replacingList: true) }
+                                }.fixedSize().help("Start a replacement list by selecting printed names")
+                            }
+                        }
+                    }.disabled(isRunning)
+                    Text("Click a name, or drag a box around its complete label. Repeated names become separate numbered parts.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }.padding(12).frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.accentColor.opacity(0.07), in: RoundedRectangle(cornerRadius: 8))
+                Text("You can also use a starting profile or enter names below. Use two staves for a piano grand staff; every name and staff count stays editable.")
+                    .font(.callout).foregroundStyle(.secondary)
                 Menu("Use a Starting Profile") {
                     Button("String Quartet") { setProfile([("Violin I", 1), ("Violin II", 1), ("Viola", 1), ("Cello", 1)]) }
                     Button("Clarinet Trio") { setProfile([("Clarinet in A", 1), ("Cello", 1), ("Piano", 2)]) }
                     Button("Voice and Piano") { setProfile([("Voice", 1), ("Piano", 2)], lyricIndices: [0]) }
                     Button("SATB Choir") { setProfile([("Soprano", 1), ("Alto", 1), ("Tenor", 1), ("Bass", 1)], lyricIndices: [0, 1, 2, 3]) }
                 }
-                HStack {
-                    Menu("Pick Names from Score", systemImage: "cursorarrow.click") {
-                        Button("Start a New List") { startPickingNames(replacingList: true) }
-                        Button("Add to This List") { startPickingNames(replacingList: false) }
-                    }.disabled(isRunning)
-                    if document.isPickingInstrumentNames {
-                        Button("Show Score", action: onShowScore)
-                        Button("Done Picking") { document.cancelInstrumentNamePicking() }
-                    }
-                }
-                if document.isPickingInstrumentNames {
-                    Text("Click a printed instrument name, or drag around its full label. Work from top to bottom; repeated names become separate numbered parts.")
+                if document.isPickingInstrumentNames, let pickStatus {
+                    Text(pickStatus).font(.callout).foregroundStyle(.secondary)
+                } else if !profile.parts.isEmpty {
+                    Text("\(profile.parts.count) instruments. Review the names and staff counts below, then choose Auto.")
                         .font(.callout).foregroundStyle(.secondary)
                 }
-                if let pickStatus { Text(pickStatus).font(.callout).foregroundStyle(.secondary) }
                 ForEach(profile.parts.indices, id: \.self) { index in
                     HStack {
                         Text("\(index + 1).").frame(width: 24)
@@ -1136,8 +1166,8 @@ struct ScoreExtractionView: View {
         onShowScore()
     }
 
-    private func receiveInstrumentNamePick() {
-        guard document.isPickingInstrumentNames, let pick = document.instrumentNamePick else { return }
+    private func receiveInstrumentNamePick(_ pick: ScoreInstrumentNamePick) {
+        guard document.isPickingInstrumentNames else { return }
         var nextParts = replaceListOnNextPick ? [] : profile.parts
         var nextPickList = replaceListOnNextPick ? ScoreInstrumentPickList() : pickedInstrumentList
         guard let result = nextPickList.apply(pick, to: &nextParts) else { return }

@@ -1,0 +1,7 @@
+Thirty focused checks passed for the instrument-selection round trip. The harness compiles the production Core and feature views, presses the actual SwiftUI accessibility actions, recognizes both numbered violin labels from a real Brahms score, and verifies retained instrument order, immediate completion, pending-recognition protection, two-document ownership, zero-pick completion, and source-window cleanup. The source project remains unchanged.
+
+All five final captures were visually reviewed. The setup instruction and direct selection action fit the 800 × 580-point minimum window. The source instructions, selected-label chip and Done action stay outside the scrolling score at 760 × 650 points. A highlight spilling into the header was found during review; the final editor clipping fix removes it.
+
+The test process deliberately cannot activate, so it records and forwards the actual AppKit focus requests and verifies their target. It does not claim OS-level key-window activation. Offscreen cache-display captures omit prominent button fills, so the PNGs establish layout and wording, not active-window color contrast. These limits are recorded in `review.json` and `results.json`.
+
+Run `bash tools/test_instrument_pick_flow.sh` from the repository root on macOS with native AppKit/Vision rendering access. `source-hashes.json` binds every compiled production source, both harness files and the sample PDF. `manifest.json` binds this evidence directory. No user app, document or production detector algorithm was modified by the reviewer.

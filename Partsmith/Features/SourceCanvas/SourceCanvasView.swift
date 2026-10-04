@@ -9,6 +9,7 @@ struct SourceCanvasView: View {
     var onImportDropped: (URL) -> Void
     var onNewPartRequested: () -> Void
     var onAutoExtractRequested: () -> Void
+    var onFinishPickingInstrumentNames: () -> Void
 
     @State private var isImportDropTargeted = false
 
@@ -27,28 +28,9 @@ struct SourceCanvasView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                         RestAutoStatusView(document: document)
-                        if document.isPickingInstrumentNames {
-                            if document.isRecognizingInstrumentName {
-                                HStack(spacing: 8) {
-                                    ProgressView().controlSize(.small)
-                                    Text("Reading the instrument name…")
-                                }
-                                .font(.subheadline)
-                            } else if let message = document.instrumentNamePickMessage {
-                                Text(message)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            } else if let pick = document.instrumentNamePick {
-                                Text("Recognized: \(pick.name). Click another name, or drag a box to reread a label.")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
                     }
                     Spacer()
-                    if document.isPickingInstrumentNames {
-                        Button("Done", action: document.cancelInstrumentNamePicking)
-                    } else {
+                    if !document.isPickingInstrumentNames {
                         if document.project.bands.isEmpty && !document.isEditingHeaderSelection && !document.isEditingPageRectification {
                             Button("Auto Extract", systemImage: "wand.and.stars", action: onAutoExtractRequested)
                                 .buttonStyle(.borderedProminent)
@@ -165,6 +147,11 @@ struct SourceCanvasView: View {
                     }
                 }
                 .background(Color(nsColor: .windowBackgroundColor))
+                .clipped()
+
+                if document.isPickingInstrumentNames {
+                    instrumentNamePickingBar
+                }
             }
         } else {
             VStack {
@@ -225,6 +212,64 @@ struct SourceCanvasView: View {
                 perform: handleImportDrop(providers:)
             )
         }
+    }
+
+    /// Kept outside the scrolling PDF so the instructions and return action stay
+    /// visible without covering the printed names being selected.
+    private var instrumentNamePickingBar: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Label("Select instrument names", systemImage: "cursorarrow.click")
+                        .font(.headline)
+                    Text("Click each printed name from top to bottom in one system, then choose Done.")
+                        .font(.callout).foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+                Button("Done — Back to Auto Extract", systemImage: "arrow.turn.up.left",
+                       action: onFinishPickingInstrumentNames)
+                    .buttonStyle(.borderedProminent).controlSize(.large)
+                    .disabled(document.isRecognizingInstrumentName)
+                    .accessibilityIdentifier("finishInstrumentNamePicking")
+            }
+            if !document.instrumentNameHighlights.isEmpty {
+                HStack(spacing: 10) {
+                    Text("\(document.instrumentNameHighlights.count) selected")
+                        .font(.callout.weight(.medium))
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 6) {
+                            ForEach(document.instrumentNameHighlights) { pick in
+                                Label(pick.name, systemImage: "checkmark")
+                                    .font(.callout).padding(.horizontal, 8).padding(.vertical, 4)
+                                    .background(Color.accentColor.opacity(0.10), in: Capsule())
+                            }
+                        }
+                    }.frame(height: 32).scrollIndicators(.hidden)
+                }
+            }
+            if document.isRecognizingInstrumentName {
+                HStack(spacing: 8) {
+                    ProgressView().controlSize(.small)
+                    Text("Reading your selection… Done will be available when it’s added.")
+                }.font(.callout)
+            } else if let message = document.instrumentNamePickMessage {
+                Text(message).font(.callout).foregroundStyle(.orange)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                Text(document.instrumentNameHighlights.isEmpty
+                    ? "Start with the top instrument name. You can also drag a box around a complete label."
+                    : "Select the next name, or choose Done to review your instrument list and run Auto.")
+                    .font(.callout).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.regularMaterial)
+        .overlay(alignment: .top) { Rectangle().fill(Color.accentColor.opacity(0.5)).frame(height: 2) }
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("instrumentNamePickingBar")
     }
 
     private func handleImportDrop(providers: [NSItemProvider]) -> Bool {

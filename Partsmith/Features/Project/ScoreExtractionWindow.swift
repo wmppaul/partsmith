@@ -30,7 +30,8 @@ final class ScoreExtractionWindowController: NSObject, ObservableObject, NSWindo
         self.document = document
         let view = ScoreExtractionView(document: document,
             onClose: { [weak self] in self?.close() },
-            onShowScore: { [weak self] in self?.showScore() })
+            onShowScore: { [weak self] in self?.showScore() },
+            onFinishPickingNames: { [weak self] in self?.finishPickingNames() })
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1200, height: 820),
             styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
         window.title = "Auto Extract Parts"
@@ -64,6 +65,16 @@ final class ScoreExtractionWindowController: NSObject, ObservableObject, NSWindo
         document?.canvasMode = .source
         sourceWindow?.deminiaturize(nil)
         sourceWindow?.makeKeyAndOrderFront(nil)
+    }
+
+    /// Explicit completion returns to this document's existing setup window.
+    /// Cancellation and source-window closure must never reopen or focus it.
+    func finishPickingNames() {
+        guard let document, document.isPickingInstrumentNames,
+              !document.isRecognizingInstrumentName, let extractionWindow else { return }
+        document.cancelInstrumentNamePicking()
+        extractionWindow.deminiaturize(nil)
+        extractionWindow.makeKeyAndOrderFront(nil)
     }
 
     func close() {

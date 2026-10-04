@@ -15,7 +15,7 @@ Reviewed examples and the evaluation record are in [output/pdf](output/pdf) and 
 
 ## Alpha Download
 
-- Current extraction preview: [Partsmith for macOS](artifacts/macos/Partsmith-extraction-preview-macos.zip), including crop editing in **Preview**. See [changes and review limits](artifacts/macos/README.md).
+- Current extraction preview: [Partsmith for macOS](artifacts/macos/Partsmith-extraction-preview-macos.zip), including guided instrument-name selection and crop editing in **Preview**. See [changes and review limits](artifacts/macos/README.md).
 - macOS alpha zip: [Partsmith v0.1.0-alpha.2](https://raw.githubusercontent.com/wmppaul/partsmith/v0.1.0-alpha.2/artifacts/macos/Partsmith-v0.1.0-alpha.2-macos.zip)
 - If macOS says `Apple could not verify "Partsmith.app" is free of malware that may harm your Mac or compromise your privacy`, open `System Settings > Privacy & Security`, scroll down, and click `Open Anyway`.
 

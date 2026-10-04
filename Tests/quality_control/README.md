@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 4 guided instrument-name selection
+
+The [updated app flow](instrument-pick-flow-release-2026-10-04/README.md) replaces the primary picker menu with a direct selection action and instructions. A persistent source bar shows picked names and **Done — Back to Auto Extract**, returning to the same setup. [Thirty native interaction checks](instrument-pick-flow-2026-10-04/README.md) cover real numbered-name recognition, last-pick retention, pending reads, zero-pick completion, two-document targeting and close cleanup. Narrow layouts were visually reviewed; a highlight overflow was fixed. The harness validates focus requests without activating the process. The universal package was verified and published; detector Core is unchanged.
+
 ## October 4 manual Brahms crop cleanup
 
 The [complete seven-trim Quartet alternative](brahms-seven-trims-native-2026-10-04/README.md) removes the neighboring whole staff bodies in seven reviewed rows while retaining intended notes and markings. [Independent source/output review](brahms-seven-trims-independent-2026-10-04/review.md) covers every edit and all 35 changed page layouts; the other 29 pages are pixel-identical to the parent. Native project comparison permits only the seven edges and modification date to change. All 604 bands, 42 copies, nine corrections and the prior Viola “in tempo” repair remain. This is manual assistance; neighboring fragments and awkward turns remain. The released Preview handles let users make the same kind of crop adjustment directly in a part, synced with Source and export.

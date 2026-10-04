@@ -1,0 +1,67 @@
+{
+  "blockingFindings": [],
+  "codeReview": [
+    "Primary selection is now a direct action with a top-to-bottom instruction and explicit return destination.",
+    "Source completion delegates through the owning controller; cancellation and source closure cannot reopen setup.",
+    "Recognition completion is consumed synchronously from the publisher value while the setup is covered.",
+    "Completion is disabled in the UI and guarded in the controller while OCR is pending.",
+    "The existing setup host remains alive across the source/Auto round trip; zero-pick sessions preserve established rows."
+  ],
+  "date": "2026-10-04",
+  "functionalChecks": 30,
+  "limits": [
+    "Activation-prohibited process intentionally cannot become the user's active app. An in-process recorder intercepts and forwards the actual production makeKeyAndOrderFront calls to verify their target; this checks focus requests, not OS-level key-window status.",
+    "Real printed labels are recognized through the production document OCR entry point; the harness does not synthesize PDF mouse-coordinate selection gestures, whose implementation is unchanged.",
+    "No detector, crop quality, export or corpus-completeness claim follows from these UI checks."
+  ],
+  "reproduce": "bash tools/test_instrument_pick_flow.sh (macOS with native AppKit/Vision rendering access; no App main or user documents)",
+  "reviewer": "name_pick_flow_review",
+  "verdict": "pass within stated scope",
+  "visualReview": {
+    "allFinalScreenshotsViewed": true,
+    "captureLimit": "NSView cache-display captures in an inactive activation-prohibited process omit prominent button bezel fills. These are layout/label checks, not a certification of active-window color contrast.",
+    "files": {
+      "setup-empty-narrow.png": {
+        "pixels": [
+          1600,
+          1160
+        ],
+        "sha256": "08550af10b6de47fac922dc1da5638f58f6ce6c19acb12bf604777b7ac03a8d1"
+      },
+      "setup-empty.png": {
+        "pixels": [
+          2400,
+          1636
+        ],
+        "sha256": "c3ba95ca4cd1b9f9e89b94d3fd089f4a388972ae7304e8788e8ce766e1ff97cc"
+      },
+      "setup-populated.png": {
+        "pixels": [
+          2400,
+          1656
+        ],
+        "sha256": "62b92dd0400c776513224662f9f849fe0b1ed7839533ddba7826e575ae931b56"
+      },
+      "source-selecting-narrow.png": {
+        "pixels": [
+          1520,
+          1300
+        ],
+        "sha256": "15580f448938bc6a8ccdff7d281bc31835a8647d85a09764bf64df8ccb218560"
+      },
+      "source-selecting.png": {
+        "pixels": [
+          1960,
+          1700
+        ],
+        "sha256": "3662ce09cf78181be1ed02f38c40f814c8ee7cf98cbeec14525cadcec6a51735"
+      }
+    },
+    "observations": [
+      "Empty setup at 800 by 580 points keeps the selection instruction and primary action in the visible setup area; descriptive text wraps.",
+      "Source at 760 by 650 points retains a fixed bottom instruction/action area outside the PDF viewport, with selected-label chip and count.",
+      "The populated setup shows both distinct numbered violins in source order and the next instruction to review and choose Auto.",
+      "Review found a green highlight spilling into the instruction header when its label was scrolled outside the PDF viewport. The final clipped editor group stops that spill; the final source-selecting image shows a clean header."
+    ]
+  }
+}

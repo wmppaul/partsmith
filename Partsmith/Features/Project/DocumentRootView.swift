@@ -67,7 +67,8 @@ struct DocumentRootView: View {
                                     document.setPageRectificationEditing(false)
                                     showingAddPartSheet = true
                                 },
-                                onAutoExtractRequested: showAutoExtract
+                                onAutoExtractRequested: showAutoExtract,
+                                onFinishPickingInstrumentNames: scoreExtractionWindow.finishPickingNames
                             )
                         case .preview:
                             PartPreviewView(
