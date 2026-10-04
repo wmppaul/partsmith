@@ -1,0 +1,94 @@
+{
+  "scope": "Complete assisted native Mendelssohn draft; source and all final outputs reviewed. No production code edits.",
+  "artifacts": {
+    "README.md": {
+      "sha256": "f3f403bfcc764efa6b907d478e3076dede742de9af800960350958cd1e49126d",
+      "bytes": 4653
+    },
+    "archive-members.json": {
+      "sha256": "03a098f1a7d4017de2b58cc9bdb36571e164f06e2f607634e75b1f6da3d151c0",
+      "bytes": 24435
+    },
+    "baseline-review.json": {
+      "sha256": "adce9fbc8f4ea0264b3c612b24464238b30da2678dc99605c052444c625fc396",
+      "bytes": 25320
+    },
+    "build-final.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "delivery.json": {
+      "sha256": "0751199b2e51d3cc6b8ec8355df356088a0d13f34ed83e2a1d9acbf697366f41",
+      "bytes": 2489
+    },
+    "export.log": {
+      "sha256": "a5f4a1aa6dca504e1a26dbf91bc0d5ec6148462166abc8854cca41e55fd17a78",
+      "bytes": 398
+    },
+    "final-export.log": {
+      "sha256": "66c95e3d46103663435abb893a5e421cd3cb377a59ebd8a088b1f80ef5427cf5",
+      "bytes": 394
+    },
+    "final-overrides.json": {
+      "sha256": "acb26d8d31955d00199eeed18d65b9d8416dccc4ffa553be26594acaeebdb1a5",
+      "bytes": 15081
+    },
+    "final-render-index.json": {
+      "sha256": "f1ece618a40eecb57403efef06372ec4a010e503fff0df94a096183ad7d4ea70",
+      "bytes": 25435
+    },
+    "final-review.json": {
+      "sha256": "0effb6804ab474b68de50f62adc8c8de2ec4e220e9a0bd6777c1d772e3eef4a0",
+      "bytes": 32914
+    },
+    "independent-output-review.json": {
+      "sha256": "0aef4f0406e5ee37637e832f99b896088c5d4bb631889aa2de82268f2e83cdfe",
+      "bytes": 21371
+    },
+    "input-bindings.json": {
+      "sha256": "973e3d1229cd9eff3aa3e8399c5c986963c516b1f7f99f05ce32fa146442b34e",
+      "bytes": 1268
+    },
+    "manual-corrections.json": {
+      "sha256": "82e90d799f07940a27d793de33adc2bac8e4a51c05a48aa27c2ab268455ee0e6",
+      "bytes": 2635
+    },
+    "native-workflow-evidence.tar.gz": {
+      "sha256": "1682e9b57cbfb2cb53d2621d477e44c13a7c86e183b3d6ab3971f986b0b26cf8",
+      "bytes": 6966049
+    },
+    "production-source-hashes.json": {
+      "sha256": "47d6648cb17198bba0b791b886e25a189da1dca7e4843cde67992868f5699fa6",
+      "bytes": 3196
+    },
+    "profile.json": {
+      "sha256": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a",
+      "bytes": 596
+    },
+    "render-index.json": {
+      "sha256": "9f2b1eb0dd49b0d572970e2a2f3b5e5fd88b9a885e57c45522967413c85bd839",
+      "bytes": 25822
+    },
+    "reviewed-overrides.json": {
+      "sha256": "709e43e97f9ae84002fc1ccb861cf3406f90e00931437e8be1955834d51a2557",
+      "bytes": 14694
+    },
+    "source-map.json": {
+      "sha256": "0f0584e205aa895f2d4d645e6b3bb367ce365afd6dd1b8600064b79da78f414b",
+      "bytes": 66578
+    },
+    "source-obligations.json": {
+      "sha256": "01cc816cd1331e80efeddd8c3262929c8fcbc27ddab68bc65c8aa0cc38296323",
+      "bytes": 36979
+    },
+    "validation.json": {
+      "sha256": "51dfe750bd2d2547bc7e873f967f4252b297cebe50dd226b9e3e3937f1b698c4",
+      "bytes": 6943
+    }
+  },
+  "references": {
+    "Tests/quality_control/variable-layout-next-score-2026-10-03/manifest.json": "2da9e26221779875d2cba5e1fc32ec87ae5c39c15c2977d0b1982e6e3c5c7ae9",
+    "Tests/quality_control/system-template-independent-2026-10-03/frozen/source-truth.json": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+    "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706"
+  }
+}

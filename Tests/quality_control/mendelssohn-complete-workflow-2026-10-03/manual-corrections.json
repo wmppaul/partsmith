@@ -1,0 +1,109 @@
+{
+  "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+  "initialManifestSHA256": "23255054ec62599bb19be1172de2ef098899106a46f547bee0a70186e435b77a",
+  "changes": [
+    {
+      "part": "organ",
+      "page": 4,
+      "system": 2,
+      "before": [
+        0,
+        583.9952867242733,
+        595.22,
+        733.8719560094265
+      ],
+      "after": [
+        0,
+        581.4,
+        595.22,
+        733.8719560094265
+      ],
+      "reason": "Restore the complete original upper-manual bar68 slur crest. Original drawing546 cubic true minimum y582.60; 0.06pt stroke gives582.57.",
+      "independentLocalSourceObligation": [
+        175.9,
+        582.4,
+        242.0,
+        590.4
+      ],
+      "scope": "Original full source and fixed local obligation, not a whole-band segmentation oracle."
+    },
+    {
+      "part": "bass",
+      "page": 1,
+      "system": 1,
+      "before": [
+        0,
+        492.71798900235666,
+        595.22,
+        540.0730557737628
+      ],
+      "after": [
+        0,
+        492.71798900235666,
+        595.22,
+        524.0
+      ],
+      "reason": "Keep the complete Bass initial staff/rests through516.36 and clear blank below it; exclude duplicate Organ Andante beginning530.434 and Organ slurs.",
+      "independentLocalSourceObligation": [
+        52,
+        495,
+        560,
+        518
+      ],
+      "scope": "Original full source and fixed local obligation, not a whole-band segmentation oracle."
+    },
+    {
+      "part": "bass",
+      "page": 4,
+      "system": 2,
+      "before": [
+        0,
+        544.9709347996858,
+        595.22,
+        616.7989002356637
+      ],
+      "after": [
+        0,
+        544.9709347996858,
+        595.22,
+        599.0
+      ],
+      "reason": "Retain all Bass lyrics through the independently measured597.6546 text extent; remove lower Organ staff/notes while retaining overlapping upper Organ fragments.",
+      "independentLocalSourceObligation": [
+        329.0,
+        586.0,
+        554.0,
+        598.0
+      ],
+      "scope": "Original full source and fixed local obligation, not a whole-band segmentation oracle."
+    }
+  ],
+  "restJoining": {
+    "sourceVerifiedNoTempoMeterChangesDuringAbsence": true,
+    "spans": {
+      "soprano": [
+        8,
+        66,
+        59
+      ],
+      "alto": [
+        8,
+        36,
+        29
+      ],
+      "tenor": [
+        8,
+        66,
+        59
+      ],
+      "bass": [
+        8,
+        15,
+        8
+      ]
+    },
+    "allOriginalPrintedMusicRowsRemain": 49,
+    "allOriginalGeneratedRestRecordsRemain": 21,
+    "originalTotalReferences": 70
+  }
+}

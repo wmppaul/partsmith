@@ -1,0 +1,33 @@
+{
+  "scope": "Single private affine-local ownership experiment; no production edit, source/guard change or corpus run.",
+  "hypothesis": "Compare actual retained connected-component run cell extents to the same x-dependent affine staff-line geometry already used for line removal, rather than nominal horizontal global bbox intervals. Recover raw page34 Viola f only if this staff-owner inference is causal.",
+  "limitationsBeforeResults": [
+    "Uses the detected page-wide skew, not a newly measured curved local trace. Curvature remains an explicit unresolved model limit.",
+    "No mask, structural separation, crop padding, source image or target oracle changes. Actual output component bounds remain identical before any existing owner-dependent thin filter.",
+    "Changing ownership can change planner crops non-monotonically; any newly lost source-owned pixel rejects this candidate. Old failing cases remain unfinished and are not waived."
+  ],
+  "nativeBaselineSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "nativeCandidateSHA256": "88f1c02216e5df8c2c5e502a6d36ec4795361c2e56d6344bd33060f813f5f78d",
+  "plannerSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+  "tests": [
+    "one fresh raw original PDF page34 baseline and candidate native render/analyze/plan",
+    "current permanent crop suite unchanged",
+    "unchanged297 source masks, exact lost-pixel sets and separation outcomes",
+    "unchanged336 low-resolution filled/hollow source-envelope controls"
+  ],
+  "successRequired": [
+    "complete independent raw f source mask retained",
+    "no newly lost owned source pixels versus frozen baseline",
+    "no new false shared/whole-neighbor outcomes in separation controls",
+    "permanent and336 controls retain prior outcomes",
+    "source inspection of every changed page34 crop; no cleanup-only approval"
+  ],
+  "sourcePDF": {
+    "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a"
+  },
+  "unchangedIndependentFObligations": {
+    "path": "Tests/quality_control/brahms-p34-dynamic-2026-10-03/independent-symbol-obligations.json",
+    "sha256": "de6189c8e741da03114d5ab51ceb5a92eeee888d0662ded92b9019f9988d5ac9"
+  }
+}

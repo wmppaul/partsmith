@@ -1,0 +1,219 @@
+{
+  "scope": "Current native review/apply, user-level rest-joining API, canonical save/decode/reopen and native export of all parts; saved native analysis reused without detector/matcher rerun.",
+  "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+  "baselineManifestSHA256": "23255054ec62599bb19be1172de2ef098899106a46f547bee0a70186e435b77a",
+  "finalManifestSHA256": "4b59e6136a6038b9be7a06b3007c91b797acd79deb1badd5f0d41c551fc4de79",
+  "inputBindingsSHA256": "973e3d1229cd9eff3aa3e8399c5c986963c516b1f7f99f05ce32fa146442b34e",
+  "manualCorrectionsSHA256": "82e90d799f07940a27d793de33adc2bac8e4a51c05a48aa27c2ab268455ee0e6",
+  "coreCurrentMatches": {
+    "Partsmith/Core/Detection/NativeScorePageAnalyzer.swift": true,
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": true,
+    "Partsmith/Core/Detection/ScoreInputPageSelection.swift": true,
+    "Partsmith/Core/Detection/ScoreInstrumentNameDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreInstrumentPickList.swift": true,
+    "Partsmith/Core/Detection/ScoreLocalEndingPreservation.swift": true,
+    "Partsmith/Core/Detection/ScoreRestDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedDestinationDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedDirectionReview.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedDirectionWorkflow.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedEnding.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedEndingDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedHeadingDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreSharedNavigationDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreSourceHeaderDetector.swift": true,
+    "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift": true,
+    "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift": true,
+    "Partsmith/Core/Detection/StaffBandDetector.swift": true,
+    "Partsmith/Core/DocumentModel/BarNumberDetector.swift": true,
+    "Partsmith/Core/DocumentModel/PageRectificationEstimator.swift": true,
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": true,
+    "Partsmith/Core/DocumentModel/ProjectModels.swift": true,
+    "Partsmith/Core/Export/PartPDFExporter.swift": true,
+    "Partsmith/Core/Export/PartPreviewRenderer.swift": true,
+    "Partsmith/Core/Layout/PartLayoutEngine.swift": true
+  },
+  "nativeAnalyzerSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "sourceMusicRows": 49,
+  "originalGeneratedRestRows": 21,
+  "renderedGeneratedRestRows": 4,
+  "renderedTotalRows": 53,
+  "originalRefsPreserved": 70,
+  "completeAllFiveTimelines": true,
+  "nativeCodecReencodedSavedProjectBytesEqual": true,
+  "codecScope": "Uses ISO-8601 project envelope decoder and PartsmithDocument initialization; no app UI open-panel click claimed. Timestamps use the codec’s second precision.",
+  "noExclusions": true,
+  "copiedVerifiedAndanteCount": 3,
+  "sourceCropChanges": [
+    {
+      "id": "p1-s1-bass",
+      "part": "bass",
+      "before": [
+        0,
+        492.71798900235666,
+        595.22,
+        540.0730557737628
+      ],
+      "after": [
+        0,
+        492.71798900235666,
+        595.22,
+        524
+      ]
+    },
+    {
+      "id": "p4-s2-bass",
+      "part": "bass",
+      "before": [
+        0,
+        544.9709347996858,
+        595.22,
+        616.7989002356637
+      ],
+      "after": [
+        0,
+        544.9709347996858,
+        595.22,
+        599
+      ]
+    },
+    {
+      "id": "p4-s2-organ",
+      "part": "organ",
+      "before": [
+        0,
+        583.9952867242733,
+        595.22,
+        733.8719560094265
+      ],
+      "after": [
+        0,
+        581.4,
+        595.22,
+        733.8719560094265
+      ]
+    }
+  ],
+  "localSourceObligationsContained": 3,
+  "parts": [
+    {
+      "id": "soprano",
+      "file": "Soprano.pdf",
+      "sha256": "12e1025604ad8a9c2400e594bd4416b3213714e6374c54a4d5a4369f13d600fe",
+      "outputPages": 1,
+      "renderedRows": 7,
+      "originalItemReferences": 14,
+      "barsCovered": [
+        1,
+        102
+      ],
+      "restRows": [
+        {
+          "start": 8,
+          "count": 59,
+          "sourceRows": [
+            "p2-s1-soprano",
+            "p2-s2-soprano",
+            "p2-s3-soprano",
+            "p2-s4-soprano",
+            "p3-s1-soprano",
+            "p3-s2-soprano",
+            "p3-s3-soprano",
+            "p4-s1-soprano"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alto",
+      "file": "Alto.pdf",
+      "sha256": "5940e8dc0bd6dc09e2dd4d4fa9d151a1d5b9b3b17fc382c506ce23c853b5dc35",
+      "outputPages": 1,
+      "renderedRows": 11,
+      "originalItemReferences": 14,
+      "barsCovered": [
+        1,
+        102
+      ],
+      "restRows": [
+        {
+          "start": 8,
+          "count": 29,
+          "sourceRows": [
+            "p2-s1-alto",
+            "p2-s2-alto",
+            "p2-s3-alto",
+            "p2-s4-alto"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tenor",
+      "file": "Tenor.pdf",
+      "sha256": "482056d3cd6da5911d28af38bdee8699b883abc60231e0e0043284a8b6d8b21d",
+      "outputPages": 1,
+      "renderedRows": 7,
+      "originalItemReferences": 14,
+      "barsCovered": [
+        1,
+        102
+      ],
+      "restRows": [
+        {
+          "start": 8,
+          "count": 59,
+          "sourceRows": [
+            "p2-s1-tenor",
+            "p2-s2-tenor",
+            "p2-s3-tenor",
+            "p2-s4-tenor",
+            "p3-s1-tenor",
+            "p3-s2-tenor",
+            "p3-s3-tenor",
+            "p4-s1-tenor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "file": "Bass.pdf",
+      "sha256": "fe1b5519db1937b67ffeddfbea8ada98630945bfc202486252807bc76f49f21e",
+      "outputPages": 2,
+      "renderedRows": 14,
+      "originalItemReferences": 14,
+      "barsCovered": [
+        1,
+        102
+      ],
+      "restRows": [
+        {
+          "start": 8,
+          "count": 8,
+          "sourceRows": [
+            "p2-s1-bass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "organ",
+      "file": "Organ (manuals and pedal).pdf",
+      "sha256": "1d3a407e67be0ac3a5c3a10f3375d996e545d543d54d0c3f3ef4b60809d39b7a",
+      "outputPages": 3,
+      "renderedRows": 14,
+      "originalItemReferences": 14,
+      "barsCovered": [
+        1,
+        102
+      ],
+      "restRows": []
+    }
+  ],
+  "knownRemainingLimitations": [
+    "Manual source identities/counts and three local crop corrections; not unattended Auto identity/crop success.",
+    "Residual foreign lyrics and slur/beam fragments, especially Bass bar67 and Organ rows.",
+    "Bass page turn51→52 splits a continuing vocal phrase. Organ turns29→30 and66→67 occur during continuous playing; no performance-safe turn claim.",
+    "Generated rests use native typography and do not engrave the original source’s exact style. Printed opening staves retain the3/4 meter."
+  ]
+}

@@ -1,0 +1,49 @@
+--- baseline/Core/Detection/NativeScorePageAnalyzer.swift
++++ candidate/Core/Detection/NativeScorePageAnalyzer.swift
+@@ -574,7 +574,12 @@
+             }
+         }
+         struct Run { var left: Int; var right: Int; var y: Int }
+-        struct Bounds { var left: Int; var top: Int; var right: Int; var bottom: Int; var area: Int }
++        struct Bounds {
++            var left: Int; var top: Int; var right: Int; var bottom: Int; var area: Int
++            // The same detected slope already locates staff lines at each x.
++            // Retained run cell corners are compared in that staff coordinate frame.
++            var localCoreTop: Double; var localCoreBottom: Double
++        }
+         var runs: [Run] = [], parents: [Int] = [], previous: [Int] = []
+         func root(_ value: Int) -> Int {
+             var index = value
+@@ -607,13 +612,20 @@
+         for (index, run) in runs.enumerated() {
+             if index % 4096 == 0 && isCancelled() { return nil }
+             let key = root(index)
++            let leftShift = slope * (Double(run.left) - Double(width) / 2)
++            let rightShift = slope * (Double(run.right) - Double(width) / 2)
++            let localTop = Double(run.y) - max(leftShift, rightShift)
++            let localBottom = Double(run.y + 1) - min(leftShift, rightShift)
+             if var box = boxes[key] {
+                 box.left = min(box.left, run.left); box.right = max(box.right, run.right)
+                 box.top = min(box.top, run.y); box.bottom = max(box.bottom, run.y + 1)
+                 box.area += run.right - run.left
++                box.localCoreTop = min(box.localCoreTop, localTop)
++                box.localCoreBottom = max(box.localCoreBottom, localBottom)
+                 boxes[key] = box
+             } else {
+-                boxes[key] = Bounds(left: run.left, top: run.y, right: run.right, bottom: run.y + 1, area: run.right - run.left)
++                boxes[key] = Bounds(left: run.left, top: run.y, right: run.right, bottom: run.y + 1,
++                    area: run.right - run.left, localCoreTop: localTop, localCoreBottom: localBottom)
+             }
+         }
+         let typicalSpace = spaces.sorted()[spaces.count / 2]
+@@ -621,8 +633,8 @@
+         for box in boxes.values where box.area >= 2 {
+             let boxHeight = Double(box.bottom - box.top), boxWidth = Double(box.right - box.left)
+             let owners = lines.indices.filter {
+-                Double(box.top) <= lines[$0][4]
+-                    && Double(box.bottom) >= lines[$0][0]
++                box.localCoreTop <= lines[$0][4]
++                    && box.localCoreBottom >= lines[$0][0]
+             }
+             // Thin, multi-staff vertical connectors and braces strictly left of
+             // the staff-line starts are not target-note ownership evidence. A
