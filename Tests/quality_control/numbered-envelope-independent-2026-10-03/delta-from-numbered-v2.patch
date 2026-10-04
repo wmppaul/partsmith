@@ -1,0 +1,95 @@
+--- frozen-numbered-v2/NativeScorePageAnalyzer.swift
++++ narrow-candidate/NativeScorePageAnalyzer.swift
+@@ -739,6 +739,84 @@
+                 boxes[key] = Bounds(left: run.left, top: run.y, right: run.right, bottom: run.y + 1, area: run.right - run.left)
+             }
+         }
++        // Preserve established single-owner crop support only when actual
++        // retained source pixels still have the same sole owner. The legacy
++        // feature mask already carries the identical structural cuts; it does
++        // not rerun rasterization, connector proofs, or musical recognition.
++        var legacyRuns: [Run] = [], legacyParents: [Int] = []
++        func legacyRoot(_ value: Int) -> Int {
++            var index = value
++            while legacyParents[index] != index {
++                legacyParents[index] = legacyParents[legacyParents[index]]
++                index = legacyParents[index]
++            }
++            return index
++        }
++        var legacyPrevious: [Int] = []
++        for y in 0..<height {
++            if y % 128 == 0 && isCancelled() { return nil }
++            var current: [Int] = [], x = 0, previousOffset = 0
++            while x < width {
++                if !musicalFeatureInk[y * width + x] { x += 1; continue }
++                let left = x
++                while x < width && musicalFeatureInk[y * width + x] { x += 1 }
++                let index = legacyRuns.count
++                legacyRuns.append(Run(left: left, right: x, y: y))
++                legacyParents.append(index); current.append(index)
++                while previousOffset < legacyPrevious.count && legacyRuns[legacyPrevious[previousOffset]].right < left { previousOffset += 1 }
++                var offset = previousOffset
++                while offset < legacyPrevious.count && legacyRuns[legacyPrevious[offset]].left <= x {
++                    let other = legacyRoot(legacyPrevious[offset]), own = legacyRoot(index)
++                    if other != own { legacyParents[other] = own }
++                    offset += 1
++                }
++            }
++            legacyPrevious = current
++        }
++        var legacyBoxes: [Int: Bounds] = [:]
++        var children: [Int: Set<Int>] = [:]
++        var currentOffset = 0
++        for (index, run) in legacyRuns.enumerated() {
++            if index % 4096 == 0 && isCancelled() { return nil }
++            let key = legacyRoot(index)
++            if var box = legacyBoxes[key] {
++                box.left = min(box.left, run.left); box.right = max(box.right, run.right)
++                box.top = min(box.top, run.y); box.bottom = max(box.bottom, run.y + 1)
++                box.area += run.right - run.left
++                legacyBoxes[key] = box
++            } else {
++                legacyBoxes[key] = Bounds(left: run.left, top: run.y, right: run.right, bottom: run.y + 1, area: run.right - run.left)
++            }
++            // Same-row strict interval overlap is an actual retained pixel;
++            // touching boxes or adjacent pixels cannot establish correspondence.
++            while currentOffset < runs.count && (runs[currentOffset].y < run.y || (runs[currentOffset].y == run.y && runs[currentOffset].right <= run.left)) { currentOffset += 1 }
++            var offset = currentOffset
++            while offset < runs.count && runs[offset].y == run.y && runs[offset].left < run.right {
++                if runs[offset].right > run.left { children[key, default: []].insert(root(offset)) }
++                offset += 1
++            }
++        }
++        func ownersOf(_ box: Bounds) -> [Int] {
++            lines.indices.filter { Double(box.top) <= lines[$0][4] && Double(box.bottom) >= lines[$0][0] }
++        }
++        let currentOwners = boxes.mapValues { ownersOf($0) }
++        var legacyEnvelopeSupports: [ScoreInkComponent] = []
++        for key in legacyBoxes.keys.sorted() {
++            if isCancelled() { return nil }
++            let box = legacyBoxes[key]!
++            let owners = ownersOf(box)
++            guard box.area >= 2, owners.count == 1, let linked = children[key], !linked.isEmpty else { continue }
++            guard linked.allSatisfy({ currentOwners[$0]?.isEmpty == true || currentOwners[$0] == owners }) else { continue }
++            let ownedChildren = linked.filter { currentOwners[$0] == owners }.compactMap { boxes[$0] }
++            guard !ownedChildren.isEmpty else { continue }
++            let retainedTop = ownedChildren.map(\.top).min()!
++            let retainedBottom = ownedChildren.map(\.bottom).max()!
++            guard box.top < retainedTop || box.bottom > retainedBottom else { continue }
++            var support = ScoreInkComponent(bounds: [Double(box.left) / Double(width), Double(box.top) / Double(height),
++                Double(box.right) / Double(width), Double(box.bottom) / Double(height)], staffIDs: owners.map { ordered[$0].id })
++            support.isOwnershipAlternative = true
++            legacyEnvelopeSupports.append(support)
++        }
+         let typicalSpace = spaces.sorted()[spaces.count / 2]
+         var result: [ScoreInkComponent] = []
+         for box in boxes.values where box.area >= 2 {
+@@ -760,6 +838,7 @@
+             result.append(ScoreInkComponent(bounds: [Double(box.left) / Double(width), Double(box.top) / Double(height),
+                 Double(box.right) / Double(width), Double(box.bottom) / Double(height)], staffIDs: owners.map { ordered[$0].id }))
+         }
++        result.append(contentsOf: legacyEnvelopeSupports)
+         if retainMusicalEvidence && preservedMusicalConnection {
+             // Keep the local components as ordinary attribution evidence.
+             // A musical connection is an additional outward-preservation

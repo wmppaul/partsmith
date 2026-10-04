@@ -1,0 +1,192 @@
+{
+  "source": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "measurement": "12 rendered pixels per PDF point, top-down physical original source coordinates. Pixel centers >=cropBottom and inside unchanged guard; dark is gray<190, comparison<254 also reported. No guard or crop modified.",
+  "cases": [
+    {
+      "id": "p35-s1-violin1",
+      "physicalPage": 35,
+      "pageSizePt": [
+        426.0,
+        614.0
+      ],
+      "guard": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "cropBottomPt": 66.38242097147263,
+      "renderPixelsPerPoint": 12,
+      "threshold": 190,
+      "outsideDarkPixelCenters": 5546,
+      "outside254PixelCenters": 5546,
+      "whollyOutside190UnitCells": 5546,
+      "darkColumnGroups": [
+        {
+          "bboxPt": [
+            37.75,
+            66.41666666666667,
+            40.5,
+            68.0
+          ],
+          "darkPixelCenters": 565
+        },
+        {
+          "bboxPt": [
+            41.416666666666664,
+            66.41666666666667,
+            42.083333333333336,
+            68.0
+          ],
+          "darkPixelCenters": 152
+        },
+        {
+          "bboxPt": [
+            131.83333333333334,
+            66.41666666666667,
+            146.41666666666666,
+            68.0
+          ],
+          "darkPixelCenters": 2381
+        },
+        {
+          "bboxPt": [
+            151.66666666666666,
+            66.41666666666667,
+            152.41666666666666,
+            68.0
+          ],
+          "darkPixelCenters": 139
+        },
+        {
+          "bboxPt": [
+            218.75,
+            66.41666666666667,
+            219.66666666666666,
+            68.0
+          ],
+          "darkPixelCenters": 153
+        },
+        {
+          "bboxPt": [
+            287.5,
+            66.41666666666667,
+            297.5833333333333,
+            68.0
+          ],
+          "darkPixelCenters": 1556
+        },
+        {
+          "bboxPt": [
+            302.0833333333333,
+            66.41666666666667,
+            302.75,
+            68.0
+          ],
+          "darkPixelCenters": 152
+        },
+        {
+          "bboxPt": [
+            380.1666666666667,
+            67.08333333333333,
+            384.5,
+            68.0
+          ],
+          "darkPixelCenters": 274
+        },
+        {
+          "bboxPt": [
+            389.0,
+            66.41666666666667,
+            389.8333333333333,
+            68.0
+          ],
+          "darkPixelCenters": 174
+        }
+      ],
+      "partiallyExcluded190UnitCells": 233
+    },
+    {
+      "id": "p22-s3-cello",
+      "physicalPage": 22,
+      "pageSizePt": [
+        427.0,
+        615.0
+      ],
+      "guard": [
+        38,
+        415,
+        393,
+        448
+      ],
+      "cropBottomPt": 447.65561126108753,
+      "renderPixelsPerPoint": 12,
+      "threshold": 190,
+      "outsideDarkPixelCenters": 348,
+      "outside254PixelCenters": 348,
+      "whollyOutside190UnitCells": 348,
+      "darkColumnGroups": [
+        {
+          "bboxPt": [
+            58.416666666666664,
+            447.6666666666667,
+            58.75,
+            448.0
+          ],
+          "darkPixelCenters": 16
+        },
+        {
+          "bboxPt": [
+            60.166666666666664,
+            447.6666666666667,
+            60.75,
+            448.0
+          ],
+          "darkPixelCenters": 24
+        },
+        {
+          "bboxPt": [
+            76.58333333333333,
+            447.6666666666667,
+            80.0,
+            448.0
+          ],
+          "darkPixelCenters": 156
+        },
+        {
+          "bboxPt": [
+            281.8333333333333,
+            447.6666666666667,
+            285.0,
+            448.0
+          ],
+          "darkPixelCenters": 152
+        }
+      ],
+      "partiallyExcluded190UnitCells": 84
+    },
+    {
+      "id": "p22-s3-cello-landmark",
+      "physicalPage": 22,
+      "pageSizePt": [
+        427.0,
+        615.0
+      ],
+      "guard": [
+        332,
+        436,
+        372,
+        448
+      ],
+      "cropBottomPt": 447.65561126108753,
+      "renderPixelsPerPoint": 12,
+      "threshold": 190,
+      "outsideDarkPixelCenters": 0,
+      "outside254PixelCenters": 0,
+      "whollyOutside190UnitCells": 0,
+      "darkColumnGroups": [],
+      "partiallyExcluded190UnitCells": 0
+    }
+  ]
+}

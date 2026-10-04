@@ -1,0 +1,363 @@
+{
+  "archive": "implementation-and-controls.zip",
+  "members": {
+    "baseline/fourcore.json": {
+      "bytes": 207199,
+      "sha256": "9211ed13ca3a96c9ba0c483c50e37e04e10ae7b2ce09dcef9ccb0464877c309a"
+    },
+    "build-run.sh": {
+      "bytes": 823,
+      "sha256": "aaf99314979623638753acbb2e0206db87365d12437430863b24c40fed1ff2f9"
+    },
+    "candidate/Core/Detection/NativeScorePageAnalyzer.swift": {
+      "bytes": 61359,
+      "sha256": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f"
+    },
+    "candidate/Core/Detection/ScoreExtractionPlanner.swift": {
+      "bytes": 70852,
+      "sha256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7"
+    },
+    "candidate/Core/Detection/ScoreLocalEndingPreservation.swift": {
+      "bytes": 12513,
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    "candidate/Core/Detection/ScoreSharedEnding.swift": {
+      "bytes": 3285,
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    "candidate/Core/Detection/ScoreSharedEndingDetector.swift": {
+      "bytes": 19141,
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    "candidate/Core/Detection/StaffBandDetector.swift": {
+      "bytes": 29163,
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    "candidate/case176-comparison.json": {
+      "bytes": 519,
+      "sha256": "601c2aa2026994e1e51b76d3c94dfdb262ca307e3aac48593bd306b4973adb85"
+    },
+    "candidate/case176-middle-owner.pgm": {
+      "bytes": 547215,
+      "sha256": "bd31b41d07d6904cd8b9cff8aa1ec535c8cf8a8cbb9987b709085ae5658d82a6"
+    },
+    "candidate/case176-source.pgm": {
+      "bytes": 547215,
+      "sha256": "049c67488a80a525c46e7c697fd01d41c3dc7cb903bccb2efd1b990fca0e89ab"
+    },
+    "candidate/case176.json": {
+      "bytes": 1382,
+      "sha256": "ef4e17b36320dcdd427b5ddd85791ed01e99d6696c59438d7520bd59dc46a1a1"
+    },
+    "candidate/case176.log": {
+      "bytes": 111,
+      "sha256": "e3d1c73e882ba0206c0f762bd23ca0033a832b0674dcf84012972abafb7ae75f"
+    },
+    "candidate/existing795.log": {
+      "bytes": 124,
+      "sha256": "70dae5f1697a3d8b56afc15657a93011ed44c54bef0a97c99d99f6ff8163fa0b"
+    },
+    "candidate/fourcore-exact-pixel-comparison.json": {
+      "bytes": 75646,
+      "sha256": "43a4be637e18aa9fd9ca3ccd46258b794ae2e4c78120890543d61a6f0ddcd0c1"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-fiveMissingRows-owner0.png": {
+      "bytes": 2970,
+      "sha256": "99780157acd9b4b34fe488224b5c1fea547fbe2913235bad7e3b18ca116c8a83"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-fiveMissingRows-owner1.png": {
+      "bytes": 2927,
+      "sha256": "e8fce599d412c229da5ef1c3fd59a077018c9f337b41d05beedbbe9f17e14e7f"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-fiveMissingRows-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-fiveMissingRows-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-fiveMissingRows.png": {
+      "bytes": 3995,
+      "sha256": "0dabe50574c7b4c6c4fdd59d20516c5d083c5395b86197e35fde671d1f08b2a5"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-intact-owner0.png": {
+      "bytes": 3544,
+      "sha256": "ee30131d1122f0479fdac106f68b5f052565577099d98df069bb3b81ad0ac038"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-intact-owner1.png": {
+      "bytes": 2893,
+      "sha256": "c0dd9dc57b8eced0fc1bb789df99798e345a2e673c4c9324158e789b9e80e5b3"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-intact-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-intact-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/filledFirstSpace-intact.png": {
+      "bytes": 3991,
+      "sha256": "37f5bfed5d03eb3aa3f1afcefa8bf17261b4a489b1d519a57b7a7bebd9c12c0e"
+    },
+    "candidate/fourcore-sources/filledOuter-fiveMissingRows-owner0.png": {
+      "bytes": 3562,
+      "sha256": "fef827ad8475751b104d0b4a358ec11afc532280009638d4293b4a1c26c1eea6"
+    },
+    "candidate/fourcore-sources/filledOuter-fiveMissingRows-owner1.png": {
+      "bytes": 3023,
+      "sha256": "510160882b1813505349b8db37917e4d016a89ce063f4c0eb91015a0b3554a52"
+    },
+    "candidate/fourcore-sources/filledOuter-fiveMissingRows-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/filledOuter-fiveMissingRows-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/filledOuter-fiveMissingRows.png": {
+      "bytes": 3982,
+      "sha256": "b47a3ebe74c4c624eea865a09ddc34891a3590c0e4c70ec3c7a4f754c28c1622"
+    },
+    "candidate/fourcore-sources/filledOuter-intact-owner0.png": {
+      "bytes": 3553,
+      "sha256": "4e0e39f314ac02bd37c4261905408e9207538b9c543e1efdbac21d6c65b7831d"
+    },
+    "candidate/fourcore-sources/filledOuter-intact-owner1.png": {
+      "bytes": 2894,
+      "sha256": "69c5d6de32b1c21d62e6f812c4516c920944b83f2b7a7b8964eed1d7f259b61e"
+    },
+    "candidate/fourcore-sources/filledOuter-intact-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/filledOuter-intact-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/filledOuter-intact.png": {
+      "bytes": 3976,
+      "sha256": "ea708d9b4c36ff35abff83f2f350a727b431c7e7e5d78e32408600b50880beff"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-fiveMissingRows-owner0.png": {
+      "bytes": 3701,
+      "sha256": "5e9d575eb683ea05c1f13a2ad3c83587a9682210c4c6f41a61d9de4d9f9abbd0"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-fiveMissingRows-owner1.png": {
+      "bytes": 3300,
+      "sha256": "5926a09d4a1ab5a1441bb128208da975404ac1b5d8c9705ec877cb4e68144446"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-fiveMissingRows-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-fiveMissingRows-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-fiveMissingRows.png": {
+      "bytes": 4117,
+      "sha256": "322a09c35c47ec19eacf73192688bbb22919526decf4e6d7ad7dac244815bdbc"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-intact-owner0.png": {
+      "bytes": 3706,
+      "sha256": "90269e346747a34b6020573155816ae033bb7a5e4b874160bc140116f877bc95"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-intact-owner1.png": {
+      "bytes": 3263,
+      "sha256": "153ac1b610b0db9ad4983b4472b82a9be14f7f9dcda8ecadd52305bccbff5fc7"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-intact-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-intact-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/filledTiedOuter-intact.png": {
+      "bytes": 4112,
+      "sha256": "9a19234e963b29742550b51e1cb6d83f024d59da1e0cae3690c9c317de3f0a69"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-fiveMissingRows-owner0.png": {
+      "bytes": 3436,
+      "sha256": "6a46b8a75c4e8b8a7b8dca583877928eb3741801f747b079a1099e4a88176ccf"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-fiveMissingRows-owner1.png": {
+      "bytes": 3502,
+      "sha256": "ecedf106ea18845941f97fa212044ef4ae402b018f75efc57133eba86071d872"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-fiveMissingRows-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-fiveMissingRows-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-fiveMissingRows.png": {
+      "bytes": 4044,
+      "sha256": "a46e92fb4af17b6c24f0309bc997d0e9f6bebd6e0c754f2845a55c2e0764e3c7"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-intact-owner0.png": {
+      "bytes": 3534,
+      "sha256": "fde1e010efcf0215b8bd78ba887f7a859c00163aa745db42c4b17e2d6bce4c61"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-intact-owner1.png": {
+      "bytes": 3269,
+      "sha256": "2ce23556f3a7cb2e0fe2075a254cc6217e6011f234970fa28e91dacfd39ac09a"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-intact-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-intact-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/hollowFirstSpace-intact.png": {
+      "bytes": 4052,
+      "sha256": "97a73b48ae240f9be8cf76c26c15ef79bade3aef59648cf95c77728c8afdafc0"
+    },
+    "candidate/fourcore-sources/hollowOuter-fiveMissingRows-owner0.png": {
+      "bytes": 3557,
+      "sha256": "341a0b1d4706e73dfd97ba6629ecf78c3f0d221a397c6d37104d2f6084293e7d"
+    },
+    "candidate/fourcore-sources/hollowOuter-fiveMissingRows-owner1.png": {
+      "bytes": 3499,
+      "sha256": "581b351f9edf9da9ad1daae967b91360c22be1b575881a5095e1314ce1533355"
+    },
+    "candidate/fourcore-sources/hollowOuter-fiveMissingRows-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/hollowOuter-fiveMissingRows-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/hollowOuter-fiveMissingRows.png": {
+      "bytes": 4039,
+      "sha256": "75980792b70c2962f04d5b4d04b05cad64faf72dae57a044dd7de361fcf3a500"
+    },
+    "candidate/fourcore-sources/hollowOuter-intact-owner0.png": {
+      "bytes": 3537,
+      "sha256": "a257fd405f73598de91a2d28be46743de2e05c3b013fb1c446c3495dccdbd449"
+    },
+    "candidate/fourcore-sources/hollowOuter-intact-owner1.png": {
+      "bytes": 3269,
+      "sha256": "443083565043d64ca9c8b79b9950e62e5d6906814c56072a48a71d2f92e3576f"
+    },
+    "candidate/fourcore-sources/hollowOuter-intact-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/hollowOuter-intact-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/hollowOuter-intact.png": {
+      "bytes": 4033,
+      "sha256": "efd30d4cc5734a95686ee1b5669eb1376b2ca3403c00853d86a71f65dba12236"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-fiveMissingRows-owner0.png": {
+      "bytes": 3686,
+      "sha256": "b7bd909ce7642a2fc6433188c0b2047d97485861da71d6169a32dcc6cadf7705"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-fiveMissingRows-owner1.png": {
+      "bytes": 3581,
+      "sha256": "e99d00ebcff6bcffadc80927403ca32b201e3e2764c9149b559b2074b4322845"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-fiveMissingRows-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-fiveMissingRows-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-fiveMissingRows.png": {
+      "bytes": 4168,
+      "sha256": "aa1e78bedf5ddb7dd95f36caff3875a3d1e46d1c1cd7a406c168da17997f9cef"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-intact-owner0.png": {
+      "bytes": 3672,
+      "sha256": "b4e69162178653d16cb5d790880063e0ac35c8850932fb8227db972989c9249f"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-intact-owner1.png": {
+      "bytes": 3573,
+      "sha256": "0c94f27582f29d03a3c55627ecdb8154349a69ec26aa81ab7a1cdb3b8a080bec"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-intact-owner2.png": {
+      "bytes": 2695,
+      "sha256": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-intact-owner3.png": {
+      "bytes": 2961,
+      "sha256": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+    },
+    "candidate/fourcore-sources/hollowTiedOuter-intact.png": {
+      "bytes": 4162,
+      "sha256": "dc81c0137a5856228fa1c8aa6ac174c3057cc45a77fafed1442b37b3ef6b4a6c"
+    },
+    "candidate/fourcore.json": {
+      "bytes": 242094,
+      "sha256": "af62178e7cec0eeb0c1ad89b2d1c8d342114540b790dd55f67bb69530295f0b4"
+    },
+    "candidate/fourcore.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate/versus-numbered-v2.diff": {
+      "bytes": 5712,
+      "sha256": "be8838a2e33cfb42ba3ae19e63693e184419e7a63fa3a9f7791323b741212767"
+    },
+    "case176-correspondence.json": {
+      "bytes": 3195,
+      "sha256": "5b6b603f84e49800ed352bd32b9a8175a06a536bf43c710e2cb15dfd8c3d9f43"
+    },
+    "case176.swift": {
+      "bytes": 11003,
+      "sha256": "648c44df2ec2935b561eae8ca1a398289531fe61d5fddbfccdc34ffcb1b0fde4"
+    },
+    "compare-fourcore-exact.py": {
+      "bytes": 2260,
+      "sha256": "2ea137b502b42dc89c0b96be5ee9184c1d0733e669191e9a44899929fe724641"
+    },
+    "controls297.swift": {
+      "bytes": 10628,
+      "sha256": "82d4df925ff89ce3dd611878979e72185d3e88b14846055b2a323cbea1e76267"
+    },
+    "existing795.swift": {
+      "bytes": 34390,
+      "sha256": "a78f09b90b9f9feaf1416ede622d73ffd2d6e43ad52a948f46926bb252f3bf1d"
+    },
+    "expanded336.swift": {
+      "bytes": 11763,
+      "sha256": "0b0f20697841eca0604eca732604c01b8e86a77ee070f454c0e1f756ef2650e5"
+    },
+    "fourcore.swift": {
+      "bytes": 5673,
+      "sha256": "5dbf6b01298373601a6fdb07f0802486a4c26f67ef377f4c24dd931030ba080d"
+    },
+    "freeze-report.py": {
+      "bytes": 4024,
+      "sha256": "1ce1757eb7aa6bbf1ad4a44e67fa3b7455ff11f514ef25674b4101de9474e38a"
+    },
+    "prepare.py": {
+      "bytes": 7152,
+      "sha256": "99bd230830d16f311a54abcf1d0a8b790c7d87761637082f2764d6a801f6551c"
+    },
+    "protocol-before-results.json": {
+      "bytes": 3487,
+      "sha256": "caced5d8a638510b906541cd02fb23141ac04582ecf6e9e37a318a088691de2f"
+    },
+    "source-bindings-before-results.json": {
+      "bytes": 1411,
+      "sha256": "9407d98eb38e969e9b0f35248f5692710743f5be90017301992349276aa8fb67"
+    }
+  },
+  "omitted": "Rebuildable executables/module caches and independent suites already hash-bound in their own verified archive. Real39 review is parent-owned and outside this limited control receipt.",
+  "sha256": "cfedb990b39bb7514fd36ef23f8bfcf06ab0f02e2d0fa0e1bdafa38d8a50c349"
+}

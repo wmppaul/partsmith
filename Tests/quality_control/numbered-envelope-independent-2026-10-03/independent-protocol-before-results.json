@@ -1,0 +1,6 @@
+{
+  "scope": "One unchanged297 exact source pixel observer and one unchanged336 envelope run against frozen narrow compatibility candidate. Reuse exact previously validated297 baseline; no new baseline native execution.",
+  "candidateNative": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f",
+  "gates": "No newly lost source-owned pixel compared to original production baseline, including existing failures. No new whole-neighbor inclusion for clean/separation negatives or new global ownership union. Full recovery of old failures is not required. Only if these limited gates pass, run unchanged29+6 against their original baseline masks.",
+  "inputs": "All original constructors, transforms, scales, masks, owner definitions and observers are unchanged; source bytes/mask sets must match every case. No post-result threshold changes or new fixture."
+}

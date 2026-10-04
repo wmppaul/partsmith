@@ -1,0 +1,71 @@
+{
+  "verdict": "No concrete correctness blocker found in bounded independent static review of compatibility mapping. This is not a proof of perfect musical ownership or full crop preservation.",
+  "nativeSource": ".build/numbered-line-envelope-compatibility-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift",
+  "nativeSHA256": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f",
+  "plannerSource": ".build/numbered-line-envelope-compatibility-2026-10-03/candidate/Core/Detection/ScoreExtractionPlanner.swift",
+  "plannerSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+  "scope": "New compatibility hunk versus numbered-line V2, with surrounding source-mask construction, structural cuts, existing recursive interpretation merge and planner alternative handling. No code edits, new fixtures or detector reruns by this reviewer.",
+  "findings": [
+    {
+      "area": "Actual-source correspondence",
+      "lines": [
+        776,
+        797
+      ],
+      "assessment": "Legacy/current runs share one raster grid and both are subsets of original source ink. Same-row intervals use strict overlap (left<otherRight and right>otherLeft), establishing at least one identical black pixel; mere adjacent pixels or overlapping bounding boxes cannot link components. Global currentOffset is monotone with sorted legacy runs; a current run spanning multiple legacy runs remains available until its exclusive right boundary is passed."
+    },
+    {
+      "area": "Component roots",
+      "lines": [
+        701,
+        802
+      ],
+      "assessment": "Both union-find passes finish before any boxes/correspondence records are built. Later root calls only path-compress, not re-union, so keys used by children and currentOwners remain consistent. Same previous-row run convention matches existing eight-connectivity; exclusive interval endpoints correctly include one-column diagonal adjacency only within connected-component labeling."
+    },
+    {
+      "area": "Ownership boundaries",
+      "lines": [
+        799,
+        818
+      ],
+      "assessment": "Legacy box must have exactly one inferred staff owner and area>=2. There must be at least one retained child with that same sole owner. Every owner-bearing linked child must have exactly that same owner; conflicting/shared-owner children are rejected. Unowned children do not acquire an ordinary owner. Staff IDs come from the same ordered candidate mapping. CurrentOwners deliberately includes tiny filtered boxes, making conflict detection conservative; an area1 child may also support historical compatibility, which is not a musical-identity claim."
+    },
+    {
+      "area": "Outward support only",
+      "lines": [
+        811,
+        818
+      ],
+      "assessment": "Old bounds are appended only when they extend the union of owned retained child vertical bounds. The support keeps the old sole staff ID and isOwnershipAlternative=true. It does not mutate either source mask, new ordinary component, staff geometry, or ownership list."
+    },
+    {
+      "area": "Planner and recursive isolation",
+      "lines": [
+        841,
+        866
+      ],
+      "assessment": "Added alternatives do not re-enter run matching. The existing retainMusicalEvidence branch recurses at most once with false; that branch cannot trigger further musical recursion. The planner excludes flagged alternatives from lyric ownership, highTargetInk, following-system competition, initial selection and detached propagation, and applies them only as an outward envelope after those steps. Merging uses staffIDs+bounds identity and cannot downgrade a local ordinary component into an alternative."
+    },
+    {
+      "area": "Cancellation",
+      "lines": [
+        756,
+        805
+      ],
+      "assessment": "New legacy labeling checks cancellation every128 rows; aggregation/correspondence every4096 runs; support generation per legacy box; existing final return also checks. Canceled stages return nil rather than a partial component set. The currentOwners mapValues operation and sorted legacy-key creation do not check inside their loops, so cancellation may finish those bounded page-local segments first. This is a latency caveat, not a demonstrated correctness regression."
+    },
+    {
+      "area": "Runtime and memory",
+      "lines": [
+        746,
+        818
+      ],
+      "assessment": "One additional connected-component/run-overlap pass per existing interpretation; no new rasterization or structural tracing by the compatibility hunk. Pixel scan is O(width*height), overlap visits are linear in sorted run arrangements plus output intersections, ownership scans are O(staffCount*componentCount), sorting is O(legacyComponentCount*log(count)); added memory is proportional to runs/components. Both interpretations may hold these arrays during existing recursion. Parent full39 log records10.74s wall time. This reviewer did not run an independent performance or peak-memory benchmark."
+    }
+  ],
+  "limitations": [
+    "Ownership is inherited from established vertical bounding-box staff intersection, not certified from musical semantics. Retained historical extrema may be staff-line residue or neighbor contamination.",
+    "Same-owner support does not reconstruct target material omitted by both old and current envelopes. Existing preservation losses remain explicit.",
+    "Bounded controls reported by independent agents (796/36/297/336/29+6) are separate evidence; this review does not claim to rerun them."
+  ]
+}

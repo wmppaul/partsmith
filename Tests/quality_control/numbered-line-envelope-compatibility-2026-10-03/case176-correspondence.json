@@ -1,0 +1,117 @@
+{
+  "status": "Read-only correspondence supporting pre-result compatibility protocol; source ownership not reclassified.",
+  "originalCase": "edgeMusicBroken scale1 tilt0 bow10, index176",
+  "sourceBeforeBothVersions": "Same immutable720x760 original source; gap atx600..<603,y227..<235.",
+  "legacyDriver": {
+    "bounds": [
+      396,
+      230,
+      603,
+      385
+    ],
+    "area": 1470,
+    "staffIDs": [
+      1
+    ]
+  },
+  "numberedDriver": {
+    "bounds": [
+      470,
+      233,
+      603,
+      385
+    ],
+    "area": 668,
+    "staffIDs": [
+      1
+    ]
+  },
+  "samePixelCorrespondence": {
+    "numberedDriverInsideLegacy": true,
+    "sharedPixels": 668,
+    "numberedDriverNewPixels": 0,
+    "additionalChildren": [
+      {
+        "bounds": [
+          470,
+          335,
+          538,
+          338
+        ],
+        "pixels": 68,
+        "staffIDs": [
+          1
+        ],
+        "musicalSourcePixels": 0
+      },
+      {
+        "bounds": [
+          470,
+          347,
+          538,
+          350
+        ],
+        "pixels": 68,
+        "staffIDs": [
+          1
+        ],
+        "musicalSourcePixels": 0
+      },
+      {
+        "bounds": [
+          470,
+          359,
+          538,
+          362
+        ],
+        "pixels": 68,
+        "staffIDs": [
+          1
+        ],
+        "musicalSourcePixels": 0
+      },
+      {
+        "bounds": [
+          470,
+          371,
+          538,
+          374
+        ],
+        "pixels": 68,
+        "staffIDs": [
+          1
+        ],
+        "musicalSourcePixels": 0
+      }
+    ]
+  },
+  "explanation": "All five retained children have soleowner1. Old top230 andnew233 are nonmusical staff-line residues. Preserve old envelope allowance as owner1 context, yielding oldtop212 with unchanged18pixelclearance. Do not append all-contactedstaff musical span.",
+  "newNativeResult": {
+    "baselineMiddleCrop": [
+      0,
+      211.99999999999997,
+      720,
+      395
+    ],
+    "candidateMiddleCrop": [
+      0,
+      211.99999999999997,
+      720,
+      395
+    ],
+    "baselineLost": 650,
+    "candidateLost": 650,
+    "newlyLost": 0,
+    "recovered": 0,
+    "allSourceEnvelopePass": false,
+    "scope": "The prior650 missing middle-owner pixels remain; only avoiding newly lost baseline ink is the gate for this incremental candidate.",
+    "candidateNativeSHA256": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f"
+  },
+  "bindings": {
+    ".build/brahms-case176-2026-10-03/component-ownership-map.json": "ef0c993c6c9d1372af8ca79b9ab95714ed16891e98b45dd32f517e381044901a",
+    ".build/brahms-case176-2026-10-03/baseline/after-connectors-true.pgm": "38f379995e225a4d99241f81cdfbff477e345291e5d98ab8d3239ec9c74145ec",
+    ".build/brahms-case176-2026-10-03/candidate-v2/after-connectors-true.pgm": "771a94c5d0211ee376c294e4f49a519e164a041c001031f76ea7983202491d6a",
+    ".build/brahms-case176-2026-10-03/baseline/case176-middle-owner.pgm": "bd31b41d07d6904cd8b9cff8aa1ec535c8cf8a8cbb9987b709085ae5658d82a6",
+    ".build/numbered-line-envelope-compatibility-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f"
+  }
+}

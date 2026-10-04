@@ -1,0 +1,46 @@
+{
+  "scope": "Independent unchanged297 exact source-owned pixel comparison,336 fixed envelopes, original29 and prospective6.",
+  "preservationGate": "pass; no newly omitted baseline-owned pixel",
+  "separationGate": "pass; no increased whole-neighbor count, all27 junction negatives zero",
+  "existingFailures": "59 incomplete297cases and all35+6 incomplete smaller-suite owners remain unfinished",
+  "releaseScope": "Suitable for subsequent real-score evaluation only; no release approval, production modification or delivered output.",
+  "newlyLostPixels297": 0,
+  "recoveredPixels297": 12,
+  "wholeNeighborRelationsBefore": 398,
+  "wholeNeighborRelationsAfter": 386,
+  "changed297OwnerCrops": 38,
+  "smallSuiteSummaries": {
+    "original29": {
+      "sourceScaleCases": 29,
+      "ownerObservations": 99,
+      "sourceBindingsExact": true,
+      "baselineCompleteOwners": 64,
+      "candidateCompleteOwners": 64,
+      "baselineLostPixels": 18018,
+      "candidateLostPixels": 18018,
+      "newlyLostPixels": 0,
+      "recoveredPixels": 0,
+      "newSpuriousWholeNeighborRelations": 0,
+      "ordinaryChangedCases": 29,
+      "removedBaselineAlternativeCases": 1,
+      "nativeElapsedSeconds": 0.4392319917678833,
+      "sourceSpanInference": "Absent from this candidate; it has no sourceSpanV4 helper or raw span records. Only baseline-compatible sole-owner supports are added."
+    },
+    "addendum6": {
+      "sourceScaleCases": 6,
+      "ownerObservations": 18,
+      "sourceBindingsExact": true,
+      "baselineCompleteOwners": 12,
+      "candidateCompleteOwners": 12,
+      "baselineLostPixels": 6294,
+      "candidateLostPixels": 6294,
+      "newlyLostPixels": 0,
+      "recoveredPixels": 0,
+      "newSpuriousWholeNeighborRelations": 0,
+      "ordinaryChangedCases": 6,
+      "removedBaselineAlternativeCases": 1,
+      "nativeElapsedSeconds": 0.08437204360961914,
+      "sourceSpanInference": "Absent from this candidate; it has no sourceSpanV4 helper or raw span records. Only baseline-compatible sole-owner supports are added."
+    }
+  }
+}

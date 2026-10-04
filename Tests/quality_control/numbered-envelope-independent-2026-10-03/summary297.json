@@ -1,0 +1,115 @@
+{
+  "cases": 297,
+  "owners": 891,
+  "sourceBindingsExact": true,
+  "baselineReproducesOriginal297Exactly": true,
+  "case176ReproducesIndependentSourceAndMaskExactly": true,
+  "baselineCompleteCases": 238,
+  "candidateCompleteCases": 238,
+  "baselineCompleteOwners": 732,
+  "candidateCompleteOwners": 732,
+  "baselineLostPixels": 88821,
+  "candidateLostPixels": 88809,
+  "newlyLostPixels": 0,
+  "recoveredPixels": 12,
+  "casesWithIncreasedWholeNeighborCount": 0,
+  "newWholeNeighborRelationsNetPositiveByCase": 0,
+  "expectsSeparationCasesWithNewNeighbors": 0,
+  "ordinaryComponentsChangedCases": 248,
+  "removedBaselineAlternativeCases": 25,
+  "case176": [
+    {
+      "kind": "edgeMusicBroken",
+      "scale": 1,
+      "tilt": 0,
+      "bow": 10,
+      "caseIndex": 176,
+      "owner": 0,
+      "sourcePixels": 1400,
+      "sourceEnvelope": [
+        148,
+        160,
+        609,
+        539
+      ],
+      "baselineCrop": [
+        0,
+        142,
+        720,
+        241.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        142,
+        720,
+        241.00000000000003
+      ],
+      "baselineLost": 970,
+      "candidateLost": 970,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": []
+    },
+    {
+      "kind": "edgeMusicBroken",
+      "scale": 1,
+      "tilt": 0,
+      "bow": 10,
+      "caseIndex": 176,
+      "owner": 1,
+      "sourcePixels": 1400,
+      "sourceEnvelope": [
+        218,
+        190,
+        609,
+        539
+      ],
+      "baselineCrop": [
+        0,
+        211.99999999999997,
+        720,
+        395
+      ],
+      "candidateCrop": [
+        0,
+        211.99999999999997,
+        720,
+        395
+      ],
+      "baselineLost": 650,
+      "candidateLost": 650,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": []
+    },
+    {
+      "kind": "edgeMusicBroken",
+      "scale": 1,
+      "tilt": 0,
+      "bow": 10,
+      "caseIndex": 176,
+      "owner": 2,
+      "sourcePixels": 1400,
+      "sourceEnvelope": [
+        288,
+        190,
+        609,
+        539
+      ],
+      "baselineCrop": [
+        0,
+        441.99999999999994,
+        720,
+        545
+      ],
+      "candidateCrop": [
+        0,
+        441.99999999999994,
+        720,
+        545
+      ],
+      "baselineLost": 808,
+      "candidateLost": 808,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": []
+    }
+  ]
+}

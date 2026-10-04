@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 3 narrower envelope compatibility
+
+The [single-owner compatibility candidate](numbered-line-envelope-compatibility-2026-10-03/README.md) retains prior per-component envelope support only where actual retained source pixels keep the same sole staff owner. It passes the unchanged preservation controls with no new whole-neighbor relations, including all 27 junction negatives. Existing incomplete source obligations remain explicit. Its [fresh full Brahms replay](brahms-envelope-compatibility-full-2026-10-03/README.md) exactly matches all 604 previously source-reviewed crop areas and reduces whole-neighbor inclusions from seven to five. A separate [interpretation of the old failing guards](unchanged-guard-source-interpretation-2026-10-03/README.md) identifies only neighboring or structural ink outside the current crops; the original geometric failures remain unchanged. Full raw-corpus and document-worker/export validation are in progress; this is not a production promotion.
+
 ## October 3 combined cleanup and ownership review
 
 The [numbered-line V2 plus source-span V4 combination](numbered-lines-source-spans-v4-2026-10-03/README.md) recovers all original 297-case source masks without new pixel losses, but assigns local notes across a structural barline in all 27 junction negatives. This remains an ownership failure. Its [diagnostic full Brahms replay](brahms-numbered-spans-v4-full-2026-10-03/README.md) preserves all 604 assignments and reduces complete neighboring-staff inclusions from seven to five. All 252 changed crops were source-reviewed with no new intended omission observed; partial neighboring notation remains. The same three fixed-region failures remain explicit. No production detector or app is promoted from this combination.

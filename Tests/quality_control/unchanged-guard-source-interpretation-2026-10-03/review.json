@@ -1,0 +1,123 @@
+{
+  "purpose": "Supplementary musical interpretation of exactly three unchanged geometric guard failures. No guard, crop, test outcome or implementation changed.",
+  "method": "Inspect original physical PDF source full-width before reading parent source-edge panels, then examine the exact excluded strips and local vulnerable notation at 12 rendered pixels/PDF point (720dpi). Original pages22/35 are not rectified. Separate visual semantic ownership from rectangle containment.",
+  "frozenGuardOutcomes": [
+    {
+      "group": "old10",
+      "bandID": "p35-s1-violin1",
+      "rect": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "description": "All ledger notes and accents, last beam and full clef.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json",
+      "before": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "after": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "containedBefore": false,
+      "containedAfter": false
+    },
+    {
+      "group": "celloLower4",
+      "bandID": "p22-s3-cello",
+      "rect": [
+        38,
+        415,
+        393,
+        448
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json",
+      "before": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "after": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "containedBefore": false,
+      "containedAfter": false
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p22-s3-cello",
+      "description": "rightmost lower beam and hairpin",
+      "rect": [
+        332,
+        436,
+        372,
+        448
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json",
+      "before": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "after": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "containedBefore": false,
+      "containedAfter": false
+    }
+  ],
+  "findings": [
+    {
+      "bandID": "p22-s3-cello",
+      "cropBottomPt": 447.65561126108753,
+      "guardBottomPt": 448,
+      "newOrExistingTargetOmissionObserved": false,
+      "whollyExcludedDarkRenderedPixels": 348,
+      "partiallyExcludedDarkPixelCells": 84,
+      "classification": "All excluded ink belongs to the following system: high Violin I sharp at x58.4167\u201360.75, note head at x76.5833\u201380, and rehearsal A apex at x281.8333\u2013285. The target Cello lower notes, final beam and hairpin remain complete.",
+      "rightLandmarkExcludedDarkPixels": 0,
+      "rightLandmarkPartiallyCutDarkCells": 0,
+      "rightBeamHairpinLocalInkBounds": [
+        335.1666666666667,
+        436.0833333333333,
+        371.25,
+        445.6666666666667
+      ],
+      "lowestLocalInkClearancePt": 1.9889445944208433,
+      "note": "The local window436..448 deliberately contains only the vulnerable lower beam/hairpin portion; its top is not a claimed full beam envelope. Guard still ends448 and still fails."
+    },
+    {
+      "bandID": "p35-s1-violin1",
+      "cropBottomPt": 66.38242097147263,
+      "guardBottomPt": 68,
+      "newOrExistingTargetOmissionObserved": false,
+      "whollyExcludedDarkRenderedPixels": 5546,
+      "partiallyExcludedDarkPixelCells": 233,
+      "classification": "Excluded ink is the left system connector/barline, interior/final barline continuations, and rising beams of the neighboring Violin II staff (x131.8333\u2013146.4167,287.5\u2013297.5833,380.1667\u2013384.5). No Violin I note, beam, ledger line, accent, slur or clef fragment is in this strip.",
+      "isolatedTargetClefTailInkBounds": [
+        45,
+        61.333333333333336,
+        49.5,
+        64.33333333333333
+      ],
+      "clefTailClearancePt": 2.049087638139298,
+      "rightmostTargetBeamLocalBottomPt": 62.583333333333336,
+      "note": "Guard remains[0,28,426,68] and still fails. This observation does not alter the source obligation or claim entire source correctness."
+    }
+  ],
+  "overall": "No actual intended music omission found at either unchanged lower edge. Three geometry failures remain three failures; supplementary source evidence distinguishes excess envelope space/foreign ink from target loss."
+}
