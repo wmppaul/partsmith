@@ -1,6 +1,6 @@
-// Native export regression: enlargement may remove only blank side space.
-// Every rendered strip is compared with an independent PDF roundtrip of its
-// COMPLETE original crop, transformed at the chosen scale without side trimming.
+// Native export regression: every requested enlargement is honored.
+// Compare all visible ink against an independent PDF roundtrip of the COMPLETE
+// original crop at the chosen scale, clipped only by the physical output page.
 import AppKit
 import Foundation
 import PDFKit
@@ -136,13 +136,13 @@ import PDFKit
             }
         }
         check(dark > 100, "\(name): real source ink is included in the comparison")
-        check(changed == 0, "\(name): complete original-source ink and copied markings survive (changed \(changed)/\(examined), max channel delta \(maximum))")
+        check(changed == 0, "\(name): all on-page original-source ink and copied markings match the complete-crop reference (changed \(changed)/\(examined), max channel delta \(maximum))")
         if save { try data.write(to: output.appendingPathComponent(name + ".pdf")) }
     }
     static func runFixture(name: String, source: Data, base: ProjectData, exactGrowth: Bool, save: Bool = true) throws -> [Double] {
         var applied: [Double] = []
         let originalBands = base.bands
-        for value in [0.8, 1.0, 1.25, 1.4] {
+        for value in [0.8, 1.0, 1.25, 1.3, 1.4] {
             var p = base; p.parts[0].layoutSettings.scale = value
             let planned = try plan(p, source: source)
             let result = try PartPDFExporter.renderResult(for: p.parts[0].id, project: p, sourcePDFData: source)
@@ -158,9 +158,10 @@ import PDFKit
             check(approximately(factor, planned.scaleInfo.appliedScale), "\(label): feedback reports actual notation enlargement")
             check(planned.pages.flatMap(\.placements).map(\.bandID) == p.sortedBands(for: p.parts[0].id).map(\.id), "\(label): every source strip retains reading order")
             for placement in planned.pages.flatMap(\.placements) {
-                check(placement.destinationRect.minX >= p.projectSettings.margins.leading-0.000001 &&
-                    placement.destinationRect.maxX <= planned.pageSize.width-p.projectSettings.margins.trailing+0.000001,
-                    "\(label): complete output crop stays inside chosen margins")
+                let withinMargins = placement.destinationRect.minX >= p.projectSettings.margins.leading-0.000001 &&
+                    placement.destinationRect.maxX <= planned.pageSize.width-p.projectSettings.margins.trailing+0.000001
+                check(withinMargins || planned.scaleInfo.exceedsContentWidth,
+                    "\(label): deliberate overflow carries warning metadata")
                 let original = p.bands.first { $0.id == placement.bandID }!
                 let bounds = PDFDocument(data: source)!.page(at: original.pageIndex)!.bounds(for: .mediaBox)
                 let full = sourceRect(original, bounds)
@@ -173,12 +174,55 @@ import PDFKit
                     planned.pages.flatMap(\.placements).map(\.destinationRect) == old.pages.flatMap(\.placements).map(\.destinationRect),
                     "\(label): scale <=1 retains the original untrimmed layout exactly")
             }
-            if exactGrowth { check(approximately(factor, value), "\(label): requested enlargement is realized when blank space allows it") }
+            if exactGrowth { check(approximately(factor, value), "\(label): requested enlargement is realized, including beyond the safe recommendation") }
+            check(planned.scaleInfo.exceedsContentWidth == (value > planned.scaleInfo.maximumSafeScale + 0.0001),
+                "\(label): warning is tied to the safe recommendation instead of a hidden clamp")
             try verifyPixels(name: label, project: p, source: source, plan: planned, data: result.data, save: save)
-            print("\(label): applied \(String(format: "%.4f", factor)), max safe \(String(format: "%.4f", planned.scaleInfo.maximumSafeScale)), width limited \(planned.scaleInfo.isWidthLimited)")
+            print("\(label): applied \(String(format: "%.4f", factor)), max safe \(String(format: "%.4f", planned.scaleInfo.maximumSafeScale)), exceeds margins \(planned.scaleInfo.exceedsContentWidth)")
         }
         return applied
     }
+    static func checkOverflowPageBoundaries() throws {
+        let source = pdf(size: CGSize(width: 600, height: 800)) { c in
+            c.setFillColor(NSColor.black.cgColor)
+            // This full-width stripe crosses both physical page edges after
+            // enlargement and must remain visible inside both margin areas.
+            c.fill(CGRect(x: 0, y: 418, width: 600, height: 4))
+        }
+        var p = project(name: "Physical page clipping", bands: [(0, 0.43, 0.52)])
+        p.parts[0].layoutSettings.scale = 1.4
+        let rendered = try PartPDFExporter.renderResult(for: p.parts[0].id, project: p, sourcePDFData: source)
+        let placement = rendered.renderPlan.pages[0].placements[0]
+        check(rendered.scaleInfo.exceedsContentWidth && approximately(rendered.scaleInfo.appliedScale, 1.4),
+            "Physical-edge fixture has a warning and the exact requested scale")
+        check(placement.destinationRect.minX < 0 && placement.destinationRect.maxX > 612,
+            "Overflow geometry passes both physical edges instead of being resized to the page")
+        let page = PDFDocument(data: rendered.data)!.page(at: 0)!
+        check(page.bounds(for: .mediaBox) == CGRect(x: 0, y: 0, width: 612, height: 792),
+            "Enlargement retains the selected paper size")
+        let actual = bitmap(page)
+        let y = Int((placement.destinationRect.minY + (420 - placement.sourceRect.minY)
+                     * placement.destinationRect.height / placement.sourceRect.height) * 2)
+        let bytes = actual.bitmapData!
+        // CGContext's row convention differs across AppKit bridges, so examine
+        // both equivalent rows. Pixel comparison below still checks every row.
+        for x in [0, 20, actual.pixelsWide - 21, actual.pixelsWide - 1] {
+            let dark = [y, actual.pixelsHigh - 1 - y].contains { row in
+                bytes[row * actual.bytesPerRow + x * actual.samplesPerPixel] < 32
+            }
+            check(dark, "Requested overflow paints physical-page pixel x=\(x), including the inner margin")
+        }
+        try verifyPixels(name: "overflow-physical-page-edges", project: p, source: source,
+            plan: rendered.renderPlan, data: rendered.data, save: true)
+        let renderer = PartPreviewRenderer()
+        let snapshot = PartPreviewSnapshot(partID: p.parts[0].id, project: p, sourcePDFData: source)
+        renderer.update(snapshot); wait { !renderer.isRendering }
+        check(renderer.errorMessage == nil && renderer.renderedSnapshot == snapshot,
+            "Overflow remains available in the native preview")
+        try verifyPixels(name: "overflow-preview-page-edges", project: p, source: source,
+            plan: rendered.renderPlan, data: renderer.pdfDocument!.dataRepresentation()!, save: false)
+    }
+
     static func checkMarginPersistence(source: Data, base: ProjectData) throws {
         struct Envelope: Codable { var project: ProjectData }
         var initial = base
@@ -320,8 +364,10 @@ import PDFKit
         var withMarking = standard
         withMarking.bands[0].sourceMarkings = [BandSourceMarking(topFraction: 0.23, bottomFraction: 0.26, leftFraction: 0.12, rightFraction: 0.74)]
         _ = try runFixture(name: "copied-edge-direction", source: syntheticSource, base: withMarking, exactGrowth: true)
-        let edge = try runFixture(name: "tiny-edge-ink", source: synthetic(edgeInk: true), base: standard, exactGrowth: false)
-        check(edge[2] < 1.04 && edge[3] < 1.04, "Tiny intended edge ink prevents enlargement that would clip it")
+        let edge = try runFixture(name: "tiny-edge-ink", source: synthetic(edgeInk: true), base: standard, exactGrowth: true)
+        check(approximately(edge[3], 1.3) && approximately(edge[4], 1.4),
+            "Tiny intended edge ink contributes to the warning but does not silently cap 1.3 or 1.4")
+        try checkOverflowPageBoundaries()
         var corrected = standard
         corrected.pageRectifications = [PageRectification(pageIndex: 0,
             topLeft: FractionPoint(x: 0.02, y: 0.01), topRight: FractionPoint(x: 0.98, y: 0.03),
@@ -329,8 +375,9 @@ import PDFKit
         _ = try runFixture(name: "rectified-digital", source: syntheticSource, base: corrected, exactGrowth: true)
         let beethoven = try Data(contentsOf: URL(fileURLWithPath: "Tests/extraction/sources/beethoven-op67-pages-7-8.pdf"))
         let flute = project(name: "Flauti", bands: [(0, 0.307, 0.367), (1, 0.016, 0.09), (1, 0.516, 0.55)])
-        let realGrowth = try runFixture(name: "beethoven-flute", source: beethoven, base: flute, exactGrowth: false)
-        check(realGrowth[2] > 1.03 && realGrowth[3] >= realGrowth[2], "Actual scanned Beethoven notation enlarges above1 without losing source ink")
+        let realGrowth = try runFixture(name: "beethoven-flute", source: beethoven, base: flute, exactGrowth: true)
+        check(approximately(realGrowth[3], 1.3) && approximately(realGrowth[4], 1.4),
+            "Scanned Beethoven grows linearly through 1.3 and 1.4 with any physical-page clipping explicitly warned")
         var narrow = flute
         narrow.parts[0].layoutSettings.scale = 1.4
         narrow.parts[0].layoutSettings.sideMarginPoints = 12
@@ -340,7 +387,7 @@ import PDFKit
         var normal = flute; normal.parts[0].layoutSettings.scale = 1.4
         let normalPlan = try plan(normal, source: beethoven)
         check(narrowPlan.pages[0].placements[0].destinationRect.width > normalPlan.pages[0].placements[0].destinationRect.width+40,
-            "Smaller side margins visibly increase notation width at the content limit")
+            "Smaller side margins visibly increase notation width at the requested enlargement")
         var defaultMargins = normal
         defaultMargins.projectSettings.margins.leading = ProjectData.empty.projectSettings.margins.leading
         defaultMargins.projectSettings.margins.trailing = ProjectData.empty.projectSettings.margins.trailing
@@ -350,7 +397,7 @@ import PDFKit
         try verifyPixels(name: "beethoven-default-18pt-margins", project: defaultMargins, source: beethoven,
             plan: defaultMarginPlan, data: defaultMarginResult.data, save: true)
         check(defaultMarginPlan.pages[0].placements[0].destinationRect.width > normalPlan.pages[0].placements[0].destinationRect.width+40,
-            "New 18-point side margins visibly widen scanned notation while preserving complete source ink")
+            "New 18-point side margins visibly widen scanned notation with on-page ink matching the full-source reference")
         let sharedAnalysis = SourceHorizontalContentCache()
         _ = try PartPDFExporter.renderResult(for: normal.parts[0].id, project: normal, sourcePDFData: beethoven,
             horizontalContentCache: sharedAnalysis)

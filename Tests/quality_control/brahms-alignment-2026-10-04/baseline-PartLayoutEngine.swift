@@ -22,10 +22,8 @@ struct PartRenderScaleInfo: Equatable {
     /// Horizontal enlargement before the exceptional vertical fitting of a
     /// crop taller than an output page; this is not a universal printed size.
     var appliedScale: Double
-    /// Largest multiplier that keeps retained source ink within output margins.
-    /// This is guidance, not a clamp: the user may deliberately exceed it.
     var maximumSafeScale: Double
-    var exceedsContentWidth: Bool { requestedScale > maximumSafeScale + 0.0001 }
+    var isWidthLimited: Bool { requestedScale > maximumSafeScale + 0.0001 }
 }
 
 struct PartRenderPage: Identifiable {
@@ -156,8 +154,7 @@ enum PartLayoutEngine {
         var labelHeight: Double
         var barNumberHeight: Double
         var scale: Double
-        var originalSourceRect: CGRect
-        var originalSourceWidth: Double { originalSourceRect.width }
+        var originalSourceWidth: Double
         var markingRects: [CGRect] = []
         var belowMarkingIndices: Set<Int> = []
         var sourceBandIDs: [UUID]
@@ -195,17 +192,6 @@ enum PartLayoutEngine {
         var barNumberWidth: Double { Double(String(band.displayedBarNumber ?? 0).count) * 7 + 2 }
         var hasOutsideBarNumber: Bool {
             band.displayedBarNumber != nil && band.generatedRest == nil && restReplacement == nil
-        }
-    }
-
-    /// One horizontal source frame keeps aligned staves aligned even when a
-    /// page number, instrument label or speck changes an individual ink trim.
-    /// Page-box origins are PDF coordinates, not musical offsets.
-    private static func horizontalFrame(_ bands: [PreparedBand], original: Bool) -> CGRect {
-        bands.reduce(CGRect.null) { frame, band in
-            let rect = original ? band.originalSourceRect : band.sourceRect
-            return frame.union(CGRect(x: rect.minX - band.pageBounds.minX,
-                                      y: 0, width: rect.width, height: 1))
         }
     }
 
@@ -405,12 +391,12 @@ enum PartLayoutEngine {
             }
             prepared.append(PreparedBand(band: band, pageBounds: bounds, sourceRect: renderedSourceRect,
                                          label: label, labelHeight: labelHeight, barNumberHeight: numberHeight, scale: 1,
-                                         originalSourceRect: sourceRect, markingRects: markingRects,
+                                         originalSourceWidth: sourceRect.width, markingRects: markingRects,
                                          belowMarkingIndices: belowMarkingIndices,
                                          sourceBandIDs: [band.id], lastSourceOrder: sourceOrder,
                                          restReplacement: band.restReplacement, restStartNumber: band.barNumberValue))
         }
-        let originalHorizontalFrame = horizontalFrame(prepared, original: true)
+        let maximumSourceWidth = prepared.map { $0.originalSourceWidth }.max() ?? contentRect.width
         var joined: [PreparedBand] = []
         for item in prepared {
             if let current = item.band.generatedRest, current.joinWithPrevious == true,
@@ -454,28 +440,21 @@ enum PartLayoutEngine {
             }
         }
         prepared = joined
-        let fixedWidthBands = prepared.filter { !$0.hasFlexibleRestWidth }
-        let retainedHorizontalFrame = fixedWidthBands.isEmpty || partScale <= 1
-            ? originalHorizontalFrame : horizontalFrame(fixedWidthBands, original: false)
-        let consistentSafeScale = fixedWidthBands.isEmpty ? partScale
-            : originalHorizontalFrame.width / retainedHorizontalFrame.width
+        let maximumRetainedWidth = prepared.filter { !$0.hasFlexibleRestWidth }.map { $0.sourceRect.width }.max()
+        let consistentSafeScale = maximumRetainedWidth.map { maximumSourceWidth / $0 } ?? partScale
         var appliedScales: [Double] = []
         var safeScales: [Double] = []
         for index in prepared.indices {
             let item = prepared[index]
-            let width = part.layoutSettings.useConsistentScale ? originalHorizontalFrame.width : item.originalSourceWidth
+            let width = part.layoutSettings.useConsistentScale ? maximumSourceWidth : item.originalSourceWidth
             let safeScale = part.layoutSettings.useConsistentScale ? consistentSafeScale :
                 (item.hasFlexibleRestWidth ? partScale : width / item.sourceRect.width)
-            let appliedScale = partScale
+            let appliedScale = min(partScale, safeScale)
             prepared[index].scale = contentRect.width / width * appliedScale
-            let scaledLeft = part.layoutSettings.useConsistentScale
-                ? contentRect.midX + (item.sourceRect.minX - item.pageBounds.minX
-                    - retainedHorizontalFrame.midX) * prepared[index].scale
-                : contentRect.midX - item.sourceRect.width * prepared[index].scale / 2
             if item.hasOutsideBarNumber,
-               item.renderedSourceHeight * prepared[index].scale < 12 || scaledLeft < contentRect.minX - 0.000001 {
-                // Keep numbers clear of both short crops and music deliberately
-                // enlarged into the margin where a number would otherwise sit.
+               item.renderedSourceHeight * prepared[index].scale < 12 {
+                // Very short user crops still need room for a readable number;
+                // otherwise successive margin labels could overlap each other.
                 prepared[index].barNumberHeight = 16
                 let capacity = pageMusicTop - contentRect.minY - (index == 0 ? headerBlockHeight : 0)
                 guard item.labelHeight + 16 + item.markingGap < capacity else {
@@ -490,9 +469,28 @@ enum PartLayoutEngine {
             maximumSafeScale: safeScales.min() ?? partScale)
         let firstCapacity = pageMusicTop - headerBlockHeight - contentRect.minY
         let continuationCapacity = pageMusicTop - contentRect.minY
-        let actualGap = interSystemGap
-        let ranges = paginate(prepared, firstCapacity: firstCapacity, continuationCapacity: continuationCapacity,
+        var actualGap = interSystemGap
+        var ranges = paginate(prepared, firstCapacity: firstCapacity, continuationCapacity: continuationCapacity,
                               gap: actualGap, balanced: part.layoutSettings.balancePages)
+        if part.layoutSettings.balancePages, interSystemGap > 4 {
+            let compact = paginate(prepared, firstCapacity: firstCapacity, continuationCapacity: continuationCapacity,
+                                   gap: 4, balanced: true)
+            if compact.count < ranges.count {
+                // Page count is monotonic in the gap. Keep the widest spacing that
+                // reaches the minimum page count, without changing crops or scale.
+                var lower = 4.0
+                var upper = interSystemGap
+                for _ in 0..<28 {
+                    let candidate = (lower + upper) / 2
+                    let candidateRanges = paginate(prepared, firstCapacity: firstCapacity,
+                        continuationCapacity: continuationCapacity, gap: candidate, balanced: true)
+                    if candidateRanges.count == compact.count { lower = candidate } else { upper = candidate }
+                }
+                actualGap = lower
+                ranges = paginate(prepared, firstCapacity: firstCapacity,
+                    continuationCapacity: continuationCapacity, gap: actualGap, balanced: true)
+            }
+        }
         var pages: [PartRenderPage] = []
         for (pageIndex, range) in ranges.enumerated() {
             var cursorTop = pageMusicTop - (pageIndex == 0 ? headerBlockHeight : 0)
@@ -513,14 +511,7 @@ enum PartLayoutEngine {
                 // without constraining the size of surrounding source notation.
                 let targetWidth = item.hasFlexibleRestWidth ? min(contentRect.width, item.sourceRect.width * renderScale)
                     : item.sourceRect.width * renderScale
-                let destinationX: Double
-                if part.layoutSettings.useConsistentScale && !item.hasFlexibleRestWidth {
-                    destinationX = contentRect.midX + (item.sourceRect.minX - item.pageBounds.minX
-                        - retainedHorizontalFrame.midX) * renderScale
-                } else {
-                    destinationX = contentRect.minX + (contentRect.width - targetWidth) / 2
-                }
-                let destinationRect = CGRect(x: destinationX,
+                let destinationRect = CGRect(x: contentRect.minX + (contentRect.width - targetWidth) / 2,
                     y: bandTop - item.renderedSourceHeight * renderScale,
                     width: targetWidth, height: item.renderedSourceHeight * renderScale)
                 let exclusionRects = (item.restReplacement == nil && band.generatedRest == nil ? band.exclusions : []).map { exclusion in

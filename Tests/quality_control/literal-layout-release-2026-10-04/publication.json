@@ -1,0 +1,39 @@
+{
+  "status": "Published local app package after independent regression, real Brahms and native Inspector reviews",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "0f6608c09f178e38cef3bff14340ca0618e75285629304ea5b75a2f1f912152e",
+  "priorPublicSHA256": "1c2ff4069ef41d28d7818277ffe87bbfe840ac360835c1b8642f509cf4d20eb9",
+  "independentReviews": [
+    {
+      "path": "Tests/quality_control/literal-layout-regressions-2026-10-04",
+      "manifestSHA256": "0d6887191f0334e343b57fec93214fc9c8a0a59465d29c77337ad874ad2e2e2f",
+      "evidenceFilesVerified": 5,
+      "sourceFilesVerified": 31
+    },
+    {
+      "path": "Tests/quality_control/literal-layout-ui-2026-10-04",
+      "manifestSHA256": "d932116adb218c41a2828545ad1dd8e055add3df085ec23f6087567f72699d23",
+      "evidenceFilesVerified": 11,
+      "sourceFilesVerified": 34
+    },
+    {
+      "path": "Tests/quality_control/brahms-alignment-2026-10-04",
+      "manifestSHA256": "6d884ebfdb21a115315e2a0e0a3d3c7737b82af0668ca6c4097d7225d81b949d",
+      "evidenceFilesVerified": 25,
+      "sourceFilesVerified": 25
+    }
+  ],
+  "layoutAssertions": 7157,
+  "nativeExportChecks": 411,
+  "nativeInspectorChecks": 13,
+  "brahmsBaselineChecks": 11,
+  "brahmsCandidateChecks": 69,
+  "compiledAppSourcesPerArchitecture": 35,
+  "sourceInputsVerified": 45,
+  "rootVisualReview": [
+    "brahms-alignment-2026-10-04/alignment-comparison.png",
+    "literal-layout-ui-2026-10-04/inspector-340-scrolled.png"
+  ],
+  "visualLimits": "Brahms is a four-band layout reproduction, not new whole-score extraction. Inspector is an inactive private view with supplied scale metadata; actual scale, spacing and source positions are covered by native exports. Deliberate overflow fixtures clip at paper edges.",
+  "runningAppActions": "none"
+}

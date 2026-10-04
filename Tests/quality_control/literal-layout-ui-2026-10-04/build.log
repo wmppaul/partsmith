@@ -1,0 +1,9 @@
+.build/literal-layout-ui-2026-10-04/LiteralLayoutUITests.swift:46:15: warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+ 44 |         _ = NSApplication.shared
+ 45 |         NSApp.setActivationPolicy(.prohibited); NSApp.finishLaunching()
+ 46 |         NSApp.accessibilitySetValue(true, forAttribute: .init(rawValue: "AXEnhancedUserInterface"))
+    |               `- warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+ 47 |         var project = ProjectData.empty
+ 48 |         var settings = PartLayoutSettings.default
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

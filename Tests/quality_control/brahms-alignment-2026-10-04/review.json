@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "beforeNativeChecks": 11,
+  "afterNativeChecks": 69,
+  "additionalLinearScaleRatioCheck": true,
+  "baselineFirstTwoSameSourceXDisplacementPt": 19.699887640449447,
+  "afterMaximumSameSourceXDisplacementPt": 5.684341886080802e-14,
+  "scaleRatio1_4over1_3": 1.0769230769230769,
+  "nativePixelCases": 6,
+  "nativePixelPages": 7,
+  "nativePixelMaximumChannelDifference": 0,
+  "allCurrentCoreSourceHashesMatch": true,
+  "visualReview": [
+    "Exact user 39-page score identified; source page 3 first two systems share the same left alignment.",
+    "1.05 before/after renders inspected; section A false left shift removed; all four systems share their source-coordinate horizontal frame.",
+    "1.3 and 1.4 inspected; music grows by 14/13 and extends past the physical page as allowed by the warning. Clefs/key signatures at the left are visibly clipped at these settings; these are deliberate overflow demonstrations, not deliverable musician parts.",
+    "100 and 200 pt gap geometry verified with Balance on; 200 pt render inspected; page count goes from one to two.",
+    "Original source and project bytes unchanged; all four band IDs, their order, and vertical crop bounds retained."
+  ],
+  "scope": "Layout regression using four existing reviewed violin bands on source page3; no new extraction, cleanup, or project edits. Exports may retain neighboring notation already inside stored crops.",
+  "rasterOracle": "CoreGraphics at 2\u00d7 compares each export against complete original crops drawn at the same transformed placements. All seven pages are pixel-identical. MuPDF display screenshots use clipping-dependent resampling, so are not the pixel oracle."
+}

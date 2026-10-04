@@ -269,20 +269,19 @@ struct InspectorView: View {
                 commit: { document.updatePartScale(part.id, scale: $0) })
                 .id("scale-\(part.id)")
 
-            if let info = document.previewScaleInfo, info.isWidthLimited {
+            if let info = document.previewScaleInfo, info.exceedsContentWidth {
                 HStack {
-                    Text(part.layoutSettings.useConsistentScale ? "Applied Scale" : "Smallest Applied Scale")
+                    Label("Fits Within Margins", systemImage: "exclamationmark.triangle")
                     Spacer()
-                    Text("\(info.appliedScale.formatted(.number.precision(.fractionLength(2))))×")
+                    Text("\(info.maximumSafeScale.formatted(.number.precision(.fractionLength(2))))×")
                         .monospacedDigit()
                 }
                 .font(.subheadline.weight(.semibold))
-                Text(part.layoutSettings.useConsistentScale
-                    ? "Page width reached. The widest strip sets the limit, so higher Scale settings look the same. Smaller Side Margins make the music larger."
-                    : "Some strips have reached the page width and cannot grow further. Smaller Side Margins make more room for the music.")
+                .foregroundStyle(.orange)
+                Text("Your chosen Scale is applied. Music may extend into the margins or be cut off at the paper edge. Check Preview before exporting.")
                     .font(.caption).foregroundStyle(.secondary)
             } else {
-                Text("Above 1.00, blank source side margins are removed when possible. Notation stays inside the page margins.")
+                Text("Scale applies as requested. Above 1.00, blank source side margins are removed when possible.")
                     .font(.caption).foregroundStyle(.secondary)
             }
 
@@ -298,22 +297,20 @@ struct InspectorView: View {
                     .font(.caption)
             }
 
-            DeferredLayoutSlider(title: "Preferred System Gap",
+            DeferredLayoutSlider(title: "System Gap",
                 value: document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap,
                 range: PartLayoutSettings.systemGapRange, step: 2, format: { "\(Int($0)) pt" },
                 commit: { document.updatePartGap(part.id, gap: $0) })
                 .id("gap-\(part.id)")
 
-            if part.layoutSettings.balancePages {
-                Text("Balance Page Fill may reduce this gap to avoid extra pages. Turn it off to keep your preferred spacing.")
-                    .font(.caption).foregroundStyle(.secondary)
-            }
+            Text("Spacing is kept at the selected value. Larger gaps may add pages.")
+                .font(.caption).foregroundStyle(.secondary)
 
             Toggle("Balance Page Fill", isOn: Binding(
                 get: { document.part(withID: part.id)?.layoutSettings.balancePages ?? true },
                 set: { document.updatePartBalancedPages(part.id, enabled: $0) }
             ))
-            .help("Balance complete systems between explicit section breaks. Spacing may reduce to 4 points to avoid an extra page; notation keeps its scale.")
+            .help("Distribute complete systems between pages while keeping the selected scale and system gap.")
 
             Toggle("Use Consistent Scale", isOn: Binding(
                 get: { document.part(withID: part.id)?.layoutSettings.useConsistentScale ?? true },

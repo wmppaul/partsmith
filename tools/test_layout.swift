@@ -78,7 +78,11 @@ struct LayoutRegressionTests {
                           "Editorial labels never overlap previous bands or their own music")
                 }
                 check(rect.width > 0 && rect.height > 0, "All output crops have positive area")
-                check(content.insetBy(dx: -0.001, dy: -0.001).contains(rect), "Music must remain within all four margins")
+                check(rect.minY >= content.minY - 0.001 && rect.maxY <= content.maxY + 0.001,
+                      "Music must remain within vertical margins")
+                check((rect.minX >= content.minX - 0.001 && rect.maxX <= content.maxX + 0.001)
+                      || plan.scaleInfo.exceedsContentWidth,
+                      "Horizontal overflow requires visible scale warning metadata")
                 check(rect.maxY <= previousBottom + 0.001, "Music must not overlap headers or preceding bands")
                 check(abs(rect.width / rect.height - placement.sourceRect.width / placement.sourceRect.height) < 0.00001,
                       "Music must retain its aspect ratio")
@@ -88,6 +92,21 @@ struct LayoutRegressionTests {
         if let header = plan.headerPlacement {
             check(content.insetBy(dx: -0.001, dy: -0.001).contains(header.destinationRect), "Source header stays inside margins")
         }
+    }
+
+    static func verifyGap(_ plan: PartRenderPlan, expected: Double) {
+        var gaps: [Double] = []
+        for page in plan.pages {
+            for (previous, next) in zip(page.placements, page.placements.dropFirst()) {
+                let previousBottom = ([previous.destinationRect] + previous.sourceMarkings.map(\.destinationRect)).map(\.minY).min()!
+                let nextTop = ([next.destinationRect] + next.sourceMarkings.map(\.destinationRect)
+                    + [next.editorialLabelRect, next.barNumberRect].compactMap { $0 }).map(\.maxY).max()!
+                gaps.append(previousBottom - nextTop)
+            }
+        }
+        check(!gaps.isEmpty, "Gap fixture contains systems sharing at least one page")
+        check(gaps.allSatisfy { abs($0 - expected) < 0.00001 },
+              "Every physical inter-system gap equals the requested \(expected) points: \(gaps)")
     }
 
     static func main() throws {
@@ -216,7 +235,8 @@ struct LayoutRegressionTests {
             band(partID: compact.parts[0].id, page: index % 3, top: 0.2, bottom: 0.31875)
         }
         let compactPlan = try plan(compact)
-        check(compactPlan.pages.count == 1, "A four-point gap reduction avoids an unnecessary second page")
+        check(compactPlan.pages.count == 2, "Requested spacing is retained even when tighter gaps would remove a page")
+        verifyGap(compactPlan, expected: compact.parts[0].layoutSettings.interSystemGap)
         check(compactPlan.pages[0].placements.allSatisfy { abs($0.destinationRect.height - 95) < 0.00001 },
               "Compact page packing retains requested notation scale")
 
@@ -228,10 +248,9 @@ struct LayoutRegressionTests {
         let firstChoirBandID = choir.sortedBands(for: choir.parts[0].id)[0].id
         choir.bands[choir.bands.firstIndex { $0.id == firstChoirBandID }!].editorialLabel = "Adagio"
         let choirPlan = try plan(choir)
-        check(choirPlan.pages.count == 1, "An eight-system choir part avoids a page turn by using a gap below twelve points")
-        let choirPlacements = choirPlan.pages[0].placements
-        let choirGap = choirPlacements[0].destinationRect.minY - choirPlacements[1].destinationRect.maxY
-        check(choirGap > 11.7 && choirGap < 11.72, "The chosen gap is the largest gap reaching the minimum page count: \(choirGap)")
+        check(choirPlan.pages.count == 2, "Choir pagination uses another page instead of silently reducing the chosen gap")
+        let choirPlacements = choirPlan.pages.flatMap(\.placements)
+        verifyGap(choirPlan, expected: choir.parts[0].layoutSettings.interSystemGap)
         check(choirPlacements.allSatisfy { abs($0.destinationRect.height - 64.5) < 0.00001 },
               "Gap optimization never reduces source scale")
 
@@ -241,30 +260,32 @@ struct LayoutRegressionTests {
             band(partID: pianoPacking.parts[0].id, page: index % 3, top: 0.2, bottom: 0.2 + 118.4 / 800)
         }
         let pianoPlan = try plan(pianoPacking)
-        check(pianoPlan.pages.count == 4 && pianoPlan.pages.allSatisfy { $0.placements.count == 5 },
-              "Twenty piano systems fit four balanced pages using the full safe gap range")
+        check(pianoPlan.pages.count == 5,
+              "Twenty piano systems keep the requested gap instead of squeezing onto four pages")
+        verifyGap(pianoPlan, expected: pianoPacking.parts[0].layoutSettings.interSystemGap)
         check(pianoPlan.pages.flatMap(\.placements).allSatisfy { abs($0.destinationRect.height - 118.4) < 0.00001 },
               "Twenty-system packing preserves notation scale")
 
         var spacious = project()
         spacious.projectSettings.showTitleBlock = false
-        spacious.parts[0].layoutSettings.balancePages = false
-        spacious.parts[0].layoutSettings.interSystemGap = 200
         spacious.bands = (0..<5).map { index in
             band(partID: spacious.parts[0].id, page: index % 3, top: 0.2, bottom: 0.4)
         }
-        let spaciousPlan = try plan(spacious)
-        let spaciousGaps = spaciousPlan.pages.flatMap { page in
-            zip(page.placements, page.placements.dropFirst()).map { $0.destinationRect.minY - $1.destinationRect.maxY }
+        for balance in [false, true] {
+            spacious.parts[0].layoutSettings.balancePages = balance
+            var previousPageCount = 0
+            for gap in [4.0, 20, 48, 100, 150, 200] {
+                spacious.parts[0].layoutSettings.interSystemGap = gap
+                let result = try plan(spacious)
+                verifyGap(result, expected: gap)
+                check(result.pages.count >= previousPageCount,
+                      "Increasing the literal gap cannot reduce page count (Balance \(balance), gap \(gap))")
+                if gap == 100 { check(result.pages.count == 2, "100-point gaps fit this score onto two pages") }
+                if gap == 200 { check(result.pages.count == 3, "200-point gaps produce a visibly wider three-page layout") }
+                previousPageCount = result.pages.count
+                verifyGeometry(result, project: spacious)
+            }
         }
-        check(!spaciousGaps.isEmpty && spaciousGaps.allSatisfy { abs($0 - 200) < 0.00001 },
-              "With balancing off, 200-point gaps remain 200 points in the rendered layout")
-        verifyGeometry(spaciousPlan, project: spacious)
-        spacious.parts[0].layoutSettings.balancePages = true
-        let balancedSpacious = try plan(spacious)
-        check(balancedSpacious.pages.count < spaciousPlan.pages.count,
-              "Balancing retains its documented ability to reduce large gaps and avoid extra pages")
-        verifyGeometry(balancedSpacious, project: spacious)
 
         var uniform = project()
         var narrow = uniform.bands[0]
@@ -375,28 +396,58 @@ struct LayoutRegressionTests {
                   "Requested scale \(multiplier) enlarges the notation when blank edges provide room")
             check(placement.sourceRect.minY == originalPlacement.sourceRect.minY && placement.sourceRect.height == originalPlacement.sourceRect.height,
                   "Horizontal enlargement never changes top or bottom crop edges")
-            check(abs(result.scaleInfo.appliedScale - multiplier) < 0.00001 && !result.scaleInfo.isWidthLimited,
+            check(abs(result.scaleInfo.appliedScale - multiplier) < 0.00001 && !result.scaleInfo.exceedsContentWidth,
                   "Scale metadata reports the visible enlargement")
             verifyGeometry(result, project: enlarged)
         }
         let limited = try plan(enlarged, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
-        check(limited.scaleInfo.isWidthLimited && abs(limited.scaleInfo.appliedScale - 516.0 / 456) < 0.00001,
-              "A crop with little blank space stops at its actual safe width and reports the limit")
+        check(limited.scaleInfo.exceedsContentWidth && abs(limited.scaleInfo.maximumSafeScale - 516.0 / 456) < 0.00001
+              && abs(limited.scaleInfo.appliedScale - 1.4) < 0.00001,
+              "A crop with little blank space reports the safe recommendation but honors requested enlargement")
         var limitedAt130 = enlarged
         limitedAt130.parts[0].layoutSettings.scale = 1.3
-        let plateau = try plan(limitedAt130, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
-        check(plateau.pages[0].placements[0].destinationRect == limited.pages[0].placements[0].destinationRect &&
-              plateau.scaleInfo.appliedScale == limited.scaleInfo.appliedScale,
-              "Requests of 1.30 and 1.40 share the same real size after reaching the ink-preserving width limit")
+        let at130 = try plan(limitedAt130, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
+        check(abs(limited.pages[0].placements[0].destinationRect.height /
+                  at130.pages[0].placements[0].destinationRect.height - 1.4 / 1.3) < 0.00001
+              && at130.scaleInfo.appliedScale == 1.3 && at130.scaleInfo.exceedsContentWidth,
+              "1.30 and 1.40 grow linearly beyond the recommendation instead of reaching a plateau")
+        check(limited.pages[0].placements[0].destinationRect.minX < 48
+              && limited.pages[0].placements[0].destinationRect.maxX > 564,
+              "Requested overflow extends beyond chosen margins, with warning metadata")
         limitedAt130.parts[0].layoutSettings.sideMarginPoints = 18
         let widerAt18 = try plan(limitedAt130, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
-        check(abs(widerAt18.pages[0].placements[0].destinationRect.width - 576) < 0.00001 &&
-              widerAt18.scaleInfo.maximumSafeScale == plateau.scaleInfo.maximumSafeScale &&
-              widerAt18.pages[0].placements[0].sourceRect == plateau.pages[0].placements[0].sourceRect,
-              "18-point margins enlarge physical notation at the plateau without changing crops or the relative scale limit")
+        check(abs(widerAt18.pages[0].placements[0].destinationRect.width /
+                  at130.pages[0].placements[0].destinationRect.width - 576.0 / 516) < 0.00001 &&
+              widerAt18.scaleInfo.maximumSafeScale == at130.scaleInfo.maximumSafeScale &&
+              widerAt18.pages[0].placements[0].sourceRect == at130.pages[0].placements[0].sourceRect,
+              "18-point margins enlarge physical notation proportionally without changing crops or the relative recommendation")
         let noBounds = try plan(enlarged)
-        check(noBounds.scaleInfo.isWidthLimited && noBounds.pages[0].placements[0].destinationRect == originalPlacement.destinationRect,
-              "Unavailable content bounds safely preserve the original crop")
+        check(noBounds.scaleInfo.exceedsContentWidth
+              && noBounds.pages[0].placements[0].sourceRect == originalPlacement.sourceRect
+              && abs(noBounds.pages[0].placements[0].destinationRect.height /
+                     originalPlacement.destinationRect.height - 1.4) < 0.00001,
+              "Unavailable content bounds preserve the whole original crop while honoring explicit enlargement with a warning")
+        var numberedOverflow = enlarged
+        numberedOverflow.projectSettings.showTitleBlock = false
+        numberedOverflow.bands.append(band(partID: numberedOverflow.parts[0].id, page: 1, top: 0.2, bottom: 0.4))
+        for index in numberedOverflow.bands.indices {
+            numberedOverflow.bands[index].barNumberMode = .manual
+            numberedOverflow.bands[index].barNumberValue = 120 + index * 4
+        }
+        let numberedOverflowPlan = try plan(numberedOverflow)
+        check(numberedOverflowPlan.scaleInfo.exceedsContentWidth,
+              "Bar-number fixture exercises enlarged music crossing the margin-number position")
+        for page in numberedOverflowPlan.pages {
+            for placement in page.placements {
+                let badge = placement.barNumberRect!
+                check(badge.minY >= placement.destinationRect.maxY + 0.00001,
+                      "Overscale bar numbers reserve a row above music instead of covering its ink")
+                check(page.placements.allSatisfy { !$0.destinationRect.intersects(badge) },
+                      "Overscale bar numbers never overlap another system")
+            }
+        }
+        verifyGeometry(numberedOverflowPlan, project: numberedOverflow)
+
         for bad in [CGRect(x: -.infinity, y: 0, width: 10, height: 10), CGRect.zero,
                     originalPlacement.sourceRect.insetBy(dx: -2, dy: 0)] {
             let rejected = try plan(enlarged, horizontalBounds: { _, _ in bad })
@@ -410,9 +461,9 @@ struct LayoutRegressionTests {
         let markedPlacement = markedPlan.pages[0].placements[0]
         let retainedMark = markedPlacement.sourceMarkings[0]
         check(markedPlacement.sourceRect.minX <= retainedMark.sourceRect.minX
-              && retainedMark.destinationRect.minX >= 48 && retainedMark.destinationRect.maxX <= 564,
-              "Copied directions outside the staff's ink envelope remain fully preserved")
-        check(markedPlan.scaleInfo.isWidthLimited, "An edge direction contributes to the actual width limit")
+              && abs(retainedMark.sourceRect.width - 36) < 0.00001,
+              "Copied directions outside the staff's ink envelope remain in the retained source geometry")
+        check(markedPlan.scaleInfo.exceedsContentWidth, "An edge direction contributes to the actual width limit")
         var mixedWidths = enlarged
         var short = mixedWidths.bands[0]; short.id = UUID(); short.pageIndex = 1; short.leftFraction = 0.40
         mixedWidths.bands.append(short)
@@ -423,6 +474,46 @@ struct LayoutRegressionTests {
         let independentEnlargement = try plan(mixedWidths, horizontalBounds: insetInk).pages.flatMap(\.placements)
         check(independentEnlargement[1].destinationRect.height > independentEnlargement[0].destinationRect.height,
               "Independent system scaling still uses each original crop's own fit-to-width baseline")
+        // A page-number speck can make the top band's ink wider than the
+        // following staff. Equal source x positions must still line up.
+        var aligned = project()
+        aligned.projectSettings.showTitleBlock = false
+        aligned.bands = [band(partID: aligned.parts[0].id, page: 0, top: 0.2, bottom: 0.25),
+                         band(partID: aligned.parts[0].id, page: 0, top: 0.4, bottom: 0.45),
+                         band(partID: aligned.parts[0].id, page: 1, top: 0.2, bottom: 0.25)]
+        aligned.bands[2].leftFraction = 0.3 // An intentionally narrower stored crop.
+        let alignedOriginalBands = aligned.bands
+        let inkBounds: (BandModel, CGRect) -> CGRect? = { b, rect in
+            let left = b.topFraction < 0.3 ? 6.0 : 56.0
+            let right = b.topFraction < 0.3 ? 8.0 : 66.0
+            return CGRect(x: rect.minX + left, y: rect.minY,
+                          width: rect.width - left - right, height: rect.height)
+        }
+        func mappedX(_ placement: BandPlacement, sourceX: Double) -> Double {
+            placement.destinationRect.minX + (sourceX - placement.sourceRect.minX)
+                * placement.destinationRect.width / placement.sourceRect.width
+        }
+        for multiplier in [0.85, 1.0, 1.3, 1.4] {
+            aligned.parts[0].layoutSettings.scale = multiplier
+            let alignedPlan = try PartLayoutEngine.makePlan(project: aligned,
+                pageBoundsProvider: { page in sourceBounds.offsetBy(dx: page == 1 ? 100 : 0, dy: 0) },
+                partID: aligned.parts[0].id, horizontalContentBoundsProvider: inkBounds)
+            let placements = alignedPlan.pages.flatMap(\.placements)
+            for sourceX in [250.0, 400.0] {
+                check(abs(mappedX(placements[0], sourceX: sourceX) - mappedX(placements[1], sourceX: sourceX)) < 0.00001,
+                      "Same-page staff positions remain aligned despite different trimmed ink at scale \(multiplier)")
+                check(abs(mappedX(placements[0], sourceX: sourceX) - mappedX(placements[2], sourceX: sourceX + 100)) < 0.00001,
+                      "A narrower crop on a translated PDF page preserves the common source-coordinate transform")
+            }
+            if multiplier > 1 {
+                check(placements[0].sourceRect.width != placements[1].sourceRect.width,
+                      "Alignment fixture exercises genuinely different horizontal ink envelopes")
+            }
+            verifyGeometry(alignedPlan, project: aligned)
+        }
+        check(aligned.bands == alignedOriginalBands,
+              "Alignment adjusts render placement without editing any stored crop or intentional source indentation")
+
         var restAndMusic = enlarged
         var rest = restAndMusic.bands[0]; rest.id = UUID(); rest.pageIndex = 1
         rest.restReplacement = BandRestReplacement(barCount: 12)
@@ -449,11 +540,11 @@ struct LayoutRegressionTests {
         let contextPlacement = contextPlan.pages[0].placements[0]
         check(abs(contextPlacement.sourceRect.minX - originalPlacement.sourceRect.minX) < 0.00001
               && abs(contextPlacement.sourceRect.maxX - originalPlacement.sourceRect.maxX) < 0.00001
-              && contextPlan.scaleInfo.isWidthLimited,
+              && contextPlan.scaleInfo.exceedsContentWidth,
               "An automatic rest keeps its entire source clef, signature and final barline context")
         check(contextPlacement.restSourcePlacement!.fragments.allSatisfy {
-            $0.destinationRect.minX >= 48 && $0.destinationRect.maxX <= 564
-        }, "Preserved automatic-rest fragments remain on the output page")
+            abs($0.destinationRect.width / $0.sourceRect.width - 1.4) < 0.00001
+        }, "Source rest fragments use the requested enlargement instead of a separate width clamp")
         var closerMargins = project()
         closerMargins.parts[0].layoutSettings.sideMarginPoints = 12
         let closerPlan = try plan(closerMargins)

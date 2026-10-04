@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "layoutChecks": 7157,
+  "nativeScaleExportChecks": 411,
+  "failures": 0,
+  "productionEditsByReviewer": [],
+  "contractCoverage": [
+    "100 and 200 point gaps are physical distances under Balance on and off; sequence4,20,48,100,150,200 remains literal and pagecount monotonic.",
+    "1.3 and1.4 requested scale continue linearly beyond recommendedfit. Warning metadata reports overflow; aspect and vertical containment remain tested.",
+    "Same source positions map identically despite unequal strip ink extents, narrow stored crops, and translated page bounds. Crop records stay unchanged.",
+    "Copied directions/rest context retain source geometry; generated rest widths stay on-page; oversized bar numbers have a separate row.",
+    "Native PDF and preview match complete-source pixel controls with clipping only at physical page edges; visible margin ink remains present.",
+    "Scanned Beethoven, rectified digital score, copied direction, tinyedgeink, persistence/undo, cancellation, cache invalidation and latest-preview tests pass."
+  ],
+  "performanceSeconds": {
+    "120StripEnlargedPreview": 0.731,
+    "cachedGapRefresh": 0.037
+  },
+  "notes": [
+    "Warnings are tested through actual layoutmetadata; native Inspector visuals are outside this harness.",
+    "Actual screenshot Brahms reproduction is independently reviewed by the Brahms alignment agent.",
+    "Only two test files edited. Old safe-width clamping and balanced-gap reduction assertions replaced to reflect explicit user requested behavior, not discarded without replacement."
+  ],
+  "logFiles": [
+    "layout.log",
+    "scale-export.log"
+  ],
+  "binaries": {
+    ".build/test_literal_layout": "c3593531e28c1afcbd51516bc6da0ac5564ba1795805c4b329d71fe7abe52611",
+    ".build/test_scale_exports": "9f944fb14df0f148a65bf139b5c02c8777138d7bac8bf9b1bc77017a7d1197c5"
+  },
+  "representativeRenderFiles": [
+    ".build/scale-export-tests/overflow-physical-page-edges.png",
+    ".build/scale-export-tests/beethoven-flute-1.30.png",
+    ".build/scale-export-tests/beethoven-flute-1.40.png"
+  ]
+}
