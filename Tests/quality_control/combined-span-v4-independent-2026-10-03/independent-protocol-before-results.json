@@ -1,0 +1,11 @@
+{
+  "scope": "Unchanged297 exact original source-owned pixel loss sets, unchanged336 source envelopes, and frozen29+6. No new fixture or source oracle.",
+  "nativeSHA256": "87e515434e671bc11f7c304342112401fcd0fc3d800015b8f93f7b29ab013487",
+  "constructor297SHA256": "82d4df925ff89ce3dd611878979e72185d3e88b14846055b2a323cbea1e76267",
+  "observer297SHA256": "e6327ef291d7e352a7790b8e82e06ff0e91d267574f809079705e3b73bf0ecf4",
+  "constructor336SHA256": "0b0f20697841eca0604eca732604c01b8e86a77ee070f454c0e1f756ef2650e5",
+  "sourceConvention": "297 source constructor, transforms, raster scales, analyzer calls and planner are unmodified; observer records original full-resolution owned pixel indices/mask hashes and exact loss sets using same1e-9 unit-cell containment as original envelope predicate. Source indices/hashes must match baseline and candidate for every case.",
+  "baselineBinding": "Run the same297 observer against frozen production9f8d7ef; strip observer-only fields and require exact equality to original production results before interpreting candidate. Reuse original336 result only if immutable constructor matches.",
+  "gates": "No newly lost source-owned pixel, including in an existing failing case; fullcase176 allowners. Compare whole-neighbor counts separately.336must preserve all fixed source envelopes; no new missing high target.29+6 unchanged masks and raw source-span records.",
+  "execution": "Private standalone combined testing only. Stop and report concrete regression. No real39/fullcorpus/export/production changes by this evaluator."
+}

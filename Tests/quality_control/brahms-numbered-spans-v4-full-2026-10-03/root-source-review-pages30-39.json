@@ -1,0 +1,943 @@
+{
+  "scope": "Root visual review of all changed crops on physical pages30\u201339 using exact frozen original source rasters, fullwidth context and old/new boundaries. This checks changes, not completeness of unchanged baseline crops or shared-marking propagation.",
+  "reviewedBands": 62,
+  "newOmissionsObserved": 0,
+  "findings": [
+    "P31s1Violin2 and p38s1Viola/Cello still include full neighboring cores; these were already present.",
+    "P31s4Cello lower contraction intersects the printed plate number, not a musical note or part marking.",
+    "P35s3Viola expansion retains intended notation but adds some neighboring cello ink; no complete foreign core added.",
+    "Contractions on pages30\u201339 keep visible owned stems, slurs, articulations, low dynamics, and staff-local text. Unchanged shared-ending omissions are outside this change review."
+  ],
+  "bands": [
+    {
+      "band": "p30-s1-violin1",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s1-violin1.png",
+      "contextSHA256": "08d124b70e5a53b158888d53c5e9ecfb9c61e86167450e8f508fe6678f912576",
+      "oldY": [
+        14.397223293482453,
+        68.17238719629772
+      ],
+      "newY": [
+        14.397223293482453,
+        70.06980331662167
+      ]
+    },
+    {
+      "band": "p30-s1-violin2",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s1-violin2.png",
+      "contextSHA256": "f1f5c2a5b51590f12612c66e35362e37407dd110a52a34fcc43e8532825f4262",
+      "oldY": [
+        48.78789047435403,
+        101.61434631700733
+      ],
+      "newY": [
+        52.81989973004242,
+        101.61434631700733
+      ]
+    },
+    {
+      "band": "p30-s1-cello",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s1-cello.png",
+      "contextSHA256": "84e0e92d55ae712b8d92e219efb9e24c36526d468467a196e5a4c40345a1240f",
+      "oldY": [
+        109.97956035480138,
+        168.97261858850752
+      ],
+      "newY": [
+        116.6205167759352,
+        168.97261858850752
+      ]
+    },
+    {
+      "band": "p30-s2-violin1",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s2-violin1.png",
+      "contextSHA256": "4a6c48bbfdfa23e8b0cfd6b782a7880073ff5b0e6b368e3814b027aa261e9fd4",
+      "oldY": [
+        144.60740455071345,
+        211.19012726571538
+      ],
+      "newY": [
+        160.49826455842654,
+        211.19012726571538
+      ]
+    },
+    {
+      "band": "p30-s2-violin2",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s2-violin2.png",
+      "contextSHA256": "e98c0a7da90e504d3e3e10b9e5ac9448dd2ed50738140dbf8c9936cdeb5cc44b",
+      "oldY": [
+        192.2799845738527,
+        238.22830698033167
+      ],
+      "newY": [
+        198.68376397994598,
+        238.22830698033167
+      ]
+    },
+    {
+      "band": "p30-s2-viola",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s2-viola.png",
+      "contextSHA256": "8e036d2947032d8485217bd1b37e32b6b5705f2e9b3758abf9c948e6302b29a3",
+      "oldY": [
+        225.2475896644813,
+        269.0613189355958
+      ],
+      "newY": [
+        232.3629001156961,
+        269.0613189355958
+      ]
+    },
+    {
+      "band": "p30-s3-cello",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s3-cello.png",
+      "contextSHA256": "560360a5b4351afd9229201e13095096484066fc3b313a47fdc12b20bd7523e1",
+      "oldY": [
+        397.91245661396067,
+        447.41843424604707
+      ],
+      "newY": [
+        401.7072888546085,
+        447.41843424604707
+      ]
+    },
+    {
+      "band": "p30-s4-violin2",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s4-violin2.png",
+      "contextSHA256": "a58b438f0e2ee50cd2df2566487ef85bdb5d416936ca6d6882ccea4857034120",
+      "oldY": [
+        484.00771307365983,
+        535.1739298110298
+      ],
+      "newY": [
+        484.00771307365983,
+        530.9047435403008
+      ]
+    },
+    {
+      "band": "p30-s4-viola",
+      "page": 30,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p30-s4-viola.png",
+      "contextSHA256": "fef5928a65f2f548c7c23e51b5d5f492ed1c10548d660befca7a0b902a5d6279",
+      "oldY": [
+        508.6741226378712,
+        563.8723486309294
+      ],
+      "newY": [
+        510.80871577323563,
+        562.212109525646
+      ]
+    },
+    {
+      "band": "p31-s1-violin1",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s1-violin1.png",
+      "contextSHA256": "154ccaa5ea1bf42141b9682111fdbad3e5c4c62659e3d21195c6952211011031",
+      "oldY": [
+        21.038179714616273,
+        85.01195526417278
+      ],
+      "newY": [
+        21.51253374469726,
+        85.01195526417278
+      ]
+    },
+    {
+      "band": "p31-s1-violin2",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s1-violin2.png",
+      "contextSHA256": "43eef66aabd698259c08891e4637166c9eb3e5676e171bcd7113a7c38ad8f8f3",
+      "oldY": [
+        41.43540300809873,
+        110.8642499035866
+      ],
+      "newY": [
+        41.43540300809873,
+        106.35788661781721
+      ]
+    },
+    {
+      "band": "p31-s1-viola",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s1-viola.png",
+      "contextSHA256": "9cc3af46d504021a50e29e0967e3db606cde564c4730d9c5e07a9dd83fbb8a61",
+      "oldY": [
+        91.24257616660239,
+        141.22290782876976
+      ],
+      "newY": [
+        91.24257616660239,
+        140.7485537986888
+      ]
+    },
+    {
+      "band": "p31-s2-viola",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s2-viola.png",
+      "contextSHA256": "77f671b09ed4bbc5e6090f14fa9ee0294ad13f6b30ef3bdc4f3d2d01a3b156ef",
+      "oldY": [
+        232.3629001156961,
+        281.86887774778245
+      ],
+      "newY": [
+        232.3629001156961,
+        278.5483995372156
+      ]
+    },
+    {
+      "band": "p31-s3-violin1",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s3-violin1.png",
+      "contextSHA256": "3fcfb7e0e70009107acbb3ccdae83852c2d24f0181a238837a6b3d9be0e2a4fd",
+      "oldY": [
+        296.6378711916699,
+        358.71423062090247
+      ],
+      "newY": [
+        302.33011955264175,
+        358.002699575781
+      ]
+    },
+    {
+      "band": "p31-s3-cello",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s3-cello.png",
+      "contextSHA256": "949a4a3b1f576944500d43fd91b5fbdb7b68a257135ebf5501a1c4d9137bd5d5",
+      "oldY": [
+        401.47011183956806,
+        452.8735055919784
+      ],
+      "newY": [
+        404.790590050135,
+        452.8735055919784
+      ]
+    },
+    {
+      "band": "p31-s4-violin2",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s4-violin2.png",
+      "contextSHA256": "f0c2344a804c999136189a43d397ab49686ea3a47c5c192552e8ac9f6fa8a4a6",
+      "oldY": [
+        481.1615888931739,
+        528.7701504049363
+      ],
+      "newY": [
+        488.03972232934825,
+        528.7701504049363
+      ]
+    },
+    {
+      "band": "p31-s4-cello",
+      "page": 31,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p31-s4-cello.png",
+      "contextSHA256": "6a4c3a404d06f57f4f12883da8ba1dbe231504f0a0b41d9701c3ebb36876e94a",
+      "oldY": [
+        546.8596220593907,
+        598.0258387967605
+      ],
+      "newY": [
+        549.2313922097957,
+        591.3848823756267
+      ]
+    },
+    {
+      "band": "p32-s1-violin2",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s1-violin2.png",
+      "contextSHA256": "4f8d2f0cb53e9960e2dfc9026d3befde9ebbb426d5288a80eefd98faed8b5f11",
+      "oldY": [
+        53.057076745082924,
+        102.08870034708832
+      ],
+      "newY": [
+        53.7686077902044,
+        102.08870034708832
+      ]
+    },
+    {
+      "band": "p32-s2-viola",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s2-viola.png",
+      "contextSHA256": "8e3f4a3908d8ad662262eddc0ab8d6bfcfc7f32879acfd231e8885125db73fae",
+      "oldY": [
+        229.0424219051292,
+        276.17662938681065
+      ],
+      "newY": [
+        230.22830698033167,
+        276.17662938681065
+      ]
+    },
+    {
+      "band": "p32-s3-violin2",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s3-violin2.png",
+      "contextSHA256": "8827150121b1f733c4e004d731b2caad0ac179ad96f0bb0500084fc8726a8eb1",
+      "oldY": [
+        333.1631315079059,
+        382.19475510991134
+      ],
+      "newY": [
+        337.66949479367526,
+        382.19475510991134
+      ]
+    },
+    {
+      "band": "p32-s3-viola",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s3-viola.png",
+      "contextSHA256": "ab542bbc933fd7629eb8508d4424cb97bc6421b4b95e70308ed9b12fcd0b4121",
+      "oldY": [
+        365.6563825684535,
+        416.34824527574244
+      ],
+      "newY": [
+        365.6563825684535,
+        414.9251831854994
+      ]
+    },
+    {
+      "band": "p32-s4-violin1",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s4-violin1.png",
+      "contextSHA256": "c14f69c8d0efe8a08961f61558a7ad5791927e05adb5318e237cbeee9f190d1d",
+      "oldY": [
+        429.9313536444273,
+        496.27689934438877
+      ],
+      "newY": [
+        429.9313536444273,
+        495.32819128422676
+      ]
+    },
+    {
+      "band": "p32-s4-violin2",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s4-violin2.png",
+      "contextSHA256": "b89f1833e765634ac1413db60395001f9d9da44fb97fe596ff8531e5c8c60f1c",
+      "oldY": [
+        478.5526417277285,
+        527.584265329734
+      ],
+      "newY": [
+        481.1615888931739,
+        527.584265329734
+      ]
+    },
+    {
+      "band": "p32-s4-viola",
+      "page": 32,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p32-s4-viola.png",
+      "contextSHA256": "a268fcc9221551d368bacec7d72ce50f39921715de303ed164446302a535a7a7",
+      "oldY": [
+        510.5715387581952,
+        559.6031623602006
+      ],
+      "newY": [
+        510.5715387581952,
+        558.417277284998
+      ]
+    },
+    {
+      "band": "p33-s1-violin2",
+      "page": 33,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p33-s1-violin2.png",
+      "contextSHA256": "360737ba3640f64d54657e5f38744d0586022c30dd18f2bf143048b9d68770d4",
+      "oldY": [
+        52.58272271500193,
+        106.35788661781721
+      ],
+      "newY": [
+        54.242961820285394,
+        106.35788661781721
+      ]
+    },
+    {
+      "band": "p33-s1-viola",
+      "page": 33,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p33-s1-viola.png",
+      "contextSHA256": "d6bf3217c1cab5cfb36b64eab0039716c81b25cb1e754558b4d7c8fa1f5fb66e",
+      "oldY": [
+        86.97338989587351,
+        140.98573081372928
+      ],
+      "newY": [
+        86.97338989587351,
+        139.7998457385268
+      ]
+    },
+    {
+      "band": "p33-s1-cello",
+      "page": 33,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p33-s1-cello.png",
+      "contextSHA256": "09e14b8e2fc5fce9d42f80dcb45c516f3ea50713a9730912b60a83424d9f3f22",
+      "oldY": [
+        116.38333976089471,
+        167.07520246818356
+      ],
+      "newY": [
+        118.04357886617817,
+        167.07520246818356
+      ]
+    },
+    {
+      "band": "p33-s2-viola",
+      "page": 33,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p33-s2-viola.png",
+      "contextSHA256": "e1efb281b7df56b0633d383c8282cfd24b5cdbca2b66c8fa57dae5fe43f0a573",
+      "oldY": [
+        226.90782876976476,
+        283.52911685306594
+      ],
+      "newY": [
+        229.51677593521015,
+        283.52911685306594
+      ]
+    },
+    {
+      "band": "p33-s4-violin2",
+      "page": 33,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p33-s4-violin2.png",
+      "contextSHA256": "c64cdbccdd69a54b1d620535604dc71b62953fc1d9671d684658236e174baf8b",
+      "oldY": [
+        486.6166602391053,
+        536.3598148862321
+      ],
+      "newY": [
+        486.6166602391053,
+        527.8214423447745
+      ]
+    },
+    {
+      "band": "p34-s1-cello",
+      "page": 34,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p34-s1-cello.png",
+      "contextSHA256": "47fc0b84bf3ee8bdf41a743bffd898d5e060dda718926dc116a4ebe052a2feac",
+      "oldY": [
+        116.39999999999999,
+        164.4
+      ],
+      "newY": [
+        124.0,
+        164.4
+      ]
+    },
+    {
+      "band": "p34-s2-violin2",
+      "page": 34,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p34-s2-violin2.png",
+      "contextSHA256": "85c404a4a604dc4f9503d628018a788028e9c6b3c6ff4e4f932a087752a9193a",
+      "oldY": [
+        203.6,
+        250.0
+      ],
+      "newY": [
+        203.6,
+        244.4
+      ]
+    },
+    {
+      "band": "p34-s2-viola",
+      "page": 34,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p34-s2-viola.png",
+      "contextSHA256": "fc1eef56bb8c0703d5619e37f0461db3c12006cd8337bc7ecb0691c5458b4a86",
+      "oldY": [
+        231.6,
+        282.8
+      ],
+      "newY": [
+        231.6,
+        281.6
+      ]
+    },
+    {
+      "band": "p34-s2-cello",
+      "page": 34,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p34-s2-cello.png",
+      "contextSHA256": "7e57382f08ac88909de30d517dc9d88af87156fb11b26079e319694d976bb1ae",
+      "oldY": [
+        263.59999999999997,
+        304.0
+      ],
+      "newY": [
+        268.0,
+        304.0
+      ]
+    },
+    {
+      "band": "p34-s4-violin1",
+      "page": 34,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p34-s4-violin1.png",
+      "contextSHA256": "632027e5372c397ddc27dd39cf1cb6e81d3c678077e00512ce58170434bda7e1",
+      "oldY": [
+        432.79999999999995,
+        494.4
+      ],
+      "newY": [
+        443.2,
+        494.4
+      ]
+    },
+    {
+      "band": "p34-s4-cello",
+      "page": 34,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p34-s4-cello.png",
+      "contextSHA256": "bd64dc7dc8631fda1e664c9ab333dd680dd3b7f97c3eb5fca856c970d080d925",
+      "oldY": [
+        543.6,
+        595.6
+      ],
+      "newY": [
+        549.1999999999999,
+        595.6
+      ]
+    },
+    {
+      "band": "p35-s1-cello",
+      "page": 35,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p35-s1-cello.png",
+      "contextSHA256": "b8e94a15e72b0667af9c9bdf582ab439c441ba59a91417cd3c01d6a0c4fa264f",
+      "oldY": [
+        127.26214340786429,
+        174.0809560524287
+      ],
+      "newY": [
+        127.26214340786429,
+        166.9799537393986
+      ]
+    },
+    {
+      "band": "p35-s3-violin2",
+      "page": 35,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p35-s3-violin2.png",
+      "contextSHA256": "1ed1a90e9a08c0b862bc21cbc599d650bb9de2a883133e77b871fab50dd1ffeb",
+      "oldY": [
+        343.84271395528145,
+        396.5790285273709
+      ],
+      "newY": [
+        345.4996144949884,
+        383.56052428681573
+      ]
+    },
+    {
+      "band": "p35-s3-viola",
+      "page": 35,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p35-s3-viola.png",
+      "contextSHA256": "8fe34a226a14c44f98bdbed02bec912836bb8f179b55ebc28f333915b7760daa",
+      "oldY": [
+        379.11102544333073,
+        418.82883577486507
+      ],
+      "newY": [
+        379.11102544333073,
+        426.6399383191981
+      ]
+    },
+    {
+      "band": "p35-s3-cello",
+      "page": 35,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p35-s3-cello.png",
+      "contextSHA256": "e0102839e05cc17be948bdd15bda2d30cf0509baf075ebeaf9229eba3e1a1cb1",
+      "oldY": [
+        408.6985350809561,
+        462.1449498843485
+      ],
+      "newY": [
+        410.35543562066306,
+        453.15034695451044
+      ]
+    },
+    {
+      "band": "p36-s1-violin1",
+      "page": 36,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p36-s1-violin1.png",
+      "contextSHA256": "385fd522c4f6b03b5898be04ef251cea0d037ee1d515cf760845708735439c52",
+      "oldY": [
+        19.140763594292324,
+        78.37099884303895
+      ],
+      "newY": [
+        19.140763594292324,
+        76.47358272271501
+      ]
+    },
+    {
+      "band": "p36-s1-violin2",
+      "page": 36,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p36-s1-violin2.png",
+      "contextSHA256": "6d563744cae69da9ed05df01da0a85859aa5104226fc5df8af80e62da15d970c",
+      "oldY": [
+        60.646741226378715,
+        110.8642499035866
+      ],
+      "newY": [
+        60.646741226378715,
+        110.6270728885461
+      ]
+    },
+    {
+      "band": "p36-s2-violin1",
+      "page": 36,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p36-s2-violin1.png",
+      "contextSHA256": "d658788f9c29d004ae911be3bd1dbf38c53bd2c5918aba5b2d17e2b71c3e2fe6",
+      "oldY": [
+        147.45352873119938,
+        217.11955264172772
+      ],
+      "newY": [
+        147.45352873119938,
+        208.10682607018896
+      ]
+    },
+    {
+      "band": "p36-s4-violin2",
+      "page": 36,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p36-s4-violin2.png",
+      "contextSHA256": "436d071717539733c5264a4e42fda4a76143efc99fc3f56eab4b2bfbe054727d",
+      "oldY": [
+        479.0269957578095,
+        528.7701504049363
+      ],
+      "newY": [
+        484.4820671037408,
+        528.7701504049363
+      ]
+    },
+    {
+      "band": "p36-s4-cello",
+      "page": 36,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p36-s4-cello.png",
+      "contextSHA256": "d2a71e0a9a285c6d9b6a5cd8dccce58f772741e702a800f6011dac0dd2fcbe44",
+      "oldY": [
+        542.1160817585808,
+        597.7886617817201
+      ],
+      "newY": [
+        548.7570381797146,
+        597.7886617817201
+      ]
+    },
+    {
+      "band": "p37-s1-violin1",
+      "page": 37,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p37-s1-violin1.png",
+      "contextSHA256": "8af98c25fce29f9acc69cac2bd50927736d1855f20e5dcabef78b2604802dc29",
+      "oldY": [
+        19.090208172706244,
+        71.82652274479568
+      ],
+      "newY": [
+        19.090208172706244,
+        70.87972243639167
+      ]
+    },
+    {
+      "band": "p37-s1-cello",
+      "page": 37,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p37-s1-cello.png",
+      "contextSHA256": "653da66b7ea90af0750bce9b81df48e647f5723daa8f094b4a4002aba5166965",
+      "oldY": [
+        110.69313801079413,
+        168.40015420200464
+      ],
+      "newY": [
+        116.84734001542019,
+        168.40015420200464
+      ]
+    },
+    {
+      "band": "p37-s2-violin2",
+      "page": 37,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p37-s2-violin2.png",
+      "contextSHA256": "1127beb85c2c96f8536a48d536f2fa9fdcec165316438278a77747f85a532a30",
+      "oldY": [
+        193.77486507324596,
+        244.61757902852736
+      ],
+      "newY": [
+        199.45566692367,
+        244.61757902852736
+      ]
+    },
+    {
+      "band": "p37-s4-violin2",
+      "page": 37,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p37-s4-violin2.png",
+      "contextSHA256": "2ee2145f6f9229ee2eaf4a27e088d3e484e38aa697cfeb0cbfd3ae61849c60a4",
+      "oldY": [
+        486.5728604471858,
+        531.7347725520432
+      ],
+      "newY": [
+        486.5728604471858,
+        531.2613723978412
+      ]
+    },
+    {
+      "band": "p38-s1-violin2",
+      "page": 38,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p38-s1-violin2.png",
+      "contextSHA256": "74fafb65aa89b61ff5e1d7826ca5334702fff935f02052280733574367a98f3b",
+      "oldY": [
+        55.979843953185956,
+        105.5663198959688
+      ],
+      "newY": [
+        56.37971391417425,
+        105.5663198959688
+      ]
+    },
+    {
+      "band": "p38-s1-viola",
+      "page": 38,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p38-s1-viola.png",
+      "contextSHA256": "6d903e75b595287dc78b309a47d6670bc90f7f0342120cbf65d6130b8a24b371",
+      "oldY": [
+        87.96944083224967,
+        159.54876462938878
+      ],
+      "newY": [
+        87.96944083224967,
+        150.7516254876463
+      ]
+    },
+    {
+      "band": "p38-s1-cello",
+      "page": 38,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p38-s1-cello.png",
+      "contextSHA256": "54c3dd45c131894d4bfa856536bdf01e26ad6599d9dc1b1db31b12f92b874f6e",
+      "oldY": [
+        91.56827048114434,
+        165.14694408322495
+      ],
+      "newY": [
+        98.36605981794538,
+        165.14694408322495
+      ]
+    },
+    {
+      "band": "p38-s2-viola",
+      "page": 38,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p38-s2-viola.png",
+      "contextSHA256": "f72a9a12d973616626db7ccff5e7fd1cc486089171998bf39984c12ba83ca1f3",
+      "oldY": [
+        226.32444733420027,
+        285.90767230169047
+      ],
+      "newY": [
+        226.32444733420027,
+        287.1072821846554
+      ]
+    },
+    {
+      "band": "p38-s2-cello",
+      "page": 38,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p38-s2-cello.png",
+      "contextSHA256": "12b693b4826c8cc414f4d4fec1e0c0565a9590bcc8a3f2e15de35610c8141cdc",
+      "oldY": [
+        261.51300390117035,
+        313.498699609883
+      ],
+      "newY": [
+        264.3120936280884,
+        313.498699609883
+      ]
+    },
+    {
+      "band": "p38-s3-violin1",
+      "page": 38,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p38-s3-violin1.png",
+      "contextSHA256": "92e97054a69907bb641b977a8f46f7b1131d5eb7325655c0031436f1ef818ca8",
+      "oldY": [
+        309.49739921976595,
+        363.88231469440836
+      ],
+      "newY": [
+        309.49739921976595,
+        365.08192457737323
+      ]
+    },
+    {
+      "band": "p39-s1-violin2",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s1-violin2.png",
+      "contextSHA256": "6c9ef4af4e0f770fbf0a01cb08583812e1e52365a65b2135618a000be5546925",
+      "oldY": [
+        55.599999999999994,
+        104.8
+      ],
+      "newY": [
+        62.8,
+        99.6
+      ]
+    },
+    {
+      "band": "p39-s1-viola",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s1-viola.png",
+      "contextSHA256": "d75d8d187f1ce99823379fe3938324bb3cb213a0ef4e40180b5562ececb5ed8a",
+      "oldY": [
+        85.6,
+        138.0
+      ],
+      "newY": [
+        92.4,
+        137.6
+      ]
+    },
+    {
+      "band": "p39-s2-violin1",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s2-violin1.png",
+      "contextSHA256": "f6013c91caf0419fc5faf08ccbc25e16975eeabb82236d1aef803b33c4e715c1",
+      "oldY": [
+        146.0,
+        211.6
+      ],
+      "newY": [
+        146.0,
+        212.8
+      ]
+    },
+    {
+      "band": "p39-s2-violin2",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s2-violin2.png",
+      "contextSHA256": "4cc265de326c41641ac2fd34e5e2f9a8b0f70e2ea405914c66c8500705b4614f",
+      "oldY": [
+        195.2,
+        242.79999999999998
+      ],
+      "newY": [
+        195.2,
+        236.79999999999998
+      ]
+    },
+    {
+      "band": "p39-s2-cello",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s2-cello.png",
+      "contextSHA256": "ebeafb416333b09df6df98dc60677594240b96c20a976df75e82c169a28eef54",
+      "oldY": [
+        249.6,
+        299.6
+      ],
+      "newY": [
+        250.0,
+        299.6
+      ]
+    },
+    {
+      "band": "p39-s3-violin2",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s3-violin2.png",
+      "contextSHA256": "4d57b6682263e6cd9949da0e95213835a2808832fb9e2fa4c08c18f23b1768e8",
+      "oldY": [
+        336.0,
+        378.4
+      ],
+      "newY": [
+        336.0,
+        382.00000000000006
+      ]
+    },
+    {
+      "band": "p39-s3-viola",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s3-viola.png",
+      "contextSHA256": "d4e82ae0d5b62cfcb7236945deb1ebacc578f429bc6040fd7e84dcbfaa130869",
+      "oldY": [
+        365.6,
+        416.40000000000003
+      ],
+      "newY": [
+        365.6,
+        415.6
+      ]
+    },
+    {
+      "band": "p39-s4-viola",
+      "page": 39,
+      "verdict": "No newly excluded intended note or local marking observed",
+      "context": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p39-s4-viola.png",
+      "contextSHA256": "89efc92cca581747f00e01df1b3766636e5f57c398bf3300519852cf39b6029a",
+      "oldY": [
+        505.2,
+        558.0
+      ],
+      "newY": [
+        505.2,
+        557.6
+      ]
+    }
+  ]
+}

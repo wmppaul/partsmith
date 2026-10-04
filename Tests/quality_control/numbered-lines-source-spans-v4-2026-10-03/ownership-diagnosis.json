@@ -1,0 +1,285 @@
+{
+  "allJunctionCases": 27,
+  "bindings": {
+    ".build/combined-span-v4-independent-2026-10-03/baseline/controls297-pixels-run/results.json": "24d215fcdec8d6ffa4010d61b1e8d0464450ed0dcf7115063de62d78c1d3c85f",
+    ".build/combined-span-v4-independent-2026-10-03/candidate/controls297-pixels-run/results.json": "66b5a241759d94cd9df20364711fc584272099c1b02daa044edba5aeb3e1b954",
+    ".build/combined-span-v4-independent-2026-10-03/controls297-pixels.swift": "e6327ef291d7e352a7790b8e82e06ff0e91d267574f809079705e3b73bf0ecf4",
+    ".build/combined-span-v4-independent-2026-10-03/controls297.swift": "82d4df925ff89ce3dd611878979e72185d3e88b14846055b2a323cbea1e76267",
+    ".build/numbered-lines-source-spans-v4-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift": "87e515434e671bc11f7c304342112401fcd0fc3d800015b8f93f7b29ab013487"
+  },
+  "case176OwnerContract": "The interrupted long head-to-head musical shaft and both heads belong to all three owners under the unchanged source constructor. Source-mask intersection, not visible connectivity alone, defines this test.",
+  "cases": [
+    {
+      "baselineWholeNeighbors": 0,
+      "bow": 10,
+      "candidateAlternatives": [
+        {
+          "bounds": [
+            0.8236111111111111,
+            0.25,
+            0.8458333333333333,
+            0.7092105263157895
+          ],
+          "isOwnershipAlternative": true,
+          "staffIDs": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "candidateWholeNeighbors": 6,
+      "caseIndex": 176,
+      "expectsSeparation": false,
+      "kind": "edgeMusicBroken",
+      "owners": [
+        {
+          "baselineCrop": [
+            0,
+            142,
+            720,
+            241.00000000000003
+          ],
+          "baselineLostPixels": 970,
+          "candidateCrop": [
+            0,
+            142,
+            720,
+            545
+          ],
+          "candidateLostPixels": 0,
+          "owner": 0,
+          "sourceEnvelope": [
+            148,
+            160,
+            609,
+            539
+          ],
+          "sourceMaskSHA256": "43a27e6a78fb5ca6e77d7aaf1f331d2a08ac112414faa11a2229bfa1451f3399",
+          "sourcePixelCount": 1400
+        },
+        {
+          "baselineCrop": [
+            0,
+            211.99999999999997,
+            720,
+            395
+          ],
+          "baselineLostPixels": 650,
+          "candidateCrop": [
+            0,
+            172,
+            720,
+            545
+          ],
+          "candidateLostPixels": 0,
+          "owner": 1,
+          "sourceEnvelope": [
+            218,
+            190,
+            609,
+            539
+          ],
+          "sourceMaskSHA256": "dcec515cd2afca0987b6e65b38d5608cb0db19cef919fa965f045c885df1c086",
+          "sourcePixelCount": 1400
+        },
+        {
+          "baselineCrop": [
+            0,
+            441.99999999999994,
+            720,
+            545
+          ],
+          "baselineLostPixels": 808,
+          "candidateCrop": [
+            0,
+            172,
+            720,
+            545
+          ],
+          "candidateLostPixels": 0,
+          "owner": 2,
+          "sourceEnvelope": [
+            288,
+            190,
+            609,
+            539
+          ],
+          "sourceMaskSHA256": "458daf9026dc2d167a61a6acd1bf09ac074a088aa4a2b19dd2e2777852502abb",
+          "sourcePixelCount": 1400
+        }
+      ],
+      "scale": 1,
+      "sourceOwnershipSHA256": "1f47bcf674697161cb816a4e0a182558404bcafa7e8ac66c3f6cb9c26bb96de8",
+      "sourcePNG": "case176-original-source.png",
+      "sourcePNGSHA256": "a4aa1f04d1f8ad99bcaaa200472241129bcb91d3e8980b20e56473b0c31ca3a7",
+      "sourceRawSHA256": "4d70efc87579e06de4c04c193ef1136163d4be8316790e05cb70c509dce1424f",
+      "tilt": 0
+    },
+    {
+      "baselineWholeNeighbors": 0,
+      "bow": 0,
+      "candidateAlternatives": [
+        {
+          "bounds": [
+            0.8194444444444444,
+            0.2631578947368421,
+            0.8388888888888889,
+            0.6684210526315789
+          ],
+          "isOwnershipAlternative": true,
+          "staffIDs": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "candidateWholeNeighbors": 2,
+      "caseIndex": 202,
+      "expectsSeparation": true,
+      "kind": "headAtJunction",
+      "owners": [
+        {
+          "baselineCrop": [
+            0,
+            140,
+            720,
+            241.00000000000003
+          ],
+          "baselineLostPixels": 0,
+          "candidateCrop": [
+            0,
+            140,
+            720,
+            514
+          ],
+          "candidateLostPixels": 0,
+          "owner": 0,
+          "sourceEnvelope": [
+            148,
+            158,
+            604,
+            208
+          ],
+          "sourceMaskSHA256": "0f8aca0de760748c3d39983206f3e7289e68b88a89184b2a3010aef4a975141e",
+          "sourcePixelCount": 455
+        },
+        {
+          "baselineCrop": [
+            0,
+            292,
+            720,
+            391
+          ],
+          "baselineLostPixels": 0,
+          "candidateCrop": [
+            0,
+            182,
+            720,
+            514
+          ],
+          "candidateLostPixels": 0,
+          "owner": 1,
+          "sourceEnvelope": [
+            218,
+            308,
+            604,
+            358
+          ],
+          "sourceMaskSHA256": "22df26a72c2b0d3d74f5cbeef32e503ed92c08c6e53ae3523bd4aa7f038825d9",
+          "sourcePixelCount": 455
+        },
+        {
+          "baselineCrop": [
+            0,
+            441.99999999999994,
+            720,
+            534
+          ],
+          "baselineLostPixels": 0,
+          "candidateCrop": [
+            0,
+            181.99999999999997,
+            720,
+            534
+          ],
+          "candidateLostPixels": 0,
+          "owner": 2,
+          "sourceEnvelope": [
+            288,
+            458,
+            604,
+            508
+          ],
+          "sourceMaskSHA256": "8bc2aa672b75d353b0c2c1ee66bfde912b99d7193051b8fe7839f6d64e819647",
+          "sourcePixelCount": 455
+        }
+      ],
+      "scale": 1,
+      "sourceOwnershipSHA256": "fc80254613a35a83c63d5f55fdcf50d9a38d0637f0c06919acc70cbd59139455",
+      "sourcePNG": "case202-original-source.png",
+      "sourcePNGSHA256": "26929ab5ae8dfe86e8213ef304c2ae008823e33ad291b495bfb58e8c4a20e3a9",
+      "sourceRawSHA256": "75cc3c790e03a49c2d1541cabd1e813fc1acf4d542a686735d4d57087c74bfab",
+      "tilt": 0
+    }
+  ],
+  "codeCause": {
+    "bodyMembership": "Actual direct body attachment and filledness are correct here: these are genuine noteheads.",
+    "ownerAssignment": "Every five-line staff core intersected by that span and occupied source shaft is assigned ownership of the complete span.",
+    "plannerEffect": "Expansion-only alternative therefore grows all three owners to include other independently owned local heads and staffs.",
+    "spanFormation": "Every accepted body on one physical corridor is joined into a single first-to-last span without a separate common musical-owner test."
+  },
+  "inference": "Filledness and original-pixel connectivity prove a body is attached, but cannot distinguish a shared musical shaft from independent local stems superimposed on a structural barline. This failure is semantic ownership, not false body recognition. Structural and musical labels may overlap on identical raster pixels.",
+  "junctionAddedWholeNeighborRelations": 84,
+  "junctionCasesWithIncreasedNeighbors": 27,
+  "junctionOwnerContract": "Each of three heads and its short local stem belongs only to its own staff; the long right barline is structural. Exact original constructor and masks predate this candidate.",
+  "nextEvidenceNeeded": "Separate a proven structural backbone from local note-stem/beam ownership hypotheses. Common ownership requires notation evidence beyond sharing that backbone; body presence or absence, gap size, position, head count, or a universal continuing-barline veto alone cannot resolve the mixed four-core positives. When source notation supplies no discriminating evidence, retain an explicit ambiguity/review path rather than certify every contacted staff as one shared owner.",
+  "scope": "Read-only diagnosis. No native rerun, new candidate, threshold edit, or oracle change.",
+  "sourceGeometry202": {
+    "headCenters": [
+      [
+        596,
+        204
+      ],
+      [
+        596,
+        354
+      ],
+      [
+        596,
+        504
+      ]
+    ],
+    "headSourceRadii": [
+      8,
+      4
+    ],
+    "localMusicalStems": [
+      [
+        600,
+        158,
+        603,
+        206
+      ],
+      [
+        600,
+        308,
+        603,
+        356
+      ],
+      [
+        600,
+        458,
+        603,
+        506
+      ]
+    ],
+    "structuralSpine": [
+      600,
+      180,
+      603,
+      529
+    ]
+  }
+}

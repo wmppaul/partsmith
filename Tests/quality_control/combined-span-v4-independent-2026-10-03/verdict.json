@@ -1,0 +1,146 @@
+{
+  "preservationVerdict": "All original297 masks fully retained, all336 source envelopes retained; unchanged29+6 lose no baseline or V4 owned pixels. Known29+6 misses remain.",
+  "cleanlinessVerdict": "Existing independent headAtJunction oracle fails separation in all27 variants; 84 new whole-neighbor relations. This is an ownership false positive under the unchanged oracle, while recovering 24 source pixels in three previously incomplete variants; the other 24 variants already preserved all owned pixels.",
+  "promotionVerdict": "Preservation gates pass, but this reviewer cannot certify no crop-quality regression. Parent owns actual-score evidence and release decision. No production/output changes or new variant were made.",
+  "junctionCases": 27,
+  "junctionAddedWholeNeighborRelations": 84,
+  "cases297ByKind": [
+    {
+      "kind": "cleanBoundary",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 7,
+      "candidateWholeNeighborRelations": 7,
+      "increasedCases": 0,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "horizontalBreaks",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 0,
+      "candidateWholeNeighborRelations": 0,
+      "increasedCases": 0,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "verticalBreak",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 16,
+      "candidateWholeNeighborRelations": 16,
+      "increasedCases": 0,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "parallelPaths",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 30,
+      "candidateWholeNeighborRelations": 24,
+      "increasedCases": 0,
+      "decreasedCases": 4
+    },
+    {
+      "kind": "edgeMusicFullHeight",
+      "cases": 27,
+      "baselineCompleteCases": 9,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 80,
+      "candidateWholeNeighborRelations": 153,
+      "increasedCases": 21,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "edgeMusicNearEdge",
+      "cases": 27,
+      "baselineCompleteCases": 16,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 89,
+      "candidateWholeNeighborRelations": 132,
+      "increasedCases": 12,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "edgeMusicBroken",
+      "cases": 27,
+      "baselineCompleteCases": 0,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 52,
+      "candidateWholeNeighborRelations": 156,
+      "increasedCases": 26,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "headAtJunction",
+      "cases": 27,
+      "baselineCompleteCases": 24,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 0,
+      "candidateWholeNeighborRelations": 84,
+      "increasedCases": 27,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "sharedStemIntoGap",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 8,
+      "candidateWholeNeighborRelations": 8,
+      "increasedCases": 0,
+      "decreasedCases": 0
+    },
+    {
+      "kind": "attachedSlur",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 8,
+      "candidateWholeNeighborRelations": 7,
+      "increasedCases": 0,
+      "decreasedCases": 1
+    },
+    {
+      "kind": "ledgerAliases",
+      "cases": 27,
+      "baselineCompleteCases": 27,
+      "candidateCompleteCases": 27,
+      "baselineWholeNeighborRelations": 108,
+      "candidateWholeNeighborRelations": 122,
+      "increasedCases": 4,
+      "decreasedCases": 1
+    }
+  ],
+  "smallSuites": [
+    {
+      "suite": "original29",
+      "rawSpanWitnessesEqualStandaloneV4": true,
+      "completeOwners": 70,
+      "totalOwners": 99,
+      "newlyLostPixelsVersusStandaloneV4": 0,
+      "recoveredPixelsVersusStandaloneV4": 0,
+      "remainingLostPixels": 12754,
+      "negativeObservationsWithSpans": 0,
+      "sourceScaleCases": 29,
+      "negativeSourceScaleCases": 12
+    },
+    {
+      "suite": "addendum6",
+      "rawSpanWitnessesEqualStandaloneV4": true,
+      "completeOwners": 15,
+      "totalOwners": 18,
+      "newlyLostPixelsVersusStandaloneV4": 0,
+      "recoveredPixelsVersusStandaloneV4": 0,
+      "remainingLostPixels": 2296,
+      "negativeObservationsWithSpans": 0,
+      "sourceScaleCases": 6,
+      "negativeSourceScaleCases": 4
+    }
+  ],
+  "scope": "297 baseline and combined each run once; combined336 once; combined29+6 each once with logging-only observer. Earlier original336 baseline reused only after exact constructor hash verification. No standalone V4 297 attribution run or full score run by this reviewer."
+}

@@ -214,6 +214,12 @@ Inspect the complete source shape behind a musical-ownership claim: a thick
 patch can belong to a fermata arch, a slur crossing or printed text. Passing
 local body checks is not enough to assign the entire connecting barline to
 multiple instruments. Keep these source counterexamples in full-score review.
+Even genuine filled noteheads can belong to separate instruments while touching
+one structural barline. Physical attachment does not establish a shared stem or
+voice. Keep local note ownership distinct from the connecting spine; when the
+source is ambiguous, retain context and report uncertainty. Compare neighboring
+staff inclusion separately from recovered notes so preservation gains do not
+hide new whole-staff contamination.
 
 Compare every source page, including unresolved instrument layouts. Ignore only
 component ordering; ownership, bounds and alternative-evidence tags are semantic

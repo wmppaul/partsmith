@@ -1,0 +1,3032 @@
+{
+  "status": "Independent source-effects review only; combined candidate not promoted. Preserve the separate synthetic ambiguity/false-owner findings.",
+  "candidate": ".build/brahms-numbered-spans-v4-full-2026-10-03/candidate.json",
+  "candidateSHA256": "81c67c284dcb6b9a57c7bc774bbcf675b2f1abf0f4e5520159e84c44cf102b6d",
+  "baseline": ".build/ownership-alternatives-2026-10-03/actual.json",
+  "baselineSHA256": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+  "requirementsSHA256": "83e5ba388ea61fb1ec4045b31e4ced152dd52a140176c4286c6d6c9612b7f077",
+  "automatedChecks": {
+    "totalBands": [
+      604,
+      604
+    ],
+    "freshPages": 39,
+    "changedBands": 252,
+    "reducedBands": 209,
+    "unchangedRetainedAnalyses": 0,
+    "guardCount": 57,
+    "baselineGuardPasses": 54,
+    "candidateGuardPasses": 54,
+    "newGuardFailures": [],
+    "allStaffRecordsExact": true,
+    "allAssignmentIdentitiesExact": true,
+    "allObservedStaffAssignedOnce": true,
+    "newUnresolvedPages": []
+  },
+  "unchangedPriorFailures": [
+    {
+      "group": "old10",
+      "bandID": "p35-s1-violin1",
+      "rect": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "description": "All ledger notes and accents, last beam and full clef.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json",
+      "before": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "after": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "containedBefore": false,
+      "containedAfter": false
+    },
+    {
+      "group": "celloLower4",
+      "bandID": "p22-s3-cello",
+      "rect": [
+        38,
+        415,
+        393,
+        448
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json",
+      "before": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "after": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "containedBefore": false,
+      "containedAfter": false
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p22-s3-cello",
+      "description": "rightmost lower beam and hairpin",
+      "rect": [
+        332,
+        436,
+        372,
+        448
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json",
+      "before": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "after": [
+        0,
+        396.25221750867723,
+        427,
+        447.65561126108753
+      ],
+      "containedBefore": false,
+      "containedAfter": false
+    }
+  ],
+  "sourceVisualScope": {
+    "physicalPages": "Changed bands on pages 1\u201319; page 1 has none. Root independently owns pages 20\u201339.",
+    "changedBandsReviewed": 125,
+    "withContractedEdge": 102,
+    "newTargetOmissionsObserved": 0,
+    "newSourcePaginationCut": [
+      "p4-s1-violin1"
+    ],
+    "noWholeOutputExportClaim": true,
+    "residualNeighbors": "Many partial neighboring staves, notes, dynamics and following-system cues remain. The full 39-page geometric comparison reports whole-neighbor occurrences 7\u21925; that statistic is separate from this 125-band visual review."
+  },
+  "vivace": {
+    "group": "p2Vivace-source-ink",
+    "bandID": "p2-s1-violin1",
+    "rect": [
+      137.25,
+      131.25,
+      173.16666666666666,
+      140.41666666666666
+    ],
+    "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+    "sourceSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+    "sourcePageIndex": 1,
+    "sourceMeasurementRegionPt": [
+      134,
+      129,
+      179,
+      145
+    ],
+    "sourcePixelsPerPoint": 12,
+    "threshold": 190,
+    "description": "Complete original printed Vivace word including initial V upper serifs and final period. Actual dark-pixel envelope from the same published saved-correction source used to verify the resolution regression, frozen before combined-candidate result inspection. No existing guard substituted.",
+    "image": "vivace-source-only.png",
+    "imageSHA256": "b0e5d91992c14e3f26a91d593a1b195fff629c4dc2cbf40b8d1ea6a2b400d250",
+    "before": [
+      0,
+      125.2,
+      427,
+      176.79999999999998
+    ],
+    "after": [
+      0,
+      125.2,
+      427,
+      176.79999999999998
+    ],
+    "containedBefore": true,
+    "containedAfter": true
+  },
+  "userPriorityAssessment": "The user explicitly prioritizes retaining intended notes over avoiding neighboring ink. The author reports recovery of 88,821 owned source pixels across the 297 preservation fixtures and the real-score 7\u21925 whole-neighbor count is an improvement, but 27 headAtJunction fixtures acquire false shared ownership (+84 foreign cores). Those findings should be reported as preservation benefit and cleanliness regression, not renamed or silently waived. In this independently reviewed source half and 57 fixed rectangle obligations no new target omission was found. This does not establish robust behavior on all scores.",
+  "records": [
+    {
+      "bandID": "p2-s1-viola",
+      "sourcePhysicalPage": 2,
+      "before": [
+        0,
+        195.6,
+        427,
+        249.2
+      ],
+      "after": [
+        0,
+        199.6,
+        427,
+        249.2
+      ],
+      "removedTopPt": 4.0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p2-s1-viola.png",
+      "contextSHA256": "4df3f6b48df81d5c4782d44845c68eae5b8ae79ef96e2439518ca2aedc94aa6c",
+      "reviewSheet": "sheets/sheet-01.png"
+    },
+    {
+      "bandID": "p3-s2-viola",
+      "sourcePhysicalPage": 3,
+      "before": [
+        0,
+        226.74111282843893,
+        427,
+        276.4969088098918
+      ],
+      "after": [
+        0,
+        226.74111282843893,
+        427,
+        274.1244204018547
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.3724884080371,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p3-s2-viola.png",
+      "contextSHA256": "51ce6cc1171d2c7e0be994c97bf71e85afaecd25d3596a288bf24414ef19a2bd",
+      "reviewSheet": "sheets/sheet-01.png"
+    },
+    {
+      "bandID": "p3-s2-cello",
+      "sourcePhysicalPage": 3,
+      "before": [
+        0,
+        260.4304482225657,
+        427,
+        317.0664605873261
+      ],
+      "after": [
+        0,
+        263.2774343122102,
+        427,
+        317.0664605873261
+      ],
+      "removedTopPt": 2.8469860896444743,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p3-s2-cello.png",
+      "contextSHA256": "ba47bfadc6e912e32fcd8e738ef6fdc74fa1c568bd10081280a92b0ff1817fc0",
+      "reviewSheet": "sheets/sheet-01.png"
+    },
+    {
+      "bandID": "p3-s3-viola",
+      "sourcePhysicalPage": 3,
+      "before": [
+        0,
+        367.4296754250387,
+        427,
+        423.35394126738794
+      ],
+      "after": [
+        0,
+        370.5139103554868,
+        427,
+        423.35394126738794
+      ],
+      "removedTopPt": 3.084234930448133,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p3-s3-viola.png",
+      "contextSHA256": "d2f3cbad5311ce8d5ab7a92fede661b48819341aaeab2f4c13d1b7a2282c44ef",
+      "reviewSheet": "sheets/sheet-01.png"
+    },
+    {
+      "bandID": "p3-s3-cello",
+      "sourcePhysicalPage": 3,
+      "before": [
+        0,
+        401.59350850077277,
+        427,
+        449.68856259659975
+      ],
+      "after": [
+        0,
+        402.54250386398763,
+        427,
+        449.68856259659975
+      ],
+      "removedTopPt": 0.9489953632148627,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p3-s3-cello.png",
+      "contextSHA256": "d0825ca2fcf40b05d8626828018329faacba0f7f2aaa0b5a3941c546b747235f",
+      "reviewSheet": "sheets/sheet-01.png"
+    },
+    {
+      "bandID": "p3-s4-violin2",
+      "sourcePhysicalPage": 3,
+      "before": [
+        0,
+        485.10510046367847,
+        427,
+        532.4884080370942
+      ],
+      "after": [
+        0,
+        485.10510046367847,
+        427,
+        532.2511591962906
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.23724884080365882,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p3-s4-violin2.png",
+      "contextSHA256": "75d49ecab367b699ac1a3c3d1c45e46727e289d22da62df6302c5389e068e863",
+      "reviewSheet": "sheets/sheet-02.png"
+    },
+    {
+      "bandID": "p4-s1-violin1",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        11.08191653786708,
+        427,
+        68.19242658423494
+      ],
+      "after": [
+        0,
+        20.809119010819167,
+        427,
+        68.19242658423494
+      ],
+      "removedTopPt": 9.727202472952087,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "New top edge crosses the original printed page number 4. Target notes and upper slurs remain complete; this is source pagination rather than a bar number or music.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s1-violin1.png",
+      "contextSHA256": "9ed10417e88109044020e0ecd1ca24040ecb59a8ef56ea9dde03d38062b13147",
+      "reviewSheet": "sheets/sheet-02.png"
+    },
+    {
+      "bandID": "p4-s1-violin2",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        45.48299845440494,
+        427,
+        98.32302936630603
+      ],
+      "after": [
+        0,
+        48.56723338485317,
+        427,
+        95.47604327666151
+      ],
+      "removedTopPt": 3.0842349304482255,
+      "removedBottomPt": 2.846986089644517,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s1-violin2.png",
+      "contextSHA256": "1217fb05a582dfa178151db804441bae82066e670025cbc1bc9510bcb25f0c43",
+      "reviewSheet": "sheets/sheet-02.png"
+    },
+    {
+      "bandID": "p4-s1-viola",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        78.93508500772798,
+        427,
+        131.53786707882534
+      ],
+      "after": [
+        0,
+        78.93508500772798,
+        427,
+        129.63987635239567
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 1.8979907264296685,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s1-viola.png",
+      "contextSHA256": "525f1d4555e3cfbda44c1ae2d4bf198dea75d50d2b71977479bf1fd347372e1f",
+      "reviewSheet": "sheets/sheet-02.png"
+    },
+    {
+      "bandID": "p4-s2-violin2",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        196.61051004636784,
+        427,
+        243.7565687789799
+      ],
+      "after": [
+        0,
+        196.61051004636784,
+        427,
+        235.45285935085008
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 8.303709428129821,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s2-violin2.png",
+      "contextSHA256": "54442667edb535221866097364071646a64ac9c78903537e863e2dee94eb797c",
+      "reviewSheet": "sheets/sheet-02.png"
+    },
+    {
+      "bandID": "p4-s3-viola",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        361.2612055641422,
+        427,
+        410.7797527047913
+      ],
+      "after": [
+        0,
+        361.2612055641422,
+        427,
+        410.3052550231839
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.4744976816073745,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s3-viola.png",
+      "contextSHA256": "516c7df3e06039f279e2ba4a67a58c8a13b679d9913c55b7c3b752be4474f913",
+      "reviewSheet": "sheets/sheet-03.png"
+    },
+    {
+      "bandID": "p4-s4-violin1",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        436.46908809891806,
+        427,
+        480.7681607418856
+      ],
+      "after": [
+        0,
+        436.46908809891806,
+        427,
+        485.5131375579598
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s4-violin1.png",
+      "contextSHA256": "4f6a437cba27160af5331107385a51632d2741c227990d099799dc8b9922ae83",
+      "reviewSheet": "sheets/sheet-03.png"
+    },
+    {
+      "bandID": "p4-s4-violin2",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        466.59969088098916,
+        427,
+        521.5749613601237
+      ],
+      "after": [
+        0,
+        466.59969088098916,
+        427,
+        521.8122102009273
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s4-violin2.png",
+      "contextSHA256": "d135ae5309523f433f41636c552528452b23e87076bddac2b877bddebfdb4d07",
+      "reviewSheet": "sheets/sheet-03.png"
+    },
+    {
+      "bandID": "p4-s4-cello",
+      "sourcePhysicalPage": 4,
+      "before": [
+        0,
+        529.4706336939721,
+        427,
+        591.5633693972179
+      ],
+      "after": [
+        0,
+        537.5370942812983,
+        427,
+        591.5633693972179
+      ],
+      "removedTopPt": 8.066460587326219,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p4-s4-cello.png",
+      "contextSHA256": "bfcf0cfb52975b84c6201612b74bd13dd04d4e0a20172cc2fe8049aa5b52ad10",
+      "reviewSheet": "sheets/sheet-03.png"
+    },
+    {
+      "bandID": "p5-s1-violin2",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        55.921947449768155,
+        427,
+        94.52704791344668
+      ],
+      "after": [
+        0,
+        55.921947449768155,
+        427,
+        103.54250386398763
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s1-violin2.png",
+      "contextSHA256": "849fd46567fb02efb4bb876cc0a5408130bd46245f7ff67f739f8fa43f454c7b",
+      "reviewSheet": "sheets/sheet-04.png"
+    },
+    {
+      "bandID": "p5-s1-viola",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        84.629057187017,
+        427,
+        128.45363214837712
+      ],
+      "after": [
+        0,
+        90.56027820710973,
+        427,
+        133.19860896445132
+      ],
+      "removedTopPt": 5.931221020092735,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s1-viola.png",
+      "contextSHA256": "451e52ac0e0c5c88332a521b427196569f14db84255c4e1adb686f6bfd87846c",
+      "reviewSheet": "sheets/sheet-04.png"
+    },
+    {
+      "bandID": "p5-s2-violin2",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        189.01854714064913,
+        427,
+        239.96058732612056
+      ],
+      "after": [
+        0,
+        189.25579598145285,
+        427,
+        239.96058732612056
+      ],
+      "removedTopPt": 0.23724884080371567,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s2-violin2.png",
+      "contextSHA256": "d24a28b9eeed1c42a8a5dbefd23ab427f6948931b077aafc8c73b76b76601341",
+      "reviewSheet": "sheets/sheet-04.png"
+    },
+    {
+      "bandID": "p5-s3-violin1",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        298.6275115919629,
+        427,
+        347.67156105100463
+      ],
+      "after": [
+        0,
+        298.6275115919629,
+        427,
+        352.1792890262751
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s3-violin1.png",
+      "contextSHA256": "5c0aba84f69e09743356bd0c22a8d9b580a1ed8ebd667e070689f313fc77773a",
+      "reviewSheet": "sheets/sheet-04.png"
+    },
+    {
+      "bandID": "p5-s3-viola",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        364.81993817619787,
+        427,
+        411.2542503863988
+      ],
+      "after": [
+        0,
+        367.4296754250387,
+        427,
+        414.338485316847
+      ],
+      "removedTopPt": 2.6097372488408155,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s3-viola.png",
+      "contextSHA256": "ae5a88f9b291670a6a9b905da4a66d09898d982d4b9f766976ad919bcd31979e",
+      "reviewSheet": "sheets/sheet-04.png"
+    },
+    {
+      "bandID": "p5-s4-violin1",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        442.16306027820707,
+        427,
+        494.0540958268934
+      ],
+      "after": [
+        0,
+        442.16306027820707,
+        427,
+        488.1228748068006
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 5.931221020092778,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s4-violin1.png",
+      "contextSHA256": "41e6043290a8f8e6734dd20729adda0c70894f4b2f1fe0000a3b949d85c143bc",
+      "reviewSheet": "sheets/sheet-05.png"
+    },
+    {
+      "bandID": "p5-s4-violin2",
+      "sourcePhysicalPage": 5,
+      "before": [
+        0,
+        473.9544049459042,
+        427,
+        520.6259659969088
+      ],
+      "after": [
+        0,
+        481.30911901081913,
+        427,
+        520.6259659969088
+      ],
+      "removedTopPt": 7.354714064914958,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p5-s4-violin2.png",
+      "contextSHA256": "dc1c7bf7784eb6cf92b66dfba4abf06d35b644d9ed8d594142b75c6ab1ad02a2",
+      "reviewSheet": "sheets/sheet-05.png"
+    },
+    {
+      "bandID": "p6-s1-violin2",
+      "sourcePhysicalPage": 6,
+      "before": [
+        0,
+        57.58268933539412,
+        427,
+        109.47372488408038
+      ],
+      "after": [
+        0,
+        57.58268933539412,
+        427,
+        110.89721792890263
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p6-s1-violin2.png",
+      "contextSHA256": "6e39e7e7ba6c5656074ff0c92c0580b6c56d94ef0a7f64e14e9e675da7a647d0",
+      "reviewSheet": "sheets/sheet-05.png"
+    },
+    {
+      "bandID": "p6-s1-viola",
+      "sourcePhysicalPage": 6,
+      "before": [
+        0,
+        88.42503863987635,
+        427,
+        139.60432766615148
+      ],
+      "after": [
+        0,
+        88.42503863987635,
+        427,
+        141.0278207109737
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p6-s1-viola.png",
+      "contextSHA256": "eb923e605cff3f9928a462693b476bfdbebc19704b87c7faa44e3349a03c69cc",
+      "reviewSheet": "sheets/sheet-05.png"
+    },
+    {
+      "bandID": "p6-s1-cello",
+      "sourcePhysicalPage": 6,
+      "before": [
+        0,
+        117.84389489953632,
+        427,
+        171.15842349304484
+      ],
+      "after": [
+        0,
+        119.97913446676971,
+        427,
+        171.15842349304484
+      ],
+      "removedTopPt": 2.135239567233384,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p6-s1-cello.png",
+      "contextSHA256": "bdc51e538341ebfb21522dae53c3a224171b449d51711edb6282cd3a64705972",
+      "reviewSheet": "sheets/sheet-06.png"
+    },
+    {
+      "bandID": "p6-s2-violin2",
+      "sourcePhysicalPage": 6,
+      "before": [
+        0,
+        196.61051004636784,
+        427,
+        240.67233384853168
+      ],
+      "after": [
+        0,
+        197.5595054095827,
+        427,
+        240.67233384853168
+      ],
+      "removedTopPt": 0.9489953632148627,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p6-s2-violin2.png",
+      "contextSHA256": "1ccdd626f53c93616bbbfb979dbdd5325e67a44dc0f0225ea9e699554bd31425",
+      "reviewSheet": "sheets/sheet-06.png"
+    },
+    {
+      "bandID": "p6-s4-violin1",
+      "sourcePhysicalPage": 6,
+      "before": [
+        0,
+        442.40030911901084,
+        427,
+        492.63060278207115
+      ],
+      "after": [
+        0,
+        442.40030911901084,
+        427,
+        488.8346213292117
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 3.7959814528594507,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Second-ending bracket and 2., sotto voce, low p/hairpin and long upper slur retained.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p6-s4-violin1.png",
+      "contextSHA256": "562ce81726a1823281372d5c93ec342bb73dc135d6f5fe16431977b70089a795",
+      "reviewSheet": "sheets/sheet-06.png"
+    },
+    {
+      "bandID": "p6-s4-viola",
+      "sourcePhysicalPage": 6,
+      "before": [
+        0,
+        508.82998454404947,
+        427,
+        559.0602782071097
+      ],
+      "after": [
+        0,
+        508.82998454404947,
+        427,
+        554.0780525502319
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 4.9822256568778585,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p6-s4-viola.png",
+      "contextSHA256": "d3019ef6b0ffd042070b7b4b66398ca1fad71ec3268e49b03f469c6b56eded73",
+      "reviewSheet": "sheets/sheet-06.png"
+    },
+    {
+      "bandID": "p7-s1-violin1",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        13.200000000000003,
+        427,
+        65.60000000000001
+      ],
+      "after": [
+        0,
+        13.200000000000003,
+        427,
+        70.4
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s1-violin1.png",
+      "contextSHA256": "c25949b1aa3b62132b68eda3279ef26a6eac5b9d7acda0b351e0a6f0a98cd6ad",
+      "reviewSheet": "sheets/sheet-06.png"
+    },
+    {
+      "bandID": "p7-s1-violin2",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        51.599999999999994,
+        427,
+        101.2
+      ],
+      "after": [
+        0,
+        53.199999999999996,
+        427,
+        101.2
+      ],
+      "removedTopPt": 1.6000000000000014,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s1-violin2.png",
+      "contextSHA256": "096efff5702df60466e6e8f0cd29597c60f93523a3e86a3ddfa11a475a383a94",
+      "reviewSheet": "sheets/sheet-07.png"
+    },
+    {
+      "bandID": "p7-s1-viola",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        84.79999999999998,
+        427,
+        129.6
+      ],
+      "after": [
+        0,
+        86.8,
+        427,
+        129.6
+      ],
+      "removedTopPt": 2.000000000000014,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s1-viola.png",
+      "contextSHA256": "5d3eccacd25ef3ffa029595fefa087105d6f3a374175e3468f623cd1d5f25cbe",
+      "reviewSheet": "sheets/sheet-07.png"
+    },
+    {
+      "bandID": "p7-s2-violin1",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        140.8,
+        427,
+        206.8
+      ],
+      "after": [
+        0,
+        140.8,
+        427,
+        210.8
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s2-violin1.png",
+      "contextSHA256": "a505f8aec07b7b0d19fcbe29297a362b29f227bd0a1cd67dc346b3d91645e8a1",
+      "reviewSheet": "sheets/sheet-07.png"
+    },
+    {
+      "bandID": "p7-s2-violin2",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        190.8,
+        427,
+        240.4
+      ],
+      "after": [
+        0,
+        190.8,
+        427,
+        242.79999999999998
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s2-violin2.png",
+      "contextSHA256": "fc66c75b43b42569435cb437b3cd1163814d426560544c81d3a4e5c92b636995",
+      "reviewSheet": "sheets/sheet-07.png"
+    },
+    {
+      "bandID": "p7-s2-viola",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        219.20000000000002,
+        427,
+        265.59999999999997
+      ],
+      "after": [
+        0,
+        222.39999999999998,
+        427,
+        272.0
+      ],
+      "removedTopPt": 3.19999999999996,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s2-viola.png",
+      "contextSHA256": "22825361b95698a0f98791036cb1d4959d84727ef348fcce687e866a58e31b48",
+      "reviewSheet": "sheets/sheet-07.png"
+    },
+    {
+      "bandID": "p7-s2-cello",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        252.79999999999998,
+        427,
+        297.6
+      ],
+      "after": [
+        0,
+        255.2,
+        427,
+        297.6
+      ],
+      "removedTopPt": 2.4000000000000057,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s2-cello.png",
+      "contextSHA256": "98f76e9546ca9587ae60a089db0b1410ad84d36e263fa18b2a07f919b3bb2490",
+      "reviewSheet": "sheets/sheet-07.png"
+    },
+    {
+      "bandID": "p7-s3-violin1",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        300.0,
+        427,
+        353.20000000000005
+      ],
+      "after": [
+        0,
+        300.0,
+        427,
+        350.4
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.800000000000068,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Rehearsal E and molto dolce sempre retained.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s3-violin1.png",
+      "contextSHA256": "df9832808a611c935f1ed273e89fc97736d8e9a20c05161cd8f230e7640e70f9",
+      "reviewSheet": "sheets/sheet-08.png"
+    },
+    {
+      "bandID": "p7-s4-violin2",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        481.20000000000005,
+        427,
+        528.8000000000001
+      ],
+      "after": [
+        0,
+        481.20000000000005,
+        427,
+        521.6
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 7.2000000000000455,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Lower slurs and both hairpins remain above the new bottom edge; large lower contraction removes mostly neighboring Viola.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s4-violin2.png",
+      "contextSHA256": "33a90d5e93d2da82df350ad9a95d547c656622fbdebc7a8cbed04cd82554176d",
+      "reviewSheet": "sheets/sheet-08.png"
+    },
+    {
+      "bandID": "p7-s4-cello",
+      "sourcePhysicalPage": 7,
+      "before": [
+        0,
+        539.1999999999999,
+        427,
+        591.6
+      ],
+      "after": [
+        0,
+        541.6,
+        427,
+        591.6
+      ],
+      "removedTopPt": 2.400000000000091,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p7-s4-cello.png",
+      "contextSHA256": "74718095282e612fd16fab1dc2a09bee4c35784842ef180ad82ba082b48cc06a",
+      "reviewSheet": "sheets/sheet-08.png"
+    },
+    {
+      "bandID": "p8-s1-violin2",
+      "sourcePhysicalPage": 8,
+      "before": [
+        0,
+        56.63369397217929,
+        427,
+        111.84621329211747
+      ],
+      "after": [
+        0,
+        56.87094281298299,
+        427,
+        111.84621329211747
+      ],
+      "removedTopPt": 0.23724884080370146,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p8-s1-violin2.png",
+      "contextSHA256": "efc83addadf3c5aa51ee404111563441129c818ef5ddd3ed9b59ce46c83eaafe",
+      "reviewSheet": "sheets/sheet-08.png"
+    },
+    {
+      "bandID": "p8-s1-cello",
+      "sourcePhysicalPage": 8,
+      "before": [
+        0,
+        119.50463678516228,
+        427,
+        170.4466769706337
+      ],
+      "after": [
+        0,
+        122.58887171561051,
+        427,
+        171.87017001545595
+      ],
+      "removedTopPt": 3.0842349304482326,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p8-s1-cello.png",
+      "contextSHA256": "f63425893c1b4847e9681bc823ef9e3da9128a0f0ba95c75f6a3beda6fb10181",
+      "reviewSheet": "sheets/sheet-08.png"
+    },
+    {
+      "bandID": "p8-s2-violin1",
+      "sourcePhysicalPage": 8,
+      "before": [
+        0,
+        143.70401854714063,
+        427,
+        217.18469860896445
+      ],
+      "after": [
+        0,
+        163.39567233384852,
+        427,
+        216.94744976816077
+      ],
+      "removedTopPt": 19.69165378670789,
+      "removedBottomPt": 0.23724884080368724,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Largest reviewed top contraction (19.69 pt) removes prior-system cello fragments while retaining rehearsal F, in tempo, target high ledger notes and slurs.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p8-s2-violin1.png",
+      "contextSHA256": "711e6580ddb08b0bc89d5f12b2cb7a84d462fad0ceb7f2f836df1128c09714f8",
+      "reviewSheet": "sheets/sheet-09.png"
+    },
+    {
+      "bandID": "p8-s3-viola",
+      "sourcePhysicalPage": 8,
+      "before": [
+        0,
+        373.8353941267388,
+        427,
+        421.9304482225657
+      ],
+      "after": [
+        0,
+        373.8353941267388,
+        427,
+        418.84621329211745
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 3.084234930448247,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p8-s3-viola.png",
+      "contextSHA256": "fa80b7fa6ef4443e99e469f75c04483e31e78069466d225e6acfc3cd208dc9b5",
+      "reviewSheet": "sheets/sheet-09.png"
+    },
+    {
+      "bandID": "p8-s4-violin1",
+      "sourcePhysicalPage": 8,
+      "before": [
+        0,
+        430.77511591962906,
+        427,
+        501.64605873261206
+      ],
+      "after": [
+        0,
+        430.77511591962906,
+        427,
+        501.17156105100463
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.47449768160743133,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p8-s4-violin1.png",
+      "contextSHA256": "6caf9778c83353171b6fed0090268b962e9558f49943011672a02777cd5e7754",
+      "reviewSheet": "sheets/sheet-09.png"
+    },
+    {
+      "bandID": "p8-s4-violin2",
+      "sourcePhysicalPage": 8,
+      "before": [
+        0,
+        482.7326120556414,
+        427,
+        536.2843894899536
+      ],
+      "after": [
+        0,
+        482.7326120556414,
+        427,
+        534.1491499227203
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.1352395672332705,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p8-s4-violin2.png",
+      "contextSHA256": "c9516e677753dadbf82ca532a9dabb55f7a255126e5d96cec4fb4ba47ba4f6e5",
+      "reviewSheet": "sheets/sheet-09.png"
+    },
+    {
+      "bandID": "p9-s1-violin1",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        12.268160741885628,
+        427,
+        75.30989180834621
+      ],
+      "after": [
+        0,
+        16.064142194744978,
+        427,
+        77.68238021638331
+      ],
+      "removedTopPt": 3.7959814528593494,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s1-violin1.png",
+      "contextSHA256": "9264188ad611afb3eb5b53035d86c28f9ce0154bc0d2c47ba8b4ded2000cbfb8",
+      "reviewSheet": "sheets/sheet-10.png"
+    },
+    {
+      "bandID": "p9-s1-viola",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        88.89953632148377,
+        427,
+        134.14760432766616
+      ],
+      "after": [
+        0,
+        90.08578052550233,
+        427,
+        133.43585780525504
+      ],
+      "removedTopPt": 1.1862442040185641,
+      "removedBottomPt": 0.7117465224111186,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s1-viola.png",
+      "contextSHA256": "e7d16dfd56bd7bbc70edfc1ab8f3cae1ef5334c8249203c5b409f72fc753caa3",
+      "reviewSheet": "sheets/sheet-10.png"
+    },
+    {
+      "bandID": "p9-s1-cello",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        117.3693972179289,
+        427,
+        161.66846986089647
+      ],
+      "after": [
+        0,
+        121.16537867078824,
+        427,
+        161.66846986089647
+      ],
+      "removedTopPt": 3.795981452859337,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s1-cello.png",
+      "contextSHA256": "5459719d07496e369f31f1530e32f69d1dd5fd037fc1e0e7ba1faf86ee7942d6",
+      "reviewSheet": "sheets/sheet-10.png"
+    },
+    {
+      "bandID": "p9-s2-violin1",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        162.92117465224112,
+        427,
+        215.04945904173107
+      ],
+      "after": [
+        0,
+        162.92117465224112,
+        427,
+        215.9984544049459
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s2-violin1.png",
+      "contextSHA256": "83d08bc2e32ba010148085079370af3ba787ba6250e5d4b63fd4c6d72c8e8c53",
+      "reviewSheet": "sheets/sheet-10.png"
+    },
+    {
+      "bandID": "p9-s2-violin2",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        198.0340030911901,
+        427,
+        249.68778979907265
+      ],
+      "after": [
+        0,
+        198.0340030911901,
+        427,
+        251.82302936630603
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s2-violin2.png",
+      "contextSHA256": "b34bd471ab4ccf7489ca06dd33a2ba65329bab66bbfa3ddcd955d5dbe8398918",
+      "reviewSheet": "sheets/sheet-11.png"
+    },
+    {
+      "bandID": "p9-s2-viola",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        226.26661514683153,
+        427,
+        276.2596599690881
+      ],
+      "after": [
+        0,
+        226.26661514683153,
+        427,
+        277.44590417310667
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s2-viola.png",
+      "contextSHA256": "01729de46fde53eac13e4b4f9426a37f3b3ebbc5564354f9bb9f309d8482ec50",
+      "reviewSheet": "sheets/sheet-11.png"
+    },
+    {
+      "bandID": "p9-s3-viola",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        370.5139103554868,
+        427,
+        423.59119010819165
+      ],
+      "after": [
+        0,
+        370.5139103554868,
+        427,
+        417.1854714064915
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 6.4057187017001525,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "One-bar rest count, new 6/8, p sotto voce and full upper slur retained.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s3-viola.png",
+      "contextSHA256": "45531e698e8ee5b4547a1f7cd221ad7417dc0f0f1744a7918ea45bfc8d084b3f",
+      "reviewSheet": "sheets/sheet-11.png"
+    },
+    {
+      "bandID": "p9-s4-violin1",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        431.48686244204015,
+        427,
+        500.69706336939726
+      ],
+      "after": [
+        0,
+        429.8261205564142,
+        427,
+        499.5108191653787
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 1.1862442040185783,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s4-violin1.png",
+      "contextSHA256": "ad30809a030347e91176ae4972792fa68a34e53024e5536d33ccf3a1bd7c9e48",
+      "reviewSheet": "sheets/sheet-11.png"
+    },
+    {
+      "bandID": "p9-s4-violin2",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        482.4953632148377,
+        427,
+        528.9296754250387
+      ],
+      "after": [
+        0,
+        484.15610510046366,
+        427,
+        528.9296754250387
+      ],
+      "removedTopPt": 1.6607418856259528,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s4-violin2.png",
+      "contextSHA256": "04d72344a1267cfc5bba3b9b5af178f09f20b3c2cb8b4575045a0cb88deae6bb",
+      "reviewSheet": "sheets/sheet-12.png"
+    },
+    {
+      "bandID": "p9-s4-viola",
+      "sourcePhysicalPage": 9,
+      "before": [
+        0,
+        515.710200927357,
+        427,
+        563.8052550231839
+      ],
+      "after": [
+        0,
+        515.710200927357,
+        427,
+        555.7387944358578
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 8.066460587326105,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p9-s4-viola.png",
+      "contextSHA256": "269bae5e0a91266afd88baeb7914389c50218de911d1b4327f7ab66ddaaf307c",
+      "reviewSheet": "sheets/sheet-12.png"
+    },
+    {
+      "bandID": "p10-s1-violin1",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        22.232612055641425,
+        427,
+        73.17465224111282
+      ],
+      "after": [
+        0,
+        22.232612055641425,
+        427,
+        74.59814528593509
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s1-violin1.png",
+      "contextSHA256": "7ad537bc2521f370b31e17661ffcf19b67bad093d26e48ec40614a3da0ddff02",
+      "reviewSheet": "sheets/sheet-12.png"
+    },
+    {
+      "bandID": "p10-s1-violin2",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        56.39644513137557,
+        427,
+        102.8307573415765
+      ],
+      "after": [
+        0,
+        57.81993817619784,
+        427,
+        104.01700154559505
+      ],
+      "removedTopPt": 1.4234930448222656,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Own fermata and dim. e rit. poco a poco remain complete; no full-staff fermata-induced join here.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s1-violin2.png",
+      "contextSHA256": "66bc316ce268cb47d9f08b70c74d76654d25a35091ebbfd78577b6b8409e7748",
+      "reviewSheet": "sheets/sheet-12.png"
+    },
+    {
+      "bandID": "p10-s1-viola",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        82.01931993817621,
+        427,
+        133.43585780525504
+      ],
+      "after": [
+        0,
+        82.49381761978361,
+        427,
+        133.43585780525504
+      ],
+      "removedTopPt": 0.4744976816074029,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Own fermata and dim. e rit. poco a poco remain complete.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s1-viola.png",
+      "contextSHA256": "f555500e2bb446166b04cdf18ffecda967bbd4e6357b3c440d070d742eabfc81",
+      "reviewSheet": "sheets/sheet-12.png"
+    },
+    {
+      "bandID": "p10-s1-cello",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        112.38717156105099,
+        427,
+        161.66846986089647
+      ],
+      "after": [
+        0,
+        119.26738794435857,
+        427,
+        161.66846986089647
+      ],
+      "removedTopPt": 6.880216383307584,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Own fermata and dim. e rit. poco a poco remain complete after 6.88 pt top contraction; cropped neighboring Viola text remains.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s1-cello.png",
+      "contextSHA256": "30cb45d9c4de72be3fa40d479118d90b6c371b51b3fd329b6ba8b3e84283d94a",
+      "reviewSheet": "sheets/sheet-13.png"
+    },
+    {
+      "bandID": "p10-s2-violin1",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        159.8369397217929,
+        427,
+        213.15146831530137
+      ],
+      "after": [
+        0,
+        159.8369397217929,
+        427,
+        211.49072642967542
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 1.6607418856259528,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s2-violin1.png",
+      "contextSHA256": "24ab860b9d0e739534bca33b0ac55d255ae4986e85dadc1c627358b3ffa1ac49",
+      "reviewSheet": "sheets/sheet-13.png"
+    },
+    {
+      "bandID": "p10-s2-violin2",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        190.91653786707883,
+        427,
+        245.8918083462133
+      ],
+      "after": [
+        0,
+        193.76352395672333,
+        427,
+        245.8918083462133
+      ],
+      "removedTopPt": 2.8469860896445027,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s2-violin2.png",
+      "contextSHA256": "b23ac888910999a65bd49fbd2baae56316e96fe48ddff772770401f85fbcdbb6",
+      "reviewSheet": "sheets/sheet-13.png"
+    },
+    {
+      "bandID": "p10-s2-viola",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        224.13137557959814,
+        427,
+        273.17542503863984
+      ],
+      "after": [
+        0,
+        225.79211746522412,
+        427,
+        273.17542503863984
+      ],
+      "removedTopPt": 1.6607418856259812,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s2-viola.png",
+      "contextSHA256": "84663da79b2b8161a5dacbd62502940c6cdf79d71f9d9066dea4f09d9603f1c9",
+      "reviewSheet": "sheets/sheet-13.png"
+    },
+    {
+      "bandID": "p10-s2-cello",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        253.3129829984544,
+        427,
+        303.54327666151465
+      ],
+      "after": [
+        0,
+        255.92272024729522,
+        427,
+        303.54327666151465
+      ],
+      "removedTopPt": 2.6097372488408155,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s2-cello.png",
+      "contextSHA256": "fbb1c852fc716d31bbd02c5e23e419e9850a8ecae6c38d43be9b5a3abe2cdfb8",
+      "reviewSheet": "sheets/sheet-14.png"
+    },
+    {
+      "bandID": "p10-s3-viola",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        369.0904173106646,
+        427,
+        414.338485316847
+      ],
+      "after": [
+        0,
+        369.0904173106646,
+        427,
+        413.3894899536321
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.9489953632149195,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s3-viola.png",
+      "contextSHA256": "0dd8aa77c132893e69565c66747a8b9dd4a45490d8cf1b57a1a2458c0dce310c",
+      "reviewSheet": "sheets/sheet-14.png"
+    },
+    {
+      "bandID": "p10-s4-violin1",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        449.9922720247295,
+        427,
+        495.952086553323
+      ],
+      "after": [
+        0,
+        449.9922720247295,
+        427,
+        489.3091190108192
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 6.642967542503811,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s4-violin1.png",
+      "contextSHA256": "23465737d52c57f73a6315ce42b0fef11063d48f028fd52bb3ac3e9d000d6250",
+      "reviewSheet": "sheets/sheet-14.png"
+    },
+    {
+      "bandID": "p10-s4-violin2",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        482.258114374034,
+        427,
+        520.1514683153014
+      ],
+      "after": [
+        0,
+        482.258114374034,
+        427,
+        519.676970633694
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.47449768160731765,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s4-violin2.png",
+      "contextSHA256": "dfaf5ce61fc30185ca8e2538210e7fdbc08b6f73af8d3a3c35da4a1491a38d77",
+      "reviewSheet": "sheets/sheet-14.png"
+    },
+    {
+      "bandID": "p10-s4-viola",
+      "sourcePhysicalPage": 10,
+      "before": [
+        0,
+        502.661514683153,
+        427,
+        556.4505409582689
+      ],
+      "after": [
+        0,
+        503.6105100463679,
+        427,
+        556.4505409582689
+      ],
+      "removedTopPt": 0.9489953632149195,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p10-s4-viola.png",
+      "contextSHA256": "7565f7764b1ae886cf9f04f7568fe7f85a1c1bfd9c066e8e82ff998463329672",
+      "reviewSheet": "sheets/sheet-14.png"
+    },
+    {
+      "bandID": "p11-s1-violin1",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        20.334621329211746,
+        427,
+        79.34312210200927
+      ],
+      "after": [
+        0,
+        20.334621329211746,
+        427,
+        75.0726429675425
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 4.270479134466768,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s1-violin1.png",
+      "contextSHA256": "c99f9a2a131c7f1c7a23bb9a533b0896a333b1d915a74ce8e88f116994e026dc",
+      "reviewSheet": "sheets/sheet-15.png"
+    },
+    {
+      "bandID": "p11-s1-viola",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        92.45826893353942,
+        427,
+        137.9435857805255
+      ],
+      "after": [
+        0,
+        92.45826893353942,
+        427,
+        138.65533230293664
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s1-viola.png",
+      "contextSHA256": "0c1aa01900ccae78e9a58c5a6a721db60faa7206bfd3ca9fadcf7ec1c08e3906",
+      "reviewSheet": "sheets/sheet-15.png"
+    },
+    {
+      "bandID": "p11-s2-violin2",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        202.06723338485315,
+        427,
+        254.67001545595056
+      ],
+      "after": [
+        0,
+        203.49072642967542,
+        427,
+        254.67001545595056
+      ],
+      "removedTopPt": 1.4234930448222656,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s2-violin2.png",
+      "contextSHA256": "6ceefe6b977087a363120c26abac1e74c0b120ef06272d29d8e14b29272e37de",
+      "reviewSheet": "sheets/sheet-15.png"
+    },
+    {
+      "bandID": "p11-s2-viola",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        232.435085007728,
+        427,
+        284.32612055641425
+      ],
+      "after": [
+        0,
+        232.435085007728,
+        427,
+        282.19088098918087
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.135239567233384,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s2-viola.png",
+      "contextSHA256": "c1ea54adf551110c47fb36f3b82a599c9259cb89b031beba3749461b1f48da9e",
+      "reviewSheet": "sheets/sheet-15.png"
+    },
+    {
+      "bandID": "p11-s2-cello",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        262.5656877897991,
+        427,
+        310.660741885626
+      ],
+      "after": [
+        0,
+        265.64992272024733,
+        427,
+        310.660741885626
+      ],
+      "removedTopPt": 3.084234930448247,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s2-cello.png",
+      "contextSHA256": "53d46a86a57f1dc7d763a1c4d1624757c4415dae7bc948f1d3cea85858e1d1d6",
+      "reviewSheet": "sheets/sheet-16.png"
+    },
+    {
+      "bandID": "p11-s3-violin2",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        343.2302936630603,
+        427,
+        393.46058732612056
+      ],
+      "after": [
+        0,
+        343.2302936630603,
+        427,
+        393.935085007728
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s3-violin2.png",
+      "contextSHA256": "79667ec702eb239a6a3cb79938514e53a20e028872f0c035f4392ae8fe97c247",
+      "reviewSheet": "sheets/sheet-16.png"
+    },
+    {
+      "bandID": "p11-s3-viola",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        373.12364760432763,
+        427,
+        422.8794435857805
+      ],
+      "after": [
+        0,
+        375.97063369397216,
+        427,
+        422.40494590417313
+      ],
+      "removedTopPt": 2.846986089644531,
+      "removedBottomPt": 0.4744976816073745,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s3-viola.png",
+      "contextSHA256": "d3b8d334e1b4bce1cb51f28e3e27725d29fd5a63d06b1d5c9ec0d736e6d7baa6",
+      "reviewSheet": "sheets/sheet-16.png"
+    },
+    {
+      "bandID": "p11-s4-viola",
+      "sourcePhysicalPage": 11,
+      "before": [
+        0,
+        510.25347758887176,
+        427,
+        563.5680061823803
+      ],
+      "after": [
+        0,
+        510.25347758887176,
+        427,
+        559.2975270479135
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 4.270479134466768,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p11-s4-viola.png",
+      "contextSHA256": "bfb66ffebdf91c867a4dfacba759817e03a435bd5d9ac6c9ee35e567c5d2ef56",
+      "reviewSheet": "sheets/sheet-16.png"
+    },
+    {
+      "bandID": "p12-s1-violin2",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        62.56491499227202,
+        427,
+        108.28748068006182
+      ],
+      "after": [
+        0,
+        62.56491499227202,
+        427,
+        109.71097372488408
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s1-violin2.png",
+      "contextSHA256": "86100cd40989e4673d19afc82af2dbc3795ddf9649c55930252aeff76b66e1f8",
+      "reviewSheet": "sheets/sheet-16.png"
+    },
+    {
+      "bandID": "p12-s1-viola",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        86.05255023183926,
+        427,
+        138.89258114374033
+      ],
+      "after": [
+        0,
+        88.66228748068006,
+        427,
+        138.89258114374033
+      ],
+      "removedTopPt": 2.6097372488408013,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s1-viola.png",
+      "contextSHA256": "6ac342eea82c356d15b65d02c10e8056fd63aa8cabfc529f6268f27cb2b70c94",
+      "reviewSheet": "sheets/sheet-17.png"
+    },
+    {
+      "bandID": "p12-s2-violin1",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        149.16074188562598,
+        427,
+        215.04945904173107
+      ],
+      "after": [
+        0,
+        149.16074188562598,
+        427,
+        211.7279752704791
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 3.3214837712519625,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s2-violin1.png",
+      "contextSHA256": "db24e0b5058a8907d09ea15284b2cdd693845d8102e1df261f38408f99389d41",
+      "reviewSheet": "sheets/sheet-17.png"
+    },
+    {
+      "bandID": "p12-s2-violin2",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        195.1870170015456,
+        427,
+        248.0270479134467
+      ],
+      "after": [
+        0,
+        200.16924265842349,
+        427,
+        248.0270479134467
+      ],
+      "removedTopPt": 4.982225656877887,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s2-violin2.png",
+      "contextSHA256": "3fc5fdab22bdbc522643e7f5a457c3883926d388cc68b6654828ae97d2faedbb",
+      "reviewSheet": "sheets/sheet-17.png"
+    },
+    {
+      "bandID": "p12-s2-viola",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        230.5370942812983,
+        427,
+        278.6321483771252
+      ],
+      "after": [
+        0,
+        230.5370942812983,
+        427,
+        278.15765069551776
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.47449768160743133,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s2-viola.png",
+      "contextSHA256": "a8a07a90c7e624e1c335cc3674ee2044c40e7bbb2d158d902df56aa496cae728",
+      "reviewSheet": "sheets/sheet-17.png"
+    },
+    {
+      "bandID": "p12-s3-cello",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        399.69551777434316,
+        427,
+        447.5533230293663
+      ],
+      "after": [
+        0,
+        400.8817619783617,
+        427,
+        447.5533230293663
+      ],
+      "removedTopPt": 1.1862442040185215,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s3-cello.png",
+      "contextSHA256": "18271319bef4d663ca3934cb007e51d20d0e349a997d6b4638e715b39f3aaeb2",
+      "reviewSheet": "sheets/sheet-18.png"
+    },
+    {
+      "bandID": "p12-s4-violin2",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        478.9366306027821,
+        427,
+        532.725656877898
+      ],
+      "after": [
+        0,
+        481.7836166924266,
+        427,
+        532.725656877898
+      ],
+      "removedTopPt": 2.846986089644531,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s4-violin2.png",
+      "contextSHA256": "cb489d7dd4bf43d4b68de7ea36d09b6d52d83dab6b31c837da51b3c9de3ef6c6",
+      "reviewSheet": "sheets/sheet-18.png"
+    },
+    {
+      "bandID": "p12-s4-viola",
+      "sourcePhysicalPage": 12,
+      "before": [
+        0,
+        509.54173106646056,
+        427,
+        560.7210200927357
+      ],
+      "after": [
+        0,
+        513.5749613601237,
+        427,
+        560.7210200927357
+      ],
+      "removedTopPt": 4.0332302936631095,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p12-s4-viola.png",
+      "contextSHA256": "e5717eeb365bbae86e5710dfa2efc6aad3454511660791cb828c47a2380bdee2",
+      "reviewSheet": "sheets/sheet-18.png"
+    },
+    {
+      "bandID": "p13-s2-violin1",
+      "sourcePhysicalPage": 13,
+      "before": [
+        0,
+        166.71715610510046,
+        427,
+        219.79443585780527
+      ],
+      "after": [
+        0,
+        166.71715610510046,
+        427,
+        220.26893353941267
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p13-s2-violin1.png",
+      "contextSHA256": "6c81d13fa09c9029bb0a933e0b79f217fd61a33ccefa2e4cac10e7e833c17603",
+      "reviewSheet": "sheets/sheet-18.png"
+    },
+    {
+      "bandID": "p13-s2-violin2",
+      "sourcePhysicalPage": 13,
+      "before": [
+        0,
+        201.82998454404944,
+        427,
+        255.61901081916537
+      ],
+      "after": [
+        0,
+        202.54173106646058,
+        427,
+        253.7210200927357
+      ],
+      "removedTopPt": 0.711746522411147,
+      "removedBottomPt": 1.8979907264296685,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p13-s2-violin2.png",
+      "contextSHA256": "ef139b90ab432ec4992668440bd03b87eaafca4b1ea0e5f074ce298d337084fd",
+      "reviewSheet": "sheets/sheet-19.png"
+    },
+    {
+      "bandID": "p13-s2-viola",
+      "sourcePhysicalPage": 13,
+      "before": [
+        0,
+        233.6213292117465,
+        427,
+        281.241885625966
+      ],
+      "after": [
+        0,
+        236.46831530139104,
+        427,
+        281.241885625966
+      ],
+      "removedTopPt": 2.846986089644531,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p13-s2-viola.png",
+      "contextSHA256": "767ea4a74014095a73cf05a71324f5922ba76c8a00a4cfa07fe15731e83794a7",
+      "reviewSheet": "sheets/sheet-19.png"
+    },
+    {
+      "bandID": "p13-s3-cello",
+      "sourcePhysicalPage": 13,
+      "before": [
+        0,
+        409.6599690880989,
+        427,
+        453.0100463678516
+      ],
+      "after": [
+        0,
+        415.35394126738794,
+        427,
+        453.0100463678516
+      ],
+      "removedTopPt": 5.693972179289062,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p13-s3-cello.png",
+      "contextSHA256": "4f930174f92722a92a1c88a806f1852a33146e82fb85175c441fa9457711f969",
+      "reviewSheet": "sheets/sheet-19.png"
+    },
+    {
+      "bandID": "p13-s4-viola",
+      "sourcePhysicalPage": 13,
+      "before": [
+        0,
+        525.6746522411128,
+        427,
+        572.3462132921175
+      ],
+      "after": [
+        0,
+        525.6746522411128,
+        427,
+        569.7364760432766
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.6097372488408155,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p13-s4-viola.png",
+      "contextSHA256": "af10d083050e1c3f9ac2e35e3acd5611b73b74cd3a9b1f7f96bb6812eb2fd6e5",
+      "reviewSheet": "sheets/sheet-19.png"
+    },
+    {
+      "bandID": "p14-s1-cello",
+      "sourcePhysicalPage": 14,
+      "before": [
+        0,
+        119.50463678516228,
+        427,
+        169.49768160741885
+      ],
+      "after": [
+        0,
+        122.11437403400308,
+        427,
+        169.49768160741885
+      ],
+      "removedTopPt": 2.6097372488408013,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p14-s1-cello.png",
+      "contextSHA256": "b7d228fe581defd5e112c310ac6cfcc53b158f868aad0f62a8aa6d280639f521",
+      "reviewSheet": "sheets/sheet-19.png"
+    },
+    {
+      "bandID": "p14-s2-viola",
+      "sourcePhysicalPage": 14,
+      "before": [
+        0,
+        229.82534775888718,
+        427,
+        270.5656877897991
+      ],
+      "after": [
+        0,
+        233.85857805255023,
+        427,
+        270.5656877897991
+      ],
+      "removedTopPt": 4.033230293663053,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p14-s2-viola.png",
+      "contextSHA256": "ba8ae8bedc58d303768688075c086d87dccdfec28762124c0d7e8fdff25210ce",
+      "reviewSheet": "sheets/sheet-20.png"
+    },
+    {
+      "bandID": "p14-s3-violin2",
+      "sourcePhysicalPage": 14,
+      "before": [
+        0,
+        339.67156105100463,
+        427,
+        391.5625965996909
+      ],
+      "after": [
+        0,
+        339.67156105100463,
+        427,
+        389.42735703245745
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.135239567233441,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p14-s3-violin2.png",
+      "contextSHA256": "4b77ca07030e2d230bb65d719d5551562e2010e74d369bbe891448a6d17c83cb",
+      "reviewSheet": "sheets/sheet-20.png"
+    },
+    {
+      "bandID": "p14-s3-viola",
+      "sourcePhysicalPage": 14,
+      "before": [
+        0,
+        369.564914992272,
+        427,
+        420.98145285935084
+      ],
+      "after": [
+        0,
+        371.9374034003091,
+        427,
+        420.98145285935084
+      ],
+      "removedTopPt": 2.3724884080371,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p14-s3-viola.png",
+      "contextSHA256": "cc8ca722e99d615ba93747664e4be9789fcfcc820cea9178e944e1bde346b604",
+      "reviewSheet": "sheets/sheet-20.png"
+    },
+    {
+      "bandID": "p14-s4-violin1",
+      "sourcePhysicalPage": 14,
+      "before": [
+        0,
+        449.2805255023184,
+        427,
+        502.59505409582687
+      ],
+      "after": [
+        0,
+        449.2805255023184,
+        427,
+        505.6792890262751
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p14-s4-violin1.png",
+      "contextSHA256": "6029a2aebbe59df94ea0918bdef0ca9a1dd4d659319a9f11f799fdc276d45f42",
+      "reviewSheet": "sheets/sheet-20.png"
+    },
+    {
+      "bandID": "p15-s1-violin1",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        17.906707787201235,
+        426,
+        82.00462606013879
+      ],
+      "after": [
+        0,
+        17.906707787201235,
+        426,
+        81.05782575173477
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.946800308404022,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s1-violin1.png",
+      "contextSHA256": "fb363a9b5482029adb94816098b6cb4c07c7d910095c195c892f83bc58772fd3",
+      "reviewSheet": "sheets/sheet-21.png"
+    },
+    {
+      "bandID": "p15-s1-violin2",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        63.35312259059368,
+        426,
+        112.53893600616807
+      ],
+      "after": [
+        0,
+        65.48342328450269,
+        426,
+        112.30223592906708
+      ],
+      "removedTopPt": 2.130300693909014,
+      "removedBottomPt": 0.23670007710099128,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s1-violin2.png",
+      "contextSHA256": "7801ce4e443c6a86c288ab86681064b798d5b714bb711d21bb5facab4dd15225",
+      "reviewSheet": "sheets/sheet-21.png"
+    },
+    {
+      "bandID": "p15-s1-viola",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        91.28373168851195,
+        426,
+        142.12644564379337
+      ],
+      "after": [
+        0,
+        94.12413261372397,
+        426,
+        142.12644564379337
+      ],
+      "removedTopPt": 2.8404009252120233,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s1-viola.png",
+      "contextSHA256": "5fa6e4a8501d4af4c0c777f7a6d2a3608c16a024e3e9d43068412d8fcf82b489",
+      "reviewSheet": "sheets/sheet-21.png"
+    },
+    {
+      "bandID": "p15-s2-viola",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        236.85427910562836,
+        426,
+        286.0400925212028
+      ],
+      "after": [
+        0,
+        236.85427910562836,
+        426,
+        286.27679259830376
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s2-viola.png",
+      "contextSHA256": "f6c2ee0bf8219f9bb7d4a2b1199b82c27a9bc3a997d85f04582462860c5b33bd",
+      "reviewSheet": "sheets/sheet-21.png"
+    },
+    {
+      "bandID": "p15-s3-violin2",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        349.0501156515035,
+        426,
+        398.4726291441789
+      ],
+      "after": [
+        0,
+        349.0501156515035,
+        426,
+        401.3130300693909
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s3-violin2.png",
+      "contextSHA256": "d12781ac1acd03fd8a58155e6ceddd36d0c6e65e3aaedefe86a7e4bc1b5282e3",
+      "reviewSheet": "sheets/sheet-22.png"
+    },
+    {
+      "bandID": "p15-s3-viola",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        384.08172706245176,
+        426,
+        432.3207401696222
+      ],
+      "after": [
+        0,
+        384.08172706245176,
+        426,
+        431.8473400154202
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.473400154202011,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s3-viola.png",
+      "contextSHA256": "2d4de6534ee5d0cc5a0fe468951dcd530d0a4299f00ca8c10d6cc55a73ec8091",
+      "reviewSheet": "sheets/sheet-22.png"
+    },
+    {
+      "bandID": "p15-s4-violin2",
+      "sourcePhysicalPage": 15,
+      "before": [
+        0,
+        488.93986121819586,
+        426,
+        539.7825751734772
+      ],
+      "after": [
+        0,
+        490.3600616808019,
+        426,
+        539.7825751734772
+      ],
+      "removedTopPt": 1.420200462606033,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p15-s4-violin2.png",
+      "contextSHA256": "672dc663c5aef9c1cd8ab447b0fc48f05430326a4860d04927b510878ea61eb0",
+      "reviewSheet": "sheets/sheet-22.png"
+    },
+    {
+      "bandID": "p16-s1-violin2",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        65.64914992272024,
+        427,
+        117.5401854714065
+      ],
+      "after": [
+        0,
+        65.64914992272024,
+        427,
+        116.82843894899537
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.7117465224111328,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s1-violin2.png",
+      "contextSHA256": "dc3af8684210e53ae0b55f854503a424391c1f8d88068c9d2f4890f75fc1104d",
+      "reviewSheet": "sheets/sheet-22.png"
+    },
+    {
+      "bandID": "p16-s1-viola",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        95.77975270479135,
+        427,
+        145.7727975270479
+      ],
+      "after": [
+        0,
+        97.20324574961359,
+        427,
+        145.7727975270479
+      ],
+      "removedTopPt": 1.4234930448222372,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s1-viola.png",
+      "contextSHA256": "cf39aeea1e56909a1abd67fc48de22ed462e0e956d816793ecf79a4396e10c2a",
+      "reviewSheet": "sheets/sheet-22.png"
+    },
+    {
+      "bandID": "p16-s2-violin1",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        173.1228748068006,
+        427,
+        218.84544049459043
+      ],
+      "after": [
+        0,
+        173.1228748068006,
+        427,
+        216.23570324574962
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.6097372488408155,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s2-violin1.png",
+      "contextSHA256": "3ef1ef8ed8426e013e515362873ef8ffa6cf8b3ebf174e56251a007dbfb14698",
+      "reviewSheet": "sheets/sheet-23.png"
+    },
+    {
+      "bandID": "p16-s2-viola",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        234.09582689335392,
+        427,
+        286.2241112828439
+      ],
+      "after": [
+        0,
+        237.65455950540957,
+        427,
+        290.257341576507
+      ],
+      "removedTopPt": 3.5587326120556497,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s2-viola.png",
+      "contextSHA256": "51ec9672d1ccd616283622eb140f785e2d87ab14f1c6515ecca56a512f907b1e",
+      "reviewSheet": "sheets/sheet-23.png"
+    },
+    {
+      "bandID": "p16-s3-violin1",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        314.52318392581145,
+        427,
+        366.41421947449766
+      ],
+      "after": [
+        0,
+        314.52318392581145,
+        427,
+        367.6004636785162
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s3-violin1.png",
+      "contextSHA256": "16f011f1723cca35c1caa2989b55c9dfc0665ebd91c68f8f98188844846fadf8",
+      "reviewSheet": "sheets/sheet-23.png"
+    },
+    {
+      "bandID": "p16-s3-violin2",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        343.46754250386397,
+        427,
+        400.8153013910356
+      ],
+      "after": [
+        0,
+        344.41653786707883,
+        427,
+        400.8153013910356
+      ],
+      "removedTopPt": 0.9489953632148627,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s3-violin2.png",
+      "contextSHA256": "7eb988fa1bd8c4551b28aaa5111e1d80ddb63ce30e7bba8c7e4ebbfc01cb7f1b",
+      "reviewSheet": "sheets/sheet-23.png"
+    },
+    {
+      "bandID": "p16-s3-viola",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        373.8353941267388,
+        427,
+        432.84389489953634
+      ],
+      "after": [
+        0,
+        380.47836166924264,
+        427,
+        430.9459041731066
+      ],
+      "removedTopPt": 6.642967542503868,
+      "removedBottomPt": 1.8979907264297253,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s3-viola.png",
+      "contextSHA256": "9874d4040c0dd7bd075a6df680529b7ead27ee487301657178070cb0bd734de4",
+      "reviewSheet": "sheets/sheet-24.png"
+    },
+    {
+      "bandID": "p16-s3-cello",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        411.3207109737249,
+        427,
+        458.46676970633695
+      ],
+      "after": [
+        0,
+        413.69319938176193,
+        427,
+        458.46676970633695
+      ],
+      "removedTopPt": 2.372488408037043,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s3-cello.png",
+      "contextSHA256": "e85c1787a845f6cee4b1fd3f545bcb3cf98c8a71a04e2aeac85871a807d2ca02",
+      "reviewSheet": "sheets/sheet-24.png"
+    },
+    {
+      "bandID": "p16-s4-violin1",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        456.3979907264297,
+        427,
+        509.47527047913445
+      ],
+      "after": [
+        0,
+        456.3979907264297,
+        427,
+        509.23802163833074
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.23724884080371567,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s4-violin1.png",
+      "contextSHA256": "c917da934269d37d49701b3a773b751352a4001cd2a653665f3791b3f7f76527",
+      "reviewSheet": "sheets/sheet-24.png"
+    },
+    {
+      "bandID": "p16-s4-cello",
+      "sourcePhysicalPage": 16,
+      "before": [
+        0,
+        550.5857805255023,
+        427,
+        604.6120556414219
+      ],
+      "after": [
+        0,
+        554.6190108191654,
+        427,
+        604.6120556414219
+      ],
+      "removedTopPt": 4.0332302936631095,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p16-s4-cello.png",
+      "contextSHA256": "1788f58d778bd28b9fe4b3fc50607c2b78da63b83e7cce8c12c1b2634cf3f869",
+      "reviewSheet": "sheets/sheet-24.png"
+    },
+    {
+      "bandID": "p17-s1-violin1",
+      "sourcePhysicalPage": 17,
+      "before": [
+        0,
+        16.400000000000002,
+        426,
+        64.8
+      ],
+      "after": [
+        0,
+        16.400000000000002,
+        426,
+        63.199999999999996
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 1.6000000000000014,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p17-s1-violin1.png",
+      "contextSHA256": "4ea098f7a5bdd6d85dbc5c0e940055c2be499686bfd54a6c1d67e8f0083d372d",
+      "reviewSheet": "sheets/sheet-24.png"
+    },
+    {
+      "bandID": "p17-s1-viola",
+      "sourcePhysicalPage": 17,
+      "before": [
+        0,
+        83.2,
+        426,
+        137.6
+      ],
+      "after": [
+        0,
+        86.8,
+        426,
+        134.0
+      ],
+      "removedTopPt": 3.5999999999999943,
+      "removedBottomPt": 3.5999999999999943,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p17-s1-viola.png",
+      "contextSHA256": "1781fc4ff1042b017132de85b9f7f043ff54b7ae3cf916aa00a92581892d7f13",
+      "reviewSheet": "sheets/sheet-25.png"
+    },
+    {
+      "bandID": "p17-s2-viola",
+      "sourcePhysicalPage": 17,
+      "before": [
+        0,
+        230.4,
+        426,
+        280.0
+      ],
+      "after": [
+        0,
+        230.4,
+        426,
+        277.59999999999997
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.400000000000034,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p17-s2-viola.png",
+      "contextSHA256": "88d9f781546b08bd22b43b453c7134181b5ce41842e5ed48df1f075f9c7b90a3",
+      "reviewSheet": "sheets/sheet-25.png"
+    },
+    {
+      "bandID": "p17-s3-violin1",
+      "sourcePhysicalPage": 17,
+      "before": [
+        0,
+        287.2,
+        426,
+        355.2
+      ],
+      "after": [
+        0,
+        296.0,
+        426,
+        355.2
+      ],
+      "removedTopPt": 8.800000000000011,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Rehearsal B, high ledger notes/upper slurs, low p and crescendo remain complete after 8.8 pt top contraction.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p17-s3-violin1.png",
+      "contextSHA256": "9f4e6a7aed27adf3b935b7999b7e1f3d18d7e98b02ecf07d0b79d5d31aa2c773",
+      "reviewSheet": "sheets/sheet-25.png"
+    },
+    {
+      "bandID": "p17-s3-viola",
+      "sourcePhysicalPage": 17,
+      "before": [
+        0,
+        365.6,
+        426,
+        420.79999999999995
+      ],
+      "after": [
+        0,
+        366.0,
+        426,
+        420.79999999999995
+      ],
+      "removedTopPt": 0.39999999999997726,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p17-s3-viola.png",
+      "contextSHA256": "c26ba4cf0932608dd059225cbfa25b36a8c0d1b3dcc5918ca4f5aa7cdaf91c5a",
+      "reviewSheet": "sheets/sheet-25.png"
+    },
+    {
+      "bandID": "p17-s4-viola",
+      "sourcePhysicalPage": 17,
+      "before": [
+        0,
+        510.8,
+        426,
+        563.2
+      ],
+      "after": [
+        0,
+        510.8,
+        426,
+        560.8000000000001
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 2.3999999999999773,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p17-s4-viola.png",
+      "contextSHA256": "9394883a8b601250654e147ca79d7161cb261bdf3413f754fe1b73521d715551",
+      "reviewSheet": "sheets/sheet-25.png"
+    },
+    {
+      "bandID": "p18-s1-violin1",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        20.097372488408038,
+        427,
+        77.91962905718701
+      ],
+      "after": [
+        0,
+        21.520865533230296,
+        427,
+        77.91962905718701
+      ],
+      "removedTopPt": 1.4234930448222585,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s1-violin1.png",
+      "contextSHA256": "a691dbfad89e27459613a4dc63973ed64f2e0b628a47fefa3dd999073ad87958",
+      "reviewSheet": "sheets/sheet-26.png"
+    },
+    {
+      "bandID": "p18-s1-cello",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        118.79289026275116,
+        427,
+        172.34466769706336
+      ],
+      "after": [
+        0,
+        119.97913446676971,
+        427,
+        171.87017001545595
+      ],
+      "removedTopPt": 1.18624420401855,
+      "removedBottomPt": 0.4744976816074029,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Own lower forte and rhythmic notation remain intact; next-system high slur fragments remain below the target staff.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s1-cello.png",
+      "contextSHA256": "16fbaf29d2c6ef186a6ef18ca26efda7709ce0988b5371ccb619971e1fed3499",
+      "reviewSheet": "sheets/sheet-26.png"
+    },
+    {
+      "bandID": "p18-s2-violin2",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        196.61051004636784,
+        427,
+        248.0270479134467
+      ],
+      "after": [
+        0,
+        200.40649149922717,
+        427,
+        249.92503863987636
+      ],
+      "removedTopPt": 3.795981452859337,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s2-violin2.png",
+      "contextSHA256": "d1cb637db04b61ae70aa27ca6cf6ef29e3997e02e1a00a58d3083b66c4421f82",
+      "reviewSheet": "sheets/sheet-26.png"
+    },
+    {
+      "bandID": "p18-s2-viola",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        223.419629057187,
+        427,
+        277.92040185471404
+      ],
+      "after": [
+        0,
+        228.8763523956723,
+        427,
+        277.92040185471404
+      ],
+      "removedTopPt": 5.456723338485318,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s2-viola.png",
+      "contextSHA256": "156543c77090ee416daf19c3a98d25826b4f90bc735812aee4780be782c7d09d",
+      "reviewSheet": "sheets/sheet-26.png"
+    },
+    {
+      "bandID": "p18-s3-violin2",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        343.7047913446677,
+        427,
+        382.30989180834626
+      ],
+      "after": [
+        0,
+        343.7047913446677,
+        427,
+        385.6313755795981
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Tranquillo, low p and hairpins remain complete; bottom expands 3.32 pt.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s3-violin2.png",
+      "contextSHA256": "b629815d6cd2ae4e5d959459daa59936c0729a78426363a8313b61a755d827a2",
+      "reviewSheet": "sheets/sheet-27.png"
+    },
+    {
+      "bandID": "p18-s4-violin1",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        452.839258114374,
+        427,
+        499.27357032457496
+      ],
+      "after": [
+        0,
+        452.839258114374,
+        427,
+        492.63060278207115
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 6.642967542503811,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s4-violin1.png",
+      "contextSHA256": "4f5ef92259c6f6ab85656e721cd8c977da75ebdb0f314132e5147df1877e5194",
+      "reviewSheet": "sheets/sheet-27.png"
+    },
+    {
+      "bandID": "p18-s4-violin2",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        482.96986089644514,
+        427,
+        533.2001545595053
+      ],
+      "after": [
+        0,
+        482.96986089644514,
+        427,
+        528.2179289026275
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 4.9822256568778585,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s4-violin2.png",
+      "contextSHA256": "732471890b0f59d67bb0824f04cafc07713d01700266f9d2b825a496cf4e895a",
+      "reviewSheet": "sheets/sheet-27.png"
+    },
+    {
+      "bandID": "p18-s4-viola",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        516.8964451313756,
+        427,
+        563.3307573415765
+      ],
+      "after": [
+        0,
+        510.72797527047913,
+        427,
+        563.3307573415765
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s4-viola.png",
+      "contextSHA256": "e25498a8e1bbd189b9b5f084529c4a20a3550676dd41306d424e47d8b3241361",
+      "reviewSheet": "sheets/sheet-27.png"
+    },
+    {
+      "bandID": "p18-s4-cello",
+      "sourcePhysicalPage": 18,
+      "before": [
+        0,
+        546.5525502318393,
+        427,
+        596.5455950540958
+      ],
+      "after": [
+        0,
+        546.5525502318393,
+        427,
+        595.8338485316847
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 0.7117465224110902,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p18-s4-cello.png",
+      "contextSHA256": "8eb49c68743169f74b7fff992d48093658c35a3a60a19739281f635a60334d2c",
+      "reviewSheet": "sheets/sheet-27.png"
+    },
+    {
+      "bandID": "p19-s2-violin1",
+      "sourcePhysicalPage": 19,
+      "before": [
+        0,
+        165.14434330299088,
+        427,
+        220.32899869960988
+      ],
+      "after": [
+        0,
+        165.14434330299088,
+        427,
+        213.93107932379712
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 6.397919375812762,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Residual neighboring staff/notation fragments may remain; no cleanup erasure applied.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p19-s2-violin1.png",
+      "contextSHA256": "fdc189dd83223e8c72c87ee3367daa1d305018856a9861577ffef7683ae2d620",
+      "reviewSheet": "sheets/sheet-28.png"
+    },
+    {
+      "bandID": "p19-s3-violin1",
+      "sourcePhysicalPage": 19,
+      "before": [
+        0,
+        312.69635890767233,
+        427,
+        366.6814044213264
+      ],
+      "after": [
+        0,
+        312.69635890767233,
+        427,
+        365.48179453836156
+      ],
+      "removedTopPt": 0,
+      "removedBottomPt": 1.1996098829648645,
+      "visualReview": "No new omission of intended note, ledger, articulation, slur, local direction or source heading observed in the full-width context. This is a visual comparison, not a pixel-complete transcription oracle.",
+      "notes": "Rit. un poco, rehearsal D, in tempo and own dol. e grazioso remain complete; neighboring duplicate text is still visible.",
+      "contextPath": ".build/brahms-numbered-spans-v4-full-2026-10-03/contexts/p19-s3-violin1.png",
+      "contextSHA256": "2395b349531032d1b793a1febd131eb3d2cd6c1d130c184cb32e6423e06d6683",
+      "reviewSheet": "sheets/sheet-28.png"
+    }
+  ]
+}

@@ -1,8 +1,12 @@
 # Complete input corpus quality control
 
+## October 3 combined cleanup and ownership review
+
+The [numbered-line V2 plus source-span V4 combination](numbered-lines-source-spans-v4-2026-10-03/README.md) recovers all original 297-case source masks without new pixel losses, but assigns local notes across a structural barline in all 27 junction negatives. This remains an ownership failure. Its [diagnostic full Brahms replay](brahms-numbered-spans-v4-full-2026-10-03/README.md) preserves all 604 assignments and reduces complete neighboring-staff inclusions from seven to five. All 252 changed crops were source-reviewed with no new intended omission observed; partial neighboring notation remains. The same three fixed-region failures remain explicit. No production detector or app is promoted from this combination.
+
 ## October 3 whole-body preservation checkpoint
 
-The [V4 preservation layer](source-musical-spans-v4-2026-10-03/README.md) measures the complete source shape, rejecting the p10 fermata arches while retaining full broken-stem recovery. Independent arithmetic and the unchanged 29+6 cases confirm its narrow behavior; remaining filled/hollow and full-scale three-head misses remain explicit. A fresh 39-page replay has identical components, staff assignments and all 604 crops to production. This is a useful regression checkpoint, not a crop-quality improvement by itself. A separate combination with numbered-line cleanup is under test; no new detector or app is promoted here.
+The [V4 preservation layer](source-musical-spans-v4-2026-10-03/README.md) measures the complete source shape, rejecting the p10 fermata arches while retaining full broken-stem recovery. Independent arithmetic and the unchanged 29+6 cases confirm its narrow behavior; remaining filled/hollow and full-scale three-head misses remain explicit. A fresh 39-page replay has identical components, staff assignments and all 604 crops to production. This is a useful regression checkpoint, not a crop-quality improvement by itself. Its subsequently tested combination with numbered-line cleanup is recorded above; no new detector or app is promoted here.
 
 ## October 3 complete-body continuation
 
