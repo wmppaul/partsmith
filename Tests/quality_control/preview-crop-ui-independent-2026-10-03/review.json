@@ -1,0 +1,88 @@
+{
+  "scope": "Independent bounded static audit of Preview crop interaction, source/PDF coordinate conversion, render identity, source mutation and Undo path; read-only review of native harness and its output image/log. No production code edits and no independent claim of executing the parent-owned native test.",
+  "verdict": "No remaining concrete blocker in the reviewed implementation.",
+  "findings_fixed_before_final_review": [
+    {
+      "finding": "A drag started in one PDF transform could survive a direct PDFKit scroll or zoom and commit using coordinates from a different transform.",
+      "resolution": "PDFView scale/page/visible-page notifications and clip bounds changes now cancel the draft. Root native harness directly changes PDF zoom and scroll origin during a drag and checks that no edit occurs."
+    },
+    {
+      "finding": "The overlay is a sibling of PDFView; sending scrollWheel to PDFView need not route to its internal NSScrollView.",
+      "resolution": "The overlay cancels its draft and forwards scrolling directly to PDFView.documentView.enclosingScrollView. Root harness verifies real clip-origin movement."
+    }
+  ],
+  "reviewed_invariants": [
+    "The PDFDocument, exact render plan used by the exporter and source snapshot publish together in one PublishedPreview value.",
+    "canEdit rejects in-flight and stale snapshots; the crop callback also rechecks both source snapshot and exact original band before mutation.",
+    "PDFKit conversions handle PDF bottom-up versus flipped overlay coordinates. CropGeometry maps output delta through actual placement scale and original source-page height, validates matching vertical source geometry, and clamps without moving the opposite edge.",
+    "Dragging updates only overlay draft state. One mouse-up callback commits a single ordinary Resize Band source transaction; Esc, layout resize, selection, source replacement and transform changes discard draft state.",
+    "Document updateBand preserves absolute source whiteout positions, intersects them with the resized crop and includes that adjustment in the same Undo transaction. Generated rests and nonfinite input cannot be resized.",
+    "Non-crop PDF interactions pass through the overlay when no editable strip/handle is hit. The overlay supports scrolling and pinch zoom over its own hit regions.",
+    "After PDF reflow the same selected band anchors its prior viewport offset when it remains present; manual zoom is retained.",
+    "Selection alone is outside renderer snapshot identity. Per-event dragging does not rebuild a PDF. Overlay rebuild/hit search is linear in selected-part band count; this review did not benchmark very large parts."
+  ],
+  "validation_evidence": {
+    "native_ui": "Parent-owned offscreen AppKit/PDFKit harness log reports PASS: 34 native Preview interaction checks. Independently read its test code and passing log, including direct transform cancellation, real scroll routing, source-coordinate conversion, one-commit drag, Esc, stale rendering, reflow and manual zoom.",
+    "screenshot": "Independently inspected preview-crop-drag.png: selected strip outline and two handles track the visible strip; the removed top portion is dimmed. This deliberately broad test band is a gesture fixture, not a claim of automatic musical extraction quality.",
+    "other_tests_reported_by_parent": "Core 110, existing layout 5389 and export 169 checks pass; those runs were not rerun by this reviewer.",
+    "native_log_warning": "The native test log contains a PDFKit timed page-drawing warning before the PASS line; the captured overlay image was readable and all 34 assertions passed."
+  },
+  "limits": [
+    "No active user app or document was modified by this review.",
+    "The native harness is offscreen and programmatically sends real AppKit mouse events; it is not a human trackpad acceptance session.",
+    "No broad extraction algorithm quality verdict follows from crop gesture correctness.",
+    "There is no measured large-score latency claim beyond the code-level invariant that dragging performs no PDF export until commit."
+  ],
+  "source_and_evidence_bindings": [
+    {
+      "path": "Partsmith/Features/PartPreview/PartPreviewView.swift",
+      "sha256": "7f752a69fb50f6b7a1d39aab0026da523775a876f387af4f57c0912ea406bc61",
+      "bytes": 21780
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPreviewRenderer.swift",
+      "sha256": "825d5479ea8368702f17000ea9b4745a55811a263a1092f0ac0289a5ce1cda25",
+      "bytes": 7749
+    },
+    {
+      "path": "Partsmith/Core/Export/PartPDFExporter.swift",
+      "sha256": "b7bb2a5f061a284b240f970bfa15508662fb4047cbe2412d5d20ed8e1dde45aa",
+      "bytes": 23366
+    },
+    {
+      "path": "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+      "sha256": "b92670df58a4b62e513a870520d686d3a9f8928288434b391157625172ac7c05",
+      "bytes": 130673
+    },
+    {
+      "path": "tools/test_preview_crop_ui.swift",
+      "sha256": "2c727fb0550d7ce39b93c5f5d0027f8d09b6288ce3f5924781bfb38d25119594",
+      "bytes": 9143
+    },
+    {
+      "path": "tools/test_preview_crop.swift",
+      "sha256": "6b86dbdc3ed9751663c7d992ed66fbb59b26eab3313d15228913878cf3dd6b88",
+      "bytes": 16096
+    },
+    {
+      "path": ".build/preview-crop-ui-tests-native.log",
+      "sha256": "f82c221a64a2f781ccc4c28c4e2a2aafca85548bf0ded07cc6d9f023e3717cea",
+      "bytes": 268
+    },
+    {
+      "path": ".build/preview-crop-drag.png",
+      "sha256": "4bc8cee0df4f8185052b26137629d218ed35b062a2be2fdb47c2b1b4e1bf5049",
+      "bytes": 843424
+    },
+    {
+      "path": ".build/test_preview_crop.log",
+      "sha256": "2d6616cfde248e06a5b79ddd8f1987e86267e38002de03f9a2f8e5ed23528dfd",
+      "bytes": 146
+    },
+    {
+      "path": ".build/test_preview_crop_existing_layout.log",
+      "sha256": "6f5a69f90bd69454627452ddf320ed866092b5d0c72e2d9d209a3520c3ce745a",
+      "bytes": 193
+    }
+  ]
+}

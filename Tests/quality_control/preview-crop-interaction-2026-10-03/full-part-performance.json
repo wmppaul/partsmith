@@ -1,0 +1,24 @@
+{
+  "test": "tools/test_preview_performance.sh (unchanged default fixture)",
+  "exitCode": 0,
+  "checksPassed": 24,
+  "fixturePart": "Clarinet in A",
+  "fixtureBands": 131,
+  "fixtureSourcePages": 33,
+  "finalPreviewPages": 10,
+  "fullScoreEnqueueMilliseconds": 0.23,
+  "scope": "Actual background preview, rapid Scale/System Gap supersession, main-queue availability, first/middle/final page pixel equality against ordinary export, cancellation, excluded-rest join barrier, and invalid-source handling.",
+  "log": ".build/test_preview_performance_crop.log",
+  "logSHA256": "71a39089d2318597cbcc03aa61adcb528a904e7c62c25629a8ab1f040b1d787c",
+  "expectedDiagnostic": "CoreGraphics invalid PDF message is emitted by the deliberate corrupt-source test.",
+  "bindings": {
+    "tools/test_preview_performance.swift": "fddd404d5d599f89180b69e079f54169d08afa61ee7586fc9fe0ea9027421bc4",
+    "tools/test_preview_performance.sh": "9a4c1730feb12f839d50cc53b98630d76f5f2976272112ae74c3aa8492c8d373",
+    "Partsmith/Core/Export/PartPreviewRenderer.swift": "825d5479ea8368702f17000ea9b4745a55811a263a1092f0ac0289a5ce1cda25",
+    "Partsmith/Core/Export/PartPDFExporter.swift": "b7bb2a5f061a284b240f970bfa15508662fb4047cbe2412d5d20ed8e1dde45aa",
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift": "b92670df58a4b62e513a870520d686d3a9f8928288434b391157625172ac7c05",
+    "output/pdf/brahms-trio-medium/Brahms Clarinet Trio Op. 114.partsmithproject/project.json": "bf77bdd9ee5377e0ddae30f041d408c08eef6d670abc2429b2aad4ac7b469432",
+    "output/pdf/brahms-trio-medium/Brahms Clarinet Trio Op. 114.partsmithproject/source.pdf": "0f617f77acf2e257973b14a8ce558e88eca877835df6fff4894419e66c871e4b",
+    ".build/test_preview_performance": "5ed0a06833a751c296f4496edacb20cd96a5268e7083f791768214e24be186aa"
+  }
+}

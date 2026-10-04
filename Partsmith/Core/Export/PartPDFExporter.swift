@@ -4,7 +4,10 @@ import PDFKit
 
 struct PartPDFRenderResult {
     var data: Data
-    var scaleInfo: PartRenderScaleInfo
+    /// The exact placements used to draw `data`, including content trimming and
+    /// any page-height fitting. Preview interactions must not recompute them.
+    var renderPlan: PartRenderPlan
+    var scaleInfo: PartRenderScaleInfo { renderPlan.scaleInfo }
 }
 
 enum PartPDFExporter {
@@ -117,7 +120,7 @@ enum PartPDFExporter {
         }
 
         context.closePDF()
-        return PartPDFRenderResult(data: mutableData as Data, scaleInfo: plan.scaleInfo)
+        return PartPDFRenderResult(data: mutableData as Data, renderPlan: plan)
     }
 
     private static func render(

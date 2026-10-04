@@ -1397,12 +1397,27 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func updateBand(_ bandID: UUID, topFraction: Double, bottomFraction: Double) {
-        guard band(withID: bandID)?.generatedRest == nil else { return }
+        guard topFraction.isFinite, bottomFraction.isFinite,
+              let band = band(withID: bandID), band.generatedRest == nil else { return }
         commit(actionName: "Resize Band") { project, _ in
             guard let index = project.bands.firstIndex(where: { $0.id == bandID }) else { return }
             project.bands[index].topFraction = topFraction
             project.bands[index].bottomFraction = bottomFraction
-            project.bands[index] = project.bands[index].normalized()
+            var resized = project.bands[index].normalized()
+            // Whiteouts are absolute source-page selections. Keep their source
+            // positions while intersecting with the resized crop, in the same
+            // undo transaction as the edge edit.
+            resized.exclusions = resized.exclusions.compactMap { exclusion in
+                guard [exclusion.topFraction, exclusion.bottomFraction,
+                       exclusion.leftFraction, exclusion.rightFraction].allSatisfy(\.isFinite) else { return nil }
+                var clipped = exclusion
+                clipped.topFraction = max(exclusion.topFraction, resized.topFraction)
+                clipped.bottomFraction = min(exclusion.bottomFraction, resized.bottomFraction)
+                clipped.leftFraction = max(exclusion.leftFraction, resized.leftFraction)
+                clipped.rightFraction = max(exclusion.rightFraction, resized.rightFraction)
+                return clipped.isValid(in: resized) ? clipped : nil
+            }
+            project.bands[index] = resized
         }
 
         if let updatedBand = project.bands.first(where: { $0.id == bandID }) {

@@ -27,11 +27,20 @@ struct PartPreviewSnapshot: Equatable {
 /// Main-thread observable state with a serial, worker-owned export pipeline.
 /// Superseded renders are cancelled and can never replace the newest preview.
 final class PartPreviewRenderer: ObservableObject {
-    @Published private(set) var pdfDocument: PDFDocument?
+    private struct PublishedPreview {
+        let pdfDocument: PDFDocument
+        let renderPlan: PartRenderPlan
+        let snapshot: PartPreviewSnapshot
+    }
+    // One publication prevents a new PDF from being paired with old drag
+    // geometry or a different source snapshot by an observation callback.
+    @Published private var preview: PublishedPreview?
+    var pdfDocument: PDFDocument? { preview?.pdfDocument }
+    var renderPlan: PartRenderPlan? { preview?.renderPlan }
+    var renderedSnapshot: PartPreviewSnapshot? { preview?.snapshot }
     @Published private(set) var isRendering = false
     @Published private(set) var errorMessage: String?
     @Published private(set) var scaleInfo: PartRenderScaleInfo?
-    private(set) var renderedSnapshot: PartPreviewSnapshot?
     private var requestedSnapshot: PartPreviewSnapshot?
     private var operation: BlockOperation?
     private var generation = UUID()
@@ -50,8 +59,7 @@ final class PartPreviewRenderer: ObservableObject {
         operation?.cancel()
         queue.cancelAllOperations()
         if renderedSnapshot?.partID != snapshot.partID || renderedSnapshot?.sourcePDFData != snapshot.sourcePDFData {
-            pdfDocument = nil
-            renderedSnapshot = nil
+            preview = nil
         }
         requestedSnapshot = snapshot
         errorMessage = nil
@@ -72,16 +80,15 @@ final class PartPreviewRenderer: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self, self.generation == token, !operation.isCancelled else { return }
                 self.operation = nil
-                self.isRendering = false
+                defer { self.isRendering = false }
                 switch result {
                 case .success(let result):
                     guard let pdf = PDFDocument(data: result.data) else {
                         self.errorMessage = "The preview PDF could not be generated."
                         return
                     }
-                    self.pdfDocument = pdf
                     self.scaleInfo = result.scaleInfo
-                    self.renderedSnapshot = snapshot
+                    self.preview = PublishedPreview(pdfDocument: pdf, renderPlan: result.renderPlan, snapshot: snapshot)
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
                 }
@@ -99,11 +106,58 @@ final class PartPreviewRenderer: ObservableObject {
         isRendering = false
         scaleInfo = nil
         if clearPreview {
-            pdfDocument = nil
-            renderedSnapshot = nil
+            preview = nil
             errorMessage = nil
         }
     }
 
     deinit { queue.cancelAllOperations() }
+}
+
+/// Converts a drag on the rendered music strip to the corresponding source
+/// edges. Output PDF coordinates increase upward; source fractions go downward.
+enum PartPreviewCropGeometry {
+    enum Edge { case top, bottom }
+    struct CropEdges: Equatable {
+        var topFraction: Double
+        var bottomFraction: Double
+    }
+
+    static func cropEdges(for band: BandModel, placement: BandPlacement,
+                          sourcePageBounds: CGRect, edge: Edge,
+                          outputDeltaY: CGFloat) -> CropEdges? {
+        func valid(_ rect: CGRect) -> Bool {
+            [rect.origin.x, rect.origin.y, rect.size.width, rect.size.height].allSatisfy(\.isFinite)
+                && rect.size.width > 0 && rect.size.height > 0
+                && rect.maxX.isFinite && rect.maxY.isFinite
+        }
+        guard band.id == placement.bandID, band.pageIndex == placement.sourcePageIndex,
+              !band.excluded, band.generatedRest == nil, band.restReplacement == nil,
+              placement.generatedRest == nil, placement.restReplacement == nil,
+              placement.restSourcePlacement == nil,
+              placement.sourceBandIDs.isEmpty || placement.sourceBandIDs == [band.id],
+              [band.topFraction, band.bottomFraction, band.leftFraction, band.rightFraction].allSatisfy(\.isFinite),
+              outputDeltaY.isFinite, valid(sourcePageBounds),
+              valid(placement.sourceRect), valid(placement.destinationRect) else { return nil }
+        let normalized = band.normalized()
+        let expected = normalized.cropRect(in: sourcePageBounds)
+        // A drag must use the same vertical crop as the published snapshot.
+        // Horizontal whitespace trimming may legitimately differ from the band.
+        guard abs(placement.sourceRect.minY - expected.minY) < 0.0001,
+              abs(placement.sourceRect.height - expected.height) < 0.0001 else { return nil }
+        let scale = placement.destinationRect.height / placement.sourceRect.height
+        guard scale.isFinite, scale > 0 else { return nil }
+        let fractionDelta = Double(outputDeltaY / scale / sourcePageBounds.height)
+        guard fractionDelta.isFinite else { return nil }
+        var result = CropEdges(topFraction: normalized.topFraction, bottomFraction: normalized.bottomFraction)
+        // Preserve the opposite edge and the same 0.002 minimum used by
+        // BandModel.normalized(), even when a handle crosses the other handle.
+        switch edge {
+        case .top:
+            result.topFraction = max(0, min(result.bottomFraction - 0.002, result.topFraction - fractionDelta))
+        case .bottom:
+            result.bottomFraction = min(1, max(result.topFraction + 0.002, result.bottomFraction - fractionDelta))
+        }
+        return result
+    }
 }

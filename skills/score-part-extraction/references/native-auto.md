@@ -81,6 +81,15 @@ correction. The editor keeps assigned staff lines inside the crop, but cannot
 recognize every detached note or marking. Inspect outside both edges before
 accepting the review. Count and disclose these corrections separately from Auto.
 
+After adding parts, **Preview** also edits the same crop rectangles. Click a
+music system to select it, then drag its top or bottom blue handle to remove
+neighboring notation. The shaded area shows the pending trim; release to apply
+one undoable edit, or press Escape to cancel. The score selection follows the
+source page, and saving and export use the edited crop. Check exposed notes and
+markings before and after each trim. Page layout updates after the drag, keeping
+the selected system in view. Restore a compressed rest to its original crop
+before resizing it; generated rests do not have a source crop to edit.
+
 Adding the reviewed parts is one undoable transaction. Stale source/rectification
 results and duplicate populated parts are rejected. Inspect Preview and export
 all parts. Balanced pagination minimizes pages by choosing the widest viable gap
