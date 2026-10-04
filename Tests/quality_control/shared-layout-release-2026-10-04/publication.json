@@ -1,0 +1,35 @@
+{
+  "status": "Published local package after model, legacy rendering, export and native Inspector checks",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "c72de989610ba18c4633bdfec342806397e975f7c7e040dae185bc5977e56771",
+  "priorPublicSHA256": "0f6608c09f178e38cef3bff14340ca0618e75285629304ea5b75a2f1f912152e",
+  "independentReviews": [
+    {
+      "path": "Tests/quality_control/shared-layout-2026-10-04",
+      "manifestSHA256": "ec2c29575313bdba4e5b072e01755eab860606cc3a62d907c145614564cc8900",
+      "checks": 67,
+      "evidenceFilesVerified": 11,
+      "sourceFilesVerified": 29
+    },
+    {
+      "path": "Tests/quality_control/shared-layout-ui-2026-10-04",
+      "manifestSHA256": "a477fd55ac29e12793b05a4678cac2221fa9db3ce488999cb0b7ebe76395ec1b",
+      "checks": 48,
+      "evidenceFilesVerified": 13,
+      "sourceFilesVerified": 34
+    }
+  ],
+  "layoutAssertions": 7157,
+  "nativeCropAndExportChecks": 169,
+  "scaleExportChecks": 411,
+  "sharedLayoutChecks": 67,
+  "legacyPixelIdenticalPages": 38,
+  "compiledAppSourcesPerArchitecture": 35,
+  "sourceInputsVerified": 45,
+  "rootVisualReview": [
+    "shared-layout-ui-2026-10-04/inspector-340-shared-full.png",
+    "shared-layout-ui-2026-10-04/inspector-340-local-full.png"
+  ],
+  "visualLimits": "Native Inspector checks use an inactive private view; warning metadata in shared screenshot is supplied by the harness. Shared model and actual PDF/preview agreement are tested separately.",
+  "runningAppActions": "none"
+}

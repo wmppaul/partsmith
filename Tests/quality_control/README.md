@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 4 shared score layout
+
+The [shared layout release](shared-layout-release-2026-10-04/README.md) links scale, system gap and side margins across parts, with explicit local overrides and a one-action way to apply any part’s settings to all parts. Existing projects migrate without changing their rendered appearance. The focused [ownership and legacy migration review](shared-layout-2026-10-04/README.md) compares all 38 pages of ten older-layout outputs with the unchanged engine.
+
 ## October 4 literal scale, spacing and source alignment
 
 The [latest layout update](literal-layout-release-2026-10-04/README.md) replaces the enforced width cap with an overflow warning, retains the chosen system gap during balancing, and positions consistent-scale strips using one source reference. A reproduced Brahms page-3 shift came from separately centering unequal ink bounds, including a right-edge scan speck. Instrument-name selection was not involved. Focused native checks and before/after source comparisons cover the changed behavior; this does not change staff detection or crop assignment.

@@ -184,11 +184,10 @@ enum PartPDFExporter {
                 .foregroundColor: NSColor.darkGray,
                 .paragraphStyle: paragraph
             ]
-            let leading = plan.part.layoutSettings.sideMarginPoints ?? project.projectSettings.margins.leading
-            let trailing = plan.part.layoutSettings.sideMarginPoints ?? project.projectSettings.margins.trailing
-            let footer = CGRect(x: leading,
+            let margins = plan.part.layoutSettings.outputMargins(in: project.projectSettings)
+            let footer = CGRect(x: margins.leading,
                                 y: max(3, (project.projectSettings.margins.bottom - 12) / 2),
-                                width: plan.pageSize.width - leading - trailing,
+                                width: plan.pageSize.width - margins.leading - margins.trailing,
                                 height: 12)
             NSGraphicsContext.saveGraphicsState()
             NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)

@@ -1115,22 +1115,80 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     func updatePartScale(_ partID: UUID, scale: Double) {
+        guard scale.isFinite, let part = part(withID: partID) else { return }
+        let value = max(0.6, min(scale, 1.4))
+        if part.layoutSettings.usesSharedLayout == true {
+            commit(actionName: "Change Score Scale") { project, _ in
+                project.projectSettings.defaultScale = value
+            }
+            return
+        }
         updatePart(partID: partID, actionName: "Change Scale") { part in
-            part.layoutSettings.scale = max(0.6, min(scale, 1.4))
+            part.layoutSettings.scale = value
         }
     }
 
     func updatePartGap(_ partID: UUID, gap: Double) {
+        guard gap.isFinite, let part = part(withID: partID) else { return }
+        let value = max(PartLayoutSettings.systemGapRange.lowerBound,
+            min(gap, PartLayoutSettings.systemGapRange.upperBound))
+        if part.layoutSettings.usesSharedLayout == true {
+            commit(actionName: "Change Score System Gap") { project, _ in
+                project.projectSettings.interSystemGap = value
+            }
+            return
+        }
         updatePart(partID: partID, actionName: "Change System Gap") { part in
-            part.layoutSettings.interSystemGap = max(PartLayoutSettings.systemGapRange.lowerBound,
-                min(gap, PartLayoutSettings.systemGapRange.upperBound))
+            part.layoutSettings.interSystemGap = value
         }
     }
 
     func updatePartSideMargins(_ partID: UUID, points: Double?) {
         guard points == nil || (points!.isFinite && (0...144).contains(points!)) else { return }
+        guard let part = part(withID: partID) else { return }
+        if part.layoutSettings.usesSharedLayout == true {
+            guard let points else { return }
+            commit(actionName: "Change Score Side Margins") { project, _ in
+                project.projectSettings.margins.leading = points
+                project.projectSettings.margins.trailing = points
+            }
+            return
+        }
         updatePart(partID: partID, actionName: "Change Side Margins") { part in
             part.layoutSettings.sideMarginPoints = points
+            part.layoutSettings.sideMarginOverride = nil
+        }
+    }
+
+    func setPartLayoutOverride(_ partID: UUID, enabled: Bool) {
+        guard let part = part(withID: partID),
+              (part.layoutSettings.usesSharedLayout != true) != enabled else { return }
+        let effective = part.layoutSettings.resolved(in: project.projectSettings)
+        let margins = effective.outputMargins(in: project.projectSettings)
+        updatePart(partID: partID, actionName: enabled ? "Customize Part Layout" : "Use Score Layout") { part in
+            part.layoutSettings.scale = effective.scale
+            part.layoutSettings.interSystemGap = effective.interSystemGap
+            part.layoutSettings.usesSharedLayout = !enabled
+            part.layoutSettings.sideMarginPoints = nil
+            part.layoutSettings.sideMarginOverride = enabled
+                ? PartSideMargins(leading: margins.leading, trailing: margins.trailing) : nil
+        }
+    }
+
+    func applyPartLayoutToAllParts(_ partID: UUID) {
+        guard let part = part(withID: partID) else { return }
+        let effective = part.layoutSettings.resolved(in: project.projectSettings)
+        let margins = effective.outputMargins(in: project.projectSettings)
+        commit(actionName: "Use Layout for All Parts") { project, _ in
+            project.projectSettings.defaultScale = effective.scale
+            project.projectSettings.interSystemGap = effective.interSystemGap
+            project.projectSettings.margins.leading = margins.leading
+            project.projectSettings.margins.trailing = margins.trailing
+            for index in project.parts.indices {
+                project.parts[index].layoutSettings.usesSharedLayout = true
+                project.parts[index].layoutSettings.sideMarginPoints = nil
+                project.parts[index].layoutSettings.sideMarginOverride = nil
+            }
         }
     }
 
@@ -1918,7 +1976,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             scale: max(0.6, min(project.projectSettings.defaultScale, 1.4)),
             interSystemGap: max(PartLayoutSettings.systemGapRange.lowerBound,
                 min(project.projectSettings.interSystemGap, PartLayoutSettings.systemGapRange.upperBound)),
-            showPartNameLabel: false
+            showPartNameLabel: false,
+            usesSharedLayout: true
         )
     }
 

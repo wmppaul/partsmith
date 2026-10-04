@@ -1,0 +1,9 @@
+.build/shared-layout-ui-2026-10-04/SharedLayoutUITests.swift:71:15: warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+ 69 |         _ = NSApplication.shared
+ 70 |         NSApp.setActivationPolicy(.prohibited); NSApp.finishLaunching()
+ 71 |         NSApp.accessibilitySetValue(true, forAttribute: .init(rawValue: "AXEnhancedUserInterface"))
+    |               `- warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+ 72 |         var project = ProjectData.empty
+ 73 |         project.projectSettings.defaultScale = 1.25
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

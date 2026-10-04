@@ -26,6 +26,9 @@ struct LayoutRegressionTests {
         let part = PartModel(id: UUID(), name: "Violin", color: ColorData(red: 0.2, green: 0.4, blue: 0.8),
                              layoutSettings: .default, createdAt: .now)
         project.parts = [part]
+        // These geometry fixtures deliberately edit the part's own layout.
+        // Legacy-to-shared migration is covered by test_shared_layout.swift.
+        project.parts[0].layoutSettings.usesSharedLayout = false
         project.pageCount = 3
         project.projectSettings.headerDisplayMode = .typed
         project.bands = [band(partID: part.id, page: 0, top: 0.2, bottom: 0.4)]

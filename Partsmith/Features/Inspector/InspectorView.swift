@@ -262,49 +262,9 @@ struct InspectorView: View {
                     .foregroundStyle(.secondary)
             }
 
-            DeferredLayoutSlider(title: "Scale",
-                value: document.part(withID: part.id)?.layoutSettings.scale ?? part.layoutSettings.scale,
-                range: 0.6...1.4, step: 0.05,
-                format: { "\($0.formatted(.number.precision(.fractionLength(2))))×" },
-                commit: { document.updatePartScale(part.id, scale: $0) })
-                .id("scale-\(part.id)")
-
-            if let info = document.previewScaleInfo, info.exceedsContentWidth {
-                HStack {
-                    Label("Fits Within Margins", systemImage: "exclamationmark.triangle")
-                    Spacer()
-                    Text("\(info.maximumSafeScale.formatted(.number.precision(.fractionLength(2))))×")
-                        .monospacedDigit()
-                }
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.orange)
-                Text("Your chosen Scale is applied. Music may extend into the margins or be cut off at the paper edge. Check Preview before exporting.")
-                    .font(.caption).foregroundStyle(.secondary)
-            } else {
-                Text("Scale applies as requested. Above 1.00, blank source side margins are removed when possible.")
-                    .font(.caption).foregroundStyle(.secondary)
-            }
-
-            DeferredLayoutSlider(title: "Side Margins",
-                value: document.part(withID: part.id)?.layoutSettings.sideMarginPoints
-                    ?? (document.project.projectSettings.margins.leading + document.project.projectSettings.margins.trailing) / 2,
-                range: 0...144, step: 3, format: { "\(Int($0)) pt" },
-                commit: { document.updatePartSideMargins(part.id, points: $0) })
-                .id("side-margins-\(part.id)")
-                .help("Left and right output-page margins for this part. Smaller margins give the music more width.")
-            if part.layoutSettings.sideMarginPoints != nil {
-                Button("Use Project Margins") { document.updatePartSideMargins(part.id, points: nil) }
-                    .font(.caption)
-            }
-
-            DeferredLayoutSlider(title: "System Gap",
-                value: document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap,
-                range: PartLayoutSettings.systemGapRange, step: 2, format: { "\(Int($0)) pt" },
-                commit: { document.updatePartGap(part.id, gap: $0) })
-                .id("gap-\(part.id)")
-
-            Text("Spacing is kept at the selected value. Larger gaps may add pages.")
-                .font(.caption).foregroundStyle(.secondary)
+            Divider()
+            partLayoutControls(part)
+            Divider()
 
             Toggle("Balance Page Fill", isOn: Binding(
                 get: { document.part(withID: part.id)?.layoutSettings.balancePages ?? true },
@@ -332,6 +292,100 @@ struct InspectorView: View {
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func partLayoutControls(_ part: PartModel) -> some View {
+        let currentPart = document.part(withID: part.id) ?? part
+        let scope = currentPart.layoutSettings.usesSharedLayout
+        let isShared = scope == true
+        let scopeID = scope.map { $0 ? "shared" : "local" } ?? "legacy"
+        let settings = currentPart.layoutSettings.resolved(in: document.project.projectSettings)
+        let margins = settings.outputMargins(in: document.project.projectSettings)
+        let averageMargin = (margins.leading + margins.trailing) / 2
+        let asymmetricMargins = abs(margins.leading - margins.trailing) > 0.000001
+
+        return VStack(alignment: .leading, spacing: 12) {
+            Text(isShared ? "Score Layout" : "Part Override")
+                .font(.headline)
+            Text(isShared
+                 ? "Scale, gap and side margins stay synchronized across parts. Parts with an override keep their own settings."
+                 : "Scale, gap and side margins below apply only to this part.")
+                .font(.caption).foregroundStyle(.secondary)
+
+            Toggle("Customize This Part", isOn: Binding(
+                get: { document.part(withID: part.id)?.layoutSettings.usesSharedLayout != true },
+                set: { document.setPartLayoutOverride(part.id, enabled: $0) }
+            ))
+            .help("Turn on to give this part its own scale, system gap and side margins. Turn off to use the current score settings.")
+
+            DeferredLayoutSlider(title: "Scale", value: settings.scale,
+                range: 0.6...1.4, step: 0.05,
+                format: { "\($0.formatted(.number.precision(.fractionLength(2))))×" },
+                commit: { value in
+                    guard let current = document.part(withID: part.id),
+                          current.layoutSettings.usesSharedLayout == scope else { return }
+                    document.updatePartScale(part.id, scale: value)
+                })
+                .id("scale-\(part.id)-\(scopeID)")
+
+            if let info = document.previewScaleInfo, info.exceedsContentWidth {
+                HStack {
+                    Label("Fits Within Margins", systemImage: "exclamationmark.triangle")
+                    Spacer()
+                    Text("\(info.maximumSafeScale.formatted(.number.precision(.fractionLength(2))))×")
+                        .monospacedDigit()
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.orange)
+                Text("Your chosen Scale is applied. Music may extend into the margins or be cut off at the paper edge. Check Preview before exporting.")
+                    .font(.caption).foregroundStyle(.secondary)
+            } else {
+                Text("Scale applies as requested. Above 1.00, blank source side margins are removed when possible.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+
+            DeferredLayoutSlider(title: "Side Margins", value: averageMargin,
+                range: 0...144, step: 3,
+                format: { value in
+                    if asymmetricMargins && abs(value - averageMargin) < 0.000001 {
+                        return "L \(margins.leading.formatted(.number.precision(.fractionLength(0...1)))) · R \(margins.trailing.formatted(.number.precision(.fractionLength(0...1)))) pt"
+                    }
+                    return "\(Int(value)) pt"
+                },
+                commit: { value in
+                    guard let current = document.part(withID: part.id),
+                          current.layoutSettings.usesSharedLayout == scope else { return }
+                    document.updatePartSideMargins(part.id, points: value)
+                })
+                .id("side-margins-\(part.id)-\(scopeID)")
+                .help("Left and right output-page margins. Smaller margins give the music more width.")
+            if asymmetricMargins {
+                Text("Left and right margins differ. Moving the slider sets both.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            if !isShared && (currentPart.layoutSettings.sideMarginPoints != nil || currentPart.layoutSettings.sideMarginOverride != nil) {
+                Button("Use Project Margins") { document.updatePartSideMargins(part.id, points: nil) }
+                    .font(.caption)
+            }
+
+            DeferredLayoutSlider(title: "System Gap", value: settings.interSystemGap,
+                range: PartLayoutSettings.systemGapRange, step: 2, format: { "\(Int($0)) pt" },
+                commit: { value in
+                    guard let current = document.part(withID: part.id),
+                          current.layoutSettings.usesSharedLayout == scope else { return }
+                    document.updatePartGap(part.id, gap: value)
+                })
+                .id("gap-\(part.id)-\(scopeID)")
+            Text("Spacing is kept at the selected value. Larger gaps may add pages.")
+                .font(.caption).foregroundStyle(.secondary)
+
+            if document.project.parts.contains(where: { $0.layoutSettings.usesSharedLayout != true }) {
+                Button("Use These Settings for All Parts") {
+                    document.applyPartLayoutToAllParts(part.id)
+                }
+                .help("Use this part's scale, system gap and side margins throughout the score, replacing every part override. You can undo this change.")
+            }
+        }
     }
 
     private func selectedBandSection(_ band: BandModel) -> some View {

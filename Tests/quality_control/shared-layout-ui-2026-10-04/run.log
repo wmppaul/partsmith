@@ -1,0 +1,51 @@
+2026-10-04 16:14:04.466 test-ui[19211:4084960] Failure on line 688 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+2026-10-04 16:14:04.670 test-ui[19211:4084960] Error received in message reply handler: Connection invalid
+2026-10-04 16:14:04.670 test-ui[19211:4084975] Connection Invalid error for service com.apple.hiservices-xpcservice.
+PASS: Inspector stays at the narrow 340-point viewport
+PASS: Shared scope and behavior are clearly displayed
+PASS: Sliders display inherited scale, gap and margins rather than stale raw defaults
+PASS: Apply-all button stays hidden when every part already follows the score
+PASS: Overflow remains a warning with requested scale applied
+PASS: Three native sliders are present
+PASS: Native slider 0 accepts 1.0
+PASS: Shared Scale updates score and another linked part
+PASS: Three native sliders are present
+PASS: Native slider 1 accepts 0.25
+PASS: Shared margins update both score margins
+PASS: Three native sliders are present
+PASS: Native slider 2 accepts 1.0
+PASS: Shared Gap updates score and another linked part
+PASS: Native control is accessible: Customize This Part
+PASS: Native control activates: Customize This Part
+PASS: Customize toggle creates a local override
+PASS: Local scope is clearly displayed
+PASS: Local override offers a visible apply-all action
+PASS: Three native sliders are present
+PASS: Native slider 0 accepts 0.5
+PASS: Three native sliders are present
+PASS: Native slider 1 accepts 0.125
+PASS: Three native sliders are present
+PASS: Native slider 2 accepts 0.0
+PASS: Local scale and gap accept changes
+PASS: Local slider edits leave shared score settings intact
+PASS: Local margin slider changes only the override
+PASS: Native control is accessible: Use These Settings for All Parts
+PASS: Native control activates: Use These Settings for All Parts
+PASS: Apply-all rejoins every part to score settings
+PASS: Apply-all promotes selected effective settings
+PASS: Three native sliders are present
+PASS: Native slider 0 accepts 1.0
+PASS: Immediate shared edit is preserved when customizing the part
+PASS: Three native sliders are present
+PASS: Native slider 0 accepts 0.0
+PASS: Immediate local edit does not overwrite shared settings when rejoining
+PASS: Asymmetric margins are displayed explicitly without flattening
+PASS: Native control is accessible: Customize This Part
+PASS: Native control activates: Customize This Part
+PASS: Customize preserves asymmetric margins
+PASS: Native control is accessible: Use Project Margins
+PASS: Native control activates: Use Project Margins
+PASS: Use Project Margins clears frozen pair explicitly
+PASS: Native control is accessible: Balance Page Fill
+PASS: Native control activates: Balance Page Fill
+PASS: Balance Page Fill remains a per-part choice

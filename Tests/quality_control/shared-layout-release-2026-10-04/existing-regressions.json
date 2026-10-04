@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "layoutChecks": 7157,
+  "nativeCropAndExportChecks": 169,
+  "scaleExportChecks": 411,
+  "failures": 0,
+  "cached120StripGapRefreshSeconds": 0.071,
+  "enlarged120StripPreviewSeconds": 3.302,
+  "scope": "Existing layout, crop, export, scaling and preview regressions; fixture settings are explicitly local. Shared ownership is covered independently.",
+  "testSourceHashes": {
+    "tools/test_layout.swift": "8a99d931be63912592d237142f00f57385e84b4e2e04ea9e48d2f2342b943ea0",
+    "tools/test_layout_export.sh": "16847f4439101bf09a420470c9c6968625be13e177adf390cebb0a6b9321a06a",
+    "tools/test_exclusions.swift": "4fddb9f1c12ac721094faec60567c5a661ebd8cfa1af64af07a4008f85aac686",
+    "tools/test_scale_exports.swift": "ba3c066ad20a260b353b13e1a55d27a83254b8647fbbb373e79f9b45caa1b6d8",
+    "tools/test_scale_exports.sh": "24e638784c766e201bc53b4d68cb624a03ceb2d89174dc4526794afdfd7a72ef"
+  },
+  "testBinaryHashes": {
+    ".build/test_layout": "1e642cee79f0bac8e8a0651397af4adebc82d709bf84ec73c9b961643876608b",
+    ".build/test_exclusions": "fc7da3700e694adfb71332d64945f49f48161f024e2e71b9f35ab8cc1a229b14",
+    ".build/test_scale_exports": "e11f350478584f711ab00ffa7c3b8b40fab318e0cc63a58ffee678fa806aca66"
+  },
+  "graphicsAccess": "Scale export executable ran with native macOS graphics access; sandboxed Core Image rectification could not complete."
+}

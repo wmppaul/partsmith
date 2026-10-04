@@ -261,9 +261,10 @@ enum PartLayoutEngine {
         partID: UUID,
         horizontalContentBoundsProvider: ((BandModel, CGRect) -> CGRect?)? = nil
     ) throws -> PartRenderPlan {
-        guard let part = project.parts.first(where: { $0.id == partID }) else {
+        guard var part = project.parts.first(where: { $0.id == partID }) else {
             throw PartLayoutError.missingPart
         }
+        part.layoutSettings = part.layoutSettings.resolved(in: project.projectSettings)
 
         let sourceBands = project.sortedBands(for: partID)
         let includedBands = sourceBands.filter { !$0.excluded }
@@ -273,11 +274,7 @@ enum PartLayoutEngine {
         }
 
         let pageSize = project.projectSettings.outputPageSize.pointsSize
-        var margins = project.projectSettings.margins
-        if let sideMargin = part.layoutSettings.sideMarginPoints {
-            margins.leading = sideMargin
-            margins.trailing = sideMargin
-        }
+        let margins = part.layoutSettings.outputMargins(in: project.projectSettings)
         let marginValues = [margins.top, margins.leading, margins.bottom, margins.trailing]
         guard marginValues.allSatisfy({ $0.isFinite && $0 >= 0 }),
               margins.leading + margins.trailing < pageSize.width,

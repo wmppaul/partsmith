@@ -65,6 +65,9 @@ import PDFKit
         p.projectSettings.showPartNameInHeader = false
         p.projectSettings.margins.bottom = 0 // Omit the footer from pixel controls.
         var part = PartModel(id: UUID(), name: name, color: ColorData(nsColor: .systemBlue), layoutSettings: .default, createdAt: .now)
+        // These tests exercise literal local settings; shared ownership and
+        // legacy project migration have their own focused regression suite.
+        part.layoutSettings.usesSharedLayout = false
         part.layoutSettings.balancePages = false
         p.parts = [part]
         p.pageCount = (bands.map { $0.0 }.max() ?? 0) + 1

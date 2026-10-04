@@ -76,6 +76,42 @@ struct ProjectData: Codable, Equatable {
         parts = try container.decodeIfPresent([PartModel].self, forKey: .parts) ?? []
         bands = try container.decodeIfPresent([BandModel].self, forKey: .bands) ?? []
         pageRectifications = try container.decodeIfPresent([PageRectification].self, forKey: .pageRectifications) ?? []
+        migrateLegacyPartLayouts()
+    }
+
+    /// Older documents stored a separate scale and gap on every part. Link equal
+    /// layouts without changing their appearance, and preserve differences as overrides.
+    private mutating func migrateLegacyPartLayouts() {
+        guard parts.contains(where: { $0.layoutSettings.usesSharedLayout == nil }) else { return }
+        let originalSettings = projectSettings
+        func matches(_ layout: PartLayoutSettings, _ settings: ProjectSettings) -> Bool {
+            let margins = layout.outputMargins(in: originalSettings)
+            return layout.scale == settings.defaultScale
+                && layout.interSystemGap == settings.interSystemGap
+                && margins.leading == settings.margins.leading
+                && margins.trailing == settings.margins.trailing
+        }
+        if parts.allSatisfy({ $0.layoutSettings.usesSharedLayout == nil }), let first = parts.first {
+            var common = originalSettings
+            common.defaultScale = first.layoutSettings.scale
+            common.interSystemGap = first.layoutSettings.interSystemGap
+            common.margins = first.layoutSettings.outputMargins(in: originalSettings)
+            if parts.allSatisfy({ matches($0.layoutSettings, common) }) {
+                projectSettings = common
+            }
+        }
+        for index in parts.indices where parts[index].layoutSettings.usesSharedLayout == nil {
+            let linked = matches(parts[index].layoutSettings, projectSettings)
+            parts[index].layoutSettings.usesSharedLayout = linked
+            if linked {
+                parts[index].layoutSettings.sideMarginPoints = nil
+                parts[index].layoutSettings.sideMarginOverride = nil
+            } else if parts[index].layoutSettings.sideMarginPoints == nil,
+                      parts[index].layoutSettings.sideMarginOverride == nil {
+                parts[index].layoutSettings.sideMarginOverride = PartSideMargins(
+                    leading: originalSettings.margins.leading, trailing: originalSettings.margins.trailing)
+            }
+        }
     }
 
     func encode(to encoder: Encoder) throws {
@@ -344,6 +380,11 @@ struct PartModel: Codable, Identifiable, Equatable {
     }
 }
 
+struct PartSideMargins: Codable, Equatable {
+    var leading: Double
+    var trailing: Double
+}
+
 struct PartLayoutSettings: Codable, Equatable {
     static let systemGapRange = 4.0...200.0
 
@@ -357,6 +398,10 @@ struct PartLayoutSettings: Codable, Equatable {
     var useConsistentScale: Bool
     /// Nil retains the project's original (possibly asymmetric) page margins.
     var sideMarginPoints: Double?
+    /// Nil denotes legacy, literal per-part settings until a document is decoded.
+    var usesSharedLayout: Bool?
+    /// Preserves asymmetric margins when a part opts out of the shared layout.
+    var sideMarginOverride: PartSideMargins?
 
     init(
         showTitle: Bool,
@@ -367,7 +412,9 @@ struct PartLayoutSettings: Codable, Equatable {
         showPartNameLabel: Bool = false,
         balancePages: Bool = true,
         useConsistentScale: Bool = true,
-        sideMarginPoints: Double? = nil
+        sideMarginPoints: Double? = nil,
+        usesSharedLayout: Bool? = nil,
+        sideMarginOverride: PartSideMargins? = nil
     ) {
         self.showTitle = showTitle
         self.titleText = titleText
@@ -378,6 +425,31 @@ struct PartLayoutSettings: Codable, Equatable {
         self.balancePages = balancePages
         self.useConsistentScale = useConsistentScale
         self.sideMarginPoints = sideMarginPoints
+        self.usesSharedLayout = usesSharedLayout
+        self.sideMarginOverride = sideMarginOverride
+    }
+
+    func resolved(in settings: ProjectSettings) -> PartLayoutSettings {
+        guard usesSharedLayout == true else { return self }
+        var result = self
+        result.scale = settings.defaultScale
+        result.interSystemGap = settings.interSystemGap
+        result.sideMarginPoints = nil
+        result.sideMarginOverride = nil
+        return result
+    }
+
+    func outputMargins(in settings: ProjectSettings) -> PageMargins {
+        var result = settings.margins
+        guard usesSharedLayout != true else { return result }
+        if let sideMarginOverride {
+            result.leading = sideMarginOverride.leading
+            result.trailing = sideMarginOverride.trailing
+        } else if let sideMarginPoints {
+            result.leading = sideMarginPoints
+            result.trailing = sideMarginPoints
+        }
+        return result
     }
 
     static let `default` = PartLayoutSettings(
@@ -399,6 +471,8 @@ struct PartLayoutSettings: Codable, Equatable {
         case balancePages
         case useConsistentScale
         case sideMarginPoints
+        case usesSharedLayout
+        case sideMarginOverride
     }
 
     init(from decoder: Decoder) throws {
@@ -412,6 +486,8 @@ struct PartLayoutSettings: Codable, Equatable {
         balancePages = try container.decodeIfPresent(Bool.self, forKey: .balancePages) ?? true
         useConsistentScale = try container.decodeIfPresent(Bool.self, forKey: .useConsistentScale) ?? true
         sideMarginPoints = try container.decodeIfPresent(Double.self, forKey: .sideMarginPoints)
+        usesSharedLayout = try container.decodeIfPresent(Bool.self, forKey: .usesSharedLayout)
+        sideMarginOverride = try container.decodeIfPresent(PartSideMargins.self, forKey: .sideMarginOverride)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -425,6 +501,8 @@ struct PartLayoutSettings: Codable, Equatable {
         try container.encode(balancePages, forKey: .balancePages)
         try container.encode(useConsistentScale, forKey: .useConsistentScale)
         try container.encodeIfPresent(sideMarginPoints, forKey: .sideMarginPoints)
+        try container.encodeIfPresent(usesSharedLayout, forKey: .usesSharedLayout)
+        try container.encodeIfPresent(sideMarginOverride, forKey: .sideMarginOverride)
     }
 }
 

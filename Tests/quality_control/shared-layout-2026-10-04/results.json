@@ -1,0 +1,275 @@
+{
+  "checks" : [
+    {
+      "check" : "All newly created app parts use the shared score layout",
+      "passed" : true
+    },
+    {
+      "check" : "Editing any linked part synchronizes scale and gap across every linked part",
+      "passed" : true
+    },
+    {
+      "check" : "Editing shared margins updates both edges of every linked part",
+      "passed" : true
+    },
+    {
+      "check" : "Shared edits update project defaults for future parts",
+      "passed" : true
+    },
+    {
+      "check" : "A part created after shared edits inherits the current values",
+      "passed" : true
+    },
+    {
+      "check" : "Customizing one part explicitly opts it out of synchronization",
+      "passed" : true
+    },
+    {
+      "check" : "Entering custom layout preserves its exact appearance",
+      "passed" : true
+    },
+    {
+      "check" : "A custom part retains all three values while shared settings change",
+      "passed" : true
+    },
+    {
+      "check" : "Local edits never change sibling parts or project defaults",
+      "passed" : true
+    },
+    {
+      "check" : "Returning to the shared layout adopts its latest values",
+      "passed" : true
+    },
+    {
+      "check" : "Switching selected parts does not change shared settings",
+      "passed" : true
+    },
+    {
+      "check" : "Use these settings for all parts re-links existing overrides",
+      "passed" : true
+    },
+    {
+      "check" : "Use these settings for all parts transfers scale, gap, and margins together",
+      "passed" : true
+    },
+    {
+      "check" : "Sharing scale, gap, and margins preserves unrelated per-part settings",
+      "passed" : true
+    },
+    {
+      "check" : "Layout synchronization does not alter source PDF bytes or source crops",
+      "passed" : true
+    },
+    {
+      "check" : "One shared action changes every linked part",
+      "passed" : true
+    },
+    {
+      "check" : "One Undo restores the complete shared edit",
+      "passed" : true
+    },
+    {
+      "check" : "One Redo restores the complete shared edit",
+      "passed" : true
+    },
+    {
+      "check" : "Undo all-parts promotion restores the prior override and every sibling",
+      "passed" : true
+    },
+    {
+      "check" : "Redo all-parts promotion restores values and shared ownership together",
+      "passed" : true
+    },
+    {
+      "check" : "Saving and reopening preserves shared ownership, override values, and project defaults",
+      "passed" : true
+    },
+    {
+      "check" : "A custom override freezes asymmetric source-project margins without averaging them",
+      "passed" : true
+    },
+    {
+      "check" : "Asymmetric local margins survive save and reopen",
+      "passed" : true
+    },
+    {
+      "check" : "Sharing a custom layout preserves an asymmetric pair for all parts",
+      "passed" : true
+    },
+    {
+      "check" : "Export uses resolved settings for Violin I",
+      "passed" : true
+    },
+    {
+      "check" : "Shared and custom export retain all four source systems for Violin I",
+      "passed" : true
+    },
+    {
+      "check" : "Violin I uses its exact resolved gap in the exported PDF",
+      "passed" : true
+    },
+    {
+      "check" : "Export uses resolved settings for Violin II",
+      "passed" : true
+    },
+    {
+      "check" : "Shared and custom export retain all four source systems for Violin II",
+      "passed" : true
+    },
+    {
+      "check" : "Violin II uses its exact resolved gap in the exported PDF",
+      "passed" : true
+    },
+    {
+      "check" : "Export uses resolved settings for Viola",
+      "passed" : true
+    },
+    {
+      "check" : "Shared and custom export retain all four source systems for Viola",
+      "passed" : true
+    },
+    {
+      "check" : "Viola uses its exact resolved gap in the exported PDF",
+      "passed" : true
+    },
+    {
+      "check" : "A shared layout edit invalidates the linked part's preview snapshot",
+      "passed" : true
+    },
+    {
+      "check" : "Background preview completes within the timeout",
+      "passed" : true
+    },
+    {
+      "check" : "Superseded shared-layout renders cannot overwrite the latest preview",
+      "passed" : true
+    },
+    {
+      "check" : "The visible preview resolves the final shared scale and gap",
+      "passed" : true
+    },
+    {
+      "check" : "Background preview and ordinary export paginate shared layout identically",
+      "passed" : true
+    },
+    {
+      "check" : "Every shared-layout preview page matches exported PDF pixels",
+      "passed" : true
+    },
+    {
+      "check" : "Mixed legacy layouts link the part matching project values and preserve the differing part",
+      "passed" : true
+    },
+    {
+      "check" : "A migrated legacy override freezes inherited asymmetric margins before later shared edits",
+      "passed" : true
+    },
+    {
+      "check" : "Decoding a mixed-version project never replaces explicit shared settings with stale part values",
+      "passed" : true
+    },
+    {
+      "check" : "original: equal legacy layouts become synchronized",
+      "passed" : true
+    },
+    {
+      "check" : "original part 0: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "original part 0: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom: equal legacy layouts become synchronized",
+      "passed" : true
+    },
+    {
+      "check" : "Common non-default legacy values become project settings without changing appearance",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom part 0: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom part 0: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom part 1: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom part 1: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom part 2: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "uniform-custom part 2: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "Differing legacy layouts become explicit local overrides",
+      "passed" : true
+    },
+    {
+      "check" : "mixed-custom part 0: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "mixed-custom part 0: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "mixed-custom part 1: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "mixed-custom part 1: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "mixed-custom part 2: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "mixed-custom part 2: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric: equal legacy layouts become synchronized",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric part 0: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric part 0: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric part 1: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric part 1: every migrated page matches pre-change export pixels",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric part 2: migration preserves legacy pagination",
+      "passed" : true
+    },
+    {
+      "check" : "asymmetric part 2: every migrated page matches pre-change export pixels",
+      "passed" : true
+    }
+  ],
+  "count" : 67,
+  "failures" : 0,
+  "legacyBaseline" : ".build\/shared-layout-review-before\/fixtures"
+}
