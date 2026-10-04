@@ -1,0 +1,25 @@
+tools/test_system_bar_ui.swift:112:15: warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+110 |         try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+111 |         _ = NSApplication.shared; NSApp.setActivationPolicy(.prohibited); NSApp.finishLaunching()
+112 |         NSApp.accessibilitySetValue(true, forAttribute: .init(rawValue: "AXEnhancedUserInterface"))
+    |               `- warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+113 |         let sourceURL = URL(fileURLWithPath: "Tests/extraction/sources/mozart-k488-page-17.pdf")
+114 |         let source = PDFDocument(url: sourceURL)!, fixture = PDFDocument()
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+Progress after Auto: Optional(main.ScoreDetectionProgress(completedPages: 1, totalPages: 2, directionPhase: nil))
+PASS: Real Auto flow exposes Bars in system in the enlarged assignment panel
+PASS: Actual Mozart page17 source produces six bars and a review reminder
+PASS: Native mouse drag across six staff rows selects the printed system
+PASS: Editing the production count binding takes precedence over the suggestion
+PASS: Assign System stores the explicitly edited count
+PASS: Advancing to a new unsaved system does not carry over its predecessor's count
+PASS: A different page with identical staff IDs starts without the first page's manual count
+PASS: Returning from another page recalls the last assigned system instead of a blank next-system slot
+PASS: Page return restores the reviewed staff selection along with its count
+PASS: Saved reviewed count remains unchanged after the automatic worker could finish
+PASS: Repeating the same native drag preserves an edited count instead of reloading saved eleven
+PASS: Selecting the piano-only system counts its bars once across both staves
+PASS: Re-entering assignment mode loads the saved count rather than an unsaved edit
+PASS: UI review remains a private proposal and does not mutate user's or fixture output parts
+PASS: 14 production assignment UI checks

@@ -42,6 +42,8 @@
 		200000000000000000000023 /* ScoreSystemTemplateMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000023 /* ScoreSystemTemplateMatcher.swift */; };
 		200000000000000000000024 /* ScoreSystemAssignmentBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000024 /* ScoreSystemAssignmentBatch.swift */; };
 		200000000000000000000025 /* ScoreSystemTemplatePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000025 /* ScoreSystemTemplatePanel.swift */; };
+		200000000000000000000026 /* ScoreSystemBarCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000026 /* ScoreSystemBarCounter.swift */; };
+		200000000000000000000027 /* ScoreSystemBarCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000027 /* ScoreSystemBarCountRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		100000000000000000000023 /* ScoreSystemTemplateMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemTemplateMatcher.swift; sourceTree = "<group>"; };
 		100000000000000000000024 /* ScoreSystemAssignmentBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemAssignmentBatch.swift; sourceTree = "<group>"; };
 		100000000000000000000025 /* ScoreSystemTemplatePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemTemplatePanel.swift; sourceTree = "<group>"; };
+		100000000000000000000026 /* ScoreSystemBarCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemBarCounter.swift; sourceTree = "<group>"; };
+		100000000000000000000027 /* ScoreSystemBarCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystemBarCountRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 				10000000000000000000000F /* StaffBandDetector.swift */,
 				100000000000000000000012 /* ScoreExtractionPlanner.swift */,
 				100000000000000000000024 /* ScoreSystemAssignmentBatch.swift */,
+				100000000000000000000027 /* ScoreSystemBarCountRequest.swift */,
+				100000000000000000000026 /* ScoreSystemBarCounter.swift */,
 				100000000000000000000023 /* ScoreSystemTemplateMatcher.swift */,
 				100000000000000000000013 /* NativeScorePageAnalyzer.swift */,
 				100000000000000000000014 /* ScoreInstrumentNameDetector.swift */,
@@ -339,6 +345,8 @@
 				20000000000000000000001B /* ScoreSharedHeadingDetector.swift in Sources */,
 				200000000000000000000010 /* ScoreExtractionPlanner.swift in Sources */,
 				200000000000000000000024 /* ScoreSystemAssignmentBatch.swift in Sources */,
+				200000000000000000000027 /* ScoreSystemBarCountRequest.swift in Sources */,
+				200000000000000000000026 /* ScoreSystemBarCounter.swift in Sources */,
 				200000000000000000000023 /* ScoreSystemTemplateMatcher.swift in Sources */,
 				20000000000000000000000F /* ScoreExtractionView.swift in Sources */,
 				200000000000000000000025 /* ScoreSystemTemplatePanel.swift in Sources */,

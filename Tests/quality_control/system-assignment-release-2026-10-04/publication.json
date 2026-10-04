@@ -1,0 +1,36 @@
+{
+  "status": "Published local package after independent source, geometry, count, lifecycle and native panel review",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "8a0426fb86b2ba03075b6debe58c96c786f7bdde819847b9c514befda3515c40",
+  "priorPublicSHA256": "c72de989610ba18c4633bdfec342806397e975f7c7e040dae185bc5977e56771",
+  "independentReviews": [
+    {
+      "path": "Tests/quality_control/system-selection-2026-10-04",
+      "manifestSHA256": "0306e58caa96611a70465ac5cf0d7ce2a00dbe92cc646f1ff1b6ddcc8234b14c",
+      "evidenceFilesVerified": 4,
+      "sourceFilesVerified": 38
+    },
+    {
+      "path": "Tests/quality_control/system-bar-count-2026-10-04",
+      "manifestSHA256": "9647bf9dfd9943ce5cdd7f5064290c9cc69eda2e89a3f5e5d0962dec44e5c2c3",
+      "evidenceFilesVerified": 4,
+      "sourceFilesVerified": 8
+    },
+    {
+      "path": "Tests/quality_control/system-bar-ui-2026-10-04",
+      "manifestSHA256": "b906d5dd50dfcf0dcb52627917e36d2851f65d8ff6961e87b7beadc808a4e03b",
+      "evidenceFilesVerified": 12,
+      "sourceFilesVerified": 41
+    }
+  ],
+  "compiledAppSourcesPerArchitecture": 37,
+  "sourceInputsVerified": 47,
+  "runningAppActions": "none",
+  "rootVisualReview": [
+    "system-bar-ui-2026-10-04/assign-system-suggested-six.png",
+    "system-bar-ui-2026-10-04/assign-system-recalled-eleven.png"
+  ],
+  "nativePanelChecks": 14,
+  "requestLifecycleChecks": 21,
+  "interactionScope": "Inactive native panel: accessibility actions plus direct NSEvent drag selection and repeat-drag draft preservation. Captures omit some prominent buttons; actions are verified separately. Modifier/zoom/scroll variants are geometry checks, not native events."
+}

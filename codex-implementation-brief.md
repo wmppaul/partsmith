@@ -23,8 +23,11 @@ OMR, MusicXML editing or a cloud service.
   direction/rest recognition; run Auto and resolve uncertain assignments.
   Readable zero-staff pages are skippable without acknowledgement gates.
 - Use enlarged system assignment and reviewed layout examples when instruments
-  change. Confirm silence and bar counts before inserting rests for omitted
-  instruments; never infer them from an unassigned staff.
+  change. Drag to select a highlighted staff range, with page/system labels and
+  recalled counts/rosters when revisiting assignments. Clear shared barlines can
+  suggest an editable count; single-staff or disconnected systems remain manual.
+  Confirm silence and actual whole-bar durations, including pickups and split
+  measures, before inserting rests for omitted instruments.
 - Add parts as an undoable operation. Refine crops in Source or Preview using
   the same saved geometry, review all output and export one or all parts.
 
@@ -61,6 +64,9 @@ between score-wide and part-only controls.
   requires checking target ink outside its proposed edges.
 - Rest compression is deliberately narrow and reversible; shared-direction
   copying is experimental. Do not describe either as full music understanding.
+- System bar-count suggestions run in the background and are scoped to the
+  selected page, system and staff IDs. Cancel superseded work; a late result must
+  never replace an entered count or the stored count of an assigned system.
 - No network or AI service is required by the macOS extraction workflow.
 - The pre-release project format has no backward-compatibility commitment.
   Compatibility machinery is not a reason to block an otherwise useful change.

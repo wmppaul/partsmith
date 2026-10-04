@@ -1,0 +1,22 @@
+PASS: Start synchronously exposes progress and clears old responses
+PASS: Suggestion publishes with the matching request identity
+PASS: The background counter publishes completion on the main thread
+PASS: Cancel clears a completed suggestion
+PASS: Slow first request starts on its worker
+PASS: Rapid selection changes allocate separate identities while showing latest progress
+PASS: Only the newest selection publishes after a cancelled slow request
+PASS: A superseded queued request never calls the expensive counter
+PASS: Running counter receives cooperative cancellation
+PASS: Latest completion clears progress
+PASS: Cancellation fixture starts before cancellation
+PASS: Manual cancellation clears UI state immediately
+PASS: Cancelled counter finishes cooperatively
+PASS: Cancelled count cannot arrive later and overwrite a manual value
+PASS: No confident count is still a completed response, never a fabricated zero
+PASS: Retry removes previous abstention before counting
+PASS: An abstaining worker can be reused for another selection
+PASS: Deallocation fixture begins counting
+PASS: Closing owner is not retained by an unfinished operation
+PASS: Owner deallocation cancels its counter
+PASS: Forty cancelled fast results never leak through queued main-thread delivery
+PASS: 21 bar-count request lifecycle checks

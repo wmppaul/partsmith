@@ -6,7 +6,7 @@ The app preserves the original engraving or scanned notation. Staff detection, p
 
 ## Download
 
-**[Download Partsmith v0.1.0-alpha.3 for macOS](https://github.com/wmppaul/partsmith/releases/download/v0.1.0-alpha.3/Partsmith-v0.1.0-alpha.3-macos.zip)** · [Release notes](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.3)
+**[Download Partsmith v0.1.0-alpha.4 for macOS](https://github.com/wmppaul/partsmith/releases/download/v0.1.0-alpha.4/Partsmith-v0.1.0-alpha.4-macos.zip)** · [Release notes](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.4)
 
 Requires **macOS 14 or later**; supports Apple Silicon and Intel. Unzip the download and open `Partsmith.app`. This alpha is ad hoc signed, not notarized. If macOS blocks it, open **System Settings → Privacy & Security → Open Anyway** after trying to launch it.
 
@@ -43,9 +43,11 @@ Names remain editable after recognition. Use **Add Names from Score** to extend 
 
 **Count and compress full-bar rests automatically** runs after Add Parts. For an existing part, use **Find & Compress Rests**; for one strip, use **Count & Compress This Strip**. Clear, eligible single-staff rest strips become counted rests. Uncertain notation stays as its original crop. **Restore Original Crop**, Undo and a reviewed manual count remain available.
 
-If silent instruments disappear from the full score, enable **Instrument layout changes between systems** before running Auto. In **Assign Instruments**, use Fit Width or zoom, click the first staff and Shift-click the last staff of a system, then select the instruments actually printed. Set that system's bar count and choose **Assign System**. Confirmed absent instruments receive counted rests, keeping their parts in time with the score. A piano grand staff counts measures once, not once per staff.
+If silent instruments disappear from the full score, enable **Instrument layout changes between systems** before running Auto. In **Assign Instruments**, use Fit Width or zoom and drag across the staves of one complete system; the selection highlights as you drag. Click to adjust the selection, or Shift-click/Shift-drag to add staves. Check the instruments actually printed and their staff counts. **Page N · System N** identifies the system within its source page.
 
-**Load** revisits an assignment. Set per-system staff counts for divided sections, and use **Find Similar Systems** to suggest layouts from reviewed examples. Check the suggested identities; a matching staff count alone is not enough. Rest durations must be confirmed for each affected system. See the [detailed extraction workflow](EXTRACTION_WORKFLOW.md).
+**Bars in system** suggests a count from clear shared barlines when possible. Check or edit it, especially at pickups or split measures, then choose **Assign System**. A single selected staff or unclear connections between staves need a manual count. Confirmed absent instruments receive that many bars of rest; a piano grand staff counts measures once. Revisiting an assigned system restores its instruments, first bar and count; **Load** also restores them. New suggestions leave entered and assigned counts intact.
+
+Use **Find Similar Systems** to suggest layouts from reviewed examples. Check the suggested identities; a matching staff count alone is not enough. Verify each affected system's own rest duration. See the [detailed extraction workflow](EXTRACTION_WORKFLOW.md).
 
 ### Shared musical markings
 

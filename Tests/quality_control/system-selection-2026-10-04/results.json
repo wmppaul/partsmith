@@ -1,0 +1,18 @@
+{
+  "command": "bash tools/test_system_selection.sh",
+  "exitCode": 0,
+  "checks": 96,
+  "passed": true,
+  "failures": [],
+  "compiledSourceCount": 36,
+  "sourceUnchangedDuringTest": true,
+  "scope": [
+    "Staff selection geometry at five zoom scales, both drag directions, additive selections, gutter and page bounds",
+    "Saved roster and measure-span recall across pages with repeated staff IDs and JSON persistence",
+    "Navigation target recall: exact saved system, auto-advance fallback, sparse assignment placeholders, first actual saved system, page isolation, invalidated assignments, and empty reviews"
+  ],
+  "limitations": [
+    "Pure production-helper and model tests; no live mouse gesture automation or window-navigation simulation",
+    "Synthetic staff geometry; no claim of score recognition or musical correctness"
+  ]
+}

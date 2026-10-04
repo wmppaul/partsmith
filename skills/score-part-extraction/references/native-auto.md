@@ -94,7 +94,9 @@ a manual correction; the regular-profile Auto path does not resolve the inset.
 
 For changing instrumentation, enable **Instrument layout changes between
 systems** before Auto. In **Assign Instruments**, select a complete printed
-system on the enlarged score and assign the instruments actually present.
+system by dragging across its staves on the enlarged score. The selection
+highlights live; clicks and Shift-click/Shift-drag refine it. **Page N · System
+N** identifies each source-page system. Assign the instruments actually present.
 Under **Reuse Assigned Layouts**, **Find Similar Systems** compares source
 connections and opening clef shapes with those examples. Add an example of each
 different roster; some layouts still require manual assignment. **Show** selects
@@ -103,8 +105,9 @@ systems together while preserving prior assignments and crop edits.
 
 If one section alternates between a single staff and divided staves, set its
 count beside the instrument name in **Assign a System** for that printed layout.
-The local count does not change the saved profile's default. **Load** restores
-the reviewed grouping, and similar-layout proposals carry that grouping through
+The local count does not change the saved profile's default. Revisiting an
+assigned system or choosing **Load** restores its reviewed grouping, first bar
+and bar count. Similar-layout proposals carry that grouping through
 acceptance. Check the proposed counts as well as names: the same roster with
 different divisions is ambiguous. Keep both Soprano I–II or Bass I–II staves in
 their combined section part unless the task explicitly calls for separate parts.
@@ -113,7 +116,7 @@ Splitting two voices that share one printed staff requires a different workflow.
 These proposals reuse reviewed identities; they do not read instrument names.
 An unseen roster with the same clefs and staff count can still look similar.
 Check source labels and transitions, especially on orchestral scores. Missing
-or inconsistent staff evidence makes the matcher abstain. Enter the target
+or inconsistent staff evidence makes the matcher abstain. Verify the target
 system's own bar count whenever instruments are absent: an example's rest count
 is never copied. Partial matches do not make the whole score complete. Reusing
 a roster also does not fix crop edges, copy all musical directions, or establish
@@ -416,12 +419,26 @@ opening and ending context must remain. Original crops remain available through
 Enable **Instrument layout changes between systems** in the magic-wand setup.
 This disables automatic instrument cadence guesses even when a page's total
 staff count happens to be divisible by the complete profile. Auto still detects
-staff geometry. In **Assign Instruments**, use **Fit Width** and zoom; click the
-first staff and Shift-click the last staff of one printed system. Check the
-printed instruments in profile order, enter an optional first bar and the
-system's bar count, then **Assign System**. Piano uses two staves but counts each
-measure once. Instrument choices persist for the next system; counts do not.
-Use **Load** to revisit an assignment.
+staff geometry. In **Assign Instruments**, use **Fit Width** and zoom, then drag
+across every staff in one printed system. The drag and selected staves highlight;
+click to adjust, or Shift-click/Shift-drag to add staves. Check the printed
+instruments in profile order and set any per-system staff counts. The selector
+and assignment list include **Page N · System N**, with page-local system numbers.
+
+When the selected group matches the checked staff counts, **Bars in system**
+tries to fill an empty count in the background. It compares printed boundaries
+across at least two staves and requires connecting barlines through a staff gap.
+Single-staff systems, disconnected barline patterns and unclear scans stay
+manual. The counter counts printed compartments, not rhythmic values: verify
+pickups, split measures and the source's true duration before using it for rests.
+Piano uses two staves but counts each measure once. Existing entered and assigned
+counts are not replaced by a suggestion.
+
+Enter an optional first bar, check or edit the count and choose **Assign System**.
+Revisiting a page or system restores its assigned instruments, staff counts,
+first bar and count; selecting that exact staff group or choosing **Load** also
+restores the assignment. Instrument choices remain ready for the next unassigned
+system, which needs its own count rather than a copy of the previous duration.
 
 Entered starting bar numbers are retained on printed music as well as inserted
 rests, including after crop review, Add Parts, saving and PDF export. Exported

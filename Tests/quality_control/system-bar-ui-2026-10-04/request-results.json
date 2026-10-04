@@ -1,0 +1,26 @@
+{
+  "checks" : [
+    "Start synchronously exposes progress and clears old responses",
+    "Suggestion publishes with the matching request identity",
+    "The background counter publishes completion on the main thread",
+    "Cancel clears a completed suggestion",
+    "Slow first request starts on its worker",
+    "Rapid selection changes allocate separate identities while showing latest progress",
+    "Only the newest selection publishes after a cancelled slow request",
+    "A superseded queued request never calls the expensive counter",
+    "Running counter receives cooperative cancellation",
+    "Latest completion clears progress",
+    "Cancellation fixture starts before cancellation",
+    "Manual cancellation clears UI state immediately",
+    "Cancelled counter finishes cooperatively",
+    "Cancelled count cannot arrive later and overwrite a manual value",
+    "No confident count is still a completed response, never a fabricated zero",
+    "Retry removes previous abstention before counting",
+    "An abstaining worker can be reused for another selection",
+    "Deallocation fixture begins counting",
+    "Closing owner is not retained by an unfinished operation",
+    "Owner deallocation cancels its counter",
+    "Forty cancelled fast results never leak through queued main-thread delivery"
+  ],
+  "count" : 21
+}

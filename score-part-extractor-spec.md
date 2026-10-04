@@ -56,8 +56,12 @@ rest notation only for supported or explicitly counted silent passages.
    acknowledgement or typed reason; **View Skipped Pages** and **Restore Page**
    make recovery available. A failed page render is an error, not a blank page.
 7. For changing instrumentation, use **Assign Instruments** on the enlarged
-   score, select each printed system, and identify its actual roster. Verified
-   absent instruments require that system's bar count to receive inserted rests.
+   score, drag across each printed system's staves, and identify its actual
+   roster. The selection highlights live; clicks and Shift selection refine it.
+   **Page N · System N** supplies page context. **Bars in system** can suggest an
+   editable count from clear connected barlines; verify it before assigning
+   rests for absent instruments. Revisiting assigned systems restores their
+   roster, staff counts, first bar and bar count.
    **Find Similar Systems** reuses reviewed examples but cannot establish a new
    instrument identity from staff count alone.
 8. Choose **Add Parts**. Adding parts is one undoable transaction; automatic
@@ -157,6 +161,13 @@ Instrument picking reads user-selected labels locally. Assignment applies the
 reviewed roster; it does not independently understand every staff. Reusable
 layouts compare reviewed source examples. Condensed scores, changing divisions
 and omitted instruments may need manual system assignments and verified counts.
+
+System bar-count suggestions require multiple selected staves with consistent
+barline evidence and connections across a staff gap. Single-staff selections,
+disconnected barlines and uncertain geometry remain manual. Suggestions fill an
+empty field without replacing entered or assigned values. They count printed
+bar compartments and cannot establish the duration of pickups, split measures
+or unprinted silence. Cancel work when its page, system or selection changes.
 
 Automatic direction copying currently targets supported tempos, navigation
 instructions, linked symbols and paired first/second endings in consistent

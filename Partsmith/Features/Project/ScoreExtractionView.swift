@@ -13,15 +13,21 @@ struct ScoreExtractionView: View {
     @State private var pageImage: CGImage?
     @State private var selectedStaves = Set<Int>()
     @State private var correctionSystem = 1
+    @State private var lastSystemByPage: [Int: Int] = [:]
     @State private var correctionPart = ""
     @State private var assigningSystems = false
     @State private var previewFitsWidth = false
     @State private var previewZoom = 1.0
     @State private var selectionAnchor: Int?
+    @State private var staffSelectionDrag: ScoreStaffRangeSelection?
     @State private var printedPartIDs = Set<String>()
     @State private var systemStaffCounts: [String: Int] = [:]
     @State private var systemFirstBar = ""
     @State private var systemBarCount = ""
+    @StateObject private var barCountRequest = ScoreSystemBarCountRequest()
+    @State private var pendingBarCount: (id: UUID, context: BarCountContext)?
+    @State private var barCountFieldContext: BarCountContext?
+    @State private var barCountNotice: String?
     @State private var assignmentStatus: String?
     @State private var pendingTemplateSelection: ScoreSystemTemplateMatcher.Suggestion?
     @State private var templateFocusBounds: [Double]?
@@ -49,6 +55,15 @@ struct ScoreExtractionView: View {
     @State private var pageRangeText = ""
     @State private var pageRangeInvalid = false
     @StateObject private var thumbnails = ScoreInputThumbnails()
+
+    private struct BarCountContext: Equatable {
+        var pageIndex: Int
+        var systemNumber: Int
+        var staffIDs: Set<Int>
+    }
+    private var currentBarCountContext: BarCountContext {
+        BarCountContext(pageIndex: selectedPage, systemNumber: correctionSystem, staffIDs: selectedStaves)
+    }
 
     private var sourcePageCount: Int { document.pdfDocument?.pageCount ?? 0 }
     private var inputPages: Set<Int> { usesAllPages ? Set(0..<sourcePageCount) : selectedInputPages }
@@ -107,7 +122,7 @@ struct ScoreExtractionView: View {
             // Reviewed assignments still inherit detector evidence for their staves.
             let warnings = Array(Set(band.warnings + staves.filter { band.candidateIDs.contains($0.id) }.flatMap(\.warnings))).sorted()
             return warnings.isEmpty ? nil : DetectorNote(id: band.id,
-                title: "\(partName(band.partID)) · System \(band.systemIndex + 1)", warnings: warnings)
+                title: "\(partName(band.partID)) · \(systemLabel(band.systemIndex))", warnings: warnings)
         }
         let assignedIDs = Set(assignments.flatMap(\.candidateIDs))
         notes += staves.filter { !assignedIDs.contains($0.id) && !$0.warnings.isEmpty }.map {
@@ -207,7 +222,8 @@ struct ScoreExtractionView: View {
         }
         .onChange(of: document.sourcePDFData) { invalidateSourceReview(); resetInputPages() }
         .onChange(of: document.project.pageRectifications) { invalidateSourceReview(); refreshThumbnails() }
-        .onChange(of: selectedPage) {
+        .onChange(of: selectedPage) { oldPage, _ in
+            lastSystemByPage[oldPage] = correctionSystem
             updatePageImage()
             if let pending = pendingTemplateSelection, pending.pageIndex == selectedPage {
                 selectTemplateSuggestion(pending)
@@ -215,6 +231,19 @@ struct ScoreExtractionView: View {
             }
         }
         .onChange(of: review?.plan) { clearDirectionFocus() }
+        .onChange(of: expectedSelectedStaffCount) { requestBarCountIfNeeded() }
+        .onReceive(barCountRequest.$response) { response in
+            guard let response, let pending = pendingBarCount,
+                  pending.id == response.id, pending.context == currentBarCountContext,
+                  assigningSystems, systemBarCount.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+            pendingBarCount = nil
+            if let suggestion = response.suggestion {
+                systemBarCount = String(suggestion.barCount)
+                barCountNotice = "Suggested from printed barlines. Check pickups and split measures."
+            } else {
+                barCountNotice = "No clear count found. Enter the number of bars."
+            }
+        }
         .onChange(of: document.headerSelection) { updateHeaderPreview() }
     }
 
@@ -514,7 +543,7 @@ struct ScoreExtractionView: View {
                         focusDirection(page: selectedPage, bounds: copy.bounds)
                         focusedCropID = copy.band.id
                     } label: {
-                        Text("\(partName(copy.band.partID)) · System \(copy.band.systemIndex + 1): \(copy.label)")
+                        Text("\(partName(copy.band.partID)) · \(systemLabel(copy.band.systemIndex)): \(copy.label)")
                             .multilineTextAlignment(.leading)
                     }.buttonStyle(.link)
                     HStack {
@@ -632,7 +661,7 @@ struct ScoreExtractionView: View {
                 }
             }.background(Color(nsColor: .underPageBackgroundColor)).clipped()
             HStack {
-                Text(assigningSystems ? "Click staves to select. Shift-click selects a range." : "Zoom or choose Assign Instruments to change the staff layout.")
+                Text(assigningSystems ? "Drag across the staves in one system. Click to adjust; Shift-click or Shift-drag adds staves." : "Zoom or choose Assign Instruments to change the staff layout.")
                     .font(.caption).foregroundStyle(.secondary)
                 Spacer(minLength: 0)
                 Button(assigningSystems ? "Crop Review" : "Assign Instruments") { toggleAssignmentMode() }
@@ -649,7 +678,7 @@ struct ScoreExtractionView: View {
                     .overlay(Rectangle().stroke(color, lineWidth: focusedCropID == band.id ? 3 : 1))
                     .overlay(alignment: .topLeading) {
                         if !assigningSystems {
-                            Text("\(partName(band.partID)) · \(band.systemIndex + 1)")
+                            Text("\(partName(band.partID)) · \(systemLabel(band.systemIndex))")
                                 .font(.system(size: 10, weight: .semibold)).padding(2).background(.regularMaterial)
                         }
                     }
@@ -677,6 +706,13 @@ struct ScoreExtractionView: View {
             ForEach(currentAnalysis?.staves ?? []) { staff in
                 staffSelectionRow(staff, width: width, height: height)
             }
+            if assigningSystems, let selection = staffSelectionDrag {
+                Rectangle().fill(Color.accentColor.opacity(0.10))
+                    .overlay(Rectangle().stroke(Color.accentColor, style: StrokeStyle(lineWidth: 1.5, dash: [5, 3])))
+                    .frame(width: max(1, selection.rect.width), height: max(1, selection.rect.height))
+                    .offset(x: selection.rect.minX, y: selection.rect.minY)
+                    .allowsHitTesting(false)
+            }
             if let bounds = templateFocusBounds, bounds.count == 4 {
                 // A positioned view exposes the whole page as its scroll frame.
                 // Give the marker its own one-point frame in the page's layout.
@@ -688,15 +724,42 @@ struct ScoreExtractionView: View {
                     .offset(x: width / 2).allowsHitTesting(false)
             }
         }.frame(width: width, height: height)
+            .contentShape(ScoreStaffSelectionHitArea())
+            .highPriorityGesture(staffRangeGesture(width: width, height: height, pageIndex: selectedPage),
+                                 including: assigningSystems ? .all : .subviews)
+    }
+
+    private func staffRangeGesture(width: Double, height: Double, pageIndex: Int) -> some Gesture {
+        // Coordinates belong to the rendered page, so scrolling and zooming do
+        // not change which source staves a drag touches. Waiting for real mouse
+        // movement leaves the existing staff buttons available for clicks.
+        DragGesture(minimumDistance: 4, coordinateSpace: .local)
+            .onChanged { value in
+                guard assigningSystems, selectedPage == pageIndex else { return }
+                var selection = staffSelectionDrag ?? ScoreStaffRangeSelection(
+                    initialSelection: selectedStaves,
+                    additive: !NSEvent.modifierFlags.intersection([.shift, .command]).isEmpty)
+                selection.update(from: value.startLocation, to: value.location,
+                                 pageSize: CGSize(width: width, height: height))
+                staffSelectionDrag = selection
+                selectedStaves = selection.selectedIDs(staves: currentAnalysis?.staves ?? [],
+                                                      pageHeight: height)
+                selectionAnchor = selection.anchorID(staves: currentAnalysis?.staves ?? [], pageHeight: height)
+                assignmentStatus = nil
+            }
+            .onEnded { _ in
+                guard assigningSystems, selectedPage == pageIndex else { return }
+                staffSelectionDrag = nil
+                staffSelectionDidChange()
+            }
     }
 
     private func staffSelectionRow(_ staff: ScoreObservedStaff, width: Double, height: Double) -> some View {
-        let top = staff.staffLineFractions.first ?? staff.topFraction
-        let bottom = staff.staffLineFractions.last ?? staff.bottomFraction
+        let rowBounds = ScoreStaffRangeSelection.rowBounds(staff, pageHeight: height)
         let selected = selectedStaves.contains(staff.id)
         let assignment = staffAssignment(staff.id)
         let color = selected ? Color.orange : assignment.map { bandColor($0.partID) } ?? Color.blue
-        let rowHeight = max(12, height * (bottom - top))
+        let rowHeight = rowBounds.upperBound - rowBounds.lowerBound
         return Button { toggleStaff(staff.id) } label: {
             HStack(spacing: 0) {
                 Text("\(staff.id + 1)").font(.caption2.bold()).foregroundStyle(.white)
@@ -707,10 +770,10 @@ struct ScoreExtractionView: View {
             }.contentShape(Rectangle())
         }.buttonStyle(.plain)
             .frame(width: width + 24, height: rowHeight)
-            .offset(x: -24, y: height * top)
-            .accessibilityLabel("Staff \(staff.id + 1)" + (assignment.map { ", \(partName($0.partID)), system \($0.system + 1)" } ?? ", unassigned"))
+            .offset(x: -24, y: rowBounds.lowerBound)
+            .accessibilityLabel("Staff \(staff.id + 1), page \(selectedPage + 1)" + (assignment.map { ", \(partName($0.partID)), system \($0.system + 1)" } ?? ", unassigned"))
             .accessibilityValue(selected ? "Selected" : "Not selected")
-            .help(assignment.map { "\(partName($0.partID)) · System \($0.system + 1). Click to select." } ?? "Click to select this staff")
+            .help(assignment.map { "\(partName($0.partID)) · \(systemLabel($0.system)). Click to select." } ?? "Page \(selectedPage + 1). Click to select this staff")
     }
 
     private func staffAssignment(_ id: Int) -> (partID: String, system: Int)? {
@@ -726,11 +789,14 @@ struct ScoreExtractionView: View {
     }
 
     private func toggleAssignmentMode() {
+        cancelBarCountSuggestion()
+        staffSelectionDrag = nil
         assigningSystems.toggle()
         if assigningSystems {
             previewFitsWidth = true
             previewZoom = 1
             if printedPartIDs.isEmpty { printedPartIDs = Set(profile.parts.map(\.id)) }
+            loadSystemAssignment()
         }
     }
 
@@ -738,16 +804,20 @@ struct ScoreExtractionView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Assign a System").font(.headline)
-                Text("Select every printed staff in one system. Check the instruments shown, in score order. Adjust the staff counts when a section divides. These choices stay ready for the next system.")
+                Text("Drag across every printed staff in one system, then check the instruments shown in score order. Click individual staves to adjust the selection. Adjust staff counts when a section divides.")
                     .font(.caption).foregroundStyle(.secondary)
                 HStack {
-                    Stepper("System \(correctionSystem)", value: $correctionSystem, in: 1...32)
+                    Stepper(systemLabel(correctionSystem - 1), value: systemNumberBinding, in: 1...32)
                     Button("Load") { loadSystemAssignment() }.help("Select this system's current staves and instrument choices")
                 }
                 HStack {
                     Text("\(selectedStaves.count) staves selected")
                     Spacer()
-                    Button("Clear") { selectedStaves.removeAll(); selectionAnchor = nil }
+                    Button("Clear") {
+                        cancelBarCountSuggestion()
+                        selectedStaves.removeAll(); selectionAnchor = nil
+                        systemBarCount = ""; barCountFieldContext = nil
+                    }
                 }.font(.caption)
                 Text("Instruments printed in this system").font(.subheadline.bold())
                 ForEach(profile.parts) { part in
@@ -777,7 +847,12 @@ struct ScoreExtractionView: View {
                 }
                 HStack {
                     Text("Bars in system")
-                    TextField("Count", text: $systemBarCount).textFieldStyle(.roundedBorder).frame(width: 80)
+                    TextField("Count", text: systemBarCountBinding).textFieldStyle(.roundedBorder).frame(width: 80)
+                }
+                if barCountRequest.isCounting {
+                    Text("Counting printed bars…").font(.caption).foregroundStyle(.secondary)
+                } else if let barCountNotice {
+                    Text(barCountNotice).font(.caption).foregroundStyle(.secondary)
                 }
                 if printedPartIDs.count < profile.parts.count {
                     Text("Unchecked instruments receive this many bars of rest. Confirm they are silent, and keep any tempo, meter or rehearsal changes at their original bar.")
@@ -803,11 +878,11 @@ struct ScoreExtractionView: View {
                 if let correction = review.overrides.first(where: { $0.pageIndex == selectedPage }) {
                     ForEach(correction.systems, id: \.systemIndex) { system in
                         Button {
-                            correctionSystem = system.systemIndex + 1
+                            navigateToSystem(system.systemIndex + 1)
                             loadSystemAssignment()
                         } label: {
                             VStack(alignment: .leading, spacing: 3) {
-                                Text("System \(system.systemIndex + 1)").font(.subheadline.bold())
+                                Text(systemLabel(system.systemIndex)).font(.subheadline.bold())
                                 Text(system.bands.map { partName($0.partID) }.joined(separator: ", "))
                                     .font(.caption).foregroundStyle(.secondary)
                                 if let count = system.barCount {
@@ -853,6 +928,7 @@ struct ScoreExtractionView: View {
     }
 
     private func selectTemplateSuggestion(_ suggestion: ScoreSystemTemplateMatcher.Suggestion) {
+        cancelBarCountSuggestion()
         templateFocusBounds = suggestion.sourceBounds
         templateFocusID = UUID()
         selectedStaves = Set(suggestion.candidateIDs)
@@ -862,14 +938,41 @@ struct ScoreExtractionView: View {
         systemFirstBar = ""
         systemBarCount = ""
         selectionAnchor = nil
-        assignmentStatus = "Matching layout highlighted: " + profile.parts.filter { suggestion.presentPartIDs.contains($0.id) }.map(\.name).joined(separator: ", ")
+        assignmentStatus = "\(systemLabel(suggestion.systemIndex, pageIndex: suggestion.pageIndex)) highlighted: " + profile.parts.filter { suggestion.presentPartIDs.contains($0.id) }.map(\.name).joined(separator: ", ")
+        barCountFieldContext = currentBarCountContext
+        requestBarCountIfNeeded()
     }
 
     private func loadSystemAssignment() {
         guard let review else { return }
         let correction = pageOverride(review)
         guard let system = correction.systems.first(where: { $0.systemIndex == correctionSystem - 1 }) else { return }
-        selectedStaves = Set(system.bands.flatMap { $0.candidateIDs ?? [] })
+        applySystemAssignment(system, selectStaves: true)
+    }
+
+    private var systemNumberBinding: Binding<Int> {
+        Binding(get: { correctionSystem }, set: navigateToSystem)
+    }
+
+    private func navigateToSystem(_ number: Int) {
+        cancelBarCountSuggestion()
+        barCountFieldContext = nil
+        correctionSystem = number
+        lastSystemByPage[selectedPage] = number
+        staffSelectionDrag = nil
+        selectedStaves.removeAll()
+        selectionAnchor = nil
+        systemFirstBar = ""
+        systemBarCount = ""
+        assignmentStatus = nil
+        loadSystemAssignment()
+    }
+
+    private func applySystemAssignment(_ system: ScoreSystemOverride, selectStaves: Bool) {
+        cancelBarCountSuggestion()
+        correctionSystem = system.systemIndex + 1
+        lastSystemByPage[selectedPage] = correctionSystem
+        if selectStaves { selectedStaves = Set(system.bands.flatMap { $0.candidateIDs ?? [] }) }
         let music = system.bands.filter { ($0.kind ?? "music") == "music" }
         printedPartIDs = Set(music.map(\.partID))
         systemStaffCounts = [:]
@@ -880,8 +983,63 @@ struct ScoreExtractionView: View {
         }
         systemFirstBar = system.startBarNumber.map(String.init) ?? ""
         systemBarCount = system.barCount.map(String.init) ?? ""
-        selectionAnchor = nil
+        barCountFieldContext = currentBarCountContext
+        if selectStaves { selectionAnchor = nil }
         assignmentStatus = nil
+        requestBarCountIfNeeded()
+    }
+
+    @discardableResult
+    private func recallSelectedSystemAssignment() -> Bool {
+        guard let saved = ScoreSystemSelectionRecall.matchingSystem(
+            in: review?.overrides ?? [], pageIndex: selectedPage, selectedIDs: selectedStaves) else { return false }
+        applySystemAssignment(saved, selectStaves: false)
+        return true
+    }
+
+    private func staffSelectionDidChange() {
+        cancelBarCountSuggestion()
+        // A drag can finish on the same selection. Keep any edits made since
+        // loading it; recalling the saved assignment would erase that draft.
+        if barCountFieldContext == currentBarCountContext {
+            requestBarCountIfNeeded()
+            return
+        }
+        if recallSelectedSystemAssignment() {
+            return
+        }
+        if barCountFieldContext != currentBarCountContext {
+            systemBarCount = ""
+            barCountFieldContext = currentBarCountContext
+        }
+        requestBarCountIfNeeded()
+    }
+
+    private var systemBarCountBinding: Binding<String> {
+        Binding(get: { systemBarCount }, set: { value in
+            cancelBarCountSuggestion()
+            systemBarCount = value
+            barCountFieldContext = currentBarCountContext
+        })
+    }
+
+    private func requestBarCountIfNeeded() {
+        guard assigningSystems, !selectedStaves.isEmpty,
+              selectedStaves.count == expectedSelectedStaffCount,
+              systemBarCount.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let image = pageImage, let analysis = currentAnalysis else { return }
+        cancelBarCountSuggestion()
+        let context = currentBarCountContext
+        let staves = analysis.staves.filter { selectedStaves.contains($0.id) }
+        let id = barCountRequest.start(image: image, staves: staves, skewDegrees: analysis.analysisSkewDegrees)
+        pendingBarCount = (id, context)
+        barCountFieldContext = context
+    }
+
+    private func cancelBarCountSuggestion() {
+        pendingBarCount = nil
+        barCountRequest.cancel()
+        barCountNotice = nil
     }
 
     private func assignSystemSelection() {
@@ -903,8 +1061,9 @@ struct ScoreExtractionView: View {
             value.overrides.append(correction)
             value.replan()
             review = value
+            cancelBarCountSuggestion()
             let restParts = profile.parts.count - printedPartIDs.count
-            assignmentStatus = "System \(correctionSystem) assigned." + (restParts > 0 ? " Added \(countText)-bar rests for \(restParts) absent instruments." : "")
+            assignmentStatus = "\(systemLabel(correctionSystem - 1)) assigned." + (restParts > 0 ? " Added \(countText)-bar rests for \(restParts) absent instruments." : "")
             correctionSystem = min(32, correctionSystem + 1)
             selectedStaves.removeAll(); selectionAnchor = nil
             // A repeated instrument layout does not imply a repeated measure count.
@@ -912,6 +1071,8 @@ struct ScoreExtractionView: View {
                 systemFirstBar = String(first + count)
             } else { systemFirstBar = "" }
             systemBarCount = ""
+            barCountFieldContext = nil
+            loadSystemAssignment()
             errorMessage = nil
         } catch { errorMessage = error.localizedDescription }
     }
@@ -997,7 +1158,7 @@ struct ScoreExtractionView: View {
                                 .font(.caption).foregroundStyle(.secondary)
                             ForEach((currentPlan?.assignments ?? []).filter { $0.generatedRest == nil }) { band in
                                 VStack(alignment: .leading, spacing: 6) {
-                                    Button("\(partName(band.partID)) · System \(band.systemIndex + 1)") { focusedCropID = band.id }
+                                    Button("\(partName(band.partID)) · \(systemLabel(band.systemIndex))") { focusedCropID = band.id }
                                         .buttonStyle(.link).help("Highlight this crop on the source page")
                                     HStack {
                                         cropNumberField("Top", value: cropEdgeBinding(band, height: analysis.pageHeight, top: true), unit: "pt")
@@ -1017,7 +1178,7 @@ struct ScoreExtractionView: View {
                             .font(.caption).foregroundStyle(.secondary)
                         Text("Selected: \(selectedStaves.sorted().map { String($0 + 1) }.joined(separator: ", "))")
                             .font(.caption)
-                        Stepper("System \(correctionSystem)", value: $correctionSystem, in: 1...32)
+                        Stepper(systemLabel(correctionSystem - 1), value: systemNumberBinding, in: 1...32)
                         Picker("Part", selection: $correctionPart) {
                             ForEach(profile.parts) { Text($0.name).tag($0.id) }
                         }
@@ -1151,6 +1312,7 @@ struct ScoreExtractionView: View {
     }
 
     private func cancelWork() {
+        cancelBarCountSuggestion()
         document.cancelScoreDetection()
         document.cancelInstrumentNamePicking()
         if let deskewRunID { document.cancelAutoEstimateAllPageRectifications(runID: deskewRunID) }
@@ -1193,6 +1355,7 @@ struct ScoreExtractionView: View {
     }
 
     private func invalidateSourceReview() {
+        cancelBarCountSuggestion()
         let hadAnalysis = review != nil || isRunning
         document.cancelScoreDetection()
         document.cancelInstrumentNamePicking()
@@ -1218,6 +1381,7 @@ struct ScoreExtractionView: View {
                              copySharedDirections: copyDirections && profile.requiresSystemAssignment != true) { result in
             guard let result else { errorMessage = "The source or rectification changed. Run Auto again."; return }
             review = result
+            lastSystemByPage = [:]
             systemStaffCounts = [:]
             if profile.requiresSystemAssignment == true {
                 assigningSystems = true
@@ -1234,15 +1398,21 @@ struct ScoreExtractionView: View {
     }
 
     private func updatePageImage() {
+        cancelBarCountSuggestion()
+        barCountFieldContext = nil
+        staffSelectionDrag = nil
         templateFocusBounds = nil
         selectedStaves.removeAll()
         focusedCropID = nil
-        correctionSystem = 1
+        correctionSystem = ScoreSystemSelectionRecall.recalledSystemNumber(
+            in: review?.overrides ?? [], pageIndex: selectedPage,
+            preferred: lastSystemByPage[selectedPage] ?? 1)
         selectionAnchor = nil
         systemFirstBar = ""
         systemBarCount = ""
         assignmentStatus = nil
         pageImage = document.scoreReviewImage(pageIndex: selectedPage)
+        if assigningSystems { loadSystemAssignment() }
     }
 
     private func clearDirectionFocus() {
@@ -1258,6 +1428,11 @@ struct ScoreExtractionView: View {
             if selectedStaves.contains(id) { selectedStaves.remove(id) } else { selectedStaves.insert(id) }
             selectionAnchor = id
         }
+        staffSelectionDidChange()
+    }
+
+    private func systemLabel(_ systemIndex: Int, pageIndex: Int? = nil) -> String {
+        "Page \((pageIndex ?? selectedPage) + 1) · System \(systemIndex + 1)"
     }
 
     private func partName(_ id: String) -> String { profile.parts.first { $0.id == id }?.name ?? id }
@@ -1383,8 +1558,87 @@ struct ScoreExtractionView: View {
     }
 }
 
-/// Small previews are made off the main thread with worker-owned PDFKit
-/// objects. Full-size detection rasters never accumulate in the page picker.
+enum ScoreSystemSelectionRecall {
+    /// Assignment advances to the next empty slot. Returning to a page should
+    /// reopen its saved system rather than that empty slot.
+    static func recalledSystemNumber(in overrides: [ScorePageOverride], pageIndex: Int,
+                                     preferred: Int) -> Int {
+        let saved = overrides.first(where: { $0.pageIndex == pageIndex })?.systems
+            .filter { $0.requiresAssignmentReview != true && !$0.bands.isEmpty }
+            .map { $0.systemIndex + 1 }.sorted() ?? []
+        return saved.last(where: { $0 <= preferred }) ?? saved.first ?? 1
+    }
+
+    static func matchingSystem(in overrides: [ScorePageOverride], pageIndex: Int,
+                               selectedIDs: Set<Int>) -> ScoreSystemOverride? {
+        guard !selectedIDs.isEmpty,
+              let page = overrides.first(where: { $0.pageIndex == pageIndex }) else { return nil }
+        return page.systems.first { system in
+            system.requiresAssignmentReview != true
+                && Set(system.bands.flatMap { $0.candidateIDs ?? [] }) == selectedIDs
+        }
+    }
+}
+
+/// A drag selects detected staff lines, rather than the larger music crops that
+/// can overlap neighboring staves. The bounds are the same ones drawn by the
+/// numbered staff buttons. Keeping the starting selection makes additive drags
+/// reversible as the pointer moves back over an earlier row.
+struct ScoreStaffRangeSelection {
+    let initialSelection: Set<Int>
+    let additive: Bool
+    private(set) var rect = CGRect.zero
+    private var startY: Double = 0
+
+    init(initialSelection: Set<Int>, additive: Bool) {
+        self.initialSelection = initialSelection
+        self.additive = additive
+    }
+
+    mutating func update(from start: CGPoint, to end: CGPoint, pageSize: CGSize) {
+        let startX = max(-24, min(pageSize.width, start.x))
+        let endX = max(-24, min(pageSize.width, end.x))
+        startY = max(0, min(pageSize.height, start.y))
+        let endY = max(0, min(pageSize.height, end.y))
+        rect = CGRect(x: min(startX, endX), y: min(startY, endY),
+                      width: abs(endX - startX), height: abs(endY - startY))
+    }
+
+    func selectedIDs(staves: [ScoreObservedStaff], pageHeight: Double) -> Set<Int> {
+        let touched = Set(touchedStaves(staves, pageHeight: pageHeight).map(\.id))
+        return additive ? initialSelection.union(touched) : touched
+    }
+
+    func anchorID(staves: [ScoreObservedStaff], pageHeight: Double) -> Int? {
+        touchedStaves(staves, pageHeight: pageHeight).min { first, second in
+            let firstBounds = Self.rowBounds(first, pageHeight: pageHeight)
+            let secondBounds = Self.rowBounds(second, pageHeight: pageHeight)
+            return abs((firstBounds.lowerBound + firstBounds.upperBound) / 2 - startY)
+                < abs((secondBounds.lowerBound + secondBounds.upperBound) / 2 - startY)
+        }?.id
+    }
+
+    static func rowBounds(_ staff: ScoreObservedStaff, pageHeight: Double) -> ClosedRange<Double> {
+        let top = pageHeight * (staff.staffLineFractions.first ?? staff.topFraction)
+        let bottom = pageHeight * (staff.staffLineFractions.last ?? staff.bottomFraction)
+        return top...max(top + 12, bottom)
+    }
+
+    private func touchedStaves(_ staves: [ScoreObservedStaff], pageHeight: Double) -> [ScoreObservedStaff] {
+        guard pageHeight > 0 else { return [] }
+        return staves.filter { staff in
+            let bounds = Self.rowBounds(staff, pageHeight: pageHeight)
+            return rect.minY <= bounds.upperBound && rect.maxY >= bounds.lowerBound
+        }
+    }
+}
+
+private struct ScoreStaffSelectionHitArea: Shape {
+    func path(in rect: CGRect) -> Path {
+        Path(CGRect(x: rect.minX - 24, y: rect.minY, width: rect.width + 24, height: rect.height))
+    }
+}
+
 private final class ScoreInputThumbnails: ObservableObject {
     @Published private(set) var images: [Int: CGImage] = [:]
     @Published private(set) var failedPages = Set<Int>()

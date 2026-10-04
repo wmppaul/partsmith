@@ -1,0 +1,20 @@
+{
+  "checks" : [
+    "Real Auto flow exposes Bars in system in the enlarged assignment panel",
+    "Actual Mozart page17 source produces six bars and a review reminder",
+    "Native mouse drag across six staff rows selects the printed system",
+    "Editing the production count binding takes precedence over the suggestion",
+    "Assign System stores the explicitly edited count",
+    "Advancing to a new unsaved system does not carry over its predecessor's count",
+    "A different page with identical staff IDs starts without the first page's manual count",
+    "Returning from another page recalls the last assigned system instead of a blank next-system slot",
+    "Page return restores the reviewed staff selection along with its count",
+    "Saved reviewed count remains unchanged after the automatic worker could finish",
+    "Repeating the same native drag preserves an edited count instead of reloading saved eleven",
+    "Selecting the piano-only system counts its bars once across both staves",
+    "Re-entering assignment mode loads the saved count rather than an unsaved edit",
+    "UI review remains a private proposal and does not mutate user's or fixture output parts"
+  ],
+  "count" : 14,
+  "scope" : "Inactive native window; production accessibility actions, direct native mouse events, and real Auto detection on two indexed copies of Mozart source page17. Manual11\/12\/9 are deliberate precedence probes, not reviewed musical counts."
+}
