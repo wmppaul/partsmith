@@ -17,7 +17,7 @@ extension NSWindow {
 /// document OCR and window-controller actions; never opens a user's document.
 @main @MainActor enum InstrumentPickFlowTests {
     static var checks: [String] = []
-    static let output = URL(fileURLWithPath: ".build/instrument-pick-flow-2026-10-04")
+    static let output = URL(fileURLWithPath: ".build/selected-page-picking-2026-10-04")
 
     static func check(_ condition: @autoclosure () -> Bool, _ message: String) {
         precondition(condition(), message)
@@ -70,6 +70,52 @@ extension NSWindow {
         guard object.responds(to: selector) else { return false }
         typealias Press = @convention(c) (AnyObject, Selector) -> Bool
         return unsafeBitCast(object.method(for: selector), to: Press.self)(object, selector)
+    }
+
+    static func labeled(_ root: NSObject, _ text: String) -> NSObject? {
+        elements(root).first { label($0) == text }
+    }
+
+    static func setText(_ object: NSObject, _ text: String) -> Bool {
+        let selector = NSSelectorFromString("setAccessibilityValue:")
+        guard object.responds(to: selector) else { return false }
+        typealias SetValue = @convention(c) (AnyObject, Selector, AnyObject) -> Void
+        unsafeBitCast(object.method(for: selector), to: SetValue.self)(object, selector, text as NSString)
+        if let field = (object as? NSTextField) ?? ((object as? NSCell)?.controlView as? NSTextField) {
+            // An offscreen AX value assignment does not run the field editor's
+            // change notification. Deliver the same native control event so
+            // SwiftUI receives the edit through its production delegate.
+            field.delegate?.controlTextDidChange?(Notification(name: NSControl.textDidChangeNotification, object: field))
+        }
+        return true
+    }
+
+    static func selectSegment(_ text: String, in root: NSView) -> Bool {
+        var queue = [root]
+        while !queue.isEmpty {
+            let view = queue.removeFirst()
+            if let control = view as? NSSegmentedControl,
+               let index = (0..<control.segmentCount).first(where: { control.label(forSegment: $0) == text }) {
+                // NSAccessibilitySegment does not implement Press in the
+                // inactive test window; deliver the owning native action.
+                control.setSelected(true, forSegment: index)
+                return control.sendAction(control.action, to: control.target)
+            }
+            queue += view.subviews
+        }
+        return false
+    }
+
+    static func pickingRoundTrip(_ document: PartsmithDocument, source: NSWindow, auto: NSWindow,
+        expectedPage: Int, description: String) {
+        guard press(find(auto.contentView!, "selectInstrumentNames")!) else { fatalError("Cannot start \(description)") }
+        pump()
+        check(document.currentPageIndex == expectedPage && document.isPickingInstrumentNames
+            && FocusRequests.last === source, description)
+        guard press(find(source.contentView!, "finishInstrumentNamePicking")!) else { fatalError("Cannot finish \(description)") }
+        pump()
+        check(!document.isPickingInstrumentNames && FocusRequests.last === auto,
+            "Done returns to the owning Auto setup after: \(description)")
     }
 
     static func dump(_ window: NSWindow, _ name: String) throws {
@@ -197,6 +243,52 @@ extension NSWindow {
         pump()
         check(fields(autoHost) == priorFields, "Returning without more picks preserves the established list exactly")
 
+        document.currentPageIndex = 5
+        pickingRoundTrip(document, source: source, auto: auto, expectedPage: 5,
+            description: "All Pages preserves the current source page instead of jumping to a cover")
+        document.currentPageIndex = 7
+        guard press(labeled(autoHost, "Current Page")!) else { fatalError("No Current Page action") }
+        pump()
+        check(value(labeled(autoHost, "Page range")!, "accessibilityValue") as? String == "8",
+            "The actual Current Page action defines an explicit extraction selection")
+        document.currentPageIndex = 0
+        pickingRoundTrip(document, source: source, auto: auto, expectedPage: 7,
+            description: "Name picking opens the selected eighth page from the document cover")
+        guard setText(labeled(autoHost, "Page range")!, "8, 3-4") else { fatalError("Cannot edit Page range") }
+        pump()
+        check(value(labeled(autoHost, "Page range")!, "accessibilityValue") as? String == "8, 3-4",
+            "The real editable Page range accepts a discontiguous selection")
+        try dump(auto, "setup-selected-pages.png")
+        document.currentPageIndex = 9
+        pickingRoundTrip(document, source: source, auto: auto, expectedPage: 2,
+            description: "An unsorted selected range opens its first page in document order")
+        check(fields(autoHost).filter { $0.contains("Violine") } == ["1. Violine", "2. Violine"],
+            "Changing page selection and returning preserves both named instruments")
+        guard setText(labeled(autoHost, "Page range")!, "1-9999") else { fatalError("Cannot edit invalid Page range") }
+        pump()
+        check(elements(autoHost).contains {
+            label($0).hasPrefix("Use page numbers from 1 to")
+                || (value($0, "accessibilityValue") as? String ?? "").hasPrefix("Use page numbers from 1 to")
+        },
+            "An out-of-range page edit is visibly reported as invalid")
+        document.currentPageIndex = 4
+        pickingRoundTrip(document, source: source, auto: auto, expectedPage: 4,
+            description: "An invalid range keeps the current page rather than using the stale valid selection")
+        guard press(labeled(autoHost, "Clear")!) else { fatalError("No Clear action") }
+        pump()
+        check(value(labeled(autoHost, "Page range")!, "accessibilityValue") as? String == "",
+            "The actual Clear action removes the selected page range")
+        document.currentPageIndex = 6
+        pickingRoundTrip(document, source: source, auto: auto, expectedPage: 6,
+            description: "An empty explicit selection preserves the current source page")
+        guard setText(labeled(autoHost, "Page range")!, "3-4"),
+              selectSegment("All Pages", in: autoHost) else { fatalError("Cannot switch to All Pages") }
+        pump()
+        document.currentPageIndex = 8
+        pickingRoundTrip(document, source: source, auto: auto, expectedPage: 8,
+            description: "Switching back to All Pages ignores the previously selected range")
+        document.currentPageIndex = 0
+
         let otherDocument = PartsmithDocument(sourcePDFData: data)
         otherDocument.project.pageCount = otherDocument.pdfDocument!.pageCount
         let otherController = ScoreExtractionWindowController()
@@ -225,7 +317,7 @@ extension NSWindow {
         let report: [String: Any] = ["checks": checks, "count": checks.count,
             "scope": "Actual production SwiftUI accessibility actions, native window controllers and real Brahms OCR in an isolated process; no user app or document modified.",
             "focusLimit": "Activation-prohibited process intentionally cannot become the user's active app. An in-process recorder intercepts and forwards the actual production makeKeyAndOrderFront calls to verify their target; this checks focus requests, not OS-level key-window status.",
-            "screenshots": ["setup-empty.png", "setup-empty-narrow.png", "source-selecting.png", "source-selecting-narrow.png", "setup-populated.png"]]
+            "screenshots": ["setup-empty.png", "setup-empty-narrow.png", "source-selecting.png", "source-selecting-narrow.png", "setup-populated.png", "setup-selected-pages.png"]]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
             .write(to: output.appendingPathComponent("results.json"))
         print("PASS: \(checks.count) instrument-picking flow checks")

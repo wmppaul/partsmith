@@ -1,0 +1,82 @@
+{
+  "blockingFindings": [],
+  "codeReview": [
+    "Only a valid, nonempty explicit Selected Pages selection navigates to the minimum page index before enabling picking and showing the source window.",
+    "All Pages preserves the current page; invalid range text cannot reuse a stale parsed selection; empty selection also preserves the current page.",
+    "The page picker explains which page will open. Deskew now has a blue prominent native button on a light neutral panel; action and disabling guards are unchanged."
+  ],
+  "date": "2026-10-04",
+  "functionalChecks": 47,
+  "harnessNotes": [
+    "Uses actual production AX buttons and the native segmented-control action for All Pages. Text edits set the AX cell value and deliver its owning native text field delegate change event so SwiftUI receives the edit without an active field editor.",
+    "Initial sandbox Vision pixel-buffer denial and development AX adapter assertions were not production failures and were not counted as passes. Final run exits successfully with all checks."
+  ],
+  "limits": [
+    "Activation-prohibited process intentionally cannot become the user's active app. An in-process recorder intercepts and forwards the actual production makeKeyAndOrderFront calls to verify their target; this checks focus requests, not OS-level key-window status.",
+    "Offscreen NSView cache-display captures omit prominent button fills; captures establish layout and wording, not active-window color contrast.",
+    "Navigation assertions inspect the document page state after actual UI actions; PDF mouse selection gestures and deskew detection algorithms are unchanged and are not tested by this harness."
+  ],
+  "navigationCases": [
+    "All Pages retains page 6",
+    "Current Page selection of page 8 opens page 8 from page 1",
+    "Unsorted 8, 3-4 opens page 3 from page 10",
+    "Out-of-range 1-9999 retains page 5 despite prior valid range",
+    "Cleared selection retains page 7",
+    "Returning to All Pages ignores prior 3-4 selection and retains page 9"
+  ],
+  "reproduce": "bash tools/test_instrument_pick_flow.sh (macOS with native AppKit/Vision access; isolated offscreen process; no user app or documents)",
+  "reviewer": "selected_page_pick_review",
+  "verdict": "pass within stated scope",
+  "visualReview": {
+    "allFinalScreenshotsViewed": true,
+    "files": {
+      "setup-empty-narrow.png": {
+        "pixels": [
+          1600,
+          1160
+        ],
+        "sha256": "72cb1c17a3498e9359173d2e9a35ce8fcbc17c62b836f37efe26755e25a290a5"
+      },
+      "setup-empty.png": {
+        "pixels": [
+          2400,
+          1636
+        ],
+        "sha256": "d335235ed77e1152ca6a330a469674f6be1127a57a4a200440c5e0de8634b85b"
+      },
+      "setup-populated.png": {
+        "pixels": [
+          2400,
+          1656
+        ],
+        "sha256": "2c161a636cd6bfdd289d187a93579efc3503fd03bf9cd785a6fa270037dc58db"
+      },
+      "setup-selected-pages.png": {
+        "pixels": [
+          2400,
+          1656
+        ],
+        "sha256": "f8491b585288902e8a2d0a7cc80a27fce123dd53db16f290bcdb3dbc2d1b7e66"
+      },
+      "source-selecting-narrow.png": {
+        "pixels": [
+          1520,
+          1300
+        ],
+        "sha256": "15580f448938bc6a8ccdff7d281bc31835a8647d85a09764bf64df8ccb218560"
+      },
+      "source-selecting.png": {
+        "pixels": [
+          1960,
+          1700
+        ],
+        "sha256": "3662ce09cf78181be1ed02f38c40f814c8ee7cf98cbeec14525cadcec6a51735"
+      }
+    },
+    "observations": [
+      "At 800 by 580 points, both setup steps and primary action labels remain in the visible area; the new page-selection explanation wraps within the page-picker column.",
+      "The selected-range capture shows 8, 3-4 and three included pages, with pages 3 and 4 visibly selected and cover pages 1 and 2 excluded.",
+      "The fixed source instruction and Done area remains outside the scrollable score at both tested window sizes; both numbered violin rows survive the round trip."
+    ]
+  }
+}

@@ -253,7 +253,7 @@ struct ScoreExtractionView: View {
                     }
                 }.padding(5).id(thumbnails.generation)
             }
-            Text("Click previews to include or leave out pages. Deskew and Auto use this selection.")
+            Text("Click previews to choose pages. With Selected Pages, name selection opens the first included page. Deskew and Auto use these pages.")
                 .font(.caption).foregroundStyle(.secondary)
         }.padding(.trailing, 12).disabled(isRunning)
     }
@@ -316,6 +316,7 @@ struct ScoreExtractionView: View {
                         .foregroundStyle(.secondary)
                     HStack {
                         Button("Deskew & Align Pages", systemImage: "viewfinder", action: deskewPages)
+                            .buttonStyle(.borderedProminent).tint(.blue)
                             .disabled(isRunning || hasSourceCrops || !inputPagesValid)
                         if let progress = document.rectificationAutoProgress {
                             ProgressView(value: progress.fractionComplete).frame(width: 140)
@@ -328,7 +329,7 @@ struct ScoreExtractionView: View {
                     }
                     if let deskewStatus { Text(deskewStatus).font(.callout).foregroundStyle(.secondary) }
                 }.padding(12).frame(maxWidth: .infinity, alignment: .leading)
-                    .background(.quaternary, in: RoundedRectangle(cornerRadius: 8))
+                    .background(Color.secondary.opacity(0.06), in: RoundedRectangle(cornerRadius: 8))
                 Text("2. Choose the instruments").font(.headline)
                 VStack(alignment: .leading, spacing: 10) {
                     Text(profile.parts.isEmpty
@@ -1162,6 +1163,9 @@ struct ScoreExtractionView: View {
         document.setPageRectificationEditing(false)
         replaceListOnNextPick = replacingList
         pickStatus = replacingList ? "The first name you select starts a new list." : "Selected names will be added to this list."
+        if !usesAllPages, inputPagesValid, let firstPage = inputPages.min() {
+            document.currentPageIndex = firstPage
+        }
         document.isPickingInstrumentNames = true
         onShowScore()
     }

@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 4 selected-page name picking
+
+The name-selection action now opens the first included input page for a valid explicit page selection. All Pages retains the current page, and invalid or empty selections cannot jump to stale range data. Deskew has a blue button in a light neutral panel. See the [focused interaction review](selected-page-picking-2026-10-04/README.md) and [release verification](selected-page-picking-release-2026-10-04/README.md).
+
 ## October 4 guided instrument-name selection
 
 The [updated app flow](instrument-pick-flow-release-2026-10-04/README.md) replaces the primary picker menu with a direct selection action and instructions. A persistent source bar shows picked names and **Done — Back to Auto Extract**, returning to the same setup. [Thirty native interaction checks](instrument-pick-flow-2026-10-04/README.md) cover real numbered-name recognition, last-pick retention, pending reads, zero-pick completion, two-document targeting and close cleanup. Narrow layouts were visually reviewed; a highlight overflow was fixed. The harness validates focus requests without activating the process. The universal package was verified and published; detector Core is unchanged.

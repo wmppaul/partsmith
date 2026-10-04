@@ -1,0 +1,18 @@
+{
+  "status": "Published local app package after focused native interaction and release checks",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "25f0364d3cd5119352220014b46b3c6d65356bd43ee37c7527b265c975a944e8",
+  "priorPublicSHA256": "877bbf7447cfa5bd406412690f8854c2cfc10c38d1dd230b589bc8c3e061c43b",
+  "peerManifestSHA256": "cfa8750bea3c237e22f41a637f78733ec3852e13d1d0baf2328ea4d3124dc344",
+  "peerEvidenceFilesVerified": 11,
+  "nativeInteractionChecksPassed": 47,
+  "peerCompiledProductionSourcesVerified": 34,
+  "compiledAppSourcesPerArchitecture": 35,
+  "sourceInputsVerified": 45,
+  "rootVisualReview": [
+    "setup-empty-narrow.png",
+    "setup-selected-pages.png"
+  ],
+  "visualLimits": "Offscreen native screenshots omit prominent button fills; reviewed geometry and wording, not active-window contrast. Native harness verifies correct focus requests, not OS activation.",
+  "runningAppActions": "none"
+}

@@ -1,0 +1,56 @@
+2026-10-04 15:20:40.564 test-flow[13439:4015777] addTextFromVisionDocument: numWordQuads = 35, elapsedTime = 0.047773 secs
+PASS: Empty setup presents the direct selection action
+PASS: The actual setup accessibility button starts selection
+PASS: Starting selection enters source picking mode
+PASS: Starting selection requests focus for this document's source window
+PASS: The score contains a persistent selection bar
+PASS: The actual source Done button completes a zero-pick session
+PASS: Done requests focus for the existing Auto window
+PASS: A zero-pick session does not invent instrument rows
+PASS: Selection can be restarted from the existing setup
+PASS: A real printed-name read enters recognition state
+PASS: Done during recognition cannot discard the pending name or return early
+PASS: Real score recognition returns the complete first violin name
+PASS: Immediate Done retains the final recognized name in the covered setup
+PASS: Immediate Done requests focus for the same setup window
+PASS: Populated setup makes the additive action explicit
+PASS: The additive action reopens source picking
+PASS: The second printed violin remains a distinct recognized name
+PASS: The visible Done button returns after successful recognition
+PASS: Both instrument rows and their score order survive the complete round trip
+PASS: An established list supports another picking session
+PASS: An established list supports zero-pick Done
+PASS: Returning without more picks preserves the established list exactly
+PASS: All Pages preserves the current source page instead of jumping to a cover
+PASS: Done returns to the owning Auto setup after: All Pages preserves the current source page instead of jumping to a cover
+2026-10-04 15:20:45.693 test-flow[13439:4015839] addTextFromVisionDocument: numWordQuads = 57, elapsedTime = 0.066674 secs
+PASS: The actual Current Page action defines an explicit extraction selection
+PASS: Name picking opens the selected eighth page from the document cover
+2026-10-04 15:20:46.263 test-flow[13439:4015839] addTextFromVisionDocument: numWordQuads = 16, elapsedTime = 0.0180941 secs
+PASS: Done returns to the owning Auto setup after: Name picking opens the selected eighth page from the document cover
+PASS: The real editable Page range accepts a discontiguous selection
+PASS: An unsorted selected range opens its first page in document order
+PASS: Done returns to the owning Auto setup after: An unsorted selected range opens its first page in document order
+PASS: Changing page selection and returning preserves both named instruments
+2026-10-04 15:20:47.417 test-flow[13439:4015778] addTextFromVisionDocument: numWordQuads = 32, elapsedTime = 0.035835 secs
+PASS: An out-of-range page edit is visibly reported as invalid
+PASS: An invalid range keeps the current page rather than using the stale valid selection
+PASS: Done returns to the owning Auto setup after: An invalid range keeps the current page rather than using the stale valid selection
+PASS: The actual Clear action removes the selected page range
+2026-10-04 15:20:48.550 test-flow[13439:4015817] addTextFromVisionDocument: numWordQuads = 62, elapsedTime = 0.0751511 secs
+PASS: An empty explicit selection preserves the current source page
+PASS: Done returns to the owning Auto setup after: An empty explicit selection preserves the current source page
+2026-10-04 15:20:49.379 test-flow[13439:4015817] addTextFromVisionDocument: numWordQuads = 47, elapsedTime = 0.109382 secs
+PASS: Switching back to All Pages ignores the previously selected range
+PASS: Done returns to the owning Auto setup after: Switching back to All Pages ignores the previously selected range
+2026-10-04 15:20:50.010 test-flow[13439:4015817] addTextFromVisionDocument: numWordQuads = 31, elapsedTime = 0.0435801 secs
+PASS: First document can start picking while another Auto window exists
+2026-10-04 15:20:50.758 test-flow[13439:4015817] addTextFromVisionDocument: numWordQuads = 35, elapsedTime = 0.037964 secs
+PASS: Done targets its owning Auto window, not whichever document most recently requested focus
+PASS: The other document's setup and selection state remain untouched
+PASS: Source-close cleanup is exercised during a live picking session
+PASS: Closing the source closes its Auto window and cancels picking
+PASS: A late Done callback never resurrects a closed setup
+PASS: Picking and returning only edit transient setup, not the source project
+PASS: The second document also cleans up its owned Auto window
+PASS: 47 instrument-picking flow checks
