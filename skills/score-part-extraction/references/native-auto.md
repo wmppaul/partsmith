@@ -48,6 +48,14 @@ acknowledgement. Use **View Skipped Pages** for source review and **Restore Page
 when music was missed. A page with undetected music must stay included; a failed
 raster is an error, not evidence of a blank page.
 
+A staff-count mismatch can also come from an editorial music example. Inspect
+the entire page before changing its instrument roster. Mozart K.478 (IMSLP
+478563), page 38, has three normal five-staff systems and a smaller piano
+ornament example in the footnote. Assign the normal systems separately and
+retain the example with its explanation and reference in the piano part.
+Excluding that extra staff as non-music would discard notation. Record this as
+a manual correction; the regular-profile Auto path does not resolve the inset.
+
 For changing instrumentation, enable **Instrument layout changes between
 systems** before Auto. In **Assign Instruments**, select a complete printed
 system on the enlarged score and assign the instruments actually present.
@@ -220,6 +228,12 @@ voice. Keep local note ownership distinct from the connecting spine; when the
 source is ambiguous, retain context and report uncertainty. Compare neighboring
 staff inclusion separately from recovered notes so preservation gains do not
 hide new whole-staff contamination.
+When replacing an analysis-only line mask, check whether it restores pixels the
+old mask removed. A few restored endpoint rows can cross the next staff's bounds
+and add a false owner without joining two components. Trace original pixels and
+owner changes separately. Making additional cleanup only remove pixels prevents
+that particular regression; it does not establish musical completeness, so keep
+the source-preservation and crop-review checks.
 
 Compare every source page, including unresolved instrument layouts. Ignore only
 component ordering; ownership, bounds and alternative-evidence tags are semantic

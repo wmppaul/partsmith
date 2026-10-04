@@ -1,0 +1,36 @@
+{
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/01_mozart_piano_quartet_k478_imslp_478563.pdf",
+  "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+  "page": 38,
+  "render": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/k478-page-38.png",
+  "renderSHA256": "17a5bab0e496cd2d39ff9ee1f75f556597f2c3572834a0013919b77aec2a4438",
+  "reviewer": "root",
+  "finding": "Three complete regular systems of five staves each, plus a small one-staff editorial ornament example in a footnote below the final system. Detector finds all16. Planner rejects16 as indivisible by5, leaving whole page unassigned.",
+  "regularSystemStaffIDs": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    [
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  ],
+  "footnoteStaffID": 15,
+  "footnoteSourceText": "Vorschlag zur Auszierung der Fermate",
+  "ownershipInterpretation": "Ornament suggestion linked by asterisk to piano right-hand fermata in first system. It should be retained as piano source annotation; silently discarding this detected staff would lose intended editorial music.",
+  "status": "Pre-existing assignment workflow limitation, unchanged by candidate. Source review provides a concrete manual resolution, not an automatic assignment or changed baseline."
+}

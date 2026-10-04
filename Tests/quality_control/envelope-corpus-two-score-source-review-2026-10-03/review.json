@@ -1,0 +1,5136 @@
+{
+  "reviewer": "crop_algorithm_audit",
+  "date": "2026-10-03",
+  "purpose": "Bounded independent source review of all changed crop geometry for two verified raw corpus jobs. Not an overall extraction-quality or production-approval claim.",
+  "method": {
+    "source": "Original score PDFs; source-only full page2 of each score inspected before contexts.",
+    "render": "PyMuPDF at 3 px/pt; original full-width source contexts cover the union of old/new crops plus 18 pt above/below. Overlay coordinates use each actual page and pix.x/y origin. Old edges are red dashed; new edges blue solid. No source pixels are cleaned or erased.",
+    "inspection": "All 147 contexts visually inspected in 29 contact sheets at 1440 px wide. All changed edges examined against target notes, ledger lines, slurs/ties, articulations, dynamics and headings. No new native detection, synthetic fixtures or export run.",
+    "limits": "Visual source-area review, not pixel-perfect output-render equality or proof that every original omission is absent. Unchanged crops and unresolved K478p38 were not newly certified. Partial neighboring ink remains."
+  },
+  "scores": [
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "alias": "K478",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/01_mozart_piano_quartet_k478_imslp_478563.pdf",
+      "sourceSHA256": "b4764fe2d3969c319898c13a7909ad240b59f10afb73d29f51cb4d8d965048aa",
+      "verifiedInputFiles": [
+        {
+          "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+          "sha256": "384640abe9e15bdaf5aadf1a1210079ffc23d3bd69ad0874a454c0d2d75687fd"
+        },
+        {
+          "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/candidate/lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563.json",
+          "sha256": "84d2215dd248fcaa289694f3dc1486636b22878ba937226516dab6f6bc8d3f37"
+        }
+      ],
+      "verifiedJobSHA256": "802a70dbb6bfe6ecfa80997717387b554f79886e8ea6374f32ac465a355dd832",
+      "beforeCounts": {
+        "bands": 612,
+        "pagesWithAssignments": 51,
+        "pagesWithUnresolvedReasons": 1,
+        "detectedStaves": 781,
+        "unassignedStaves": 16,
+        "wholeNeighborOccurrences": 0
+      },
+      "afterCounts": {
+        "bands": 612,
+        "pagesWithAssignments": 51,
+        "pagesWithUnresolvedReasons": 1,
+        "detectedStaves": 781,
+        "unassignedStaves": 16,
+        "wholeNeighborOccurrences": 0
+      },
+      "changedGeometryReviewed": 34,
+      "withContractedEdge": 26,
+      "withExpandedEdge": 8,
+      "newIntendedMusicOmissionsObserved": [],
+      "newWholeNeighborRelations": [],
+      "assignmentChanges": 0,
+      "notes": [
+        "p14 s1 Cello: the 19.077 pt bottom contraction removes neighboring piano ink; own rests and notes remain.",
+        "p24 s3 Violin and p52 s3 Violin: bottom contractions retain the low forte/slur and low sustained ledger note/articulations respectively.",
+        "p20 s1 Piano: Andante remains complete despite the top contraction.",
+        "Changed piano bottom edges retain low ledger notes and slurs in p8 s1, p9 s2, p39 s1, p40 s3, p44 s2 and p52 s2/s3.",
+        "p32 s3 Piano: editorial footnote text lies below the unchanged bottom before and after; this is not a new crop omission.",
+        "Physical page 38 remains unresolved: 16 detected staves versus the five-staff cadence profile. Root separately confirmed 15 main staves plus a piano ornament footnote staff; neither the page nor that annotation is approved for omission."
+      ],
+      "reviewedRows": [
+        {
+          "bandID": "p1-s3-viola",
+          "page": 1,
+          "before": [
+            0,
+            645.1520064856101,
+            648,
+            692.7466558573166
+          ],
+          "after": [
+            0,
+            649.4714227807052,
+            648,
+            692.7466558573166
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p1-s3-viola.png",
+          "contextSHA256": "86a8163847a427a9f3970fc63b9e21446b9f6aca2063f13e31265b6de4b56014",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1881
+          ],
+          "sourceClip": [
+            0,
+            627.1520064856101,
+            648.0,
+            710.7466558573166
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p1-s3-violin",
+          "page": 1,
+          "before": [
+            0,
+            613.4762869882447,
+            648,
+            667.1901094446696
+          ],
+          "after": [
+            0,
+            613.4762869882447,
+            648,
+            666.830158086745
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p1-s3-violin.png",
+          "contextSHA256": "fab402902f96361e9f5d9238dfcfe94dde05d7289c377795012d35c674d759f2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1786
+          ],
+          "sourceClip": [
+            0,
+            595.4762869882447,
+            648.0,
+            685.1901094446696
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p3-s1-violin",
+          "page": 3,
+          "before": [
+            0,
+            41.513579246047826,
+            648,
+            102.78638021888935
+          ],
+          "after": [
+            0,
+            41.513579246047826,
+            648,
+            103.50628293473855
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p3-s1-violin.png",
+          "contextSHA256": "cb3820d60016059a3947ae834f2bd7ad079cbe2bb1797f9611c897ff02c659d8",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            70
+          ],
+          "sourceClip": [
+            0,
+            23.513579246047826,
+            648.0,
+            121.50628293473855
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p5-s1-viola",
+          "page": 5,
+          "before": [
+            0,
+            83.6278881232266,
+            648,
+            130.5026347790839
+          ],
+          "after": [
+            0,
+            83.6278881232266,
+            648,
+            124.02351033644103
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p5-s1-viola.png",
+          "contextSHA256": "eeac98243719ecd342f622d14f30e0a6c4f2c6686c8abe88fdbd41d1a7f78b3e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            196
+          ],
+          "sourceClip": [
+            0,
+            65.6278881232266,
+            648.0,
+            148.5026347790839
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p8-s1-piano",
+          "page": 8,
+          "before": [
+            0,
+            155.25558013411722,
+            648,
+            277.0037135264333
+          ],
+          "after": [
+            0,
+            155.25558013411722,
+            648,
+            270.1646377258658
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p8-s1-piano.png",
+          "contextSHA256": "b7c361db2a7e6183067d9bbf234d79d804109a0cdd6f27e44577651842bc2c1d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            411
+          ],
+          "sourceClip": [
+            0,
+            137.25558013411722,
+            648.0,
+            295.0037135264333
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p8-s2-cello",
+          "page": 8,
+          "before": [
+            0,
+            384.9071747061208,
+            648,
+            428.18240778273207
+          ],
+          "after": [
+            0,
+            384.9071747061208,
+            648,
+            422.783137413863
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p8-s2-cello.png",
+          "contextSHA256": "86e1eccb25ecc859e51a2fee77d29cb88c9bebe425431cee32a781db879f4a64",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1100
+          ],
+          "sourceClip": [
+            0,
+            366.9071747061208,
+            648.0,
+            446.18240778273207
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p9-s2-piano",
+          "page": 9,
+          "before": [
+            0,
+            433.5070734653373,
+            648,
+            549.8438116147836
+          ],
+          "after": [
+            0,
+            437.8264897604326,
+            648,
+            542.2848330983669
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p9-s2-piano.png",
+          "contextSHA256": "5fbd7c2b70e23aac2ddad96ab63f3b9e293d4a1d4ddd604d8f2d06e97f44c083",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1246
+          ],
+          "sourceClip": [
+            0,
+            415.5070734653373,
+            648.0,
+            567.8438116147836
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p13-s3-violin",
+          "page": 13,
+          "before": [
+            0,
+            574.9614916903121,
+            648,
+            649.9124442642886
+          ],
+          "after": [
+            0,
+            574.9614916903121,
+            648,
+            650.6323469801379
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p13-s3-violin.png",
+          "contextSHA256": "7d857ed6badd7711a24e0bd8f58c435ca7084a4e83cefe4706185e9693f3cbeb",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1670
+          ],
+          "sourceClip": [
+            0,
+            556.9614916903121,
+            648.0,
+            668.6323469801379
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p14-s1-cello",
+          "page": 14,
+          "before": [
+            0,
+            120.3429266315363,
+            648,
+            178.73611674098095
+          ],
+          "after": [
+            0,
+            120.3429266315363,
+            648,
+            159.6586947709769
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p14-s1-cello.png",
+          "contextSHA256": "1af93994d1ee64a054f373e7aceb7abe1eb143f6395e4e21bc99ef9752694617",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            307
+          ],
+          "sourceClip": [
+            0,
+            102.3429266315363,
+            648.0,
+            196.73611674098095
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s1-violin",
+          "page": 17,
+          "before": [
+            0,
+            42.59343331982164,
+            648,
+            103.86623429266317
+          ],
+          "after": [
+            0,
+            42.59343331982164,
+            648,
+            104.94608836643697
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p17-s1-violin.png",
+          "contextSHA256": "99d3454ed11ca1d5755e7738d5f7eacb1ed6c5ba94201e14038a7c4d1411461f",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            73
+          ],
+          "sourceClip": [
+            0,
+            24.593433319821642,
+            648.0,
+            122.94608836643697
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p19-s2-viola",
+          "page": 19,
+          "before": [
+            0,
+            360.4304823672477,
+            648,
+            393.2671260640454
+          ],
+          "after": [
+            0,
+            361.15038508309686,
+            648,
+            393.2671260640454
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p19-s2-viola.png",
+          "contextSHA256": "7768fa7d8780d410f6df62a538ede309e79fa2022e18a7d9be75065a5bb93a61",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1027
+          ],
+          "sourceClip": [
+            0,
+            342.4304823672477,
+            648.0,
+            411.2671260640454
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s1-piano",
+          "page": 20,
+          "before": [
+            0,
+            172.59467075717498,
+            648,
+            290.3014386220848
+          ],
+          "after": [
+            0,
+            174.75437890472259,
+            648,
+            290.3014386220848
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p20-s1-piano.png",
+          "contextSHA256": "59116b3a233f8771fe6a4f66746017ba6ba31d09d7004ebf3905445c7bd9cf80",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            463
+          ],
+          "sourceClip": [
+            0,
+            154.59467075717498,
+            648.0,
+            308.3014386220848
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p24-s3-violin",
+          "page": 24,
+          "before": [
+            0,
+            579.2809079854073,
+            648,
+            643.0733684637211
+          ],
+          "after": [
+            0,
+            579.2809079854073,
+            648,
+            632.274827725983
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p24-s3-violin.png",
+          "contextSHA256": "ba9a9e33e2eab7e3b5db827d0eb6dfb6a9142320e964683db350931058867bf2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1683
+          ],
+          "sourceClip": [
+            0,
+            561.2809079854073,
+            648.0,
+            661.0733684637211
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p31-s3-piano",
+          "page": 31,
+          "before": [
+            0,
+            729.9334808523344,
+            648,
+            815.5052249639596
+          ],
+          "after": [
+            0,
+            729.9334808523344,
+            648,
+            815.7857185160507
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p31-s3-piano.png",
+          "contextSHA256": "676a6a75b07a3033800ca799d37c146ea3a51b274523699ba7a4b1b3a6bc1846",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            2135
+          ],
+          "sourceClip": [
+            0,
+            711.9334808523344,
+            648.0,
+            833.7857185160507
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p32-s3-piano",
+          "page": 32,
+          "before": [
+            0,
+            716.1260197986417,
+            648,
+            824.4676542570937
+          ],
+          "after": [
+            0,
+            717.9257765882646,
+            648,
+            824.4676542570937
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p32-s3-piano.png",
+          "contextSHA256": "4818c5bc8b3df5eec77fda6e7e62c7746e2eb8e87651691f74d2fda37d97e25a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            2094
+          ],
+          "sourceClip": [
+            0,
+            698.1260197986417,
+            648.0,
+            842.4676542570937
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p34-s1-violin",
+          "page": 34,
+          "before": [
+            0,
+            39.71382245642481,
+            648,
+            103.14633157681395
+          ],
+          "after": [
+            0,
+            39.71382245642481,
+            648,
+            104.22618565058777
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p34-s1-violin.png",
+          "contextSHA256": "ae8d7a2642ae6cc6da826ce4c570af85516acff5e87f169296600e3602097af0",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            65
+          ],
+          "sourceClip": [
+            0,
+            21.713822456424808,
+            648.0,
+            122.22618565058777
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p39-s1-piano",
+          "page": 39,
+          "before": [
+            0,
+            175.18285993807845,
+            648,
+            296.3977684816593
+          ],
+          "after": [
+            0,
+            175.18285993807845,
+            648,
+            290.6385467548656
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p39-s1-piano.png",
+          "contextSHA256": "14964857ecaae6b1f66fc88ba31e096531e1b8d7b9a1dd2486eaa6f20e21176a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            471
+          ],
+          "sourceClip": [
+            0,
+            157.18285993807845,
+            648.0,
+            314.3977684816593
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p39-s3-cello",
+          "page": 39,
+          "before": [
+            0,
+            659.9100121605188,
+            648,
+            710.3842723956221
+          ],
+          "after": [
+            0,
+            661.7097689501418,
+            648,
+            710.3842723956221
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p39-s3-cello.png",
+          "contextSHA256": "63ac66de473dc9246423c1707c87a137856a7b02ca6da5bf6c12126edbf8caae",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1925
+          ],
+          "sourceClip": [
+            0,
+            641.9100121605188,
+            648.0,
+            728.3842723956221
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p40-s3-piano",
+          "page": 40,
+          "before": [
+            0,
+            709.9356606436502,
+            648,
+            825.9311883788832
+          ],
+          "after": [
+            0,
+            709.9356606436502,
+            648,
+            823.411528873411
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p40-s3-piano.png",
+          "contextSHA256": "56b3953cdc5c53e7b41db856e610eddb158ffaaa002379af8dfbbf52da01e1fa",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            2075
+          ],
+          "sourceClip": [
+            0,
+            691.9356606436502,
+            648.0,
+            843.9311883788832
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p42-s2-violin",
+          "page": 42,
+          "before": [
+            0,
+            306.07782732063237,
+            648,
+            368.79043372517225
+          ],
+          "after": [
+            0,
+            306.07782732063237,
+            648,
+            369.5103364410215
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p42-s2-violin.png",
+          "contextSHA256": "5e82f93842bcac83c1fbcdfec4e45b7e2e5c17235624c256013c9a27185aa1a0",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            864
+          ],
+          "sourceClip": [
+            0,
+            288.07782732063237,
+            648.0,
+            387.5103364410215
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p42-s3-violin",
+          "page": 42,
+          "before": [
+            0,
+            581.440616132955,
+            648,
+            643.4333198216457
+          ],
+          "after": [
+            0,
+            581.440616132955,
+            648,
+            644.1532225374949
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p42-s3-violin.png",
+          "contextSHA256": "5482ac997fd50605be578bd1af85b12f0f4065000b9fa71d94c05b9977ccc928",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1690
+          ],
+          "sourceClip": [
+            0,
+            563.440616132955,
+            648.0,
+            662.1532225374949
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p44-s2-piano",
+          "page": 44,
+          "before": [
+            0,
+            444.35826813611396,
+            648,
+            556.6653361043383
+          ],
+          "after": [
+            0,
+            444.35826813611396,
+            648,
+            553.0658225250921
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p44-s2-piano.png",
+          "contextSHA256": "4f9244ed75eddf892a6af9a7d4f13a19330434ca3b8bb2f09eb0f7d78e5eaf27",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1279
+          ],
+          "sourceClip": [
+            0,
+            426.35826813611396,
+            648.0,
+            574.6653361043383
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p44-s3-piano",
+          "page": 44,
+          "before": [
+            0,
+            712.1077440747981,
+            648,
+            825.9270632843499
+          ],
+          "after": [
+            0,
+            716.0672090119688,
+            648,
+            825.9270632843499
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p44-s3-piano.png",
+          "contextSHA256": "42465638d5e4663d3ce35cdc27e390747b4189d66f171d8b81fa3340995dad2d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            2082
+          ],
+          "sourceClip": [
+            0,
+            694.1077440747981,
+            648.0,
+            843.9270632843499
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p44-s3-viola",
+          "page": 44,
+          "before": [
+            0,
+            624.6347790839076,
+            648,
+            672.5893798135387
+          ],
+          "after": [
+            0,
+            631.8338062423996,
+            648,
+            672.5893798135387
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p44-s3-viola.png",
+          "contextSHA256": "4598f4cdb62718c6f439152c8524c3e53cb5667c2f718a2587552a4cef59eaa2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1819
+          ],
+          "sourceClip": [
+            0,
+            606.6347790839076,
+            648.0,
+            690.5893798135387
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p44-s3-violin",
+          "page": 44,
+          "before": [
+            0,
+            587.5597892176733,
+            648,
+            650.2723956222133
+          ],
+          "after": [
+            0,
+            587.5597892176733,
+            648,
+            648.8325901905148
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p44-s3-violin.png",
+          "contextSHA256": "f1d05639debdeb9a9c41c36926e247037a41b2bdeff9afceb9b6d8a5fa613ac7",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1708
+          ],
+          "sourceClip": [
+            0,
+            569.5597892176733,
+            648.0,
+            668.2723956222133
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p45-s1-viola",
+          "page": 45,
+          "before": [
+            0,
+            87.58735306039725,
+            648,
+            137.701661937576
+          ],
+          "after": [
+            0,
+            87.58735306039725,
+            648,
+            134.82205107417917
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p45-s1-viola.png",
+          "contextSHA256": "d614ae4e2ef947aac7d51984533547df63aa211f5607019f93a0d910ff089b27",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            208
+          ],
+          "sourceClip": [
+            0,
+            69.58735306039725,
+            648.0,
+            155.701661937576
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p45-s2-violin",
+          "page": 45,
+          "before": [
+            0,
+            312.19700040535065,
+            648,
+            369.87028779894604
+          ],
+          "after": [
+            0,
+            312.19700040535065,
+            648,
+            367.71057965139846
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p45-s2-violin.png",
+          "contextSHA256": "c3cabe51e44d8f89eeace8bf3c1681ec028cfdf0c482859c640331d231110766",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            882
+          ],
+          "sourceClip": [
+            0,
+            294.19700040535065,
+            648.0,
+            387.87028779894604
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p46-s3-violin",
+          "page": 46,
+          "before": [
+            0,
+            583.6003242805026,
+            648,
+            642.353465747872
+          ],
+          "after": [
+            0,
+            583.6003242805026,
+            648,
+            644.5131738954195
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p46-s3-violin.png",
+          "contextSHA256": "56850cce7fb89cb10021b5ed611f780b2496c5d6d7f26c0c958aa9f9fd26dbf6",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1696
+          ],
+          "sourceClip": [
+            0,
+            565.6003242805026,
+            648.0,
+            662.5131738954195
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p47-s2-violin",
+          "page": 47,
+          "before": [
+            0,
+            313.27685447912444,
+            648,
+            382.1086339683826
+          ],
+          "after": [
+            0,
+            313.27685447912444,
+            648,
+            375.9894608836643
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p47-s2-violin.png",
+          "contextSHA256": "718df53d6afcfc516c1fe84713cac3f13f1de8d5787b97d5d957a853618f61ac",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            885
+          ],
+          "sourceClip": [
+            0,
+            295.27685447912444,
+            648.0,
+            400.1086339683826
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p49-s1-violin",
+          "page": 49,
+          "before": [
+            0,
+            37.91406566680178,
+            648,
+            97.02715849209567
+          ],
+          "after": [
+            0,
+            37.91406566680178,
+            648,
+            93.78759627077423
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p49-s1-violin.png",
+          "contextSHA256": "6bf9b34a62354def453ba006ca244da145031b7c9033ce815f57a9463ca740f7",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            59
+          ],
+          "sourceClip": [
+            0,
+            19.914065666801783,
+            648.0,
+            115.02715849209567
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p49-s3-violin",
+          "page": 49,
+          "before": [
+            0,
+            588.9995946493717,
+            648,
+            642.7134171057966
+          ],
+          "after": [
+            0,
+            588.9995946493717,
+            648,
+            641.9935143899472
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p49-s3-violin.png",
+          "contextSHA256": "25ceba30f4402dd68cf6f31871ee837e8ca9d8ba9a1d40f3d0064d7ff5e3cb16",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1712
+          ],
+          "sourceClip": [
+            0,
+            570.9995946493717,
+            648.0,
+            660.7134171057966
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p52-s2-piano",
+          "page": 52,
+          "before": [
+            0,
+            433.5616338781408,
+            648,
+            553.7850897476864
+          ],
+          "after": [
+            0,
+            433.5616338781408,
+            648,
+            549.465673452591
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p52-s2-piano.png",
+          "contextSHA256": "a57eac678776e584218daf902696619ee8518fa0ed58b2043739537384cbb7b3",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1246
+          ],
+          "sourceClip": [
+            0,
+            415.5616338781408,
+            648.0,
+            571.7850897476864
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p52-s3-piano",
+          "page": 52,
+          "before": [
+            0,
+            709.6425138255248,
+            648,
+            828.7885310623469
+          ],
+          "after": [
+            0,
+            713.96193012062,
+            648,
+            825.9089201989501
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p52-s3-piano.png",
+          "contextSHA256": "441b5c149c9fd97635062857d715e582e046a707e2dd6b32e2e799de1e40342d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            2074
+          ],
+          "sourceClip": [
+            0,
+            691.6425138255248,
+            648.0,
+            846.7885310623469
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p52-s3-violin",
+          "page": 52,
+          "before": [
+            0,
+            580.0008107012565,
+            648,
+            639.8338062423996
+          ],
+          "after": [
+            0,
+            580.0008107012565,
+            648,
+            630.1151195784354
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/K478/p52-s3-violin.png",
+          "contextSHA256": "e99c2b72a441fb4c5fd2fbb4dd37df9bc6f3a466111e76ed672a4f1d4671d05f",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1686
+          ],
+          "sourceClip": [
+            0,
+            562.0008107012565,
+            648.0,
+            657.8338062423996
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        }
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "alias": "Trio114011",
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/02_brahms_clarinet_trio_op114_imslp_114011.pdf",
+      "sourceSHA256": "db43702c5b9b64069748f90339aeeb6f4e4d5736696b59dd8e14a58780c5e19d",
+      "verifiedInputFiles": [
+        {
+          "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+          "sha256": "07821d8f5ba12b5e75883f38013b6691f992c2f9bc4bd03efe76c8904ac3c311"
+        },
+        {
+          "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/candidate/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011.json",
+          "sha256": "9994558e14dd52448863828f163fb0efba25a5f3c04a896343da075e40c2d9b6"
+        }
+      ],
+      "verifiedJobSHA256": "64c7c7dcb5fb63d0943d75e691b4c0c5114403679febb3c469883572bbfac43e",
+      "beforeCounts": {
+        "bands": 393,
+        "pagesWithAssignments": 33,
+        "pagesWithUnresolvedReasons": 2,
+        "detectedStaves": 524,
+        "unassignedStaves": 0,
+        "wholeNeighborOccurrences": 2
+      },
+      "afterCounts": {
+        "bands": 393,
+        "pagesWithAssignments": 33,
+        "pagesWithUnresolvedReasons": 2,
+        "detectedStaves": 524,
+        "unassignedStaves": 0,
+        "wholeNeighborOccurrences": 1
+      },
+      "changedGeometryReviewed": 113,
+      "withContractedEdge": 94,
+      "withExpandedEdge": 20,
+      "newIntendedMusicOmissionsObserved": [],
+      "newWholeNeighborRelations": [],
+      "assignmentChanges": 0,
+      "notes": [
+        "Largest piano bottom contractions at p22 s2 (21.159 pt), p23 s1 and p18 s1 (18.184 pt), p18 s3 (16.861 pt) and p33 s2 (16.531 pt) keep low notes, ledger lines, slurs and accents while removing following-system ink.",
+        "Poco meno Allegro at p11 s2 Clarinet, Andante grazioso at p18 s1 Piano, Un poco sostenuto at p25 s3 Clarinet/Piano and Allegro at p26 s1 Clarinet remain complete.",
+        "Clarinet top contractions at p14 s1, p15 s1, p20 s1 and p29 s1 can cut or remove source page numbers. These are pagination, not measure numbers or musical directions.",
+        "Expansions such as p3 s1 Cello, p19 s2 Cello and p21 s1 Cello add partial neighboring piano ink. This job has no new complete neighboring staff relation.",
+        "p25 s1 Clarinet removes its former whole-neighbor relation, but substantial partial cello notation remains; crop cleanliness is not fully solved."
+      ],
+      "reviewedRows": [
+        {
+          "bandID": "p1-s2-clarinet",
+          "page": 1,
+          "before": [
+            0.0,
+            375.85825471698115,
+            595.2,
+            430.1441037735849
+          ],
+          "after": [
+            0.0,
+            375.85825471698115,
+            595.2,
+            424.1930660377359
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p1-s2-clarinet.png",
+          "contextSHA256": "b23d65f3b026eb94790b85f6943ae856bfca8ce300f9e392efe31f1346abf4de",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1073
+          ],
+          "sourceClip": [
+            0,
+            357.85825471698115,
+            595.2000122070312,
+            448.1441037735849
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p2-s1-piano",
+          "page": 2,
+          "before": [
+            0.0,
+            113.01359113699526,
+            595.2,
+            238.39083125622173
+          ],
+          "after": [
+            0.0,
+            115.32788358982545,
+            595.2,
+            238.39083125622173
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p2-s1-piano.png",
+          "contextSHA256": "a18f01cb94c006469c8b3a71898bc823280abb130bb19eed96db1c94505286fb",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            285
+          ],
+          "sourceClip": [
+            0,
+            95.01359113699526,
+            595.2000122070312,
+            256.39083125622176
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p2-s2-clarinet",
+          "page": 2,
+          "before": [
+            0.0,
+            239.31500000000003,
+            595.2,
+            285.66613207547175
+          ],
+          "after": [
+            0.0,
+            239.31500000000003,
+            595.2,
+            279.05386792452833
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p2-s2-clarinet.png",
+          "contextSHA256": "9cd12265938adfe9b9d87a9e9358d7958da755e3ecf460c64581c3e330d63a89",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            663
+          ],
+          "sourceClip": [
+            0,
+            221.31500000000003,
+            595.2000122070312,
+            303.66613207547175
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p2-s3-clarinet",
+          "page": 2,
+          "before": [
+            0.0,
+            415.20122641509437,
+            595.2,
+            470.1483018867924
+          ],
+          "after": [
+            0.0,
+            415.20122641509437,
+            595.2,
+            467.5033962264151
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p2-s3-clarinet.png",
+          "contextSHA256": "6caf1c49a22cf44a1a841e9485133fdf8c9aa399039f4c72c2554d59f7e093ff",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1191
+          ],
+          "sourceClip": [
+            0,
+            397.20122641509437,
+            595.2000122070312,
+            488.1483018867924
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p2-s4-piano",
+          "page": 2,
+          "before": [
+            0.0,
+            659.1780419208206,
+            595.2,
+            787.542225020104
+          ],
+          "after": [
+            0.0,
+            668.7658249396885,
+            595.2,
+            787.542225020104
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p2-s4-piano.png",
+          "contextSHA256": "b2ca8971113c028051e2d1c0a35422852f5f8b3e601fd1a86d38681944329e33",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1923
+          ],
+          "sourceClip": [
+            0,
+            641.1780419208206,
+            595.2000122070312,
+            805.542225020104
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p3-s1-cello",
+          "page": 3,
+          "before": [
+            0.0,
+            86.57169811320756,
+            595.2,
+            121.68198113207546
+          ],
+          "after": [
+            0.0,
+            86.57169811320756,
+            595.2,
+            140.52693396226417
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p3-s1-cello.png",
+          "contextSHA256": "e617a7b88cb98d18981474ce90556eb1b01ef5a2f6a4035f30682f13107d7740",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            205
+          ],
+          "sourceClip": [
+            0,
+            68.57169811320756,
+            595.2000122070312,
+            158.52693396226417
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p3-s4-cello",
+          "page": 3,
+          "before": [
+            0.0,
+            625.8018396226415,
+            595.2,
+            692.9816037735849
+          ],
+          "after": [
+            0.0,
+            625.8018396226415,
+            595.2,
+            675.7897169811321
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p3-s4-cello.png",
+          "contextSHA256": "7eb0fd6d9c778f293c5b1739a28fb92da661adba9e161b9265f281710813c6c9",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1823
+          ],
+          "sourceClip": [
+            0,
+            607.8018396226415,
+            595.2000122070312,
+            710.9816037735849
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p3-s4-piano",
+          "page": 3,
+          "before": [
+            0.0,
+            661.8320031065016,
+            595.2,
+            788.2004329267636
+          ],
+          "after": [
+            0.0,
+            655.5503521631055,
+            595.2,
+            788.2004329267636
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p3-s4-piano.png",
+          "contextSHA256": "926afa7ba88ec16802babd3853c1e74e9f1e2390e37e61646af930a80836ae57",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1912
+          ],
+          "sourceClip": [
+            0,
+            637.5503521631055,
+            595.2000122070312,
+            806.2004329267636
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p4-s2-clarinet",
+          "page": 4,
+          "before": [
+            0.0,
+            241.9599056603774,
+            595.2,
+            286.32735849056604
+          ],
+          "after": [
+            0.0,
+            241.9599056603774,
+            595.2,
+            284.67429245283023
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p4-s2-clarinet.png",
+          "contextSHA256": "9e7b0f269ed06b275e3a35959701717c68610b7738f2f2b716007e2cfa69526e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            671
+          ],
+          "sourceClip": [
+            0,
+            223.9599056603774,
+            595.2000122070312,
+            304.32735849056604
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p5-s1-piano",
+          "page": 5,
+          "before": [
+            0.0,
+            120.21981185424929,
+            595.2,
+            247.67042435047037
+          ],
+          "after": [
+            0.0,
+            128.15452883538137,
+            595.2,
+            247.67042435047037
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p5-s1-piano.png",
+          "contextSHA256": "dfed9249c2e1058bc724c2319263a27938b635d9e6dd7c0f53cae76c95fc119b",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            306
+          ],
+          "sourceClip": [
+            0,
+            102.21981185424929,
+            595.2000122070312,
+            265.6704243504704
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p5-s2-piano",
+          "page": 5,
+          "before": [
+            0.0,
+            307.0691569863909,
+            595.2,
+            411.96756087875025
+          ],
+          "after": [
+            0.0,
+            309.38344943922107,
+            595.2,
+            411.96756087875025
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p5-s2-piano.png",
+          "contextSHA256": "88f7297456e1066788565212f2fb6ca5622bfd5e0d45acc99529367800848c53",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            867
+          ],
+          "sourceClip": [
+            0,
+            289.0691569863909,
+            595.2000122070312,
+            429.96756087875025
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p6-s4-piano",
+          "page": 6,
+          "before": [
+            0.0,
+            679.2811191236482,
+            595.2,
+            796.8208376506078
+          ],
+          "after": [
+            0.0,
+            679.2811191236482,
+            595.2,
+            789.8779602921173
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p6-s4-piano.png",
+          "contextSHA256": "fc358b6db6082c2f8a0d25791e87be83e5e878b062cc172b3c6f6407afe8841a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1983
+          ],
+          "sourceClip": [
+            0,
+            661.2811191236482,
+            595.2000122070312,
+            814.8208376506078
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p7-s3-cello",
+          "page": 7,
+          "before": [
+            0.0,
+            442.9727358490566,
+            595.2,
+            519.7402830188679
+          ],
+          "after": [
+            0.0,
+            445.9482547169812,
+            595.2,
+            519.7402830188679
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p7-s3-cello.png",
+          "contextSHA256": "d44b23b5172eea9c52cbde31b95f147b0fb81f86f2a4706099949b0331a23589",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1274
+          ],
+          "sourceClip": [
+            0,
+            424.9727358490566,
+            595.2000122070312,
+            537.7402830188679
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p7-s3-clarinet",
+          "page": 7,
+          "before": [
+            0.0,
+            416.1930660377359,
+            595.2,
+            463.5360377358491
+          ],
+          "after": [
+            0.0,
+            416.1930660377359,
+            595.2,
+            461.8829716981132
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p7-s3-clarinet.png",
+          "contextSHA256": "42f3d80fc379aba8f95caf04dbc4a7cdef59aa1bec00203d1c99b6d6f2b6f453",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1194
+          ],
+          "sourceClip": [
+            0,
+            398.1930660377359,
+            595.2000122070312,
+            481.5360377358491
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p7-s3-piano",
+          "page": 7,
+          "before": [
+            0.0,
+            474.9052093160376,
+            595.2,
+            621.2842069575472
+          ],
+          "after": [
+            0.0,
+            474.9052093160376,
+            595.2,
+            611.035197523585
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p7-s3-piano.png",
+          "contextSHA256": "c8fb9cb2e24a3cbd0ddb065aeab44df961234145e36613344755f5785496e95c",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1370
+          ],
+          "sourceClip": [
+            0,
+            456.9052093160376,
+            595.2000122070312,
+            639.2842069575472
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p7-s4-cello",
+          "page": 7,
+          "before": [
+            0.0,
+            633.4059433962265,
+            595.2,
+            690.0060849056604
+          ],
+          "after": [
+            0.0,
+            638.6957547169811,
+            595.2,
+            690.0060849056604
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p7-s4-cello.png",
+          "contextSHA256": "6bb124631ad0d576e22f15797d134da7cfded7674eac3eccea8a362f4f6424d6",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1846
+          ],
+          "sourceClip": [
+            0,
+            615.4059433962265,
+            595.2000122070312,
+            708.0060849056604
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p7-s4-clarinet",
+          "page": 7,
+          "before": [
+            0.0,
+            601.0058490566038,
+            595.2,
+            653.9692452830188
+          ],
+          "after": [
+            0.0,
+            605.3038207547171,
+            595.2,
+            651.9855660377358
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p7-s4-clarinet.png",
+          "contextSHA256": "18a28447bf028ed7784777235c30e05ab3ce57fb177e8d8d0eeda7c734f2e140",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1749
+          ],
+          "sourceClip": [
+            0,
+            583.0058490566038,
+            595.2000122070312,
+            671.9692452830188
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p7-s4-piano",
+          "page": 7,
+          "before": [
+            0.0,
+            672.6738974056605,
+            595.2,
+            802.4395813679245
+          ],
+          "after": [
+            0.0,
+            672.6738974056605,
+            595.2,
+            797.8109964622641
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p7-s4-piano.png",
+          "contextSHA256": "1ce9ecc9eabdb1dc7b2e482cc460d765c1a155b59b7b1b7ee7070e7b5d13e1b2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1964
+          ],
+          "sourceClip": [
+            0,
+            654.6738974056605,
+            595.2000122070312,
+            820.4395813679245
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p8-s2-clarinet",
+          "page": 8,
+          "before": [
+            0.0,
+            244.60481132075475,
+            595.2,
+            289.6334905660378
+          ],
+          "after": [
+            0.0,
+            244.60481132075475,
+            595.2,
+            287.9804245283019
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p8-s2-clarinet.png",
+          "contextSHA256": "405f7d7917db52d015fdb4a5d5a096fd36f34b6fdb21aae9e40026b0975afa4e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            679
+          ],
+          "sourceClip": [
+            0,
+            226.60481132075475,
+            595.2000122070312,
+            307.6334905660378
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p9-s1-clarinet",
+          "page": 9,
+          "before": [
+            0.0,
+            47.22872641509434,
+            595.2,
+            104.82070754716982
+          ],
+          "after": [
+            0.0,
+            47.22872641509434,
+            595.2,
+            94.90231132075472
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p9-s1-clarinet.png",
+          "contextSHA256": "a175263ad6e2dc8dc2bfb6a16c2fd2e62cff2d544464cff87153f54ca90970a6",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            87
+          ],
+          "sourceClip": [
+            0,
+            29.228726415094343,
+            595.2000122070312,
+            122.82070754716982
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p10-s3-clarinet",
+          "page": 10,
+          "before": [
+            0.0,
+            420.8216509433962,
+            595.2,
+            474.1156603773585
+          ],
+          "after": [
+            0.0,
+            420.8216509433962,
+            595.2,
+            474.44627358490567
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p10-s3-clarinet.png",
+          "contextSHA256": "4e240bea8dfd79b2ee3315e3a74c18673bcc3367f3caca7d27793281a0b27e57",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1208
+          ],
+          "sourceClip": [
+            0,
+            402.8216509433962,
+            595.2000122070312,
+            492.44627358490567
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p10-s4-piano",
+          "page": 10,
+          "before": [
+            0.0,
+            667.713855374345,
+            595.2,
+            790.8684004098096
+          ],
+          "after": [
+            0.0,
+            667.713855374345,
+            595.2,
+            779.9581645607531
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p10-s4-piano.png",
+          "contextSHA256": "d6decdd372605d3391b9c2825fcabd143a9f4619d3210b9403bbf2a30f26dbbc",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1949
+          ],
+          "sourceClip": [
+            0,
+            649.713855374345,
+            595.2000122070312,
+            808.8684004098096
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p11-s2-clarinet",
+          "page": 11,
+          "before": [
+            0.0,
+            229.39660377358493,
+            595.2,
+            283.35183962264153
+          ],
+          "after": [
+            0.0,
+            229.39660377358493,
+            595.2,
+            276.408962264151
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p11-s2-clarinet.png",
+          "contextSHA256": "4165a6815e4baaea018403c164531f612c0c2d1d7c7e886d1ad6e6ea7c51479a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            634
+          ],
+          "sourceClip": [
+            0,
+            211.39660377358493,
+            595.2000122070312,
+            301.35183962264153
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p11-s3-clarinet",
+          "page": 11,
+          "before": [
+            0.0,
+            425.11962264150947,
+            595.2,
+            482.7116037735849
+          ],
+          "after": [
+            0.0,
+            425.11962264150947,
+            595.2,
+            468.16462264150937
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p11-s3-clarinet.png",
+          "contextSHA256": "ab55405b54805a851114bbed97ace8b831f12c8fd7533db5b882d0980385e79c",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1221
+          ],
+          "sourceClip": [
+            0,
+            407.11962264150947,
+            595.2000122070312,
+            500.7116037735849
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p11-s4-cello",
+          "page": 11,
+          "before": [
+            0.0,
+            647.952924528302,
+            595.2,
+            711.4959433962264
+          ],
+          "after": [
+            0.0,
+            647.952924528302,
+            595.2,
+            713.4796226415094
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p11-s4-cello.png",
+          "contextSHA256": "0c6b261be6ca8121d8847de15b3d9b0073722369b9af750f95600161c1c5ab9d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1889
+          ],
+          "sourceClip": [
+            0,
+            629.952924528302,
+            595.2000122070312,
+            731.4796226415094
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p12-s2-cello",
+          "page": 12,
+          "before": [
+            0.0,
+            274.36,
+            595.2,
+            340.8785377358491
+          ],
+          "after": [
+            0.0,
+            276.34367924528306,
+            595.2,
+            340.8785377358491
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p12-s2-cello.png",
+          "contextSHA256": "983c59b0c418bbd4342cc46f8a0d9e749095bd0d8b04585e8bd34f18b21b683a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            769
+          ],
+          "sourceClip": [
+            0,
+            256.36,
+            595.2000122070312,
+            358.8785377358491
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p12-s3-clarinet",
+          "page": 12,
+          "before": [
+            0.0,
+            418.5073584905661,
+            595.2,
+            479.0748584905661
+          ],
+          "after": [
+            0.0,
+            418.5073584905661,
+            595.2,
+            476.0993396226415
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p12-s3-clarinet.png",
+          "contextSHA256": "fdbd43615fed6af47422b41cb5e1b65ef9a8bd36730bf3483033e4d635309345",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1201
+          ],
+          "sourceClip": [
+            0,
+            400.5073584905661,
+            595.2000122070312,
+            497.0748584905661
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p12-s4-piano",
+          "page": 12,
+          "before": [
+            0.0,
+            678.2945983047889,
+            595.2,
+            798.1415175462025
+          ],
+          "after": [
+            0.0,
+            684.245636040638,
+            595.2,
+            785.57821565941
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p12-s4-piano.png",
+          "contextSHA256": "e19efdd8f955cc213ed29fb251a61d7eb4873cfb00cae7139f4368022a8e325e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1980
+          ],
+          "sourceClip": [
+            0,
+            660.2945983047889,
+            595.2000122070312,
+            816.1415175462025
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p13-s1-cello",
+          "page": 13,
+          "before": [
+            0.0,
+            85.24924528301888,
+            595.2,
+            152.09839622641508
+          ],
+          "after": [
+            0.0,
+            90.20844339622643,
+            595.2,
+            152.09839622641508
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p13-s1-cello.png",
+          "contextSHA256": "f95679f01fe7bb9cd02036eb732b489c7ec5a2c807213ff8badc528b61bf9771",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            201
+          ],
+          "sourceClip": [
+            0,
+            67.24924528301888,
+            595.2000122070312,
+            170.09839622641508
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p13-s1-clarinet",
+          "page": 13,
+          "before": [
+            0.0,
+            58.80018867924529,
+            595.2,
+            106.1431603773585
+          ],
+          "after": [
+            0.0,
+            58.80018867924529,
+            595.2,
+            104.49009433962264
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p13-s1-clarinet.png",
+          "contextSHA256": "1033d613ac4af00d694d26af9ec17398b7e898cc421c00c4c1b5c20c291b1cc1",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            122
+          ],
+          "sourceClip": [
+            0,
+            40.80018867924529,
+            595.2000122070312,
+            124.1431603773585
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p13-s2-cello",
+          "page": 13,
+          "before": [
+            0.0,
+            258.1599528301887,
+            595.2,
+            313.437641509434
+          ],
+          "after": [
+            0.0,
+            262.4579245283019,
+            595.2,
+            313.437641509434
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p13-s2-cello.png",
+          "contextSHA256": "6ae551f3d8261e321f6522ad97f6e672c59dce736549b317b2a3ae2062b8926b",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            720
+          ],
+          "sourceClip": [
+            0,
+            240.15995283018867,
+            595.2000122070312,
+            331.437641509434
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p13-s2-clarinet",
+          "page": 13,
+          "before": [
+            0.0,
+            238.65377358490568,
+            595.2,
+            278.0620283018868
+          ],
+          "after": [
+            0.0,
+            238.65377358490568,
+            595.2,
+            281.0375471698113
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p13-s2-clarinet.png",
+          "contextSHA256": "eb54ae8a10589192523ac4d728f4f621af54ac29b47d24bf555395b50951601d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            661
+          ],
+          "sourceClip": [
+            0,
+            220.65377358490568,
+            595.2000122070312,
+            299.0375471698113
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p13-s4-piano",
+          "page": 13,
+          "before": [
+            0.0,
+            661.431418042049,
+            595.2,
+            799.4646059356692
+          ],
+          "after": [
+            0.0,
+            661.431418042049,
+            595.2,
+            797.4809266903862
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p13-s4-piano.png",
+          "contextSHA256": "86febf1f0e61b98a9abc95ef202a18d1757e697599dda381d1625e15ddb0abe1",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1930
+          ],
+          "sourceClip": [
+            0,
+            643.431418042049,
+            595.2000122070312,
+            817.4646059356692
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p14-s1-clarinet",
+          "page": 14,
+          "before": [
+            0.0,
+            32.351132075471696,
+            595.2,
+            91.9267924528302
+          ],
+          "after": [
+            0.0,
+            41.608301886792454,
+            595.2,
+            91.9267924528302
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p14-s1-clarinet.png",
+          "contextSHA256": "97e39eefa8416126e091fab5ec3485f834e5c5c903ebed96af2dbb8184b24608",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            43
+          ],
+          "sourceClip": [
+            0,
+            14.351132075471696,
+            595.2000122070312,
+            109.9267924528302
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p14-s3-piano",
+          "page": 14,
+          "before": [
+            0.0,
+            468.02550003067523,
+            595.2,
+            597.458999989775
+          ],
+          "after": [
+            0.0,
+            475.6296038042601,
+            595.2,
+            597.458999989775
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p14-s3-piano.png",
+          "contextSHA256": "2e75126fd3493f4c48f251a822b41b5759e90967508abf56b4085fce3f4659ec",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1350
+          ],
+          "sourceClip": [
+            0,
+            450.02550003067523,
+            595.2000122070312,
+            615.458999989775
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p15-s1-clarinet",
+          "page": 15,
+          "before": [
+            0.0,
+            44.914433962264155,
+            595.2,
+            108.12683962264151
+          ],
+          "after": [
+            0.0,
+            56.4858962264151,
+            595.2,
+            108.12683962264151
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p15-s1-clarinet.png",
+          "contextSHA256": "d7179e6c2cb913bc3a7398e46d35788c87c1a8d987f71fc10474479104b991da",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            80
+          ],
+          "sourceClip": [
+            0,
+            26.914433962264155,
+            595.2000122070312,
+            126.12683962264151
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p15-s2-clarinet",
+          "page": 15,
+          "before": [
+            0.0,
+            223.77617924528303,
+            595.2,
+            291.61716981132076
+          ],
+          "after": [
+            0.0,
+            223.77617924528303,
+            595.2,
+            285.66613207547175
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p15-s2-clarinet.png",
+          "contextSHA256": "4a69b15463b31a8541fc23b6671509421e67cfcd5563f2647c1fd150e02066aa",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            617
+          ],
+          "sourceClip": [
+            0,
+            205.77617924528303,
+            595.2000122070312,
+            309.61716981132076
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p15-s3-cello",
+          "page": 15,
+          "before": [
+            0.0,
+            455.2054245283019,
+            595.2,
+            519.7402830188679
+          ],
+          "after": [
+            0.0,
+            456.52787735849057,
+            595.2,
+            519.7402830188679
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p15-s3-cello.png",
+          "contextSHA256": "d209e5ac51b797a3086ec91e08a24360578905276f4a345364339f878bdba930",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1311
+          ],
+          "sourceClip": [
+            0,
+            437.2054245283019,
+            595.2000122070312,
+            537.7402830188679
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p16-s3-clarinet",
+          "page": 16,
+          "before": [
+            0.0,
+            426.44207547169816,
+            595.2,
+            477.09117924528306
+          ],
+          "after": [
+            0.0,
+            426.44207547169816,
+            595.2,
+            475.7687264150943
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p16-s3-clarinet.png",
+          "contextSHA256": "5f6003f6e73f88630feb66e727e6cd3836317d592ea481169efff3b98771aed6",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1225
+          ],
+          "sourceClip": [
+            0,
+            408.44207547169816,
+            595.2000122070312,
+            495.09117924528306
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p16-s3-piano",
+          "page": 16,
+          "before": [
+            0.0,
+            482.57900710216563,
+            595.2,
+            608.036447318146
+          ],
+          "after": [
+            0.0,
+            492.49740332858073,
+            595.2,
+            608.036447318146
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p16-s3-piano.png",
+          "contextSHA256": "cc30303833adae20637af33a4d4b0768b6caea94411ef2182cb751c8aaf99355",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1393
+          ],
+          "sourceClip": [
+            0,
+            464.57900710216563,
+            595.2000122070312,
+            626.036447318146
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s1-cello",
+          "page": 17,
+          "before": [
+            0.0,
+            80.29004716981133,
+            595.2,
+            141.51877358490566
+          ],
+          "after": [
+            0.0,
+            82.27372641509434,
+            595.2,
+            141.51877358490566
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s1-cello.png",
+          "contextSHA256": "c8b676d5c532c6fb918bd4e19d0a0ce537334d82f88d91ca6eddb5f817173ba3",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            186
+          ],
+          "sourceClip": [
+            0,
+            62.29004716981133,
+            595.2000122070312,
+            159.51877358490566
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s1-clarinet",
+          "page": 17,
+          "before": [
+            0.0,
+            38.9633962264151,
+            595.2,
+            104.49009433962264
+          ],
+          "after": [
+            0.0,
+            41.27768867924529,
+            595.2,
+            101.18396226415095
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s1-clarinet.png",
+          "contextSHA256": "f7beaa5035b02998311d3acd0f00c55cebc0adecb87cb8d4b81b7978a7d96efd",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            62
+          ],
+          "sourceClip": [
+            0,
+            20.9633962264151,
+            595.2000122070312,
+            122.49009433962264
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s1-piano",
+          "page": 17,
+          "before": [
+            0.0,
+            118.17355837264152,
+            595.2,
+            244.71576356132073
+          ],
+          "after": [
+            0.0,
+            125.7776621462264,
+            595.2,
+            244.71576356132073
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s1-piano.png",
+          "contextSHA256": "e4fbbf851833748cf0d01a2aeeeca88c31aad6e800ceeab6f433d16a444f4073",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            300
+          ],
+          "sourceClip": [
+            0,
+            100.17355837264152,
+            595.2000122070312,
+            262.7157635613207
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s2-cello",
+          "page": 17,
+          "before": [
+            0.0,
+            262.12731132075476,
+            595.2,
+            315.0907075471698
+          ],
+          "after": [
+            0.0,
+            265.43344339622644,
+            595.2,
+            315.0907075471698
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s2-cello.png",
+          "contextSHA256": "654c29da8be3d56f8171966f05533c8f0981e5a2721262052c2311bc67a9fd05",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            732
+          ],
+          "sourceClip": [
+            0,
+            244.12731132075476,
+            595.2000122070312,
+            333.0907075471698
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s2-clarinet",
+          "page": 17,
+          "before": [
+            0.0,
+            227.7435377358491,
+            595.2,
+            285.00490566037735
+          ],
+          "after": [
+            0.0,
+            227.7435377358491,
+            595.2,
+            287.64981132075474
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s2-clarinet.png",
+          "contextSHA256": "bb5c1612367ddab7fde621d0a40fbd04bdf0fd773408057c100502e00b279d59",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            629
+          ],
+          "sourceClip": [
+            0,
+            209.7435377358491,
+            595.2000122070312,
+            305.64981132075474
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s2-piano",
+          "page": 17,
+          "before": [
+            0.0,
+            293.7288817268077,
+            595.2,
+            427.54496395269933
+          ],
+          "after": [
+            0.0,
+            299.67991946265676,
+            595.2,
+            427.54496395269933
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s2-piano.png",
+          "contextSHA256": "669f448e5911c9ec214f1aa359e073ec5cb30c58748bb134852f1a3feb21a578",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            827
+          ],
+          "sourceClip": [
+            0,
+            275.7288817268077,
+            595.2000122070312,
+            445.54496395269933
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s3-clarinet",
+          "page": 17,
+          "before": [
+            0.0,
+            405.28283018867927,
+            595.2,
+            462.21358490566035
+          ],
+          "after": [
+            0.0,
+            405.28283018867927,
+            595.2,
+            460.2299056603773
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s3-clarinet.png",
+          "contextSHA256": "036e05b3177531a616812d8e0b97d6e2fa6379dec7d7083e2dc7e996cd405c97",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1161
+          ],
+          "sourceClip": [
+            0,
+            387.28283018867927,
+            595.2000122070312,
+            480.21358490566035
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s3-piano",
+          "page": 17,
+          "before": [
+            0.0,
+            477.9305812911459,
+            595.2,
+            616.6390043494923
+          ],
+          "after": [
+            0.0,
+            477.9305812911459,
+            595.2,
+            608.7042873683602
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s3-piano.png",
+          "contextSHA256": "5435eaafe79b86019811f0e5ea21a877d5c8f7deb8a754a10455c6d59da5635f",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1379
+          ],
+          "sourceClip": [
+            0,
+            459.9305812911459,
+            595.2000122070312,
+            634.6390043494923
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p17-s4-cello",
+          "page": 17,
+          "before": [
+            0.0,
+            624.8100000000001,
+            595.2,
+            685.0468867924528
+          ],
+          "after": [
+            0.0,
+            625.8018396226415,
+            595.2,
+            685.0468867924528
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p17-s4-cello.png",
+          "contextSHA256": "fb608e3a2d73f7a3df7ad531a41d7c34d58eddbe9d551e1a7f24235d275885ed",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1820
+          ],
+          "sourceClip": [
+            0,
+            606.8100000000001,
+            595.2000122070312,
+            703.0468867924528
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p18-s1-piano",
+          "page": 18,
+          "before": [
+            0.0,
+            123.52535966981132,
+            595.2,
+            251.63797759433965
+          ],
+          "after": [
+            0.0,
+            123.52535966981132,
+            595.2,
+            233.45425117924532
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p18-s1-piano.png",
+          "contextSHA256": "4f743aecf83a64fc3bbd66c14c54083aa5c687207b80291527a30f4600d05796",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            316
+          ],
+          "sourceClip": [
+            0,
+            105.52535966981132,
+            595.2000122070312,
+            269.63797759433965
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p18-s2-cello",
+          "page": 18,
+          "before": [
+            0.0,
+            268.7395754716981,
+            595.2,
+            327.6540094339623
+          ],
+          "after": [
+            0.0,
+            268.7395754716981,
+            595.2,
+            328.6458490566038
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p18-s2-cello.png",
+          "contextSHA256": "74134efaa270dea03fe4f799f125caf12b4952da93e0e54bfab5e0c82b74bae5",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            752
+          ],
+          "sourceClip": [
+            0,
+            250.73957547169812,
+            595.2000122070312,
+            346.6458490566038
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p18-s3-cello",
+          "page": 18,
+          "before": [
+            0.0,
+            436.3604716981132,
+            595.2,
+            503.8708490566038
+          ],
+          "after": [
+            0.0,
+            436.3604716981132,
+            595.2,
+            504.2014622641509
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p18-s3-cello.png",
+          "contextSHA256": "1e0ebbf52991e48807f65b899c6a1f9a53426c585275b704b4dbe477a3234d10",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1255
+          ],
+          "sourceClip": [
+            0,
+            418.3604716981132,
+            595.2000122070312,
+            522.2014622641509
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p18-s3-piano",
+          "page": 18,
+          "before": [
+            0.0,
+            473.25249959372894,
+            595.2,
+            610.7044655442287
+          ],
+          "after": [
+            0.0,
+            473.25249959372894,
+            595.2,
+            593.8431919593231
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p18-s3-piano.png",
+          "contextSHA256": "9923ff578a1a80810c458c8293fb2a37f9a223e5265545534f1ae3e5ad85a8e2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1365
+          ],
+          "sourceClip": [
+            0,
+            455.25249959372894,
+            595.2000122070312,
+            628.7044655442287
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p18-s4-clarinet",
+          "page": 18,
+          "before": [
+            0.0,
+            590.0956132075472,
+            595.2,
+            635.4549056603773
+          ],
+          "after": [
+            0.0,
+            590.0956132075472,
+            595.2,
+            643.0590094339623
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p18-s4-clarinet.png",
+          "contextSHA256": "22da58ac4b2cefe4a761a1ebd1f0539bd95accb9ce68330490a39efa682a02aa",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1716
+          ],
+          "sourceClip": [
+            0,
+            572.0956132075472,
+            595.2000122070312,
+            661.0590094339623
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p19-s2-cello",
+          "page": 19,
+          "before": [
+            0.0,
+            277.3355188679246,
+            595.2,
+            325.67033018867926
+          ],
+          "after": [
+            0.0,
+            277.3355188679246,
+            595.2,
+            338.89485849056604
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p19-s2-cello.png",
+          "contextSHA256": "866f528d4f4c8b147679c61299c9082322c33d5c3b47f697b2f92763c248d050",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            778
+          ],
+          "sourceClip": [
+            0,
+            259.3355188679246,
+            595.2000122070312,
+            356.89485849056604
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p19-s4-clarinet",
+          "page": 19,
+          "before": [
+            0.0,
+            617.8671226415095,
+            595.2,
+            662.5651886792452
+          ],
+          "after": [
+            0.0,
+            617.8671226415095,
+            595.2,
+            654.6304716981132
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p19-s4-clarinet.png",
+          "contextSHA256": "5140a20c3a066eb5e9d75acc0224f7208ab231acd6459f5b13227d82dda12b76",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1799
+          ],
+          "sourceClip": [
+            0,
+            599.8671226415095,
+            595.2000122070312,
+            680.5651886792452
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s1-cello",
+          "page": 20,
+          "before": [
+            0.0,
+            80.6206603773585,
+            595.2,
+            126.97179245283019
+          ],
+          "after": [
+            0.0,
+            83.9267924528302,
+            595.2,
+            126.97179245283019
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p20-s1-cello.png",
+          "contextSHA256": "926239e782ae069ba04c7822d9156d60298266619cc397452ec9bd6b496317fd",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            187
+          ],
+          "sourceClip": [
+            0,
+            62.620660377358504,
+            595.2000122070312,
+            144.9717924528302
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s1-clarinet",
+          "page": 20,
+          "before": [
+            0.0,
+            40.61646226415095,
+            595.2,
+            99.53089622641511
+          ],
+          "after": [
+            0.0,
+            54.83283018867925,
+            595.2,
+            99.53089622641511
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p20-s1-clarinet.png",
+          "contextSHA256": "f305d3ce803ba5323a465fa0981e537c18ba44199ce682b390e1fbc965be51f3",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            67
+          ],
+          "sourceClip": [
+            0,
+            22.616462264150947,
+            595.2000122070312,
+            117.53089622641511
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s2-clarinet",
+          "page": 20,
+          "before": [
+            0.0,
+            219.808820754717,
+            595.2,
+            268.80485849056606
+          ],
+          "after": [
+            0.0,
+            219.808820754717,
+            595.2,
+            270.7885377358491
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p20-s2-clarinet.png",
+          "contextSHA256": "aa32fb2829294e395eca91c4d639d8e1c96ba649e8052339d5d4db59347a9fc0",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            605
+          ],
+          "sourceClip": [
+            0,
+            201.808820754717,
+            595.2000122070312,
+            288.7885377358491
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s3-cello",
+          "page": 20,
+          "before": [
+            0.0,
+            429.4175943396227,
+            595.2,
+            489.6544811320755
+          ],
+          "after": [
+            0.0,
+            429.4175943396227,
+            595.2,
+            487.67080188679245
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p20-s3-cello.png",
+          "contextSHA256": "8cf3e284dd6ae5a23df9e833af274d54eae4f8a8b96769652dcc6230d8282b84",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1234
+          ],
+          "sourceClip": [
+            0,
+            411.4175943396227,
+            595.2000122070312,
+            507.6544811320755
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s4-cello",
+          "page": 20,
+          "before": [
+            0.0,
+            618.5283490566038,
+            595.2,
+            670.8305188679245
+          ],
+          "after": [
+            0.0,
+            624.4793867924528,
+            595.2,
+            670.8305188679245
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p20-s4-cello.png",
+          "contextSHA256": "eb681489db5644a06c564696edcd1276163337b32e80cf51ef6cb9c1e7bacc44",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1801
+          ],
+          "sourceClip": [
+            0,
+            600.5283490566038,
+            595.2000122070312,
+            688.8305188679245
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p20-s4-piano",
+          "page": 20,
+          "before": [
+            0.0,
+            655.4697714248349,
+            595.2,
+            791.2028120407783
+          ],
+          "after": [
+            0.0,
+            659.1065167078536,
+            595.2,
+            791.2028120407783
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p20-s4-piano.png",
+          "contextSHA256": "4dff36f37012552d5272d5d08d2119475eaa5dc50b4e7ce0888cbaf392fc1b00",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1912
+          ],
+          "sourceClip": [
+            0,
+            637.4697714248349,
+            595.2000122070312,
+            809.2028120407783
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p21-s1-cello",
+          "page": 21,
+          "before": [
+            0.0,
+            87.56353773584907,
+            595.2,
+            125.31872641509435
+          ],
+          "after": [
+            0.0,
+            87.56353773584907,
+            595.2,
+            140.19632075471696
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p21-s1-cello.png",
+          "contextSHA256": "071f2d195fd7e5867b117aabee96eb523cdf54de6b33b9a997e990722a1f931e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            208
+          ],
+          "sourceClip": [
+            0,
+            69.56353773584907,
+            595.2000122070312,
+            158.19632075471696
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p21-s1-piano",
+          "page": 21,
+          "before": [
+            0.0,
+            121.47150698220108,
+            595.2,
+            249.677689496499
+          ],
+          "after": [
+            0.0,
+            121.47150698220108,
+            595.2,
+            243.0654253455556
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p21-s1-piano.png",
+          "contextSHA256": "0074b9ba1812c99d160fa06804a0cc77212cab00fa20c80360f9918cdcc1373f",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            310
+          ],
+          "sourceClip": [
+            0,
+            103.47150698220108,
+            595.2000122070312,
+            267.677689496499
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p21-s2-clarinet",
+          "page": 21,
+          "before": [
+            0.0,
+            229.06599056603775,
+            595.2,
+            285.66613207547175
+          ],
+          "after": [
+            0.0,
+            229.06599056603775,
+            595.2,
+            285.99674528301887
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p21-s2-clarinet.png",
+          "contextSHA256": "8ef322b86140e397357eb6cbad80518b94bc104356ee2ee101c8cafabc8bcd9e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            633
+          ],
+          "sourceClip": [
+            0,
+            211.06599056603775,
+            595.2000122070312,
+            303.99674528301887
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p21-s3-clarinet",
+          "page": 21,
+          "before": [
+            0.0,
+            423.7971698113208,
+            595.2,
+            472.4625943396226
+          ],
+          "after": [
+            0.0,
+            423.7971698113208,
+            595.2,
+            467.5033962264151
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p21-s3-clarinet.png",
+          "contextSHA256": "affe1c360fe21dc82c9e65fd23713b5cae8bd9540460c70e4520f30d70e78333",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1217
+          ],
+          "sourceClip": [
+            0,
+            405.7971698113208,
+            595.2000122070312,
+            490.4625943396226
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p22-s1-clarinet",
+          "page": 22,
+          "before": [
+            0.0,
+            55.49405660377359,
+            595.2,
+            102.17580188679246
+          ],
+          "after": [
+            0.0,
+            55.49405660377359,
+            595.2,
+            85.97575471698114
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p22-s1-clarinet.png",
+          "contextSHA256": "6d6d0ed4498889ed80bc30b90e019c8709c347966090fc5dea6579dfd08372c5",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            112
+          ],
+          "sourceClip": [
+            0,
+            37.49405660377359,
+            595.2000122070312,
+            120.17580188679246
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p22-s2-cello",
+          "page": 22,
+          "before": [
+            0.0,
+            259.1517924528302,
+            595.2,
+            317.7356132075472
+          ],
+          "after": [
+            0.0,
+            259.1517924528302,
+            595.2,
+            302.85801886792456
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p22-s2-cello.png",
+          "contextSHA256": "eb9535526561440feb355b1cf3e1b01b5d146d3a0fed8391388e0f77c77a5c23",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            723
+          ],
+          "sourceClip": [
+            0,
+            241.1517924528302,
+            595.2000122070312,
+            335.7356132075472
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p22-s2-piano",
+          "page": 22,
+          "before": [
+            0.0,
+            287.3859567815419,
+            595.2,
+            435.8307188086684
+          ],
+          "after": [
+            0.0,
+            288.7084096117306,
+            595.2,
+            414.6714735256496
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p22-s2-piano.png",
+          "contextSHA256": "903b6ab07ca24f0a404377f65a62714e36d1ec4790a235c9e7d10d1becf863ee",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            808
+          ],
+          "sourceClip": [
+            0,
+            269.3859567815419,
+            595.2000122070312,
+            453.8307188086684
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p22-s3-clarinet",
+          "page": 22,
+          "before": [
+            0.0,
+            414.20938679245285,
+            595.2,
+            469.4870754716981
+          ],
+          "after": [
+            0.0,
+            414.20938679245285,
+            595.2,
+            467.83400943396225
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p22-s3-clarinet.png",
+          "contextSHA256": "b89c76937348954f51b0356a395e86ab238b5018499314790418bb79465f4b4b",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1188
+          ],
+          "sourceClip": [
+            0,
+            396.20938679245285,
+            595.2000122070312,
+            487.4870754716981
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p22-s4-cello",
+          "page": 22,
+          "before": [
+            0.0,
+            629.1079716981133,
+            595.2,
+            674.1366509433963
+          ],
+          "after": [
+            0.0,
+            634.0671698113208,
+            595.2,
+            674.1366509433963
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p22-s4-cello.png",
+          "contextSHA256": "07c29705f5666e8d76bfcc88542307c0240804865404e8b51da879a9c6c97b60",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1833
+          ],
+          "sourceClip": [
+            0,
+            611.1079716981133,
+            595.2000122070312,
+            692.1366509433963
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p22-s4-piano",
+          "page": 22,
+          "before": [
+            0.0,
+            668.5716300632183,
+            595.2,
+            787.2763434380468
+          ],
+          "after": [
+            0.0,
+            668.5716300632183,
+            595.2,
+            782.3171453248392
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p22-s4-piano.png",
+          "contextSHA256": "4286a1d0f77c5b71a73e9a8ebdbfcd9da20dffcaa49a9d04526b63c774a62a24",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1951
+          ],
+          "sourceClip": [
+            0,
+            650.5716300632183,
+            595.2000122070312,
+            805.2763434380468
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p23-s1-piano",
+          "page": 23,
+          "before": [
+            0.0,
+            125.05934686279619,
+            595.2,
+            254.6531894105145
+          ],
+          "after": [
+            0.0,
+            125.05934686279619,
+            595.2,
+            236.46946299542014
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p23-s1-piano.png",
+          "contextSHA256": "9f179e135bdd89e772ef0e8750d1db234c94b9bc9f1d66f5f6e5b40b2db4a5a2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            321
+          ],
+          "sourceClip": [
+            0,
+            107.05934686279619,
+            595.2000122070312,
+            272.6531894105145
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p23-s2-cello",
+          "page": 23,
+          "before": [
+            0.0,
+            267.0865094339623,
+            595.2,
+            328.3152358490566
+          ],
+          "after": [
+            0.0,
+            274.36,
+            595.2,
+            328.3152358490566
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p23-s2-cello.png",
+          "contextSHA256": "5ad38021f1513ea5b1bda03db3e1d64c17c9d7684aa3df12de5d863f50f8b0b0",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            747
+          ],
+          "sourceClip": [
+            0,
+            249.0865094339623,
+            595.2000122070312,
+            346.3152358490566
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p23-s2-clarinet",
+          "page": 23,
+          "before": [
+            0.0,
+            233.6945754716981,
+            595.2,
+            291.947783018868
+          ],
+          "after": [
+            0.0,
+            233.6945754716981,
+            595.2,
+            287.31919811320756
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p23-s2-clarinet.png",
+          "contextSHA256": "db90503766d037a7e019cb3e2e7278864be0dc7a1e482e756a162824b7c086ec",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            647
+          ],
+          "sourceClip": [
+            0,
+            215.6945754716981,
+            595.2000122070312,
+            309.947783018868
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p23-s3-clarinet",
+          "page": 23,
+          "before": [
+            0.0,
+            418.1767452830189,
+            595.2,
+            459.89929245283014
+          ],
+          "after": [
+            0.0,
+            418.1767452830189,
+            595.2,
+            470.4789150943396
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p23-s3-clarinet.png",
+          "contextSHA256": "1c602b554d4ad604b0fd9ca3d9f463eaf0b137862297b2cbe1c3b7061d808d42",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1200
+          ],
+          "sourceClip": [
+            0,
+            400.1767452830189,
+            595.2000122070312,
+            488.4789150943396
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p24-s1-cello",
+          "page": 24,
+          "before": [
+            0.0,
+            82.60433962264152,
+            595.2,
+            141.18816037735849
+          ],
+          "after": [
+            0.0,
+            84.58801886792455,
+            595.2,
+            141.18816037735849
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p24-s1-cello.png",
+          "contextSHA256": "28b73e6a89a2bef2bb2f3dfab880684640a37284ec47adc5570cce79a46afc38",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            193
+          ],
+          "sourceClip": [
+            0,
+            64.60433962264152,
+            595.2000122070312,
+            159.18816037735849
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p24-s1-clarinet",
+          "page": 24,
+          "before": [
+            0.0,
+            50.53485849056604,
+            595.2,
+            102.8370283018868
+          ],
+          "after": [
+            0.0,
+            50.53485849056604,
+            595.2,
+            104.82070754716982
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p24-s1-clarinet.png",
+          "contextSHA256": "cd08a04cf1c5857d084022916f59b942dfac150daebc5da2c038640ff86cf9cb",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            97
+          ],
+          "sourceClip": [
+            0,
+            32.53485849056604,
+            595.2000122070312,
+            122.82070754716982
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p24-s3-clarinet",
+          "page": 24,
+          "before": [
+            0.0,
+            428.75636792452826,
+            595.2,
+            486.0177358490566
+          ],
+          "after": [
+            0.0,
+            428.75636792452826,
+            595.2,
+            481.71976415094343
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p24-s3-clarinet.png",
+          "contextSHA256": "a455164feca0b10e6a7c5d5e5318b716ef655b78cf9f9aba34a672b85e234b45",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1232
+          ],
+          "sourceClip": [
+            0,
+            410.75636792452826,
+            595.2000122070312,
+            504.0177358490566
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p24-s4-clarinet",
+          "page": 24,
+          "before": [
+            0.0,
+            610.5936320754718,
+            595.2,
+            647.6875943396227
+          ],
+          "after": [
+            0.0,
+            610.5936320754718,
+            595.2,
+            643.7202358490566
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p24-s4-clarinet.png",
+          "contextSHA256": "9e444f1ba3f86cc26e77794e427045c3ac71b3f45f04728df29caa7fd5c52997",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1777
+          ],
+          "sourceClip": [
+            0,
+            592.5936320754718,
+            595.2000122070312,
+            665.6875943396227
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p24-s4-piano",
+          "page": 24,
+          "before": [
+            0.0,
+            665.6074604366106,
+            595.2,
+            789.9174660179851
+          ],
+          "after": [
+            0.0,
+            665.6074604366106,
+            595.2,
+            782.9745886594947
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p24-s4-piano.png",
+          "contextSHA256": "8c09935b92d5a09c23e458f3c818ee81cd06c3c69b52ec1960876c61d8fec61b",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1942
+          ],
+          "sourceClip": [
+            0,
+            647.6074604366106,
+            595.2000122070312,
+            807.9174660179851
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p25-s1-cello",
+          "page": 25,
+          "before": [
+            0.0,
+            60.453254716981135,
+            595.2,
+            142.51061320754718
+          ],
+          "after": [
+            0.0,
+            70.70226415094339,
+            595.2,
+            145.15551886792454
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s1-cello.png",
+          "contextSHA256": "77ff693c83792bedf753ef73dff337f4a9cd6ab8c1a951ad75ea7acb9bc10e8d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            127
+          ],
+          "sourceClip": [
+            0,
+            42.453254716981135,
+            595.2000122070312,
+            163.15551886792454
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p25-s1-clarinet",
+          "page": 25,
+          "before": [
+            0.0,
+            44.253207547169815,
+            595.2,
+            123.99627358490567
+          ],
+          "after": [
+            0.0,
+            44.253207547169815,
+            595.2,
+            118.04523584905661
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s1-clarinet.png",
+          "contextSHA256": "e1ba82fce4de7c0b1407ecce46ec6b736e47c7fff21cfaada68036f99423858c",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            78
+          ],
+          "sourceClip": [
+            0,
+            26.253207547169815,
+            595.2000122070312,
+            141.99627358490568
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": [
+            1
+          ]
+        },
+        {
+          "bandID": "p25-s2-cello",
+          "page": 25,
+          "before": [
+            0.0,
+            266.4252830188679,
+            595.2,
+            330.960141509434
+          ],
+          "after": [
+            0.0,
+            269.73141509433964,
+            595.2,
+            330.960141509434
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s2-cello.png",
+          "contextSHA256": "98c0cc66e89ac7fe7534655f716cc4a6e008c9b1267e42126b8bbcde5f40df83",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            745
+          ],
+          "sourceClip": [
+            0,
+            248.4252830188679,
+            595.2000122070312,
+            348.960141509434
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p25-s2-clarinet",
+          "page": 25,
+          "before": [
+            0.0,
+            241.62929245283019,
+            595.2,
+            288.3110377358491
+          ],
+          "after": [
+            0.0,
+            241.62929245283019,
+            595.2,
+            288.97226415094343
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s2-clarinet.png",
+          "contextSHA256": "1e9d2af50d42893efe65da2189ff0722836e934a40bed336f148708f3353e5a8",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            670
+          ],
+          "sourceClip": [
+            0,
+            223.62929245283019,
+            595.2000122070312,
+            306.97226415094343
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p25-s2-piano",
+          "page": 25,
+          "before": [
+            0.0,
+            302.6535526342657,
+            595.2,
+            434.81908308417565
+          ],
+          "after": [
+            0.0,
+            302.6535526342657,
+            595.2,
+            435.8109227068171
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s2-piano.png",
+          "contextSHA256": "4009aa6e397eb519f14f407e10ce98386efd505e047ce94b34d3766f29dc5377",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            853
+          ],
+          "sourceClip": [
+            0,
+            284.6535526342657,
+            595.2000122070312,
+            453.8109227068171
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p25-s3-clarinet",
+          "page": 25,
+          "before": [
+            0.0,
+            414.20938679245285,
+            595.2,
+            464.85849056603774
+          ],
+          "after": [
+            0.0,
+            414.20938679245285,
+            595.2,
+            466.5115566037736
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s3-clarinet.png",
+          "contextSHA256": "6c4c870e24b3bc679f48840b073153664e047c7e212920a582ab3cdb46f87df2",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1188
+          ],
+          "sourceClip": [
+            0,
+            396.20938679245285,
+            595.2000122070312,
+            484.5115566037736
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p25-s3-piano",
+          "page": 25,
+          "before": [
+            0.0,
+            485.54195322737405,
+            595.2,
+            628.2080438927621
+          ],
+          "after": [
+            0.0,
+            488.5174720952987,
+            595.2,
+            623.5794589871017
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p25-s3-piano.png",
+          "contextSHA256": "8787e28cd1421970ca30e76330db7aff76f93bec7df5fad935c19b5949fc567a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1402
+          ],
+          "sourceClip": [
+            0,
+            467.54195322737405,
+            595.2000122070312,
+            646.2080438927621
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p26-s1-clarinet",
+          "page": 26,
+          "before": [
+            0.0,
+            52.187924528301885,
+            595.2,
+            103.49825471698114
+          ],
+          "after": [
+            0.0,
+            52.187924528301885,
+            595.2,
+            100.19212264150944
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p26-s1-clarinet.png",
+          "contextSHA256": "d7ecb16cde2a357aa095197e5a66bc54fa05ac3cedd8f30162f8d117253dccb7",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            102
+          ],
+          "sourceClip": [
+            0,
+            34.187924528301885,
+            595.2000122070312,
+            121.49825471698114
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p26-s2-cello",
+          "page": 26,
+          "before": [
+            0.0,
+            262.12731132075476,
+            595.2,
+            317.07438679245286
+          ],
+          "after": [
+            0.0,
+            266.75589622641513,
+            595.2,
+            317.07438679245286
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p26-s2-cello.png",
+          "contextSHA256": "280dcb0c0f6fddc87fff5ea829f771b63abeba5cfe1f1bf190d5c10fbe1c010f",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            732
+          ],
+          "sourceClip": [
+            0,
+            244.12731132075476,
+            595.2000122070312,
+            335.07438679245286
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p26-s2-clarinet",
+          "page": 26,
+          "before": [
+            0.0,
+            233.36396226415096,
+            595.2,
+            282.02938679245284
+          ],
+          "after": [
+            0.0,
+            233.36396226415096,
+            595.2,
+            281.36816037735855
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p26-s2-clarinet.png",
+          "contextSHA256": "ff27dc4b9165de24b2e699029b6efaf9b3e5dcae760806281ae61b7fb5f51790",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            646
+          ],
+          "sourceClip": [
+            0,
+            215.36396226415096,
+            595.2000122070312,
+            300.02938679245284
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p26-s2-piano",
+          "page": 26,
+          "before": [
+            0.0,
+            289.2283151703523,
+            595.2,
+            405.6818194715178
+          ],
+          "after": [
+            0.0,
+            291.8732208307297,
+            595.2,
+            405.6818194715178
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p26-s2-piano.png",
+          "contextSHA256": "12f20fcdb2c5122b930a2668c8480150f940b64532fe7c076cc152b911e5a9ce",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            813
+          ],
+          "sourceClip": [
+            0,
+            271.2283151703523,
+            595.2000122070312,
+            423.6818194715178
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p26-s4-cello",
+          "page": 26,
+          "before": [
+            0.0,
+            616.5446698113208,
+            595.2,
+            667.855
+          ],
+          "after": [
+            0.0,
+            623.4875471698114,
+            595.2,
+            667.855
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p26-s4-cello.png",
+          "contextSHA256": "0f35c917252f589627ae596f33f35674d60a1759c61142bffa230d7f744ad408",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1795
+          ],
+          "sourceClip": [
+            0,
+            598.5446698113208,
+            595.2000122070312,
+            685.855
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p28-s1-cello",
+          "page": 28,
+          "before": [
+            0.0,
+            80.29004716981133,
+            595.2,
+            126.64117924528303
+          ],
+          "after": [
+            0.0,
+            87.89415094339624,
+            595.2,
+            126.64117924528303
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p28-s1-cello.png",
+          "contextSHA256": "8d05a1b92ef3a96ad690a33521690df65b9d64a5a5cb005ebd12f4b33c9ad1bb",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            186
+          ],
+          "sourceClip": [
+            0,
+            62.29004716981133,
+            595.2000122070312,
+            144.641179245283
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p28-s1-clarinet",
+          "page": 28,
+          "before": [
+            0.0,
+            52.84915094339623,
+            595.2,
+            103.49825471698114
+          ],
+          "after": [
+            0.0,
+            52.84915094339623,
+            595.2,
+            95.89415094339624
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p28-s1-clarinet.png",
+          "contextSHA256": "5fca0a528cb898a715be8e3cba7cc6a01f7dcd55288e2783be21cae3fabd72b4",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            104
+          ],
+          "sourceClip": [
+            0,
+            34.84915094339623,
+            595.2000122070312,
+            121.49825471698114
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p28-s4-piano",
+          "page": 28,
+          "before": [
+            0.0,
+            676.2450436460597,
+            595.2,
+            790.8899854513136
+          ],
+          "after": [
+            0.0,
+            676.2450436460597,
+            595.2,
+            782.6246552626343
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p28-s4-piano.png",
+          "contextSHA256": "14074f865971a643199febddb7ea835924ae92eaa5e126a476c079f243d87126",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1974
+          ],
+          "sourceClip": [
+            0,
+            658.2450436460597,
+            595.2000122070312,
+            808.8899854513136
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p29-s1-clarinet",
+          "page": 29,
+          "before": [
+            0.0,
+            40.28584905660377,
+            595.2,
+            101.51457547169812
+          ],
+          "after": [
+            0.0,
+            55.82466981132076,
+            595.2,
+            101.51457547169812
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p29-s1-clarinet.png",
+          "contextSHA256": "76deb4d98ca1dcf0312fe8552c9939940b68fdcfbfde429cb14d398c92a36c5d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            66
+          ],
+          "sourceClip": [
+            0,
+            22.285849056603773,
+            595.2000122070312,
+            119.51457547169812
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p29-s1-piano",
+          "page": 29,
+          "before": [
+            0.0,
+            110.18458748984091,
+            595.2,
+            240.76648970464421
+          ],
+          "after": [
+            0.0,
+            110.18458748984091,
+            595.2,
+            228.8644142329461
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p29-s1-piano.png",
+          "contextSHA256": "06435eba43569f0b9962ebfaabf011be89060abab57a2a90f207e65dc204e97e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            276
+          ],
+          "sourceClip": [
+            0,
+            92.18458748984091,
+            595.2000122070312,
+            258.7664897046442
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p29-s2-clarinet",
+          "page": 29,
+          "before": [
+            0.0,
+            227.0823113207547,
+            595.2,
+            283.02122641509436
+          ],
+          "after": [
+            0.0,
+            227.0823113207547,
+            595.2,
+            283.35183962264153
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p29-s2-clarinet.png",
+          "contextSHA256": "c8aa1dbce87c027dccf4ca85489ffa81ec45a6bdfcdc8c0e7533dbced1c51ee1",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            627
+          ],
+          "sourceClip": [
+            0,
+            209.0823113207547,
+            595.2000122070312,
+            301.35183962264153
+          ],
+          "hasContractedEdge": false,
+          "hasExpandedEdge": true,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p29-s3-piano",
+          "page": 29,
+          "before": [
+            0.0,
+            482.8398044761309,
+            595.2,
+            598.1413230362583
+          ],
+          "after": [
+            0.0,
+            484.82348372141394,
+            595.2,
+            598.1413230362583
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p29-s3-piano.png",
+          "contextSHA256": "33c0e8bc5b4538076643ec633283e9b418c145d01e74573d80f8d96441d24f56",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1394
+          ],
+          "sourceClip": [
+            0,
+            464.8398044761309,
+            595.2000122070312,
+            616.1413230362583
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p29-s4-cello",
+          "page": 29,
+          "before": [
+            0.0,
+            629.7691981132076,
+            595.2,
+            686.0387264150943
+          ],
+          "after": [
+            0.0,
+            629.7691981132076,
+            595.2,
+            685.7081132075472
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p29-s4-cello.png",
+          "contextSHA256": "f98a15eb34742c3419a6a237aaf8f3c9a3717c7e6065936902b32ffa13ebb4de",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1835
+          ],
+          "sourceClip": [
+            0,
+            611.7691981132076,
+            595.2000122070312,
+            704.0387264150943
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p30-s1-cello",
+          "page": 30,
+          "before": [
+            0.0,
+            73.67778301886794,
+            595.2,
+            141.18816037735849
+          ],
+          "after": [
+            0.0,
+            78.96759433962265,
+            595.2,
+            141.18816037735849
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p30-s1-cello.png",
+          "contextSHA256": "33a97c052f388b15944845dd74233d92f8c97ea8ae3490f032dbaf4c3c922f23",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            167
+          ],
+          "sourceClip": [
+            0,
+            55.67778301886794,
+            595.2000122070312,
+            159.18816037735849
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p30-s1-clarinet",
+          "page": 30,
+          "before": [
+            0.0,
+            53.1797641509434,
+            595.2,
+            96.2247641509434
+          ],
+          "after": [
+            0.0,
+            53.1797641509434,
+            595.2,
+            91.9267924528302
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p30-s1-clarinet.png",
+          "contextSHA256": "0a2fafef6c9d18f6d7255270ba4c607f9053ae3044f861e9caa5a6f37b52d5cf",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            105
+          ],
+          "sourceClip": [
+            0,
+            35.1797641509434,
+            595.2000122070312,
+            114.2247641509434
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p30-s2-cello",
+          "page": 30,
+          "before": [
+            0.0,
+            262.7885377358491,
+            595.2,
+            327.3233962264151
+          ],
+          "after": [
+            0.0,
+            262.7885377358491,
+            595.2,
+            326.0009433962265
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p30-s2-cello.png",
+          "contextSHA256": "9ef0467435f7e7d0509996ca7a89eee24c885307db0b2525ff5fc87006e7c27a",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            734
+          ],
+          "sourceClip": [
+            0,
+            244.7885377358491,
+            595.2000122070312,
+            345.3233962264151
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p30-s3-piano",
+          "page": 30,
+          "before": [
+            0.0,
+            479.6501154629253,
+            595.2,
+            600.0861879274526
+          ],
+          "after": [
+            0.0,
+            482.62563433084983,
+            595.2,
+            600.0861879274526
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p30-s3-piano.png",
+          "contextSHA256": "91c1c3e75718979b18c7fc013ab6429cb7f903f13d1231371799bed0e3524253",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1384
+          ],
+          "sourceClip": [
+            0,
+            461.6501154629253,
+            595.2000122070312,
+            618.0861879274526
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p31-s2-cello",
+          "page": 31,
+          "before": [
+            0.0,
+            265.43344339622644,
+            595.2,
+            326.99278301886795
+          ],
+          "after": [
+            0.0,
+            265.43344339622644,
+            595.2,
+            321.0417452830189
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p31-s2-cello.png",
+          "contextSHA256": "45bd179c416abe2a4e64d7d3135025cabd02b0587f7f1f0c27e46fbaf2ea12af",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            742
+          ],
+          "sourceClip": [
+            0,
+            247.43344339622644,
+            595.2000122070312,
+            344.99278301886795
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p32-s1-cello",
+          "page": 32,
+          "before": [
+            0.0,
+            71.36349056603774,
+            595.2,
+            123.33504716981133
+          ],
+          "after": [
+            0.0,
+            75.33084905660378,
+            595.2,
+            123.33504716981133
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p32-s1-cello.png",
+          "contextSHA256": "26d7f649c80dc852e0d987bd472aec035dbc625946c83aaa14ca4b387249a036",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            160
+          ],
+          "sourceClip": [
+            0,
+            53.36349056603774,
+            595.2000122070312,
+            141.33504716981133
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p32-s2-clarinet",
+          "page": 32,
+          "before": [
+            0.0,
+            227.0823113207547,
+            595.2,
+            281.36816037735855
+          ],
+          "after": [
+            0.0,
+            227.0823113207547,
+            595.2,
+            274.75589622641513
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p32-s2-clarinet.png",
+          "contextSHA256": "7b71fcb1ae002449aed1302766dae1a471ca375035e0f34c0cd001ceb34082ab",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            627
+          ],
+          "sourceClip": [
+            0,
+            209.0823113207547,
+            595.2000122070312,
+            299.36816037735855
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p32-s4-clarinet",
+          "page": 32,
+          "before": [
+            0.0,
+            583.1527358490566,
+            595.2,
+            636.777358490566
+          ],
+          "after": [
+            0.0,
+            583.1527358490566,
+            595.2,
+            628.5120283018867
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p32-s4-clarinet.png",
+          "contextSHA256": "eea300fb94b8359ec676eafa919745e14b52b68fefc1d071432dcb2a2f81efa0",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1695
+          ],
+          "sourceClip": [
+            0,
+            565.1527358490566,
+            595.2000122070312,
+            654.777358490566
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p33-s2-cello",
+          "page": 33,
+          "before": [
+            0.0,
+            263.1191509433963,
+            595.2,
+            322.3641981132076
+          ],
+          "after": [
+            0.0,
+            265.43344339622644,
+            595.2,
+            322.3641981132076
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p33-s2-cello.png",
+          "contextSHA256": "409c6e81ab81144ded630e3af9ed1bf19883ec53dc85fe321b4dcc0bf0fa4b8e",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            735
+          ],
+          "sourceClip": [
+            0,
+            245.11915094339628,
+            595.2000122070312,
+            340.3641981132076
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p33-s2-piano",
+          "page": 33,
+          "before": [
+            0.0,
+            296.9596643772954,
+            595.2,
+            415.227187345933
+          ],
+          "after": [
+            0.0,
+            296.9596643772954,
+            595.2,
+            398.6965269685745
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p33-s2-piano.png",
+          "contextSHA256": "e2c193531ca3dc2d3d09a645713be0e769fb0c09dd0f92df9321e38b5e9d3f91",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            836
+          ],
+          "sourceClip": [
+            0,
+            278.9596643772954,
+            595.2000122070312,
+            433.227187345933
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p33-s3-clarinet",
+          "page": 33,
+          "before": [
+            0.0,
+            394.0419811320755,
+            595.2,
+            457.585
+          ],
+          "after": [
+            0.0,
+            394.0419811320755,
+            595.2,
+            449.98089622641504
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p33-s3-clarinet.png",
+          "contextSHA256": "71177047cfd235a00a3feed100d2bee53201be0848d3e99d04a723f4fb4df3b5",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1128
+          ],
+          "sourceClip": [
+            0,
+            376.0419811320755,
+            595.2000122070312,
+            475.585
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        },
+        {
+          "bandID": "p33-s4-clarinet",
+          "page": 33,
+          "before": [
+            0.0,
+            588.7731603773585,
+            595.2,
+            640.0834905660378
+          ],
+          "after": [
+            0.0,
+            588.7731603773585,
+            595.2,
+            639.7528773584907
+          ],
+          "context": ".build/envelope-corpus-independent-source-review-2026-10-03/Trio114011/p33-s4-clarinet.png",
+          "contextSHA256": "3a5a09ad8a8db6863298c71f917c2e2245c4fabf6d559f8e758ceb7a22a52c5d",
+          "pixelScale": 3.0,
+          "pixOrigin": [
+            0,
+            1712
+          ],
+          "sourceClip": [
+            0,
+            570.7731603773585,
+            595.2000122070312,
+            658.0834905660378
+          ],
+          "hasContractedEdge": true,
+          "hasExpandedEdge": false,
+          "observation": "No newly omitted intended music observed in the changed source crop; neighboring fragments may remain.",
+          "newWholeNeighborRelations": [],
+          "removedWholeNeighborRelations": []
+        }
+      ]
+    }
+  ],
+  "crossCorpusDisposition": "Root independently found new whole-neighbor regressions on separate Brahms242312. This positive two-score preservation review does not waive those or approve the candidate.",
+  "rootSupplementaryNonmusicReview": {
+    "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/root-trio-empty-review/review.json",
+    "sha256": "dc867d527f5a369d56aaff796f0e628bfda2c57ffb617dca573180dadd3c04ea",
+    "attribution": "Root independently viewed original Trio pages34/35:34blankscan,35publishercatalog text only; no music. This does not change the extraction plan or the unresolved K478p38."
+  },
+  "totals": {
+    "changedCropsReviewed": 147,
+    "withContractedEdge": 120,
+    "withExpandedEdge": 28,
+    "bothContractedAndExpanded": 1,
+    "newIntendedMusicOmissionsObserved": 0,
+    "newWholeNeighborRelations": 0,
+    "staffOrAssignmentDrift": 0
+  },
+  "rootSupplementaryK478Review": {
+    "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/root-k478-footnote-review.json",
+    "sha256": "426582b13c34c0c1bfaced23944e5ebde29002d379f4f85edb9de1b9943cd5c2",
+    "attribution": "Root independently inspected physical page 38: three complete five-staff systems plus a small piano ornament footnote staff at the bottom, linked by an asterisk to the first-system piano fermata. The fixed five-staff cadence profile rejects the total of 16. Detection is correct; the footnote must remain a piano annotation or receive manual assignment. This remains unresolved Auto output, not a blank page or an authorized omission."
+  },
+  "contextArchive": {
+    "file": "reviewed-contexts.tar.xz",
+    "sha256": "43efd6d474fbf4a77676b210378a86ac0d69dc366243177c388176835f8b5432",
+    "contextCount": 147,
+    "excluded": "Contact sheets and duplicate contexts are not archived."
+  }
+}

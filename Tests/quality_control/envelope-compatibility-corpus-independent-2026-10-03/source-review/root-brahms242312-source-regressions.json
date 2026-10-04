@@ -1,0 +1,65 @@
+{
+  "scope": "Only these three of 269 changed crops visually reviewed by root. Review stopped after decisive cleanliness regressions. This is not a full score or output PDF review.",
+  "indexSHA256": "bc10ddf921cd00cd17ac2d7266e2fd42a3d2e6445b6ac0a916536c7c1916e520",
+  "totalChangedCrops": 269,
+  "reviewedCrops": 3,
+  "rows": [
+    {
+      "band": "p1-s1-cello",
+      "page": 1,
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "oldY": [
+        251.56567164179103,
+        303.54029850746264
+      ],
+      "newY": [
+        226.10667714061273,
+        303.54029850746264
+      ],
+      "context": ".build/envelope-compatibility-corpus-2026-10-03/root-source/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/p1-s1-cello.png",
+      "contextSHA256": "ed2ca378c4fdcb6e9276d1b72217a69b88b1bb57c2d27c1476b7624f72ad867e",
+      "reviewed": true,
+      "verdict": "regression",
+      "observation": "Top expansion includes the complete neighboring staff above. No intended target notation recovery observed that warrants this expansion."
+    },
+    {
+      "band": "p2-s2-cello",
+      "page": 2,
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "oldY": [
+        291.9032992930086,
+        336.2732914375491
+      ],
+      "newY": [
+        269.75066771406125,
+        336.2732914375491
+      ],
+      "context": ".build/envelope-compatibility-corpus-2026-10-03/root-source/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/p2-s2-cello.png",
+      "contextSHA256": "96350f38afebeefeb7554c0b6eb4a8d85df4bbc911e38c7f777ecbbd07936070",
+      "reviewed": true,
+      "verdict": "regression",
+      "observation": "Top expansion includes the complete neighboring staff above. No intended target notation recovery observed that warrants this expansion."
+    },
+    {
+      "band": "p16-s5-viola",
+      "page": 16,
+      "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+      "oldY": [
+        706.1905734485467,
+        750.8912018853102
+      ],
+      "newY": [
+        679.7396700706992,
+        746.9235663786332
+      ],
+      "context": ".build/envelope-compatibility-corpus-2026-10-03/root-source/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/p16-s5-viola.png",
+      "contextSHA256": "fb87653cce8355346252079f459ace43217e35da021361fce845ef29f3f44c9d",
+      "reviewed": true,
+      "verdict": "regression",
+      "observation": "Top expansion includes the complete neighboring staff above. No intended target notation recovery observed that warrants this expansion."
+    }
+  ]
+}
