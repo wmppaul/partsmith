@@ -1,0 +1,31 @@
+{
+  "originalInputs": {
+    ".build/brahms-consistent-resolution-2026-10-03/protocol-before-results.json": "fd5970d5699fc0747ae5284fc9492167f3543088353351f8f2309cab70f86d45",
+    ".build/ownership-alternatives-2026-10-03/actual.json": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+    "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json": "ba3e66644c889faa175c413fa9561b76ff691fe73147c8973257a02b10e64573",
+    "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json": "24838a6c5f3f8dd1832c7bdc9298b3d72c8bc22d2f7483c473ce507b80c71f40",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+    "Tests/quality_control/terminal-attachment-source-review/corrected-smaller-source-guards.json": "b0391c815b25d092d53519de583f09a0c6fec3eee5c05d97ca98a71290957cfa",
+    "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json": "ff35d389289c1bb04f19d90abb77f280779ecbabbf0654f89a21a496b777df71",
+    "Tests/quality_control/brahms-seven-source-independent-2026-10-03/inputs.json": "cf93dacecd9493645a791172550d44f645a9b2201c29ac73d120b5d35ab26d60"
+  },
+  "measurementResults": {
+    ".build/brahms-consistent-resolution-2026-10-03/protocol-before-results.json": "fd5970d5699fc0747ae5284fc9492167f3543088353351f8f2309cab70f86d45",
+    ".build/brahms-consistent-resolution-2026-10-03/measure.swift": "b98b111a8e095452851bbf0d15074d1dc7307fc6f358e8696126191437d8aae0",
+    ".build/brahms-consistent-resolution-2026-10-03/results/candidate.json": "9615e174c7cb6a30f0db367f554523e76c820d3060003074acf5e5f8516335d0",
+    ".build/brahms-consistent-resolution-2026-10-03/comparison.json": "be18b398353774a3ea1f706e9d4e53dfbe4e7f8c43478ae001d7fac0d0660d27",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-17.png": "a23de5428c9e39352c1190a8f115a60e980a3b5fcaa9c65b44c84869cef6b14a",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-19.png": "d3ac01f35c1371c2458a8bb48ae3518aabb8209bc5a64df657e70f92c69cbeee",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-2.png": "26e0413c3f0eacc3e58fdddbea61321f177bfd48ac9293130f0f8bae398b8a9d",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-23.png": "046a35cd8d0ffa7a734a6050d1f12cf3c1e889fc786c0bee8b4b92a624ff0bed",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-28.png": "45cd407d61ab89c89ff0fcdce2c5722edaf183592e799b49a46366e60e485757",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-34.png": "084a04e8a712bd7fff7f513ebf843c2f3e66ad7e8d7db698810d1f9f6e5dc45a",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-38.png": "4ed6610cc0fb55462331d415e3448ff8bbe4341d562775d663876742385a731e",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-39.png": "820ab901262f1b90574384947eabd6ce66ad37fa3ae0ae61cd52b19aedf5adc5",
+    ".build/brahms-consistent-resolution-2026-10-03/results/page-7.png": "e3c9a1ee3e1fcbc9e76626be762e6650fda6d50fa259ddfe26fc3c06cd690403"
+  },
+  "imageAxes": "Top-down source raster to top-down PDF points, separately scaled by actual page dimensions. Blue/green independent panels: old/new edges. The copied root p28s2ViolinII panel uses red/blue old/new edges.",
+  "reproduction": "compare.py accepts candidate inventory path and compares against frozen .build/ownership-alternatives-2026-10-03/actual.json. No detector/extractor replay was started by this reviewer.",
+  "parentMeasurementScope": "Only nine pages freshly analyzed; thirty reused; no full PDF export in this experiment."
+}

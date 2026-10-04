@@ -1,0 +1,69 @@
+{
+  "id": "p2-s1-violin1-vivace-top",
+  "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-2.png",
+  "imageSize": [
+    1800,
+    2589
+  ],
+  "pageSize": [
+    427,
+    614
+  ],
+  "sourceMeasuredRegionPt": [
+    134,
+    130,
+    178,
+    143
+  ],
+  "threshold": 190,
+  "candidateTopPt": 131.78833526458092,
+  "candidateTopPx": 555.700325732899,
+  "originalWordDarkTopPt": 131.38509076863653,
+  "originalWordDarkTopPx": 554,
+  "excludedRows": [
+    {
+      "row": 554,
+      "yPt": 131.38509076863653,
+      "xRangePx": [
+        579,
+        611
+      ],
+      "xRangePt": [
+        137.35166666666666,
+        144.94277777777776
+      ],
+      "count": 28
+    },
+    {
+      "row": 555,
+      "yPt": 131.62224797219002,
+      "xRangePx": [
+        579,
+        611
+      ],
+      "xRangePt": [
+        137.35166666666666,
+        144.94277777777776
+      ],
+      "count": 28
+    }
+  ],
+  "sourceMarkingCopies": [],
+  "finding": "Upper serif of the initial V in Vivace is above the candidate owner crop. This is actual source ink, not a guard padding failure.",
+  "darkPixelCentersAboveCandidateEdge": 56,
+  "pixelAreaCaveat": "Counts use dark pixel centers; row554 is wholly above the cut, row555 intersects the fractional cut. Do not report all56 pixel cells as wholly removed.",
+  "independentPublishedReference": {
+    "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+    "pageSize": [
+      0.0,
+      0.0,
+      427.0,
+      614.0
+    ],
+    "renderScale": 12,
+    "wordDarkTopPt": 131.25,
+    "candidateTopPt": 131.78833526458092,
+    "darkPixelCentersAboveCut": 357,
+    "note": "Published exact-correction source is a separate low-resolution raster reference; inspected to check effect on existing output coordinate space."
+  }
+}

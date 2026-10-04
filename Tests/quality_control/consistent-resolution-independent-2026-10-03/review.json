@@ -1,0 +1,496 @@
+{
+  "verdict": "Hold standalone resolution setting; no promotion recommendation. Source-heading clipping found despite unchanged existing guard passes; independent root review also found two new whole-neighbor crops on p28system2.",
+  "scope": "Nine fresh corrected pages and thirty exact retained analyses; read-only independent review, no production mutation or added detector run.",
+  "requirementsSHA256": "a9920c8cdf264c14d316f524600586fbeae9e335cf4a9135ee7a0f40bcae986d",
+  "candidateSHA256": "9615e174c7cb6a30f0db367f554523e76c820d3060003074acf5e5f8516335d0",
+  "baselineSHA256": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+  "allInputHashesUnchanged": true,
+  "changedInputs": [],
+  "geometry": {
+    "totalBands": [
+      604,
+      604
+    ],
+    "freshPages": 9,
+    "changedBands": 140,
+    "reducedBands": 105,
+    "unchangedRetainedAnalyses": 30,
+    "guardCount": 56,
+    "baselineGuardPasses": 53,
+    "candidateGuardPasses": 53,
+    "newGuardFailures": [],
+    "allAssignmentIdentitiesExact": true,
+    "allObservedStaffAssignedOnce": true,
+    "newUnresolvedPages": []
+  },
+  "sourceAndCorrectionsExact": true,
+  "allPhysicalPageDimensionsExact": true,
+  "largestFiveLineDeltaPt": 1.5360348568626836,
+  "visualEdgeReview": [
+    {
+      "bandID": "p2-s1-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p2-s1-violin1.png",
+      "imageSHA256": "fe4de48dcebdde62cdd803b7ea1bbf7219a69e329c741417dd1556e4121a0527",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-2.png",
+      "sourceImageSHA256": "26e0413c3f0eacc3e58fdddbea61321f177bfd48ac9293130f0f8bae398b8a9d",
+      "removedTopPt": 6.58833526458092,
+      "removedBottomPt": 0,
+      "finding": "Actual upper serif of initial V in Vivace omitted at top; main notes and lower dynamics retained.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p2-s1-violin1.png"
+    },
+    {
+      "bandID": "p2-s2-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p2-s2-cello.png",
+      "imageSHA256": "e6571507e454af480f4faf9c192fa9614d02836ea27860bd36850632bdb9c37c",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-2.png",
+      "sourceImageSHA256": "26e0413c3f0eacc3e58fdddbea61321f177bfd48ac9293130f0f8bae398b8a9d",
+      "removedTopPt": 8.523599845500144,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p2-s2-cello.png"
+    },
+    {
+      "bandID": "p2-s3-violin2",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p2-s3-violin2.png",
+      "imageSHA256": "7579193a8a339be9985e4087812407418279381dda50c0fc0ccc1e33787d28d1",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-2.png",
+      "sourceImageSHA256": "26e0413c3f0eacc3e58fdddbea61321f177bfd48ac9293130f0f8bae398b8a9d",
+      "removedTopPt": 0.28273464658167313,
+      "removedBottomPt": 2.2890691386635353,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p2-s3-violin2.png"
+    },
+    {
+      "bandID": "p7-s2-violin2",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p7-s2-violin2.png",
+      "imageSHA256": "5366824025361aa865ee7390293f47239ed6b5b90db726f20ea1bfc20e08644e",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-7.png",
+      "sourceImageSHA256": "e3c9a1ee3e1fcbc9e76626be762e6650fda6d50fa259ddfe26fc3c06cd690403",
+      "removedTopPt": 0,
+      "removedBottomPt": 11.440556199304751,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p7-s2-violin2.png"
+    },
+    {
+      "bandID": "p7-s4-violin2",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p7-s4-violin2.png",
+      "imageSHA256": "c096063d212a5ea1305b7f37a83adc5648620b87098e04944acb8cbee52a7789",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-7.png",
+      "sourceImageSHA256": "e3c9a1ee3e1fcbc9e76626be762e6650fda6d50fa259ddfe26fc3c06cd690403",
+      "removedTopPt": 0,
+      "removedBottomPt": 7.188567014291266,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p7-s4-violin2.png"
+    },
+    {
+      "bandID": "p17-s1-viola",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p17-s1-viola.png",
+      "imageSHA256": "ff04c488d55797efb73cbf0ce402adb48dc6ef85731b31e9570e31a865e423f9",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-17.png",
+      "sourceImageSHA256": "a23de5428c9e39352c1190a8f115a60e980a3b5fcaa9c65b44c84869cef6b14a",
+      "removedTopPt": 3.550674373795758,
+      "removedBottomPt": 3.572254335260112,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p17-s1-viola.png"
+    },
+    {
+      "bandID": "p17-s3-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p17-s3-cello.png",
+      "imageSHA256": "565b7b2b637b22b38c6d6f9a5e369a6edb61f7dc84995f685db5ab2bbd053b35",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-17.png",
+      "sourceImageSHA256": "a23de5428c9e39352c1190a8f115a60e980a3b5fcaa9c65b44c84869cef6b14a",
+      "removedTopPt": 3.4065510597303046,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p17-s3-cello.png"
+    },
+    {
+      "bandID": "p17-s4-viola",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p17-s4-viola.png",
+      "imageSHA256": "73cea3705db47887c7b840886ff4b1eefffe949c18c8460a632c06e3e49efb6d",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-17.png",
+      "sourceImageSHA256": "a23de5428c9e39352c1190a8f115a60e980a3b5fcaa9c65b44c84869cef6b14a",
+      "removedTopPt": 0.19036608863194715,
+      "removedBottomPt": 2.3298651252408717,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p17-s4-viola.png"
+    },
+    {
+      "bandID": "p19-s2-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p19-s2-violin1.png",
+      "imageSHA256": "39cbd2ba284c8c1f0c2d70f61ff8d52b15d8ad0e61bdd07d95712315d8a64e90",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-19.png",
+      "sourceImageSHA256": "d3ac01f35c1371c2458a8bb48ae3518aabb8209bc5a64df657e70f92c69cbeee",
+      "removedTopPt": 0,
+      "removedBottomPt": 6.292747253408578,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p19-s2-violin1.png"
+    },
+    {
+      "bandID": "p19-s2-violin2",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p19-s2-violin2.png",
+      "imageSHA256": "33718a5b2abf642314af30b3ad4ea7b6365220c26cdddfb72b281c92b7f900f0",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-19.png",
+      "sourceImageSHA256": "d3ac01f35c1371c2458a8bb48ae3518aabb8209bc5a64df657e70f92c69cbeee",
+      "removedTopPt": 0,
+      "removedBottomPt": 2.482339669120165,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p19-s2-violin2.png"
+    },
+    {
+      "bandID": "p19-s2-viola",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p19-s2-viola.png",
+      "imageSHA256": "27c7c39f7e0981b368dbfe5194d40898211703c058aa36bd87fa07b7bfb73597",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-19.png",
+      "sourceImageSHA256": "d3ac01f35c1371c2458a8bb48ae3518aabb8209bc5a64df657e70f92c69cbeee",
+      "removedTopPt": 0.012953751146540071,
+      "removedBottomPt": 3.727133469774799,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p19-s2-viola.png"
+    },
+    {
+      "bandID": "p23-s2-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p23-s2-violin1.png",
+      "imageSHA256": "061aeb2892cd348c3e5541fb0722a78a729f535a408b58304547d88350aa4c26",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-23.png",
+      "sourceImageSHA256": "046a35cd8d0ffa7a734a6050d1f12cf3c1e889fc786c0bee8b4b92a624ff0bed",
+      "removedTopPt": 0.009252679390385765,
+      "removedBottomPt": 2.178389151145666,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p23-s2-violin1.png"
+    },
+    {
+      "bandID": "p23-s2-viola",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p23-s2-viola.png",
+      "imageSHA256": "298bf34a6fadb6aaa9b1b7a435ec4785be71a2e2755ee06ac353aa5afcc86c54",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-23.png",
+      "sourceImageSHA256": "046a35cd8d0ffa7a734a6050d1f12cf3c1e889fc786c0bee8b4b92a624ff0bed",
+      "removedTopPt": 0.3657892585670197,
+      "removedBottomPt": 2.9469783858412484,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p23-s2-viola.png"
+    },
+    {
+      "bandID": "p23-s3-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p23-s3-cello.png",
+      "imageSHA256": "86b34dc9619574fae5925144647cce639631e08f3e8ae8d19b74bfe19aeef6cc",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-23.png",
+      "sourceImageSHA256": "046a35cd8d0ffa7a734a6050d1f12cf3c1e889fc786c0bee8b4b92a624ff0bed",
+      "removedTopPt": 3.6347608871940906,
+      "removedBottomPt": 0.17981040282001004,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p23-s3-cello.png"
+    },
+    {
+      "bandID": "p23-s4-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p23-s4-violin1.png",
+      "imageSHA256": "cdeb4d4bb1ae4b1795bfc2cfe965f8f97c3a70cbb229f3ad96c74daa92128747",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-23.png",
+      "sourceImageSHA256": "046a35cd8d0ffa7a734a6050d1f12cf3c1e889fc786c0bee8b4b92a624ff0bed",
+      "removedTopPt": 0,
+      "removedBottomPt": 6.095665182393134,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p23-s4-violin1.png"
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p28-s1-violin1.png",
+      "imageSHA256": "99c51a7ae28d346d438d2c6bf5d0d2aa5cf834011708b585d1c541ac5b06fa2d",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-28.png",
+      "sourceImageSHA256": "45cd407d61ab89c89ff0fcdce2c5722edaf183592e799b49a46366e60e485757",
+      "removedTopPt": 0,
+      "removedBottomPt": 6.186495651742177,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p28-s1-violin1.png"
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p28-s1-violin2.png",
+      "imageSHA256": "858a977305ab59b9223fc3409c9a505b4bf6a068344cf6220ee48644bf682ab4",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-28.png",
+      "sourceImageSHA256": "45cd407d61ab89c89ff0fcdce2c5722edaf183592e799b49a46366e60e485757",
+      "removedTopPt": 21.504614805189725,
+      "removedBottomPt": 0.021898007890598592,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p28-s1-violin2.png"
+    },
+    {
+      "bandID": "p28-s1-viola",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p28-s1-viola.png",
+      "imageSHA256": "9ff7aaa6639302a59426acf913b7c924f4658d0d114279c171fcafa5a35511c7",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-28.png",
+      "sourceImageSHA256": "45cd407d61ab89c89ff0fcdce2c5722edaf183592e799b49a46366e60e485757",
+      "removedTopPt": 6.140849100082903,
+      "removedBottomPt": 0.06708192558036785,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p28-s1-viola.png"
+    },
+    {
+      "bandID": "p28-s2-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p28-s2-violin1.png",
+      "imageSHA256": "6fe92f13749ae120fafe92662a928d94f08d9f6eb14a71f42a950fb2c8de5248",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-28.png",
+      "sourceImageSHA256": "45cd407d61ab89c89ff0fcdce2c5722edaf183592e799b49a46366e60e485757",
+      "removedTopPt": 12.981509184726121,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p28-s2-violin1.png"
+    },
+    {
+      "bandID": "p34-s1-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p34-s1-violin1.png",
+      "imageSHA256": "2b8ecf5ff3045ed8ccdaa47714a800cff72b7e3af61c21998cfb60f0cff06052",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-34.png",
+      "sourceImageSHA256": "084a04e8a712bd7fff7f513ebf843c2f3e66ad7e8d7db698810d1f9f6e5dc45a",
+      "removedTopPt": 0.04140594824256638,
+      "removedBottomPt": 5.4473541908072605,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p34-s1-violin1.png"
+    },
+    {
+      "bandID": "p34-s1-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p34-s1-cello.png",
+      "imageSHA256": "65cf764b9002dee07b45ae26b18c24e708a58358495a07fa5e1efae2c13e04ec",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-34.png",
+      "sourceImageSHA256": "084a04e8a712bd7fff7f513ebf843c2f3e66ad7e8d7db698810d1f9f6e5dc45a",
+      "removedTopPt": 7.5621475473155755,
+      "removedBottomPt": 0.18447276940906931,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p34-s1-cello.png"
+    },
+    {
+      "bandID": "p34-s4-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p34-s4-cello.png",
+      "imageSHA256": "dda6b36031b74a315ceb89cf54077f5c72159bf7985d390e7abe0438c48df35a",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-34.png",
+      "sourceImageSHA256": "084a04e8a712bd7fff7f513ebf843c2f3e66ad7e8d7db698810d1f9f6e5dc45a",
+      "removedTopPt": 5.822170722286614,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p34-s4-cello.png"
+    },
+    {
+      "bandID": "p38-s1-viola",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p38-s1-viola.png",
+      "imageSHA256": "781fcebbf64ba9c650ff7b1988ea4398964d1d709a2d539c914a75dd4db437d0",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-38.png",
+      "sourceImageSHA256": "4ed6610cc0fb55462331d415e3448ff8bbe4341d562775d663876742385a731e",
+      "removedTopPt": 0,
+      "removedBottomPt": 22.595043071347902,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p38-s1-viola.png"
+    },
+    {
+      "bandID": "p38-s1-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p38-s1-cello.png",
+      "imageSHA256": "89c763af6d38193ed0c80eb90c284783bd3f9827cc6c1d249d910724182a118a",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-38.png",
+      "sourceImageSHA256": "4ed6610cc0fb55462331d415e3448ff8bbe4341d562775d663876742385a731e",
+      "removedTopPt": 28.37272450535778,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p38-s1-cello.png"
+    },
+    {
+      "bandID": "p39-s2-violin2",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p39-s2-violin2.png",
+      "imageSHA256": "2e390158f69794ba379f139680612694d6d4a4a553ce9c80c7c6d731dcfc6c00",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-39.png",
+      "sourceImageSHA256": "820ab901262f1b90574384947eabd6ce66ad37fa3ae0ae61cd52b19aedf5adc5",
+      "removedTopPt": 0,
+      "removedBottomPt": 6.084007707129075,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p39-s2-violin2.png"
+    },
+    {
+      "bandID": "p39-s2-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p39-s2-cello.png",
+      "imageSHA256": "4fec9a8e4dea52aa53d9d78cd27865ceca205e39a07378f0368a5652de4f364a",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-39.png",
+      "sourceImageSHA256": "820ab901262f1b90574384947eabd6ce66ad37fa3ae0ae61cd52b19aedf5adc5",
+      "removedTopPt": 4.906358381502912,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p39-s2-cello.png"
+    },
+    {
+      "bandID": "p39-s3-violin1",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p39-s3-violin1.png",
+      "imageSHA256": "811990d759548627c00d12667492882846347462af85d2e759041cc37882cf30",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-39.png",
+      "sourceImageSHA256": "820ab901262f1b90574384947eabd6ce66ad37fa3ae0ae61cd52b19aedf5adc5",
+      "removedTopPt": 0.18882466281314692,
+      "removedBottomPt": 3.480539499036638,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p39-s3-violin1.png"
+    },
+    {
+      "bandID": "p39-s4-cello",
+      "image": ".build/consistent-resolution-independent-2026-10-03/edge-contexts/p39-s4-cello.png",
+      "imageSHA256": "0b35b984d1422c1e1cd357b49d41eb7d725ee4720ce9ff7fe74a5e750d19fa20",
+      "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-39.png",
+      "sourceImageSHA256": "820ab901262f1b90574384947eabd6ce66ad37fa3ae0ae61cd52b19aedf5adc5",
+      "removedTopPt": 7.095953757225402,
+      "removedBottomPt": 0,
+      "finding": "No target note or locally printed marking omission seen at the major changed edges; removed ink belongs to neighboring staff/system or paper/structural context.",
+      "limitation": "Visual source-context review of edges contracted more than2pt. Does not certify all140 changed crops or all shared score directions.",
+      "durableContext": "edge-contexts.zip:p39-s4-cello.png"
+    }
+  ],
+  "confirmedSourceLoss": {
+    "id": "p2-s1-violin1-vivace-top",
+    "sourceImage": ".build/brahms-consistent-resolution-2026-10-03/results/page-2.png",
+    "imageSize": [
+      1800,
+      2589
+    ],
+    "pageSize": [
+      427,
+      614
+    ],
+    "sourceMeasuredRegionPt": [
+      134,
+      130,
+      178,
+      143
+    ],
+    "threshold": 190,
+    "candidateTopPt": 131.78833526458092,
+    "candidateTopPx": 555.700325732899,
+    "originalWordDarkTopPt": 131.38509076863653,
+    "originalWordDarkTopPx": 554,
+    "excludedRows": [
+      {
+        "row": 554,
+        "yPt": 131.38509076863653,
+        "xRangePx": [
+          579,
+          611
+        ],
+        "xRangePt": [
+          137.35166666666666,
+          144.94277777777776
+        ],
+        "count": 28
+      },
+      {
+        "row": 555,
+        "yPt": 131.62224797219002,
+        "xRangePx": [
+          579,
+          611
+        ],
+        "xRangePt": [
+          137.35166666666666,
+          144.94277777777776
+        ],
+        "count": 28
+      }
+    ],
+    "sourceMarkingCopies": [],
+    "finding": "Upper serif of the initial V in Vivace is above the candidate owner crop. This is actual source ink, not a guard padding failure.",
+    "darkPixelCentersAboveCandidateEdge": 56,
+    "pixelAreaCaveat": "Counts use dark pixel centers; row554 is wholly above the cut, row555 intersects the fractional cut. Do not report all56 pixel cells as wholly removed.",
+    "independentPublishedReference": {
+      "source": "output/pdf/auto-qc-2026-09-21/brahms-quartet-93521-preservation/rectified-review-source.pdf",
+      "pageSize": [
+        0.0,
+        0.0,
+        427.0,
+        614.0
+      ],
+      "renderScale": 12,
+      "wordDarkTopPt": 131.25,
+      "candidateTopPt": 131.78833526458092,
+      "darkPixelCentersAboveCut": 357,
+      "note": "Published exact-correction source is a separate low-resolution raster reference; inspected to check effect on existing output coordinate space."
+    }
+  },
+  "unreviewedScope": "77additional smaller-contraction bands plus expanding-only changes are not independently source-certified here. Root held the setting after the major-edge/new-overlap findings. All140 assignment identities were compared automatically.",
+  "frozenGuardCaveat": "56 checks include overlaps/duplicates from separate existing guard families.53pass in both; p35 ViolinI broad guard and p22Cello lower guard plus one nested landmark remain existing failures on untouched pages. No guard value was modified.",
+  "sharedDirectionCaveat": "Candidate inventory sourceMarkings are empty for p2s1 ViolinI. A separately merged full Vivace source copy could retain the word elsewhere but does not make this standalone crop source-complete; no such merged output was inspected.",
+  "newWholeNeighborCrops": [
+    {
+      "band": "p28-s2-violin1",
+      "page": 28,
+      "oldCandidates": [
+        4
+      ],
+      "newCandidates": [
+        4
+      ],
+      "oldY": [
+        151.54876462938878,
+        206.7334200260078
+      ],
+      "newY": [
+        164.5302738141149,
+        236.33089086000768
+      ],
+      "oldWholeNeighbors": [],
+      "newWholeNeighbors": [
+        5
+      ]
+    },
+    {
+      "band": "p28-s2-violin2",
+      "page": 28,
+      "oldCandidates": [
+        5
+      ],
+      "newCandidates": [
+        5
+      ],
+      "oldY": [
+        201.93237971391414,
+        241.52210663198957
+      ],
+      "newY": [
+        168.08792903972233,
+        241.31160817585805
+      ],
+      "oldWholeNeighbors": [],
+      "newWholeNeighbors": [
+        4
+      ]
+    }
+  ],
+  "wholeNeighborMetric": {
+    "before": 7,
+    "after": 6,
+    "caveat": "Net7to6 hides two newly retained complete neighboring staves. Both p28s2 violin source contexts independently inspected."
+  },
+  "coordinateNotes": "Each source image was mapped with its own physical pageWidth/pageHeight, not a constant615pt height. Page2 is427x614pt and1800x2589px. Some corrected source pages are426pt wide. All candidate/baseline physical dimensions and saved normalized corrections match; no raw-only guard was reused for a corrected page.",
+  "durableSourceLossImages": [
+    "p2-s1-violin1.png",
+    "p2-vivace-detail.png",
+    "p2-vivace-published-reference-detail.png"
+  ]
+}

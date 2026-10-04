@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 3 corrected-page resolution check
+
+The [consistent-resolution measurement](brahms-consistent-resolution-2026-10-03/README.md) freshly analyzes the nine saved corrected Brahms pages at the ordinary native renderer's resolution, retaining the other thirty analyses. All 604 assignments remain unchanged. Three whole-neighbor inclusions disappear, but two new p28 crops include the complete adjacent staff; the net seven-to-six count hides those regressions. [Independent review](consistent-resolution-independent-2026-10-03/README.md) also finds actual `Vivace` serif pixels clipped by the new p2 crop. The setting remains outside production. All 28 larger contractions were inspected; the same 53 of 56 existing guard checks pass, demonstrating why fixed guards alone do not establish complete source preservation.
+
 ## October 3 full-score musical-span rejection
 
 The [complete 39-page Brahms replay](brahms-source-spans-full-2026-10-03/README.md) rejects the private V1 source-span recognizer. Eight false spans follow ordinary barlines and slur/staff intersections; thirteen crops expand, adding fourteen complete neighboring-core incidences across ten crops. Existing notation components and crop areas are preserved, but the resulting extra staves are still a quality regression. No detector or app change is promoted.

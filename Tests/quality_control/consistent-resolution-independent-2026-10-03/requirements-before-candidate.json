@@ -1,0 +1,699 @@
+{
+  "createdUTC": "2026-10-03T23:55:56.921685+00:00",
+  "status": "Frozen before inspecting resolution candidate or comparison results. Existing guard values unchanged; no additional source region inferred from new crop edges.",
+  "inputHashes": {
+    ".build/brahms-consistent-resolution-2026-10-03/protocol-before-results.json": "fd5970d5699fc0747ae5284fc9492167f3543088353351f8f2309cab70f86d45",
+    ".build/ownership-alternatives-2026-10-03/actual.json": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+    "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json": "ba3e66644c889faa175c413fa9561b76ff691fe73147c8973257a02b10e64573",
+    "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json": "24838a6c5f3f8dd1832c7bdc9298b3d72c8bc22d2f7483c473ce507b80c71f40",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+    "Tests/quality_control/terminal-attachment-source-review/corrected-smaller-source-guards.json": "b0391c815b25d092d53519de583f09a0c6fec3eee5c05d97ca98a71290957cfa",
+    "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json": "ff35d389289c1bb04f19d90abb77f280779ecbabbf0654f89a21a496b777df71",
+    "Tests/quality_control/brahms-seven-source-independent-2026-10-03/inputs.json": "cf93dacecd9493645a791172550d44f645a9b2201c29ac73d120b5d35ab26d60"
+  },
+  "freshPages": [
+    2,
+    7,
+    17,
+    19,
+    23,
+    28,
+    34,
+    38,
+    39
+  ],
+  "baselineFreshBandCount": 140,
+  "guards": [
+    {
+      "group": "seven-reviewed",
+      "bandID": "p24-s2-viola",
+      "rect": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "seven-reviewed",
+      "bandID": "p24-s2-cello",
+      "rect": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "seven-reviewed",
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "seven-reviewed",
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "seven-reviewed",
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "seven-reviewed",
+      "bandID": "p38-s1-viola",
+      "rect": [
+        0,
+        90,
+        427,
+        133
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "seven-reviewed",
+      "bandID": "p38-s1-cello",
+      "rect": [
+        0,
+        132.5,
+        427,
+        163
+      ],
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/case-bounds-and-validation.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p24-s2-viola",
+      "rect": [
+        301,
+        272,
+        316,
+        281.5
+      ],
+      "description": "Detached forte below penultimate bar; belongs to Viola, not Cello.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p24-s2-cello",
+      "rect": [
+        300,
+        306,
+        316,
+        315.5
+      ],
+      "description": "Cello forte below penultimate bar.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        242,
+        54,
+        301,
+        64
+      ],
+      "description": "Complete crescendo wedge followed by forte below Violin I; no Violin II core needed.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        242,
+        74,
+        301,
+        98.5
+      ],
+      "description": "Fifth-bar lower phrase slur, low flagged ledger note, crescendo wedge and following forte.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        97,
+        91,
+        134,
+        105.5
+      ],
+      "description": "Detached piano dynamic, lower slur and articulation dot after the initial rest bar.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-viola",
+      "rect": [
+        70,
+        95,
+        117,
+        132.5
+      ],
+      "description": "Opening triplet numeral, dual-voice notes, lower nested slurs and detached tenuto marks.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-viola",
+      "rect": [
+        374,
+        90,
+        390,
+        117
+      ],
+      "description": "Last high ledger note and both right-edge phrase arcs above it.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-viola",
+      "rect": [
+        342,
+        121,
+        358,
+        133
+      ],
+      "description": "Viola forte beneath final bar.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-viola",
+      "rect": [
+        69,
+        128,
+        338,
+        133
+      ],
+      "description": "Detached lower tenutos through the first six bars.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-cello",
+      "rect": [
+        65,
+        145,
+        95,
+        163
+      ],
+      "description": "Opening accidental, low ledger note, nested lower slurs and tenuto.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-cello",
+      "rect": [
+        340,
+        152,
+        358,
+        163
+      ],
+      "description": "Cello final forte below hollow note.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "additional12",
+      "bandID": "p38-s1-cello",
+      "rect": [
+        68,
+        158,
+        335,
+        163
+      ],
+      "description": "Cello detached tenutos under phrases and low notes.",
+      "source": "Tests/quality_control/brahms-seven-source-independent-2026-10-03/additional-local-obligations.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p24-s2-viola",
+      "rect": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "description": "All viola notes, staccato, slurs, cresc., f and final hairpin.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p24-s2-cello",
+      "rect": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "description": "Low opening ledger note/slur, all cello notes, cresc., f, closing slur/hairpin.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "description": "All high ledger notes, phrase slurs, crescendo and forte; clef lower dot retained.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "description": "High articulation dots, low ledger note, slurs, hairpin and forte.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p29-s1-violin1",
+      "rect": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "description": "Complete Poco Allegretto heading, all notes, slurs, dynamics and hairpins.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p29-s1-violin2",
+      "rect": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "description": "Complete clef and notes, low accidental/ledger note, slurs, p/pp and hairpins.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p31-s1-violin1",
+      "rect": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p35-s1-violin1",
+      "rect": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "description": "All ledger notes and accents, last beam and full clef.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old10",
+      "bandID": "p35-s1-violin2",
+      "rect": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "description": "High beams, low ledger notes, accidentals and all three large slurs.",
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-ten-source-guards.json"
+    },
+    {
+      "group": "old13",
+      "bandID": "p24-s2-viola",
+      "rect": [
+        377,
+        253,
+        388.5,
+        268.5
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "final note, stem and slur"
+    },
+    {
+      "group": "old13",
+      "bandID": "p24-s2-viola",
+      "rect": [
+        348.5,
+        268,
+        388,
+        274
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "final hairpin pair"
+    },
+    {
+      "group": "old13",
+      "bandID": "p24-s2-cello",
+      "rect": [
+        378,
+        273.5,
+        388.5,
+        295
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "high final note and slur"
+    },
+    {
+      "group": "old13",
+      "bandID": "p24-s2-cello",
+      "rect": [
+        360.5,
+        278,
+        373,
+        295
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "sharp and preceding high half note"
+    },
+    {
+      "group": "old13",
+      "bandID": "p24-s2-cello",
+      "rect": [
+        348,
+        302,
+        387,
+        307.5
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "final hairpin pair"
+    },
+    {
+      "group": "old13",
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        87.5,
+        33,
+        95,
+        52
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "pre-barline flagged note and slur endpoint"
+    },
+    {
+      "group": "old13",
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        102.5,
+        29,
+        116,
+        49
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "post-barline note and upper slur start"
+    },
+    {
+      "group": "old13",
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        88.5,
+        75,
+        97,
+        90
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "pre-barline low flagged note"
+    },
+    {
+      "group": "old13",
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        103,
+        75,
+        110.5,
+        95
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "post-barline low note, stem and dot"
+    },
+    {
+      "group": "old13",
+      "bandID": "p31-s1-violin1",
+      "rect": [
+        349,
+        33,
+        386.5,
+        65
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "final beamed descending notes, slur and detached last note"
+    },
+    {
+      "group": "old13",
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        353,
+        73,
+        389.5,
+        102
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "last flagged note pair, lower slur and crescendo"
+    },
+    {
+      "group": "old13",
+      "bandID": "p35-s1-violin1",
+      "rect": [
+        327,
+        26,
+        378,
+        66
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "last beamed melody, dots and ledger notes"
+    },
+    {
+      "group": "old13",
+      "bandID": "p35-s1-violin2",
+      "rect": [
+        337.5,
+        65,
+        385.5,
+        106
+      ],
+      "source": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/immutable-thirteen-local-obligations.json",
+      "description": "rising beamed figure, low ledger note and full lower slur"
+    },
+    {
+      "group": "corrected3",
+      "bandID": "p17-s1-viola",
+      "rect": [
+        0,
+        97.5,
+        426,
+        133
+      ],
+      "description": "Upper slurs/flags, lower chord notes/slurs, crescendo.",
+      "source": "Tests/quality_control/terminal-attachment-source-review/corrected-smaller-source-guards.json"
+    },
+    {
+      "group": "corrected3",
+      "bandID": "p23-s3-violin2",
+      "rect": [
+        0,
+        347,
+        427,
+        386
+      ],
+      "description": "Upper slurs, all chord/ledger notes, dim. ed un poco rit., final slur and hairpin.",
+      "source": "Tests/quality_control/terminal-attachment-source-review/corrected-smaller-source-guards.json"
+    },
+    {
+      "group": "corrected3",
+      "bandID": "p28-s2-violin1",
+      "rect": [
+        0,
+        171,
+        427,
+        204.5
+      ],
+      "description": "High whole/ledger notes, accidentals, slurs, clef, both forte marks and opening hairpins.",
+      "source": "Tests/quality_control/terminal-attachment-source-review/corrected-smaller-source-guards.json"
+    },
+    {
+      "group": "celloLower4",
+      "bandID": "p17-s2-cello",
+      "rect": [
+        38,
+        278,
+        393,
+        306
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p17-s2-cello",
+      "description": "lower slurs and long hairpin",
+      "rect": [
+        164,
+        292,
+        230,
+        306
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p17-s2-cello",
+      "description": "left hairpin and forte",
+      "rect": [
+        64,
+        291,
+        115,
+        303
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLower4",
+      "bandID": "p18-s1-cello",
+      "rect": [
+        38,
+        140,
+        393,
+        171
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p18-s1-cello",
+      "description": "low forte and attached low beam stem",
+      "rect": [
+        104,
+        157,
+        125,
+        171
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLower4",
+      "bandID": "p22-s3-cello",
+      "rect": [
+        38,
+        415,
+        393,
+        448
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p22-s3-cello",
+      "description": "low ledger note and long hairpin",
+      "rect": [
+        227,
+        432,
+        329,
+        443
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p22-s3-cello",
+      "description": "rightmost lower beam and hairpin",
+      "rect": [
+        332,
+        436,
+        372,
+        448
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLower4",
+      "bandID": "p32-s3-cello",
+      "rect": [
+        38,
+        415,
+        393,
+        441
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p32-s3-cello",
+      "description": "left lower beam and hairpin",
+      "rect": [
+        132,
+        430,
+        175,
+        437
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    },
+    {
+      "group": "celloLowerLandmarks",
+      "bandID": "p32-s3-cello",
+      "description": "long lowest hairpin",
+      "rect": [
+        198,
+        433,
+        255,
+        441
+      ],
+      "source": "Tests/quality_control/brahms93521/cello-next-system-lower-guards.json"
+    }
+  ],
+  "requiredComparisons": [
+    "Exact source hash, saved normalized correction list and physical source-page dimensions",
+    "Each ordered staff and all five physical line identities; quantify coordinate deltas, inspect any candidate swap/phase jump",
+    "Each band preserves identity, ordered staff candidate assignment and all intended staff candidates are assigned exactly once; count changes/unresolved reasons independently",
+    "All frozen guards; distinguish existing baseline failures, new rectangle-only failures and visually confirmed source-ink loss; do not shrink guards",
+    "Original high-quality saved-correction source context for every reduced edge; untouched30 pages exact analysis identity",
+    "New/worsened whole neighbors reported separately; narrower crop is not music-preservation evidence"
+  ],
+  "coordinateCaveat": "Raw-only guards on corrected pages are excluded; guards reference same normalized correction geometry but the low-resolution displayed reference can differ by raster resampling. Real edge failures require source-image confirmation; normalized point mapping must be verified."
+}
