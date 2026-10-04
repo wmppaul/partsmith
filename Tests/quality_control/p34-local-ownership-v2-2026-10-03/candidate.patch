@@ -1,0 +1,83 @@
+--- production/Core/Detection/NativeScorePageAnalyzer.swift
++++ candidate/Core/Detection/NativeScorePageAnalyzer.swift
+@@ -617,19 +617,77 @@
+             }
+         }
+         let typicalSpace = spaces.sorted()[spaces.count / 2]
++        // A nominal owner is removed only when all five original local line
++        // ridges prove that the complete component lies outside its core.
++        // Empty cache entries mean unsupported: retain the nominal owner.
++        var measuredCoreCache: [Int: [Double]] = [:]
++        func measuredCore(staffIndex: Int, x: Int) -> [Double]? {
++            let key = staffIndex * width + x
++            if let cached = measuredCoreCache[key] { return cached.isEmpty ? nil : cached }
++            let space = spaces[staffIndex]
++            let reach = max(2, Int((space * 2).rounded()))
++            let lo = max(0, x - reach), hi = min(width, x + reach + 1)
++            guard hi - lo >= reach else { measuredCoreCache[key] = []; return nil }
++            let radius = max(1, Int(floor(space * 0.49)))
++            var accepted: [Int] = []
++            for shift in -radius...radius {
++                if isCancelled() { return nil }
++                var allFive = true
++                for line in lines[staffIndex] {
++                    var supported = 0
++                    for column in lo..<hi {
++                        let centeredColumn = Double(column) - Double(width) / 2
++                        let nominalY = line + slope * centeredColumn
++                        let y = Int((nominalY + Double(shift)).rounded())
++                        var present = false
++                        for dy in -1...1 {
++                            let row = y + dy
++                            if row >= 0 && row < height && original[row * width + column] { present = true; break }
++                        }
++                        if present { supported += 1 }
++                    }
++                    if Double(supported) < Double(hi - lo) * 0.80 { allFive = false; break }
++                }
++                if allFive { accepted.append(shift) }
++            }
++            guard let first = accepted.first, let last = accepted.last else {
++                measuredCoreCache[key] = []; return nil
++            }
++            // Keep the union of every supported shift and the one-pixel
++            // observation tolerance, rather than choosing a convenient ridge.
++            let shift = slope * (Double(x) - Double(width) / 2)
++            let bounds = [lines[staffIndex][0] + shift + Double(first) - 1,
++                          lines[staffIndex][4] + shift + Double(last) + 1]
++            measuredCoreCache[key] = bounds
++            return bounds
++        }
+         var result: [ScoreInkComponent] = []
+         for box in boxes.values where box.area >= 2 {
+             let boxHeight = Double(box.bottom - box.top), boxWidth = Double(box.right - box.left)
+-            let owners = lines.indices.filter {
++            let nominalOwners = lines.indices.filter {
+                 Double(box.top) <= lines[$0][4]
+                     && Double(box.bottom) >= lines[$0][0]
+             }
+             // Thin, multi-staff vertical connectors and braces strictly left of
+             // the staff-line starts are not target-note ownership evidence. A
+             // single staff's long thin stem is kept, even at the page's left edge.
+-            if owners.count > 1 && boxHeight > 8 * typicalSpace {
+-                let outsideStaff = owners.allSatisfy { Double(box.right) < Double(lineStarts[$0]) - spaces[$0] * 0.25 }
++            if nominalOwners.count > 1 && boxHeight > 8 * typicalSpace {
++                let outsideStaff = nominalOwners.allSatisfy { Double(box.right) < Double(lineStarts[$0]) - spaces[$0] * 0.25 }
+                 if boxWidth < 0.6 * typicalSpace || (boxWidth < 1.8 * typicalSpace && outsideStaff) { continue }
++            }
++            if isCancelled() { return nil }
++            let owners = nominalOwners.filter { staffIndex in
++                // If even the conservative affine box still touches this core,
++                // no refinement is needed. This is only a source-proof removal.
++                let a = slope * (Double(box.left) - Double(width) / 2)
++                let b = slope * (Double(box.right) - Double(width) / 2)
++                if Double(box.top) - max(a, b) <= lines[staffIndex][4]
++                    && Double(box.bottom) - min(a, b) >= lines[staffIndex][0] { return true }
++                for column in box.left..<box.right {
++                    guard let core = measuredCore(staffIndex: staffIndex, x: column) else { return true }
++                    if Double(box.top) <= core[1] && Double(box.bottom) >= core[0] { return true }
++                }
++                return false
+             }
+             // Keep interior components too. A low dynamic close to the following
+             // staff can lie within its padding envelope, yet belong to the

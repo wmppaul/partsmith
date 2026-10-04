@@ -1,0 +1,24 @@
+{
+  "v2CoreReceipt": {
+    "path": "Tests/quality_control/p34-local-ownership-v2-2026-10-03/manifest.json",
+    "sha256": "a1ccefa60300ab2b9397621f82fcff8b7b9ed12069fd3ec686deb46ffa0d5b72"
+  },
+  "baselineCoreReceipt": {
+    "path": "Tests/quality_control/p34-local-ownership-v1-2026-10-03/manifest.json",
+    "sha256": "f850da8ba8c8304af12bd297d221abc66cb7b2ed9d1e35ba32f603702c4c1720"
+  },
+  "executables": {
+    "baseline": {
+      "sha256": "5d9bc9ad4df8dece6144db2d1502dc39fc310038d3b33226e570be93f61fb0fa",
+      "bytes": 1138856
+    },
+    "candidate": {
+      "sha256": "90f1c9a8fefed381ef421d09419c3cd36aef32af716c2fef309c06afc1496593",
+      "bytes": 1156504
+    }
+  },
+  "guards": {
+    "Tests/quality_control/residual7-source-2026-10-03/source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "Tests/quality_control/residual7-source-2026-10-03/source-oracle.json": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f"
+  }
+}

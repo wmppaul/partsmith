@@ -1,0 +1,676 @@
+{
+  "scope": "Independent source-first review: all6 original pages, all11 initial final-PDF pages and all8 repaired final-PDF pages; timeline/reference/project decoding and exactly3 changed source crops. No detection rerun or production mutation.",
+  "source": {
+    "path": "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+    "sha256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706"
+  },
+  "initialReviewSHA256": "8e161fdf598a0dc3c5e04b6d463459cf511f71135df85e32cb0911a1f571e53a",
+  "sourceExpectationsSHA256": "ae81ba2a620a7de0752cb7f23bedc2deca8ee5ae3c587e41a02b39f8c89500d8",
+  "finalManifest": {
+    "path": ".build/mendelssohn-complete-2026-10-03/final-parts/manifest.json",
+    "sha256": "4b59e6136a6038b9be7a06b3007c91b797acd79deb1badd5f0d41c551fc4de79"
+  },
+  "finalRenderIndex": {
+    "path": ".build/mendelssohn-complete-2026-10-03/final-render-index.json",
+    "sha256": "f1ece618a40eecb57403efef06372ec4a010e503fff0df94a096183ad7d4ea70"
+  },
+  "manualCorrections": {
+    "path": ".build/mendelssohn-complete-2026-10-03/manual-corrections.json",
+    "sha256": "82e90d799f07940a27d793de33adc2bac8e4a51c05a48aa27c2ab268455ee0e6"
+  },
+  "parts": [
+    {
+      "part": "soprano",
+      "file": ".build/mendelssohn-complete-2026-10-03/final-parts/Soprano.pdf",
+      "pdfSHA256": "12e1025604ad8a9c2400e594bd4416b3213714e6374c54a4d5a4369f13d600fe",
+      "decodedPages": 1,
+      "renderedRows": 7,
+      "sourceReferences": [
+        "p1-s1-soprano",
+        "p2-s1-soprano",
+        "p2-s2-soprano",
+        "p2-s3-soprano",
+        "p2-s4-soprano",
+        "p3-s1-soprano",
+        "p3-s2-soprano",
+        "p3-s3-soprano",
+        "p4-s1-soprano",
+        "p4-s2-soprano",
+        "p5-s1-soprano",
+        "p5-s2-soprano",
+        "p6-s1-soprano",
+        "p6-s2-soprano"
+      ],
+      "allBars1Through102ExactlyOnce": true,
+      "generatedGroups": [
+        {
+          "barCount": 59,
+          "startBarNumber": 8
+        }
+      ]
+    },
+    {
+      "part": "alto",
+      "file": ".build/mendelssohn-complete-2026-10-03/final-parts/Alto.pdf",
+      "pdfSHA256": "5940e8dc0bd6dc09e2dd4d4fa9d151a1d5b9b3b17fc382c506ce23c853b5dc35",
+      "decodedPages": 1,
+      "renderedRows": 11,
+      "sourceReferences": [
+        "p1-s1-alto",
+        "p2-s1-alto",
+        "p2-s2-alto",
+        "p2-s3-alto",
+        "p2-s4-alto",
+        "p3-s1-alto",
+        "p3-s2-alto",
+        "p3-s3-alto",
+        "p4-s1-alto",
+        "p4-s2-alto",
+        "p5-s1-alto",
+        "p5-s2-alto",
+        "p6-s1-alto",
+        "p6-s2-alto"
+      ],
+      "allBars1Through102ExactlyOnce": true,
+      "generatedGroups": [
+        {
+          "barCount": 29,
+          "startBarNumber": 8
+        }
+      ]
+    },
+    {
+      "part": "tenor",
+      "file": ".build/mendelssohn-complete-2026-10-03/final-parts/Tenor.pdf",
+      "pdfSHA256": "482056d3cd6da5911d28af38bdee8699b883abc60231e0e0043284a8b6d8b21d",
+      "decodedPages": 1,
+      "renderedRows": 7,
+      "sourceReferences": [
+        "p1-s1-tenor",
+        "p2-s1-tenor",
+        "p2-s2-tenor",
+        "p2-s3-tenor",
+        "p2-s4-tenor",
+        "p3-s1-tenor",
+        "p3-s2-tenor",
+        "p3-s3-tenor",
+        "p4-s1-tenor",
+        "p4-s2-tenor",
+        "p5-s1-tenor",
+        "p5-s2-tenor",
+        "p6-s1-tenor",
+        "p6-s2-tenor"
+      ],
+      "allBars1Through102ExactlyOnce": true,
+      "generatedGroups": [
+        {
+          "barCount": 59,
+          "startBarNumber": 8
+        }
+      ]
+    },
+    {
+      "part": "bass",
+      "file": ".build/mendelssohn-complete-2026-10-03/final-parts/Bass.pdf",
+      "pdfSHA256": "fe1b5519db1937b67ffeddfbea8ada98630945bfc202486252807bc76f49f21e",
+      "decodedPages": 2,
+      "renderedRows": 14,
+      "sourceReferences": [
+        "p1-s1-bass",
+        "p2-s1-bass",
+        "p2-s2-bass",
+        "p2-s3-bass",
+        "p2-s4-bass",
+        "p3-s1-bass",
+        "p3-s2-bass",
+        "p3-s3-bass",
+        "p4-s1-bass",
+        "p4-s2-bass",
+        "p5-s1-bass",
+        "p5-s2-bass",
+        "p6-s1-bass",
+        "p6-s2-bass"
+      ],
+      "allBars1Through102ExactlyOnce": true,
+      "generatedGroups": [
+        {
+          "barCount": 8,
+          "startBarNumber": 8
+        }
+      ]
+    },
+    {
+      "part": "organ",
+      "file": ".build/mendelssohn-complete-2026-10-03/final-parts/Organ (manuals and pedal).pdf",
+      "pdfSHA256": "1d3a407e67be0ac3a5c3a10f3375d996e545d543d54d0c3f3ef4b60809d39b7a",
+      "decodedPages": 3,
+      "renderedRows": 14,
+      "sourceReferences": [
+        "p1-s1-organ",
+        "p2-s1-organ",
+        "p2-s2-organ",
+        "p2-s3-organ",
+        "p2-s4-organ",
+        "p3-s1-organ",
+        "p3-s2-organ",
+        "p3-s3-organ",
+        "p4-s1-organ",
+        "p4-s2-organ",
+        "p5-s1-organ",
+        "p5-s2-organ",
+        "p6-s1-organ",
+        "p6-s2-organ"
+      ],
+      "allBars1Through102ExactlyOnce": true,
+      "generatedGroups": []
+    }
+  ],
+  "totalOutputPages": 8,
+  "renderedRows": 53,
+  "all70OriginalBandReferencesExactlyOnce": true,
+  "all49PrintedMusicRowsRemain": true,
+  "original21AbsentRowsJoinedInto4Groups": true,
+  "onlyThreePlanFieldChanges": [
+    {
+      "bandID": "p1-s1-bass",
+      "fields": [
+        "bottomFraction"
+      ],
+      "before": [
+        0,
+        0.5851757589101623,
+        1,
+        0.6414169308476992
+      ],
+      "after": [
+        0,
+        0.5851757589101623,
+        1,
+        0.6223277909738717
+      ]
+    },
+    {
+      "bandID": "p4-s2-bass",
+      "fields": [
+        "bottomFraction"
+      ],
+      "before": [
+        0,
+        0.6472338893107907,
+        1,
+        0.732540261562546
+      ],
+      "after": [
+        0,
+        0.6472338893107907,
+        1,
+        0.7114014251781473
+      ]
+    },
+    {
+      "bandID": "p4-s2-organ",
+      "fields": [
+        "topFraction"
+      ],
+      "before": [
+        0,
+        0.6935811006226524,
+        1,
+        0.8715818954981313
+      ],
+      "after": [
+        0,
+        0.6904988123515439,
+        1,
+        0.8715818954981313
+      ]
+    }
+  ],
+  "decodedProject": {
+    "projectJSONSHA256": "0fef2401d83dc6fc77001e8b8c73094b2fa6a8d70a8baca36c6f28b53f3076c4",
+    "sourcePDFSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+    "sourcePages": 6,
+    "bands": 70,
+    "noRectification": true,
+    "allMainCropFractionsAndSourceCopiesExact": true,
+    "partNamesAndBandOrderExact": true,
+    "seventeenJoinedRestContinuationFlagsPersist": true,
+    "rows": [
+      {
+        "cropID": "p1-s1-alto",
+        "projectBandID": "C08AD1F8-ADA0-49F8-BAC1-970C55C85FDC",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p1-s1-bass",
+        "projectBandID": "E62649EE-2ED6-4F6B-960C-68EE668466D4",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p1-s1-organ",
+        "projectBandID": "69BFD3D4-FC3A-4096-9CBA-8E7550B9CEB3",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p1-s1-soprano",
+        "projectBandID": "34218A9B-7C23-4056-B1AD-8D0F54768757",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p1-s1-tenor",
+        "projectBandID": "E16EB2E6-DF10-40AE-9E01-3495F9B6AB1F",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s1-soprano",
+        "projectBandID": "9865F56A-AEAC-4F8F-9DF3-1B67D7264A44",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s1-alto",
+        "projectBandID": "5F317632-3608-4F03-B044-B868BFB6C3A3",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s1-tenor",
+        "projectBandID": "BA605A1E-E7E8-444F-A415-8A0041ABF024",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s1-bass",
+        "projectBandID": "FC3ADCA6-97DF-4825-9CE9-4E2AC0FCE90C",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s1-organ",
+        "projectBandID": "1B18B2F2-E0C0-47CE-91C7-7A5F675B6C7A",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s2-soprano",
+        "projectBandID": "73A5A6E1-BEF5-4A59-9D05-5C1AE0624C65",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s2-alto",
+        "projectBandID": "FF7E34A0-D5E1-4382-8B78-F7593845D979",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s2-tenor",
+        "projectBandID": "17800975-E349-4898-8076-80996D805706",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s2-bass",
+        "projectBandID": "389ADD24-F70C-4001-88FE-675DA248D0A6",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s2-organ",
+        "projectBandID": "012A2FD9-62CC-4E5B-A84E-DBE2C578F1C5",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s3-soprano",
+        "projectBandID": "9FEFAC5F-F9B2-4C5C-AFF6-A0D682DB36EC",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s3-alto",
+        "projectBandID": "3086B081-D7A0-4F83-BA31-3D787968504B",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s3-tenor",
+        "projectBandID": "1B85FD53-47DD-44EB-9237-65FEE8ADD277",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s3-bass",
+        "projectBandID": "792B49A3-571B-4AF3-9601-B58D7840041C",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s3-organ",
+        "projectBandID": "1996772E-D564-42E6-8468-937624B01F45",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s4-soprano",
+        "projectBandID": "39E5B195-FCE7-479F-94C4-4CD820F09295",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s4-alto",
+        "projectBandID": "1C2AC16D-AA83-40FB-AADF-2423D364C1F4",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s4-tenor",
+        "projectBandID": "4D54EA4C-766E-4AAB-ABC3-6F9C9DE7A1DB",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p2-s4-bass",
+        "projectBandID": "BA95B8AE-CE35-4CEC-ADEA-55F0DEC63A65",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p2-s4-organ",
+        "projectBandID": "F77FA1BB-A0ED-4BEB-8A3D-FDAC73472BC9",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s1-soprano",
+        "projectBandID": "3BFCDEB0-294E-4FC4-8BB4-6B2C31A3531D",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p3-s1-tenor",
+        "projectBandID": "8355D3E7-480B-41F3-BD5E-83E85E199871",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p3-s1-alto",
+        "projectBandID": "59382B10-F53C-47CD-B2A1-C7C422124E39",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s1-bass",
+        "projectBandID": "940FC391-E19D-4325-8F7D-A25A1AE96F4D",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s1-organ",
+        "projectBandID": "80273297-98DE-422A-8155-F25AC05613A5",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s2-soprano",
+        "projectBandID": "D5EA6BD5-1709-4590-B1A6-ED20835BCB43",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p3-s2-tenor",
+        "projectBandID": "06F87235-E1DC-4B91-A8D2-BB655F0A2482",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p3-s2-alto",
+        "projectBandID": "40B74971-67AD-4091-AD62-AC18622736CA",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s2-bass",
+        "projectBandID": "0CA9EA72-C0BC-41B4-9696-C599F4F6DB9A",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s2-organ",
+        "projectBandID": "0FB367AD-F2D3-4263-B75A-21D0EF4B67D0",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s3-soprano",
+        "projectBandID": "49A0EA77-0009-43F8-82F6-57EB600C8D43",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p3-s3-tenor",
+        "projectBandID": "B1624BCA-AAC6-4821-9328-8EFA205497F2",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p3-s3-alto",
+        "projectBandID": "C2919BC0-4AC6-40D3-B590-5D9BB6A472EA",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s3-bass",
+        "projectBandID": "24407037-EB4F-4304-BF6E-C76C4839C300",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p3-s3-organ",
+        "projectBandID": "87539478-9F16-48BB-914C-1F5581A11E6F",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s1-soprano",
+        "projectBandID": "5E9634D1-DA97-4C46-B7F7-7DB1B99C5BE3",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p4-s1-tenor",
+        "projectBandID": "A43787F7-C822-4BBF-A24E-90C3F0EB641C",
+        "joinWithPrevious": true
+      },
+      {
+        "cropID": "p4-s1-alto",
+        "projectBandID": "0262FC90-535A-4430-8B3F-4352D1CCC355",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s1-bass",
+        "projectBandID": "16F85C9C-B2DE-4FB8-8986-8A673E088AB6",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s1-organ",
+        "projectBandID": "94DA7DED-68D5-4A93-9C2A-8BCF09D8533E",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s2-alto",
+        "projectBandID": "E1092D17-9255-4FC1-AF9F-DE82E0F4E59E",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s2-bass",
+        "projectBandID": "3CA9278F-EF28-4629-A707-FCC5DC493CC6",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s2-organ",
+        "projectBandID": "475A6C0D-8729-4D15-BAB6-E1E34C7590A0",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s2-soprano",
+        "projectBandID": "48602C71-DF17-497E-B71B-9414AFCC7CDB",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p4-s2-tenor",
+        "projectBandID": "C26E8045-A632-4731-911D-A8A20C826C61",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s1-alto",
+        "projectBandID": "3102D265-6E16-4BC8-AEAD-7BC3F7D02F11",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s1-bass",
+        "projectBandID": "A085715B-EBCD-46B7-8105-EEB021050EEF",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s1-organ",
+        "projectBandID": "E047A612-BFE8-4503-BDB7-FCA2BB80A220",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s1-soprano",
+        "projectBandID": "510205BC-C8D0-4785-A704-A1ADB37117DD",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s1-tenor",
+        "projectBandID": "9A4D2142-F637-42E5-B4EC-8F3FA85AF91B",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s2-alto",
+        "projectBandID": "B45B447C-966B-4A84-8157-1A472790F231",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s2-bass",
+        "projectBandID": "A39FD647-6B19-4679-B591-2E8FA283358B",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s2-organ",
+        "projectBandID": "8B2C8811-60E3-4814-AE72-D09A8A4A1915",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s2-soprano",
+        "projectBandID": "9EFC940C-796B-4A9B-9C5C-6920D0B56817",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p5-s2-tenor",
+        "projectBandID": "469971FF-B35E-499D-9C25-D51A632F3D9A",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s1-alto",
+        "projectBandID": "5ECB8686-61BC-443E-AEC9-B35F7F9A0ED4",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s1-bass",
+        "projectBandID": "7F7D43F9-8477-419F-B8D2-7830600F4120",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s1-organ",
+        "projectBandID": "37B5A8FF-A3AA-4EC7-8F3E-320B990450C0",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s1-soprano",
+        "projectBandID": "6E4E47B4-E040-4CF1-BF62-1AD498C0174D",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s1-tenor",
+        "projectBandID": "1D3917C2-2783-4C48-97F9-17685318E8F3",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s2-alto",
+        "projectBandID": "8788DB08-B543-4FA1-85A7-2EC26ED52313",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s2-bass",
+        "projectBandID": "8D55F33B-6249-4451-BC43-6791E9FDFEC7",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s2-organ",
+        "projectBandID": "CBF655F4-A145-42F9-B36F-26EFF1608C35",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s2-soprano",
+        "projectBandID": "95EE686D-6E03-4BFC-924E-B983B74230D8",
+        "joinWithPrevious": false
+      },
+      {
+        "cropID": "p6-s2-tenor",
+        "projectBandID": "3055120D-EFB6-4EA8-8030-4B1EE677E2FA",
+        "joinWithPrevious": false
+      }
+    ]
+  },
+  "visualOutputPages": [
+    {
+      "part": "soprano",
+      "page": 1,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/soprano/page-001.png",
+      "sha256": "b4867764113886d99c0f48759323df1d4c2549c9d8145081308d8b4612bfc0ae",
+      "viewed": true
+    },
+    {
+      "part": "alto",
+      "page": 1,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/alto/page-001.png",
+      "sha256": "e5cf0371c6aa46e0af6ed0c07fb067295153230af5f56af3d2fa2285773da5fb",
+      "viewed": true
+    },
+    {
+      "part": "tenor",
+      "page": 1,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/tenor/page-001.png",
+      "sha256": "9cf8fbd9e0a208ea423bb07f42dd961144aa78418b43d3e710fe1e1dfbc7020f",
+      "viewed": true
+    },
+    {
+      "part": "bass",
+      "page": 1,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/bass/page-001.png",
+      "sha256": "861a368aeea8b4cde2adc3d9aee0e283f923bc3a30b96639271c4ef07eab9a45",
+      "viewed": true
+    },
+    {
+      "part": "bass",
+      "page": 2,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/bass/page-002.png",
+      "sha256": "e02ef2b5de1c95b46dcbdb77224a39136c4b6e4d3af6220ef880207b98a3386c",
+      "viewed": true
+    },
+    {
+      "part": "organ",
+      "page": 1,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/organ/page-001.png",
+      "sha256": "ccaa4484c6b64958d1484e8598f5bdcbd7ac2c71739bfd20c863bf39da91fedd",
+      "viewed": true
+    },
+    {
+      "part": "organ",
+      "page": 2,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/organ/page-002.png",
+      "sha256": "9646b04938c403c93c440d49b2a849d3e2e08aa587fcc6c0e2ed5c452ffd2ecb",
+      "viewed": true
+    },
+    {
+      "part": "organ",
+      "page": 3,
+      "path": ".build/mendelssohn-complete-2026-10-03/final-output-review/organ/page-003.png",
+      "sha256": "346e94a48792628eaee342312b1a40b45ec001204883c2e64c6321a6a183966c",
+      "viewed": true
+    }
+  ],
+  "repairedCases": [
+    {
+      "bandID": "p4-s2-organ",
+      "verdict": "Complete continuous original slur crest over bar68 is now visible in actual Organ page3; no cut at the previous upper edge. All other own notes/registration/pedal ties visible there retained."
+    },
+    {
+      "bandID": "p1-s1-bass",
+      "verdict": "Complete own first staff and seven rests retained; copied Andante above staff remains exactly once. Neighboring Organ Andante and slur fragments below this crop have been excluded."
+    },
+    {
+      "bandID": "p4-s2-bass",
+      "verdict": "Full own notes, lower slur and complete lyric line incl descenders, hyphens and punctuation retained. Organ staff and most noteheads excluded; physically overlapping high slur/beam fragments remain."
+    }
+  ],
+  "finalObservations": [
+    "No remaining intended note, lyric or expressive-mark omission observed in the reviewed final pages at archived render resolution.",
+    "All expected source headings, vocal dynamics, three-staff Organ registration text and low pedal ties appear retained.",
+    "Soprano/Alto/Tenor now each fit one page; generated rest counts59/29/59 match exact absent ranges8\u201366/8\u201336/8\u201366. Bass retains8 bars of generated silence8\u201315. Explicit leading/trailing printed rests remain untouched.",
+    "Some clipped upper-voice lyrics and Organ slur/beam fragments remain in Bass/Organ margins, plus tiny neighboring fragments in other voices. No full foreign staff remains in the specifically corrected Bass row.",
+    "Bass still turns between51 and52 in an ongoing text phrase; Organ turns29\u219230 and66\u219267 amid continuing accompaniment. These page-turn limitations remain."
+  ],
+  "verdict": "Acceptable complete source-reviewed draft with the confirmed slur loss repaired; residual neighboring fragments and page-turn limitations remain. Not proof of unattended Auto extraction.",
+  "limits": [
+    "This extraction uses14 source-reviewed system maps, source-confirmed absent parts, three local crop edits and explicitly joined absence rests.",
+    "The unchanged automatic crop algorithm initially clipped a real Organ slur; the final artifact repair does not fix that general algorithm.",
+    "Visual review is not a pixel-segmented proof for every notation mark or a claim of typographic perfection."
+  ]
+}

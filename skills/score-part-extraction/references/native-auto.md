@@ -370,6 +370,14 @@ music numbers use the page margin; narrow margins or very short crops reserve a
 separate row so a number cannot cover notation. Leaving the starting bar blank
 does not infer a number.
 
+Freeze a per-system measure table before generating omitted rests. Recount it
+independently from the original notation: cross-staff stems can resemble
+barlines, and a wide measure can look like two. Compare another aligned staff
+when the first is ambiguous; do not count the two halves of a grand staff twice.
+Record meter and tempo changes at their actual measure, including changes
+inside a system. A correct roster and a gap-free calculated timeline do not
+validate the source counts used to create that timeline.
+
 An unassigned staff is not evidence of silence. Only explicitly unchecked,
 confirmed silent instruments receive generated rests. Their counts are required
 before adding the reviewed parts, because dropping an absent system would

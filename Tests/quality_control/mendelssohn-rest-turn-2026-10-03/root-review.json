@@ -1,0 +1,58 @@
+{
+  "change": "Native Start on New Page before Bass bar67 only; all source crop rectangles, rendering sizes, copied rectangles and original band references unchanged; model equality check passes after removing only pageBreakBefore and modifiedAt.",
+  "beforeTurn": [
+    51,
+    52
+  ],
+  "afterTurn": [
+    66,
+    67
+  ],
+  "restBars": [
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "nextSungEntry": 70,
+  "newBassPages": 2,
+  "newBassRowsPerPage": [
+    9,
+    5
+  ],
+  "allPartsPages": 8,
+  "sourcePages": 6,
+  "rootVisualReview": [
+    "both final Bass pages",
+    "original source page4"
+  ],
+  "unchangedPartsPixelComparison": [
+    {
+      "part": "Alto.pdf",
+      "pages": 1,
+      "pixelIdenticalAtDPI": 144
+    },
+    {
+      "part": "Organ (manuals and pedal).pdf",
+      "pages": 3,
+      "pixelIdenticalAtDPI": 144
+    },
+    {
+      "part": "Soprano.pdf",
+      "pages": 1,
+      "pixelIdenticalAtDPI": 144
+    },
+    {
+      "part": "Tenor.pdf",
+      "pages": 1,
+      "pixelIdenticalAtDPI": 144
+    }
+  ],
+  "independentReviewSHA256": "a35f747a10fb1651261c8df5b1d31d9bdd80d4e0d71421d22870dbc68293471f",
+  "limitations": [
+    "Existing neighboring fragments remain.",
+    "Organ turns29\u201330 and66\u201367 remain during continuous accompaniment.",
+    "This is assisted source-reviewed extraction, not unattended Auto."
+  ]
+}

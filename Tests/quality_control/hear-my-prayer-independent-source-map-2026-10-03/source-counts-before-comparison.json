@@ -1,0 +1,1160 @@
+{
+  "method": "Independent direct visual count of original source barlines and roster from all ten original page renders, before opening root proposed-source-map.json or prepare_map.py, and without detector reuse. Approximate x values identify counted right barlines; they are not crop or rest detection coordinates. Each printed double/final barline is counted once.",
+  "createdUTC": "2026-10-04T02:16:04.772388+00:00",
+  "source": {
+    "path": "sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+    "sha256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+    "pageCount": 10,
+    "pageSizePDFPoints": [
+      595,
+      842
+    ]
+  },
+  "pageImages": [
+    {
+      "page": 1,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-01.png",
+      "sha256": "c69f1297287fcf3fa9e2c93df82b3c13a3368b773dd9a8c341f501371345dac2",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 2,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-02.png",
+      "sha256": "3fa27c5a389ac064242faf2d973fe1575dbf666a5cf180680a14e6664b229de5",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 3,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-03.png",
+      "sha256": "d46c0526110202469dee8fecb89cf37a4b9ff4d5897739831066b5b6e4d70934",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 4,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-04.png",
+      "sha256": "c453074c596c6dea6d72dc4fe931ba7720db9ff5cdd76189f6ff1e32fbb42f38",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 5,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-05.png",
+      "sha256": "0027a245495be094591fdf04604b0973d39d5c6994aab66c513f210d3aeb9a49",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 6,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-06.png",
+      "sha256": "3f19371d81c177642587acef868d07649fce6bb6f1b744818e066beea26ccc96",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 7,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-07.png",
+      "sha256": "1442cc6f61d1574709e6fc5b135e62b9d2ae2bad077901e9646a6921f41aa860",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 8,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-08.png",
+      "sha256": "9f943e05d6c09f2b908653ea832ba2c37c99594efddc9e25c03d7ef855e7da33",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 9,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-09.png",
+      "sha256": "316f7dd8fce2ced66930e4aea77741d8da31d7813b17b04f094f6d8ff2457763",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "page": 10,
+      "path": ".build/hear-my-prayer-complete-map-2026-10-03/source/page-10.png",
+      "sha256": "81a27aee9bd4b2d4f1a3054999a330c89009b500c0bef1c84591f0a5c824a7ab",
+      "dimensions": [
+        1075,
+        1521
+      ],
+      "visuallyInspected": true
+    }
+  ],
+  "systems": [
+    {
+      "id": "p1-s1",
+      "page": 1,
+      "system": 1,
+      "barCount": 4,
+      "startBar": 1,
+      "endBar": 4,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        451,
+        623,
+        769,
+        1024
+      ]
+    },
+    {
+      "id": "p1-s2",
+      "page": 1,
+      "system": 2,
+      "barCount": 5,
+      "startBar": 5,
+      "endBar": 9,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        308,
+        455,
+        602,
+        812,
+        1024
+      ]
+    },
+    {
+      "id": "p1-s3",
+      "page": 1,
+      "system": 3,
+      "barCount": 5,
+      "startBar": 10,
+      "endBar": 14,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        302,
+        493,
+        653,
+        822,
+        1024
+      ]
+    },
+    {
+      "id": "p1-s4",
+      "page": 1,
+      "system": 4,
+      "barCount": 4,
+      "startBar": 15,
+      "endBar": 18,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        372,
+        600,
+        815,
+        1024
+      ]
+    },
+    {
+      "id": "p2-s1",
+      "page": 2,
+      "system": 1,
+      "barCount": 5,
+      "startBar": 19,
+      "endBar": 23,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        310,
+        493,
+        665,
+        841,
+        1004
+      ]
+    },
+    {
+      "id": "p2-s2",
+      "page": 2,
+      "system": 2,
+      "barCount": 5,
+      "startBar": 24,
+      "endBar": 28,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        311,
+        470,
+        621,
+        819,
+        1004
+      ]
+    },
+    {
+      "id": "p2-s3",
+      "page": 2,
+      "system": 3,
+      "barCount": 5,
+      "startBar": 29,
+      "endBar": 33,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        290,
+        480,
+        648,
+        797,
+        1004
+      ]
+    },
+    {
+      "id": "p2-s4",
+      "page": 2,
+      "system": 4,
+      "barCount": 8,
+      "startBar": 34,
+      "endBar": 41,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        294,
+        466,
+        566,
+        642,
+        729,
+        811,
+        910,
+        1004
+      ]
+    },
+    {
+      "id": "p3-s1",
+      "page": 3,
+      "system": 1,
+      "barCount": 10,
+      "startBar": 42,
+      "endBar": 51,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        207,
+        283,
+        371,
+        458,
+        544,
+        629,
+        717,
+        815,
+        914,
+        999
+      ]
+    },
+    {
+      "id": "p3-s2",
+      "page": 3,
+      "system": 2,
+      "barCount": 11,
+      "startBar": 52,
+      "endBar": 62,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        198,
+        282,
+        368,
+        455,
+        533,
+        602,
+        665,
+        744,
+        824,
+        901,
+        1000
+      ]
+    },
+    {
+      "id": "p3-s3",
+      "page": 3,
+      "system": 3,
+      "barCount": 10,
+      "startBar": 63,
+      "endBar": 72,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        200,
+        265,
+        346,
+        447,
+        531,
+        634,
+        729,
+        815,
+        894,
+        1000
+      ]
+    },
+    {
+      "id": "p4-s1",
+      "page": 4,
+      "system": 1,
+      "barCount": 10,
+      "startBar": 73,
+      "endBar": 82,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        195,
+        285,
+        395,
+        493,
+        594,
+        670,
+        753,
+        827,
+        909,
+        986
+      ]
+    },
+    {
+      "id": "p4-s2",
+      "page": 4,
+      "system": 2,
+      "barCount": 10,
+      "startBar": 83,
+      "endBar": 92,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        209,
+        283,
+        378,
+        459,
+        546,
+        637,
+        744,
+        820,
+        893,
+        989
+      ]
+    },
+    {
+      "id": "p4-s3",
+      "page": 4,
+      "system": 3,
+      "barCount": 9,
+      "startBar": 93,
+      "endBar": 101,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        214,
+        304,
+        396,
+        497,
+        592,
+        693,
+        809,
+        895,
+        990
+      ]
+    },
+    {
+      "id": "p5-s1",
+      "page": 5,
+      "system": 1,
+      "barCount": 13,
+      "startBar": 102,
+      "endBar": 114,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        238,
+        316,
+        421,
+        495,
+        551,
+        609,
+        664,
+        724,
+        783,
+        843,
+        911,
+        949,
+        1016
+      ]
+    },
+    {
+      "id": "p5-s2",
+      "page": 5,
+      "system": 2,
+      "barCount": 16,
+      "startBar": 115,
+      "endBar": 130,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        164,
+        224,
+        265,
+        332,
+        388,
+        445,
+        501,
+        600,
+        654,
+        710,
+        761,
+        808,
+        849,
+        918,
+        958,
+        1000
+      ]
+    },
+    {
+      "id": "p5-s3",
+      "page": 5,
+      "system": 3,
+      "barCount": 4,
+      "startBar": 131,
+      "endBar": 134,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        382,
+        582,
+        816,
+        1013
+      ]
+    },
+    {
+      "id": "p6-s1",
+      "page": 6,
+      "system": 1,
+      "barCount": 3,
+      "startBar": 135,
+      "endBar": 137,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        496,
+        795,
+        997
+      ]
+    },
+    {
+      "id": "p6-s2",
+      "page": 6,
+      "system": 2,
+      "barCount": 8,
+      "startBar": 138,
+      "endBar": 145,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        257,
+        387,
+        506,
+        621,
+        711,
+        825,
+        922,
+        995
+      ]
+    },
+    {
+      "id": "p6-s3",
+      "page": 6,
+      "system": 3,
+      "barCount": 5,
+      "startBar": 146,
+      "endBar": 150,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        346,
+        507,
+        658,
+        798,
+        998
+      ]
+    },
+    {
+      "id": "p6-s4",
+      "page": 6,
+      "system": 4,
+      "barCount": 6,
+      "startBar": 151,
+      "endBar": 156,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        267,
+        372,
+        480,
+        618,
+        810,
+        998
+      ]
+    },
+    {
+      "id": "p6-s5",
+      "page": 6,
+      "system": 5,
+      "barCount": 6,
+      "startBar": 157,
+      "endBar": 162,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        263,
+        453,
+        592,
+        721,
+        853,
+        998
+      ]
+    },
+    {
+      "id": "p7-s1",
+      "page": 7,
+      "system": 1,
+      "barCount": 6,
+      "startBar": 163,
+      "endBar": 168,
+      "roster": [
+        "Solo Soprano",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        274,
+        415,
+        553,
+        692,
+        818,
+        1000
+      ]
+    },
+    {
+      "id": "p7-s2",
+      "page": 7,
+      "system": 2,
+      "barCount": 6,
+      "startBar": 169,
+      "endBar": 174,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        265,
+        463,
+        556,
+        649,
+        823,
+        1001
+      ]
+    },
+    {
+      "id": "p7-s3",
+      "page": 7,
+      "system": 3,
+      "barCount": 5,
+      "startBar": 175,
+      "endBar": 179,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        312,
+        509,
+        676,
+        836,
+        1000
+      ]
+    },
+    {
+      "id": "p8-s1",
+      "page": 8,
+      "system": 1,
+      "barCount": 5,
+      "startBar": 180,
+      "endBar": 184,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        314,
+        488,
+        684,
+        822,
+        991
+      ]
+    },
+    {
+      "id": "p8-s2",
+      "page": 8,
+      "system": 2,
+      "barCount": 5,
+      "startBar": 185,
+      "endBar": 189,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        293,
+        479,
+        644,
+        810,
+        990
+      ]
+    },
+    {
+      "id": "p8-s3",
+      "page": 8,
+      "system": 3,
+      "barCount": 6,
+      "startBar": 190,
+      "endBar": 195,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        280,
+        421,
+        541,
+        696,
+        818,
+        990
+      ]
+    },
+    {
+      "id": "p9-s1",
+      "page": 9,
+      "system": 1,
+      "barCount": 6,
+      "startBar": 196,
+      "endBar": 201,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        267,
+        455,
+        570,
+        714,
+        832,
+        1006
+      ]
+    },
+    {
+      "id": "p9-s2",
+      "page": 9,
+      "system": 2,
+      "barCount": 6,
+      "startBar": 202,
+      "endBar": 207,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        262,
+        366,
+        469,
+        606,
+        799,
+        1006
+      ]
+    },
+    {
+      "id": "p9-s3",
+      "page": 9,
+      "system": 3,
+      "barCount": 5,
+      "startBar": 208,
+      "endBar": 212,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        313,
+        541,
+        711,
+        847,
+        1004
+      ]
+    },
+    {
+      "id": "p10-s1",
+      "page": 10,
+      "system": 1,
+      "barCount": 6,
+      "startBar": 213,
+      "endBar": 218,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        273,
+        423,
+        575,
+        717,
+        853,
+        993
+      ]
+    },
+    {
+      "id": "p10-s2",
+      "page": 10,
+      "system": 2,
+      "barCount": 6,
+      "startBar": 219,
+      "endBar": 224,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        295,
+        430,
+        549,
+        665,
+        769,
+        994
+      ]
+    },
+    {
+      "id": "p10-s3",
+      "page": 10,
+      "system": 3,
+      "barCount": 8,
+      "startBar": 225,
+      "endBar": 232,
+      "roster": [
+        "Solo Soprano",
+        "Chorus Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Organ"
+      ],
+      "staffCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rightBarlineApproximateXInSourceRender": [
+        272,
+        473,
+        564,
+        657,
+        753,
+        849,
+        932,
+        988
+      ]
+    }
+  ],
+  "totalSystems": 34,
+  "totalBars": 232,
+  "soloOrganSystemCount": 13,
+  "fullRosterSystemCount": 21,
+  "notes": [
+    "Initial common time: bar1 is complete, no opening pickup.",
+    "p2s4 first two bars remain common time; 3/8 Allegro moderato starts its third bar (global36).",
+    "p5s2 ends with a cautionary common-time signature beyond the final double barline; do not count that as another measure. Recit. begins p5s3 global131.",
+    "p5s2 solo eighth at global120 is followed by two eighth rests; the bar is counted once. Long tied notes and printed whole-bar rests occupy individually bounded bars.",
+    "p6s2 Sostenuto is a full seven-staff system, even though solo and chorus entries alternate. Its ending double barline/fermata is counted once.",
+    "p6s3 Con un poco pi\u00f9 di moto starts global146; chorus absent through p7s1 global168 inclusive.",
+    "p7s2 contains all chorus staves including several printed-rest bars before Bass and Tenor enter. These are present notation, not absent staff rows.",
+    "Final bar232 contains the vocal whole-bar rests with fermatas and Organ chord; retained as a complete measure."
+  ],
+  "absenceSpansForEachChorusVoice": [
+    {
+      "startBar": 1,
+      "endBar": 33,
+      "count": 33
+    },
+    {
+      "startBar": 131,
+      "endBar": 137,
+      "count": 7
+    },
+    {
+      "startBar": 146,
+      "endBar": 168,
+      "count": 23
+    }
+  ]
+}

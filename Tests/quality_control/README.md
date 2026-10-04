@@ -1,5 +1,17 @@
 # Complete input corpus quality control
 
+## October 3 Preview crop editing and complete choir outputs
+
+The [published Preview crop controls](preview-crop-release-2026-10-03/README.md) edit the same saved bands as Source view and PDF export. Selecting a system exposes top/bottom handles, with one Undo operation per drag, Escape cancellation and a retained view position after reflow. The [current app package](shared-direction-default-release-2026-10-03/README.md) also enables shared directions for new setups while respecting existing preferences; private crop experiments are not included.
+
+The complete six-page Mendelssohn *Verleih uns Frieden* now has [five source-reviewed parts on eight output pages](mendelssohn-complete-workflow-2026-10-03/README.md). All 70 original references and five timelines through bar 102 remain. Three manual crop corrections repair an Organ slur and reduce Bass overlap; native joining combines 21 verified absence records into four rests. The [independent review](mendelssohn-complete-independent-2026-10-03/README.md) inspected every final page. A [separate page-turn version](mendelssohn-rest-turn-2026-10-03/README.md) moves the Bass turn into five complete rest bars without adding pages or changing notation size. Neighboring fragments and difficult Organ turns remain explicit.
+
+The ten-page scanned *Hear My Prayer* has an [independently agreed complete source map](hear-my-prayer-independent-source-map-2026-10-03/README.md): 34 systems, 186 physical staves and 232 bars. This establishes identities and durations for assisted initialization, not an automatic assignment or output-quality pass.
+
+## October 3 local ownership preservation candidate
+
+The [private V2 source-line measurement](p34-local-ownership-v2-2026-10-03/README.md) restores the raw Brahms page 34 Viola dynamic without new owned-pixel loss in the unchanged preservation suites. Its [rejected V1](p34-local-ownership-v1-2026-10-03/README.md) remains recorded because an unchanged overall pass count concealed 408 newly lost pixels. V2's [twelve-page source replay](p34-local-ownership-real-cases-2026-10-03/README.md) preserves assignments and component bounds, with five outward crop changes and no new whole neighboring core. This is bounded preservation evidence; broader corpus validation and crop-quality review remain unfinished, and the app detector is unchanged.
+
 ## October 3 narrower envelope compatibility
 
 The [single-owner compatibility candidate](numbered-line-envelope-compatibility-2026-10-03/README.md) retains prior per-component envelope support only where actual retained source pixels keep the same sole staff owner. It passes the unchanged preservation controls with no new whole-neighbor relations, including all 27 junction negatives. Existing incomplete source obligations remain explicit. Its [fresh full Brahms replay](brahms-envelope-compatibility-full-2026-10-03/README.md) exactly matches all 604 previously source-reviewed crop areas and reduces whole-neighbor inclusions from seven to five. A separate [interpretation of the old failing guards](unchanged-guard-source-interpretation-2026-10-03/README.md) identifies only neighboring or structural ink outside the current crops; the original geometric failures remain unchanged. Full raw-corpus and document-worker/export validation are in progress; this is not a production promotion.

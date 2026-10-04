@@ -1,0 +1,35 @@
+{
+  "scope": "Independent visual review of only the two changed Bass output pages and original source page4; no re-review claim for the six unchanged output pages.",
+  "viewed": [
+    {
+      "path": ".build/mendelssohn-rest-turn-2026-10-03/bass-1.png",
+      "sha256": "dc77df8c419082333a960f470f2335b95842b6fec7489c0f77e74edafa77d053"
+    },
+    {
+      "path": ".build/mendelssohn-rest-turn-2026-10-03/bass-2.png",
+      "sha256": "1dbf4ede2ec98a286d46460f446627a61672c510944c46efa70a5d484b8ca0ca"
+    },
+    {
+      "path": ".build/mendelssohn-rest-turn-2026-10-03/original-source-page4.png",
+      "sha256": "a2913c2b6112b1a4137d71bfef1781405ed5eefa017dafb85d3876abbf37b55b"
+    }
+  ],
+  "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+  "musicalTurn": {
+    "beforeBar": 67,
+    "sourceObservation": "Bass bar64 ends with a quarter rest after its half note; bars65\u201369 are all whole-bar rests. The 66\u219267 page turn lies within five full bars of silence, before the next sung phrase starts at70.",
+    "verdict": "Improved over previous 51\u219252 turn inside ongoing text. Suitable resting turn."
+  },
+  "layout": {
+    "page1Rows": 9,
+    "page2Rows": 5,
+    "readability": "Both pages remain legible at the existing staff size. Nine rows fit page1 without page/footer clipping or overprint. Page2 has additional whitespace but retains all five remaining rows.",
+    "preservation": "No newly clipped Bass note, rest, lyric, slur, dynamic or Andante observed on either page compared with the reviewed draft and original page4."
+  },
+  "residuals": [
+    "Existing clipped adjacent lyrics/fragments remain above some Bass rows.",
+    "Overlapping high Organ beam/slur fragments remain below the bar67 row.",
+    "This review approves the source-specific page break, not general crop cleanliness or automatic page-turn selection."
+  ],
+  "verdict": "No blocker for adopting the Bass page break before bar67."
+}

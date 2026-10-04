@@ -1,0 +1,2005 @@
+{
+  "summary": {
+    "pages": 12,
+    "bands": 192,
+    "baselineSemanticAnalysisMatchesFrozenReference": true,
+    "staffGeometryAssignmentIDsAndOrderExact": true,
+    "changedCropCount": 5,
+    "inwardChangedCrops": 0,
+    "newWholeNeighborRelations": [],
+    "newFullGuardFailures": [],
+    "existingFullGuardFailures": [
+      "p35-s1-violin1"
+    ],
+    "newLocalGuardFailures": [],
+    "existingLocalGuardFailures": [],
+    "baselineAnalysisSeconds": 1.0881270170211792,
+    "candidateAnalysisSeconds": 1.0983867645263672,
+    "baselinePlanningSeconds": 0.15005803108215332,
+    "candidatePlanningSeconds": 0.15130293369293213,
+    "timingScope": "One sequential batch per version, same saved images; no universal performance guarantee.",
+    "visualSourceReviewComplete": false,
+    "promotionApproved": false
+  },
+  "changedCrops": [
+    {
+      "bandID": "p8-s1-viola",
+      "page": 8,
+      "beforePDFBounds": [
+        0,
+        90.08578052550233,
+        427,
+        137.9435857805255
+      ],
+      "afterPDFBounds": [
+        0,
+        90.08578052550233,
+        427,
+        138.1808346213292
+      ],
+      "candidateIDs": [
+        2
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p8-s2-violin2",
+      "page": 8,
+      "beforePDFBounds": [
+        0,
+        200.40649149922717,
+        427,
+        254.90726429675425
+      ],
+      "afterPDFBounds": [
+        0,
+        200.40649149922717,
+        427,
+        255.85625965996908
+      ],
+      "candidateIDs": [
+        5
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p8-s2-viola",
+      "page": 8,
+      "beforePDFBounds": [
+        0,
+        227.6901081916538,
+        427,
+        280.53013910355486
+      ],
+      "afterPDFBounds": [
+        0,
+        227.6901081916538,
+        427,
+        282.4281298299845
+      ],
+      "candidateIDs": [
+        6
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p25-s2-violin1",
+      "page": 25,
+      "beforePDFBounds": [
+        0,
+        164.05591978403393,
+        427,
+        216.40802159660623
+      ],
+      "afterPDFBounds": [
+        0,
+        164.05591978403393,
+        427,
+        217.3567296567682
+      ],
+      "candidateIDs": [
+        4
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p29-s1-viola",
+      "page": 29,
+      "beforePDFBounds": [
+        0,
+        88.87080601619745,
+        427,
+        140.2741997686078
+      ],
+      "afterPDFBounds": [
+        0,
+        88.87080601619745,
+        427,
+        140.5113767836483
+      ],
+      "candidateIDs": [
+        2
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "hasInwardEdge": false
+    }
+  ],
+  "allChangedAssignments": [
+    {
+      "bandID": "p8-s1-viola",
+      "page": 8,
+      "beforePDFBounds": [
+        0,
+        90.08578052550233,
+        427,
+        137.9435857805255
+      ],
+      "afterPDFBounds": [
+        0,
+        90.08578052550233,
+        427,
+        138.1808346213292
+      ],
+      "candidateIDs": [
+        2
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p8-s2-violin2",
+      "page": 8,
+      "beforePDFBounds": [
+        0,
+        200.40649149922717,
+        427,
+        254.90726429675425
+      ],
+      "afterPDFBounds": [
+        0,
+        200.40649149922717,
+        427,
+        255.85625965996908
+      ],
+      "candidateIDs": [
+        5
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p8-s2-viola",
+      "page": 8,
+      "beforePDFBounds": [
+        0,
+        227.6901081916538,
+        427,
+        280.53013910355486
+      ],
+      "afterPDFBounds": [
+        0,
+        227.6901081916538,
+        427,
+        282.4281298299845
+      ],
+      "candidateIDs": [
+        6
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p25-s2-violin1",
+      "page": 25,
+      "beforePDFBounds": [
+        0,
+        164.05591978403393,
+        427,
+        216.40802159660623
+      ],
+      "afterPDFBounds": [
+        0,
+        164.05591978403393,
+        427,
+        217.3567296567682
+      ],
+      "candidateIDs": [
+        4
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ],
+      "hasInwardEdge": false
+    },
+    {
+      "bandID": "p29-s1-viola",
+      "page": 29,
+      "beforePDFBounds": [
+        0,
+        88.87080601619745,
+        427,
+        140.2741997686078
+      ],
+      "afterPDFBounds": [
+        0,
+        88.87080601619745,
+        427,
+        140.5113767836483
+      ],
+      "candidateIDs": [
+        2
+      ],
+      "beforeWholeNeighbors": [],
+      "afterWholeNeighbors": [],
+      "beforeWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "afterWarnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ],
+      "hasInwardEdge": false
+    }
+  ],
+  "pages": [
+    {
+      "page": 6,
+      "baselineComponents": 1699,
+      "candidateComponents": 1699,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.11777777777777777,
+            0.09350850077279753,
+            0.12555555555555556,
+            0.09891808346213292
+          ],
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.8333333333333334,
+            0.5112055641421948,
+            0.8483333333333334,
+            0.518160741885626
+          ],
+          "staffIDs": [
+            8
+          ]
+        },
+        {
+          "bounds": [
+            0.8761111111111111,
+            0.5583462132921174,
+            0.8833333333333333,
+            0.5683925811437404
+          ],
+          "staffIDs": [
+            9
+          ]
+        },
+        {
+          "bounds": [
+            0.8744444444444445,
+            0.6143740340030912,
+            0.8822222222222222,
+            0.624420401854714
+          ],
+          "staffIDs": [
+            10
+          ]
+        },
+        {
+          "bounds": [
+            0.8761111111111111,
+            0.6657650695517774,
+            0.8833333333333333,
+            0.6754250386398764
+          ],
+          "staffIDs": [
+            11
+          ]
+        },
+        {
+          "bounds": [
+            0.3605555555555556,
+            0.8771251931993818,
+            0.36666666666666664,
+            0.8775115919629057
+          ],
+          "staffIDs": [
+            14
+          ]
+        },
+        {
+          "bounds": [
+            0.3672222222222222,
+            0.8771251931993818,
+            0.3688888888888889,
+            0.8775115919629057
+          ],
+          "staffIDs": [
+            14
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.11777777777777777,
+            0.09350850077279753,
+            0.12555555555555556,
+            0.09891808346213292
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8333333333333334,
+            0.5112055641421948,
+            0.8483333333333334,
+            0.518160741885626
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8761111111111111,
+            0.5583462132921174,
+            0.8833333333333333,
+            0.5683925811437404
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8744444444444445,
+            0.6143740340030912,
+            0.8822222222222222,
+            0.624420401854714
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8761111111111111,
+            0.6657650695517774,
+            0.8833333333333333,
+            0.6754250386398764
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.3605555555555556,
+            0.8771251931993818,
+            0.36666666666666664,
+            0.8775115919629057
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.3672222222222222,
+            0.8771251931993818,
+            0.3688888888888889,
+            0.8775115919629057
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "baselineComponents": 2171,
+      "candidateComponents": 2171,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.21611111111111111,
+            0.21445131375579599,
+            0.22111111111111112,
+            0.22179289026275115
+          ],
+          "staffIDs": [
+            3
+          ]
+        },
+        {
+          "bounds": [
+            0.22277777777777777,
+            0.21445131375579599,
+            0.23222222222222222,
+            0.22179289026275115
+          ],
+          "staffIDs": [
+            3
+          ]
+        },
+        {
+          "bounds": [
+            0.2311111111111111,
+            0.21445131375579599,
+            0.2361111111111111,
+            0.22179289026275115
+          ],
+          "staffIDs": [
+            3
+          ]
+        },
+        {
+          "bounds": [
+            0.8388888888888889,
+            0.24227202472952086,
+            0.84,
+            0.2426584234930448
+          ],
+          "staffIDs": [
+            3
+          ]
+        },
+        {
+          "bounds": [
+            0.28055555555555556,
+            0.40649149922720246,
+            0.295,
+            0.4134466769706337
+          ],
+          "staffIDs": [
+            6
+          ]
+        },
+        {
+          "bounds": [
+            0.2038888888888889,
+            0.4115146831530139,
+            0.20722222222222222,
+            0.4134466769706337
+          ],
+          "staffIDs": [
+            6
+          ]
+        },
+        {
+          "bounds": [
+            0.2011111111111111,
+            0.446676970633694,
+            0.21,
+            0.4567233384853168
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.17944444444444443,
+            0.44976816074188564,
+            0.18444444444444444,
+            0.4567233384853168
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.18555555555555556,
+            0.44976816074188564,
+            0.19166666666666668,
+            0.4567233384853168
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.19055555555555556,
+            0.44976816074188564,
+            0.195,
+            0.4567233384853168
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.21777777777777776,
+            0.44976816074188564,
+            0.22777777777777777,
+            0.4563369397217929
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.22611111111111112,
+            0.44976816074188564,
+            0.23055555555555557,
+            0.4563369397217929
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.2088888888888889,
+            0.45131375579598143,
+            0.21333333333333335,
+            0.4563369397217929
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.21222222222222223,
+            0.455564142194745,
+            0.21388888888888888,
+            0.4563369397217929
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.8611111111111112,
+            0.6031684698608965,
+            0.8683333333333333,
+            0.6035548686244204
+          ],
+          "staffIDs": [
+            9
+          ]
+        },
+        {
+          "bounds": [
+            0.8694444444444445,
+            0.6031684698608965,
+            0.8711111111111111,
+            0.6035548686244204
+          ],
+          "staffIDs": [
+            9
+          ]
+        },
+        {
+          "bounds": [
+            0.8727777777777778,
+            0.6031684698608965,
+            0.8744444444444445,
+            0.6035548686244204
+          ],
+          "staffIDs": [
+            9
+          ]
+        },
+        {
+          "bounds": [
+            0.8761111111111111,
+            0.6031684698608965,
+            0.8772222222222222,
+            0.6035548686244204
+          ],
+          "staffIDs": [
+            9
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.21611111111111111,
+            0.21445131375579599,
+            0.22111111111111112,
+            0.22179289026275115
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.22277777777777777,
+            0.21445131375579599,
+            0.23222222222222222,
+            0.22179289026275115
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.2311111111111111,
+            0.21445131375579599,
+            0.2361111111111111,
+            0.22179289026275115
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8388888888888889,
+            0.24227202472952086,
+            0.84,
+            0.2426584234930448
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.28055555555555556,
+            0.40649149922720246,
+            0.295,
+            0.4134466769706337
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.2038888888888889,
+            0.4115146831530139,
+            0.20722222222222222,
+            0.4134466769706337
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.2011111111111111,
+            0.446676970633694,
+            0.21,
+            0.4567233384853168
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.17944444444444443,
+            0.44976816074188564,
+            0.18444444444444444,
+            0.4567233384853168
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.18555555555555556,
+            0.44976816074188564,
+            0.19166666666666668,
+            0.4567233384853168
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.19055555555555556,
+            0.44976816074188564,
+            0.195,
+            0.4567233384853168
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.21777777777777776,
+            0.44976816074188564,
+            0.22777777777777777,
+            0.4563369397217929
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.22611111111111112,
+            0.44976816074188564,
+            0.23055555555555557,
+            0.4563369397217929
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.2088888888888889,
+            0.45131375579598143,
+            0.21333333333333335,
+            0.4563369397217929
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.21222222222222223,
+            0.455564142194745,
+            0.21388888888888888,
+            0.4563369397217929
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8611111111111112,
+            0.6031684698608965,
+            0.8683333333333333,
+            0.6035548686244204
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8694444444444445,
+            0.6031684698608965,
+            0.8711111111111111,
+            0.6035548686244204
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8727777777777778,
+            0.6031684698608965,
+            0.8744444444444445,
+            0.6035548686244204
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8761111111111111,
+            0.6031684698608965,
+            0.8772222222222222,
+            0.6035548686244204
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "baselineComponents": 2514,
+      "candidateComponents": 2514,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.8316666666666667,
+            0.6214340786430224,
+            0.835,
+            0.6237471087124132
+          ],
+          "staffIDs": [
+            9
+          ]
+        },
+        {
+          "bounds": [
+            0.8755555555555555,
+            0.8492675404780262,
+            0.8794444444444445,
+            0.8523515805705474
+          ],
+          "staffIDs": [
+            13
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.8316666666666667,
+            0.6214340786430224,
+            0.835,
+            0.6237471087124132
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8755555555555555,
+            0.8492675404780262,
+            0.8794444444444445,
+            0.8523515805705474
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "baselineComponents": 2249,
+      "candidateComponents": 2249,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.23055555555555557,
+            0.061051004636785165,
+            0.2538888888888889,
+            0.06800618238021638
+          ],
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.8388888888888889,
+            0.08771251931993818,
+            0.84,
+            0.08809891808346214
+          ],
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.21055555555555555,
+            0.1151468315301391,
+            0.21222222222222223,
+            0.11707882534775889
+          ],
+          "staffIDs": [
+            1
+          ]
+        },
+        {
+          "bounds": [
+            0.2927777777777778,
+            0.16537867078825347,
+            0.3194444444444444,
+            0.17387944358578053
+          ],
+          "staffIDs": [
+            2
+          ]
+        },
+        {
+          "bounds": [
+            0.8033333333333333,
+            0.1947449768160742,
+            0.8194444444444444,
+            0.19706336939721794
+          ],
+          "staffIDs": [
+            2
+          ]
+        },
+        {
+          "bounds": [
+            0.8177777777777778,
+            0.24768160741885625,
+            0.8188888888888889,
+            0.24806800618238023
+          ],
+          "staffIDs": [
+            3
+          ]
+        },
+        {
+          "bounds": [
+            0.2594444444444444,
+            0.2936630602782071,
+            0.2733333333333333,
+            0.30100463678516226
+          ],
+          "staffIDs": [
+            4
+          ]
+        },
+        {
+          "bounds": [
+            0.905,
+            0.36901081916537865,
+            0.9061111111111111,
+            0.3693972179289026
+          ],
+          "staffIDs": [
+            5
+          ]
+        },
+        {
+          "bounds": [
+            0.18722222222222223,
+            0.40108191653786707,
+            0.2038888888888889,
+            0.40610510046367854
+          ],
+          "staffIDs": [
+            6
+          ]
+        },
+        {
+          "bounds": [
+            0.12944444444444445,
+            0.455564142194745,
+            0.135,
+            0.4598145285935085
+          ],
+          "staffIDs": [
+            7
+          ]
+        },
+        {
+          "bounds": [
+            0.6377777777777778,
+            0.705564142194745,
+            0.6388888888888888,
+            0.7059505409582689
+          ],
+          "staffIDs": [
+            11
+          ]
+        },
+        {
+          "bounds": [
+            0.7633333333333333,
+            0.9459041731066461,
+            0.7644444444444445,
+            0.94629057187017
+          ],
+          "staffIDs": [
+            15
+          ]
+        },
+        {
+          "bounds": [
+            0.7116666666666667,
+            0.94629057187017,
+            0.7133333333333334,
+            0.9466769706336939
+          ],
+          "staffIDs": [
+            15
+          ]
+        },
+        {
+          "bounds": [
+            0.8005555555555556,
+            0.9466769706336939,
+            0.8205555555555556,
+            0.9602009273570324
+          ],
+          "staffIDs": [
+            15
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.23055555555555557,
+            0.061051004636785165,
+            0.2538888888888889,
+            0.06800618238021638
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8388888888888889,
+            0.08771251931993818,
+            0.84,
+            0.08809891808346214
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.21055555555555555,
+            0.1151468315301391,
+            0.21222222222222223,
+            0.11707882534775889
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.2927777777777778,
+            0.16537867078825347,
+            0.3194444444444444,
+            0.17387944358578053
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8033333333333333,
+            0.1947449768160742,
+            0.8194444444444444,
+            0.19706336939721794
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8177777777777778,
+            0.24768160741885625,
+            0.8188888888888889,
+            0.24806800618238023
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.2594444444444444,
+            0.2936630602782071,
+            0.2733333333333333,
+            0.30100463678516226
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.905,
+            0.36901081916537865,
+            0.9061111111111111,
+            0.3693972179289026
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.18722222222222223,
+            0.40108191653786707,
+            0.2038888888888889,
+            0.40610510046367854
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.12944444444444445,
+            0.455564142194745,
+            0.135,
+            0.4598145285935085
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.6377777777777778,
+            0.705564142194745,
+            0.6388888888888888,
+            0.7059505409582689
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.7633333333333333,
+            0.9459041731066461,
+            0.7644444444444445,
+            0.94629057187017
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.7116666666666667,
+            0.94629057187017,
+            0.7133333333333334,
+            0.9466769706336939
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8005555555555556,
+            0.9466769706336939,
+            0.8205555555555556,
+            0.9602009273570324
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "baselineComponents": 1877,
+      "candidateComponents": 1877,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.7488888888888889,
+            0.33243347473968377,
+            0.7583333333333333,
+            0.34400308522946393
+          ],
+          "staffIDs": [
+            4
+          ]
+        },
+        {
+          "bounds": [
+            0.18166666666666667,
+            0.548785190898573,
+            0.1827777777777778,
+            0.5495564982645584
+          ],
+          "staffIDs": [
+            8
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.7488888888888889,
+            0.33243347473968377,
+            0.7583333333333333,
+            0.34400308522946393
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.18166666666666667,
+            0.548785190898573,
+            0.1827777777777778,
+            0.5495564982645584
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "baselineComponents": 2481,
+      "candidateComponents": 2481,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.18388888888888888,
+            0.06710374084072503,
+            0.18555555555555556,
+            0.07057462398765908
+          ],
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.22722222222222221,
+            0.3478596220593907,
+            0.23222222222222222,
+            0.3501735441573467
+          ],
+          "staffIDs": [
+            5
+          ]
+        },
+        {
+          "bounds": [
+            0.6855555555555556,
+            0.5499421519475511,
+            0.6905555555555556,
+            0.5503278056305437
+          ],
+          "staffIDs": [
+            8
+          ]
+        },
+        {
+          "bounds": [
+            0.6916666666666667,
+            0.5499421519475511,
+            0.6927777777777778,
+            0.5503278056305437
+          ],
+          "staffIDs": [
+            8
+          ]
+        },
+        {
+          "bounds": [
+            0.87,
+            0.5499421519475511,
+            0.8944444444444445,
+            0.5696104897801774
+          ],
+          "staffIDs": [
+            8
+          ]
+        },
+        {
+          "bounds": [
+            0.87,
+            0.5996914770536058,
+            0.8883333333333333,
+            0.6151176243733127
+          ],
+          "staffIDs": [
+            9
+          ]
+        },
+        {
+          "bounds": [
+            0.7844444444444445,
+            0.7886617817200154,
+            0.7994444444444444,
+            0.7952178943308909
+          ],
+          "staffIDs": [
+            12
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.18388888888888888,
+            0.06710374084072503,
+            0.18555555555555556,
+            0.07057462398765908
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.22722222222222221,
+            0.3478596220593907,
+            0.23222222222222222,
+            0.3501735441573467
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.6855555555555556,
+            0.5499421519475511,
+            0.6905555555555556,
+            0.5503278056305437
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.6916666666666667,
+            0.5499421519475511,
+            0.6927777777777778,
+            0.5503278056305437
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.87,
+            0.5499421519475511,
+            0.8944444444444445,
+            0.5696104897801774
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.87,
+            0.5996914770536058,
+            0.8883333333333333,
+            0.6151176243733127
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.7844444444444445,
+            0.7886617817200154,
+            0.7994444444444444,
+            0.7952178943308909
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "baselineComponents": 821,
+      "candidateComponents": 821,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [],
+      "addedComponentRecords": []
+    },
+    {
+      "page": 29,
+      "baselineComponents": 2029,
+      "candidateComponents": 2029,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [
+        {
+          "bounds": [
+            0.12222222222222222,
+            0.09409949865021211,
+            0.12611111111111112,
+            0.09448515233320479
+          ],
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.6183333333333333,
+            0.22329348245275743,
+            0.6211111111111111,
+            0.22522175086772078
+          ],
+          "staffIDs": [
+            3
+          ]
+        },
+        {
+          "bounds": [
+            0.8544444444444445,
+            0.30119552641727726,
+            0.8555555555555555,
+            0.3019668337832626
+          ],
+          "staffIDs": [
+            4
+          ]
+        }
+      ],
+      "addedComponentRecords": [
+        {
+          "bounds": [
+            0.12222222222222222,
+            0.09409949865021211,
+            0.12611111111111112,
+            0.09448515233320479
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.6183333333333333,
+            0.22329348245275743,
+            0.6211111111111111,
+            0.22522175086772078
+          ],
+          "staffIDs": []
+        },
+        {
+          "bounds": [
+            0.8544444444444445,
+            0.30119552641727726,
+            0.8555555555555555,
+            0.3019668337832626
+          ],
+          "staffIDs": []
+        }
+      ]
+    },
+    {
+      "page": 31,
+      "baselineComponents": 2351,
+      "candidateComponents": 2351,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [],
+      "addedComponentRecords": []
+    },
+    {
+      "page": 34,
+      "baselineComponents": 966,
+      "candidateComponents": 966,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [],
+      "addedComponentRecords": []
+    },
+    {
+      "page": 35,
+      "baselineComponents": 2093,
+      "candidateComponents": 2093,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [],
+      "addedComponentRecords": []
+    },
+    {
+      "page": 38,
+      "baselineComponents": 966,
+      "candidateComponents": 966,
+      "componentBoundsMultisetExact": true,
+      "removedComponentRecords": [],
+      "addedComponentRecords": []
+    }
+  ],
+  "fullGuards": [
+    {
+      "bandID": "p24-s2-viola",
+      "rect": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "description": "All viola notes, staccato, slurs, cresc., f and final hairpin.",
+      "baselineCrop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "candidateCrop": [
+        0,
+        241.13844967219435,
+        427,
+        311.75318164288467
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "rect": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "description": "Low opening ledger note/slur, all cello notes, cresc., f, closing slur/hairpin.",
+      "baselineCrop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "candidateCrop": [
+        0,
+        241.13844967219435,
+        427,
+        316.4967219436946
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "description": "All high ledger notes, phrase slurs, crescendo and forte; clef lower dot retained.",
+      "baselineCrop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "candidateCrop": [
+        0,
+        17.592327698309493,
+        427,
+        93.5702210663199
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "description": "High articulation dots, low ledger note, slurs, hairpin and forte.",
+      "baselineCrop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "candidateCrop": [
+        0,
+        21.59102730819246,
+        427,
+        107.56566970091028
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p29-s1-violin1",
+      "rect": [
+        0,
+        23.5,
+        427,
+        74
+      ],
+      "description": "Complete Poco Allegretto heading, all notes, slurs, dynamics and hairpins.",
+      "baselineCrop": [
+        0,
+        18.90358657925183,
+        427,
+        75.76205167759352
+      ],
+      "candidateCrop": [
+        0,
+        18.90358657925183,
+        427,
+        75.76205167759352
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p29-s1-violin2",
+      "rect": [
+        0,
+        70.5,
+        427,
+        105.5
+      ],
+      "description": "Complete clef and notes, low accidental/ledger note, slurs, p/pp and hairpins.",
+      "baselineCrop": [
+        0,
+        59.22367913613575,
+        427,
+        110.6270728885461
+      ],
+      "candidateCrop": [
+        0,
+        59.22367913613575,
+        427,
+        110.6270728885461
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p31-s1-violin1",
+      "rect": [
+        35,
+        26.5,
+        394,
+        71
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged.",
+      "baselineCrop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "candidateCrop": [
+        0,
+        21.038179714616273,
+        427,
+        85.01195526417278
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged.",
+      "baselineCrop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "candidateCrop": [
+        0,
+        41.43540300809873,
+        427,
+        110.8642499035866
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p35-s1-violin1",
+      "rect": [
+        0,
+        28,
+        426,
+        68
+      ],
+      "description": "All ledger notes and accents, last beam and full clef.",
+      "baselineCrop": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "candidateCrop": [
+        0,
+        22.877409406322286,
+        426,
+        66.38242097147263
+      ],
+      "baselineContains": false,
+      "candidateContains": false
+    },
+    {
+      "bandID": "p35-s1-violin2",
+      "rect": [
+        0,
+        62,
+        426,
+        106.5
+      ],
+      "description": "High beams, low ledger notes, accidentals and all three large slurs.",
+      "baselineCrop": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "candidateCrop": [
+        0,
+        57.19892058596761,
+        426,
+        113.95913646877409
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    }
+  ],
+  "localGuards": [
+    {
+      "bandID": "p24-s2-viola",
+      "content": "final note, stem and slur",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        377.0,
+        253.0,
+        388.5,
+        268.5
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p24-s2-viola",
+      "content": "final hairpin pair",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        349.375,
+        268.0,
+        387.25,
+        274.0
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "content": "high final note and slur",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        378.0,
+        273.875,
+        388.5,
+        292.5
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "content": "sharp and preceding high half note",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        360.5,
+        278.0,
+        373.0,
+        295.0
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "content": "final hairpin pair",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        350.5,
+        302.375,
+        386.375,
+        306.875
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "content": "pre-barline flagged note and slur endpoint",
+      "coordinateSpace": "corrected",
+      "sourceGuard": [
+        87.5,
+        33.5,
+        95.0,
+        51.5
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "content": "post-barline note and upper slur start",
+      "coordinateSpace": "corrected",
+      "sourceGuard": [
+        102.5,
+        29.625,
+        116.0,
+        48.375
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "content": "pre-barline low flagged note",
+      "coordinateSpace": "corrected",
+      "sourceGuard": [
+        88.5,
+        75.75,
+        97.0,
+        88.75
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "content": "post-barline low note, stem and dot",
+      "coordinateSpace": "corrected",
+      "sourceGuard": [
+        103.0,
+        76.75,
+        110.5,
+        94.5
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p31-s1-violin1",
+      "content": "final beamed descending notes, slur and detached last note",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        349.0,
+        33.0,
+        386.5,
+        61.75
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "content": "last flagged note pair, lower slur and crescendo",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        353.0,
+        74.125,
+        389.5,
+        100.625
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p35-s1-violin1",
+      "content": "last beamed melody, dots and ledger notes",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        327.0,
+        30.25,
+        378.0,
+        62.375
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    },
+    {
+      "bandID": "p35-s1-violin2",
+      "content": "rising beamed figure, low ledger note and full lower slur",
+      "coordinateSpace": "original",
+      "sourceGuard": [
+        337.5,
+        67.125,
+        385.5,
+        105.125
+      ],
+      "baselineContains": true,
+      "candidateContains": true
+    }
+  ],
+  "timings": [
+    {
+      "page": 6,
+      "baselineSeconds": 0.10654294490814209,
+      "candidateSeconds": 0.10582304000854492,
+      "deltaSeconds": -0.000719904899597168
+    },
+    {
+      "page": 8,
+      "baselineSeconds": 0.10970199108123779,
+      "candidateSeconds": 0.11105191707611084,
+      "deltaSeconds": 0.0013499259948730469
+    },
+    {
+      "page": 15,
+      "baselineSeconds": 0.10801398754119873,
+      "candidateSeconds": 0.10801994800567627,
+      "deltaSeconds": 5.9604644775390625e-06
+    },
+    {
+      "page": 20,
+      "baselineSeconds": 0.10424506664276123,
+      "candidateSeconds": 0.10613489151000977,
+      "deltaSeconds": 0.0018898248672485352
+    },
+    {
+      "page": 24,
+      "baselineSeconds": 0.10450994968414307,
+      "candidateSeconds": 0.1054149866104126,
+      "deltaSeconds": 0.0009050369262695312
+    },
+    {
+      "page": 25,
+      "baselineSeconds": 0.10385191440582275,
+      "candidateSeconds": 0.10646390914916992,
+      "deltaSeconds": 0.002611994743347168
+    },
+    {
+      "page": 28,
+      "baselineSeconds": 0.04262197017669678,
+      "candidateSeconds": 0.04271805286407471,
+      "deltaSeconds": 9.608268737792969e-05
+    },
+    {
+      "page": 29,
+      "baselineSeconds": 0.1060340404510498,
+      "candidateSeconds": 0.10811197757720947,
+      "deltaSeconds": 0.002077937126159668
+    },
+    {
+      "page": 31,
+      "baselineSeconds": 0.10108602046966553,
+      "candidateSeconds": 0.10399889945983887,
+      "deltaSeconds": 0.00291287899017334
+    },
+    {
+      "page": 34,
+      "baselineSeconds": 0.0422290563583374,
+      "candidateSeconds": 0.04199206829071045,
+      "deltaSeconds": -0.00023698806762695312
+    },
+    {
+      "page": 35,
+      "baselineSeconds": 0.1038520336151123,
+      "candidateSeconds": 0.10356998443603516,
+      "deltaSeconds": -0.00028204917907714844
+    },
+    {
+      "page": 38,
+      "baselineSeconds": 0.05543804168701172,
+      "candidateSeconds": 0.05508708953857422,
+      "deltaSeconds": -0.0003509521484375
+    }
+  ]
+}

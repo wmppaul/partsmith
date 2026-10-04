@@ -1,0 +1,34 @@
+{
+  "scope": "One separately frozen V2 after source-reviewed V1 failure; private, not blinded to V1. No source/guard/production changes and no corpus.",
+  "hypothesis": "Nominal owner may be removed only when affine displacement makes it suspect AND original five-line local ridge evidence across every component x proves its complete bbox is outside the core. Unsupported/ambiguous evidence preserves nominal ownership.",
+  "fixedRules": [
+    "Start from production9f8, not private95 or V1. Preserve old structural filtering based on original nominal owners. Add no owners or components.",
+    "At each needed component column, sample original source over +/-2 staff spaces and search the half-spacing-safe +/-floor(0.49*space) local shift, at least1 pixel.",
+    "Every one of five numbered line predictions must have original ink within +/-1 pixel on at least80% of the local horizontal window. These are fixed before results.",
+    "The core includes all accepted shifts and +/-1 observation tolerance. Any column with no certificate or any possible bbox/core contact preserves the nominal owner.",
+    "No mask/connector/crop-padding changes. Original musical alternative machinery stays in place."
+  ],
+  "required": [
+    "372/372 raw f original nonwhite cells retained",
+    "zero newly lost source-owned pixels including old failing owners",
+    "unchanged336 and796 pass",
+    "no new false whole-neighbor separation cases",
+    "same one-page source geometry/assignments and inspect every changed crop"
+  ],
+  "knownLimits": [
+    "These are bounded local line certificates, not a complete topological note/stem ownership model.",
+    "No global safety claim; 59 existing incomplete297 cases remain unfinished unless actually recovered."
+  ],
+  "nativeSHA256": "ba2f92f32652801c9753d5c8dce1af055cf06eabce976c7dd36e883f3cf55079",
+  "productionNativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "harnessHashes": {
+    "permanent.swift": "a78f09b90b9f9feaf1416ede622d73ffd2d6e43ad52a948f46926bb252f3bf1d",
+    "controls297-pixels.swift": "e6327ef291d7e352a7790b8e82e06ff0e91d267574f809079705e3b73bf0ecf4",
+    "expanded336.swift": "0b0f20697841eca0604eca732604c01b8e86a77ee070f454c0e1f756ef2650e5",
+    "one-page.swift": "f82ff6741203195d42946f885408b7e781585821216023de7e260fb70e4a9ed4"
+  },
+  "priorFailureReceipt": {
+    "path": "Tests/quality_control/p34-local-ownership-v1-2026-10-03/manifest.json",
+    "sha256": "f850da8ba8c8304af12bd297d221abc66cb7b2ed9d1e35ba32f603702c4c1720"
+  }
+}

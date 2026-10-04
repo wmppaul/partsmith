@@ -1,0 +1,50 @@
+--- candidate Native
++++ observed Native
+@@ -621,6 +621,8 @@
+         // ridges prove that the complete component lies outside its core.
+         // Empty cache entries mean unsupported: retain the nominal owner.
+         var measuredCoreCache: [Int: [Double]] = [:]
++        var observedCores: [[String: Any]] = []
++        var observedOwners: [[String: Any]] = []
+         func measuredCore(staffIndex: Int, x: Int) -> [Double]? {
+             let key = staffIndex * width + x
+             if let cached = measuredCoreCache[key] { return cached.isEmpty ? nil : cached }
+@@ -651,6 +653,7 @@
+                 if allFive { accepted.append(shift) }
+             }
+             guard let first = accepted.first, let last = accepted.last else {
++                observedCores.append(["staffIndex": staffIndex, "x": x, "lo": lo, "hi": hi, "acceptedShifts": accepted, "coreBounds": []])
+                 measuredCoreCache[key] = []; return nil
+             }
+             // Keep the union of every supported shift and the one-pixel
+@@ -658,6 +661,7 @@
+             let shift = slope * (Double(x) - Double(width) / 2)
+             let bounds = [lines[staffIndex][0] + shift + Double(first) - 1,
+                           lines[staffIndex][4] + shift + Double(last) + 1]
++            observedCores.append(["staffIndex": staffIndex, "x": x, "lo": lo, "hi": hi, "acceptedShifts": accepted, "coreBounds": bounds])
+             measuredCoreCache[key] = bounds
+             return bounds
+         }
+@@ -689,6 +693,7 @@
+                 }
+                 return false
+             }
++            observedOwners.append(["bounds": [box.left, box.top, box.right, box.bottom], "nominalOwners": nominalOwners, "owners": owners])
+             // Keep interior components too. A low dynamic close to the following
+             // staff can lie within its padding envelope, yet belong to the
+             // preceding part; omitting it here makes later review impossible.
+@@ -725,6 +730,14 @@
+             return $0.bounds[0] < $1.bounds[0]
+         }
+         guard !isCancelled() else { return nil }
++        if let path = ProcessInfo.processInfo.environment["P34_OWNERSHIP_OBSERVER_DIR"] {
++            let directory = URL(fileURLWithPath: path)
++            let phase = retainMusicalEvidence ? "musical" : "ordinary"
++            let observation: [String: Any] = ["width": width, "height": height, "slope": slope, "lines": lines,
++                "spaces": spaces, "cores": observedCores, "owners": observedOwners]
++            try! JSONSerialization.data(withJSONObject: observation, options: [.prettyPrinted, .sortedKeys]).write(to: directory.appendingPathComponent(phase + "-observations.json"))
++            try! Data(raw).write(to: directory.appendingPathComponent(phase + "-gray.bin"))
++        }
+         return result
+     }
+ }

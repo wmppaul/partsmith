@@ -1,0 +1,15 @@
+# Local ownership V2: twelve saved real pages
+
+The unchanged private V2 was replayed on twelve hash-bound Brahms 93521 source rasters, covering 192 bands. All staff geometry, assigned identities, ordering and component bounds match production. Five crop bottoms expand; none contracts. No new whole neighboring core or source-guard failure is introduced. This is bounded evidence, not promotion approval.
+
+Pages 6, 8, 15, 20, 24, 25, 28, 29, 31, 34, 35 and 38 were selected before results to cover positive/negative slopes, known curvature/connected components, prior ledger/stem cases and the corrected page34 counterpart. The saved transforms and exact raster bytes were preserved. Fresh production replay reproduces the frozen reference's semantic source/staff/component analysis. No OCR, new deskew or complete part output was run. This does not extend the earlier raw-page34 positive into a new whole-score preservation claim.
+
+The five changed rows are page8 system1 Viola, page8 system2 Violin II and Viola, page25 system2 Violin I, and page29 system1 Viola. All changed original full pages were viewed first, followed by all five full-width old/new crop contexts. The additions are neighboring line, beam and clef fragments; they do not demonstrate new target recovery. Complete own directions, notes, ties/slurs and dynamics in those changed areas remain. Other existing neighboring fragments and source omissions remain unfinished.
+
+Fifty-three geometric core-contact labels become unowned across the selected pages; no new component bounds appear. These labels are not semantic instrument assignments. Exact individual changes are retained in `comparison.json`. The five zero-skew control pages are unchanged, including corrected page34. The original ten broad guards remain 9/10: the old page35 Violin I conservative envelope failure stays explicit. All thirteen separately frozen local musical regions remain contained. No guard was altered.
+
+Native analysis measured 1.088127 seconds for production and 1.098387 seconds for V2 across all twelve pages (10.260ms difference, about 0.94%). Planning measured 0.150058 versus 0.151303 seconds. These were one sequential batch per version on identical saved images, not a statistical benchmark or runtime guarantee. The previously passing 796/297/336 control suites were not repeated here.
+
+The source code remains the frozen V2 from `../p34-local-ownership-v2-2026-10-03/`, Native SHA `46ad9d2041991d4c9e2743519ef708d699c30b6846493abf70f7b94818d5d540`. Broader corpus validation and independent review are required before promotion. `evidence.zip` stores the two full native results and logs; `comparison.json` enumerates all 192 assignments, owner changes, guards and timings through its referenced raw results. `context-index.json` binds the five source contexts. Original PDFs, saved rasters and code archives remain hash-bound rather than duplicated.
+
+`selection-count-erratum.json` corrects the original protocol’s prose count: the unchanged selected list contains seven sloped pages and five zero-skew pages. No input or result changed.
