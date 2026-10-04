@@ -1,0 +1,63 @@
+{
+  "scope": "Release-provenance replay using frozen production9f8 staff/component analyses plus the narrow current numbered-volta heading recognition. Selected09200page22 is exported through the actual app apply/layout/exporter. The same existing two-job harness also executes242312page18 recognition as a smoke check. No new staff detection, recompile or production edit in this replay.",
+  "productionAnalyzerSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "headingSHA256": "d90ec25f18a2b8605b74f16c9b17e23fe3047a46758815ff13d03c06f0cf5307",
+  "harness": {
+    "path": ".build/monotone-shared-direction-candidate-2026-10-03/replay",
+    "sha256": "67e95825e709b57c6778d640c5c1732e3a4677be6a46545a7827b8392ea7a76c",
+    "sourceReceipt": "../monotone-numbered-volta-workflow-2026-10-03",
+    "sameBinaryNoRecompile": true
+  },
+  "inputs": [
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "productionBaseline": {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+        "sha256": "c658cf6dbea80231c6e17406c9bc662beae70fdb9a263d93c1ea1a9fd1cc609c"
+      },
+      "input": ".build/production-numbered-volta-replay-2026-10-03/inputs/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+      "inputSHA256": "a3cf1fa72d61c4dfce63c4a376f0dcba9493824fa6c87f2d9fa741b8de5139d4",
+      "pagesAndPlanExactlyPreserved": true
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "productionBaseline": {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+        "sha256": "9583e9db3e7a2c00d6894296f12df5473d2c3e9d7a79ee4247e4eb6af37a4e9c"
+      },
+      "input": ".build/production-numbered-volta-replay-2026-10-03/inputs/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json",
+      "inputSHA256": "3c8f8f4649102e51aa2f5bbc89c06a592176cbfb957ffc6523c3da02db813abe",
+      "pagesAndPlanExactlyPreserved": true
+    }
+  ],
+  "runtime": {
+    "exit": 0,
+    "workflowIssues": 0,
+    "sameOriginalAnalyses": true
+  },
+  "productionGeometry": {
+    "mainCropsAndAssignmentIDsUnchanged": true,
+    "mainCropAndAssignmentChangeIDs": []
+  },
+  "sourcePreservation": {
+    "word": "2da volta rit.",
+    "originalNonwhiteWordPixels": 2599,
+    "allFourPartsRetainCompleteWord": true,
+    "violinIIMainCropRetainsPartialWordPixels": 2493,
+    "violinIISourceCopyRetainsCompleteWordPixels": 2599,
+    "duplicateFragmentConfirmedVisually": true
+  },
+  "outputs": {
+    "physicalSourcePage": 22,
+    "partCount": 4,
+    "pdfPages": 4,
+    "systemsPerPart": 5,
+    "fullOriginalPDFEmbeddedInScratchProject": true,
+    "scratchProject": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/Brahms Op.67 \u2014 production page 22 review.partsmithproject",
+    "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+    "fullSourceNotDuplicatedInReceipt": true
+  },
+  "rootVisualReview": "root-export-review.json",
+  "verdict": "Bounded intended-source preservation passes. Duplicate partial text and substantial neighboring staff fragments remain. This evidence cannot support a clean-output or deduplication claim. The private monotone cleanup remains unpromoted.",
+  "coverageLimit": "No new raw changed-crop visual-review IDs are added by this release-provenance replay; remaining corpus and unresolved19-profile work remain in scope."
+}

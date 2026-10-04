@@ -1,0 +1,41 @@
+{
+  "reviewer": "/root",
+  "method": "Independent Poppler rendering and full-page inspection of each of the four actual native PDFs.",
+  "source": {
+    "path": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+    "sha256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+  },
+  "renderBindings": [
+    {
+      "pdf": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/Viola.pdf",
+      "pdfSHA256": "6f007b9190b53cab2475d610642a70dcf5a4becd7c5a32cd65980ba5ee181393",
+      "png": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/root-poppler/Viola.png",
+      "pngSHA256": "6011d96194c39a2a1f63823d9d86f2a898996668ebe8adc62270e5c023673dde"
+    },
+    {
+      "pdf": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/Violin I.pdf",
+      "pdfSHA256": "43d693a90aa7e9e0c564541b15bcd02ce31e25ed7c52b0b2e48174762ca010c3",
+      "png": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/root-poppler/Violin I.png",
+      "pngSHA256": "75da33b29aef34c273d6c672904e0b3713b9b1d7f35755e227da910233f2e0b9"
+    },
+    {
+      "pdf": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/Violin II.pdf",
+      "pdfSHA256": "9fec5c18ce1f5b297e29ce9ff4fb5ed7032b3e9f598bddc561f81e3263139e36",
+      "png": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/root-poppler/Violin II.png",
+      "pngSHA256": "dcb68de68ec70970528e1c76d0efd2da6cd1bb48ac74377cd71f77c3952603d3"
+    },
+    {
+      "pdf": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/Violoncello.pdf",
+      "pdfSHA256": "86800441958fca39267008598d4f44f670c427f3b2f23f8f1cf2603da6eab020",
+      "png": ".build/production-numbered-volta-replay-2026-10-03/09200-page22-parts/root-poppler/Violoncello.png",
+      "pngSHA256": "4a42878ed99488c1820e637cc62c79af5db529df7ec5f1f82b5e1223a55509af"
+    }
+  ],
+  "observations": [
+    "Complete numbered instruction, including ordinal, appears in each of all four parts.",
+    "Doppio Movimento remains at system4.",
+    "ViolinII has a complete copied source instruction plus the visibly clipped old occurrence inside its main crop below.",
+    "Significant neighboring-staff fragments remain in all parts."
+  ],
+  "verdict": "Source preservation confirmed for this bounded instruction/export case. Not deduplicated or clean output. Production crop algorithm remains unchanged; broader cleanup is unpromoted."
+}

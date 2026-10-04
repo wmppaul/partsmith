@@ -1,0 +1,82 @@
+{
+  "archive": "replay-evidence.tar.xz",
+  "sha256": "4388691596b250ba7ce57bad32f939cd51d8b2fd3bbf6f0d05a749ecb5148416",
+  "bytes": 124888,
+  "members": {
+    "README.md": {
+      "sha256": "785ed1fe54b41a634f73191debd34dee4c2b1bd84f31fdd93b24f9e35be4bbc6",
+      "bytes": 1200
+    },
+    "core-hashes.json": {
+      "sha256": "4eec64a777e96e57411893f4a9c6b9bcb953f9f4ee5926746c11fff81464f9f7",
+      "bytes": 2946
+    },
+    "input-bindings.json": {
+      "sha256": "65de7984c8f7081b1fc138011a386eff6e0f52171490b96325ab74381d45b319",
+      "bytes": 1347
+    },
+    "inputs/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json": {
+      "sha256": "b9fd2d36204c05e997f0911c9f0fa5ba8edda188d0a60ff3bdb364d7c4df97f2",
+      "bytes": 325646
+    },
+    "inputs/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json": {
+      "sha256": "3e72e0feb8625cb445b3341e79f59d61e0a11743149dd79bf62f466ac21ee4df",
+      "bytes": 541765
+    },
+    "logs/build-final.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/build.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/native-run.log": {
+      "sha256": "b16e4f1a15c5e18ef0c0fca28fd7ec6881bcbe082cada5c7891f0045e2c9670e",
+      "bytes": 1555
+    },
+    "logs/sandbox-run.log": {
+      "sha256": "e417ec2f730c45a9be6dcbebe928791884f5e38f2ddb82b1d2cf3f960d973631",
+      "bytes": 255
+    },
+    "outputs/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-ocr.json": {
+      "sha256": "8495b345bce7c8f1279c3d4c2d9c2b19b99b811fefcb556644ac78babe12064d",
+      "bytes": 9564
+    },
+    "outputs/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312-result.json": {
+      "sha256": "2ef8f42a76fd3b803d007a9a972c1a4e1d89f6d6b188107d90b151d261bbc0b6",
+      "bytes": 662682
+    },
+    "outputs/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-ocr.json": {
+      "sha256": "4e2da5595c3f44288358661633fbd609264ea62461b5c1101f922960c70a276c",
+      "bytes": 9302
+    },
+    "outputs/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200-result.json": {
+      "sha256": "5cc1fc3df1ed75c781cb20f229669bd55c374ffa5ecc73a72dff357d77daf36a",
+      "bytes": 1086872
+    },
+    "profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json": {
+      "sha256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "bytes": 378
+    },
+    "profiles/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200.json": {
+      "sha256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+      "bytes": 378
+    },
+    "protocol.json": {
+      "sha256": "f5a16f8f36bdf03387b46cb467373d86fd3ea184c19071dc271fc24f229afcab",
+      "bytes": 589
+    },
+    "replay-provenance.json": {
+      "sha256": "6ed116b2fd4bb7ef5272fe66ea8f579c1ba6f936a352cc8dc33f7ff91e94e964",
+      "bytes": 6964
+    },
+    "replay.swift": {
+      "sha256": "daeac384b80edb1fca889aa106ff33aec7764fb02a13a2fb2a472f30df891f53",
+      "bytes": 4227
+    }
+  },
+  "memberHashesFileSHA256": "61b0bcb226035a201eaf4b4d63d03cedf8c8542a229ad636691dcd93f1167456",
+  "verifiedAllArchiveMembers": true,
+  "noReruns": true
+}
