@@ -1,0 +1,204 @@
+{
+  "status": "Frozen original-source survey before any native crop/part output inspection",
+  "scope": "All27 original pages directly viewed; original-only enlarged details for p21 and flute switches. Agreed roster is bound but not independently recounted here. This is a pre-crop source obligation inventory, not a pixel-completeness verdict.",
+  "source": {
+    "path": "sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+    "sha256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+    "pages": 27
+  },
+  "profile": {
+    "path": "Tests/quality_control/profiles/medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041.json",
+    "sha256": "44d53a99f39124c479ef18c55f524a1d3d5075c2781dcf82457c704c86eef57d"
+  },
+  "agreedRootMapSHA256": "76b144bae5932f5e308560956709a179a24af1ee4a079bfc6064dd615695fb89",
+  "systemCount": 26,
+  "printedPartRows": 520,
+  "physicalStaffReferences": 568,
+  "ownReviewPartIDs": [
+    "soprano",
+    "alto-section",
+    "tenor",
+    "bass-section",
+    "violin1",
+    "violin2",
+    "viola",
+    "cello",
+    "bass"
+  ],
+  "ownSourceRows": 234,
+  "otherRowsOwnedByRoot": 286,
+  "noGeneratedRestsOrOmittedStaves": true,
+  "originalPagesViewed": [
+    {
+      "page": 1,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-01.png",
+      "sha256": "89dd9a715d91bacd0da64b5ac2933316df89b1939a00c10ebbfb20c7de230c4f",
+      "sourceObservations": "Poem/frontmatter only; preserve in embedded full source. No musical staff assignment."
+    },
+    {
+      "page": 2,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-02.png",
+      "sha256": "fa4e0a0e98a70243a3595617b73f70524fe7c254baf595639995a7b9e27cf42a",
+      "sourceObservations": "Opening pickup and all 20 printed part rows, including quiet choir. Preserve source meter/key and complete multi-player/transposition labels (two flutes/piccolo, clarinets in B, separate D/F horn pairs, D trumpets, combined TromboneIII/Tuba). Maestoso printed above flute and below Double bass. High Flute/VI1 ledger notes, low Bass ff/sf/pesante and full title/dedication/composer need room."
+    },
+    {
+      "page": 3,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-03.png",
+      "sha256": "8339cd53913d13e5ed100195bff1b0c2a7ccf80485cf88938602e972a80182b5",
+      "sourceObservations": "Quiet combined Alto and Bass staves remain printed. Preserve local a2/first-player cues, woodwind and horn low dynamics, high VI1 notes and Cello/Bass low triplet markings."
+    },
+    {
+      "page": 4,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-04.png",
+      "sha256": "f94b29d7ee8642339ce2aaffd30f91f243726f4113a277232011a399761dfbe3",
+      "sourceObservations": "Alto and Bass each become two physical staves despite early printed rests. Rehearsal A appears above flute and below Bass at same interior bar. Tenor/Bass entry lyrics begin at right; keep first/second Bass shared printed text between their staves."
+    },
+    {
+      "page": 5,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-05.png",
+      "sha256": "542b0090430a956c75ec64dc0daa7ed66a8588d73409635410dc7ea310ccc48f",
+      "sourceObservations": "Alto pair shares text between staves; BassII may share BassI text while both staves stay grouped. Do not turn printed quiet instrumental rows into omitted parts. Low Bass f and hairpins at right."
+    },
+    {
+      "page": 6,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-06.png",
+      "sha256": "6232c0fd2673ea60806f6fcbcb08a1383f8a4c412ed05e49656fe20b11f253cb",
+      "sourceObservations": "Separate Alto/Bass staves retained. Shared pair lyrics, p/f at phrase entry, long low string hairpins and local triplet ties need complete source edges."
+    },
+    {
+      "page": 7,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-07.png",
+      "sha256": "fe084c54b6f29383194e08d7e096b41c6a8e1469a200f545e0edfe7c5594ef35",
+      "sourceObservations": "Rehearsal B above flute and below Bass within system. Very high VI1/flute notes and triplet digits, low Brass/Timpani ff/sf and Bass B/ff/dynamics. Choir phrase starts at right and continues next source page."
+    },
+    {
+      "page": 8,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-08.png",
+      "sha256": "638cbb901584cb2ca2960eabcef2de66a379368da61645df8908ac800da6a61e",
+      "sourceObservations": "Alto pair shared lyrics; low BassII and string notes/dynamics, horn ledger notes. No new shared tempo observed."
+    },
+    {
+      "page": 9,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-09.png",
+      "sha256": "9ae30e876c49ceca4fc0789cf26b15068e5d15b1feb751029330296c21566bd7",
+      "sourceObservations": "BassII has its own full lyric line below its staff. Alto pair shares some text. Preserve low lyric hyphens/descenders and high string notes/slurs."
+    },
+    {
+      "page": 10,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-10.png",
+      "sha256": "ca87472e12a3fc9f64cdb37a99f3adcebe6a6d810c06e5122923e1e7b160e574",
+      "sourceObservations": "Rehearsal C above flute and below Bass at interior bar. VI2 has numeric bow/division annotations near first active phrase; preserve without reinterpreting. Dense choir lyrics and right-edge syllables."
+    },
+    {
+      "page": 11,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-11.png",
+      "sha256": "2a4f58e30b32c2f6d8f4e94037f55cdbedac5b8aaa9ad1d6a7d2d81c3211a6e3",
+      "sourceObservations": "All local sf/f and hairpins remain part-specific. Lower Bass shared/independent text and low Bass hairpins/triplets are close to neighboring material."
+    },
+    {
+      "page": 12,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-12.png",
+      "sha256": "28d9510634c0beabc2e45f98022105a97669fe81ce9dc807b8d3dc64416c6cf0",
+      "sourceObservations": "Rehearsal D above flute and below Bass. Both Alto and Bass rows have independently printed low lyric continuations; preserve complete two-staff envelopes, slurs and pp/dim. High flute p dol. passage."
+    },
+    {
+      "page": 13,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-13.png",
+      "sha256": "4120c514f7928218ac39a804a32cbc4916f02cb4d8d4c8ecccd268ce88c8525a",
+      "sourceObservations": "Low hornF ledger note/dynamic near next Trumpet staff; quiet trumpet/low brass/timpani labels must not be confused with notes. Both Bass lyric lines and string low dim/pp/hairpins require preservation."
+    },
+    {
+      "page": 14,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-14.png",
+      "sha256": "7bb559345cd3d0ebba7edab1d243f356335d0891b354ca162ece503002017219",
+      "sourceObservations": "All divisi vocal staves present. Source-specific shared and separate underlay remains exactly as printed. High VI1 runs and low Bass f/slur remain."
+    },
+    {
+      "page": 15,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-15.png",
+      "sha256": "c92e3341de30f7d38e66a0a4a43fc23adc272a6779b1b623e71024acfaa2f344",
+      "sourceObservations": "Rehearsal E at top/bottom. sempre più f printed locally over all six choral staves, not a new global tempo. Preserve it within each vocal section crop. Local a2 woodwind cues and high string articulation."
+    },
+    {
+      "page": 16,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-16.png",
+      "sha256": "be67662ff703c0b777b38a37547d897e0ec8884d6657c935d8c7e55cf652a8db",
+      "sourceObservations": "Mid-system key change with molto marcato on Bassoon/Contrabassoon/Cello/Bass and molto marc. on combined low brass. Do not broadcast those local articulation directions. Keep complete key changes and long right-edge choir words."
+    },
+    {
+      "page": 17,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-17.png",
+      "sha256": "3aa4cb50f57c061f6da0a865651093e79d02df6082c694a1be42f02163283875",
+      "sourceObservations": "Rehearsal F above flute/below Bass. Local first/second player cues and dolce strings. Several AltoII/BassII entries acquire their own short lower words; do not use a uniform shared-text assumption."
+    },
+    {
+      "page": 18,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-18.png",
+      "sha256": "af59852a78fa6cee5a47459f66a3a3c94d22255656619888db60e06ce7940b46",
+      "sourceObservations": "Far-right key change and all slur/tie endpoints require full width. Each divided vocal row has its own low lyric continuation. Low Cello/Bass dim and ties."
+    },
+    {
+      "page": 19,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-19.png",
+      "sha256": "1911bbc6e0ee875d8100d702b957fa3863b9297374430d28ae61db2e27468d77",
+      "sourceObservations": "p sotto voce is printed on all choral staves at differing entry x positions, to retain locally. pizz. belongs only to Double bass here; Cello remains bowed."
+    },
+    {
+      "page": 20,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-20.png",
+      "sha256": "ee13724658525bef319377864d5b2c93f73a84e6c7c42fbb1311a9377dcbcf28",
+      "sourceObservations": "Late pizz. instructions on all five string staves. Choir cresc/mf/p at differing x positions. Quiet upper strings remain printed rows."
+    },
+    {
+      "page": 21,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-21.png",
+      "sha256": "30f27040e52ec9bd94961545efa419cf636826049ae4729e3258226f6e2ad9a1",
+      "sourceObservations": "Mid-system 3/4/key change and printed quarter=quarter relation above flute and below Bass. Sehr weich und gebunden printed only above Soprano at this entry; preserve its horizontal timing and choir context. Arco printed on all five strings earlier in system. Source details independently rendered/viewed before crop results."
+    },
+    {
+      "page": 22,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-22.png",
+      "sha256": "a77134dd069151fe137f0a7c15d6c006bedfda3e3654da6c805c38bedf737387",
+      "sourceObservations": "p dolcissimo printed individually below active woodwinds/hornD and strings. Tenor espress. at final entry. Do not copy local expression to quiet instruments. Low string dynamics and long wind slurs."
+    },
+    {
+      "page": 23,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-23.png",
+      "sha256": "7b218651b016716e14a295a6b5f79ceff2dc0c351a29a7c929965453a776f412",
+      "sourceObservations": "Rehearsal G above flute/below Bass at start. Many completely quiet printed orchestral staves. Alto/Bass retain both staves and their own/shared text; no missing duration inference."
+    },
+    {
+      "page": 24,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-24.png",
+      "sha256": "be0a68e759463492c67b486d306727d310a356c4afb85a3fd99b801228c344b4",
+      "sourceObservations": "Rehearsal H at top/bottom. pizz. on all strings; mid-system arco only Cello. Woodwind dolcissimo, soprano p espress. and local dim remain part-specific."
+    },
+    {
+      "page": 25,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-25.png",
+      "sha256": "629cf0417adc91469f44cd5839bacbed5efe85c69e91055fd3882549c3d5d4db",
+      "sourceObservations": "Local first piccolo instruction above flute, while common time/key change occurs later. Upper three strings arco at left; con sordini on VI1/VI2/Viola/Cello, not Bass. Low strings pp sempre, ma marcato printed individually. Keep lower BassII lyric So… and muted Cello low whole note."
+    },
+    {
+      "page": 26,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-26.png",
+      "sha256": "563bb8b7d43c513b40ef7261e68536269b62b5364e2719018b47d519f74096de",
+      "sourceObservations": "Second large-flute cue is printed below flute staff at an interior entry. AltoII/BassII have shared upper lyrics plus independent lower entry text; preserve as printed. Quiet string rows and locally printed dim/pp."
+    },
+    {
+      "page": 27,
+      "path": ".build/brahms-parzen109041-source-map-2026-10-03/source/page-27.png",
+      "sha256": "96b654468367d8c288a48dacfa3fd35a0a298c138cbaa3b296ee11ef64fee5ae",
+      "sourceObservations": "Both first piccolo and second large-flute cues near flute shaft/ties; final high/low fermatas on every intended staff, including silent choir rests and Timpani roll. Part-local perdendosi/ppp dim are below active wind/string staves. Bass arco above its final entry; low Bass perdendosi/hairpins and last pp must survive. All original terminal barlines and choral word punctuation retained."
+    }
+  ],
+  "sourceDetailIndexSHA256": "8aa6067dd6e90b563fa0212fae4f431f156d944b3d53d9ca3ef974bc12ced247",
+  "generalObligations": [
+    "Retain every printed quiet staff and all its clef/key/meter/rest context. No inferred omissions or silent durations.",
+    "Combined orchestral player staves are retained as published; do not invent separate player notes.",
+    "Two-staff Alto and Bass sections keep both staves and the edition’s actual shared/independent lyric lines.",
+    "Preserve local expression/instrument switches at original x positions, and avoid broad shared copying of part-specific instructions.",
+    "Full-width source targets include high ledger notes and low lyric/dynamic/fermata/tie ink beyond five-line staff cores.",
+    "Physical source page1 remains embedded although it has no musical strips."
+  ]
+}

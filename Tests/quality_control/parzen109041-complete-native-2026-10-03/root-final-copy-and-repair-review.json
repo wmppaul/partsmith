@@ -1,0 +1,170 @@
+{
+  "scope": "Independent root geometry/hash verification plus directly viewed source and actual PDF details; not an automatic musical-completeness certificate.",
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "finalManifestSHA256": "45dd2c2236c77a886aeb0df309e9f0d8f119d2189dcf78f670e87a3bbe2b395d",
+  "copyIndexSHA256": "2d567e83ccf6d15d0323c7cacdbd9795d3331542d19e90bca4ff3c45730a1925",
+  "initial208SourceReviewSHA256": "1305e3845712b4a6087ea54d8841d246506c2c2b16d51cd01dd131cc12c864a5",
+  "verified": {
+    "parts": 20,
+    "pages": 62,
+    "sourceRows": 520,
+    "staffReferences": 568,
+    "sourceCopyMappings": 183,
+    "uniqueCopiedBoxes": 11,
+    "retainedDoubleBassLocalMarkings": 10,
+    "changedCropEdges": 2
+  },
+  "visualReview": [
+    "All 208 assigned initial Flutes\u2013Trumpets source context rows directly viewed; remaining 312 belong to independent peer review.",
+    "All 11 unique copied-source boxes viewed in three original panels; all source-image hashes identical in final stage.",
+    "All four actual choir PDF contexts at source page21 viewed: complete expression above, quarter relation below at the matching bar position, no collision observed.",
+    "All ten retained local DoubleBass markings viewed in three panels; the six removed duplicate copies were not needed for complete local glyphs.",
+    "Original high-resolution Horn slur and Trombone dim. source details compared with final actual exported row details; both previously clipped marks now complete."
+  ],
+  "repairs": [
+    {
+      "partID": "horns12",
+      "bandID": "p21-s1-horns12",
+      "before": [
+        0,
+        178.15155660377354,
+        595.2,
+        224.17207547169812
+      ],
+      "after": [
+        0,
+        177.25,
+        595.2,
+        224.17207547169812
+      ]
+    },
+    {
+      "partID": "trombones12",
+      "bandID": "p24-s1-trombones12",
+      "before": [
+        0,
+        299.8172169811321,
+        595.2,
+        343.1928301886793
+      ],
+      "after": [
+        0,
+        299.8172169811321,
+        595.2,
+        346.5
+      ]
+    }
+  ],
+  "limits": [
+    "Seven known whole-neighbor rows remain across combined reviews.",
+    "Foreign instrument directions and fragments remain; manual Preview cleanup is still needed.",
+    "Author reviewed all62 initial final pages and changed pages; root reviewed the specified source/recipient details, not all62 full pages.",
+    "This is an assisted preservation draft, not auto-only or performance-ready."
+  ],
+  "pdfs": {
+    "flutes": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Flutes I\u2013II - piccolo doubling.pdf",
+      "sha256": "e099b753220048055b20ecb68e8b1e542872184f636962a4fefe066ed9c0627b",
+      "pages": 3
+    },
+    "oboes": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Oboes I\u2013II.pdf",
+      "sha256": "1c82786fd0b5fbb6a3d5fe17805d6779245528cc5399b5198bfc765592439cf4",
+      "pages": 3
+    },
+    "clarinets": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Clarinets I\u2013II.pdf",
+      "sha256": "14afee21026455f53a76e4cc64d0ba2a92d568f23212d823ba52101cdc5cae15",
+      "pages": 3
+    },
+    "bassoons": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Bassoons I\u2013II.pdf",
+      "sha256": "d31dc4fae1bdd3f2eda1302f1358638aea4f6f5a4a9265f682ac9ff501940bfa",
+      "pages": 3
+    },
+    "contrabassoon": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Contrabassoon.pdf",
+      "sha256": "d8428a88e45a537929d79b065fd62fdc3f722cad834f62774e22d927c86eb7ba",
+      "pages": 3
+    },
+    "horns12": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Horns I\u2013II.pdf",
+      "sha256": "3d3fedd0fbd6be83c3c874793bff79a8bdab37d35025b0feee4be322c3914f6a",
+      "pages": 3
+    },
+    "horns34": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Horns III\u2013IV.pdf",
+      "sha256": "581a4eac0de7ed3d92785c3d129cd70fb0a58a2e4cc48b1c50c1ccd11eb4626c",
+      "pages": 3
+    },
+    "trumpets": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Trumpets I\u2013II.pdf",
+      "sha256": "73e44619ccc22892b899e2e0ebaaebc1595c76b7f9a6d8002847ad69bcaff107",
+      "pages": 3
+    },
+    "trombones12": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Trombones I\u2013II.pdf",
+      "sha256": "0a19f2dc81bad597d9fac110c6c857af60b5d44dd76ca8b0391637bf1dd35c5b",
+      "pages": 3
+    },
+    "trombone3-tuba": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Trombone III and bass tuba.pdf",
+      "sha256": "39b27848b55e20b8f77df9b2f6c06960c2b157d9026da9d2e917a2e887fae74a",
+      "pages": 3
+    },
+    "timpani": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Timpani.pdf",
+      "sha256": "5788a482ad36aa032da174f730c3ebb37b436d0fcb903f6ea73dc8af88b73b0f",
+      "pages": 3
+    },
+    "soprano": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Soprano.pdf",
+      "sha256": "ee2dd523c03fef56ec129242550d2c69bd40e9d946c08e69883a7cdfad9cef79",
+      "pages": 3
+    },
+    "alto-section": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Altos I\u2013II (combined or divided).pdf",
+      "sha256": "44b579228bbc9300d73b5a67e11e502a105ee7ae6560f98daef05fe9fb23c3c4",
+      "pages": 4
+    },
+    "tenor": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Tenor.pdf",
+      "sha256": "8fa9d4fff892df70e37cff2b2f4f1d756b361aafd0cb6a73addb2f9652deb8fb",
+      "pages": 3
+    },
+    "bass-section": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Basses I\u2013II (combined or divided).pdf",
+      "sha256": "7cc984bc77cc66b0c54fde8c7ceb895d4a4c296fb678f4b441b5fa9d8c539b22",
+      "pages": 4
+    },
+    "violin1": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Violin I.pdf",
+      "sha256": "56540aae23b2c4ab62c6f47de934ae8c3c12a7e800131e72418d239e22eee8ce",
+      "pages": 3
+    },
+    "violin2": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Violin II.pdf",
+      "sha256": "8c1e7fecd7b8458cfb933e97ff5e8318e9170859d5a60c7f1595e92b969d2cf0",
+      "pages": 3
+    },
+    "viola": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Viola.pdf",
+      "sha256": "b59d8733108dfa7603acf7b3976dea5a3451322a9adce570f9ffab0538857619",
+      "pages": 3
+    },
+    "cello": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Violoncello.pdf",
+      "sha256": "8ebee95dcea4f8499dd8bebe9082657bc8775385798624eb064c562dd5ea8979",
+      "pages": 3
+    },
+    "bass": {
+      "file": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Double bass.pdf",
+      "sha256": "f587ec1b017b06b543d606aa546383da94f53e160e452c1747b640bd8fd6d38d",
+      "pages": 3
+    }
+  },
+  "evidence": {
+    "doubleBassSourceProofSHA256": "a83c6b339a0a72156f59d884fb7bafd78af0c4bdb64a8f0082fa434a852a6575",
+    "repairDetailIndexSHA256": "3ea190ca2ce246e99ed9f419dd5bf2bec793e8de41b9a363a4549affe30016cd"
+  }
+}

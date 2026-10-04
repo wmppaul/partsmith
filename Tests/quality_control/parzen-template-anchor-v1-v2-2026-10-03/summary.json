@@ -1,0 +1,150 @@
+{
+  "scope": "Private diagnosis only; v1 and v2 not promoted. All26 source music systems, 24unseeded,568physical staves. No source notes/crops/export changed.",
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "baseline": {
+    "suggestions": 6,
+    "physicalPages": [
+      5,
+      8,
+      10,
+      16,
+      19,
+      21
+    ],
+    "allNeedsReview": true,
+    "completeGroups": 26,
+    "connectedPairChecks": 542,
+    "causeOf18Abstentions": "Per-staff clef-patch score below unchanged0.48; not connection partition or staff counts."
+  },
+  "extraReviewedSeeds": {
+    "addedPhysicalPages": [
+      3,
+      19
+    ],
+    "suggestions": 11,
+    "remainingUnseeded": 22,
+    "allNeedsReview": true,
+    "limit": "Additional manual setup, not an algorithm gain. Old serializer lacks actual staffCounts, unlike both private candidates."
+  },
+  "candidates": {
+    "candidate-v1": {
+      "suggestions": 15,
+      "unseededSystems": 24,
+      "physicalPages": [
+        5,
+        6,
+        7,
+        9,
+        10,
+        12,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        24,
+        26,
+        27
+      ],
+      "confidenceCounts": {
+        "needsReview": 12,
+        "sourceSupported": 3
+      },
+      "sourceGroupingErrors": [],
+      "baselinePagesRetained": [
+        5,
+        10,
+        16,
+        19,
+        21
+      ],
+      "baselinePagesLost": [
+        8
+      ],
+      "newPages": [
+        6,
+        7,
+        9,
+        12,
+        15,
+        17,
+        20,
+        24,
+        26,
+        27
+      ],
+      "abstentions": 9,
+      "elapsedSeconds": 8.151329040527344,
+      "matcherSHA256": "ee50790aaf672456c4d8105e2489f1d86a0d4c5239f08020ea1cea990b56cc2f",
+      "resultSHA256": "75fad33b03225b079d21f419e770ee1eed47c5168b030517f722fb4629660a78",
+      "historical32ComparableOutputsUnchanged": true,
+      "historicalOriginalExpectations": {
+        "pass": 31,
+        "fail": 1,
+        "existingConflict": "notte-changed-profile-count: per-system count API now learns reviewed counts; original expectation still records failure."
+      }
+    },
+    "candidate-v2": {
+      "suggestions": 11,
+      "unseededSystems": 24,
+      "physicalPages": [
+        5,
+        7,
+        8,
+        9,
+        10,
+        15,
+        17,
+        19,
+        21,
+        25,
+        27
+      ],
+      "confidenceCounts": {
+        "sourceSupported": 2,
+        "needsReview": 9
+      },
+      "sourceGroupingErrors": [],
+      "baselinePagesRetained": [
+        5,
+        8,
+        10,
+        19,
+        21
+      ],
+      "baselinePagesLost": [
+        16
+      ],
+      "newPages": [
+        7,
+        9,
+        15,
+        17,
+        25,
+        27
+      ],
+      "abstentions": 13,
+      "elapsedSeconds": 8.430146098136902,
+      "matcherSHA256": "8c66f1d14a4500283c36640701b8f7612be6253989c319f28b509070a00e9127",
+      "resultSHA256": "2c125b89726e3ec67b03b551ba796340e64290433636649ce2ccbd913da6799d",
+      "historical32ComparableOutputsUnchanged": true,
+      "historicalOriginalExpectations": {
+        "pass": 31,
+        "fail": 1,
+        "existingConflict": "notte-changed-profile-count: per-system count API now learns reviewed counts; original expectation still records failure."
+      }
+    }
+  },
+  "productionUnchanged": {
+    "matcherSHA256": "6abb036e0b6c1e3678d78cb6702ad2f558ddb4b8b8fd5436e350186f139a0351",
+    "NativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01"
+  },
+  "limitations": [
+    "Candidate historical equivalence excludes elapsed time and actual staffCounts field newly added to serializer; actual Parzen staffCounts are independently compared to frozen source.",
+    "v1 chooses a bracket for one adjacent pair and barline for the other on p8 staff9, then averages unlike structures.",
+    "v2 rejects useful true thick/double barline endpoints because the measured earliest line start and chosen right edge differ by more than existing reach; it changes seed p4 staff7 but abstains target p16 staff7, losing a previous valid proposal.",
+    "Neither candidate qualifies as a robust improvement. No production changes or cleanup promotion."
+  ]
+}

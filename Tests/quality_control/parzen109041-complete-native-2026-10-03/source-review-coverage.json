@@ -1,0 +1,39 @@
+{
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "sourceContextIndexSHA256": "ede2895c67db880d7dd0748a93ba3d9063917f51ad9780f9759dc8fb9e2e130e",
+  "canonicalRows": 520,
+  "uniqueReviewedRows": 520,
+  "unreviewedRows": [],
+  "overlapRows": [],
+  "allContextHashesVerified": true,
+  "reports": [
+    {
+      "path": ".build/brahms-parzen-root-source-review-2026-10-03/initial-208-source-review.json",
+      "sha256": "1305e3845712b4a6087ea54d8841d246506c2c2b16d51cd01dd131cc12c864a5",
+      "uniqueRows": 208
+    },
+    {
+      "path": ".build/brahms-parzen-source-crops-independent-2026-10-03/initial-234-crop-review.json",
+      "sha256": "b625a7ee13cc100159547616f94af9e5cc3a3e13dde70a918b04d424e755bf97",
+      "uniqueRows": 234
+    },
+    {
+      "path": ".build/brahms-parzen-source-crops-independent-2026-10-03/extra-78-crop-review.json",
+      "sha256": "b3dde98de95033cac61cab8f0c09393bb333b129973d0e33218d7e7db94118eb",
+      "uniqueRows": 78
+    }
+  ],
+  "originalOwnLossFindings": [
+    {
+      "id": "p21-s1-horns12",
+      "verdict": "confirmed-own-slur-apex-clip",
+      "report": ".build/brahms-parzen-root-source-review-2026-10-03/initial-208-source-review.json"
+    },
+    {
+      "id": "p24-s1-trombones12",
+      "verdict": "own-expression-clipped",
+      "report": ".build/brahms-parzen-source-crops-independent-2026-10-03/extra-78-crop-review.json"
+    }
+  ],
+  "scope": "All520 initial source crop contexts reviewed across disjoint208+234+78 allocations. Coverage is not a clean-output claim. Two own-source omissions prompted explicit manual repairs; neighboring notation/instructions remain. Final repaired output acceptance is a separate receipt."
+}

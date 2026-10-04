@@ -1,0 +1,116 @@
+{
+  "status": "Private validated candidate for independent review; no production edits or promotion performed.",
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "matcherSHA256": "c7db7cdd2634df1a90878f898a08bb696e6e26a7489c722696863b95d800d0e9",
+  "originalInputSHA256": "07795a386954b078712d0c36190416e9ce408f391c42dab62e6f7e02fdafabfe",
+  "expectedSourceSHA256": "951092b11cf678a5b7091507f66506daf3ddb88e842ddcc19f7a78f406ba80e3",
+  "historicalInputSHA256": "6600e6b304757b0580fd773bbd87b71f3791376e53a45d0ca5fe9cae27c524b4",
+  "historicalSourceTruthSHA256": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+  "observed": {
+    "suggestions": 20,
+    "physicalPages": [
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "confidences": {
+      "sourceSupported": 3,
+      "needsReview": 17
+    },
+    "diagnostics": 4,
+    "sourceIdentityErrors": [],
+    "eventCounts": {
+      "staff": 568,
+      "connection": 542,
+      "anchorEvidence": 542,
+      "anchoredStaff": 551,
+      "anchorAbstention": 17,
+      "groups": 26,
+      "incomparableOrigins": 3,
+      "comparison": 21
+    },
+    "elapsedSeconds": 8.399362087249756,
+    "historical32Changed": [],
+    "retainedBaselinePages": [
+      5,
+      8,
+      10,
+      16,
+      19,
+      21
+    ]
+  },
+  "baseElapsedSeconds": 7.921561002731323,
+  "baseEvidenceManifest": {
+    "path": "Tests/quality_control/parzen-template-anchor-v1-v2-2026-10-03/manifest.json",
+    "sha256": "7e65b896dbafa4c0901fd58f657d182ad7b1ffca42d24c2c076174f341daeb7d"
+  },
+  "sameOtherCoreFiles": true,
+  "noNewBarCountOrStart": true,
+  "remaining": [
+    {
+      "physicalPage": 3,
+      "reason": "Incompatible per-staff source-origin proof",
+      "differingStaffIDs": [
+        2,
+        8,
+        9,
+        10,
+        13,
+        14,
+        18
+      ]
+    },
+    {
+      "physicalPage": 7,
+      "reason": "Incompatible per-staff source-origin proof",
+      "differingStaffIDs": [
+        1,
+        16,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "physicalPage": 15,
+      "reason": "Incompatible per-staff source-origin proof",
+      "differingStaffIDs": [
+        5
+      ]
+    },
+    {
+      "physicalPage": 13,
+      "reason": "Bassoon clef score remains0.474 below0.48; no relaxation."
+    }
+  ],
+  "historicalAssessor": {
+    "pass": 31,
+    "fail": 1,
+    "knownExistingFailure": "notte-changed-profile-count",
+    "allComparableCaseResultsExact": true,
+    "note": "Compare excludes time and newly serializedstaffCounts absent in old harness. All Parzen staffCounts directly verified against frozen source."
+  },
+  "productionBindings": {
+    "matcherSHA256": "6abb036e0b6c1e3678d78cb6702ad2f558ddb4b8b8fd5436e350186f139a0351",
+    "NativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01"
+  },
+  "archiveReplay": "Unpack base v1/v2archive for exactinput.json/profile/expected and snapshots; v3archive contains candidate-v3Core+run.swift and actualresults/events. Existing source PDF must match hash."
+}

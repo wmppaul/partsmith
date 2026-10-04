@@ -1,0 +1,25 @@
+{
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "cases": [
+    {
+      "page": 2,
+      "staffID": 9,
+      "finding": "Nominal x454 samples notes after F clef; actual left boundary anchor320. v2 phase-7 has100% five-line support but first horizontal start309, so endpoint/exterior proof abstains.",
+      "panel": "candidate-v2/source-review/p2-staff9.png"
+    },
+    {
+      "page": 8,
+      "staffID": 9,
+      "finding": "v1 adjacent columns72outer bracket and89staff boundary are distinct structures; averaging to81 introduces wrong ink. v2 abstains.",
+      "panel": "candidate-v2/source-review/p8-staff9.png"
+    },
+    {
+      "page": 16,
+      "staffID": 7,
+      "finding": "Five lines100% supported; start73 vs boundary rightedges81/83 fails endpoint proof. Changed seed p4 versus unchanged target loses baseline page16.",
+      "panel": "candidate-v2/source-review/p16-staff7.png"
+    }
+  ],
+  "measurement": "candidate-v2/abstention-measurements.json",
+  "exactSourcePixelCheck": "All8selected production patches reproduce1792/1792pixels from original native source rasters. No detector replay for these6render-only pages."
+}

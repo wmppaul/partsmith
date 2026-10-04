@@ -1,0 +1,776 @@
+{
+  "verdict": "Two local additive repairs pass independent source-envelope, actual-row and full-page visual review.",
+  "scope": "Repaired source 21 Horn I/II and source 24 Trombone I/II, both output page 3. Previous 312 source review remains separate; full 520 final musical completeness is not inferred from metadata.",
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "beforeManifestSHA256": "d4a7d0fc194f8d9bb8a8a839e0caf9fda3f8113643668e634e3e6e7b5503ad5d",
+  "finalManifestSHA256": "45dd2c2236c77a886aeb0df309e9f0d8f119d2189dcf78f670e87a3bbe2b395d",
+  "finalProject": {
+    "path": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Brahms \u2014 Gesang der Parzen, Op. 89.partsmithproject",
+    "members": {
+      "project.json": "6063bc5693ce0c5a69fb24a7e001941e343c48974d705d419efad0a337ee44dc",
+      "source.pdf": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d"
+    }
+  },
+  "verified": {
+    "parts": 20,
+    "pages": 62,
+    "uniqueRows": 520,
+    "staffReferences": 568,
+    "identityStaffBarAndPageMetadataExact": true,
+    "sourceCopyShapesExact": 183,
+    "unchangedMainCrops": 518,
+    "samePagePNGs": 60,
+    "changedPagePNGs": 2,
+    "bothFrozenSourceGuardsContained": true
+  },
+  "sourceCropChanges": [
+    {
+      "id": "p21-s1-horns12",
+      "before": [
+        0,
+        178.15155660377354,
+        595.2,
+        224.17207547169812
+      ],
+      "after": [
+        0,
+        177.25,
+        595.2,
+        224.17207547169812
+      ]
+    },
+    {
+      "id": "p24-s1-trombones12",
+      "before": [
+        0,
+        299.8172169811321,
+        595.2,
+        343.1928301886793
+      ],
+      "after": [
+        0,
+        299.8172169811321,
+        595.2,
+        346.5
+      ]
+    }
+  ],
+  "directVisualViews": {
+    "allFourBeforeAfterRowStrips": [
+      {
+        "bandID": "p21-s1-horns12",
+        "stage": "dedup-stage",
+        "sourceRect": [
+          0,
+          178.15155660377354,
+          595.2,
+          224.17207547169812
+        ],
+        "outputPage": 3,
+        "outputPDFSHA256": "513a5c325c9e481c64d600fc72a4b5232225bc41793250a0c76bbc25fd7232ca",
+        "outputDetail": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/repair-output-details/p21-s1-horns12-before.png",
+        "sha256": "76ffca33f7958fc43ddaf715ea064fbb9315c54eeba8896184934d8cd5e3352d"
+      },
+      {
+        "bandID": "p24-s1-trombones12",
+        "stage": "dedup-stage",
+        "sourceRect": [
+          0,
+          299.8172169811321,
+          595.2,
+          343.1928301886793
+        ],
+        "outputPage": 3,
+        "outputPDFSHA256": "a0bfe761778d20b31e91476c25eff57fad924d9aa753c43c31d14ac7616d4105",
+        "outputDetail": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/repair-output-details/p24-s1-trombones12-before.png",
+        "sha256": "818b3817d0a098132f10cd13ced4f4725f383d539571f0dbc28743a1e79e7704"
+      },
+      {
+        "bandID": "p21-s1-horns12",
+        "stage": "final-reviewed-stage",
+        "sourceRect": [
+          0,
+          177.25,
+          595.2,
+          224.17207547169812
+        ],
+        "outputPage": 3,
+        "outputPDFSHA256": "3d3fedd0fbd6be83c3c874793bff79a8bdab37d35025b0feee4be322c3914f6a",
+        "outputDetail": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/repair-output-details/p21-s1-horns12-after.png",
+        "sha256": "6bc29c1f049181c1f931f89c1b84aa133a3c33cd3d10c0d34fb04d481fe6ffc9"
+      },
+      {
+        "bandID": "p24-s1-trombones12",
+        "stage": "final-reviewed-stage",
+        "sourceRect": [
+          0,
+          299.8172169811321,
+          595.2,
+          346.5
+        ],
+        "outputPage": 3,
+        "outputPDFSHA256": "0a19f2dc81bad597d9fac110c6c857af60b5d44dd76ca8b0391637bf1dd35c5b",
+        "outputDetail": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/repair-output-details/p24-s1-trombones12-after.png",
+        "sha256": "6df2aacf9ec8b89f3f3d4e137274dde4b46ff93579a3b7a4099c9692b04a350a"
+      }
+    ],
+    "allFourBeforeAfterFullPagePNGs": [
+      {
+        "partID": "horns12",
+        "page": 3,
+        "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/horns12/page-03.png",
+        "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/horns12/page-03.png",
+        "beforeSHA256": "5af39fcbad9c40bc4ba69b09bcad9256d5edced3daa1b30e6eaa76ab9bbbfa80",
+        "afterSHA256": "c4164eaa7168bd2c7162d710b183d4e3fbc7eb229a6ce16fab4c16b37c566b20"
+      },
+      {
+        "partID": "trombones12",
+        "page": 3,
+        "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trombones12/page-03.png",
+        "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trombones12/page-03.png",
+        "beforeSHA256": "002fb39b6357a9a58158bcded61df1138cfac709a641f8b2bf403977b0de3cb7",
+        "afterSHA256": "349346658a8a6b39b8c1cdcd84123ecd0305f416d282252230101f5b442ec1bd"
+      }
+    ],
+    "findings": [
+      {
+        "id": "p21-s1-horns12",
+        "finding": "Upper slur crest complete; own notes, lower slur, pp/dim and meter change retained. Neighbor Horn III/IV fragments remain."
+      },
+      {
+        "id": "p24-s1-trombones12",
+        "finding": "Complete dim. lower letter strokes and period retained. Own tied chords, hairpins and pp remain complete. Additional neighboring Tuba line fragments are visible."
+      }
+    ],
+    "layout": "No new row overlap, page collision or pagination change observed on either changed final page; shifted following rows remain clear."
+  },
+  "unchangedPagePNGBindings": [
+    {
+      "partID": "flutes",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/flutes/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/flutes/page-01.png",
+      "beforeSHA256": "7bbc7f30afe7310a78b9f760c778e6578499b8e4e3e1fd65b32311869d46e21b",
+      "afterSHA256": "7bbc7f30afe7310a78b9f760c778e6578499b8e4e3e1fd65b32311869d46e21b"
+    },
+    {
+      "partID": "flutes",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/flutes/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/flutes/page-02.png",
+      "beforeSHA256": "e7108beb3801cfaad37ea2a2d9273e36f40bb940960d88f566e0f46ddfe3e383",
+      "afterSHA256": "e7108beb3801cfaad37ea2a2d9273e36f40bb940960d88f566e0f46ddfe3e383"
+    },
+    {
+      "partID": "flutes",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/flutes/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/flutes/page-03.png",
+      "beforeSHA256": "3e8753388af836d4bd8b2f75b264c91146a031dc4f4b69076da0221d69fb68ba",
+      "afterSHA256": "3e8753388af836d4bd8b2f75b264c91146a031dc4f4b69076da0221d69fb68ba"
+    },
+    {
+      "partID": "oboes",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/oboes/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/oboes/page-01.png",
+      "beforeSHA256": "e8c86b9786b784e2891108a7f03e470d97fc73e7d51e223784920626963415f9",
+      "afterSHA256": "e8c86b9786b784e2891108a7f03e470d97fc73e7d51e223784920626963415f9"
+    },
+    {
+      "partID": "oboes",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/oboes/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/oboes/page-02.png",
+      "beforeSHA256": "fe380f9b22527c53ea8de36a01a545a2bacec1c4cfe53ed4859e15c14b210e6a",
+      "afterSHA256": "fe380f9b22527c53ea8de36a01a545a2bacec1c4cfe53ed4859e15c14b210e6a"
+    },
+    {
+      "partID": "oboes",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/oboes/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/oboes/page-03.png",
+      "beforeSHA256": "6d07efe1275d49a944c4f2e24db8458002fa7119522a5b573372525f015c2af3",
+      "afterSHA256": "6d07efe1275d49a944c4f2e24db8458002fa7119522a5b573372525f015c2af3"
+    },
+    {
+      "partID": "clarinets",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/clarinets/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/clarinets/page-01.png",
+      "beforeSHA256": "89dd6ea7137e35d1d2ec48db9542091b9076521e2cad0b68fa53f2a4ccac1079",
+      "afterSHA256": "89dd6ea7137e35d1d2ec48db9542091b9076521e2cad0b68fa53f2a4ccac1079"
+    },
+    {
+      "partID": "clarinets",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/clarinets/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/clarinets/page-02.png",
+      "beforeSHA256": "f5f1b4e1ce9a6a3ca661ae18a2d3977fd170d8b2165103a655dead6e48c20bba",
+      "afterSHA256": "f5f1b4e1ce9a6a3ca661ae18a2d3977fd170d8b2165103a655dead6e48c20bba"
+    },
+    {
+      "partID": "clarinets",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/clarinets/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/clarinets/page-03.png",
+      "beforeSHA256": "ee99aa2332c00bda9a8c0ef37559acbde41c0c6eb5ee7f382da4c527450ed57e",
+      "afterSHA256": "ee99aa2332c00bda9a8c0ef37559acbde41c0c6eb5ee7f382da4c527450ed57e"
+    },
+    {
+      "partID": "bassoons",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bassoons/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bassoons/page-01.png",
+      "beforeSHA256": "1ae944d11511b184a52f99bcbcc50b4e03e14f14062ebe4e65839e2809daeb37",
+      "afterSHA256": "1ae944d11511b184a52f99bcbcc50b4e03e14f14062ebe4e65839e2809daeb37"
+    },
+    {
+      "partID": "bassoons",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bassoons/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bassoons/page-02.png",
+      "beforeSHA256": "67653297b00070f50b51e1d48e8cb7083ca1b0131e2f54a4b3c71ea46895666a",
+      "afterSHA256": "67653297b00070f50b51e1d48e8cb7083ca1b0131e2f54a4b3c71ea46895666a"
+    },
+    {
+      "partID": "bassoons",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bassoons/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bassoons/page-03.png",
+      "beforeSHA256": "ce9ea540e3ea334fd0bcf3f2e7bfa7f358a115430456aa78b316833625dba6ee",
+      "afterSHA256": "ce9ea540e3ea334fd0bcf3f2e7bfa7f358a115430456aa78b316833625dba6ee"
+    },
+    {
+      "partID": "contrabassoon",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/contrabassoon/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/contrabassoon/page-01.png",
+      "beforeSHA256": "e759494c981e89dee58c010e024b1c97908482cfd439f5e1c56df4e379576079",
+      "afterSHA256": "e759494c981e89dee58c010e024b1c97908482cfd439f5e1c56df4e379576079"
+    },
+    {
+      "partID": "contrabassoon",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/contrabassoon/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/contrabassoon/page-02.png",
+      "beforeSHA256": "8ce3fac3c63e86afe96cdcc98e873d2a3d0ab588812abafac99a542fbbe9ee85",
+      "afterSHA256": "8ce3fac3c63e86afe96cdcc98e873d2a3d0ab588812abafac99a542fbbe9ee85"
+    },
+    {
+      "partID": "contrabassoon",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/contrabassoon/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/contrabassoon/page-03.png",
+      "beforeSHA256": "ef1ef0325d7ecff85aa76873ea7d6b5c6bb2ac555a29a0a81973d184721fe799",
+      "afterSHA256": "ef1ef0325d7ecff85aa76873ea7d6b5c6bb2ac555a29a0a81973d184721fe799"
+    },
+    {
+      "partID": "horns12",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/horns12/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/horns12/page-01.png",
+      "beforeSHA256": "1a0fb9fda6dac3d62af19ddfec9da647bc0a2ee77070d188de3114e289de3a9e",
+      "afterSHA256": "1a0fb9fda6dac3d62af19ddfec9da647bc0a2ee77070d188de3114e289de3a9e"
+    },
+    {
+      "partID": "horns12",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/horns12/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/horns12/page-02.png",
+      "beforeSHA256": "e995748ae2e23147851d19816f96a9bf83836174e100bd574ef3684838bf405e",
+      "afterSHA256": "e995748ae2e23147851d19816f96a9bf83836174e100bd574ef3684838bf405e"
+    },
+    {
+      "partID": "horns34",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/horns34/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/horns34/page-01.png",
+      "beforeSHA256": "023d843f5d62719f59761a684d48b6827c68422efe09f0ba38e5e26132820ab9",
+      "afterSHA256": "023d843f5d62719f59761a684d48b6827c68422efe09f0ba38e5e26132820ab9"
+    },
+    {
+      "partID": "horns34",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/horns34/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/horns34/page-02.png",
+      "beforeSHA256": "6c5228fa5a8a5d522a4bc624e3dccc043c0323a909ffaf365d0cd5ed228eeadf",
+      "afterSHA256": "6c5228fa5a8a5d522a4bc624e3dccc043c0323a909ffaf365d0cd5ed228eeadf"
+    },
+    {
+      "partID": "horns34",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/horns34/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/horns34/page-03.png",
+      "beforeSHA256": "675bb2a0e1905f2b2aa7439abd5a730f242c2cf550c13a8f1fb9f70f9ef6409e",
+      "afterSHA256": "675bb2a0e1905f2b2aa7439abd5a730f242c2cf550c13a8f1fb9f70f9ef6409e"
+    },
+    {
+      "partID": "trumpets",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trumpets/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trumpets/page-01.png",
+      "beforeSHA256": "c58ef470a577e914076b24314706496c6be96a0bdd6b238f2725cecc7fc6d4ac",
+      "afterSHA256": "c58ef470a577e914076b24314706496c6be96a0bdd6b238f2725cecc7fc6d4ac"
+    },
+    {
+      "partID": "trumpets",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trumpets/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trumpets/page-02.png",
+      "beforeSHA256": "48ab6ef60c42c366195689b161ec71acc095c596636f47d76ef8a004c83463f8",
+      "afterSHA256": "48ab6ef60c42c366195689b161ec71acc095c596636f47d76ef8a004c83463f8"
+    },
+    {
+      "partID": "trumpets",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trumpets/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trumpets/page-03.png",
+      "beforeSHA256": "618cc29a431f38cd755af848e809cb537237fe405dd9f90b772a2d5d77267777",
+      "afterSHA256": "618cc29a431f38cd755af848e809cb537237fe405dd9f90b772a2d5d77267777"
+    },
+    {
+      "partID": "trombones12",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trombones12/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trombones12/page-01.png",
+      "beforeSHA256": "c6d7d482aa8266e5fc11b1529f8e0a83a8c486c5cde42da5d772b1d713758bbf",
+      "afterSHA256": "c6d7d482aa8266e5fc11b1529f8e0a83a8c486c5cde42da5d772b1d713758bbf"
+    },
+    {
+      "partID": "trombones12",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trombones12/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trombones12/page-02.png",
+      "beforeSHA256": "a2c4464077f24383b7c3745e2aa3b7b5d6dd5d2809566d783007a3a521c1d841",
+      "afterSHA256": "a2c4464077f24383b7c3745e2aa3b7b5d6dd5d2809566d783007a3a521c1d841"
+    },
+    {
+      "partID": "trombone3-tuba",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trombone3-tuba/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trombone3-tuba/page-01.png",
+      "beforeSHA256": "73ac720bcf9cc9592e5133e01f8fc8240e5ff1c1f63a0797214bc75f8677a1db",
+      "afterSHA256": "73ac720bcf9cc9592e5133e01f8fc8240e5ff1c1f63a0797214bc75f8677a1db"
+    },
+    {
+      "partID": "trombone3-tuba",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trombone3-tuba/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trombone3-tuba/page-02.png",
+      "beforeSHA256": "5ab9909d9611cdac907ee75c84041ee8891f72517de0a8275dfbdc9891f9ba76",
+      "afterSHA256": "5ab9909d9611cdac907ee75c84041ee8891f72517de0a8275dfbdc9891f9ba76"
+    },
+    {
+      "partID": "trombone3-tuba",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/trombone3-tuba/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/trombone3-tuba/page-03.png",
+      "beforeSHA256": "e87e8d5c466e23bcf71fb6081016473fc7f9e9b6ec0ab223cbb094ab63cc70d8",
+      "afterSHA256": "e87e8d5c466e23bcf71fb6081016473fc7f9e9b6ec0ab223cbb094ab63cc70d8"
+    },
+    {
+      "partID": "timpani",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/timpani/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/timpani/page-01.png",
+      "beforeSHA256": "7a21ec996d7ec91c785e0bb04a067408ef224385743465bd9250518240d6044e",
+      "afterSHA256": "7a21ec996d7ec91c785e0bb04a067408ef224385743465bd9250518240d6044e"
+    },
+    {
+      "partID": "timpani",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/timpani/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/timpani/page-02.png",
+      "beforeSHA256": "f7b1964d4142f2006ed76cc7cf4bdb77ee2a01b50e56da766762e0001de0b5de",
+      "afterSHA256": "f7b1964d4142f2006ed76cc7cf4bdb77ee2a01b50e56da766762e0001de0b5de"
+    },
+    {
+      "partID": "timpani",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/timpani/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/timpani/page-03.png",
+      "beforeSHA256": "2b5f50607192575734b22f126af994d889d65b460da3b7aac4b135dee394f761",
+      "afterSHA256": "2b5f50607192575734b22f126af994d889d65b460da3b7aac4b135dee394f761"
+    },
+    {
+      "partID": "soprano",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/soprano/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/soprano/page-01.png",
+      "beforeSHA256": "b4c20cd20d8514a22910f850ab40a92a3ded70fc280d3b8e8cf6326228d3e91c",
+      "afterSHA256": "b4c20cd20d8514a22910f850ab40a92a3ded70fc280d3b8e8cf6326228d3e91c"
+    },
+    {
+      "partID": "soprano",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/soprano/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/soprano/page-02.png",
+      "beforeSHA256": "17b18115533ef456c183ba95566574ea1a85eecb06d56f99ee5c26a6b428ec66",
+      "afterSHA256": "17b18115533ef456c183ba95566574ea1a85eecb06d56f99ee5c26a6b428ec66"
+    },
+    {
+      "partID": "soprano",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/soprano/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/soprano/page-03.png",
+      "beforeSHA256": "cf961e3f5f32af9b832fb268b8be7af22fd61fed90d93e29c5b47bf3c08644a1",
+      "afterSHA256": "cf961e3f5f32af9b832fb268b8be7af22fd61fed90d93e29c5b47bf3c08644a1"
+    },
+    {
+      "partID": "alto-section",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/alto-section/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/alto-section/page-01.png",
+      "beforeSHA256": "93e49a730602463f71c97f3f60e14bce41dbf30e407c1256ac8bd752482f0f97",
+      "afterSHA256": "93e49a730602463f71c97f3f60e14bce41dbf30e407c1256ac8bd752482f0f97"
+    },
+    {
+      "partID": "alto-section",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/alto-section/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/alto-section/page-02.png",
+      "beforeSHA256": "d8d98d17548302d28c8cd8b086d4bb9b0874ac63c9e1b207747bc4667f4398f6",
+      "afterSHA256": "d8d98d17548302d28c8cd8b086d4bb9b0874ac63c9e1b207747bc4667f4398f6"
+    },
+    {
+      "partID": "alto-section",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/alto-section/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/alto-section/page-03.png",
+      "beforeSHA256": "b583fb22def601eb3869d7387382ee329aa9be7992ccb2bb5fa0aff12bed6699",
+      "afterSHA256": "b583fb22def601eb3869d7387382ee329aa9be7992ccb2bb5fa0aff12bed6699"
+    },
+    {
+      "partID": "alto-section",
+      "page": 4,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/alto-section/page-04.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/alto-section/page-04.png",
+      "beforeSHA256": "bdc454e911cb2544fe0859015a285288b23ab2ba4b6e6507b1d9cacd27f9c453",
+      "afterSHA256": "bdc454e911cb2544fe0859015a285288b23ab2ba4b6e6507b1d9cacd27f9c453"
+    },
+    {
+      "partID": "tenor",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/tenor/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/tenor/page-01.png",
+      "beforeSHA256": "34d388026bf1891e4762005b123f274ca24c2876f369389e7eec75fcc6e60860",
+      "afterSHA256": "34d388026bf1891e4762005b123f274ca24c2876f369389e7eec75fcc6e60860"
+    },
+    {
+      "partID": "tenor",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/tenor/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/tenor/page-02.png",
+      "beforeSHA256": "ad09d2629a7d79efcc3680d7e55ec95095ba5033d622fd016639f653a6f51d30",
+      "afterSHA256": "ad09d2629a7d79efcc3680d7e55ec95095ba5033d622fd016639f653a6f51d30"
+    },
+    {
+      "partID": "tenor",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/tenor/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/tenor/page-03.png",
+      "beforeSHA256": "776d168e68618dc5cf28d1274646fc34b08b9a62fc71f85f5108d2db6593d574",
+      "afterSHA256": "776d168e68618dc5cf28d1274646fc34b08b9a62fc71f85f5108d2db6593d574"
+    },
+    {
+      "partID": "bass-section",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass-section/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass-section/page-01.png",
+      "beforeSHA256": "38fdae4da4b8457638f38db00d93412a7987a30fecb51cdc64b1f35ef8369a83",
+      "afterSHA256": "38fdae4da4b8457638f38db00d93412a7987a30fecb51cdc64b1f35ef8369a83"
+    },
+    {
+      "partID": "bass-section",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass-section/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass-section/page-02.png",
+      "beforeSHA256": "2a2e9e3d1cf8ecbe07eae80bae0f6c462515ef7e6a38c083e1380a197f5a6ab9",
+      "afterSHA256": "2a2e9e3d1cf8ecbe07eae80bae0f6c462515ef7e6a38c083e1380a197f5a6ab9"
+    },
+    {
+      "partID": "bass-section",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass-section/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass-section/page-03.png",
+      "beforeSHA256": "94d02ad8f1e5c885664a900913d0b36fe5d05eb09fe8685c07a5515db54563b5",
+      "afterSHA256": "94d02ad8f1e5c885664a900913d0b36fe5d05eb09fe8685c07a5515db54563b5"
+    },
+    {
+      "partID": "bass-section",
+      "page": 4,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass-section/page-04.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass-section/page-04.png",
+      "beforeSHA256": "b0d1da97afd8c4acd708a49a277312ef681913bf59bf78efc2206546d4d1a8ed",
+      "afterSHA256": "b0d1da97afd8c4acd708a49a277312ef681913bf59bf78efc2206546d4d1a8ed"
+    },
+    {
+      "partID": "violin1",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/violin1/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/violin1/page-01.png",
+      "beforeSHA256": "1b845b84ea0f0c3d18e5e309bc15a30a6d84d7d89dba241b16e8e886df131181",
+      "afterSHA256": "1b845b84ea0f0c3d18e5e309bc15a30a6d84d7d89dba241b16e8e886df131181"
+    },
+    {
+      "partID": "violin1",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/violin1/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/violin1/page-02.png",
+      "beforeSHA256": "1bd93e930ebf2737e3fca5ae85286ff6d0a24cb2f499c163d92ed27b3620ed19",
+      "afterSHA256": "1bd93e930ebf2737e3fca5ae85286ff6d0a24cb2f499c163d92ed27b3620ed19"
+    },
+    {
+      "partID": "violin1",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/violin1/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/violin1/page-03.png",
+      "beforeSHA256": "b28536d2886aee363ddf5196533c272654f61e6ad871269dba11ae80fdf7e7f1",
+      "afterSHA256": "b28536d2886aee363ddf5196533c272654f61e6ad871269dba11ae80fdf7e7f1"
+    },
+    {
+      "partID": "violin2",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/violin2/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/violin2/page-01.png",
+      "beforeSHA256": "3c3d6c3f7deb883b2a4f5b1fe3c1993d660c8d71bbd4cabd7c9858ba6eb80312",
+      "afterSHA256": "3c3d6c3f7deb883b2a4f5b1fe3c1993d660c8d71bbd4cabd7c9858ba6eb80312"
+    },
+    {
+      "partID": "violin2",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/violin2/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/violin2/page-02.png",
+      "beforeSHA256": "e1d71e7b1049d44ec41a21bc98e82d99bbcb4b054a60498a6561b59ad0a5af26",
+      "afterSHA256": "e1d71e7b1049d44ec41a21bc98e82d99bbcb4b054a60498a6561b59ad0a5af26"
+    },
+    {
+      "partID": "violin2",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/violin2/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/violin2/page-03.png",
+      "beforeSHA256": "2403aa0077bf35f6f17fb7b6d86617b8a8bb680f42f8a7f45eb24a2e0152c34f",
+      "afterSHA256": "2403aa0077bf35f6f17fb7b6d86617b8a8bb680f42f8a7f45eb24a2e0152c34f"
+    },
+    {
+      "partID": "viola",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/viola/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/viola/page-01.png",
+      "beforeSHA256": "fe0de3d4ad6054a060314f8339324ab63506609e7d922c2756d919871f478f42",
+      "afterSHA256": "fe0de3d4ad6054a060314f8339324ab63506609e7d922c2756d919871f478f42"
+    },
+    {
+      "partID": "viola",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/viola/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/viola/page-02.png",
+      "beforeSHA256": "b7f044d6641f74c8bb774445c3577ae99a7f63c8cb8d378c18f74e49d43e50e5",
+      "afterSHA256": "b7f044d6641f74c8bb774445c3577ae99a7f63c8cb8d378c18f74e49d43e50e5"
+    },
+    {
+      "partID": "viola",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/viola/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/viola/page-03.png",
+      "beforeSHA256": "d4a18eb7fbb11268cfd21bb66358d548d482cadbbc9aadcc061008bd9798d4eb",
+      "afterSHA256": "d4a18eb7fbb11268cfd21bb66358d548d482cadbbc9aadcc061008bd9798d4eb"
+    },
+    {
+      "partID": "cello",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/cello/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/cello/page-01.png",
+      "beforeSHA256": "486319cb4733cc28cdb0ee4f5daf55557e208ed1836cc208a4dfd6175a5aac17",
+      "afterSHA256": "486319cb4733cc28cdb0ee4f5daf55557e208ed1836cc208a4dfd6175a5aac17"
+    },
+    {
+      "partID": "cello",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/cello/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/cello/page-02.png",
+      "beforeSHA256": "126e6c6b5cf664965fadf163ad76e4a42b87319353eb53bd879fdf57775b6db4",
+      "afterSHA256": "126e6c6b5cf664965fadf163ad76e4a42b87319353eb53bd879fdf57775b6db4"
+    },
+    {
+      "partID": "cello",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/cello/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/cello/page-03.png",
+      "beforeSHA256": "5c1d63e88d1fbc64e092e1e667534bcc7c7853995f859cd4740a4ebb39d54baa",
+      "afterSHA256": "5c1d63e88d1fbc64e092e1e667534bcc7c7853995f859cd4740a4ebb39d54baa"
+    },
+    {
+      "partID": "bass",
+      "page": 1,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass/page-01.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass/page-01.png",
+      "beforeSHA256": "e762b5df109b7d3b3518721db11daf135085421ebc59920a6a94df360a730320",
+      "afterSHA256": "e762b5df109b7d3b3518721db11daf135085421ebc59920a6a94df360a730320"
+    },
+    {
+      "partID": "bass",
+      "page": 2,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass/page-02.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass/page-02.png",
+      "beforeSHA256": "f2532d356393ba6dced996f00c68a541791a9f1255694a06a962fafe86465e28",
+      "afterSHA256": "f2532d356393ba6dced996f00c68a541791a9f1255694a06a962fafe86465e28"
+    },
+    {
+      "partID": "bass",
+      "page": 3,
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/output-review/bass/page-03.png",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/output-review/bass/page-03.png",
+      "beforeSHA256": "21c1ea4d3fdcd77f8712146cf75dd9d108b1a505f0531a5c52a0e6d62094e329",
+      "afterSHA256": "21c1ea4d3fdcd77f8712146cf75dd9d108b1a505f0531a5c52a0e6d62094e329"
+    }
+  ],
+  "pdfBindings": [
+    {
+      "partID": "flutes",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Flutes I\u2013II - piccolo doubling.pdf",
+      "beforeSHA256": "3c055b924b88ab7c4385b74f219815502fef3935b9dfd45ac4facf3b2d1336e5",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Flutes I\u2013II - piccolo doubling.pdf",
+      "afterSHA256": "e099b753220048055b20ecb68e8b1e542872184f636962a4fefe066ed9c0627b"
+    },
+    {
+      "partID": "oboes",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Oboes I\u2013II.pdf",
+      "beforeSHA256": "82b4fde9afdaf58b1375b8b3fdb5abec66caf59dfd5be304f92a855f6f15322a",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Oboes I\u2013II.pdf",
+      "afterSHA256": "1c82786fd0b5fbb6a3d5fe17805d6779245528cc5399b5198bfc765592439cf4"
+    },
+    {
+      "partID": "clarinets",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Clarinets I\u2013II.pdf",
+      "beforeSHA256": "e7c1ae96a215f3000c8b55018261858275ce93a86a7a0981030caec85d7f8c6f",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Clarinets I\u2013II.pdf",
+      "afterSHA256": "14afee21026455f53a76e4cc64d0ba2a92d568f23212d823ba52101cdc5cae15"
+    },
+    {
+      "partID": "bassoons",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Bassoons I\u2013II.pdf",
+      "beforeSHA256": "25556d23f4c09eed16b4385ab5289c1377bb8437f8d826ff9eb6c0a4c9c7bc3b",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Bassoons I\u2013II.pdf",
+      "afterSHA256": "d31dc4fae1bdd3f2eda1302f1358638aea4f6f5a4a9265f682ac9ff501940bfa"
+    },
+    {
+      "partID": "contrabassoon",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Contrabassoon.pdf",
+      "beforeSHA256": "c884157c764c784c3d6791c45d7ebd9e1e93b11da947aed98fc2305ce97327eb",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Contrabassoon.pdf",
+      "afterSHA256": "d8428a88e45a537929d79b065fd62fdc3f722cad834f62774e22d927c86eb7ba"
+    },
+    {
+      "partID": "horns12",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Horns I\u2013II.pdf",
+      "beforeSHA256": "513a5c325c9e481c64d600fc72a4b5232225bc41793250a0c76bbc25fd7232ca",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Horns I\u2013II.pdf",
+      "afterSHA256": "3d3fedd0fbd6be83c3c874793bff79a8bdab37d35025b0feee4be322c3914f6a"
+    },
+    {
+      "partID": "horns34",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Horns III\u2013IV.pdf",
+      "beforeSHA256": "9d21f6a723f478f6495a43576ccb77c10fdf905bcf5c01f3595e96099256f965",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Horns III\u2013IV.pdf",
+      "afterSHA256": "581a4eac0de7ed3d92785c3d129cd70fb0a58a2e4cc48b1c50c1ccd11eb4626c"
+    },
+    {
+      "partID": "trumpets",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Trumpets I\u2013II.pdf",
+      "beforeSHA256": "2a72e00218cd91cb41941d7032d67378ec2624a0aa01466a943bf24213607e0f",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Trumpets I\u2013II.pdf",
+      "afterSHA256": "73e44619ccc22892b899e2e0ebaaebc1595c76b7f9a6d8002847ad69bcaff107"
+    },
+    {
+      "partID": "trombones12",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Trombones I\u2013II.pdf",
+      "beforeSHA256": "a0bfe761778d20b31e91476c25eff57fad924d9aa753c43c31d14ac7616d4105",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Trombones I\u2013II.pdf",
+      "afterSHA256": "0a19f2dc81bad597d9fac110c6c857af60b5d44dd76ca8b0391637bf1dd35c5b"
+    },
+    {
+      "partID": "trombone3-tuba",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Trombone III and bass tuba.pdf",
+      "beforeSHA256": "03b46f71189ed0a2d870d312140ec0726104707286da0cf9304b9ad717b9d637",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Trombone III and bass tuba.pdf",
+      "afterSHA256": "39b27848b55e20b8f77df9b2f6c06960c2b157d9026da9d2e917a2e887fae74a"
+    },
+    {
+      "partID": "timpani",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Timpani.pdf",
+      "beforeSHA256": "d99b4bcb14e5c425b391ff017a0b35a8492229648e6c019b9fab95a9ceb08554",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Timpani.pdf",
+      "afterSHA256": "5788a482ad36aa032da174f730c3ebb37b436d0fcb903f6ea73dc8af88b73b0f"
+    },
+    {
+      "partID": "soprano",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Soprano.pdf",
+      "beforeSHA256": "d47f978e0317ed553ff3926ac3580f68b5b1e4305825e21a781da81ab40df2b7",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Soprano.pdf",
+      "afterSHA256": "ee2dd523c03fef56ec129242550d2c69bd40e9d946c08e69883a7cdfad9cef79"
+    },
+    {
+      "partID": "alto-section",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Altos I\u2013II (combined or divided).pdf",
+      "beforeSHA256": "4ecc2d51223d1d4f13672e217ae6caab0375eaf069f741acda2659d7a0a1a03b",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Altos I\u2013II (combined or divided).pdf",
+      "afterSHA256": "44b579228bbc9300d73b5a67e11e502a105ee7ae6560f98daef05fe9fb23c3c4"
+    },
+    {
+      "partID": "tenor",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Tenor.pdf",
+      "beforeSHA256": "d63eb06db3bfeee9dca1ccf3d2810ba94ecbb4da38ef3553a770282bda1e86a7",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Tenor.pdf",
+      "afterSHA256": "8fa9d4fff892df70e37cff2b2f4f1d756b361aafd0cb6a73addb2f9652deb8fb"
+    },
+    {
+      "partID": "bass-section",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Basses I\u2013II (combined or divided).pdf",
+      "beforeSHA256": "68d7d146c64fc16893f9918a094d690e2f5964b4dde6cfc4ca10e0f121b79131",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Basses I\u2013II (combined or divided).pdf",
+      "afterSHA256": "7cc984bc77cc66b0c54fde8c7ceb895d4a4c296fb678f4b441b5fa9d8c539b22"
+    },
+    {
+      "partID": "violin1",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Violin I.pdf",
+      "beforeSHA256": "c85e0eda944c9846fab2e9b65e9f251b5391a2d8d5542a237152f614f0f58598",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Violin I.pdf",
+      "afterSHA256": "56540aae23b2c4ab62c6f47de934ae8c3c12a7e800131e72418d239e22eee8ce"
+    },
+    {
+      "partID": "violin2",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Violin II.pdf",
+      "beforeSHA256": "2f45a66bc988afa0149204ec0ceace2729690517186eb04b29300887085f2582",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Violin II.pdf",
+      "afterSHA256": "8c1e7fecd7b8458cfb933e97ff5e8318e9170859d5a60c7f1595e92b969d2cf0"
+    },
+    {
+      "partID": "viola",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Viola.pdf",
+      "beforeSHA256": "84c50f135c0c558673994d34f2c3deef279e892f8a9c0a54ce042569450978c9",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Viola.pdf",
+      "afterSHA256": "b59d8733108dfa7603acf7b3976dea5a3451322a9adce570f9ffab0538857619"
+    },
+    {
+      "partID": "cello",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Violoncello.pdf",
+      "beforeSHA256": "8bfd4790583e145c34e83bde357f3f80c5f3465277c26100202daaa34936263f",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Violoncello.pdf",
+      "afterSHA256": "8ebee95dcea4f8499dd8bebe9082657bc8775385798624eb064c562dd5ea8979"
+    },
+    {
+      "partID": "bass",
+      "beforePath": ".build/brahms-parzen109041-complete-native-2026-10-03/dedup-stage/parts/Double bass.pdf",
+      "beforeSHA256": "2eed90c318e301ee421163136fe225b7801fdaf9ce523e3a39b0d3f7e8514a65",
+      "afterPath": ".build/brahms-parzen109041-complete-native-2026-10-03/final-reviewed-stage/parts/Double bass.pdf",
+      "afterSHA256": "f587ec1b017b06b543d606aa546383da94f53e160e452c1747b640bd8fd6d38d"
+    }
+  ],
+  "limits": [
+    "Existing whole-neighbor rows, foreign technique/direction carryovers and fragments recorded in initial 312 receipt are not resolved by these two repairs.",
+    "PDF rows/pages were viewed from exporter-created hash-bound renders; this reviewer did not rerender or re-export.",
+    "No production code or crop was edited by this reviewer."
+  ]
+}

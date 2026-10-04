@@ -1,0 +1,61 @@
+{
+  "scope": "Root independent check after agent review; private matcher candidate remains unshipped.",
+  "matcherEvidence": [
+    {
+      "path": "Tests/quality_control/parzen-template-anchor-v1-v2-2026-10-03/manifest.json",
+      "sha256": "7e65b896dbafa4c0901fd58f657d182ad7b1ffca42d24c2c076174f341daeb7d",
+      "archivePayloadsIndependentlyVerified": 186
+    },
+    {
+      "path": "Tests/quality_control/parzen-template-anchor-v3-2026-10-03/manifest.json",
+      "sha256": "b3fb53fc227331a8f38de267495dc739235d375e53f697e6767165888e8b325b",
+      "archivePayloadsIndependentlyVerified": 127
+    }
+  ],
+  "matcherRootFindings": {
+    "all20ProposalsMatchFrozenSourceIdentityAndStaffCounts": true,
+    "unseededSystemCount": 24,
+    "retainedAll6ShippingProposals": true,
+    "newBarCountsOrStarts": false,
+    "originalSourcePanelsViewed": [
+      {
+        "path": ".build/parzen-template-probe-2026-10-03/candidate-v3/source-review/contact-01.png",
+        "sha256": "69dd7e49de957966e4ab1deb7ed5a9b70db45cb94c062ea03237d9e3f705c9b4"
+      },
+      {
+        "path": ".build/parzen-template-probe-2026-10-03/candidate-v3/source-review/contact-02.png",
+        "sha256": "2d0826e4a7f38183ab22fa09df8af95da9809f4fdc9c29cbabb60bd8207e395b"
+      },
+      {
+        "path": ".build/parzen-template-probe-2026-10-03/candidate-v3/source-review/contact-09.png",
+        "sha256": "ddb9f8e5fab71568c552424a5060ac41862d899d22a7b1fe102ef9c1cf944ef5"
+      }
+    ],
+    "visualScope": "Twelve displayed original clef contexts: wrong interior origin, thick/double boundaries, isolated bracket, key-change neighbors. Candidate patches target intended clefs in these contexts; labels and key-signature pieces can still enter. Remaining source panels were reviewed by author, not independently by root.",
+    "staticDiff": "Full production-to-v3 matcher diff read. Candidate changes patch origins only after source-boundary evidence, requires matching origin provenance for comparisons, keeps group/crop geometry and thresholds. Diagnostic calls remain in private snapshot; production integration and cancellation responsiveness still require review before shipping.",
+    "historicalScope": "Author reports32 comparable outputs unchanged, assessor31passes/1existing profile-contract conflict; root verified immutable replay payload hashes without rerunning Swift or claiming all32 pass."
+  },
+  "parzenEvidence": {
+    "nativeArchivePayloadCount": 943,
+    "nativeArchivePayloadsAllIndependentlyReadAndHashMatched": true,
+    "archiveSHA256": "5ea3d97c5ee8f74e0b71540e95bdf0abf0c33a603d171d1b7f1742be1bf026ec",
+    "peerManifestSHA256": "0e3ae8e7f4b5cdac2d139c4b143f1ef40a8ae71592583df8bd12858db6f65875",
+    "peerFinalFilesIndependentlyVerified": 32,
+    "peerInitialArchiveMembersVerified": 20,
+    "rootFinalCopyReviewSHA256": "faa1771bbff542623c0d9f926160d6b90dd606e2647eb5c08cdf010a9d4f35eb",
+    "finalQCPackagingManifestSHA256": "858c4a9ebaaa263ee482cc77887b314d2cb345b3de3420f5a00779b1cfe298f9",
+    "finalQCPayloadsVerified": 31,
+    "deliveryHashesSHA256": "8b106eff43cbeb1a1869fb70a98961613a295b7a8458745ced6cc3ffeb1f7cab",
+    "deliveredFilesIndependentlyVerified": 29,
+    "chunkAssemblyScriptExecuted": true,
+    "assembledArchiveBytesExactlyMatchReviewedArchive": true
+  },
+  "previewCropFeature": {
+    "downloadSHA256": "db824e17bcb11f909110273a8dba68f4fd1693bf7f517b72a182fdad3ac2eba0",
+    "zipIntegrityPassed": true,
+    "executableSHA256": "2ce342abad62fcf31af67d089839a5808c26d01fcbd58689e3d877460e9422e6",
+    "sourceAndNativeTestHashesMatchIndependentReviewedVersions": true,
+    "nativeTestsAlreadyPassed": 34,
+    "currentTurnScope": "Verified existing package and reviewed source bindings; no app source edits, no redundant test rerun, no live user window interaction."
+  }
+}

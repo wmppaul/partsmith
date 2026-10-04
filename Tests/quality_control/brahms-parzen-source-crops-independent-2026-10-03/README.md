@@ -1,0 +1,9 @@
+# Parzen independent source crop review
+
+All 27 original source pages and 312 assigned source crop rows were directly inspected. The 234 vocal/string rows were frozen before the extra 78 brass/percussion rows were allocated and reviewed. Root owns the other 208 rows; this receipt does not claim to have viewed them. The exporter owns complete PDF-page review.
+
+One source-owned omission was found: page 24 Trombone I/II cuts the lower part of `dim.` at bottom 343.1928 pt. The independently frozen original-source envelope is [77,339,95.5,346] pt; the last measured ink cell ends 345.875 pt. The text crosses a neighboring Tuba staff line, so complete retention also preserves some foreign line ink. Final repair review is pending separately.
+
+No own-ink omission was observed in the other 311 rows. This is bounded visual evidence, not a guarantee of every source pixel or a clean extraction. Four string rows retain whole neighboring staves (page 13 ViolinII/Viola and page 27 Cello/DoubleBass). Misleading foreign instructions remain, including page 19 Cello `pizz.`, page 24 Viola `arco`, page 21 Timpani `Sehr weich und gebunden`, and page 16 Timpani `molto marc.`. Other adjacent dynamics, ties, lyrics and staff fragments remain documented in the per-row receipts.
+
+The source PDF SHA is 62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d. All 312 reviewed context hashes and original-point rectangles match the author's frozen context index. The exact rendered contexts and full original pages are retained once in the main [workflow evidence](../parzen109041-complete-native-2026-10-03/native-evidence.tar.xz). This compact receipt archives only independent source obligations, findings and detail images. No production code, project or source crop was edited by this reviewer.

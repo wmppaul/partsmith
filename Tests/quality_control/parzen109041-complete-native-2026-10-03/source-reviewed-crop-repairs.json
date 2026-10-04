@@ -1,0 +1,61 @@
+[
+  {
+    "bandID": "p24-s1-trombones12",
+    "physicalPage": 24,
+    "partID": "trombones12",
+    "candidateIDs": [
+      8
+    ],
+    "beforeRect": [
+      0,
+      299.8172169811321,
+      595.2,
+      343.1928301886793
+    ],
+    "afterRect": [
+      0,
+      299.8172169811321,
+      595.2,
+      346.5
+    ],
+    "reason": "Original-source lower letters/period of own dim. clipped; expand bottom only to retain independently frozen envelope plus 0.5 pt clearance.",
+    "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+    "guardPath": ".build/brahms-parzen-source-crops-independent-2026-10-03/p24-trombones12-dim-source-obligation.json",
+    "guardSHA256": "03c2b132a2724a41c69c876ff09ffb7691f9185088a89fba91eca1e9f2da6ad0",
+    "requiredConservativeTextEnvelope": [
+      77,
+      339,
+      95.5,
+      346
+    ],
+    "stage": "Frozen before corrected output. Original crop and deduplicated before PDFs remain untouched.",
+    "limitation": "Adds some neighboring Tuba staff-line residue; no source erasure/whiteout or global crop rule change."
+  },
+  {
+    "bandID": "p21-s1-horns12",
+    "physicalPage": 21,
+    "partID": "horns12",
+    "candidateIDs": [
+      5
+    ],
+    "beforeRect": [
+      0,
+      178.15155660377354,
+      595.2,
+      224.17207547169812
+    ],
+    "afterRect": [
+      0,
+      177.25,
+      595.2,
+      224.17207547169812
+    ],
+    "reason": "Retain own upper slur crest; independently measured required top 177.5 pt, chosen 177.25 pt adds 0.25 pt clearance.",
+    "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+    "guardPath": ".build/brahms-parzen-source-crops-independent-2026-10-03/p21-horns12-slur-source-obligation.json",
+    "guardSHA256": "e231e84b59e6b211cfb89a9e641dc228a00b7e41cd13638346e4599f349f538b",
+    "requiredUpperGuard": 177.5,
+    "stage": "Frozen before corrected output; root and peer source-only agreement.",
+    "limitation": "Slight outward top expansion may retain additional neighboring fragments; no source erasure."
+  }
+]

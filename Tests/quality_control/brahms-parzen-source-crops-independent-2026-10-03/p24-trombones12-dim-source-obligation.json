@@ -1,0 +1,26 @@
+{
+  "bandID": "p24-s1-trombones12",
+  "physicalPage": 24,
+  "sourcePDF": "sample_scores/medium_skewed/08_brahms_gesang_der_parzen_op89_imslp_109041.pdf",
+  "sourceSHA256": "62c1958522594664caa74149373b183e9a7d04674c059916d39dfda637bf041d",
+  "method": "Source-only original PDF render at 8 pixels/point; direct visual identification of Trombone I/II dim. below tied sustained chord; original source lower staff line crosses text. No candidate repaired edge viewed.",
+  "sourceDetailRect": [
+    60,
+    328,
+    106,
+    355
+  ],
+  "sourceDetail": ".build/brahms-parzen-source-crops-independent-2026-10-03/source-details/p24-trombones12-dim-original.png",
+  "sourceDetailSHA256": "93d08db247efcd0e65e7aa3102711902483569f2bab050ca8d91c99e335498fd",
+  "requiredConservativeTextEnvelope": [
+    77,
+    339,
+    95.5,
+    346
+  ],
+  "measuredLowerInkPixelCellBottom": 345.875,
+  "measurement": "Gray<190 original pixels in x90..<96; text/dot below first neighboring staffline reaches y345.75 pixel start, cell bottom345.875. White gap before next line around346.625.",
+  "initialCropBottom": 343.1928,
+  "verdict": "Own dim. lower letter strokes and period clipped; require full source envelope, independently of any chosen repair.",
+  "limitations": "Horizontal expansion retains more neighboring Tuba staff line fragments."
+}
