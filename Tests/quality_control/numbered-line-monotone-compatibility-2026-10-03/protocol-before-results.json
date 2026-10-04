@@ -1,0 +1,20 @@
+{
+  "purpose": "Additional-only numbered staff-line erasure; prevent restored nominal-line pixels from making a prior single-owner component touch another staff core.",
+  "base": ".build/numbered-line-envelope-compatibility-2026-10-03/candidate/Core",
+  "baseNativeSHA256": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f",
+  "nativeSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "change": "Initialize structural ink from existing musicalFeatureInk immediately before the measured-line removal loop. Existing curve, crossing veto, original-source connector proof, legacy feature image and matched single-owner compatibility support stay unchanged.",
+  "noNewThresholds": true,
+  "sourceCause": ".build/envelope-compatibility-corpus-2026-10-03/cause-242312/cause-manifest.json",
+  "sourceCauseSHA256": "4dfff9277acc5080192b56b8f67e0e724b96b13ea2ce72f30eeedec34ea9c892",
+  "gates": [
+    "unchanged796 permanent",
+    "unchanged36 four-core exact pixel losses",
+    "independent297 exact loss sets and separate ownership",
+    "independent336 envelopes",
+    "independent29+6",
+    "native242312 pages1/2/16 source cause must no longer produce false shared component; no new original pixel loss gate relaxation",
+    "later parent corrected39 and full36 only after limited gates pass"
+  ],
+  "diagnosticInvariant": "After identical source-based structural cuts and before component labeling, every retained structural ink pixel must also be retained in musicalFeatureInk. Instrument observer copies only, record mask hashes and output equality."
+}

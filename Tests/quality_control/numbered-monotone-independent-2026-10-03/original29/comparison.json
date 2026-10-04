@@ -1,0 +1,3546 @@
+{
+  "summary": {
+    "sourceScaleCases": 29,
+    "ownerObservations": 99,
+    "sourceBindingsExact": true,
+    "baselineCompleteOwners": 64,
+    "candidateCompleteOwners": 64,
+    "baselineLostPixels": 18018,
+    "candidateLostPixels": 18018,
+    "newlyLostPixels": 0,
+    "recoveredPixels": 0,
+    "newSpuriousWholeNeighborRelations": 0,
+    "ordinaryChangedCases": 1,
+    "removedBaselineAlternativeCases": 0,
+    "nativeElapsedSeconds": 0.4753379821777344,
+    "sourceSpanInference": "Absent from this candidate; it has no sourceSpanV4 helper or raw span records. Only baseline-compatible sole-owner supports are added."
+  },
+  "cases": [
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "original-case176",
+      "family": "original-case176",
+      "scale": 1,
+      "ordinaryComponentsEqual": false,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": [
+        {
+          "bounds": [
+            0.55,
+            0.2394736842105263,
+            0.8458333333333333,
+            0.2986842105263158
+          ],
+          "isOwnershipAlternative": true,
+          "staffIDs": [
+            0
+          ]
+        },
+        {
+          "bounds": [
+            0.55,
+            0.3026315789473684,
+            0.8375,
+            0.506578947368421
+          ],
+          "isOwnershipAlternative": true,
+          "staffIDs": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "ordinaryComponentsEqual": true,
+      "removedBaselineAlternatives": [],
+      "addedAlternativeComponents": []
+    }
+  ],
+  "owners": [
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "45e2ea019d06c3a2fc77d065d5657ccc7f20fd5b1bad5429120541a0943078fd",
+      "sourcePixels": 504,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 216,
+      "candidateLost": 216,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "e460eaae40cc4808bb13f142a84abc66cf0b9b644f4218ef19bb332b5e3d15d7",
+      "sourcePixels": 504,
+      "sourceEnvelope": [
+        190,
+        106,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 150,
+      "candidateLost": 150,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "e974db1e24593be59c33fef047c6faf03e906b4eb051e8dfb398a29fdb30306c",
+      "sourcePixels": 514,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 216,
+      "candidateLost": 216,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "b84d250339599bf172f3eef87da2c46fa1df3d7d49411350feacde721f639c97",
+      "sourcePixels": 514,
+      "sourceEnvelope": [
+        190,
+        106,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 160,
+      "candidateLost": 160,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "4097c1a820a461459951fc48956107a4f785aac6159d8167af283e262743cdec",
+      "sourcePixels": 520,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "cc7423f49bfdb41badd0b298d8e8eba48c7839607f5c86bf2b02a337fca551b2",
+      "sourcePixels": 520,
+      "sourceEnvelope": [
+        190,
+        98,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "baselineLost": 94,
+      "candidateLost": 94,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "a73e61d8972bc4ef50d6bd2eefcbf81c41fa3e776e5298c91d8b0aefce793b94",
+      "sourcePixels": 530,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 216,
+      "candidateLost": 216,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "8607a4bf0cf9ba0f426e2a5f537593e990a8bb1e9b848aca2b4a5761bb8fee9a",
+      "sourcePixels": 530,
+      "sourceEnvelope": [
+        190,
+        98,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 176,
+      "candidateLost": 176,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "ad8083b53647a44ae0293b19289af3b49735c05d5b4019bb8ad4db350104351c",
+      "sourcePixels": 654,
+      "sourceEnvelope": [
+        140,
+        89,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "6b6d21736b293a2595703a7b4888586b07e9d33c300bb576558439477b225003",
+      "sourcePixels": 654,
+      "sourceEnvelope": [
+        190,
+        90,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "baselineLost": 228,
+      "candidateLost": 228,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "7fca0b846c10522658f2ec5d16343621f53b6d93de4a8c1d08b85d432b1c72ef",
+      "sourcePixels": 664,
+      "sourceEnvelope": [
+        140,
+        89,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 216,
+      "candidateLost": 216,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "2eddab4fcdf47b07a8a2810d47542ca01f3b84bdd1fe0ea1f961e16d56167daa",
+      "sourcePixels": 664,
+      "sourceEnvelope": [
+        190,
+        90,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 310,
+      "candidateLost": 310,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "84dd1000ffb219141194cb45a643a082eb427c77eb70b51a7044ba0381100ad7",
+      "sourcePixels": 447,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 186,
+      "candidateLost": 186,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "594d1813170b1d054f0e7c9d34c8a810c354fec44438368a03c0fb0e1276019e",
+      "sourcePixels": 447,
+      "sourceEnvelope": [
+        190,
+        106,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 123,
+      "candidateLost": 123,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "15bd1ddb41101d899e3be4b2826a4c94a05c988d8b735e9db88a74ba7d241fd0",
+      "sourcePixels": 457,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 186,
+      "candidateLost": 186,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "89c5e374c976773cf2b1801dd0d16ed65a213f7444ae46de4731281f16e28ea0",
+      "sourcePixels": 457,
+      "sourceEnvelope": [
+        190,
+        106,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 133,
+      "candidateLost": 133,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "6fd53886e92fd24650c643925e6090584533799213d28a40a57ba1073c075dbe",
+      "sourcePixels": 463,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "99c61343816eb5057e5b68fec8b144eeb7a616157bc71d4633e4a1ee7bc86a64",
+      "sourcePixels": 463,
+      "sourceEnvelope": [
+        190,
+        98,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "baselineLost": 67,
+      "candidateLost": 67,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "505b12fbebe79c246d7e17ffdd3dab4e78621c8cd9c982e36189e8617877332a",
+      "sourcePixels": 473,
+      "sourceEnvelope": [
+        140,
+        89,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 186,
+      "candidateLost": 186,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "8fd84b648726df60bbf3c23117f1960853588f281a2b665923db1fb9583aa76d",
+      "sourcePixels": 473,
+      "sourceEnvelope": [
+        190,
+        98,
+        511,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 149,
+      "candidateLost": 149,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "7de080df445eff6940230d08a32e3e9170fb0112e9b42315a17d864686109abe",
+      "sourcePixels": 597,
+      "sourceEnvelope": [
+        140,
+        89,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        219.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "e039d3dfd4b2c324c40684dc07e8ec81fe48b1c5e3e33b6adfb516a89fa02aa8",
+      "sourcePixels": 597,
+      "sourceEnvelope": [
+        190,
+        90,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        111,
+        720,
+        219
+      ],
+      "baselineLost": 201,
+      "candidateLost": 201,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "606288f02a2e1295e67d613a9735b32c9160fb59af12ecb0e78b4e2aafa33622",
+      "sourcePixels": 607,
+      "sourceEnvelope": [
+        140,
+        89,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "candidateCrop": [
+        0,
+        76.62499999999999,
+        720,
+        145.12499999999997
+      ],
+      "baselineLost": 186,
+      "candidateLost": 186,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "0ce2c114385b09f88cbd90c7f266407e5a87fef6dfcc043538c07f1f696b4118",
+      "sourcePixels": 607,
+      "sourceEnvelope": [
+        190,
+        90,
+        576,
+        215
+      ],
+      "baselineCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "candidateCrop": [
+        0,
+        152,
+        720,
+        219
+      ],
+      "baselineLost": 283,
+      "candidateLost": 283,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        240,
+        256,
+        252,
+        297
+      ],
+      "baselineCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "candidateCrop": [
+        0,
+        243.625,
+        720,
+        312.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "family": "original-mixed-four-core",
+      "scale": 1,
+      "owner": 3,
+      "sourceMaskSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+      "sourcePixels": 152,
+      "sourceEnvelope": [
+        290,
+        330,
+        302,
+        371
+      ],
+      "baselineCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "candidateCrop": [
+        0,
+        317.625,
+        720,
+        381.125
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-case176",
+      "family": "original-case176",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "43a27e6a78fb5ca6e77d7aaf1f331d2a08ac112414faa11a2229bfa1451f3399",
+      "sourcePixels": 1400,
+      "sourceEnvelope": [
+        148,
+        160,
+        609,
+        539
+      ],
+      "baselineCrop": [
+        0,
+        142,
+        720,
+        241.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        142,
+        720,
+        241.00000000000003
+      ],
+      "baselineLost": 970,
+      "candidateLost": 970,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-case176",
+      "family": "original-case176",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "dcec515cd2afca0987b6e65b38d5608cb0db19cef919fa965f045c885df1c086",
+      "sourcePixels": 1400,
+      "sourceEnvelope": [
+        218,
+        190,
+        609,
+        539
+      ],
+      "baselineCrop": [
+        0,
+        211.99999999999997,
+        720,
+        395
+      ],
+      "candidateCrop": [
+        0,
+        211.99999999999997,
+        720,
+        395
+      ],
+      "baselineLost": 650,
+      "candidateLost": 650,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "original-case176",
+      "family": "original-case176",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "458daf9026dc2d167a61a6acd1bf09ac074a088aa4a2b19dd2e2777852502abb",
+      "sourcePixels": 1400,
+      "sourceEnvelope": [
+        288,
+        190,
+        609,
+        539
+      ],
+      "baselineCrop": [
+        0,
+        441.99999999999994,
+        720,
+        545
+      ],
+      "candidateCrop": [
+        0,
+        441.99999999999994,
+        720,
+        545
+      ],
+      "baselineLost": 808,
+      "candidateLost": 808,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "5b742384692adff803371127900c4aeb03c773bb97a3194b40cf18693a7e6f35",
+      "sourcePixels": 1537,
+      "sourceEnvelope": [
+        150,
+        120,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        212.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        212.00000000000003
+      ],
+      "baselineLost": 1066,
+      "candidateLost": 1066,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "024b5f84e4d1d05c662b6def45a9ac0b6313685d3fd633af508357f351e3dc9e",
+      "sourcePixels": 1537,
+      "sourceEnvelope": [
+        220,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        192.00000000000003,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        192.00000000000003,
+        720,
+        382
+      ],
+      "baselineLost": 776,
+      "candidateLost": 776,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "b35ca3c32e5101cc763e32e90bc4d039bcd0eb32448395f19ac7d4818bf7e9c2",
+      "sourcePixels": 1537,
+      "sourceEnvelope": [
+        290,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 994,
+      "candidateLost": 994,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "5b742384692adff803371127900c4aeb03c773bb97a3194b40cf18693a7e6f35",
+      "sourcePixels": 1537,
+      "sourceEnvelope": [
+        150,
+        120,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "baselineLost": 1081,
+      "candidateLost": 1081,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "024b5f84e4d1d05c662b6def45a9ac0b6313685d3fd633af508357f351e3dc9e",
+      "sourcePixels": 1537,
+      "sourceEnvelope": [
+        220,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 1031,
+      "candidateLost": 1031,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-filled",
+      "family": "new-musical-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "b35ca3c32e5101cc763e32e90bc4d039bcd0eb32448395f19ac7d4818bf7e9c2",
+      "sourcePixels": 1537,
+      "sourceEnvelope": [
+        290,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 994,
+      "candidateLost": 994,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "e7129232b87edf15281ff1036d6019cc9eccb96ce9dce53e87105bbda6717cdb",
+      "sourcePixels": 1477,
+      "sourceEnvelope": [
+        150,
+        120,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "baselineLost": 1048,
+      "candidateLost": 1048,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "4d8a1889b4b5a0719d37472d435647d95a7940a6163349690c76b1e4bb6302b9",
+      "sourcePixels": 1477,
+      "sourceEnvelope": [
+        220,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 968,
+      "candidateLost": 968,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "bbb85150652b2ddf2652b011ed202187a264bd8cf40224524bb47bfc79de305e",
+      "sourcePixels": 1477,
+      "sourceEnvelope": [
+        290,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 964,
+      "candidateLost": 964,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "e7129232b87edf15281ff1036d6019cc9eccb96ce9dce53e87105bbda6717cdb",
+      "sourcePixels": 1477,
+      "sourceEnvelope": [
+        150,
+        120,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "baselineLost": 1051,
+      "candidateLost": 1051,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "4d8a1889b4b5a0719d37472d435647d95a7940a6163349690c76b1e4bb6302b9",
+      "sourcePixels": 1477,
+      "sourceEnvelope": [
+        220,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 971,
+      "candidateLost": 971,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "music-hollow",
+      "family": "new-musical-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "bbb85150652b2ddf2652b011ed202187a264bd8cf40224524bb47bfc79de305e",
+      "sourcePixels": 1477,
+      "sourceEnvelope": [
+        290,
+        143,
+        513,
+        545
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 964,
+      "candidateLost": 964,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "5e1010f4e5f5a62941b4563e95d2840d02b3eb49e4bc981f7bc0636fa3024a91",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "d5fc76bd6f4f04cbc96ed155897d07540bc0b7611dc177713804ca15b48b254d",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "04d51ebe1634eedcb95a2deec2daf44398a39de0f0910544f91e42653703712c",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "5e1010f4e5f5a62941b4563e95d2840d02b3eb49e4bc981f7bc0636fa3024a91",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "d5fc76bd6f4f04cbc96ed155897d07540bc0b7611dc177713804ca15b48b254d",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "04d51ebe1634eedcb95a2deec2daf44398a39de0f0910544f91e42653703712c",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "090e8a06992499e198e967a29c1762bc8b1cc0d117bdb6bc184dc04cc65d42f0",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "62149e02acbbe2e78f46807b7b2f3148d079e74d87df159d3b557e832c930818",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "a972ea61d3b0b53d166c1efe0567eca5b9330fda37dea8dd605696d9f67ba129",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "090e8a06992499e198e967a29c1762bc8b1cc0d117bdb6bc184dc04cc65d42f0",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "62149e02acbbe2e78f46807b7b2f3148d079e74d87df159d3b557e832c930818",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "a972ea61d3b0b53d166c1efe0567eca5b9330fda37dea8dd605696d9f67ba129",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "5e1010f4e5f5a62941b4563e95d2840d02b3eb49e4bc981f7bc0636fa3024a91",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "d5fc76bd6f4f04cbc96ed155897d07540bc0b7611dc177713804ca15b48b254d",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "04d51ebe1634eedcb95a2deec2daf44398a39de0f0910544f91e42653703712c",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "5e1010f4e5f5a62941b4563e95d2840d02b3eb49e4bc981f7bc0636fa3024a91",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "d5fc76bd6f4f04cbc96ed155897d07540bc0b7611dc177713804ca15b48b254d",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-filled-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "04d51ebe1634eedcb95a2deec2daf44398a39de0f0910544f91e42653703712c",
+      "sourcePixels": 388,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "090e8a06992499e198e967a29c1762bc8b1cc0d117bdb6bc184dc04cc65d42f0",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "62149e02acbbe2e78f46807b7b2f3148d079e74d87df159d3b557e832c930818",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "a972ea61d3b0b53d166c1efe0567eca5b9330fda37dea8dd605696d9f67ba129",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "090e8a06992499e198e967a29c1762bc8b1cc0d117bdb6bc184dc04cc65d42f0",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        150,
+        120,
+        494,
+        169
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "62149e02acbbe2e78f46807b7b2f3148d079e74d87df159d3b557e832c930818",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        220,
+        300,
+        494,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "a972ea61d3b0b53d166c1efe0567eca5b9330fda37dea8dd605696d9f67ba129",
+      "sourcePixels": 358,
+      "sourceEnvelope": [
+        290,
+        480,
+        494,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "a54edf8be5d433a8fe68155cbbc1d0125d5e819155bee648bffbf6986d291cca",
+      "sourcePixels": 300,
+      "sourceEnvelope": [
+        150,
+        120,
+        496,
+        224
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        230
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        230
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "80f5d449ceb9576577fff7d44468bbd28d9e1d291a94a1aaba37e08461f65cde",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        290,
+        480,
+        303,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "a54edf8be5d433a8fe68155cbbc1d0125d5e819155bee648bffbf6986d291cca",
+      "sourcePixels": 300,
+      "sourceEnvelope": [
+        150,
+        120,
+        496,
+        224
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        230
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        230
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-dynamic",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "80f5d449ceb9576577fff7d44468bbd28d9e1d291a94a1aaba37e08461f65cde",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        290,
+        480,
+        303,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 0,
+      "sourceMaskSHA256": "b580660d2795baaf3ce3c26def76a73f4664a72b9529bf89b5ffdfd5446dba08",
+      "sourcePixels": 338,
+      "sourceEnvelope": [
+        150,
+        120,
+        497,
+        222
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        228
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        228
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 1,
+      "sourceMaskSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 0.5,
+      "owner": 2,
+      "sourceMaskSHA256": "80f5d449ceb9576577fff7d44468bbd28d9e1d291a94a1aaba37e08461f65cde",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        290,
+        480,
+        303,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 0,
+      "sourceMaskSHA256": "b580660d2795baaf3ce3c26def76a73f4664a72b9529bf89b5ffdfd5446dba08",
+      "sourcePixels": 338,
+      "sourceEnvelope": [
+        150,
+        120,
+        497,
+        222
+      ],
+      "baselineCrop": [
+        0,
+        102,
+        720,
+        228
+      ],
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        228
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 1,
+      "sourceMaskSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "baselineCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    },
+    {
+      "id": "detached-sharp",
+      "family": "new-no-shared-span",
+      "scale": 1,
+      "owner": 2,
+      "sourceMaskSHA256": "80f5d449ceb9576577fff7d44468bbd28d9e1d291a94a1aaba37e08461f65cde",
+      "sourcePixels": 218,
+      "sourceEnvelope": [
+        290,
+        480,
+        303,
+        529
+      ],
+      "baselineCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "baselineLost": 0,
+      "candidateLost": 0,
+      "newlyLostPixelIndices": [],
+      "recoveredPixelIndices": [],
+      "baselineSpuriousWholeNeighborIDs": [],
+      "candidateSpuriousWholeNeighborIDs": [],
+      "newSpuriousWholeNeighborIDs": []
+    }
+  ]
+}

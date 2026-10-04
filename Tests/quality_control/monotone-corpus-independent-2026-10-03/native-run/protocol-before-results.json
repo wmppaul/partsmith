@@ -1,0 +1,26 @@
+{
+  "scope": "Full raw36-score inventory comparison for the private monotone-mask candidate. Source PDFs and reviewed profiles are unchanged. Corrected39Brahms replay is separately reported, not conflated with these rawinputs.",
+  "candidateAnalyzerSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "candidateExecutableSHA256": "1fdf770ef72181cd15cff11ea07986ab40501d503bfa3de6dccf6b5359eedc7e",
+  "corpusSHA256": "03a6c870bc0529f6daa575bdbb7d2f21651d0398e1810663f9983c985b8eff09",
+  "baselineBinding": "Reuse unchanged production9f8 raw pages and current77212 normalized plans from .build/envelope-compatibility-corpus-2026-10-03/baseline; previous all36 plans exactly equal historical plans.",
+  "baselineStatusSHA256": "be40d62c5a867c89b869e3cc61956199df9302df8d72d2cb0e8793e0e2ff365b",
+  "checks": [
+    "Verify all36source/profilehashes and1477physicalpages",
+    "Staffgeometry,identities,orderandfullplancoverage unchanged",
+    "No per-band new whole-neighbor staffrelation; totals cannot substitute",
+    "Inspect newlyexcluded originalink and newneighboringink for changed crops",
+    "Keep all19variableprofilezero-output inputs unresolved; nevercountasextractionpasses",
+    "Reuse sourcevisualreviews only with exactsource/crop/identitybinding",
+    "No production or app publication follows geometry checks alone"
+  ],
+  "requiredGates": [
+    "796permanent assertions",
+    "36fourcore no-new-ownedpixelloss",
+    "297no-new-ownedpixelloss andno-newforeignstaff",
+    "336sourceenvelopes",
+    "independent29+6",
+    "three raw242312regressions fixed with unchanged staffassignment andsourceview30otherchanges"
+  ],
+  "statusAtFreeze": "796/36/297/336/threepages passing; independent29+6 pending; runner must wait"
+}

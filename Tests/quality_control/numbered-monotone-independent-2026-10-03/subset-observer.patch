@@ -1,0 +1,10 @@
+--- frozen/NativeScorePageAnalyzer.swift
++++ observed/NativeScorePageAnalyzer.swift
+@@ -699,6 +699,7 @@
+                 }
+             }
+         }
++        precondition(zip(ink, musicalFeatureInk).allSatisfy { !$0.0 || $0.1 }, "Independent observer: component ink escaped legacy musical mask")
+         struct Run { var left: Int; var right: Int; var y: Int }
+         struct Bounds { var left: Int; var top: Int; var right: Int; var bottom: Int; var area: Int }
+         var runs: [Run] = [], parents: [Int] = [], previous: [Int] = []

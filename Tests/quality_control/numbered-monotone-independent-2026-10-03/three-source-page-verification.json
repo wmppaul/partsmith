@@ -1,0 +1,715 @@
+{
+  "scope": "Read-only independent comparison of author native component replay using frozen staff candidates, no duplicate native analysis. Original PDF and profile bindings exact. This is geometry/mask verification, not a new visual source review.",
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/10_brahms_string_quartet_no3_op67_imslp_242312.pdf",
+  "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e",
+  "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312.json",
+  "profileSHA256": "72aacc51adc13734b2f3cd47dc80c6cbf0514cc1038564c58878b895f5b76c3c",
+  "baselineSHA256": "c658cf6dbea80231c6e17406c9bc662beae70fdb9a263d93c1ea1a9fd1cc609c",
+  "observerSourceExactlyLoggingOnly": true,
+  "inputChecks": [
+    {
+      "study": "musical-span-independent-2026-10-03",
+      "inputFilesVerified": 255,
+      "manifestSHA256": "106c6ce623585187f95a49a8327ffaa28323e2a988e77b86f73968d5b3101c21"
+    },
+    {
+      "study": "musical-span-attached-addendum-2026-10-03",
+      "inputFilesVerified": 25,
+      "manifestSHA256": "3cae7888ada1cbd4c06741dd300c9f9bd881965c13f99e55392c7e09eb6abc6d"
+    }
+  ],
+  "rows": [
+    {
+      "page": 1,
+      "bandsCompared": 16,
+      "target": {
+        "bandID": "p1-s1-cello",
+        "before": [
+          0.0,
+          251.56567164179103,
+          595.2,
+          303.54029850746264
+        ],
+        "after": [
+          0.0,
+          251.56567164179103,
+          595.2,
+          303.54029850746264
+        ],
+        "beforeForeign": [],
+        "afterForeign": [],
+        "newForeign": []
+      },
+      "changedCrops": [
+        {
+          "bandID": "p1-s1-viola",
+          "before": [
+            0.0,
+            220.15522388059702,
+            595.2,
+            269.81539670070697
+          ],
+          "after": [
+            0.0,
+            220.4858601728201,
+            595.2,
+            269.81539670070697
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s2-violin1",
+          "before": [
+            0.0,
+            305.4593872741555,
+            595.2,
+            357.76465043205025
+          ],
+          "after": [
+            0.0,
+            305.4593872741555,
+            595.2,
+            356.1114689709348
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s2-viola",
+          "before": [
+            0.0,
+            365.30455616653575,
+            595.2,
+            422.56936370777686
+          ],
+          "after": [
+            0.0,
+            365.30455616653575,
+            595.2,
+            424.2225451688924
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s2-cello",
+          "before": [
+            0.0,
+            402.6664571877455,
+            595.2,
+            457.94744697564806
+          ],
+          "after": [
+            0.0,
+            408.2872741555381,
+            595.2,
+            457.94744697564806
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s3-violin1",
+          "before": [
+            0.0,
+            441.3509033778476,
+            595.2,
+            512.8330714846819
+          ],
+          "after": [
+            0.0,
+            441.3509033778476,
+            595.2,
+            506.22034564021993
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s4-violin1",
+          "before": [
+            0.0,
+            589.4759622937942,
+            595.2,
+            666.578947368421
+          ],
+          "after": [
+            0.0,
+            592.7823252160251,
+            595.2,
+            663.2725844461901
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s4-viola",
+          "before": [
+            0.0,
+            677.4252160251374,
+            595.2,
+            735.0206598586017
+          ],
+          "after": [
+            0.0,
+            680.7315789473683,
+            595.2,
+            729.7304791830322
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p1-s4-cello",
+          "before": [
+            0.0,
+            714.4564807541241,
+            595.2,
+            773.3744697564807
+          ],
+          "after": [
+            0.0,
+            714.7871170463471,
+            595.2,
+            773.3744697564807
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        }
+      ],
+      "newForeignRelations": [],
+      "subsetChecksIndependentlyRecomputed": [
+        {
+          "stage": "after-lines-true",
+          "structuralInkPixels": 431520,
+          "legacyInkPixels": 515671,
+          "restoredPixels": 0,
+          "newMaskSHA256": "011ff6b56be24fbee412d1c7789a90dc413cf8236385cc26690bf327f0d1e356",
+          "legacyMaskSHA256": "0b955b3b825251d7c714e0f5d71f9b1a305ee35a0529b6540c09094ef6a24747"
+        },
+        {
+          "stage": "after-connectors-true",
+          "structuralInkPixels": 413513,
+          "legacyInkPixels": 497664,
+          "restoredPixels": 0,
+          "newMaskSHA256": "19d7f2c02a70b884c9ada0f460ead938a98a14ad850f03b35eb00d3fc3fe2fda",
+          "legacyMaskSHA256": "814ad460325d689cb0fe7d4deb9f7a439ae446828dbd105490a57c55a0b4b09e"
+        }
+      ],
+      "nativePageSHA256": "b718b7a0267c11dcc515f6f83505e467970a226a703f33d52e8f52eb48fe2d4a",
+      "planSHA256": "48607da4eefddda711d40f99c5927110be94bea262513d5c3c4d5f41303627ee"
+    },
+    {
+      "page": 2,
+      "bandsCompared": 20,
+      "target": {
+        "bandID": "p2-s2-cello",
+        "before": [
+          0.0,
+          291.9032992930086,
+          595.2,
+          336.2732914375491
+        ],
+        "after": [
+          0.0,
+          291.9032992930086,
+          595.2,
+          336.2732914375491
+        ],
+        "beforeForeign": [],
+        "afterForeign": [],
+        "newForeign": []
+      },
+      "changedCrops": [
+        {
+          "bandID": "p2-s1-cello",
+          "before": [
+            0.0,
+            145.76205813040062,
+            595.2,
+            196.08350353495678
+          ],
+          "after": [
+            0.0,
+            146.42333071484683,
+            595.2,
+            196.08350353495678
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s2-violin2",
+          "before": [
+            0.0,
+            228.09049489395127,
+            595.2,
+            279.73448546739985
+          ],
+          "after": [
+            0.0,
+            228.09049489395127,
+            595.2,
+            279.40384917517673
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s3-violin2",
+          "before": [
+            0.0,
+            368.2802827965436,
+            595.2,
+            420.5855459544383
+          ],
+          "after": [
+            0.0,
+            371.25600942655143,
+            595.2,
+            420.91618224666144
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s3-viola",
+          "before": [
+            0.0,
+            399.36009426551453,
+            595.2,
+            449.6815396700707
+          ],
+          "after": [
+            0.0,
+            401.6745483110762,
+            595.2,
+            449.6815396700707
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s3-cello",
+          "before": [
+            0.0,
+            430.4399057344855,
+            595.2,
+            495.97062058130393
+          ],
+          "after": [
+            0.0,
+            430.4399057344855,
+            595.2,
+            480.7613511390416
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s4-violin1",
+          "before": [
+            0.0,
+            469.45498821681065,
+            595.2,
+            527.381068342498
+          ],
+          "after": [
+            0.0,
+            475.7370777690495,
+            595.2,
+            526.3891594658287
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s4-violin2",
+          "before": [
+            0.0,
+            509.4619795758052,
+            595.2,
+            559.1221523959151
+          ],
+          "after": [
+            0.0,
+            509.4619795758052,
+            595.2,
+            561.1059701492537
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s4-viola",
+          "before": [
+            0.0,
+            537.8967007069913,
+            595.2,
+            587.5568735271013
+          ],
+          "after": [
+            0.0,
+            537.8967007069913,
+            595.2,
+            590.5326001571091
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s4-cello",
+          "before": [
+            0.0,
+            571.290966221524,
+            595.2,
+            636.1604084838963
+          ],
+          "after": [
+            0.0,
+            573.6054202670856,
+            595.2,
+            636.1604084838963
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s5-violin2",
+          "before": [
+            0.0,
+            649.3211311861744,
+            595.2,
+            705.9246661429693
+          ],
+          "after": [
+            0.0,
+            649.9824037706205,
+            595.2,
+            705.9246661429693
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p2-s5-viola",
+          "before": [
+            0.0,
+            681.0622152395915,
+            595.2,
+            734.0287509819324
+          ],
+          "after": [
+            0.0,
+            681.0622152395915,
+            595.2,
+            732.0449332285938
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        }
+      ],
+      "newForeignRelations": [],
+      "subsetChecksIndependentlyRecomputed": [
+        {
+          "stage": "after-lines-true",
+          "structuralInkPixels": 555702,
+          "legacyInkPixels": 654635,
+          "restoredPixels": 0,
+          "newMaskSHA256": "5e3337cff74f7a141081aac1f7b946f92214219dcad16847b5924b89b2b8fce5",
+          "legacyMaskSHA256": "6b05e74c385cab3d5ee2c24a821b8afeb0bc3115b0ea585e08b0371fdbace35a"
+        },
+        {
+          "stage": "after-connectors-true",
+          "structuralInkPixels": 537669,
+          "legacyInkPixels": 636602,
+          "restoredPixels": 0,
+          "newMaskSHA256": "36b0664b3c076bdbc0dd8e0a077705cea9fec7051013d921b2cb6a595b6902f3",
+          "legacyMaskSHA256": "157e9ba0775b1fe73450d442452bb0b8a225699e9d2bb033474bb2c5215a08a6"
+        }
+      ],
+      "nativePageSHA256": "ed041c63141d0da0f02deb4acb45b3936c691512781f7fbd3defe02414cf3f9f",
+      "planSHA256": "6590ed0ad4f32ed8151039a0620b6434b093116500caa3578b3a45ad3b7a744d"
+    },
+    {
+      "page": 16,
+      "bandsCompared": 20,
+      "target": {
+        "bandID": "p16-s5-viola",
+        "before": [
+          0.0,
+          706.1905734485467,
+          595.2,
+          750.8912018853102
+        ],
+        "after": [
+          0.0,
+          706.1905734485467,
+          595.2,
+          750.8912018853102
+        ],
+        "beforeForeign": [],
+        "afterForeign": [],
+        "newForeign": []
+      },
+      "changedCrops": [
+        {
+          "bandID": "p16-s1-violin2",
+          "before": [
+            0.0,
+            53.51453260015712,
+            595.2,
+            128.9643362136685
+          ],
+          "after": [
+            0.0,
+            60.127258444618995,
+            595.2,
+            128.9643362136685
+          ],
+          "beforeForeign": [
+            0
+          ],
+          "afterForeign": [
+            0
+          ],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s1-viola",
+          "before": [
+            0.0,
+            110.71461115475256,
+            595.2,
+            158.72160251374703
+          ],
+          "after": [
+            0.0,
+            111.04524744697564,
+            595.2,
+            155.4152395915161
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s2-violin2",
+          "before": [
+            0.0,
+            219.16331500392775,
+            595.2,
+            278.74257659073055
+          ],
+          "after": [
+            0.0,
+            219.8245875883739,
+            595.2,
+            278.74257659073055
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s2-viola",
+          "before": [
+            0.0,
+            251.23503534956794,
+            595.2,
+            303.2096622152396
+          ],
+          "after": [
+            0.0,
+            253.8801256873527,
+            595.2,
+            303.2096622152396
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s3-violin1",
+          "before": [
+            0.0,
+            318.35420267085624,
+            595.2,
+            386.19937156323647
+          ],
+          "after": [
+            0.0,
+            318.35420267085624,
+            595.2,
+            390.16700706991355
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s3-violin2",
+          "before": [
+            0.0,
+            371.58664571877455,
+            595.2,
+            422.56936370777686
+          ],
+          "after": [
+            0.0,
+            371.9172820109976,
+            595.2,
+            419.593637077769
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s3-viola",
+          "before": [
+            0.0,
+            405.9728201099764,
+            595.2,
+            456.62490180675564
+          ],
+          "after": [
+            0.0,
+            406.3034564021995,
+            595.2,
+            456.62490180675564
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s4-violin1",
+          "before": [
+            0.0,
+            467.8018067556952,
+            595.2,
+            539.2839748625294
+          ],
+          "after": [
+            0.0,
+            477.0596229379418,
+            595.2,
+            539.2839748625294
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s4-violin2",
+          "before": [
+            0.0,
+            518.3891594658287,
+            595.2,
+            573.6701492537313
+          ],
+          "after": [
+            0.0,
+            519.0504320502749,
+            595.2,
+            573.6701492537313
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s4-viola",
+          "before": [
+            0.0,
+            549.7996072270228,
+            595.2,
+            633.8459544383346
+          ],
+          "after": [
+            0.0,
+            549.7996072270228,
+            595.2,
+            623.2655930871956
+          ],
+          "beforeForeign": [
+            15
+          ],
+          "afterForeign": [
+            15
+          ],
+          "newForeign": []
+        },
+        {
+          "bandID": "p16-s5-violin1",
+          "before": [
+            0.0,
+            616.588138256088,
+            595.2,
+            688.0703063629221
+          ],
+          "after": [
+            0.0,
+            618.9025923016496,
+            595.2,
+            685.4252160251374
+          ],
+          "beforeForeign": [],
+          "afterForeign": [],
+          "newForeign": []
+        }
+      ],
+      "newForeignRelations": [],
+      "subsetChecksIndependentlyRecomputed": [
+        {
+          "stage": "after-lines-true",
+          "structuralInkPixels": 431185,
+          "legacyInkPixels": 520067,
+          "restoredPixels": 0,
+          "newMaskSHA256": "0007cbe0eece0af9d20c79bb31dd9b7763f50c777cdd4469e124292dbb6a2933",
+          "legacyMaskSHA256": "7bab6d01e7877606b462757c9c2c93a75c39509e62c37c3b119d612f649b00e9"
+        },
+        {
+          "stage": "after-connectors-true",
+          "structuralInkPixels": 409507,
+          "legacyInkPixels": 498389,
+          "restoredPixels": 0,
+          "newMaskSHA256": "edf5b5dd45360faa5db91c5562399164d47a7e10045377e23950bf96e860ad41",
+          "legacyMaskSHA256": "05c44f3be758f823e8ab2cc1c9932c123090b1cd41fcb6b8574e172faf199743"
+        }
+      ],
+      "nativePageSHA256": "03d4779569004161a403fe304cadeb00e314851219461127fc44eb98d3bd3b05",
+      "planSHA256": "328f9314a640ad56ae3bc9cb640e24a968039da41d90bfe2575b5bdbc5d3525e"
+    }
+  ],
+  "summary": {
+    "pages": 3,
+    "bands": 56,
+    "changedCrops": 30,
+    "threePriorRegressionsExactlyBaseline": true,
+    "noNewForeignRelations": true,
+    "allSixOriginalMaskSubsetChecksPassed": true,
+    "perOwner297NewForeignRelations": 0
+  }
+}

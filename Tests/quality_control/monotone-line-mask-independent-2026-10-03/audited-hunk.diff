@@ -1,0 +1,12 @@
+--- e32/NativeScorePageAnalyzer.swift
++++ monotone/NativeScorePageAnalyzer.swift
+@@ -167,6 +167,9 @@
+                 }
+             }
+         }
++        // Measured line removal may remove additional source evidence, but
++        // must not restore nominally removed endpoints into a new staff owner.
++        ink = musicalFeatureInk
+         for (index, staff) in lines.enumerated() {
+             if isCancelled() { return nil }
+             let thickness = max(0, Int((spaces[index] * 0.09).rounded()))

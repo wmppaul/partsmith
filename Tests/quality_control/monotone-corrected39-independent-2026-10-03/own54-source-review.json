@@ -1,0 +1,1112 @@
+{
+  "scope": "54 of67 genuinely new areas versus e32; remaining13 expansion-only rows delegated independently to ending_delivery. No repeated renders of537 identical previous areas.",
+  "candidateSHA256": "8fef068a1241e65e60716b9f44afa6d5a05eba3c6c39a05bc0a420b7754b7870",
+  "previousSHA256": "baa108292bdc5d979914a9dc08fdcec71609e71c10cf7a13ac27f68e079ec2cc",
+  "sourceManifestSHA256": "aab9f6116f25de1c15fc8981870bbeaa6ab7efbb02b87c105aa37297d25f2507",
+  "frozenGuardSummary": {
+    "totalBands": [
+      604,
+      604
+    ],
+    "freshPages": 39,
+    "changedBands": 239,
+    "reducedBands": 189,
+    "unchangedRetainedAnalyses": 0,
+    "guardCount": 57,
+    "baselineGuardPasses": 54,
+    "candidateGuardPasses": 54,
+    "newGuardFailures": [],
+    "allStaffRecordsExact": true,
+    "allAssignmentIdentitiesExact": true,
+    "allObservedStaffAssignedOnce": true,
+    "newUnresolvedPages": []
+  },
+  "wholeNeighborCounts": {
+    "baseline": 7,
+    "previous": 5,
+    "candidate": 5
+  },
+  "rows": [
+    {
+      "band": "p4-s4-violin2",
+      "page": 4,
+      "oldY": [
+        466.59969088098916,
+        521.8122102009273
+      ],
+      "newY": [
+        466.59969088098916,
+        521.5749613601237
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p4-s4-violin2.png",
+      "contextSHA256": "f969d2b20eb3a4c030e8a54b2733ed7b1261d588cb3c0f72d5f4b22b88025bb0",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-4.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p7-s2-violin2",
+      "page": 7,
+      "oldY": [
+        190.8,
+        242.79999999999998
+      ],
+      "newY": [
+        190.8,
+        242.4
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p7-s2-violin2.png",
+      "contextSHA256": "a19a21afba25230d106c79b3f3477cb331d100add58a65f1cb7bc350aaeda110",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-7.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p12-s1-violin2",
+      "page": 12,
+      "oldY": [
+        62.56491499227202,
+        109.71097372488408
+      ],
+      "newY": [
+        62.56491499227202,
+        109.47372488408038
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p12-s1-violin2.png",
+      "contextSHA256": "273d4efddee86a768249f988df1721bc6ffcf0d53948674e7ae4447924bd6ca2",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-12.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p12-s2-cello",
+      "page": 12,
+      "oldY": [
+        254.97372488408035,
+        298.08655332302936
+      ],
+      "newY": [
+        262.32843894899537,
+        298.08655332302936
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p12-s2-cello.png",
+      "contextSHA256": "fa43293e135eec6d68aee01eed6091d212910cbbec543ddb3b0abf79cc6938e5",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-12.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "The7.355pt top contraction removes part of the upper Viola staff/slur area. The Cello high phrase arc, own notes and lower hairpins remain below/within its new crop."
+    },
+    {
+      "band": "p13-s2-violin1",
+      "page": 13,
+      "oldY": [
+        166.71715610510046,
+        220.26893353941267
+      ],
+      "newY": [
+        166.71715610510046,
+        219.79443585780527
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p13-s2-violin1.png",
+      "contextSHA256": "4eaab1ce9f52eb14fe67da5276173a058baf37829c70d5d35bf54bd36a057ba9",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-13.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p15-s2-viola",
+      "page": 15,
+      "oldY": [
+        236.85427910562836,
+        286.27679259830376
+      ],
+      "newY": [
+        236.85427910562836,
+        285.80339244410175
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p15-s2-viola.png",
+      "contextSHA256": "5c548282ad39f63f85c5b37e323ca6af7fbd1b764efce63017dd5c8db6669a60",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-15.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p18-s4-viola",
+      "page": 18,
+      "oldY": [
+        510.72797527047913,
+        563.3307573415765
+      ],
+      "newY": [
+        516.8964451313756,
+        563.3307573415765
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p18-s4-viola.png",
+      "contextSHA256": "1b183adac88ad5c52f12f50fe3db4184757dc58f3c50ce7e4522c6108dc7e016",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-18.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "The6.168pt top contraction returns to baseline; upper ViolinII fragments are excluded while the Viola phrase arcs, chord/ledger notes, hairpins and piano remain complete."
+    },
+    {
+      "band": "p20-s2-violin1",
+      "page": 20,
+      "oldY": [
+        146.78825347758885,
+        216.23570324574962
+      ],
+      "newY": [
+        146.78825347758885,
+        215.5239567233385
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p20-s2-violin1.png",
+      "contextSHA256": "19e15378c0229c279593ab975e5d9983cc20a3e83cb7952b1066e708bb7536f7",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-20.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p20-s3-violin2",
+      "page": 20,
+      "oldY": [
+        338.0108191653787,
+        388.71561051004636
+      ],
+      "newY": [
+        341.3323029366306,
+        388.71561051004636
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p20-s3-violin2.png",
+      "contextSHA256": "3fb1172d2673647b44858c7ecbf591de967ae3f318c4f1afb4422dcdb30f5309",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-20.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "The3.321pt top contraction removes upper ViolinI beam/staff fragments; ViolinII top phrase slur, own chords and crescendo words remain."
+    },
+    {
+      "band": "p21-s3-violin1",
+      "page": 21,
+      "oldY": [
+        303.9903586579252,
+        357.76552256074046
+      ],
+      "newY": [
+        303.9903586579252,
+        357.52834554569995
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s3-violin1.png",
+      "contextSHA256": "0cfa3beda6d236ce7bdf21826b18a45b9d8a291d4ecbe0816b95b8f341a33f23",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p21-s3-cello",
+      "page": 21,
+      "oldY": [
+        400.75858079444663,
+        464.49517932896265
+      ],
+      "newY": [
+        407.39953721558044,
+        467.57848052448907
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s3-cello.png",
+      "contextSHA256": "07822c031b5f999a856f652144dbd598e26063ef01ea3cd818bf56d809e6b207",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Mixed change:6.641pt top contraction excludes upper Viola beam fragments; own Cello high phrase arc, lower hairpins and forte remain. Bottom expansion adds more following-system ViolinI fragments; this is excess neighboring ink."
+    },
+    {
+      "band": "p22-s2-violin1",
+      "page": 22,
+      "oldY": [
+        146.9791747011184,
+        208.58118010026996
+      ],
+      "newY": [
+        147.2163517161589,
+        208.58118010026996
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p22-s2-violin1.png",
+      "contextSHA256": "968ed80904f5cd693c5372259cca3b93ae33acf0242799c844ac7c07b4fc00b7",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-22.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p22-s2-viola",
+      "page": 22,
+      "oldY": [
+        222.40146548399537,
+        279.73428461241804
+      ],
+      "newY": [
+        222.40146548399537,
+        279.4971075973775
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p22-s2-viola.png",
+      "contextSHA256": "d0c1d447ffd2b66e1a6de6c09c0a8e716aa59536c7cdc557b70b39a3dc7a5c05",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-22.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p22-s4-viola",
+      "page": 22,
+      "oldY": [
+        505.3536444273043,
+        558.6544543000385
+      ],
+      "newY": [
+        505.3536444273043,
+        557.9429232549171
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p22-s4-viola.png",
+      "contextSHA256": "3f178dbc829597be9e52d56ff0a4bec92adc4c05e4c9072960d79fdf9d4eab1b",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-22.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p23-s2-viola",
+      "page": 23,
+      "oldY": [
+        231.5227568270481,
+        280.7093628088426
+      ],
+      "newY": [
+        231.5227568270481,
+        280.30949284785436
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p23-s2-viola.png",
+      "contextSHA256": "5af882be3abf22f97ec0f322730da36959212440b5fe70cd49e8f1f312c90900",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-23.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p25-s3-viola",
+      "page": 25,
+      "oldY": [
+        368.73968376397994,
+        422.27767065175476
+      ],
+      "newY": [
+        368.73968376397994,
+        422.04049363671425
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p25-s3-viola.png",
+      "contextSHA256": "34765c8f01a1205ba4cc84efecbab0b39868f7338b55ec79dbef698a5975c4cb",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-25.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p27-s1-violin2",
+      "page": 27,
+      "oldY": [
+        60.646741226378715,
+        112.99884303895102
+      ],
+      "newY": [
+        60.646741226378715,
+        112.76166602391055
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p27-s1-violin2.png",
+      "contextSHA256": "41c0f909da326b63b8f3063c0f6535a04cf5c719423bd9881c4bd3592791277e",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-27.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p27-s3-cello",
+      "page": 27,
+      "oldY": [
+        406.45082915541843,
+        455.7196297724644
+      ],
+      "newY": [
+        410.7200154261473,
+        455.7196297724644
+      ],
+      "hasContraction": true,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p27-s3-cello.png",
+      "contextSHA256": "3ae94af510a795f551f66e4eccef5d874b117429ee4ed17ad86c63bbcbc1b04f",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-27.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "The4.269pt top contraction excludes upper Viola staff fragments; own Cello phrase arcs, forte, low ledger notes, piano and pizzicato direction remain complete."
+    },
+    {
+      "band": "p4-s1-violin2",
+      "page": 4,
+      "oldY": [
+        48.56723338485317,
+        95.47604327666151
+      ],
+      "newY": [
+        48.56723338485317,
+        98.32302936630603
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p4-s1-violin2.png",
+      "contextSHA256": "d8e2961b013aeb3a3bea5906c34a359594576ab25cfbef08c992d442130e7f64",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-4.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p4-s2-violin2",
+      "page": 4,
+      "oldY": [
+        196.61051004636784,
+        235.45285935085008
+      ],
+      "newY": [
+        196.61051004636784,
+        243.7565687789799
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p4-s2-violin2.png",
+      "contextSHA256": "27fb5a4fa4416574023b3597a60af940e54e5403ec7b0b720dfc9d66f2f8be57",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-4.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Bottom expansion returns to baseline and includes more Viola upper staff/slur ink; own ViolinII low slurs and hairpins remain complete."
+    },
+    {
+      "band": "p4-s2-viola",
+      "page": 4,
+      "oldY": [
+        228.4018547140649,
+        264.3972179289026
+      ],
+      "newY": [
+        228.4018547140649,
+        273.17542503863984
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p4-s2-viola.png",
+      "contextSHA256": "7d2414d79896ec4821600f4fb41358b3433b312c095793b78fa74f85013bdbf8",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-4.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Bottom expansion includes more Cello top-staff and slur fragments; it does not reach the full Cello core."
+    },
+    {
+      "band": "p4-s3-violin1",
+      "page": 4,
+      "oldY": [
+        295.0687789799073,
+        345.0618238021638
+      ],
+      "newY": [
+        295.0687789799073,
+        348.3833075734158
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p4-s3-violin1.png",
+      "contextSHA256": "1c14dbb676e64ad1a851bec07192d31feb05527c20650c783778e02e1b1b3ab0",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-4.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p5-s3-violin2",
+      "page": 5,
+      "oldY": [
+        333.7403400309119,
+        383.4961360123648
+      ],
+      "newY": [
+        333.7403400309119,
+        385.1568778979907
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p5-s3-violin2.png",
+      "contextSHA256": "ccca64825465bc770d2a10826a52dd884565ab34e0fe24faf4c61602067d2682",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-5.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p7-s3-violin1",
+      "page": 7,
+      "oldY": [
+        300.0,
+        350.4
+      ],
+      "newY": [
+        300.0,
+        353.20000000000005
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p7-s3-violin1.png",
+      "contextSHA256": "ef39d9bdf461016d2ccc49036419e1c5b8b80f4149e671413fe622488a3581ac",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-7.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p7-s4-violin2",
+      "page": 7,
+      "oldY": [
+        481.20000000000005,
+        521.6
+      ],
+      "newY": [
+        481.20000000000005,
+        528.8000000000001
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p7-s4-violin2.png",
+      "contextSHA256": "b7afd795a8d5a866828d8fa7be11507161ddb259d41d12919e38b7b4e39fe54c",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-7.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p8-s4-violin2",
+      "page": 8,
+      "oldY": [
+        482.7326120556414,
+        534.1491499227203
+      ],
+      "newY": [
+        482.7326120556414,
+        536.5216383307574
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p8-s4-violin2.png",
+      "contextSHA256": "39a6f95b5368a68ad24116303dd11f03ee389d9909e4149a0d10ada29d4d8682",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-8.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p9-s4-violin1",
+      "page": 9,
+      "oldY": [
+        429.8261205564142,
+        499.5108191653787
+      ],
+      "newY": [
+        429.8261205564142,
+        500.69706336939726
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p9-s4-violin1.png",
+      "contextSHA256": "af540ed6eec8387d9abc1f25aa4a3d3151d8aa3c8212a27b83cd768f0eb39e29",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-9.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p10-s2-viola",
+      "page": 10,
+      "oldY": [
+        225.79211746522412,
+        273.17542503863984
+      ],
+      "newY": [
+        225.79211746522412,
+        275.0734157650695
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p10-s2-viola.png",
+      "contextSHA256": "a225d8e25f1f6538f7e4da4aca51ed0445f832d2cf3c02382e4c17e9f7778f87",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-10.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p11-s1-violin1",
+      "page": 11,
+      "oldY": [
+        20.334621329211746,
+        75.0726429675425
+      ],
+      "newY": [
+        20.334621329211746,
+        80.76661514683153
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p11-s1-violin1.png",
+      "contextSHA256": "1fb11c494b725cbf8c97b0719b081c2a5fb3b9b17e17e734d1c56c9f5aab4c40",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-11.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p12-s2-violin2",
+      "page": 12,
+      "oldY": [
+        200.16924265842349,
+        248.0270479134467
+      ],
+      "newY": [
+        200.16924265842349,
+        248.9760432766615
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p12-s2-violin2.png",
+      "contextSHA256": "efc71b7268b091ddbca9000d50d6ed23ce4ab63f28fb459590ca525ce64e71ab",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-12.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p12-s2-viola",
+      "page": 12,
+      "oldY": [
+        230.5370942812983,
+        278.15765069551776
+      ],
+      "newY": [
+        230.5370942812983,
+        278.6321483771252
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p12-s2-viola.png",
+      "contextSHA256": "934f8aefd7eaf76858ef852afc04f554bf61a11059e99f08336a687ae317fee5",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-12.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p13-s2-violin2",
+      "page": 13,
+      "oldY": [
+        202.54173106646058,
+        253.7210200927357
+      ],
+      "newY": [
+        202.54173106646058,
+        255.61901081916537
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p13-s2-violin2.png",
+      "contextSHA256": "1fdc455d91a514a63d26c4837e80ee4973532ed172e26ef1d33ea0bff0c5097d",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-13.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p13-s4-viola",
+      "page": 13,
+      "oldY": [
+        525.6746522411128,
+        569.7364760432766
+      ],
+      "newY": [
+        525.6746522411128,
+        572.3462132921175
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p13-s4-viola.png",
+      "contextSHA256": "1d54ee764fb428e3a4a7b6c42cd943b3362ebe7661b06cb154eed65004a928bc",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-13.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p14-s2-violin1",
+      "page": 14,
+      "oldY": [
+        172.17387944358578,
+        219.31993817619784
+      ],
+      "newY": [
+        172.17387944358578,
+        220.98068006182382
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p14-s2-violin1.png",
+      "contextSHA256": "321bf66f8dc0d371b0d43402bfd3f72eb75701290251a192d16144c7d0ccf74f",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-14.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p14-s4-violin2",
+      "page": 14,
+      "oldY": [
+        484.3933539412674,
+        531.3021638330757
+      ],
+      "newY": [
+        484.3933539412674,
+        534.8608964451314
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p14-s4-violin2.png",
+      "contextSHA256": "82c03d912826c2396dc0e673c48d483660b01b3f60a48c6998490b6df37c5ee0",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-14.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p15-s1-violin2",
+      "page": 15,
+      "oldY": [
+        65.48342328450269,
+        112.30223592906708
+      ],
+      "newY": [
+        65.48342328450269,
+        112.77563608326908
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p15-s1-violin2.png",
+      "contextSHA256": "514a07e6219f94689a14bffff3cf84dbee42c46eaae603589851c3a4e182b2ba",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-15.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p16-s1-violin2",
+      "page": 16,
+      "oldY": [
+        65.64914992272024,
+        116.82843894899537
+      ],
+      "newY": [
+        65.64914992272024,
+        117.5401854714065
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p16-s1-violin2.png",
+      "contextSHA256": "0b31950a0f068739a45ff625ec4a5c0b89858a1950fc7f0cc34057e4249545e6",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-16.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p16-s3-violin2",
+      "page": 16,
+      "oldY": [
+        344.41653786707883,
+        400.8153013910356
+      ],
+      "newY": [
+        344.41653786707883,
+        401.28979907264295
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p16-s3-violin2.png",
+      "contextSHA256": "26349180dfe0a7a79cdbfab57f1e879595e883d0295d313b1c012222bc13c935",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-16.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p16-s4-violin1",
+      "page": 16,
+      "oldY": [
+        456.3979907264297,
+        509.23802163833074
+      ],
+      "newY": [
+        456.3979907264297,
+        509.47527047913445
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p16-s4-violin1.png",
+      "contextSHA256": "1191fca18367fa4ba15374975fbf46d6f9720a22174400b5e9bd01d1f0505d22",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-16.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p17-s1-violin2",
+      "page": 17,
+      "oldY": [
+        56.4,
+        105.2
+      ],
+      "newY": [
+        56.4,
+        106.4
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p17-s1-violin2.png",
+      "contextSHA256": "672ef732105b14271dfb42ad11b44ce353b3269b450fafaf018b1c1685d86ad5",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-17.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p17-s2-violin2",
+      "page": 17,
+      "oldY": [
+        198.4,
+        251.2
+      ],
+      "newY": [
+        198.4,
+        252.0
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p17-s2-violin2.png",
+      "contextSHA256": "f3e96c6ff824b295570185f2f128889520d8b5471733342f40bef0897d5e61a5",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-17.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p17-s2-viola",
+      "page": 17,
+      "oldY": [
+        230.4,
+        277.59999999999997
+      ],
+      "newY": [
+        230.4,
+        280.0
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p17-s2-viola.png",
+      "contextSHA256": "9fe5eefe1b49b4699e9bbecd2b2e13299fdcda8cb018f0a342250ba8733c848d",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-17.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p18-s2-viola",
+      "page": 18,
+      "oldY": [
+        228.8763523956723,
+        277.92040185471404
+      ],
+      "newY": [
+        228.8763523956723,
+        279.58114374034005
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p18-s2-viola.png",
+      "contextSHA256": "22be3d53a38ed6d3579cda670fe8dd9a85d2c4ed22acd1c61f90125d67f1c752",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-18.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p18-s3-violin1",
+      "page": 18,
+      "oldY": [
+        287.47681607418855,
+        350.28129829984545
+      ],
+      "newY": [
+        285.34157650695516,
+        350.28129829984545
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p18-s3-violin1.png",
+      "contextSHA256": "5747994c645598849ddf629c1a5a2bbc4da58bcfd2dba72fbcb92cfbbb4f5aa5",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-18.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p18-s4-violin2",
+      "page": 18,
+      "oldY": [
+        482.96986089644514,
+        528.2179289026275
+      ],
+      "newY": [
+        482.96986089644514,
+        533.2001545595053
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p18-s4-violin2.png",
+      "contextSHA256": "ae2d973f948a2ca1a039e5f38a6674976c36c66b11ec5631d7fe9b40e573586d",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-18.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p19-s2-violin1",
+      "page": 19,
+      "oldY": [
+        165.14434330299088,
+        213.93107932379712
+      ],
+      "newY": [
+        165.14434330299088,
+        220.32899869960988
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p19-s2-violin1.png",
+      "contextSHA256": "987d3a69502c5e896781c775083cb191c3393711877afa880608a37d1b3a6acf",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-19.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p19-s3-violin1",
+      "page": 19,
+      "oldY": [
+        312.69635890767233,
+        365.48179453836156
+      ],
+      "newY": [
+        312.69635890767233,
+        366.6814044213264
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p19-s3-violin1.png",
+      "contextSHA256": "21c22c23cdc2c8c5374031649ccb0388b2eba0a9356bfd9ee3958ea63c8e6dbd",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-19.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Local rit. un poco, in tempo and dol. e grazioso words remain. The slightly lower edge also retains more of the ViolinII direction fragments."
+    },
+    {
+      "band": "p20-s2-violin2",
+      "page": 20,
+      "oldY": [
+        193.28902627511593,
+        250.16228748068005
+      ],
+      "newY": [
+        193.28902627511593,
+        250.63678516228748
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p20-s2-violin2.png",
+      "contextSHA256": "4e18c00ca38be89e0d759fcf0810999e3b9e7281ec2d0f18645ffc21d07ffc8d",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-20.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p21-s1-violin1",
+      "page": 21,
+      "oldY": [
+        16.76899344388739,
+        71.73004242190513
+      ],
+      "newY": [
+        16.76899344388739,
+        71.96721943694561
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s1-violin1.png",
+      "contextSHA256": "15da07aa13aca5bda942bffbea5109100d1165b0a1159d759a6ca3851dc0eeb4",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p21-s2-violin2",
+      "page": 21,
+      "oldY": [
+        198.68376397994598,
+        250.32433474739682
+      ],
+      "newY": [
+        198.68376397994598,
+        250.56151176243733
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s2-violin2.png",
+      "contextSHA256": "f394e512dca6b832249b824ba5c745c9f980f161a723b47869532571ad3eeafd",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p21-s2-viola",
+      "page": 21,
+      "oldY": [
+        236.157732356344,
+        280.9201696876205
+      ],
+      "newY": [
+        236.157732356344,
+        281.39452371770153
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s2-viola.png",
+      "contextSHA256": "ff6ab3be25a077b76661caf7871819d47ae981e862d4565a4c850a0d29d39d35",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p21-s3-violin2",
+      "page": 21,
+      "oldY": [
+        336.95796374855377,
+        383.3806401851138
+      ],
+      "newY": [
+        336.95796374855377,
+        392.63054377169306
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s3-violin2.png",
+      "contextSHA256": "814e4f6406c8d34b99fdac4437c9294c902aa092930a316fb02759f73701a524",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Bottom expansion includes more neighboring Viola slur and upper staff ink; own ViolinII long lower hairpin and forte remain."
+    },
+    {
+      "band": "p21-s3-viola",
+      "page": 21,
+      "oldY": [
+        369.45121480910143,
+        418.72001542614737
+      ],
+      "newY": [
+        369.45121480910143,
+        423.93790975703826
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p21-s3-viola.png",
+      "contextSHA256": "d37514dffaf742286cf1d8e76c1ee53c2dfc916b59466836efde67a80164119f",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-21.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    },
+    {
+      "band": "p24-s4-violin2",
+      "page": 24,
+      "oldY": [
+        492.30890860007713,
+        538.2572310065561
+      ],
+      "newY": [
+        492.30890860007713,
+        539.2059390667181
+      ],
+      "hasContraction": false,
+      "reviewer": "crop_algorithm_audit",
+      "context": ".build/brahms-monotone-independent-2026-10-03/contexts/p24-s4-violin2.png",
+      "contextSHA256": "3d06cbec622e15bc2e56072d96406c61910554640db51a4099c6ede9bfc30f9a",
+      "sourceRaster": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-24.png",
+      "newTargetOmissionObserved": false,
+      "newWholeNeighborObserved": false,
+      "observation": "Changed edges retain intended notes and markings. Added or remaining neighboring fragments are explicit; no whole new adjacent staff observed in this panel."
+    }
+  ],
+  "limitations": "Original-source area review only, not exported-page layout or a complete semantic proof. All old guard failures remain failures; their supplementary prior source interpretation is not a guard waiver."
+}

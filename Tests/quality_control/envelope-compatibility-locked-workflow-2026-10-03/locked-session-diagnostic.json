@@ -1,0 +1,99 @@
+{
+  "classification": "Failed actual app workflow in a locked desktop session; no export or publication. Separate from native raw-crop regressions.",
+  "workerExitCode": 0,
+  "planCanApply": false,
+  "bands": 464,
+  "expectedPriorBandCount": 604,
+  "rectificationRenderFailures": [
+    {
+      "pageIndex": 1,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 6,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 16,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 18,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 22,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 27,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 33,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 37,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    },
+    {
+      "pageIndex": 38,
+      "imageWidth": 0,
+      "imageHeight": 0,
+      "warnings": [
+        "Page could not be rendered; review or restore the source."
+      ]
+    }
+  ],
+  "rectificationRenderFailureCount": 9,
+  "visionIssueCount": 93,
+  "visionIssueDescription": "All shared-direction phases returned Foundation._GenericObjCError; retain exact individual messages in summary.",
+  "sessionReadOnlyObservation": "CGSSessionScreenIsLocked=Yes and kCGSSessionOnConsoleKey=Yes from ioreg; root separately confirmed lock.",
+  "causalLimit": "Locked-session platform image/Vision availability is the observed environment correlation; it is not a successful application run or a musical correctness test. No run repeated while locked.",
+  "outputsExported": false,
+  "productionChanged": false,
+  "elapsedSeconds": 46.11486899852753,
+  "bindings": {
+    "brahms-inventory.json": "1a0b9e9c959ef00956d47b18a6fd6697e1af219365af77c03b90738bda43ca7c",
+    "brahms-plan.json": "6ef981fd41003f9e0fb2f8713e4da8f3c70501b555d6d70633491704a42e72cc",
+    "brahms-summary.json": "cc57f691b3427b2a7aaa4cc8288bbfc07734923df243128b260dee6a2ccfc284",
+    "worker.log": "b4a31a7f62478d89d8f5c81c83e3ba94685dfff5ceb37ff2e5b73fd21da8f0e9",
+    "native_worker.swift": "5a1a0213dbe36b110859f124ad8d521d6d69194144dfd2a1a1a9cdc242127594",
+    "source-hashes-before-build.json": "45fd0f29ce919d921dec53e8b226d4cbadfd8cc08f0c1fb1661c029311471852",
+    "config.json": "e277011a28598ac838f09d726be200c43c4042d163808bde5527c5dbb363ba5f",
+    "layout-page-breaks.json": "49cca9f84d20895a42134d60bedd3066ad268c4791dfde989ac9b8bc5c9e02d1"
+  }
+}

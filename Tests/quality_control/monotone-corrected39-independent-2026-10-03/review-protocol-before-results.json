@@ -1,0 +1,18 @@
+{
+  "purpose": "Independent frozen-57 guard comparison and exact prior-area reuse for the next private monotone corrected39 replay; inspect genuinely new source areas only.",
+  "candidateExpected": ".build/brahms-monotone-compatibility-full-2026-10-03/candidate.json",
+  "expectedNativeSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "previousCandidate": ".build/brahms-envelope-compatibility-full-2026-10-03/candidate.json",
+  "previousCandidateSHA256": "baa108292bdc5d979914a9dc08fdcec71609e71c10cf7a13ac27f68e079ec2cc",
+  "requirementsSHA256": "83e5ba388ea61fb1ec4045b31e4ced152dd52a140176c4286c6d6c9612b7f077",
+  "inputManifest": ".build/brahms-source-span-full-replay-2026-10-03/inputs.json",
+  "inputManifestSHA256": "aab9f6116f25de1c15fc8981870bbeaa6ab7efbb02b87c105aa37297d25f2507",
+  "limits": [
+    "No source correction or resolution change; verify all manifest and snapshot hashes before reusing a review.",
+    "Exact prior crop area plus exact source/staff identity may reuse the prior source interpretation. Unchanged baseline areas are only regression-unchanged, not newly certified music-complete.",
+    "Every newly contracted nonblank source region remains a review obligation; structural-mask subset is not a waiver.",
+    "Keep the three prior guard failures as failures. Supplementary original-pixel musical interpretations do not alter the frozen guards.",
+    "Prioritize local text/heading/accidental/slur/dynamic losses even when tiny. Root and agents divide only genuinely new source-area review."
+  ],
+  "mutations": "Only this private comparison/report directory; no production, detector execution or new fixtures."
+}

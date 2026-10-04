@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-03",
+  "reviewer": "crop_algorithm_audit",
+  "verdict": "No static blocker for the bounded monotone-mask change; empirical preservation, ownership, source crop and corpus gates remain required. No production approval is implied.",
+  "scope": "Read-only code review and textual/source-hash assertions. No detector, corpus, synthetic test, or helper implementation was run.",
+  "bindings": [
+    {
+      "path": "/Users/will/Documents/git/partsmith/Partsmith/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/numbered-line-envelope-compatibility-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "e32b5a76928b505efbeba6fa5bc9aef4b58ed0e2b7d11ddeef3269b73570996f"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/numbered-line-monotone-compatibility-2026-10-03/candidate/Core/Detection/NativeScorePageAnalyzer.swift",
+      "sha256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/numbered-line-monotone-compatibility-2026-10-03/candidate/Core/Detection/ScoreExtractionPlanner.swift",
+      "sha256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/numbered-line-monotone-compatibility-2026-10-03/protocol-before-results.json",
+      "sha256": "24521b120d958e2dff5cf901a57228d67eaafe7afb0abf7cace34c02b0edcbde"
+    },
+    {
+      "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/cause-242312/component-cause.json",
+      "sha256": "ea251231c6523c0a1c48137a5978b08aff8c9764ec33f4d702140388004c3cfe"
+    }
+  ],
+  "verifiedAssertions": {
+    "onlyFunctionalChange": "One assignment, ink = musicalFeatureInk, before the measured erasure loop. Removing its three-line hunk reproduces e32 exactly.",
+    "onlyChangedCoreSwiftFile": [
+      "Detection/NativeScorePageAnalyzer.swift"
+    ],
+    "nominalMaskLoop": "The candidate nominal feature-mask loop is text-identical to production after renaming musicalFeatureInk to ink.",
+    "connectorDecisionLoop": "The full candidate connector loop is text-identical to production after normalizing its two legacy feature-mask reads and the synchronized false-only cut into both masks."
+  },
+  "proof": [
+    "Let N be the established nominally erased feature mask and S the measured structural mask, for one invocation and fixed retainMusicalEvidence value. At candidate line172, S=N. Every measured-mask write at lines207/211 only clears a pixel. Every later connector cut at lines694/695 clears the same pixel in both masks. No later write adds ink. Therefore S is a pixel subset of N at connected-component labeling.",
+    "Both masks use the same source raster dimensions and the same eight-connected run-labeling convention. Consequently every raw S component lies entirely inside exactly one raw N component. Its bounding box lies within that parent box, so the vertical bounding-box staff-owner test cannot gain an owner relative to that raw parent.",
+    "Connector support, staff-core tests and branch decisions continue reading the untouched original mask. The two terminal-body flood-fill reads use N; its initial nominal erasure matches production, and every accepted connector cut mutates N exactly as production mutates its old ink. By induction over connector traversal, musical head vetoes, structural cuts and preservedMusicalConnection decisions stay production-equivalent on fixed inputs. S is never read by those decisions.",
+    "The true/false retainMusicalEvidence branches each satisfy this invariant independently. Recursion remains at most one additional false branch. The final ordinary results come from the established local branch when preservation alternatives exist; the additional assignments do not create new recursion or ownership flags."
+  ],
+  "limitations": [
+    "The subset result concerns raw mask components. Published components can differ because the later thin multi-owner connector filter can reject a parent while retaining a smaller child; do not claim set containment of final component records.",
+    "Component splitting can change detached-mark selection, neighborhood relationships, warnings and crop geometry. The planner also applies flagged legacy envelopes after ordinary selection, so pixel-mask monotonicity does not prove crop or whole-neighbor monotonicity.",
+    "Additional erasure can fragment true notation. Existing musical ownership controls and frozen source obligations remain mandatory; a historical single-owner envelope is preservation support, not semantic proof that every excluded pixel is staff ink.",
+    "Swift array assignment preserves value semantics. This creates no new shared-mutation hazard; later writes can incur normal copy-on-write memory cost. No independent runtime or memory benchmark was performed.",
+    "Cancellation checks and work structure are unchanged from e32. The new assignment itself does not introduce an unbounded loop; current per-page scanning and mapping retain their previously documented bounded cancellation gaps."
+  ],
+  "reviewPrioritizationRecommendation": [
+    "Reuse exact previously reviewed crop areas only under matching source/raster, page geometry and staff-identity bindings. A superset contains the previously reviewed target area but requires a separate cleanliness assessment of added ink.",
+    "For contractions inspect the actual source region oldCrop minus newCrop, not the analysis-mask difference. Only skip a margin when original unthresholded source/output pixels show it is blank with outward pixel rounding; never use the detector threshold of190 to certify blankness.",
+    "Use component provenance to order the queue: newly excluded single-owner ink, shared headings and detached marks first. Every other nonblank exclusion still needs source interpretation; the monotone mask is not a waiver.",
+    "Group multiple changed edges from one page/system into one source panel while recording a result for every affected band. Keep small heading/serif exclusions even when the geometric change is tiny.",
+    "Keep preservation, added-neighbor cleanliness, unresolved staff assignment and final output layout as separate reported outcomes."
+  ]
+}

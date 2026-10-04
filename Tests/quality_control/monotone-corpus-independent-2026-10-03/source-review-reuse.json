@@ -1,0 +1,3470 @@
+{
+  "sourceReviewReferences": [
+    {
+      "path": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "sha256": "66f994afa02b5d87e26a1c58da505882e5f053c627984f8181f249bd740a6cd6"
+    },
+    {
+      "path": ".build/envelope-compatibility-corpus-2026-10-03/root-schumann-source-review.json",
+      "sha256": "84a4f6f36f96342ef34b6d9c601191c99ce5ac5c184db54c4c3efc71e3f02255"
+    },
+    {
+      "path": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "sha256": "c8285f27574427efa34724628c5ba45646f43376a54d13e458bd4ec5be8c8619"
+    }
+  ],
+  "summary": {
+    "changedCrops": 1282,
+    "exactPriorReviewReuse": 127,
+    "newCandidateReviewedSourceRows": 30,
+    "reviewedTotal": 157,
+    "pending": 1125,
+    "priorReviewedRowsWithDifferentGeometryNeedingNewReview": 11,
+    "newWholeForeignRelations": 0,
+    "limits": "Geometry comparison is complete, visual source coverage is not. Reuse never relies on similar words, aggregate counts, or source identity alone; both exact crops and staff ownership must match. No exported part/PDF/pagination review in this comparison."
+  },
+  "reviewed": [
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p1-s3-viola",
+      "page": 1,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        645.1520064856101,
+        648,
+        692.7466558573166
+      ],
+      "after": [
+        0,
+        649.4714227807052,
+        648,
+        692.7466558573166
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "86a8163847a427a9f3970fc63b9e21446b9f6aca2063f13e31265b6de4b56014"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p1-s3-violin",
+      "page": 1,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        613.4762869882447,
+        648,
+        667.1901094446696
+      ],
+      "after": [
+        0,
+        613.4762869882447,
+        648,
+        666.830158086745
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "fab402902f96361e9f5d9238dfcfe94dde05d7289c377795012d35c674d759f2"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p3-s1-violin",
+      "page": 3,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        41.513579246047826,
+        648,
+        102.78638021888935
+      ],
+      "after": [
+        0,
+        41.513579246047826,
+        648,
+        103.50628293473855
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "cb3820d60016059a3947ae834f2bd7ad079cbe2bb1797f9611c897ff02c659d8"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p5-s1-viola",
+      "page": 5,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        83.6278881232266,
+        648,
+        130.5026347790839
+      ],
+      "after": [
+        0,
+        83.6278881232266,
+        648,
+        124.02351033644103
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "eeac98243719ecd342f622d14f30e0a6c4f2c6686c8abe88fdbd41d1a7f78b3e"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p8-s1-piano",
+      "page": 8,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        155.25558013411722,
+        648,
+        277.0037135264333
+      ],
+      "after": [
+        0,
+        155.25558013411722,
+        648,
+        270.1646377258658
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "b7c361db2a7e6183067d9bbf234d79d804109a0cdd6f27e44577651842bc2c1d"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p8-s2-cello",
+      "page": 8,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        384.9071747061208,
+        648,
+        428.18240778273207
+      ],
+      "after": [
+        0,
+        384.9071747061208,
+        648,
+        422.783137413863
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "86e1eccb25ecc859e51a2fee77d29cb88c9bebe425431cee32a781db879f4a64"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p9-s2-piano",
+      "page": 9,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        433.5070734653373,
+        648,
+        549.8438116147836
+      ],
+      "after": [
+        0,
+        437.8264897604326,
+        648,
+        542.2848330983669
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "5fbd7c2b70e23aac2ddad96ab63f3b9e293d4a1d4ddd604d8f2d06e97f44c083"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p14-s1-cello",
+      "page": 14,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        120.3429266315363,
+        648,
+        178.73611674098095
+      ],
+      "after": [
+        0,
+        120.3429266315363,
+        648,
+        159.6586947709769
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "1af93994d1ee64a054f373e7aceb7abe1eb143f6395e4e21bc99ef9752694617"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p19-s2-viola",
+      "page": 19,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        360.4304823672477,
+        648,
+        393.2671260640454
+      ],
+      "after": [
+        0,
+        361.15038508309686,
+        648,
+        393.2671260640454
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "7768fa7d8780d410f6df62a538ede309e79fa2022e18a7d9be75065a5bb93a61"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p20-s1-piano",
+      "page": 20,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        172.59467075717498,
+        648,
+        290.3014386220848
+      ],
+      "after": [
+        0,
+        174.75437890472259,
+        648,
+        290.3014386220848
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "59116b3a233f8771fe6a4f66746017ba6ba31d09d7004ebf3905445c7bd9cf80"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p24-s3-violin",
+      "page": 24,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        579.2809079854073,
+        648,
+        643.0733684637211
+      ],
+      "after": [
+        0,
+        579.2809079854073,
+        648,
+        632.274827725983
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "ba9a9e33e2eab7e3b5db827d0eb6dfb6a9142320e964683db350931058867bf2"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p32-s3-piano",
+      "page": 32,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        716.1260197986417,
+        648,
+        824.4676542570937
+      ],
+      "after": [
+        0,
+        717.9257765882646,
+        648,
+        824.4676542570937
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4818c5bc8b3df5eec77fda6e7e62c7746e2eb8e87651691f74d2fda37d97e25a"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p39-s1-piano",
+      "page": 39,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        175.18285993807845,
+        648,
+        296.3977684816593
+      ],
+      "after": [
+        0,
+        175.18285993807845,
+        648,
+        290.6385467548656
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "14964857ecaae6b1f66fc88ba31e096531e1b8d7b9a1dd2486eaa6f20e21176a"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p39-s3-cello",
+      "page": 39,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        659.9100121605188,
+        648,
+        710.3842723956221
+      ],
+      "after": [
+        0,
+        661.7097689501418,
+        648,
+        710.3842723956221
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "63ac66de473dc9246423c1707c87a137856a7b02ca6da5bf6c12126edbf8caae"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p40-s3-piano",
+      "page": 40,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        709.9356606436502,
+        648,
+        825.9311883788832
+      ],
+      "after": [
+        0,
+        709.9356606436502,
+        648,
+        823.411528873411
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "56b3953cdc5c53e7b41db856e610eddb158ffaaa002379af8dfbbf52da01e1fa"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p44-s2-piano",
+      "page": 44,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        444.35826813611396,
+        648,
+        556.6653361043383
+      ],
+      "after": [
+        0,
+        444.35826813611396,
+        648,
+        553.0658225250921
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4f9244ed75eddf892a6af9a7d4f13a19330434ca3b8bb2f09eb0f7d78e5eaf27"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p44-s3-piano",
+      "page": 44,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        712.1077440747981,
+        648,
+        825.9270632843499
+      ],
+      "after": [
+        0,
+        716.0672090119688,
+        648,
+        825.9270632843499
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "42465638d5e4663d3ce35cdc27e390747b4189d66f171d8b81fa3340995dad2d"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p44-s3-viola",
+      "page": 44,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        624.6347790839076,
+        648,
+        672.5893798135387
+      ],
+      "after": [
+        0,
+        631.8338062423996,
+        648,
+        672.5893798135387
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4598f4cdb62718c6f439152c8524c3e53cb5667c2f718a2587552a4cef59eaa2"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p44-s3-violin",
+      "page": 44,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        587.5597892176733,
+        648,
+        650.2723956222133
+      ],
+      "after": [
+        0,
+        587.5597892176733,
+        648,
+        648.8325901905148
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "f1d05639debdeb9a9c41c36926e247037a41b2bdeff9afceb9b6d8a5fa613ac7"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p45-s1-viola",
+      "page": 45,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        87.58735306039725,
+        648,
+        137.701661937576
+      ],
+      "after": [
+        0,
+        87.58735306039725,
+        648,
+        134.82205107417917
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "d614ae4e2ef947aac7d51984533547df63aa211f5607019f93a0d910ff089b27"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p45-s2-violin",
+      "page": 45,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        312.19700040535065,
+        648,
+        369.87028779894604
+      ],
+      "after": [
+        0,
+        312.19700040535065,
+        648,
+        367.71057965139846
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "c3cabe51e44d8f89eeace8bf3c1681ec028cfdf0c482859c640331d231110766"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p46-s3-violin",
+      "page": 46,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        583.6003242805026,
+        648,
+        642.353465747872
+      ],
+      "after": [
+        0,
+        583.6003242805026,
+        648,
+        644.5131738954195
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "56850cce7fb89cb10021b5ed611f780b2496c5d6d7f26c0c958aa9f9fd26dbf6"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p47-s2-violin",
+      "page": 47,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        313.27685447912444,
+        648,
+        382.1086339683826
+      ],
+      "after": [
+        0,
+        313.27685447912444,
+        648,
+        375.9894608836643
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "718df53d6afcfc516c1fe84713cac3f13f1de8d5787b97d5d957a853618f61ac"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p49-s1-violin",
+      "page": 49,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        37.91406566680178,
+        648,
+        97.02715849209567
+      ],
+      "after": [
+        0,
+        37.91406566680178,
+        648,
+        93.78759627077423
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "6bf9b34a62354def453ba006ca244da145031b7c9033ce815f57a9463ca740f7"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p49-s3-violin",
+      "page": 49,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        588.9995946493717,
+        648,
+        642.7134171057966
+      ],
+      "after": [
+        0,
+        588.9995946493717,
+        648,
+        641.9935143899472
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "25ceba30f4402dd68cf6f31871ee837e8ca9d8ba9a1d40f3d0064d7ff5e3cb16"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p52-s2-piano",
+      "page": 52,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        433.5616338781408,
+        648,
+        553.7850897476864
+      ],
+      "after": [
+        0,
+        433.5616338781408,
+        648,
+        549.465673452591
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "a57eac678776e584218daf902696619ee8518fa0ed58b2043739537384cbb7b3"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p52-s3-piano",
+      "page": 52,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        709.6425138255248,
+        648,
+        828.7885310623469
+      ],
+      "after": [
+        0,
+        713.96193012062,
+        648,
+        825.9089201989501
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "441b5c149c9fd97635062857d715e582e046a707e2dd6b32e2e799de1e40342d"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "bandID": "p52-s3-violin",
+      "page": 52,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        580.0008107012565,
+        648,
+        639.8338062423996
+      ],
+      "after": [
+        0,
+        580.0008107012565,
+        648,
+        630.1151195784354
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "e99c2b72a441fb4c5fd2fbb4dd37df9bc6f3a466111e76ed672a4f1d4671d05f"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p1-s2-clarinet",
+      "page": 1,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        375.85825471698115,
+        595.2,
+        430.1441037735849
+      ],
+      "after": [
+        0.0,
+        375.85825471698115,
+        595.2,
+        424.1930660377359
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "b23d65f3b026eb94790b85f6943ae856bfca8ce300f9e392efe31f1346abf4de"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p2-s1-piano",
+      "page": 2,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        113.01359113699526,
+        595.2,
+        238.39083125622173
+      ],
+      "after": [
+        0.0,
+        115.32788358982545,
+        595.2,
+        238.39083125622173
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "a18f01cb94c006469c8b3a71898bc823280abb130bb19eed96db1c94505286fb"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p2-s2-clarinet",
+      "page": 2,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        239.31500000000003,
+        595.2,
+        285.66613207547175
+      ],
+      "after": [
+        0.0,
+        239.31500000000003,
+        595.2,
+        279.05386792452833
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "9cd12265938adfe9b9d87a9e9358d7958da755e3ecf460c64581c3e330d63a89"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p2-s3-clarinet",
+      "page": 2,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        415.20122641509437,
+        595.2,
+        470.1483018867924
+      ],
+      "after": [
+        0.0,
+        415.20122641509437,
+        595.2,
+        467.5033962264151
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "6caf1c49a22cf44a1a841e9485133fdf8c9aa399039f4c72c2554d59f7e093ff"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p2-s4-piano",
+      "page": 2,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        659.1780419208206,
+        595.2,
+        787.542225020104
+      ],
+      "after": [
+        0.0,
+        668.7658249396885,
+        595.2,
+        787.542225020104
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "b2ca8971113c028051e2d1c0a35422852f5f8b3e601fd1a86d38681944329e33"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p3-s1-cello",
+      "page": 3,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        86.57169811320756,
+        595.2,
+        121.68198113207546
+      ],
+      "after": [
+        0.0,
+        86.57169811320756,
+        595.2,
+        140.52693396226417
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "e617a7b88cb98d18981474ce90556eb1b01ef5a2f6a4035f30682f13107d7740"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p4-s2-clarinet",
+      "page": 4,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        241.9599056603774,
+        595.2,
+        286.32735849056604
+      ],
+      "after": [
+        0.0,
+        241.9599056603774,
+        595.2,
+        284.67429245283023
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "9e7b0f269ed06b275e3a35959701717c68610b7738f2f2b716007e2cfa69526e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p5-s1-piano",
+      "page": 5,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        120.21981185424929,
+        595.2,
+        247.67042435047037
+      ],
+      "after": [
+        0.0,
+        128.15452883538137,
+        595.2,
+        247.67042435047037
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "dfed9249c2e1058bc724c2319263a27938b635d9e6dd7c0f53cae76c95fc119b"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p5-s2-piano",
+      "page": 5,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        307.0691569863909,
+        595.2,
+        411.96756087875025
+      ],
+      "after": [
+        0.0,
+        309.38344943922107,
+        595.2,
+        411.96756087875025
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "88f7297456e1066788565212f2fb6ca5622bfd5e0d45acc99529367800848c53"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p6-s4-piano",
+      "page": 6,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        679.2811191236482,
+        595.2,
+        796.8208376506078
+      ],
+      "after": [
+        0.0,
+        679.2811191236482,
+        595.2,
+        789.8779602921173
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "fc358b6db6082c2f8a0d25791e87be83e5e878b062cc172b3c6f6407afe8841a"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p7-s3-cello",
+      "page": 7,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        442.9727358490566,
+        595.2,
+        519.7402830188679
+      ],
+      "after": [
+        0.0,
+        445.9482547169812,
+        595.2,
+        519.7402830188679
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "d44b23b5172eea9c52cbde31b95f147b0fb81f86f2a4706099949b0331a23589"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p7-s3-clarinet",
+      "page": 7,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        416.1930660377359,
+        595.2,
+        463.5360377358491
+      ],
+      "after": [
+        0.0,
+        416.1930660377359,
+        595.2,
+        461.8829716981132
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "42f3d80fc379aba8f95caf04dbc4a7cdef59aa1bec00203d1c99b6d6f2b6f453"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p7-s3-piano",
+      "page": 7,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        474.9052093160376,
+        595.2,
+        621.2842069575472
+      ],
+      "after": [
+        0.0,
+        474.9052093160376,
+        595.2,
+        611.035197523585
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "c8fb9cb2e24a3cbd0ddb065aeab44df961234145e36613344755f5785496e95c"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p7-s4-cello",
+      "page": 7,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        633.4059433962265,
+        595.2,
+        690.0060849056604
+      ],
+      "after": [
+        0.0,
+        638.6957547169811,
+        595.2,
+        690.0060849056604
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "6bb124631ad0d576e22f15797d134da7cfded7674eac3eccea8a362f4f6424d6"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p7-s4-clarinet",
+      "page": 7,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        601.0058490566038,
+        595.2,
+        653.9692452830188
+      ],
+      "after": [
+        0.0,
+        605.3038207547171,
+        595.2,
+        651.9855660377358
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "18a28447bf028ed7784777235c30e05ab3ce57fb177e8d8d0eeda7c734f2e140"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p7-s4-piano",
+      "page": 7,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        672.6738974056605,
+        595.2,
+        802.4395813679245
+      ],
+      "after": [
+        0.0,
+        672.6738974056605,
+        595.2,
+        797.8109964622641
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "1ce9ecc9eabdb1dc7b2e482cc460d765c1a155b59b7b1b7ee7070e7b5d13e1b2"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p8-s2-clarinet",
+      "page": 8,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        244.60481132075475,
+        595.2,
+        289.6334905660378
+      ],
+      "after": [
+        0.0,
+        244.60481132075475,
+        595.2,
+        287.9804245283019
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "405f7d7917db52d015fdb4a5d5a096fd36f34b6fdb21aae9e40026b0975afa4e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p9-s1-clarinet",
+      "page": 9,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        47.22872641509434,
+        595.2,
+        104.82070754716982
+      ],
+      "after": [
+        0.0,
+        47.22872641509434,
+        595.2,
+        94.90231132075472
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "a175263ad6e2dc8dc2bfb6a16c2fd2e62cff2d544464cff87153f54ca90970a6"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p10-s4-piano",
+      "page": 10,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        667.713855374345,
+        595.2,
+        790.8684004098096
+      ],
+      "after": [
+        0.0,
+        667.713855374345,
+        595.2,
+        779.9581645607531
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "d6decdd372605d3391b9c2825fcabd143a9f4619d3210b9403bbf2a30f26dbbc"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p11-s2-clarinet",
+      "page": 11,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        229.39660377358493,
+        595.2,
+        283.35183962264153
+      ],
+      "after": [
+        0.0,
+        229.39660377358493,
+        595.2,
+        276.408962264151
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4165a6815e4baaea018403c164531f612c0c2d1d7c7e886d1ad6e6ea7c51479a"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p11-s3-clarinet",
+      "page": 11,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        425.11962264150947,
+        595.2,
+        482.7116037735849
+      ],
+      "after": [
+        0.0,
+        425.11962264150947,
+        595.2,
+        468.16462264150937
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "ab55405b54805a851114bbed97ace8b831f12c8fd7533db5b882d0980385e79c"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p11-s4-cello",
+      "page": 11,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        647.952924528302,
+        595.2,
+        711.4959433962264
+      ],
+      "after": [
+        0.0,
+        647.952924528302,
+        595.2,
+        713.4796226415094
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "0c6b261be6ca8121d8847de15b3d9b0073722369b9af750f95600161c1c5ab9d"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p12-s2-cello",
+      "page": 12,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        274.36,
+        595.2,
+        340.8785377358491
+      ],
+      "after": [
+        0.0,
+        276.34367924528306,
+        595.2,
+        340.8785377358491
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "983c59b0c418bbd4342cc46f8a0d9e749095bd0d8b04585e8bd34f18b21b683a"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p12-s3-clarinet",
+      "page": 12,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        418.5073584905661,
+        595.2,
+        479.0748584905661
+      ],
+      "after": [
+        0.0,
+        418.5073584905661,
+        595.2,
+        476.0993396226415
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "fdbd43615fed6af47422b41cb5e1b65ef9a8bd36730bf3483033e4d635309345"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p12-s4-piano",
+      "page": 12,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        678.2945983047889,
+        595.2,
+        798.1415175462025
+      ],
+      "after": [
+        0.0,
+        684.245636040638,
+        595.2,
+        785.57821565941
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "e19efdd8f955cc213ed29fb251a61d7eb4873cfb00cae7139f4368022a8e325e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p13-s1-cello",
+      "page": 13,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        85.24924528301888,
+        595.2,
+        152.09839622641508
+      ],
+      "after": [
+        0.0,
+        90.20844339622643,
+        595.2,
+        152.09839622641508
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "f95679f01fe7bb9cd02036eb732b489c7ec5a2c807213ff8badc528b61bf9771"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p13-s1-clarinet",
+      "page": 13,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        58.80018867924529,
+        595.2,
+        106.1431603773585
+      ],
+      "after": [
+        0.0,
+        58.80018867924529,
+        595.2,
+        104.49009433962264
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "1033d613ac4af00d694d26af9ec17398b7e898cc421c00c4c1b5c20c291b1cc1"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p13-s2-cello",
+      "page": 13,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        258.1599528301887,
+        595.2,
+        313.437641509434
+      ],
+      "after": [
+        0.0,
+        262.4579245283019,
+        595.2,
+        313.437641509434
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "6ae551f3d8261e321f6522ad97f6e672c59dce736549b317b2a3ae2062b8926b"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p13-s2-clarinet",
+      "page": 13,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        238.65377358490568,
+        595.2,
+        278.0620283018868
+      ],
+      "after": [
+        0.0,
+        238.65377358490568,
+        595.2,
+        281.0375471698113
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "eb54ae8a10589192523ac4d728f4f621af54ac29b47d24bf555395b50951601d"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p13-s4-piano",
+      "page": 13,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        661.431418042049,
+        595.2,
+        799.4646059356692
+      ],
+      "after": [
+        0.0,
+        661.431418042049,
+        595.2,
+        797.4809266903862
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "86febf1f0e61b98a9abc95ef202a18d1757e697599dda381d1625e15ddb0abe1"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p14-s1-clarinet",
+      "page": 14,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        32.351132075471696,
+        595.2,
+        91.9267924528302
+      ],
+      "after": [
+        0.0,
+        41.608301886792454,
+        595.2,
+        91.9267924528302
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "97e39eefa8416126e091fab5ec3485f834e5c5c903ebed96af2dbb8184b24608"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p14-s3-piano",
+      "page": 14,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        468.02550003067523,
+        595.2,
+        597.458999989775
+      ],
+      "after": [
+        0.0,
+        475.6296038042601,
+        595.2,
+        597.458999989775
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "2e75126fd3493f4c48f251a822b41b5759e90967508abf56b4085fce3f4659ec"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p15-s1-clarinet",
+      "page": 15,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        44.914433962264155,
+        595.2,
+        108.12683962264151
+      ],
+      "after": [
+        0.0,
+        56.4858962264151,
+        595.2,
+        108.12683962264151
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "d7179e6c2cb913bc3a7398e46d35788c87c1a8d987f71fc10474479104b991da"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p15-s2-clarinet",
+      "page": 15,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        223.77617924528303,
+        595.2,
+        291.61716981132076
+      ],
+      "after": [
+        0.0,
+        223.77617924528303,
+        595.2,
+        285.66613207547175
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4a69b15463b31a8541fc23b6671509421e67cfcd5563f2647c1fd150e02066aa"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p15-s3-cello",
+      "page": 15,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        455.2054245283019,
+        595.2,
+        519.7402830188679
+      ],
+      "after": [
+        0.0,
+        456.52787735849057,
+        595.2,
+        519.7402830188679
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "d209e5ac51b797a3086ec91e08a24360578905276f4a345364339f878bdba930"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p16-s3-clarinet",
+      "page": 16,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        426.44207547169816,
+        595.2,
+        477.09117924528306
+      ],
+      "after": [
+        0.0,
+        426.44207547169816,
+        595.2,
+        475.7687264150943
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "5f6003f6e73f88630feb66e727e6cd3836317d592ea481169efff3b98771aed6"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p16-s3-piano",
+      "page": 16,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        482.57900710216563,
+        595.2,
+        608.036447318146
+      ],
+      "after": [
+        0.0,
+        492.49740332858073,
+        595.2,
+        608.036447318146
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "cc30303833adae20637af33a4d4b0768b6caea94411ef2182cb751c8aaf99355"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s1-cello",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        80.29004716981133,
+        595.2,
+        141.51877358490566
+      ],
+      "after": [
+        0.0,
+        82.27372641509434,
+        595.2,
+        141.51877358490566
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "c8b676d5c532c6fb918bd4e19d0a0ce537334d82f88d91ca6eddb5f817173ba3"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s1-clarinet",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        38.9633962264151,
+        595.2,
+        104.49009433962264
+      ],
+      "after": [
+        0.0,
+        41.27768867924529,
+        595.2,
+        101.18396226415095
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "f7beaa5035b02998311d3acd0f00c55cebc0adecb87cb8d4b81b7978a7d96efd"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s1-piano",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        118.17355837264152,
+        595.2,
+        244.71576356132073
+      ],
+      "after": [
+        0.0,
+        125.7776621462264,
+        595.2,
+        244.71576356132073
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "e4fbbf851833748cf0d01a2aeeeca88c31aad6e800ceeab6f433d16a444f4073"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s2-cello",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        262.12731132075476,
+        595.2,
+        315.0907075471698
+      ],
+      "after": [
+        0.0,
+        265.43344339622644,
+        595.2,
+        315.0907075471698
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "654c29da8be3d56f8171966f05533c8f0981e5a2721262052c2311bc67a9fd05"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s2-clarinet",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        227.7435377358491,
+        595.2,
+        285.00490566037735
+      ],
+      "after": [
+        0.0,
+        227.7435377358491,
+        595.2,
+        287.64981132075474
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "bb5c1612367ddab7fde621d0a40fbd04bdf0fd773408057c100502e00b279d59"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s2-piano",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        293.7288817268077,
+        595.2,
+        427.54496395269933
+      ],
+      "after": [
+        0.0,
+        299.67991946265676,
+        595.2,
+        427.54496395269933
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "669f448e5911c9ec214f1aa359e073ec5cb30c58748bb134852f1a3feb21a578"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s3-clarinet",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        405.28283018867927,
+        595.2,
+        462.21358490566035
+      ],
+      "after": [
+        0.0,
+        405.28283018867927,
+        595.2,
+        460.2299056603773
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "036e05b3177531a616812d8e0b97d6e2fa6379dec7d7083e2dc7e996cd405c97"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s3-piano",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        477.9305812911459,
+        595.2,
+        616.6390043494923
+      ],
+      "after": [
+        0.0,
+        477.9305812911459,
+        595.2,
+        608.7042873683602
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "5435eaafe79b86019811f0e5ea21a877d5c8f7deb8a754a10455c6d59da5635f"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p17-s4-cello",
+      "page": 17,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        624.8100000000001,
+        595.2,
+        685.0468867924528
+      ],
+      "after": [
+        0.0,
+        625.8018396226415,
+        595.2,
+        685.0468867924528
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "fb608e3a2d73f7a3df7ad531a41d7c34d58eddbe9d551e1a7f24235d275885ed"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p18-s1-piano",
+      "page": 18,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        123.52535966981132,
+        595.2,
+        251.63797759433965
+      ],
+      "after": [
+        0.0,
+        123.52535966981132,
+        595.2,
+        233.45425117924532
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4f743aecf83a64fc3bbd66c14c54083aa5c687207b80291527a30f4600d05796"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p19-s4-clarinet",
+      "page": 19,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        617.8671226415095,
+        595.2,
+        662.5651886792452
+      ],
+      "after": [
+        0.0,
+        617.8671226415095,
+        595.2,
+        654.6304716981132
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "5140a20c3a066eb5e9d75acc0224f7208ab231acd6459f5b13227d82dda12b76"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p20-s1-cello",
+      "page": 20,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        80.6206603773585,
+        595.2,
+        126.97179245283019
+      ],
+      "after": [
+        0.0,
+        83.9267924528302,
+        595.2,
+        126.97179245283019
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "926239e782ae069ba04c7822d9156d60298266619cc397452ec9bd6b496317fd"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p20-s1-clarinet",
+      "page": 20,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        40.61646226415095,
+        595.2,
+        99.53089622641511
+      ],
+      "after": [
+        0.0,
+        54.83283018867925,
+        595.2,
+        99.53089622641511
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "f305d3ce803ba5323a465fa0981e537c18ba44199ce682b390e1fbc965be51f3"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p20-s4-cello",
+      "page": 20,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        618.5283490566038,
+        595.2,
+        670.8305188679245
+      ],
+      "after": [
+        0.0,
+        624.4793867924528,
+        595.2,
+        670.8305188679245
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "eb681489db5644a06c564696edcd1276163337b32e80cf51ef6cb9c1e7bacc44"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p20-s4-piano",
+      "page": 20,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        655.4697714248349,
+        595.2,
+        791.2028120407783
+      ],
+      "after": [
+        0.0,
+        659.1065167078536,
+        595.2,
+        791.2028120407783
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4dff36f37012552d5272d5d08d2119475eaa5dc50b4e7ce0888cbaf392fc1b00"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p21-s1-cello",
+      "page": 21,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        87.56353773584907,
+        595.2,
+        125.31872641509435
+      ],
+      "after": [
+        0.0,
+        87.56353773584907,
+        595.2,
+        140.19632075471696
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "071f2d195fd7e5867b117aabee96eb523cdf54de6b33b9a997e990722a1f931e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p21-s1-piano",
+      "page": 21,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        121.47150698220108,
+        595.2,
+        249.677689496499
+      ],
+      "after": [
+        0.0,
+        121.47150698220108,
+        595.2,
+        243.0654253455556
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "0074b9ba1812c99d160fa06804a0cc77212cab00fa20c80360f9918cdcc1373f"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p21-s2-clarinet",
+      "page": 21,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        229.06599056603775,
+        595.2,
+        285.66613207547175
+      ],
+      "after": [
+        0.0,
+        229.06599056603775,
+        595.2,
+        285.99674528301887
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "8ef322b86140e397357eb6cbad80518b94bc104356ee2ee101c8cafabc8bcd9e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p21-s3-clarinet",
+      "page": 21,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        423.7971698113208,
+        595.2,
+        472.4625943396226
+      ],
+      "after": [
+        0.0,
+        423.7971698113208,
+        595.2,
+        467.5033962264151
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "affe1c360fe21dc82c9e65fd23713b5cae8bd9540460c70e4520f30d70e78333"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p22-s2-cello",
+      "page": 22,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        259.1517924528302,
+        595.2,
+        317.7356132075472
+      ],
+      "after": [
+        0.0,
+        259.1517924528302,
+        595.2,
+        302.85801886792456
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "eb9535526561440feb355b1cf3e1b01b5d146d3a0fed8391388e0f77c77a5c23"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p22-s2-piano",
+      "page": 22,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        287.3859567815419,
+        595.2,
+        435.8307188086684
+      ],
+      "after": [
+        0.0,
+        288.7084096117306,
+        595.2,
+        414.6714735256496
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "903b6ab07ca24f0a404377f65a62714e36d1ec4790a235c9e7d10d1becf863ee"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p22-s3-clarinet",
+      "page": 22,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        414.20938679245285,
+        595.2,
+        469.4870754716981
+      ],
+      "after": [
+        0.0,
+        414.20938679245285,
+        595.2,
+        467.83400943396225
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "b89c76937348954f51b0356a395e86ab238b5018499314790418bb79465f4b4b"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p22-s4-cello",
+      "page": 22,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        629.1079716981133,
+        595.2,
+        674.1366509433963
+      ],
+      "after": [
+        0.0,
+        634.0671698113208,
+        595.2,
+        674.1366509433963
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "07c29705f5666e8d76bfcc88542307c0240804865404e8b51da879a9c6c97b60"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p22-s4-piano",
+      "page": 22,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        668.5716300632183,
+        595.2,
+        787.2763434380468
+      ],
+      "after": [
+        0.0,
+        668.5716300632183,
+        595.2,
+        782.3171453248392
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "4286a1d0f77c5b71a73e9a8ebdbfcd9da20dffcaa49a9d04526b63c774a62a24"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p23-s1-piano",
+      "page": 23,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        125.05934686279619,
+        595.2,
+        254.6531894105145
+      ],
+      "after": [
+        0.0,
+        125.05934686279619,
+        595.2,
+        236.46946299542014
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "9f179e135bdd89e772ef0e8750d1db234c94b9bc9f1d66f5f6e5b40b2db4a5a2"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p23-s2-cello",
+      "page": 23,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        267.0865094339623,
+        595.2,
+        328.3152358490566
+      ],
+      "after": [
+        0.0,
+        274.36,
+        595.2,
+        328.3152358490566
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "5ad38021f1513ea5b1bda03db3e1d64c17c9d7684aa3df12de5d863f50f8b0b0"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p23-s2-clarinet",
+      "page": 23,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        233.6945754716981,
+        595.2,
+        291.947783018868
+      ],
+      "after": [
+        0.0,
+        233.6945754716981,
+        595.2,
+        287.31919811320756
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "db90503766d037a7e019cb3e2e7278864be0dc7a1e482e756a162824b7c086ec"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p23-s3-clarinet",
+      "page": 23,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        418.1767452830189,
+        595.2,
+        459.89929245283014
+      ],
+      "after": [
+        0.0,
+        418.1767452830189,
+        595.2,
+        470.4789150943396
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "1c602b554d4ad604b0fd9ca3d9f463eaf0b137862297b2cbe1c3b7061d808d42"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p24-s1-cello",
+      "page": 24,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        82.60433962264152,
+        595.2,
+        141.18816037735849
+      ],
+      "after": [
+        0.0,
+        84.58801886792455,
+        595.2,
+        141.18816037735849
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "28b73e6a89a2bef2bb2f3dfab880684640a37284ec47adc5570cce79a46afc38"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p24-s1-clarinet",
+      "page": 24,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        50.53485849056604,
+        595.2,
+        102.8370283018868
+      ],
+      "after": [
+        0.0,
+        50.53485849056604,
+        595.2,
+        104.82070754716982
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "cd08a04cf1c5857d084022916f59b942dfac150daebc5da2c038640ff86cf9cb"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p24-s3-clarinet",
+      "page": 24,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        428.75636792452826,
+        595.2,
+        486.0177358490566
+      ],
+      "after": [
+        0.0,
+        428.75636792452826,
+        595.2,
+        481.71976415094343
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "a455164feca0b10e6a7c5d5e5318b716ef655b78cf9f9aba34a672b85e234b45"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p24-s4-clarinet",
+      "page": 24,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        610.5936320754718,
+        595.2,
+        647.6875943396227
+      ],
+      "after": [
+        0.0,
+        610.5936320754718,
+        595.2,
+        643.7202358490566
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "9e444f1ba3f86cc26e77794e427045c3ac71b3f45f04728df29caa7fd5c52997"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p24-s4-piano",
+      "page": 24,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        665.6074604366106,
+        595.2,
+        789.9174660179851
+      ],
+      "after": [
+        0.0,
+        665.6074604366106,
+        595.2,
+        782.9745886594947
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "8c09935b92d5a09c23e458f3c818ee81cd06c3c69b52ec1960876c61d8fec61b"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p25-s1-cello",
+      "page": 25,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        60.453254716981135,
+        595.2,
+        142.51061320754718
+      ],
+      "after": [
+        0.0,
+        70.70226415094339,
+        595.2,
+        145.15551886792454
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "77ff693c83792bedf753ef73dff337f4a9cd6ab8c1a951ad75ea7acb9bc10e8d"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p25-s2-cello",
+      "page": 25,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        266.4252830188679,
+        595.2,
+        330.960141509434
+      ],
+      "after": [
+        0.0,
+        269.73141509433964,
+        595.2,
+        330.960141509434
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "98c0cc66e89ac7fe7534655f716cc4a6e008c9b1267e42126b8bbcde5f40df83"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p25-s2-clarinet",
+      "page": 25,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        241.62929245283019,
+        595.2,
+        288.3110377358491
+      ],
+      "after": [
+        0.0,
+        241.62929245283019,
+        595.2,
+        288.97226415094343
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "1e9d2af50d42893efe65da2189ff0722836e934a40bed336f148708f3353e5a8"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p25-s3-clarinet",
+      "page": 25,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        414.20938679245285,
+        595.2,
+        464.85849056603774
+      ],
+      "after": [
+        0.0,
+        414.20938679245285,
+        595.2,
+        466.5115566037736
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "6c4c870e24b3bc679f48840b073153664e047c7e212920a582ab3cdb46f87df2"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p25-s3-piano",
+      "page": 25,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        485.54195322737405,
+        595.2,
+        628.2080438927621
+      ],
+      "after": [
+        0.0,
+        488.5174720952987,
+        595.2,
+        623.5794589871017
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "8787e28cd1421970ca30e76330db7aff76f93bec7df5fad935c19b5949fc567a"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p26-s2-cello",
+      "page": 26,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        262.12731132075476,
+        595.2,
+        317.07438679245286
+      ],
+      "after": [
+        0.0,
+        266.75589622641513,
+        595.2,
+        317.07438679245286
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "280dcb0c0f6fddc87fff5ea829f771b63abeba5cfe1f1bf190d5c10fbe1c010f"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p26-s2-piano",
+      "page": 26,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        289.2283151703523,
+        595.2,
+        405.6818194715178
+      ],
+      "after": [
+        0.0,
+        291.8732208307297,
+        595.2,
+        405.6818194715178
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "12f20fcdb2c5122b930a2668c8480150f940b64532fe7c076cc152b911e5a9ce"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p26-s4-cello",
+      "page": 26,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        616.5446698113208,
+        595.2,
+        667.855
+      ],
+      "after": [
+        0.0,
+        623.4875471698114,
+        595.2,
+        667.855
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "0f35c917252f589627ae596f33f35674d60a1759c61142bffa230d7f744ad408"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p28-s1-cello",
+      "page": 28,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        80.29004716981133,
+        595.2,
+        126.64117924528303
+      ],
+      "after": [
+        0.0,
+        87.89415094339624,
+        595.2,
+        126.64117924528303
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "8d05a1b92ef3a96ad690a33521690df65b9d64a5a5cb005ebd12f4b33c9ad1bb"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p28-s4-piano",
+      "page": 28,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        676.2450436460597,
+        595.2,
+        790.8899854513136
+      ],
+      "after": [
+        0.0,
+        676.2450436460597,
+        595.2,
+        782.6246552626343
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "14074f865971a643199febddb7ea835924ae92eaa5e126a476c079f243d87126"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p29-s1-clarinet",
+      "page": 29,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        40.28584905660377,
+        595.2,
+        101.51457547169812
+      ],
+      "after": [
+        0.0,
+        55.82466981132076,
+        595.2,
+        101.51457547169812
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "76deb4d98ca1dcf0312fe8552c9939940b68fdcfbfde429cb14d398c92a36c5d"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p29-s1-piano",
+      "page": 29,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        110.18458748984091,
+        595.2,
+        240.76648970464421
+      ],
+      "after": [
+        0.0,
+        110.18458748984091,
+        595.2,
+        228.8644142329461
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "06435eba43569f0b9962ebfaabf011be89060abab57a2a90f207e65dc204e97e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p29-s2-clarinet",
+      "page": 29,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        227.0823113207547,
+        595.2,
+        283.02122641509436
+      ],
+      "after": [
+        0.0,
+        227.0823113207547,
+        595.2,
+        283.35183962264153
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "c8aa1dbce87c027dccf4ca85489ffa81ec45a6bdfcdc8c0e7533dbced1c51ee1"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p29-s3-piano",
+      "page": 29,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        482.8398044761309,
+        595.2,
+        598.1413230362583
+      ],
+      "after": [
+        0.0,
+        484.82348372141394,
+        595.2,
+        598.1413230362583
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "33c0e8bc5b4538076643ec633283e9b418c145d01e74573d80f8d96441d24f56"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p29-s4-cello",
+      "page": 29,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        629.7691981132076,
+        595.2,
+        686.0387264150943
+      ],
+      "after": [
+        0.0,
+        629.7691981132076,
+        595.2,
+        685.7081132075472
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "f98a15eb34742c3419a6a237aaf8f3c9a3717c7e6065936902b32ffa13ebb4de"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p30-s1-cello",
+      "page": 30,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        73.67778301886794,
+        595.2,
+        141.18816037735849
+      ],
+      "after": [
+        0.0,
+        78.96759433962265,
+        595.2,
+        141.18816037735849
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "33a97c052f388b15944845dd74233d92f8c97ea8ae3490f032dbaf4c3c922f23"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p30-s2-cello",
+      "page": 30,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        262.7885377358491,
+        595.2,
+        327.3233962264151
+      ],
+      "after": [
+        0.0,
+        262.7885377358491,
+        595.2,
+        326.0009433962265
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "9ef0467435f7e7d0509996ca7a89eee24c885307db0b2525ff5fc87006e7c27a"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p30-s3-piano",
+      "page": 30,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        479.6501154629253,
+        595.2,
+        600.0861879274526
+      ],
+      "after": [
+        0.0,
+        482.62563433084983,
+        595.2,
+        600.0861879274526
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "91c1c3e75718979b18c7fc013ab6429cb7f903f13d1231371799bed0e3524253"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p31-s2-cello",
+      "page": 31,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        265.43344339622644,
+        595.2,
+        326.99278301886795
+      ],
+      "after": [
+        0.0,
+        265.43344339622644,
+        595.2,
+        321.0417452830189
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "45bd179c416abe2a4e64d7d3135025cabd02b0587f7f1f0c27e46fbaf2ea12af"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p32-s1-cello",
+      "page": 32,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        71.36349056603774,
+        595.2,
+        123.33504716981133
+      ],
+      "after": [
+        0.0,
+        75.33084905660378,
+        595.2,
+        123.33504716981133
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "26d7f649c80dc852e0d987bd472aec035dbc625946c83aaa14ca4b387249a036"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p32-s4-clarinet",
+      "page": 32,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        583.1527358490566,
+        595.2,
+        636.777358490566
+      ],
+      "after": [
+        0.0,
+        583.1527358490566,
+        595.2,
+        628.5120283018867
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "eea300fb94b8359ec676eafa919745e14b52b68fefc1d071432dcb2a2f81efa0"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p33-s2-cello",
+      "page": 33,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        263.1191509433963,
+        595.2,
+        322.3641981132076
+      ],
+      "after": [
+        0.0,
+        265.43344339622644,
+        595.2,
+        322.3641981132076
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "409c6e81ab81144ded630e3af9ed1bf19883ec53dc85fe321b4dcc0bf0fa4b8e"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p33-s2-piano",
+      "page": 33,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        296.9596643772954,
+        595.2,
+        415.227187345933
+      ],
+      "after": [
+        0.0,
+        296.9596643772954,
+        595.2,
+        398.6965269685745
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "e2c193531ca3dc2d3d09a645713be0e769fb0c09dd0f92df9321e38b5e9d3f91"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p33-s3-clarinet",
+      "page": 33,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        394.0419811320755,
+        595.2,
+        457.585
+      ],
+      "after": [
+        0.0,
+        394.0419811320755,
+        595.2,
+        449.98089622641504
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "71177047cfd235a00a3feed100d2bee53201be0848d3e99d04a723f4fb4df3b5"
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p33-s4-clarinet",
+      "page": 33,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0.0,
+        588.7731603773585,
+        595.2,
+        640.0834905660378
+      ],
+      "after": [
+        0.0,
+        588.7731603773585,
+        595.2,
+        639.7528773584907
+      ],
+      "reviewer": "crop_algorithm_audit",
+      "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+      "contextSHA256": "3a5a09ad8a8db6863298c71f917c2e2245c4fabf6d559f8e758ceb7a22a52c5d"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "bandID": "p2-s1-voice",
+      "page": 2,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        36.11538461538461,
+        516,
+        103.53846153846155
+      ],
+      "after": [
+        0,
+        51.98076923076924,
+        516,
+        103.53846153846155
+      ],
+      "reviewer": "root",
+      "receipt": ".build/envelope-compatibility-corpus-2026-10-03/root-schumann-source-review.json",
+      "contextSHA256": "ac6eb8c4c03bfdee94d26c32572d3a10ece2c5d6053ae8b25975b37815f9d442"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "bandID": "p5-s4-piano",
+      "page": 5,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        465.0576923076923,
+        516,
+        560.173076923077
+      ],
+      "after": [
+        0,
+        465.0576923076923,
+        516,
+        551.8076923076924
+      ],
+      "reviewer": "root",
+      "receipt": ".build/envelope-compatibility-corpus-2026-10-03/root-schumann-source-review.json",
+      "contextSHA256": "c81a03f9fafc16608eac7f44ad11f79a6acccfcd6a95a901772e58ec9ffb6567"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "bandID": "p11-s2-voice",
+      "page": 11,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        173.1346153846154,
+        516,
+        236.2307692307692
+      ],
+      "after": [
+        0,
+        170.24999999999997,
+        516,
+        236.2307692307692
+      ],
+      "reviewer": "root",
+      "receipt": ".build/envelope-compatibility-corpus-2026-10-03/root-schumann-source-review.json",
+      "contextSHA256": "4745d1097002476aaafbe5f6a78ae7e2e776dbb129052f5040d39e8be9babf29"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "bandID": "p11-s4-voice",
+      "page": 11,
+      "method": "exact same source, ownership, before crop and after crop as prior reviewed source area",
+      "before": [
+        0,
+        411.40384615384613,
+        516,
+        479.9807692307693
+      ],
+      "after": [
+        0,
+        410.53846153846155,
+        516,
+        479.9807692307693
+      ],
+      "reviewer": "root",
+      "receipt": ".build/envelope-compatibility-corpus-2026-10-03/root-schumann-source-review.json",
+      "contextSHA256": "0ffbff7be20d9035990672ec2523c9db9972d38313a888fb6838bd2f41384704"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s1-viola",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "6fccbc3360898aad4ed7883a4571e47ee0217d35a803e3f5c4f8eeed7ee783d1"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s2-cello",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "e5af5bc570355196b669fbab248943f3afd3987951618c04ec2729cd9927472e"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s2-viola",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "b301d31ec2f70c95163149f424c38d9a187a43e64c8c75e70975370e30d6e88a"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s2-violin1",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "066f12f71f14ca117dc7763552ceb953546d492005a0345868c0e5bb138edaaf"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s3-violin1",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "6e6128ee1b5a17b2d785404005bc27a671b535e4f86e17125f2374482104bd9a"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s4-cello",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "9b414f955ca1b422222aca4dee46c9ea16fbb4eef469d27f30bca1c5177561fa"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s4-viola",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "f833f74cb4078061cacb56dcd545161794fbe51272318aee7171beca2c276d47"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p1-s4-violin1",
+      "page": 1,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "833d3d3fb89f84e66aa28e038e71efab480128204f275651bd55debc854a3f0f"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s1-cello",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "bc73011bd41d3f26c92cfae331107e26ba27b50a755424f1182f8b3126320a9e"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s2-violin2",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "ff1f6e9e567a3eb68b421a14605435bd416a347ae5a41879bde79c6fd64a2157"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s3-cello",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "d8a54e211d9378f7eb67ee75db94431d1024b627164ee4b4e5f72237d2190bba"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s3-viola",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "c45124675b8c472e880566480ba7213dd1330428dd5c6e55ebda1a003f11b371"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s3-violin2",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "e4e9e57a917215016f6e28612192722f97b59bf4bc79224e2444ba7e6e36ef4c"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s4-cello",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "aad0fa5c01a4756e6df524d84e71c0927df32c74293fca3ab00981a7e8f79398"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s4-viola",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "dc627c58f853aa6e939898f3711f47034c38f78c78afdc3d7363b75a78459dd5"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s4-violin1",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "fe60fd735147d45f8b68411a1bbc3b39b3c5349b704ae60d835f09f8fff3c59c"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s4-violin2",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "d9a4b02c0b7e9b677bccd735d4e23ef30c1302106addcbd85417d8940d859d9d"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s5-viola",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "4154b2889a82c3c73442ab4031b3d1b836e614ee63c2002a32c6ca8c774da788"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p2-s5-violin2",
+      "page": 2,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "41c22636cb9dbaa540c0c6075afd33fb7c323dac053e10e378028d0f90881008"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s1-viola",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "d66c4bdfedad2e4fa58ffd16c16f86aeb2a49130158fad01c37ef68baa26a6d6"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s1-violin2",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "b5f8fe34a5e1d0ef0d1ed80fcb1e5f6901349249e896b848de3a6443d5e88d99"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s2-viola",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "b6af33ca4c8725e184a82b6c8821a7674860d48f929fe440d12ba98da1036bcb"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s2-violin2",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "b8ca16aff116528e591ba187ff953d760879c147f3d6fcbfd3d1548347618a29"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s3-viola",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "220d03de486cfbd02ba4db8ad999d0129fb34fdf0f6405021082973e1953a0e3"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s3-violin1",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "fe299b2ea349f427efadedada0509271179cd0ff098c4946809274f4d8339e5e"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s3-violin2",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "132405a97a41ed10f252f7821e2129b4408cf9926191388c52c3d2d4b38cc998"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s4-viola",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "3ec4b7d150c4653e7cc3dbc6c69d656ee5a8da4e6004ff59421246e799b7535a"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s4-violin1",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "5fbdf9f72d8cdb248443b53dcbb60e4d2e6fc8b8150d2d42b86d538ee40acf7c"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s4-violin2",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "fb360b328d0bcf130592ab1427ed5222f37d5ed141910364271d288b4ee8e351"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p16-s5-violin1",
+      "page": 16,
+      "method": "new native candidate source review, exact fresh full-worker assignment equality",
+      "reviewer": "root",
+      "receipt": ".build/numbered-line-monotone-compatibility-2026-10-03/root-three-page-review/review.json",
+      "contextSHA256": "807c124af57b8426972c2286c23056291228b6cc32156b44b6d14bc4b1988b6a"
+    }
+  ],
+  "perScore": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "pending": 9,
+      "changed": 9
+    },
+    {
+      "id": "excerpt-mozart-k488-page-17"
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "reviewed": 28,
+      "changed": 29,
+      "pending": 1
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "reviewed": 95,
+      "changed": 109,
+      "pending": 14
+    },
+    {
+      "id": "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803"
+    },
+    {
+      "id": "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222"
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "reviewed": 4,
+      "changed": 6,
+      "pending": 2
+    },
+    {
+      "id": "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132"
+    },
+    {
+      "id": "lightly-skewed-07-brahms-2-motets-op74-imslp-101579"
+    },
+    {
+      "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163"
+    },
+    {
+      "id": "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040"
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "reviewed": 30,
+      "changed": 256,
+      "pending": 226
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "pending": 86,
+      "changed": 86
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "pending": 107,
+      "changed": 107
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "pending": 205,
+      "changed": 205
+    },
+    {
+      "id": "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506"
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "pending": 199,
+      "changed": 199
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "pending": 253,
+      "changed": 253
+    },
+    {
+      "id": "medium-skewed-07-brahms-2-motets-op74-imslp-101580"
+    },
+    {
+      "id": "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041"
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "pending": 19,
+      "changed": 19
+    },
+    {
+      "id": "medium-skewed-10-schubert-winterreise-d911-imslp-00414"
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "pending": 1,
+      "changed": 1
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "pending": 3,
+      "changed": 3
+    },
+    {
+      "id": "normal-mozart-trio-eb-major-kv498-score"
+    },
+    {
+      "id": "normal-beethoven-egmont-overture-op84-score"
+    },
+    {
+      "id": "normal-mozart-magic-flute-overture-kv620-score"
+    },
+    {
+      "id": "normal-mozart-symphony-no18-kv130-score"
+    },
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score"
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score"
+    },
+    {
+      "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score"
+    },
+    {
+      "id": "normal-mozart-ave-verum-corpus-kv618-cpdl18715-complete-score"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624"
+    },
+    {
+      "id": "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437"
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229"
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-flute-mutopia2229"
+    }
+  ],
+  "priorReviewedButDifferentGeometry": [
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p10-s3-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          420.8216509433962,
+          595.2,
+          474.1156603773585
+        ],
+        "after": [
+          0.0,
+          420.8216509433962,
+          595.2,
+          474.44627358490567
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "4e240bea8dfd79b2ee3315e3a74c18673bcc3367f3caca7d27793281a0b27e57"
+      },
+      "currentBefore": [
+        0.0,
+        420.8216509433962,
+        595.2,
+        474.1156603773585
+      ],
+      "currentAfter": [
+        0.0,
+        420.8216509433962,
+        595.2,
+        473.78504716981126
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p18-s2-cello",
+      "prior": {
+        "before": [
+          0.0,
+          268.7395754716981,
+          595.2,
+          327.6540094339623
+        ],
+        "after": [
+          0.0,
+          268.7395754716981,
+          595.2,
+          328.6458490566038
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "74134efaa270dea03fe4f799f125caf12b4952da93e0e54bfab5e0c82b74bae5"
+      },
+      "currentBefore": [
+        0.0,
+        268.7395754716981,
+        595.2,
+        327.6540094339623
+      ],
+      "currentAfter": [
+        0.0,
+        268.7395754716981,
+        595.2,
+        327.9846226415095
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p18-s3-cello",
+      "prior": {
+        "before": [
+          0.0,
+          436.3604716981132,
+          595.2,
+          503.8708490566038
+        ],
+        "after": [
+          0.0,
+          436.3604716981132,
+          595.2,
+          504.2014622641509
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "1e0ebbf52991e48807f65b899c6a1f9a53426c585275b704b4dbe477a3234d10"
+      },
+      "currentBefore": [
+        0.0,
+        436.3604716981132,
+        595.2,
+        503.8708490566038
+      ],
+      "currentAfter": [
+        0.0,
+        436.3604716981132,
+        595.2,
+        503.5402358490566
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p18-s4-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          590.0956132075472,
+          595.2,
+          635.4549056603773
+        ],
+        "after": [
+          0.0,
+          590.0956132075472,
+          595.2,
+          643.0590094339623
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "22da58ac4b2cefe4a761a1ebd1f0539bd95accb9ce68330490a39efa682a02aa"
+      },
+      "currentBefore": [
+        0.0,
+        590.0956132075472,
+        595.2,
+        635.4549056603773
+      ],
+      "currentAfter": [
+        0.0,
+        590.0956132075472,
+        595.2,
+        642.3977830188679
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p19-s2-cello",
+      "prior": {
+        "before": [
+          0.0,
+          277.3355188679246,
+          595.2,
+          325.67033018867926
+        ],
+        "after": [
+          0.0,
+          277.3355188679246,
+          595.2,
+          338.89485849056604
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "866f528d4f4c8b147679c61299c9082322c33d5c3b47f697b2f92763c248d050"
+      },
+      "currentBefore": [
+        0.0,
+        277.3355188679246,
+        595.2,
+        325.67033018867926
+      ],
+      "currentAfter": [
+        0.0,
+        277.3355188679246,
+        595.2,
+        337.9030188679246
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p20-s2-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          219.808820754717,
+          595.2,
+          268.80485849056606
+        ],
+        "after": [
+          0.0,
+          219.808820754717,
+          595.2,
+          270.7885377358491
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "aa32fb2829294e395eca91c4d639d8e1c96ba649e8052339d5d4db59347a9fc0"
+      },
+      "currentBefore": [
+        0.0,
+        219.808820754717,
+        595.2,
+        268.80485849056606
+      ],
+      "currentAfter": [
+        0.0,
+        219.808820754717,
+        595.2,
+        270.12731132075476
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p20-s3-cello",
+      "prior": {
+        "before": [
+          0.0,
+          429.4175943396227,
+          595.2,
+          489.6544811320755
+        ],
+        "after": [
+          0.0,
+          429.4175943396227,
+          595.2,
+          487.67080188679245
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "8cf3e284dd6ae5a23df9e833af274d54eae4f8a8b96769652dcc6230d8282b84"
+      },
+      "currentBefore": [
+        0.0,
+        429.4175943396227,
+        595.2,
+        489.6544811320755
+      ],
+      "currentAfter": [
+        0.0,
+        429.4175943396227,
+        595.2,
+        489.32386792452826
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p25-s1-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          44.253207547169815,
+          595.2,
+          123.99627358490567
+        ],
+        "after": [
+          0.0,
+          44.253207547169815,
+          595.2,
+          118.04523584905661
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "e1ba82fce4de7c0b1407ecce46ec6b736e47c7fff21cfaada68036f99423858c"
+      },
+      "currentBefore": [
+        0.0,
+        44.253207547169815,
+        595.2,
+        123.99627358490567
+      ],
+      "currentAfter": [
+        0.0,
+        44.253207547169815,
+        595.2,
+        117.38400943396228
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p26-s1-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          52.187924528301885,
+          595.2,
+          103.49825471698114
+        ],
+        "after": [
+          0.0,
+          52.187924528301885,
+          595.2,
+          100.19212264150944
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "d7ecb16cde2a357aa095197e5a66bc54fa05ac3cedd8f30162f8d117253dccb7"
+      },
+      "currentBefore": [
+        0.0,
+        52.187924528301885,
+        595.2,
+        103.49825471698114
+      ],
+      "currentAfter": [
+        0.0,
+        52.187924528301885,
+        595.2,
+        103.82886792452831
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p26-s2-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          233.36396226415096,
+          595.2,
+          282.02938679245284
+        ],
+        "after": [
+          0.0,
+          233.36396226415096,
+          595.2,
+          281.36816037735855
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "ff27dc4b9165de24b2e699029b6efaf9b3e5dcae760806281ae61b7fb5f51790"
+      },
+      "currentBefore": [
+        0.0,
+        233.36396226415096,
+        595.2,
+        282.02938679245284
+      ],
+      "currentAfter": [
+        0.0,
+        233.36396226415096,
+        595.2,
+        282.69061320754724
+      ]
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "bandID": "p30-s1-clarinet",
+      "prior": {
+        "before": [
+          0.0,
+          53.1797641509434,
+          595.2,
+          96.2247641509434
+        ],
+        "after": [
+          0.0,
+          53.1797641509434,
+          595.2,
+          91.9267924528302
+        ],
+        "reviewer": "crop_algorithm_audit",
+        "receipt": "Tests/quality_control/envelope-corpus-two-score-source-review-2026-10-03/review.json",
+        "contextSHA256": "0a2fafef6c9d18f6d7255270ba4c607f9053ae3044f861e9caa5a6f37b52d5cf"
+      },
+      "currentBefore": [
+        0.0,
+        53.1797641509434,
+        595.2,
+        96.2247641509434
+      ],
+      "currentAfter": [
+        0.0,
+        53.1797641509434,
+        595.2,
+        96.88599056603775
+      ]
+    }
+  ]
+}
