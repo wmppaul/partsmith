@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "independent child agent /root/app_audit/seven_trim_contract",
+  "reviewedAtUTC": "2026-10-04T19:57:06.096116+00:00",
+  "scope": "Read-only JSON/native contract and byte-hash comparison. No PDF rendering and no visual clipping judgment performed by this reviewer.",
+  "result": "PASS",
+  "contractDefects": [],
+  "inputs": {
+    "parentProject": {
+      "path": "/Users/will/Documents/git/partsmith/output/pdf/auto-qc-2026-10-03/brahms-quartet-93521-viola-in-tempo-repair/Brahms — String Quartet No.3, Op.67.partsmithproject/project.json",
+      "sha256": "052f9d4193b936055e9f1d57cad19fba291c9797973aef7a903466ea88e0110b"
+    },
+    "newProject": {
+      "path": "/Users/will/Documents/git/partsmith/.build/brahms93521-reviewed-overlap-trim-2026-10-03/parts/Brahms — String Quartet No.3, Op.67.partsmithproject/project.json",
+      "sha256": "fa29f073524041ba5e37b712eb22fd5b064479eabb334932dc06e5ee5d973b1c"
+    },
+    "parentManifest": {
+      "path": "/Users/will/Documents/git/partsmith/output/pdf/auto-qc-2026-10-03/brahms-quartet-93521-viola-in-tempo-repair/manifest.json",
+      "sha256": "b640714f0d8dcc9901883a28498fc712ba4d7a80cde453d555ea097c44ee2ba4"
+    },
+    "newManifest": {
+      "path": "/Users/will/Documents/git/partsmith/.build/brahms93521-reviewed-overlap-trim-2026-10-03/parts/manifest.json",
+      "sha256": "18c4fdcc0db49db1350af235c184668dbb4392fafa0e676d53f558f6af499282"
+    },
+    "frozenEdits": {
+      "path": "/Users/will/Documents/git/partsmith/.build/brahms93521-reviewed-overlap-trim-2026-10-03/parts/proposed-edits-before-output.json",
+      "sha256": "87b6827f789f42612bf490555f46923e461f12fda5ed82583bb69de163966bf8",
+      "workAndPartsCopiesByteIdentical": true,
+      "parentProjectAndManifestHashesMatch": true
+    }
+  },
+  "projectDiff": {
+    "exactLeafChangeCount": 8,
+    "sevenDeclaredEdgesOnlyPlusModifiedAt": true,
+    "changes": [
+      {
+        "path": [
+          "project",
+          "bands",
+          354,
+          "bottomFraction"
+        ],
+        "before": 0.5069157425087556,
+        "after": 0.46016260162601624
+      },
+      {
+        "path": [
+          "project",
+          "bands",
+          355,
+          "topFraction"
+        ],
+        "before": 0.3920950401173892,
+        "after": 0.44065040650406506
+      },
+      {
+        "path": [
+          "project",
+          "bands",
+          412,
+          "bottomFraction"
+        ],
+        "before": 0.15214670092084537,
+        "after": 0.10650406504065041
+      },
+      {
+        "path": [
+          "project",
+          "bands",
+          413,
+          "topFraction"
+        ],
+        "before": 0.0351073614767357,
+        "after": 0.1048780487804878
+      },
+      {
+        "path": [
+          "project",
+          "bands",
+          461,
+          "topFraction"
+        ],
+        "before": 0.06737463903755891,
+        "after": 0.10975609756097561
+      },
+      {
+        "path": [
+          "project",
+          "bands",
+          574,
+          "bottomFraction"
+        ],
+        "before": 0.25942888557624194,
+        "after": 0.2186991869918699
+      },
+      {
+        "path": [
+          "project",
+          "bands",
+          575,
+          "topFraction"
+        ],
+        "before": 0.14889149671730786,
+        "after": 0.21300813008130082
+      },
+      {
+        "path": [
+          "project",
+          "modifiedAt"
+        ],
+        "before": "2026-10-04T02:43:57Z",
+        "after": "2026-10-04T04:23:50Z"
+      }
+    ]
+  },
+  "bands": {
+    "projectCountBefore": 604,
+    "projectCountAfter": 604,
+    "manifestPlacementCountBefore": 604,
+    "manifestPlacementCountAfter": 604,
+    "allProjectIDsAndOrderPreserved": true,
+    "allPerPartPlacementIDsAndOrderPreserved": true,
+    "nonLayoutPlacementMetadataPreserved": true,
+    "sourceRectChangesExactlyFrozenSeven": true
+  },
+  "rectifications": {
+    "projectCount": 9,
+    "projectAndManifestValuesIdentical": true
+  },
+  "sourceCopies": {
+    "count": 42,
+    "allSourceRectanglesAndMetadataIdentical": true,
+    "copiesWithDestinationLayoutChanges": 25
+  },
+  "immutableFiles": [
+    {
+      "relativePath": "rectified-review-source.pdf",
+      "parentSHA256": "be1074d1436da4737bab07e360d1f6b4fda8b011db7b3a598e60cd62891cf8b4",
+      "newSHA256": "be1074d1436da4737bab07e360d1f6b4fda8b011db7b3a598e60cd62891cf8b4",
+      "byteIdentical": true
+    },
+    {
+      "relativePath": "original-detection-plan.json",
+      "parentSHA256": "be1e379afe06a1d4f1500c91964dc37c2befc6ceb494695d9e0fb9e2c31db38c",
+      "newSHA256": "be1e379afe06a1d4f1500c91964dc37c2befc6ceb494695d9e0fb9e2c31db38c",
+      "byteIdentical": true
+    },
+    {
+      "relativePath": "source-guard-before-edit.json",
+      "parentSHA256": "16bd53ceee34580d72f1873f1379cbdfabb81778cea8a68c5646fab7a7cc8bc2",
+      "newSHA256": "16bd53ceee34580d72f1873f1379cbdfabb81778cea8a68c5646fab7a7cc8bc2",
+      "byteIdentical": true
+    },
+    {
+      "relativePath": "Brahms — String Quartet No.3, Op.67.partsmithproject/source.pdf",
+      "parentSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "newSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+      "byteIdentical": true
+    }
+  ],
+  "edges": [
+    {
+      "id": "p28-s1-violin1",
+      "bandUUID": "8689414A-CBEE-4532-8A97-9254612E0975",
+      "sourcePage": 28,
+      "edge": "bottom",
+      "valuePDFPoints": 65.5,
+      "oldSourceRect": [
+        0,
+        17.59232769830942,
+        427,
+        93.57022106631985
+      ],
+      "newSourceRect": [
+        0,
+        17.592327698309532,
+        427,
+        65.5
+      ],
+      "matchesFrozenDeclaration": true
+    },
+    {
+      "id": "p28-s1-violin2",
+      "bandUUID": "565CE319-DD55-4C08-B575-F48A86103E4D",
+      "sourcePage": 28,
+      "edge": "top",
+      "valuePDFPoints": 64.5,
+      "oldSourceRect": [
+        0,
+        21.59102730819245,
+        427,
+        107.56566970091029
+      ],
+      "newSourceRect": [
+        0,
+        64.5,
+        427,
+        107.56566970091029
+      ],
+      "matchesFrozenDeclaration": true
+    },
+    {
+      "id": "p31-s1-violin2",
+      "bandUUID": "2C796C21-5BF2-4515-B3AF-C7F06AE67B7F",
+      "sourcePage": 31,
+      "edge": "top",
+      "valuePDFPoints": 67.5,
+      "oldSourceRect": [
+        0,
+        41.435403008098774,
+        427,
+        110.8642499035866
+      ],
+      "newSourceRect": [
+        0,
+        67.5,
+        427,
+        110.8642499035866
+      ],
+      "matchesFrozenDeclaration": true
+    },
+    {
+      "id": "p24-s2-viola",
+      "bandUUID": "9F94A3A1-97DB-46C2-A120-EEEB1F380EEE",
+      "sourcePage": 24,
+      "edge": "bottom",
+      "valuePDFPoints": 283.0,
+      "oldSourceRect": [
+        0,
+        241.13844967219433,
+        427,
+        311.75318164288467
+      ],
+      "newSourceRect": [
+        0,
+        241.13844967219438,
+        427,
+        283
+      ],
+      "matchesFrozenDeclaration": true
+    },
+    {
+      "id": "p38-s1-viola",
+      "bandUUID": "8B13FD1D-3509-49EB-A52E-1E5E50D51B60",
+      "sourcePage": 38,
+      "edge": "bottom",
+      "valuePDFPoints": 134.5,
+      "oldSourceRect": [
+        0,
+        87.96944083224969,
+        427,
+        159.54876462938876
+      ],
+      "newSourceRect": [
+        0,
+        87.96944083224969,
+        427,
+        134.5
+      ],
+      "matchesFrozenDeclaration": true
+    },
+    {
+      "id": "p24-s2-cello",
+      "bandUUID": "CF3DAF3F-51B2-4968-8DC0-DA99202BA090",
+      "sourcePage": 24,
+      "edge": "top",
+      "valuePDFPoints": 271.0,
+      "oldSourceRect": [
+        0,
+        241.13844967219433,
+        427,
+        316.4967219436946
+      ],
+      "newSourceRect": [
+        0,
+        271,
+        427,
+        316.4967219436946
+      ],
+      "matchesFrozenDeclaration": true
+    },
+    {
+      "id": "p38-s1-cello",
+      "bandUUID": "E580346B-A80C-469B-BBD4-70B52A898F88",
+      "sourcePage": 38,
+      "edge": "top",
+      "valuePDFPoints": 131.0,
+      "oldSourceRect": [
+        0,
+        91.5682704811444,
+        427,
+        165.14694408322498
+      ],
+      "newSourceRect": [
+        0,
+        131,
+        427,
+        165.14694408322498
+      ],
+      "matchesFrozenDeclaration": true
+    }
+  ],
+  "retainedViolaRepair": {
+    "id": "p8-s2-viola",
+    "bandUUID": "4234AE04-F8EB-4446-9095-1A5961992AA6",
+    "projectBandIdentical": true,
+    "manualCropRepairMetadataIdentical": true,
+    "sourceRectBefore": [
+      0,
+      227.6901081916538,
+      427,
+      284
+    ],
+    "sourceRectAfter": [
+      0,
+      227.6901081916538,
+      427,
+      284
+    ],
+    "originalSourceGuardByteIdentical": true
+  },
+  "parts": [
+    {
+      "id": "violin1",
+      "name": "Violin I",
+      "bandCountBefore": 151,
+      "bandCountAfter": 151,
+      "identityAndOrderPreserved": true,
+      "outputPagesBefore": 17,
+      "outputPagesAfter": 17,
+      "bandsMovedBetweenOutputPages": 0,
+      "newPDFSHA256": "f0812171b50734e0adf03a585f530dc0b6e9c82283b49fcb6278a259fe4e73eb",
+      "newPDFHashMatchesManifest": true
+    },
+    {
+      "id": "violin2",
+      "name": "Violin II",
+      "bandCountBefore": 151,
+      "bandCountAfter": 151,
+      "identityAndOrderPreserved": true,
+      "outputPagesBefore": 16,
+      "outputPagesAfter": 16,
+      "bandsMovedBetweenOutputPages": 4,
+      "newPDFSHA256": "a57e1cefbdad798f4486bf5ceeeb0c87d3fc7896429c075ea887859bfc720ce5",
+      "newPDFHashMatchesManifest": true
+    },
+    {
+      "id": "viola",
+      "name": "Viola",
+      "bandCountBefore": 151,
+      "bandCountAfter": 151,
+      "identityAndOrderPreserved": true,
+      "outputPagesBefore": 16,
+      "outputPagesAfter": 16,
+      "bandsMovedBetweenOutputPages": 20,
+      "newPDFSHA256": "b463c0f74738f6b7c0cce354219c09a72ce5261fa14e72e98c1513c89d6fc46d",
+      "newPDFHashMatchesManifest": true
+    },
+    {
+      "id": "cello",
+      "name": "Violoncello",
+      "bandCountBefore": 151,
+      "bandCountAfter": 151,
+      "identityAndOrderPreserved": true,
+      "outputPagesBefore": 15,
+      "outputPagesAfter": 15,
+      "bandsMovedBetweenOutputPages": 0,
+      "newPDFSHA256": "fa26d801da1869d33848225681b95dbb995b44d47ad49aea434f5fac9a5bcdb3",
+      "newPDFHashMatchesManifest": true
+    }
+  ]
+}

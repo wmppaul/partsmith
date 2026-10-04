@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "manifestSHA256": "ad45fd170cbf31418eb0a1da4b4704b67ad00b525ef10e12c7e9da8264aaaf6b",
+  "projectJSONSHA256": "8f474d12e0fe5fe65927b8f341bf98c1286b9588bc8d347ca64e88a8ee9fd6aa",
+  "embeddedSourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+  "rows": 225,
+  "parts": 5,
+  "staffReferencesInNativePlan": 292,
+  "copies": 72,
+  "explicitMovementBreaks": [
+    "p12-s1-soprano-section",
+    "p12-s1-alto",
+    "p12-s1-tenor",
+    "p12-s1-bass-section",
+    "p12-s1-rehearsal-piano"
+  ],
+  "noGeneratedRests": true,
+  "noRectifications": true,
+  "sourceCropTolerancePoints": 1e-08,
+  "scope": "Independent direct decoding checks all stored crops/copies/order/bar-number modes and five second-motet breaks. Native worker separately save/decode/reopens exact project JSON and original embedded PDF before actual export. Candidate staff IDs and barCount are analysis/plan metadata, not stored band fields."
+}

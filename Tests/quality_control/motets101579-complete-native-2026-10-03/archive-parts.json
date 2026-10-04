@@ -1,0 +1,26 @@
+{
+  "format": "Concatenate numbered chunks byte-for-byte to restore one gzip tar archive.",
+  "assembledName": "native-evidence.tar.gz",
+  "assembledSize": 94315033,
+  "assembledSHA256": "79968905c324f0c5ef89d764da3ecbdc6559e9328e331c2b00793db79f76fbd1",
+  "chunks": [
+    {
+      "path": "native-evidence.tar.gz.part01",
+      "size": 33554432,
+      "sha256": "1da39093738ad2e45ff06fa81fb5c45cc6679012d77c1d3587a29fbb86784374"
+    },
+    {
+      "path": "native-evidence.tar.gz.part02",
+      "size": 33554432,
+      "sha256": "94798ba7c6025642e1fa13ba8b1c7628ccf1840e5ebabf58d5a3e9f5fa87ebc7"
+    },
+    {
+      "path": "native-evidence.tar.gz.part03",
+      "size": 27206169,
+      "sha256": "f723bdfa6814ba583ff57e30c2cf884b46de368423dbad625add753622bf75ee"
+    }
+  ],
+  "payloadCount": 461,
+  "originalSourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+  "excluded": "Executables and duplicate PDF/source binaries. Final PDFs and embedded source are in the separately hash-bound delivery. Original initial PDF hashes remain in the before manifest; before/after page images preserve the review evidence."
+}

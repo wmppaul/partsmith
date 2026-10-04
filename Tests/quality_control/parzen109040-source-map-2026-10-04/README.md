@@ -1,0 +1,5 @@
+# Parzen IMSLP109040 — frozen source map only
+
+The independent source reviewer directly viewed all 27 original pages and froze `source-map-before-comparison.json` before comparing with another edition or an extraction. It identifies the poem page, 26 music systems, 20 aggregate roles, 568 physical staves and 520 printed part rows. No part is omitted. Alto and Bass each divide onto two staves on pages 4–27. The opening is an eighth-note upbeat before 176 numbered full bars; a six-times source detail corrected a provisional quarter-note interpretation before the map was frozen.
+
+This preserves the reviewer's original source map and rendered evidence after its work was interrupted. Root verified file identities and every archived image. Root has not yet independently evaluated this source map or compared it against an extraction. No parts were generated, no crop or output quality is certified, and no approval is transferred from scan109041. Further map comparison and full extraction review remain.

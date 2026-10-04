@@ -1,0 +1,333 @@
+{
+  "status": "Frozen for future trials after independent original/current-corrected source inspection; no candidate or proposed-crop trial run in this study.",
+  "basis": "Seven earlier source-defined target envelopes adopted without edits after current-source visual review and exact 4 px/pt corrected raster equivalence. They are conservative envelopes, not pixel ownership masks.",
+  "coordinateSpace": "Current saved corrected top-down PDF points. Pages24/31 have no rectification; pages 28/38 are corrected. Original sources also inspected separately, never mapped approximately.",
+  "currentOriginalSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "currentCorrectedSHA256": "be1074d1436da4737bab07e360d1f6b4fda8b011db7b3a598e60cd62891cf8b4",
+  "priorObligationFileSHA256": "eaa6dcbe8f9d1d13c3368441e64227276e908228df46dc12ced94886916fa47c",
+  "tenGuardSHA256": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+  "thirteenLocalObligationsSHA256": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+  "targetRegions": [
+    {
+      "bandID": "p24-s2-viola",
+      "rect": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "description": "All viola notes, staccato, slurs, cresc., f and final hairpin.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        241.13844967219433,
+        427,
+        311.75318164288467
+      ]
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "rect": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "description": "Low opening ledger note/slur, all cello notes, cresc., f, closing slur/hairpin.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        241.13844967219433,
+        427,
+        316.4967219436946
+      ]
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "description": "All high ledger notes, phrase slurs, crescendo and forte; clef lower dot retained.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        17.59232769830942,
+        427,
+        93.57022106631985
+      ]
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "description": "High articulation dots, low ledger note, slurs, hairpin and forte.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        21.59102730819245,
+        427,
+        107.56566970091029
+      ]
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        41.435403008098774,
+        427,
+        110.8642499035866
+      ]
+    },
+    {
+      "bandID": "p38-s1-viola",
+      "rect": [
+        0,
+        90,
+        427,
+        133
+      ],
+      "description": "Full intended Viola row: both voices/chords, triplet numeral and beam, all ties/slurs above and below, accidentals, lower tenuto marks, last high note with two arcs, and final forte. Independently inspected original and corrected full-width contexts; includes adjacent ink and is not a per-pixel ownership mask.",
+      "derivation": "new independently selected full-width source envelope",
+      "currentRect": [
+        0,
+        87.96944083224969,
+        427,
+        159.54876462938876
+      ]
+    },
+    {
+      "bandID": "p38-s1-cello",
+      "rect": [
+        0,
+        132.5,
+        427,
+        163
+      ],
+      "description": "Full intended Cello row: initial low accidental and ledger note, all stems/beams, lower nested/long slurs, low ledger notes and accidentals, all detached tenutos, closing half note and forte. Independently inspected original and corrected full-width contexts; includes adjacent ink and is not a per-pixel ownership mask.",
+      "derivation": "new independently selected full-width source envelope",
+      "currentRect": [
+        0,
+        91.5682704811444,
+        427,
+        165.14694408322498
+      ]
+    }
+  ],
+  "freshVisualEvidence": [
+    {
+      "page": 24,
+      "space": "original",
+      "clip": [
+        0,
+        180,
+        427,
+        335
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/original-p24-system-context.png",
+      "sha256": "6dffa31d59f81521f87033570c32dfcfca3fb77b06bcf4420c08b84c6c87367b"
+    },
+    {
+      "page": 28,
+      "space": "original",
+      "clip": [
+        0,
+        0,
+        427,
+        185
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/original-p28-system-context.png",
+      "sha256": "73dac13d974ddf1931c368ba94eb1ace99293e714f0ef263db95ca411c789cd1"
+    },
+    {
+      "page": 31,
+      "space": "original",
+      "clip": [
+        0,
+        0,
+        427,
+        180
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/original-p31-system-context.png",
+      "sha256": "740db03dcf93950e46700951b68807b347b1bc60b310e100048ad8fb27764c84"
+    },
+    {
+      "page": 38,
+      "space": "original",
+      "clip": [
+        0,
+        0,
+        427,
+        185
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/original-p38-system-context.png",
+      "sha256": "f04e3163a9092d45f324fc558dde9418d2cafcf9225df34350f7095d89f2a10a"
+    },
+    {
+      "page": 24,
+      "space": "corrected",
+      "clip": [
+        0,
+        180,
+        427,
+        335
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p24-system-context.png",
+      "sha256": "6dffa31d59f81521f87033570c32dfcfca3fb77b06bcf4420c08b84c6c87367b"
+    },
+    {
+      "page": 28,
+      "space": "corrected",
+      "clip": [
+        0,
+        0,
+        427,
+        185
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p28-system-context.png",
+      "sha256": "4186cce68f00d4806543684d0007686d62f643ffa1f2589736a4fad18a24cfd4"
+    },
+    {
+      "page": 31,
+      "space": "corrected",
+      "clip": [
+        0,
+        0,
+        427,
+        180
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p31-system-context.png",
+      "sha256": "740db03dcf93950e46700951b68807b347b1bc60b310e100048ad8fb27764c84"
+    },
+    {
+      "page": 38,
+      "space": "corrected",
+      "clip": [
+        0,
+        0,
+        427,
+        185
+      ],
+      "scale": 4,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p38-system-context.png",
+      "sha256": "f02fb4ba8e67b5add9d5420fd7371850e0ebd03ebabd5448817439d39069cb34"
+    },
+    {
+      "page": 24,
+      "space": "current-corrected",
+      "sourceRect": [
+        376,
+        240,
+        399,
+        316
+      ],
+      "scale": 8,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p24-right-spine.png",
+      "sha256": "1fcfcdfb590e8698641b73f6e74cdafff7bda331ecb87d1f477a4640a43d16b2"
+    },
+    {
+      "page": 24,
+      "space": "current-corrected",
+      "sourceRect": [
+        300,
+        264,
+        399,
+        316
+      ],
+      "scale": 8,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p24-overlapping-local-music.png",
+      "sha256": "a0fa7e53c6da8db227c7a9b01d36f08f5aad7cac860294a57181b4069e43c178"
+    },
+    {
+      "page": 28,
+      "space": "current-corrected",
+      "sourceRect": [
+        85,
+        25,
+        112,
+        105
+      ],
+      "scale": 8,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p28-interior-boundary.png",
+      "sha256": "f7724934c2ad95a9962db40ae15e91400550c0e4d025cc2de04eaec4a3dc47aa"
+    },
+    {
+      "page": 31,
+      "space": "current-corrected",
+      "sourceRect": [
+        370,
+        38,
+        399,
+        108
+      ],
+      "scale": 8,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p31-right-spine.png",
+      "sha256": "31937ff902450480d4de4ed81399553edeae70b6fc3d50aee117ce57fb315455"
+    },
+    {
+      "page": 38,
+      "space": "current-corrected",
+      "sourceRect": [
+        144,
+        92,
+        182,
+        166
+      ],
+      "scale": 8,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p38-tie-at-continuing-boundary.png",
+      "sha256": "5c59cf05633231a1a5bcfbb2dc28808c4769ddec9e36b485ce0d1efb060faa93"
+    },
+    {
+      "page": 38,
+      "space": "current-corrected",
+      "sourceRect": [
+        336,
+        87,
+        399,
+        166
+      ],
+      "scale": 8,
+      "path": ".build/brahms-residual-source-separation-2026-10-03/source/corrected-p38-upper-ending-arcs.png",
+      "sha256": "2d0dba3531fccef599532af91850ba74c08ed87e959707e16235a7bfaa69753f"
+    }
+  ],
+  "sourceJudgments": [
+    {
+      "page": 24,
+      "finding": "Viola and Cello have separate musical phrases; surviving right-boundary connectivity is structural. Viola low cresc./forte/hairpins and Cello high closing half notes/sharp/slur occupy overlapping vertical bands. Both full neighboring cores can be excluded, but a single full-width rectangle cannot remove every foreign mark."
+    },
+    {
+      "page": 28,
+      "finding": "The first internal barline connects the two violin rows. Adjacent violin noteheads, their own stems/flag and upper/lower slurs are distinct from that physical boundary. Full first and second violin cores can be separated; preserve ViolinII low flagged note/hairpin/forte and Viola high-note/slur remnants where ranges overlap."
+    },
+    {
+      "page": 31,
+      "finding": "The right system boundary is visibly separate from the last ViolinI beam and ViolinII flagged notes, lower slur and crescendo. Local staff lines are damaged and curved; their missing fragments cannot be fabricated as full lines. Full ViolinI core can be excluded while retaining ViolinII source envelope."
+    },
+    {
+      "page": 38,
+      "finding": "The accepted body location is on a Cello tie at a continuing measureline, not a separate notehead. All Cello noteheads/ties belong to Cello; the vertical measureline does not couple them to Viola. Viola final high note/double arc overlaps the vertical range of ViolinII lower markings; perfect neighbor-fragment removal is impossible with one horizontal rectangle."
+    }
+  ]
+}

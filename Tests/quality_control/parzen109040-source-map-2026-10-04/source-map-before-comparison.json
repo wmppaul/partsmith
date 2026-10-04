@@ -1,0 +1,8274 @@
+{
+  "version": 1,
+  "reviewer": "crop_continuation",
+  "frozenBeforeComparison": true,
+  "method": "Original PDF renders only. Every physical page viewed individually; opening/meter/final-pause details checked at 6×. No detector inventory, native plan, 109041 source map or output used as map authority. Counts follow actual vertical measure boundaries and printed subsequent starts.",
+  "source": "sample_scores/lightly_skewed/09_brahms_gesang_der_parzen_op89_imslp_109040.pdf",
+  "sourceSHA256": "9ba9d999930da2d109304c745fcf5e5568b8a33fd4349a77d95317da9a1c0ea4",
+  "sourceBytes": 4901501,
+  "physicalPageCount": 27,
+  "musicPageCount": 26,
+  "systemCount": 26,
+  "staffCount": 568,
+  "partRowCount": 520,
+  "partCount": 20,
+  "numberedCompleteBars": 176,
+  "pickupDurationWholeNotes": "1/8",
+  "durationScope": "176 numbered complete bars with a separate initial eighth-note upbeat; meter changes mean this is not 176 equal-duration bars. No repeats were observed. No generated rests or absent-part duration inference is needed.",
+  "frontmatter": {
+    "physicalPage": 1,
+    "kind": "poem",
+    "text": "Complete Goethe poem, title and attribution. Preserve as source context/frontmatter for an editable source-based project; it is not a music system or generated-rest row.",
+    "render": {
+      "physicalPage": 1,
+      "size": [
+        595.2000122070312,
+        841.0800170898438
+      ],
+      "scale": 2.4,
+      "rasterSize": [
+        1429,
+        2019
+      ],
+      "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-01.png",
+      "sha256": "1c776f5fbf52f4149e3e04166ecc545aab3f15ddf0874181457911b36fe9ec77"
+    }
+  },
+  "partDefinitions": [
+    {
+      "id": "flutes",
+      "name": "Flutes I–II (piccolo doubling)",
+      "initialPrintedLabel": "2 Flöten (Kleine Flöte)"
+    },
+    {
+      "id": "oboes",
+      "name": "Oboes I–II",
+      "initialPrintedLabel": "2 Oboen"
+    },
+    {
+      "id": "clarinets",
+      "name": "Clarinets I–II in B-flat",
+      "initialPrintedLabel": "2 Klarinetten in B"
+    },
+    {
+      "id": "bassoons",
+      "name": "Bassoons I–II",
+      "initialPrintedLabel": "2 Fagotte"
+    },
+    {
+      "id": "contrabassoon",
+      "name": "Contrabassoon",
+      "initialPrintedLabel": "Kontrafagott"
+    },
+    {
+      "id": "horns12",
+      "name": "Horns I–II in D",
+      "initialPrintedLabel": "2 Hörner in D"
+    },
+    {
+      "id": "horns34",
+      "name": "Horns III–IV in F",
+      "initialPrintedLabel": "2 Hörner in F"
+    },
+    {
+      "id": "trumpets",
+      "name": "Trumpets I–II in D",
+      "initialPrintedLabel": "2 Trompeten in D"
+    },
+    {
+      "id": "trombones12",
+      "name": "Trombones I–II",
+      "initialPrintedLabel": "1. u. 2. Posaune"
+    },
+    {
+      "id": "trombone3-tuba",
+      "name": "Trombone III and Bass Tuba",
+      "initialPrintedLabel": "3. Posaune / Baß-Tuba"
+    },
+    {
+      "id": "timpani",
+      "name": "Timpani in D and A",
+      "initialPrintedLabel": "Pauken in D, A"
+    },
+    {
+      "id": "soprano",
+      "name": "Soprano",
+      "initialPrintedLabel": "Sopran"
+    },
+    {
+      "id": "alto",
+      "name": "Alto I–II",
+      "initialPrintedLabel": "1. u. 2. Alt"
+    },
+    {
+      "id": "tenor",
+      "name": "Tenor",
+      "initialPrintedLabel": "Tenor"
+    },
+    {
+      "id": "bass",
+      "name": "Bass I–II",
+      "initialPrintedLabel": "1. u. 2. Baß"
+    },
+    {
+      "id": "violin1",
+      "name": "Violin I",
+      "initialPrintedLabel": "1. Violine"
+    },
+    {
+      "id": "violin2",
+      "name": "Violin II",
+      "initialPrintedLabel": "2. Violine"
+    },
+    {
+      "id": "viola",
+      "name": "Viola",
+      "initialPrintedLabel": "Bratsche"
+    },
+    {
+      "id": "cello",
+      "name": "Cello",
+      "initialPrintedLabel": "Violoncell"
+    },
+    {
+      "id": "double-bass",
+      "name": "Double Bass",
+      "initialPrintedLabel": "Kontrabaß"
+    }
+  ],
+  "systems": [
+    {
+      "physicalPage": 2,
+      "pageIndex": 1,
+      "systemIndex": 0,
+      "printedPage": 3,
+      "printedParenthesizedPage": 87,
+      "printedStartBar": null,
+      "numberedStartBar": 1,
+      "numberedEndBar": 4,
+      "completeBarCount": 4,
+      "initialUnnumberedPickup": {
+        "numerator": 1,
+        "denominator": 8,
+        "evidence": "One-flag notes and eighth rests before the first barline; original 6× close-ups."
+      },
+      "staffCount": 20,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 15,
+          "role": "bass",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 16,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 17,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 18,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 19,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 20,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            14
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            16
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            17
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "One complete physical system. Full title, Goethe credit, six-part choir/orchestra subtitle, dedication, Brahms Op. 89 and publication 1883 text precede the music. Eighth-note upbeat before numbered bar 1; four complete C bars follow. All 20 part rows printed, including quiet combined Alto and Bass staves. Maestoso printed above Flutes and below Double Bass. Local pesante does not authorize broadcasting to quiet choir.",
+      "originalRender": {
+        "physicalPage": 2,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-02.png",
+        "sha256": "f5ff7b2b8a620969e24208817291b25977f576b458c4ff579481935682448508"
+      }
+    },
+    {
+      "physicalPage": 3,
+      "pageIndex": 2,
+      "systemIndex": 0,
+      "printedPage": 4,
+      "printedParenthesizedPage": 88,
+      "printedStartBar": 5,
+      "numberedStartBar": 5,
+      "numberedEndBar": 11,
+      "completeBarCount": 7,
+      "initialUnnumberedPickup": null,
+      "staffCount": 20,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 15,
+          "role": "bass",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 16,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 17,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 18,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 19,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 20,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            14
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            16
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            17
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "One physical system; all 20 part rows printed. Alto I–II and Bass I–II remain on one quiet staff each. Printed start 5. Active orchestral slurs, ledger notes, accents and dynamics require their original source extents.",
+      "originalRender": {
+        "physicalPage": 3,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-03.png",
+        "sha256": "7a55746bef778f081b1d7927472a9fa1c27157bf05d48b4fb5fa91d6e44f95d5"
+      }
+    },
+    {
+      "physicalPage": 4,
+      "pageIndex": 3,
+      "systemIndex": 0,
+      "printedPage": 5,
+      "printedParenthesizedPage": 89,
+      "printedStartBar": 12,
+      "numberedStartBar": 12,
+      "numberedEndBar": 20,
+      "completeBarCount": 9,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Alto I/II and Bass I/II split into separate staves: 22 physical staves, 20 part rows. Both pairs remain split on every later page. Rehearsal A at bar 18. Tenor and Bass enter late in bar 19. Shared Bass lyric under the upper member must accompany the complete paired Bass row.",
+      "originalRender": {
+        "physicalPage": 4,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-04.png",
+        "sha256": "f57af74b2c2ba7afba35e042febf1ba3e77bcf449baf4ecf70fb8ba264a78cd6"
+      }
+    },
+    {
+      "physicalPage": 5,
+      "pageIndex": 4,
+      "systemIndex": 0,
+      "printedPage": 6,
+      "printedParenthesizedPage": 90,
+      "printedStartBar": 21,
+      "numberedStartBar": 21,
+      "numberedEndBar": 25,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 21; Soprano and both Altos enter late in bar 21. Alto/Bass lyric underlay is partly shared between the pair. Five complete C bars.",
+      "originalRender": {
+        "physicalPage": 5,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-05.png",
+        "sha256": "3ab255dcd35a9a305b9720fe3b5538d6b9a7f67aff3f683247c5b1a0a57c1232"
+      }
+    },
+    {
+      "physicalPage": 6,
+      "pageIndex": 5,
+      "systemIndex": 0,
+      "printedPage": 7,
+      "printedParenthesizedPage": 91,
+      "printedStartBar": 26,
+      "numberedStartBar": 26,
+      "numberedEndBar": 30,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 26. Both Alto and Bass pairs are present, even where one or both members rest; do not infer omission from silence.",
+      "originalRender": {
+        "physicalPage": 6,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-06.png",
+        "sha256": "935f181af1f5e33df8368d5ce30d273b167a470e2ac0d66be71914e13b34922e"
+      }
+    },
+    {
+      "physicalPage": 7,
+      "pageIndex": 6,
+      "systemIndex": 0,
+      "printedPage": 8,
+      "printedParenthesizedPage": 92,
+      "printedStartBar": 31,
+      "numberedStartBar": 31,
+      "numberedEndBar": 36,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 31. Rehearsal B at bar 35. All six vocal staves and all orchestral staves present; high ledger notes and slurs extend outside staff cores.",
+      "originalRender": {
+        "physicalPage": 7,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-07.png",
+        "sha256": "a32d6df0b42b96aacfdc2c9f9ec780f148dadc626c04e2e8abac73484e58dd7d"
+      }
+    },
+    {
+      "physicalPage": 8,
+      "pageIndex": 7,
+      "systemIndex": 0,
+      "printedPage": 9,
+      "printedParenthesizedPage": 93,
+      "printedStartBar": 37,
+      "numberedStartBar": 37,
+      "numberedEndBar": 41,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 37. Six vocal staves; Alto and Bass pairs retain shared or separate printed lyric underlay as engraved.",
+      "originalRender": {
+        "physicalPage": 8,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-08.png",
+        "sha256": "5b07ba1c7f2d3a1d9329d47569785834ad48ec71baf39e1d5af37befa4d55c74"
+      }
+    },
+    {
+      "physicalPage": 9,
+      "pageIndex": 8,
+      "systemIndex": 0,
+      "printedPage": 10,
+      "printedParenthesizedPage": 94,
+      "printedStartBar": 42,
+      "numberedStartBar": 42,
+      "numberedEndBar": 46,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 42. Both Bass voices have separate lyric lines in parts of this system; preserve both. Viola changes clef within the system and at its right end.",
+      "originalRender": {
+        "physicalPage": 9,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-09.png",
+        "sha256": "743706c24f53759ef9d15d7f501b53afd1f11dc98be297a86200e137e85ad487"
+      }
+    },
+    {
+      "physicalPage": 10,
+      "pageIndex": 9,
+      "systemIndex": 0,
+      "printedPage": 11,
+      "printedParenthesizedPage": 95,
+      "printedStartBar": 47,
+      "numberedStartBar": 47,
+      "numberedEndBar": 52,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 47. Rehearsal C at bar 48. Violin II has printed 6. and 12. division indications at the new section; retain in that part rather than treating as measure labels.",
+      "originalRender": {
+        "physicalPage": 10,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-10.png",
+        "sha256": "0da728e49edd5ecdda165ecb73985749903298ba56caa38d9c422aacc472e495"
+      }
+    },
+    {
+      "physicalPage": 11,
+      "pageIndex": 10,
+      "systemIndex": 0,
+      "printedPage": 12,
+      "printedParenthesizedPage": 96,
+      "printedStartBar": 53,
+      "numberedStartBar": 53,
+      "numberedEndBar": 57,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 53. Long vocal ties, lyric extension dashes and lower dynamics near interstaff boundaries are owned notation, not removable line residue.",
+      "originalRender": {
+        "physicalPage": 11,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-11.png",
+        "sha256": "26182e61c14ee14132a626c5aac90ec882a7105157c3697f714cbe90313a192f"
+      }
+    },
+    {
+      "physicalPage": 12,
+      "pageIndex": 11,
+      "systemIndex": 0,
+      "printedPage": 13,
+      "printedParenthesizedPage": 97,
+      "printedStartBar": 58,
+      "numberedStartBar": 58,
+      "numberedEndBar": 63,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 58. Rehearsal D at bar 60. Lyric phrases increasingly independent across Alto/Bass pairs. Local p dol. and dim. remain with their actual instrument.",
+      "originalRender": {
+        "physicalPage": 12,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-12.png",
+        "sha256": "2a76492a966b035a26f41d241b43d1ef9152e405182e5ca4c480a1dc74ca1256"
+      }
+    },
+    {
+      "physicalPage": 13,
+      "pageIndex": 12,
+      "systemIndex": 0,
+      "printedPage": 14,
+      "printedParenthesizedPage": 98,
+      "printedStartBar": 64,
+      "numberedStartBar": 64,
+      "numberedEndBar": 69,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 64. Distinct lyrics on both Alto and Bass staves. Low Violin II slurs and Viola upper notation approach the intervening space; a narrow horizontal gap alone cannot certify crop separation.",
+      "originalRender": {
+        "physicalPage": 13,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-13.png",
+        "sha256": "b245343ff08353af6ec43d9b4338778241f8a01b678a3d7d115e1187b1e5385d"
+      }
+    },
+    {
+      "physicalPage": 14,
+      "pageIndex": 13,
+      "systemIndex": 0,
+      "printedPage": 15,
+      "printedParenthesizedPage": 99,
+      "printedStartBar": 70,
+      "numberedStartBar": 70,
+      "numberedEndBar": 75,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 70. Paired Alto/Bass staves continue; some common lyric lines coexist with separate printed lines.",
+      "originalRender": {
+        "physicalPage": 14,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-14.png",
+        "sha256": "c5100fcef55a8dd164b802299d81ede616963af08f0ac9bbad94b24230865617"
+      }
+    },
+    {
+      "physicalPage": 15,
+      "pageIndex": 14,
+      "systemIndex": 0,
+      "printedPage": 16,
+      "printedParenthesizedPage": 100,
+      "printedStartBar": 76,
+      "numberedStartBar": 76,
+      "numberedEndBar": 81,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 76. Rehearsal E at bar 80. Sempre più f is printed on the six choir staves approaching the bar-80 entrance; keep at its actual within-system position.",
+      "originalRender": {
+        "physicalPage": 15,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-15.png",
+        "sha256": "d3bc897a485605315e3ac5930896ee88d580a2b113280eb1910c59ccfd66527c"
+      }
+    },
+    {
+      "physicalPage": 16,
+      "pageIndex": 15,
+      "systemIndex": 0,
+      "printedPage": 17,
+      "printedParenthesizedPage": 101,
+      "printedStartBar": 82,
+      "numberedStartBar": 82,
+      "numberedEndBar": 86,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 82. Key-signature change at bar 84. Molto marcato belongs to the active low instrumental lines (Bassoons, Contrabassoon, Trombone III/Tuba, Cello and Double Bass), not the adjacent silent Timpani row.",
+      "originalRender": {
+        "physicalPage": 16,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-16.png",
+        "sha256": "793026d5d5649f6710f79895ad7f38e1d1c3726d8a2721dc58e4f36f37e391e6"
+      }
+    },
+    {
+      "physicalPage": 17,
+      "pageIndex": 16,
+      "systemIndex": 0,
+      "printedPage": 18,
+      "printedParenthesizedPage": 102,
+      "printedStartBar": 87,
+      "numberedStartBar": 87,
+      "numberedEndBar": 92,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 87. Rehearsal F at bar 90. Local dolce on Violin I/II at the late passage; printed player numerals distinguish instrument members.",
+      "originalRender": {
+        "physicalPage": 17,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-17.png",
+        "sha256": "02eadf61f49ccfafcd0e2377fbde0699c985818fb79d34bd93d4b88a02463be1"
+      }
+    },
+    {
+      "physicalPage": 18,
+      "pageIndex": 17,
+      "systemIndex": 0,
+      "printedPage": 19,
+      "printedParenthesizedPage": 103,
+      "printedStartBar": 93,
+      "numberedStartBar": 93,
+      "numberedEndBar": 99,
+      "completeBarCount": 7,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 93. Seven full C bars, with cancellation/new key signs at the terminal boundary preparing bar 100. Ties and lyric extensions continue through the page edge.",
+      "originalRender": {
+        "physicalPage": 18,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-18.png",
+        "sha256": "3465467d8368f9100e6e36392e3b90b05eb18c0d03c163e95cd4145feec7662e"
+      }
+    },
+    {
+      "physicalPage": 19,
+      "pageIndex": 18,
+      "systemIndex": 0,
+      "printedPage": 20,
+      "printedParenthesizedPage": 104,
+      "printedStartBar": 100,
+      "numberedStartBar": 100,
+      "numberedEndBar": 105,
+      "completeBarCount": 6,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 100. P sotto voce appears at each choir entry. Pizz. at the left belongs only to Double Bass: the Cello passage remains under bowed slurs. Retain the spelling/position and avoid foreign instruction carryover.",
+      "originalRender": {
+        "physicalPage": 19,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-19.png",
+        "sha256": "eddccd209e719114d0677f8af0198902b3e28fdc52b3f975a9c4a74368336dbe"
+      }
+    },
+    {
+      "physicalPage": 20,
+      "pageIndex": 19,
+      "systemIndex": 0,
+      "printedPage": 21,
+      "printedParenthesizedPage": 105,
+      "printedStartBar": 106,
+      "numberedStartBar": 106,
+      "numberedEndBar": 110,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 106. Pizz. appears in each string part at the final beat of bar 110. Local poco cresc./cresc. are individually printed; preserve the quiet upper-string source rows before their entry.",
+      "originalRender": {
+        "physicalPage": 20,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-20.png",
+        "sha256": "fa8d70bafbc4366924f0c3b8dc247114602ad68105d57768c9f37b79cd49a891"
+      }
+    },
+    {
+      "physicalPage": 21,
+      "pageIndex": 20,
+      "systemIndex": 0,
+      "printedPage": 22,
+      "printedParenthesizedPage": 106,
+      "printedStartBar": 111,
+      "numberedStartBar": 111,
+      "numberedEndBar": 118,
+      "completeBarCount": 8,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 111. Five C bars (111–115), followed by three 3/4 bars (116–118), with quarter-note = quarter-note equivalence above Flutes and below Double Bass. Sehr weich und gebunden is printed above the choir at bar 116; do not misattribute it to silent Timpani. Arco at late bar 111 belongs to the individual strings. Horns I–II long upper slur crest must remain intact.",
+      "originalRender": {
+        "physicalPage": 21,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-21.png",
+        "sha256": "4f2d67181e555e4bf28b2b3c7b988cac22d55f2bc41ae3bd3fb629971a8854d3"
+      }
+    },
+    {
+      "physicalPage": 22,
+      "pageIndex": 21,
+      "systemIndex": 0,
+      "printedPage": 23,
+      "printedParenthesizedPage": 107,
+      "printedStartBar": 119,
+      "numberedStartBar": 119,
+      "numberedEndBar": 129,
+      "completeBarCount": 11,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 119. Eleven full 3/4 bars. P dolcissimo appears on entering winds/Horns I–II and upper strings/Cello, not all silent instrument rows. Tenor espress. entry at the final bar is local.",
+      "originalRender": {
+        "physicalPage": 22,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-22.png",
+        "sha256": "15d1bd921cd5d4f34b0c0f0fb7f2b22fb796f851d9b70bc1bc7fd54693cd8463"
+      }
+    },
+    {
+      "physicalPage": 23,
+      "pageIndex": 22,
+      "systemIndex": 0,
+      "printedPage": 24,
+      "printedParenthesizedPage": 108,
+      "printedStartBar": 130,
+      "numberedStartBar": 130,
+      "numberedEndBar": 140,
+      "completeBarCount": 11,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 130. Eleven full 3/4 bars. Rehearsal G at system start. Soprano and all strings are printed silent rows; other vocal voices continue independent lyrics.",
+      "originalRender": {
+        "physicalPage": 23,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-23.png",
+        "sha256": "da292226002655020d9e85cddf636a7dacecb1f04c31819ba3aa2cc813aa32e6"
+      }
+    },
+    {
+      "physicalPage": 24,
+      "pageIndex": 23,
+      "systemIndex": 0,
+      "printedPage": 25,
+      "printedParenthesizedPage": 109,
+      "printedStartBar": 141,
+      "numberedStartBar": 141,
+      "numberedEndBar": 152,
+      "completeBarCount": 12,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 141. Twelve full 3/4 bars. Rehearsal H at bar 144. String pizz. at bar 144; the later arco belongs to Cello alone (late bar 147), not Viola above. Preserve the first-bar Trombones I–II dim. including the period and full descender. Choir p espress. and all lyric underlay retain their actual ownership.",
+      "originalRender": {
+        "physicalPage": 24,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-24.png",
+        "sha256": "4d0e56f56873286586c4258cb18ff57dff5f60aafd98119d8e4a74ee713cb08f"
+      }
+    },
+    {
+      "physicalPage": 25,
+      "pageIndex": 24,
+      "systemIndex": 0,
+      "printedPage": 26,
+      "printedParenthesizedPage": 110,
+      "printedStartBar": 153,
+      "numberedStartBar": 153,
+      "numberedEndBar": 162,
+      "completeBarCount": 10,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 153. Nine 3/4 bars through 161, then common time at bar 162. First flute changes to piccolo at the late bar-161 entry; keep the player/instrument label. Con sordini appears for Violin I, Violin II, Viola and Cello at bar 160, not Double Bass. Upper strings pp sempre, ma marcato; retain source instruction scope. Separate Alto/Bass staves continue.",
+      "originalRender": {
+        "physicalPage": 25,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-25.png",
+        "sha256": "27dd8c28ea469a44a1bdfbf121867c6ed83c49ff0da34585b71fb9cfabdddddf"
+      }
+    },
+    {
+      "physicalPage": 26,
+      "pageIndex": 25,
+      "systemIndex": 0,
+      "printedPage": 27,
+      "printedParenthesizedPage": 111,
+      "printedStartBar": 163,
+      "numberedStartBar": 163,
+      "numberedEndBar": 167,
+      "completeBarCount": 5,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 163. Five common-time bars. 2. gr. Flöte marks the second large flute entry late in bar 165; it is not a generic tempo heading. Alto/Bass pair members have different lyrics and entries; preserve both.",
+      "originalRender": {
+        "physicalPage": 26,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-26.png",
+        "sha256": "84ce5fa83e6fb1f0478cb1516f51b32e95026ad41e6db5c5f33b23b12ba4503b"
+      }
+    },
+    {
+      "physicalPage": 27,
+      "pageIndex": 26,
+      "systemIndex": 0,
+      "printedPage": 28,
+      "printedParenthesizedPage": 112,
+      "printedStartBar": 168,
+      "numberedStartBar": 168,
+      "numberedEndBar": 176,
+      "completeBarCount": 9,
+      "initialUnnumberedPickup": null,
+      "staffCount": 22,
+      "partRowCount": 20,
+      "stavesTopDown": [
+        {
+          "ordinal": 1,
+          "role": "flutes",
+          "partID": "flutes"
+        },
+        {
+          "ordinal": 2,
+          "role": "oboes",
+          "partID": "oboes"
+        },
+        {
+          "ordinal": 3,
+          "role": "clarinets",
+          "partID": "clarinets"
+        },
+        {
+          "ordinal": 4,
+          "role": "bassoons",
+          "partID": "bassoons"
+        },
+        {
+          "ordinal": 5,
+          "role": "contrabassoon",
+          "partID": "contrabassoon"
+        },
+        {
+          "ordinal": 6,
+          "role": "horns12",
+          "partID": "horns12"
+        },
+        {
+          "ordinal": 7,
+          "role": "horns34",
+          "partID": "horns34"
+        },
+        {
+          "ordinal": 8,
+          "role": "trumpets",
+          "partID": "trumpets"
+        },
+        {
+          "ordinal": 9,
+          "role": "trombones12",
+          "partID": "trombones12"
+        },
+        {
+          "ordinal": 10,
+          "role": "trombone3-tuba",
+          "partID": "trombone3-tuba"
+        },
+        {
+          "ordinal": 11,
+          "role": "timpani",
+          "partID": "timpani"
+        },
+        {
+          "ordinal": 12,
+          "role": "soprano",
+          "partID": "soprano"
+        },
+        {
+          "ordinal": 13,
+          "role": "alto-1",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 14,
+          "role": "alto-2",
+          "partID": "alto"
+        },
+        {
+          "ordinal": 15,
+          "role": "tenor",
+          "partID": "tenor"
+        },
+        {
+          "ordinal": 16,
+          "role": "bass-1",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 17,
+          "role": "bass-2",
+          "partID": "bass"
+        },
+        {
+          "ordinal": 18,
+          "role": "violin1",
+          "partID": "violin1"
+        },
+        {
+          "ordinal": 19,
+          "role": "violin2",
+          "partID": "violin2"
+        },
+        {
+          "ordinal": 20,
+          "role": "viola",
+          "partID": "viola"
+        },
+        {
+          "ordinal": 21,
+          "role": "cello",
+          "partID": "cello"
+        },
+        {
+          "ordinal": 22,
+          "role": "double-bass",
+          "partID": "double-bass"
+        }
+      ],
+      "partRows": [
+        {
+          "partID": "flutes",
+          "staffOrdinals": [
+            1
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "oboes",
+          "staffOrdinals": [
+            2
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "clarinets",
+          "staffOrdinals": [
+            3
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bassoons",
+          "staffOrdinals": [
+            4
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "contrabassoon",
+          "staffOrdinals": [
+            5
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns12",
+          "staffOrdinals": [
+            6
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "horns34",
+          "staffOrdinals": [
+            7
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trumpets",
+          "staffOrdinals": [
+            8
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombones12",
+          "staffOrdinals": [
+            9
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "trombone3-tuba",
+          "staffOrdinals": [
+            10
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "timpani",
+          "staffOrdinals": [
+            11
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "soprano",
+          "staffOrdinals": [
+            12
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "alto",
+          "staffOrdinals": [
+            13,
+            14
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "tenor",
+          "staffOrdinals": [
+            15
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "bass",
+          "staffOrdinals": [
+            16,
+            17
+          ],
+          "staffCount": 2,
+          "printed": true
+        },
+        {
+          "partID": "violin1",
+          "staffOrdinals": [
+            18
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "violin2",
+          "staffOrdinals": [
+            19
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "viola",
+          "staffOrdinals": [
+            20
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "cello",
+          "staffOrdinals": [
+            21
+          ],
+          "staffCount": 1,
+          "printed": true
+        },
+        {
+          "partID": "double-bass",
+          "staffOrdinals": [
+            22
+          ],
+          "staffCount": 1,
+          "printed": true
+        }
+      ],
+      "absentPartIDs": [],
+      "sourceObservations": "Printed start 168. Nine common-time bars to final bar 176. First piccolo reentry, second large-flute line, Double Bass arco at bar 170, local perdendosi and all final fermatas/pp dynamics must remain. Cello and Double Bass low slurs and nearby dynamics overlap vertical context; simple staff-midpoint cuts would be unsafe. Final numbered bar is a full common-time sustained/rest bar, not a complementary shortened pickup bar.",
+      "originalRender": {
+        "physicalPage": 27,
+        "size": [
+          595.2000122070312,
+          841.0800170898438
+        ],
+        "scale": 2.4,
+        "rasterSize": [
+          1429,
+          2019
+        ],
+        "path": ".build/brahms-parzen109040-independent-source-2026-10-03/source/page-27.png",
+        "sha256": "8c1dca98fddad13208d4f86ca955f27c8c6b8d6aeffbbd8815b6ac8fb9b71f75"
+      }
+    }
+  ],
+  "globalAndChoralDirections": [
+    {
+      "physicalPage": 2,
+      "bar": 1,
+      "alsoCoversInitialPickup": true,
+      "kind": "tempo",
+      "text": "Maestoso",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 4,
+      "bar": 18,
+      "kind": "rehearsal",
+      "text": "A",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 7,
+      "bar": 35,
+      "kind": "rehearsal",
+      "text": "B",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 10,
+      "bar": 48,
+      "kind": "rehearsal",
+      "text": "C",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 12,
+      "bar": 60,
+      "kind": "rehearsal",
+      "text": "D",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 15,
+      "bar": 80,
+      "kind": "rehearsal",
+      "text": "E",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 17,
+      "bar": 90,
+      "kind": "rehearsal",
+      "text": "F",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 23,
+      "bar": 130,
+      "kind": "rehearsal",
+      "text": "G",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 24,
+      "bar": 144,
+      "kind": "rehearsal",
+      "text": "H",
+      "scope": "whole score",
+      "sourceLocations": [
+        "above Flutes",
+        "below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 21,
+      "bar": 116,
+      "kind": "meter-and-beat-equivalence",
+      "text": "3/4; quarter note = quarter note",
+      "scope": "whole score",
+      "sourceLocations": [
+        "meter on every staff",
+        "beat equivalence above Flutes and below Double Bass"
+      ]
+    },
+    {
+      "physicalPage": 21,
+      "bar": 116,
+      "kind": "choral-expression",
+      "text": "Sehr weich und gebunden",
+      "scope": "six choir voices; source prints above Soprano",
+      "sourceLocations": [
+        "above Soprano, below silent Timpani"
+      ],
+      "requiresReviewBeforeBroadeningScope": true
+    },
+    {
+      "physicalPage": 25,
+      "bar": 162,
+      "kind": "meter",
+      "text": "common time",
+      "scope": "whole score",
+      "sourceLocations": [
+        "meter on every staff"
+      ]
+    },
+    {
+      "physicalPage": 27,
+      "bar": 176,
+      "kind": "final-pause",
+      "text": "fermata",
+      "scope": "whole-score final pause, with printed glyphs retained for each part",
+      "sourceLocations": [
+        "right end of each own row"
+      ]
+    }
+  ],
+  "meterSegments": [
+    {
+      "numberedStart": 1,
+      "numberedEnd": 115,
+      "meter": "C (4/4)"
+    },
+    {
+      "numberedStart": 116,
+      "numberedEnd": 161,
+      "meter": "3/4"
+    },
+    {
+      "numberedStart": 162,
+      "numberedEnd": 176,
+      "meter": "C (4/4)"
+    }
+  ],
+  "keyChangeObligations": [
+    {
+      "physicalPage": 16,
+      "bar": 84,
+      "instruction": "Preserve original per-instrument key signatures at the within-system double bar."
+    },
+    {
+      "physicalPage": 18,
+      "nextBar": 100,
+      "instruction": "Preserve terminal cautionary cancellation/new key signs and next-page signatures."
+    },
+    {
+      "physicalPage": 21,
+      "bar": 116,
+      "instruction": "Preserve per-instrument signatures with meter change."
+    },
+    {
+      "physicalPage": 25,
+      "bar": 162,
+      "instruction": "Preserve cancellations/new signature with common-time return."
+    }
+  ],
+  "lyricObligations": [
+    "Page 1 is complete poem text, not expendable blank material.",
+    "Every sung syllable, umlaut, hyphen, punctuation and extension line belongs to the associated vocal row.",
+    "Alto and Bass each use two separately printed staves on physical pages 4–27. Some lyric lines are shared between these staves, other lines independent; keep the pair and all intervening text together.",
+    "Source labels describe six vocal lines but a four-part choir delivery groups Alto I/II and Bass I/II, giving 20 aggregate part rows per system. No Soprano/Bass divisi substitution is permitted."
+  ],
+  "footnoteObservation": "No starred performance footnote was observed in the 27-page original survey. The J. B. 95 plate number occurs in the footer and is distinct from musical instructions.",
+  "uncertaintiesAndLimits": [
+    "Source-only roster and count review, not crop or PDF-output certification. Exact future crop envelopes require checking this PDF geometry; no 109041 coordinate or crop approval transfers.",
+    "Opening duration was initially described provisionally as a quarter, then corrected before this freeze to an eighth from the original 6× flags and rest glyphs.",
+    "Within-bar beat anchors for local expression/instrument instructions are source observations, not a re-engraved timing model. Recheck the original when positioning copied markings.",
+    "The choir-only scope of Sehr weich und gebunden must be explicit; no automatic dissemination to all silent instrumental rows is justified here.",
+    "No extraction/export or production edit occurred."
+  ]
+}

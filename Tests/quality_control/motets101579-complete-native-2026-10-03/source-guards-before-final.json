@@ -1,0 +1,81 @@
+{
+  "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+  "guards": [
+    {
+      "id": "p11-s2-bass-section",
+      "rect": [
+        105,
+        437,
+        567,
+        447
+      ],
+      "kind": "shared above-staff underlay source envelope",
+      "requiredCropTopAtMost": 436.5
+    },
+    {
+      "id": "p11-s3-bass-section",
+      "rect": [
+        66,
+        650,
+        568,
+        660
+      ],
+      "kind": "shared above-staff underlay source envelope",
+      "requiredCropTopAtMost": 649.0
+    },
+    {
+      "id": "p2-s2-rehearsal-piano",
+      "rect": [
+        27,
+        752,
+        165,
+        760.75
+      ],
+      "kind": "complete rehearsal-only footnote"
+    },
+    {
+      "id": "p12-s3-rehearsal-piano",
+      "rect": [
+        27,
+        768,
+        165,
+        777.25
+      ],
+      "kind": "complete rehearsal-only footnote"
+    },
+    {
+      "id": "p4-s2-rehearsal-piano",
+      "rect": [
+        25,
+        494,
+        578,
+        518
+      ],
+      "kind": "all lower target ink plus isolated scan speck; following B excluded"
+    },
+    {
+      "id": "p11-s1-rehearsal-piano",
+      "rect": [
+        380,
+        327,
+        401,
+        337
+      ],
+      "kind": "complete pedal word"
+    },
+    {
+      "id": "p16-s3-bass-section",
+      "rect": [
+        52,
+        647,
+        114,
+        660
+      ],
+      "kind": "complete own mf cresc.",
+      "rootSourcePath": ".build/motets101579-root-review-2026-10-03/p16s3-bass-dynamic-source.png"
+    }
+  ],
+  "independentAltoCorrectionFile": ".build/motets101579-upper-independent-2026-10-03/required-corrections.json",
+  "independentAltoCorrectionSHA256": "d965a1ff28bacde1ea855a94664a40d177ea2e857f372919d14b66db5a512a57",
+  "scope": "Source-only semantic obligations frozen before final crop output. Threshold extents are descriptive measurements, not substitutes for visual whole-word/music review."
+}

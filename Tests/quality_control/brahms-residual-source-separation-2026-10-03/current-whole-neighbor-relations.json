@@ -1,0 +1,253 @@
+{
+  "manifestSHA256": "b640714f0d8dcc9901883a28498fc712ba4d7a80cde453d555ea097c44ee2ba4",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "correctedSourceSHA256": "be1074d1436da4737bab07e360d1f6b4fda8b011db7b3a598e60cd62891cf8b4",
+  "basis": "Geometric full staff-core containment only, used to identify review rows, not certify source ownership.",
+  "relations": [
+    {
+      "id": "p28-s1-violin1",
+      "sourcePage": 28,
+      "system": 1,
+      "partID": "violin1",
+      "sourceRect": [
+        0,
+        17.59232769830942,
+        427,
+        93.57022106631985
+      ],
+      "ownStaffIDs": [
+        0
+      ],
+      "ownLines": [
+        [
+          41.58647594278284,
+          44.99105866183753,
+          48.2112676467611,
+          51.58322496749025,
+          54.7793037478967
+        ]
+      ],
+      "foreignStaffID": 1,
+      "foreignPart": "violin2",
+      "foreignSystem": 1,
+      "foreignLines": [
+        71.17685305591678,
+        74.37581274382315,
+        77.77470741222366,
+        80.77373211963588,
+        83.98064678024096
+      ],
+      "outputPage": 12
+    },
+    {
+      "id": "p28-s1-violin2",
+      "sourcePage": 28,
+      "system": 1,
+      "partID": "violin2",
+      "sourceRect": [
+        0,
+        21.59102730819245,
+        427,
+        107.56566970091029
+      ],
+      "ownStaffIDs": [
+        1
+      ],
+      "ownLines": [
+        [
+          71.17685305591678,
+          74.37581274382315,
+          77.77470741222366,
+          80.77373211963588,
+          83.98064678024096
+        ]
+      ],
+      "foreignStaffID": 0,
+      "foreignPart": "violin1",
+      "foreignSystem": 1,
+      "foreignLines": [
+        41.58647594278284,
+        44.99105866183753,
+        48.2112676467611,
+        51.58322496749025,
+        54.7793037478967
+      ],
+      "outputPage": 11
+    },
+    {
+      "id": "p31-s1-violin2",
+      "sourcePage": 31,
+      "system": 1,
+      "partID": "violin2",
+      "sourceRect": [
+        0,
+        41.435403008098774,
+        427,
+        110.8642499035866
+      ],
+      "ownStaffIDs": [
+        1
+      ],
+      "ownLines": [
+        [
+          75.18438309311362,
+          78.40265871940069,
+          81.82678328883512,
+          85.0270222481544,
+          88.35824083104184
+        ]
+      ],
+      "foreignStaffID": 0,
+      "foreignPart": "violin1",
+      "foreignSystem": 1,
+      "foreignLines": [
+        44.827186517376155,
+        48.146934053220214,
+        51.58307205739454,
+        54.899227446144714,
+        57.98978017740069
+      ],
+      "outputPage": 13
+    },
+    {
+      "id": "p24-s2-viola",
+      "sourcePage": 24,
+      "system": 2,
+      "partID": "viola",
+      "sourceRect": [
+        0,
+        241.13844967219433,
+        427,
+        311.75318164288467
+      ],
+      "ownStaffIDs": [
+        6
+      ],
+      "ownLines": [
+        [
+          255.3045640396042,
+          258.52294639413805,
+          261.7331605317577,
+          265.04531430775165,
+          268.2443567477126
+        ]
+      ],
+      "foreignStaffID": 7,
+      "foreignPart": "cello",
+      "foreignSystem": 2,
+      "foreignLines": [
+        286.8740724605778,
+        290.2024828033237,
+        293.50536396878056,
+        296.8234031364203,
+        300.02804101425477
+      ],
+      "outputPage": 10
+    },
+    {
+      "id": "p38-s1-viola",
+      "sourcePage": 38,
+      "system": 1,
+      "partID": "viola",
+      "sourceRect": [
+        0,
+        87.96944083224969,
+        427,
+        159.54876462938876
+      ],
+      "ownStaffIDs": [
+        2
+      ],
+      "ownLines": [
+        [
+          106.36540962288687,
+          109.40230080387754,
+          112.77694854777961,
+          115.98305344719142,
+          119.34645517964782
+        ]
+      ],
+      "foreignStaffID": 3,
+      "foreignPart": "cello",
+      "foreignSystem": 1,
+      "foreignLines": [
+        135.95578673602083,
+        139.15474642392715,
+        142.35370611183353,
+        145.72341319184076,
+        148.98304629184034
+      ],
+      "outputPage": 16
+    },
+    {
+      "id": "p24-s2-cello",
+      "sourcePage": 24,
+      "system": 2,
+      "partID": "cello",
+      "sourceRect": [
+        0,
+        241.13844967219433,
+        427,
+        316.4967219436946
+      ],
+      "ownStaffIDs": [
+        7
+      ],
+      "ownLines": [
+        [
+          286.8740724605778,
+          290.2024828033237,
+          293.50536396878056,
+          296.8234031364203,
+          300.02804101425477
+        ]
+      ],
+      "foreignStaffID": 6,
+      "foreignPart": "viola",
+      "foreignSystem": 2,
+      "foreignLines": [
+        255.3045640396042,
+        258.52294639413805,
+        261.7331605317577,
+        265.04531430775165,
+        268.2443567477126
+      ],
+      "outputPage": 9
+    },
+    {
+      "id": "p38-s1-cello",
+      "sourcePage": 38,
+      "system": 1,
+      "partID": "cello",
+      "sourceRect": [
+        0,
+        91.5682704811444,
+        427,
+        165.14694408322498
+      ],
+      "ownStaffIDs": [
+        3
+      ],
+      "ownLines": [
+        [
+          135.95578673602083,
+          139.15474642392715,
+          142.35370611183353,
+          145.72341319184076,
+          148.98304629184034
+        ]
+      ],
+      "foreignStaffID": 2,
+      "foreignPart": "viola",
+      "foreignSystem": 1,
+      "foreignLines": [
+        106.36540962288687,
+        109.40230080387754,
+        112.77694854777961,
+        115.98305344719142,
+        119.34645517964782
+      ],
+      "outputPage": 15
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "scope": "Original page 8 source reviewed before any crop edit. Source has no rectification on page8. Native complete production workflow Viola page3 visibly clips the descending p foot in its own in tempo marking. Required source envelope is independent of proposed crop.",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "sourcePage": 8,
+  "system": 2,
+  "part": "viola",
+  "sourcePageSize": [
+    427,
+    614
+  ],
+  "sourceBandUUID": "4234AE04-F8EB-4446-9095-1A5961992AA6",
+  "baselineSourceRect": [
+    0,
+    227.6901081916538,
+    427,
+    280.53013910355486
+  ],
+  "baselineManifestSHA256": "32aa382203127e34fc631283e9e3e4939d0bac618ab41055775676771f512bb7",
+  "baselineProjectSHA256": "98ea6d807eb267ac9d45c5ba9f4679e7ff2d94fe32c1dd70561f63f57f1ad01b",
+  "independentLowerFootEnvelopePDF": [
+    97.498333,
+    281.979915,
+    100.345,
+    283.402858
+  ],
+  "independentSourceRasterCoordinates": {
+    "dimensions": [
+      1800,
+      2589
+    ],
+    "lowerFootEnvelope": [
+      411,
+      1189,
+      423,
+      1195
+    ],
+    "onePixelWhiteClearanceBottomPDF": 283.640015
+  },
+  "fullTargetRequirement": "Retain all existing Viola own notes/stems/dynamics/slurs and complete p legg. / in tempo; original-source p descender lies below the crossing Cello upper staff line. Extra neighboring line fragments are unavoidable for a horizontal crop.",
+  "proposedBottomPDF": 284.0,
+  "proposedChange": "Expand only existing bottom edge by3.46986089644514pt using native document.updateBand; no source replacement, erasure, recognition or other crop movement.",
+  "originalSourceImages": {
+    "full-system.png": "74181de889a090c83e43f1644ff53e2230560de63891ba289f93b494ada4981a",
+    "full-target.png": "9f58886239f4b6f4c174834c45a8ac1e03b9e1f5b57f8895fc07be4817fd7c4c",
+    "in-tempo-source-10x.png": "440bb026042c1e026cefa5c16823089312a68741c59e96065f65adcf73612028",
+    "baseline-output-detail.png": "3e53e10d4e30912d7a9bdd22d2b7e34aa7dfeef2326b74e792b1eb1de35c262e",
+    "baseline-viola-page03.png": "dcebc493f19105b4376be116cacad24e5f3f36268d88dcee604db2e7445a03c1"
+  }
+}

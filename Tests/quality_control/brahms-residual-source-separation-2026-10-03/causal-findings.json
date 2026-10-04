@@ -1,0 +1,97 @@
+{
+  "sourceReview": true,
+  "newCandidateTested": false,
+  "cases": [
+    {
+      "pages": [
+        24
+      ],
+      "rows": [
+        "p24-s2-viola",
+        "p24-s2-cello"
+      ],
+      "kind": "ordinary-shared-component",
+      "nativeRect": [
+        285,
+        1042,
+        1643,
+        1306
+      ],
+      "owners": [
+        6,
+        7
+      ],
+      "causalSource": "Right system boundary plus staff-line-connected local musical branches.",
+      "historicalGate": "Local geometry accepted; lower-core support49/57 below 88% gate. Historical exact-source probe, not rerun.",
+      "prohibitedShortcut": "Dropping shared component loses both parts local notes. Wider core tolerance or more other complete cores does not distinguish attached musical stems."
+    },
+    {
+      "pages": [
+        28
+      ],
+      "rows": [
+        "p28-s1-violin1",
+        "p28-s1-violin2"
+      ],
+      "kind": "ordinary-shared-component",
+      "nativeRect": [
+        132,
+        69,
+        969,
+        229
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "causalSource": "Interior measureline near corrected x98pt; original staff-line fragments connect otherwise separate phrases.",
+      "historicalGate": "Local geometry accepted; upper-core support29/34 below 88% gate. Historical exact-source probe, not rerun.",
+      "prohibitedShortcut": "Aligned multi-core barline fallback already loses four-core shared musical chord controls; retain exact attached branches and stop when ownership unresolved."
+    },
+    {
+      "pages": [
+        31
+      ],
+      "rows": [
+        "p31-s1-violin2"
+      ],
+      "kind": "ordinary-shared-structural-component",
+      "nativeRect": [
+        1641,
+        200,
+        1651,
+        350
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "causalSource": "448-pixel narrow leaning right boundary and short staff-line stubs; no musical head, beam, slur or dynamic in this component.",
+      "historicalGate": "Ordered-line trace fails final damaged window before connector proof; staff lines are visibly missing. A thin/slender filter is unsafe on steep slur/gliss controls.",
+      "prohibitedShortcut": "Bounding-box thinness, row width or proximity to page edge is not semantic ownership proof."
+    },
+    {
+      "pages": [
+        38
+      ],
+      "rows": [
+        "p38-s1-viola",
+        "p38-s1-cello"
+      ],
+      "kind": "outward-ownership-alternative",
+      "nativeRect": [
+        135,
+        244,
+        971,
+        394
+      ],
+      "owners": [
+        2,
+        3
+      ],
+      "causalSource": "Compact one-sided patch at Cello tie/continuing measureline; patch[411,374,414,376], spine[409,411).",
+      "historicalGate": "Terminal-body witness preserves musical interpretation; native lines 640\u2013663 append broad alternative; planner lines 1121 onward expand every contacted owner. Current inventory explicitly marks this component isOwnershipAlternative=true.",
+      "prohibitedShortcut": "Do not turn a compact patch, curve crossing or even two local heads on a structural bar into shared cross-staff musical ownership. Blanket tie/branch rejection also cuts real tied notes."
+    }
+  ]
+}

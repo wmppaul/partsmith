@@ -1,0 +1,199 @@
+{
+  "status": "Frozen source obligations before rendering manual candidate crops. This supplements but never changes the ten pre-existing full guards or thirteen local obligations.",
+  "coordinateSystem": "Top-down saved-corrected PDF points, full source page width. Original p28/p38 also viewed separately; no guessed affine mapping.",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "correctedSHA256": "1a3ef93cd28c5539a4732b185a6489ea4a93e16382266c387657d64e3400feb8",
+  "savedRectificationCount": 9,
+  "oldGuardCorrectedPDFPixelsCompared": [
+    {
+      "page": 24,
+      "oldAndCurrentCorrectedPixelsExact": true,
+      "rasterSHA256": "a05ffc621bcd643d86c1a0caede6585ab3c586d7a45fd8eb3805e4901666e921"
+    },
+    {
+      "page": 28,
+      "oldAndCurrentCorrectedPixelsExact": true,
+      "rasterSHA256": "e2e4b2d0e2880068fcec41a632f5025c11122fbdeca0322729c5ec2201fe77c4"
+    },
+    {
+      "page": 29,
+      "oldAndCurrentCorrectedPixelsExact": true,
+      "rasterSHA256": "7531e2df9bff5f334b469cf9ebb90ca33c545010e9878460f7e3a676b5fc586c"
+    },
+    {
+      "page": 31,
+      "oldAndCurrentCorrectedPixelsExact": true,
+      "rasterSHA256": "907ff5d3dd9fb2d7bdb8c390c5a407493a12662b98150e5b98c70a0d7e15edcf"
+    },
+    {
+      "page": 35,
+      "oldAndCurrentCorrectedPixelsExact": true,
+      "rasterSHA256": "1b178c37c74f4fd3ba0b21a2841d6089a67d511e6c5d07a0588aae5c07ab2911"
+    }
+  ],
+  "targetRegions": [
+    {
+      "bandID": "p24-s2-viola",
+      "rect": [
+        0,
+        243,
+        427,
+        281.5
+      ],
+      "description": "All viola notes, staccato, slurs, cresc., f and final hairpin.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        241.13844967219433,
+        427,
+        311.75318164288467
+      ]
+    },
+    {
+      "bandID": "p24-s2-cello",
+      "rect": [
+        0,
+        272.5,
+        427,
+        315.5
+      ],
+      "description": "Low opening ledger note/slur, all cello notes, cresc., f, closing slur/hairpin.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        241.13844967219433,
+        427,
+        316.4967219436946
+      ]
+    },
+    {
+      "bandID": "p28-s1-violin1",
+      "rect": [
+        0,
+        24,
+        427,
+        64
+      ],
+      "description": "All high ledger notes, phrase slurs, crescendo and forte; clef lower dot retained.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        17.59232769830942,
+        427,
+        93.57022106631985
+      ]
+    },
+    {
+      "bandID": "p28-s1-violin2",
+      "rect": [
+        0,
+        66,
+        427,
+        98.5
+      ],
+      "description": "High articulation dots, low ledger note, slurs, hairpin and forte.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        21.59102730819245,
+        427,
+        107.56566970091029
+      ]
+    },
+    {
+      "bandID": "p31-s1-violin2",
+      "rect": [
+        35,
+        69,
+        394,
+        105.5
+      ],
+      "description": "Existing frozen connector8 target guard, unchanged.",
+      "derivation": "unchanged prior full guard",
+      "currentRect": [
+        0,
+        41.435403008098774,
+        427,
+        110.8642499035866
+      ]
+    },
+    {
+      "bandID": "p38-s1-viola",
+      "rect": [
+        0,
+        90,
+        427,
+        133
+      ],
+      "description": "Full intended Viola row: both voices/chords, triplet numeral and beam, all ties/slurs above and below, accidentals, lower tenuto marks, last high note with two arcs, and final forte. Independently inspected original and corrected full-width contexts; includes adjacent ink and is not a per-pixel ownership mask.",
+      "derivation": "new independently selected full-width source envelope",
+      "currentRect": [
+        0,
+        87.96944083224969,
+        427,
+        159.54876462938876
+      ]
+    },
+    {
+      "bandID": "p38-s1-cello",
+      "rect": [
+        0,
+        132.5,
+        427,
+        163
+      ],
+      "description": "Full intended Cello row: initial low accidental and ledger note, all stems/beams, lower nested/long slurs, low ledger notes and accidentals, all detached tenutos, closing half note and forte. Independently inspected original and corrected full-width contexts; includes adjacent ink and is not a per-pixel ownership mask.",
+      "derivation": "new independently selected full-width source envelope",
+      "currentRect": [
+        0,
+        91.5682704811444,
+        427,
+        165.14694408322498
+      ]
+    }
+  ],
+  "newGuardsOnly": [
+    {
+      "bandID": "p38-s1-viola",
+      "rect": [
+        0,
+        90,
+        427,
+        133
+      ],
+      "description": "Full intended Viola row: both voices/chords, triplet numeral and beam, all ties/slurs above and below, accidentals, lower tenuto marks, last high note with two arcs, and final forte. Independently inspected original and corrected full-width contexts; includes adjacent ink and is not a per-pixel ownership mask."
+    },
+    {
+      "bandID": "p38-s1-cello",
+      "rect": [
+        0,
+        132.5,
+        427,
+        163
+      ],
+      "description": "Full intended Cello row: initial low accidental and ledger note, all stems/beams, lower nested/long slurs, low ledger notes and accidentals, all detached tenutos, closing half note and forte. Independently inspected original and corrected full-width contexts; includes adjacent ink and is not a per-pixel ownership mask."
+    }
+  ],
+  "rulerImages": [
+    {
+      "path": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p24-target-ruler.png",
+      "sha256": "84e8db8411685b5bead560fc56a506816003820531b71ab82df3967419159d75",
+      "annotation": "Coordinate ticks are outside original source pixels; original context images are separately preserved."
+    },
+    {
+      "path": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p28-target-ruler.png",
+      "sha256": "7162e8086502534cd8bfa7fa1eea3626e112ab13e893bbddcb82ebeb4cdad1c1",
+      "annotation": "Coordinate ticks are outside original source pixels; original context images are separately preserved."
+    },
+    {
+      "path": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p31-target-ruler.png",
+      "sha256": "13668e55aec7e7646ebfa6a09e7be6240ac97bd61b527d063bcb1e1c92ed31a5",
+      "annotation": "Coordinate ticks are outside original source pixels; original context images are separately preserved."
+    },
+    {
+      "path": "Tests/quality_control/brahms-reviewed-cleanup-2026-10-03/rectified-p38-target-ruler.png",
+      "sha256": "3a546fd2b06efa7566a46d8c7ef82c7f4459cfa4eb52f59e7c5bf8f3016b8d97",
+      "annotation": "Coordinate ticks are outside original source pixels; original context images are separately preserved."
+    }
+  ]
+}

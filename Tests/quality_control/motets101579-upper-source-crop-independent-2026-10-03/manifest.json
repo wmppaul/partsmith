@@ -1,0 +1,826 @@
+{
+  "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+  "initialPlanSHA256": "69aea30fc952e80a45d40acaaf539ca1f2304383ea5dd45aeee3e0415c988dd5",
+  "rowCount": 135,
+  "initialTargetPreserved": 133,
+  "initialCorrectionsRequired": 2,
+  "archive": {
+    "path": "review-evidence.tar.gz",
+    "bytes": 40193483,
+    "sha256": "b90f4ad8719088a392e19c3ae1f469d28b21e1a9f0a66849c307b6f614603ac6",
+    "members": [
+      {
+        "path": "author-initial/assignment-config.json",
+        "bytes": 38112,
+        "sha256": "4fafacf70fd03a29b01eab41e40c887b0a60c923d0fe72763a11057e6f9d8b38"
+      },
+      {
+        "path": "author-initial/diagnostic-plan.json",
+        "bytes": 94687,
+        "sha256": "69aea30fc952e80a45d40acaaf539ca1f2304383ea5dd45aeee3e0415c988dd5"
+      },
+      {
+        "path": "author-initial/profile.json",
+        "bytes": 692,
+        "sha256": "e2168a7b08c8555eb23f0ec10bcabf383802958aa9c2cb529ada40bdf5f75b6e"
+      },
+      {
+        "path": "author-initial/reviewed-overrides.json",
+        "bytes": 57828,
+        "sha256": "b821c1ba5e2c3c70f8ef0cee27aa3a9c825a625f94e6abb6bd92f5298be1844f"
+      },
+      {
+        "path": "author-initial/source-context-index.json",
+        "bytes": 168602,
+        "sha256": "e9f6c49a9cad0712b9413318bb4bca91b35529144a6f36f33b317364d42c7018"
+      },
+      {
+        "path": "author-initial/source-map-before-output.json",
+        "bytes": 26930,
+        "sha256": "5548c0f8f2b903234e992329bd94b412e2aa890c6873a109e580e31013f1b897"
+      },
+      {
+        "path": "author-initial/source-obligations-before-output.json",
+        "bytes": 7099,
+        "sha256": "f918d9c3e018d0b34f69d4a25b9793fc6a25c2ea1d4bc24a87a6a4bd5dd3e6da"
+      },
+      {
+        "path": "correction-previews/p11-s2-alto-correction.png",
+        "bytes": 164341,
+        "sha256": "21561f20d9cfee5e00d7ea52de800d0401fde5c0df42ea845baa23775691eb3b"
+      },
+      {
+        "path": "correction-previews/p11-s2-alto-proposed-exact.png",
+        "bytes": 94342,
+        "sha256": "3e91b869057ec4cb32f81fae00e420c578511bb5352ca179254ad4c41bd9c52f"
+      },
+      {
+        "path": "correction-previews/p11-s3-alto-correction.png",
+        "bytes": 199895,
+        "sha256": "cde5e23daa254fd7f5243cdf3c50f12943b2dfc3779febef4fa1647373072686"
+      },
+      {
+        "path": "correction-previews/p11-s3-alto-proposed-exact.png",
+        "bytes": 119302,
+        "sha256": "db642b6a4b3c92423771204be63d5d8df73557a2b7a916550f4d8497df426fd0"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-01-02.png",
+        "bytes": 775017,
+        "sha256": "960a8a3255d5b0c13ce9eb421803a152f1e5ebe0508ac7300b8f4e946b2bff2f"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-03-04.png",
+        "bytes": 1424859,
+        "sha256": "bff35b8c65e2c2808fb4889570e92861de641cf62c09bfc022a5fe20f3a21685"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-05-06.png",
+        "bytes": 1236784,
+        "sha256": "fb3fee448fdaa3606638db54c3ff3ec87e80776acc332c20f19a66362a3c12b0"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-07-08.png",
+        "bytes": 1126178,
+        "sha256": "673598c20504dcd853530f3177042aefda6b439fa1c811ea4917a9713decdadb"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-09-10.png",
+        "bytes": 1165864,
+        "sha256": "63c95969a84a39df03ff1a39b2eea65c80d303682790f56dacc2ddc4148c2959"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-11-12.png",
+        "bytes": 1333392,
+        "sha256": "c9b6f81ddc4288caf339c7757428d8096c050f415c4dd1e903d331a98b13732f"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-13-14.png",
+        "bytes": 1172877,
+        "sha256": "f0b27a86969ed523f4356500c526187056de138df5d2f0c8e6cf5630f4e3cf3f"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-15-16.png",
+        "bytes": 1293521,
+        "sha256": "b1f38c8f491d7eab155ba8e8664ce63d64f9d770c644eca9d440d5ea942d236e"
+      },
+      {
+        "path": "original-page-roster-panels/original-pages-17-18.png",
+        "bytes": 1294740,
+        "sha256": "599ea25be60842d5129eb75568e5eedd6ea3d93208d2735ed8c6550d7e3aa7f3"
+      },
+      {
+        "path": "review-tools/freeze_review.py",
+        "bytes": 7206,
+        "sha256": "17001149b9d32dfda9c0a6578d0598a6f14e8c888fe0ab26effc089a5a35975e"
+      },
+      {
+        "path": "review-tools/prepare_review.py",
+        "bytes": 1860,
+        "sha256": "2b550d59584283f5a6ef11beb0853314de56c7405faf84fe3dd19073233d8de1"
+      },
+      {
+        "path": "review-tools/record.py",
+        "bytes": 529,
+        "sha256": "5ba0905536059a38942d5dd9796b2dbe547a47475f76cdef2fe3ceb0c2feeb77"
+      },
+      {
+        "path": "source-contexts/p10-s1-alto.png",
+        "bytes": 270123,
+        "sha256": "253a9c6d34306099686e6d6703dc8437245707d4420646ea6b3a2e46894c7503"
+      },
+      {
+        "path": "source-contexts/p10-s1-soprano-section.png",
+        "bytes": 263064,
+        "sha256": "57b57de94227101d6e742b9b04711e518cfac6d6d9069f5d1f68952e8e1ef368"
+      },
+      {
+        "path": "source-contexts/p10-s1-tenor.png",
+        "bytes": 276623,
+        "sha256": "42dbd047f7ee1658de4fde84737ddbca7a112e3757139cfc4c2aaab53f486317"
+      },
+      {
+        "path": "source-contexts/p10-s2-alto.png",
+        "bytes": 257357,
+        "sha256": "4c07c963e9e72e11c05b2c970c412e635c7ebdededbb9bdb37091e82ee373c69"
+      },
+      {
+        "path": "source-contexts/p10-s2-soprano-section.png",
+        "bytes": 284165,
+        "sha256": "9d80b7942c07a2cb36e2d3d4c5803d06e352cb0cb8f83d640563c07f246e7cf0"
+      },
+      {
+        "path": "source-contexts/p10-s2-tenor.png",
+        "bytes": 229531,
+        "sha256": "d26cfa7749ea89263496c950b6431a3fab494347e7e0f34bac73414dc51c0617"
+      },
+      {
+        "path": "source-contexts/p11-s1-alto.png",
+        "bytes": 260963,
+        "sha256": "946c067d9f6984914787f2857421f365a6e4537a6a798a6aa5ffa57e5fe3e55b"
+      },
+      {
+        "path": "source-contexts/p11-s1-soprano-section.png",
+        "bytes": 272086,
+        "sha256": "2a40a6f08c996d570cd5814e1486e191ab76c3bccbc30d175bebca63dca9bc19"
+      },
+      {
+        "path": "source-contexts/p11-s1-tenor.png",
+        "bytes": 275555,
+        "sha256": "56fbe1ad79ffc08a70585f3216d08f96e9800674eea316d536f81bca0b506200"
+      },
+      {
+        "path": "source-contexts/p11-s2-alto.png",
+        "bytes": 248444,
+        "sha256": "1e54c7d7a782422682999fae97036d60faabb1434a8605907bf3c4b41a7621dc"
+      },
+      {
+        "path": "source-contexts/p11-s2-soprano-section.png",
+        "bytes": 231561,
+        "sha256": "ffb1217fc9d732e50ec75ffd1701e6bb4ed82a4d0b2a0bc1e2ae47554a0dee13"
+      },
+      {
+        "path": "source-contexts/p11-s2-tenor.png",
+        "bytes": 255896,
+        "sha256": "e28dcc3c6cfe8d4b979e1ba123780bd1db9e99abd11545308a0ea27a3ddd8025"
+      },
+      {
+        "path": "source-contexts/p11-s3-alto.png",
+        "bytes": 306816,
+        "sha256": "91bb218e12c2f831b35d187b9b0e6e43c417da331dc158bd39cda6c02ae18db0"
+      },
+      {
+        "path": "source-contexts/p11-s3-soprano-section.png",
+        "bytes": 265405,
+        "sha256": "d9914c1ed26bdc6de476a06f8f7d222820e566c9b58157d901fe5f709f5c4bb9"
+      },
+      {
+        "path": "source-contexts/p11-s3-tenor.png",
+        "bytes": 309357,
+        "sha256": "5850e3f3739e51adb1bdd65fd34d45c797c5b988684a3e2d0b355ecc2669a5f5"
+      },
+      {
+        "path": "source-contexts/p12-s1-alto.png",
+        "bytes": 207234,
+        "sha256": "c00cbae732908f65d6bbc0f229a2c54c1ba65416cce4ff3d15797cc08b38dc84"
+      },
+      {
+        "path": "source-contexts/p12-s1-soprano-section.png",
+        "bytes": 145522,
+        "sha256": "c87e6f7623caa7d7e37635e34acc38215aa2cdc0a0030cdada4b302af675a474"
+      },
+      {
+        "path": "source-contexts/p12-s1-tenor.png",
+        "bytes": 197968,
+        "sha256": "a196126b3d9f1ea8ecd9ea1d04e9789ffd78ac375dddcc001f76e4746b02334a"
+      },
+      {
+        "path": "source-contexts/p12-s2-alto.png",
+        "bytes": 222952,
+        "sha256": "5aad4b06c297bb37ef9cdce82f5f9f3697d0d4ffeced0b9214d0342feac8487e"
+      },
+      {
+        "path": "source-contexts/p12-s2-soprano-section.png",
+        "bytes": 190748,
+        "sha256": "1b90099cf58af98e75d550e7deb9411f3b10cbffa895f1d345a29ddddd4c30e4"
+      },
+      {
+        "path": "source-contexts/p12-s2-tenor.png",
+        "bytes": 228067,
+        "sha256": "0a9942769bf94c4f53ac658b7e1e0bd065afdfcf47c040ff9cf90a61eb5b7c88"
+      },
+      {
+        "path": "source-contexts/p12-s3-alto.png",
+        "bytes": 247199,
+        "sha256": "d828a15d588eac866493a8a7f725b9c66e9843fec1aaed5c84cc280d03ed22f2"
+      },
+      {
+        "path": "source-contexts/p12-s3-soprano-section.png",
+        "bytes": 194580,
+        "sha256": "ee18186117d05b22e4cc0db9c1129c495b04d2017c273164ed925aa7f0b4a72e"
+      },
+      {
+        "path": "source-contexts/p12-s3-tenor.png",
+        "bytes": 239193,
+        "sha256": "ccb4d30c5d58e719c253305d7e65e06fb0554e528d4f3411df3fff431b733579"
+      },
+      {
+        "path": "source-contexts/p13-s1-alto.png",
+        "bytes": 185803,
+        "sha256": "3c44bf782eed1507f4272301e1750ba77c26841ac0dee1ad437775c2fde64100"
+      },
+      {
+        "path": "source-contexts/p13-s1-soprano-section.png",
+        "bytes": 127920,
+        "sha256": "2b9fddceb585f1514b0b8e6d96fa33e395081a40de873357b41f6ee2599a4a3a"
+      },
+      {
+        "path": "source-contexts/p13-s1-tenor.png",
+        "bytes": 207165,
+        "sha256": "208bc669090f827cb013883745a067660c10fa5e37b5c1d59aa6f28ef6492099"
+      },
+      {
+        "path": "source-contexts/p13-s2-alto.png",
+        "bytes": 199840,
+        "sha256": "ed8d2ac1f6affa60c6f7e5b277b11455864c8fca8a4e14ae384a1654afb5cf1a"
+      },
+      {
+        "path": "source-contexts/p13-s2-soprano-section.png",
+        "bytes": 127482,
+        "sha256": "fb0bd4c353210f6c22542e183bae557223efbfaa5384c24f232b619ff39f1b10"
+      },
+      {
+        "path": "source-contexts/p13-s2-tenor.png",
+        "bytes": 224342,
+        "sha256": "2753fcf1e325fbedd9786c3e6be816498dbff328d49f518557e6ca3a60398f9e"
+      },
+      {
+        "path": "source-contexts/p13-s3-alto.png",
+        "bytes": 232658,
+        "sha256": "746516fc3cda331432abc3d5dc5621512cdf86bc10846269569349b7f9a6533a"
+      },
+      {
+        "path": "source-contexts/p13-s3-soprano-section.png",
+        "bytes": 134855,
+        "sha256": "643d40f2a10446fd1f87df994e591831ef2133aa4c34dcb0fb0d3905e49053c8"
+      },
+      {
+        "path": "source-contexts/p13-s3-tenor.png",
+        "bytes": 231340,
+        "sha256": "f5a86e38c11dad368351db15ba1094cb2a1e237613c1cb367f7cc911fd6aa7ca"
+      },
+      {
+        "path": "source-contexts/p14-s1-alto.png",
+        "bytes": 263366,
+        "sha256": "9d63a4688e928750c32632be0fca4a11cfbd4ab6818d3623c0febddd95247e29"
+      },
+      {
+        "path": "source-contexts/p14-s1-soprano-section.png",
+        "bytes": 165738,
+        "sha256": "d8710dd2ed08ebd5dec18cbe7b79ad43ed2831313f06ebf39451732efe0b5296"
+      },
+      {
+        "path": "source-contexts/p14-s1-tenor.png",
+        "bytes": 280958,
+        "sha256": "f0a5cdde79231339cd574bee599fa6a516406911828bb5f323bd847ec98c402e"
+      },
+      {
+        "path": "source-contexts/p14-s2-alto.png",
+        "bytes": 260517,
+        "sha256": "6a17ca49a094c49a4239fc4e21840a95a101c7341ad1d062db1319adcfb74481"
+      },
+      {
+        "path": "source-contexts/p14-s2-soprano-section.png",
+        "bytes": 201946,
+        "sha256": "9a01264cdcd1636cd73f9813b406d3c0787f1dbca4bb1533cf3a61df225f2a29"
+      },
+      {
+        "path": "source-contexts/p14-s2-tenor.png",
+        "bytes": 259427,
+        "sha256": "24dcf8fbd80f277987c382100f82cc3e3d32bde708d1f43c2ac924cba4b9e456"
+      },
+      {
+        "path": "source-contexts/p14-s3-alto.png",
+        "bytes": 262187,
+        "sha256": "5b10245dd00f497598f8daae9db40152bd443dfb6b92024a8ea20591eb4c770d"
+      },
+      {
+        "path": "source-contexts/p14-s3-soprano-section.png",
+        "bytes": 205871,
+        "sha256": "ec926de8728c1e9db0dd7244a361f300a51222d78c9adb958f7732ed27f228c7"
+      },
+      {
+        "path": "source-contexts/p14-s3-tenor.png",
+        "bytes": 248767,
+        "sha256": "73cfc77f4e2667d91f98669834bb349cac0089fd2d38da5cf12a309eeaa4e2c6"
+      },
+      {
+        "path": "source-contexts/p15-s1-alto.png",
+        "bytes": 224479,
+        "sha256": "bae3ffe93b18fea0e45a30d08c5af4d9e42803471e434b158fa78b0480790d4a"
+      },
+      {
+        "path": "source-contexts/p15-s1-soprano-section.png",
+        "bytes": 150303,
+        "sha256": "389ca5b9975693e5f1f39c4ab7ffd5b4e7617e05877750c422e79085ec34c39a"
+      },
+      {
+        "path": "source-contexts/p15-s1-tenor.png",
+        "bytes": 208473,
+        "sha256": "a857c2b509464f9092bd77ddeb851439a81931ef01488c2038a42a025491ec19"
+      },
+      {
+        "path": "source-contexts/p15-s2-alto.png",
+        "bytes": 228654,
+        "sha256": "1874429817140534d1cd64cb731cb2217c95e6021108cdd68f9bc7ee9612f1a9"
+      },
+      {
+        "path": "source-contexts/p15-s2-soprano-section.png",
+        "bytes": 169502,
+        "sha256": "7127462cf692fb7444be944548ffece0b5732f3262e03287447c6bd805045762"
+      },
+      {
+        "path": "source-contexts/p15-s2-tenor.png",
+        "bytes": 223824,
+        "sha256": "52ddf011b8c766d0212ec25f6a003745bfd61cd97877401de9b473790e7fa180"
+      },
+      {
+        "path": "source-contexts/p15-s3-alto.png",
+        "bytes": 275466,
+        "sha256": "246e9101500a27a183d51ea373fae60ae83d0ebb77f07823c0ef146b7a6fa456"
+      },
+      {
+        "path": "source-contexts/p15-s3-soprano-section.png",
+        "bytes": 230810,
+        "sha256": "1340fb276fb7c20d633da4801233f089f529260f03d116578168cca5862b1ac0"
+      },
+      {
+        "path": "source-contexts/p15-s3-tenor.png",
+        "bytes": 268178,
+        "sha256": "1efb6674b32557f51e6dbd0e544722983c57fba6991d96773bb84ed384013e62"
+      },
+      {
+        "path": "source-contexts/p16-s1-alto.png",
+        "bytes": 257109,
+        "sha256": "2ad22ee2cab441679632a6dd2faca0f42244be2a4a715730451df2b2c86f9a2d"
+      },
+      {
+        "path": "source-contexts/p16-s1-soprano-section.png",
+        "bytes": 180444,
+        "sha256": "e06309b39d5a751d232465fbce60f259506754dd5b2e3d38e8849d3f912eb100"
+      },
+      {
+        "path": "source-contexts/p16-s1-tenor.png",
+        "bytes": 247703,
+        "sha256": "6e3df518916e57488ce057e3137167d64e66cf9c8c2ea234cb846e6a40a871c2"
+      },
+      {
+        "path": "source-contexts/p16-s2-alto.png",
+        "bytes": 290876,
+        "sha256": "b71346a2b51c946fad339aa3f1ca19296a4d7bcdc1d2da5d2230c1b20782578e"
+      },
+      {
+        "path": "source-contexts/p16-s2-soprano-section.png",
+        "bytes": 212280,
+        "sha256": "929c059096ce79a557fb6e35cf73bd1d2c039282da66d91400c6c637115fbbfc"
+      },
+      {
+        "path": "source-contexts/p16-s2-tenor.png",
+        "bytes": 270662,
+        "sha256": "c8193a4f9f9af34c1ef996c637fcc98e58cf6259a55ba227a31e3c8f0814d51e"
+      },
+      {
+        "path": "source-contexts/p16-s3-alto.png",
+        "bytes": 277607,
+        "sha256": "f8eff1b2dac2588ecf4cbab482c9f5cf6b89f9ecfd5ecea29edf92c37f041fa6"
+      },
+      {
+        "path": "source-contexts/p16-s3-soprano-section.png",
+        "bytes": 206434,
+        "sha256": "a3f58b3943c70e0e67d5ab5eabe659fcf7e88633fdc41a92e7a16ba0be81384c"
+      },
+      {
+        "path": "source-contexts/p16-s3-tenor.png",
+        "bytes": 266463,
+        "sha256": "9f209de1a77bf641d5b461ede440baea7a83c10c3ca640bc8258b882f783a0d9"
+      },
+      {
+        "path": "source-contexts/p17-s1-alto.png",
+        "bytes": 263044,
+        "sha256": "30ce1827ebcb0880256e486761c765494d142a0aee3c3e3ff051664f78786f32"
+      },
+      {
+        "path": "source-contexts/p17-s1-soprano-section.png",
+        "bytes": 192023,
+        "sha256": "c07232379fe27e9c4e48434ab832a6fcc27eadc7bfc9fcf6511385ec17304dc1"
+      },
+      {
+        "path": "source-contexts/p17-s1-tenor.png",
+        "bytes": 248931,
+        "sha256": "717fba753e5abc80094cd401015f4e55c59469cb7731997f33e8e85fdee1f787"
+      },
+      {
+        "path": "source-contexts/p17-s2-alto.png",
+        "bytes": 226897,
+        "sha256": "d0a455e1807da9328419799a20d4e1ffa1514ddf0d7ba88f6a45f83b1d423ea8"
+      },
+      {
+        "path": "source-contexts/p17-s2-soprano-section.png",
+        "bytes": 191220,
+        "sha256": "4a0771f07eb16d917d4a31db2a0576a8c082e5d2011e40ca6c66ffdaafa96c12"
+      },
+      {
+        "path": "source-contexts/p17-s2-tenor.png",
+        "bytes": 229101,
+        "sha256": "5339a0c32177ab755ef74438e647e1bc04350e82171a464584027f81bb094734"
+      },
+      {
+        "path": "source-contexts/p17-s3-alto.png",
+        "bytes": 253028,
+        "sha256": "3e28cfd3949f9477cff4e02ed8b3d06d0a67dfbf270366510f4ebddd453af9a2"
+      },
+      {
+        "path": "source-contexts/p17-s3-soprano-section.png",
+        "bytes": 165197,
+        "sha256": "19712a5b74a421c9c4edf8178db3db013b0ba7d7716c53394a56c97f3fbfc92b"
+      },
+      {
+        "path": "source-contexts/p17-s3-tenor.png",
+        "bytes": 251711,
+        "sha256": "d1b70a667ce4b8caa4544e9cee25fc6910766c3ac0e57fff15cc7744ffd722f6"
+      },
+      {
+        "path": "source-contexts/p18-s1-alto.png",
+        "bytes": 250846,
+        "sha256": "9131edc19a436c96c71770f615e35ad2fc9ff710a7190e811f746f5a0d40a8e2"
+      },
+      {
+        "path": "source-contexts/p18-s1-soprano-section.png",
+        "bytes": 166751,
+        "sha256": "ef04df28a2b12351993da52964c1f61ba305765d88a81339f84f608cb64388c2"
+      },
+      {
+        "path": "source-contexts/p18-s1-tenor.png",
+        "bytes": 287419,
+        "sha256": "715521bad7aab8239fee2db78803b72963046f20dceef7255fbc238be0311344"
+      },
+      {
+        "path": "source-contexts/p18-s2-alto.png",
+        "bytes": 238654,
+        "sha256": "4be170e37eb61d925ff1eadb417e6159800a08e54c3c51a3aa4717843689ee4a"
+      },
+      {
+        "path": "source-contexts/p18-s2-soprano-section.png",
+        "bytes": 181391,
+        "sha256": "1d0c39cad63a43a7f43573092803993d1782c4533b6e9fd039aa3dd3d83798ec"
+      },
+      {
+        "path": "source-contexts/p18-s2-tenor.png",
+        "bytes": 242452,
+        "sha256": "fe14c856020fe7f78e93deb3cf6be76774f38d0ae99dae1b5fbee05d3caff205"
+      },
+      {
+        "path": "source-contexts/p18-s3-alto.png",
+        "bytes": 276591,
+        "sha256": "8cb70176583479cd0a6ae5ed7fe8f8cdd21ea8a34ccbfc43ee520ebfaca20538"
+      },
+      {
+        "path": "source-contexts/p18-s3-soprano-section.png",
+        "bytes": 199041,
+        "sha256": "f6e0b6777687e38e551608645a5b8fd3aa2854007fe46e6a186d178dd1a23954"
+      },
+      {
+        "path": "source-contexts/p18-s3-tenor.png",
+        "bytes": 273221,
+        "sha256": "9cd74678a814655e5243e0a0512a63e94e004ae68b71c2c11cfa1ba0a152ab1f"
+      },
+      {
+        "path": "source-contexts/p2-s1-alto.png",
+        "bytes": 193753,
+        "sha256": "e3e70e6950fc7fa895fc4b6d9104a19e9e974e53f9f7d2af2d720c61507f58c0"
+      },
+      {
+        "path": "source-contexts/p2-s1-soprano-section.png",
+        "bytes": 165017,
+        "sha256": "22f200ab72004234026a889beb4c054d887ea7e9ae2c4911fa59fbb5fb05ebee"
+      },
+      {
+        "path": "source-contexts/p2-s1-tenor.png",
+        "bytes": 166530,
+        "sha256": "3ea90b91601252ab4ba879094f7f9038a5d6b00d06e86fc90225c0ea0e6f5e85"
+      },
+      {
+        "path": "source-contexts/p2-s2-alto.png",
+        "bytes": 230513,
+        "sha256": "ac3e529893e593d9f2cce2344ec0e56cd0ac9e5a255c6eee25887f20c28a64af"
+      },
+      {
+        "path": "source-contexts/p2-s2-soprano-section.png",
+        "bytes": 172762,
+        "sha256": "f7f6a162a5218918a87c512b30cb9143d4c56b824e6ba361b1c92851b149ba3c"
+      },
+      {
+        "path": "source-contexts/p2-s2-tenor.png",
+        "bytes": 192308,
+        "sha256": "72b2a6b191fea931ddd73cd3bd4a4e03eee7caa742fdb42d6009f1f838152931"
+      },
+      {
+        "path": "source-contexts/p3-s1-alto.png",
+        "bytes": 260446,
+        "sha256": "346810d0ef170987cca9ddbd76fccb468da05d8619685eb967be2605cd80a75f"
+      },
+      {
+        "path": "source-contexts/p3-s1-soprano-section.png",
+        "bytes": 177355,
+        "sha256": "e35ca516cd86c3497bbed71ad62227b9e2efd1d0b2f3bc38ec25d7a7997e15bc"
+      },
+      {
+        "path": "source-contexts/p3-s1-tenor.png",
+        "bytes": 260732,
+        "sha256": "6c1baa24ce36c61e1ebc8c12566af39848af25f0fb126a3c38b889681ce7600f"
+      },
+      {
+        "path": "source-contexts/p3-s2-alto.png",
+        "bytes": 267804,
+        "sha256": "9d58850d1e719e37b14fef08ee5c75be7856567640fe2ec6774dfc97b3ccb7b7"
+      },
+      {
+        "path": "source-contexts/p3-s2-soprano-section.png",
+        "bytes": 197524,
+        "sha256": "5c71af46e202001b59630584f3ec31749dd1f76bcb3beea56927f2abced0cc64"
+      },
+      {
+        "path": "source-contexts/p3-s2-tenor.png",
+        "bytes": 268924,
+        "sha256": "d3c9420551a582730bc206b4c3a25c82c3e308f8377e76fe222e813e4e87250a"
+      },
+      {
+        "path": "source-contexts/p3-s3-alto.png",
+        "bytes": 207315,
+        "sha256": "2a3c1b9d5f6ad4105c36185fc80c8539a2e3371fdf4209f10151e98f3ab7875f"
+      },
+      {
+        "path": "source-contexts/p3-s3-soprano-section.png",
+        "bytes": 201142,
+        "sha256": "3b65540e2a9bb271b7ea0271aa350f9ce5c434af9964e13c7c0e6ebadfc8717a"
+      },
+      {
+        "path": "source-contexts/p3-s3-tenor.png",
+        "bytes": 215117,
+        "sha256": "dcff324646ddc0161a52fd543aaf49f542102ef0e7deb56026c92d8af4beddbb"
+      },
+      {
+        "path": "source-contexts/p4-s1-alto.png",
+        "bytes": 267178,
+        "sha256": "4f2b24002cd974d2e27f308d936b94739503d7acd50d94313cfb422297382de0"
+      },
+      {
+        "path": "source-contexts/p4-s1-soprano-section.png",
+        "bytes": 185981,
+        "sha256": "3d3886c94bb1f14317c8aff817be16462b96932d963de5f9b1c9878c9734a1fa"
+      },
+      {
+        "path": "source-contexts/p4-s1-tenor.png",
+        "bytes": 267242,
+        "sha256": "0b8ad87ad4371496644c92d18c40ef3737a6acc8dde5b25a74778820467b4c12"
+      },
+      {
+        "path": "source-contexts/p4-s2-alto.png",
+        "bytes": 307659,
+        "sha256": "b150c1885f379b894fd31a1cd682eb1e6dffe70b2afd3493b122f07e0820cb5a"
+      },
+      {
+        "path": "source-contexts/p4-s2-soprano-section.png",
+        "bytes": 231431,
+        "sha256": "5d9b523ae8b93b9cd6d2f603b32fce3a19854c4b9f4bb64fc0c1ec406dad2a19"
+      },
+      {
+        "path": "source-contexts/p4-s2-tenor.png",
+        "bytes": 319075,
+        "sha256": "f1ba07aec92ed87fa6cc1bcf243cef51298473b65ca734d10cfceae5ec869424"
+      },
+      {
+        "path": "source-contexts/p4-s3-alto.png",
+        "bytes": 283560,
+        "sha256": "a9c30ec8c10c9eaffb46f0e9fa375936822fd060bce7a84ac66a4429e81a1237"
+      },
+      {
+        "path": "source-contexts/p4-s3-soprano-section.png",
+        "bytes": 269624,
+        "sha256": "57ff7138af8363d60dbf4a74ca694c6cce907c50462e309a70046d1c608e6618"
+      },
+      {
+        "path": "source-contexts/p4-s3-tenor.png",
+        "bytes": 303281,
+        "sha256": "550f59504030650fd463e6104a99cfeff92e9050b00e62b8ef4736d68fa30021"
+      },
+      {
+        "path": "source-contexts/p5-s1-alto.png",
+        "bytes": 262845,
+        "sha256": "20b73f032b34a0fec17de082f48080edab8a42f2270e9faba17b58f418917507"
+      },
+      {
+        "path": "source-contexts/p5-s1-soprano-section.png",
+        "bytes": 181680,
+        "sha256": "97d6d2d823abfa2f69afe4e13e911301e720089e4fceb2222879aef9aead54e5"
+      },
+      {
+        "path": "source-contexts/p5-s1-tenor.png",
+        "bytes": 256766,
+        "sha256": "1bf66ae74d5481678720efaa01cd617da64abea3e5941e2ec08346b6916b8301"
+      },
+      {
+        "path": "source-contexts/p5-s2-alto.png",
+        "bytes": 246509,
+        "sha256": "dffcbeca11316e2cc380ae5805ca1ce56cab4dad3eaabae975c942be63728857"
+      },
+      {
+        "path": "source-contexts/p5-s2-soprano-section.png",
+        "bytes": 215048,
+        "sha256": "a8086bae72627529c8b1187fcebca11c79308e26b9b341197d6cdc0d479de4c4"
+      },
+      {
+        "path": "source-contexts/p5-s2-tenor.png",
+        "bytes": 235455,
+        "sha256": "7225b36968fbf368222c6ba922a6a3458404a12d160b36ed50876d6489af0dbb"
+      },
+      {
+        "path": "source-contexts/p5-s3-alto.png",
+        "bytes": 271004,
+        "sha256": "3e98f07cc7f4cec5f72259c849d5de80b36784a99aacbc5d0589ee2b875aad97"
+      },
+      {
+        "path": "source-contexts/p5-s3-soprano-section.png",
+        "bytes": 189654,
+        "sha256": "54ca44a9cd0469aa66914010232643cfb66aa1bc55488a4fb74e2462d94ca317"
+      },
+      {
+        "path": "source-contexts/p5-s3-tenor.png",
+        "bytes": 269647,
+        "sha256": "04ad3811bfe2be369ecaaffb716e4594b0a3a0d414da63509068b97d61647a0f"
+      },
+      {
+        "path": "source-contexts/p6-s1-alto.png",
+        "bytes": 206835,
+        "sha256": "b71cea5e8f6ab17cf7acf5bb11f54f11643ddfb7dc66e4947cf5630b9ab21373"
+      },
+      {
+        "path": "source-contexts/p6-s1-soprano-section.png",
+        "bytes": 267119,
+        "sha256": "99a3d4a4f13e6e34bbb8f33268063fc06042c214e9dbee1cea0207347acca812"
+      },
+      {
+        "path": "source-contexts/p6-s1-tenor.png",
+        "bytes": 178345,
+        "sha256": "aeb48ba88187ac9c268e5a224b53fd6492cf671f3ef61d0efeb8d3eb77c28912"
+      },
+      {
+        "path": "source-contexts/p6-s2-alto.png",
+        "bytes": 211543,
+        "sha256": "64e20920a945962fff2d7d3fc03b921637884d927286d1cf95302e7fb7a3c97f"
+      },
+      {
+        "path": "source-contexts/p6-s2-soprano-section.png",
+        "bytes": 268772,
+        "sha256": "8377c5cb4c92dabd729961a2f3d5b104131806a4dc379ae60e3399747bfaca22"
+      },
+      {
+        "path": "source-contexts/p6-s2-tenor.png",
+        "bytes": 199395,
+        "sha256": "3d7b42a8024b7cf2d08d62ce45eacbe6213f12851c57363c9c6397a89d198d05"
+      },
+      {
+        "path": "source-contexts/p7-s1-alto.png",
+        "bytes": 185519,
+        "sha256": "18b12bf8b1af153ba08ccaa4c84857bd2924ed93e1ab6cca4ac388ca34074fca"
+      },
+      {
+        "path": "source-contexts/p7-s1-soprano-section.png",
+        "bytes": 208943,
+        "sha256": "48756156702ed8468f0fdeeae4507c38dc302182b5da89f50fb7ddcbe80f82cd"
+      },
+      {
+        "path": "source-contexts/p7-s1-tenor.png",
+        "bytes": 187525,
+        "sha256": "b5812147a5686c5537dfacd9b100a8157fde14a7eba9f838030c7e7b096a85ef"
+      },
+      {
+        "path": "source-contexts/p7-s2-alto.png",
+        "bytes": 193528,
+        "sha256": "7964e5a79e2fb6afac9edf06db6913c2bb62bd0919a2be17e8229a0496d22733"
+      },
+      {
+        "path": "source-contexts/p7-s2-soprano-section.png",
+        "bytes": 203964,
+        "sha256": "e0f4aec3f6b61198e32f0f3b9df58364571561dfff55f377bc7e9a630c22e8cc"
+      },
+      {
+        "path": "source-contexts/p7-s2-tenor.png",
+        "bytes": 208319,
+        "sha256": "f1902453f8eb758694452ecf714a41b1c2b902b2b221c49a5cf5c7d757f40bcf"
+      },
+      {
+        "path": "source-contexts/p8-s1-alto.png",
+        "bytes": 228613,
+        "sha256": "8453f733505bf3c27f7821db9f621d6d0b8a800a05ea83b02612d4dfc96afa88"
+      },
+      {
+        "path": "source-contexts/p8-s1-soprano-section.png",
+        "bytes": 246106,
+        "sha256": "ec2a7da957e8235d6f4902179e18838c21aa99043a2881fb1d0cb7569b935b94"
+      },
+      {
+        "path": "source-contexts/p8-s1-tenor.png",
+        "bytes": 209682,
+        "sha256": "5b1c1b070f2010d61b4772f9843d3ea4be573f50c44686e5037ffadfc86f27f0"
+      },
+      {
+        "path": "source-contexts/p8-s2-alto.png",
+        "bytes": 232263,
+        "sha256": "5e13ed8fb17f92cbdd05a902acb53782b29fa95deaa32740740893fbb65e5657"
+      },
+      {
+        "path": "source-contexts/p8-s2-soprano-section.png",
+        "bytes": 236493,
+        "sha256": "d5f6e9c4c94040d28b661f5e57b43322fe794fb717d55a51f90d949ca011df90"
+      },
+      {
+        "path": "source-contexts/p8-s2-tenor.png",
+        "bytes": 243069,
+        "sha256": "7369a8705188d88b9b07c1291f80a756541742f8f9af83998bcf8218204220e3"
+      },
+      {
+        "path": "source-contexts/p9-s1-alto.png",
+        "bytes": 228964,
+        "sha256": "dfc12febb3e596429862e6aca91bd3a88606d139ff2b94314b978a3144da88fa"
+      },
+      {
+        "path": "source-contexts/p9-s1-soprano-section.png",
+        "bytes": 228340,
+        "sha256": "5a0a52e802f93e86a4ff1b5431a8c679d1291c1757a5b616e524b8f37a331c90"
+      },
+      {
+        "path": "source-contexts/p9-s1-tenor.png",
+        "bytes": 210841,
+        "sha256": "941788ec6f4e0509941aa79ec8b555c9542e5201e12ed43e4547c7f297c3049d"
+      },
+      {
+        "path": "source-contexts/p9-s2-alto.png",
+        "bytes": 196512,
+        "sha256": "72eaa24232d8c773b3b44edc22d6a4ec842393acfc59ae4d80be62eed16ddc20"
+      },
+      {
+        "path": "source-contexts/p9-s2-soprano-section.png",
+        "bytes": 221258,
+        "sha256": "2d39655370ad9a9155d55d257446fe3cfe27d9dbc3e8ad2f1eda20a552518fd4"
+      },
+      {
+        "path": "source-contexts/p9-s2-tenor.png",
+        "bytes": 190130,
+        "sha256": "c024e550154b0cc90e7d7a5899eb25853345bba5684803b7dc1b6374ab48ba52"
+      }
+    ]
+  },
+  "reviewFiles": [
+    {
+      "path": "manual-findings.json",
+      "sha256": "f3d561fe370becf48490fe81665d33dc4969341ac637631209bc3616b92a06d8",
+      "bytes": 28314
+    },
+    {
+      "path": "required-corrections.json",
+      "sha256": "d965a1ff28bacde1ea855a94664a40d177ea2e857f372919d14b66db5a512a57",
+      "bytes": 1698
+    },
+    {
+      "path": "review.md",
+      "sha256": "b1b3b6e325670bd0355e480893553dd94ea79ba5e71f042761584ca5e6c4e65e",
+      "bytes": 2412
+    },
+    {
+      "path": "row-receipt.json",
+      "sha256": "304cde6decd8eebc74cff9bd787bdcc3fbdb0363454179b98e4a60a8603df3d4",
+      "bytes": 174888
+    }
+  ]
+}

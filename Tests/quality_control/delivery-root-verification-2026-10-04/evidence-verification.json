@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "folder": "Tests/quality_control/motets101579-upper-source-crop-independent-2026-10-03",
+      "manifestSHA256": "6881c07d15d678baf1393cf9f1e0c7dd2f297c7d2116d677069b5407161e3c36",
+      "payloadsVerified": 158
+    },
+    {
+      "folder": "Tests/quality_control/motets101579-final-output-independent-2026-10-03",
+      "manifestSHA256": "bd495159421d7fd3b89645deb941ec6322438d048f317d0236fb429cf90861de",
+      "payloadsVerified": 47
+    },
+    {
+      "folder": "Tests/quality_control/p31-structural-gap-certificate-2026-10-03",
+      "manifestSHA256": "c9381fd206b1d5f34a694991dda739ac816da1bd639179e43bbceab60c2ed408",
+      "payloadsVerified": 666
+    },
+    {
+      "folder": "Tests/quality_control/brahms-residual-source-separation-2026-10-03",
+      "manifestSHA256": "4627280c1c24fdda85ece6f2706c8aea98657694706cf6fc435d38b71aab9499",
+      "payloadsVerified": 27
+    },
+    {
+      "folder": "Tests/quality_control/motets101579-complete-native-2026-10-03",
+      "chunkManifestSHA256": "9b651cc0b4af4eadb628726c7d6daf3a652dd2ce571dc226b927a680d31c4961",
+      "assembledSHA256": "79968905c324f0c5ef89d764da3ecbdc6559e9328e331c2b00793db79f76fbd1",
+      "payloadsVerified": 461
+    },
+    {
+      "deliveryStage": ".build/brahms-motets101579-complete-native-2026-10-03/delivery-stage",
+      "receiptSHA256": "fce44254c80e80bf5b875b6938253aef508dd325360839869156a2b1200249a2",
+      "zipSHA256": "3e38a4c3075391bc830c3615aef20a823f4bbe8c0aceacbebe5608d12ff9c35f",
+      "allDeliveryFilesAndZIPMembersExact": true
+    }
+  ],
+  "scope": "Byte and evidence-binding verification; musical findings remain in individual visual reviews."
+}

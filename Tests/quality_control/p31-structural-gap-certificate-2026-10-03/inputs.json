@@ -1,0 +1,4966 @@
+{
+  "cases": [
+    {
+      "id": "p31-current-original",
+      "image": ".build/p31-spine-provenance-2026-10-03/p31-original.pgm",
+      "lines": [
+        [
+          189.00308071472583,
+          203.00000000000003,
+          217.4876517802017,
+          231.46942563878576,
+          244.49999999999997
+        ],
+        [
+          316.9969192852742,
+          330.5660066006601,
+          345.00300661455196,
+          358.4960466495355,
+          372.54133085348207
+        ],
+        [
+          459.99999999999994,
+          474.0,
+          487.5532896085262,
+          501.9999999999999,
+          515.4549087927853
+        ],
+        [
+          587.5078446754264,
+          602.0029359953024,
+          615.5,
+          629.5983116050438,
+          643.5116301608839
+        ],
+        [
+          788.0101146325017,
+          801.5078446754264,
+          816.018598884067,
+          829.4719943988799,
+          843.4641362821277
+        ],
+        [
+          907.5978931687592,
+          921.5196116885666,
+          935.5447245375077,
+          949.5,
+          963.484371947646
+        ],
+        [
+          1055.4805409612763,
+          1068.4961824775721,
+          1082.575015628256,
+          1096.994162288383,
+          1109.9812850904555
+        ],
+        [
+          1181.4962679604403,
+          1194.5193087468622,
+          1209.4810570183747,
+          1222.600439422473,
+          1236.4771819737593
+        ],
+        [
+          1383.4570228560267,
+          1397.4962114036753,
+          1411.4308802602154,
+          1425.4885909868792,
+          1439.023176761434
+        ],
+        [
+          1504.9786689419789,
+          1518.5,
+          1533.4367463925678,
+          1546.5346220427004,
+          1560.064298836497
+        ],
+        [
+          1651.503774297037,
+          1665.9884593191,
+          1679.492246559411,
+          1693.5312561047083,
+          1707.002804262479
+        ],
+        [
+          1775.6024800163964,
+          1790.4180159868822,
+          1804.481057018375,
+          1817.5114090131206,
+          1831.4961969956269
+        ],
+        [
+          1985.5110314396034,
+          1999.5211909302818,
+          2013.5387672029465,
+          2027.5196116885663,
+          2040.95517035266
+        ],
+        [
+          2106.4727573457867,
+          2120.0700525394045,
+          2134.5306572140257,
+          2147.97778436019,
+          2161.943576388889
+        ],
+        [
+          2253.098039215686,
+          2266.9999999999995,
+          2281.0367421922842,
+          2294.5076643035068,
+          2308.393855888957
+        ],
+        [
+          2378.0386155606407,
+          2392.5113228911114,
+          2406.4999999999995,
+          2420.0811785929045,
+          2433.9999999999995
+        ]
+      ],
+      "originalSourceBindings": "Tests/quality_control/brahms-residual-source-separation-2026-10-03/input-bindings.json",
+      "sourceSHA256": "8f01a17f3e3d90f7400dcf45062139943665f52f6e5f884ab8803ffae29a7c8c",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "original-filledFirstSpace-fiveMissingRows",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-filledFirstSpace-fiveMissingRows",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "d22b710a16af0a7b5740420c954feff9da2c0753a83f5ddd552c7063599269fa",
+        "sourcePNGSHA256": "0dabe50574c7b4c6c4fdd59d20516c5d083c5395b86197e35fde671d1f08b2a5",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 504,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "45e2ea019d06c3a2fc77d065d5657ccc7f20fd5b1bad5429120541a0943078fd",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 504,
+            "envelope": [
+              190,
+              106,
+              511,
+              215
+            ],
+            "maskRawSHA256": "e460eaae40cc4808bb13f142a84abc66cf0b9b644f4218ef19bb332b5e3d15d7",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-fiveMissingRows.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-fiveMissingRows-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-fiveMissingRows-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-fiveMissingRows-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-fiveMissingRows-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "0dabe50574c7b4c6c4fdd59d20516c5d083c5395b86197e35fde671d1f08b2a5",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner0.png": "99780157acd9b4b34fe488224b5c1fea547fbe2913235bad7e3b18ca116c8a83",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner1.png": "e8fce599d412c229da5ef1c3fd59a077018c9f337b41d05beedbbe9f17e14e7f",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-fiveMissingRows/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-filledFirstSpace-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-filledFirstSpace-intact",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "cdaffac7ccf43522223e9cebe936af68bb6d005d4b6d981384af92813b33dba4",
+        "sourcePNGSHA256": "37f5bfed5d03eb3aa3f1afcefa8bf17261b4a489b1d519a57b7a7bebd9c12c0e",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 514,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "e974db1e24593be59c33fef047c6faf03e906b4eb051e8dfb398a29fdb30306c",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 514,
+            "envelope": [
+              190,
+              106,
+              511,
+              215
+            ],
+            "maskRawSHA256": "b84d250339599bf172f3eef87da2c46fa1df3d7d49411350feacde721f639c97",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-intact.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-intact-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-intact-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-intact-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledFirstSpace-intact-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "37f5bfed5d03eb3aa3f1afcefa8bf17261b4a489b1d519a57b7a7bebd9c12c0e",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner0.png": "ee30131d1122f0479fdac106f68b5f052565577099d98df069bb3b81ad0ac038",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner1.png": "c0dd9dc57b8eced0fc1bb789df99798e345a2e673c4c9324158e789b9e80e5b3",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledFirstSpace-intact/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-filledOuter-fiveMissingRows",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-filledOuter-fiveMissingRows",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "21100d353db414c7df2976d2634101cda3c366ba873d8bede3274438d3fdc286",
+        "sourcePNGSHA256": "b47a3ebe74c4c624eea865a09ddc34891a3590c0e4c70ec3c7a4f754c28c1622",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 520,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "4097c1a820a461459951fc48956107a4f785aac6159d8167af283e262743cdec",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 520,
+            "envelope": [
+              190,
+              98,
+              511,
+              215
+            ],
+            "maskRawSHA256": "cc7423f49bfdb41badd0b298d8e8eba48c7839607f5c86bf2b02a337fca551b2",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-fiveMissingRows.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-fiveMissingRows-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-fiveMissingRows-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-fiveMissingRows-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-fiveMissingRows-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "b47a3ebe74c4c624eea865a09ddc34891a3590c0e4c70ec3c7a4f754c28c1622",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner0.png": "fef827ad8475751b104d0b4a358ec11afc532280009638d4293b4a1c26c1eea6",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner1.png": "510160882b1813505349b8db37917e4d016a89ce063f4c0eb91015a0b3554a52",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-fiveMissingRows/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-filledOuter-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-filledOuter-intact",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "cd985c4d212d2b68e951d7cbddc12b5bc50d6a4c0c00e7d72587a51f49046769",
+        "sourcePNGSHA256": "ea708d9b4c36ff35abff83f2f350a727b431c7e7e5d78e32408600b50880beff",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 530,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "a73e61d8972bc4ef50d6bd2eefcbf81c41fa3e776e5298c91d8b0aefce793b94",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 530,
+            "envelope": [
+              190,
+              98,
+              511,
+              215
+            ],
+            "maskRawSHA256": "8607a4bf0cf9ba0f426e2a5f537593e990a8bb1e9b848aca2b4a5761bb8fee9a",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-intact.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-intact-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-intact-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-intact-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledOuter-intact-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "ea708d9b4c36ff35abff83f2f350a727b431c7e7e5d78e32408600b50880beff",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner0.png": "4e0e39f314ac02bd37c4261905408e9207538b9c543e1efdbac21d6c65b7831d",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner1.png": "69c5d6de32b1c21d62e6f812c4516c920944b83f2b7a7b8964eed1d7f259b61e",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledOuter-intact/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-filledTiedOuter-fiveMissingRows",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-filledTiedOuter-fiveMissingRows",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "b07b0b327caf71d4e882424a1b8b9fa6141f907f0c737c7bd83e5ad3821ba147",
+        "sourcePNGSHA256": "322a09c35c47ec19eacf73192688bbb22919526decf4e6d7ad7dac244815bdbc",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 654,
+            "envelope": [
+              140,
+              89,
+              576,
+              215
+            ],
+            "maskRawSHA256": "ad8083b53647a44ae0293b19289af3b49735c05d5b4019bb8ad4db350104351c",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 654,
+            "envelope": [
+              190,
+              90,
+              576,
+              215
+            ],
+            "maskRawSHA256": "6b6d21736b293a2595703a7b4888586b07e9d33c300bb576558439477b225003",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-fiveMissingRows.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-fiveMissingRows-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-fiveMissingRows-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-fiveMissingRows-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-fiveMissingRows-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "322a09c35c47ec19eacf73192688bbb22919526decf4e6d7ad7dac244815bdbc",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner0.png": "5e9d575eb683ea05c1f13a2ad3c83587a9682210c4c6f41a61d9de4d9f9abbd0",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner1.png": "5926a09d4a1ab5a1441bb128208da975404ac1b5d8c9705ec877cb4e68144446",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-fiveMissingRows/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-filledTiedOuter-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-filledTiedOuter-intact",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "c27c6bc1c907f7d0f3410cf4ed572feae55cf0e19bfe9de24eeebd216074e3ca",
+        "sourcePNGSHA256": "9a19234e963b29742550b51e1cb6d83f024d59da1e0cae3690c9c317de3f0a69",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 664,
+            "envelope": [
+              140,
+              89,
+              576,
+              215
+            ],
+            "maskRawSHA256": "7fca0b846c10522658f2ec5d16343621f53b6d93de4a8c1d08b85d432b1c72ef",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 664,
+            "envelope": [
+              190,
+              90,
+              576,
+              215
+            ],
+            "maskRawSHA256": "2eddab4fcdf47b07a8a2810d47542ca01f3b84bdd1fe0ea1f961e16d56167daa",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-intact.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-intact-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-intact-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-intact-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/filledTiedOuter-intact-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "9a19234e963b29742550b51e1cb6d83f024d59da1e0cae3690c9c317de3f0a69",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner0.png": "90269e346747a34b6020573155816ae033bb7a5e4b874160bc140116f877bc95",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner1.png": "153ac1b610b0db9ad4983b4472b82a9be14f7f9dcda8ecadd52305bccbff5fc7",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-filledTiedOuter-intact/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-hollowFirstSpace-fiveMissingRows",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-hollowFirstSpace-fiveMissingRows",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "d472ea39631632ca591c5d870fd5355372904e9a65b75f638b2a98e87fad1c0e",
+        "sourcePNGSHA256": "a46e92fb4af17b6c24f0309bc997d0e9f6bebd6e0c754f2845a55c2e0764e3c7",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 447,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "84dd1000ffb219141194cb45a643a082eb427c77eb70b51a7044ba0381100ad7",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 447,
+            "envelope": [
+              190,
+              106,
+              511,
+              215
+            ],
+            "maskRawSHA256": "594d1813170b1d054f0e7c9d34c8a810c354fec44438368a03c0fb0e1276019e",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-fiveMissingRows.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-fiveMissingRows-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-fiveMissingRows-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-fiveMissingRows-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-fiveMissingRows-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "a46e92fb4af17b6c24f0309bc997d0e9f6bebd6e0c754f2845a55c2e0764e3c7",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner0.png": "6a46b8a75c4e8b8a7b8dca583877928eb3741801f747b079a1099e4a88176ccf",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner1.png": "ecedf106ea18845941f97fa212044ef4ae402b018f75efc57133eba86071d872",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-fiveMissingRows/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-hollowFirstSpace-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-hollowFirstSpace-intact",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "2d466e7ba6f2b40aed1e5132f6ecfa536d02e007860833ab9447533b11635fe9",
+        "sourcePNGSHA256": "97a73b48ae240f9be8cf76c26c15ef79bade3aef59648cf95c77728c8afdafc0",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 457,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "15bd1ddb41101d899e3be4b2826a4c94a05c988d8b735e9db88a74ba7d241fd0",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 457,
+            "envelope": [
+              190,
+              106,
+              511,
+              215
+            ],
+            "maskRawSHA256": "89c5e374c976773cf2b1801dd0d16ed65a213f7444ae46de4731281f16e28ea0",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-intact.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-intact-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-intact-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-intact-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowFirstSpace-intact-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "97a73b48ae240f9be8cf76c26c15ef79bade3aef59648cf95c77728c8afdafc0",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner0.png": "fde1e010efcf0215b8bd78ba887f7a859c00163aa745db42c4b17e2d6bce4c61",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner1.png": "2ce23556f3a7cb2e0fe2075a254cc6217e6011f234970fa28e91dacfd39ac09a",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowFirstSpace-intact/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-hollowOuter-fiveMissingRows",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-hollowOuter-fiveMissingRows",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "c6c4bc19b87d30b077ba6920062c2f427be3e5cde5d540ddd3d625937670ab3d",
+        "sourcePNGSHA256": "75980792b70c2962f04d5b4d04b05cad64faf72dae57a044dd7de361fcf3a500",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 463,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "6fd53886e92fd24650c643925e6090584533799213d28a40a57ba1073c075dbe",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 463,
+            "envelope": [
+              190,
+              98,
+              511,
+              215
+            ],
+            "maskRawSHA256": "99c61343816eb5057e5b68fec8b144eeb7a616157bc71d4633e4a1ee7bc86a64",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-fiveMissingRows.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-fiveMissingRows-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-fiveMissingRows-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-fiveMissingRows-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-fiveMissingRows-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "75980792b70c2962f04d5b4d04b05cad64faf72dae57a044dd7de361fcf3a500",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner0.png": "341a0b1d4706e73dfd97ba6629ecf78c3f0d221a397c6d37104d2f6084293e7d",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner1.png": "581b351f9edf9da9ad1daae967b91360c22be1b575881a5095e1314ce1533355",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-fiveMissingRows/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-hollowOuter-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-hollowOuter-intact",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "eea533e43663a78b90b9a2d6237c35fee4c51d23fc47e12a8b99d25e02167b1a",
+        "sourcePNGSHA256": "efd30d4cc5734a95686ee1b5669eb1376b2ca3403c00853d86a71f65dba12236",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 473,
+            "envelope": [
+              140,
+              89,
+              511,
+              215
+            ],
+            "maskRawSHA256": "505b12fbebe79c246d7e17ffdd3dab4e78621c8cd9c982e36189e8617877332a",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 473,
+            "envelope": [
+              190,
+              98,
+              511,
+              215
+            ],
+            "maskRawSHA256": "8fd84b648726df60bbf3c23117f1960853588f281a2b665923db1fb9583aa76d",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-intact.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-intact-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-intact-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-intact-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowOuter-intact-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "efd30d4cc5734a95686ee1b5669eb1376b2ca3403c00853d86a71f65dba12236",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner0.png": "a257fd405f73598de91a2d28be46743de2e05c3b013fb1c446c3495dccdbd449",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner1.png": "443083565043d64ca9c8b79b9950e62e5d6906814c56072a48a71d2f92e3576f",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowOuter-intact/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-hollowTiedOuter-fiveMissingRows",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-hollowTiedOuter-fiveMissingRows",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "c54bda93fb3a92e3dfe57b30e2e3a7b398e87db23474411eb0c9fc9e384b430f",
+        "sourcePNGSHA256": "aa1e78bedf5ddb7dd95f36caff3875a3d1e46d1c1cd7a406c168da17997f9cef",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 597,
+            "envelope": [
+              140,
+              89,
+              576,
+              215
+            ],
+            "maskRawSHA256": "7de080df445eff6940230d08a32e3e9170fb0112e9b42315a17d864686109abe",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 597,
+            "envelope": [
+              190,
+              90,
+              576,
+              215
+            ],
+            "maskRawSHA256": "e039d3dfd4b2c324c40684dc07e8ec81fe48b1c5e3e33b6adfb516a89fa02aa8",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-fiveMissingRows.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-fiveMissingRows-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-fiveMissingRows-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-fiveMissingRows-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-fiveMissingRows-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "aa1e78bedf5ddb7dd95f36caff3875a3d1e46d1c1cd7a406c168da17997f9cef",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner0.png": "b7bd909ce7642a2fc6433188c0b2047d97485861da71d6169a32dcc6cadf7705",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner1.png": "e99d00ebcff6bcffadc80927403ca32b201e3e2764c9149b559b2074b4322845",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-fiveMissingRows/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-hollowTiedOuter-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/source.png",
+      "lines": [
+        [
+          103,
+          112,
+          120,
+          128,
+          136
+        ],
+        [
+          178,
+          186,
+          194,
+          202,
+          210
+        ],
+        [
+          270,
+          278,
+          287,
+          295,
+          303
+        ],
+        [
+          344,
+          352,
+          361,
+          369,
+          377
+        ]
+      ],
+      "family": "original-mixed-four-core",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner2.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner3.png"
+      ],
+      "originalFixture": {
+        "id": "original-hollowTiedOuter-intact",
+        "family": "original-mixed-four-core",
+        "width": 720,
+        "height": 500,
+        "staffLines": [
+          [
+            103,
+            112,
+            120,
+            128,
+            136
+          ],
+          [
+            178,
+            186,
+            194,
+            202,
+            210
+          ],
+          [
+            270,
+            278,
+            287,
+            295,
+            303
+          ],
+          [
+            344,
+            352,
+            361,
+            369,
+            377
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.206,
+              0.224,
+              0.24,
+              0.256,
+              0.272
+            ],
+            "topFraction": 0.158,
+            "bottomFraction": 0.32
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.356,
+              0.372,
+              0.388,
+              0.404,
+              0.42
+            ],
+            "topFraction": 0.308,
+            "bottomFraction": 0.468
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.54,
+              0.556,
+              0.574,
+              0.59,
+              0.606
+            ],
+            "topFraction": 0.492,
+            "bottomFraction": 0.654
+          },
+          {
+            "id": 3,
+            "staffLineFractions": [
+              0.688,
+              0.704,
+              0.722,
+              0.738,
+              0.754
+            ],
+            "topFraction": 0.64,
+            "bottomFraction": 0.802
+          }
+        ],
+        "sourceRawSHA256": "47a759c1138f707478964b6dedeb7958c7f94314bbe4866b69ef40b48b8d3e15",
+        "sourcePNGSHA256": "dc81c0137a5856228fa1c8aa6ac174c3057cc45a77fafed1442b37b3ef6b4a6c",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 607,
+            "envelope": [
+              140,
+              89,
+              576,
+              215
+            ],
+            "maskRawSHA256": "606288f02a2e1295e67d613a9735b32c9160fb59af12ecb0e78b4e2aafa33622",
+            "allowedWholeNeighborIDs": [
+              1
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 607,
+            "envelope": [
+              190,
+              90,
+              576,
+              215
+            ],
+            "maskRawSHA256": "0ce2c114385b09f88cbd90c7f266407e5a87fef6dfcc043538c07f1f696b4118",
+            "allowedWholeNeighborIDs": [
+              0
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 152,
+            "envelope": [
+              240,
+              256,
+              252,
+              297
+            ],
+            "maskRawSHA256": "db18a474cf59699d886f8264d408a2e1cfb5ffcdb6e29a6ecde6b49652e14b8c",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 3,
+            "partID": "staff3",
+            "pixels": 152,
+            "envelope": [
+              290,
+              330,
+              302,
+              371
+            ],
+            "maskRawSHA256": "bbdd4c147b8464c35203649c490c503e1899ddd99b8d21619f2daed51b41c91b",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "originalSource": "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-intact.png",
+          "originalOwnerFiles": [
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-intact-owner0.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-intact-owner1.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-intact-owner2.png",
+            "Tests/quality_control/four-core-independent-2026-10-03/sources/hollowTiedOuter-intact-owner3.png"
+          ]
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "dc81c0137a5856228fa1c8aa6ac174c3057cc45a77fafed1442b37b3ef6b4a6c",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner0.png": "b4e69162178653d16cb5d790880063e0ac35c8850932fb8227db972989c9249f",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner1.png": "0c94f27582f29d03a3c55627ecdb8154349a69ec26aa81ab7a1cdb3b8a080bec",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner2.png": "ceb16cc6ae6d2b017c0537550afd8f3735de6856895d2fbc9d6bacf25c393eb1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-hollowTiedOuter-intact/owner3.png": "79edfab6260c95f55f1588200a7d6958f058a5702a8f15ca04f23eab038b2fad"
+      }
+    },
+    {
+      "id": "original-case176",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/original-case176/source.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "original-case176",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/original-case176/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-case176/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/original-case176/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "original-case176",
+        "family": "original-case176",
+        "width": 720,
+        "height": 760,
+        "staffLines": [
+          [
+            180,
+            192,
+            204,
+            216,
+            228
+          ],
+          [
+            330,
+            342,
+            354,
+            366,
+            378
+          ],
+          [
+            480,
+            492,
+            504,
+            516,
+            528
+          ]
+        ],
+        "scales": [
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.23684210526315788,
+              0.25263157894736843,
+              0.26842105263157895,
+              0.28421052631578947,
+              0.3
+            ],
+            "topFraction": 0.18947368421052632,
+            "bottomFraction": 0.3473684210526316
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.4342105263157895,
+              0.45,
+              0.46578947368421053,
+              0.48157894736842105,
+              0.49736842105263157
+            ],
+            "topFraction": 0.3868421052631579,
+            "bottomFraction": 0.5447368421052632
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.631578947368421,
+              0.6473684210526316,
+              0.6631578947368421,
+              0.6789473684210526,
+              0.6947368421052632
+            ],
+            "topFraction": 0.5842105263157895,
+            "bottomFraction": 0.7421052631578947
+          }
+        ],
+        "sourceRawSHA256": "4d70efc87579e06de4c04c193ef1136163d4be8316790e05cb70c509dce1424f",
+        "sourcePNGSHA256": "a4aa1f04d1f8ad99bcaaa200472241129bcb91d3e8980b20e56473b0c31ca3a7",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "p0",
+            "pixels": 1400,
+            "envelope": [
+              148,
+              160,
+              609,
+              539
+            ],
+            "maskRawSHA256": "43a27e6a78fb5ca6e77d7aaf1f331d2a08ac112414faa11a2229bfa1451f3399",
+            "allowedWholeNeighborIDs": [
+              1,
+              2
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "p1",
+            "pixels": 1400,
+            "envelope": [
+              218,
+              190,
+              609,
+              539
+            ],
+            "maskRawSHA256": "dcec515cd2afca0987b6e65b38d5608cb0db19cef919fa965f045c885df1c086",
+            "allowedWholeNeighborIDs": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "p2",
+            "pixels": 1400,
+            "envelope": [
+              288,
+              190,
+              609,
+              539
+            ],
+            "maskRawSHA256": "458daf9026dc2d167a61a6acd1bf09ac074a088aa4a2b19dd2e2777852502abb",
+            "allowedWholeNeighborIDs": [
+              0,
+              1
+            ]
+          }
+        ],
+        "metadata": {
+          "originalConstructor": ".build/brahms-numbered-lines-2026-10-03/controls297.swift",
+          "originalSourcePGM": ".build/brahms-numbered-lines-2026-10-03/candidate-v2/case176-source.pgm",
+          "originalMiddleOwnerPGM": ".build/brahms-numbered-lines-2026-10-03/candidate-v2/case176-middle-owner.pgm",
+          "middleOwnerFullRecoveryRequired": true,
+          "requiredMiddleEnvelope": [
+            218,
+            190,
+            609,
+            539
+          ],
+          "analysisAtScaleOne": "original image without extra redraw"
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "a4aa1f04d1f8ad99bcaaa200472241129bcb91d3e8980b20e56473b0c31ca3a7",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/original-case176/owner0.png": "a56a5637911418043acb05bdc5f3775ac7a439878e252a7a9ea6f9ba7b2f7fc1",
+        ".build/musical-span-independent-2026-10-03/inputs/original-case176/owner1.png": "97b447e0a1159646966e2a2fa02aa971e0e3eae915134b8fc2c5faa81cd40c34",
+        ".build/musical-span-independent-2026-10-03/inputs/original-case176/owner2.png": "85357b2184c58cdb131e34e3e7b9ce97e155c939daa06f907a8eb22134b15df2"
+      }
+    },
+    {
+      "id": "music-filled",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/music-filled/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-musical-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/music-filled/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/music-filled/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/music-filled/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "music-filled",
+        "family": "new-musical-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "53b813939836db2e6a3a0d15821150c2ea8001a8405aa1551aeda2b897949c4b",
+        "sourcePNGSHA256": "218062bf6c527fea72b051e604ae4d02c2669e6778ebf70bde2af64f57be35e2",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 1537,
+            "envelope": [
+              150,
+              120,
+              513,
+              545
+            ],
+            "maskRawSHA256": "5b742384692adff803371127900c4aeb03c773bb97a3194b40cf18693a7e6f35",
+            "allowedWholeNeighborIDs": [
+              1,
+              2
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 1537,
+            "envelope": [
+              220,
+              143,
+              513,
+              545
+            ],
+            "maskRawSHA256": "024b5f84e4d1d05c662b6def45a9ac0b6313685d3fd633af508357f351e3dc9e",
+            "allowedWholeNeighborIDs": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 1537,
+            "envelope": [
+              290,
+              143,
+              513,
+              545
+            ],
+            "maskRawSHA256": "b35ca3c32e5101cc763e32e90bc4d039bcd0eb32448395f19ac7d4818bf7e9c2",
+            "allowedWholeNeighborIDs": [
+              0,
+              1
+            ]
+          }
+        ],
+        "metadata": {
+          "kind": "music-filled",
+          "musicalGapRuns": [
+            [
+              205,
+              211
+            ],
+            [
+              349,
+              352
+            ]
+          ],
+          "forbidSharedMusicalSpan": false,
+          "headStafflineOnly": false
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "218062bf6c527fea72b051e604ae4d02c2669e6778ebf70bde2af64f57be35e2",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/music-filled/owner0.png": "79383d15ab8d6c33c2df039175898c40f4ab5af28da44aa3bc5918654b7bbf03",
+        ".build/musical-span-independent-2026-10-03/inputs/music-filled/owner1.png": "c6038b0f1f3f3f52432982d113a9dff84791b1dd2bb8ce61da6d96109c01bfae",
+        ".build/musical-span-independent-2026-10-03/inputs/music-filled/owner2.png": "5222613f7a8874f79cec86143ccb1e1584be0074f4b0449a9b151bf5614ec176"
+      }
+    },
+    {
+      "id": "music-hollow",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/music-hollow/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-musical-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/music-hollow/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/music-hollow/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/music-hollow/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "music-hollow",
+        "family": "new-musical-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "1cacb2595743728df2cb2dcb3ff615ac84a37e5be62e22e016e6b09b4b759c26",
+        "sourcePNGSHA256": "71602e4f5d46811a2ba46ce2842ea5d0835f1a9335f24a2215b78595a15f3232",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 1477,
+            "envelope": [
+              150,
+              120,
+              513,
+              545
+            ],
+            "maskRawSHA256": "e7129232b87edf15281ff1036d6019cc9eccb96ce9dce53e87105bbda6717cdb",
+            "allowedWholeNeighborIDs": [
+              1,
+              2
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 1477,
+            "envelope": [
+              220,
+              143,
+              513,
+              545
+            ],
+            "maskRawSHA256": "4d8a1889b4b5a0719d37472d435647d95a7940a6163349690c76b1e4bb6302b9",
+            "allowedWholeNeighborIDs": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 1477,
+            "envelope": [
+              290,
+              143,
+              513,
+              545
+            ],
+            "maskRawSHA256": "bbb85150652b2ddf2652b011ed202187a264bd8cf40224524bb47bfc79de305e",
+            "allowedWholeNeighborIDs": [
+              0,
+              1
+            ]
+          }
+        ],
+        "metadata": {
+          "kind": "music-hollow",
+          "musicalGapRuns": [
+            [
+              205,
+              211
+            ],
+            [
+              349,
+              352
+            ]
+          ],
+          "forbidSharedMusicalSpan": false,
+          "headStafflineOnly": false
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "71602e4f5d46811a2ba46ce2842ea5d0835f1a9335f24a2215b78595a15f3232",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/music-hollow/owner0.png": "a42a6e7adfbfe40bf162e69068966545c62e1df6bb8e3835d4152d5dd2897a5b",
+        ".build/musical-span-independent-2026-10-03/inputs/music-hollow/owner1.png": "0be72d20c19bd10a88935c5285ce36149eea7e4c3f2b0c4e9bba3127130765f3",
+        ".build/musical-span-independent-2026-10-03/inputs/music-hollow/owner2.png": "89b1c156bd3ad20f18f97a8c25d40eb53fdd4c07f62aca7be269b4b69937e93c"
+      }
+    },
+    {
+      "id": "staffline-filled-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "staffline-filled-intact",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "899c0d8af791725e68233236a054a046962a0799568806093e7cd0fab16de61e",
+        "sourcePNGSHA256": "e7eb43622b1d8ce07564ca2956494eb0d86c766702d5b91bdc88fc74f72b30d3",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 388,
+            "envelope": [
+              150,
+              120,
+              494,
+              169
+            ],
+            "maskRawSHA256": "5e1010f4e5f5a62941b4563e95d2840d02b3eb49e4bc981f7bc0636fa3024a91",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 388,
+            "envelope": [
+              220,
+              300,
+              494,
+              349
+            ],
+            "maskRawSHA256": "d5fc76bd6f4f04cbc96ed155897d07540bc0b7611dc177713804ca15b48b254d",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 388,
+            "envelope": [
+              290,
+              480,
+              494,
+              529
+            ],
+            "maskRawSHA256": "04d51ebe1634eedcb95a2deec2daf44398a39de0f0910544f91e42653703712c",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "kind": "staffline-filled-intact",
+          "musicalGapRuns": [],
+          "forbidSharedMusicalSpan": true,
+          "headStafflineOnly": true
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "e7eb43622b1d8ce07564ca2956494eb0d86c766702d5b91bdc88fc74f72b30d3",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/owner0.png": "0929818ac4fd8f804875e2840f33c0fda5ff19af0262e7e30edb7ea5e77dcf34",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/owner1.png": "b98387581b0a8da4f189e6bc49bfab353b7607e8397892df76fe48181f3418b1",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-intact/owner2.png": "1018d27769f2740d4bfe8be90659b7151bb794c61c4ac718215dccf54ed79767"
+      }
+    },
+    {
+      "id": "staffline-hollow-intact",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "staffline-hollow-intact",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "ace22e15a966205b8ccc662bb8e5cf3ace0a537473cc2f0a39c5c50e3d6d7533",
+        "sourcePNGSHA256": "41cba0cce7d5e34b3645211d00e877dabb2d41193e839883de17ce847d4ea577",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 358,
+            "envelope": [
+              150,
+              120,
+              494,
+              169
+            ],
+            "maskRawSHA256": "090e8a06992499e198e967a29c1762bc8b1cc0d117bdb6bc184dc04cc65d42f0",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 358,
+            "envelope": [
+              220,
+              300,
+              494,
+              349
+            ],
+            "maskRawSHA256": "62149e02acbbe2e78f46807b7b2f3148d079e74d87df159d3b557e832c930818",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 358,
+            "envelope": [
+              290,
+              480,
+              494,
+              529
+            ],
+            "maskRawSHA256": "a972ea61d3b0b53d166c1efe0567eca5b9330fda37dea8dd605696d9f67ba129",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "kind": "staffline-hollow-intact",
+          "musicalGapRuns": [],
+          "forbidSharedMusicalSpan": true,
+          "headStafflineOnly": true
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "41cba0cce7d5e34b3645211d00e877dabb2d41193e839883de17ce847d4ea577",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/owner0.png": "aadbeb63fe92baf4fbcf70427c2ddd30885ba54809b8e1841ce4cdc240760ab8",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/owner1.png": "255bdc43043392aa3a2e309cc648a7de27a6f7ca92cfd96aa6e9bc074d891147",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-intact/owner2.png": "f4d96dfbbe1efa149f8cb0b159a0a12e0d1b29f71d5ea9ed312ee336811931e1"
+      }
+    },
+    {
+      "id": "staffline-filled-broken",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "staffline-filled-broken",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "1304b13715c7db35c032c25b8fb27b3015ff321cd13aeee45ca359b86c1b2f70",
+        "sourcePNGSHA256": "6acc7866fa3b1847e11ca397c012f4a2c1d95360eef39ab779a436d37995e6aa",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 388,
+            "envelope": [
+              150,
+              120,
+              494,
+              169
+            ],
+            "maskRawSHA256": "5e1010f4e5f5a62941b4563e95d2840d02b3eb49e4bc981f7bc0636fa3024a91",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 388,
+            "envelope": [
+              220,
+              300,
+              494,
+              349
+            ],
+            "maskRawSHA256": "d5fc76bd6f4f04cbc96ed155897d07540bc0b7611dc177713804ca15b48b254d",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 388,
+            "envelope": [
+              290,
+              480,
+              494,
+              529
+            ],
+            "maskRawSHA256": "04d51ebe1634eedcb95a2deec2daf44398a39de0f0910544f91e42653703712c",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "kind": "staffline-filled-broken",
+          "musicalGapRuns": [],
+          "forbidSharedMusicalSpan": true,
+          "headStafflineOnly": true
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "6acc7866fa3b1847e11ca397c012f4a2c1d95360eef39ab779a436d37995e6aa",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/owner0.png": "0929818ac4fd8f804875e2840f33c0fda5ff19af0262e7e30edb7ea5e77dcf34",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/owner1.png": "b98387581b0a8da4f189e6bc49bfab353b7607e8397892df76fe48181f3418b1",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-filled-broken/owner2.png": "1018d27769f2740d4bfe8be90659b7151bb794c61c4ac718215dccf54ed79767"
+      }
+    },
+    {
+      "id": "staffline-hollow-broken",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "staffline-hollow-broken",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "740300ba093d70fc82ab04694b96163f0afb58c0839b566fc5153a477b71dc06",
+        "sourcePNGSHA256": "08dd3ef71739b98b39f656755ba82289a61c4f223efc3eeb7996b6427701dea7",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 358,
+            "envelope": [
+              150,
+              120,
+              494,
+              169
+            ],
+            "maskRawSHA256": "090e8a06992499e198e967a29c1762bc8b1cc0d117bdb6bc184dc04cc65d42f0",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 358,
+            "envelope": [
+              220,
+              300,
+              494,
+              349
+            ],
+            "maskRawSHA256": "62149e02acbbe2e78f46807b7b2f3148d079e74d87df159d3b557e832c930818",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 358,
+            "envelope": [
+              290,
+              480,
+              494,
+              529
+            ],
+            "maskRawSHA256": "a972ea61d3b0b53d166c1efe0567eca5b9330fda37dea8dd605696d9f67ba129",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "kind": "staffline-hollow-broken",
+          "musicalGapRuns": [],
+          "forbidSharedMusicalSpan": true,
+          "headStafflineOnly": true
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "08dd3ef71739b98b39f656755ba82289a61c4f223efc3eeb7996b6427701dea7",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/owner0.png": "aadbeb63fe92baf4fbcf70427c2ddd30885ba54809b8e1841ce4cdc240760ab8",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/owner1.png": "255bdc43043392aa3a2e309cc648a7de27a6f7ca92cfd96aa6e9bc074d891147",
+        ".build/musical-span-independent-2026-10-03/inputs/staffline-hollow-broken/owner2.png": "f4d96dfbbe1efa149f8cb0b159a0a12e0d1b29f71d5ea9ed312ee336811931e1"
+      }
+    },
+    {
+      "id": "detached-dynamic",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "detached-dynamic",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "ab7af9e7eda1d91ed8e5b52803b9c0852d8e39ac55cdbfe0cc69a88b6b96e2d2",
+        "sourcePNGSHA256": "169ad32093174f1b9bc250043267d554b3b1e14843be34865151d18af420742d",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 300,
+            "envelope": [
+              150,
+              120,
+              496,
+              224
+            ],
+            "maskRawSHA256": "a54edf8be5d433a8fe68155cbbc1d0125d5e819155bee648bffbf6986d291cca",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 218,
+            "envelope": [
+              220,
+              300,
+              233,
+              349
+            ],
+            "maskRawSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 218,
+            "envelope": [
+              290,
+              480,
+              303,
+              529
+            ],
+            "maskRawSHA256": "80f5d449ceb9576577fff7d44468bbd28d9e1d291a94a1aaba37e08461f65cde",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "kind": "detached-dynamic",
+          "musicalGapRuns": [],
+          "forbidSharedMusicalSpan": true,
+          "headStafflineOnly": false
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "169ad32093174f1b9bc250043267d554b3b1e14843be34865151d18af420742d",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/owner0.png": "f09484bf5a2ba227022417ca062be874700ebb1c240f2adbf5160b95296e39d3",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/owner1.png": "e74356abe8adcdcdaaf853b66953fed456ca42b3d4cc4d09fcd261ba3d8625b1",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-dynamic/owner2.png": "f5593520fa9957af4ddb84d9ecfff3b0820f66248c50c19c800e5f709b4e1fc8"
+      }
+    },
+    {
+      "id": "detached-sharp",
+      "image": ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/owner0.png",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/owner1.png",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "detached-sharp",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "fc35be41caba860c3317a7c41c562bc97656d415e68e2f4a4ebd565276a0bfc6",
+        "sourcePNGSHA256": "5a267847fdcdca948c92063e3ee4b325ced5c02537775a5c78fa84b1a003cdaf",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 338,
+            "envelope": [
+              150,
+              120,
+              497,
+              222
+            ],
+            "maskRawSHA256": "b580660d2795baaf3ce3c26def76a73f4664a72b9529bf89b5ffdfd5446dba08",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 218,
+            "envelope": [
+              220,
+              300,
+              233,
+              349
+            ],
+            "maskRawSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 218,
+            "envelope": [
+              290,
+              480,
+              303,
+              529
+            ],
+            "maskRawSHA256": "80f5d449ceb9576577fff7d44468bbd28d9e1d291a94a1aaba37e08461f65cde",
+            "allowedWholeNeighborIDs": []
+          }
+        ],
+        "metadata": {
+          "kind": "detached-sharp",
+          "musicalGapRuns": [],
+          "forbidSharedMusicalSpan": true,
+          "headStafflineOnly": false
+        }
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "5a267847fdcdca948c92063e3ee4b325ced5c02537775a5c78fa84b1a003cdaf",
+      "ownerMaskHashes": {
+        ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/owner0.png": "dfdeb0130af679bce9720ac1b2a17a44828ea05b0691c426e6d45ce1bac76be5",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/owner1.png": "e74356abe8adcdcdaaf853b66953fed456ca42b3d4cc4d09fcd261ba3d8625b1",
+        ".build/musical-span-independent-2026-10-03/inputs/detached-sharp/owner2.png": "f5593520fa9957af4ddb84d9ecfff3b0820f66248c50c19c800e5f709b4e1fc8"
+      }
+    },
+    {
+      "id": "three-filled-heads",
+      "image": ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-musical-span",
+      "ownerMasks": [
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/owner0.png",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/owner1.png",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "three-filled-heads",
+        "family": "new-musical-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "bfbc0b0b4ddaa0985db5ea7c7e1527179ebe812fbe7cb8cd958c8c1ba76f91d5",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 1625,
+            "envelope": [
+              150,
+              120,
+              513,
+              545
+            ],
+            "maskRawSHA256": "065c1b5deabb111929ee95001e32b9b7abb2fa91bb53662ea6f6e744dca0c381",
+            "allowedWholeNeighborIDs": [
+              1,
+              2
+            ]
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 1625,
+            "envelope": [
+              220,
+              143,
+              513,
+              545
+            ],
+            "maskRawSHA256": "675a935dc0c7fcae1611e2f8958d057ca682e6055322447e2cf0c5ef3f69acf1",
+            "allowedWholeNeighborIDs": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 1625,
+            "envelope": [
+              290,
+              143,
+              513,
+              545
+            ],
+            "maskRawSHA256": "eca1b4b207fdbbb6378dcd487f62990d9061501b9d45799a29a49ee21fa90936",
+            "allowedWholeNeighborIDs": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "33ee6da5d7714ee0116fb3848ad3e8b40ceaf8f608e6bb8111ab8b0faef30aab",
+      "ownerMaskHashes": {
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/owner0.png": "3f7bd7a98c9414f487b7cceaf49dc2c08d521339e50bf59bebf69b53fa1e3d3b",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/owner1.png": "aa9abf06f6f6c5debc3088277709001a72435978c7808051e0551bb44022834c",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/three-filled-heads/owner2.png": "fd1ce73eec6d79ad96229ed1c8bafa8263cc9fe53ac4c328369350a29978845b"
+      }
+    },
+    {
+      "id": "attached-pp-context",
+      "image": ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/owner0.png",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/owner1.png",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "attached-pp-context",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "8015ade862dfecd25cf4b0a60e7349ddc9b7bd92fb04340a8b4fe9c2a55c3855",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 408,
+            "envelope": [
+              150,
+              120,
+              502,
+              218
+            ],
+            "maskRawSHA256": "49519f900dd935664564087f915e85830bf1a4f2c7ad50ca1bb085996b27d8e1",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 218,
+            "envelope": [
+              220,
+              300,
+              233,
+              349
+            ],
+            "maskRawSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 408,
+            "envelope": [
+              290,
+              480,
+              502,
+              566
+            ],
+            "maskRawSHA256": "0224f524ee3f936ea06bc8e4773642f8a30ea813ce24233f237d615cc99057e4",
+            "allowedWholeNeighborIDs": []
+          }
+        ]
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "23272c6fa8279bf4566d7b9d8cad87f0b2212f69096eb8500e804a729fc2b3b5",
+      "ownerMaskHashes": {
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/owner0.png": "aeeb82a1592432003773281a4769858841b093ff4e6f1776cedd2f3be32916fb",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/owner1.png": "e74356abe8adcdcdaaf853b66953fed456ca42b3d4cc4d09fcd261ba3d8625b1",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-pp-context/owner2.png": "07ac5f91cac5cf1fa6333b48507d552fa35d8abb04df746d3afed9743ff585fd"
+      }
+    },
+    {
+      "id": "attached-flat-context",
+      "image": ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/source.png",
+      "lines": [
+        [
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        [
+          320,
+          332,
+          344,
+          356,
+          368
+        ],
+        [
+          500,
+          512,
+          524,
+          536,
+          548
+        ]
+      ],
+      "family": "new-no-shared-span",
+      "ownerMasks": [
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/owner0.png",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/owner1.png",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/owner2.png"
+      ],
+      "originalFixture": {
+        "id": "attached-flat-context",
+        "family": "new-no-shared-span",
+        "width": 720,
+        "height": 640,
+        "staffLines": [
+          [
+            140,
+            152,
+            164,
+            176,
+            188
+          ],
+          [
+            320,
+            332,
+            344,
+            356,
+            368
+          ],
+          [
+            500,
+            512,
+            524,
+            536,
+            548
+          ]
+        ],
+        "scales": [
+          0.5,
+          1
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "staffLineFractions": [
+              0.21875,
+              0.2375,
+              0.25625,
+              0.275,
+              0.29375
+            ],
+            "topFraction": 0.1625,
+            "bottomFraction": 0.35
+          },
+          {
+            "id": 1,
+            "staffLineFractions": [
+              0.5,
+              0.51875,
+              0.5375,
+              0.55625,
+              0.575
+            ],
+            "topFraction": 0.44375,
+            "bottomFraction": 0.63125
+          },
+          {
+            "id": 2,
+            "staffLineFractions": [
+              0.78125,
+              0.8,
+              0.81875,
+              0.8375,
+              0.85625
+            ],
+            "topFraction": 0.725,
+            "bottomFraction": 0.9125
+          }
+        ],
+        "sourceRawSHA256": "7e12318708b9ffdd7eb41e6a2187ddfeca9914fc3652e1ebcc96a594425dc1aa",
+        "owners": [
+          {
+            "owner": 0,
+            "partID": "staff0",
+            "pixels": 466,
+            "envelope": [
+              150,
+              120,
+              536,
+              187
+            ],
+            "maskRawSHA256": "146f50ee662478611640377b3940751e2e7718ad50c4fe9d002afa0230c704b5",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 1,
+            "partID": "staff1",
+            "pixels": 218,
+            "envelope": [
+              220,
+              300,
+              233,
+              349
+            ],
+            "maskRawSHA256": "46445e966c1b2cc71e258603b6837cd9fa47baeec9af7ff58492f197eaab477d",
+            "allowedWholeNeighborIDs": []
+          },
+          {
+            "owner": 2,
+            "partID": "staff2",
+            "pixels": 466,
+            "envelope": [
+              290,
+              480,
+              536,
+              547
+            ],
+            "maskRawSHA256": "f0a3d40654f2e05b3587b10e21cc36846a05edd8a2ee708439f2abde6ec0a182",
+            "allowedWholeNeighborIDs": []
+          }
+        ]
+      },
+      "scope": "Original source raster only; no resampling or authored-mask alteration",
+      "sourceSHA256": "8162451118cadc19047d5f2511e2922cbf23588e8911357b8f9972b7589a44e6",
+      "ownerMaskHashes": {
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/owner0.png": "ce2fe80bdfd579b19a892eef86daa0bfff769ac0e45a244029de33997efc1acd",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/owner1.png": "e74356abe8adcdcdaaf853b66953fed456ca42b3d4cc4d09fcd261ba3d8625b1",
+        ".build/musical-span-attached-addendum-2026-10-03/inputs/attached-flat-context/owner2.png": "4bcc279b3cb5026447194d648ba32f78a9b34f537b4545b81a5bfd5b21515f4a"
+      }
+    },
+    {
+      "id": "attachedSlur",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/attachedSlur.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "edec90fd920cff875d6acb46e8dfc05b99946a6aaa9233c2b3e59682ecfebe0b",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "cleanBoundary",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/cleanBoundary.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "9688a89ecacd96368b81edc169f5c18831ceec99ae5acee983418449c3bd7a89",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "edgeMusicBroken",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/edgeMusicBroken.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "e6796ddcc12124de70a22cfcf52a0ba45a168775fd738bb3d2ef305d0d81105a",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "edgeMusicFullHeight",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/edgeMusicFullHeight.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "4450accefeb1c28a5505e090e73c9f754d2b82bc66d8a7a14160dd3fafe8b8ab",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "edgeMusicNearEdge",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/edgeMusicNearEdge.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "887c54eaba50f8c8152625f0a332e50733cad49809432b711386dad180bbbad9",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "headAtJunction",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/headAtJunction.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "bfdfa09b4a40e8b1721443e9b6539d7745a5d2b314d357b7846e4bcd557916e8",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "horizontalBreaks",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/horizontalBreaks.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "b721948c5451b23251c88635e3c5a2f91385e59e3399d27c294d575bbd438f19",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "ledgerAliases",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/ledgerAliases.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "99c98bdb3c418e3b448e209f6ac533f93742dfbbe06f1051b870aace30634b56",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "parallelPaths",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/parallelPaths.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "f6fb02147183cfc1e275db1fa1e98123489e54c67b442ba9ae5cf7499a4ccd00",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "sharedStemIntoGap",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/sharedStemIntoGap.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "8048e204f0bf8e93b12463a61c862a3590c0ddb2ee3cce4739145903fd9aabe5",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "verticalBreak",
+      "image": ".build/stem-ownership-2026-10-03/fixtures/verticalBreak.png",
+      "lines": [
+        [
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        [
+          330,
+          342,
+          354,
+          366,
+          378
+        ],
+        [
+          480,
+          492,
+          504,
+          516,
+          528
+        ]
+      ],
+      "family": "existing-conservative-boundary-controls",
+      "sourceSHA256": "989be48f4f2c311e42e71813649af1106b03e9b2a8e7a304a2c9b23b779a0920",
+      "ownerMaskHashes": {}
+    },
+    {
+      "id": "diagonal-glissando",
+      "image": ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/diagonal-glissando.png",
+      "lines": [
+        [
+          170,
+          184,
+          198,
+          212,
+          226
+        ],
+        [
+          340,
+          354,
+          368,
+          382,
+          396
+        ]
+      ],
+      "ownerMasks": [
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/diagonal-glissando-owner0.png",
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/diagonal-glissando-owner1.png"
+      ],
+      "family": "existing-steep-musical-source",
+      "sourceSHA256": "2dea75bcfc36d865670cb24821b08dacb675eb50ae0ed95fb1c9ebeb4efc8e8d",
+      "ownerMaskHashes": {
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/diagonal-glissando-owner0.png": "e234b6650806fca31c0d2cb9a6e51a488cace20a10658ca65d66730da009b062",
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/diagonal-glissando-owner1.png": "7f7e061f09149043ad593a7cdfc891ee5eb8f896f1f221bbb987f13f989b59d9"
+      }
+    },
+    {
+      "id": "curved-cross-staff-slur",
+      "image": ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/curved-cross-staff-slur.png",
+      "lines": [
+        [
+          170,
+          184,
+          198,
+          212,
+          226
+        ],
+        [
+          340,
+          354,
+          368,
+          382,
+          396
+        ]
+      ],
+      "ownerMasks": [
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/curved-cross-staff-slur-owner0.png",
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/curved-cross-staff-slur-owner1.png"
+      ],
+      "family": "existing-steep-musical-source",
+      "sourceSHA256": "c6adf847930c907bbf36daf588b803b834c39cdc8e3363188c42ba0180cd7290",
+      "ownerMaskHashes": {
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/curved-cross-staff-slur-owner0.png": "d82217a6dd24520361b9470403852d8245c8e5eaf510fcf0dac2d352ca4becfe",
+        ".build/brahms-remaining-2026-10-03/thin-independent/diagonal-baseline-sources/curved-cross-staff-slur-owner1.png": "34e24707cbf684febee8ff635673252af0034d7f14a80cf7ff6c413702cf8254"
+      }
+    }
+  ],
+  "productionNativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "currentSourceReportManifestSHA256": "4627280c1c24fdda85ece6f2706c8aea98657694706cf6fc435d38b71aab9499",
+  "oldGuards": {
+    "immutable-ten-source-guards.json": "e097a2b80032e18b85606f4f02c13e24870162857a02bf95f6b58786f2cdbe0c",
+    "immutable-thirteen-local-obligations.json": "525213f740e8d0889a541e535dd86d5964b9908bf7370f0e85e191178833877f",
+    "source-obligations-before-future-trials.json": "e20cce2e1be625b09eb7bdb2dde1e4a658c08cac2c2d6e8092584c8a6a670771"
+  },
+  "legacyEndpointObserverSHA256": "fab101754a47f4397fca26c59f530b6c4275df8b22ffb8a33bc7b78102be75a4"
+}

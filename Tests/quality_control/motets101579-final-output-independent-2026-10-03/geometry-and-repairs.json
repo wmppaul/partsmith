@@ -1,0 +1,59 @@
+{
+  "sourceSHA256": "6287050ea4af566daded58d9a6059045bcdfd6d537a94e09dd18f1d0e5c324a3",
+  "manifestSHA256": "ad45fd170cbf31418eb0a1da4b4704b67ad00b525ef10e12c7e9da8264aaaf6b",
+  "exactSourceIdentityRows": 225,
+  "exactSourceCropChanges": 9,
+  "exactCopyChanges": 6,
+  "unchangedUpperSourceCrops": 133,
+  "repairedUpperSourceCrops": 2,
+  "outputBands": 225,
+  "sourceCopies": 72,
+  "placementAndCopyBoundsPass": true,
+  "interBandOverlapCheckPass": true,
+  "liveFinalPDFHashesStillMatchSnapshot": true,
+  "repairDetails": [
+    {
+      "id": "p11-s2-alto",
+      "sourceRect": [
+        0,
+        371.50000000000006,
+        595.2,
+        421.2175471698114
+      ],
+      "destinationRect": [
+        48,
+        551.1057231250634,
+        564,
+        594.2076289376014
+      ],
+      "sourceContext": "repair-detail/p11-s2-alto-source.png",
+      "sourceContextSHA256": "1a28d54fbfd084000c231811acd241d5d6e992e474ca59b187e33f0100ab06c5",
+      "finalCrop": "repair-detail/p11-s2-alto-final-output.png",
+      "finalCropSHA256": "ecf2db0d882ed39f61db9d35065b08e2f619f3acfa526086852e5db00315e751",
+      "reviewStatus": "source-and-output-visually-compared",
+      "finding": "Complete intended shared above-staff lyric row, including capital tops and final syllables; own notation/hairpins and fermatas retained. Neighboring notation fragments remain."
+    },
+    {
+      "id": "p11-s3-alto",
+      "sourceRect": [
+        0,
+        583,
+        595.2,
+        634.1324528301888
+      ],
+      "destinationRect": [
+        48,
+        625.3677457182708,
+        564,
+        669.6962834541199
+      ],
+      "sourceContext": "repair-detail/p11-s3-alto-source.png",
+      "sourceContextSHA256": "3f6efb0bb62f914f48ea622e58404c4d04c89111e9e1950b4067f1e195b00c92",
+      "finalCrop": "repair-detail/p11-s3-alto-final-output.png",
+      "finalCropSHA256": "d07c19e1a089ab63a254cc4f64ed63ab5210811d68b35bd434659b6f1e0ac2a2",
+      "reviewStatus": "source-and-output-visually-compared",
+      "finding": "Complete intended shared above-staff lyric row, including capital tops and final syllables; own notation/hairpins and fermatas retained. Neighboring notation fragments remain."
+    }
+  ],
+  "sourceRectTolerancePoints": 1e-08
+}
