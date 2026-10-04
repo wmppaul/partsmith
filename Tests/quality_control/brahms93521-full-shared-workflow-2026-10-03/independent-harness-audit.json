@@ -1,0 +1,49 @@
+{
+  "scope": "Read-only source and completed-artifact review; no workflow/export/test rerun.",
+  "findings": [],
+  "observations": [
+    "The workflow intentionally reuses frozen staff/component analysis, invokes all unchanged shared-direction phases with saved rectifications, and asserts non-direction fields unchanged. It is not fresh staff detection.",
+    "Input/source/profile/correction and analysis invariance checks independently passed on both completed runs.",
+    "Export reconstruction omits ephemeral direction issues/references; both actual runs have zero issues and export plans equal the recognized review plans exactly, including destination-symbol copies. This is not an omission in these outputs.",
+    "Both outputs are new default-layout 64-page drafts, not the earlier 67-page manually chosen page-turn alternative.",
+    "Review is about harness scope and provenance, not full musical source/output certification."
+  ],
+  "results": [
+    {
+      "path": ".build/brahms93521-full-workflow-draft-2026-10-03",
+      "planEqualityToWorkflow": true,
+      "sourceBands": 604,
+      "sourceCopies": 42,
+      "parts": 4,
+      "outputPages": 64,
+      "originalSourceEmbeddedHashExact": true,
+      "allNineSavedCorrectionsExact": true,
+      "directionIssues": 0,
+      "sourcePages": 39,
+      "autoSkippedPageIndices": [
+        0
+      ]
+    },
+    {
+      "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03",
+      "planEqualityToWorkflow": true,
+      "sourceBands": 604,
+      "sourceCopies": 42,
+      "parts": 4,
+      "outputPages": 64,
+      "originalSourceEmbeddedHashExact": true,
+      "allNineSavedCorrectionsExact": true,
+      "directionIssues": 0,
+      "sourcePages": 39,
+      "autoSkippedPageIndices": [
+        0
+      ]
+    }
+  ],
+  "bindings": {
+    ".build/brahms93521-full-workflow-draft-2026-10-03/replay.swift": "a2e38de02b49f6744031fce39eaae88f85aad146f6a02ef435a61a6e59b67954",
+    ".build/brahms93521-full-workflow-draft-2026-10-03/export_score_plan.swift": "c0fd6a23ed5e2b8a3d5f2c1016d62a179a6a83832057fdf6fd81cf90742f54b3",
+    ".build/brahms93521-full-workflow-draft-2026-10-03/protocol-before-results.json": "022e367d000dc3c8355483b7119e88df201c3045a38853ac7ee5397c869eb2cf",
+    ".build/brahms93521-full-production-workflow-draft-2026-10-03/protocol-before-results.json": "02554f9ea655390ffaf196405fae49bd41424b5d1e788786010dba1557c6f99c"
+  }
+}

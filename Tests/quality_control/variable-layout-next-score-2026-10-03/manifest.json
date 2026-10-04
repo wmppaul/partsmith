@@ -1,0 +1,37 @@
+{
+  "scope": "Frozen read-only inventory and source-grounded recommendation; no production changes or new native workers.",
+  "artifacts": {
+    "README.md": {
+      "sha256": "80ee436f1bb34ea17de9c8b2dfbbc6eef7e3f7831004bb49099ef98783f232fd",
+      "bytes": 4036
+    },
+    "inventory_remaining.py": {
+      "sha256": "b5e2db11c0d67855041a2ac89fdb3a199e3866b3c6dd04faf87b0ffb7a1b5f20",
+      "bytes": 2780
+    },
+    "mendelssohn-source-map.json": {
+      "sha256": "0f0584e205aa895f2d4d645e6b3bb367ce365afd6dd1b8600064b79da78f414b",
+      "bytes": 66578
+    },
+    "next-workflow.json": {
+      "sha256": "dc8a4ca6a10d24128864fd85499dedd8560d990b66453458423b98afbaa0dd38",
+      "bytes": 3512
+    },
+    "remaining-output-inventory.json": {
+      "sha256": "268944f8e34de6a2c1d324dfec757bc9cf11f3b62514a9549c40bbd4222da0da",
+      "bytes": 14098
+    },
+    "source-review.json": {
+      "sha256": "fd987cf40867d4aedfcdc5a4e44b915732e69389cd4de91b1ec64b2046822e39",
+      "bytes": 4364
+    }
+  },
+  "references": {
+    "Tests/quality_control/variable-layout-output-audit-2026-10-03/manifest.json": "62569bf92aa433bd5a0f5fbced2d816ea2697618781d1c7ae1e094c0e80d1bb0",
+    "Tests/quality_control/system-template-independent-2026-10-03/frozen/source-truth.json": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+    "Tests/quality_control/system-template-independent-2026-10-03/source-renders.zip": "c524a3126f202a1b7fd558ce60812260327651c39bf7436b3a6f2accb7087cfa",
+    "Tests/quality_control/system-template-independent-2026-10-03/evaluation-v2/source-comparison.json": "3a581ad9bb5d97593b660f91c36b168a1d10068dc9729435716158fd68e1613b",
+    "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+    "Tests/quality_control/profiles/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a"
+  }
+}

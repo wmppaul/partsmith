@@ -19,6 +19,14 @@ Cello, and two-staff Piano. A correct staff count cannot distinguish them. The
 Inspector's **Auto Rectify Page/All** controls page alignment; **Auto Extract**
 in the toolbar creates parts.
 
+For tilted scans, use **Deskew & Align Pages** in Auto Extract before identifying
+the staves, then inspect the corrected page. Even modest tilt can make a detached
+dynamic appear to belong to a neighboring staff: Brahms 93521, page 34, system 4,
+Viola loses the lower hook of its forte in the uncorrected Auto crop, while the
+saved corrected-page crop retains it. Alignment helps this case; it does not
+replace checking target notation beyond both crop edges. Keep original and
+corrected coordinates separate when recording corrections or comparing output.
+
 New setups use **Compact — follow notation** in **Crop Context**. The analyzer
 measures connected ink beyond the staff and preserves a small safety margin.
 Enable **Lyrics** for vocal staves; figured bass and additional verses may need
@@ -143,7 +151,7 @@ required copies and respects explicitly removed copies.
 Check both a return instruction and its destination symbol, plus any first/second
 endings. Copying the sentence alone does not make the repeat complete.
 
-The Mac magic-wand setup has an optional **Copy detected tempos, repeats and
+The Mac magic-wand setup has a **Copy detected tempos, repeats and
 paired endings (experimental)** setting for consistent instrument layouts. It
 runs native heading, navigation, linked-symbol and paired-ending recognition in
 the background after staff detection. In Auto review, dashed purple boxes identify source copies;
@@ -159,13 +167,15 @@ directions. Run Auto again to recognize directions for the revised setup.
 Ending recognition currently requires a supported first/second pair; unpaired,
 third/list endings, rehearsal letters and bar numbers still need separate source
 review. Missing or unresolved pages prevent pairing across the gap. A staffless
-page is not assumed to be blank for this purpose. This option is off by default.
+page is not assumed to be blank for this purpose. New setups enable this option
+by default; an existing saved preference is respected. Changing-instrument
+layouts still require reviewed direction copies.
 Raw `inventory` plus `plan` batch results do not run this recognition pass.
 Review both modes separately: a tighter crop can remove a shared instruction
 that an enabled direction pass would restore. Brahms 242312 page 18, system 4,
 Violin II loses its printed Coda in the crop-only cleanup candidate; the native
-direction workflow restores a complete source copy. That opt-in result does not
-establish safety for the default mode or for failed recognition.
+direction workflow restores a complete source copy. That result does not
+establish safety when copying is disabled or recognition fails.
 Check conditional tempo instructions such as **2da volta rit.** as well as
 movement headings. Preserve the repeat ordinal with the tempo: removing it
 changes when the instruction applies. Brahms 09200 page 22 is a source case;

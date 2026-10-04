@@ -1,0 +1,196 @@
+{
+  "version": 2,
+  "scope": "Exact source-review coverage only, not a musical preservation pass.",
+  "candidateNativeSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "changedCrops": 1282,
+  "originalCovered": 157,
+  "originalPending": 1125,
+  "coveredAtV1": 398,
+  "pendingAtV1": 884,
+  "newlyCoveredDistinct": 60,
+  "coveredTotal": 458,
+  "remainingTotal": 824,
+  "duplicates": 0,
+  "outOfQueueIDs": 0,
+  "inputGeometryOrSourceBindingMismatches": 0,
+  "newReviewReceipt": "Tests/quality_control/brahms-raw60-source-review-2026-10-03/per-band-review.json",
+  "priorReviewedRowsWithReportedLoss": [
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "bandID": "p18-s4-violin2",
+      "group": "Brahms 242312",
+      "receipt": "Tests/quality_control/monotone-242312-coda-loss-2026-10-03/review.json",
+      "receiptSHA256": "91971f4b2b3f532acde6c106f1c8931076e7abfc14ddc80ca8e656e14918ec03",
+      "page": 18,
+      "verdict": "New shared navigation heading omission",
+      "sourceSHA256": "b74b4f3ebf951a78e6b11faf889033d6da3e8bd4759fb5d8197eb0b65e96059e"
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "bandID": "p22-s1-violin2",
+      "group": "Brahms 09200",
+      "receipt": "Tests/quality_control/monotone-09200-source-review-2026-10-03/review.json",
+      "receiptSHA256": "2a07554e06fc4e954dd2f4c3b31db4837d5ebc8460bed2bb99cc184d9d53c787",
+      "page": 22,
+      "verdict": "shared-direction loss in raw plan",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "bandID": "p10-s1-violin2",
+      "group": "Brahms 09200",
+      "receipt": "Tests/quality_control/monotone-09200-source-review-2026-10-03/review.json",
+      "receiptSHA256": "2a07554e06fc4e954dd2f4c3b31db4837d5ebc8460bed2bb99cc184d9d53c787",
+      "page": 10,
+      "verdict": "shared-direction loss in raw plan",
+      "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689"
+    }
+  ],
+  "newReceiptExistingTargetDefect": {
+    "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+    "bandID": "p34-s4-viola",
+    "description": "Own forte lower hook is cut in both frozen raw plans; corrected counterpart is complete.",
+    "independentEvidence": "Tests/quality_control/brahms-p34-dynamic-2026-10-03/cause.json",
+    "independentEvidenceSHA256": "b396df690f0fcde112ca8e2944a3307282996f9395220b581bc810c30b4604bb"
+  },
+  "newReviewNewOwnNoteOrMarkLossObserved": 0,
+  "newReviewNewSharedInstructionLossObserved": 0,
+  "newReviewWholeForeignRelationsRemoved": 3,
+  "newReviewWholeForeignRelationsAdded": 0,
+  "scopeLimits": {
+    "candidateEligibleForCropPromotion": false,
+    "coverageIsNotPass": true,
+    "unresolvedZeroBandProfiles": [
+      "excerpt-mozart-k488-page-17",
+      "lightly-skewed-03-brahms-symphony-no1-op68-imslp-317803",
+      "lightly-skewed-04-schumann-concertpiece-4-horns-op86-imslp-291222",
+      "lightly-skewed-06-puccini-la-boheme-sc67-imslp-885132",
+      "lightly-skewed-07-brahms-2-motets-op74-imslp-101579",
+      "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+      "lightly-skewed-09-brahms-gesang-der-parzen-op89-imslp-109040",
+      "medium-skewed-04-schumann-concertpiece-4-horns-op86-imslp-51506",
+      "medium-skewed-07-brahms-2-motets-op74-imslp-101580",
+      "medium-skewed-08-brahms-gesang-der-parzen-op89-imslp-109041",
+      "medium-skewed-10-schubert-winterreise-d911-imslp-00414",
+      "normal-beethoven-egmont-overture-op84-score",
+      "normal-mozart-symphony-no18-kv130-score",
+      "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "normal-schubert-erlkonig-d328-score",
+      "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+      "rest-detection-beethoven-symphony-no5-op67-complete-imslp52624",
+      "rest-detection-beethoven-symphony-no5-op67-mvt2-mutopia1437",
+      "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229"
+    ],
+    "unassignedStaves": 15712,
+    "unresolvedPages": 987,
+    "finalOutputsCertified": false,
+    "newRenderingOrNativeAnalysis": false,
+    "reason": "Coverage includes failed and unfinished crops. The frozen raw crop-only/default-off direction plans lose Coda, Andante and numbered-tempo instructions. This v2 receipt also retains the existing raw p34 Viola f omission. Separate newer direction-workflow changes do not retrospectively approve these frozen crop plans or certify full outputs."
+  },
+  "perScore": [
+    {
+      "id": "excerpt-beethoven-op67-pages-7-8",
+      "changedCrops": 9,
+      "coveredAtV1": 0,
+      "addedInV2": 0,
+      "covered": 0,
+      "pending": 9
+    },
+    {
+      "id": "lightly-skewed-01-mozart-piano-quartet-k478-imslp-478563",
+      "changedCrops": 29,
+      "coveredAtV1": 28,
+      "addedInV2": 0,
+      "covered": 28,
+      "pending": 1
+    },
+    {
+      "id": "lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011",
+      "changedCrops": 109,
+      "coveredAtV1": 95,
+      "addedInV2": 0,
+      "covered": 95,
+      "pending": 14
+    },
+    {
+      "id": "lightly-skewed-05-schumann-frauenliebe-und-leben-op42-imslp-270922",
+      "changedCrops": 6,
+      "coveredAtV1": 4,
+      "addedInV2": 0,
+      "covered": 4,
+      "pending": 2
+    },
+    {
+      "id": "lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312",
+      "changedCrops": 256,
+      "coveredAtV1": 34,
+      "addedInV2": 0,
+      "covered": 34,
+      "pending": 222
+    },
+    {
+      "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+      "changedCrops": 86,
+      "coveredAtV1": 0,
+      "addedInV2": 0,
+      "covered": 0,
+      "pending": 86
+    },
+    {
+      "id": "medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012",
+      "changedCrops": 107,
+      "coveredAtV1": 0,
+      "addedInV2": 0,
+      "covered": 0,
+      "pending": 107
+    },
+    {
+      "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+      "changedCrops": 205,
+      "coveredAtV1": 32,
+      "addedInV2": 0,
+      "covered": 32,
+      "pending": 173
+    },
+    {
+      "id": "medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200",
+      "changedCrops": 199,
+      "coveredAtV1": 12,
+      "addedInV2": 0,
+      "covered": 12,
+      "pending": 187
+    },
+    {
+      "id": "medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521",
+      "changedCrops": 253,
+      "coveredAtV1": 193,
+      "addedInV2": 60,
+      "covered": 253,
+      "pending": 0
+    },
+    {
+      "id": "medium-skewed-09-schumann-frauenliebe-und-leben-op42-imslp-51733",
+      "changedCrops": 19,
+      "coveredAtV1": 0,
+      "addedInV2": 0,
+      "covered": 0,
+      "pending": 19
+    },
+    {
+      "id": "normal-mozart-piano-quartet-kv478-score",
+      "changedCrops": 1,
+      "coveredAtV1": 0,
+      "addedInV2": 0,
+      "covered": 0,
+      "pending": 1
+    },
+    {
+      "id": "normal-mozart-string-quartet-kv387-score",
+      "changedCrops": 3,
+      "coveredAtV1": 0,
+      "addedInV2": 0,
+      "covered": 0,
+      "pending": 3
+    }
+  ]
+}

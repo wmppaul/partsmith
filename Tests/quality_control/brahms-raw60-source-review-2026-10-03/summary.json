@@ -1,0 +1,47 @@
+{
+  "scope": "Visual source review of the exact 60 previously pending raw Brahms 93521 changed crop areas, from original uncorrected PDF.",
+  "reviewVersion": 1,
+  "candidateNativeSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "reviewedCrops": 60,
+  "sourcePhysicalPages": [
+    2,
+    7,
+    17,
+    19,
+    23,
+    28,
+    34,
+    38,
+    39
+  ],
+  "inwardEdgeChanges": 45,
+  "outwardOnlyChanges": 15,
+  "sourceReviewQueueSHA256": "694a066652d3c83fb79fd42fc0705c16d0962c40cf9b8b5070e19f7ab8fe49e7",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "newOwnStaffNoteLossObserved": 0,
+  "newLocalMarkLossObserved": 0,
+  "newSharedInstructionLossObserved": 0,
+  "wholeForeignRelationsBefore": 3,
+  "wholeForeignRelationsAfter": 0,
+  "newWholeForeignRelations": 0,
+  "existingOwnDynamicDefect": {
+    "bandID": "p34-s4-viola",
+    "text": "f",
+    "observation": "The lower portion of the own-staff forte is cut by the identical baseline/candidate bottom edge. Source detail preserves this defect; it is not counted as a newly introduced loss.",
+    "followup": "Original/corrected counterpart investigation assigned separately; no old guard changed."
+  },
+  "otherLimits": [
+    "Conspicuous neighboring notes, slurs, dynamics and staff fragments remain in most crops.",
+    "Rehearsal/tempo labels outside both baseline and candidate lower-part crops remain existing raw-plan omissions; examples E on page 7, B on page 17, D on page 19, Coda on page 28, Doppio Movimento on page 34.",
+    "The optional shared-direction workflow was not run here; no stage coverage is inferred.",
+    "Three whole-neighbor removals on page 28 do not establish overall crop cleanliness.",
+    "Visual inspection is not an exhaustive note-level pixel oracle or certification of all 604 bands.",
+    "No parts exported, pagination checked, or production code changed.",
+    "Other corpus instruction-loss failures still block crop promotion."
+  ],
+  "nativeAnalysisRun": false,
+  "sourceRectified": false,
+  "algorithmsChanged": false,
+  "sourceGuardsChanged": false,
+  "outputApproved": false
+}

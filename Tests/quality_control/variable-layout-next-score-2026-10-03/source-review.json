@@ -1,0 +1,55 @@
+{
+  "scope": "Read-only original source inspection for selecting the next complete workflow. No new crop, identity or detector acceptance test and no output generated.",
+  "sourcePath": "sample_scores/normal/04_choir/mendelssohn_verleih_uns_frieden_gnadiglich_cpdl63797_full_score.pdf",
+  "sourceSHA256": "e5d9e40c209ccae77ea2a610e81db5e3435df3a848da47b51bb644a72b710706",
+  "profilePath": "Tests/quality_control/profiles/normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score.json",
+  "profileSHA256": "5bf0f8964e702f65be7ba79a096dac57543193b37b0059f0add942a4dae8d46a",
+  "sourceTruthPath": "Tests/quality_control/system-template-independent-2026-10-03/frozen/source-truth.json",
+  "sourceTruthSHA256": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98",
+  "renderArchivePath": "Tests/quality_control/system-template-independent-2026-10-03/source-renders.zip",
+  "renderArchiveSHA256": "c524a3126f202a1b7fd558ce60812260327651c39bf7436b3a6f2accb7087cfa",
+  "pages": [
+    {
+      "page": 1,
+      "viewedOriginal": true,
+      "renderArchiveMember": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/page-1.png",
+      "renderSHA256": "166d8ddb8cf1c4a942ef6fdf42a04f774c66b569822605acff6e0f069b2ce94a",
+      "sourceInterpretation": "Original title and part labels identify SATB and Organ. Opening seven bars explicitly print all four vocal rest staves. Organ has two manuals plus a separately drawn pedal staff. Andante, 3/4, key signature, registrations and pedal ties must survive."
+    },
+    {
+      "page": 2,
+      "viewedOriginal": true,
+      "renderArchiveMember": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/page-2.png",
+      "renderSHA256": "320abc9266cc9ad5c1cef092777a8973732b71f06312f55b20fa77e25251880a",
+      "sourceInterpretation": "Four systems start at 8, 16, 23 and 30. First is Organ alone; the other three add Bass. Repeated bar anchors above Bass and Organ identify the same physical system despite separate left connections. Preserve Bass lyrics and dynamics, Organ manual clef changes, registration labels and pedal ties."
+    },
+    {
+      "page": 3,
+      "viewedOriginal": true,
+      "renderArchiveMember": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/page-3.png",
+      "renderSHA256": "dd42c181fb17cf4d92588b91eadd760f600d4aff306d01d3bd0de0cbe2e0247e",
+      "sourceInterpretation": "Three systems start at 37, 45 and 52, each Alto/Bass/Organ. Printed initial Alto rests remain part of that staff identity before its entry. Preserve both lyric lines, bracketed dynamics, slurs, Organ registrations and pedal ties."
+    },
+    {
+      "page": 4,
+      "viewedOriginal": true,
+      "renderArchiveMember": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/page-4.png",
+      "renderSHA256": "e532d124765cde1034a8250d3c1003882497c1d52d35c184473152ba26ddbb46",
+      "sourceInterpretation": "Two systems start at 59 and 67. The first is Alto/Bass/Organ; the second restores SATB/Organ, including three printed vocal rest bars before the vocal entry. Choir and organ have separate connections, but aligned measures and duplicate anchors identify one physical system. Preserve vocal hairpins, lyrics and long pedal ties."
+    },
+    {
+      "page": 5,
+      "viewedOriginal": true,
+      "renderArchiveMember": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/page-5.png",
+      "renderSHA256": "6b81ba61d8f885b3e5dc3a5bfddb5e3783fe3dae5fc8e214d64d6e03cb3e713f",
+      "sourceInterpretation": "Two complete SATB/Organ systems start at 74 and 82. Preserve individual lyrics, dynamic changes, hairpins, vocal slurs and Organ registration and clef changes; the pedal is the third Organ staff."
+    },
+    {
+      "page": 6,
+      "viewedOriginal": true,
+      "renderArchiveMember": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score/page-6.png",
+      "renderSHA256": "fd70406fa353e908a86e1128ebcc98bfc0b0313d4dc96a7660d4d9f25e418445",
+      "sourceInterpretation": "Two complete SATB/Organ systems start at 89 and 96. The final system contains seven measures through the printed final barlines, ending at 102. Preserve sustained vocal and Organ ties, descending low manual notes and final pedal ties; printed final vocal rests remain source crops."
+    }
+  ]
+}

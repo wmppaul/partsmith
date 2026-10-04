@@ -1,0 +1,362 @@
+[
+  {
+    "case": "raw production",
+    "inventory": ".build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+    "inventorySHA256": "96a434fe6f52504d4a7a585c6e79ea15b86191705fe968c7455ac148e2e54b5c",
+    "nativeImageSize": [
+      1800,
+      2588
+    ],
+    "analysisSkewDegrees": 0.7800000000000001,
+    "componentIndex": 1500,
+    "component": {
+      "bounds": [
+        0.67,
+        0.9068778979907264,
+        0.6877777777777778,
+        0.9211746522411128
+      ],
+      "staffIDs": [
+        15
+      ]
+    },
+    "componentNativePixelBounds": [
+      1206.0,
+      2347.0,
+      1238.0,
+      2384.0
+    ],
+    "targetStaff": {
+      "bottomFraction": 0.908907638447751,
+      "confidence": 0.7731340798793114,
+      "id": 14,
+      "staffLineFractions": [
+        0.8707431181397778,
+        0.8761429420775702,
+        0.881560625387092,
+        0.8869517069134439,
+        0.8921811480913434
+      ],
+      "topFraction": 0.8488203368227281,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "neighborStaff": {
+      "bottomFraction": 0.9668674529763446,
+      "confidence": 0.6405876111965287,
+      "id": 15,
+      "staffLineFractions": [
+        0.9207859711458491,
+        0.9260323590007349,
+        0.9316074188562595,
+        0.9368316255848397,
+        0.9424254883791064
+      ],
+      "topFraction": 0.9017569674255101,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ]
+    },
+    "neighborNominalFirstLinePixel": 2382.9940933254575,
+    "neighborSkewProjectedFirstLineAtSymbolCenter": 2387.3779330960074,
+    "componentOverlapsNominalNeighborCore": true,
+    "componentOverlapsSkewProjectedNeighborCoreAtCenter": false,
+    "crop": {
+      "bottomFraction": 0.9132264170891461,
+      "candidateIDs": [
+        14
+      ],
+      "editorialLabel": "",
+      "id": "p34-s4-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 33,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 3,
+      "topFraction": 0.8333501150385896,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "cropBottomPDFPoints": 560.7210200927357,
+    "cropBottomNativePixel": 2363.42996742671
+  },
+  {
+    "case": "raw private95",
+    "inventory": ".build/monotone-line-corpus-2026-10-03/candidate/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521.json",
+    "inventorySHA256": "cf7e49763bef8dc7e9c4daba77737238dfbb98d16da6cbe3a80b70bd486f48e8",
+    "nativeImageSize": [
+      1800,
+      2588
+    ],
+    "analysisSkewDegrees": 0.7800000000000001,
+    "componentIndex": 1564,
+    "component": {
+      "bounds": [
+        0.67,
+        0.9068778979907264,
+        0.6877777777777778,
+        0.9211746522411128
+      ],
+      "staffIDs": [
+        15
+      ]
+    },
+    "componentNativePixelBounds": [
+      1206.0,
+      2347.0,
+      1238.0,
+      2384.0
+    ],
+    "targetStaff": {
+      "bottomFraction": 0.908907638447751,
+      "confidence": 0.7731340798793114,
+      "id": 14,
+      "staffLineFractions": [
+        0.8707431181397778,
+        0.8761429420775702,
+        0.881560625387092,
+        0.8869517069134439,
+        0.8921811480913434
+      ],
+      "topFraction": 0.8488203368227281,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "neighborStaff": {
+      "bottomFraction": 0.9668674529763446,
+      "confidence": 0.6405876111965287,
+      "id": 15,
+      "staffLineFractions": [
+        0.9207859711458491,
+        0.9260323590007349,
+        0.9316074188562595,
+        0.9368316255848397,
+        0.9424254883791064
+      ],
+      "topFraction": 0.9017569674255101,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ]
+    },
+    "neighborNominalFirstLinePixel": 2382.9940933254575,
+    "neighborSkewProjectedFirstLineAtSymbolCenter": 2387.3779330960074,
+    "componentOverlapsNominalNeighborCore": true,
+    "componentOverlapsSkewProjectedNeighborCoreAtCenter": false,
+    "crop": {
+      "bottomFraction": 0.9132264170891461,
+      "candidateIDs": [
+        14
+      ],
+      "editorialLabel": "",
+      "id": "p34-s4-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 33,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 3,
+      "topFraction": 0.8383732989644009,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "cropBottomPDFPoints": 560.7210200927357,
+    "cropBottomNativePixel": 2363.42996742671
+  },
+  {
+    "case": "corrected production",
+    "inventory": ".build/ownership-alternatives-2026-10-03/actual.json",
+    "inventorySHA256": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+    "nativeImageSize": [
+      1068,
+      1535
+    ],
+    "analysisSkewDegrees": 0,
+    "componentIndex": 909,
+    "component": {
+      "bounds": [
+        0.6779026217228464,
+        0.904885993485342,
+        0.6956928838951311,
+        0.9192182410423453
+      ],
+      "staffIDs": []
+    },
+    "componentNativePixelBounds": [
+      724.0,
+      1389.0,
+      743.0,
+      1411.0
+    ],
+    "targetStaff": {
+      "bottomFraction": 0.9035830618892509,
+      "confidence": 0.7081112000286459,
+      "id": 14,
+      "staffLineFractions": [
+        0.8706620672229212,
+        0.8762256008007943,
+        0.8814332247557003,
+        0.8866449511400651,
+        0.89185667752443
+      ],
+      "topFraction": 0.8534201954397395,
+      "warnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ]
+    },
+    "neighborStaff": {
+      "bottomFraction": 0.9667752442996743,
+      "confidence": 0.7246938830535128,
+      "id": 15,
+      "staffLineFractions": [
+        0.9205211726384365,
+        0.9260318446768386,
+        0.9315960912052117,
+        0.9368078175895764,
+        0.9420232708949828
+      ],
+      "topFraction": 0.9061889250814332,
+      "warnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "neighborNominalFirstLinePixel": 1413.0,
+    "neighborSkewProjectedFirstLineAtSymbolCenter": 1413.0,
+    "componentOverlapsNominalNeighborCore": false,
+    "componentOverlapsSkewProjectedNeighborCoreAtCenter": false,
+    "crop": {
+      "bottomFraction": 0.9224755700325733,
+      "candidateIDs": [
+        14
+      ],
+      "editorialLabel": "",
+      "id": "p34-s4-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 33,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 3,
+      "topFraction": 0.839087947882736,
+      "warnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "cropBottomPDFPoints": 566.4,
+    "cropBottomNativePixel": 1416.0
+  },
+  {
+    "case": "corrected private95",
+    "inventory": ".build/brahms-monotone-compatibility-full-2026-10-03/candidate.json",
+    "inventorySHA256": "8fef068a1241e65e60716b9f44afa6d5a05eba3c6c39a05bc0a420b7754b7870",
+    "nativeImageSize": [
+      1068,
+      1535
+    ],
+    "analysisSkewDegrees": 0,
+    "componentIndex": 1061,
+    "component": {
+      "bounds": [
+        0.6779026217228464,
+        0.904885993485342,
+        0.6956928838951311,
+        0.9192182410423453
+      ],
+      "staffIDs": []
+    },
+    "componentNativePixelBounds": [
+      724.0,
+      1389.0,
+      743.0,
+      1411.0
+    ],
+    "targetStaff": {
+      "bottomFraction": 0.9035830618892509,
+      "confidence": 0.7081112000286459,
+      "id": 14,
+      "staffLineFractions": [
+        0.8706620672229212,
+        0.8762256008007943,
+        0.8814332247557003,
+        0.8866449511400651,
+        0.89185667752443
+      ],
+      "topFraction": 0.8534201954397395,
+      "warnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal."
+      ]
+    },
+    "neighborStaff": {
+      "bottomFraction": 0.9667752442996743,
+      "confidence": 0.7246938830535128,
+      "id": 15,
+      "staffLineFractions": [
+        0.9205211726384365,
+        0.9260318446768386,
+        0.9315960912052117,
+        0.9368078175895764,
+        0.9420232708949828
+      ],
+      "topFraction": 0.9061889250814332,
+      "warnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "neighborNominalFirstLinePixel": 1413.0,
+    "neighborSkewProjectedFirstLineAtSymbolCenter": 1413.0,
+    "componentOverlapsNominalNeighborCore": false,
+    "componentOverlapsSkewProjectedNeighborCoreAtCenter": false,
+    "crop": {
+      "bottomFraction": 0.9224755700325733,
+      "candidateIDs": [
+        14
+      ],
+      "editorialLabel": "",
+      "id": "p34-s4-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 33,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 3,
+      "topFraction": 0.839087947882736,
+      "warnings": [
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Some staff lines are faint or interrupted; verify this proposal.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "cropBottomPDFPoints": 566.4,
+    "cropBottomNativePixel": 1416.0
+  }
+]

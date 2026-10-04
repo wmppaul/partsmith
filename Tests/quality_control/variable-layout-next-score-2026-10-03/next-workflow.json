@@ -1,0 +1,147 @@
+{
+  "id": "normal-mendelssohn-verleih-uns-frieden-gnadiglich-cpdl63797-full-score",
+  "pages": 6,
+  "systems": 14,
+  "physicalStaves": 77,
+  "startBar": 1,
+  "finalBar": 102,
+  "parts": [
+    "soprano",
+    "alto",
+    "tenor",
+    "bass",
+    "organ"
+  ],
+  "expectedOriginalMusicRows": 49,
+  "expectedAbsentPartRows": 21,
+  "expectedTotalOriginalItemsBeforeRestJoining": 70,
+  "rosterTypes": [
+    [
+      "soprano",
+      "alto",
+      "tenor",
+      "bass",
+      "organ"
+    ],
+    [
+      "organ"
+    ],
+    [
+      "bass",
+      "organ"
+    ],
+    [
+      "alto",
+      "bass",
+      "organ"
+    ]
+  ],
+  "frozenMatcherSource": "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift",
+  "currentMatcherSHA256": "fe3504a1ba9b86659a6bc5bed37ef1e6424ca4c63d8deb959d45f3ad4a8d2df7",
+  "priorEvaluationPath": "Tests/quality_control/system-template-independent-2026-10-03/evaluation-v2/source-comparison.json",
+  "priorEvaluationSHA256": "3a581ad9bb5d97593b660f91c36b168a1d10068dc9729435716158fd68e1613b",
+  "reviewedSeeds": [
+    {
+      "page": 1,
+      "system": 1
+    },
+    {
+      "page": 2,
+      "system": 1
+    },
+    {
+      "page": 2,
+      "system": 2
+    },
+    {
+      "page": 3,
+      "system": 1
+    }
+  ],
+  "availableSuggestions": [
+    {
+      "page": 3,
+      "system": 2,
+      "requiresMeasureCount": true
+    },
+    {
+      "page": 3,
+      "system": 3,
+      "requiresMeasureCount": true
+    }
+  ],
+  "manualAssignmentsStillNeeded": [
+    {
+      "page": 2,
+      "system": 3
+    },
+    {
+      "page": 2,
+      "system": 4
+    },
+    {
+      "page": 4,
+      "system": 1
+    },
+    {
+      "page": 4,
+      "system": 2
+    },
+    {
+      "page": 5,
+      "system": 1
+    },
+    {
+      "page": 5,
+      "system": 2
+    },
+    {
+      "page": 6,
+      "system": 1
+    },
+    {
+      "page": 6,
+      "system": 2
+    }
+  ],
+  "missingSourceRanges": {
+    "soprano": [
+      [
+        8,
+        66
+      ]
+    ],
+    "alto": [
+      [
+        8,
+        36
+      ]
+    ],
+    "tenor": [
+      [
+        8,
+        66
+      ]
+    ],
+    "bass": [
+      [
+        8,
+        15
+      ]
+    ],
+    "organ": []
+  },
+  "steps": [
+    "Initialize the printed five-part profile with the Organ configured as three staves.",
+    "Use the frozen source map for every physical system and the already reviewed examples; accept only the two supported suggestions, then explicitly assign the eight unresolved systems.",
+    "Use each frozen printed-anchor/barline count for absent-part rows. Keep the seven opening vocal rest staves as original music; never copy a count from a template.",
+    "Apply through the native document workflow, save a source-embedded project, export all five complete parts, reopen, and verify all 70 original item references cover bars 1–102 without missing or duplicate intervals.",
+    "Review all generated output against all six original pages, focusing on lyrics, manual/pedal identity, low ties, registration marks, absent-part rest timing and page turns."
+  ],
+  "limitations": [
+    "No complete Mendelssohn output is claimed or created by this recommendation.",
+    "The existing matcher abstains on eight systems; a few templates alone do not currently complete the score.",
+    "The numeric item/coverage expectations are bookkeeping obligations, not a musical crop-quality certificate.",
+    "The output search covers loose files returned by rg in output and .build; unopened arbitrary archives and other machine locations are not asserted absent."
+  ]
+}

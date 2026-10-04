@@ -1,0 +1,489 @@
+{
+  "recordedAtUTC": "2026-10-04T01:59:10.169121+00:00",
+  "scope": "Two independent complete39-page native shared-direction workflows using immutable frozen crop analyses and identical saved correction metadata, followed by actual full native four-part exports. No staff detection, new transforms or crop promotion.",
+  "source": {
+    "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "bytes": 2747941
+  },
+  "productionNativeSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "privateInputAlgorithmSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "frozenCoreFilesAll25EqualCurrent": true,
+  "sharedCompiledHarness": {
+    "path": ".build/brahms93521-full-workflow-draft-2026-10-03/replay",
+    "sha256": "ba87c8449a24d0e6e2bf7bfa5b45cef9aa9270fb55b09c9ebd3cbddd9ba87620",
+    "bytes": 2989560
+  },
+  "savedCorrectedPhysicalPages": [
+    2,
+    7,
+    17,
+    19,
+    23,
+    28,
+    34,
+    38,
+    39
+  ],
+  "bothRunDirectionsExactlyEqualOnAll39Pages": true,
+  "bothSavedCorrectionsExact": true,
+  "noOriginalSourceStaffOrComponentEvidenceChangedByDirectionRecognition": true,
+  "runs": {
+    "private95": {
+      "input": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/inventory-input.json",
+        "sha256": "7be3590262a71e44f67b53129fee1f74f932f1ef797b23cd4d777227cbb2d322",
+        "bytes": 14097028
+      },
+      "actualWorkflowResult": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/workflow-result.json",
+        "sha256": "1902a6453cd0a2bd2de83ef4a27bb712db335ac55822fe1d3d586425a9a64107",
+        "bytes": 580796
+      },
+      "actualRecognizedInventory": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/recognized-inventory.json",
+        "sha256": "014414f51291ca9c6afe8e97abbae176ea0ad699c8c0c6132843abb721a2a2b9",
+        "bytes": 14476920
+      },
+      "elapsedSeconds": 55.83491396903992,
+      "sourcePages": 39,
+      "eligibleMusicPages": 38,
+      "autoSkippedPhysicalPages": [
+        1
+      ],
+      "directionIssues": [],
+      "headings": 7,
+      "navigationRecordsIncludingDestination": 2,
+      "endingPairs": 4,
+      "outputBands": 604,
+      "sourceCopies": 42,
+      "cropChangesForSourceDirections": [
+        {
+          "id": "p28-s2-cello",
+          "before": [
+            0,
+            0.42132322623616353,
+            1,
+            0.49675008193514963
+          ],
+          "after": [
+            0,
+            0.42132322623616353,
+            1,
+            0.4990941162751253
+          ],
+          "containsOld": true
+        }
+      ],
+      "allChangedCropsExpandOnly": true,
+      "pdfs": [
+        {
+          "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Violin I.pdf",
+          "sha256": "bcf2de1a48972ee901586323d96bcdb1e16eb3504a449e5c1a36b9223e550d8c",
+          "bytes": 18513783,
+          "part": "Violin I",
+          "pages": 17,
+          "bands": 151,
+          "systemsPerPage": [
+            8,
+            10,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            10,
+            8,
+            10,
+            8,
+            8,
+            9,
+            9
+          ]
+        },
+        {
+          "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Violin II.pdf",
+          "sha256": "f456bbe9df05ed9696941645b459d2f31559e521da3ffa4db09732ecd58261a6",
+          "bytes": 18513489,
+          "part": "Violin II",
+          "pages": 16,
+          "bands": 151,
+          "systemsPerPage": [
+            8,
+            10,
+            9,
+            10,
+            10,
+            9,
+            9,
+            10,
+            9,
+            10,
+            9,
+            9,
+            10,
+            9,
+            10,
+            10
+          ]
+        },
+        {
+          "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Viola.pdf",
+          "sha256": "a4b3d1bdf667f29f050052c27c427f6607fe48fa88e6bea928a1c25e25be4f24",
+          "bytes": 18513434,
+          "part": "Viola",
+          "pages": 16,
+          "bands": 151,
+          "systemsPerPage": [
+            8,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            9,
+            9,
+            10,
+            9,
+            9,
+            9,
+            9,
+            10,
+            9
+          ]
+        },
+        {
+          "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Violoncello.pdf",
+          "sha256": "99457139376f5f8b07a676933b3344244455ab65aa4f169b73d6cddbf6d6289f",
+          "bytes": 18513205,
+          "part": "Violoncello",
+          "pages": 15,
+          "bands": 151,
+          "systemsPerPage": [
+            9,
+            10,
+            10,
+            11,
+            11,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ]
+        }
+      ],
+      "outputPages": 64,
+      "outputManifest": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/manifest.json",
+        "sha256": "1544832131e0e4412fbbc2211cc5a8982bd7f044dafda2f1220c164147063841",
+        "bytes": 541186
+      },
+      "editableProjectJSON": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Brahms \u2014 String Quartet No.3, Op.67.partsmithproject/project.json",
+        "sha256": "8a12864f41277b790aba82cdf91c65e5e4b2832aaeac52c3c00ba5f25edb993c",
+        "bytes": 269325
+      },
+      "editableOriginalSource": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Brahms \u2014 String Quartet No.3, Op.67.partsmithproject/source.pdf",
+        "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "bytes": 2747941
+      },
+      "correctedReviewSource": {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/rectified-review-source.pdf",
+        "sha256": "bcc562f57b78057cd2b08fbcaf2cffd4178a4e3a7b35b4a6b9ecfcc15f79713c",
+        "bytes": 18737371
+      },
+      "decodedProjectPageCount": 39,
+      "all604ProjectBandsMappedToCropIDs": true,
+      "decodedProjectCropFractionsMarkingsPartNamesAndOrderExact": true,
+      "decodedProjectSavedCorrectionsExact": true,
+      "actualDecodedPDFProof": {
+        "parts": [
+          {
+            "file": "Violin I.pdf",
+            "sha256": "bcf2de1a48972ee901586323d96bcdb1e16eb3504a449e5c1a36b9223e550d8c",
+            "decodedPages": 17,
+            "allPagesLetter612x792": true
+          },
+          {
+            "file": "Violin II.pdf",
+            "sha256": "f456bbe9df05ed9696941645b459d2f31559e521da3ffa4db09732ecd58261a6",
+            "decodedPages": 16,
+            "allPagesLetter612x792": true
+          },
+          {
+            "file": "Viola.pdf",
+            "sha256": "a4b3d1bdf667f29f050052c27c427f6607fe48fa88e6bea928a1c25e25be4f24",
+            "decodedPages": 16,
+            "allPagesLetter612x792": true
+          },
+          {
+            "file": "Violoncello.pdf",
+            "sha256": "99457139376f5f8b07a676933b3344244455ab65aa4f169b73d6cddbf6d6289f",
+            "decodedPages": 15,
+            "allPagesLetter612x792": true
+          }
+        ],
+        "decodedOutputPageTotal": 64,
+        "editableOriginalSourceDecodedPages": 39,
+        "correctedReviewSourceDecodedPages": 39,
+        "originalSourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "correctedReviewSourceSHA256": "bcc562f57b78057cd2b08fbcaf2cffd4178a4e3a7b35b4a6b9ecfcc15f79713c"
+      }
+    },
+    "production9f8": {
+      "input": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/inventory-input.json",
+        "sha256": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+        "bytes": 16769092
+      },
+      "actualWorkflowResult": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/workflow-result.json",
+        "sha256": "1421abf973114ea92348ce1a4b9df256458c3467a6f1e6b439e004afeca747a7",
+        "bytes": 590954
+      },
+      "actualRecognizedInventory": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/recognized-inventory.json",
+        "sha256": "ae9d205cf5c2cc9c73dcf7345b09a15293ef229fbc242a7dc7be6c418ca54d24",
+        "bytes": 16236971
+      },
+      "elapsedSeconds": 56.90572893619537,
+      "sourcePages": 39,
+      "eligibleMusicPages": 38,
+      "autoSkippedPhysicalPages": [
+        1
+      ],
+      "directionIssues": [],
+      "headings": 7,
+      "navigationRecordsIncludingDestination": 2,
+      "endingPairs": 4,
+      "outputBands": 604,
+      "sourceCopies": 42,
+      "cropChangesForSourceDirections": [
+        {
+          "id": "p28-s2-cello",
+          "before": [
+            0,
+            0.42132322623616353,
+            1,
+            0.49675008193514963
+          ],
+          "after": [
+            0,
+            0.42132322623616353,
+            1,
+            0.4990941162751253
+          ],
+          "containsOld": true
+        }
+      ],
+      "allChangedCropsExpandOnly": true,
+      "pdfs": [
+        {
+          "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/Violin I.pdf",
+          "sha256": "e05762014fd11a8ba87faf8bef6977830f5ba82ce570df95bef2d9621d5b4ae4",
+          "bytes": 18513810,
+          "part": "Violin I",
+          "pages": 17,
+          "bands": 151,
+          "systemsPerPage": [
+            8,
+            10,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            10,
+            8,
+            10,
+            8,
+            8,
+            9,
+            9
+          ]
+        },
+        {
+          "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/Violin II.pdf",
+          "sha256": "7a048e7463ffb0ec37e5e995ca2960ae70e42c05bef860856ccaef12423fe6fe",
+          "bytes": 18513491,
+          "part": "Violin II",
+          "pages": 16,
+          "bands": 151,
+          "systemsPerPage": [
+            8,
+            10,
+            9,
+            10,
+            10,
+            10,
+            10,
+            10,
+            9,
+            10,
+            8,
+            9,
+            10,
+            9,
+            9,
+            10
+          ]
+        },
+        {
+          "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/Viola.pdf",
+          "sha256": "9e37c3ef86c8da2c6004d580283a98729797448789676ea82e81c5a39a42354a",
+          "bytes": 18513375,
+          "part": "Viola",
+          "pages": 16,
+          "bands": 151,
+          "systemsPerPage": [
+            9,
+            10,
+            10,
+            10,
+            10,
+            9,
+            10,
+            9,
+            9,
+            10,
+            9,
+            9,
+            9,
+            9,
+            10,
+            9
+          ]
+        },
+        {
+          "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/Violoncello.pdf",
+          "sha256": "c503e8d90986a26a9fd5c0b0a0f66dc6cea155fbf3f74edb26df02c70f5ac23c",
+          "bytes": 18513192,
+          "part": "Violoncello",
+          "pages": 15,
+          "bands": 151,
+          "systemsPerPage": [
+            9,
+            10,
+            10,
+            11,
+            11,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ]
+        }
+      ],
+      "outputPages": 64,
+      "outputManifest": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/manifest.json",
+        "sha256": "32aa382203127e34fc631283e9e3e4939d0bac618ab41055775676771f512bb7",
+        "bytes": 541269
+      },
+      "editableProjectJSON": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/Brahms \u2014 String Quartet No.3, Op.67.partsmithproject/project.json",
+        "sha256": "98ea6d807eb267ac9d45c5ba9f4679e7ff2d94fe32c1dd70561f63f57f1ad01b",
+        "bytes": 269347
+      },
+      "editableOriginalSource": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/Brahms \u2014 String Quartet No.3, Op.67.partsmithproject/source.pdf",
+        "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "bytes": 2747941
+      },
+      "correctedReviewSource": {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/production-crop-draft-parts/rectified-review-source.pdf",
+        "sha256": "be1074d1436da4737bab07e360d1f6b4fda8b011db7b3a598e60cd62891cf8b4",
+        "bytes": 18737371
+      },
+      "decodedProjectPageCount": 39,
+      "all604ProjectBandsMappedToCropIDs": true,
+      "decodedProjectCropFractionsMarkingsPartNamesAndOrderExact": true,
+      "decodedProjectSavedCorrectionsExact": true,
+      "actualDecodedPDFProof": {
+        "parts": [
+          {
+            "file": "Violin I.pdf",
+            "sha256": "e05762014fd11a8ba87faf8bef6977830f5ba82ce570df95bef2d9621d5b4ae4",
+            "decodedPages": 17,
+            "allPagesLetter612x792": true
+          },
+          {
+            "file": "Violin II.pdf",
+            "sha256": "7a048e7463ffb0ec37e5e995ca2960ae70e42c05bef860856ccaef12423fe6fe",
+            "decodedPages": 16,
+            "allPagesLetter612x792": true
+          },
+          {
+            "file": "Viola.pdf",
+            "sha256": "9e37c3ef86c8da2c6004d580283a98729797448789676ea82e81c5a39a42354a",
+            "decodedPages": 16,
+            "allPagesLetter612x792": true
+          },
+          {
+            "file": "Violoncello.pdf",
+            "sha256": "c503e8d90986a26a9fd5c0b0a0f66dc6cea155fbf3f74edb26df02c70f5ac23c",
+            "decodedPages": 15,
+            "allPagesLetter612x792": true
+          }
+        ],
+        "decodedOutputPageTotal": 64,
+        "editableOriginalSourceDecodedPages": 39,
+        "correctedReviewSourceDecodedPages": 39,
+        "originalSourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+        "correctedReviewSourceSHA256": "be1074d1436da4737bab07e360d1f6b4fda8b011db7b3a598e60cd62891cf8b4"
+      }
+    }
+  },
+  "productionVisualReview": {
+    "path": "Tests/quality_control/brahms93521-full-shared-workflow-2026-10-03/production-direction-visual-review.json",
+    "sha256": "d0b7100dd3ca9f62464b390aa0142c0fe86a41246666c68a46078c366b63f295",
+    "bytes": 32628
+  },
+  "private64PageRootReview": {
+    "path": "Tests/quality_control/brahms93521-full-output-root-review-2026-10-03/review.json",
+    "sha256": "663cd57c1a1bb2ffdc5c72ebcd5a76dd83897f63b4cde115f87b2254976f64e4",
+    "bytes": 5007
+  },
+  "independentHarnessAudit": {
+    "path": "Tests/quality_control/brahms93521-full-shared-workflow-2026-10-03/independent-harness-audit.json",
+    "sha256": "26ee82eada609dc34c0552070d8ac53f63a17dd2ef34e24c1e8cdaafeb412291",
+    "bytes": 2419
+  },
+  "replayArchive": {
+    "path": "Tests/quality_control/brahms93521-full-shared-workflow-2026-10-03/replay-evidence.tar.xz",
+    "sha256": "3748b387bd21be84fe27dc13ac20f99a9d8f2ea245c89f9202fc4d05ec7a38a9",
+    "bytes": 3377884
+  },
+  "visualArchive": {
+    "path": "Tests/quality_control/brahms93521-full-shared-workflow-2026-10-03/production-direction-views.tar.xz",
+    "sha256": "d534c0519242047ff9d46c64d960754d4814d27a8afb3e7801999af4d61e16ce",
+    "bytes": 10474876
+  },
+  "result": "Complete draft outputs and editable projects generated. Recognized source directions preserved in the bounded production recipient review. Private crop candidate remains unpromoted; significant neighboring fragments and page-turn defects remain.",
+  "executionNotes": [
+    "The private export sandbox attempt failed at saved rectification page2 and did not produce the final set. The preserved sandbox log is followed by the successful native-permission export log.",
+    "No stage was retried as a per-page corpus run. Each recognition workflow received all39 analyses together, allowing cross-page ending and navigation relationships.",
+    "The quiet successful compilation produced an empty build.log; the exact frozen Core/helper sources and compiled executable hash are recorded. The run logs contain actual native progress and completion.",
+    "The original full PDF and eight output PDFs are hash-linked rather than duplicated into this compact replay archive. The actual decoded editable project JSON, all604 identity mappings and full workflow input/results are archived."
+  ]
+}

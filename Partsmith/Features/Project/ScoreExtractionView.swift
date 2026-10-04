@@ -35,7 +35,7 @@ struct ScoreExtractionView: View {
     @State private var errorMessage: String?
     @State private var findPrintedHeader = true
     @AppStorage("automaticallyCompressRestStrips") private var compressRests = true
-    @AppStorage("copySharedDirectionsInAuto") private var copyDirections = false
+    @AppStorage("copySharedDirectionsInAuto") private var copyDirections = true
     @State private var focusedDirectionPage: Int?
     @State private var focusedDirectionBounds: [Double]?
     @State private var includeSuggestedHeader = true

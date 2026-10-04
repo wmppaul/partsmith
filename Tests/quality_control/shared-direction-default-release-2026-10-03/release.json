@@ -1,0 +1,57 @@
+{
+  "publishedAtUTC": "2026-10-04T01:59:43.028211+00:00",
+  "change": "Enable detected shared tempos, navigation and paired endings by default for new fixed-layout Auto setups; preserve existing saved preference. Includes previously shipped direct Preview crop controls.",
+  "artifact": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "artifactSHA256": "e4d177f85139c748fb308faafea3a4c719645de416e18b6f8c0d3fb3c646586e",
+  "artifactBytes": 3788543,
+  "executableSHA256": "6f8156aedded183167d1a69e6725d4bcc0fe54b62f136c1c4f9b15813483cd69",
+  "previousArtifactSHA256": "e57f392652eed0d051b3e47f95bf2633ee834683818405c9acadd913ed716f08",
+  "previousArtifactBackup": ".build/shared-direction-default-release-2026-10-03/previous-public-e57f392652eed0d051b3e47f95bf2633ee834683818405c9acadd913ed716f08.zip",
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "minimumMacOS": "14.0",
+  "signing": "Strictly verified ad hoc signature; not notarized.",
+  "existingPreferenceKeyUnchanged": "copySharedDirectionsInAuto",
+  "existingExplicitOptOutPreserved": true,
+  "variableInstrumentLayoutsStillDisabled": true,
+  "nativeCropDetectorUnchanged": true,
+  "privateMonotoneCandidateIncluded": false,
+  "validation": {
+    "freshUniversalReleaseBuild": true,
+    "independentBuiltAndExtractedPackageAudit": "Tests/quality_control/shared-direction-default-release-2026-10-03/independent-package-audit.json",
+    "completeScoreSourcePages": 39,
+    "completeScoreParts": 4,
+    "completeScoreBands": 604,
+    "completeScoreOutputPagesPerRun": 64,
+    "independentActualWorkflows": 2,
+    "rawWorkflowBindings": [
+      {
+        "path": ".build/brahms93521-full-workflow-draft-2026-10-03/workflow-result.json",
+        "sha256": "1902a6453cd0a2bd2de83ef4a27bb712db335ac55822fe1d3d586425a9a64107"
+      },
+      {
+        "path": ".build/brahms93521-full-production-workflow-draft-2026-10-03/workflow-result.json",
+        "sha256": "1421abf973114ea92348ce1a4b9df256458c3467a6f1e6b439e004afeca747a7"
+      }
+    ],
+    "workflowEvidence": {
+      "path": "Tests/quality_control/brahms93521-full-shared-workflow-2026-10-03",
+      "manifestSHA256": "4a69ea2a815037575f0b4e88352b3d64efb85293269eea4e6730a79f6e73f0cb"
+    },
+    "privateFinalPageVisualReview": {
+      "path": "Tests/quality_control/brahms93521-full-output-root-review-2026-10-03/review.json",
+      "sha256": "663cd57c1a1bb2ffdc5c72ebcd5a76dd83897f63b4cde115f87b2254976f64e4"
+    },
+    "existingHeadingAndDirectionChecks": "87 heading and113 app-direction checks from previous release; every Core file is byte-identical. No new detector or direction algorithm is introduced."
+  },
+  "knownLimitations": [
+    "Direction recognition remains experimental and cannot find every shared marking.",
+    "Rehearsal letters, bar numbers and unsupported endings still need source review.",
+    "Large neighboring fragments, duplicate source text and awkward page turns remain in the complete Brahms drafts.",
+    "This release does not promote the private crop candidate or certify all sample outputs."
+  ],
+  "runningAppOrUserDocumentModified": false,
+  "publication": "Verified same-directory atomic ZIP replacement only."
+}

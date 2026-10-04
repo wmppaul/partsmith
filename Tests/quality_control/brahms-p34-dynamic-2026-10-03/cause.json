@@ -1,0 +1,43 @@
+{
+  "verdict": "Confirmed existing raw-source dynamic omission; corrected counterpart fully retained by both algorithms.",
+  "rawSourceFNonwhitePixels": 372,
+  "rawFullyOutsidePixels": 184,
+  "rawPartiallyIntersectedPixels": 7,
+  "rawFullyIncludedPixels": 181,
+  "correctedNonwhitePixels": 210,
+  "correctedFullyOutsidePixels": 0,
+  "rawFBottomCellExclusive": 2385,
+  "rawNextCelloLineFirstNonwhiteRowInSameXSpan": 2391,
+  "originalSourceWhiteRowsBetweenSymbolAndNextLine": [
+    2385,
+    2391
+  ],
+  "mechanism": "The analyzer assigns owners by global vertical component bounds intersecting nominal staff-row intervals, ignoring x-dependent staff slope/curvature. The detached raw f bottom2384 overlaps the Cello nominal first row2382.994 but is above the locally projected row2387.378. It therefore receives sole Cello ownership[15] although original source pixels show a gap. The planner skips foreign-owned components, detects possible low-dynamic ambiguity and emits a warning rather than retaining this component. The selected own dot sets the raw bottom; corrected f is unowned and is retained by detached-mark discovery.",
+  "rawBottomDerivation": {
+    "selectedDot": {
+      "bounds": [
+        0.6894444444444444,
+        0.9076506955177743,
+        0.6922222222222222,
+        0.9099690880989181
+      ],
+      "staffIDs": []
+    },
+    "bottomClearanceNormalized": 0.003257328990228013,
+    "computedBottomNormalized": 0.9132264170891461,
+    "cropBottomNormalized": 0.9132264170891461
+  },
+  "coordinateLimit": "The original visual landmark is measured in the1800x2589 PyMuPDF source render; native component geometry is in1800x2588. They are separately bound to the same PDF and must not be equated pixel-for-pixel. Corrected image is1068x1535 and its saved rectification is included. Global skew projection is a diagnostic; local original line position differs by several pixels, so it is not claimed to be exact measured tracing.",
+  "productionModified": false,
+  "oldGuardsModified": false,
+  "nativeReruns": false,
+  "nextStep": "A private test should measure ownership against actual local numbered staff-line/core geometry at retained component pixels, instead of treating a global bbox/mean-row overlap as physical contact. Preserve original connected musical branches and baseline ownership evidence separately; any changed ownership must also be tested for crop shrinkage elsewhere. This is a falsifiable design hypothesis, not a proven safe patch.",
+  "mustPreserve": [
+    "All original filled/hollow head, ledger, tie and cross-staff musical-stem source masks at low resolution.",
+    "The original four-core mixed musical/structural fixtures and all27 head-at-junction separation negatives.",
+    "Case176 complete musical ownership, including its original650 missed middle-owner pixels, must remain an explicit unsolved requirement rather than be hidden by unchanged aggregates.",
+    "p35 independent ledger-note/slur guard and the unchanged other frozen Brahms source envelopes.",
+    "Detached dynamic touching or nearly touching a genuine next-staff beam must never erase that beam or neighboring notation.",
+    "Page curvature and per-line endpoints must be measured locally; the page-average skew alone is insufficient."
+  ]
+}

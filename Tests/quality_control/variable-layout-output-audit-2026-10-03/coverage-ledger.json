@@ -1,0 +1,721 @@
+{
+  "scope": "Three complete score workflows corresponding to four of nineteen zero-band raw profiles; other fifteen profiles not newly audited.",
+  "cases": [
+    {
+      "name": "Notte e giorno",
+      "deliveryDirectory": "output/pdf/full-score-sets/notte",
+      "source": {
+        "path": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+        "sha256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+        "bytes": 224852
+      },
+      "sourcePages": 4,
+      "reviewedSystemCount": 20,
+      "modelSourcePageCountMatches": true,
+      "sourceEmbeddedExact": true,
+      "projectJSON": {
+        "path": "output/pdf/full-score-sets/notte/Notte e giorno.partsmithproject/project.json",
+        "sha256": "ec9c76f0ede3377e5b1b80df783a8e5940b566ee3d958514eb74fda2c930be6f",
+        "bytes": 18956
+      },
+      "sourceMap": {
+        "path": "output/pdf/full-score-sets/evidence/notte-map.json",
+        "sha256": "52f686995b10c969137109a5d43e2573bd9d0428fc52d292527b6fb1220c838f",
+        "bytes": 28742
+      },
+      "manifest": {
+        "path": "output/pdf/full-score-sets/notte/manifest.json",
+        "sha256": "76a822fe1f0803af937c7ea2031e2cc1c48d57eddeb2b48e3070c2433ab1afbb",
+        "bytes": 41626
+      },
+      "parts": [
+        {
+          "name": "Voice (Leporello)",
+          "bands": 20,
+          "generatedRestRecords": 0,
+          "sourceMarkingCount": 0,
+          "pages": 3,
+          "pdf": {
+            "path": "output/pdf/full-score-sets/notte/Voice (Leporello).pdf",
+            "sha256": "4bc087fcd659a995b466c64206c83c2f834f3b6f4ca0f3b85cb81b09fb876d93",
+            "bytes": 554901
+          }
+        },
+        {
+          "name": "Piano",
+          "bands": 20,
+          "generatedRestRecords": 0,
+          "sourceMarkingCount": 0,
+          "pages": 4,
+          "pdf": {
+            "path": "output/pdf/full-score-sets/notte/Piano.pdf",
+            "sha256": "6f6303975ad5ff5f0a3ef7cfb37061f65a1774f98bd0629c2ace0c05579979ce",
+            "bytes": 552810
+          }
+        }
+      ],
+      "totalOutputPages": 7,
+      "totalProjectBands": 40,
+      "deliveryVerification": {
+        "file": {
+          "path": "output/pdf/full-score-sets/notte/review-record.json",
+          "sha256": "4109cc7753a98d27b1998bf50c8f0994f1206cb63bbb3d59b0dfa22b0522f4a6",
+          "bytes": 1670
+        },
+        "sourceManifestAndBothPDFsVerified": true
+      },
+      "nativeAssignmentRows": 40,
+      "printedMusicRows": 38,
+      "editorialCueRows": 2,
+      "generatedSilentRows": 0,
+      "reviewedPhysicalStaves": 58,
+      "coverage": "All 20 systems of provided four-page score; bars 1\u201373. First nine Voice bars are represented by labeled Piano source cues for 1\u20134 and 5\u20139, not generated rest notation.",
+      "sourceMapAssignmentCheck": "all 40 exact",
+      "unchangedProtectedRegions": [
+        {
+          "bandID": "p1-s1-voice",
+          "protectedRect": [
+            18,
+            53.4038,
+            572,
+            176.909
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s1-piano",
+          "protectedRect": [
+            18,
+            53.4038,
+            572,
+            176.909
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s2-voice",
+          "protectedRect": [
+            18,
+            159.5493,
+            572,
+            283.0548
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s2-piano",
+          "protectedRect": [
+            18,
+            159.5493,
+            572,
+            283.0548
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s3-voice",
+          "protectedRect": [
+            18,
+            265.1576,
+            572,
+            352.3965
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s3-piano",
+          "protectedRect": [
+            18,
+            326.5383,
+            572,
+            451.3666
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s4-voice",
+          "protectedRect": [
+            18,
+            433.7383,
+            572,
+            520.2617
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s4-piano",
+          "protectedRect": [
+            18,
+            502.8485,
+            572,
+            627.1599
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s5-voice",
+          "protectedRect": [
+            18,
+            609.0561,
+            572,
+            696.295
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p1-s5-piano",
+          "protectedRect": [
+            18,
+            684.7177,
+            572,
+            809.6908
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s1-voice",
+          "protectedRect": [
+            18,
+            6.1177,
+            572,
+            91.9265
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s1-piano",
+          "protectedRect": [
+            18,
+            71.6528,
+            572,
+            190.0118
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s2-voice",
+          "protectedRect": [
+            18,
+            163.6414,
+            572,
+            250.8803
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s2-piano",
+          "protectedRect": [
+            18,
+            223.8237,
+            572,
+            342.6582
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s3-voice",
+          "protectedRect": [
+            18,
+            316.6183,
+            572,
+            402.4273
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s3-piano",
+          "protectedRect": [
+            18,
+            379.1154,
+            572,
+            499.3139
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s4-voice",
+          "protectedRect": [
+            18,
+            478.3166,
+            572,
+            564.1257
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s4-piano",
+          "protectedRect": [
+            18,
+            535.5849,
+            572,
+            669.486
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s5-voice",
+          "protectedRect": [
+            18,
+            643.9833,
+            572,
+            729.792
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p2-s5-piano",
+          "protectedRect": [
+            18,
+            700.5901,
+            572,
+            839.7818
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s1-voice",
+          "protectedRect": [
+            18,
+            7.4403,
+            572,
+            93.2493
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s1-piano",
+          "protectedRect": [
+            18,
+            69.6067,
+            572,
+            188.1519
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s2-voice",
+          "protectedRect": [
+            18,
+            164.5093,
+            572,
+            250.3183
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s2-piano",
+          "protectedRect": [
+            18,
+            232.2971,
+            572,
+            350.8424
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s3-voice",
+          "protectedRect": [
+            18,
+            327.5304,
+            572,
+            413.3394
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s3-piano",
+          "protectedRect": [
+            18,
+            389.3662,
+            572,
+            511.8794
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s4-voice",
+          "protectedRect": [
+            18,
+            487.6996,
+            572,
+            574.9385
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s4-piano",
+          "protectedRect": [
+            18,
+            559.9927,
+            572,
+            678.8686
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s5-voice",
+          "protectedRect": [
+            18,
+            654.6888,
+            572,
+            741.9277
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p3-s5-piano",
+          "protectedRect": [
+            18,
+            714.8088,
+            572,
+            839.7819
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s1-voice",
+          "protectedRect": [
+            18,
+            5.5803,
+            572,
+            92.8193
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s1-piano",
+          "protectedRect": [
+            18,
+            79.5267,
+            572,
+            198.4029
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s2-voice",
+          "protectedRect": [
+            18,
+            162.856,
+            572,
+            248.6648
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s2-piano",
+          "protectedRect": [
+            18,
+            228.7217,
+            572,
+            351.3797
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s3-voice",
+          "protectedRect": [
+            18,
+            315.6263,
+            572,
+            401.4351
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s3-piano",
+          "protectedRect": [
+            18,
+            386.39,
+            572,
+            519.1543
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s4-voice",
+          "protectedRect": [
+            18,
+            483.6075,
+            572,
+            569.4163
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s4-piano",
+          "protectedRect": [
+            18,
+            558.5359,
+            572,
+            677.8143
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s5-voice",
+          "protectedRect": [
+            18,
+            641.4619,
+            572,
+            728.7008
+          ],
+          "contained": true
+        },
+        {
+          "bandID": "p4-s5-piano",
+          "protectedRect": [
+            18,
+            710.779,
+            572,
+            834.615
+          ],
+          "contained": true
+        }
+      ],
+      "currentAppCompatibility": {
+        "path": ".build/variable-layout-output-audit-2026-10-03/notte/current-comparison.json",
+        "sha256": "8738826cad97f42dd7c899b0d5a10d2a0bef8f5b6f9da5788f69de6fedef9830",
+        "bytes": 29811
+      },
+      "currentTemplateAid": "Two reviewed seeds plus eight suggestions cover 10/20; 10 abstain. Separate from this complete earlier reviewed assignment/export."
+    },
+    {
+      "name": "Erlk\u00f6nig",
+      "deliveryDirectory": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft",
+      "source": {
+        "path": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+        "sha256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+        "bytes": 211642
+      },
+      "sourcePages": 11,
+      "reviewedSystemCount": 48,
+      "modelSourcePageCountMatches": true,
+      "sourceEmbeddedExact": true,
+      "projectJSON": {
+        "path": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/Erlkonig-rest-layout.partsmithproject/project.json",
+        "sha256": "c8441d92ccd3611b94af99be1d535f7f87052ed7aa1b8b237022bfe76f22d66b",
+        "bytes": 46797
+      },
+      "sourceMap": {
+        "path": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/source-reviewed-map.json",
+        "sha256": "6dca03bf961551a2cf28da2b9c34cee1d5be5b29b170e929577da35960268365",
+        "bytes": 32483
+      },
+      "manifest": {
+        "path": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/manifest.json",
+        "sha256": "ed9ee646bfea0c59f9e903957c3320046e7e2adf9233d74443a1684103458583",
+        "bytes": 4145
+      },
+      "parts": [
+        {
+          "name": "Voice",
+          "bands": 48,
+          "generatedRestRecords": 4,
+          "sourceMarkingCount": 2,
+          "pages": 4,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/Voice.pdf",
+            "sha256": "53f3751a2052395590dadcc83de34f6da1b40af3d423579b8acb9e2459963413",
+            "bytes": 1106651
+          }
+        },
+        {
+          "name": "Piano",
+          "bands": 48,
+          "generatedRestRecords": 0,
+          "sourceMarkingCount": 2,
+          "pages": 8,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/Piano.pdf",
+            "sha256": "9be97a3d67710f14b08092c09566ff818e4e8b7e5652dced26b9815248876b13",
+            "bytes": 1187107
+          }
+        }
+      ],
+      "totalOutputPages": 12,
+      "totalProjectBands": 96,
+      "deliveryVerification": {
+        "file": {
+          "path": "output/pdf/auto-qc-2026-10-03/erlkonig-joined-rest-draft/delivery-hashes.json",
+          "sha256": "fc89f0eec9f06b51d5f87e7a738cb5000a7b278cf705104c1c5cae96b3b53b6f",
+          "bytes": 2224
+        },
+        "verifiedEntries": 22,
+        "mismatches": []
+      },
+      "measureSpan": [
+        1,
+        148
+      ],
+      "sourceMapTimelineContiguous": true,
+      "sourceReferencesPreservedExactlyOnce": 96,
+      "printedMusicRows": 92,
+      "generatedRestRecords": 4,
+      "renderedRestRows": 1,
+      "openingSilentMeasures": 12,
+      "coverage": "All 48 systems of provided 11-page source; joined 12-bar opening Voice rest and editorial [4/4]. Manual identity, measure counts, crop corrections and directions retained.",
+      "currentTemplateAid": "Two source-reviewed seeds plus 46 suggestions cover all 48 systems, but absent-part durations were separately supplied. Template-only exports retain known hairpin/direction defects; this delivery includes manual corrections."
+    },
+    {
+      "name": "Mozart K488 first movement",
+      "deliveryDirectory": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft",
+      "source": {
+        "path": "sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf",
+        "sha256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+        "bytes": 690212
+      },
+      "sourcePages": 36,
+      "reviewedSystemCount": 78,
+      "modelSourcePageCountMatches": true,
+      "sourceEmbeddedExact": true,
+      "projectJSON": {
+        "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Mozart K488 \u2014 I. Allegro.partsmithproject/project.json",
+        "sha256": "a02f7eaedcb8532913dbdf5314718f9fa4b0844ee072bcd1958377606ccfc723",
+        "bytes": 379735
+      },
+      "sourceMap": {
+        "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/source-reviewed-map.json",
+        "sha256": "04e22a65907e7ec206ec4ccccd6e4e89e28ab19e203c9eaa2e011b4282bce020",
+        "bytes": 355849
+      },
+      "manifest": {
+        "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/manifest.json",
+        "sha256": "b1a7195e8f684717d3d16acccd2bb7fb960c9a33dd73d263110fb2a8ad97734c",
+        "bytes": 845000
+      },
+      "parts": [
+        {
+          "name": "Flute",
+          "bands": 78,
+          "generatedRestRecords": 11,
+          "sourceMarkingCount": 0,
+          "pages": 6,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Flute.pdf",
+            "sha256": "fbad117693d432cbfeea100c2ec6db1f82e07716dbe60382592de9d627cc1060",
+            "bytes": 1874291
+          }
+        },
+        {
+          "name": "Clarinet in A",
+          "bands": 78,
+          "generatedRestRecords": 11,
+          "sourceMarkingCount": 22,
+          "pages": 7,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Clarinet in A.pdf",
+            "sha256": "47a997177d9172940f789899ec4aed1a675fab324d54e15a83b8be595b160226",
+            "bytes": 2465953
+          }
+        },
+        {
+          "name": "Bassoon",
+          "bands": 78,
+          "generatedRestRecords": 11,
+          "sourceMarkingCount": 22,
+          "pages": 6,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Bassoon.pdf",
+            "sha256": "158d5366b3dbf0a75667ef70edfc330566ecbbc1ee6df370fb6bbb16c8404084",
+            "bytes": 2464907
+          }
+        },
+        {
+          "name": "French Horn in A",
+          "bands": 78,
+          "generatedRestRecords": 11,
+          "sourceMarkingCount": 22,
+          "pages": 6,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/French Horn in A.pdf",
+            "sha256": "7b84129c0dcadd0bb972db45c2567632844b2ab4f5709dc0c9ed04d79575f66f",
+            "bytes": 2464034
+          }
+        },
+        {
+          "name": "Piano",
+          "bands": 78,
+          "generatedRestRecords": 19,
+          "sourceMarkingCount": 22,
+          "pages": 9,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Piano.pdf",
+            "sha256": "26cda19df1c3ddb23a2a25c5054aed31b6381349516b01994e098ffab2f470d1",
+            "bytes": 2215950
+          }
+        },
+        {
+          "name": "Violin I",
+          "bands": 78,
+          "generatedRestRecords": 9,
+          "sourceMarkingCount": 23,
+          "pages": 6,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Violin I.pdf",
+            "sha256": "cd3cde99c684240d104329d1341fc134f93ddffcad063324384a0ca5ccd0f3c2",
+            "bytes": 2570835
+          }
+        },
+        {
+          "name": "Violin II",
+          "bands": 78,
+          "generatedRestRecords": 9,
+          "sourceMarkingCount": 23,
+          "pages": 6,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Violin II.pdf",
+            "sha256": "7aedd0f198414b6b7a34c4c911dbb1c378c0d697b0b35ef8eeb76ef956e20d75",
+            "bytes": 2570185
+          }
+        },
+        {
+          "name": "Viola",
+          "bands": 78,
+          "generatedRestRecords": 9,
+          "sourceMarkingCount": 23,
+          "pages": 6,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Viola.pdf",
+            "sha256": "93d5f2ec2f4e45a2eb1f889a7252ad2933fba119b4d85b3ae135b08b3678923b",
+            "bytes": 2570411
+          }
+        },
+        {
+          "name": "Cello and Bass",
+          "bands": 78,
+          "generatedRestRecords": 9,
+          "sourceMarkingCount": 23,
+          "pages": 5,
+          "pdf": {
+            "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/Cello and Bass.pdf",
+            "sha256": "f6ea0ac6d0c57d04d4b770d7cf14ac199fc1c7896df16f64e0e9c13d313f40b7",
+            "bytes": 2569665
+          }
+        }
+      ],
+      "totalOutputPages": 57,
+      "totalProjectBands": 702,
+      "deliveryVerification": {
+        "file": {
+          "path": "output/pdf/auto-qc-2026-10-03/mozart-k488-variable-layout-draft/delivery-hashes.json",
+          "sha256": "ced2ffa127ce18793b9b27bda96f4cc675bfcfe1e41fa9a2e423f584a842f2a9",
+          "bytes": 1694
+        },
+        "verifiedEntries": 18,
+        "mismatches": []
+      },
+      "measureSpan": [
+        1,
+        314
+      ],
+      "sourceMapTimelineContiguous": true,
+      "reviewedSourceAssignmentAndCountChecks": 702,
+      "printedMusicRows": 603,
+      "generatedRestRecords": 99,
+      "sourceDirectionCopies": 180,
+      "coverage": "All 78 systems for all nine printed parts in provided 36-page first movement. Shared wind staves and Cello/Bass remain combined as printed.",
+      "currentTemplateAid": "Full assignment supplied by reviewed map/overrides, not a demonstrated template matching completion. The raw corpus also has a separate one-page K488 excerpt; do not double-count it as another complete score."
+    }
+  ]
+}

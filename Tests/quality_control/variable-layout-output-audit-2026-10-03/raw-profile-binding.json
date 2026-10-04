@@ -1,0 +1,67 @@
+{
+  "focusProfiles": [
+    {
+      "id": "normal-mozart-notte-e-giorno-don-giovanni-score",
+      "source": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sourceSHA256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77",
+      "profile": "Tests/quality_control/profiles/notte-variable-initialization.json",
+      "profileSHA256": "5488f4e71da4701b8cead6675c8a974722bda2d6a8f8aa3b1e27e82d845bf2ac",
+      "sourcePages": 4,
+      "requiresSystemAssignment": true,
+      "productionInventoryCurrentPlannerBaseline": ".build/envelope-compatibility-corpus-2026-10-03/baseline/normal-mozart-notte-e-giorno-don-giovanni-score.json",
+      "baselineSHA256": "505d6791973fcf6b814f7297505be1b6c72512ac17a916f3fc669da87738d45a",
+      "rawBands": 0
+    },
+    {
+      "id": "normal-schubert-erlkonig-d328-score",
+      "source": "sample_scores/normal/03_piano_vocal/schubert_erlkonig_d328_score.pdf",
+      "sourceSHA256": "dfd76c0ddb804d0587048c61e4edec8dcd7a75b6e39e27420087ed510d89046b",
+      "profile": "Tests/quality_control/profiles/normal-schubert-erlkonig-d328-score.json",
+      "profileSHA256": "8c0e99a5f0c7490194f70279581842ef6f90c7b6e4889552cbd022b198e645c1",
+      "sourcePages": 11,
+      "requiresSystemAssignment": true,
+      "productionInventoryCurrentPlannerBaseline": ".build/envelope-compatibility-corpus-2026-10-03/baseline/normal-schubert-erlkonig-d328-score.json",
+      "baselineSHA256": "96cb2dd4106e56093ace033e0c553c965020b286ad896fbc0a03c683567375c1",
+      "rawBands": 0
+    },
+    {
+      "id": "rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229",
+      "source": "sample_scores/rest_detection/01_full_scores/mozart_piano_concerto_no23_kv488_mvt1_mutopia2229.pdf",
+      "sourceSHA256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+      "profile": "Tests/quality_control/profiles/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec",
+      "sourcePages": 36,
+      "requiresSystemAssignment": true,
+      "productionInventoryCurrentPlannerBaseline": ".build/envelope-compatibility-corpus-2026-10-03/baseline/rest-detection-mozart-piano-concerto-no23-kv488-mvt1-mutopia2229.json",
+      "baselineSHA256": "4503cc3c9d39673357e9eb1a7c7686fd9d1750810e16baaeb749fad1ff1f8a0d",
+      "rawBands": 0
+    },
+    {
+      "id": "excerpt-mozart-k488-page-17",
+      "source": "Tests/extraction/sources/mozart-k488-page-17.pdf",
+      "sourceSHA256": "9e7a091795bbc85fc8da0794afd791c8540ec3268a1e516204a08aa82244f121",
+      "profile": "Tests/quality_control/profiles/excerpt-mozart-k488-page-17.json",
+      "profileSHA256": "9c72ccfbe10676c866d65619f07daa668458024fd2c7372bf7f13d5816f91aec",
+      "sourcePages": 1,
+      "requiresSystemAssignment": true,
+      "productionInventoryCurrentPlannerBaseline": ".build/envelope-compatibility-corpus-2026-10-03/baseline/excerpt-mozart-k488-page-17.json",
+      "baselineSHA256": "a8dc11faa8cc9d6c1f398bafeaa18aedf84e90a2067a549d114fbd722c3157bd",
+      "rawBands": 0
+    }
+  ],
+  "k488ExcerptRelation": {
+    "fullSourcePage": 17,
+    "excerptPage": 1,
+    "pixelIdentical144dpi": true,
+    "fullPixelSHA256": "9dac2961dc4852b2721175d0208356194f484f191a226379c82f86a19ee6a79c",
+    "excerptPixelSHA256": "9dac2961dc4852b2721175d0208356194f484f191a226379c82f86a19ee6a79c",
+    "dimensions": [
+      1191,
+      1684
+    ]
+  },
+  "rawZeroTotal": 19,
+  "focusedProfiles": 4,
+  "independentCompleteScoresRepresented": 3,
+  "remainingProfilesNotAudited": 15
+}

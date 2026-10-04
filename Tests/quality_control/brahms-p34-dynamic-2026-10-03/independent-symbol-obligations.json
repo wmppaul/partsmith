@@ -1,0 +1,420 @@
+{
+  "purpose": "New positive source preservation regression, separate from every pre-existing guard. Entire f is required in both source representations.",
+  "raw": {
+    "name": "original uncorrected source",
+    "instrument": "Viola",
+    "sourcePage": 34,
+    "systemIndex": 3,
+    "bandID": "p34-s4-viola",
+    "symbol": "f",
+    "ownership": "The forte printed directly below the Viola low double stop, above Cello, confirmed visually in original full system.",
+    "image": ".build/brahms-raw60-source-review-2026-10-03/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/source-page-34.png",
+    "imageSHA256": "80727249d9b3bcf2bbd2d52437e231ed1d7af01bdfd512c00b9c301cd4d41892",
+    "imageSize": [
+      1800,
+      2589
+    ],
+    "nonwhiteRule": "Original grayscale sample <255; unit pixel cells, including antialiasing. Raw mask is the isolated 8-connected f component; corrected mask uses the independently viewed tight f-only ROI, with source glyph and neighbor separated.",
+    "inkPixelBounds": [
+      1205,
+      2347,
+      1238,
+      2385
+    ],
+    "pdfBoundsInItsOwnCoordinateSpace": [
+      285.85277777777776,
+      556.6079567400541,
+      293.68111111111114,
+      565.6199304750869
+    ],
+    "pixelCount": 372,
+    "pixelRuns": [
+      [
+        2347,
+        1231,
+        1233
+      ],
+      [
+        2348,
+        1230,
+        1236
+      ],
+      [
+        2349,
+        1228,
+        1237
+      ],
+      [
+        2350,
+        1226,
+        1238
+      ],
+      [
+        2351,
+        1226,
+        1238
+      ],
+      [
+        2352,
+        1225,
+        1238
+      ],
+      [
+        2353,
+        1224,
+        1231
+      ],
+      [
+        2353,
+        1232,
+        1238
+      ],
+      [
+        2354,
+        1223,
+        1230
+      ],
+      [
+        2354,
+        1232,
+        1238
+      ],
+      [
+        2355,
+        1223,
+        1230
+      ],
+      [
+        2355,
+        1233,
+        1238
+      ],
+      [
+        2356,
+        1222,
+        1230
+      ],
+      [
+        2357,
+        1221,
+        1231
+      ],
+      [
+        2358,
+        1217,
+        1232
+      ],
+      [
+        2359,
+        1216,
+        1232
+      ],
+      [
+        2360,
+        1216,
+        1232
+      ],
+      [
+        2361,
+        1218,
+        1228
+      ],
+      [
+        2362,
+        1220,
+        1227
+      ],
+      [
+        2363,
+        1219,
+        1226
+      ],
+      [
+        2364,
+        1219,
+        1226
+      ],
+      [
+        2365,
+        1219,
+        1226
+      ],
+      [
+        2366,
+        1218,
+        1226
+      ],
+      [
+        2367,
+        1218,
+        1226
+      ],
+      [
+        2368,
+        1218,
+        1225
+      ],
+      [
+        2369,
+        1218,
+        1225
+      ],
+      [
+        2370,
+        1217,
+        1224
+      ],
+      [
+        2371,
+        1217,
+        1224
+      ],
+      [
+        2372,
+        1216,
+        1223
+      ],
+      [
+        2373,
+        1216,
+        1223
+      ],
+      [
+        2374,
+        1216,
+        1222
+      ],
+      [
+        2375,
+        1206,
+        1210
+      ],
+      [
+        2375,
+        1215,
+        1222
+      ],
+      [
+        2376,
+        1206,
+        1211
+      ],
+      [
+        2376,
+        1215,
+        1222
+      ],
+      [
+        2377,
+        1205,
+        1211
+      ],
+      [
+        2377,
+        1214,
+        1220
+      ],
+      [
+        2378,
+        1205,
+        1211
+      ],
+      [
+        2378,
+        1213,
+        1220
+      ],
+      [
+        2379,
+        1205,
+        1211
+      ],
+      [
+        2379,
+        1212,
+        1219
+      ],
+      [
+        2380,
+        1205,
+        1218
+      ],
+      [
+        2381,
+        1205,
+        1218
+      ],
+      [
+        2382,
+        1205,
+        1217
+      ],
+      [
+        2383,
+        1206,
+        1215
+      ],
+      [
+        2384,
+        1209,
+        1214
+      ]
+    ],
+    "cropBottomPixel": 2364.3431938437993,
+    "fullyIncludedPixels": 181,
+    "partiallyIntersectedPixels": 7,
+    "fullyOutsidePixels": 184,
+    "fullEnvelopePreserved": false
+  },
+  "corrected": {
+    "name": "saved corrected native source",
+    "instrument": "Viola",
+    "sourcePage": 34,
+    "systemIndex": 3,
+    "bandID": "p34-s4-viola",
+    "symbol": "f",
+    "ownership": "The forte printed directly below the Viola low double stop, above Cello, confirmed visually in original full system.",
+    "image": ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-34.png",
+    "imageSHA256": "d6adb1039ed375dd62c8c58f03c33749f252d3c64dc8d5f0618ea622bd47eeae",
+    "imageSize": [
+      1068,
+      1535
+    ],
+    "nonwhiteRule": "Original grayscale sample <255; unit pixel cells, including antialiasing. Raw mask is the isolated 8-connected f component; corrected mask uses the independently viewed tight f-only ROI, with source glyph and neighbor separated.",
+    "inkPixelBounds": [
+      723,
+      1389,
+      744,
+      1412
+    ],
+    "pdfBoundsInItsOwnCoordinateSpace": [
+      289.0646067415731,
+      555.6,
+      297.4606741573034,
+      564.8000000000001
+    ],
+    "pixelCount": 210,
+    "pixelRuns": [
+      [
+        1389,
+        736,
+        743
+      ],
+      [
+        1390,
+        734,
+        744
+      ],
+      [
+        1391,
+        734,
+        744
+      ],
+      [
+        1392,
+        733,
+        744
+      ],
+      [
+        1393,
+        732,
+        744
+      ],
+      [
+        1394,
+        732,
+        743
+      ],
+      [
+        1395,
+        728,
+        740
+      ],
+      [
+        1396,
+        728,
+        740
+      ],
+      [
+        1397,
+        728,
+        740
+      ],
+      [
+        1398,
+        730,
+        737
+      ],
+      [
+        1399,
+        730,
+        737
+      ],
+      [
+        1400,
+        730,
+        737
+      ],
+      [
+        1401,
+        729,
+        736
+      ],
+      [
+        1402,
+        729,
+        736
+      ],
+      [
+        1403,
+        729,
+        735
+      ],
+      [
+        1404,
+        728,
+        735
+      ],
+      [
+        1405,
+        723,
+        734
+      ],
+      [
+        1406,
+        723,
+        734
+      ],
+      [
+        1407,
+        723,
+        733
+      ],
+      [
+        1408,
+        723,
+        733
+      ],
+      [
+        1409,
+        723,
+        732
+      ],
+      [
+        1410,
+        723,
+        731
+      ],
+      [
+        1411,
+        724,
+        730
+      ]
+    ],
+    "cropBottomPixel": 1416.0,
+    "fullyIncludedPixels": 210,
+    "partiallyIntersectedPixels": 0,
+    "fullyOutsidePixels": 0,
+    "fullEnvelopePreserved": true
+  }
+}

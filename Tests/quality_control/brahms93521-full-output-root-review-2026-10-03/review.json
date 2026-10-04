@@ -1,0 +1,103 @@
+{
+  "scope": "Visual final-page layout and conspicuous-neighbor review of the complete private95 corrected Brahms93521 draft; not a complete note-by-note source preservation pass.",
+  "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "sourcePages": 39,
+  "musicSourcePages": 38,
+  "nativeCropCandidateSHA256": "95a958a328a729cf4c8d64421a96c1dd2533b3b38a68606fb1ead3c21cf780e0",
+  "sharedDirectionsEnabled": true,
+  "parts": 4,
+  "bands": 604,
+  "finalOutputPages": 64,
+  "allFinalPagesViewedAsContactSheets": true,
+  "contactSheetCount": 17,
+  "individualFullPagesViewed": [
+    {
+      "part": "viola",
+      "page": 14
+    },
+    {
+      "part": "violin2",
+      "page": 12
+    }
+  ],
+  "additionalSourceViewed": [
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-34.png"
+  ],
+  "partObservations": {
+    "violin1": {
+      "pages": 17,
+      "observations": [
+        "Neighboring staff fragments throughout; complete extra staff at output12 source28 system1.",
+        "Output2 ends on first ending and output3 opens on second ending, requiring a page turn across the repeat choice.",
+        "Movement starts fall within output7 and output9; automatic pagination does not choose movement boundaries.",
+        "No blank or near-empty output pages observed. Last page has nine systems."
+      ]
+    },
+    "violin2": {
+      "pages": 16,
+      "observations": [
+        "Neighboring notes, slurs and dynamics above and below nearly every system; many boundaries appear crowded.",
+        "Output13 retains complete Violin I staff above source31 system1; output12 source28 system1 also retains substantial unrelated staff context.",
+        "Output12 full-page inspection confirms readable complete Da Capo sentence, Coda heading and Poco Allegretto con Variazioni heading; crops still include neighbor fragments.",
+        "First and second endings fall on opposite output2/output3 pages. No blank or near-empty pages observed."
+      ]
+    },
+    "viola": {
+      "pages": 16,
+      "observations": [
+        "Heavy neighboring music remains throughout; output16 source38 system1 includes Cello staff.",
+        "Corrected source34 system4 low f is visible in full output14. Raw-score omission recorded separately is not present here.",
+        "Doppio Movimento source copy is readable in full output14; original neighboring dynamics remain.",
+        "First and second endings fall on opposite output2/output3 pages. No blank or near-empty pages observed."
+      ]
+    },
+    "cello": {
+      "pages": 15,
+      "observations": [
+        "Upper-neighbor fragments remain, with complete neighboring staff at output9 source24 system2 and output15 source38 system1.",
+        "Repeated printed publisher plate number7892 appears between several systems; it is source footer clutter.",
+        "Return instruction is visible on output11, linked destination on output10 and Coda heading on output11.",
+        "No blank or near-empty output pages observed. Last page has ten systems."
+      ]
+    }
+  },
+  "reviewResult": "draft: material neighboring music and page-turn issues remain",
+  "limitations": [
+    "Contact sheets establish broad layout/readability observations, not exact preservation of every note or dynamic.",
+    "Whole-source target and shared-direction completeness remain separate obligations.",
+    "This does not approve private crop candidate promotion or certify all corpus outputs.",
+    "Separate source comparisons retain known crop-only instruction losses and unresolved raw-score target omissions."
+  ],
+  "pdfBindings": [
+    {
+      "file": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Violin I.pdf",
+      "sha256": "bcf2de1a48972ee901586323d96bcdb1e16eb3504a449e5c1a36b9223e550d8c",
+      "pages": 17,
+      "bands": 151
+    },
+    {
+      "file": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Violin II.pdf",
+      "sha256": "f456bbe9df05ed9696941645b459d2f31559e521da3ffa4db09732ecd58261a6",
+      "pages": 16,
+      "bands": 151
+    },
+    {
+      "file": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Viola.pdf",
+      "sha256": "a4b3d1bdf667f29f050052c27c427f6607fe48fa88e6bea928a1c25e25be4f24",
+      "pages": 16,
+      "bands": 151
+    },
+    {
+      "file": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/Violoncello.pdf",
+      "sha256": "99457139376f5f8b07a676933b3344244455ab65aa4f169b73d6cddbf6d6289f",
+      "pages": 15,
+      "bands": 151
+    }
+  ],
+  "manifestBinding": {
+    "path": ".build/brahms93521-full-workflow-draft-2026-10-03/private-crop-draft-parts/manifest.json",
+    "sha256": "1544832131e0e4412fbbc2211cc5a8982bd7f044dafda2f1220c164147063841"
+  },
+  "renderIndexSHA256": "4c52a70ee0b2f10d8b43778477d207b291b4a36821a7bf6ba127e42cdfae811d"
+}

@@ -1,0 +1,680 @@
+{
+  "scope": "Bounded visual comparison of all recognized shared-direction recipients in the actual production9f8 PDF outputs, against immutable original and saved-corrected source. Not an all-page or all-note preservation certification.",
+  "source": {
+    "path": "sample_scores/medium_skewed/06_brahms_string_quartet_no3_op67_imslp_93521.pdf",
+    "sha256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+    "bytes": 2747941
+  },
+  "systemContexts": 14,
+  "recipientStrips": 56,
+  "all56RecipientsInspected": true,
+  "result": "All recognized shared directions complete; copied neighboring fragments and crowded original crops remain.",
+  "defaultEnabledAssessment": "Supports enabling this experimental copy option for source preservation on this exact score. Does not certify recognition recall on all scores, clean parts, good page turns or private crop promotion.",
+  "limitations": [
+    "Coverage is of detected headings/navigation/endings; it is not an exhaustive search for every unrecognized score instruction.",
+    "OCR text in the actual JSON can be misspelled. Exported source glyphs, not OCR transcriptions, were reviewed.",
+    "Source context clips do not establish preservation of every remote low dynamic or all notes outside the reviewed systems.",
+    "Output clips extend 12 PDF points beyond the placement union and may include a portion of an adjacent output system; those pixels alone are not evidence of overprint.",
+    "Comparison PNGs archive the exact viewed composite of original source, corrected source and four output strips. Individual render hashes/clip coordinates remain in index.json; their duplicate PNG files are not archived."
+  ],
+  "systems": [
+    {
+      "sourcePage": 2,
+      "system": 1,
+      "direction": "Vivace.",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p2-s1-comparison.png",
+      "comparisonSHA256": "cc19059894c486f084d132e0383ce0745088272e18b3069fdd0d18dbc208b4b2",
+      "observation": "Complete once in each recipient. First violin retains a clipped printed composer/header fragment in its existing upper crop; neighboring notation remains in lower parts.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 1,
+          "renderSHA256": "e91aa92bb937ae7b3c5a31b3cb1c60d176651805b4169d378b4a1943353c586e",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 1,
+          "renderSHA256": "678aed41cf0ebfede02b581de5f752fcfe937b7d5940e5bdda9e7c2d2ac16032",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 1,
+          "renderSHA256": "323b4d456aadd1d9a475a43179e7094e79596c3940be9ba1bf2bee611540b386",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 1,
+          "renderSHA256": "5187c5edbe8d03d6cc1e3f5be1fcc3a882842dda91dbbd1be999beb73b3b55cc",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 6,
+      "system": 3,
+      "direction": "First ending",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p6-s3-comparison.png",
+      "comparisonSHA256": "ba33df9641b64cd87da6fb1851c8ccc3053294cdb5639d468da1bd4812e5f25d",
+      "observation": "Complete 1. and bracket/hook at the far-right bar in all parts. The copied region also retains the first staff's nearby isolated printed rest-count numeral, which appears in addition to lower parts' own numeral.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 2,
+          "renderSHA256": "5e3c2d8a08f560048c360951c377222b72b082065404eaae173234031a387f34",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 2,
+          "renderSHA256": "5f8e5d0f537d7f9cf79a356b8b66f6f26c4aa83848efc7bd0a02d0427122763e",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 2,
+          "renderSHA256": "3bffd062a00e8909a70681bbc9050e37a1936990e3c0c3fb6f6974324e66a7dd",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 2,
+          "renderSHA256": "21c5595d74bd54951132583cafd70a64c8f199592f6f628dadcbbc09fd15495a",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 6,
+      "system": 4,
+      "direction": "Second ending",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p6-s4-comparison.png",
+      "comparisonSHA256": "9190471ec01a6678aa1e201fa683e0c9197ddb60d21784154979f4d316193374",
+      "observation": "Complete 2. and bracket/hook at the first bar in all parts. Small adjacent note/stem fragments are included below the copy. Existing upper/lower neighboring music remains.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 3,
+          "renderSHA256": "13fc017990b22368f136b4a0e0e1077b52f93c28e6f19b510b316e355f21b3ba",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 3,
+          "renderSHA256": "31212662beef9a1ec68b0d3c4d429313aba0aa79f0ce83bef4d5a3df82f3dfa4",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 2,
+          "renderSHA256": "dae87aef6bb7b033677c40f319223f9443cc8161b563887e0969e0626aab2e9e",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 2,
+          "renderSHA256": "d2e8d431e648d53ed36f9e356774f2a4e27fbf0bc6a615e45a57d70ba3cac859",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 16,
+      "system": 1,
+      "direction": "Andante.",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p16-s1-comparison.png",
+      "comparisonSHA256": "fc0b658b5dab66524478b79dbb7e7cdb837507cb71e6dc801a1bf31f74d9b797",
+      "observation": "Complete heading once in every part. Existing neighboring notes, slurs, dynamics and printed page/footer fragments remain.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 7,
+          "renderSHA256": "2260ac9a2e9eebd8981a4e82c39290554a14bec9b57b34706d6515564fdd695c",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 6,
+          "renderSHA256": "f39952e8a6d8d648f07dd979ad9880e01aee83b376f84a37e461d33aeb1acd70",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 6,
+          "renderSHA256": "92ebe0c7abc3f9d9cc02ef0d18cf2762c0002d0384cf9cf838a4b4a49d98ff46",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 6,
+          "renderSHA256": "cfcdcf97d29069d7324aa56a88d7c158c0638fae184e9a37fdac472bbbb0337b",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 22,
+      "system": 1,
+      "direction": "Agitato. (Allegretto non troppo.)",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p22-s1-comparison.png",
+      "comparisonSHA256": "d72be649ee5a2ca680eb5107e27f8015b4de151072f55cdf21fead784524934f",
+      "observation": "Complete heading including both parentheses and period in every part. Lower-part copies include visibly clipped adjacent con Sord. and other musical fragments below the heading; this is not clean engraving.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 9,
+          "renderSHA256": "fe0d926cbe57281de288fd08d1112c98819b087e3159ec3f3fa791bd48034c15",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 9,
+          "renderSHA256": "c4701594a37afe7085b63ac4a3d5520304411bd2854f54d8ceb8e52f0bd3572e",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 9,
+          "renderSHA256": "9c1c664cc035eb5abd82d82ac943bfd2b86956acc393de630f23a6e3850166a4",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 8,
+          "renderSHA256": "73633dafaa4b722856054820076e9e695f9d2bddb68cc288fdc7bd958a3bd547",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 26,
+      "system": 2,
+      "direction": "Return destination sign",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p26-s2-comparison.png",
+      "comparisonSHA256": "23f18fd082b1ea59924d5e9e5eff9a26ff844252fcb30c2b35807eb61c5cf376",
+      "observation": "Complete circular/cross destination at the matching source bar in all parts. Copies retain a short horizontal source staff/bar fragment beneath the sign. Corresponding inline sign is retained in the p28 return sentence.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 11,
+          "renderSHA256": "b773ad2401f19dee14108c0f6f80cdb3711928a111c55e81a51c234336d7b654",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 11,
+          "renderSHA256": "173d6cf1ea1145167a379ffd268f8eade4031afd1474288dc41ccae58c18ec39",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 11,
+          "renderSHA256": "291c36d86f58fc551f9d871c52223fd9d58403ea113318ec6a61aa1ec7c07a59",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 10,
+          "renderSHA256": "edb590d773c2cea49a8d72ae10684127bb8f5fb30e2ec00c54edf049526a3426",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 26,
+      "system": 3,
+      "direction": "Trio.",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p26-s3-comparison.png",
+      "comparisonSHA256": "5f7409e751f141733abb52122206ff5ea8cff814deff2f1536cde03c20b16530",
+      "observation": "Complete heading once in every part. Lower-part copies also include a clipped first-violin beam fragment immediately beneath the heading.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 11,
+          "renderSHA256": "3523549c27baab8c451024518643d5ae719fb6b8fe5dfdce8aa014e4f286041e",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 11,
+          "renderSHA256": "0e9d4fbb5e21a2c6f334d92da764bb8cdcf22c594b98068a8b1208c4a9458b81",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 11,
+          "renderSHA256": "80662cf3cb6d9f0f18158b9b04efe5a70fccf300fa3389af7c42542dc8b2a3bf",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 10,
+          "renderSHA256": "62779b1fc95049567db9de55d862e8663abcbabe97417f5a1253b4bfe854ed81",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 28,
+      "system": 2,
+      "direction": "Da Capo return sentence",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p28-s2-comparison.png",
+      "comparisonSHA256": "063d1c1885a740d6c0479f413458ed929aad87bbc5469a074488f341cd6b2aca",
+      "observation": "Complete printed return sentence, inline destination sign and Coda word in all parts, placed below the system at the right-hand source position. No clipped or doubled return sentence observed.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 12,
+          "renderSHA256": "a582c61f7328e730b3cafcef8082142a299009e432b902c2f4a7ba5548351c11",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 12,
+          "renderSHA256": "783ce34c18563b7b13f2920a7dc5897d219d7586adfe3594381c157865c5b150",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 11,
+          "renderSHA256": "2bdd27743ec01d5385dbd02e828af2c161ffa39d575dc6fdfd1f6758f7d5944d",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 11,
+          "renderSHA256": "de9c10abd6d3a8f02c47c5e5a571959afa09de49454ce076a3c8e9aeb0054e93",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 28,
+      "system": 3,
+      "direction": "Coda.",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p28-s3-comparison.png",
+      "comparisonSHA256": "ec6e035d6990e440d1f1df62b9addd7c82d47edcc127138b04e5586617dacd47",
+      "observation": "Complete heading once in every part. A small underline/staff fragment is retained beneath a copied heading; substantial neighboring low notes/slurs remain in main crops.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 12,
+          "renderSHA256": "828f2f4343257942df2180294318c64d2e97b4829ab62dcb542a7db985011447",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 12,
+          "renderSHA256": "94cfd872796166c725eafdf3dc698c3710f7051478214e1cfa6376e95330cf01",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 12,
+          "renderSHA256": "f411e7f91d271e7ce85b1e38cb1423e6c2eaa6c4299f95d9be8056289b69c009",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 11,
+          "renderSHA256": "6ac655957a6d9e0bbb5f2fcaa58ce84074f788647da1d4793eb38e10be56cd3a",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 29,
+      "system": 1,
+      "direction": "Poco Allegretto con Variazioni.",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p29-s1-comparison.png",
+      "comparisonSHA256": "2673dd08d2da4841e0309c52f7b539792ba76bd0bc84a029d712683e5e7e2ac3",
+      "observation": "Complete full phrase and period once in each part. Existing first-violin printed page number remains in its crop; neighboring notes/dynamics are present in lower-part margins.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 13,
+          "renderSHA256": "2f070c9affed9fa4ecca142c7d34e06a0e73579d741ac2066640bb295a68468c",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 12,
+          "renderSHA256": "3fa00e8e0581657721fc3ae69ec3a42aa2b24a9540303a67be6b385f182f73e9",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 12,
+          "renderSHA256": "a58d8459401b51f2c6d8a8a6a1d0e51b87ec2c3dc2e46975730ad7abb9966a15",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 11,
+          "renderSHA256": "a2202d145e04f21d57322d573396eafc2ea02b8bf61696db0576498eb12419ad",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 32,
+      "system": 4,
+      "direction": "Paired first/second endings",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p32-s4-comparison.png",
+      "comparisonSHA256": "4b6a01952da0db2a422f78a8cbeb0311adfbfedeb3303cd3b4c615875e4e0d02",
+      "observation": "Both complete labels and bracket hooks align with their respective repeat bars in all parts. Copied rectangles retain first-violin slur crowns and partial high noteheads beneath brackets; these fragments remain visibly separate clutter.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 14,
+          "renderSHA256": "fe8462308eab8b4cec853de33862ebc58bb61a951a8afd6c5a5325cbb61a75ea",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 13,
+          "renderSHA256": "fea549624d2dd913b2a33274e254ec9e672b67be6f130d76c376f21db95911a8",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 13,
+          "renderSHA256": "8ec4a283850ae638700436a6ddec3156536de0650222ac552654630318ee2e21",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 13,
+          "renderSHA256": "80b7395364ce049ba05d2d3d0f24e64a2f5df3f8ec1304c36e56331f709dbb88",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 34,
+      "system": 3,
+      "direction": "Doppio Movimento.",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p34-s3-comparison.png",
+      "comparisonSHA256": "e7c8757f4f94d7be47647d7a8ad0bfeb1b77d4c0191f2a99e8c01599458522d7",
+      "observation": "Complete phrase once in every part. Original and saved-corrected source were compared; notes/high slurs/ledger notes and accents visible in the system contexts remain. General neighboring crop fragments persist.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 15,
+          "renderSHA256": "d784b90c986ed14631de99a5897ae145205f93feb38e159ce3defd338b2c1c72",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 14,
+          "renderSHA256": "78641bc92171a7c0018eccaf8024facdc7a4d35b5e7b644b458b69781958bfdb",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 14,
+          "renderSHA256": "80dd256b7d019548e9a6e484f7ee95cb626c3ff790413d4b322e4a003b5bbe2a",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 13,
+          "renderSHA256": "938283a5ffd760c858ad9acbec15e76865f54b89dd2da757bec8fb980609c283",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 36,
+      "system": 1,
+      "direction": "Paired first/second endings",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p36-s1-comparison.png",
+      "comparisonSHA256": "1e2efb60c975e4b8df06d55fccb254414dbecad8e32d33f28d21d4dabb942124",
+      "observation": "Complete 1./2. and all bracket hooks in all parts. Copied source region also carries first-violin flag/stem/head fragments beneath the first bracket, plus small adjacent dots.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 16,
+          "renderSHA256": "55a858110062f7ac6bcac064fd6cff0f3b3176b4cdf384c25b7b3d9ac5e83a8b",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 15,
+          "renderSHA256": "823667a647f7e1f7c0f83498e85a37947191a385a2c4b50bebfdb58b7e9e6a1d",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 15,
+          "renderSHA256": "e2de5ba5e358fe675df06915c5ed358956208b7f491988654af9164dd92b744a",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 14,
+          "renderSHA256": "dd96c7a3bb41f3906de3b8b0ebb2df55869d8102977070772583cfdbce0fabba",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    },
+    {
+      "sourcePage": 37,
+      "system": 2,
+      "direction": "Paired first/second endings",
+      "actualSourceAndCorrectedContextCompared": true,
+      "comparisonFile": "p37-s2-comparison.png",
+      "comparisonSHA256": "a61a8b391e4bb8a1bb40f9db159590eb7b93856534ac43357d511020c9eb8645",
+      "observation": "Both labels and bracket hooks complete and at the correct repeat-choice bars in all parts. Neighboring notes, dol. duplicates from adjacent staves and slur fragments remain in main crops.",
+      "recipients": [
+        {
+          "partID": "violin1",
+          "outputPage": 16,
+          "renderSHA256": "faf4e6f9d30b25218c19984ced96a58179c2244b67e34f39d745d13a8437dadf",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "violin2",
+          "outputPage": 15,
+          "renderSHA256": "3249ec9754b645aab76fd164a97dc4e06c176f5c68b816c54fe3bb7a592eccc4",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "viola",
+          "outputPage": 15,
+          "renderSHA256": "e6c6f58836d66d34cb4c1e7b43c09c8f6ae5354cdc4eaf876c5c6f0b957f27e6",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        },
+        {
+          "partID": "cello",
+          "outputPage": 14,
+          "renderSHA256": "271bb1b20617c4b01182ad464c90c1e117acde0cebd1efcee1585c89dae3f326",
+          "requiredDirectionGlyphsAndHooksComplete": true,
+          "horizontalMusicalPositionMatchesSource": true,
+          "missingOrClippedRequiredDirectionObserved": false,
+          "secondCompleteCopyOfSameSharedDirectionObserved": false
+        }
+      ]
+    }
+  ]
+}

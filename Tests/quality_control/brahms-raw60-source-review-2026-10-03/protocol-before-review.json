@@ -1,0 +1,15 @@
+{
+  "scope": "Exactly 60 remaining raw Brahms93521 crop changes, physical pages2,7,17,19,23,28,34,38,39. Original unrectified PDF only.",
+  "inputQueue": "Tests/quality_control/brahms-raw-corrected-review-reuse-2026-10-03/remaining-pending-bands.json",
+  "inputSHA256": "694a066652d3c83fb79fd42fc0705c16d0962c40cf9b8b5070e19f7ab8fe49e7",
+  "renderPattern": ".build/monotone-pending-source-review-2026-10-03/generate.py",
+  "renderPatternSHA256": "0a69a25be42f3efe7c00dd4ef26ccf793406259c19859c97114217afadb6a5de",
+  "rules": [
+    "Verify original source and exact baseline/candidate assignment rows before rendering.",
+    "Do not use corrected rasters; do not run the analyzer or alter algorithms.",
+    "Inspect original source pages and all60 full-width changed contexts including exterior margins.",
+    "Stop on newly lost own-staff musical note; distinguish shared instruction loss, original limitations and foreign fragments.",
+    "Source-review coverage is not complete PDF, page-turn or production approval."
+  ],
+  "reportOwner": "ending_delivery"
+}
