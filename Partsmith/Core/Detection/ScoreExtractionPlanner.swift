@@ -259,7 +259,7 @@ struct ScoreGeneratedRest: Codable, Equatable {
 /// alone never identifies omitted instruments or carries a mapping forward.
 enum ScoreSystemAssignment {
     enum AssignmentError: LocalizedError {
-        case invalidPage, invalidSystem, invalidProfile, unknownPart, invalidSelection
+        case invalidPage, invalidSystem, invalidProfile, unknownPart, invalidSelection, invalidStaffCounts
         case wrongStaffCount(expected: Int, actual: Int), missingRestCount, invalidMeasureSpan
 
         var errorDescription: String? {
@@ -268,6 +268,7 @@ enum ScoreSystemAssignment {
             case .invalidSystem: return "Choose a valid system number."
             case .invalidProfile: return "Review the instrument names and staff counts first."
             case .unknownPart: return "A selected instrument is no longer in the setup."
+            case .invalidStaffCounts: return "Choose 1–4 printed staves for each instrument in this system."
             case .invalidSelection: return "Select consecutive detected staves belonging to one printed system."
             case let .wrongStaffCount(expected, actual):
                 return "The checked instruments need \(expected) staves; \(actual) are selected. Check the printed parts and the piano staff grouping."
@@ -281,7 +282,7 @@ enum ScoreSystemAssignment {
         page: ScorePageAnalysis, profile: ScoreExtractionProfile,
         pagePlan: ScorePagePlan?, existingOverride: ScorePageOverride?,
         systemIndex: Int, candidateIDs: [Int], presentPartIDs: Set<String>,
-        startBarNumber: Int?, barCount: Int?
+        startBarNumber: Int?, barCount: Int?, staffCounts: [String: Int] = [:]
     ) throws -> ScorePageOverride {
         guard page.pageWidth.isFinite, page.pageWidth > 0, page.pageHeight.isFinite, page.pageHeight > 0,
               existingOverride == nil || existingOverride?.pageIndex == page.pageIndex,
@@ -293,6 +294,10 @@ enum ScoreSystemAssignment {
             throw AssignmentError.invalidProfile
         }
         guard presentPartIDs.isSubset(of: partIDs) else { throw AssignmentError.unknownPart }
+        guard Set(staffCounts.keys).isSubset(of: presentPartIDs),
+              staffCounts.values.allSatisfy({ (1...4).contains($0) }) else {
+            throw AssignmentError.invalidStaffCounts
+        }
         let selected = Set(candidateIDs)
         let ordered = page.staves.sorted { ($0.staffLineFractions.first ?? -1) < ($1.staffLineFractions.first ?? -1) }
         let positions = ordered.indices.filter { selected.contains(ordered[$0].id) }
@@ -306,7 +311,7 @@ enum ScoreSystemAssignment {
                       && zip(staff.staffLineFractions, staff.staffLineFractions.dropFirst()).allSatisfy({ $0 < $1 })
               }) else { throw AssignmentError.invalidSelection }
         let printedParts = profile.parts.filter { presentPartIDs.contains($0.id) }
-        let expected = printedParts.reduce(0) { $0 + $1.staffCount }
+        let expected = printedParts.reduce(0) { $0 + (staffCounts[$1.id] ?? $1.staffCount) }
         guard expected == selected.count else { throw AssignmentError.wrongStaffCount(expected: expected, actual: selected.count) }
         if presentPartIDs != partIDs, barCount == nil { throw AssignmentError.missingRestCount }
         guard (barCount == nil || (1...999).contains(barCount!)),
@@ -340,8 +345,9 @@ enum ScoreSystemAssignment {
         var offset = 0
         let previous = correction.systems[systemIndex]
         correction.systems[systemIndex].bands = printedParts.map { part in
-            let group = Array(ids[offset..<(offset + part.staffCount)])
-            offset += part.staffCount
+            let count = staffCounts[part.id] ?? part.staffCount
+            let group = Array(ids[offset..<(offset + count)])
+            offset += count
             return previous.bands.first { $0.partID == part.id && ($0.kind ?? "music") == "music" && $0.candidateIDs == group }
                 ?? ScoreBandOverride(partID: part.id, candidateIDs: group)
         }
@@ -713,13 +719,18 @@ enum ScoreExtractionPlanner {
         let ignoredIDs = override.ignoredCandidateIDs ?? []
         let musicIDs = override.systems.flatMap(\.bands).filter { ($0.kind ?? "music") == "music" }.flatMap { $0.candidateIDs ?? [] }
         let allIDs = override.systems.flatMap(\.bands).flatMap { $0.candidateIDs ?? [] }
-        guard musicIDs.count == Set(musicIDs).count,
+        guard availableIDs.count == page.staves.count,
+              musicIDs.count == Set(musicIDs).count,
               ignoredIDs.count == Set(ignoredIDs).count,
               Set(ignoredIDs).isDisjoint(with: Set(allIDs)),
               Set(allIDs + ignoredIDs) == availableIDs else {
             output.unresolvedReasons = ["Account for every detected staff exactly once as music or an explicitly ignored candidate; only labeled cue bands may reuse staves."]
             return output
         }
+        let readingOrder = page.staves.sorted {
+            ($0.staffLineFractions.first ?? -1) < ($1.staffLineFractions.first ?? -1)
+        }
+        let readingPositions = Dictionary(uniqueKeysWithValues: readingOrder.enumerated().map { ($0.element.id, $0.offset) })
         let lyricIDs = Set(override.systems.flatMap(\.bands).filter { assigned in
             profile.parts.first { $0.id == assigned.partID }?.hasLyrics == true
         }.compactMap { $0.candidateIDs?.last })
@@ -800,8 +811,9 @@ enum ScoreExtractionPlanner {
                     output.unresolvedReasons.append("Invalid candidate IDs for \(assigned.partID), system \(system.systemIndex + 1).")
                     continue
                 }
-                if (assigned.kind ?? "music") == "music", !ids.isEmpty,
-                   ids != Array(ids.min()!...ids.max()!) {
+                let positions = ids.compactMap { readingPositions[$0] }
+                if (assigned.kind ?? "music") == "music", !positions.isEmpty,
+                   positions != Array(positions.min()!...positions.max()!) {
                     output.unresolvedReasons.append("A music band must group consecutive candidates in reading order.")
                     continue
                 }

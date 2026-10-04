@@ -1,0 +1,12 @@
+{
+  "scope": "Independent API/batch/matcher tests for explicit local staff counts. New bounded synthetic original page with three same-shape, three-staff systems, not a source-score recall claim.",
+  "checks": [
+    "1+2 versus 2+1 with the same instrument roster stays ambiguous; absent parts encoded distinctly",
+    "Nil/default counts retain global behavior; local choices never mutate global profile",
+    "Invalid counts/keys/mismatch reject atomically; cancellation and stale assignments preserve original edits",
+    "Existing manual crops and directions survive unchanged groups; changed physical grouping does not inherit stale per-band crop",
+    "Suggestions carry exact physical groups and no invented measure spans; codec round trip retains local groupings",
+    "Malformed reviewed count >4 and duplicate/missing staff ownership not learned; exact layout dedup stable under input reorder"
+  ],
+  "productionWrites": false
+}

@@ -1,0 +1,50 @@
+PASS Original fixture has exactly nine independently detected staves
+PASS Default grouping uses physical order, not numeric candidate IDs
+PASS Explicit global defaults are exactly equivalent
+PASS Partial counts keep other defaults and preserve existing crop/copies/break
+PASS Local two-plus-one groups exact original staves
+PASS Regrouped ownership cannot inherit old one-staff crop or source list
+PASS Assigning a different count in another system preserves edited seed exactly
+PASS Saved existing override schema preserves per-system grouping
+PASS Batch and crop planner cover all variable-count source systems
+PASS Batch carries local count into planned multi-staff band
+PASS Local count does not mutate profile, detector evidence or source
+PASS Batch preserves old manually reviewed source crop
+PASS Stale result cannot replace an already applied local grouping
+PASS Late invalid local count rejects atomic batch: ["soprano": 0]
+PASS Invalid batch leaves caller review empty: ["soprano": 0]
+PASS Late invalid local count rejects atomic batch: ["soprano": 5]
+PASS Invalid batch leaves caller review empty: ["soprano": 5]
+PASS Late invalid local count rejects atomic batch: ["soprano": -9223372036854775808]
+PASS Invalid batch leaves caller review empty: ["soprano": -9223372036854775808]
+PASS Late invalid local count rejects atomic batch: ["soprano": 9223372036854775807]
+PASS Invalid batch leaves caller review empty: ["soprano": 9223372036854775807]
+PASS Late invalid local count rejects atomic batch: ["absent": 1]
+PASS Invalid batch leaves caller review empty: ["absent": 1]
+PASS Late invalid local count rejects atomic batch: ["soprano": 2]
+PASS Invalid batch leaves caller review empty: ["soprano": 2]
+PASS Late invalid local count rejects atomic batch: ["bass": 1, "soprano": 4]
+PASS Invalid batch leaves caller review empty: ["bass": 1, "soprano": 4]
+PASS Cancellation after a local assignment prevents result publication
+PASS Cancellation leaves caller unchanged
+PASS Same roster with one-plus-two and two-plus-one yields two target alternatives
+PASS Identical clefs cannot auto-select between distinct count groupings
+PASS Every ambiguous suggestion carries the exact count layout
+PASS Suggestions preserve complete physical source grouping without invented timing
+PASS Multiple same-count examples deduplicate into one target layout
+PASS Exact raster match with unambiguous counts remains supported
+PASS Input system order does not change ambiguity, IDs or scores
+PASS Unresolved alternate grouping is not learned as a reviewed template
+PASS More than four staves for one part cannot become a template
+PASS A local grouping cannot reuse one physical staff twice
+PASS Matcher immediate cancellation returns no count choices
+PASS Matcher phase cancellation cannot publish partial count choices
+PASS Local count templates retain omissions but never clone reviewed silent duration
+PASS Explicit target duration, not template nine bars, creates missing-part rest
+PASS Absent part cannot receive a hidden staff-count override
+PASS Zero-count absent layout slots distinguish equal totals with different rosters
+PASS Assignment rejects a physically gapped selection despite valid total count
+PASS Planner rejects physical gaps with all source IDs otherwise accounted
+PASS Planner rejects physically reversed order within a band
+PASS Four-staff local section is accepted at the inclusive limit
+TOTAL 49 FAILURES 0

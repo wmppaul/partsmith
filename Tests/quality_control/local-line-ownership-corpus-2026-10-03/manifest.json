@@ -1,0 +1,414 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "d31d16458d0dd6c5330b5382d44923edf84888533a27d4b9ae8a193707c7c18a",
+      "bytes": 7854
+    },
+    {
+      "path": "archive-payloads.json",
+      "sha256": "271cc095a4f368589c5c769861cb558d805d3d64a43ec08e43fe28f7289f7272",
+      "bytes": 52288
+    },
+    {
+      "path": "baseline-reference.json",
+      "sha256": "60b497f225b54cde35ce62e731b512476612f044244a4e8121858e457c32169e",
+      "bytes": 9888
+    },
+    {
+      "path": "comparison/all-ownership-changes.json.gz",
+      "sha256": "eb146e0ca6428c66245906b42d028493043f9af66cf19f380678fcc2f719a3f4",
+      "bytes": 58828
+    },
+    {
+      "path": "comparison/attribution-summary.json",
+      "sha256": "3afda1a0d57f43fa248304a1f79a61ba68deadaffba7c58e6cb80ccca3afe285",
+      "bytes": 916
+    },
+    {
+      "path": "comparison/baseline-binding.json",
+      "sha256": "af7344053524c12157c66ff8951b008165f010df35573e54eaa6960b4b7bfe7c",
+      "bytes": 711154
+    },
+    {
+      "path": "comparison/changed-crop-review-jobs.json",
+      "sha256": "608652a76533cd99e49a282b9f1ef5418c617e28185dd62921b85e5500d6428d",
+      "bytes": 246819
+    },
+    {
+      "path": "comparison/compact-source-review-queue.json",
+      "sha256": "05e2cdfc83edd7876742f8c5d233443615101255f11dca5d81c8f1ba796c99a6",
+      "bytes": 852634
+    },
+    {
+      "path": "comparison/compare.py",
+      "sha256": "257b237dd7937831b4712a91661bc953914603fb0b29e5d9bddf5df0ecb8e203",
+      "bytes": 13048
+    },
+    {
+      "path": "comparison/comparison-run.log",
+      "sha256": "68daa08ea9d2ad39a6a2b1b5cde5305b0f18f3668545521d641d629a4cdb6e17",
+      "bytes": 5352
+    },
+    {
+      "path": "comparison/comparison.json",
+      "sha256": "d72dccbe78fef0cfde491947b3dee01e33d7553752c4d706dc48fc8ea04c7147",
+      "bytes": 298654
+    },
+    {
+      "path": "comparison/component-deltas.json.gz",
+      "sha256": "c6c88c2389aff77bcdf3449c081747d38a34873ee6d16ffbae540fe8cede0e78",
+      "bytes": 61047
+    },
+    {
+      "path": "comparison/component-geometry-validation.json",
+      "sha256": "7d3d56e566da67b8cf7efc7982609a82fc16c0a9cab4ca812ca83f76855a21c6",
+      "bytes": 572425
+    },
+    {
+      "path": "comparison/finish-comparison.py",
+      "sha256": "b4991eae32c3f47b26944840cf4607f09bf574a2524d822e19fafdc0698e6904",
+      "bytes": 4895
+    },
+    {
+      "path": "comparison/independent-summary.json",
+      "sha256": "1a079bb11fed81dc7518695c1434a2cf07c39a7a10ebfac9c98093f2ac35e3c2",
+      "bytes": 2502
+    },
+    {
+      "path": "comparison/neutral-staff-jobs.json",
+      "sha256": "83e36b9a04014383911d9bc181be4c1f173cca351714c5874037f1c2ca437e96",
+      "bytes": 140370
+    },
+    {
+      "path": "comparison/order-and-geometry-validation.json",
+      "sha256": "8a007e2a49435b1e85c6464dc76a9edbb9070fae635b9d4bfcaae907f5e2eff1",
+      "bytes": 533368
+    },
+    {
+      "path": "comparison/owner-detail-before-results.json",
+      "sha256": "43a6e9ed3a3258021fcd47db5fead4a02a40545679f6dbf22fc757c2ad1cc0a6",
+      "bytes": 257
+    },
+    {
+      "path": "comparison/owner-detail.py",
+      "sha256": "27de664db6313899d0f99ca1943589481bf73cf09a832323bfbe5750bd75e2ca",
+      "bytes": 4964
+    },
+    {
+      "path": "comparison/ownership-summary.json",
+      "sha256": "5c01a46b3a246ce75c27a02fdf59db1da7f368da608966f99601e62ad5140290",
+      "bytes": 9086
+    },
+    {
+      "path": "comparison/page-coverage.json",
+      "sha256": "fef1264271148ef135fe2452642b7718d5419cf556a64f8e21519c0e846c4619",
+      "bytes": 2356664
+    },
+    {
+      "path": "comparison/per-band-foreign-staves.json",
+      "sha256": "9f29a7c4d9c84c615e1b7387ad33c3d07b45105741d0577c14debd09e816ebbe",
+      "bytes": 2322783
+    },
+    {
+      "path": "comparison/physical-pdf-geometry.json",
+      "sha256": "6e2d43bc1b83928bb1d84535ada37fef53941ec53b9fa6d01bc649a9b9dbfa86",
+      "bytes": 391473
+    },
+    {
+      "path": "comparison/prepare.py",
+      "sha256": "41f77a17676ce7b6b4552490eb584d8585011e46ff7c67748cacbeb8707f36aa",
+      "bytes": 2729
+    },
+    {
+      "path": "comparison/priority-by-score.json",
+      "sha256": "b6f15e696d83b1c9e250069038273982fd6ad2567ff2d893e8f7968386cc8df4",
+      "bytes": 10083
+    },
+    {
+      "path": "comparison/protocol-before-comparison.json",
+      "sha256": "f8798bffb70f361b6a4d541c6d30ee3c99b6df9266b8b84bc081bd926a81e931",
+      "bytes": 1398
+    },
+    {
+      "path": "comparison/source-review-queue.json",
+      "sha256": "8bafed85bc5a88b78377e0ade0e5a857b7c510156f2451e2273f85cab908f3cd",
+      "bytes": 2004572
+    },
+    {
+      "path": "comparison/unassigned-diagnostic-jobs.json",
+      "sha256": "c187019dfae8a6c568a67709253700c4fa191e467c7f689712ba699b4909e7c1",
+      "bytes": 250099
+    },
+    {
+      "path": "fresh-production-40163/build.log",
+      "sha256": "a57dccb3677aa46e21afe1a1210640ec65de719f144bfab8d1eefc36321e0521",
+      "bytes": 31
+    },
+    {
+      "path": "fresh-production-40163/compare.py",
+      "sha256": "a2ec7593b5bcca9ba9206eef4ee87c5518b98493137aaa7b3ad67fc14cab37a5",
+      "bytes": 2850
+    },
+    {
+      "path": "fresh-production-40163/comparison.json",
+      "sha256": "70a530e30047313339e7cb8c3e637b3aa5b1266bbb82966ac467d7cac5b3e355",
+      "bytes": 4764
+    },
+    {
+      "path": "fresh-production-40163/protocol-before-results.json",
+      "sha256": "eee98ad5f4511bb984cc1c55189c163f9b56c9aace1d8e01af19ef54ff3c9d88",
+      "bytes": 2653
+    },
+    {
+      "path": "fresh-production-40163/run.log",
+      "sha256": "1f78e04d40079965aeffbc4caabf2aa5057abe3cf94dff04bab9e51857f6b0d0",
+      "bytes": 56
+    },
+    {
+      "path": "fresh-production-40163/run.sh",
+      "sha256": "8c4c994dc1d2535d5feadfb0f54e80574f0730170af6742d967441364b12bd6e",
+      "bytes": 1031
+    },
+    {
+      "path": "native-candidate-evidence.zip",
+      "sha256": "8898f6e256ae463d04edcb8c52a8fba3728285e3500cfcdd184198f1d4aa23b3",
+      "bytes": 35243707
+    },
+    {
+      "path": "native-run/build-binding.json",
+      "sha256": "5ab5175468eaa21067980b3f6047b3c77b31faafea955e236afb2fa8f00eb99f",
+      "bytes": 3705
+    },
+    {
+      "path": "native-run/inputs.json",
+      "sha256": "7f8abd22b1451c1c74323b1eb4a909fbb158d396288d498f221eb53415563da6",
+      "bytes": 28957
+    },
+    {
+      "path": "native-run/protocol-before-results.json",
+      "sha256": "034b5a8f60f8d29dba4d699f4c042f4935e96cdfbdc905ed3c88bc9b4ea76ade",
+      "bytes": 1370
+    },
+    {
+      "path": "native-run/run.log",
+      "sha256": "b6850628fac9df5dd6dcf6ceb0e7a5b17d4e8d85506f7746fd8bf6267d7f2228",
+      "bytes": 4460
+    },
+    {
+      "path": "native-run/run.py",
+      "sha256": "5ac5c7799416d40f7f49493042d4ad1fd4ea53995be8a1dd9981d1fc54c6547b",
+      "bytes": 7021
+    },
+    {
+      "path": "native-run/runner-state.json",
+      "sha256": "8c38acde7ac10d85c1eea3f8fcc075c652df9597b216d5ab62e06e0bbd28c76a",
+      "bytes": 281
+    },
+    {
+      "path": "native-run/status.json",
+      "sha256": "05b0773b325c2121b3dbe32dc64374410400555939c315e9c115b61d2612ef09",
+      "bytes": 45125
+    },
+    {
+      "path": "reviewed-source-images.zip",
+      "sha256": "f29786a4d27ad22ae8babf2b3f762e32c678463b05b4e2a7d2404bf7b364ce4a",
+      "bytes": 12538768
+    },
+    {
+      "path": "scripts/package.py",
+      "sha256": "494a5b52be6c9f0098e4401d379e1f634763f6b80d2388fc867c541dfb9c4f17",
+      "bytes": 5031
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/bindings.json",
+      "sha256": "eccffbfaef781926218d5776ab524614c2020724ef632db9c7d230de2b50a611",
+      "bytes": 1173
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/index.json",
+      "sha256": "d1136df2cfc5bd98a4da9d07eb2d42464b34f4a78038720bd687a9b2d17a8fee",
+      "bytes": 8360
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/sheets.json",
+      "sha256": "d055b15c7618f754feacc0ed08595fed3682b6f0fd63fdef0d01773776e36c5f",
+      "bytes": 311
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-02-brahms-clarinet-trio-op114-imslp-114011/source-contacts.json",
+      "sha256": "7693bfeb9eb92bb24c30e224dbdf5e5a44595be8cdc728dd1f4ec254630db392",
+      "bytes": 798
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/bindings.json",
+      "sha256": "eae88f127a76c70b3fc08b3fe35aad92a9b8b8b5a38159f2e5504fb3fb05966a",
+      "bytes": 1181
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/index.json",
+      "sha256": "5c90ac17b2c34f9be4afcc607c5e109ebaafa8c7f036fea5229ea1515da52049",
+      "bytes": 22075
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/sheets.json",
+      "sha256": "33aa6c72dbb5634c6d66a2ad01ad080043048675f6b4458327a9fed01b15cc16",
+      "bytes": 643
+    },
+    {
+      "path": "source-review/bindings/lightly-skewed-10-brahms-string-quartet-no3-op67-imslp-242312/source-contacts.json",
+      "sha256": "43d9140739cac158140e75abf9ed09fff4bae2106e138cedb77d2095779dc407",
+      "bytes": 1070
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/bindings.json",
+      "sha256": "e2e1add276b22ccda52f5d1ebd418b1fb1aed67ee018b5f0eabd70ec558e6ec3",
+      "bytes": 1167
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/index.json",
+      "sha256": "290a1cb45bfcd17738669c432b786a2884acad9bb26620ab0dfc64476e39d9f3",
+      "bytes": 25259
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/sheets.json",
+      "sha256": "5f766b455603f178b2095c3ef4a969cd46dadad04430be8e750c7aa7ada9d435",
+      "bytes": 648
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-contacts.json",
+      "sha256": "839063bb7c6d91a3df1a23911f92a58c61cf0fc1b8fc82d84c64038b885d94de",
+      "bytes": 1830
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/bindings.json",
+      "sha256": "da2bc8a7c00cb0b09803603f4ad1d261ad52dccb507614c6ec1d88f287b6b45e",
+      "bytes": 1171
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/index.json",
+      "sha256": "4cbb43a7e727b9e905f4769a21ae0f0aa38a1b48799dabc802b1b2211834dbd6",
+      "bytes": 12854
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/sheets.json",
+      "sha256": "5c6fea2896f57a8530dff67a6b028bea13dc3e65d0f7981ef72e18da03064438",
+      "bytes": 334
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-02-brahms-clarinet-trio-op114-imslp-114012/source-contacts.json",
+      "sha256": "79247088a704d5e2eba82268fd15ffc600eccfbc34271ec165042506df2c585f",
+      "bytes": 1051
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/bindings.json",
+      "sha256": "20e8c2a28ca44dfb02711019f65f41ae8a3000267aa083be8f8dbdd1300b47b9",
+      "bytes": 1171
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/index.json",
+      "sha256": "f5566e886eb34c3f685bf24561985188a5932295fa71689df252183df4995f8f",
+      "bytes": 28917
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/sheets.json",
+      "sha256": "af4bb2fdd36bcd4756db61bc18f3f747978a19314518b8e2fcf22f5e7b135df6",
+      "bytes": 679
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-contacts.json",
+      "sha256": "8fe241b5829f6dcd24b9c3911119d56829eddc3c78a1b42038e62d9d1475d264",
+      "bytes": 2101
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/bindings.json",
+      "sha256": "006f50570bb9699241ba41b13a3673cd9d18ca961abedcd7ecdd2d07767ffe38",
+      "bytes": 1177
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/index.json",
+      "sha256": "a40fc27215388306d1f21a18a7aaf0cd26025c6d4bafa898306210621dfd2699",
+      "bytes": 119163
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/sheets.json",
+      "sha256": "9a97b89eca32540dc43774df9c180b7648b51f8f88a7cf05c2da33889d5eb167",
+      "bytes": 2440
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-05-brahms-string-quartet-no3-op67-imslp-09200/source-contacts.json",
+      "sha256": "aaba259c6d96b8219911831361a729e624da0c594e13e9e23e644fbd038e7440",
+      "bytes": 3961
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/bindings.json",
+      "sha256": "117b915051ed3db6bc4e7986f7d9b171794f4880a05383aa27facb1e12e4cca0",
+      "bytes": 1177
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/index.json",
+      "sha256": "9d0cb55c75e89a98f58e76ffa4c4530959681a5a983178fd7985e42059f4114f",
+      "bytes": 62643
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/sheets.json",
+      "sha256": "0c8f8eaaef270273a580f3835cdde863c0913a54baa66d20f4997197b4f23d31",
+      "bytes": 1385
+    },
+    {
+      "path": "source-review/bindings/medium-skewed-06-brahms-string-quartet-no3-op67-imslp-93521/source-contacts.json",
+      "sha256": "b20c29dd81a15a7954d1f4b803a8de2ddd8367a2ae4c5160a4b3c17c22054a50",
+      "bytes": 3704
+    },
+    {
+      "path": "source-review/generate.py",
+      "sha256": "4f5ab126ddde9cce991b2e2da927f8cf8e620b859f0f358ecda6212064551048",
+      "bytes": 4011
+    },
+    {
+      "path": "source-review/p8-in-tempo/production-output-binding.json",
+      "sha256": "b4fecab3edd678473a40706045f592bfb1a6745ea3433d2b0eb9514dabd37bee",
+      "bytes": 1290
+    },
+    {
+      "path": "source-review/p8-in-tempo/source-landmark.json",
+      "sha256": "03b0cc22663321d1fd7ed7b1639e75171423870f03bfe610129d585867a1d076",
+      "bytes": 5125
+    },
+    {
+      "path": "source-review/per-band-review.json",
+      "sha256": "e27f2f8f9dde349f7f4116fa4be6e932a6b2d8a747a036afe6623d95ed1607b6",
+      "bytes": 150094
+    },
+    {
+      "path": "source-review/protocol-before-review.json",
+      "sha256": "f2d0b549a813b6e9bfdd720981881f40453b2ba29eb42c54cb2c60d54ba6c624",
+      "bytes": 591
+    },
+    {
+      "path": "source-review/review-summary.json",
+      "sha256": "6033a6ca5bcbb474e9731587655de889d4baae63e94c1df1316e76f71b7ac80e",
+      "bytes": 1499
+    },
+    {
+      "path": "source-review/source-contact.py",
+      "sha256": "4d332d52e836b6924d3f11ab59258d80df4989450783c6d99efe49b2ee962d8b",
+      "bytes": 1255
+    },
+    {
+      "path": "source-review/source-contacts.json",
+      "sha256": "a9c416bd572068149e8e704def50b92a1966cda62f5e44561f4609b7c876b8a2",
+      "bytes": 14497
+    },
+    {
+      "path": "source-review/write-review.py",
+      "sha256": "1f40d0683e0df5316618f1dd75c3f1e01d9006369d687d4441de7ecada9625ee",
+      "bytes": 6235
+    },
+    {
+      "path": "verification.json",
+      "sha256": "11360d3fc52b8a317c05ef573a49fc14d439ee5cece1bdd3da132f8552d5b2d9",
+      "bytes": 156
+    }
+  ]
+}

@@ -1,0 +1,723 @@
+[
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 25,
+    "bandID": "p25-s3-violin1",
+    "before": {
+      "bottomFraction": 0.6826138030619545,
+      "candidateIDs": [
+        12
+      ],
+      "editorialLabel": "",
+      "id": "p25-s3-violin1",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 24,
+      "partID": "violin1",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.6208820771234306,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.6845420714769179,
+      "candidateIDs": [
+        12
+      ],
+      "editorialLabel": "",
+      "id": "p25-s3-violin1",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 24,
+      "partID": "violin1",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.6208820771234306,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.6826138030619545,
+        "after": 0.6845420714769179
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      458.8318549942152,
+      513,
+      504.45160046278437
+    ],
+    "afterPDFBounds": [
+      0,
+      458.8318549942152,
+      513,
+      505.87659082144233
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      0.0,
+      0,
+      1.4249903586579649
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p25-s3-violin1.png",
+    "contextSHA256": "864a3ffacd83fbf870545d10eb79aa0aa051fac43ccf0d378de808321c8c218a",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-25.png",
+    "sourceRasterSHA256": "ceaa6bff911aa00d33a317e8e92ed1bc27f60e02b6cbcfd5282efa1a7096be1e"
+  },
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 26,
+    "bandID": "p26-s1-violin2",
+    "before": {
+      "bottomFraction": 0.16545221416878061,
+      "candidateIDs": [
+        1
+      ],
+      "editorialLabel": "",
+      "id": "p26-s1-violin2",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 25,
+      "partID": "violin2",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.10024960508332259,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.16622352153476597,
+      "candidateIDs": [
+        1
+      ],
+      "editorialLabel": "",
+      "id": "p26-s1-violin2",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 25,
+      "partID": "violin2",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.10024960508332259,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.16545221416878061,
+        "after": 0.16622352153476597
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      74.0844581565754,
+      513,
+      122.26918627072888
+    ],
+    "afterPDFBounds": [
+      0,
+      74.0844581565754,
+      513,
+      122.83918241419205
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      0.0,
+      0,
+      0.5699961434631717
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p26-s1-violin2.png",
+    "contextSHA256": "c8667a69dea3f0bcfbc990e76a5244cd2fbbddaf462164b9aa0db1ab492c3dd1",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-26.png",
+    "sourceRasterSHA256": "744c3952f98f3562d6eb119a5ed8d59ed38a235642f2fed90185172406b83002"
+  },
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 29,
+    "bandID": "p29-s1-viola",
+    "before": {
+      "bottomFraction": 0.18704882041637028,
+      "candidateIDs": [
+        2
+      ],
+      "editorialLabel": "",
+      "id": "p29-s1-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 28,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.13225886077171442,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.19437624039323106,
+      "candidateIDs": [
+        2
+      ],
+      "editorialLabel": "",
+      "id": "p29-s1-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 28,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.13225886077171442,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.18704882041637028,
+        "after": 0.19437624039323106
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      97.73929811029696,
+      513,
+      138.22907828769763
+    ],
+    "afterPDFBounds": [
+      0,
+      97.73929811029696,
+      513,
+      143.64404165059776
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      0.0,
+      0,
+      5.414963362900124
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p29-s1-viola.png",
+    "contextSHA256": "0b623a7d868c9c0d74a93c372205cad79f04ceda4dbca0099e5ee3a47cc9f457",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-29.png",
+    "sourceRasterSHA256": "a74f364187b147503768290a68915962f67bfc5d7ea8e62888e90dbe1e36e687"
+  },
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 29,
+    "bandID": "p29-s3-violin2",
+    "before": {
+      "bottomFraction": 0.731591820802024,
+      "candidateIDs": [
+        13
+      ],
+      "editorialLabel": "",
+      "id": "p29-s3-violin2",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 28,
+      "partID": "violin2",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.6717883632784634,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.7358340113149433,
+      "candidateIDs": [
+        13
+      ],
+      "editorialLabel": "",
+      "id": "p29-s3-violin2",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 28,
+      "partID": "violin2",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.6717883632784634,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.731591820802024,
+        "after": 0.7358340113149433
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      496.4516004627844,
+      513,
+      540.6463555726957
+    ],
+    "afterPDFBounds": [
+      0,
+      496.4516004627844,
+      513,
+      543.7813343617431
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      0.0,
+      0,
+      3.134978789047409
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p29-s3-violin2.png",
+    "contextSHA256": "f61a2a45a662962b54bb34acc99ee11cf8589e16e3c58c338985b811dc3020b8",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-29.png",
+    "sourceRasterSHA256": "a74f364187b147503768290a68915962f67bfc5d7ea8e62888e90dbe1e36e687"
+  },
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 35,
+    "bandID": "p35-s1-viola",
+    "before": {
+      "bottomFraction": 0.19167666461228236,
+      "candidateIDs": [
+        2
+      ],
+      "editorialLabel": "",
+      "id": "p35-s1-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 34,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.1341871291866778,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.19514754775921644,
+      "candidateIDs": [
+        2
+      ],
+      "editorialLabel": "",
+      "id": "p35-s1-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 34,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.1341871291866778,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.19167666461228236,
+        "after": 0.19514754775921644
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      99.1642884689549,
+      513,
+      141.64905514847666
+    ],
+    "afterPDFBounds": [
+      0,
+      99.1642884689549,
+      513,
+      144.21403779406094
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      0.0,
+      0,
+      2.56498264558428
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p35-s1-viola.png",
+    "contextSHA256": "ac9e6504d53b24d4579425137382104c80f61033d026320b4825838309d3cfe5",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-35.png",
+    "sourceRasterSHA256": "d7d90f898e75fd036ee1e29fc3349f313747b05c01c2ad2bf997f1389b68d81d"
+  },
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 41,
+    "bandID": "p41-s3-viola",
+    "before": {
+      "bottomFraction": 0.7574306175625329,
+      "candidateIDs": [
+        14
+      ],
+      "editorialLabel": "",
+      "id": "p41-s3-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 40,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.7018693505518917,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.758587578611511,
+      "candidateIDs": [
+        14
+      ],
+      "editorialLabel": "",
+      "id": "p41-s3-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 40,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.7018693505518917,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.7574306175625329,
+        "after": 0.758587578611511
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      518.681450057848,
+      513,
+      559.7412263787119
+    ],
+    "afterPDFBounds": [
+      0,
+      518.681450057848,
+      513,
+      560.5962205939067
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      0.0,
+      0,
+      0.8549942151947789
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p41-s3-viola.png",
+    "contextSHA256": "e3f391a996422d9924867677e7a401d441632918f5fc52543bab76c28416b5ac",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-41.png",
+    "sourceRasterSHA256": "35f766567227172b63847f84492f9f11393df3ec2b6197e085a21675d88efed7"
+  },
+  {
+    "id": "medium-skewed-03-schumann-piano-quintet-op44-imslp-06822",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/03_schumann_piano_quintet_op44_imslp_06822.pdf",
+    "sourceSHA256": "b8b9f6431438a6bd4c9593fffb46278418fbb211b7d81b6953d920faf8cf744e",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "8c2e75ed316f616f453179e5fe0a2f9d90b73e7449dcb545fb111d748b166470"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822.json",
+        "sha256": "6bf22a930e72b37fa702cbc3926ec0520a15918e987430a74123e38ee2cb889b"
+      }
+    ],
+    "page": 49,
+    "bandID": "p49-s2-violin2",
+    "before": {
+      "bottomFraction": 0.4469794027534316,
+      "candidateIDs": [
+        7
+      ],
+      "editorialLabel": "",
+      "id": "p49-s2-violin2",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 48,
+      "partID": "violin2",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 1,
+      "topFraction": 0.3887185599618417,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.4469794027534316,
+      "candidateIDs": [
+        7
+      ],
+      "editorialLabel": "",
+      "id": "p49-s2-violin2",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 48,
+      "partID": "violin2",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 1,
+      "topFraction": 0.387175945229871,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/topFraction",
+        "before": 0.3887185599618417,
+        "after": 0.387175945229871
+      }
+    ],
+    "beforePDFBounds": [
+      0,
+      287.263015811801,
+      513,
+      330.31777863478595
+    ],
+    "afterPDFBounds": [
+      0,
+      286.12302352487467,
+      513,
+      330.31777863478595
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0,
+      -1.139992286926315,
+      0,
+      0.0
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/p49-s2-violin2.png",
+    "contextSHA256": "93c39aaf7f0b49f1930a7678241f51687d9cff06a35f12adf22adc008a9e946a",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-03-schumann-piano-quintet-op44-imslp-06822/source-page-49.png",
+    "sourceRasterSHA256": "ec3f02659f78def8c4766f6957721e2a3db8ed9ba26e67dd2ad00d624dd89375"
+  }
+]

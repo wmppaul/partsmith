@@ -1,0 +1,107 @@
+{
+  "identicalCases": 30,
+  "changedCases": [
+    {
+      "id": "mendelssohn-p2-subgroup-1,2",
+      "before": {
+        "cancelled": false,
+        "diagnostics": [
+          {
+            "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+            "pageIndex": -1
+          }
+        ],
+        "id": "mendelssohn-p2-subgroup-1,2",
+        "suggestions": []
+      },
+      "after": {
+        "cancelled": false,
+        "diagnostics": [
+          {
+            "message": "Reviewed system 1 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+            "pageIndex": 1
+          }
+        ],
+        "id": "mendelssohn-p2-subgroup-1,2",
+        "suggestions": []
+      }
+    },
+    {
+      "id": "notte-changed-profile-count",
+      "before": {
+        "cancelled": false,
+        "diagnostics": [
+          {
+            "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+            "pageIndex": -1
+          }
+        ],
+        "id": "notte-changed-profile-count",
+        "suggestions": []
+      },
+      "after": {
+        "cancelled": false,
+        "diagnostics": [],
+        "id": "notte-changed-profile-count",
+        "suggestions": [
+          {
+            "barCount": null,
+            "candidateIDs": [
+              2,
+              3
+            ],
+            "confidence": "sourceSupported",
+            "pageIndex": 0,
+            "presentPartIDs": [
+              "piano"
+            ],
+            "requiresMeasureCount": true,
+            "startBarNumber": null,
+            "systemIndex": 1,
+            "templatePageIndex": 0,
+            "templateSystemIndex": 0
+          },
+          {
+            "barCount": null,
+            "candidateIDs": [
+              7,
+              8,
+              9
+            ],
+            "confidence": "sourceSupported",
+            "pageIndex": 0,
+            "presentPartIDs": [
+              "piano",
+              "voice"
+            ],
+            "requiresMeasureCount": false,
+            "startBarNumber": null,
+            "systemIndex": 3,
+            "templatePageIndex": 0,
+            "templateSystemIndex": 2
+          },
+          {
+            "barCount": null,
+            "candidateIDs": [
+              10,
+              11,
+              12
+            ],
+            "confidence": "sourceSupported",
+            "pageIndex": 0,
+            "presentPartIDs": [
+              "piano",
+              "voice"
+            ],
+            "requiresMeasureCount": false,
+            "startBarNumber": null,
+            "systemIndex": 4,
+            "templatePageIndex": 0,
+            "templateSystemIndex": 2
+          }
+        ]
+      }
+    }
+  ],
+  "timingExcluded": true
+}

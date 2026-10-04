@@ -1,0 +1,23 @@
+{
+  "before": {
+    "checks": 45,
+    "passed": 42,
+    "failed": 3
+  },
+  "after": {
+    "checks": 49,
+    "passed": 49,
+    "failed": 0
+  },
+  "original45TestCodePrefixPreserved": true,
+  "originalFixtureUnchanged": true,
+  "displayNote": "Swift dictionary order differs in two descriptive log labels; original test code and expectations are exact.",
+  "fixedPlannerSHA256": "a8ae3119c3d55f8ac0d8314527ecf71f2848f5c30f01bd6198829a96df1164f9",
+  "nativeUnchangedSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+  "originalFailures": [
+    "Batch and crop planner cover all variable-count source systems",
+    "Batch carries local count into planned multi-staff band",
+    "Explicit target duration, not template nine bars, creates missing-part rest"
+  ],
+  "scope": "Synthetic API/planner/matcher lifecycle validation. No corpus, app UI events or score output certification. Core source evidence reconstitutes final snapshot by replacing the one planner in the complete prior snapshot. Four-staff upper-bound check tests API validation, not a source-confirmed four-staff system."
+}

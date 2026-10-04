@@ -1,0 +1,48 @@
+{
+  "scope": "Bounded static UI/state integration review of five frozen files; independent Core adversarial coverage owned by ending agent. No GUI click or screenshot claim.",
+  "frozenSourceHashRecordSHA256": "f5d0bfffb638d384ba1b7c2d97b754120d79b4f96c1ea4cbee2565d207a5a5ba",
+  "fiveSourceBindings": {
+    "Partsmith/Features/Project/ScoreExtractionView.swift": "f1042bf0efc43099f512071b6e3dfcb4d1eccb45a1ba59b89667ce6b9e7c1122",
+    "Partsmith/Features/Project/ScoreSystemTemplatePanel.swift": "6729cfcca027c7de7903b645ab2eeae088ca9a0278e9be8b896c6b8009eaa717",
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift": "02b9719e0ea4384ff60c8fbaff9a0db63b20a1ed2e58d94d0f3152c7ed04b096",
+    "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift": "b4fb5e22a3ad92d1ca6d1dc43db5fce16bba57c0441836ae2093d9d68b6488d9",
+    "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift": "6abb036e0b6c1e3678d78cb6702ad2f558ddb4b8b8fd5436e350186f139a0351"
+  },
+  "allFiveFrozenFilesEqualCurrentAtReview": true,
+  "checks": [
+    {
+      "subject": "per-system controls",
+      "finding": "Count steppers bind only systemStaffCounts, range 1...4, disabled for unchecked parts. Expected selection uses that dictionary with the profile default as fallback; profile.parts is never mutated by these controls."
+    },
+    {
+      "subject": "Load",
+      "finding": "Actual saved candidateIDs determine music staff counts. Rest bands do not enter the printed roster. Existing start/count values load separately."
+    },
+    {
+      "subject": "Show",
+      "finding": "Same-page selection immediately transfers exact suggestion counts. Cross-page Show saves a pending suggestion, updates the page image/clears previous selection, then calls the same selection function through onChange; it does not reset the transferred counts afterward."
+    },
+    {
+      "subject": "single assignment",
+      "finding": "Only checked part counts pass to assign; local grouping persists for the next system. Measure counts clear after each assignment and are not inherited from a template."
+    },
+    {
+      "subject": "batch assignment",
+      "finding": "Each displayed suggestion names its own counts and the exact dictionary passes into ScoreSystemAssignmentChoice. Competing suggestions for one physical system remain unchecked, and checking one removes its siblings."
+    },
+    {
+      "subject": "async state",
+      "finding": "Still-matching guard includes source bytes, analyses, rectifications, selected pages, exclusions, profile and overrides. A stale result cannot publish/apply; run identity and cancellation gates remain unchanged."
+    },
+    {
+      "subject": "profile scope",
+      "finding": "Core assign/batch only use per-system values to partition selected staff IDs; saved global staffCount values remain exact. New Auto resets local count state."
+    }
+  ],
+  "blockingFindings": [],
+  "limitations": [
+    "Actual SwiftUI rendering/accessibility interaction is not exercised here.",
+    "Physical system identity remains user-reviewed; this change does not recognize divisi from staff count.",
+    "Persistence test follows existing candidateIDs override format rather than inventing a new profile field."
+  ]
+}

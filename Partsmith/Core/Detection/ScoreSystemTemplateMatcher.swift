@@ -20,6 +20,8 @@ enum ScoreSystemTemplateMatcher {
         /// Normalized top-down [left, top, right, bottom] in the analysis image.
         var sourceBounds: [Double]
         var requiresMeasureCount: Bool
+        /// Reviewed staff grouping for this layout, including section divisi.
+        var staffCounts: [String: Int] = [:]
         // A repeated printed layout does not imply repeated measure counts.
         var startBarNumber: Int? { nil }
         var barCount: Int? { nil }
@@ -95,7 +97,10 @@ enum ScoreSystemTemplateMatcher {
                       present.isDisjoint(with: absent), present.union(absent) == partIDs,
                       absent.count == (system.omittedParts ?? []).count else { continue }
                 let printed = profile.parts.filter { present.contains($0.id) }
-                guard printed.allSatisfy({ part in bands.first(where: { $0.partID == part.id })?.candidateIDs?.count == part.staffCount }) else { continue }
+                let counts = Dictionary(uniqueKeysWithValues: printed.map { part in
+                    (part.id, bands.first(where: { $0.partID == part.id })?.candidateIDs?.count ?? 0)
+                })
+                guard counts.values.allSatisfy({ (1...4).contains($0) }) else { continue }
                 let ids = printed.flatMap { part in bands.first(where: { $0.partID == part.id })?.candidateIDs ?? [] }
                 guard Set(ids).count == ids.count else { continue }
                 guard let group = page.groups.first(where: { $0.staves.map(\.id) == ids }),
@@ -108,7 +113,7 @@ enum ScoreSystemTemplateMatcher {
                     continue
                 }
                 templates.append(Template(pageIndex: correction.pageIndex, systemIndex: system.systemIndex,
-                    presentPartIDs: present, group: group))
+                    presentPartIDs: present, staffCounts: counts, group: group))
             }
         }
         guard !disconnectedReviewedSystem else { return result }
@@ -135,12 +140,13 @@ enum ScoreSystemTemplateMatcher {
                     guard let minimum = scores.min(), minimum >= 0.48 else { continue }
                     matches.append((template, minimum))
                 }
-                // Multiple reviewed examples of the same roster are useful;
-                // differing rosters remain separate explicit choices.
-                var best: [Set<String>: (Template, Double)] = [:]
+                // Staff grouping matters even when the instrument names are
+                // identical: 2+1 and 1+2 are competing assignments, not duplicates.
+                var best: [[Int]: (Template, Double)] = [:]
                 for match in matches {
-                    if best[match.0.presentPartIDs] == nil || best[match.0.presentPartIDs]!.1 < match.1 {
-                        best[match.0.presentPartIDs] = match
+                    let layout = profile.parts.map { match.0.staffCounts[$0.id] ?? 0 }
+                    if best[layout] == nil || best[layout]!.1 < match.1 {
+                        best[layout] = match
                     }
                 }
                 guard !best.isEmpty else { unsupported = true; continue }
@@ -150,7 +156,7 @@ enum ScoreSystemTemplateMatcher {
                     let certain = best.count == 1 && score >= 0.72
                     var reasons = ["A continuous printed left edge connects all \(ids.count) staves.",
                         "Initial clef shapes resemble reviewed page \(template.pageIndex + 1), system \(template.systemIndex + 1)."]
-                    if best.count > 1 { reasons.append("More than one reviewed instrument roster fits this source. Choose the correct roster on the score.") }
+                    if best.count > 1 { reasons.append("More than one reviewed instrument layout fits this source. Check the instrument names and staff grouping on the score.") }
                     if score < 0.72 { reasons.append("Some clef shapes differ or are faint; inspect this system before accepting.") }
                     let needsCount = template.presentPartIDs != partIDs
                     if needsCount { reasons.append("Absent parts still need this system’s own confirmed bar count.") }
@@ -158,7 +164,7 @@ enum ScoreSystemTemplateMatcher {
                         candidateIDs: ids, presentPartIDs: template.presentPartIDs,
                         templatePageIndex: template.pageIndex, templateSystemIndex: template.systemIndex,
                         confidence: certain ? .sourceSupported : .needsReview, reasons: reasons,
-                        sourceBounds: group.bounds, requiresMeasureCount: needsCount))
+                        sourceBounds: group.bounds, requiresMeasureCount: needsCount, staffCounts: template.staffCounts))
                 }
             }
             if unsupported {
@@ -188,6 +194,7 @@ enum ScoreSystemTemplateMatcher {
         var pageIndex: Int
         var systemIndex: Int
         var presentPartIDs: Set<String>
+        var staffCounts: [String: Int]
         var group: Group
     }
     private struct Raster {

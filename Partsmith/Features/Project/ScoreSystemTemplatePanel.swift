@@ -113,7 +113,10 @@ struct ScoreSystemTemplatePanel: View {
                 Spacer(minLength: 3)
                 Button("Show") { onReveal(suggestion) }.controlSize(.small)
             }
-            Text((review?.profile.parts ?? []).filter { suggestion.presentPartIDs.contains($0.id) }.map(\.name).joined(separator: ", "))
+            Text((review?.profile.parts ?? []).filter { suggestion.presentPartIDs.contains($0.id) }.map { part in
+                let count = suggestion.staffCounts[part.id] ?? part.staffCount
+                return "\(part.name) (\(count) \(count == 1 ? "staff" : "staves"))"
+            }.joined(separator: ", "))
                 .font(.caption)
             Text("Uses page \(suggestion.templatePageIndex + 1), system \(suggestion.templateSystemIndex + 1)")
                 .font(.caption2).foregroundStyle(.secondary)
@@ -201,7 +204,8 @@ struct ScoreSystemTemplatePanel: View {
             ScoreSystemAssignmentChoice(pageIndex: $0.pageIndex, systemIndex: $0.systemIndex,
                 candidateIDs: $0.candidateIDs, presentPartIDs: $0.presentPartIDs,
                 startBarNumber: Int((starts[$0.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)),
-                barCount: Int((counts[$0.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)))
+                barCount: Int((counts[$0.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)),
+                staffCounts: $0.staffCounts)
         }
         let id = UUID()
         runID = id; isApplying = true; error = nil

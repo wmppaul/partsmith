@@ -1,0 +1,19 @@
+PASS initial expected count uses profile defaults
+PASS local 2+1 grouping leaves profile unchanged
+PASS actual Assign action accepts local divisi
+PASS actual Assign passes counts and maps successive physical staves
+PASS next system keeps counts while clearing duration
+PASS Load reconstructs actual saved divisi groups
+PASS Show transfers selected staves and exact template grouping
+PASS Show never copies a template's duration
+PASS Show then Assign preserves divisi
+PASS unchecked stale count is filtered by actual Assign call
+PASS silent layout keeps actual grouped staves and explicit duration
+PASS Load excludes generated rest from printed roster and restores count
+PASS all UI state transitions leave global profile exact
+PASS actual batch mapping includes staff counts
+PASS batch UI mapping reaches native grouping without profile mutation
+PASS profile change rejects stale matcher result
+PASS assignment change rejects stale matcher result
+PASS silent-layout Apply remains gated by explicit valid duration
+18 extracted UI state controls passed

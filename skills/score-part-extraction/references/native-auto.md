@@ -73,6 +73,15 @@ different roster; some layouts still require manual assignment. **Show** selects
 the proposed staves on the score; **Use Selected Layouts** applies the chosen
 systems together while preserving prior assignments and crop edits.
 
+If one section alternates between a single staff and divided staves, set its
+count beside the instrument name in **Assign a System** for that printed layout.
+The local count does not change the saved profile's default. **Load** restores
+the reviewed grouping, and similar-layout proposals carry that grouping through
+acceptance. Check the proposed counts as well as names: the same roster with
+different divisions is ambiguous. Keep both Soprano I–II or Bass I–II staves in
+their combined section part unless the task explicitly calls for separate parts.
+Splitting two voices that share one printed staff requires a different workflow.
+
 These proposals reuse reviewed identities; they do not read instrument names.
 An unseen roster with the same clefs and staff count can still look similar.
 Check source labels and transitions, especially on orchestral scores. Missing
@@ -81,6 +90,12 @@ system's own bar count whenever instruments are absent: an example's rest count
 is never copied. Partial matches do not make the whole score complete. Reusing
 a roster also does not fix crop edges, copy all musical directions, or establish
 safe page turns; retain the source/output review below.
+
+Printed barline compartments can include pickups or incomplete bars at section
+breaks. Record these separately from complete measures; do not use their count
+as a whole-bar rest duration. Brahms Op.74, IMSLP101580, has complementary verse
+fragments and repeated printed start numbers at transitions. With every section
+printed, retain those source crops and leave uncertain bar counts unset.
 
 Use **Adjust crop edges on this page** for a source-reviewed local correction.
 Top and Bottom are source-page points measured downward; select the part/system

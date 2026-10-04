@@ -9,6 +9,7 @@ struct ScoreSystemAssignmentChoice: Equatable, Identifiable {
     var presentPartIDs: Set<String>
     var startBarNumber: Int?
     var barCount: Int?
+    var staffCounts: [String: Int] = [:]
 
     var id: String { "\(pageIndex):\(systemIndex)" }
 }
@@ -72,7 +73,8 @@ enum ScoreSystemAssignmentBatch {
             let correction = try ScoreSystemAssignment.assign(page: page, profile: review.profile,
                 pagePlan: nil, existingOverride: result.overrides.first { $0.pageIndex == choice.pageIndex },
                 systemIndex: choice.systemIndex, candidateIDs: choice.candidateIDs,
-                presentPartIDs: choice.presentPartIDs, startBarNumber: choice.startBarNumber, barCount: choice.barCount)
+                presentPartIDs: choice.presentPartIDs, startBarNumber: choice.startBarNumber, barCount: choice.barCount,
+                staffCounts: choice.staffCounts)
             result.overrides.removeAll { $0.pageIndex == choice.pageIndex }
             result.overrides.append(correction)
         }

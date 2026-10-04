@@ -119,6 +119,61 @@ import Foundation
             })
         }
         check(initial.overrides == [seed], "Cancellation preserves the original assigned crop and source copy")
+        // A section may split while another printed part uses fewer staves.
+        // Names and the total staff count alone cannot preserve this grouping.
+        var divided = full
+        divided.staffCounts = ["voice": 2, "piano": 1]
+        let withDivisi = try ScoreSystemAssignmentBatch.applying([silent, divided], to: initial)
+        let lastSystem = withDivisi.overrides[0].systems[2]
+        check(lastSystem.bands.first { $0.partID == "voice" }?.candidateIDs == [5, 6],
+              "Explicit section divisi retains both selected staves in one part")
+        check(lastSystem.bands.first { $0.partID == "piano" }?.candidateIDs == [7],
+              "Following part begins after the locally expanded section")
+        check(withDivisi.profile == profile, "Local grouping does not alter the global instrument setup")
+        check(withDivisi.overrides[0].systems[0] == seed.systems[0], "Local grouping preserves earlier crop edits and source copies")
+        check(withDivisi.plan.canApply && withDivisi.plan.bands.count == 6, "Divisi plan retains all systems and silent time")
+        check(withDivisi.plan.bands.first { $0.partID == "voice" && $0.systemIndex == 2 }?.candidateIDs == [5, 6],
+              "The crop planner consumes the actual local section grouping")
+        let restored = try JSONDecoder().decode([ScorePageOverride].self, from: JSONEncoder().encode(withDivisi.overrides))
+        check(restored == withDivisi.overrides, "Local grouping survives the existing saved override format")
+        var oneLocalCount = silent; oneLocalCount.staffCounts = ["piano": 2]
+        let explicitDefault = try ScoreSystemAssignmentBatch.applying([full, oneLocalCount], to: initial)
+        check(explicitDefault.overrides == applied.overrides && explicitDefault.plan == applied.plan,
+              "Explicit default count is identical to legacy behavior")
+        for badCounts in [["voice": 0], ["voice": 5], ["voice": -1], ["voice": Int.max], ["unknown": 1], ["voice": 2]] {
+            var badChoice = full; badChoice.staffCounts = badCounts
+            rejects("Invalid or mismatched local counts cannot apply a partial batch: \(badCounts)") {
+                _ = try ScoreSystemAssignmentBatch.applying([silent, badChoice], to: initial)
+            }
+        }
+        var absentCount = silent; absentCount.staffCounts = ["voice": 1]
+        rejects("A count for an absent part cannot silently change its rest assignment") {
+            _ = try ScoreSystemAssignmentBatch.applying([absentCount], to: initial)
+        }
+        check(initial.overrides == [seed], "Failed local groupings leave all initial assignments intact")
+        let identifiers = [90, 8, 42, 13, 99, 2, 88, 50]
+        var renamedPage = page
+        for i in renamedPage.staves.indices { renamedPage.staves[i].id = identifiers[i] }
+        var renamedSeed = seed
+        for i in renamedSeed.systems[0].bands.indices {
+            renamedSeed.systems[0].bands[i].candidateIDs = seed.systems[0].bands[i].candidateIDs?.map { identifiers[$0] }
+        }
+        let renamedReview = ScoreDetectionReview.initial(profile: profile, analyses: [renamedPage], overrides: [renamedSeed],
+            selectedPageIndices: [0], sourcePDFData: initial.sourcePDFData, rectifications: [])
+        var renamedSilent = silent; renamedSilent.candidateIDs = silent.candidateIDs.map { identifiers[$0] }
+        var renamedDivided = divided; renamedDivided.candidateIDs = divided.candidateIDs.map { identifiers[$0] }
+        let renamedResult = try ScoreSystemAssignmentBatch.applying([renamedSilent, renamedDivided], to: renamedReview)
+        check(renamedResult.plan.canApply && renamedResult.plan.bands.count == withDivisi.plan.bands.count,
+              "Nonsequential staff identifiers remain valid through assignment and crop planning")
+        check(renamedResult.plan.bands.first { $0.partID == "voice" && $0.systemIndex == 2 }?.candidateIDs == [2, 88],
+              "Planner preserves original identifiers while validating actual reading order")
+        var disconnected = renamedResult.overrides
+        disconnected[0].systems[2].bands[0].candidateIDs = [2, 50]
+        disconnected[0].systems[2].bands[1].candidateIDs = [88]
+        let rejectedPlan = ScoreDetectionReview.initial(profile: profile, analyses: [renamedPage], overrides: disconnected,
+            selectedPageIndices: [0], sourcePDFData: initial.sourcePDFData, rectifications: []).plan
+        check(!rejectedPlan.canApply && rejectedPlan.bands.isEmpty,
+              "Physical nonconsecutive grouping is rejected even when every source staff is accounted for")
         print("\(checks) batch system-assignment checks passed")
     }
 }

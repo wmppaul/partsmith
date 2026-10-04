@@ -1,0 +1,41 @@
+{
+  "scope": "One authorized fresh production9f8 raw baseline for the exact ten-page40163 PDF to attribute unexpected historical staff/raster geometry differences. No other source reanalysis. Original historical comparison retained.",
+  "input": {
+    "id": "lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+    "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+    "profileSHA256": "9d669e5786b2c44264242b1c28b63897f92c5932943b49ac39d5c4a3a14d5675",
+    "pages": 10,
+    "baseline": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+    "baselineSHA256": "bec2027d78cfc4244824992d1e6b0d6830cb2bc75e3ecb65dc4f1ad508ee4794"
+  },
+  "dependencies": {
+    "StaffBandDetector.swift": {
+      "baselineSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb",
+      "candidateSHA256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    "ScoreExtractionPlanner.swift": {
+      "baselineSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7",
+      "candidateSHA256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7"
+    },
+    "ScoreSharedEnding.swift": {
+      "baselineSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370",
+      "candidateSHA256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    "ScoreSharedEndingDetector.swift": {
+      "baselineSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f",
+      "candidateSHA256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    "ScoreLocalEndingPreservation.swift": {
+      "baselineSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7",
+      "candidateSHA256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    "NativeScorePageAnalyzer.swift": {
+      "baselineSHA256": "9f8d7ef80a27569ca3f5711388ad5876326a2931d60ecd77b2703d0aba235f01",
+      "candidateSHA256": "46ad9d2041991d4c9e2743519ef708d699c30b6846493abf70f7b94818d5d540"
+    }
+  },
+  "harnessSHA256": "a78f09b90b9f9feaf1416ede622d73ffd2d6e43ad52a948f46926bb252f3bf1d",
+  "buildRunSHA256": "8c4c994dc1d2535d5feadfb0f54e80574f0730170af6742d967441364b12bd6e"
+}

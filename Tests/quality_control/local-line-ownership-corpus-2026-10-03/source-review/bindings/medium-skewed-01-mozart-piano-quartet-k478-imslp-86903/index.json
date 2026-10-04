@@ -1,0 +1,636 @@
+[
+  {
+    "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "42ff69fbf36c8a3b747bf33db6c6c152431d29310ed91d3066fe292d4ba2203a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "8e27a8c6a0ff936c89461ca6069b0f479496414e101c95c61b212e5f1196f309"
+      }
+    ],
+    "page": 17,
+    "bandID": "p17-s4-cello",
+    "before": {
+      "bottomFraction": 0.870776600623562,
+      "candidateIDs": [
+        17
+      ],
+      "editorialLabel": "",
+      "id": "p17-s4-cello",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 16,
+      "partID": "cello",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 3,
+      "topFraction": 0.811876068656053,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.8804267815644546,
+      "candidateIDs": [
+        17
+      ],
+      "editorialLabel": "",
+      "id": "p17-s4-cello",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 16,
+      "partID": "cello",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 3,
+      "topFraction": 0.8114739777835158,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.870776600623562,
+        "after": 0.8804267815644546
+      },
+      {
+        "path": "/topFraction",
+        "before": 0.811876068656053,
+        "after": 0.8114739777835158
+      }
+    ],
+    "beforePDFBounds": [
+      0.0,
+      609.881302774427,
+      543.6,
+      654.1273823884198
+    ],
+    "afterPDFBounds": [
+      0.0,
+      609.5792521109771,
+      543.6,
+      661.3765983112183
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0.0,
+      -0.3020506634499043,
+      0.0,
+      7.2492159227984985
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/p17-s4-cello.png",
+    "contextSHA256": "26b7692f6d4f74a235bb250416f363866facd3dff0d12b92d839c70aead967fc",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-page-17.png",
+    "sourceRasterSHA256": "fa87515d2588990eaa3eacc9ee2aa6cddcf7b60a54b059252e1fcd5d11f39b0e"
+  },
+  {
+    "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "42ff69fbf36c8a3b747bf33db6c6c152431d29310ed91d3066fe292d4ba2203a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "8e27a8c6a0ff936c89461ca6069b0f479496414e101c95c61b212e5f1196f309"
+      }
+    ],
+    "page": 19,
+    "bandID": "p19-s1-violin",
+    "before": {
+      "bottomFraction": 0.10278303407752261,
+      "candidateIDs": [
+        0
+      ],
+      "editorialLabel": "",
+      "id": "p19-s1-violin",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 18,
+      "partID": "violin",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.0503159560706087,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.10720603367543173,
+      "candidateIDs": [
+        0
+      ],
+      "editorialLabel": "",
+      "id": "p19-s1-violin",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 18,
+      "partID": "violin",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 0,
+      "topFraction": 0.0503159560706087,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.10278303407752261,
+        "after": 0.10720603367543173
+      }
+    ],
+    "beforePDFBounds": [
+      0.0,
+      37.79734620024126,
+      543.6,
+      77.21061519903499
+    ],
+    "afterPDFBounds": [
+      0.0,
+      37.79734620024126,
+      543.6,
+      80.53317249698432
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0.0,
+      0.0,
+      0.0,
+      3.3225572979493307
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/p19-s1-violin.png",
+    "contextSHA256": "e81b6954020c2af8c105137bf0f9e5b72f8bcd873fa4c1d61d310d165dd515b5",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-page-19.png",
+    "sourceRasterSHA256": "cc801671d61859f8f70ad2142cc01c6cd0e0a754f05b20d470acade83c2e92f5"
+  },
+  {
+    "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "42ff69fbf36c8a3b747bf33db6c6c152431d29310ed91d3066fe292d4ba2203a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "8e27a8c6a0ff936c89461ca6069b0f479496414e101c95c61b212e5f1196f309"
+      }
+    ],
+    "page": 22,
+    "bandID": "p22-s3-viola",
+    "before": {
+      "bottomFraction": 0.6033861703863284,
+      "candidateIDs": [
+        11
+      ],
+      "editorialLabel": "",
+      "id": "p22-s3-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 21,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.5380521844582242,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.6033861703863284,
+      "candidateIDs": [
+        11
+      ],
+      "editorialLabel": "",
+      "id": "p22-s3-viola",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 21,
+      "partID": "viola",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.5388563662032987,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/topFraction",
+        "before": 0.5380521844582242,
+        "after": 0.5388563662032987
+      }
+    ],
+    "beforePDFBounds": [
+      0.0,
+      404.18480096501804,
+      543.6,
+      453.2636911942099
+    ],
+    "afterPDFBounds": [
+      0.0,
+      404.788902291918,
+      543.6,
+      453.2636911942099
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": false,
+    "previousContainsCandidateCrop": true,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0.0,
+      0.6041013268999791,
+      0.0,
+      0.0
+    ],
+    "largestContractionPT": 0.6041013268999791,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/p22-s3-viola.png",
+    "contextSHA256": "d60f5eb8891f36e84d6bf8e2ce9d70ac3df2b1c9242cadf4aa64a87249fbc939",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-page-22.png",
+    "sourceRasterSHA256": "a4377d59293950cd3db2ae5bd49809df5f1624a2007f3d292766e420b96cdc0b"
+  },
+  {
+    "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "42ff69fbf36c8a3b747bf33db6c6c152431d29310ed91d3066fe292d4ba2203a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "8e27a8c6a0ff936c89461ca6069b0f479496414e101c95c61b212e5f1196f309"
+      }
+    ],
+    "page": 22,
+    "bandID": "p22-s3-violin",
+    "before": {
+      "bottomFraction": 0.5643833557502207,
+      "candidateIDs": [
+        10
+      ],
+      "editorialLabel": "",
+      "id": "p22-s3-violin",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 21,
+      "partID": "violin",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.5086995507630091,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.5659917192403694,
+      "candidateIDs": [
+        10
+      ],
+      "editorialLabel": "",
+      "id": "p22-s3-violin",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 21,
+      "partID": "violin",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.5086995507630091,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.5643833557502207,
+        "after": 0.5659917192403694
+      },
+      {
+        "path": "/warnings",
+        "before": [
+          "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+          "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+          "Check detached low dynamics and slurs at the lower edge: nearby ink connects to the following staff, so its ownership is uncertain. Expand this crop locally if the target marking continues below it."
+        ],
+        "after": [
+          "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+          "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+        ]
+      }
+    ],
+    "beforePDFBounds": [
+      0.0,
+      382.13510253317247,
+      543.6,
+      423.9647768395658
+    ],
+    "afterPDFBounds": [
+      0.0,
+      382.13510253317247,
+      543.6,
+      425.1729794933655
+    ],
+    "geometryChanged": true,
+    "warningChanges": true,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0.0,
+      0.0,
+      0.0,
+      1.2082026537997308
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/p22-s3-violin.png",
+    "contextSHA256": "fde255ecea482541f2d5c830d4aefcfb92e56adf2420c3978a0ab3fbd9eb1951",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-page-22.png",
+    "sourceRasterSHA256": "a4377d59293950cd3db2ae5bd49809df5f1624a2007f3d292766e420b96cdc0b"
+  },
+  {
+    "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "42ff69fbf36c8a3b747bf33db6c6c152431d29310ed91d3066fe292d4ba2203a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "8e27a8c6a0ff936c89461ca6069b0f479496414e101c95c61b212e5f1196f309"
+      }
+    ],
+    "page": 23,
+    "bandID": "p23-s3-cello",
+    "before": {
+      "bottomFraction": 0.641986894149899,
+      "candidateIDs": [
+        12
+      ],
+      "editorialLabel": "",
+      "id": "p23-s3-cello",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 22,
+      "partID": "cello",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.5947469974859685,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.641986894149899,
+      "candidateIDs": [
+        12
+      ],
+      "editorialLabel": "",
+      "id": "p23-s3-cello",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 22,
+      "partID": "cello",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.5879114526528363,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/topFraction",
+        "before": 0.5947469974859685,
+        "after": 0.5879114526528363
+      }
+    ],
+    "beforePDFBounds": [
+      0.0,
+      446.77394451145955,
+      543.6,
+      482.26055488540413
+    ],
+    "afterPDFBounds": [
+      0.0,
+      441.63908323281066,
+      543.6,
+      482.26055488540413
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0.0,
+      -5.134861278648884,
+      0.0,
+      0.0
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/p23-s3-cello.png",
+    "contextSHA256": "e22a01af2a10e54993117c3d35dd973738c57e759560d18389a52cceed7150b2",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-page-23.png",
+    "sourceRasterSHA256": "4acbed3578eb55f3284cd973f68367e72d06729041903c249418b7e97ab1f3e7"
+  },
+  {
+    "id": "medium-skewed-01-mozart-piano-quartet-k478-imslp-86903",
+    "source": "/Users/will/Documents/git/partsmith/sample_scores/medium_skewed/01_mozart_piano_quartet_k478_imslp_86903.pdf",
+    "sourceSHA256": "33ba263af431caa89d16530adcce3bf230b9c8b2e2367b737835c112fcfc99c8",
+    "profile": "/Users/will/Documents/git/partsmith/Tests/quality_control/profiles/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+    "inventoryFiles": [
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/envelope-compatibility-corpus-2026-10-03/baseline/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "42ff69fbf36c8a3b747bf33db6c6c152431d29310ed91d3066fe292d4ba2203a"
+      },
+      {
+        "path": "/Users/will/Documents/git/partsmith/.build/local-line-ownership-corpus-2026-10-03/candidate/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903.json",
+        "sha256": "8e27a8c6a0ff936c89461ca6069b0f479496414e101c95c61b212e5f1196f309"
+      }
+    ],
+    "page": 24,
+    "bandID": "p24-s3-violin",
+    "before": {
+      "bottomFraction": 0.577652354543948,
+      "candidateIDs": [
+        10
+      ],
+      "editorialLabel": "",
+      "id": "p24-s3-violin",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 23,
+      "partID": "violin",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.529206185262406,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ]
+    },
+    "after": {
+      "bottomFraction": 0.5800648997791712,
+      "candidateIDs": [
+        10
+      ],
+      "editorialLabel": "",
+      "id": "p24-s3-violin",
+      "kind": "music",
+      "leftFraction": 0,
+      "pageBreakBefore": false,
+      "pageIndex": 23,
+      "partID": "violin",
+      "provenance": "native-profile-cadence",
+      "rightFraction": 0,
+      "sourceMarkings": [],
+      "systemIndex": 2,
+      "topFraction": 0.529206185262406,
+      "warnings": [
+        "Skew-aware staff analysis; the crop stays in original source coordinates and includes both tilted ends.",
+        "Staff lines may be tilted, curved, or interrupted. Check both ends of this band.",
+        "A neighboring staff is close. Suggested edges may cut target notation; expand the crop and keep neighboring ink when needed."
+      ]
+    },
+    "fieldDifferences": [
+      {
+        "path": "/bottomFraction",
+        "before": 0.577652354543948,
+        "after": 0.5800648997791712
+      }
+    ],
+    "beforePDFBounds": [
+      0.0,
+      397.53968636911947,
+      543.6,
+      433.93244873341376
+    ],
+    "afterPDFBounds": [
+      0.0,
+      397.53968636911947,
+      543.6,
+      435.7447527141134
+    ],
+    "geometryChanged": true,
+    "warningChanges": false,
+    "assignmentChanged": false,
+    "candidateContainsPreviousCrop": true,
+    "previousContainsCandidateCrop": false,
+    "beforeWholeNeighbors": [],
+    "afterWholeNeighbors": [],
+    "edgeChangesPT": [
+      0.0,
+      0.0,
+      0.0,
+      1.812303980699653
+    ],
+    "largestContractionPT": 0,
+    "newWholeNeighbors": [],
+    "removedWholeNeighbors": [],
+    "context": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/p24-s3-violin.png",
+    "contextSHA256": "d72508526bd030e34eb9ed2c2a8b5a871d74578bb56552c714e56f7d8fc6f747",
+    "sourceRaster": ".build/local-line-ownership-corpus-2026-10-03/source-review/medium-skewed-01-mozart-piano-quartet-k478-imslp-86903/source-page-24.png",
+    "sourceRasterSHA256": "9356d570dc73d68864b35fc034bae35891bc079c20fa5789b3b368164811ccc0"
+  }
+]

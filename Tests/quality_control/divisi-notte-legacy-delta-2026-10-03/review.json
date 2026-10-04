@@ -1,0 +1,224 @@
+{
+  "scope": "Read-only source, frozen result and code audit; no new matcher/native run. Original page render directly viewed before accepting the derived part groups.",
+  "caseID": "notte-changed-profile-count",
+  "oldExpectation": "noSuggestions",
+  "oldExpectationStillFails": true,
+  "historicalSuite": {
+    "total": 32,
+    "oldExpectationsPassing": 31,
+    "oldExpectationsFailing": 1,
+    "fullSemanticsIdenticalExcludingTiming": 30,
+    "additionalDiagnosticOnlyDelta": "mendelssohn-p2-subgroup-1,2",
+    "assignmentOutcomesUnchanged": 31
+  },
+  "verdict": "Intentional, source-correct new local-count behavior for these three proposals; not a 32/32 old-suite pass.",
+  "countObservationLimit": "The unchanged historical harness does not serialize Suggestion.staffCounts. Counts here are derived from the exact linked reviewed seed, consistent with frozen matcher construction and UI forwarding code. Separate 49 native controls verify actual count-field forwarding. This audit does not claim new runtime serialization.",
+  "sourceMaxLinePositionErrorPt": 0.15917014925366857,
+  "sourceLinePositionToleranceOneNativePixelPt": 0.33067164179104475,
+  "rows": [
+    {
+      "physicalPage": 1,
+      "systemNumber": 2,
+      "candidateIDs": [
+        2,
+        3
+      ],
+      "staffCountsDerivedFromLinkedReviewedSeed": {
+        "piano": 2
+      },
+      "derivedPartStaffIDs": {
+        "piano": [
+          2,
+          3
+        ]
+      },
+      "independentGoldenPartStaffIDs": {
+        "piano": [
+          2,
+          3
+        ]
+      },
+      "sourceRanksOneBased": {
+        "piano": [
+          3,
+          4
+        ]
+      },
+      "correctSourceOwnership": true,
+      "requiresOwnMeasureCount": true,
+      "barCountAndStartRemainNil": true,
+      "frozenGoldenSpanForSourceIdentificationOnly": {
+        "start": 5,
+        "count": 5
+      }
+    },
+    {
+      "physicalPage": 1,
+      "systemNumber": 4,
+      "candidateIDs": [
+        7,
+        8,
+        9
+      ],
+      "staffCountsDerivedFromLinkedReviewedSeed": {
+        "voice": 1,
+        "piano": 2
+      },
+      "derivedPartStaffIDs": {
+        "voice": [
+          7
+        ],
+        "piano": [
+          8,
+          9
+        ]
+      },
+      "independentGoldenPartStaffIDs": {
+        "piano": [
+          8,
+          9
+        ],
+        "voice": [
+          7
+        ]
+      },
+      "sourceRanksOneBased": {
+        "piano": [
+          9,
+          10
+        ],
+        "voice": [
+          8
+        ]
+      },
+      "correctSourceOwnership": true,
+      "requiresOwnMeasureCount": false,
+      "barCountAndStartRemainNil": true,
+      "frozenGoldenSpanForSourceIdentificationOnly": {
+        "start": 15,
+        "count": 5
+      }
+    },
+    {
+      "physicalPage": 1,
+      "systemNumber": 5,
+      "candidateIDs": [
+        10,
+        11,
+        12
+      ],
+      "staffCountsDerivedFromLinkedReviewedSeed": {
+        "voice": 1,
+        "piano": 2
+      },
+      "derivedPartStaffIDs": {
+        "voice": [
+          10
+        ],
+        "piano": [
+          11,
+          12
+        ]
+      },
+      "independentGoldenPartStaffIDs": {
+        "piano": [
+          11,
+          12
+        ],
+        "voice": [
+          10
+        ]
+      },
+      "sourceRanksOneBased": {
+        "piano": [
+          12,
+          13
+        ],
+        "voice": [
+          11
+        ]
+      },
+      "correctSourceOwnership": true,
+      "requiresOwnMeasureCount": false,
+      "barCountAndStartRemainNil": true,
+      "frozenGoldenSpanForSourceIdentificationOnly": {
+        "start": 20,
+        "count": 4
+      }
+    }
+  ],
+  "diagnosticOnlyChange": {
+    "before": [
+      {
+        "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+        "pageIndex": -1
+      }
+    ],
+    "after": [
+      {
+        "message": "Reviewed system 1 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+        "pageIndex": 1
+      }
+    ],
+    "bothAbstain": true
+  },
+  "limits": [
+    "Only Notte physical page 1 source ownership reviewed here.",
+    "No new crop or output layout review; proposals still require user acceptance.",
+    "Piano-only target retains absent Voice and requires its own count; no silence duration is copied."
+  ],
+  "bindings": [
+    {
+      "path": "Tests/quality_control/system-template-independent-2026-10-03/challenge-inputs.json",
+      "sha256": "6600e6b304757b0580fd773bbd87b71f3791376e53a45d0ca5fe9cae27c524b4"
+    },
+    {
+      "path": "Tests/quality_control/system-template-independent-2026-10-03/source-truth.json",
+      "sha256": "4e917f3e4291124ae0f7d8c78e8c5560930d07d1269686ba4ab51d5042af8d98"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/challenges/results.json",
+      "sha256": "45ce892715081a54631f80bb106b74a1c6dca48dfebfed49d057c87448567b11"
+    },
+    {
+      "path": ".build/hear-my-prayer-matcher-2026-10-03/candidate-challenge-results.json",
+      "sha256": "b31469897d4504389c9cb4cbe2a8548391995a07ef1a1e3aa15712b21e050972"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/challenges/protocol-before-results.json",
+      "sha256": "b53ae5535d6934eab39e4cbf0e12dd4deefb96ee1775efada020d16a6cbcc9b2"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/challenges/results-assessment.json",
+      "sha256": "2c33034fd84d8779df23c38fa862f22e7643d9a9729c36de80fbc81ef09dc9e1"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/challenges/prior-release-comparison.json",
+      "sha256": "5d10af29d859afa3662afcc3d7b0eeaf499369208b332d078bc23dc1e7a2fa58"
+    },
+    {
+      "path": "sample_scores/normal/03_piano_vocal/mozart_notte_e_giorno_don_giovanni_score.pdf",
+      "sha256": "ccf943f1ac084f087e3fe958f318cc0da57885c11d9eab7dced0f4934d60da77"
+    },
+    {
+      "path": ".build/variable-profile-audit-2026-10-03/normal-mozart-notte-e-giorno-don-giovanni-score/page-1.png",
+      "sha256": "39a5215a85c8ea87ec8986712859e83c1c579ac3eaed609371898131028f83cf"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/source-hashes.json",
+      "sha256": "8c40bcba7108eb04f991ad5fb88e7d14e8e11005279ce6666bab74f40d84e8e1"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift",
+      "sha256": "6abb036e0b6c1e3678d78cb6702ad2f558ddb4b8b8fd5436e350186f139a0351"
+    },
+    {
+      "path": ".build/divisi-assignment-release-v2-2026-10-03/Partsmith/Features/Project/ScoreSystemTemplatePanel.swift",
+      "sha256": "6729cfcca027c7de7903b645ab2eeae088ca9a0278e9be8b896c6b8009eaa717"
+    },
+    {
+      "path": "Tests/quality_control/system-staff-count-independent-2026-10-03/manifest.json",
+      "sha256": "c2fb4e032b0086aeacd6fdeaf92fb90896d77145bb9b3d2c5a696989f439a68f"
+    }
+  ]
+}

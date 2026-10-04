@@ -1,0 +1,219 @@
+{
+  "scope": "Only Viola re-exported. Three other PDFs byte-identical; all16 Viola pages compared at the same1.7\u00d7 raster; only changed pages retained for visual review.",
+  "sourceSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "baselineManifestSHA256": "32aa382203127e34fc631283e9e3e4939d0bac618ab41055775676771f512bb7",
+  "finalManifestSHA256": "b640714f0d8dcc9901883a28498fc712ba4d7a80cde453d555ea097c44ee2ba4",
+  "all604BandIdentitiesAndOrderExact": true,
+  "all9RectificationsExact": true,
+  "all42SourceCopiesExact": true,
+  "all4PartSettingsExact": true,
+  "sourceCropChanges": [
+    {
+      "id": "p8-s2-viola",
+      "before": [
+        0,
+        227.6901081916538,
+        427,
+        280.53013910355486
+      ],
+      "after": [
+        0,
+        227.6901081916538,
+        427,
+        284
+      ]
+    }
+  ],
+  "projectBandFieldChanges": [
+    {
+      "id": "4234AE04-F8EB-4446-9095-1A5961992AA6",
+      "field": "bottomFraction",
+      "before": 0.4568894773673532,
+      "after": 0.46254071661237783
+    }
+  ],
+  "placementChanges": [
+    {
+      "id": "p8-s2-viola",
+      "oldPage": 3,
+      "newPage": 3,
+      "before": [
+        48,
+        378.38177897629606,
+        564,
+        442.23530579255123
+      ],
+      "after": [
+        48,
+        378.3817789762961,
+        564,
+        446.42839296483623
+      ]
+    },
+    {
+      "id": "p8-s3-viola",
+      "oldPage": 3,
+      "newPage": 3,
+      "before": [
+        48,
+        447.9582060788681,
+        564,
+        506.07775622745515
+      ],
+      "after": [
+        48,
+        452.1512932511531,
+        564,
+        510.27084339974016
+      ]
+    },
+    {
+      "id": "p8-s4-viola",
+      "oldPage": 3,
+      "newPage": 3,
+      "before": [
+        48,
+        511.800656513772,
+        564,
+        570.7803031625092
+      ],
+      "after": [
+        48,
+        515.9937436860571,
+        564,
+        574.9733903347942
+      ]
+    },
+    {
+      "id": "p9-s1-viola",
+      "oldPage": 3,
+      "newPage": 3,
+      "before": [
+        48,
+        576.5032034488261,
+        564,
+        631.1823675968122
+      ],
+      "after": [
+        48,
+        580.6962906211111,
+        564,
+        635.3754547690972
+      ]
+    },
+    {
+      "id": "p9-s2-viola",
+      "oldPage": 3,
+      "newPage": 3,
+      "before": [
+        48,
+        636.9052678831291,
+        564,
+        697.3184086987834
+      ],
+      "after": [
+        48,
+        641.0983550554141,
+        564,
+        701.5114958710684
+      ]
+    }
+  ],
+  "violaPages": [
+    {
+      "page": 1,
+      "pixelIdentical": true
+    },
+    {
+      "page": 2,
+      "pixelIdentical": true
+    },
+    {
+      "page": 3,
+      "pixelIdentical": false,
+      "before": {
+        "path": ".build/brahms93521-viola-in-tempo-2026-10-03/changed-pages/before-page-03.png",
+        "sha256": "dcebc493f19105b4376be116cacad24e5f3f36268d88dcee604db2e7445a03c1"
+      },
+      "after": {
+        "path": ".build/brahms93521-viola-in-tempo-2026-10-03/changed-pages/after-page-03.png",
+        "sha256": "35f9776dd772950b5a9c29b6705ab263b5a7ffbcf9d4cbf62398890ed95e399e"
+      }
+    },
+    {
+      "page": 4,
+      "pixelIdentical": true
+    },
+    {
+      "page": 5,
+      "pixelIdentical": true
+    },
+    {
+      "page": 6,
+      "pixelIdentical": true
+    },
+    {
+      "page": 7,
+      "pixelIdentical": true
+    },
+    {
+      "page": 8,
+      "pixelIdentical": true
+    },
+    {
+      "page": 9,
+      "pixelIdentical": true
+    },
+    {
+      "page": 10,
+      "pixelIdentical": true
+    },
+    {
+      "page": 11,
+      "pixelIdentical": true
+    },
+    {
+      "page": 12,
+      "pixelIdentical": true
+    },
+    {
+      "page": 13,
+      "pixelIdentical": true
+    },
+    {
+      "page": 14,
+      "pixelIdentical": true
+    },
+    {
+      "page": 15,
+      "pixelIdentical": true
+    },
+    {
+      "page": 16,
+      "pixelIdentical": true
+    }
+  ],
+  "changedViolaPages": [
+    3
+  ],
+  "unchangedViolaPages": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "targetOutputPage": 3,
+  "sourceGuardContained": true,
+  "extraNeighborInk": "Expansion intersects original Cello upper staff-line/clef tops. It cannot include a whole Cello staff; source review checks actual fragments. Existing broader crop limitations remain."
+}

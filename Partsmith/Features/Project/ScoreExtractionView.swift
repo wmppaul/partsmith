@@ -18,6 +18,7 @@ struct ScoreExtractionView: View {
     @State private var previewZoom = 1.0
     @State private var selectionAnchor: Int?
     @State private var printedPartIDs = Set<String>()
+    @State private var systemStaffCounts: [String: Int] = [:]
     @State private var systemFirstBar = ""
     @State private var systemBarCount = ""
     @State private var assignmentStatus: String?
@@ -706,7 +707,7 @@ struct ScoreExtractionView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Assign a System").font(.headline)
-                Text("Select every printed staff in one system. Check the instruments shown, in score order. The same choices stay ready for the next system.")
+                Text("Select every printed staff in one system. Check the instruments shown, in score order. Adjust the staff counts when a section divides. These choices stay ready for the next system.")
                     .font(.caption).foregroundStyle(.secondary)
                 HStack {
                     Stepper("System \(correctionSystem)", value: $correctionSystem, in: 1...32)
@@ -719,15 +720,18 @@ struct ScoreExtractionView: View {
                 }.font(.caption)
                 Text("Instruments printed in this system").font(.subheadline.bold())
                 ForEach(profile.parts) { part in
-                    Toggle(isOn: Binding(get: { printedPartIDs.contains(part.id) }, set: { included in
-                        if included { printedPartIDs.insert(part.id) } else { printedPartIDs.remove(part.id) }
-                    })) {
-                        HStack {
-                            Text(part.name)
-                            Spacer()
-                            Text("\(part.staffCount)").foregroundStyle(.secondary).font(.caption)
-                        }
-                    }.toggleStyle(.checkbox)
+                    HStack {
+                        Toggle(part.name, isOn: Binding(get: { printedPartIDs.contains(part.id) }, set: { included in
+                            if included { printedPartIDs.insert(part.id) } else { printedPartIDs.remove(part.id) }
+                        })).toggleStyle(.checkbox)
+                        Spacer()
+                        let count = systemStaffCounts[part.id] ?? part.staffCount
+                        Stepper("\(count) \(count == 1 ? "staff" : "staves")", value: Binding(
+                            get: { systemStaffCounts[part.id] ?? part.staffCount },
+                            set: { systemStaffCounts[part.id] = $0 }), in: 1...4)
+                            .fixedSize().disabled(!printedPartIDs.contains(part.id))
+                            .accessibilityLabel("Printed staves for \(part.name) in this system")
+                    }
                 }
                 HStack {
                     Button("All") { printedPartIDs = Set(profile.parts.map(\.id)) }
@@ -804,7 +808,7 @@ struct ScoreExtractionView: View {
     }
 
     private var expectedSelectedStaffCount: Int {
-        profile.parts.filter { printedPartIDs.contains($0.id) }.reduce(0) { $0 + $1.staffCount }
+        profile.parts.filter { printedPartIDs.contains($0.id) }.reduce(0) { $0 + (systemStaffCounts[$1.id] ?? $1.staffCount) }
     }
 
     private func revealTemplateSuggestion(_ suggestion: ScoreSystemTemplateMatcher.Suggestion) {
@@ -822,6 +826,7 @@ struct ScoreExtractionView: View {
         templateFocusID = UUID()
         selectedStaves = Set(suggestion.candidateIDs)
         printedPartIDs = suggestion.presentPartIDs
+        systemStaffCounts = suggestion.staffCounts
         correctionSystem = suggestion.systemIndex + 1
         systemFirstBar = ""
         systemBarCount = ""
@@ -834,7 +839,14 @@ struct ScoreExtractionView: View {
         let correction = pageOverride(review)
         guard let system = correction.systems.first(where: { $0.systemIndex == correctionSystem - 1 }) else { return }
         selectedStaves = Set(system.bands.flatMap { $0.candidateIDs ?? [] })
-        printedPartIDs = Set(system.bands.map(\.partID))
+        let music = system.bands.filter { ($0.kind ?? "music") == "music" }
+        printedPartIDs = Set(music.map(\.partID))
+        systemStaffCounts = [:]
+        for band in music {
+            if let count = band.candidateIDs?.count, (1...4).contains(count) {
+                systemStaffCounts[band.partID] = count
+            }
+        }
         systemFirstBar = system.startBarNumber.map(String.init) ?? ""
         systemBarCount = system.barCount.map(String.init) ?? ""
         selectionAnchor = nil
@@ -854,7 +866,8 @@ struct ScoreExtractionView: View {
             let correction = try ScoreSystemAssignment.assign(page: analysis, profile: profile,
                 pagePlan: currentPlan, existingOverride: value.overrides.first(where: { $0.pageIndex == selectedPage }),
                 systemIndex: correctionSystem - 1, candidateIDs: selectedStaves.sorted(), presentPartIDs: printedPartIDs,
-                startBarNumber: Int(firstText), barCount: Int(countText))
+                startBarNumber: Int(firstText), barCount: Int(countText),
+                staffCounts: systemStaffCounts.filter { printedPartIDs.contains($0.key) })
             value.overrides.removeAll { $0.pageIndex == selectedPage }
             value.overrides.append(correction)
             value.replan()
@@ -1171,6 +1184,7 @@ struct ScoreExtractionView: View {
                              copySharedDirections: copyDirections && profile.requiresSystemAssignment != true) { result in
             guard let result else { errorMessage = "The source or rectification changed. Run Auto again."; return }
             review = result
+            systemStaffCounts = [:]
             if profile.requiresSystemAssignment == true {
                 assigningSystems = true
                 previewFitsWidth = true

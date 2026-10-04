@@ -1,0 +1,43 @@
+{
+  "status": "published",
+  "change": "Per-system staff counts for divided sections, with exact grouping in reused layouts and physical source-order validation.",
+  "packageSHA256": "db824e17bcb11f909110273a8dba68f4fd1693bf7f517b72a182fdad3ac2eba0",
+  "executableSHA256": "2ce342abad62fcf31af67d089839a5808c26d01fcbd58689e3d877460e9422e6",
+  "changedApplicationFiles": [
+    "Partsmith/Core/Detection/ScoreExtractionPlanner.swift",
+    "Partsmith/Core/Detection/ScoreSystemAssignmentBatch.swift",
+    "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift",
+    "Partsmith/Features/Project/ScoreExtractionView.swift",
+    "Partsmith/Features/Project/ScoreSystemTemplatePanel.swift"
+  ],
+  "validation": {
+    "plannerChecks": 111,
+    "batchChecks": 46,
+    "independentChecks": 49,
+    "uiStateChecks": 18,
+    "historicalMatcherCases": 32,
+    "historicalExpectationsSatisfied": 31,
+    "intentionalExpectationChange": "A reviewed two-staff piano layout remains valid when the global default is three.",
+    "assignmentOutcomesUnchanged": 31,
+    "entireSerializedResultsUnchanged": 30,
+    "otherDifference": "One still-rejected incomplete Mendelssohn subgroup has a more specific diagnostic."
+  },
+  "independentEvidence": {
+    "Tests/quality_control/system-staff-count-independent-2026-10-03/manifest.json": "c2fb4e032b0086aeacd6fdeaf92fb90896d77145bb9b3d2c5a696989f439a68f",
+    "Tests/quality_control/divisi-ui-independent-2026-10-03/manifest.json": "7fa93b5ce6ed666c069e754dc26ac44c6325f71500112c086d570ea7bf9be36e",
+    "Tests/quality_control/divisi-notte-legacy-delta-2026-10-03/manifest.json": "a985f1b12a59665b0c6b04306808c859a0299aafe93ebe96c1a8ffb2ac019d4c"
+  },
+  "limits": [
+    "Reviewed grouping does not identify unseen instruments or infer bar counts.",
+    "The original numeric-ID validation failures remain in the independent evidence.",
+    "UI state tests do not claim live window interaction.",
+    "Production crop detection is unchanged; ownership experiments stay private."
+  ],
+  "runningAppOrUserDocumentModified": false,
+  "artifact": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "artifactBytes": 3804537,
+  "publishedAtUTC": "2026-10-04T02:59:18.794705+00:00",
+  "previousArtifactSHA256": "7b3e5344a340be05973b465453c7c89b35f4a04d1f76b6456ed26f8495fc57ff",
+  "previousArtifactBackup": ".build/divisi-assignment-release-v2-2026-10-03/previous-public-7b3e5344a340be05973b465453c7c89b35f4a04d1f76b6456ed26f8495fc57ff.zip",
+  "publication": "Verified atomic replacement of the download ZIP; running app and user documents untouched."
+}

@@ -1,0 +1,202 @@
+{
+  "checks" : 49,
+  "failures" : 0,
+  "results" : [
+    {
+      "name" : "Original fixture has exactly nine independently detected staves",
+      "passed" : true
+    },
+    {
+      "name" : "Default grouping uses physical order, not numeric candidate IDs",
+      "passed" : true
+    },
+    {
+      "name" : "Explicit global defaults are exactly equivalent",
+      "passed" : true
+    },
+    {
+      "name" : "Partial counts keep other defaults and preserve existing crop\/copies\/break",
+      "passed" : true
+    },
+    {
+      "name" : "Local two-plus-one groups exact original staves",
+      "passed" : true
+    },
+    {
+      "name" : "Regrouped ownership cannot inherit old one-staff crop or source list",
+      "passed" : true
+    },
+    {
+      "name" : "Assigning a different count in another system preserves edited seed exactly",
+      "passed" : true
+    },
+    {
+      "name" : "Saved existing override schema preserves per-system grouping",
+      "passed" : true
+    },
+    {
+      "name" : "Batch and crop planner cover all variable-count source systems",
+      "passed" : true
+    },
+    {
+      "name" : "Batch carries local count into planned multi-staff band",
+      "passed" : true
+    },
+    {
+      "name" : "Local count does not mutate profile, detector evidence or source",
+      "passed" : true
+    },
+    {
+      "name" : "Batch preserves old manually reviewed source crop",
+      "passed" : true
+    },
+    {
+      "name" : "Stale result cannot replace an already applied local grouping",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"soprano\": 0]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"soprano\": 0]",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"soprano\": 5]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"soprano\": 5]",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"soprano\": -9223372036854775808]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"soprano\": -9223372036854775808]",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"soprano\": 9223372036854775807]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"soprano\": 9223372036854775807]",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"absent\": 1]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"absent\": 1]",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"soprano\": 2]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"soprano\": 2]",
+      "passed" : true
+    },
+    {
+      "name" : "Late invalid local count rejects atomic batch: [\"bass\": 1, \"soprano\": 4]",
+      "passed" : true
+    },
+    {
+      "name" : "Invalid batch leaves caller review empty: [\"bass\": 1, \"soprano\": 4]",
+      "passed" : true
+    },
+    {
+      "name" : "Cancellation after a local assignment prevents result publication",
+      "passed" : true
+    },
+    {
+      "name" : "Cancellation leaves caller unchanged",
+      "passed" : true
+    },
+    {
+      "name" : "Same roster with one-plus-two and two-plus-one yields two target alternatives",
+      "passed" : true
+    },
+    {
+      "name" : "Identical clefs cannot auto-select between distinct count groupings",
+      "passed" : true
+    },
+    {
+      "name" : "Every ambiguous suggestion carries the exact count layout",
+      "passed" : true
+    },
+    {
+      "name" : "Suggestions preserve complete physical source grouping without invented timing",
+      "passed" : true
+    },
+    {
+      "name" : "Multiple same-count examples deduplicate into one target layout",
+      "passed" : true
+    },
+    {
+      "name" : "Exact raster match with unambiguous counts remains supported",
+      "passed" : true
+    },
+    {
+      "name" : "Input system order does not change ambiguity, IDs or scores",
+      "passed" : true
+    },
+    {
+      "name" : "Unresolved alternate grouping is not learned as a reviewed template",
+      "passed" : true
+    },
+    {
+      "name" : "More than four staves for one part cannot become a template",
+      "passed" : true
+    },
+    {
+      "name" : "A local grouping cannot reuse one physical staff twice",
+      "passed" : true
+    },
+    {
+      "name" : "Matcher immediate cancellation returns no count choices",
+      "passed" : true
+    },
+    {
+      "name" : "Matcher phase cancellation cannot publish partial count choices",
+      "passed" : true
+    },
+    {
+      "name" : "Local count templates retain omissions but never clone reviewed silent duration",
+      "passed" : true
+    },
+    {
+      "name" : "Explicit target duration, not template nine bars, creates missing-part rest",
+      "passed" : true
+    },
+    {
+      "name" : "Absent part cannot receive a hidden staff-count override",
+      "passed" : true
+    },
+    {
+      "name" : "Zero-count absent layout slots distinguish equal totals with different rosters",
+      "passed" : true
+    },
+    {
+      "name" : "Assignment rejects a physically gapped selection despite valid total count",
+      "passed" : true
+    },
+    {
+      "name" : "Planner rejects physical gaps with all source IDs otherwise accounted",
+      "passed" : true
+    },
+    {
+      "name" : "Planner rejects physically reversed order within a band",
+      "passed" : true
+    },
+    {
+      "name" : "Four-staff local section is accepted at the inclusive limit",
+      "passed" : true
+    }
+  ]
+}

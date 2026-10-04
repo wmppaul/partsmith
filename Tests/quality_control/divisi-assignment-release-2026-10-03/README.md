@@ -1,0 +1,11 @@
+# Per-system staff grouping
+
+Assign a System now has a 1–4 staff count beside each instrument. A Soprano or Bass section can expand from one staff to two without changing its global part definition. Load restores the actual saved grouping; Show and Use Selected Layouts carry the reviewed counts into assignment. Matching retains 1+2 and 2+1 as distinct uncertain choices even when the instrument names and clef shapes are identical. Source assignments remain explicit; missing durations are never copied from an example.
+
+Independent testing found an older inconsistency: assignment used physical staff order, while the crop planner required numerically consecutive staff IDs. The planner now validates consecutive source positions and preserves the original IDs. All 45 original independent controls pass after the fix, plus four additional boundary/rejection controls. The original three failures and source fixture remain recorded. Existing planner checks (111), permanent batch controls (46), and independent UI state checks (18) pass. The latter exercise extracted native method bodies, not live window clicks.
+
+All 32 historical source challenges were replayed without changing their expectations. Thirty-one pass their old expectation. One intentionally changes: a source-reviewed two-staff piano example is now valid even when the setup default is three. Its three proposed source systems pass a [separate independent source audit](../divisi-notte-legacy-delta-2026-10-03/README.md). This is not described as a 32/32 historical pass. Thirty-one assignment outcomes remain unchanged; thirty complete serialized results remain identical because one rejected Mendelssohn subgroup now has a more specific boundary diagnostic.
+
+The universal Mac package is built from 45 frozen inputs and 35 Swift files per architecture. Independent audit verifies both architectures, exact packaged executable bytes, macOS 14.0 minimum and strict ad-hoc signing. The native crop analyzer is unchanged. Private crop candidates are excluded. The existing direct Preview crop handles remain included.
+
+The complete Brahms Motets source map, checked independently on all 18 original pages, contains 45 systems and 292 staves, including 11 divided-section systems. Its complete output review is separate work; these feature tests do not certify that score's notation or pagination.
