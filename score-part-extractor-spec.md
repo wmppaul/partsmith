@@ -1,600 +1,197 @@
-# Score Part Extractor for macOS — Product + Engineering Spec
+# Partsmith — product and engineering specification
 
-## Project codename
-Partsmith
+This describes the current macOS extraction preview as of October 2026. It
+replaces the original manual-MVP proposal. See [README.md](README.md) for the
+getting-started flow and [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md) for current
+limits; neither the feature list nor a successful detection run certifies a
+score's musical completeness.
 
 ## Product goal
-Build a native macOS app that turns a full-score PDF into clean individual part PDFs by selecting, assigning, and relayouting staff regions from the source score.
 
-The app should optimize for:
-- preserving the original engraving
-- fast manual correction when detection is imperfect
-- a macOS-native workflow for large monitors, keyboard shortcuts, drag/resize precision, and multi-window use
+Turn full-score PDFs into readable individual parts while preserving the source
+engraving. Support born-digital scores and scans, run locally without a network
+connection, and make corrections practical on a large score.
 
-## Core product decision
-This is a **geometry-first extraction app**, not a notation-OMR editor.
-
-That means:
-- the primary pipeline copies/clips regions from the source PDF
-- the output stays visually faithful to the original score
-- OCR/OMR is only used as assistive metadata or rescue tooling
-- full music re-engraving is explicitly out of scope for V1
-
-## Users
-- conductors
-- orchestra librarians
-- arrangers and engravers
-- teachers
-- chamber musicians working from public-domain or rehearsal PDFs
-
-## File types
-### Inputs
-- PDF full scores
-- born-digital PDF scores
-- scanned / photocopied PDF scores
-
-### Outputs
-- per-part PDF files
-- project document bundle containing source reference, selections, settings, previews, and export presets
+Partsmith is a geometry-first extraction app. It detects staff geometry and
+copies PDF regions; local text recognition assists instrument setup and shared
+markings. It does not transcribe pitches or rhythms, transpose, re-engrave
+playing music, or export MusicXML. The narrow multi-bar-rest feature generates
+rest notation only for supported or explicitly counted silent passages.
 
 ## Product principles
-1. **Manual-first, auto-assisted**
-   Automation should accelerate setup, not block progress.
-2. **Everything is editable**
-   Any detection result can be nudged, replaced, copied, or deleted.
-3. **Native desktop ergonomics**
-   Toolbar, inspector, keyboard commands, thumbnails, multi-select, undo, drag-drop.
-4. **Stable geometry model**
-   Global defaults, part-level settings, and page/system overrides must be clearly separated.
-5. **Non-destructive**
-   Source PDF remains untouched; the project stores transforms and assignments only.
 
-## Non-goals for V1
-- MusicXML export
-- note-level editing
-- collaborative cloud sync
-- iPad support
-- App Store release requirements
-- automatic part extraction from arbitrarily bad scans with no manual intervention
-
-## Competitive / inspiration takeaways
-### Good ideas to borrow
-- Select parts on the full-score canvas using visible top/bottom crop bands.
-- Maintain a dedicated parts list with color coding.
-- Offer a separate preview/layout stage for each part.
-- Allow per-part settings like scale, title visibility, and staff separation.
-- Support copy/paste of selection outlines across pages with similar layout.
-- Keep both an automatic mode and a manual mode.
-
-### Pitfalls to avoid
-- Hidden navigation between selection mode and preview mode.
-- Weak or absent undo/redo.
-- iPad-style UI compromises on macOS.
-- Over-promising “magic” detection without showing confidence or an easy repair path.
-- Fragile zoom/navigation and poor large-screen behavior.
-- No deskew / rotation correction for scanned pages.
-- Unclear distinction between global settings and part-specific overrides.
-- Freezes during analysis or export.
-
-## UX overview
-## Main window layout
-Three-pane desktop layout:
-
-1. **Left sidebar**
-   - project / pages / parts
-   - page thumbnails
-   - part list with color chips, staff-count badge, export status
-
-2. **Center canvas**
-   - full-score PDF view or part preview
-   - vector overlay layer for boxes, bands, handles, labels, confidence hints
-   - zoom, pan, fit-width, fit-page, rotate, compare-before-after
-
-3. **Right inspector**
-   - context-sensitive settings
-   - document settings
-   - selected page settings
-   - selected part settings
-   - selected band/staff settings
-
-Top toolbar:
-- Import PDF
-- Analyze
-- Auto Detect
-- Manual Band Tool
-- Propagate
-- Preview
-- Export
-- Undo / Redo
-- Search page / part
-- Toggle scan rescue
-
-## Primary workflow
-### Flow A: Clean born-digital PDF
-1. Open PDF.
-2. App analyzes pages and detects staff/system candidates.
-3. User creates parts or imports detected instrument names.
-4. User assigns bands to parts on representative pages.
-5. User propagates template to similar pages.
-6. User reviews each part in preview mode.
-7. User adjusts layout settings per part.
-8. Export selected or all parts to PDF.
-
-### Flow B: Scanned / photocopied PDF
-1. Open PDF.
-2. User toggles Scan Rescue Mode.
-3. App deskews, thresholds, and detects staff candidates.
-4. User corrects page rotation / skew if needed.
-5. User assigns bands to parts.
-6. Remaining flow is identical.
-
-## Interaction model
-### Selection on the score canvas
-Selections are **horizontal bands** spanning left-to-right music content, with adjustable:
-- top crop
-- bottom crop
-- left trim
-- right trim
-- per-page vertical offset
-
-Each band belongs to exactly one part and one source page.
-
-### Recommended band behavior
-- click on a staff center to create a band snapped to the nearest staff group
-- drag top/bottom handles to refine crop
-- option-drag duplicates a band
-- command-click adds/removes source systems from a part
-- shift-select enables batch edits to multiple bands
-- copy current page outline to next page / page range
-- copy one part’s layout to another part when page structure matches
-
-### Preview mode
-Preview mode should show the assembled destination part pages, not the source page.
-
-In preview mode the user can:
-- adjust scale
-- adjust staff separation
-- toggle title block
-- edit title/composer/part name text
-- toggle source page numbers / custom headers
-- choose page size and margins
-- reorder or suppress extracted systems
-- insert manual page breaks
-
-## Settings hierarchy
-### Global project settings
-- output page size (Letter, A4, custom)
-- default margins
-- default scale
-- default inter-system gap
-- source-side trim defaults
-- scan rescue defaults
-- export quality preset
-
-### Per-part settings
-- part name
-- color
-- expected staves per system
-- show title
-- title text
-- composer text
-- header alignment
-- scale override
-- staff separation override
-- margin override
-- page-break strategy
-
-### Per-page override
-- page rotation
-- deskew angle
-- page crop trim
-- layout template id
-
-### Per-band override
-- top/bottom/left/right crop
-- x/y nudges
-- scale override
-- include/exclude in export
-
-## Data model
-### ProjectDocument
-- id
-- projectName
-- createdAt
-- modifiedAt
-- sourcePDFBookmarkData
-- sourcePDFFileHash
-- pageCount
-- projectSettings
-- pages: [PageModel]
-- parts: [PartModel]
-- templates: [LayoutTemplate]
-- exports: [ExportRecord]
-
-### PageModel
-- pageIndex
-- sourceSize
-- rotationDegrees
-- deskewDegrees
-- contentBounds
-- scanModeEnabled
-- rasterCacheKey
-- detectionResult
-- assignments: [BandAssignment]
-
-### DetectionResult
-- systems: [SystemCandidate]
-- instrumentLabelCandidates: [TextLabelCandidate]
-- confidenceSummary
-- detectionMode (vector | raster | rescue)
-
-### SystemCandidate
-- id
-- bounds
-- staffLineGroups
-- estimatedStaffCount
-- confidence
-
-### PartModel
-- id
-- name
-- color
-- expectedStavesPerSystem
-- layoutSettings
-- sourceBandRefs
-- previewCacheKey
-
-### BandAssignment
-- id
-- pageIndex
-- partID
-- systemCandidateID?
-- rect
-- snappedTop
-- snappedBottom
-- leftTrim
-- rightTrim
-- sourceOrderIndex
-- excluded
-
-### LayoutTemplate
-- id
-- name
-- pageRangeRule
-- normalizedBandRects
-- expectedSystemCount
-
-## Architecture
-## Recommended tech stack
-### UI
-- SwiftUI for app shell and inspector UI
-- AppKit interop where needed for precision desktop behavior
-- PDFKit-backed viewer for source PDF rendering/navigation
-- custom overlay layer for editable bands and handles
-
-### Core document handling
-- PDFKit / Quartz for reading, rendering, navigation, and writing PDF-related data
-- CGPDF inspection layer for low-level page metadata and optional content parsing
-
-### Image / scan pipeline
-- Core Image / Accelerate for basic preprocessing where practical
-- optional OpenCV bridge module for deskew, thresholding, morphology, and staff-line detection
-- Vision only for assistive OCR tasks such as instrument labels or bar-number hints, not for full music recognition
-
-### Storage
-- document-based project file bundle
-- JSON metadata + thumbnails/cache subfolders inside bundle
-- autosave snapshots
-
-### Packaging
-- native macOS .app
-- direct distribution first
-- code signing and notarization later
-
-## Module breakdown
-### 1. App Shell
-Owns window lifecycle, menus, commands, settings, recent documents, autosave, crash recovery.
-
-### 2. Project Document Module
-Reads/writes the project bundle and security-scoped reference to source PDF.
-
-### 3. PDF Source Module
-Opens source PDF, renders pages at requested scale, exposes page geometry and searchable text.
-
-### 4. Detection Engine
-Produces page-level system candidates.
-
-Submodes:
-- vector-aware mode for clean PDFs
-- raster-rescue mode for scans/photocopies
-
-### 5. Assignment Engine
-Maps detected systems/bands to parts and supports propagation across pages.
-
-### 6. Layout Engine
-Builds assembled part pages from source bands using target page size, margins, scale, and separation.
-
-### 7. Export Engine
-Writes one PDF per part and optionally a zip bundle.
-
-### 8. OCR Assist Module
-Reads instrument labels and optional text hints for header/title suggestions.
-
-### 9. Cache Engine
-Stores rendered page thumbnails, preview pages, and detection intermediates.
-
-## Detection strategy
-## V1 detection philosophy
-Use the cheapest robust method first.
-
-### Tier 1: Vector-aware heuristics
-For clean PDFs:
-- render page preview at moderate resolution
-- estimate music content bounds
-- detect horizontal line clusters corresponding to staves
-- group staves into systems by vertical spacing and horizontal overlap
-- optionally cross-check with PDF text near left margin for instrument labels
-
-### Tier 2: Scan rescue heuristics
-For scans:
-- grayscale normalize
-- adaptive threshold
-- estimate skew angle from horizontal line response
-- deskew
-- detect staff lines via morphology / projection profile
-- group 5-line staffs into systems
-- estimate left content anchor and staff spacing
-
-### Tier 3: Manual fallback
-When confidence is low:
-- user clicks to define band centers
-- app snaps to nearest candidate lines if possible
-- user can freely override snap
-
-## Propagation model
-The app should support three propagation modes:
-1. **Same-page template propagation**
-   Copy the current page’s band pattern to another page with similar spacing.
-2. **Affine page adaptation**
-   Allow vertical offset + scale correction when the same layout is slightly shifted.
-3. **Manual exceptions**
-   Preserve per-page corrections without breaking the template.
-
-## Layout engine behavior
-The layout engine takes assigned source bands and places them into destination pages.
-
-### Placement responsibilities
-- compute target page size and margins
-- place title block if enabled
-- stack extracted systems vertically
-- apply user scale and staff separation
-- preserve original source aspect ratio within each band
-- allow manual per-band nudge in preview
-- generate page breaks when content overflows
-
-### Important constraint
-V1 should **not** attempt musical reflow. It should only relayout image/vector excerpts as stacked systems.
-
-## Export rules
-- export all parts or selected parts
-- preserve source rendering fidelity as much as possible
-- embed metadata: title, composer, part name, source filename
-- allow export preset: draft / standard / print
-- export into user-selected folder
-
-## Error handling and trust
-### Must-have trust features
-- Undo / Redo across all edit operations
-- Autosave
-- explicit “Revert page” and “Revert part layout”
-- low-confidence warnings for auto detection
-- activity indicator with cancellable background jobs
-- immutable source PDF
-
-### User-facing confidence model
-Each page gets one status badge:
-- Green: high-confidence template match
-- Yellow: review recommended
-- Red: manual attention needed
-
-## Performance requirements
-- open a 200-page PDF without blocking the UI thread
-- render page thumbnails lazily
-- analyze pages in the background with cancellation
-- keep canvas interaction responsive at 60 fps target for common operations
-- cache page rasters and preview outputs
-- incremental export: only re-render modified parts where possible
-
-## Accessibility and desktop polish
-- full keyboard navigation
-- standard macOS menus and shortcuts
-- adjustable sidebar widths
-- high-contrast selection handles
-- reduced-motion-friendly transitions
-- VoiceOver labels for controls where reasonable
-
-## Suggested keyboard shortcuts
-- Cmd+O open PDF/project
-- Cmd+S save project
-- Cmd+Shift+E export
-- Cmd+Z undo
-- Cmd+Shift+Z redo
-- Space toggle preview
-- A auto-detect mode
-- M manual band tool
-- P propagate
-- F fit width
-- 0 fit page
-- ] next page
-- [ previous page
-
-## V1 feature list
-### Must ship
-- open PDF
-- save/open project bundle
-- page thumbnails
-- full-score canvas with editable crop bands
-- part list with colors and names
-- manual assignment workflow
-- template copy/paste across pages
-- per-part preview
-- show title toggle
-- scale control
-- staff separation control
-- export PDFs
-- undo/redo
-- autosave
-- scan rescue basic deskew + threshold + manual correction
-
-### Nice to have for V1.1
-- OCR instrument-name suggestions
-- confidence badges
-- batch propagation across page ranges
-- export quality presets
-- page rotation shortcuts
-- compare source vs preview split mode
-
-### Phase 2
-- instrument-name auto-suggestion using OCR/text
-- bar number overlay workflow
-- rehearsal mark propagation
-- smart grouping by repeated layout archetypes
-- iPad build
-
-### Explicitly deferred
-- full OMR / MusicXML
-- ML-trained band detector
-- cloud sync / multiuser
-
-## Acceptance criteria
-### Manual extraction
-Given a clean quartet score PDF,
-when the user defines 4 parts and selects representative bands,
-then they can export 4 readable part PDFs without leaving the app.
-
-### Template propagation
-Given pages with consistent system geometry,
-when the user copies a page template to a range,
-then all target pages receive aligned bands with only minor review required.
-
-### Preview editing
-Given an extracted violin part,
-when the user changes scale, title visibility, and staff separation,
-then the preview updates live and export matches preview.
-
-### Rescue mode
-Given a slightly skewed scanned page,
-when the user enables Scan Rescue Mode,
-then the app offers deskew and allows reliable manual band selection.
-
-### Recovery
-Given a mistaken delete or drag,
-when the user presses Undo,
-then the project returns to the exact prior state.
-
-## Testing matrix
-### Inputs
-- born-digital chamber score
-- orchestral score with many staves
-- piano-vocal score
-- choir score with systems of varying heights
-- skewed scan
-- photocopy with low contrast
-- PDF with rotated pages
-- password-free but malformed PDF
-
-### Edge cases
-- instrument changes mid-score
-- tacet pages
-- empty pages
-- page turns requiring manual breaks
-- repeated headers consuming vertical space
-- systems that shift slightly page to page
-- two-staff instruments mixed with one-staff instruments
-
-## Suggested project structure
-```text
-Partsmith/
-  App/
-    PartsmithApp.swift
-    Commands/
-    Windows/
-  Features/
-    Project/
-    SourceCanvas/
-    PartPreview/
-    PartsSidebar/
-    Inspector/
-    Export/
-  Core/
-    DocumentModel/
-    PDFSource/
-    Detection/
-    Assignment/
-    Layout/
-    OCRAssist/
-    Caching/
-  Bridges/
-    PDFKitBridge/
-    OpenCVBridge/   # optional
-  Resources/
-  Tests/
-    Unit/
-    Snapshot/
-    Integration/
-```
-
-## Implementation milestones
-### Milestone 1 — Skeleton app
-- document-based macOS app shell
-- open/save project
-- PDF rendering with thumbnails
-- split-view UI shell
-
-### Milestone 2 — Manual extraction MVP
-- create parts
-- draw/edit bands
-- assign to parts
-- preview assembled part pages
-- export PDFs
-- undo/redo
-
-### Milestone 3 — Template propagation
-- copy/paste page outlines
-- page-range propagation
-- part settings inspector
-
-### Milestone 4 — Scan rescue mode
-- threshold + deskew
-- rescue toggles
-- confidence indicators
-
-### Milestone 5 — Polish
-- keyboard shortcuts
-- autosave recovery
-- performance pass
-- onboarding and help overlays
-
-## Notes for Codex
-1. Build the app as a **document-based macOS app**.
-2. Keep extraction **geometry-first**; do not start with OMR.
-3. Prefer a working manual MVP before clever detection.
-4. Separate the app into UI, detection, assignment, layout, and export modules.
-5. Keep all model edits undoable.
-6. Make the source/preview mode switch obvious and keyboard accessible.
-7. Avoid hidden gestures as primary controls.
-8. Treat scan rescue as an explicit mode, not the default.
-9. Use fake/sample PDFs and snapshot tests for layout regressions.
-10. Leave clear extension points for future iPad support.
-
-## First concrete coding task for Codex
-Build a macOS document-based prototype with:
-- a left parts sidebar
-- a center PDF canvas using PDFKit
-- a right inspector
-- editable top/bottom crop bands on the source page
-- a simple preview generator that stacks selected bands into a new page
-- export of one part as PDF
-- full undo/redo for band edits
-
-That is the smallest end-to-end slice that proves the product.
+1. **Start with Auto, keep corrections accessible.** The magic wand is the main
+   entry point. Manual parts and crop drawing remain available.
+2. **Preserve intended notation.** A crop may retain neighboring ink when that
+   is necessary to keep a target note, lyric, slur or direction. Cleaner-looking
+   output does not justify deleting target notation.
+3. **Keep the source immutable.** Projects embed the source PDF and store crop,
+   rectification and layout metadata separately.
+4. **Share score layout by default.** Scale, system gap and side margins stay
+   synchronized; a part can explicitly override them.
+5. **Make changes undoable and visible.** Source and Preview edit the same bands;
+   previews and native exports use the same layout engine.
+
+## Current primary workflow
+
+1. Import a PDF and open **Auto Extract**. Its window can move and resize.
+2. Use **All Pages** or **Selected Pages** with thumbnails and page ranges to
+   define the input. This selection also controls deskew and analysis.
+3. For a scan, optionally run **Deskew & Align Pages** before identifying names
+   or staves. Existing corrections are kept. Once source crops or a header exist,
+   adjust page alignment in the Inspector and recheck affected crops.
+4. Choose **Select Instrument Names on Score**. With a page selection, picking
+   opens the first included page. Click or drag around complete printed labels
+   in top-to-bottom order, including any instrument number. Recognized labels
+   remain highlighted and editable. Separate repeated labels become distinct
+   parts. Use the score's **Done — Back to Auto Extract** control to return.
+   Starting profiles and typed names are alternatives; a piano grand staff uses
+   two staves. Name recognition does not prove the instrument assignment.
+5. Review staff counts and Lyrics options. Leave printed-header detection on to
+   propose source artwork for the first output page. Shared-direction copying
+   is experimental and enabled for new consistent-layout setups; automatic
+   full-bar-rest compression is also offered.
+6. Run **Auto**. Inspect crop proposals, the printed header and uncertain
+   assignments. Readable pages with no detected staves are skipped without an
+   acknowledgement or typed reason; **View Skipped Pages** and **Restore Page**
+   make recovery available. A failed page render is an error, not a blank page.
+7. For changing instrumentation, use **Assign Instruments** on the enlarged
+   score, select each printed system, and identify its actual roster. Verified
+   absent instruments require that system's bar count to receive inserted rests.
+   **Find Similar Systems** reuses reviewed examples but cannot establish a new
+   instrument identity from staff count alone.
+8. Choose **Add Parts**. Adding parts is one undoable transaction; automatic
+   rest compression runs separately and has its own Undo.
+9. Review every part in **Preview**. Select a system and drag its top or bottom
+   handle to refine its crop; the same change appears in Source and export.
+   Restore a compressed source strip before editing its crop. Check the source
+   beyond both edges, not only the visible output.
+10. Adjust shared layout and explicit musical page breaks, save the project,
+    and export the selected part or **Export All**. Compare output pages with
+    the source, including shared directions and rest counts.
+
+## Current interface and editing model
+
+The main window has a parts sidebar, a Source/Preview canvas and a contextual
+Inspector. Source supports PDF navigation, Fit Width/Fit Page, visible crop
+handles, band moving and copying bands to later pages. Manual **New Part** and
+crop drawing provide a fallback. Auto offers its own scrollable input-page
+previews and enlarged assignment workflow.
+
+A source band belongs to one part and source page. Saved geometry includes
+horizontal and vertical crop bounds. Source and Preview expose top/bottom crop
+handles; Preview does not independently reposition music from its source crop.
+Bands can retain exclusions, editorial labels, copied source markings, bar
+numbers and explicit page breaks. Generated rests for omitted staves are saved
+separately from crops because no printed staff exists to restore.
+
+Printed-header selection copies source artwork; typed titles remain available.
+A header proposal can be adjusted on the score or disabled. Existing manual
+header choices are kept unless edited. Shared directions retain source
+rectangles, placement and recipient identity; optional automatic recognition
+must still be checked against the score.
+
+## Settings and pagination
+
+- **Score layout:** output size is Letter or A4. Default margins are 18 pt left
+  and right, 48 pt top and bottom. Scale, system gap and side margins apply to
+  all linked parts.
+- **Part overrides:** **Customize This Part** freezes those three effective
+  settings for the selected part. Turning it off resumes score settings.
+  **Use These Settings for All Parts** promotes the selected values and removes
+  every part's overrides in one undoable change. Titles, color, Balance Page
+  Fill and Use Consistent Scale remain part settings.
+- **Scale:** 0.60–1.40×. The chosen horizontal scale is applied, even beyond the
+  recommended width. **Fits Within Margins** warns when music can reach beyond
+  margins or the physical paper edge. It does not cap the slider's effect.
+  Above 1.00, verified blank source side margins can be removed without changing
+  saved crops. A single indivisible band too tall for the printable page still
+  needs vertical fitting.
+- **System Gap:** 4–200 pt, honored at the selected value even with Balance Page
+  Fill enabled. Larger gaps can add pages; balancing does not silently reduce
+  the chosen spacing.
+- **Alignment:** Use Consistent Scale shares a horizontal source frame within
+  the part, avoiding shifts caused by independently trimming each strip. Source
+  indents remain part of the engraving; selecting instrument names does not
+  create a separate layout indent.
+- **Page turns:** complete strips are stacked and paginated without musical
+  reflow. **Start on New Page** provides a reviewed break. The engine does not
+  infer safe musical turns.
+- **Responsiveness:** layout sliders retain their draft while dragging and
+  commit on release. Preview work runs in the background and superseded work
+  is discarded. Large-score performance remains a test requirement, not a
+  blanket real-time guarantee.
+
+## Architecture and storage
+
+The native app uses Swift/SwiftUI with AppKit, PDFKit, CoreGraphics, CoreImage
+and Apple Vision. It has no Python runtime, cloud backend or AI-service
+requirement. The separate extraction skill offers a portable Python workflow.
+
+| Area | Responsibility |
+| --- | --- |
+| `App` and `Features` | Document windows, guided Auto, Source, Preview, Inspector and export controls |
+| `Core/DocumentModel` | Saved project state, source embedding, undoable transactions, background analysis coordination |
+| `Core/Detection` | Staff evidence, instrument profiles, system assignments, crop context and assistive recognition |
+| `Core/PDFSource` and `Core/Rendering` | Original and rectified source rendering and geometry |
+| `Core/Layout` | Effective shared/part settings, strip placement, headers, rest rows and pagination |
+| `Core/Export` | Native PDF output and preview generation |
+
+A `.partsmithproject` bundle contains `project.json` and the immutable
+`source.pdf`. The JSON holds project settings, parts, bands, instrumentation
+setup and page rectifications. See
+[ProjectModels.swift](Partsmith/Core/DocumentModel/ProjectModels.swift) for the
+implemented schema. Cached work is not a substitute for saved source geometry.
+There is no compatibility commitment for this pre-release format.
+
+## Detection and review boundaries
+
+Staff detection uses skew-aware evidence from multiple horizontal regions and
+supports different staff sizes on one page. Compact crops follow notation with
+context; Lyrics and per-instrument padding refine that context. Explicit deskew
+changes the rendered coordinate space, while skew-aware detection alone does
+not straighten the exported source. Keep original and corrected coordinates
+separate in tests and corrections.
+
+Instrument picking reads user-selected labels locally. Assignment applies the
+reviewed roster; it does not independently understand every staff. Reusable
+layouts compare reviewed source examples. Condensed scores, changing divisions
+and omitted instruments may need manual system assignments and verified counts.
+
+Automatic direction copying currently targets supported tempos, navigation
+instructions, linked symbols and paired first/second endings in consistent
+instrument layouts. Other endings, rehearsal letters and measure numbers still
+need source review. Recognition failure cannot be treated as proof of absence.
+
+Automatic rest compression is limited to eligible complete, single-staff,
+rest-only strips with clear bar boundaries. It retains opening and ending source
+context and leaves uncertain notation unchanged. It is not general rhythmic
+recognition and does not infer the silence of an unassigned instrument.
+
+## Verification and release criteria
+
+- Exercise born-digital, scanned, vocal, grand-staff and changing-roster scores.
+- Check instrument identity, all source systems and intended notation, shared
+  directions, rest counts, neighboring context and final pagination separately.
+- Compare Source and Preview edits, undo/redo, saved-project reopen and export.
+- Cover shared settings, isolated overrides, promotion to all parts, literal
+  scale/gap behavior and source alignment with focused regression tests.
+- Run actual Auto/document/export paths when assessing the app; a detector's
+  staff count alone does not test names, headers, directions or final output.
+- Package a native macOS app and record build/source evidence. Direct download
+  is supported; Developer ID signing and notarization remain release work.
+
+[EXTRACTION_WORKFLOW.md](EXTRACTION_WORKFLOW.md) documents focused commands;
+[Tests/quality_control](Tests/quality_control) holds dated review evidence.
+Historical reports describe their frozen builds, not every subsequent version.
+
+## Deferred or explicitly out of scope
+
+- General OMR, pitch/rhythm editing, transposition and MusicXML export
+- Automatic correctness for arbitrary scans, instrument rosters or page turns
+- Automatic inference of every absent instrument's rest duration
+- Custom page sizes and export-quality preset UI
+- Cloud collaboration, iPad support and App Store distribution
+
+Further work should extend the current Auto-first app, preserving manual repair
+and source fidelity. The original manual-only prototype milestone is complete.

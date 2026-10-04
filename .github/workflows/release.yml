@@ -1,0 +1,52 @@
+name: Publish reviewed Mac release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verify and stage the reviewed app
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python3 tools/prepare_github_release.py "$RELEASE_TAG"
+      - name: Create and publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          notes="docs/releases/$RELEASE_TAG.md"
+          archive="dist/Partsmith-$RELEASE_TAG-macos.zip"
+          flags=()
+          if [[ "$RELEASE_TAG" == *-* ]]; then flags+=(--prerelease); fi
+          if gh release view "$RELEASE_TAG" --json isDraft > /tmp/partsmith-release.json 2>/dev/null; then
+            if [[ "$(jq -r .isDraft /tmp/partsmith-release.json)" != true ]]; then
+              echo "This release is already published; refusing to replace its assets."
+              exit 1
+            fi
+            gh release upload "$RELEASE_TAG" "$archive" "$archive.sha256" --clobber
+            gh release edit "$RELEASE_TAG" --title "Partsmith $RELEASE_TAG" --notes-file "$notes" "${flags[@]}"
+          else
+            gh release create "$RELEASE_TAG" "$archive" "$archive.sha256" \
+              --title "Partsmith $RELEASE_TAG" --notes-file "$notes" \
+              --verify-tag --draft "${flags[@]}"
+          fi
+          gh release edit "$RELEASE_TAG" --draft=false

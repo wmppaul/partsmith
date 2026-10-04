@@ -1,5 +1,7 @@
 # Partsmith macOS builds
 
+The tagged GitHub download is [v0.1.0-alpha.3](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.3), with the Mac ZIP, checksum and release notes. Follow the [Auto Extract getting-started guide](../../README.md#getting-started-with-auto-extract).
+
 Use [Partsmith-extraction-preview-macos.zip](Partsmith-extraction-preview-macos.zip) for the current extraction workflow. Unzip it and open the contained `Partsmith.app`. This is a universal arm64/x86_64 build for macOS 14 or later, with ad hoc signatures and no notarization.
 
 The latest October 4 update synchronizes **Scale**, **System Gap** and **Side Margins** across parts by default. Enable **Customize This Part** for a local override; turn it off to rejoin the score settings. **Use These Settings for All Parts** applies a tuned part’s layout throughout the score and clears these overrides in one undoable action. Older projects retain their appearance: matching layouts become shared, while differing layouts stay local. See the [shared layout release review](../../Tests/quality_control/shared-layout-release-2026-10-04/README.md).

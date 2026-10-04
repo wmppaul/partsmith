@@ -1,51 +1,81 @@
-# Part extraction: complete-score native workflow
+# Part extraction workflow
 
-The current deliverable contains **19 complete parts from five complete scores**, generated through Partsmith's offline analyzer, planner, document transaction, layout engine and PDF exporter. The [reusable extraction skill](skills/score-part-extraction/SKILL.md) documents both the native macOS path and the portable workflow. [All outputs and editable projects](output/pdf/full-score-sets/README.md); [complete download](artifacts/Partsmith-complete-score-parts.zip).
+Partsmith preserves the score's printed notation as editable crops and assembles a PDF for each part. The native macOS workflow runs offline. The [score-part-extraction skill](skills/score-part-extraction/SKILL.md) provides a parallel ChatGPT/Codex workflow with source maps, protected regions and independent output review. They share an editable project format, but their typography and pagination can differ.
 
-The September 20 crop revision removes excessive neighboring staff context from Ave and the Quartet. **These are reviewed outputs, not unattended Auto results:** Ave retains 56 of 64 automatic crop rectangles and uses 8 local corrections; the Quartet retains 159 of 480 and uses 321 explicit corrections. Instrument setup and shared musical directions remain reviewed inputs. The Quartet still needs substantial crop review before Auto alone can be considered robust.
+Use [Getting Started](README.md#getting-started-with-auto-extract) for the short app walkthrough. This page covers review, changing instrumentation, reproducible checks and the status of the example outputs. The [known limitations](KNOWN_LIMITATIONS.md) describe remaining recognition and editing gaps.
 
-| Complete source | Parts | Output pages by part |
-|---|---:|---|
-| Mozart, Ave verum corpus | 8 | One page each: SATB, two violins, viola, combined Basso ed Organo |
-| Mozart, Notte e giorno | 2 | Voice 3; Piano 4 |
-| Brahms, String Quartet No. 3, Op. 67 | 4 | Violin I 13; Violin II 11; Viola 11; Cello 12 |
-| Schumann, Frauenliebe und Leben, all eight songs | 2 | Voice 13; Piano 17 |
-| Brahms, Clarinet Trio, Op. 114, all four movements | 3 | Clarinet in A 16; Cello 16; Piano 32 |
+## Native Auto workflow
 
-The set contains **156 output pages and 1,131 part bands**. All 84 input PDF pages were analyzed; the Trio's blank page and catalog were explicitly excluded. The native detector finds all **1,357 physical music staves**, with zero manual staff-position corrections. These are corpus results, not a guarantee for arbitrary scores. The original state was checkpointed at `6b422ea`, the excerpt workflow at `3aa78d1`, and the broader complete-score generation at `9df1d62` before this refinement.
+1. Import a full-score PDF and choose **Auto Extract**. Its window is movable and resizable, so the source remains accessible.
+2. Set **Pages to extract** using **All Pages**, thumbnails or a range under **Selected Pages**. For a scan, optionally run **Deskew & Align Pages** before selecting names or creating crops. Both deskew and Auto use the selected input pages; existing corrections are kept.
+3. Choose **Select Instrument Names on Score**. Click each printed name, or drag around its full label, in top-to-bottom order within one system. Successful picks stay highlighted. The source bar shows the list and **Done — Back to Auto Extract**, which returns to setup. With an explicit page selection, picking opens the first included page. Use **Add Names from Score** or **More → Replace List from Score** for an existing list. A starting profile or typed list is also available.
+4. Check instrument names, order and staff counts. A piano grand staff uses two staves. Enable **Lyrics** for vocal parts; shared lyrics and additional verses still need source comparison. Separate printed labels remain distinct parts even if recognition gives them the same name. Adjusting a green name box rereads that label rather than adding another part.
+5. Keep **Find the printed title and composer automatically** enabled if wanted, then choose **Auto**. New profiles use **Compact — follow notation**; fixed padding is also available. Auto shows the proposed crops and printed header, along with uncertainty notes. The experimental source-direction option can copy detected tempos, repeats and paired endings; it does not certify complete marking coverage.
+6. Resolve incomplete assignments and inspect any uncertain crops. Pages with no detected staves are skipped automatically; **View Skipped Pages** is optional. Unreadable pages remain errors. **Add Parts** applies a valid plan as one undoable edit, without a review checkbox or typed blank-page reason. Automatic full-bar-rest compression, when enabled, runs afterward as a separate undoable operation.
+7. Select each part in **Preview**. Click a system and drag its blue top or bottom handle to refine the crop; release to apply or press Escape to cancel. Source, the saved project and export use that same crop. Use **Restore Original Crop** before editing a compressed source strip.
+8. Adjust layout, inspect every output page, save the project and use **Export All** in Source mode. **Export PDF** in Preview exports the selected part. Manual parts, crop drawing and the single-page **Find Staves** tool remain available.
 
-## Crop quality and remaining context
+The printed header is a source-image selection, not a newly typeset title. Its review offers **Use Printed Header** and **Adjust on Score**. Existing manual header choices are preserved. Once crops or a header exist, automatic deskew in the setup is disabled; page corrections remain available in the Inspector and require renewed crop review.
 
-| Score | Previously delivered neighboring line centers | Revised | Complete neighboring staves, before → after | Pages, before → after |
-|---|---:|---:|---:|---:|
-| Ave | 227 | 12 | 0 → 0 | 8 → 8 |
-| Quartet | 3,629 | 148 | 589 → 0 | 75 → 47 |
+## Changing instrumentation and silent systems
 
-These counts measure detected line centers inside main crops; they are an approximate context metric, not musical recognition. Every revised band and output page was also reviewed visually against the source. Ave's duplicated lyric rows and broad adjacent staff areas are gone. Some isolated neighboring notes, slur arcs, glyph tips and directions remain where vertical ranges overlap; two publisher copyright lines remain in the organ part. The Quartet retains overlapping fragments and occasional printed catalog-number fragments. No masks were used, and all independently reviewed target regions remain intact.
+Enable **Instrument layout changes between systems** when the score hides silent instruments or changes its printed staff grouping. Auto detects the staves, then **Assign Instruments** provides a larger, zoomable source view. Click the first staff and Shift-click the last staff of one system, check the instruments actually printed, set their staff counts and choose **Assign System**. **Load** revisits an assignment. A temporary divided section can use a different staff count without changing the overall instrument setup.
 
-The final native Auto proposal itself improved to 14 neighboring line centers in Ave and 470 in the Quartet, with 0 and 38 complete extra staves respectively. Ave's 64 protected envelopes fit that proposal; 121 of the Quartet's conservative source envelopes did not. Those envelope failures are not a count of missing notes, but they require review and cannot be passed merely by issuing warnings. The final corrections and their reasons are recorded in the reviewed overrides and [Quartet correction report](Tests/full_scores/quartet-compact-correction-report.json).
+For systems that omit an instrument, enter the system's actual bar count. Partsmith inserts counted rests in the missing part so its timeline does not silently lose measures. These are editable rest records tied to the system's source location, not fabricated crops of another instrument. Their count requires source confirmation; neither the detected staff count nor matching page geometry establishes a tacet duration.
 
-## What the app now does
+After assigning an example of each layout, expand **Reuse Assigned Layouts** and choose **Find Similar Systems**. **Show** highlights each proposal on the source. Review the matching instrument groupings, enter required counts, select the proposals and choose **Use Selected Layouts**. Similarity is an aid to assignment, not proof of instrument identity. Missing or ambiguous systems still need manual assignment.
 
-Initialize printed instrument order and staff counts once; enable Lyrics for vocal staves. New setups use **Compact — follow notation**. Analysis separates staff lines and tilted system barlines before measuring connected ink. Lyric rows and trailing hyphens stay with their vocal staff. Compact defaults follow detected ink with a small margin; explicitly entered padding is minimum context. Existing saved fixed-padding setups retain their behavior.
+For example, Mozart K.488 movement I, source page 17, has piano and strings in bars 144–149, piano alone in bars 150–152, and the full ensemble in bars 153–156. The strings need a three-bar rest for the piano-only system; the winds need six bars followed by three bars. Keep shared changes at their correct measure when preparing those rests. The [Mozart source review](Tests/extraction/mozart-variable-instrumentation-review.md) documents the example.
 
-Run Auto over the whole source and inspect its review. **Adjust crop edges on this page** provides source-point Top/Bottom controls, highlights the selected band, and can restore automatic edges. Edits preserve assignments, labels, source cues and section breaks. The editor rejects edges outside the page or through assigned staff lines, including tilted ends. It cannot recognize every detached note or dynamic: compare the surrounding source before accepting an edit. Adding the reviewed parts remains one undoable transaction.
+## Rest compression and layout
 
-Ambiguous connected notation is retained and flagged; detached marks touching another staff may need a local correction. Names, changing instrumentation, shared directions and page-turn timing are not inferred musically. Shared tempo/rehearsal/return glyphs are copied from verified source rectangles; overlapping cue boxes are completed in the main crop when possible to avoid duplicate glyphs. The native app runs without Python, a network connection or an AI service.
+**Count and compress full-bar rests automatically** examines newly added source strips. Existing parts have **Find & Compress Rests**, and individual strips have **Count & Compress This Strip**. The detector works locally in the background and retains printed opening/ending context. Uncertain passages keep their source notation. **Set Count Manually**, **Restore Original Crop** and Undo support reviewed exceptions and recovery.
 
-Layout balances complete systems within movements/songs at a consistent scale, removes source-page breaks and prints page-number footers. It reduces spacing before increasing page count. The new full sets preserve the original engraving and scan resolution; performance page turns have not been tested by players.
+Automatic recognition is limited to complete single-staff, whole-rest strips. Grand staffs, partial-system runs, playing entrances, interior changes and ambiguous neighboring ink can prevent compression. Automatic source-image contexts are not joined across strips because that could discard a signature or direction. Explicit rest joining and joining confirmed omitted-system rests have separate context barriers. The [automatic-rest review](Tests/extraction/automatic-rest-review.md) records positive examples and rejected passages; [complete Brahms examples](output/pdf/automatic-rests/README.md) retain their original source crops.
 
-## Review and verification
+**Scale**, **System Gap** and **Side Margins** use shared score settings by default. Editing one linked part updates the other linked parts and supplies defaults for future parts. **Customize This Part** freezes its current values as a local override; turning it off resumes the shared values. **Use These Settings for All Parts** promotes the selected part's layout and removes those overrides in one undoable step. Page balancing, consistent scale, titles and source crops remain separate settings.
 
-Independent agents reviewed every revised source band and final page. See [Ave final review](Tests/full_scores/ave-compact-final-review.md), [Quartet final review](Tests/full_scores/quartet-compact-independent-review.md), and the unchanged [small-score](Tests/full_scores/small-score-independent-review.md) and [Trio](Tests/full_scores/trio-independent-review.md) reviews. Previous failed compact generations remain clearly labeled as historical evidence.
+New projects start with 18-point side margins. System Gap ranges from 4 to 200 points and is applied literally, even when balancing is enabled. Page balancing can redistribute complete systems without reducing that chosen gap. Larger gaps can therefore add pages. Explicit page breaks support movements, songs or reviewed turns; automatic musical page-turn planning is not implemented.
 
-All 1,563 protected/source-direction regions in the complete deliverable pass exact 216 dpi comparison: **312,753,822 grayscale pixels**, zero differences after documented reference normalization. Source envelopes were established independently from raw scores; they are not chosen to fit the output. The checker also requires every inventoried shared cue to exist in its main crop or a copied fragment. It records raw full-source differences, uses independently serialized original vector content, and when needed matches a scan's reviewed crop extent or CoreGraphics matrix serialization to avoid sampling-phase false positives. No exported music is used as reference content; no similarity tolerance, smoothing or whiteout is introduced. Negative controls deliberately remove notes/staves/cues, omit required cue metadata and cut a protected edge, and must fail.
+Scale applies the requested enlargement instead of stopping at the available width. Above 1.00, verified blank source-side space is removed when possible. **Fits Within Margins** is a recommendation: exceeding it can put notation into the margins or beyond the paper edge, where Preview and PDF export clip it. With **Use Consistent Scale**, systems within a part share a horizontal source reference, preventing different ink bounds from recentering individual strips. Unusually tall indivisible crops still fit vertically to a page. Inspect the result before export.
 
-Finalization rejects stale maps, manifests or PDF hashes, and compares the editable project's crop rectangles, source pages, labels, cues and section breaks with the delivered plan. Explicit geometry correction counts and band IDs are part of each review record. The three unchanged score sets retain their prior reviewed generation.
+Layout sliders keep a draft during a gesture and commit once on release. Preview builds in the background, cancels superseded work and keeps the previous pages visible. Preview and export use the same layout and drawing code. Large source PDFs can still take time to render.
 
-Native validation passes **147 planner/corpus assertions, 56 document assertions, 5,315 layout assertions and 161 rendering/export checks**. The legacy bridge also passes 362 preservation checks. Debug and universal arm64/x86_64 Release builds succeed. The [macOS preview archive](artifacts/macos/Partsmith-extraction-preview-macos.zip) is an unsigned local build. Exact build hashes and validation logs are recorded in [native-validation.json](Tests/full_scores/native-validation.json). The isolated live UI smoke check could not start: computer use returned no app state before being stopped. No new UI interactions are claimed; the crop editor is covered by the document tests and successful builds.
+## Review standard
 
-## Reproduce a reviewed revised set
+Check every requested part and every final output page against the original score. An independent reviewer should inspect both the uncropped source and the delivered PDF; reviewing only an already cropped image can conceal missing notation.
+
+- **Identity and coverage:** correct instruments, all systems and measures in order, no unexplained gaps or duplicates, and confirmed rest counts for absent instruments.
+- **Target preservation:** complete notes, ledger lines, slurs, articulations, dynamics, lyrics and required shared markings. Check outside each crop boundary as well as inside it. Missing target notation fails even if the crop looks cleaner.
+- **Neighboring notation:** disclose retained fragments and investigate large overlapping staff areas. Keep uncertain neighboring ink when removing it would risk the intended part. Whiteout is appropriate only where source comparison establishes spatial separation.
+- **Readability and layout:** useful staff size, no paper-edge clipping, complete titles and copied markings, sensible page fill, and practical turns. A balanced page is not automatically a playable turn.
+
+The skill records independent source-coordinate protected regions and rejects crop or whiteout changes that violate them. Native editing preserves the crop and mask data but does not enforce those skill guards. Changes to crops, rectification or pagination require renewed review. Copied-direction detection and pixel comparisons support that review; neither establishes complete musical meaning.
+
+Keep source hashes, instrument maps, explicit corrections, output hashes and review findings together. Failed experiments must remain identified as failed; do not weaken a source obligation to make a cleaner crop pass. Rebuilding changes the output generation, so bind the review to the actual files delivered.
+
+## Reviewed examples and current evidence
+
+The [quality-control index](Tests/quality_control/README.md) is the detailed record of complete outputs, unresolved sources and experiments. It distinguishes production changes from private candidates. Examples are assisted and source-reviewed unless explicitly stated otherwise; none establishes unattended extraction for arbitrary scores.
+
+| Example | Scope and review status |
+| --- | --- |
+| [Original five complete score sets](output/pdf/full-score-sets/README.md) | September 20 generation: 19 parts, 156 output pages, 1,131 bands across Ave verum, Notte e giorno, Brahms Quartet, Schumann songs and Brahms Trio. Includes disclosed manual crop corrections. Its historical output counts and rendering checks belong to that generation. |
+| [Brahms Quartet IMSLP93521](output/pdf/auto-qc-2026-10-04/brahms-quartet-93521-reviewed-trims/README.md) | Complete four-part alternative with seven reviewed trims and the prior Viola direction repair; neighboring fragments and difficult turns remain. This is manual cleanup, not a new automatic crop result. |
+| [Mendelssohn: Verleih uns Frieden](output/pdf/auto-qc-2026-10-03/mendelssohn-verleih-uns-frieden-native-draft/README.md) | Five complete parts with confirmed omitted-system rests and reviewed crop corrections. A separate [Bass-turn version](output/pdf/auto-qc-2026-10-03/mendelssohn-verleih-uns-frieden-reviewed-turn/README.md) moves the turn into rests. |
+| [Mendelssohn: Hear My Prayer](output/pdf/auto-qc-2026-10-03/hear-my-prayer-40163-native-draft/README.md) | Six complete parts with assisted changing-layout assignments, source copies and local corrections. Remaining overlap and difficult turns are disclosed. |
+| [Brahms: Two Motets IMSLP101580](output/pdf/auto-qc-2026-10-03/brahms-two-motets-op74-101580-native-draft/README.md) and [IMSLP101579](output/pdf/auto-qc-2026-10-03/brahms-two-motets-op74-101579-native-draft/README.md) | Separate complete five-part drafts and reviews for two distinct scans, including divided staves, shared lyrics and footnotes. |
+| [Brahms: Gesang der Parzen IMSLP109041](output/pdf/auto-qc-2026-10-03/brahms-parzen-109041-reviewed-draft/README.md) | Complete assisted 20-part draft; retained neighboring notation, small print and performance-turn limitations remain. The separate IMSLP109040 scan has a source map but does not yet have a completed extraction/review. |
+
+The [October 4 shared-layout release record](Tests/quality_control/shared-layout-release-2026-10-04/README.md) binds the app package to its sources and independent checks: 7,157 layout assertions, 169 native crop/export checks, 411 scale/export checks, 67 shared-layout checks and 48 native Inspector checks. Its legacy comparison covers 38 rendered pages. These checks verify the scoped behavior; they do not rerun or certify every score in the corpus. The [literal-layout review](Tests/quality_control/literal-layout-release-2026-10-04/README.md) covers actual scale enlargement, exact spacing and the Brahms alignment fix.
+
+The macOS package is universal for Apple Silicon and Intel, targets macOS 14 or later, and is ad hoc signed rather than notarized. The [build notes](artifacts/macos/README.md) identify the current package. Historical review directories and manifests remain unchanged, including their original failures, counts and UI-test limitations.
+
+## Reproduce extraction and focused checks
+
+The native tools require macOS and Xcode. The app itself needs no Python; the portable skill and pixel-review tools use Python 3.10+ with the dependencies in [requirements.txt](skills/score-part-extraction/scripts/requirements.txt). Do not reuse a profile's reviewed rectangles on a different edition or scan.
+
+For the historical Ave source identified by its [review map](Tests/full_scores/ave-tight-map.json):
 
 ```sh
 bash tools/score_extraction_batch.sh inventory --source SCORE.pdf --out WORK/inventory
@@ -57,88 +87,29 @@ bash tools/export_score_plan.sh --inventory WORK/inventory/inventory.json \
   --map Tests/full_scores/ave-tight-map.json --pixels
 ```
 
-Use the matching Ave source PDF for this example. Quartet settings use `quartet-compact-profile.json`, `quartet-compact-overrides.json` and `brahms-quartet-tight-map.json`; exact sources and hashes are in the maps. These overrides include disclosed local corrections and are valid only for their reviewed source. For a new score, initialize its setup and review fresh Auto proposals instead of reusing these rectangles. The other three full-score profiles/overrides remain unchanged.
+This reproduces the reviewed setup through the current engine; it does not promise identical pagination to the historical build. Inspect the new outputs and keep their review separate. For a new score, build a new source map, initialize its instrumentation and review fresh proposals.
 
-The sections below document historical excerpts. The complete-score results above supersede their coverage, detector counts and app limitations.
-
----
-
-# Earlier excerpt workflow and evaluation
-
-The result is two parallel workflows: a reusable [ChatGPT/Codex skill](skills/score-part-extraction/SKILL.md), and an improved native macOS application that runs without internet access. They share an editable project format. The skill is installed in the local personal skills directory as `score-part-extraction`.
-
-The previous project state, including unfinished bar-number work, was preserved in commit `6b422ea` before these changes.
-
-## What was tested
-
-| Score and scope | Extracted part | Result |
-| --- | --- | --- |
-| Mozart, Ave verum corpus, complete four-page score | Soprano; eight systems, bars 1–46 | Reviewed one-page PDF. All lyrics, notes, slurs, opening tempo and source measure numbers retained. |
-| Mozart, Notte e giorno, complete four-page score | Piano; twenty grand staffs, bars 1–73 | Reviewed four-page PDF. Seven precise exclusions remove neighboring lyric fragments while preserving nearby notation. Original source page divisions retained. |
-| Brahms, Quartet No. 3 Op. 67, medium scan, PDF pages 1–3 | Violin I; fourteen systems, bars 1–98 | Preservation review passed after expanding every crop, removing all masks, and freshly checking all target notation. Three-page excerpt, with neighboring ink deliberately retained. The earlier clean-isolation test remains a historical failure. |
-| Schumann, Frauenliebe und Leben Op. 42, lightly skewed scan | Voice; complete first song, six systems | One-page reviewed part. All lyrics, directions, phrasing and final fermata retained. No masks; five strips include small neighboring fragments. |
-| Brahms, Clarinet Trio Op. 114, lightly skewed scan, PDF pages 1–3 | Clarinet in A; eleven systems, bars 1–62 | Three-page reviewed excerpt. All target notes and markings retained; six strips retain neighboring fragments. No masks. |
-
-Reviewed results are [Ave verum](output/pdf/ave) and [Notte e giorno](output/pdf/notte), each containing its PDF, portable recipe, immutable source-embedded project and exact-hash review manifest. Preview PNGs are generated locally but omitted from git. Native re-exports also received visual inspection.
-
-The original failed scan is retained locally under `.build/extraction/brahms-draft`. Its [failed review](Tests/extraction/brahms-failed-review.json) and [passage report](Tests/extraction/scan-test-report.md) remain historical evidence. The new [Brahms preservation output](output/pdf/brahms-preservation), [Schumann song](output/pdf/schumann-preservation), and [Clarinet Trio excerpt](output/pdf/trio-preservation) have fresh independent reviews bound to their exact PDF hashes. No failed result was simply relabeled. The user explicitly accepts neighboring notation and requires all intended-staff notes to remain.
-
-## Preservation follow-up
-
-The acceptance criterion separates **target preservation** from **neighboring notation**. Under `preserve-target`, neighbor fragments can remain; missing target notes, slurs, dynamics or other required marks still fail. Original `clean-isolation` recipes keep their original review criteria for compatibility.
-
-The skill now requires source-coordinate protected target regions for preservation recipes. Builds reject crops that cut through these regions and whiteouts that intersect them. Enlarged context images show source ink outside each crop, avoiding the blind spot of checking only an already-clipped image. A version-2 review records an observation and neighbor-context disclosure for every strip. These guards protect reviewed regions; they do not infer instrument identity or automatically discover all notes. Native project edits do not yet enforce protected regions.
-
-For the difficult quartet, two independent agents compared every source system with the new output, including high-right slurs and ledger notes, full fp/dim. markings, rehearsal boxes A–D, ties, articulations and meter changes. All 14 strips now preserve their target notation with no whiteouts. The broader crops intentionally admit adjacent Violin II notes and preceding-system cello fragments. [Author review](Tests/extraction/brahms-preservation-review-notes.md), [independent review](Tests/extraction/brahms-independent-review.md).
-
-The cleaner scans were tested in parallel: the complete Schumann song and an eleven-system Clarinet Trio excerpt. Automatic staff counts were correct, but mapping and crop edges still received manual review. The trio required widening around low dynamics and high slurs; success does not imply one-click extraction. [Schumann independent review](Tests/extraction/schumann-independent-review.md), [Trio workflow](Tests/extraction/trio-preservation-review.md), [Trio independent review](Tests/extraction/trio-independent-review.md).
-
-All 83 protected regions across these three results match an **unclipped full-source rendering pixel-for-pixel at 216 dpi** after applying the output placement transform. This supplements the musical comparisons; the regions themselves were established visually. [Pixel results](Tests/extraction/preservation-pixel-results.json).
-
-## Iterations that changed the implementation
-
-1. Dense beams initially merged staff-line responses. Local maxima and distributed horizontal evidence improved detection. The Python workflow finds all 64/58/56 expected staves across the two complete digital scores and three scan pages. Instrument identity still requires a source-derived map.
-2. Correct staff counts still produced clipped lyrics, slurs and dynamics. Every final strip was compared against the source; crop edges were corrected individually. The piano's first two systems have no voice staff, so a repeated modulo assignment would have been wrong.
-3. Some vocal lyrics overlap the piano clef's vertical range. Seven spatially precise whiteouts solved the separable cases. High-resolution review found a subpixel residual at coincident crop edges; boundary-only bleed fixed it without expanding interior mask edges.
-4. Independent review found native layout could clip staff ends at enlarged scale and overflow tall bands. Export now respects margins, preserves aspect ratio and rejects invalid/missing source geometry explicitly.
-5. A final code review found non-ASCII text could turn into question marks, and failed multi-part rebuilds could leave altered PDFs beside an old reviewed manifest. The skill now embeds a Unicode font when needed and stages complete generations before publication. Previous generations remain in returned hidden backup directories.
-6. Editorial labels and explicit page breaks now persist into the native project, avoiding silent loss of a supplied tempo/rehearsal cue during local re-export.
-
-The independent piano forward-test narrative is [here](Tests/extraction/forward-test-report.md). It records the historical intermediate limitations as well as the observed musical corrections; the current bridge also preserves labels/page breaks.
-
-## Native app behavior
-
-Import a score, create/select a part, then use **Find Staves**. The offline review sheet shows numbered proposals and line confidence. Select the relevant staves; use two staves per band for a grand staff. Repeated-order selection is available only when the detected count divides into the chosen system size, and still requires checking instrument order. Applying proposals is one undoable edit with duplicate suppression.
-
-Detection uses a background worker with its own PDFKit document, cancellation and stale-result checks. Rectification uses local CoreImage; a failed requested correction cannot silently supply proposals in the wrong coordinate space.
-
-The band inspector provides **Expand Crop** (1–36 source points per side, clamped at page edges, one-step undo), whiteout areas, editorial labels and page breaks. Expansion never moves edges inward; existing whiteouts remain unchanged and need separate review. Preview and export use the same native renderer. The app requires no Python environment, downloaded model, cloud backend or AI service. Different typography can affect pagination relative to the skill, so check native re-exports.
-
-Native detector evaluation covers nineteen source pages and 283 expected staves. Sixteen asserted pages find all 227 expected staves, including both new Schumann pages. The medium quartet yields 16/20/19 raw; applying the existing 0.675-degree correction on page 3 recovers the twentieth staff. These are geometry results, not claims of complete playable extraction. [Exact filenames and findings](Tests/extraction/native-detection-report.md).
-
-## Reproduce the checks
-
-Set up any Python 3.10+ environment with the skill requirements; the local run used `.build/extraction-venv`:
+To examine eligible rests in a saved project without changing that input:
 
 ```sh
-python3 -m venv .build/extraction-venv
-.build/extraction-venv/bin/python -m pip install -r skills/score-part-extraction/scripts/requirements.txt
-.build/extraction-venv/bin/python -m unittest discover -s Tests/extraction -v
-.build/extraction-venv/bin/python Tests/extraction/regression_review.py output/pdf/notte
-bash tools/test_staff_detection.sh --samples
-bash tools/test_layout_export.sh
-bash tools/test_preservation_exports.sh
-.build/extraction-venv/bin/python Tests/extraction/check_preservation.py \
-  output/pdf/brahms-preservation output/pdf/schumann-preservation output/pdf/trio-preservation
+bash tools/compress_score_rests.sh --project PATH/Score.partsmithproject --out NEW_OUTPUT_DIRECTORY
 ```
 
-Python tests cover actual score counts, source immutability, vector preservation, bounds and coverage validation, portable project coordinates, whiteout transforms, review hashes, Unicode text, and failed/reduced-part rebuilds. Seven mask-edge pixel checks detect residual fragments; three critical clef/slur/chord regions must match an unmasked reference exactly.
+The tool writes part PDFs, an editable project and a source-hashed report. Run focused checks according to the changed behavior:
 
-All eighteen Python tests pass, including real regressions for a cropped Brahms slur and masks over fp, dim. and rehearsal D. Fresh rebuilds using the final skill reproduce all five reviewed output pages pixel-for-pixel at 144 dpi; [comparison record](Tests/extraction/final-rebuild-results.json). Independent agents both operated the skill and reviewed the implementation, with original failure repros rerun after fixes.
+| Area | Commands |
+| --- | --- |
+| Staff detection and planning | `bash tools/test_staff_detection.sh --samples`; `bash tools/test_score_planner.sh`; `bash tools/test_crop_quality.sh` |
+| Auto setup and document transactions | `bash tools/test_instrument_names.sh`; `bash tools/test_instrument_pick_flow.sh`; `bash tools/test_rectification_flow.sh`; `bash tools/test_source_headers.sh`; `bash tools/test_score_document.sh` |
+| Changing layouts and absent instruments | `bash tools/test_system_assignment_batch.sh`; `bash tools/test_generated_rests.sh`; `bash tools/test_generated_rest_joins.sh` |
+| Crop editing and preview performance | `bash tools/test_preview_crop.sh`; `bash tools/test_preview_crop_ui.sh`; `bash tools/test_preview_performance.sh` |
+| Shared layout and PDF geometry | `bash tools/test_shared_layout.sh`; `bash tools/test_layout_export.sh`; `bash tools/test_scale_exports.sh` |
+| Rest recognition and retained context | `bash tools/test_rest_detection.sh`; `bash tools/test_rest_auto_flow.sh`; `bash tools/test_rest_context.sh` |
+| Shared source directions | `bash tools/test_shared_direction_app.sh`; `bash tools/test_shared_ending_app.sh`; `bash tools/test_heading_overrides.sh` |
 
-Native harnesses pass 5,295 layout assertions and 148 crop/export assertions, covering layout boundaries, tall crops, invalid geometry, explicit page breaks and labels, whiteout persistence, undo/redo, and real piano project re-export. An additional 362 preservation-bridge checks re-export all three scanned projects through the production native renderer: all 31 bands and 83 protected regions survive, with 3/1/3 output pages, all labels, and explicit breaks retained. The maximum source-coordinate deviation is about 0.000014 point due to PDFKit/PyMuPDF page-size precision (tolerance 0.0001 point). All seven scanned native output pages also passed visual review; [native result record](Tests/extraction/native-preservation-results.json). The detector suite separately checks grouping, undo/redo and stale/cancelled detection. Rendering checks compare all pixels outside native masks with the unmasked native renderer. The final native piano export has four pages of five systems each, with all eighteen supplied labels and seven masks preserved; every page received independent visual inspection. The macOS graphics sandbox can prevent CoreImage from rendering; corrected scan benchmarks were verified with ordinary local graphics access.
+Apple Vision, AppKit and corrected-image checks need ordinary local macOS graphics-service access; restricted environments can fail to render even when compilation succeeds. Source-dependent suites require the matching local sample PDFs. Harness checks do not replace visual review of the final app and exported parts.
 
-Debug and Release builds use:
+Build the native app with:
 
 ```sh
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
@@ -146,88 +117,4 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
   -derivedDataPath .build/DerivedData CODE_SIGNING_ALLOWED=NO build
 ```
 
-The revised Release build and native rendering tests pass. A live UI spot-check of the new Expand Crop control could not run because the Mac was locked; the control’s document operation, edge clamping, persistence, undo and recovered-ink rendering were exercised by the native harness.
-
-The resulting app is `.build/DerivedData/Build/Products/Release/Partsmith.app`; the local preview archive is [Partsmith-extraction-preview-macos.zip](artifacts/macos/Partsmith-extraction-preview-macos.zip). This is a local unsigned preview build, not a published/notarized release.
-
-## Movable magic-wand workflow (September 20, 2026)
-
-After import, the source view promotes **Auto Extract** as the starting action. It opens a document-owned, movable and resizable window, leaving the score interactive. Optional **Deskew & Align Pages** runs before instrument identification, preserves existing corrections, and cancels with the window. Existing bands and source-header coordinates are protected from a late geometry change.
-
-Instrumentation can be entered manually, chosen from presets, or populated by clicking printed names on either the raw or rectified score. Local Apple Vision recognition isolates the clicked label from adjoining staff symbols; names and staff counts remain editable. A new project starts with no assumed quartet profile. Starting a new clicked list replaces entries only after the first successful pick; choosing a preset cancels pending recognition.
-
-Both acknowledgement checkboxes and mandatory typed omission/exclusion reasons have been removed. **Add Parts** applies valid proposals directly as one undoable edit. **Exclude This Page** records an explicit exclusion and advances to the next flagged page. Warnings and genuine missing-assignment checks remain.
-
-Validation: **55 instrument-name checks**, including the actual Brahms labels before and after native deskew; **28 deskew lifecycle checks**, including cancellation ownership, stale geometry, bands and source headers; and **64 whole-score document checks**. The universal Release app builds successfully. Live UI testing moved the window, selected printed labels, ran deskew on the 35-page medium-skewed Brahms scan (7 corrected pages), assigned all 393 bands, excluded pages 34 and 35 with one click each, and added three 131-band parts. Reopening and Escape closing were also checked. An early UI build still included an adjoining OCR character in the clarinet name; the final detector passes exact-name tests on the production raw and corrected rasters. These are workflow checks, not a fresh review of every musical crop.
-
-Run the focused suites with `bash tools/test_instrument_names.sh`, `bash tools/test_rectification_flow.sh`, and `bash tools/test_score_document.sh`. Apple Vision and corrected-image rendering need ordinary local graphics service access.
-
-### On-score name feedback and automatic printed headers
-
-Recognized instrument names now keep a green outline and readable badge beside the printed label while picking. Earlier successful picks remain visible after later clicks, including unsuccessful clicks. Highlights follow the displayed raw or rectified page, clear when its source geometry changes, and never enter exported parts.
-
-The magic-wand setup also offers **Find the printed title and composer automatically**. Offline recognition locates a conservative source-image crop above the first music system. The review shows that crop with **Use Printed Header** and **Adjust on Score**; adding parts applies the untouched automatic header in the same undoable edit. Existing manual selections and typed-header preferences are preserved. Manual selection remains available if no suitable title is found.
-
-Validation for this update: **97 instrument-name checks**, **38 source-header checks**, and **106 document assertions** including the real Ave Verum detection/export path. Header crops received visual inspection on raw and deskewed Brahms Trio, Ave Verum, and Notte e giorno; continuation-page titles were rejected. Document checks cover persistence, per-part export, invalid bounds, existing manual selections, and combined header/parts undo and redo. The universal Release build passes.
-
-Live UI testing clicked all three printed Brahms Trio instrument labels and verified all three highlights and badges together. Auto produced a printed-header preview, assigned 393 bands, and added three 131-band parts after excluding the two non-music pages. The production part preview displayed the copied title and composer above the music. The smoke-test project is saved locally as `.build/Name-Header-UI-Smoke.partsmithproject`. These checks validate the new workflow; they do not constitute a fresh musical review of every crop.
-
-Run the additional checks with `bash tools/test_source_headers.sh` and `bash tools/test_score_document.sh --source-header`.
-
-### Input page selection and optional skipped-page review
-
-Auto Extract now has a scrollable thumbnail picker, **All Pages** / **Selected Pages**, and ranges such as `1-8, 12`. Both deskew and extraction use only the selected source pages. Review navigation, source headers, crop coordinates, and exports retain their original source indices even for nonconsecutive selections. Thumbnails render at small sizes on a separate worker; invalid or empty ranges cannot start processing.
-
-Successfully rendered pages with no detected staves are skipped automatically. **View Skipped Pages** and **Restore Page** allow optional inspection, while the blue **Add Parts** button remains available when the music assignments are complete. An unreadable raster remains an error rather than being silently treated as blank. Selecting only blank pages creates no empty parts.
-
-Validation: **154 document assertions**, including real Ave Verum scoped-header detection and export, plus **37 deskew workflow checks**. Coverage includes sparse indices, selected-page progress, range parsing, empty/invalid input, skip/restore behavior, rendering failures, original-coordinate export, and undo/redo. Independent review checked both core and UI integration. The universal Release build and archive checks pass. Subsequent live testing verified the thumbnail selector, Current Page, and the sparse range `1-3, 25` selecting exactly four pages.
-
-### Numbered instruments, editable name boxes, and responsive preview
-
-Printed ordinals are retained with instrument names, including Arabic and Roman prefixes. Spatially distinct labels remain distinct instruments even when their recognized names match; unique suffixes distinguish them. Clicking a label again or adjusting its green selection box updates the existing row. Manual name edits are preserved. The source canvas supports both clicking and dragging an exact recognition box.
-
-Scale and Preferred System Gap keep a local draft during a slider gesture and commit one undoable edit on release. Preview generation uses immutable snapshots and a separate background PDF document, cancels superseded work, and retains the current page. Unchanged inputs reuse the preview. Export and preview continue to use the same layout and drawing code.
-
-Validation: **205 instrument-name checks** cover actual numbered quartet labels on raw and rectified scans, ordinal clicks, region edits, and separate identical labels. **24 preview checks** cover rapid superseding changes on the 131-band Brahms part, cancellation, reuse, missing-source clearing, exact preview/export pixels on first/middle/last pages, and excluded-strip barriers for rest joining. Enqueuing the measured preview request took under 1 ms. Independent review found no snapshot, cancellation, or renderer isolation defects. Live testing confirmed numbered highlights, separate same-name rows, resizing a recognition box, slider track clicks, accessibility increments, and one-step Undo. The automation's native slider drag produced no callbacks, so live drag behavior remains unverified; standard SwiftUI tracking handles the local draft.
-
-Run `bash tools/test_instrument_names.sh` and `bash tools/test_preview_performance.sh`.
-
-### Explicit multi-bar rests
-
-Select a rest-only band and expand **Multi-bar Rest** in the inspector. Enter 2–999 full bars and choose **Replace with Rest**. The renderer draws a vector five-line staff, H-bar and count, while the project retains the original source coordinates, whiteouts, labels and copied source markings. **Restore Original Crop** and Undo recover the source. Crop, source, instrument-assignment, whiteout, copied-marking or correction changes clear the affected replacement; copying a band to another page never copies its rest count.
-
-**Join with previous rest** is an explicit choice, off by default. Joining stops at ordinary music, excluded strips, annotations, copied markings, explicit page breaks, conflicting known bar numbers, or a total above 999. Individual source bands and their original counts remain in the project. Preview retains excluded strips as ordering barriers, matching Export. The manual tool does not perform recognition or partial-system cutting. Automatic recognition is described below.
-
-The [source audit](Tests/extraction/rest-compression-review.md) identifies real whole-rest bands in Brahms, Mozart and Schumann, plus counterexamples containing a playing entrance, a fermata and changing meters. The [Brahms demonstration](output/pdf/rest-compression-example/README.md) replaces only bars 42–47 with a six-bar rest and retains the following mixed system, including the entrance in bar 51. This is an explicitly labeled one-page excerpt, not a revised full part. New tempo/key/meter changes, repeats, cues and fermatas need their original notation or separately preserved markings.
-
-Validation: **44 rest layout/export checks**, **55 rest document checks**, **24 preview checks**, **5,315 existing layout assertions**, and **161 native crop/export checks** pass. A synthetic 4+5 example renders one nine-bar rest. Live UI testing restored the original Brahms strip, entered six bars, applied the replacement, and verified the result and following music in Preview. Source bytes remain unchanged. The universal Release app builds successfully.
-
-Run `bash tools/test_multibar_rests.sh`, `bash tools/test_rest_document.sh`, and `bash tools/test_preview_performance.sh`.
-
-### Automatic multi-bar rests
-
-The magic-wand setup now defaults to **Count and compress full-bar rests automatically**. After **Add Parts**, the native document worker examines only the newly added strips. **Find & Compress Rests** examines an existing part, and **Count & Compress This Strip** examines one selected strip. All run offline in the background with progress, cancellation and one undoable apply; no count entry is required. Manual replacements take precedence. Source/crop/correction changes reject stale results.
-
-The detector establishes a complete single staff, follows modest skew and curvature for analysis, locates measure boundaries, and requires one hanging whole-bar rest in each measure. It checks opening symbols for possible sounding notes rather than assuming every nearby shape belongs to the signature. Unknown ink, playing entries, interior changes, fermatas and repeats keep the original strip. Cropped-away notation cannot be recovered by this recognizer, so target-preserving crops remain a prerequisite.
-
-Automatic replacements keep the actual printed opening context (clef, key, meter and any opening direction) and ending barline. Copied source markings are allowed only when their entire horizontal extent lies before the retained opening boundary; a copied midrun or ending direction keeps the original notation. The native renderer joins these source fragments with a vector staff, H-bar and counted number. Original crops stay saved, and **Restore Original Crop** recovers them. Automatic contexts are not joined across strips, because doing so could lose an intervening signature or direction.
-
-Grand staffs, partial-system runs and automatic cross-strip joining remain unsupported. Broad crops can contain neighboring ink that prevents recognition: this occurs in the older Schumann project and some default Magic Flute flute crops. A fresh deskewed Brahms page-3 Auto crop also includes the printed page identifier and is kept unchanged; a separately source-reviewed crop retaining the complete staff while excluding that identifier correctly produces six bars through the real document worker. The app preserves those strips instead of guessing. This is a bounded whole-rest recognizer, not general optical music recognition.
-
-The [independent rest corpus](Tests/extraction/automatic-rest-review.md) records source hashes, exact positive counts, negative counterexamples, opening-context landmarks and a whole-score candidate audit. A live magic-wand test on Brahms source page 3 added all three instruments and automatically generated the six-bar clarinet rest; the following playing entrance stayed intact. **Find & Compress Rests**, selected-strip counting, Restore and Undo were exercised in the app.
-
-Validation: **182 detector checks**, **147 document workflow checks**, and **96 source-context checks** pass. All 77,412 sampled retained-context pixels exactly match independently drawn, PDF-roundtripped source controls. The full 43-page Magic Flute test examines 644 automatic crop bands and finds 77 independently reviewed replacements totaling 384 bars. The existing 44 manual-rest checks and 5,315 layout assertions also pass. The universal Release app builds and its ZIP verifies successfully.
-
-The [complete automatically counted Brahms parts](output/pdf/automatic-rests/README.md) contain two replacements: Clarinet bars 42–47 become six bars of rest, and Cello bars 76–82 become seven. All 48 pages were reviewed; all 46 unaffected drawing streams match the previous reviewed export. The final release rerun matches the reviewed pages and replacement contexts.
-
-The same document worker and exporter are available for saved projects:
-
-```sh
-bash tools/compress_score_rests.sh --project PATH/Score.partsmithproject --out NEW_OUTPUT_DIRECTORY
-```
-
-This writes every part PDF, the editable project and a source-hashed `automatic-rest-report.json`; the input stays unchanged. Run `bash tools/test_rest_detection.sh`, `bash tools/test_rest_auto_flow.sh` and `bash tools/test_rest_context.sh` for the detector, document lifecycle and source-fragment fidelity checks. Corrected-page checks require ordinary macOS Core Image access.
-
-## Practical limits
-
-This workflow is robust about preserving source geometry, exposing uncertain results, retaining review evidence and refusing failed output. It is not unattended extraction for arbitrary scores. Staff detection cannot infer all instrument changes, shared markings or tacet duration. Small overlapping fragments can be masked only when the target ink is separately identifiable. Truly interleaved notation, severe scan distortion and musical page-turn planning still need informed review. The original failed clean-isolation test remains as evidence of unsafe cleanup; the new preservation result demonstrates the accepted alternative of retaining neighboring context.
+The output is `.build/DerivedData/Build/Products/Release/Partsmith.app`. Packaging, signature checks and exact source/build evidence are separate release steps; a successful local build is not a notarized release.

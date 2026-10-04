@@ -5,27 +5,46 @@ It shares the analyzer, assignment planner, document transaction and PDF exporte
 with the repository's batch evaluation tools. The portable Python workflow in
 this skill remains available when Partsmith/macOS is unavailable.
 
-## Initialize once, then analyze the whole source
+## Initialize once, then analyze the requested pages
 
-Import the complete PDF and choose **Auto Extract**. Enter the printed instrument
-order and the number of staves per instrument (two for a piano grand staff).
-Read the labels and braces yourself; these names are a reviewed setup, not OCR
-recognition. Partsmith saves the setup with the project. Computer use may perform
-this initialization when the user authorizes the extraction.
+Import the complete PDF and start with the **Auto Extract** magic wand. Its
+window can move and resize. Choose **All Pages**, or define **Selected Pages**
+with the scrollable thumbnails and page-range field. Deskew and Auto use that
+selection. Match the user's requested scope; a page subset is an excerpt unless
+it excludes only verified non-music material.
 
-Choose the preset explicitly for a new setup. A four-staff system is ambiguous:
-a string quartet is four one-staff parts, while a clarinet trio is Clarinet,
-Cello, and two-staff Piano. A correct staff count cannot distinguish them. The
-Inspector's **Auto Rectify Page/All** controls page alignment; **Auto Extract**
-in the toolbar creates parts.
-
-For tilted scans, use **Deskew & Align Pages** in Auto Extract before identifying
-the staves, then inspect the corrected page. Even modest tilt can make a detached
+For tilted scans, use **Deskew & Align Pages** before selecting instrument names
+or identifying staves, then inspect the corrected page. Existing corrections are
+kept. The setup button is available before source crops or a header selection
+exist; subsequent alignment edits are available in the Inspector and require
+rechecking affected geometry. Even modest tilt can make a detached
 dynamic appear to belong to a neighboring staff: Brahms 93521, page 34, system 4,
 Viola loses the lower hook of its forte in the uncorrected Auto crop, while the
 saved corrected-page crop retains it. Alignment helps this case; it does not
 replace checking target notation beyond both crop edges. Keep original and
 corrected coordinates separate when recording corrections or comparing output.
+
+Choose **Select Instrument Names on Score** and click the complete printed labels
+from top to bottom. For **Selected Pages**, picking opens the first included
+page. Local text recognition reads each selection; a drag box and its resize
+handles let you include a detached instrument number or refine the label.
+Recognized labels stay highlighted on the score. Separate identical labels
+become distinct numbered parts; rereading one label updates its own entry.
+Choose **Done — Back to Auto Extract** on the score to return to setup. Use
+**Add Names from Score** or **More → Replace List from Score** to extend or
+restart the list. Typed names and **Use a Starting Profile** remain alternatives.
+Computer use may perform this initialization when the user authorizes extraction.
+
+Review the actual labels, braces, order and number of staves per instrument
+(two for a piano grand staff). OCR is an aid, not verified identity. A four-staff
+system could be four one-staff quartet parts, or Clarinet, Cello and two-staff
+Piano; staff count alone cannot distinguish them. Partsmith saves the setup.
+
+Leave **Find the printed title and composer automatically** enabled to propose
+source header artwork above the first music system. Inspect the proposed header,
+use **Adjust on Score** to refine it, or disable **Use Printed Header** to omit it.
+Existing header choices are retained unless changed. The selected artwork appears
+on the first output page of each part; it is not a transcription of the title.
 
 New setups use **Compact — follow notation** in **Crop Context**. The analyzer
 measures connected ink beyond the staff and preserves a small safety margin.
@@ -49,7 +68,7 @@ solely because it is closer to another staff. Referenced performance footnotes
 also belong with the affected part: the rehearsal Piano has a starred note at
 the bottom of each motet's opening page. Keep the full note and its reference.
 
-Run **Auto** and review every source page. The detector uses skew-aware evidence
+Run **Auto** and review every selected source page. The detector uses skew-aware evidence
 from several horizontal regions, including the left edge, and allows different
 staff sizes on the same page. Detection does not rotate or clean the exported
 source. Exact staff counts alone are insufficient: check the actual five-line
@@ -122,11 +141,21 @@ markings before and after each trim. Page layout updates after the drag, keeping
 the selected system in view. Restore a compressed rest to its original crop
 before resizing it; generated rests do not have a source crop to edit.
 
-Adding the reviewed parts is one undoable transaction. Stale source/rectification
-results and duplicate populated parts are rejected. Inspect Preview and export
-all parts. Balanced pagination minimizes pages by choosing the widest viable gap
-down to four points; it preserves notation scale and crop geometry. Reserve
-explicit breaks for musical sections, not source-page boundaries.
+Choose **Add Parts** to add the setup in one undoable transaction. No review
+acknowledgement checkbox or typed blank-page reason is required. Stale
+source/rectification results and conflicting populated part names still need
+resolution. Inspect Preview and export all requested parts.
+
+**Scale**, **System Gap** and **Side Margins** are score-wide by default.
+**Customize This Part** freezes those settings for one part; turn it off to
+resume the score values. **Use These Settings for All Parts** promotes the
+selected part's values and removes every part override in one Undo. Other
+controls, including titles, **Balance Page Fill** and **Use Consistent Scale**,
+remain local. The defaults use 18 pt side margins. **System Gap** is literal over
+4–200 pt, including when balancing is on; it is not reduced to avoid extra pages.
+Layout sliders commit on release and the preview updates in the background.
+Reserve explicit breaks for musical sections and reviewed turns, not source-page
+boundaries.
 
 For a difficult turn, use the Inspector's **Start on New Page** on a reviewed
 system and compare both pages plus the rest of that part's changed pagination.
@@ -138,14 +167,20 @@ tradeoff is useful. Reopen and reexport the saved project to verify the breaks,
 source crops, copied directions and notation scale persist. This is a manual
 musical review; the layout engine does not infer safe page turns.
 
-In Preview, **Scale** above 1.00 uses verified blank horizontal source margins
-to enlarge notation without changing saved crop bands. Scale at or below 1.00
-keeps its previous geometry. The widest retained strip limits **Use Consistent
-Scale**; the Inspector reports that limit. Reduce per-part **Side Margins** for
-more output width. Analysis retains scan speckles, neighboring ink, copied
-markings and rest context, so a noisy or wide strip may prevent further
-enlargement. Do not erase notation to defeat this limit. Preview and native PDF
-export use the same layout; inspect enlarged output against the original source.
+In Preview, **Scale** is 0.60–1.40× and applies as requested. Above 1.00 it
+uses verified blank horizontal source margins when possible without changing
+saved crop bands. **Use Consistent Scale** shares a horizontal source frame
+within the part, so strips do not shift because their blank edges were trimmed
+independently. Selecting instrument labels does not create an output indent.
+
+The Inspector's **Fits Within Margins** value is an advisory width recommendation,
+not a clamp. Increasing Scale beyond it can place notation in the margins or
+cut it off at the paper edge. Smaller **Side Margins** give the output more width;
+do not erase source notation to make it fit. A single indivisible strip that is
+too tall for a page still needs vertical fitting. Analysis retains scan speckles,
+neighboring ink, copied markings and rest context, which can widen a strip.
+Preview and native PDF export use the same layout. Compare enlarged output with
+the original source and check both ends of every staff before delivery.
 
 ## Shared markings and review
 

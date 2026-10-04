@@ -7,7 +7,7 @@ description: Extract instrument or vocal parts from full-score PDFs as faithful 
 
 Run this as a complete workflow in ChatGPT/Codex. The Partsmith macOS app is an optional local editor, not a dependency. Preserve the source engraving and source PDF. Never claim that staff detection establishes instrument identity or musical completeness.
 
-When a Partsmith checkout and macOS are available, use the [native whole-score Auto workflow](references/native-auto.md) to exercise the same local analyzer and exporter as the app. Initialize the printed instrument order manually if necessary. Save the setup, process the entire requested score, and test every printed part; do not silently substitute an excerpt or one selected instrument for a complete ensemble request.
+When a Partsmith checkout and macOS are available, use the [native whole-score Auto workflow](references/native-auto.md) to exercise the same local analyzer and exporter as the app. Use guided printed-name picking to initialize the instrument order, or enter it manually when needed; verify the recognized names and staff counts. Save the setup, process the entire requested score, and test every printed part; do not silently substitute an excerpt or one selected instrument for a complete ensemble request.
 
 ## Inspect and map
 
@@ -39,7 +39,7 @@ Review separately:
 - **Identity and coverage:** correct instrument, all systems and bars in order, no unexplained gaps/duplicates, explicit excerpt/tacet handling.
 - **Target preservation:** all target notes and markings retained at every edge and under any whiteout; shared markings accounted for. Check source context outside each proposed crop as well as the cropped image itself.
 - **Neighboring notation:** record where neighboring notes, lyrics or partial staff lines remain. Under `preserve-target`, unavoidable fragments are permitted; large areas of unrelated staff are still a crop-quality defect to investigate. Measure and compare neighboring-line retention when iterating on a whole score, and visually explain the remaining exceptions. A preservation check alone is not an overall quality pass. Under `clean-isolation`, residual fragments require further safe work or an unresolved result. Never trade a target note for a cleaner appearance.
-- **Readability and layout:** readable staff size, correct aspect ratio, no title or page-boundary clipping, sensible page turns. Cropping cannot repair an unreadable source or engrave a multimeasure rest.
+- **Readability and layout:** readable staff size, correct aspect ratio, no title or page-boundary clipping, sensible page turns. Cropping cannot repair an unreadable source. The portable crop workflow retains rest notation as printed; the [native workflow](references/native-auto.md#automatic-multi-bar-rests) can generate counted multi-bar rests for supported or explicitly reviewed cases.
 
 Revise the recipe, rebuild, and inspect the changed output and its page-break consequences. Output hashes change on rebuild. For preservation review, record source comparisons for every band using review version 2, separately stating target preservation and the presence of neighboring notation. Then run `verify`. This validates hashes, protected geometry and the recorded checklist, not the musical judgments. Do not convert a failed clean review to a preservation pass without reinspecting all target ink. Missing or uncertain target notation stays draft.
 
