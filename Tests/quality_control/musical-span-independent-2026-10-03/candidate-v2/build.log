@@ -1,0 +1,7 @@
+.build/musical-span-independent-2026-10-03/candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift:54:17: warning: initialization of immutable value 'center' was never used; consider replacing with assignment to '_' or removing it [#no-usage]
+ 52 |             let space = seed.space, left = max(0, seed.left), right = min(width, seed.right)
+ 53 |             guard space >= 3, left < right, Double(right - left) < space * 0.65 else { continue }
+ 54 |             let center = (left + right - 1) / 2
+    |                 `- warning: initialization of immutable value 'center' was never used; consider replacing with assignment to '_' or removing it [#no-usage]
+ 55 |             func occupied(_ y: Int) -> Bool { (left..<right).contains { black($0, y) } }
+ 56 |             guard occupied(seed.y) else { continue }

@@ -1,0 +1,63 @@
+{
+  "bands": 604,
+  "changedBands": [
+    {
+      "band": "p10-s1-violin2",
+      "newWholeNeighbors": [
+        2
+      ],
+      "newY": [
+        56.39644513137557,
+        131.30061823802163
+      ],
+      "oldWholeNeighbors": [],
+      "oldY": [
+        56.39644513137557,
+        102.8307573415765
+      ],
+      "page": 10
+    },
+    {
+      "band": "p10-s1-viola",
+      "newWholeNeighbors": [
+        1
+      ],
+      "newY": [
+        59.4806800618238,
+        133.43585780525504
+      ],
+      "oldWholeNeighbors": [],
+      "oldY": [
+        82.01931993817621,
+        133.43585780525504
+      ],
+      "page": 10
+    }
+  ],
+  "errors": [],
+  "inputSHA256": {
+    "baseline": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+    "candidate": "91bec90817cf660b3f38d83812c8a24e02106a4012b2804d08659f64c7725dd0"
+  },
+  "newSourceSpans": [
+    {
+      "occurrences": 1,
+      "page": 10,
+      "span": {
+        "bounds": [
+          0.8888888888888888,
+          0.10664605873261206,
+          0.9077777777777778,
+          0.21058732612055642
+        ],
+        "isOwnershipAlternative": true,
+        "staffIDs": [
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "pages": 39,
+  "scope": "Preservation-layer monotonicity and geometry only. New source spans and every changed real crop still require independent source review. Does not establish source-owned musical completeness."
+}

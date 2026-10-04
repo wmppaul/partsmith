@@ -1,0 +1,661 @@
+{
+  "candidateCompleteOwners": 15,
+  "candidateElapsedSeconds": 0.03199207782745361,
+  "comparisonAgainst": "candidate-v2",
+  "componentComparisons": [
+    {
+      "id": "three-filled-heads",
+      "note": "Removed V1 source-span hypotheses are expected when rejected; removal of baseline alternatives would be a regression.",
+      "ordinaryComponentsEqual": true,
+      "removedPriorAlternatives": [],
+      "scale": 0.5
+    },
+    {
+      "id": "three-filled-heads",
+      "note": "Removed V1 source-span hypotheses are expected when rejected; removal of baseline alternatives would be a regression.",
+      "ordinaryComponentsEqual": true,
+      "removedPriorAlternatives": [],
+      "scale": 1
+    },
+    {
+      "id": "attached-pp-context",
+      "note": "Removed V1 source-span hypotheses are expected when rejected; removal of baseline alternatives would be a regression.",
+      "ordinaryComponentsEqual": true,
+      "removedPriorAlternatives": [],
+      "scale": 0.5
+    },
+    {
+      "id": "attached-pp-context",
+      "note": "Removed V1 source-span hypotheses are expected when rejected; removal of baseline alternatives would be a regression.",
+      "ordinaryComponentsEqual": true,
+      "removedPriorAlternatives": [],
+      "scale": 1
+    },
+    {
+      "id": "attached-flat-context",
+      "note": "Removed V1 source-span hypotheses are expected when rejected; removal of baseline alternatives would be a regression.",
+      "ordinaryComponentsEqual": true,
+      "removedPriorAlternatives": [],
+      "scale": 0.5
+    },
+    {
+      "id": "attached-flat-context",
+      "note": "Removed V1 source-span hypotheses are expected when rejected; removal of baseline alternatives would be a regression.",
+      "ordinaryComponentsEqual": true,
+      "removedPriorAlternatives": [],
+      "scale": 1
+    }
+  ],
+  "emittedSpanRecords": 2,
+  "inputBindingsExact": true,
+  "negativeObservationsWithSpans": 0,
+  "negativeSourceScaleObservations": 4,
+  "newSpuriousNeighborOwnerObservations": 0,
+  "newSpuriousNeighborRelations": 0,
+  "newlyLostOwners": 0,
+  "newlyLostPixels": 0,
+  "observerScope": "One V3 native pass per suite; observer adds only serialization of returned spans and case labels. No independent uninstrumented rerun.",
+  "ordinaryComponentsInvariant": true,
+  "ownerObservations": 18,
+  "owners": [
+    {
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        552
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-musical-span",
+      "fullSourceRetained": true,
+      "id": "three-filled-heads",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 0,
+      "priorCrop": [
+        0,
+        102,
+        720,
+        552
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        150,
+        120,
+        513,
+        545
+      ],
+      "sourcePixels": 1625
+    },
+    {
+      "candidateCrop": [
+        0,
+        122.00000000000001,
+        720,
+        552
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-musical-span",
+      "fullSourceRetained": true,
+      "id": "three-filled-heads",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 1,
+      "priorCrop": [
+        0,
+        122.00000000000001,
+        720,
+        552
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        220,
+        143,
+        513,
+        545
+      ],
+      "sourcePixels": 1625
+    },
+    {
+      "candidateCrop": [
+        0,
+        122.00000000000001,
+        720,
+        554
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-musical-span",
+      "fullSourceRetained": true,
+      "id": "three-filled-heads",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 2,
+      "priorCrop": [
+        0,
+        122.00000000000001,
+        720,
+        554
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        290,
+        143,
+        513,
+        545
+      ],
+      "sourcePixels": 1625
+    },
+    {
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        355
+      ],
+      "candidateLost": 646,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-musical-span",
+      "fullSourceRetained": false,
+      "id": "three-filled-heads",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 0,
+      "priorCrop": [
+        0,
+        102,
+        720,
+        355
+      ],
+      "priorLost": 646,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        150,
+        120,
+        513,
+        545
+      ],
+      "sourcePixels": 1625
+    },
+    {
+      "candidateCrop": [
+        0,
+        125.00000000000001,
+        720,
+        381
+      ],
+      "candidateLost": 568,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-musical-span",
+      "fullSourceRetained": false,
+      "id": "three-filled-heads",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 1,
+      "priorCrop": [
+        0,
+        125.00000000000001,
+        720,
+        381
+      ],
+      "priorLost": 568,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        220,
+        143,
+        513,
+        545
+      ],
+      "sourcePixels": 1625
+    },
+    {
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateLost": 1082,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-musical-span",
+      "fullSourceRetained": false,
+      "id": "three-filled-heads",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 2,
+      "priorCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "priorLost": 1082,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        290,
+        143,
+        513,
+        545
+      ],
+      "sourcePixels": 1625
+    },
+    {
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        224.00000000000003
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-pp-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 0,
+      "priorCrop": [
+        0,
+        102,
+        720,
+        224.00000000000003
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        150,
+        120,
+        502,
+        218
+      ],
+      "sourcePixels": 408
+    },
+    {
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-pp-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 1,
+      "priorCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "sourcePixels": 218
+    },
+    {
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        572
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-pp-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 2,
+      "priorCrop": [
+        0,
+        462,
+        720,
+        572
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        290,
+        480,
+        502,
+        566
+      ],
+      "sourcePixels": 408
+    },
+    {
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        224.00000000000003
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-pp-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 0,
+      "priorCrop": [
+        0,
+        102,
+        720,
+        224.00000000000003
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        150,
+        120,
+        502,
+        218
+      ],
+      "sourcePixels": 408
+    },
+    {
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-pp-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 1,
+      "priorCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "sourcePixels": 218
+    },
+    {
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        572
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-pp-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 2,
+      "priorCrop": [
+        0,
+        462,
+        720,
+        572
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        290,
+        480,
+        502,
+        566
+      ],
+      "sourcePixels": 408
+    },
+    {
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-flat-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 0,
+      "priorCrop": [
+        0,
+        102,
+        720,
+        202.00000000000003
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        150,
+        120,
+        536,
+        187
+      ],
+      "sourcePixels": 466
+    },
+    {
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-flat-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 1,
+      "priorCrop": [
+        0,
+        282,
+        720,
+        382
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "sourcePixels": 218
+    },
+    {
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-flat-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 2,
+      "priorCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 0.5,
+      "sourceEnvelope": [
+        290,
+        480,
+        536,
+        547
+      ],
+      "sourcePixels": 466
+    },
+    {
+      "candidateCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-flat-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 0,
+      "priorCrop": [
+        0,
+        102,
+        720,
+        201
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        150,
+        120,
+        536,
+        187
+      ],
+      "sourcePixels": 466
+    },
+    {
+      "candidateCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-flat-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 1,
+      "priorCrop": [
+        0,
+        282,
+        720,
+        381
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        220,
+        300,
+        233,
+        349
+      ],
+      "sourcePixels": 218
+    },
+    {
+      "candidateCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "candidateLost": 0,
+      "candidateSpuriousWholeNeighborIDs": [],
+      "family": "new-no-shared-span",
+      "fullSourceRetained": true,
+      "id": "attached-flat-context",
+      "newSpuriousWholeNeighborIDs": [],
+      "newlyLostPixelIndices": [],
+      "owner": 2,
+      "priorCrop": [
+        0,
+        462,
+        720,
+        554
+      ],
+      "priorLost": 0,
+      "priorSpuriousWholeNeighborIDs": [],
+      "recoveredPixelIndices": [],
+      "scale": 1,
+      "sourceEnvelope": [
+        290,
+        480,
+        536,
+        547
+      ],
+      "sourcePixels": 466
+    }
+  ],
+  "priorAlternativesRetained": true,
+  "priorCompleteOwners": 15,
+  "recoveredOwners": 0,
+  "recoveredPixels": 0,
+  "sourceScaleCases": 6
+}

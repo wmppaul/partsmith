@@ -1,0 +1,142 @@
+{
+  "archive": "v2-evidence.zip",
+  "members": {
+    "build-run.sh": {
+      "bytes": 807,
+      "sha256": "656d198a8b79438eaf1749d0a55c61c490e23562c04fadf4a76d4a1676438bc8"
+    },
+    "candidate-v2-footprint-observed/Core/Detection/NativeScorePageAnalyzer.swift": {
+      "bytes": 63826,
+      "sha256": "e1c9ddfb23f1b290f553ac239faee04c3a4dad1e43e21e5f632266b0190b3b00"
+    },
+    "candidate-v2-footprint-observed/case176-footprint-observed.json": {
+      "bytes": 1382,
+      "sha256": "597cc82b2292083a30d5374637f0607de920e7e70ecff1baa01482945b3f4159"
+    },
+    "candidate-v2-footprint-observed/disk-diagnosis.json": {
+      "bytes": 1913,
+      "sha256": "a58b828ab1089830c5c3a7bc129784b1a94be3c4e8716f8910afaf67e88c93d1"
+    },
+    "candidate-v2-footprint-observed/footprint-records/0000.json": {
+      "bytes": 8505,
+      "sha256": "0adc2b4fb06fdfe8122e54ecc2f124d5062104a0bce8ecb8bf55e4eba5bdbc74"
+    },
+    "candidate-v2-footprint-observed/footprint-records/0001.json": {
+      "bytes": 8505,
+      "sha256": "0e36249cdd06802b97b79fb36feb47b1b6fc4cd17e41bf442607e734c846d1f8"
+    },
+    "candidate-v2-footprint-observed/run.log": {
+      "bytes": 944,
+      "sha256": "03ef1c4183fb06e1819b77e0dcec5ea5b11d317e442475953e0095a28a39c73e"
+    },
+    "candidate-v2/Core/Detection/NativeScorePageAnalyzer.swift": {
+      "bytes": 63178,
+      "sha256": "08ef2cc99337e104d646a1ded1d7b5dc63819b9735a511192d74570e41fff6d8"
+    },
+    "candidate-v2/Core/Detection/ScoreExtractionPlanner.swift": {
+      "bytes": 70852,
+      "sha256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7"
+    },
+    "candidate-v2/Core/Detection/ScoreLocalEndingPreservation.swift": {
+      "bytes": 12513,
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    "candidate-v2/Core/Detection/ScoreSharedEnding.swift": {
+      "bytes": 3285,
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    "candidate-v2/Core/Detection/ScoreSharedEndingDetector.swift": {
+      "bytes": 19141,
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    "candidate-v2/Core/Detection/StaffBandDetector.swift": {
+      "bytes": 29163,
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    "candidate-v2/case176.json": {
+      "bytes": 1382,
+      "sha256": "597cc82b2292083a30d5374637f0607de920e7e70ecff1baa01482945b3f4159"
+    },
+    "candidate-v2/case176.log": {
+      "bytes": 925,
+      "sha256": "e7ac55ff3d2969cf3208bb8380582c6b5e3ff5ac4297e95e0bcd727837f5445c"
+    },
+    "candidate-v2/fourcore-comparison.json": {
+      "bytes": 1481,
+      "sha256": "57940c9a18120d487ffa88e9236fa97ba88e19448b11c5057fc6e4970b037d02"
+    },
+    "candidate-v2/fourcore.json": {
+      "bytes": 207199,
+      "sha256": "9211ed13ca3a96c9ba0c483c50e37e04e10ae7b2ce09dcef9ccb0464877c309a"
+    },
+    "candidate-v2/fourcore.log": {
+      "bytes": 814,
+      "sha256": "1cc084c7ddbda9841980d4b061ab1fe0bf848c4f62e623a067844b761fcaa3f4"
+    },
+    "candidate-v2/real-five-comparison.json": {
+      "bytes": 863,
+      "sha256": "ca445c021b87e9bfd8b393709bf45be2df538c3a3044687d7779691e53d3d985"
+    },
+    "candidate-v2/real-five.json": {
+      "bytes": 1559485,
+      "sha256": "9c26b217fcefc70d387368747e3de07569e2062aa31d2b549b4884bb4bcd0a8a"
+    },
+    "candidate-v2/real-five.log": {
+      "bytes": 967,
+      "sha256": "0aef84d83bc4ab8734c5d4b64782c2e496022ea35ef9160f2189d77bb68a832d"
+    },
+    "candidate-v2/source-hashes.json": {
+      "bytes": 2821,
+      "sha256": "c7c203db1be1e056ea7774c8394c52c89b906a3b56e5f741f228e7cf1f6cba40"
+    },
+    "case176-footprint-observed.swift": {
+      "bytes": 11481,
+      "sha256": "74812cbbf1bafe9d6361703244630739461f8526203d69568852e6465a7ddfb1"
+    },
+    "case176.swift": {
+      "bytes": 11003,
+      "sha256": "648c44df2ec2935b561eae8ca1a398289531fe61d5fddbfccdc34ffcb1b0fde4"
+    },
+    "compare-v2.py": {
+      "bytes": 2682,
+      "sha256": "ff40123f952c3fca700e27aeaea0a3e679da60a8314057e3048224c95421e0b4"
+    },
+    "diagnose-v2-disks.py": {
+      "bytes": 1170,
+      "sha256": "8c2e0f36d70c302946b8171351d32e83f41d912f64afe4c0257fec1f4027f570"
+    },
+    "fourcore.swift": {
+      "bytes": 5673,
+      "sha256": "5dbf6b01298373601a6fdb07f0802486a4c26f67ef377f4c24dd931030ba080d"
+    },
+    "freeze-v2-report.py": {
+      "bytes": 2769,
+      "sha256": "c86150bfd7e405dfcc9e63bb8ab02ce99fe397803eb4ad5094374484c2f1aa97"
+    },
+    "make-v2.py": {
+      "bytes": 1155,
+      "sha256": "71f0af3cf03aa98df14cfad6f3ed69b88b5413c6e9371d932d70432c5fc001ee"
+    },
+    "observe-v2-footprints.py": {
+      "bytes": 1613,
+      "sha256": "2a78e7b375aaa55a8efe00d87efdfc5a46989794d507b44e295e28414009df72"
+    },
+    "real-five.swift": {
+      "bytes": 1461,
+      "sha256": "016f50e7a9da4a626722cccb3d59b1c762331686bf90aaca32e4ab4a9df2ed9f"
+    },
+    "v2-body.swift.fragment": {
+      "bytes": 10245,
+      "sha256": "66c9603310274e8bc27f6ba7fa52d32128efa8a8fbd23e2ec22d6577857dbfe7"
+    },
+    "v2-protocol-before-results.json": {
+      "bytes": 4350,
+      "sha256": "2c1caa954c2b2fe718b83986b69445915700adbd6f7ca4a0b2eb9b878d14050b"
+    },
+    "view-v2-disk-diagnosis.py": {
+      "bytes": 1901,
+      "sha256": "d21dd3179731c5527c073b7fc2f573feabc52d7ccdab8cd057e92b28cdbf0509"
+    }
+  },
+  "sha256": "6394a0e28e7131610291b3722cedbe16eecaa1a0b85c64c53f319883f3cbe63a"
+}

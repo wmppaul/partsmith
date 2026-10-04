@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 3 complete-body continuation
+
+The [V2 source-footprint study](source-musical-spans-v2-2026-10-03/README.md) rejects the earlier line-crossing and pp false matches but splits genuine heads when it excludes their original shaft pixels from the thickness test. V3 restores only those observed body pixels and [independently recovers the complete broken-stem case](musical-span-independent-2026-10-03/candidate-v3/README.md), without new production-baseline losses. Full-scale three-head and other older incomplete cases remain recorded.
+
+The [fresh full 39-page V3 replay](brahms-source-spans-v3-full-2026-10-03/README.md) nevertheless rejects promotion: thick fermata arches touching the p10 system boundary satisfy the local filled-patch check and wrongly join Violin II with Viola. Two new crops each include the complete neighboring staff. The proposed combination with numbered-line separation was stopped before testing. A complete source-body distinction, rather than a local patch alone, remains necessary; production detection is unchanged.
+
 ## October 3 corrected-page resolution check
 
 The [consistent-resolution measurement](brahms-consistent-resolution-2026-10-03/README.md) freshly analyzes the nine saved corrected Brahms pages at the ordinary native renderer's resolution, retaining the other thirty analyses. All 604 assignments remain unchanged. Three whole-neighbor inclusions disappear, but two new p28 crops include the complete adjacent staff; the net seven-to-six count hides those regressions. [Independent review](consistent-resolution-independent-2026-10-03/README.md) also finds actual `Vivace` serif pixels clipped by the new p2 crop. The setting remains outside production. All 28 larger contractions were inspected; the same 53 of 56 existing guard checks pass, demonstrating why fixed guards alone do not establish complete source preservation.

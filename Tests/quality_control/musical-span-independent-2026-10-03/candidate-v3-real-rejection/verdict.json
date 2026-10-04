@@ -1,0 +1,60 @@
+{
+  "decision": "Reject standalone V3 for real-source false musical ownership; no combined run or promotion.",
+  "independentSourceReview": "Original unannotated system context first, then span detail, then exact original body patches and author footprint/disk panel. Three fermata arches with separate dots follow an ordinary right barline; local instrument notes/stems are independent.",
+  "page": 10,
+  "system": 1,
+  "sourceRasterSHA256": "1e8f4a8ce47ffe60bb1309d17470477c3e7fe080248dd2b03f38d31e4ce11cc2",
+  "originalPDFSHA256": "662aabfdecb2d125151c984fe1dc866ea068668ee9bb74f23f286f552603c14a",
+  "nativeSHA256": "6f8a9200324702cc6579dba7455e7c6a0e2686cf6ab1e4606309d48e9196010c",
+  "bodyBounds": [
+    [
+      1600,
+      276,
+      1634,
+      293
+    ],
+    [
+      1600,
+      401,
+      1634,
+      419
+    ],
+    [
+      1600,
+      528,
+      1634,
+      545
+    ]
+  ],
+  "spanBounds": [
+    1600,
+    276,
+    1634,
+    545
+  ],
+  "claimedStaffIDs": [
+    1,
+    2
+  ],
+  "parentFullReplay": {
+    "pages": 39,
+    "bands": 604,
+    "newFalseSpans": 1,
+    "changedCrops": 2,
+    "newForeignCoreRelations": 2,
+    "scope": "Parent native run; independent visual source review and comparison/excerpt/source-hash verification only."
+  },
+  "bodyPatchesByteExactToOriginalRaster": true,
+  "observerInvariance": {
+    "rawAnalysisExact": true,
+    "normalizedAnalysisExact": true,
+    "planPageExact": true
+  },
+  "baselineCandidateSHA256": {
+    "baseline": "db454e569c263318907464b23b6d53817bfbcc66c506f07cbf148484614b7c7d",
+    "candidate": "91bec90817cf660b3f38d83812c8a24e02106a4012b2804d08659f64c7725dd0"
+  },
+  "existingBoundedV3ReportUnchanged": true,
+  "combinedExecution": "No combined preparation or test execution by this reviewer.",
+  "productionChanges": false
+}

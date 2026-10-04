@@ -1,0 +1,26 @@
+{
+  "createdUTC": "2026-10-04T00:09:03.923006+00:00",
+  "scope": "Descriptive source-shape measurements only; no classifier, thresholds, crops, production changes or combined replay. Protocol informed by visual p10 open fermata and case176 source head; statistics below not yet measured.",
+  "objects": [
+    "Each exact accepted p10 body, after logging-only author replay",
+    "Exact176 two body footprints, including restored original shaft pixels",
+    "An existing half-scale genuine filled head, once author supplies its logged witness"
+  ],
+  "measurements": [
+    "Count off-shaft and original restored shaft pixels separately; union only real source pixels",
+    "Exact convex hull of unit pixel cell corners: filled area / continuous hull area",
+    "Count pixel centers inside same hull and compute source-black occupancy; report discretization difference",
+    "White connected components in padded whole footprint: holes vs exterior-connected convex-hull void, using4-white/8-black connectivity",
+    "Bounding-box fill and rows with internal gaps; no pass/fail cutoff",
+    "Compare private footprint with original source pixels in same box and visualize explained thin paths; detached fermata dot remains a separate object",
+    "Explicitly record any inferred or missing source resolution; do not equate grayscale threshold absence with paper"
+  ],
+  "thresholdPolicy": "Use unchanged source black threshold190 only where source mask is needed. Do not choose solidity cutoff from these few outputs. Existing82% V1 ellipse criterion is historical context, not an approved whole-shape threshold.",
+  "inputHashes": {
+    ".build/brahms-source-span-full-v3-2026-10-03/p10-source-context.png": "2d48876403b6fffc162b9328e27f94bd63465c5f65d69920f605269a2b07f17f",
+    ".build/brahms-source-span-full-v3-2026-10-03/p10-span-detail.png": "9af9b274eda2e64026b717874ba71c1d2a701a7e9c2673c7df4e0197765720ed",
+    ".build/source-musical-spans-2026-10-03/candidate-v3/Core/Detection/NativeScorePageAnalyzer.swift": "6f8a9200324702cc6579dba7455e7c6a0e2686cf6ab1e4606309d48e9196010c",
+    ".build/source-musical-spans-2026-10-03/candidate-v2-footprint-observed/footprint-records/0000.json": "0adc2b4fb06fdfe8122e54ecc2f124d5062104a0bce8ecb8bf55e4eba5bdbc74",
+    ".build/source-musical-spans-2026-10-03/candidate-v2-footprint-observed/footprint-records/0001.json": "0e36249cdd06802b97b79fb36feb47b1b6fc4cd17e41bf442607e734c846d1f8"
+  }
+}

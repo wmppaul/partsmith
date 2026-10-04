@@ -1,0 +1,20 @@
+{
+  "measuredInputs": {
+    ".build/source-musical-spans-2026-10-03/candidate-v3-p10-observed/span-records/000.json": "07bfaab8a9a13b63fb460bfa7b8cb9eb3bfcec4e6ac378a15300877e597bf007",
+    "Tests/quality_control/musical-span-independent-2026-10-03/candidate-v3/span-witnesses.json": "160a4e47da14f3b3b89194c3c19dda7e0341b5f13600d301ecdb3232baf704ab",
+    ".build/brahms-source-span-full-replay-2026-10-03/rasters/page-10.png": "1e8f4a8ce47ffe60bb1309d17470477c3e7fe080248dd2b03f38d31e4ce11cc2",
+    ".build/source-musical-spans-2026-10-03/candidate-v3/case176-source.pgm": "049c67488a80a525c46e7c697fd01d41c3dc7cb903bccb2efd1b990fca0e89ab"
+  },
+  "contextAndVerification": {
+    ".build/source-musical-spans-2026-10-03/candidate-v3-p10-observed/invariance.json": "6683c7e18132ac17e48fed8c05e79203692d905203ec5e48215df0e9ba906f3a",
+    ".build/musical-span-independent-2026-10-03/inputs/music-filled/source.png": "218062bf6c527fea72b051e604ae4d02c2669e6778ebf70bde2af64f57be35e2",
+    ".build/source-musical-spans-2026-10-03/candidate-v3/Core/Detection/NativeScorePageAnalyzer.swift": "6f8a9200324702cc6579dba7455e7c6a0e2686cf6ab1e4606309d48e9196010c",
+    ".build/brahms-source-span-full-v3-2026-10-03/p10-source-context.png": "2d48876403b6fffc162b9328e27f94bd63465c5f65d69920f605269a2b07f17f",
+    ".build/brahms-source-span-full-v3-2026-10-03/p10-span-detail.png": "9af9b274eda2e64026b717874ba71c1d2a701a7e9c2673c7df4e0197765720ed"
+  },
+  "notes": [
+    "Seven individual accepted body footprints:3p10 arches,2case176 heads,2existing half-scale music-filled heads.",
+    "Half-scale values use exact logged native360x320 footprint; no Python resampling substituted for native source pixels. Original fixture source720x640 is hash-bound separately.",
+    "p10 observer invariance verifies identical analysis+plan to frozen V3; no detector rerun performed by this measurement."
+  ]
+}
