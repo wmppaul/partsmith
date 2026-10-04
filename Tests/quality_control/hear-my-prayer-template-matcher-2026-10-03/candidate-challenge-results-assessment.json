@@ -1,0 +1,597 @@
+{
+  "inputSHA256": "6600e6b304757b0580fd773bbd87b71f3791376e53a45d0ca5fe9cae27c524b4",
+  "resultsSHA256": "b31469897d4504389c9cb4cbe2a8548391995a07ef1a1e3aa15712b21e050972",
+  "total": 32,
+  "passed": 32,
+  "failed": 0,
+  "rows": [
+    {
+      "id": "notte-no-seeds",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+          "pageIndex": -1
+        }
+      ],
+      "elapsedSeconds": 0.3377000093460083
+    },
+    {
+      "id": "notte-first-system-only",
+      "expectation": "onlyKnownSourceRoster",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 0
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 2
+        }
+      ],
+      "elapsedSeconds": 0.288288950920105
+    },
+    {
+      "id": "notte-seed-duration-not-target-duration",
+      "expectation": "correctSourceSuggestionsAndNilCounts",
+      "suggestionCount": 8,
+      "sourceSupportedCount": 8,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 2
+        }
+      ],
+      "elapsedSeconds": 0.2862989902496338
+    },
+    {
+      "id": "notte-missing-source-image",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.0003299713134765625
+    },
+    {
+      "id": "notte-cancelled",
+      "expectation": "noSuggestionsCancelled",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [],
+      "elapsedSeconds": 0.00021600723266601562
+    },
+    {
+      "id": "erlkonig-no-seeds",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+          "pageIndex": -1
+        }
+      ],
+      "elapsedSeconds": 0.8421809673309326
+    },
+    {
+      "id": "erlkonig-first-system-only",
+      "expectation": "onlyKnownSourceRoster",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 0
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 2
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 4
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 5
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 6
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 7
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 8
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 9
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 10
+        }
+      ],
+      "elapsedSeconds": 0.7750879526138306
+    },
+    {
+      "id": "erlkonig-seed-duration-not-target-duration",
+      "expectation": "correctSourceSuggestionsAndNilCounts",
+      "suggestionCount": 46,
+      "sourceSupportedCount": 46,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [],
+      "elapsedSeconds": 0.7985459566116333
+    },
+    {
+      "id": "erlkonig-missing-source-image",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.0003420114517211914
+    },
+    {
+      "id": "erlkonig-cancelled",
+      "expectation": "noSuggestionsCancelled",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [],
+      "elapsedSeconds": 0.00021600723266601562
+    },
+    {
+      "id": "mendelssohn-no-seeds",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+          "pageIndex": -1
+        }
+      ],
+      "elapsedSeconds": 0.4311699867248535
+    },
+    {
+      "id": "mendelssohn-first-system-only",
+      "expectation": "onlyKnownSourceRoster",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 2
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 4
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 5
+        }
+      ],
+      "elapsedSeconds": 0.3793070316314697
+    },
+    {
+      "id": "mendelssohn-seed-duration-not-target-duration",
+      "expectation": "correctSourceSuggestionsAndNilCounts",
+      "suggestionCount": 2,
+      "sourceSupportedCount": 2,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 4
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 5
+        }
+      ],
+      "elapsedSeconds": 0.32803893089294434
+    },
+    {
+      "id": "mendelssohn-missing-source-image",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The printed system connections could not be established. Assign this page on the score.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.0005550384521484375
+    },
+    {
+      "id": "mendelssohn-cancelled",
+      "expectation": "noSuggestionsCancelled",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [],
+      "elapsedSeconds": 0.00037598609924316406
+    },
+    {
+      "id": "notte-p1-subgroup-2,3",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 1 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.05782198905944824
+    },
+    {
+      "id": "notte-p1-subgroup-6,7",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 3 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.04523897171020508
+    },
+    {
+      "id": "erlkonig-p1-subgroup-8,9",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 4 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.055209994316101074
+    },
+    {
+      "id": "erlkonig-p11-subgroup-8,9",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 3 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 10
+        }
+      ],
+      "elapsedSeconds": 0.05353391170501709
+    },
+    {
+      "id": "mendelssohn-p2-subgroup-1,2",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+          "pageIndex": -1
+        }
+      ],
+      "elapsedSeconds": 0.053970932960510254
+    },
+    {
+      "id": "mendelssohn-p2-subgroup-4,5,6",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 2 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 1
+        }
+      ],
+      "elapsedSeconds": 0.040242910385131836
+    },
+    {
+      "id": "mendelssohn-p3-subgroup-5,6,7",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 2 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 2
+        }
+      ],
+      "elapsedSeconds": 0.05291092395782471
+    },
+    {
+      "id": "mendelssohn-p2-subgroup-1,3,2",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 1 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 1
+        }
+      ],
+      "elapsedSeconds": 0.05318796634674072
+    },
+    {
+      "id": "mendelssohn-p4-missing-6,8",
+      "expectation": "noIncompleteOrWrongSourceSystemSuggestions",
+      "suggestionCount": 2,
+      "sourceSupportedCount": 2,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The detected staves no longer agree with the source image. Run Auto again before finding similar systems.",
+          "pageIndex": 3
+        },
+        {
+          "message": "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+          "pageIndex": 1
+        }
+      ],
+      "elapsedSeconds": 0.22421503067016602
+    },
+    {
+      "id": "mendelssohn-p3-missing-10",
+      "expectation": "noIncompleteOrWrongSourceSystemSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The detected staves no longer agree with the source image. Run Auto again before finding similar systems.",
+          "pageIndex": 2
+        }
+      ],
+      "elapsedSeconds": 0.14526700973510742
+    },
+    {
+      "id": "notte-p2-missing-1",
+      "expectation": "noIncompleteOrWrongSourceSystemSuggestions",
+      "suggestionCount": 3,
+      "sourceSupportedCount": 3,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The detected staves no longer agree with the source image. Run Auto again before finding similar systems.",
+          "pageIndex": 1
+        }
+      ],
+      "elapsedSeconds": 0.1176689863204956
+    },
+    {
+      "id": "notte-p2-missing-2",
+      "expectation": "noIncompleteOrWrongSourceSystemSuggestions",
+      "suggestionCount": 3,
+      "sourceSupportedCount": 3,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The detected staves no longer agree with the source image. Run Auto again before finding similar systems.",
+          "pageIndex": 1
+        }
+      ],
+      "elapsedSeconds": 0.10416698455810547
+    },
+    {
+      "id": "notte-p2-missing-3",
+      "expectation": "noIncompleteOrWrongSourceSystemSuggestions",
+      "suggestionCount": 3,
+      "sourceSupportedCount": 3,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The detected staves no longer agree with the source image. Run Auto again before finding similar systems.",
+          "pageIndex": 1
+        }
+      ],
+      "elapsedSeconds": 0.09625399112701416
+    },
+    {
+      "id": "erlkonig-phantom-source-staff",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "The detected staves no longer agree with the source image. Run Auto again before finding similar systems.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.04733097553253174
+    },
+    {
+      "id": "notte-changed-profile-count",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Assign at least one complete printed system first. Its instruments and source connections become the example.",
+          "pageIndex": -1
+        }
+      ],
+      "elapsedSeconds": 0.05808305740356445
+    },
+    {
+      "id": "notte-overlapping-reviewed-seeds",
+      "expectation": "noSuggestions",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 3 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.045195937156677246
+    },
+    {
+      "id": "same-count-independent-source",
+      "expectation": "noSourceSupportedAmbiguousChoice",
+      "suggestionCount": 0,
+      "sourceSupportedCount": 0,
+      "passed": true,
+      "failures": [],
+      "wrongSourceSuggestions": [],
+      "diagnostics": [
+        {
+          "message": "Reviewed system 1 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 0
+        },
+        {
+          "message": "Reviewed system 2 has separate or uncertain printed connections. Similar-layout matching cannot establish its complete boundary.",
+          "pageIndex": 0
+        }
+      ],
+      "elapsedSeconds": 0.009127020835876465
+    }
+  ]
+}

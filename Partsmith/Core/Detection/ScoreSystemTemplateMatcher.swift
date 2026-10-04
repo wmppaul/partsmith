@@ -334,7 +334,7 @@ enum ScoreSystemTemplateMatcher {
         let reach = max(2, Int((space * 0.65).rounded()))
         let left = max(0, min(upper.start, lower.start) - reach)
         let right = min(raster.width - 1, max(upper.start, lower.start) + reach)
-        if abs(upper.start - lower.start) <= Int(ceil(space * 0.6)) {
+        do { // Verify actual connecting ink even when measured staff starts differ.
             for x in left...right {
                 let top = max(0, Int((upper.lines[0] + localShift).rounded()))
                 let bottom = min(raster.height - 1, Int((lower.lines[4] + localShift).rounded()))

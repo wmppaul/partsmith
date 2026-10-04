@@ -1,0 +1,874 @@
+{
+  "cancelled" : false,
+  "diagnostics" : [
+    {
+      "message" : "The printed system connections could not be established. Assign this page on the score.",
+      "pageIndex" : 2
+    },
+    {
+      "message" : "Some connected staff groups do not match a reviewed complete system. This page is left for assignment so a subgroup is not mistaken for a whole system.",
+      "pageIndex" : 3
+    }
+  ],
+  "suggestions" : [
+    {
+      "candidateIDs" : [
+        3,
+        4,
+        5
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 0,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.077940339139318748,
+        0.41320726960194765,
+        0.95769649709700733,
+        0.55989834484642287
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        6,
+        7,
+        8
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 0,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.077917805333515402,
+        0.5818147521009609,
+        0.95548554177768674,
+        0.72698151770691333
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        9,
+        10,
+        11
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 0,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.07724808364106657,
+        0.74937527590815212,
+        0.95220929151280009,
+        0.89338308068728411
+      ],
+      "systemIndex" : 3,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.070279089866546421,
+        0.11120789130196408,
+        0.93930489951117124,
+        0.24841980848072337
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        3,
+        4,
+        5
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.070286040362727467,
+        0.26473196269311505,
+        0.93930142426308061,
+        0.4017373737403343
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        6,
+        7,
+        8
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 1,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.06930555555555562,
+        0.4193659206910092,
+        0.94034722222222222,
+        0.55729896601823525
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 4,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.066935766529616456,
+        0.096284868729470549,
+        0.95097656117963625,
+        0.41468461049638455
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 4,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.06362660198283146,
+        0.43496175598423181,
+        0.95096447678636209,
+        0.73545668419566357
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        14,
+        15,
+        16
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 4,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.06872088179855837,
+        0.75775371354297794,
+        0.94758400354516525,
+        0.89005485755927516
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 5,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Some clef shapes differ or are faint; inspect this system before accepting.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.067377196754537308,
+        0.095763116473691387,
+        0.62770029051162035,
+        0.2175348626100779
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 5,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.06305983611049619,
+        0.22936449538519926,
+        0.93319230416697418,
+        0.5051710142282263
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        10,
+        11,
+        12
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 5,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.06805555555555555,
+        0.51776599921476252,
+        0.93541666666666667,
+        0.64085098267697194
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        13,
+        14,
+        15
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 5,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.069302851329788695,
+        0.65238362800531391,
+        0.93534857433510565,
+        0.77479100268106549
+      ],
+      "systemIndex" : 3,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        16,
+        17,
+        18
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 5,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.070413731877677979,
+        0.78410564431477436,
+        0.93534868961671658,
+        0.90670989150920744
+      ],
+      "systemIndex" : 4,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 6,
+      "presentPartIDs" : [
+        "organ",
+        "solo-soprano"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 3 staves.",
+        "Initial clef shapes resemble reviewed page 1, system 1.",
+        "Absent parts still need this system’s own confirmed bar count."
+      ],
+      "requiresMeasureCount" : true,
+      "sourceBounds" : [
+        0.061686474195912021,
+        0.094254921918884113,
+        0.93554565179093285,
+        0.22926658850342102
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 0,
+      "templateSystemIndex" : 0
+    },
+    {
+      "candidateIDs" : [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 6,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.056964544138929131,
+        0.24825193067359444,
+        0.93762883904164662,
+        0.54503169643694205
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 6,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4.",
+        "Some clef shapes differ or are faint; inspect this system before accepting."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.057505874723041694,
+        0.56564636102226096,
+        0.93874706263847907,
+        0.88170629001131673
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 7,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4.",
+        "Some clef shapes differ or are faint; inspect this system before accepting."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.056519748357983672,
+        0.086594422650132591,
+        0.92701790359878589,
+        0.35252576489005549
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 7,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4.",
+        "Some clef shapes differ or are faint; inspect this system before accepting."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.058186980643877208,
+        0.36222142836922905,
+        0.92646206523361696,
+        0.63030714678161903
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 7,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4.",
+        "Some clef shapes differ or are faint; inspect this system before accepting."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.053191260288802986,
+        0.63785038862169563,
+        0.92423770318893184,
+        0.9029594101886923
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 8,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.059732101114364548,
+        0.083540115040747653,
+        0.94152283833170658,
+        0.35326111512188385
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 8,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.058628844302578878,
+        0.36267938361215629,
+        0.94096335562648836,
+        0.62649898567625184
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 8,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.060284958244824841,
+        0.63399146389441885,
+        0.94041307643314309,
+        0.90311370739653429
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 9,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4.",
+        "Some clef shapes differ or are faint; inspect this system before accepting."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.067071145535978677,
+        0.09660708755382641,
+        0.93090887167645509,
+        0.35606418836990317
+      ],
+      "systemIndex" : 0,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "confidence" : "sourceSupported",
+      "countWasInferred" : false,
+      "pageIndex" : 9,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.062083333333333331,
+        0.3653821319257185,
+        0.93034722222222221,
+        0.63383265144495349
+      ],
+      "systemIndex" : 1,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    },
+    {
+      "candidateIDs" : [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "confidence" : "needsReview",
+      "countWasInferred" : false,
+      "pageIndex" : 9,
+      "presentPartIDs" : [
+        "alto",
+        "bass",
+        "chorus-soprano",
+        "organ",
+        "solo-soprano",
+        "tenor"
+      ],
+      "reasons" : [
+        "A continuous printed left edge connects all 7 staves.",
+        "Initial clef shapes resemble reviewed page 2, system 4.",
+        "Some clef shapes differ or are faint; inspect this system before accepting."
+      ],
+      "requiresMeasureCount" : false,
+      "sourceBounds" : [
+        0.06140992091257734,
+        0.64362260952648553,
+        0.92707281732148916,
+        0.90957972663932507
+      ],
+      "systemIndex" : 2,
+      "templatePageIndex" : 1,
+      "templateSystemIndex" : 3
+    }
+  ]
+}

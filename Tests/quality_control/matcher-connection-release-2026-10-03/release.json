@@ -1,0 +1,49 @@
+{
+  "publishedAtUTC": "2026-10-04T02:36:20.539782+00:00",
+  "change": "Use actual continuous source-ink evidence for Find Similar Systems even when brackets shift estimated staff starts; includes existing direct Preview crop editing.",
+  "artifact": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "artifactSHA256": "7b3e5344a340be05973b465453c7c89b35f4a04d1f76b6456ed26f8495fc57ff",
+  "artifactBytes": 3788583,
+  "executableSHA256": "b2f5a9812484a45e6677c18edb59b01cda7b2253e6cce68bf44f804bec9dfbd3",
+  "previousArtifactSHA256": "e4d177f85139c748fb308faafea3a4c719645de416e18b6f8c0d3fb3c646586e",
+  "previousArtifactBackup": ".build/matcher-connection-release-2026-10-03/previous-public-e4d177f85139c748fb308faafea3a4c719645de416e18b6f8c0d3fb3c646586e.zip",
+  "changedApplicationFiles": [
+    "Partsmith/Core/Detection/ScoreSystemTemplateMatcher.swift"
+  ],
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "minimumMacOS": "14.0",
+  "signing": "Strictly verified ad hoc, not notarized.",
+  "nativeCropDetectorUnchanged": true,
+  "privateOwnershipCandidateIncluded": false,
+  "validation": {
+    "buildInputs": 45,
+    "swiftInputs": 35,
+    "unchangedIndependentChallengeCasesPassed": 32,
+    "challengeSemanticsExactBaseline": true,
+    "sourcePages": 10,
+    "sourceSystems": 34,
+    "reviewedSeeds": 2,
+    "correctAdditionalMatches": 26,
+    "wrongMatches": 0,
+    "systemsRemainingManual": 6,
+    "countsNotInferred": true,
+    "independentPackageAuditSHA256": "11d3bb2b352437215418523c7269a2a080d219ce01ba12d378278442909fc4eb",
+    "matcherExperimentManifestSHA256": "d38ffb094d4669ecddc4a58ec9d44f5fe5b770af8fdc31f407ea0b054bf84299",
+    "independentMatcherAudit": {
+      "path": "Tests/quality_control/hear-my-prayer-matcher-independent-2026-10-03/manifest.json",
+      "sha256": "8741095dd3dc0ea47ce629b35679bcedd08b800650dd399eebecfad2ad44b11d"
+    },
+    "independentSourceDeltaSHA256": "98910a8e6b6c98f360100500cf1a28195e62f641e34a9c181265420765205dae"
+  },
+  "limits": [
+    "Matching still proposes reviewed roster examples rather than identifying instruments or counting rests.",
+    "Six systems in the scanned example still require manual assignment.",
+    "A printed connection is not a musical completeness guarantee; users still review proposed rosters.",
+    "Separate crop ownership experiments remain private."
+  ],
+  "runningAppOrUserDocumentModified": false,
+  "publication": "Verified same-directory atomic ZIP replacement only."
+}

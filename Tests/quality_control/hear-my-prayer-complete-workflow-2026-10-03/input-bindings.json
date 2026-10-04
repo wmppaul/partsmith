@@ -1,0 +1,21 @@
+{
+  "source": {
+    "path": "/Users/will/Documents/git/partsmith/sample_scores/lightly_skewed/08_mendelssohn_hear_my_prayer_woo15_imslp_40163.pdf",
+    "sha256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2"
+  },
+  "profile": {
+    "path": "Tests/quality_control/profiles/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+    "sha256": "9d669e5786b2c44264242b1c28b63897f92c5932943b49ac39d5c4a3a14d5675"
+  },
+  "baselineRawInventory": {
+    "path": ".build/envelope-compatibility-corpus-2026-10-03/baseline/lightly-skewed-08-mendelssohn-hear-my-prayer-woo15-imslp-40163.json",
+    "sha256": "bec2027d78cfc4244824992d1e6b0d6830cb2bc75e3ecb65dc4f1ad508ee4794"
+  },
+  "wrappedInventorySHA256": "f66dbaf1fd25b78ee72fa9075e371cf37486b51e34e45d02beede60b810b244a",
+  "rootSourceMapSHA256": "a55e06b5ccefe6a517775bf239469cf2e15b2badee6b798fc6634c031052983b",
+  "independentCountsSHA256": "fa57f8b967532df1ca0d1dc2722eb61217fa054c6c5275b755ced3c4f6ef95f5",
+  "CoreHashesSHA256": "80f2859c84084a5542ce7ae70376f126882db7d47039e5a4f6d0d3fa0ca0baf4",
+  "exporterSHA256": "709e124622297b2c96935c908bad3aa8e1e13d3f60077861187337a6ebf1f5f3",
+  "exporterSourceSHA256": "71454ea651754c4850e35daf275a9c21718fa25d59d3813ae78cdfa2590aac3a",
+  "workflow": "Reused native inventory, reviewed all source identities/counts, native review/apply/rest joining, saved canonical JSON and embedded source, decoded into new native document, re-encoded exactly, native layout/PDF export. No detector/matcher rerun and no production edits."
+}

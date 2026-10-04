@@ -1,0 +1,247 @@
+{
+  "scope": "Source-only full-page and enlarged-context review preceded these manual draft corrections. No detector changes. Local required regions supplement full-row visual obligations; they are not exhaustive segmented music masks.",
+  "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+  "baselineManifestSHA256": "3b5326e610b7fb2e837e683b76fcc59c15e915b9c2f6b2c1e7c3176978583302",
+  "corrections": [
+    {
+      "id": "p10-s3-alto",
+      "page": 10,
+      "system": 3,
+      "part": "alto",
+      "before": [
+        0,
+        600.6234786022771,
+        595,
+        665.4840989399294
+      ],
+      "after": [
+        0,
+        600.6234786022771,
+        595,
+        644.5
+      ],
+      "reason": "Remove the complete neighboring Tenor staff; retain Alto low heads/tie and complete lower hairpin through approximately y642.5. One overlapping Tenor staff line/pp fragment remains.",
+      "independentLocalRequiredSourceRegion": [
+        250,
+        630,
+        375,
+        643
+      ]
+    },
+    {
+      "id": "p10-s3-tenor",
+      "page": 10,
+      "system": 3,
+      "part": "tenor",
+      "before": [
+        0,
+        602.9375736160189,
+        595,
+        672.7569689831174
+      ],
+      "after": [
+        0,
+        633.5,
+        595,
+        672.7569689831174
+      ],
+      "reason": "Remove the complete neighboring Alto staff; preserve the original Tenor pp beginning near y636.5 plus own staff/lyrics. Overlapping Alto low-head/hairpin remnants remain.",
+      "independentLocalRequiredSourceRegion": [
+        60,
+        635,
+        95,
+        643
+      ]
+    },
+    {
+      "id": "p2-s4-bass",
+      "page": 2,
+      "system": 4,
+      "part": "bass",
+      "before": [
+        0,
+        632.0290537887711,
+        595,
+        685.9803690616411
+      ],
+      "after": [
+        0,
+        629,
+        595,
+        675
+      ],
+      "reason": "Retain full printed Tenor lyric context above the Bass (shared text in this edition) and own Bass dynamics; remove duplicate Organ Allegro beginning below y676.",
+      "independentLocalRequiredSourceRegion": [
+        50,
+        630,
+        565,
+        674
+      ]
+    },
+    {
+      "id": "p6-s2-bass",
+      "page": 6,
+      "system": 2,
+      "part": "bass",
+      "before": [
+        0,
+        317.3121319199058,
+        595,
+        368.61876717707105
+      ],
+      "after": [
+        0,
+        317.3121319199058,
+        595,
+        357.5
+      ],
+      "reason": "Retain own complete lyric line through y356, remove neighboring Organ Sostenuto starting near y358.4.",
+      "independentLocalRequiredSourceRegion": [
+        75,
+        348,
+        540,
+        356.5
+      ]
+    },
+    {
+      "id": "p5-s2-bass",
+      "page": 5,
+      "system": 2,
+      "part": "bass",
+      "before": [
+        0,
+        504.4232430310169,
+        595,
+        540.853553199843
+      ],
+      "after": [
+        0,
+        500.5,
+        595,
+        540.853553199843
+      ],
+      "reason": "Restore complete original shared Tenor lyric context above Bass; source text top approximately502, previously cut by504.42.",
+      "independentLocalRequiredSourceRegion": [
+        65,
+        501.5,
+        565,
+        510
+      ]
+    },
+    {
+      "id": "p6-s1-organ",
+      "page": 6,
+      "system": 1,
+      "part": "organ",
+      "before": [
+        0,
+        109.04358068315662,
+        595,
+        197.37573616018847
+      ],
+      "after": [
+        0,
+        109.04358068315662,
+        595,
+        185
+      ],
+      "reason": "Retain all low Organ ledger/accidental and tie ink through y183.5; remove next-system Tutti/Sostenuto at y186.5 onward.",
+      "independentLocalRequiredSourceRegion": [
+        50,
+        174,
+        560,
+        184
+      ]
+    },
+    {
+      "id": "p6-s2-organ",
+      "page": 6,
+      "system": 2,
+      "part": "organ",
+      "before": [
+        0,
+        349.0482921083627,
+        595,
+        443.3309776207302
+      ],
+      "after": [
+        0,
+        349.0482921083627,
+        595,
+        428.5
+      ],
+      "reason": "Retain lowest Organ tie and accidental through y428; remove next-system moto heading beginning y429 onward.",
+      "independentLocalRequiredSourceRegion": [
+        65,
+        416,
+        550,
+        428
+      ]
+    },
+    {
+      "id": "p5-s2-solo-soprano",
+      "page": 5,
+      "system": 2,
+      "part": "solo-soprano",
+      "before": [
+        0,
+        334.17196702002354,
+        595,
+        406.63604240282683
+      ],
+      "after": [
+        0,
+        360,
+        595,
+        406.63604240282683
+      ],
+      "reason": "Remove previous Organ staff and low ledger fragments; retain Solo hairpins and f beginning around y361.5, plus SOLO cue.",
+      "independentLocalRequiredSourceRegion": [
+        250,
+        361,
+        450,
+        377
+      ]
+    },
+    {
+      "id": "p6-s3-solo-soprano",
+      "page": 6,
+      "system": 3,
+      "part": "solo-soprano",
+      "before": [
+        0,
+        412.8511974872398,
+        595,
+        475.0671378091873
+      ],
+      "after": [
+        0,
+        428.5,
+        595,
+        475.0671378091873
+      ],
+      "reason": "Remove previous Organ staff; retain full original moto text from y429 and SOLO cue. A tiny neighboring tie remnant may remain at the edge.",
+      "independentLocalRequiredSourceRegion": [
+        73,
+        429,
+        193,
+        445
+      ]
+    }
+  ],
+  "sourceContextSHA256": {
+    "correction-source/organ-before-moto.png": "b542447c28d01d21fe93435d62609311902cad88b58c25b4d92b97f1a2987b5f",
+    "correction-source/bass-sostenuto.png": "04d4e5263130b699035b6616a025b7961a9ce214cb30be1cf954bfa1db2b68f2",
+    "correction-source/bass-sost-lyric-ruler.png": "c111564bb95579bac8b706050102ba061102c453a1e405e50b4aab3ac1f366af",
+    "correction-source/organ-before-sostenuto.png": "ad3e6d692bda536489ca9ce2a98d086b8e261bdc30b260b42da0c680058bc730",
+    "correction-source/bass-allegro.png": "8992b3a681ed8f682e804f4b098f6411318e85e9b162fbd38a907afe19a4ec3e",
+    "correction-source/solo-moto.png": "6c53784e1079418d5224cb2648ea2da331a61ebdd4e41a73d953a145e5935008",
+    "correction-source/solo-p5s2.png": "fc759f8566c61fccffa3bc1c3404b0884c7954f281cd65d4b89ab8e8f117852f",
+    "correction-source/bass-shared-lyrics.png": "b92da800d907c04cf36ebb086fcb7b9ca01e93e9ea4d6f416e2068bc7823a4fc",
+    "correction-source/final-chorus.png": "d33a2125a51b2f7c08480c74a735f11e60b5e8b9673d5b970aae512541bfb526",
+    "correction-source/alto-hairpin-ruler.png": "d3e34b40f96e56a1c9ed74d00d15988cad2d250f405c36daa86b021d83294630",
+    "correction-source/tenor-pp-ruler.png": "2b426b5128222d1185f77472b076cbeaba29b4c881c4c65a4cacafb925efc52e",
+    "correction-source/organ-sost-gap-ruler.png": "258ba802a1f9ba9a968723be2f43bbd3ffe4bd7d08b22a152fae9ff3a2924d9d",
+    "correction-source/organ-moto-gap-ruler.png": "c91bb9dca1d06b2edcd3ea75fac4c072be1e116988c56067e93577a3015c9d16"
+  }
+}

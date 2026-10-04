@@ -1,0 +1,46 @@
+{
+  "sourceSHA256": "343ef8412af4f0ff8a5c3067dd7f72ab87138afed6b9da0c3dabbc6d62c3a2c2",
+  "sourcePage": 10,
+  "system": 3,
+  "method": "Original source interpreted and obligations sent to author before author disclosed candidate edges. This JSON records that earlier source-only assessment.",
+  "edges": [
+    {
+      "partID": "alto",
+      "edge": "bottom",
+      "minimumRequiredBottomPDFPoint": 644.0,
+      "reason": "Low slur/sharp-note cluster plus hairpin reach approximately642.5pt; conservative lower envelope includes margin."
+    },
+    {
+      "partID": "tenor",
+      "edge": "top",
+      "maximumAllowedTopPDFPoint": 634.5,
+      "reason": "Opening pp begins around636\u2013637pt; conservative upper envelope includes margin."
+    }
+  ],
+  "sourceDetails": [
+    {
+      "path": ".build/hear-my-prayer-independent-map-2026-10-03/p10-alto-low.png",
+      "sha256": "65114d79d873be92b13ca343a063e90a2a89b5cb59e559255eff9d0422099cb7",
+      "sourceClip": [
+        170,
+        623,
+        400,
+        647
+      ],
+      "renderScale": 6
+    },
+    {
+      "path": ".build/hear-my-prayer-independent-map-2026-10-03/p10-tenor-high.png",
+      "sha256": "66af3d37a881785d89bf78c71bca7e2c797a10bb7d1c6acf88bafc0e8f3e057f",
+      "sourceClip": [
+        47,
+        627,
+        106,
+        651
+      ],
+      "renderScale": 6
+    }
+  ],
+  "overlap": "The Alto hairpin and Tenor upper notation overlap vertically; one neighboring line/mark can remain. No whiteout is approved.",
+  "limitations": "Only these lower/upper edges are guarded, not complete all-edge envelopes."
+}
