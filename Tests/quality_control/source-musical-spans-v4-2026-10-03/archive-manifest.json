@@ -1,0 +1,147 @@
+{
+  "archive": "v4-implementation-and-replay.zip",
+  "members": {
+    "build-run.sh": {
+      "bytes": 807,
+      "sha256": "656d198a8b79438eaf1749d0a55c61c490e23562c04fadf4a76d4a1676438bc8"
+    },
+    "candidate-v4/Core/Detection/NativeScorePageAnalyzer.swift": {
+      "bytes": 66325,
+      "sha256": "ab60944ddeb2bd428329d71877039001f71ca5cae7d24b84ef344310f1f1607d"
+    },
+    "candidate-v4/Core/Detection/ScoreExtractionPlanner.swift": {
+      "bytes": 70852,
+      "sha256": "77212ba8218ba38b525e306ec40270268d44ccdcf3c0942585c790da94c2ace7"
+    },
+    "candidate-v4/Core/Detection/ScoreLocalEndingPreservation.swift": {
+      "bytes": 12513,
+      "sha256": "92460f7de191345bab232e868157d71ba10f2f49c837502efaf83b5962d06ec7"
+    },
+    "candidate-v4/Core/Detection/ScoreSharedEnding.swift": {
+      "bytes": 3285,
+      "sha256": "362611a9a8885e2e02e0c8f75ede8f5986b941f6673a0dbd3546ca360d96f370"
+    },
+    "candidate-v4/Core/Detection/ScoreSharedEndingDetector.swift": {
+      "bytes": 19141,
+      "sha256": "d0306a8dabf64b1496387f66270bcd94f2deb7ec424a1c609159f99453cef79f"
+    },
+    "candidate-v4/Core/Detection/StaffBandDetector.swift": {
+      "bytes": 29163,
+      "sha256": "6946d76ccc486e1ab0f2cbd09f1f950faae298eec9c047500d97233282178adb"
+    },
+    "candidate-v4/case176-middle-owner.pgm": {
+      "bytes": 547215,
+      "sha256": "bd31b41d07d6904cd8b9cff8aa1ec535c8cf8a8cbb9987b709085ae5658d82a6"
+    },
+    "candidate-v4/case176-source.pgm": {
+      "bytes": 547215,
+      "sha256": "049c67488a80a525c46e7c697fd01d41c3dc7cb903bccb2efd1b990fca0e89ab"
+    },
+    "candidate-v4/case176.json": {
+      "bytes": 1288,
+      "sha256": "7eda9f1641c62f9fd5b0dca07776c8761a7a911f80d17ebc3976c655e7223202"
+    },
+    "candidate-v4/case176.log": {
+      "bytes": 925,
+      "sha256": "9c4724a8ad084ae766a5d26a83197d7d22298e7f1ce1e16d2dc3ad7054a188a6"
+    },
+    "candidate-v4/fourcore-comparison.json": {
+      "bytes": 1481,
+      "sha256": "50a173d6aa76dd1511cd7ac4318de0cef86c9363d1107be54f95424d42f744a0"
+    },
+    "candidate-v4/fourcore.json": {
+      "bytes": 207199,
+      "sha256": "9211ed13ca3a96c9ba0c483c50e37e04e10ae7b2ce09dcef9ccb0464877c309a"
+    },
+    "candidate-v4/fourcore.log": {
+      "bytes": 814,
+      "sha256": "5fb1b274d146d7a39cb31541dc939cefa0235e58fda6860b17a92b5692ef0858"
+    },
+    "candidate-v4/real-six-comparison.json": {
+      "bytes": 1035,
+      "sha256": "cc302b3b7d23c76322196db7ab180ebec736850a5f060f5b0b67fb0f9b3c445c"
+    },
+    "candidate-v4/real-six.json": {
+      "bytes": 2030373,
+      "sha256": "1d52184c21310e4c43950edbb8c13bf90c580ea7d6da894872e015dbdd8fdaad"
+    },
+    "candidate-v4/real-six.log": {
+      "bytes": 998,
+      "sha256": "dcc902d6aeac6b14d78e6aa5e7dce0c27678226b823192abeb5c89c7a53a062f"
+    },
+    "candidate-v4/source-hashes.json": {
+      "bytes": 2821,
+      "sha256": "531d6eaa8dee44788937d6771e5febdb8206fe768a7e3be77f907fba7ce038cb"
+    },
+    "candidate-v4/versus-v3.diff": {
+      "bytes": 4205,
+      "sha256": "e829ea2389b3813f9a24e63eef1f6ce8ca4de03f0854602425d7b80e373ad4d7"
+    },
+    "case176.swift": {
+      "bytes": 11003,
+      "sha256": "648c44df2ec2935b561eae8ca1a398289531fe61d5fddbfccdc34ffcb1b0fde4"
+    },
+    "compare-v4.py": {
+      "bytes": 2680,
+      "sha256": "3802e576c8240b60a7eacc3c08ac4a4dfbbdeb5a78782f5e7edd50892a7a865b"
+    },
+    "fourcore.swift": {
+      "bytes": 5673,
+      "sha256": "5dbf6b01298373601a6fdb07f0802486a4c26f67ef377f4c24dd931030ba080d"
+    },
+    "freeze-v4-report.py": {
+      "bytes": 3323,
+      "sha256": "f3ef9dcaafd7c66fa9bdfb69d552a59f5aa6a407a7bd1bdf61bafbc9e998e382"
+    },
+    "make-v4.py": {
+      "bytes": 3967,
+      "sha256": "317066ff51bdd6c17c52296bbf618cf08e802c559af1c5b19292fdec14bc00c1"
+    },
+    "real-six.swift": {
+      "bytes": 1464,
+      "sha256": "77a98d686deb7b788d4f7a173933a00e0e173e00a31c7863c52c88c33b53682e"
+    },
+    "root-full39/build.log": {
+      "bytes": 814,
+      "sha256": "5fb1b274d146d7a39cb31541dc939cefa0235e58fda6860b17a92b5692ef0858"
+    },
+    "root-full39/candidate.json": {
+      "bytes": 16765009,
+      "sha256": "3064c1afdf49b0190f16b563030563a787d36b7bab77163c9c621e56c9c5860a"
+    },
+    "root-full39/compare.py": {
+      "bytes": 3842,
+      "sha256": "77d1e68dbc0688354f6ec1f33168a174c96031c965466648a2623ea4664ae1d1"
+    },
+    "root-full39/comparison.json": {
+      "bytes": 493,
+      "sha256": "b472b3fd07b09e91b3722779aa32d325b99e92b2bbb9d9c86d913d05a67dc660"
+    },
+    "root-full39/inputs.json": {
+      "bytes": 5827,
+      "sha256": "aab9f6116f25de1c15fc8981870bbeaa6ab7efbb02b87c105aa37297d25f2507"
+    },
+    "root-full39/protocol-before-results.json": {
+      "bytes": 4873,
+      "sha256": "5afadaa5fc09ea31e00bdbf32b61191d62696ff350c3d6430b0e20e053b39203"
+    },
+    "root-full39/replay.swift": {
+      "bytes": 1451,
+      "sha256": "3d7fb002ad9f2edd9936fdf0c75034cdca57e64bb84672ca000bcaf7560f463c"
+    },
+    "root-full39/run.log": {
+      "bytes": 1223,
+      "sha256": "576c8fe157f4f2500648cc3d3b8f9f7767881fddb18ed23ecd8bdd3457b1e8fa"
+    },
+    "root-full39/scope.json": {
+      "bytes": 1089,
+      "sha256": "db80d5a9ecc263085ad899b3471af13a687868c78fbdcedbf3d819d6bbc345b9"
+    },
+    "v4-protocol-before-results.json": {
+      "bytes": 2265,
+      "sha256": "f9bdcca7d003d7cfa8eca803a55f62ba0a4472559cbe55492cd758c00ebe9cae"
+    }
+  },
+  "omitted": "Rebuildable binaries and duplicated full source rasters. All original raster/input hashes and rootfull39 result retained.",
+  "sha256": "908c80338d76164aa294d8a462740c7e3c2e09f98f6a16759afa737eaed87e24"
+}

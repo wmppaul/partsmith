@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 3 whole-body preservation checkpoint
+
+The [V4 preservation layer](source-musical-spans-v4-2026-10-03/README.md) measures the complete source shape, rejecting the p10 fermata arches while retaining full broken-stem recovery. Independent arithmetic and the unchanged 29+6 cases confirm its narrow behavior; remaining filled/hollow and full-scale three-head misses remain explicit. A fresh 39-page replay has identical components, staff assignments and all 604 crops to production. This is a useful regression checkpoint, not a crop-quality improvement by itself. A separate combination with numbered-line cleanup is under test; no new detector or app is promoted here.
+
 ## October 3 complete-body continuation
 
 The [V2 source-footprint study](source-musical-spans-v2-2026-10-03/README.md) rejects the earlier line-crossing and pp false matches but splits genuine heads when it excludes their original shaft pixels from the thickness test. V3 restores only those observed body pixels and [independently recovers the complete broken-stem case](musical-span-independent-2026-10-03/candidate-v3/README.md), without new production-baseline losses. Full-scale three-head and other older incomplete cases remain recorded.

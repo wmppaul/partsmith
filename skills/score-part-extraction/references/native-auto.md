@@ -210,6 +210,10 @@ can survive the analysis mask yet lose ownership across its scan gap. Check the
 whole source-owned musical span; recovering only a regression's few pixels does
 not repair an already incomplete part. Staff-line residue that happens to enlarge
 a crop is not reliable musical-preservation evidence.
+Inspect the complete source shape behind a musical-ownership claim: a thick
+patch can belong to a fermata arch, a slur crossing or printed text. Passing
+local body checks is not enough to assign the entire connecting barline to
+multiple instruments. Keep these source counterexamples in full-score review.
 
 Compare every source page, including unresolved instrument layouts. Ignore only
 component ordering; ownership, bounds and alternative-evidence tags are semantic

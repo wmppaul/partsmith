@@ -1,0 +1,14 @@
+--- frozen/NativeScorePageAnalyzer.swift
++++ observer/NativeScorePageAnalyzer.swift
+@@ -958,6 +958,11 @@
+         if retainMusicalEvidence {
+             let sourceSpans = sourceMusicalSpans(original: original, width: width, height: height,
+                 seeds: sourceSpanSeeds, lines: lines, staffIDs: ordered.map(\.id), isCancelled: isCancelled)
++            if let data = try? JSONEncoder().encode(sourceSpans) {
++                FileHandle.standardError.write(Data("SOURCE_SPANS ".utf8))
++                FileHandle.standardError.write(data)
++                FileHandle.standardError.write(Data("\n".utf8))
++            }
+             for span in sourceSpans {
+                 let bounds = [Double(span.bounds[0]) / Double(width), Double(span.bounds[1]) / Double(height),
+                               Double(span.bounds[2]) / Double(width), Double(span.bounds[3]) / Double(height)]
