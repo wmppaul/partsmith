@@ -265,14 +265,21 @@ struct InspectorView: View {
             DeferredLayoutSlider(title: "Scale",
                 value: document.part(withID: part.id)?.layoutSettings.scale ?? part.layoutSettings.scale,
                 range: 0.6...1.4, step: 0.05,
-                format: { $0.formatted(.number.precision(.fractionLength(2))) },
+                format: { "\($0.formatted(.number.precision(.fractionLength(2))))×" },
                 commit: { document.updatePartScale(part.id, scale: $0) })
                 .id("scale-\(part.id)")
 
             if let info = document.previewScaleInfo, info.isWidthLimited {
+                HStack {
+                    Text(part.layoutSettings.useConsistentScale ? "Applied Scale" : "Smallest Applied Scale")
+                    Spacer()
+                    Text("\(info.appliedScale.formatted(.number.precision(.fractionLength(2))))×")
+                        .monospacedDigit()
+                }
+                .font(.subheadline.weight(.semibold))
                 Text(part.layoutSettings.useConsistentScale
-                    ? "The widest strip limits Scale to \(info.appliedScale.formatted(.number.precision(.fractionLength(2))))×. Reduce Side Margins for more width."
-                    : "Some strips reached the page width. Their scale is limited to protect notation. Reduce Side Margins for more room.")
+                    ? "Page width reached. The widest strip sets the limit, so higher Scale settings look the same. Smaller Side Margins make the music larger."
+                    : "Some strips have reached the page width and cannot grow further. Smaller Side Margins make more room for the music.")
                     .font(.caption).foregroundStyle(.secondary)
             } else {
                 Text("Above 1.00, blank source side margins are removed when possible. Notation stays inside the page margins.")
@@ -293,9 +300,14 @@ struct InspectorView: View {
 
             DeferredLayoutSlider(title: "Preferred System Gap",
                 value: document.part(withID: part.id)?.layoutSettings.interSystemGap ?? part.layoutSettings.interSystemGap,
-                range: 4...48, step: 2, format: { "\(Int($0)) pt" },
+                range: PartLayoutSettings.systemGapRange, step: 2, format: { "\(Int($0)) pt" },
                 commit: { document.updatePartGap(part.id, gap: $0) })
                 .id("gap-\(part.id)")
+
+            if part.layoutSettings.balancePages {
+                Text("Balance Page Fill may reduce this gap to avoid extra pages. Turn it off to keep your preferred spacing.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
 
             Toggle("Balance Page Fill", isOn: Binding(
                 get: { document.part(withID: part.id)?.layoutSettings.balancePages ?? true },

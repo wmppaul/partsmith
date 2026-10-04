@@ -60,6 +60,7 @@ import PDFKit
     }
     static func project(name: String, bands: [(Int, Double, Double)]) -> ProjectData {
         var p = ProjectData.empty
+        p.projectSettings.margins = PageMargins(top: 48, leading: 48, bottom: 48, trailing: 48)
         p.projectSettings.showTitleBlock = false
         p.projectSettings.showPartNameInHeader = false
         p.projectSettings.margins.bottom = 0 // Omit the footer from pixel controls.
@@ -219,7 +220,7 @@ import PDFKit
         let decoder = JSONDecoder(); decoder.dateDecodingStrategy = .iso8601
         let package = output.appendingPathComponent("Side margin persistence.partsmithproject")
         try FileManager.default.createDirectory(at: package, withIntermediateDirectories: true)
-        for value: Double? in [12, 0, nil] {
+        for value: Double? in [12, 18, 0, nil] {
             edit(value)
             try encoder.encode(Envelope(project: document.project)).write(to: package.appendingPathComponent("project.json"))
             try source.write(to: package.appendingPathComponent("source.pdf"))
@@ -241,6 +242,33 @@ import PDFKit
         for invalid in [-1.0, 145, .nan, .infinity] { document.updatePartSideMargins(partID, points: invalid) }
         check(document.project == beforeInvalid && !undo.canUndo,
             "Invalid margin values neither change the project nor create Undo steps")
+    }
+    static func checkLargeGapPersistence(source: Data, base: ProjectData) throws {
+        var initial = base
+        initial.projectSettings.interSystemGap = 192
+        let document = PartsmithDocument(project: initial, sourcePDFData: source)
+        let undo = UndoManager(); undo.groupsByEvent = false; document.undoManager = undo
+        let partID = initial.parts[0].id
+        undo.beginUndoGrouping(); document.updatePartGap(partID, gap: 200); undo.endUndoGrouping()
+        check(document.project.parts[0].layoutSettings.interSystemGap == 200,
+            "The document accepts a 200-point system gap without the old 48-point clamp")
+        check(document.project.bands == initial.bands && document.sourcePDFData == source,
+            "A large gap never changes source crops or embedded score data")
+        undo.undo()
+        check(document.project == initial, "One Undo restores the previous system gap and project")
+        undo.redo()
+        check(document.project.parts[0].layoutSettings.interSystemGap == 200, "Redo restores the 200-point system gap")
+        let encoded = try JSONEncoder().encode(document.project)
+        let restored = try JSONDecoder().decode(ProjectData.self, from: encoded)
+        let reopened = PartsmithDocument(project: restored, sourcePDFData: source)
+        check(reopened.project.parts[0].layoutSettings.interSystemGap == 200,
+            "Saving and reopening preserves a 200-point system gap")
+        undo.beginUndoGrouping(); document.createPart(name: "Inherited gap", color: .systemGreen); undo.endUndoGrouping()
+        check(document.project.parts.last?.layoutSettings.interSystemGap == 192,
+            "New parts inherit a 192-point project gap without reducing it to 48")
+        undo.undo()
+        check(document.project.parts.count == initial.parts.count && document.project.parts[0].layoutSettings.interSystemGap == 200,
+            "Undoing a new part preserves the preceding gap edit")
     }
     static func checkAnalysisOrientation(source: Data, project: ProjectData) {
         let pdf = PDFDocument(data: source)!, shared = SourceHorizontalContentCache()
@@ -286,6 +314,7 @@ import PDFKit
         let syntheticSource = synthetic()
         let standard = project(name: "Side whitespace", bands: [(0, 0.43, 0.52)])
         try checkMarginPersistence(source: syntheticSource, base: standard)
+        try checkLargeGapPersistence(source: syntheticSource, base: standard)
         checkAnalysisOrientation(source: syntheticSource, project: standard)
         _ = try runFixture(name: "spacious-digital", source: syntheticSource, base: standard, exactGrowth: true)
         var withMarking = standard
@@ -312,6 +341,16 @@ import PDFKit
         let normalPlan = try plan(normal, source: beethoven)
         check(narrowPlan.pages[0].placements[0].destinationRect.width > normalPlan.pages[0].placements[0].destinationRect.width+40,
             "Smaller side margins visibly increase notation width at the content limit")
+        var defaultMargins = normal
+        defaultMargins.projectSettings.margins.leading = ProjectData.empty.projectSettings.margins.leading
+        defaultMargins.projectSettings.margins.trailing = ProjectData.empty.projectSettings.margins.trailing
+        let defaultMarginPlan = try plan(defaultMargins, source: beethoven)
+        let defaultMarginResult = try PartPDFExporter.renderResult(for: defaultMargins.parts[0].id,
+            project: defaultMargins, sourcePDFData: beethoven)
+        try verifyPixels(name: "beethoven-default-18pt-margins", project: defaultMargins, source: beethoven,
+            plan: defaultMarginPlan, data: defaultMarginResult.data, save: true)
+        check(defaultMarginPlan.pages[0].placements[0].destinationRect.width > normalPlan.pages[0].placements[0].destinationRect.width+40,
+            "New 18-point side margins visibly widen scanned notation while preserving complete source ink")
         let sharedAnalysis = SourceHorizontalContentCache()
         _ = try PartPDFExporter.renderResult(for: normal.parts[0].id, project: normal, sourcePDFData: beethoven,
             horizontalContentCache: sharedAnalysis)

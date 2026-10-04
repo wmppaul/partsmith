@@ -1,0 +1,14 @@
+PASS: Inspector stays at the narrow 340-point viewport
+PASS: Applied Scale shows the actual 1.14× width limit beside requested 1.40×
+PASS: Width limit explanation is visible text, not only a tooltip
+PASS: New part starts with visible 18-point side margins
+PASS: Balancing's effect on preferred gap is visible text
+Native slider count: 3
+Slider 0.0...1.0 value 1.0
+Slider 0.0...1.0 value 0.125
+Slider 0.0...1.0 value 0.061224489795918366
+PASS: Native Preferred System Gap accessibility slider exposes the complete 4–200-point range
+PASS: Scale, margins and gap have three native slider controls
+PASS: Native gap slider sends its control action at the maximum
+PASS: Gap slider commits 200 points to the real document
+PASS: Independent scale explains that only some strips have reached page width

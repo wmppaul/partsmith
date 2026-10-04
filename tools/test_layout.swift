@@ -20,6 +20,9 @@ struct LayoutRegressionTests {
 
     static func project() -> ProjectData {
         var project = ProjectData.empty
+        // Historical fixtures use the original page margins explicitly, so a
+        // new-document default does not rewrite their geometry expectations.
+        project.projectSettings.margins = PageMargins(top: 48, leading: 48, bottom: 48, trailing: 48)
         let part = PartModel(id: UUID(), name: "Violin", color: ColorData(red: 0.2, green: 0.4, blue: 0.8),
                              layoutSettings: .default, createdAt: .now)
         project.parts = [part]
@@ -88,6 +91,19 @@ struct LayoutRegressionTests {
     }
 
     static func main() throws {
+        let freshMargins = ProjectData.empty.projectSettings.margins
+        check(freshMargins == PageMargins(top: 48, leading: 18, bottom: 48, trailing: 18),
+              "New projects use 18-point side margins and retain 48-point vertical margins")
+        var fresh = project()
+        fresh.projectSettings.margins = freshMargins
+        let freshPlan = try plan(fresh)
+        check(freshPlan.pages[0].placements[0].destinationRect.minX == 18 &&
+              freshPlan.pages[0].placements[0].destinationRect.maxX == 594,
+              "New-project margins provide the full 576-point music width on Letter paper")
+        verifyGeometry(freshPlan, project: fresh)
+        let savedMargins = try JSONDecoder().decode(ProjectData.self, from: JSONEncoder().encode(project()))
+        check(savedMargins.projectSettings.margins == PageMargins(top: 48, leading: 48, bottom: 48, trailing: 48),
+              "Saved 48-point project margins remain unchanged by new defaults")
         var standard = project()
         verifyGeometry(try plan(standard), project: standard)
 
@@ -230,6 +246,26 @@ struct LayoutRegressionTests {
         check(pianoPlan.pages.flatMap(\.placements).allSatisfy { abs($0.destinationRect.height - 118.4) < 0.00001 },
               "Twenty-system packing preserves notation scale")
 
+        var spacious = project()
+        spacious.projectSettings.showTitleBlock = false
+        spacious.parts[0].layoutSettings.balancePages = false
+        spacious.parts[0].layoutSettings.interSystemGap = 200
+        spacious.bands = (0..<5).map { index in
+            band(partID: spacious.parts[0].id, page: index % 3, top: 0.2, bottom: 0.4)
+        }
+        let spaciousPlan = try plan(spacious)
+        let spaciousGaps = spaciousPlan.pages.flatMap { page in
+            zip(page.placements, page.placements.dropFirst()).map { $0.destinationRect.minY - $1.destinationRect.maxY }
+        }
+        check(!spaciousGaps.isEmpty && spaciousGaps.allSatisfy { abs($0 - 200) < 0.00001 },
+              "With balancing off, 200-point gaps remain 200 points in the rendered layout")
+        verifyGeometry(spaciousPlan, project: spacious)
+        spacious.parts[0].layoutSettings.balancePages = true
+        let balancedSpacious = try plan(spacious)
+        check(balancedSpacious.pages.count < spaciousPlan.pages.count,
+              "Balancing retains its documented ability to reduce large gaps and avoid extra pages")
+        verifyGeometry(balancedSpacious, project: spacious)
+
         var uniform = project()
         var narrow = uniform.bands[0]
         narrow.id = UUID()
@@ -346,6 +382,18 @@ struct LayoutRegressionTests {
         let limited = try plan(enlarged, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
         check(limited.scaleInfo.isWidthLimited && abs(limited.scaleInfo.appliedScale - 516.0 / 456) < 0.00001,
               "A crop with little blank space stops at its actual safe width and reports the limit")
+        var limitedAt130 = enlarged
+        limitedAt130.parts[0].layoutSettings.scale = 1.3
+        let plateau = try plan(limitedAt130, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
+        check(plateau.pages[0].placements[0].destinationRect == limited.pages[0].placements[0].destinationRect &&
+              plateau.scaleInfo.appliedScale == limited.scaleInfo.appliedScale,
+              "Requests of 1.30 and 1.40 share the same real size after reaching the ink-preserving width limit")
+        limitedAt130.parts[0].layoutSettings.sideMarginPoints = 18
+        let widerAt18 = try plan(limitedAt130, horizontalBounds: { _, rect in rect.insetBy(dx: 30, dy: 0) })
+        check(abs(widerAt18.pages[0].placements[0].destinationRect.width - 576) < 0.00001 &&
+              widerAt18.scaleInfo.maximumSafeScale == plateau.scaleInfo.maximumSafeScale &&
+              widerAt18.pages[0].placements[0].sourceRect == plateau.pages[0].placements[0].sourceRect,
+              "18-point margins enlarge physical notation at the plateau without changing crops or the relative scale limit")
         let noBounds = try plan(enlarged)
         check(noBounds.scaleInfo.isWidthLimited && noBounds.pages[0].placements[0].destinationRect == originalPlacement.destinationRect,
               "Unavailable content bounds safely preserve the original crop")

@@ -325,7 +325,7 @@ struct PageMargins: Codable, Equatable {
     var bottom: Double
     var trailing: Double
 
-    static let standard = PageMargins(top: 48, leading: 48, bottom: 48, trailing: 48)
+    static let standard = PageMargins(top: 48, leading: 18, bottom: 48, trailing: 18)
 }
 
 struct PartModel: Codable, Identifiable, Equatable {
@@ -345,6 +345,8 @@ struct PartModel: Codable, Identifiable, Equatable {
 }
 
 struct PartLayoutSettings: Codable, Equatable {
+    static let systemGapRange = 4.0...200.0
+
     var showTitle: Bool
     var titleText: String
     var composerText: String

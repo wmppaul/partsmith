@@ -1,0 +1,51 @@
+{
+  "status": "pass",
+  "blockingFindings": [],
+  "scope": "System gap range, 18-point side-margin defaults, applied-scale clarity; no extraction algorithm or balancing policy change.",
+  "layoutAssertions": 5443,
+  "nativeExportChecks": 302,
+  "nativeExportFailures": 0,
+  "reviewedProductionFiles": [
+    "Partsmith/Core/DocumentModel/PartsmithDocument.swift",
+    "Partsmith/Core/DocumentModel/ProjectModels.swift",
+    "Partsmith/Features/Inspector/InspectorView.swift"
+  ],
+  "testFiles": [
+    "tools/test_layout.swift",
+    "tools/test_scale_exports.swift"
+  ],
+  "sourceHashFile": "source-hashes.json",
+  "sourceHashCount": 28,
+  "coverage": [
+    "200-point gap retained with balancing off; all bands stay ordered and within page bounds",
+    "Balancing still reduces gaps when required to avoid additional pages",
+    "200-point setter, Undo, Redo, save/reopen, and 192-point new-part inheritance",
+    "Fresh18-point horizontal/48-point vertical margins; explicit saved48/asymmetric margins preserved",
+    "1.30 and1.40 width-limit plateau,18-point physical enlargement without changing source crops",
+    "Complete original source-crop pixel reference for digital, scanned, rectified and edge-ink fixtures; preview/source cache controls"
+  ],
+  "visualReview": {
+    "files": [
+      "beethoven-flute-1.40.png",
+      "beethoven-default-18pt-margins.png"
+    ],
+    "result": "18-point output visibly wider with readable complete retained source; original vertical crops and neighboring fragments unchanged. This is a three-strip fixture, not a complete extracted part.",
+    "default18ReferencePixelIdentical": true,
+    "imageSize": [
+      1224,
+      1584
+    ]
+  },
+  "observedTimingSeconds": {
+    "120StripEnlargedPreview": 0.697,
+    "cachedSpacingRefresh": 0.037
+  },
+  "testExecutables": {
+    "test_layout": "dffa0ac42cce0afd0188eca1cffa1a5bc7b24d3b71de41d2f0e8a8e8db7d7712",
+    "test_scale_exports": "a41c118257b27222da8b89c46f7cbfc254e42312eaf43393f0ca0850818fcb10"
+  },
+  "limits": [
+    "Native harness used private documents without opening user app windows. Inspector screenshot/control smoke is covered by the separate UI reviewer.",
+    "Scale width cap and balanced-page gap reduction are preserved behavior. Existing projects retain saved margins."
+  ]
+}

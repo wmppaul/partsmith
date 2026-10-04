@@ -1122,7 +1122,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
     func updatePartGap(_ partID: UUID, gap: Double) {
         updatePart(partID: partID, actionName: "Change System Gap") { part in
-            part.layoutSettings.interSystemGap = max(4, min(gap, 48))
+            part.layoutSettings.interSystemGap = max(PartLayoutSettings.systemGapRange.lowerBound,
+                min(gap, PartLayoutSettings.systemGapRange.upperBound))
         }
     }
 
@@ -1915,7 +1916,8 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
             titleText: "",
             composerText: "",
             scale: max(0.6, min(project.projectSettings.defaultScale, 1.4)),
-            interSystemGap: max(4, min(project.projectSettings.interSystemGap, 48)),
+            interSystemGap: max(PartLayoutSettings.systemGapRange.lowerBound,
+                min(project.projectSettings.interSystemGap, PartLayoutSettings.systemGapRange.upperBound)),
             showPartNameLabel: false
         )
     }

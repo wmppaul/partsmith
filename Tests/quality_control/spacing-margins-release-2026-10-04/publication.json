@@ -1,0 +1,32 @@
+{
+  "status": "Published local app package after independent layout/export and native Inspector checks",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "1c2ff4069ef41d28d7818277ffe87bbfe840ac360835c1b8642f509cf4d20eb9",
+  "priorPublicSHA256": "25f0364d3cd5119352220014b46b3c6d65356bd43ee37c7527b265c975a944e8",
+  "independentReviews": [
+    {
+      "path": "Tests/quality_control/layout-controls-2026-10-04",
+      "manifestSHA256": "0e883a5284005703d6fda5b7f474b59ec03292d9a755f1ff5fe33e6fbf42939c",
+      "evidenceFilesVerified": 9,
+      "sourceFilesVerified": 28
+    },
+    {
+      "path": "Tests/quality_control/inspector-spacing-ui-2026-10-04",
+      "manifestSHA256": "edafc098ee2d5e19dc28658b71a852f9c6213c24464e94b703259052c2696ea4",
+      "evidenceFilesVerified": 11,
+      "sourceFilesVerified": 34
+    }
+  ],
+  "layoutAssertions": 5443,
+  "nativeExportChecks": 302,
+  "nativeInspectorChecks": 10,
+  "compiledAppSourcesPerArchitecture": 35,
+  "sourceInputsVerified": 45,
+  "rootVisualReview": [
+    "layout-controls-2026-10-04/beethoven-flute-1.40.png",
+    "layout-controls-2026-10-04/beethoven-default-18pt-margins.png",
+    "inspector-spacing-ui-2026-10-04/inspector-340-scrolled.png"
+  ],
+  "visualLimits": "Inspector is an inactive private view with supplied scale metadata. Layout/export tests calculate real scale and compare complete-source rendering. No live user-app walkthrough.",
+  "runningAppActions": "none"
+}

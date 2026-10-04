@@ -1,5 +1,9 @@
 # Complete input corpus quality control
 
+## October 4 spacing and margin controls
+
+The [spacing update](spacing-margins-release-2026-10-04/README.md) extends the preferred gap to 200 points and starts new projects with 18-point side margins. Saved margins remain explicit. The Inspector distinguishes requested and applied scale at the width limit and explains when page balancing reduces spacing. Layout/export checks cover actual 200-point spacing, persistence and Undo, historical 48-point layouts and scanned-source preservation with the new margin default.
+
 ## October 4 selected-page name picking
 
 The name-selection action now opens the first included input page for a valid explicit page selection. All Pages retains the current page, and invalid or empty selections cannot jump to stale range data. Deskew has a blue button in a light neutral panel. See the [focused interaction review](selected-page-picking-2026-10-04/README.md) and [release verification](selected-page-picking-release-2026-10-04/README.md).
