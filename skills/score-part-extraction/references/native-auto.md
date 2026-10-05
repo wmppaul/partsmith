@@ -402,16 +402,18 @@ original rectangles, counts and retained source context. It never changes the
 input project. Compare every replacement with the complete original score;
 review also needs to account for shared directions outside the target staff.
 
-The recognizer is deliberately narrow: one complete five-line staff, clear bar
-boundaries and hanging whole-measure rests. It preserves opening source context
+The recognizer is deliberately narrow: one complete five-line staff, or two staves with
+matching counts and barlines, containing hanging whole-measure rests. It preserves opening source context
 and the ending barline, and leaves unknown ink or ambiguous notation unchanged.
-Grand staffs, mixed playing/resting strips, interior meter/tempo changes,
+Mixed playing/resting strips, interior meter/tempo changes,
 fermatas, repeats and copied shared markings within the compressed span are not
 automatically compressed. Copied opening markings entirely before the retained
 prefix boundary remain eligible.
 Broad neighboring context can prevent an otherwise silent strip from matching.
-Automatic replacements do not join across strips, because their individual
-opening and ending context must remain. Original crops remain available through
+Consecutive confirmed rests join by default. An opening replacement can extend
+through following inserted rests when its ending is a verified ordinary barline.
+A later printed prefix stays separate to retain clef, key, meter or direction
+changes; other source-context boundaries remain conservative. Original crops remain available through
 **Restore Original Crop** and Undo. Recheck output layout after any replacement.
 
 ## Scores with omitted silent staves
@@ -466,12 +468,14 @@ Generated rests use separate saved metadata (`generatedRest`), with count,
 optional first bar and source-system reference. Their source rectangle is only
 an ordering/inspection anchor; never treat it as a crop of that instrument.
 There is no Restore Original Crop action for an instrument that was not printed.
-The Inspector permits changing the inserted rest count and opting into **Join
-with previous rest**, followed by **Update Rest**. Joining requires known,
-consecutive starting bar numbers and stops at intervening music, excluded rows,
-directions, editorial labels or page breaks. An opening heading can stay above
+The Inspector permits changing the inserted rest count and disabling **Join
+with previous rest**, followed by **Update Rest**, to keep a separate row.
+Joining is enabled by default for consecutive source systems; optional first-bar
+numbers may be absent, but conflicting known numbers prevent a join. Intervening
+music, excluded rows, directions, later editorial labels and page breaks stop joining. An opening heading can stay above
 the combined rest; a later heading must stay at its own measure. Generated rests
-never join printed-rest replacements. All original source entries remain stored
+can extend a preceding compressed strip with a verified ordinary ending; they
+do not absorb a later printed prefix. All original source entries remain stored
 and editable; only their output placement combines. Saving, Undo and native PDF
 export preserve these distinctions. Counts of one render as a whole-measure
 rest. Review the combined duration, meter and subsequent entry against the score;

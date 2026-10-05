@@ -28,6 +28,9 @@ OMR, MusicXML editing or a cloud service.
   suggest an editable count; single-staff or disconnected systems remain manual.
   Confirm silence and actual whole-bar durations, including pickups and split
   measures, before inserting rests for omitted instruments.
+- Recognize complete single-staff or matching two-staff whole-rest strips. Join
+  consecutive confirmed rests by default while retaining printed context and
+  musical boundaries; leave original source rows editable.
 - Add parts as an undoable operation. Refine crops in Source or Preview using
   the same saved geometry, review all output and export one or all parts.
 

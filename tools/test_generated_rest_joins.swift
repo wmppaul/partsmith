@@ -13,6 +13,7 @@ import PDFKit
         let part = PartModel(id: UUID(), name: "Voice", color: ColorData(red: 0, green: 0, blue: 1),
                              layoutSettings: .default, createdAt: .now)
         p.parts = [part]; p.pageCount = 2
+        p.parts[0].layoutSettings.usesSharedLayout = true
         p.bands = (0..<4).map { i in
             BandModel(id: UUID(), pageIndex: i / 2, partID: part.id,
                 topFraction: 0.1 + Double(i % 2) * 0.3, bottomFraction: 0.2 + Double(i % 2) * 0.3,
@@ -43,10 +44,15 @@ import PDFKit
         check(decoded == base && decodedRows.count == 1, "Join preference and all original rows survive reopening")
         let legacy = try JSONDecoder().decode(BandGeneratedRest.self,
             from: Data(#"{"barCount":3,"startBarNumber":1,"sourceSystemIndex":0}"#.utf8))
-        check(legacy.joinWithPrevious == nil, "Legacy documents do not opt into joining")
+        check(legacy.joinWithPrevious == nil, "Missing preferences retain the default joining policy")
         var separate = base
-        for i in separate.bands.indices { separate.bands[i].generatedRest?.joinWithPrevious = nil }
-        check(try placements(separate).count == 4, "Joining is opt-in")
+        for i in separate.bands.indices { separate.bands[i].generatedRest?.joinWithPrevious = false }
+        check(try placements(separate).count == 4, "Explicit separation is retained")
+        var defaults = base
+        for i in defaults.bands.indices { defaults.bands[i].generatedRest?.joinWithPrevious = nil }
+        check(try placements(defaults).count == 1, "Consecutive rests join by default")
+        for i in defaults.bands.indices { defaults.bands[i].generatedRest?.startBarNumber = nil; defaults.bands[i].barNumberValue = nil }
+        check(try placements(defaults).count == 1, "Source system continuity supports a run without typed bar numbers")
 
         let cue = BandSourceMarking(topFraction: 0.04, bottomFraction: 0.07, leftFraction: 0.1, rightFraction: 0.6)
         var opening = base; opening.bands[0].sourceMarkings = [cue]; opening.bands[0].editorialLabel = "Opening"
@@ -60,8 +66,6 @@ import PDFKit
             ("internal cue", { (p: inout ProjectData) in p.bands[1].sourceMarkings = [cue] }),
             ("internal label", { (p: inout ProjectData) in p.bands[1].editorialLabel = "Tempo change" }),
             ("requested page turn", { (p: inout ProjectData) in p.bands[1].pageBreakBefore = true }),
-            ("unknown first number", { (p: inout ProjectData) in p.bands[0].generatedRest?.startBarNumber = nil }),
-            ("unknown following number", { (p: inout ProjectData) in p.bands[1].generatedRest?.startBarNumber = nil }),
             ("measure gap", { (p: inout ProjectData) in p.bands[1].generatedRest?.startBarNumber = 5 }),
             ("measure overlap", { (p: inout ProjectData) in p.bands[1].generatedRest?.startBarNumber = 3 }),
             ("following direction", { (p: inout ProjectData) in var c = cue; c.isBelow = true; p.bands[0].sourceMarkings = [c] })

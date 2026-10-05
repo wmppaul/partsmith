@@ -212,11 +212,13 @@ enum PartPDFExporter {
         }
         context.strokePath()
         let halfWidth = min(space * 6, geometry.restSpan * 0.27)
-        context.fill(CGRect(x: center.x - halfWidth, y: center.y - space * 0.24,
-                            width: halfWidth * 2, height: space * 0.48))
-        for x in [center.x - halfWidth, center.x + halfWidth] {
-            context.fill(CGRect(x: x - space * 0.12, y: center.y - space,
-                                width: space * 0.24, height: space * 2))
+        for staffCenter in [center] + geometry.additionalRestCenters {
+            context.fill(CGRect(x: staffCenter.x - halfWidth, y: staffCenter.y - space * 0.24,
+                                width: halfWidth * 2, height: space * 0.48))
+            for x in [staffCenter.x - halfWidth, staffCenter.x + halfWidth] {
+                context.fill(CGRect(x: x - space * 0.12, y: staffCenter.y - space,
+                                    width: space * 0.24, height: space * 2))
+            }
         }
         let paragraph = NSMutableParagraphStyle(); paragraph.alignment = .center
         NSGraphicsContext.saveGraphicsState()

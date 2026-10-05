@@ -6,7 +6,7 @@ The app preserves the original engraving or scanned notation. Staff detection, p
 
 ## Download
 
-**[Download Partsmith v0.1.0-alpha.4 for macOS](https://github.com/wmppaul/partsmith/releases/download/v0.1.0-alpha.4/Partsmith-v0.1.0-alpha.4-macos.zip)** · [Release notes](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.4)
+**[Download Partsmith v0.1.0-alpha.5 for macOS](https://github.com/wmppaul/partsmith/releases/download/v0.1.0-alpha.5/Partsmith-v0.1.0-alpha.5-macos.zip)** · [Release notes](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.5)
 
 Requires **macOS 14 or later**; supports Apple Silicon and Intel. Unzip the download and open `Partsmith.app`. This alpha is ad hoc signed, not notarized. If macOS blocks it, open **System Settings → Privacy & Security → Open Anyway** after trying to launch it.
 
@@ -41,7 +41,7 @@ Names remain editable after recognition. Use **Add Names from Score** to extend 
 
 ### Rests and changing instrumentation
 
-**Count and compress full-bar rests automatically** runs after Add Parts. For an existing part, use **Find & Compress Rests**; for one strip, use **Count & Compress This Strip**. Clear, eligible single-staff rest strips become counted rests. Uncertain notation stays as its original crop. **Restore Original Crop**, Undo and a reviewed manual count remain available.
+**Count and compress full-bar rests automatically** runs after Add Parts. For an existing part, use **Find & Compress Rests**; for one strip, use **Count & Compress This Strip**. Clear, eligible rest strips become counted rests, including piano grand staffs when both hands rest for the same measures. Uncertain notation stays as its original crop. **Restore Original Crop**, Undo and a reviewed manual count remain available. Consecutive confirmed rests join by default, including an opening compressed strip followed by omitted-system rests when its ending is a plain barline. Directions, changed printed context and explicit breaks keep rests separate; uncheck **Join with previous rest** for a local exception.
 
 If silent instruments disappear from the full score, enable **Instrument layout changes between systems** before running Auto. In **Assign Instruments**, use Fit Width or zoom and drag across the staves of one complete system; the selection highlights as you drag. Click to adjust the selection, or Shift-click/Shift-drag to add staves. Check the instruments actually printed and their staff counts. **Page N · System N** identifies the system within its source page.
 

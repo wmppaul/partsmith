@@ -1,0 +1,569 @@
+{
+  "cases" : [
+    {
+      "case" : "native-auto-Flute",
+      "diagnostic" : "Measure 4: extra ink [[1276.0, 0.0, 7.0, 8.0, 37.0], [1289.0, 0.0, 7.0, 8.0, 35.0], [1305.0, 0.0, 16.0, 8.0, 65.0], [1323.0, 0.0, 10.0, 7.0, 41.0], [1334.0, 0.0, 10.0, 7.0, 45.0], [1345.0, 0.0, 18.0, 14.0, 141.0], [1365.0, 0.0, 19.0, 8.0, 86.0], [1385.0, 0.0, 9.0, 7.0, 43.0], [1396.0, 0.0, 10.0, 7.0, 40.0], [1407.0, 0.0, 18.0, 14.0, 141.0], [1435.0, 0.0, 11.0, 7.0, 42.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Clarinet",
+      "diagnostic" : "Matched 5 complete whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "Clarinet-ordinary-closing-bar",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "Clarinet-prefix-keeps-meter-before-rest",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Bassoon",
+      "diagnostic" : "Matched 5 complete whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "Bassoon-ordinary-closing-bar",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "Bassoon-prefix-keeps-meter-before-rest",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Horn",
+      "diagnostic" : "Matched 5 complete whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "Horn-ordinary-closing-bar",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "Horn-prefix-keeps-meter-before-rest",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Piano",
+      "diagnostic" : "Matched 5 complete whole-bar rests; Matched 5 complete whole-bar rests; Matched 5 complete whole-bar rests on both staves",
+      "passed" : "true"
+    },
+    {
+      "case" : "Piano-ordinary-closing-bar",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "Piano-prefix-keeps-meter-before-rest",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Violin1",
+      "diagnostic" : "Measure too narrow or extra vertical notation",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Violin2",
+      "diagnostic" : "Measure too narrow or extra vertical notation",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Viola",
+      "diagnostic" : "Complete bar boundaries not found: 8",
+      "passed" : "true"
+    },
+    {
+      "case" : "native-auto-Cello",
+      "diagnostic" : "Measure too narrow or extra vertical notation",
+      "passed" : "true"
+    },
+    {
+      "case" : "grand-staff-count-is-five-not-ten",
+      "diagnostic" : "Matched 5 complete whole-bar rests; Matched 5 complete whole-bar rests; Matched 5 complete whole-bar rests on both staves",
+      "passed" : "true"
+    },
+    {
+      "case" : "grand-staff-retains-both-five-line-groups",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch0.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch0.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch0.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch0.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch0.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch0.5",
+      "diagnostic" : "Measure 1: 0 rests, objects [[332.0, 20.0, 14.0, 16.0, 130.0], [333.0, 41.0, 12.0, 6.0, 55.0], [328.0, 52.0, 13.0, 5.0, 50.0], [325.0, 62.0, 6.0, 6.0, 28.0], [332.0, 62.0, 20.0, 6.0, 96.0], [326.0, 73.0, 7.0, 5.0, 19.0], [333.0, 73.0, 6.0, 4.0, 15.0], [341.0, 73.0, 4.0, 5.0, 15.0], [346.0, 73.0, 6.0, 5.0, 19.0], [327.0, 83.0, 18.0, 15.0, 146.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch1.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch1.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch1.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch1.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch1.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch1.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch2.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch2.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch2.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch2.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch2.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch2.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch3.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch3.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch3.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch3.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch3.5",
+      "diagnostic" : "Measure 1: 0 rests, objects [[332.0, 20.0, 14.0, 16.0, 130.0], [333.0, 41.0, 12.0, 6.0, 55.0], [328.0, 52.0, 13.0, 5.0, 50.0], [325.0, 62.0, 6.0, 6.0, 28.0], [332.0, 62.0, 20.0, 6.0, 96.0], [326.0, 73.0, 7.0, 5.0, 19.0], [333.0, 73.0, 6.0, 4.0, 15.0], [341.0, 73.0, 4.0, 5.0, 15.0], [346.0, 73.0, 6.0, 5.0, 19.0], [372.0, 73.0, 13.0, 5.0, 64.0], [327.0, 83.0, 18.0, 15.0, 146.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch3.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x380.0-pitch4.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x380.0-pitch4.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x380.0-pitch4.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch0.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch0.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch0.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch0.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch0.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch0.5",
+      "diagnostic" : "Measure 1: 0 rests, objects [[332.0, 20.0, 14.0, 16.0, 130.0], [333.0, 41.0, 12.0, 6.0, 55.0], [328.0, 52.0, 13.0, 5.0, 50.0], [409.0, 52.0, 7.0, 5.0, 30.0], [421.0, 52.0, 6.0, 5.0, 28.0], [325.0, 62.0, 6.0, 6.0, 28.0], [332.0, 62.0, 20.0, 6.0, 96.0], [409.0, 62.0, 7.0, 6.0, 34.0], [423.0, 62.0, 4.0, 6.0, 14.0], [326.0, 73.0, 7.0, 5.0, 19.0], [333.0, 73.0, 6.0, 4.0, 15.0], [341.0, 73.0, 4.0, 5.0, 15.0], [346.0, 73.0, 6.0, 5.0, 19.0], [327.0, 83.0, 18.0, 15.0, 146.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch1.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch1.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch1.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch1.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch1.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch1.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch2.0",
+      "diagnostic" : "Unknown first-measure ink: [[332.0, 20.0, 14.0, 16.0], [333.0, 41.0, 12.0, 6.0], [328.0, 52.0, 13.0, 5.0], [409.0, 52.0, 7.0, 5.0], [421.0, 52.0, 6.0, 5.0], [444.0, 55.0, 12.0, 2.0], [325.0, 62.0, 6.0, 6.0], [332.0, 62.0, 20.0, 6.0], [409.0, 62.0, 7.0, 6.0], [423.0, 62.0, 4.0, 6.0], [444.0, 62.0, 12.0, 2.0], [326.0, 73.0, 7.0, 5.0], [333.0, 73.0, 6.0, 4.0], [341.0, 73.0, 4.0, 5.0], [346.0, 73.0, 6.0, 5.0], [327.0, 83.0, 18.0, 15.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch2.0",
+      "diagnostic" : "Unknown first-measure ink: [[332.0, 20.0, 14.0, 16.0], [456.0, 27.0, 2.0, 9.0], [333.0, 41.0, 12.0, 6.0], [456.0, 41.0, 2.0, 6.0], [328.0, 52.0, 13.0, 5.0], [409.0, 52.0, 7.0, 5.0], [421.0, 52.0, 6.0, 5.0], [444.0, 52.0, 14.0, 5.0], [325.0, 62.0, 6.0, 6.0], [332.0, 62.0, 20.0, 6.0], [409.0, 62.0, 7.0, 6.0], [423.0, 62.0, 4.0, 6.0], [444.0, 62.0, 12.0, 2.0], [326.0, 73.0, 7.0, 5.0], [333.0, 73.0, 6.0, 4.0], [341.0, 73.0, 4.0, 5.0], [346.0, 73.0, 6.0, 5.0], [327.0, 83.0, 18.0, 15.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch2.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch2.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch2.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch2.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch3.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch3.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch3.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch3.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch3.5",
+      "diagnostic" : "Measure 1: 0 rests, objects [[332.0, 20.0, 14.0, 16.0, 130.0], [333.0, 41.0, 12.0, 6.0, 55.0], [328.0, 52.0, 13.0, 5.0, 50.0], [409.0, 52.0, 7.0, 5.0, 30.0], [421.0, 52.0, 6.0, 5.0, 28.0], [325.0, 62.0, 6.0, 6.0, 28.0], [332.0, 62.0, 20.0, 6.0, 96.0], [409.0, 62.0, 7.0, 6.0, 34.0], [423.0, 62.0, 4.0, 6.0, 14.0], [326.0, 73.0, 7.0, 5.0, 19.0], [333.0, 73.0, 6.0, 4.0, 15.0], [341.0, 73.0, 4.0, 5.0, 15.0], [346.0, 73.0, 6.0, 5.0, 19.0], [442.0, 73.0, 13.0, 5.0, 64.0], [327.0, 83.0, 18.0, 15.0, 146.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch3.5",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x450.0-pitch4.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x450.0-pitch4.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x450.0-pitch4.0",
+      "diagnostic" : "Possible sounding glyph in opening signature",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch0.0",
+      "diagnostic" : "Measure 2: extra ink [[733.0, 33.0, 14.0, 3.0, 34.0], [734.0, 41.0, 12.0, 2.0, 20.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch0.0",
+      "diagnostic" : "Measure 2: extra ink [[733.0, 6.0, 15.0, 30.0, 93.0], [734.0, 41.0, 12.0, 2.0, 20.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch0.0",
+      "diagnostic" : "Measure 2: extra ink [[733.0, 33.0, 14.0, 3.0, 34.0], [732.0, 41.0, 14.0, 6.0, 32.0], [732.0, 52.0, 2.0, 5.0, 10.0], [732.0, 62.0, 2.0, 6.0, 12.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch0.5",
+      "diagnostic" : "Measure 2: extra ink [[732.0, 41.0, 16.0, 6.0, 56.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch0.5",
+      "diagnostic" : "Measure 2: extra ink [[746.0, 11.0, 2.0, 25.0, 50.0], [732.0, 41.0, 16.0, 6.0, 90.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch0.5",
+      "diagnostic" : "Measure 2: 0 rests, objects []",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch1.0",
+      "diagnostic" : "Measure 2: 2 rests, objects [[733.0, 44.0, 14.0, 3.0, 30.0], [735.0, 52.0, 10.0, 2.0, 14.0], [804.0, 52.0, 16.0, 4.0, 64.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch1.0",
+      "diagnostic" : "Measure 2: 2 rests, objects [[746.0, 16.0, 2.0, 20.0, 40.0], [733.0, 41.0, 15.0, 6.0, 45.0], [735.0, 52.0, 10.0, 2.0, 14.0], [804.0, 52.0, 16.0, 4.0, 64.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch1.0",
+      "diagnostic" : "Measure 2: 2 rests, objects [[733.0, 44.0, 14.0, 3.0, 34.0], [732.0, 52.0, 2.0, 5.0, 10.0], [735.0, 52.0, 10.0, 2.0, 14.0], [804.0, 52.0, 16.0, 4.0, 64.0], [732.0, 62.0, 2.0, 6.0, 12.0], [732.0, 73.0, 2.0, 5.0, 10.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch1.5",
+      "diagnostic" : "Measure 2: extra ink [[732.0, 52.0, 7.0, 5.0, 23.0], [741.0, 52.0, 7.0, 5.0, 23.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch1.5",
+      "diagnostic" : "Measure 2: 2 rests, objects [[746.0, 22.0, 2.0, 14.0, 28.0], [746.0, 41.0, 2.0, 6.0, 12.0], [732.0, 52.0, 16.0, 5.0, 78.0], [804.0, 52.0, 16.0, 4.0, 64.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch1.5",
+      "diagnostic" : "Measure 2: 2 rests, objects [[732.0, 52.0, 16.0, 5.0, 79.0], [804.0, 52.0, 16.0, 4.0, 64.0], [732.0, 62.0, 2.0, 6.0, 12.0], [732.0, 73.0, 2.0, 5.0, 10.0], [732.0, 83.0, 2.0, 4.0, 7.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch2.0",
+      "diagnostic" : "Measure 2: extra ink [[734.0, 55.0, 12.0, 2.0, 22.0], [734.0, 62.0, 12.0, 2.0, 22.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch2.0",
+      "diagnostic" : "Measure 2: extra ink [[746.0, 27.0, 2.0, 9.0, 18.0], [746.0, 41.0, 2.0, 6.0, 12.0], [734.0, 52.0, 14.0, 5.0, 32.0], [734.0, 62.0, 12.0, 2.0, 22.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch2.0",
+      "diagnostic" : "Measure 2: extra ink [[734.0, 55.0, 12.0, 2.0, 22.0], [732.0, 62.0, 14.0, 6.0, 34.0], [732.0, 73.0, 2.0, 5.0, 10.0], [732.0, 83.0, 2.0, 9.0, 18.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch2.5",
+      "diagnostic" : "Measure 2: extra ink [[732.0, 62.0, 16.0, 6.0, 60.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch2.5",
+      "diagnostic" : "Measure 2: extra ink [[746.0, 32.0, 2.0, 4.0, 7.0], [746.0, 41.0, 2.0, 6.0, 12.0], [746.0, 52.0, 2.0, 5.0, 10.0], [732.0, 62.0, 16.0, 6.0, 93.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch2.5",
+      "diagnostic" : "Measure 2: extra ink [[732.0, 62.0, 16.0, 6.0, 93.0], [732.0, 73.0, 2.0, 5.0, 10.0], [732.0, 83.0, 2.0, 14.0, 28.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch3.0",
+      "diagnostic" : "Measure 2: extra ink [[733.0, 65.0, 14.0, 3.0, 28.0], [734.0, 73.0, 12.0, 2.0, 20.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch3.0",
+      "diagnostic" : "Measure 2: extra ink [[746.0, 41.0, 2.0, 6.0, 12.0], [746.0, 52.0, 2.0, 5.0, 10.0], [733.0, 62.0, 15.0, 6.0, 39.0], [734.0, 73.0, 12.0, 2.0, 20.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch3.0",
+      "diagnostic" : "Measure 2: extra ink [[733.0, 65.0, 14.0, 3.0, 28.0], [732.0, 73.0, 14.0, 5.0, 30.0], [732.0, 83.0, 2.0, 20.0, 40.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch3.5",
+      "diagnostic" : "Measure 2: extra ink [[732.0, 73.0, 6.0, 5.0, 22.0], [742.0, 73.0, 6.0, 5.0, 22.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch3.5",
+      "diagnostic" : "Measure 2: 0 rests, objects [[732.0, 73.0, 13.0, 5.0, 64.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch3.5",
+      "diagnostic" : "Measure 2: extra ink [[732.0, 73.0, 16.0, 5.0, 78.0], [732.0, 83.0, 2.0, 21.0, 42.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-whole-x740.0-pitch4.0",
+      "diagnostic" : "Measure 2: extra ink [[734.0, 76.0, 12.0, 2.0, 20.0], [733.0, 83.0, 14.0, 3.0, 34.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-up-x740.0-pitch4.0",
+      "diagnostic" : "Measure 2: extra ink [[746.0, 52.0, 2.0, 5.0, 10.0], [746.0, 62.0, 2.0, 6.0, 12.0], [734.0, 73.0, 14.0, 5.0, 30.0], [733.0, 83.0, 14.0, 3.0, 34.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-down-x740.0-pitch4.0",
+      "diagnostic" : "Measure 2: extra ink [[734.0, 76.0, 12.0, 2.0, 20.0], [732.0, 83.0, 15.0, 21.0, 75.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "piano-hand-0-playing",
+      "diagnostic" : "Measure 2: extra ink [[746.0, 44.0, 2.0, 6.0, 12.0], [746.0, 55.0, 2.0, 5.0, 10.0], [732.0, 65.0, 16.0, 6.0, 93.0]]; Staff 1 of the group is not entirely whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "piano-hand-1-playing",
+      "diagnostic" : "Matched 5 complete whole-bar rests; Measure 2: extra ink [[746.0, 32.0, 2.0, 6.0, 12.0], [746.0, 43.0, 2.0, 5.0, 10.0], [732.0, 53.0, 16.0, 6.0, 93.0]]; Staff 2 of the group is not entirely whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "grand-staff-conflicting-boundaries",
+      "diagnostic" : "Matched 5 complete whole-bar rests; Measure 2: extra ink [[961.0, 0.0, 3.0, 27.0, 81.0]]; Staff 2 of the group is not entirely whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-internal-fermata",
+      "diagnostic" : "Measure 3: extra ink [[1108.0, 10.0, 24.0, 12.0, 82.0], [1118.0, 19.0, 4.0, 4.0, 14.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "piano-internal-fermata",
+      "diagnostic" : "Matched 5 complete whole-bar rests; Measure 3: extra ink [[1108.0, 2.0, 24.0, 12.0, 84.0], [1118.0, 10.0, 4.0, 5.0, 16.0]]; Staff 2 of the group is not entirely whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "clarinet-internal-meter",
+      "diagnostic" : "Measure 3: extra ink [[1124.0, 52.0, 7.0, 5.0, 30.0], [1136.0, 52.0, 6.0, 5.0, 28.0], [1124.0, 62.0, 7.0, 6.0, 34.0], [1138.0, 62.0, 4.0, 6.0, 14.0]]",
+      "passed" : "true"
+    },
+    {
+      "case" : "piano-internal-meter",
+      "diagnostic" : "Matched 5 complete whole-bar rests; Measure 3: extra ink [[1124.0, 43.0, 7.0, 5.0, 30.0], [1136.0, 43.0, 6.0, 5.0, 28.0], [1124.0, 53.0, 7.0, 6.0, 34.0], [1138.0, 53.0, 4.0, 6.0, 14.0]]; Staff 2 of the group is not entirely whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "closing-double-source-preserved",
+      "diagnostic" : "Matched 5 complete whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "closing-double-stops-cross-system-join",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "closing-word-source-preserved",
+      "diagnostic" : "Matched 5 complete whole-bar rests",
+      "passed" : "true"
+    },
+    {
+      "case" : "closing-word-stops-cross-system-join",
+      "diagnostic" : "",
+      "passed" : "true"
+    },
+    {
+      "case" : "grand-staff-cancellation",
+      "diagnostic" : "",
+      "passed" : "true"
+    }
+  ],
+  "checks" : 112,
+  "failures" : [
+
+  ],
+  "sourceSHA256" : "b87d0751e71c16ad86a2fbfd886d1e65624f970560ee9797c4cdf2a50152111f"
+}

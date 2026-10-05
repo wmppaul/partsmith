@@ -1,7 +1,7 @@
 import CoreGraphics
 import Foundation
 
-/// Recognizes the deliberately narrow case of one complete staff containing
+/// Recognizes the deliberately narrow case of one or two complete staves containing
 /// only centered, hanging full-measure rests. Unknown ink is a failed match.
 /// Analysis removes lines only in a temporary raster; the source is unchanged.
 enum ScoreRestDetector {
@@ -14,6 +14,10 @@ enum ScoreRestDetector {
         var prefixBounds: CGRect
         var suffixBounds: CGRect?
         var restBounds: [CGRect]
+        var staffLineGroups: [[Double]]? = nil
+        var canExtendThroughFollowingRests = false
+        /// Kept for agreement checks between the two hands of a grand staff.
+        var boundaryFractions: [Double] = []
     }
 
     private struct Component {
@@ -39,7 +43,52 @@ enum ScoreRestDetector {
             $0.staffLineFractions.count == 5 && $0.staffLineFractions[0] >= band.minY
                 && $0.staffLineFractions[4] <= band.maxY
         }
-        guard staves.count == 1, let staff = staves.first else { return reject("Need exactly one complete staff") }
+        guard (1...2).contains(staves.count) else { return reject("Need one staff or a two-staff group") }
+        if staves.count == 2 {
+            let ordered = staves.sorted { $0.staffLineFractions[0] < $1.staffLineFractions[0] }
+            let middle = (ordered[0].staffLineFractions[4] + ordered[1].staffLineFractions[0]) / 2
+            let crops = [CGRect(x: band.minX, y: band.minY, width: band.width, height: middle - band.minY),
+                         CGRect(x: band.minX, y: middle, width: band.width, height: band.maxY - middle)]
+            var matches: [Detection] = []
+            for index in ordered.indices {
+                guard let match = detectStaff(in: image, band: crops[index], staff: ordered[index],
+                    found: found, diagnostic: diagnostic, isCancelled: isCancelled) else {
+                    return reject("Staff \(index + 1) of the group is not entirely whole-bar rests")
+                }
+                matches.append(match)
+            }
+            let first = matches[0], second = matches[1]
+            let tolerance = (ordered[0].staffLineFractions[4] - ordered[0].staffLineFractions[0])
+                * Double(image.height) / Double(image.width) * 0.15
+            guard first.barCount == second.barCount,
+                  first.boundaryFractions.count == second.boundaryFractions.count,
+                  zip(first.boundaryFractions, second.boundaryFractions).allSatisfy({ abs($0 - $1) <= tolerance }) else {
+                return reject("The two staves do not agree on measure boundaries")
+            }
+            let prefixRight = matches.map(\.prefixBounds.maxX).max()!
+            let suffixLeft = matches.compactMap(\.suffixBounds?.minX).min()!
+            guard prefixRight < suffixLeft,
+                  matches.flatMap(\.restBounds).allSatisfy({ $0.minX > prefixRight && $0.maxX < suffixLeft }) else {
+                return reject("Grand-staff signature overlaps counted rests")
+            }
+            diagnostic?("Matched \(first.barCount) complete whole-bar rests on both staves")
+            return Detection(barCount: first.barCount, staffLineFractions: first.staffLineFractions,
+                skewDegrees: first.skewDegrees, staffLeftFraction: min(first.staffLeftFraction, second.staffLeftFraction),
+                staffRightFraction: max(first.staffRightFraction, second.staffRightFraction),
+                prefixBounds: CGRect(x: band.minX, y: band.minY, width: prefixRight - band.minX, height: band.height),
+                suffixBounds: CGRect(x: suffixLeft, y: band.minY, width: band.maxX - suffixLeft, height: band.height),
+                restBounds: matches.flatMap(\.restBounds), staffLineGroups: matches.map(\.staffLineFractions),
+                canExtendThroughFollowingRests: matches.allSatisfy(\.canExtendThroughFollowingRests),
+                boundaryFractions: first.boundaryFractions)
+        }
+        return detectStaff(in: image, band: band, staff: staves[0], found: found,
+            diagnostic: diagnostic, isCancelled: isCancelled)
+    }
+
+    private static func detectStaff(in image: CGImage, band: CGRect, staff: StaffBandCandidate,
+                                    found: StaffDetectionResult, diagnostic: ((String) -> Void)?,
+                                    isCancelled: () -> Bool) -> Detection? {
+        func reject(_ reason: String) -> Detection? { diagnostic?(reason); return nil }
         let factor = min(1, 1800.0 / Double(image.width), 2600.0 / Double(image.height))
         let width = max(1, Int((Double(image.width) * factor).rounded()))
         let height = max(1, Int((Double(image.height) * factor).rounded()))
@@ -117,7 +166,16 @@ enum ScoreRestDetector {
         var lineSupport: [Int] = []
         for x in left...right {
             let supported = localLines.filter { line in
-                (-radius...radius).contains { value(x, Int(line.rounded()) + $0) }
+                (-radius...radius).contains { offset in
+                    let y = Int(line.rounded()) + offset
+                    guard value(x, y) else { return false }
+                    // A piano brace can cross all five expected line heights.
+                    // The staff itself must continue horizontally from here.
+                    let length = max(4, Int(space * 2))
+                    return [-1, 1].contains { direction in
+                        (1...length).filter { value(x + direction * $0, y) }.count >= Int(Double(length) * 0.8)
+                    }
+                }
             }.count
             if supported >= 4 { lineSupport.append(x) }
         }
@@ -299,6 +357,49 @@ enum ScoreRestDetector {
             }
             return nil
         }
+        // Orchestral scores align the meter across transposing instruments.
+        // A keyless clarinet may therefore have a large blank gap before C.
+        // Recognize that specific open-right meter shape instead of treating
+        // arbitrary ink after a long gap as another part of the signature.
+        func openingCommonTimeRight(_ body: [Component], after clefRight: Double) -> Double? {
+            let eligible = body.filter { Double($0.left) > clefRight
+                && Double($0.top) >= localLines[1] - space * 0.35
+                && Double($0.bottom) <= localLines[3] + space * 0.35 }.sorted { $0.left < $1.left }
+            var groups: [[Component]] = []
+            for component in eligible {
+                if let previous = groups.last, let right = previous.map(\.right).max(),
+                   Double(component.left - right) < space * 0.65 {
+                    groups[groups.count - 1].append(component)
+                } else { groups.append([component]) }
+            }
+            for group in groups {
+                let x0 = group.map(\.left).min()!, x1 = group.map(\.right).max()!
+                let y0 = group.map(\.top).min()!, y1 = group.map(\.bottom).max()!
+                let glyphWidth = Double(x1 - x0 + 1)
+                guard glyphWidth >= space * 1.2, glyphWidth <= space * 2.3,
+                      Double(y0) <= localLines[1] + space * 0.4,
+                      Double(y1) >= localLines[3] - space * 0.4 else { continue }
+                func density(_ left: Double, _ right: Double, _ upper: Double, _ lower: Double) -> Double {
+                    var dark = 0, samples = 0
+                    for row in Int(ceil(localLines[0] + upper * space))...Int(floor(localLines[0] + lower * space)) {
+                        // Measure actual glyph ink, excluding the five staff lines.
+                        if localLines.contains(where: { abs(Double(row) - $0) <= Double(radius) }) { continue }
+                        for x in Int(ceil(Double(x0) + left * glyphWidth))...Int(floor(Double(x0) + right * glyphWidth)) {
+                            let shift = slope * (Double(x) - Double(width) / 2) + offsets[x]
+                            if black(x, Int((Double(top + row) + shift).rounded())) { dark += 1 }
+                            samples += 1
+                        }
+                    }
+                    return samples > 0 ? Double(dark) / Double(samples) : 0
+                }
+                guard density(0, 0.4, 1.35, 2.65) > 0.5,
+                      density(0.55, 0.78, 2.05, 2.35) < 0.15,
+                      density(0.65, 0.95, 1.15, 1.6) > 0.2,
+                      density(0.65, 0.95, 2.4, 2.85) > 0.1 else { continue }
+                return Double(x1)
+            }
+            return nil
+        }
         func prefixContainsSoundingGlyph(after clefRight: Double, through end: Double) -> Bool {
             let x0 = max(staffLeft, Int(ceil(clefRight))), x1 = min(staffRight, Int(ceil(end)))
             guard x1 > x0 else { return false }
@@ -458,6 +559,9 @@ enum ScoreRestDetector {
                 // from verified clef geometry, not an arbitrary left margin.
                 if let clefRight = openingClefRight(objects) {
                     openingBodyRight = max(openingBodyRight, clefRight - space * 0.7)
+                    if let commonTimeRight = openingCommonTimeRight(objects, after: clefRight) {
+                        openingBodyRight = max(openingBodyRight, commonTimeRight)
+                    }
                 }
                 let body = objects.filter { Double($0.bottom) >= localLines[0] - space * 0.7
                     && Double($0.top) <= localLines[4] + space * 0.7 }.sorted { $0.left < $1.left }
@@ -521,10 +625,16 @@ enum ScoreRestDetector {
                           width: box.width / Double(width), height: box.height / Double(height))
         }
         guard !isCancelled() else { return nil }
+        let ordinaryClosingBar = Double(last.right - last.left + 1) <= space * 0.45
+        let hasClosingInstruction = (min(right, last.right + 2)...right).contains { x in
+            (top...bottom).contains { black(x, $0) }
+        }
         diagnostic?("Matched \(rests.count) complete whole-bar rests")
         return Detection(barCount: rests.count, staffLineFractions: staff.staffLineFractions,
             skewDegrees: found.estimatedSkewDegrees, staffLeftFraction: Double(staffLeft) / Double(width),
             staffRightFraction: Double(staffRight) / Double(width), prefixBounds: prefix,
-            suffixBounds: suffix, restBounds: restBounds)
+            suffixBounds: suffix, restBounds: restBounds,
+            canExtendThroughFollowingRests: ordinaryClosingBar && !hasClosingInstruction,
+            boundaryFractions: boundaries.map { $0.center / Double(width) })
     }
 }

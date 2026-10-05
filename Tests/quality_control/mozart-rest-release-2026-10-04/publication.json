@@ -1,0 +1,50 @@
+{
+  "status": "Published local package after source, detector, default join and independent nine-part output review",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "120a205da7a77353c16d3511090e0da909b8c9aae213739323d5dce5e37f1e6f",
+  "priorPublicSHA256": "8a0426fb86b2ba03075b6debe58c96c786f7bdde819847b9c514befda3515c40",
+  "independentReviews": [
+    {
+      "path": "Tests/quality_control/default-rest-joins-2026-10-04",
+      "manifestSHA256": "60625f96cf553a0d33d72ef1e65c335dc1603a8190d10fb1946dc1b49aa38478",
+      "evidenceFilesVerified": 14,
+      "sourceFilesVerified": 47
+    },
+    {
+      "path": "Tests/quality_control/mozart-rest-detection-2026-10-04",
+      "manifestSHA256": "89fb3c32b87cb5b94fb8b1c6ffa95a30de9c75a92213bf8db4a869a349f5cb5d",
+      "evidenceFilesVerified": 15,
+      "sourceFilesVerified": 32
+    },
+    {
+      "path": "Tests/quality_control/mozart_rest_source_review_2026-10-04",
+      "manifestSHA256": "35c1e69f2fa56849aff52d776d405046d6226aeb66ec4b999bc6fcf8a51dab04",
+      "evidenceFilesVerified": 26,
+      "sourceFilesVerified": 0
+    }
+  ],
+  "compiledAppSourcesPerArchitecture": 37,
+  "sourceInputsVerified": 47,
+  "checksPassed": 830,
+  "numberedAndUnnumberedWorkflowVerified": true,
+  "reviewedOutputPath": "output/pdf/mozart-rests-2026-10-04",
+  "outputManifestSHA256": "6265a40c06f17710ed7711890c33d87f4e8eab8d6c065e0752a73072c380705f",
+  "rootVisualReview": [
+    "mozart_rest_source_review_2026-10-04/output-review/Piano-p1.png",
+    "mozart_rest_source_review_2026-10-04/output-review/Clarinet in A-p1.png"
+  ],
+  "runningAppActions": "none",
+  "scope": "Rest behavior in eight Mozart systems, all nine parts; not full-score crop certification or live mouse interaction testing",
+  "remainingAbstentions": [
+    {
+      "part": "Flute",
+      "system": 1,
+      "eligibleBarCount": 5
+    },
+    {
+      "part": "Clarinet in A",
+      "system": 8,
+      "eligibleBarCount": 5
+    }
+  ]
+}

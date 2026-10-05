@@ -914,7 +914,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 sourceMarkings: planned.sourceMarkings.map { BandSourceMarking(topFraction: $0.topFraction,
                     bottomFraction: $0.bottomFraction, leftFraction: $0.leftFraction, rightFraction: $0.rightFraction,
                     isBelow: $0.isBelow) },
-                generatedRest: generated)
+                generatedRest: generated, sourceSystemIndex: planned.systemIndex)
             guard band.sourceMarkings.allSatisfy({ $0.isValid(in: band) }) else { return nil }
             bands.append(band)
         }
@@ -1526,7 +1526,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     /// The source crop and its markings remain stored verbatim. A replacement
     /// is an explicit output choice, restored together with its count by Undo.
     @discardableResult
-    func updateBandRestReplacement(_ bandID: UUID, barCount: Int?, joinWithPrevious: Bool = false) -> Bool {
+    func updateBandRestReplacement(_ bandID: UUID, barCount: Int?, joinWithPrevious: Bool = true) -> Bool {
         if let barCount, !(2...999).contains(barCount) { return false }
         guard let band = project.bands.first(where: { $0.id == bandID }), band.generatedRest == nil else { return false }
         let replacement = barCount.map {
@@ -1546,14 +1546,14 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     @discardableResult
     func updateBandGeneratedRestCount(_ bandID: UUID, barCount: Int) -> Bool {
         updateBandGeneratedRest(bandID, barCount: barCount,
-            joinWithPrevious: band(withID: bandID)?.generatedRest?.joinWithPrevious == true)
+            joinWithPrevious: band(withID: bandID)?.generatedRest?.joinsWithPrevious ?? true)
     }
 
     @discardableResult
     func updateBandGeneratedRest(_ bandID: UUID, barCount: Int, joinWithPrevious: Bool) -> Bool {
         guard let band = band(withID: bandID), var generated = band.generatedRest else { return false }
         generated.barCount = barCount
-        generated.joinWithPrevious = joinWithPrevious ? true : nil
+        generated.joinWithPrevious = joinWithPrevious
         guard generated.isValid else { return false }
         guard generated != band.generatedRest else { return true }
         commit(actionName: "Change Inserted Rest") { project, _ in
@@ -1648,12 +1648,13 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                         let crop = CGRect(x: band.leftFraction, y: band.topFraction,
                             width: 1 - band.leftFraction - band.rightFraction,
                             height: band.bottomFraction - band.topFraction)
-                        // Copied opening labels stay before the compressed run.
-                        // A direction farther right could change an internal
-                        // bar, whose exact position cannot survive a bare count.
+                        // Opening directions can extend past the clef/meter
+                        // fragment. Keep copies that end before the first rest
+                        // glyph; later directions retain their original strip.
                         if let found = recognize(image, crop, staves, { operation.isCancelled }),
                            band.sourceMarkings.allSatisfy({ $0.isValid(in: band)
-                               && 1 - $0.rightFraction <= found.prefixBounds.maxX + 1e-9 }),
+                               && 1 - $0.rightFraction <= (found.restBounds.map(\.minX).min()
+                                   ?? found.prefixBounds.maxX) + 1e-9 }),
                            let replacement = Self.restReplacement(from: found, in: band) {
                             replacements[band.id] = replacement
                         }
@@ -1710,7 +1711,9 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
         let context = BandRestSourceContext(prefix: marking(detection.prefixBounds),
             suffix: detection.suffixBounds.map(marking), staffLineFractions: detection.staffLineFractions,
             skewDegrees: detection.skewDegrees, staffLeftFraction: detection.staffLeftFraction,
-            staffRightFraction: detection.staffRightFraction)
+            staffRightFraction: detection.staffRightFraction,
+            staffLineGroups: detection.staffLineGroups,
+            canExtendThroughFollowingRests: detection.canExtendThroughFollowingRests)
         let replacement = BandRestReplacement(barCount: detection.barCount, sourceContext: context)
         return replacement.isValid && context.isValid(in: band) ? replacement : nil
     }

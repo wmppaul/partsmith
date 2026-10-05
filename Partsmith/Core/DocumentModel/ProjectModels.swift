@@ -606,14 +606,26 @@ struct BandRestSourceContext: Codable, Equatable {
     var skewDegrees: Double
     var staffLeftFraction: Double
     var staffRightFraction: Double
+    /// Grand staffs keep both original five-line groups and their opening ink.
+    var staffLineGroups: [[Double]]? = nil
+    /// A plain closing bar permits extending this rest through following tacet
+    /// systems. Unknown, double and repeat endings retain their boundary.
+    var canExtendThroughFollowingRests: Bool? = nil
+
+    var resolvedStaffLineGroups: [[Double]] { staffLineGroups ?? [staffLineFractions] }
 
     func isValid(in band: BandModel) -> Bool {
         let fragments = [prefix] + (suffix.map { [$0] } ?? [])
         guard fragments.allSatisfy({ $0.isValid(in: band)
             && $0.topFraction >= band.topFraction && $0.bottomFraction <= band.bottomFraction }),
-              staffLineFractions.count == 5,
-              staffLineFractions.allSatisfy({ $0.isFinite && $0 >= band.topFraction && $0 <= band.bottomFraction }),
-              zip(staffLineFractions, staffLineFractions.dropFirst()).allSatisfy({ $0.0 < $0.1 }),
+              (1...2).contains(resolvedStaffLineGroups.count),
+              resolvedStaffLineGroups.first == staffLineFractions,
+              resolvedStaffLineGroups.allSatisfy({ lines in
+                  lines.count == 5
+                      && lines.allSatisfy({ $0.isFinite && $0 >= band.topFraction && $0 <= band.bottomFraction })
+                      && zip(lines, lines.dropFirst()).allSatisfy({ $0.0 < $0.1 })
+              }),
+              zip(resolvedStaffLineGroups, resolvedStaffLineGroups.dropFirst()).allSatisfy({ $0.last! < $1.first! }),
               skewDegrees.isFinite, abs(skewDegrees) <= 3,
               staffLeftFraction.isFinite, staffRightFraction.isFinite,
               staffLeftFraction >= band.leftFraction, staffRightFraction <= 1 - band.rightFraction,
@@ -631,7 +643,7 @@ struct BandRestReplacement: Codable, Equatable {
     var joinWithPrevious: Bool
     var sourceContext: BandRestSourceContext?
 
-    init(barCount: Int, joinWithPrevious: Bool = false, sourceContext: BandRestSourceContext? = nil) {
+    init(barCount: Int, joinWithPrevious: Bool = true, sourceContext: BandRestSourceContext? = nil) {
         self.barCount = barCount
         self.joinWithPrevious = joinWithPrevious
         self.sourceContext = sourceContext
@@ -644,7 +656,7 @@ struct BandRestReplacement: Codable, Equatable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         barCount = try container.decode(Int.self, forKey: .barCount)
-        joinWithPrevious = try container.decodeIfPresent(Bool.self, forKey: .joinWithPrevious) ?? false
+        joinWithPrevious = try container.decodeIfPresent(Bool.self, forKey: .joinWithPrevious) ?? true
         sourceContext = try container.decodeIfPresent(BandRestSourceContext.self, forKey: .sourceContext)
     }
 }
@@ -656,8 +668,10 @@ struct BandGeneratedRest: Codable, Equatable {
     var startBarNumber: Int?
     var sourceSystemIndex: Int
     /// Layout preference only. Each original rest and its source stay stored.
-    /// Missing in older documents means the rest remains a separate row.
+    /// Unspecified uses automatic joining; false explicitly keeps a new row.
     var joinWithPrevious: Bool? = nil
+
+    var joinsWithPrevious: Bool { joinWithPrevious != false }
 
     var isValid: Bool {
         (1...999).contains(barCount) && sourceSystemIndex >= 0
@@ -690,6 +704,8 @@ struct BandModel: Codable, Identifiable, Equatable {
     var sourceMarkings: [BandSourceMarking]
     var restReplacement: BandRestReplacement?
     var generatedRest: BandGeneratedRest?
+    /// Original page-local system identity from reviewed Auto assignment.
+    var sourceSystemIndex: Int?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -711,6 +727,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         case sourceMarkings
         case restReplacement
         case generatedRest
+        case sourceSystemIndex
     }
 
     init(
@@ -732,7 +749,8 @@ struct BandModel: Codable, Identifiable, Equatable {
         pageBreakBefore: Bool = false,
         sourceMarkings: [BandSourceMarking] = [],
         restReplacement: BandRestReplacement? = nil,
-        generatedRest: BandGeneratedRest? = nil
+        generatedRest: BandGeneratedRest? = nil,
+        sourceSystemIndex: Int? = nil
     ) {
         self.id = id
         self.pageIndex = pageIndex
@@ -753,6 +771,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         self.sourceMarkings = sourceMarkings
         self.restReplacement = restReplacement
         self.generatedRest = generatedRest
+        self.sourceSystemIndex = sourceSystemIndex
     }
 
     init(from decoder: Decoder) throws {
@@ -779,6 +798,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         sourceMarkings = try container.decodeIfPresent([BandSourceMarking].self, forKey: .sourceMarkings) ?? []
         restReplacement = try container.decodeIfPresent(BandRestReplacement.self, forKey: .restReplacement)
         generatedRest = try container.decodeIfPresent(BandGeneratedRest.self, forKey: .generatedRest)
+        sourceSystemIndex = try container.decodeIfPresent(Int.self, forKey: .sourceSystemIndex)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -810,6 +830,7 @@ struct BandModel: Codable, Identifiable, Equatable {
         }
         try container.encodeIfPresent(restReplacement, forKey: .restReplacement)
         try container.encodeIfPresent(generatedRest, forKey: .generatedRest)
+        try container.encodeIfPresent(sourceSystemIndex, forKey: .sourceSystemIndex)
     }
 
     func normalized() -> BandModel {

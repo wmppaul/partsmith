@@ -61,6 +61,7 @@ struct RestSourcePlacement {
     var staffSpace: CGFloat
     var restCenter: CGPoint
     var restSpan: CGFloat
+    var additionalRestCenters: [CGPoint] = []
 }
 
 struct SourceMarkingPlacement {
@@ -250,9 +251,23 @@ enum PartLayoutEngine {
     }
 
     private static func restStartNumbersAgree(_ start: Int?, count: Int, next: Int?) -> Bool {
-        guard let start, let next else { return true }
+        guard let start else { return next.map { $0 > count } ?? true }
         let (expected, overflow) = start.addingReportingOverflow(count)
-        return !overflow && next == expected
+        return !overflow && (next == nil || next == expected)
+    }
+
+    private static func consecutiveRestSources(_ previous: BandModel, _ next: BandModel,
+                                                lastSystemByPage: [Int: Int]) -> Bool {
+        let previousSystem = previous.sourceSystemIndex ?? previous.generatedRest?.sourceSystemIndex
+        let nextSystem = next.sourceSystemIndex ?? next.generatedRest?.sourceSystemIndex
+        if next.pageIndex == previous.pageIndex {
+            if let previousSystem, let nextSystem {
+                return previousSystem >= 0 && previousSystem < Int.max && nextSystem == previousSystem + 1
+            }
+            return next.topFraction > previous.topFraction
+        }
+        if let previousSystem, let last = lastSystemByPage[previous.pageIndex], previousSystem < last { return false }
+        return next.pageIndex == previous.pageIndex + 1 && (nextSystem == nil || nextSystem == 0)
     }
 
     static func makePlan(
@@ -268,6 +283,12 @@ enum PartLayoutEngine {
 
         let sourceBands = project.sortedBands(for: partID)
         let includedBands = sourceBands.filter { !$0.excluded }
+        var lastSystemByPage: [Int: Int] = [:]
+        for band in project.bands {
+            if let index = band.sourceSystemIndex ?? band.generatedRest?.sourceSystemIndex, index >= 0 {
+                lastSystemByPage[band.pageIndex] = max(lastSystemByPage[band.pageIndex] ?? 0, index)
+            }
+        }
 
         guard includedBands.isEmpty == false else {
             throw PartLayoutError.noBands
@@ -405,49 +426,49 @@ enum PartLayoutEngine {
                                          originalSourceRect: sourceRect, markingRects: markingRects,
                                          belowMarkingIndices: belowMarkingIndices,
                                          sourceBandIDs: [band.id], lastSourceOrder: sourceOrder,
-                                         restReplacement: band.restReplacement, restStartNumber: band.barNumberValue))
+                                         restReplacement: band.restReplacement,
+                                         restStartNumber: band.generatedRest?.startBarNumber ?? band.barNumberValue))
         }
         let originalHorizontalFrame = horizontalFrame(prepared, original: true)
         var joined: [PreparedBand] = []
         for item in prepared {
-            if let current = item.band.generatedRest, current.joinWithPrevious == true,
-               let previous = joined.last, var previousRest = previous.band.generatedRest,
+            let currentCount = item.band.generatedRest?.barCount ?? item.restReplacement?.barCount
+            let joinsPrevious = item.band.generatedRest?.joinsWithPrevious ?? item.restReplacement?.joinWithPrevious ?? false
+            if let currentCount, joinsPrevious,
+               let previous = joined.last,
+               let previousCount = previous.band.generatedRest?.barCount ?? previous.restReplacement?.barCount,
+               // A new printed prefix can contain a changed clef, key, meter
+               // or direction. Keep it at its own measure. A verified plain
+               // ending of the first strip may extend through later silence.
+               item.restReplacement?.sourceContext == nil,
+               previous.restReplacement?.sourceContext == nil
+                   || previous.restReplacement?.sourceContext?.canExtendThroughFollowingRests == true,
                previous.lastSourceOrder + 1 == item.lastSourceOrder,
+               consecutiveRestSources(sourceBands[previous.lastSourceOrder], item.band,
+                                      lastSystemByPage: lastSystemByPage),
                !item.band.pageBreakBefore, item.label.isEmpty,
                item.markingRects.isEmpty, previous.belowMarkingIndices.isEmpty,
-               let previousEnd = previousRest.endBarNumber, previousEnd < Int.max,
-               current.startBarNumber == previousEnd + 1,
-               previousRest.barCount + current.barCount <= 999 {
-                // Keep the opening instruction in place. A direction at a
-                // later source system or after a rest must remain at its bar.
-                // Only the render copy changes; the document retains all rows.
-                previousRest.barCount += current.barCount
-                joined[joined.count - 1].band.generatedRest = previousRest
-                joined[joined.count - 1].sourceBandIDs.append(contentsOf: item.sourceBandIDs)
-                joined[joined.count - 1].lastSourceOrder = item.lastSourceOrder
-            } else if let current = item.restReplacement, current.joinWithPrevious,
-               let previous = joined.last, let previousRest = previous.restReplacement,
-               current.sourceContext == nil, previousRest.sourceContext == nil,
-               previous.lastSourceOrder + 1 == item.lastSourceOrder,
-               !item.band.pageBreakBefore,
-               previous.label.isEmpty, item.label.isEmpty,
-               previous.markingRects.isEmpty, item.markingRects.isEmpty,
-               previousRest.barCount + current.barCount <= 999,
-               restStartNumbersAgree(previous.restStartNumber, count: previousRest.barCount,
+               previousCount + currentCount <= 999,
+               previous.restStartNumber.map({ $0 <= Int.max - (previousCount + currentCount - 1) }) ?? true,
+               restStartNumbersAgree(previous.restStartNumber, count: previousCount,
                                      next: item.restStartNumber) {
-                joined[joined.count - 1].restReplacement = BandRestReplacement(barCount: previousRest.barCount + current.barCount)
-                joined[joined.count - 1].sourceBandIDs.append(contentsOf: item.sourceBandIDs)
-                joined[joined.count - 1].lastSourceOrder = item.lastSourceOrder
-                if previous.restStartNumber == nil, let currentStart = item.restStartNumber {
-                    let (derivedStart, overflow) = currentStart.subtractingReportingOverflow(previousRest.barCount)
-                    if !overflow { joined[joined.count - 1].restStartNumber = derivedStart }
+                var combined = previous
+                if combined.restStartNumber == nil, let currentStart = item.restStartNumber {
+                    let (derivedStart, overflow) = currentStart.subtractingReportingOverflow(previousCount)
+                    if !overflow && derivedStart > 0 { combined.restStartNumber = derivedStart }
                 }
+                if var generated = combined.band.generatedRest {
+                    generated.barCount += currentCount
+                    generated.startBarNumber = combined.restStartNumber
+                    combined.band.generatedRest = generated
+                } else {
+                    combined.restReplacement?.barCount += currentCount
+                }
+                combined.sourceBandIDs.append(contentsOf: item.sourceBandIDs)
+                combined.lastSourceOrder = item.lastSourceOrder
+                joined[joined.count - 1] = combined
             } else {
-                var separate = item
-                if let rest = separate.restReplacement {
-                    separate.restReplacement = BandRestReplacement(barCount: rest.barCount, sourceContext: rest.sourceContext)
-                }
-                joined.append(separate)
+                joined.append(item)
             }
         }
         prepared = joined
@@ -588,12 +609,15 @@ enum PartLayoutEngine {
         return RestSourcePlacement(fragments: fragmentRects.map { source in
             SourceMarkingPlacement(sourceRect: source,
                 destinationRect: CGRect(origin: point(source.origin), size: CGSize(width: source.width * scale, height: source.height * scale)))
-        }, staffLines: context.staffLineFractions.map { fraction in
+        }, staffLines: context.resolvedStaffLineGroups.flatMap { $0 }.map { fraction in
             [point(CGPoint(x: startX, y: staffY(fraction, at: startX))),
              point(CGPoint(x: endX, y: staffY(fraction, at: endX)))]
         }, staffSpace: (context.staffLineFractions[4] - context.staffLineFractions[0]) * bounds.height * scale / 4,
             restCenter: point(CGPoint(x: centerX, y: staffY(context.staffLineFractions[2], at: centerX))),
-            restSpan: max(0, (endX - startX) * scale))
+            restSpan: max(0, (endX - startX) * scale),
+            additionalRestCenters: context.resolvedStaffLineGroups.dropFirst().map {
+                point(CGPoint(x: centerX, y: staffY($0[2], at: centerX)))
+            })
     }
 
     private static func sourceHeaderPlacement(

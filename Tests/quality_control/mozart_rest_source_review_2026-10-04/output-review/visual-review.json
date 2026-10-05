@@ -1,0 +1,41 @@
+{
+  "reviewer": "independent mozart_rest_review agent",
+  "reviewScope": "All nine finalPDFpages and eight source systems, sourcegeometry/identity checks for72items",
+  "visualStatus": "complete for rest behavior and broad playing passage continuity",
+  "keyFixes": {
+    "clarinetOpeningBars": 5,
+    "pianoGrandStaffCombinedBars": 39,
+    "pianoStartBarNumberRequired": false
+  },
+  "detectedWholeRestStrips": 6,
+  "musicallyEligibleWholeRestStrips": 8,
+  "abstentions": [
+    {
+      "part": "Flute",
+      "system": 1,
+      "eligibleBarCount": 5
+    },
+    {
+      "part": "Clarinet in A",
+      "system": 8,
+      "eligibleBarCount": 5
+    }
+  ],
+  "falsePositiveWholeStripReplacements": 0,
+  "playingAndMixedOriginalCropsUnchanged": true,
+  "fullSourceSHA256": "b2e0feed0fc729fe0a755563cd1fc7137f2b0dc063f2b62cd59e96e7ec7b4d10",
+  "limitations": "Original neighboring note fragments/header-footer crop leakage remain; no exhaustive crop-edge certification",
+  "files": {
+    "Cello and Bass-p1.png": "85cd0de4459e3f5554bee49b29e78202b966316d3a8e7d3d9729a557212e905e",
+    "Violin I-p1.png": "70a957b1981155570d4c19b89bfa73fee13dca2eed932fcc39589d55b1def059",
+    "French Horn in A-p1.png": "dd6baffe29ac6dc831aa82daecf96a311cf5afc9e53fe436b43e96a451b18768",
+    "Clarinet in A-p1.png": "72391d9fa4398dc4b6b4600ca650e9a3a48a572ca59fd72c7a2a9aeb9e44fc42",
+    "README.md": "514c55b216f61e7bda019029f33705449b0e64622a50c3030bc18bc35d552a7d",
+    "Violin II-p1.png": "43e9787d3b80fe3d03ea5d7e50491cf8af12f55d19066d104e64366fb369cd9e",
+    "Bassoon-p1.png": "c5248fb20915035fd0f8ef4b367e95dc16f3b40c38ab725dfe91d4cc6779293e",
+    "output-structure-check.json": "fdbe1d40b0d547ac9beddfcdf8d0969c6779afa08592072506cd0fa41e3c0b0f",
+    "Viola-p1.png": "84903a2e820af630885d40ade64e19f6b0c72dbd786e227699b5c2c46925deda",
+    "Piano-p1.png": "c465c5de40332453845fa8e672f3378245a6fb6fede89ea77b1765b26cb37f56",
+    "Flute-p1.png": "e956772147c0123d8526ccb125d676976911d76f287842b3d044e374f31bf7fc"
+  }
+}

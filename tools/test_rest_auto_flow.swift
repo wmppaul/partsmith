@@ -88,7 +88,7 @@ enum RestAutoFlowTests {
         undo.endUndoGrouping()
         check([a,b,c,d].allSatisfy { rest(all, $0)?.barCount == 3 }, "Each recognized original receives its own count")
         check(rest(all, e) == nil && rest(all, f)?.barCount == 8, "Excluded strips and manual rest choices remain intact")
-        check([a,b,c,d].allSatisfy { rest(all, $0)?.joinWithPrevious == false }, "Automatic recognition never assumes cross-system continuity")
+        check([a,b,c,d].allSatisfy { rest(all, $0)?.joinWithPrevious == true }, "Automatic recognition enables joining; layout still checks source continuity and musical boundaries")
         let context = rest(all, a)!.sourceContext!
         check(context.isValid(in: all.band(withID: a)!) && context.suffix != nil,
               "Automatic replacements retain validated clef/key/meter and final-bar fragments")
@@ -148,6 +148,38 @@ enum RestAutoFlowTests {
               "A copied opening bar number or tempo entirely left of the counted run remains eligible")
         check(opening.band(withID:a)?.sourceMarkings == openingProject.bands[0].sourceMarkings,
               "Compression retains copied opening directions verbatim")
+
+        // Opening Allegro/TUTTI extends beyond the retained clef/meter prefix
+        // on Mozart K488, but still finishes before the first counted rest.
+        let openingRunRecognizer: RestAutoBandRecognizer = { _, crop, _, _ in
+            var result = found(crop)
+            result.prefixBounds.size.width = 0.191 // crop x .05 -> prefix ends .241
+            result.restBounds = [0.55, 0.298, 0.80].map { x in
+                CGRect(x: x, y: crop.minY + 0.04, width: 0.015, height: 0.005)
+            }
+            return result
+        }
+        var extendedOpeningProject = project
+        extendedOpeningProject.bands[0].sourceMarkings = [BandSourceMarking(
+            topFraction: 0.02, bottomFraction: 0.04, leftFraction: 0.06, rightFraction: 0.736)]
+        let extendedOpening = make(extendedOpeningProject)
+        check(run(extendedOpening, bandIDs: [a], recognizer: openingRunRecognizer)
+                == .completed(replacedBands: 1, totalBars: 3, examinedBands: 1),
+              "An opening direction ending after the prefix but before the first rest remains eligible")
+        check(extendedOpening.band(withID:a)?.sourceMarkings == extendedOpeningProject.bands[0].sourceMarkings,
+              "Recognition preserves the entire extended opening direction without shrinking its copied bounds")
+        var laterDirectionProject = extendedOpeningProject
+        laterDirectionProject.bands[0].sourceMarkings[0].rightFraction = 0.6 // ends .4, after first rest .298
+        let laterDirection = make(laterDirectionProject)
+        check(run(laterDirection, bandIDs: [a], recognizer: openingRunRecognizer)
+                == .completed(replacedBands: 0, totalBars: 0, examinedBands: 1),
+              "A direction crossing the earliest rest blocks compression even when rest bounds are unsorted")
+        check(laterDirection.project == laterDirectionProject,
+              "A later copied direction leaves both its source and rest output unchanged")
+        let unknownRestLocation = make(extendedOpeningProject)
+        check(run(unknownRestLocation, bandIDs: [a])
+                == .completed(replacedBands: 0, totalBars: 0, examinedBands: 1),
+              "Without located rest glyphs, an extended direction still requires the conservative prefix boundary")
 
         for count in [1, 1000] {
             let invalid = make()
@@ -260,6 +292,7 @@ enum RestAutoFlowTests {
             "sample_scores/normal/02_orchestra/mozart_magic_flute_overture_kv620_score.pdf"))
         var realProject = ProjectData.empty
         realProject.parts = [project.parts[0]]
+        realProject.parts[0].layoutSettings.usesSharedLayout = true
         realProject.pageCount = PDFDocument(data: realSource)!.pageCount
         realProject.bands = [(0.325,0.365),(0.513,0.553),(0.827,0.872)].map {
             BandModel(id: UUID(), pageIndex: 1, partID: p, topFraction: $0.0, bottomFraction: $0.1,

@@ -1,6 +1,6 @@
 # Partsmith macOS builds
 
-[Download Partsmith v0.1.0-alpha.4](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.4) for the Mac ZIP, checksum and release notes. The repository's [Partsmith-extraction-preview-macos.zip](Partsmith-extraction-preview-macos.zip) contains the same reviewed app. Unzip and open `Partsmith.app`.
+[Download Partsmith v0.1.0-alpha.5](https://github.com/wmppaul/partsmith/releases/tag/v0.1.0-alpha.5) for the Mac ZIP, checksum and release notes. The repository's [Partsmith-extraction-preview-macos.zip](Partsmith-extraction-preview-macos.zip) contains the same reviewed app. Unzip and open `Partsmith.app`.
 
 Requires macOS 14 or later, on Apple Silicon or Intel. The app is ad hoc signed and not notarized. If macOS blocks opening it, attempt to launch it and then use **System Settings → Privacy & Security → Open Anyway**.
 
@@ -12,11 +12,12 @@ For changing instrumentation, enable **Instrument layout changes between systems
 
 In **Preview**, click a system and drag its top or bottom handle to trim the crop. The same crop is used in Source, saved projects and PDF export. **Scale**, **System Gap** and **Side Margins** are synchronized across parts unless **Customize This Part** is enabled. New projects start with 18-point side margins. Gaps stay at the selected 4–200 pt even when balancing is on; requested enlargement is applied with an overflow warning instead of a silent width cap.
 
-Eligible full-bar rest strips can be counted and compressed locally. Original crops are retained for restoration. Confirmed omitted instruments use editable inserted rests tied to their source system. Detection and layout reuse assist review; they do not establish every instrument identity, rest duration or shared musical marking.
+Eligible full-bar rest strips can be counted and compressed locally, including piano grand staffs when both hands are silent. Consecutive confirmed rests join by default; a compressed opening with an ordinary ending can extend through following inserted rests while retaining its clefs, signatures and opening directions. Original crops are retained for restoration. Confirmed omitted instruments use editable inserted rests tied to their source system. Detection and layout reuse assist review; they do not establish every instrument identity, rest duration or shared musical marking.
 
 ## Review and build provenance
 
-- [Current assignment release review](../../Tests/quality_control/system-assignment-release-2026-10-04/README.md)
+- [Current rest compression release review](../../Tests/quality_control/mozart-rest-release-2026-10-04/README.md)
+- [Assignment release review](../../Tests/quality_control/system-assignment-release-2026-10-04/README.md)
 - [Shared layout release review](../../Tests/quality_control/shared-layout-release-2026-10-04/README.md)
 - [Extraction workflow and test commands](../../EXTRACTION_WORKFLOW.md)
 - [Known limitations](../../KNOWN_LIMITATIONS.md)

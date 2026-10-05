@@ -827,11 +827,11 @@ private struct GeneratedRestEditor: View {
                     .onSubmit { if let count { apply(count, joinWithPrevious) } }
             }
             Toggle("Join with previous rest", isOn: $joinWithPrevious)
-            Text("Joins consecutive numbered rests. Cues, directions and page breaks keep them separate.")
+            Text("Consecutive rests join by default. Cues, directions and page breaks keep them separate.")
                 .font(.caption).foregroundStyle(.secondary)
             Button("Update Rest") { if let count { apply(count, joinWithPrevious) } }
                 .disabled(count == nil || (count == band.generatedRest?.barCount
-                    && joinWithPrevious == (band.generatedRest?.joinWithPrevious == true)))
+                    && joinWithPrevious == (band.generatedRest?.joinsWithPrevious ?? true)))
             Text("Use 1–999 bars. No source crop exists for this silent instrument.")
                 .font(.caption).foregroundStyle(.secondary)
         }
@@ -842,7 +842,7 @@ private struct GeneratedRestEditor: View {
 
     private func load() {
         countText = band.generatedRest.map { String($0.barCount) } ?? ""
-        joinWithPrevious = band.generatedRest?.joinWithPrevious == true
+        joinWithPrevious = band.generatedRest?.joinsWithPrevious ?? true
     }
 }
 
@@ -861,7 +861,7 @@ private struct BandRestEditor: View {
         self.findRest = findRest
         self.apply = apply
         _countText = State(initialValue: band.restReplacement.map { String($0.barCount) } ?? "")
-        _joinWithPrevious = State(initialValue: band.restReplacement?.joinWithPrevious ?? false)
+        _joinWithPrevious = State(initialValue: band.restReplacement?.joinWithPrevious ?? true)
         _expanded = State(initialValue: band.restReplacement != nil)
     }
 
@@ -913,7 +913,7 @@ private struct BandRestEditor: View {
         }
         .onChange(of: band.restReplacement) {
             countText = band.restReplacement.map { String($0.barCount) } ?? ""
-            joinWithPrevious = band.restReplacement?.joinWithPrevious ?? false
+            joinWithPrevious = band.restReplacement?.joinWithPrevious ?? true
         }
     }
 }

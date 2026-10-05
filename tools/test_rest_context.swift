@@ -52,7 +52,9 @@ import PDFKit
                     project.pageCount = pdf.pageCount
                     project.projectSettings.showTitleBlock = false
                     project.projectSettings.showPartNameInHeader = true
-                    let part = PartModel(id: UUID(), name: fixture.id, color: ColorData(nsColor: .systemBlue), layoutSettings: .default, createdAt: .now)
+                    var layout = PartLayoutSettings.default
+                    layout.usesSharedLayout = true
+                    let part = PartModel(id: UUID(), name: fixture.id, color: ColorData(nsColor: .systemBlue), layoutSettings: layout, createdAt: .now)
                     project.parts = [part]
                     func fragment(_ rect: CGRect) -> BandSourceMarking {
                         BandSourceMarking(topFraction: max(r[1], rect.minY), bottomFraction: min(r[3], rect.maxY),

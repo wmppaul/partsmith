@@ -14,9 +14,9 @@ Partsmith extracts parts by preserving the score's printed notation in editable 
 
 ## Rest compression
 
-- Automatic compression recognizes complete **single-staff** strips with clear measure boundaries and one hanging whole-bar rest per bar. It retains printed opening and ending context and keeps uncertain strips unchanged. Playing entries, ambiguous symbols, interior changes, fermatas, repeat notation and neighboring ink can prevent recognition.
-- Opening-symbol recognition handles treble and bass clefs; uncertain alto/tenor clefs remain unchanged. Grand staffs, rest runs within a mixed playing/resting system, and automatic joining of source-image rest strips are not supported.
-- **Set Count Manually** is available for reviewed exceptions. Original crops remain saved and can be restored. Explicit joining is subject to musical-context barriers; confirmed rests for instruments omitted from a system have a separate joining workflow. Neither path infers an unknown tacet duration.
+- Automatic compression recognizes complete **single-staff or two-staff** strips with clear measure boundaries and one hanging whole-bar rest per bar. It retains printed opening and ending context and keeps uncertain strips unchanged. Playing entries, ambiguous symbols, interior changes, fermatas, repeat notation and neighboring ink can prevent recognition.
+- Opening-symbol recognition handles treble and bass clefs; uncertain alto/tenor clefs remain unchanged. A grand staff compresses only when both hands have matching whole-bar rests and boundaries. Rest runs within a mixed playing/resting system are not split out.
+- **Set Count Manually** is available for reviewed exceptions. Original crops remain saved and can be restored. Consecutive confirmed rests join by default. A compressed opening strip can extend through following omitted-system rests when its closing bar is ordinary. A later source-image prefix, double/repeat ending, direction, page break, missing source interval or conflicting bar number keeps a boundary. Uncheck **Join with previous rest** to retain a separate row. Neither path infers an unknown tacet duration.
 - Rest detection cannot recover notes already lost by a crop. Verify the target staff before compressing it, and preserve any tempo, meter, key, repeat or other change within a rest passage.
 
 ## Editing and layout

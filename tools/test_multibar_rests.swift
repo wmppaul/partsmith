@@ -55,6 +55,7 @@ enum MultiBarRestTests {
         let part = PartModel(id: UUID(), name: "Synthetic rest layout", color: ColorData(nsColor: .systemBlue),
             layoutSettings: .default, createdAt: Date(timeIntervalSince1970: 0))
         project.parts = [part]
+        project.parts[0].layoutSettings.usesSharedLayout = false
         project.bands = (0..<3).map { index in
             BandModel(id: UUID(), pageIndex: 0, partID: part.id,
                 topFraction: Double(140 + index * 200) / 800,
@@ -108,11 +109,11 @@ enum MultiBarRestTests {
         check(legacy == original && legacy.bands.allSatisfy { $0.restReplacement == nil },
               "Existing projects without rest replacements preserve their original source crops")
         let oldRest = try JSONDecoder().decode(BandRestReplacement.self, from: Data(#"{"barCount":4}"#.utf8))
-        check(oldRest == BandRestReplacement(barCount: 4), "Missing rest join preference defaults to separate strips")
+        check(oldRest == BandRestReplacement(barCount: 4) && oldRest.joinWithPrevious, "Missing rest join preference defaults to joining eligible consecutive rests")
 
         var separate = original
-        separate.bands[0].restReplacement = BandRestReplacement(barCount: 4)
-        separate.bands[1].restReplacement = BandRestReplacement(barCount: 5)
+        separate.bands[0].restReplacement = BandRestReplacement(barCount: 4, joinWithPrevious: false)
+        separate.bands[1].restReplacement = BandRestReplacement(barCount: 5, joinWithPrevious: false)
         let separatePlacements = try placements(separate)
         check(separatePlacements.count == 3 && separatePlacements.map { $0.restReplacement?.barCount } == [4, 5, nil],
               "Explicit counts condense only selected whole bands and do not infer replacement for neighboring music")
@@ -140,7 +141,7 @@ enum MultiBarRestTests {
         joined.bands[0].barNumberMode = .manual
         joined.bands[1].barNumberValue = 46
         let joinedPlacements = try placements(joined)
-        check(joinedPlacements.count == 2 && joinedPlacements[0].restReplacement == BandRestReplacement(barCount: 9)
+        check(joinedPlacements.count == 2 && joinedPlacements[0].restReplacement?.barCount == 9
               && joinedPlacements[0].sourceBandIDs == Array(original.bands.prefix(2).map(\.id)),
               "Explicitly joining adjacent four- and five-bar rests produces one nine-bar rest with both source identities")
         check(joined.bands[0].restReplacement?.barCount == 4 && joined.bands[1].restReplacement?.barCount == 5,
@@ -181,7 +182,7 @@ enum MultiBarRestTests {
             var blocked = separate
             blocked.bands[1].restReplacement?.joinWithPrevious = true
             switch barrier {
-            case 0: blocked.bands[0].editorialLabel = "Tempo change"
+            case 0: blocked.bands[1].editorialLabel = "Tempo change"
             case 1: blocked.bands[1].sourceMarkings = annotated.bands[0].sourceMarkings
             case 2: blocked.bands[1].pageBreakBefore = true
             case 3: blocked.bands[0].barNumberValue = 42; blocked.bands[1].barNumberValue = 99

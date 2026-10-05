@@ -174,9 +174,13 @@ instructions, linked symbols and paired first/second endings in consistent
 instrument layouts. Other endings, rehearsal letters and measure numbers still
 need source review. Recognition failure cannot be treated as proof of absence.
 
-Automatic rest compression is limited to eligible complete, single-staff,
-rest-only strips with clear bar boundaries. It retains opening and ending source
-context and leaves uncertain notation unchanged. It is not general rhythmic
+Automatic rest compression supports eligible complete single-staff strips and
+two-staff groups with matching whole-rest measures and clear bar boundaries. It retains opening and ending source
+context and leaves uncertain notation unchanged. Consecutive confirmed rests
+join by default; retain later printed prefixes, directions, explicit breaks and
+uncertain ending boundaries. A compressed opening can extend through following
+inserted rests when its closing barline is ordinary. All source rows stay editable.
+It is not general rhythmic
 recognition and does not infer the silence of an unassigned instrument.
 
 ## Verification and release criteria
