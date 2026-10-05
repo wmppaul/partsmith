@@ -191,12 +191,16 @@ struct ScoreExtractionView: View {
                         .buttonStyle(.borderedProminent)
                         .disabled(!review.plan.canApply || review.plan.bands.isEmpty)
                 } else {
-                    if profile.parts.isEmpty {
+                    if document.instrumentNameDraft != nil {
+                        Text("Add or cancel the highlighted name on the score before running Auto.")
+                            .font(.callout).foregroundStyle(.secondary)
+                    } else if profile.parts.isEmpty {
                         Text("Choose the instruments above to enable Auto.")
                             .font(.callout).foregroundStyle(.secondary)
                     }
                     Button("Auto", action: runAuto).buttonStyle(.borderedProminent)
-                        .disabled(!profileValid || !inputPagesValid || isRunning)
+                        .disabled(!profileValid || !inputPagesValid || isRunning
+                            || document.isRecognizingInstrumentName || document.instrumentNameDraft != nil)
                 }
             }
         }
@@ -365,14 +369,14 @@ struct ScoreExtractionView: View {
                         ? "First, tell Partsmith which instruments to extract."
                         : "Keep the instruments in the same top-to-bottom order as the score.")
                         .font(.callout.weight(.medium))
-                    Text("Select each printed instrument name in one system, from top to bottom. Then choose Done — Back to Auto Extract on the score.")
+                    Text("Select each instrument in one system, from top to bottom. Click its printed name, or drag a box beside an unnamed staff and type a name. Then choose Done — Back to Auto Extract on the score.")
                         .foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     HStack {
                         if document.isPickingInstrumentNames {
                             Button("Continue Selecting on Score", systemImage: "cursorarrow.click", action: onShowScore)
                                 .buttonStyle(.borderedProminent)
                             Button("Done Selecting", action: onFinishPickingNames)
-                                .disabled(document.isRecognizingInstrumentName)
+                                .disabled(document.isRecognizingInstrumentName || document.instrumentNameDraft != nil)
                         } else {
                             Button(profile.parts.isEmpty ? "Select Instrument Names on Score" : "Add Names from Score",
                                    systemImage: "cursorarrow.click") {
@@ -386,7 +390,7 @@ struct ScoreExtractionView: View {
                             }
                         }
                     }.disabled(isRunning)
-                    Text("Click a name, or drag a box around its complete label. Repeated names become separate numbered parts.")
+                    Text("Printed and typed names stay editable. Repeated names in different places become separate numbered parts.")
                         .font(.caption).foregroundStyle(.secondary)
                 }.padding(12).frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.accentColor.opacity(0.07), in: RoundedRectangle(cornerRadius: 8))
@@ -1370,7 +1374,8 @@ struct ScoreExtractionView: View {
     }
 
     private func runAuto() {
-        guard profileValid, inputPagesValid, !isRunning else { return }
+        guard profileValid, inputPagesValid, !isRunning,
+              !document.isRecognizingInstrumentName, document.instrumentNameDraft == nil else { return }
         clearDirectionFocus()
         document.cancelInstrumentNamePicking()
         errorMessage = nil

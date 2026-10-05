@@ -30,6 +30,12 @@ page. Local text recognition reads each selection; a drag box and its resize
 handles let you include a detached instrument number or refine the label.
 Recognized labels stay highlighted on the score. Separate identical labels
 become distinct numbered parts; rereading one label updates its own entry.
+For an unnamed staff, draw a box in the blank space beside it. An empty or
+unreadable selection stays highlighted in orange and opens a focused name field
+below the score. Enter the instrument name and staff count, then choose **Add
+Instrument** or press Return. Typed selections use the same unique-name rules;
+use a separate box for each instrument. The box is a setup marker, not a staff
+crop or proof of instrument identity.
 Choose **Done — Back to Auto Extract** on the score to return to setup. Use
 **Add Names from Score** or **More → Replace List from Score** to extend or
 restart the list. Typed names and **Use a Starting Profile** remain alternatives.

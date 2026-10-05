@@ -2,14 +2,22 @@ import CoreGraphics
 import Foundation
 import Vision
 
-/// One deliberate click produces one editable instrument suggestion. All
+/// One deliberate selection produces one editable instrument suggestion. All
 /// coordinates refer to the displayed raster, with a top-left origin.
 struct ScoreInstrumentNamePick: Identifiable, Equatable {
     let id: UUID
     let name: String
     let suggestedStaffCount: Int
     let pageIndex: Int
-    /// Tight label bounds in the same normalized top-down page space as clicks.
+    /// Printed label or manually selected bounds in normalized top-down space.
+    let bounds: CGRect
+}
+
+/// An unreadable selection stays on the score while the user supplies its name.
+/// Coordinates use the same normalized, top-down space as recognized labels.
+struct ScoreInstrumentNameDraft: Identifiable, Equatable {
+    let id: UUID
+    let pageIndex: Int
     let bounds: CGRect
 }
 

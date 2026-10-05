@@ -75,9 +75,9 @@ struct SourceCanvasView: View {
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
                             isPickingInstrumentNames: document.isPickingInstrumentNames,
                             instrumentNameHighlights: document.instrumentNameHighlights,
+                            instrumentNameDraft: document.instrumentNameDraft,
                             renderIdentity: document.bandEditorIdentity,
                             onPickInstrumentName: { point, region in
-                                guard !document.isRecognizingInstrumentName else { return }
                                 if let region { document.pickInstrumentName(in: region, pageIndex: document.currentPageIndex) }
                                 else { document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex) }
                             },
@@ -117,8 +117,8 @@ struct SourceCanvasView: View {
                             canCreateBands: document.selectedPartID != nil && document.isEditingHeaderSelection == false,
                             isPickingInstrumentNames: document.isPickingInstrumentNames,
                             instrumentNameHighlights: document.instrumentNameHighlights,
+                            instrumentNameDraft: document.instrumentNameDraft,
                             onPickInstrumentName: { point, region in
-                                guard !document.isRecognizingInstrumentName else { return }
                                 if let region { document.pickInstrumentName(in: region, pageIndex: document.currentPageIndex) }
                                 else { document.pickInstrumentName(at: point, pageIndex: document.currentPageIndex) }
                             },
@@ -222,7 +222,7 @@ struct SourceCanvasView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Label("Select instrument names", systemImage: "cursorarrow.click")
                         .font(.headline)
-                    Text("Click each printed name from top to bottom in one system, then choose Done.")
+                    Text("Work from top to bottom in one system. For an unnamed staff, drag a box beside it and type its name.")
                         .font(.callout).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -230,7 +230,7 @@ struct SourceCanvasView: View {
                 Button("Done — Back to Auto Extract", systemImage: "arrow.turn.up.left",
                        action: onFinishPickingInstrumentNames)
                     .buttonStyle(.borderedProminent).controlSize(.large)
-                    .disabled(document.isRecognizingInstrumentName)
+                    .disabled(document.isRecognizingInstrumentName || document.instrumentNameDraft != nil)
                     .accessibilityIdentifier("finishInstrumentNamePicking")
             }
             if !document.instrumentNameHighlights.isEmpty {
@@ -253,6 +253,9 @@ struct SourceCanvasView: View {
                     ProgressView().controlSize(.small)
                     Text("Reading your selection… Done will be available when it’s added.")
                 }.font(.callout)
+            } else if let draft = document.instrumentNameDraft {
+                ManualInstrumentNameEntry(document: document)
+                    .id(draft.id)
             } else if let message = document.instrumentNamePickMessage {
                 Text(message).font(.callout).foregroundStyle(.orange)
                     .fixedSize(horizontal: false, vertical: true)
@@ -308,6 +311,51 @@ struct SourceCanvasView: View {
     }
 }
 
+/// A missing printed label is a normal setup step. Keep its editable name and
+/// staff count beside the score, with the selected area visible above it.
+private struct ManualInstrumentNameEntry: View {
+    @ObservedObject var document: PartsmithDocument
+    @State private var name = ""
+    @State private var staffCount = 1
+    @FocusState private var nameFocused: Bool
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("No printed name found. Name the instrument in the highlighted area.")
+                .font(.callout)
+            HStack(spacing: 12) {
+                TextField("Instrument name, e.g. Violin I", text: $name)
+                    .textFieldStyle(.roundedBorder)
+                    .focused($nameFocused)
+                    .onSubmit(addInstrument)
+                    .accessibilityLabel("Instrument name")
+                    .accessibilityIdentifier("manualInstrumentName")
+                Stepper(staffCount == 1 ? "1 staff" : "\(staffCount) staves", value: $staffCount, in: 1...4)
+                    .fixedSize()
+                    .accessibilityLabel("Staves for this instrument")
+                    .accessibilityIdentifier("manualInstrumentStaffCount")
+            }
+            HStack(spacing: 10) {
+                Button("Add Instrument", systemImage: "plus", action: addInstrument)
+                    .buttonStyle(.borderedProminent)
+                    .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .accessibilityIdentifier("addManualInstrumentName")
+                Button("Cancel", action: document.cancelInstrumentNameDraft)
+                    .accessibilityIdentifier("cancelManualInstrumentName")
+                Text("Use 2 staves for a piano grand staff.")
+                    .font(.caption).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .onAppear { nameFocused = true }
+        .onExitCommand(perform: document.cancelInstrumentNameDraft)
+    }
+
+    private func addInstrument() {
+        _ = document.confirmInstrumentNameDraft(name: name, staffCount: staffCount)
+    }
+}
+
 private extension PartsmithDocument {
     var rectificationEditorIdentity: String {
         "rectify-\(currentPageIndex)-\(zoomMode.rawValue)"
@@ -328,7 +376,7 @@ private extension PartsmithDocument {
         if isPickingInstrumentNames {
             return (
                 title: "Pick instrument names",
-                body: "Click names from top to bottom, or drag a box around a complete label. Drag a green corner to adjust it."
+                body: "Click a printed name, or drag a box beside an unnamed staff to type its name. Drag a green corner to adjust a label."
             )
         }
 
@@ -403,6 +451,7 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
     var canCreateBands: Bool
     var isPickingInstrumentNames: Bool
     var instrumentNameHighlights: [ScoreInstrumentNamePick]
+    var instrumentNameDraft: ScoreInstrumentNameDraft? = nil
     var onPickInstrumentName: (CGPoint, CGRect?) -> Void
     var onSelectBand: (UUID?) -> Void
     var onCreateBand: (Double) -> Void
@@ -428,6 +477,7 @@ struct PDFBandEditorRepresentable: NSViewRepresentable {
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
             instrumentNameHighlights: instrumentNameHighlights,
+            instrumentNameDraft: instrumentNameDraft,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
@@ -452,6 +502,7 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
     var canCreateBands: Bool
     var isPickingInstrumentNames: Bool
     var instrumentNameHighlights: [ScoreInstrumentNamePick]
+    var instrumentNameDraft: ScoreInstrumentNameDraft? = nil
     var renderIdentity: String
     var onPickInstrumentName: (CGPoint, CGRect?) -> Void
     var onSelectBand: (UUID?) -> Void
@@ -479,6 +530,7 @@ struct RectifiedBandEditorRepresentable: NSViewRepresentable {
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
             instrumentNameHighlights: instrumentNameHighlights,
+            instrumentNameDraft: instrumentNameDraft,
             renderIdentity: renderIdentity,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
@@ -585,6 +637,7 @@ final class RectifiedBandEditorContainerView: NSView {
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
         instrumentNameHighlights: [ScoreInstrumentNamePick],
+        instrumentNameDraft: ScoreInstrumentNameDraft? = nil,
         renderIdentity: String,
         onPickInstrumentName: @escaping (CGPoint, CGRect?) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
@@ -627,6 +680,7 @@ final class RectifiedBandEditorContainerView: NSView {
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
             instrumentNameHighlights: instrumentNameHighlights,
+            instrumentNameDraft: instrumentNameDraft,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
@@ -1348,6 +1402,7 @@ final class PDFBandEditorContainerView: NSView {
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
         instrumentNameHighlights: [ScoreInstrumentNamePick],
+        instrumentNameDraft: ScoreInstrumentNameDraft? = nil,
         onPickInstrumentName: @escaping (CGPoint, CGRect?) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
@@ -1389,6 +1444,7 @@ final class PDFBandEditorContainerView: NSView {
             canCreateBands: canCreateBands,
             isPickingInstrumentNames: isPickingInstrumentNames,
             instrumentNameHighlights: instrumentNameHighlights,
+            instrumentNameDraft: instrumentNameDraft,
             onPickInstrumentName: onPickInstrumentName,
             onSelectBand: onSelectBand,
             onCreateBand: onCreateBand,
@@ -1650,6 +1706,7 @@ private final class BandOverlayView: NSView {
     private var canCreateBands = false
     private var isPickingInstrumentNames = false
     private var instrumentNameHighlights: [ScoreInstrumentNamePick] = []
+    private var instrumentNameDraft: ScoreInstrumentNameDraft?
     private var onPickInstrumentName: ((CGPoint, CGRect?) -> Void)?
     private var instrumentNameMouseDownPoint: CGPoint?
     private var instrumentNameDragPoint: CGPoint?
@@ -1752,6 +1809,7 @@ private final class BandOverlayView: NSView {
         canCreateBands: Bool,
         isPickingInstrumentNames: Bool,
         instrumentNameHighlights: [ScoreInstrumentNamePick],
+        instrumentNameDraft: ScoreInstrumentNameDraft? = nil,
         onPickInstrumentName: @escaping (CGPoint, CGRect?) -> Void,
         onSelectBand: @escaping (UUID?) -> Void,
         onCreateBand: @escaping (Double) -> Void,
@@ -1774,6 +1832,7 @@ private final class BandOverlayView: NSView {
         self.canCreateBands = canCreateBands
         self.isPickingInstrumentNames = isPickingInstrumentNames
         self.instrumentNameHighlights = instrumentNameHighlights
+        self.instrumentNameDraft = instrumentNameDraft
         self.onPickInstrumentName = onPickInstrumentName
         self.onSelectBand = onSelectBand
         self.onCreateBand = onCreateBand
@@ -1939,7 +1998,6 @@ private final class BandOverlayView: NSView {
     private func drawInstrumentNameHighlights() {
         guard isPickingInstrumentNames, let pageFrame = pageFrameInView(),
               pageFrame.width > 0, pageFrame.height > 0 else { return }
-        let color = NSColor.systemGreen
         let labelAttributes: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 12, weight: .semibold),
             .foregroundColor: NSColor.white
@@ -1951,19 +2009,27 @@ private final class BandOverlayView: NSView {
         NSGraphicsContext.saveGraphicsState()
         defer { NSGraphicsContext.restoreGraphicsState() }
         NSBezierPath(rect: pageFrame).addClip()
-        for pick in instrumentNameHighlights where pick.pageIndex == pageIndex {
-            let box = CGRect(x: pageFrame.minX + pick.bounds.minX * pageFrame.width,
-                y: pageFrame.maxY - pick.bounds.maxY * pageFrame.height,
-                width: pick.bounds.width * pageFrame.width,
-                height: pick.bounds.height * pageFrame.height).insetBy(dx: -3, dy: -3)
+        var annotations = instrumentNameHighlights.filter { $0.pageIndex == pageIndex }.map {
+            (bounds: $0.bounds, label: "✓ \($0.name)", pending: false)
+        }
+        if let draft = instrumentNameDraft, draft.pageIndex == pageIndex {
+            annotations.append((bounds: draft.bounds, label: "Type a name below", pending: true))
+        }
+        for annotation in annotations {
+            let color = annotation.pending ? NSColor.systemOrange : NSColor.systemGreen
+            let box = CGRect(x: pageFrame.minX + annotation.bounds.minX * pageFrame.width,
+                y: pageFrame.maxY - annotation.bounds.maxY * pageFrame.height,
+                width: annotation.bounds.width * pageFrame.width,
+                height: annotation.bounds.height * pageFrame.height).insetBy(dx: -3, dy: -3)
             guard box.intersects(visibleRect) else { continue }
             let outline = NSBezierPath(roundedRect: box, xRadius: 4, yRadius: 4)
             color.withAlphaComponent(0.20).setFill()
             outline.fill()
             color.setStroke()
             outline.lineWidth = 2
+            if annotation.pending { outline.setLineDash([5, 3], count: 2, phase: 0) }
             outline.stroke()
-            for corner in [CGPoint(x: box.minX, y: box.minY), CGPoint(x: box.minX, y: box.maxY),
+            for corner in annotation.pending ? [] : [CGPoint(x: box.minX, y: box.minY), CGPoint(x: box.minX, y: box.maxY),
                            CGPoint(x: box.maxX, y: box.minY), CGPoint(x: box.maxX, y: box.maxY)] {
                 let handle = NSBezierPath(ovalIn: CGRect(x: corner.x - 3, y: corner.y - 3, width: 6, height: 6))
                 NSColor.white.setFill(); handle.fill()
@@ -1972,14 +2038,15 @@ private final class BandOverlayView: NSView {
 
             // Show the actual recognized spelling beside the ink, large enough
             // to read even when the whole source page is fitted to the window.
-            let label = "✓ \(pick.name)" as NSString
+            let label = annotation.label as NSString
             let textSize = label.size(withAttributes: labelAttributes)
             let size = NSSize(width: min(textSize.width + 14, pageFrame.width - 8), height: textSize.height + 6)
             let x = max(pageFrame.minX + 4, min(box.minX, pageFrame.maxX - size.width - 4))
             let y = box.maxY + size.height + 4 <= pageFrame.maxY
                 ? box.maxY + 4 : max(pageFrame.minY + 4, box.minY - size.height - 4)
             let badge = CGRect(origin: CGPoint(x: x, y: y), size: size)
-            NSColor(calibratedRed: 0.10, green: 0.38, blue: 0.20, alpha: 0.97).setFill()
+            (annotation.pending ? NSColor(calibratedRed: 0.55, green: 0.29, blue: 0.02, alpha: 0.97)
+                : NSColor(calibratedRed: 0.10, green: 0.38, blue: 0.20, alpha: 0.97)).setFill()
             NSBezierPath(roundedRect: badge, xRadius: 5, yRadius: 5).fill()
             label.draw(in: badge.insetBy(dx: 7, dy: 3), withAttributes: textAttributes)
         }

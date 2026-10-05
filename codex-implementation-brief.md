@@ -17,7 +17,10 @@ OMR, MusicXML editing or a cloud service.
 
 - Choose all or selected input pages, optionally deskew before identification,
   and select printed instrument labels on the score. Names are highlighted,
-  editable and kept distinct even when their printed text repeats. The floating
+  editable and kept distinct even when their printed text repeats. Dragging a
+  box beside an unnamed staff opens a focused name field and staff count in the
+  source bar; Add Instrument/Return commits it through the same setup path.
+  Pending typed entries have explicit cancellation. The floating
   **Done — Back to Auto Extract** control completes name picking.
 - Review instrument order/staff counts, printed-header detection and optional
   direction/rest recognition; run Auto and resolve uncertain assignments.

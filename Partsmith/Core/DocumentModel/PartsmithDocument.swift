@@ -284,18 +284,47 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
     @Published var selectedPartID: UUID?
     @Published var selectedBandID: UUID?
-    @Published var currentPageIndex: Int
+    @Published var currentPageIndex: Int {
+        didSet {
+            if currentPageIndex != oldValue,
+               instrumentNameDraft != nil || instrumentNameOperation != nil {
+                clearPendingInstrumentNameSelection(message: "The displayed page changed. Select the instrument again.")
+            }
+        }
+    }
     @Published var canvasMode: CanvasMode
     @Published var zoomMode: ZoomMode
-    @Published var isEditingHeaderSelection: Bool
-    @Published var isEditingPageRectification: Bool
+    @Published var isEditingHeaderSelection: Bool {
+        didSet {
+            if isEditingHeaderSelection, !oldValue,
+               instrumentNameDraft != nil || instrumentNameOperation != nil {
+                clearPendingInstrumentNameSelection(message: "Finish selecting the header, then select the instrument again.")
+            }
+        }
+    }
+    @Published var isEditingPageRectification: Bool {
+        didSet {
+            if isEditingPageRectification, !oldValue,
+               instrumentNameDraft != nil || instrumentNameOperation != nil {
+                clearPendingInstrumentNameSelection(message: "The displayed page changed. Select the instrument again.")
+            }
+        }
+    }
     @Published private(set) var rectificationAutoProgress: RectificationAutoProgress?
     @Published private(set) var scoreDetectionProgress: ScoreDetectionProgress?
     @Published private(set) var restAutoProgress: RestAutoProgress?
     @Published var previewScaleInfo: PartRenderScaleInfo?
     @Published private(set) var restAutoStatus: String?
-    @Published var isPickingInstrumentNames = false
+    @Published var isPickingInstrumentNames = false {
+        didSet {
+            if !isPickingInstrumentNames, oldValue {
+                clearPendingInstrumentNameSelection()
+                instrumentNameHighlights = []
+            }
+        }
+    }
     @Published private(set) var instrumentNamePick: ScoreInstrumentNamePick?
+    @Published private(set) var instrumentNameDraft: ScoreInstrumentNameDraft?
     @Published private(set) var instrumentNameHighlights: [ScoreInstrumentNamePick] = []
     @Published private(set) var instrumentNamePickMessage: String?
     @Published private(set) var isRecognizingInstrumentName = false
@@ -322,6 +351,7 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     private var staffDetectionOperation: BlockOperation?
     private var scoreDetectionOperation: BlockOperation?
     private var instrumentNameOperation: BlockOperation?
+    private var instrumentNameDraftContext: (id: UUID, source: Data, rectification: PageRectification?)?
     private let instrumentNameQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.name = "Partsmith.InstrumentNameRecognition"
@@ -753,19 +783,18 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
     }
 
     private func pickInstrumentName(at point: CGPoint, region: CGRect?, pageIndex: Int) {
-        instrumentNameOperation?.cancel()
-        instrumentNameOperation = nil
-        instrumentNamePick = nil
-        instrumentNamePickMessage = nil
-        isRecognizingInstrumentName = false
+        clearPendingInstrumentNameSelection()
         guard isPickingInstrumentNames else { return }
-        guard pageIndex == currentPageIndex, !isEditingPageRectification,
+        guard region.map(Self.isValidInstrumentNameRegion) ?? true else { return }
+        guard pageIndex == currentPageIndex, !isEditingPageRectification, !isEditingHeaderSelection,
               point.x.isFinite, point.y.isFinite, (0...1).contains(point.x), (0...1).contains(point.y),
               let data = sourcePDFData, let image = scoreReviewImage(pageIndex: pageIndex) else {
-            instrumentNamePickMessage = "Show a score page, then click a printed instrument name."
+            instrumentNamePickMessage = "Show a score page, then click a name or draw a box beside an unnamed staff."
             return
         }
         let rectification = currentPageRectification
+        let draftBounds = region ?? CGRect(x: max(0, min(point.x - 0.08, 0.84)),
+            y: max(0, min(point.y - 0.0125, 0.975)), width: 0.16, height: 0.025)
         let operation = BlockOperation()
         instrumentNameOperation = operation
         isRecognizingInstrumentName = true
@@ -786,35 +815,85 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
                 self.isRecognizingInstrumentName = false
                 guard self.isPickingInstrumentNames else { return }
                 guard self.sourcePDFData == data, self.currentPageIndex == pageIndex,
-                      self.currentPageRectification == rectification, !self.isEditingPageRectification else {
+                      self.currentPageRectification == rectification,
+                      !self.isEditingPageRectification, !self.isEditingHeaderSelection else {
                     self.instrumentNamePickMessage = "The displayed page changed. Click its instrument name again."
                     return
                 }
                 guard let candidate else {
-                    self.instrumentNamePickMessage = "Couldn’t read a name there. Drag a box around the complete label, or type its name in the list."
+                    let draft = ScoreInstrumentNameDraft(id: UUID(), pageIndex: pageIndex, bounds: draftBounds)
+                    self.instrumentNameDraftContext = (draft.id, data, rectification)
+                    self.instrumentNameDraft = draft
+                    self.instrumentNamePickMessage = "No printed name found. Type a name below."
                     return
                 }
                 let pick = ScoreInstrumentNamePick(id: UUID(), name: candidate.text,
                     suggestedStaffCount: ScoreInstrumentNameDetector.suggestedStaffCount(for: candidate.text),
                     pageIndex: pageIndex, bounds: candidate.bounds)
-                // A repeat click updates its existing label; it never leaves
-                // stacked highlights over the same printed word.
-                if let index = self.instrumentNameHighlights.firstIndex(where: { previous in
-                    guard previous.pageIndex == pick.pageIndex else { return false }
-                    let intersection = previous.bounds.intersection(pick.bounds)
-                    let smallerArea = min(previous.bounds.width * previous.bounds.height,
-                                          pick.bounds.width * pick.bounds.height)
-                    return !intersection.isNull && smallerArea > 0
-                        && intersection.width * intersection.height >= smallerArea * 0.5
-                }) {
-                    self.instrumentNameHighlights[index] = pick
-                } else {
-                    self.instrumentNameHighlights.append(pick)
-                }
-                self.instrumentNamePick = pick
+                self.publishInstrumentNamePick(pick)
             }
         }
         instrumentNameQueue.addOperation(operation)
+    }
+
+    /// Manual and recognized names share the same occurrence identity and list
+    /// uniquing path. Neither changes the project before Auto is accepted.
+    @discardableResult
+    func confirmInstrumentNameDraft(name: String, staffCount: Int) -> Bool {
+        guard let draft = instrumentNameDraft, let context = instrumentNameDraftContext,
+              context.id == draft.id, isPickingInstrumentNames,
+              !isEditingPageRectification, !isEditingHeaderSelection,
+              currentPageIndex == draft.pageIndex, sourcePDFData == context.source,
+              currentPageRectification == context.rectification,
+              Self.isValidInstrumentNameRegion(draft.bounds) else {
+            cancelInstrumentNameDraft()
+            return false
+        }
+        let trimmedName = name.split(whereSeparator: \.isWhitespace).joined(separator: " ")
+        guard !trimmedName.isEmpty, (1...4).contains(staffCount) else { return false }
+        let pick = ScoreInstrumentNamePick(id: draft.id, name: trimmedName,
+            suggestedStaffCount: staffCount, pageIndex: draft.pageIndex, bounds: draft.bounds)
+        clearPendingInstrumentNameSelection()
+        publishInstrumentNamePick(pick)
+        return true
+    }
+
+    func cancelInstrumentNameDraft() {
+        clearPendingInstrumentNameSelection()
+    }
+
+    private static func isValidInstrumentNameRegion(_ bounds: CGRect) -> Bool {
+        !bounds.isNull && !bounds.isEmpty && bounds.width > 0 && bounds.height > 0
+            && [bounds.minX, bounds.minY, bounds.maxX, bounds.maxY].allSatisfy(\.isFinite)
+            && bounds.minX >= 0 && bounds.minY >= 0 && bounds.maxX <= 1 && bounds.maxY <= 1
+    }
+
+    private func clearPendingInstrumentNameSelection(message: String? = nil) {
+        instrumentNameOperation?.cancel()
+        instrumentNameOperation = nil
+        instrumentNameDraftContext = nil
+        instrumentNameDraft = nil
+        instrumentNamePick = nil
+        instrumentNamePickMessage = message
+        isRecognizingInstrumentName = false
+    }
+
+    private func publishInstrumentNamePick(_ pick: ScoreInstrumentNamePick) {
+        // A repeat selection updates its existing label without leaving stacked
+        // highlights. The same geometry-based identity applies to typed names.
+        if let index = instrumentNameHighlights.firstIndex(where: { previous in
+            guard previous.pageIndex == pick.pageIndex else { return false }
+            let intersection = previous.bounds.intersection(pick.bounds)
+            let smallerArea = min(previous.bounds.width * previous.bounds.height,
+                                  pick.bounds.width * pick.bounds.height)
+            return !intersection.isNull && smallerArea > 0
+                && intersection.width * intersection.height >= smallerArea * 0.5
+        }) {
+            instrumentNameHighlights[index] = pick
+        } else {
+            instrumentNameHighlights.append(pick)
+        }
+        instrumentNamePick = pick
     }
 
     /// Keep on-score feedback consistent with an automatically unique list name.
@@ -827,25 +906,18 @@ final class PartsmithDocument: ReferenceFileDocument, ObservableObject {
 
     func cancelInstrumentNamePicking() {
         isPickingInstrumentNames = false
-        instrumentNameOperation?.cancel()
-        instrumentNameOperation = nil
-        instrumentNamePick = nil
+        clearPendingInstrumentNameSelection()
         instrumentNameHighlights = []
-        instrumentNamePickMessage = nil
-        isRecognizingInstrumentName = false
     }
 
     /// Rectification, source import, and undo can replace the displayed page
     /// while the picker stays open. Never retain boxes from the old geometry.
     private func invalidateInstrumentNameHighlights() {
-        guard isPickingInstrumentNames || !instrumentNameHighlights.isEmpty || instrumentNameOperation != nil else { return }
-        instrumentNameOperation?.cancel()
-        instrumentNameOperation = nil
-        instrumentNamePick = nil
+        guard isPickingInstrumentNames || !instrumentNameHighlights.isEmpty
+                || instrumentNameOperation != nil || instrumentNameDraft != nil else { return }
+        clearPendingInstrumentNameSelection(message: isPickingInstrumentNames
+            ? "The displayed page changed. Select the instrument again." : nil)
         instrumentNameHighlights = []
-        isRecognizingInstrumentName = false
-        instrumentNamePickMessage = isPickingInstrumentNames
-            ? "The displayed page changed. Click its instrument name again." : nil
     }
 
     /// Add every reviewed part atomically. Existing populated parts of the same

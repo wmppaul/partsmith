@@ -1,0 +1,88 @@
+PASS: Selecting outside instrument picking mode cannot begin a manual name
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: An unnamed box creates no green success highlight or saved project edit
+PASS: An empty or whitespace-only name is rejected while keeping the box available to correct
+PASS: An empty or whitespace-only name is rejected while keeping the box available to correct
+PASS: An empty or whitespace-only name is rejected while keeping the box available to correct
+PASS: Invalid staff counts cannot submit the pending manual name
+PASS: Invalid staff counts cannot submit the pending manual name
+PASS: Invalid staff counts cannot submit the pending manual name
+PASS: Invalid staff counts cannot submit the pending manual name
+PASS: A typed instrument name confirms the blank score selection
+PASS: Confirmation publishes the entered name, chosen staff count and selected geometry
+PASS: A confirmed manual name receives the same on-score highlight as a printed label
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: A second unnamed staff can use the same entered instrument name
+PASS: Duplicate typed names produce distinct, uniquely named parts and score highlights
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: A previously named empty box can be selected again
+PASS: Repeating the same empty-box selection reuses its row without adding another suffix or highlight
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: A resized empty selection can be renamed and assigned two staves
+PASS: Resizing and renaming updates the original instrument row and the chosen staff count
+PASS: The resized manual highlight replaces the earlier box
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Manual names retain the user's punctuation, capitalization and Unicode text
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Accidental leading, trailing and repeated whitespace is normalized
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Cancel discards only the unnamed box and preserves all already chosen instruments
+PASS: A canceled draft cannot subsequently create a part
+PASS: The entire manual naming and list-editing flow leaves saved project data and source PDF unchanged
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: A blank click offers a bounded manual selection surrounding the clicked location
+PASS: Finishing name picking clears all transient manual geometry
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Navigating to another page immediately invalidates the pending name
+PASS: Returning to a page cannot revive its discarded manual name
+PASS: Blank-box OCR begins asynchronously
+PASS: Navigating away and back while OCR runs cannot revive the old result
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Replacing the source PDF rejects a draft from the old document
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Entering deskew editing discards a pending manual selection
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Changing the displayed page rectification rejects stale manual geometry
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Manual naming retains the exact drawn box and source page
+PASS: A blank selection cannot publish an instrument before its name is confirmed
+PASS: Ending the picking session directly prevents stale confirmation
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Only the latest selection survives when a newer box supersedes an in-flight read
+PASS: Starting another read clears the previous typing prompt immediately
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Each new manual selection has its own identity and source geometry
+PASS: Invalid selection geometry cannot create a manual instrument draft
+PASS: Invalid selection geometry cannot create a manual instrument draft
+PASS: Invalid selection geometry cannot create a manual instrument draft
+PASS: Invalid selection geometry cannot create a manual instrument draft
+PASS: Invalid selection geometry cannot create a manual instrument draft
+PASS: Cancellation, navigation and invalid selections never create saved parts or bands
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: Recognizable printed labels still add immediately with the complete instrument index
+PASS: Asynchronous recognition completes within the fixture timeout
+PASS: A real score's blank margin offers manual naming while keeping the prior recognized name
+PASS: Canceling a pending read prevents late OCR from replacing existing selections
+PASS: 87 manual-instrument-name regression checks

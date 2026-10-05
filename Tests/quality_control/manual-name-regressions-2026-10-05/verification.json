@@ -1,0 +1,13 @@
+{
+  "checks": 252,
+  "failures": 0,
+  "instrumentNameRecognition": 205,
+  "instrumentPickingFlow": 47,
+  "sourceFilesUnchangedDuringVerification": true,
+  "finalPickerSourceFilesUnchangedDuringVerification": true,
+  "recognitionCompiledInputsUnchangedSince205CheckPass": true,
+  "scriptsUnchanged": true,
+  "selectiveRerunReason": "Only ScoreExtractionView.swift changed after the first successful run: pending names/OCR now disable Auto and guard runAuto. The native picker-flow 47 checks were rerun against that final source. All Core and instrument-name test inputs for the 205 checks remained identical, so that suite did not need repeating.",
+  "nativeExecution": "macOS graphics enabled for isolated fixture executables; no Partsmith application or user document opened",
+  "productionReview": "Identified Auto silently canceling a pending name. Root fixed button/action guards and added a footer explanation; read-only re-review confirms the fix. No remaining blockers in draft focus, new-selection identity reset, Cancel/Escape, Done guards, OCR cancellation, or shared pick/list path."
+}

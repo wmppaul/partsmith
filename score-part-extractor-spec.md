@@ -44,7 +44,11 @@ rest notation only for supported or explicitly counted silent passages.
    opens the first included page. Click or drag around complete printed labels
    in top-to-bottom order, including any instrument number. Recognized labels
    remain highlighted and editable. Separate repeated labels become distinct
-   parts. Use the score's **Done — Back to Auto Extract** control to return.
+   parts. For an unnamed staff, drag a box in the blank space beside it, enter a
+   name and staff count in the source bar, and choose **Add Instrument** or
+   Return. A pending typed entry can be canceled; adding it uses the same unique
+   name and source occurrence rules as recognition. These boxes are setup
+   markers, not crop geometry. Use **Done — Back to Auto Extract** to return.
    Starting profiles and typed names are alternatives; a piano grand staff uses
    two staves. Name recognition does not prove the instrument assignment.
 5. Review staff counts and Lyrics options. Leave printed-header detection on to

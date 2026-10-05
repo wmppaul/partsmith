@@ -1,0 +1,38 @@
+{
+  "status": "Published local package after model, existing regressions and native name-entry UI review",
+  "publicPath": "artifacts/macos/Partsmith-extraction-preview-macos.zip",
+  "publicSHA256": "9c6f9c1c0bad230510de80bca4b3d1f21cf47e10bd7ae346dff7899e90093848",
+  "priorPublicSHA256": "120a205da7a77353c16d3511090e0da909b8c9aae213739323d5dce5e37f1e6f",
+  "independentReviews": [
+    {
+      "path": "Tests/quality_control/manual-instrument-names-2026-10-05",
+      "manifestSHA256": "56aaada3d8182f185d92a88f7650e223d97d73bb67179afc9cf8dd7199b455b4",
+      "evidenceFilesVerified": 6,
+      "sourceFilesVerified": 29,
+      "checksPassed": 87
+    },
+    {
+      "path": "Tests/quality_control/manual-name-regressions-2026-10-05",
+      "manifestSHA256": "3cb001cd0d0984c6685fa7a8a2704fc1965b56aa81c3264b1bd6a2986b0376ac",
+      "evidenceFilesVerified": 16,
+      "sourceFilesVerified": 41,
+      "checksPassed": 252
+    },
+    {
+      "path": "Tests/quality_control/manual-name-ui-2026-10-05",
+      "manifestSHA256": "a1fd827b1506cb209b39bb45c54924da0e33fa46ae7f2861279d83e5432fe733",
+      "evidenceFilesVerified": 14,
+      "sourceFilesVerified": 39,
+      "checksPassed": 56
+    }
+  ],
+  "checksPassed": 395,
+  "sourceInputsVerified": 47,
+  "compiledAppSourcesPerArchitecture": 37,
+  "rootVisualReview": [
+    "manual-name-ui-2026-10-05/source-pending-name-narrow.png",
+    "manual-name-ui-2026-10-05/source-added-name.png"
+  ],
+  "runningAppActions": "none",
+  "scope": "Name-entry interactions in isolated native windows; no new musical extraction or full-score quality claim"
+}

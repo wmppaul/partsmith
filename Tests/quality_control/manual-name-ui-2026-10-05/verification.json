@@ -1,0 +1,20 @@
+{
+  "checks": 56,
+  "failures": 0,
+  "productionSourcesUnchangedDuringVerification": true,
+  "sourceFiles": 37,
+  "testCommand": "bash tools/test_manual_instrument_pick_flow.sh",
+  "nativeGraphicsAccess": true,
+  "testBinarySHA256": "a1e8cc5211f337eea7b6d79c895f24ed7ff458e047d44947c87ca1cbbd7b5435",
+  "independentVisualReview": {
+    "reviewed": [
+      "source-pending-name.png",
+      "source-pending-name-narrow.png",
+      "source-added-name.png",
+      "source-two-staff-name.png",
+      "auto-manual-instruments.png"
+    ],
+    "result": "Pending area stays amber with Type a name below, manual field and staff count fit both view widths; Add yields a named green box; Auto contains Violin, Violin 2, and Cello and Bass with counts 1,1,2. No clipping of the new entry controls observed.",
+    "captureLimitation": "The prohibited/offscreen native window capture omits some prominent button backgrounds. Actual enabled state, press actions, keyboard Return/Escape, and focus request target are asserted by native UI tests; screenshots do not certify foreground AppKit appearance."
+  }
+}

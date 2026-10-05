@@ -71,7 +71,8 @@ final class ScoreExtractionWindowController: NSObject, ObservableObject, NSWindo
     /// Cancellation and source-window closure must never reopen or focus it.
     func finishPickingNames() {
         guard let document, document.isPickingInstrumentNames,
-              !document.isRecognizingInstrumentName, let extractionWindow else { return }
+              !document.isRecognizingInstrumentName, document.instrumentNameDraft == nil,
+              let extractionWindow else { return }
         document.cancelInstrumentNamePicking()
         extractionWindow.deminiaturize(nil)
         extractionWindow.makeKeyAndOrderFront(nil)

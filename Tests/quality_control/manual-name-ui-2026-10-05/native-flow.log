@@ -1,0 +1,66 @@
+tools/test_manual_instrument_pick_flow.swift:240:15: warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+238 |         NSApp.setActivationPolicy(.prohibited)
+239 |         NSApp.finishLaunching()
+240 |         NSApp.accessibilitySetValue(true, forAttribute: .init(rawValue: "AXEnhancedUserInterface"))
+    |               `- warning: 'accessibilitySetValue(_:forAttribute:)' was deprecated in macOS 10.10: Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [#DeprecatedDeclaration]
+241 |         let original = class_getInstanceMethod(NSWindow.self, #selector(NSWindow.makeKeyAndOrderFront(_:)))!
+242 |         let recording = class_getInstanceMethod(NSWindow.self, #selector(NSWindow.instrumentFlowMakeKeyAndOrderFront(_:)))!
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+PASS: The production Auto action opens score name picking
+PASS: The dragged selection finishes local recognition
+PASS: A dragged blank region opens a manual-name draft
+PASS: The manual draft retains the actual drag rectangle in source coordinates
+PASS: The score displays an editable manual instrument-name field
+PASS: Add is disabled for an empty name
+PASS: Done is disabled while the highlighted name is unfinished
+PASS: An early finish action cannot discard the unfinished selected instrument
+PASS: Name entry and Add remain available in a narrow source window
+PASS: The native name field accepts an edit
+PASS: Whitespace alone cannot add an instrument
+PASS: The actual native field accepts a typed instrument name
+PASS: A typed name enables the actual Add button
+PASS: Return is sent through the native field editor to add the typed name
+PASS: Adding replaces the amber draft with one named green selection
+PASS: The committed manual highlight preserves the user's selected region
+PASS: Adding keeps selection mode active and makes Done available
+PASS: Auto becomes available after the first complete instrument name
+PASS: The dragged selection finishes local recognition
+PASS: A dragged blank region opens a manual-name draft
+PASS: The manual draft retains the actual drag rectangle in source coordinates
+PASS: Auto cannot discard a pending draft when a valid instrument list already exists
+PASS: The Auto setup explains how to finish the highlighted pending name
+PASS: A second separate area accepts the same typed name
+PASS: The second manual instrument can be added
+PASS: Same-name instruments at separate source areas remain two uniquely named selections
+PASS: The dragged selection finishes local recognition
+PASS: A dragged blank region opens a manual-name draft
+PASS: The manual draft retains the actual drag rectangle in source coordinates
+PASS: A grouped unnamed instrument can be named
+PASS: The actual native staff-count control increments to two staves
+PASS: The named two-staff instrument can be added
+PASS: The selected two-staff count survives the native Add action
+PASS: The dragged selection finishes local recognition
+PASS: A dragged blank region opens a manual-name draft
+PASS: The manual draft retains the actual drag rectangle in source coordinates
+PASS: An unwanted pending name can be edited before canceling
+PASS: The actual Cancel button dismisses an unfinished name
+PASS: Cancel removes only the pending area and preserves all committed selections
+PASS: Cancel makes Auto available again for the completed instrument list
+PASS: The dragged selection finishes local recognition
+PASS: A dragged blank region opens a manual-name draft
+PASS: The manual draft retains the actual drag rectangle in source coordinates
+PASS: Another pending name can be edited before keyboard cancellation
+PASS: Escape is sent through the native field editor
+PASS: Escape cancels only the unfinished name and leaves accepted selections unchanged
+PASS: Done returns to Auto without switching windows manually
+PASS: Done requests focus for the same owning Auto window
+PASS: Auto receives all manual names in order, with distinct rows for repeated names
+PASS: The actual Auto staff-count labels retain one, one, and two staves
+PASS: Name picking and returning preserve the entire project and original source PDF
+PASS: A manual list supports another source-picking session
+PASS: The dragged selection finishes local recognition
+PASS: A dragged blank region opens a manual-name draft
+PASS: The manual draft retains the actual drag rectangle in source coordinates
+PASS: Closing the source cleans up an unfinished name and its owned Auto window
+PASS: 56 manual instrument-picking flow checks

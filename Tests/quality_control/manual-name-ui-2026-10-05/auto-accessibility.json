@@ -1,0 +1,597 @@
+[
+  {
+    "class" : "_TtGC7SwiftUI13NSHostingViewV4main19ScoreExtractionView_",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXGroup",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Auto Extract Parts"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Set the instrument order, then find and assign staves throughout the score. Runs entirely on this Mac."
+  },
+  {
+    "class" : "NSSplitView",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXSplitGroup",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Cancel",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Auto",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "_TtGC7SwiftUI13NSHostingViewGVS_15ModifiedContentVS_14_ViewList_ViewGVS_22NavigationPaneModifierVS_21ContainerStyleContext___",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXGroup",
+    "value" : ""
+  },
+  {
+    "class" : "NSSplitViewSplitter",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXSplitter",
+    "value" : ""
+  },
+  {
+    "class" : "_TtGC7SwiftUI13NSHostingViewGVS_15ModifiedContentVS_14_ViewList_ViewGVS_22NavigationPaneModifierVS_21ContainerStyleContext___",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXGroup",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Pages to extract"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Pages to extract"
+  },
+  {
+    "class" : "_TtCC7SwiftUI23SwiftUISegmentedControl4Cell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXRadioGroup",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Current Page",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Clear",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "1 of 1 pages selected"
+  },
+  {
+    "class" : "SwiftUI.HostingScrollView",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXScrollArea",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Click previews to choose pages. With Selected Pages, name selection opens the first included page. Deskew and Auto use these pages."
+  },
+  {
+    "class" : "SwiftUI.HostingScrollView",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXScrollArea",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilitySegment",
+    "identifier" : "",
+    "label" : "All Pages",
+    "role" : "AXRadioButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilitySegment",
+    "identifier" : "",
+    "label" : "Selected Pages",
+    "role" : "AXRadioButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityLazyLayoutNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXOpaqueProviderGroup",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "1. Straighten scanned pages (optional)"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Deskew and align the pages before identifying instruments and staves. Existing page corrections are kept."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Deskew & Align Pages",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "2. Choose the instruments"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Keep the instruments in the same top-to-bottom order as the score."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Select each instrument in one system, from top to bottom. Click its printed name, or drag a box beside an unnamed staff and type a name. Then choose Done — Back to Auto Extract on the score."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "selectInstrumentNames",
+    "label" : "Add Names from Score",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "_TtGCVV7SwiftUIP10$1b8ba388418AppKitPopUpAdaptor12PlatformView22SwiftUIPopupButtonCellVVS_22MenuStyleConfiguration5Label___",
+    "identifier" : "",
+    "label" : "More",
+    "role" : "AXMenuButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Printed and typed names stay editable. Repeated names in different places become separate numbered parts."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "You can also use a starting profile or enter names below. Use two staves for a piano grand staff; every name and staff count stays editable."
+  },
+  {
+    "class" : "_TtGCVV7SwiftUIP10$1b8ba388418AppKitPopUpAdaptor12PlatformView22SwiftUIPopupButtonCellVVS_22MenuStyleConfiguration5Label___",
+    "identifier" : "",
+    "label" : "Use a Starting Profile",
+    "role" : "AXMenuButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "3 instruments. Review the names and staff counts below, then choose Auto."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "1."
+  },
+  {
+    "class" : "_TtC7SwiftUIP33_C58093E7172B0A541A997680E343D0D520_SystemTextFieldCell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXTextField",
+    "value" : "Violin"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "1 staff"
+  },
+  {
+    "class" : "_TtC7SwiftUIP33_7EDEE3BC9F04CB7860AD83774DB9034623EditTrackingStepperCell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXIncrementor",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Lyrics",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "arrow.up",
+    "label" : "Up",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "minus.circle",
+    "label" : "Remove",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "2."
+  },
+  {
+    "class" : "_TtC7SwiftUIP33_C58093E7172B0A541A997680E343D0D520_SystemTextFieldCell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXTextField",
+    "value" : "Violin 2"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "1 staff"
+  },
+  {
+    "class" : "_TtC7SwiftUIP33_7EDEE3BC9F04CB7860AD83774DB9034623EditTrackingStepperCell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXIncrementor",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Lyrics",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "arrow.up",
+    "label" : "Up",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "minus.circle",
+    "label" : "Remove",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "3."
+  },
+  {
+    "class" : "_TtC7SwiftUIP33_C58093E7172B0A541A997680E343D0D520_SystemTextFieldCell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXTextField",
+    "value" : "Cello and Bass"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "2 staves"
+  },
+  {
+    "class" : "_TtC7SwiftUIP33_7EDEE3BC9F04CB7860AD83774DB9034623EditTrackingStepperCell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXIncrementor",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Lyrics",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "arrow.up",
+    "label" : "Up",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "minus.circle",
+    "label" : "Remove",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Add Instrument",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Instrument layout changes between systems",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "For scores that hide silent instruments, Auto finds the staves, then you choose the printed instruments for each system and enter its bar count. Absent instruments receive counted rests."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "3. Printed score header"
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Find the printed title and composer automatically",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Auto finds a header above the first music system and shows a preview. The original score image will appear on the first page of each part."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Copy detected tempos, repeats and paired endings (experimental)",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Copies printed tempos, repeat directions and paired first\/second endings into the parts. Other endings, rehearsal letters and bar numbers still need source review."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Count and compress full-bar rests automatically",
+    "role" : "AXCheckBox",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "After adding parts, Partsmith checks for rest-only strips and keeps their printed opening and ending context. Uncertain passages stay as source notation."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Crop mode"
+  },
+  {
+    "class" : "_TtCC7SwiftUI23SwiftUISegmentedControl4Cell",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXRadioGroup",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Compact crops follow nearby connected ink and lyric rows. Review detached directions and ink touching neighboring staves; uncertain ownership is flagged. Check Lyrics for vocal staves; multiple verses may need extra lower padding."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Crop Context — Padding and Source Margins",
+    "role" : "AXDisclosureTriangle",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Auto processes the 1 selected source pages. Pages with no detected staves are skipped automatically. You can review assignments and crop edges before adding; some neighboring notation may remain."
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXStaticText",
+    "value" : "Your instrumentation setup is saved with the project when you run Auto."
+  },
+  {
+    "class" : "NSScroller",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXScrollBar",
+    "value" : ""
+  },
+  {
+    "class" : "SwiftUI.AccessibilityNode",
+    "identifier" : "",
+    "label" : "Source page 1",
+    "role" : "AXButton",
+    "value" : "Included"
+  },
+  {
+    "class" : "NSAccessibilityStepperArrowButton",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityStepperArrowButton",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityStepperArrowButton",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityStepperArrowButton",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityStepperArrowButton",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityStepperArrowButton",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilitySegment",
+    "identifier" : "",
+    "label" : "Compact — follow notation",
+    "role" : "AXRadioButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilitySegment",
+    "identifier" : "",
+    "label" : "Fixed padding",
+    "role" : "AXRadioButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityScrollerPart",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXValueIndicator",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityScrollerPart",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityScrollerPart",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityScrollerPart",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  },
+  {
+    "class" : "NSAccessibilityScrollerPart",
+    "identifier" : "",
+    "label" : "",
+    "role" : "AXButton",
+    "value" : ""
+  }
+]
