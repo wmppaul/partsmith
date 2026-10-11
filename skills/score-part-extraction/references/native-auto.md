@@ -413,8 +413,8 @@ matching counts and barlines, containing hanging whole-measure rests. It preserv
 and the ending barline, and leaves unknown ink or ambiguous notation unchanged.
 Mixed playing/resting strips, interior meter/tempo changes,
 fermatas, repeats and copied shared markings within the compressed span are not
-automatically compressed. Copied opening markings entirely before the retained
-prefix boundary remain eligible.
+automatically compressed. Copied opening markings entirely before the first rest glyph remain eligible;
+the earlier prefix-boundary restriction no longer applies.
 Broad neighboring context can prevent an otherwise silent strip from matching.
 Consecutive confirmed rests join by default. An opening replacement can extend
 through following inserted rests when its ending is a verified ordinary barline.

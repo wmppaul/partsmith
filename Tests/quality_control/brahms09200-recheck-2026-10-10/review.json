@@ -1,0 +1,77 @@
+{
+  "status": "complete native Auto draft reviewed; shared-direction failures remain",
+  "sourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+  "sourcePages": 25,
+  "systems": 120,
+  "bands": 480,
+  "all480SourceCropContextsVisuallyViewed": true,
+  "all53OutputPagesVisuallyViewed": true,
+  "all46PaddedTargetGuardPromptsVisuallyViewed": true,
+  "targetNotationLossIdentified": false,
+  "noExhaustiveSemanticNoteOrPixelOracleClaim": true,
+  "sourceOrderAndGeometryChecks": "passed",
+  "mainMusicGeometryDifferencesFromPriorNative": 0,
+  "copies": 32,
+  "pages": {
+    "Violin I": 14,
+    "Violin II": 13,
+    "Viola": 13,
+    "Violoncello": 13
+  },
+  "issues": [
+    {
+      "kind": "missing ending pairs",
+      "page": 21,
+      "system": 3,
+      "parts": [
+        "Violin II",
+        "Viola",
+        "Violoncello"
+      ],
+      "actualSourceAndOutputViewed": true
+    },
+    {
+      "kind": "missing ending pairs",
+      "page": 23,
+      "system": 4,
+      "parts": [
+        "Violin II",
+        "Viola",
+        "Violoncello"
+      ],
+      "actualSourceAndOutputViewed": true
+    },
+    {
+      "kind": "missing ending pairs",
+      "page": 24,
+      "system": 2,
+      "parts": [
+        "Violin II",
+        "Viola",
+        "Violoncello"
+      ],
+      "actualSourceAndOutputViewed": true
+    },
+    {
+      "kind": "duplicate conditional direction",
+      "page": 22,
+      "system": 1,
+      "part": "Violin II",
+      "actualSourceAndOutputViewed": true
+    },
+    {
+      "kind": "many rehearsal letters and printed source measure labels not reliably propagated",
+      "noExhaustiveMissingGlyphCountClaim": true
+    },
+    {
+      "kind": "neighboring staff retention",
+      "geometricBandsContainingForeignTopLine": 271,
+      "scope": "retained ink; no cleanup claimed"
+    }
+  ],
+  "nativeAutoIssueMessages": 0,
+  "exportHeaderMode": "typed title and composer; automatic header proposal saved separately",
+  "instrumentSetup": "initialized four-instrument compact profile; no name-UI test",
+  "productionEdits": false,
+  "reviewer": "/root/brahms_recheck_secondary"
+}

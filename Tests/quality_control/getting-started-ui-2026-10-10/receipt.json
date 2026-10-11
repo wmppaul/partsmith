@@ -1,0 +1,105 @@
+{
+  "scope": "Actual packaged Alpha 6 native UI walkthrough; tutorial evidence, not musical completeness certification",
+  "releaseTag": "v0.1.0-alpha.6",
+  "releaseSourceCommit": "8e4700469be5870c0945cd5501dda53770eebb26",
+  "appExecutableSHA256": "a305e65f1db9c910df83c78bd137353fdf877742dc9fe2d41f0456b872202e17",
+  "originalSource": "05_brahms_string_quartet_no3_op67_imslp_09200.pdf",
+  "originalSourceSHA256": "ff883e06db2bc69c5de0c45fa447795201805ecf7210b76c50168b64f0570689",
+  "sourcePages": 25,
+  "rectifiedPages": 8,
+  "parts": [
+    {
+      "name": "1. Violine",
+      "systems": 120
+    },
+    {
+      "name": "2. Violine",
+      "systems": 120
+    },
+    {
+      "name": "Bratsche",
+      "systems": 120
+    },
+    {
+      "name": "Violoncell",
+      "systems": 120
+    }
+  ],
+  "savedProjectJSONSHA256": "43a12594405efa5e60b7ee36716ef68f2c7bf6909cc8eed33d35fab1ece71cbe",
+  "exportedPDFs": [
+    {
+      "path": ".build/getting-started-ui-2026-10-10/exports/Untitled Partsmith Project/1. Violine.pdf",
+      "pages": 14,
+      "sha256": "a797ed3c61944df3cdf18029b62599a7ecfe07bd291ada99c30473d3b5e4dc8e"
+    },
+    {
+      "path": ".build/getting-started-ui-2026-10-10/exports/Untitled Partsmith Project/2. Violine.pdf",
+      "pages": 13,
+      "sha256": "13c8b650df48309aa08f68fe6bb2321bf1bc5397f343870fe7a6f172b0b5f873"
+    },
+    {
+      "path": ".build/getting-started-ui-2026-10-10/exports/Untitled Partsmith Project/Bratsche.pdf",
+      "pages": 13,
+      "sha256": "1386c4cbb9c9bff935734eec8f8882f990d5f8f4935083e4f4e78bad0dd957d8"
+    },
+    {
+      "path": ".build/getting-started-ui-2026-10-10/exports/Untitled Partsmith Project/Violoncell.pdf",
+      "pages": 14,
+      "sha256": "c411723bdb845e53a72deeea49bc5dba0ceb941d3ef9c0e088cb48abc030d840"
+    }
+  ],
+  "stepsObserved": [
+    "File New / Import PDF",
+    "Auto Extract",
+    "Deskew & Align Pages",
+    "Select Instrument Names on Score",
+    "Read four numbered/printed labels",
+    "Done returns to same Auto setup",
+    "Auto proposes all selected pages",
+    "Assign Instruments enlarged view drag selects four staves",
+    "Add Parts accepts without acknowledgment checkbox",
+    "Preview shows crop handles and Expand Crop",
+    "Inspector shows shared layout controls",
+    "File Save writes editable project",
+    "Source Export All writes all four PDFs",
+    "Empty name box opens typed field; pending-only demonstration canceled"
+  ],
+  "screenshots": {
+    "docs/images/getting-started/01-import.png": "fac6f5f67a6d8eaf751101c5ce776c56de004f702c045618e801cd92312918b9",
+    "docs/images/getting-started/01-import.svg": "4ba5b75fe3c012f53502fac7bac9d9ce9174cd0710be9d0ec925793259044c3d",
+    "docs/images/getting-started/02-magic-wand.png": "a65763f87b2168cc76380f64a26a83a6ff62b3a84fc433e4fccdb6145545b04c",
+    "docs/images/getting-started/02-magic-wand.svg": "d65c5bbe359e6a7cf6ea4419c20daf844ab5f929f8605e53b58402849afe6043",
+    "docs/images/getting-started/03-pages-deskew.png": "39324366b34657fc02507968030669481fe7ee957d1cf04b0dbf2cfba94ffdfe",
+    "docs/images/getting-started/03-pages-deskew.svg": "a0358c6b19d10a2ec21cacb76b2fc3bae165f5f3b50b4a55d2d05a878d37cd15",
+    "docs/images/getting-started/04-pick-names.png": "1c5b8b1825946de77da528c357b8dd5cac21c3ba57edea8a4671abc955f9b829",
+    "docs/images/getting-started/04-pick-names.svg": "d3b5e8ed0ac68ae62921e5a7d73aaf97ba6b4b25a92a2498ac2f57cab7ef0d08",
+    "docs/images/getting-started/05-run-auto.png": "d975cd91695bcf7311ad190b00c2d35b8cb6580b051ac4aad9a9198c3d657ce8",
+    "docs/images/getting-started/05-run-auto.svg": "9e6c1963ca1ce15502c309fde38300dd7287b06162f76f2019b83b9bddd8a4e4",
+    "docs/images/getting-started/06-add-parts.png": "9733b51f52ff40a09dbfefdd652ae7d753277bf69e55a07277418a2f2cf17d60",
+    "docs/images/getting-started/06-add-parts.svg": "4ed3d18c0c8ec278a20b52062cbef95f01a9a3e486a1a52068f473c794483c67",
+    "docs/images/getting-started/07-preview-crop.png": "1521215a5d3848bc251cb2111e1d2435e679f2154f4e4c6b46b4eb23cfc40923",
+    "docs/images/getting-started/07-preview-crop.svg": "93ec51c31f7e09f844fd4f2ba1853f58f0a8cf7c5616f1e0cbeeef3f6ebda6c9",
+    "docs/images/getting-started/08-layout-export.png": "328a2af839253040b3b4f5f395a58bcead8280b847a0c7781463abd1a95a4b1b",
+    "docs/images/getting-started/08-layout-export.svg": "1a008c043bc75c757ebcdae1732ed549998e0bc57aa1a0f1d4bbcbace5304e84",
+    "docs/images/getting-started/09-assign-system.png": "01fd0792ea69c77e8cc8d0b4eebe237119faa04498b416311a0351ec8e2646ba",
+    "docs/images/getting-started/09-assign-system.svg": "439c3cffe300bdf1b100c87d863d7b08bfc0b2f3520c82e7af648ce89da6766f",
+    "docs/images/getting-started/10-manual-name.png": "77e509eed6501c6baff9edc2a47626017d4975bcd6cdcef521204cb52ed1655d",
+    "docs/images/getting-started/10-manual-name.svg": "d889d480955d9e4cb6739dd46913cb5e16fd3719cc2b97a463faf2b8c774b00a",
+    "docs/images/getting-started/raw/01-import.png": "61f5344221fbd40e5ee3823d79e106450cb35f3115033fd25916f5a7c2790594",
+    "docs/images/getting-started/raw/02-magic-wand.png": "e09c26b61ab6704ec221ec8756aa4c5c93c11b9b4b4b0d56fea16355154e3bb9",
+    "docs/images/getting-started/raw/03-pages-deskew.png": "b0bc288ef51af2f29a81d2b00e65561939dcf7afdc797e322c50d7e6580b02cb",
+    "docs/images/getting-started/raw/04-pick-names.png": "75fbe116eb4b06df6542537594dec277e95528b87a377c4bb8dff8d52c0add5b",
+    "docs/images/getting-started/raw/05-run-auto.png": "1bebbbbd154bdd66217ab6242072aba61585327d61a41f857a39b76a2922d880",
+    "docs/images/getting-started/raw/06-add-parts.png": "945b19cb28c6ed68677e9447fd457cc8a56abcc37b0fc4a3dd6b920fa73e6424",
+    "docs/images/getting-started/raw/07-preview-crop.png": "1cb44f74bbdd58d828804eaa27cb6931ad77f50de3b4941d83d9ebe22c1d8cf0",
+    "docs/images/getting-started/raw/08-layout-export.png": "534459a7b8c8af5e6a25830d710aedfc4925dd0d2e99293c4d793877fd62bbf8",
+    "docs/images/getting-started/raw/09-assign-system.png": "947d97be3605eb3fde9133e704220c13dd60f94a84b65975aced98c64f7c51d2",
+    "docs/images/getting-started/raw/10-manual-name.png": "9d46f434412f6461adb65d1431d7c342d46650e0bf601ef98f874d08a540b644"
+  },
+  "notes": [
+    "This UI walkthrough uses a printed source header and eight deskew corrections; the separate 09200 Core recheck uses the unrectified source and typed title. Their pagination differs.",
+    "No tutorial-only manual name was added or extra part persisted.",
+    "Guide arrows overlay actual unchanged app captures; no UI controls fabricated.",
+    "Independent agent visually reviewed all ten annotated figures and verified guide button labels, workflow, links and anchors."
+  ]
+}

@@ -1,0 +1,383 @@
+[
+  {
+    "file": "01-import",
+    "title": "1. Import the full-score PDF",
+    "crop": [
+      750,
+      720,
+      1600,
+      650
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          1100,
+          1152,
+          1395,
+          1152
+        ],
+        "label": "Choose Import PDF, then select your score."
+      }
+    ]
+  },
+  {
+    "file": "02-magic-wand",
+    "title": "2. Start with the magic wand",
+    "crop": [
+      500,
+      0,
+      2100,
+      960
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          1900,
+          170,
+          2095,
+          170
+        ],
+        "label": "Press the blue Auto Extract button."
+      },
+      {
+        "arrow": [
+          1470,
+          75,
+          1580,
+          52
+        ],
+        "label": "The toolbar wand opens the same setup."
+      }
+    ]
+  },
+  {
+    "file": "03-pages-deskew",
+    "title": "3. Choose pages, deskew, then select names",
+    "crop": [
+      0,
+      195,
+      2394,
+      690
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          135,
+          280,
+          255,
+          290
+        ],
+        "label": "Choose All Pages or Selected Pages."
+      },
+      {
+        "arrow": [
+          670,
+          380,
+          727,
+          380
+        ],
+        "label": "Straighten scans before identification."
+      },
+      {
+        "arrow": [
+          650,
+          695,
+          726,
+          695
+        ],
+        "label": "Open Select Instrument Names on Score."
+      }
+    ]
+  },
+  {
+    "file": "04-pick-names",
+    "title": "4. Pick every instrument in one complete system",
+    "crop": [
+      500,
+      700,
+      2100,
+      1260
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          610,
+          807,
+          687,
+          807
+        ],
+        "label": "Click labels from top to bottom; check green boxes."
+      },
+      {
+        "arrow": [
+          1940,
+          1765,
+          2120,
+          1765
+        ],
+        "label": "Choose Done to return directly to setup."
+      }
+    ]
+  },
+  {
+    "file": "05-run-auto",
+    "title": "5. Check names and staff counts, then run Auto",
+    "crop": [
+      680,
+      210,
+      1714,
+      1638
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          2140,
+          255,
+          1930,
+          310
+        ],
+        "label": "Check order and staff counts (piano: 2)."
+      },
+      {
+        "arrow": [
+          1590,
+          905,
+          1345,
+          929
+        ],
+        "label": "Choose header, direction, and rest options."
+      },
+      {
+        "arrow": [
+          2110,
+          1790,
+          2245,
+          1790
+        ],
+        "label": "Press Auto and wait for the proposal."
+      }
+    ]
+  },
+  {
+    "file": "06-add-parts",
+    "title": "6. Review the proposal, then add all parts",
+    "crop": [
+      0,
+      195,
+      2394,
+      1661
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          175,
+          275,
+          300,
+          232
+        ],
+        "label": "Browse source pages and check each assignment."
+      },
+      {
+        "arrow": [
+          1900,
+          325,
+          1614,
+          378
+        ],
+        "label": "Check the copied printed header."
+      },
+      {
+        "arrow": [
+          2050,
+          1790,
+          2188,
+          1790
+        ],
+        "label": "Choose Add Parts when assignments are valid."
+      }
+    ]
+  },
+  {
+    "file": "07-preview-crop",
+    "title": "7 \u00b7 Refine a crop in the part Preview",
+    "crop": [
+      500,
+      900,
+      2700,
+      840
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          840,
+          1050,
+          1140,
+          1060
+        ],
+        "label": "Click a system to select its crop."
+      },
+      {
+        "arrow": [
+          1800,
+          1230,
+          1520,
+          1142
+        ],
+        "label": "Drag a blue handle; keep every target note."
+      },
+      {
+        "arrow": [
+          2850,
+          1460,
+          2810,
+          1588
+        ],
+        "label": "Expand Crop restores more source context."
+      }
+    ]
+  },
+  {
+    "file": "08-layout-export",
+    "title": "8 \u00b7 Tune the shared layout, then export",
+    "crop": [
+      500,
+      0,
+      2700,
+      1660
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          2210,
+          1160,
+          2770,
+          1100
+        ],
+        "label": "Scale, margins and gap apply across parts."
+      },
+      {
+        "arrow": [
+          2200,
+          870,
+          2680,
+          990
+        ],
+        "label": "Customize This Part creates an exception."
+      },
+      {
+        "arrow": [
+          2120,
+          190,
+          2410,
+          190
+        ],
+        "label": "Export PDF saves the selected part."
+      },
+      {
+        "arrow": [
+          2660,
+          100,
+          2920,
+          55
+        ],
+        "label": "Source has Export All for every part."
+      }
+    ]
+  },
+  {
+    "file": "09-assign-system",
+    "title": "Advanced: assign the staves of one system",
+    "crop": [
+      0,
+      200,
+      2394,
+      1340
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          1320,
+          610,
+          1120,
+          925
+        ],
+        "label": "Drag across all printed staves in one system."
+      },
+      {
+        "arrow": [
+          2260,
+          390,
+          2048,
+          399
+        ],
+        "label": "Check page/system; Load recalls its assignment."
+      },
+      {
+        "arrow": [
+          2200,
+          1060,
+          2025,
+          1060
+        ],
+        "label": "Check Bars in system, or enter a count."
+      },
+      {
+        "arrow": [
+          2140,
+          1235,
+          1945,
+          1235
+        ],
+        "label": "Check instrument choices, then Assign System."
+      }
+    ]
+  },
+  {
+    "file": "10-manual-name",
+    "title": "Advanced: type a name when the selection is empty",
+    "crop": [
+      500,
+      430,
+      2100,
+      1530
+    ],
+    "callouts": [
+      {
+        "arrow": [
+          965,
+          476,
+          600,
+          555
+        ],
+        "label": "Drag a blank box beside the intended staff."
+      },
+      {
+        "arrow": [
+          1650,
+          1765,
+          1420,
+          1838
+        ],
+        "label": "Type the instrument name in the bottom bar."
+      },
+      {
+        "arrow": [
+          2335,
+          1745,
+          2490,
+          1838
+        ],
+        "label": "Set the staff count (piano: 2)."
+      },
+      {
+        "arrow": [
+          1080,
+          1902,
+          705,
+          1902
+        ],
+        "label": "Add Instrument or Return finishes the entry."
+      }
+    ]
+  }
+]

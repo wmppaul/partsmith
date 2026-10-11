@@ -1,5 +1,11 @@
 # Complete input corpus quality control
 
+## October 10 Brahms quartet recheck and illustrated app guides
+
+The [current quartet recheck](../../docs/brahms-quartet-review.md) covers both complete editions and all four parts: 480 staves in IMSLP09200 and 604 in IMSLP93521. Fresh Auto retains source-system coverage but still misses shared directions; the 25-page scan has confirmed absent ending pairs, while the 39-page scan still needs the earlier Viola direction repair. The [assisted 39-page delivery](../../output/pdf/brahms-recheck-2026-10-10/README.md) retains the seven reviewed trims and adds 72 source-reviewed rehearsal/fermata copies. This is assisted correction, not a production detector change.
+
+The [illustrated Getting Started guide](../../docs/getting-started.md) follows the exact Alpha 6 release through import, deskew, name selection, Auto, Add Parts, Preview, Save and Export All. [Native UI evidence](getting-started-ui-2026-10-10/README.md) binds its ten annotated screenshots and four actual exports. The [advanced guide](../../docs/advanced-workflows.md) covers manual names, changing instrumentation, crop cleanup, layout and rests. Historical records below retain their generation-specific counts and findings.
+
 ## October 4 shared score layout
 
 The [shared layout release](shared-layout-release-2026-10-04/README.md) links scale, system gap and side margins across parts, with explicit local overrides and a one-action way to apply any part’s settings to all parts. Existing projects migrate without changing their rendered appearance. The focused [ownership and legacy migration review](shared-layout-2026-10-04/README.md) compares all 38 pages of ten older-layout outputs with the unchanged engine.

@@ -14,14 +14,16 @@ The [in-repository preview ZIP](artifacts/macos/Partsmith-extraction-preview-mac
 
 ## Getting started with Auto Extract
 
-1. **Import your score.** Create a new project and drag a full-score PDF into the center pane, or choose **Import PDF**.
-2. **Click the Auto Extract magic wand.** Its window moves and resizes, so you can keep the score visible.
-3. **Choose the music pages.** Use **All Pages**, or switch to **Selected Pages** and click the thumbnails or enter a range such as `2-8, 12`. Leave out cover material and contents pages. For a tilted scan, choose **Deskew & Align Pages** before selecting instrument names. Deskew and Auto use the same page selection.
-4. **Select the instrument names.** Click **Select Instrument Names on Score**, then work through one complete system from top to bottom. With Selected Pages, Partsmith opens the first included page. Click printed names; they stay highlighted. Drag a box around a label if a click misses a number or word; adjust its green corners to reread it. **If a staff has no printed name**, drag a box in the blank space beside it. Type a name in the bar below the score, choose the staff count, and press **Add Instrument** or Return. Use a separate box for each instrument; repeated names become separate numbered parts. Choose **Done — Back to Auto Extract** to return to setup. A starting profile or **Add Instrument** in setup is also available.
-5. **Check the setup.** Verify instrument order and staff counts: a piano grand staff is **2 staves**, while each violin is normally **1 staff**. Enable **Lyrics** for vocal parts. Separate printed labels produce separate parts even when their names match. Leave automatic printed-header detection and full-bar rest compression enabled if you want those features.
-6. **Run Auto, then Add Parts.** Check the proposed assignments and crops; the window offers a larger **Assign Instruments** view for corrections. Pages with no detected staves are skipped automatically, and **View Skipped Pages** is optional. If music was missed, restore that page and correct it. **Add Parts** accepts valid assignments without an acknowledgement checkbox. Unresolved staff assignments or missing counts for omitted instruments still need correction.
-7. **Refine the parts in Preview.** Select a part in the sidebar and switch to **Preview**. Click a system, then drag its blue top or bottom handle to trim extra neighboring music. Release to apply, or press Escape to cancel. The change also appears in Source and the exported PDF; Undo restores it. Check the intended notes, lyrics, ledger lines and directions after trimming.
-8. **Set the layout and export.** Adjust **Scale**, **System Gap** and **Side Margins** in **Score Layout**; they stay synchronized across parts. Use **Customize This Part** for an exception, or **Use These Settings for All Parts** to share a tuned layout. Save the project, then use **Export PDF** for the selected Preview or **Export All** in Source mode for one PDF per part.
+**[Open the illustrated Getting Started guide](docs/getting-started.md)** for a complete walkthrough with numbered screenshots, from importing a score to exporting every part.
+
+![Choose music pages, straighten scans, and select instrument names](docs/images/getting-started/03-pages-deskew.png)
+
+1. Import the full-score PDF and press the blue **Auto Extract** magic wand.
+2. Choose the music pages, **Deskew & Align Pages** if needed, then select instrument names on the score. For an unnamed staff, drag a blank box beside it and type a name.
+3. Check instrument order and staff counts, run **Auto**, then **Add Parts** when assignments are valid.
+4. Refine each part in **Preview**, tune the shared layout, save the editable project and **Export All**.
+
+For changing instrumentation, omitted-system rests, crop cleanup and other harder cases, use [Advanced workflows](docs/advanced-workflows.md). See the [Brahms quartet recheck](docs/brahms-quartet-review.md) for current Auto results and assisted corrections.
 
 ## Refining the result
 
@@ -41,7 +43,7 @@ Names remain editable after recognition. Use **Add Names from Score** to extend 
 
 ### Rests and changing instrumentation
 
-**Count and compress full-bar rests automatically** runs after Add Parts. For an existing part, use **Find & Compress Rests**; for one strip, use **Count & Compress This Strip**. Clear, eligible rest strips become counted rests, including piano grand staffs when both hands rest for the same measures. Uncertain notation stays as its original crop. **Restore Original Crop**, Undo and a reviewed manual count remain available. Consecutive confirmed rests join by default, including an opening compressed strip followed by omitted-system rests when its ending is a plain barline. Directions, changed printed context and explicit breaks keep rests separate; uncheck **Join with previous rest** for a local exception.
+**Count and compress full-bar rests automatically** runs after Add Parts. For an existing part, use **Find & Compress Rests**; for one strip, use **Count & Compress This Strip**. Clear, eligible rest strips become counted rests, including piano grand staffs when both hands rest for the same measures. Uncertain notation stays as its original crop. **Restore Original Crop**, Undo and a reviewed manual count remain available. Consecutive confirmed rests join by default, including an opening compressed strip followed by omitted-system rests when its ending is a plain barline. Directions, changed printed context and explicit breaks keep rests separate. For inserted rests or manual replacements without printed source context, uncheck **Join with previous rest** to keep a local boundary.
 
 If silent instruments disappear from the full score, enable **Instrument layout changes between systems** before running Auto. In **Assign Instruments**, use Fit Width or zoom and drag across the staves of one complete system; the selection highlights as you drag. Click to adjust the selection, or Shift-click/Shift-drag to add staves. Check the instruments actually printed and their staff counts. **Page N · System N** identifies the system within its source page.
 
